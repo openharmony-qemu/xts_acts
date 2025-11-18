@@ -12,13 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import inspector from '@ohos.arkui.inspector';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@kit.ArkUI";
-
+import inspector from '@ohos.arkui.inspector'
+import { sendTouchEvent } from "@ohos.arkui.Test";
+// import RectValue from '../Rect';
+import { TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 export class RectValue {
   left: number = 0;
   top: number = 0;
@@ -33,33 +30,28 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static sleep(count:int) : Promise<int> {
-    return new Promise<int>((resolve, reject) => {
-      setTimeout(() => {
-        resolve(0)
-      }, count)
+  static sleep(time: number) {
+    return new Promise<string>((resolve, reject) => {
+      setTimeout(():void => {
+        resolve('OK')
+      }, time as Int)
+    }).then(() => {
+      console.info(`sleep ${time} over...`)
     })
   }
 
   static getComponentRect(key: string) {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let obj  = JSON.parseJsonElement(strJson);
+    console.info("getInspectorByKey] current component obj is: " + JSON.stringify(obj));
+    let rectInfo= JSON.parseJsonElement('[' + obj.getElement('$rect') + ']')
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
-    CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
-    CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
-    CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
-    CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
-    return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+    // Utils.rect_left = JSON.parseJsonElement('[' + rectInfo[0] + ']')[0]
+    // Utils.rect_top = JSON.parseJsonElement('[' + rectInfo[0] + ']')[1]
+    // Utils.rect_right = JSON.parseJsonElement('[' + rectInfo[1] + ']')[0]
+    // Utils.rect_bottom = JSON.parseJsonElement('[' + rectInfo[1] + ']')[1]
+    return Utils.rect_value = {
+      "left": Utils.rect_left, "top": Utils.rect_top, "right": Utils.rect_right, "bottom": Utils.rect_bottom
     }
   }
 
@@ -97,6 +89,8 @@ export default class Utils {
       windowY: 0,
       displayX: 0,
       displayY: 0,
+      // screenX: 0,
+      // screenY: 0
     }
     console.info('down touch started: ' + JSON.stringify(downPonit))
     sendTouchEvent(downPonit);
@@ -104,7 +98,7 @@ export default class Utils {
     if (drag) {
       await Utils.sleep(500)
     }
-    for (let i = 1; i <= swipeSteps; i++) {
+    for (let i = 1;i <= swipeSteps; i++) {
       let movePoint: TouchObject = {
         id: 1,
         x: downX + (xStep * i),
@@ -114,6 +108,8 @@ export default class Utils {
         windowY: 0,
         displayX: 0,
         displayY: 0,
+        // screenX: 0,
+        // screenY: 0
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
       ret = sendTouchEvent(movePoint)
@@ -135,6 +131,8 @@ export default class Utils {
       windowY: 0,
       displayX: 0,
       displayY: 0,
+      // screenX: 0,
+      // screenY: 0
     }
     console.info('up touch started: ' + JSON.stringify(upPoint))
     sendTouchEvent(upPoint)

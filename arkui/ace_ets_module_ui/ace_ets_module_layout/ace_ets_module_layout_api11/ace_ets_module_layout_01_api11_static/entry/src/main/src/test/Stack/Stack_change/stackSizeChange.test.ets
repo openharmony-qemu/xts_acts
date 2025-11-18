@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import {Alignment} from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
@@ -39,7 +39,7 @@ export default function stackSizeChange() {
   describe('stackSizeChangeTest', () => {
     beforeAll(async () => {
       console.info("stackSizeChangeTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -56,6 +56,7 @@ export default function stackSizeChange() {
         if (!("stackSizeChange" == pages?.name)) {
           console.info("get stackSizeChange state success " + JSON.stringify(pages?.name));
           routerInstance?.pushUrl(options)
+          await UtilsTest.msSleep(4000);
         }
       } catch (err) {
         console.error("push stackSizeChange page error " + JSON.stringify(err));
@@ -70,23 +71,24 @@ export default function stackSizeChange() {
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentTopStart_static
      * @tc.name     testStackLargerAlignContentTopStart_static
      * @tc.desc     testStackLargerAlignContentTopStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentTopStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopStart
       });
@@ -102,12 +104,12 @@ it('testStackLargerAlignContentTopStart_static', Level.LEVEL0, async (done: () =
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.left) - (stackSizeKey01.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopStart')
@@ -119,23 +121,24 @@ it('testStackLargerAlignContentTopStart_static', Level.LEVEL0, async (done: () =
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentTop_static
      * @tc.name     testStackLargerAlignContentTop_static
      * @tc.desc     testStackLargerAlignContentTop_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentTop_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Top
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Top
       });
@@ -150,14 +153,14 @@ it('testStackLargerAlignContentTop_static', Level.LEVEL0, async (done: () => voi
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Top')
@@ -169,23 +172,24 @@ it('testStackLargerAlignContentTop_static', Level.LEVEL0, async (done: () => voi
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentTopEnd_static
      * @tc.name     testStackLargerAlignContentTopEnd_static
      * @tc.desc     testStackLargerAlignContentTopEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentTopEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopEnd
       });
@@ -201,12 +205,12 @@ it('testStackLargerAlignContentTopEnd_static', Level.LEVEL0, async (done: () => 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopEnd')
@@ -218,23 +222,24 @@ it('testStackLargerAlignContentTopEnd_static', Level.LEVEL0, async (done: () => 
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentStart_static
      * @tc.name     testStackLargerAlignContentStart_static
      * @tc.desc     testStackLargerAlignContentStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Start
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Start
       });
@@ -250,12 +255,12 @@ it('testStackLargerAlignContentStart_static', Level.LEVEL0, async (done: () => v
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.left) - (stackSizeKey01.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start')
@@ -267,23 +272,24 @@ it('testStackLargerAlignContentStart_static', Level.LEVEL0, async (done: () => v
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentCenter_static
      * @tc.name     testStackLargerAlignContentCenter_static
      * @tc.desc     testStackLargerAlignContentCenter_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentCenter_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Center
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Center
       });
@@ -298,14 +304,14 @@ it('testStackLargerAlignContentCenter_static', Level.LEVEL0, async (done: () => 
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center')
@@ -317,23 +323,24 @@ it('testStackLargerAlignContentCenter_static', Level.LEVEL0, async (done: () => 
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentEnd_static
      * @tc.name     testStackLargerAlignContentEnd_static
      * @tc.desc     testStackLargerAlignContentEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.End
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.End
       });
@@ -349,12 +356,12 @@ it('testStackLargerAlignContentEnd_static', Level.LEVEL0, async (done: () => voi
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(stackSizeKey.bottom - stackSizeKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.End')
@@ -366,23 +373,24 @@ it('testStackLargerAlignContentEnd_static', Level.LEVEL0, async (done: () => voi
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentBottomStart_static
      * @tc.name     testStackLargerAlignContentBottomStart_static
      * @tc.desc     testStackLargerAlignContentBottomStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentBottomStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomStart
       });
@@ -398,15 +406,15 @@ it('testStackLargerAlignContentBottomStart_static', Level.LEVEL0, async (done: (
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.left) - (stackSizeKey01.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs')).assertEqual('Alignment.BottomStart')
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomStart')
       console.info('new testStackLargerAlignContentBottomStart_static END');
       done();
     });
@@ -415,23 +423,24 @@ it('testStackLargerAlignContentBottomStart_static', Level.LEVEL0, async (done: (
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentBottom_static
      * @tc.name     testStackLargerAlignContentBottom_static
      * @tc.desc     testStackLargerAlignContentBottom_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentBottom_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Bottom
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Bottom
       });
@@ -446,14 +455,14 @@ it('testStackLargerAlignContentBottom_static', Level.LEVEL0, async (done: () => 
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.right - stackSizeKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Bottom')
@@ -465,23 +474,24 @@ it('testStackLargerAlignContentBottom_static', Level.LEVEL0, async (done: () => 
     
 
 
+
 /*
      * @tc.number   testStackLargerAlignContentBottomEnd_static
      * @tc.name     testStackLargerAlignContentBottomEnd_static
      * @tc.desc     testStackLargerAlignContentBottomEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLargerAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLargerAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLargerAlignContentBottomEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 300
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 300
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomEnd
       });
@@ -496,13 +506,13 @@ it('testStackLargerAlignContentBottomEnd_static', Level.LEVEL0, async (done: () 
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.left - stackSizeKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.top - stackSizeKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomEnd')
@@ -514,23 +524,24 @@ it('testStackLargerAlignContentBottomEnd_static', Level.LEVEL0, async (done: () 
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentBottomTopStart_static
      * @tc.name     testStackEqualAlignContentBottomTopStart_static
      * @tc.desc     testStackEqualAlignContentBottomTopStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentBottomTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentBottomTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentBottomTopStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopStart
       });
@@ -549,7 +560,7 @@ it('testStackEqualAlignContentBottomTopStart_static', Level.LEVEL0, async (done:
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopStart')
@@ -561,23 +572,24 @@ it('testStackEqualAlignContentBottomTopStart_static', Level.LEVEL0, async (done:
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentBottomTop_static
      * @tc.name     testStackEqualAlignContentBottomTop_static
      * @tc.desc     testStackEqualAlignContentBottomTop_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentBottomTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentBottomTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentBottomTop_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Top
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Top
       });
@@ -596,7 +608,7 @@ it('testStackEqualAlignContentBottomTop_static', Level.LEVEL0, async (done: () =
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Top')
@@ -608,23 +620,24 @@ it('testStackEqualAlignContentBottomTop_static', Level.LEVEL0, async (done: () =
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentBottomTopEnd_static
      * @tc.name     testStackEqualAlignContentBottomTopEnd_static
      * @tc.desc     testStackEqualAlignContentBottomTopEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentBottomTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentBottomTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentBottomTopEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopEnd
       });
@@ -643,7 +656,7 @@ it('testStackEqualAlignContentBottomTopEnd_static', Level.LEVEL0, async (done: (
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopEnd')
@@ -655,23 +668,24 @@ it('testStackEqualAlignContentBottomTopEnd_static', Level.LEVEL0, async (done: (
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentBottomStart_static
      * @tc.name     testStackEqualAlignContentBottomStart_static
      * @tc.desc     testStackEqualAlignContentBottomStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentBottomStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Start
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Start
       });
@@ -690,7 +704,7 @@ it('testStackEqualAlignContentBottomStart_static', Level.LEVEL0, async (done: ()
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start')
@@ -702,23 +716,24 @@ it('testStackEqualAlignContentBottomStart_static', Level.LEVEL0, async (done: ()
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentCenter_static
      * @tc.name     testStackEqualAlignContentCenter_static
      * @tc.desc     testStackEqualAlignContentCenter_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentCenter_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Center
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Center
       });
@@ -737,7 +752,7 @@ it('testStackEqualAlignContentCenter_static', Level.LEVEL0, async (done: () => v
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center')
@@ -749,23 +764,24 @@ it('testStackEqualAlignContentCenter_static', Level.LEVEL0, async (done: () => v
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentEnd_static
      * @tc.name     testStackEqualAlignContentEnd_static
      * @tc.desc     testStackEqualAlignContentEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.End
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.End
       });
@@ -784,7 +800,7 @@ it('testStackEqualAlignContentEnd_static', Level.LEVEL0, async (done: () => void
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.End')
@@ -796,23 +812,24 @@ it('testStackEqualAlignContentEnd_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentBottomStart_static_001
      * @tc.name     testStackEqualAlignContentBottomStart_static_001
      * @tc.desc     testStackEqualAlignContentBottomStart_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentBottomStart_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentBottomStart_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentBottomStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomStart
       });
@@ -831,7 +848,7 @@ it('testStackEqualAlignContentBottomStart_static_001', Level.LEVEL0, async (done
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomStart')
@@ -843,23 +860,24 @@ it('testStackEqualAlignContentBottomStart_static_001', Level.LEVEL0, async (done
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentBottom_static
      * @tc.name     testStackEqualAlignContentBottom_static
      * @tc.desc     testStackEqualAlignContentBottom_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentBottom_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Bottom
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Bottom
       });
@@ -878,7 +896,7 @@ it('testStackEqualAlignContentBottom_static', Level.LEVEL0, async (done: () => v
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Bottom')
@@ -890,23 +908,24 @@ it('testStackEqualAlignContentBottom_static', Level.LEVEL0, async (done: () => v
     
 
 
+
 /*
      * @tc.number   testStackEqualAlignContentBottomEnd_static
      * @tc.name     testStackEqualAlignContentBottomEnd_static
      * @tc.desc     testStackEqualAlignContentBottomEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackEqualAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackEqualAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackEqualAlignContentBottomEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 200
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 200
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomEnd
       });
@@ -925,7 +944,7 @@ it('testStackEqualAlignContentBottomEnd_static', Level.LEVEL0, async (done: () =
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomEnd')
@@ -937,23 +956,24 @@ it('testStackEqualAlignContentBottomEnd_static', Level.LEVEL0, async (done: () =
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentTopStart_static
      * @tc.name     testStackLessAlignContentTopStart_static
      * @tc.desc     testStackLessAlignContentTopStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentTopStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopStart
       });
@@ -969,12 +989,12 @@ it('testStackLessAlignContentTopStart_static', Level.LEVEL0, async (done: () => 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.left) - (stackSizeKey01.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopStart')
@@ -986,23 +1006,24 @@ it('testStackLessAlignContentTopStart_static', Level.LEVEL0, async (done: () => 
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentTop_static
      * @tc.name     testStackLessAlignContentTop_static
      * @tc.desc     testStackLessAlignContentTop_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentTop_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Top
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Top
       });
@@ -1017,14 +1038,14 @@ it('testStackLessAlignContentTop_static', Level.LEVEL0, async (done: () => void)
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Top')
@@ -1036,23 +1057,24 @@ it('testStackLessAlignContentTop_static', Level.LEVEL0, async (done: () => void)
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentTopEnd_static
      * @tc.name     testStackLessAlignContentTopEnd_static
      * @tc.desc     testStackLessAlignContentTopEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentTopEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopEnd
       });
@@ -1068,12 +1090,12 @@ it('testStackLessAlignContentTopEnd_static', Level.LEVEL0, async (done: () => vo
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.top) - (stackSizeKey01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopEnd')
@@ -1085,23 +1107,24 @@ it('testStackLessAlignContentTopEnd_static', Level.LEVEL0, async (done: () => vo
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentStart_static
      * @tc.name     testStackLessAlignContentStart_static
      * @tc.desc     testStackLessAlignContentStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Start
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Start
       });
@@ -1117,12 +1140,12 @@ it('testStackLessAlignContentStart_static', Level.LEVEL0, async (done: () => voi
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.left) - (stackSizeKey01.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start')
@@ -1134,23 +1157,24 @@ it('testStackLessAlignContentStart_static', Level.LEVEL0, async (done: () => voi
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentCenter_static
      * @tc.name     testStackLessAlignContentCenter_static
      * @tc.desc     testStackLessAlignContentCenter_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentCenter_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Center
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Center
       });
@@ -1165,14 +1189,14 @@ it('testStackLessAlignContentCenter_static', Level.LEVEL0, async (done: () => vo
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center')
@@ -1184,23 +1208,24 @@ it('testStackLessAlignContentCenter_static', Level.LEVEL0, async (done: () => vo
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentEnd_static
      * @tc.name     testStackLessAlignContentEnd_static
      * @tc.desc     testStackLessAlignContentEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.End
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.End
       });
@@ -1216,12 +1241,12 @@ it('testStackLessAlignContentEnd_static', Level.LEVEL0, async (done: () => void)
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(stackSizeKey01.bottom - stackSizeKey.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.End')
@@ -1233,23 +1258,24 @@ it('testStackLessAlignContentEnd_static', Level.LEVEL0, async (done: () => void)
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentBottomStart_static
      * @tc.name     testStackLessAlignContentBottomStart_static
      * @tc.desc     testStackLessAlignContentBottomStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentBottomStart_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomStart
       });
@@ -1265,12 +1291,12 @@ it('testStackLessAlignContentBottomStart_static', Level.LEVEL0, async (done: () 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
       expect(Math.abs((stackSizeKey.left) - (stackSizeKey01.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomStart')
@@ -1282,23 +1308,24 @@ it('testStackLessAlignContentBottomStart_static', Level.LEVEL0, async (done: () 
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentBottom_static
      * @tc.name     testStackLessAlignContentBottom_static
      * @tc.desc     testStackLessAlignContentBottom_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentBottom_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Bottom
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Bottom
       });
@@ -1313,14 +1340,14 @@ it('testStackLessAlignContentBottom_static', Level.LEVEL0, async (done: () => vo
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Bottom')
@@ -1332,23 +1359,24 @@ it('testStackLessAlignContentBottom_static', Level.LEVEL0, async (done: () => vo
     
 
 
+
 /*
      * @tc.number   testStackLessAlignContentBottomEnd_static
      * @tc.name     testStackLessAlignContentBottomEnd_static
      * @tc.desc     testStackLessAlignContentBottomEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackLessAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackLessAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackLessAlignContentBottomEnd_static START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'height', value: 100
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'width', value: 100
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomEnd
       });
@@ -1363,13 +1391,13 @@ it('testStackLessAlignContentBottomEnd_static', Level.LEVEL0, async (done: () =>
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
       let stackSizeKey01: RectValue = CommonFunc.getComponentRect('stackSizeKey01');
-      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.left - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.right) - (stackSizeKey01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey.top - stackSizeKey01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackSizeKey.bottom) - (stackSizeKey01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackSizeKey01.right - stackSizeKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomEnd')

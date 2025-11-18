@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -53,7 +53,7 @@ struct TextAreaOnCut {
         .fontColor(0xCCCCCC)
         .border({ width: 1 })
         .padding(10)
-        .textAlign(TextAlign.Center)
+        .textAlign(TextAlign.Center)//input输入框中的文字被剪切时触发
         .onCut(() :void=> {
           console.log('onCut method is triggered');
         })
@@ -68,7 +68,7 @@ struct TextAreaOnCut {
         .fontColor(0xCCCCCC)
         .border({ width: 1 })
         .padding(10)
-        .textAlign(TextAlign.Center)
+        .textAlign(TextAlign.Center)//input输入框中的粘贴文字时触发
         .onPaste(() :void=> {
           console.log("onPaste method is  triggered")
         })

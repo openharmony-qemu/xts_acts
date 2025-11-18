@@ -15,7 +15,7 @@
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -54,10 +54,10 @@ export default function onDidIMEInputTest() {
         console.info("get onDidIMEInputTest state pages:" + JSON.stringify(pages));
         if (!("onDidIMEInput" == pages.name)) {
           console.info("get onDidIMEInputTest pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push onDidIMEInputTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push onDidIMEInputTest page error:" + err);
@@ -66,13 +66,14 @@ export default function onDidIMEInputTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   onDidIMEInputTest_static_0010
      * @tc.name     onDidIMEInputTest_static_0010
      * @tc.desc     onDidIMEInputTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('onDidIMEInputTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
+    it('onDidIMEInputTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
       console.info('onDidIMEInputTest_0010 START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);

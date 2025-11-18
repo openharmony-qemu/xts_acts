@@ -33,7 +33,6 @@ export default function showCounterTest() {
     beforeAll(() => {
       console.info("showCounterTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,9 +50,11 @@ export default function showCounterTest() {
         console.info("get showCounterTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get showCounterTest pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push showCounterTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push showCounterTest page error:" + err);
@@ -69,12 +70,12 @@ export default function showCounterTest() {
      * @tc.desc     showCounterTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('showCounterTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
+    it('showCounterTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[showCounterTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('showCounter_true');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[showCounterTest_static_0010] showCounter is: " + JSON.stringify(obj.getElement('$attrs').getElement('showCounter')));
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('showCounter'))+'').assertEqual('{"value":true,"options":{"thresholdPercentage":40,"highlightBorder":true}}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('showCounter'))).assertEqual('{"value":true,"options":{"thresholdPercentage":40,"highlightBorder":true}}');
       console.info('[showCounterTest_static_0010] END');
       done();
     });
@@ -86,12 +87,12 @@ it('showCounterTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     showCounterTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('showCounterTest_static_0020', Level.LEVEL0, async (done: ()=>void) => {
+    it('showCounterTest_static_0020', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[showCounterTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('showCounter_false');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[showCounterTest_static_0020] showCounter is: " + JSON.stringify(obj.getElement('$attrs').getElement('showCounter')));
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('showCounter'))+'').assertEqual('{"value":false,"options":{"thresholdPercentage":0,"highlightBorder":true}}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('showCounter'))).assertEqual('{"value":false,"options":{"thresholdPercentage":0,"highlightBorder":true}}');
       console.info('[showCounterTest_static_0020] END');
       done();
     });
@@ -103,12 +104,12 @@ it('showCounterTest_static_0020', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     showCounterTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-it('showCounterTest_static_0030', Level.LEVEL0, async (done: ()=>void) => {
+    it('showCounterTest_static_0030', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[showCounterTest_static_0030] START');
       let strJson = inspector.getInspectorByKey('showCounter_undefined');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[showCounterTest_static_0030] showCounter is: " + JSON.stringify(obj.getElement('$attrs').getElement('showCounter')));
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('showCounter'))+'').assertEqual('{"value":false,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('showCounter'))).assertEqual('{"value":false,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
       console.info('[showCounterTest_static_0030] END');
       done();
     });
@@ -120,12 +121,12 @@ it('showCounterTest_static_0030', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     showCounterTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-it('showCounterTest_static_0040', Level.LEVEL0, async (done: ()=>void) => {
+    it('showCounterTest_static_0040', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[showCounterTest_static_0040] START');
       let strJson = inspector.getInspectorByKey('showCounter_default');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[showCounterTest_static_0040] showCounter is: " + JSON.stringify(obj.getElement('$attrs').getElement('showCounter')));
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('showCounter'))+'').assertEqual('{"value":false,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('showCounter'))).assertEqual('{"value":false,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
       console.info('[showCounterTest_static_0040] END');
       done();
     });
@@ -137,12 +138,12 @@ it('showCounterTest_static_0040', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     showCounterTest_static_0050
      * @tc.level    Level.LEVEL0
      */
-it('showCounterTest_static_0050', Level.LEVEL0, async (done: ()=>void) => {
+    it('showCounterTest_static_0050', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[showCounterTest_static_0050] START');
       let strJson = inspector.getInspectorByKey('highlightBorder_false');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[showCounterTest_static_0050] showCounter is: " + JSON.stringify(obj.getElement('$attrs').getElement('showCounter')));
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('showCounter'))+'').assertEqual('{"value":false,"options":{"thresholdPercentage":0,"highlightBorder":false}}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('showCounter'))).assertEqual('{"value":false,"options":{"thresholdPercentage":0,"highlightBorder":false}}');
       console.info('[showCounterTest_static_0050] END');
       done();
     });
@@ -154,12 +155,12 @@ it('showCounterTest_static_0050', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     showCounterTest_static_0060
      * @tc.level    Level.LEVEL0
      */
-it('showCounterTest_static_0060', Level.LEVEL0, async (done: ()=>void) => {
+    it('showCounterTest_static_0060', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[showCounterTest_0060] START');
       let strJson = inspector.getInspectorByKey('highlightBorder_undefined');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[showCounterTest_0060] showCounter is: " + JSON.stringify(obj.getElement('$attrs').getElement('showCounter')));
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('showCounter'))+'').assertEqual('{"value":true,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('showCounter'))).assertEqual('{"value":true,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
       console.info('[showCounterTest_0060] END');
       done();
     });

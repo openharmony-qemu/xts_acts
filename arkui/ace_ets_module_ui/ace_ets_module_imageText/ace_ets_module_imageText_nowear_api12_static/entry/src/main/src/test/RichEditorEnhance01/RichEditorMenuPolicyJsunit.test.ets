@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -36,7 +36,7 @@ export default function RichEditorMenuPolicyJsunit() {
       console.info("RichEditorMenuPolicyJsunit beforeEach start");
 
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
@@ -70,13 +70,14 @@ export default function RichEditorMenuPolicyJsunit() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorMenuPolicyJsunit_static_0100
      * @tc.name     RichEditorMenuPolicyJsunit_static_0100
      * @tc.desc     RichEditorMenuPolicyJsunit_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorMenuPolicyJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RichEditorMenuPolicyJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RichEditorMenuPolicyJsunit_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000)
@@ -100,13 +101,14 @@ it('RichEditorMenuPolicyJsunit_static_0100', Level.LEVEL2, async (done: () => vo
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorMenuPolicyJsunit_static_0200
      * @tc.name     RichEditorMenuPolicyJsunit_static_0200
      * @tc.desc     RichEditorMenuPolicyJsunit_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorMenuPolicyJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RichEditorMenuPolicyJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RichEditorMenuPolicyJsunit_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500)

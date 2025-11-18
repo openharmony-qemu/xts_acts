@@ -34,7 +34,6 @@ export default function SearchTypeTest() {
     beforeAll(() => {
       console.info("SearchTypeTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,8 +53,9 @@ export default function SearchTypeTest() {
           console.info("get SearchTypeTest state pages.name: " + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SearchTypeTest success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push SearchTypeTest page error: " + err);
         expect().assertFail();
       }
@@ -68,13 +68,13 @@ export default function SearchTypeTest() {
      * @tc.desc     SearchTypeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('SearchTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchTypeTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('SearchType_NORMAL');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SearchTypeTest_static_0010] SearchType: ' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('type')));
-      expect(obj.getElement('$attrs').getElement('type')).assertEqual('SearchType.NORMAL');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('SearchType.NORMAL');
       console.info('[SearchTypeTest_static_0010] END');
       done();
     });
@@ -86,13 +86,13 @@ it('SearchTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise
      * @tc.desc     SearchTypeTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('SearchTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchTypeTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('SearchType_NUMBER');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SearchTypeTest_static_0020] SearchType: ' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('type')));
-      expect(obj.getElement('$attrs').getElement('type')).assertEqual('SearchType.NUMBER');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('SearchType.NUMBER');
       console.info('[SearchTypeTest_static_0020] END');
       done();
     });

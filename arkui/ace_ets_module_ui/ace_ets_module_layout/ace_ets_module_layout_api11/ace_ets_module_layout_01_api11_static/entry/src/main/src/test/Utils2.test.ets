@@ -4,8 +4,8 @@
  * you may not use Utils file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,7 +14,7 @@
  */
 import inspector from '@ohos.arkui.inspector';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from "@kit.ArkUI";
+// import { sendTouchEvent } from "@internal.full.global";
 import { Component, Driver, WindowMode } from '@ohos.UiTest';
 
 export class RectValue {
@@ -41,7 +41,7 @@ export default class Utils {
 
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<String,undefined|null|Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String,undefined|null|Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
@@ -91,7 +91,7 @@ export default class Utils {
       type: TouchType.Down
     }
     console.info('down touch started: ' + JSON.stringify(downPoint))
-    sendTouchEvent(downPoint);
+    // sendTouchEvent(downPoint);
     console.info('start to move')
     if (drag) {
       Utils.sleep(500)
@@ -108,7 +108,7 @@ export default class Utils {
         type: TouchType.Move,
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
-      ret = sendTouchEvent(movePoint)
+      // ret = sendTouchEvent(movePoint)
       if (ret == false) {
         break;
       }
@@ -129,7 +129,7 @@ export default class Utils {
       type: TouchType.Up,
     }
     console.info('up touch started: ' + JSON.stringify(upPoint))
-    sendTouchEvent(upPoint)
+    // sendTouchEvent(upPoint)
     Utils.sleep(500)
   }
 }

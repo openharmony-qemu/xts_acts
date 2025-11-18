@@ -14,7 +14,7 @@
  */
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -54,10 +54,10 @@ export default function RichEditorApi5() {
         console.info("get RichEditorApi5 state pages:" + JSON.stringify(pages));
         if (!("List_SpaceChange" == pages.name)) {
           console.info("get RichEditorApi5 pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push RichEditorApi5 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditorApi5 page error:" + err);
@@ -68,13 +68,14 @@ export default function RichEditorApi5() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorApi5_static_0100
      * @tc.name     RichEditorApi5_static_0100
      * @tc.desc     RichEditorApi5_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('RichEditorApi5_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+    it('RichEditorApi5_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('RichEditorApi5_0100 START');
       await CommonFunc.sleep(1000);
 

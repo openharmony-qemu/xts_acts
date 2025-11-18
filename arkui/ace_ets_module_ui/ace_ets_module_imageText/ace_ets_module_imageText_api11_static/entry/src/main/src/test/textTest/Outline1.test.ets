@@ -36,7 +36,6 @@ export default function outline() {
     beforeAll(() => {
       console.info("outline beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,8 +53,11 @@ export default function outline() {
         console.info("get outline state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get outline pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push outline page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push outline page error:" + err);
@@ -71,7 +73,7 @@ export default function outline() {
      * @tc.desc     outlineStyle_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('outlineStyle_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('outlineStyle_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('outlineStyle_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('outline');
@@ -90,7 +92,7 @@ it('outlineStyle_static_0100', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     outlineStyle_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('outlineStyle_static_0200', Level.LEVEL2, async (done: ()=>void) => {
+    it('outlineStyle_static_0200', Level.LEVEL2, async (done: ()=>void) => {
       console.info('outlineStyle_static_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('outline');
@@ -109,7 +111,7 @@ it('outlineStyle_static_0200', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     outlineStyle_static_0300
      * @tc.level    Level.LEVEL2
      */
-it('outlineStyle_static_0300', Level.LEVEL2, async (done: ()=>void) => {
+    it('outlineStyle_static_0300', Level.LEVEL2, async (done: ()=>void) => {
       console.info('outlineStyle_static_0300 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('outline');
@@ -128,7 +130,7 @@ it('outlineStyle_static_0300', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     outlineRadius_static_0400
      * @tc.level    Level.LEVEL2
      */
-it('outlineRadius_static_0400', Level.LEVEL2, async (done: ()=>void) => {
+    it('outlineRadius_static_0400', Level.LEVEL2, async (done: ()=>void) => {
       console.info('outlineRadius_static_0400 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('outline');

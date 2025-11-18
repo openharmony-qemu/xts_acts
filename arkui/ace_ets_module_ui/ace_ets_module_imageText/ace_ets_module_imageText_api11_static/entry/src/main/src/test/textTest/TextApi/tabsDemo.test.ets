@@ -33,7 +33,6 @@ export default function tabsDemo() {
   describe('tabsDemo', () => {
     beforeAll(() => {
       console.info("tabsDemo beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -46,12 +45,11 @@ export default function tabsDemo() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get tabsDemo state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("tabsDemo" == pages.name)) {
           console.info("get tabsDemo pages.name:" + '');
-         
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -74,7 +72,7 @@ export default function tabsDemo() {
      * @tc.desc     tabsDemo_static_001
      * @tc.level    Level.LEVEL2
      */
-it('tabsDemo_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('tabsDemo_static_001', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[tabsDemo_static_001] START');
       await CommonFunc.sleep(1000);
 
@@ -82,11 +80,11 @@ it('tabsDemo_static_001', Level.LEVEL2, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('Yellow'));
       await (btn?.click() as Promise<void>)
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(4000);
 
       let strJson = inspector.getInspectorByKey('tabsDemo_text1');
       let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(4000);
       console.info("[tabsDemo_static_001] obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('456');
 

@@ -45,7 +45,6 @@ export default function symbolGlyphApi2() {
     beforeAll(() => {
       console.info("symbolGlyphApi2 beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -63,12 +62,10 @@ export default function symbolGlyphApi2() {
         console.info("get symbolGlyphApi2 state pages:" + JSON.stringify(pages));
         if (!("symbolGlyphApi2" == pages.name)) {
           console.info("get symbolGlyphApi2 pages.name:" + '');
-          await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push symbolGlyphApi2 page error:" + err);
       }
       console.info("symbolGlyphApi2 beforeEach end");
@@ -85,12 +82,12 @@ export default function symbolGlyphApi2() {
      * @tc.desc     symbolGlyphApi2_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('symbolGlyphApi2_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('symbolGlyphApi2_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[symbolGlyphApi2_static_0100] START');
       await CommonFunc.sleep(2000);
       let symbolGlyphApi2 = inspector.getInspectorByKey('symbolGlyphApi2');
       let Obj1 = JSON.parseJsonElement(symbolGlyphApi2);
-      expect(Obj1.getElement('$attrs').getElement('renderingStrategy'))
+      expect(Obj1.getElement('$attrs').getString('renderingStrategy'))
         .assertEqual('SymbolRenderingStrategy.MULTIPLE_COLOR');
       console.info('[testRichEditor_0100] END');
       done();

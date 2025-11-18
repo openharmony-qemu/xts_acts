@@ -37,11 +37,13 @@ interface BB{
   x:string
   y:string
 }
-function sleep(time: int):Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, time * 1000);
+function sleep(time: number) {
+  return new Promise<string>((resolve, reject) => {
+    setTimeout(():void => {
+      resolve('OK');
+    }, time * 1000 as Int);
+  }).then(() => {
+    console.info(`sleep ${time} over...`);
   })
 }
 
@@ -49,7 +51,6 @@ export default function textJsunit() {
   describe('textTest', () => {
     beforeAll(() => {
       console.info("SpanTextShadowTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -66,10 +67,13 @@ export default function textJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get SpanTextShadowTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("Text" == pages.name)) {
           console.info("get SpanTextShadowTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SpanTextShadowTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SpanTextShadowTest page error:" + err);
@@ -90,34 +94,35 @@ export default function textJsunit() {
      * @tc.desc     textGetInspectorByKey_static_010
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_010', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_010', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testGetInspectorByKey START');
       await sleep(3)
       let strJson = inspector.getInspectorByKey('Text');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("cd text component obj is: " + JSON.stringify(obj));
+      console.info("cd text component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getString('width')).assertEqual('200.00vp');
       expect(obj.getElement('$attrs').getString('padding')).assertEqual('5.00vp');
       expect(obj.getElement('$attrs').getString('margin')).assertEqual('10.00px');
-      expect(obj.getElement('$attrs').getString('opacity')).assertEqual(1)
+      expect(obj.getElement('$attrs').getDouble('opacity')).assertEqual(1)
       expect(obj.getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
-      expect(JSON.stringify(obj.getElement('$attrs').getString('markAnchor'))).assertEqual(JSON.stringify({
+
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('markAnchor'))).assertEqual(JSON.stringify({
         x: "50.00vp", y: "50.00vp"
       } as BB))
-      expect(JSON.stringify(obj.getElement('$attrs').getString('offset'))).assertEqual(JSON.stringify({
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('offset'))).assertEqual(JSON.stringify({
         x: "50.00vp", y: "50.00vp"
       } as BB))
-      expect(obj.getElement('$attrs').getString('flexGrow')).assertEqual(5)
-      expect(obj.getElement('$attrs').getString('flexShrink')).assertEqual(2)
+      expect(obj.getElement('$attrs').getDouble('flexGrow')).assertEqual(5)
+      expect(obj.getElement('$attrs').getDouble('flexShrink')).assertEqual(2)
       expect(obj.getElement('$attrs').getString('alignSelf')).assertEqual("ItemAlign.Auto")
       expect(obj.getElement('$attrs').getString('borderStyle')).assertEqual("BorderStyle.Dashed")
       expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual("10.00vp")
       expect(obj.getElement('$attrs').getString('borderWidth')).assertEqual("4.00px")
       expect(obj.getElement('$attrs').getString('borderColor')).assertEqual("#FF0000FF")
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFFFC0CB")
-      expect(obj.getElement('$attrs').getString('enabled')).assertEqual(false)
-      expect(obj.getElement('$attrs').getString('zIndex')).assertEqual(1)
+      expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(false)
+      expect(obj.getElement('$attrs').getDouble('zIndex')).assertEqual(1)
       expect(obj.getElement('$attrs').getString('fontColor')).assertEqual("#FF000000")
       expect(obj.getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible")
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual("15.00fp")
@@ -134,7 +139,7 @@ it('textGetInspectorByKey_static_010', Level.LEVEL1, async (done: ()=>void) => {
         type: "TextDecorationType.Underline", color: "#FFFF0000", style: "TextDecorationStyle.SOLID"
       } as AA))
       expect(obj.getElement('$attrs').getString('direction')).assertEqual("Direction.Auto")
-      expect(obj.getElement('$attrs').getString('aspectRatio')).assertEqual(1)
+      expect(obj.getElement('$attrs').getDouble('aspectRatio')).assertEqual(1)
       expect(obj.getElement('$attrs').getString('fontColor')).assertEqual("#FF000000")
       console.info('cd textInspectorByKey END');
       done();
@@ -147,7 +152,7 @@ it('textGetInspectorByKey_static_010', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_020
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_020', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_020', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text1 component obj is: " + JSON.stringify(obj));
@@ -155,7 +160,7 @@ it('textGetInspectorByKey_static_020', Level.LEVEL1, async (done: ()=>void) => {
       expect(obj.getElement('$attrs').getString('align')).assertEqual("Alignment.Start");
       expect(obj.getElement('$attrs').getString('alignSelf')).assertEqual("ItemAlign.Start");
       expect(obj.getElement('$attrs').getString('borderStyle')).assertEqual("BorderStyle.Dotted");
-      expect(obj.getElement('$attrs').getString('enabled')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(true);
       expect(obj.getElement('$attrs').getString('visibility')).assertEqual("Visibility.Hidden");
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual("FontWeight.Normal");
       expect(obj.getElement('$attrs').getString('textAlign')).assertEqual("TextAlign.Start");
@@ -175,7 +180,7 @@ it('textGetInspectorByKey_static_020', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_030
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_030', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_030', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text2 component obj is: " + JSON.stringify(obj));
@@ -202,7 +207,7 @@ it('textGetInspectorByKey_static_030', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_040
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_040', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_040', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text3 component obj is: " + JSON.stringify(obj));
@@ -229,7 +234,7 @@ it('textGetInspectorByKey_static_040', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_050
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_050', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_050', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text4');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text4 component obj is: " + JSON.stringify(obj));
@@ -252,7 +257,7 @@ it('textGetInspectorByKey_static_050', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_060
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_060', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_060', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text5');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text5 component obj is: " + JSON.stringify(obj));
@@ -275,7 +280,7 @@ it('textGetInspectorByKey_static_060', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_070
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_070', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_070', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text6');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text6 component obj is: " + JSON.stringify(obj));
@@ -294,7 +299,7 @@ it('textGetInspectorByKey_static_070', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_080
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_080', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_080', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text7');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text7 component obj is: " + JSON.stringify(obj));
@@ -313,7 +318,7 @@ it('textGetInspectorByKey_static_080', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textGetInspectorByKey_static_090
      * @tc.level    Level.LEVEL1
      */
-it('textGetInspectorByKey_static_090', Level.LEVEL1, async (done: ()=>void) => {
+    it('textGetInspectorByKey_static_090', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('Text8');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd text8 component obj is: " + JSON.stringify(obj));

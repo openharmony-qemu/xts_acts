@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,10 +16,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {FlexAlign} from '@ohos.arkui.component'
-
+// import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
 import  RectValue from '../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
+// import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -38,6 +38,10 @@ export default function grid_colSpanJsunit() {
   describe('grid_colSpanTest', () => {
     beforeAll(async (): Promise<void> =>{
       console.info("flex beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GridCol/grid_col',
       }
@@ -49,9 +53,9 @@ export default function grid_colSpanJsunit() {
         if (!("grid_col" == pages?.name)) {
           console.info("get grid_col state success " + JSON.stringify(pages?.name));
           routerInstance?.pushUrl(options);
-          
+          // let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push grid_col page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push grid_col page error: " + err);
@@ -67,13 +71,14 @@ export default function grid_colSpanJsunit() {
     
 
 
+
 /*
      * @tc.number   testgrid_colSpan0001_static
      * @tc.name     testgrid_colSpan0001_static
      * @tc.desc     testgrid_colSpan0001_static
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_colSpan0001_static', Level.LEVEL0, async () => {
+    it('testgrid_colSpan0001_static', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_colSpan0001_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('gridContainer');
@@ -81,7 +86,7 @@ it('testgrid_colSpan0001_static', Level.LEVEL0, async () => {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('GridCol');
       expect(obj.getElement('$attrs').getString('width')).assertEqual("100.00vp");
-      console.info("[testgrid_colSpan0001_static] width value :" + obj.getElement('$attrs').getDouble('width'));
+      console.info("[testgrid_colSpan0001_static] width value :" + obj.getElement('$attrs').getString('width'));
 
     });
   })

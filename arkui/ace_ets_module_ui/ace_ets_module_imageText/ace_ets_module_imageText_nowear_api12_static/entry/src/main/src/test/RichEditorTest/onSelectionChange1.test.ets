@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point} from '@ohos.UiTest';
@@ -49,13 +49,13 @@ export default function onSelectionChange1() {
         console.info("get onSelectionChange1 state pages:" + JSON.stringify(pages));
         if (!("onSelectionChange1" == pages.name)) {
           console.info("get onSelectionChange1 pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.push(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push onSelectionChange1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        
+        // console.error("push onSelectionChange1 page error:" + err);
       }
       console.info("onSelectionChange1 beforeEach end");
     });
@@ -64,13 +64,14 @@ export default function onSelectionChange1() {
       console.info("onSelectionChange1 after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   onSelectionChange1_static_0100
      * @tc.name     onSelectionChange1_static_0100
      * @tc.desc     onSelectionChange1_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('onSelectionChange1_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('onSelectionChange1_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[onSelectionChange1_0100] START');
       await CommonFunc.sleep(1000);
 

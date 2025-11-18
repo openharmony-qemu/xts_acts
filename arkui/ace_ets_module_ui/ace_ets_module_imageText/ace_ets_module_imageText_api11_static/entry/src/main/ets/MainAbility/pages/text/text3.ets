@@ -29,9 +29,10 @@ import {
   Image
 } from '@ohos.arkui.component'
 import {
-  State,
+  State,AppStorage
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
+import { MessageManagerBase, CallbackBase, MessageBase } from '../../common/MessageManager2';
 
 @Entry
 @Component
@@ -41,6 +42,9 @@ struct Text3Example {
   @State textAlign: TextAlign = TextAlign.Start;
   @State textOverflow: TextOverflow = TextOverflow.Clip;
   @State decoration: TextDecorationType = TextDecorationType.None;
+  messageManagerTextAlign: MessageManagerBase<TextAlign> = new MessageManagerBase<TextAlign>()
+  messageManagerTextOverflow: MessageManagerBase<TextOverflow> = new MessageManagerBase<TextOverflow>()
+  messageManagerString: MessageManagerBase<string> = new MessageManagerBase<string>()
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
@@ -61,70 +65,36 @@ struct Text3Example {
 
   onPageShow() {
     console.info('text page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 226,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-
-    let stateChangeEventOne: events_emitter.InnerEvent = {
-      eventId: 227,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventOne, this.stateChangCallBack)
-
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 228,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack)
-
-    let stateChangeEventThree: events_emitter.InnerEvent = {
-      eventId: 229,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventThree, this.stateChangCallBack)
-
-    let stateChangeEventFour: events_emitter.InnerEvent = {
-      eventId: 230,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventFour, this.stateChangCallBack)
-
-    let stateChangeEventFive: events_emitter.InnerEvent = {
-      eventId: 231,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventFive, this.stateChangCallBack)
-
-    let stateChangeEventSix: events_emitter.InnerEvent = {
-      eventId: 232,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventSix, this.stateChangCallBack)
-
-    let stateChangeEventSeven: events_emitter.InnerEvent = {
-      eventId: 233,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventSeven, this.stateChangCallBack)
-  }
-
-  private stateChangCallBack:(eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) => {
-    if (eventData != null && eventData.data != null) {
-      console.info("text page state change called:" + JSON.stringify(eventData));
-      if (eventData.data !== null && ((eventData.data) as ESObject).getProperty('fontSize') != null) {
-        this.fontSize = ((eventData.data) as ESObject).getProperty('fontSize').toNumber() ;
-      }
-      if (((eventData.data) as ESObject).getProperty('fontColor') != null) {
-        this.fontColor = ((eventData.data) as ESObject).getProperty('fontColor').toString();
-      }
-      if (((eventData.data) as ESObject).getProperty('textAlign') != null) {
-        this.textAlign = ((eventData.data) as ESObject).getProperty('textAlign').toStaticObject() as TextAlign;
-      }
-      if (((eventData.data) as ESObject).getProperty('textOverflow') != null) {
-        this.textOverflow = ((eventData.data) as ESObject).getProperty('textOverflow').toStaticObject() as TextOverflow;
+    AppStorage.setOrCreate<MessageManagerBase<TextAlign>>('messageManagerTextAlign', this.messageManagerTextAlign)
+    AppStorage.setOrCreate<MessageManagerBase<TextOverflow>>('messageManagerTextOverflow', this.messageManagerTextOverflow)
+    AppStorage.setOrCreate<MessageManagerBase<string>>('messageManagerString', this.messageManagerString)
+    let callbackTextAlign: CallbackBase<TextAlign> = (message: MessageBase<TextAlign>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'textAlign') {
+        this.textAlign = message.value
+        console.log("============================= this.textAlign " + this.textAlign)
       }
     }
+    let callbackTextOverflow: CallbackBase<TextOverflow> = (message: MessageBase<TextOverflow>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'textOverflow') {
+        this.textOverflow = message.value
+        console.log("============================= this.textOverflow " + this.textAlign)
+      }
+    }
+    let callbackTextString: CallbackBase<string> = (message: MessageBase<string>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'fontSize') {
+        this.fontSize = Number.parseInt(message.value)
+        console.log("============================= this.fontSize " + this.fontSize)
+      }
+      if (message.name == 'fontColor') {
+        this.fontColor = message.value
+        console.log("============================= this.fontColor " + this.fontColor)
+      }
+    }
+    this.messageManagerTextAlign.registerCallback(callbackTextAlign)
+    this.messageManagerTextOverflow.registerCallback(callbackTextOverflow)
+    this.messageManagerString.registerCallback(callbackTextString)
   }
 }

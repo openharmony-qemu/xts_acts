@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,7 +19,7 @@ import {Alignment} from '@ohos.arkui.component'
 import  CommonFunc from '../../../../ets/MainAbility/common/Common';
 import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import {MessageManager} from '../../../../ets/MainAbility/common/MessageManager'
-
+// import screenshot from '@ohos.screenshot';
 import image from '@ohos.multimedia.image';
 import window from '@ohos.window';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -32,7 +32,7 @@ export default function Stack_Position_Change() {
   describe('Stack_Position_ChangeTest', () => {
     beforeAll(async () => {
       console.info("Stack_Position_ChangeTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -65,13 +65,14 @@ export default function Stack_Position_Change() {
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentTopStart_static
      * @tc.name     testStackPositionChangeWithAlignmentTopStart_static
      * @tc.desc     testStackPositionChangeWithAlignmentTopStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentTopStart_static] START');
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
@@ -83,17 +84,17 @@ it('testStackPositionChangeWithAlignmentTopStart_static', Level.LEVEL0, async (d
       let Stack_Position_Change_01: RectValue = CommonFunc.getComponentRect('Stack_Position_Change_01');
       expect(Math.abs((Stack_Position_Change_012.left) - (Stack_Position_Change_01.left)) <= 1).assertTrue();
       expect(Math.abs((Stack_Position_Change_012.top) - (Stack_Position_Change_01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentTopStart_static] END');
       done();
@@ -102,17 +103,18 @@ it('testStackPositionChangeWithAlignmentTopStart_static', Level.LEVEL0, async (d
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentTop_static
      * @tc.name     testStackPositionChangeWithAlignmentTop_static
      * @tc.desc     testStackPositionChangeWithAlignmentTop_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentTop_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.Top
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Top
       });
@@ -127,17 +129,17 @@ it('testStackPositionChangeWithAlignmentTop_static', Level.LEVEL0, async (done: 
       expect(Math.abs((Stack_Position_Change_012.top) - (Stack_Position_Change_01.top)) <= 1).assertTrue();
       expect(Math.abs((Math.round(Stack_Position_Change_012.left - Stack_Position_Change_01.left)) - (Math.round(Stack_Position_Change_01.right - Stack_Position_Change_012.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentTop_static] END');
       done();
@@ -146,17 +148,18 @@ it('testStackPositionChangeWithAlignmentTop_static', Level.LEVEL0, async (done: 
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentTopEnd_static
      * @tc.name     testStackPositionChangeWithAlignmentTopEnd_static
      * @tc.desc     testStackPositionChangeWithAlignmentTopEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentTopEnd_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.TopEnd
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.TopEnd
       });
@@ -170,17 +173,17 @@ it('testStackPositionChangeWithAlignmentTopEnd_static', Level.LEVEL0, async (don
       let Stack_Position_Change_01: RectValue = CommonFunc.getComponentRect('Stack_Position_Change_01');
       expect(Math.abs((Stack_Position_Change_012.right) - (Stack_Position_Change_01.right)) <= 1).assertTrue();
       expect(Math.abs((Stack_Position_Change_012.top) - (Stack_Position_Change_01.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentTopEnd_static] END');
       done();
@@ -189,17 +192,18 @@ it('testStackPositionChangeWithAlignmentTopEnd_static', Level.LEVEL0, async (don
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentStart_static
      * @tc.name     testStackPositionChangeWithAlignmentStart_static
      * @tc.desc     testStackPositionChangeWithAlignmentStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentStart_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.Start
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Start
       });
@@ -214,17 +218,17 @@ it('testStackPositionChangeWithAlignmentStart_static', Level.LEVEL0, async (done
       expect(Math.abs((Stack_Position_Change_012.left) - (Stack_Position_Change_01.left)) <= 1).assertTrue();
       expect(Math.abs((Math.round(Stack_Position_Change_012.top - Stack_Position_Change_01.top)) - (Math.round(Stack_Position_Change_01.bottom - Stack_Position_Change_012.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentStart_static] END');
       done();
@@ -233,17 +237,18 @@ it('testStackPositionChangeWithAlignmentStart_static', Level.LEVEL0, async (done
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentCenter_static
      * @tc.name     testStackPositionChangeWithAlignmentCenter_static
      * @tc.desc     testStackPositionChangeWithAlignmentCenter_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentCenter_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.Center
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Center
       });
@@ -259,17 +264,17 @@ it('testStackPositionChangeWithAlignmentCenter_static', Level.LEVEL0, async (don
         .assertTrue();
       expect(Math.abs((Math.round(Stack_Position_Change_012.top - Stack_Position_Change_01.top)) - (Math.round(Stack_Position_Change_01.bottom - Stack_Position_Change_012.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentCenter_static] END');
       done();
@@ -278,17 +283,18 @@ it('testStackPositionChangeWithAlignmentCenter_static', Level.LEVEL0, async (don
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentEnd_static
      * @tc.name     testStackPositionChangeWithAlignmentEnd_static
      * @tc.desc     testStackPositionChangeWithAlignmentEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentEnd_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.End
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.End
       });
@@ -303,17 +309,17 @@ it('testStackPositionChangeWithAlignmentEnd_static', Level.LEVEL0, async (done: 
       expect(Math.abs((Stack_Position_Change_012.right) - (Stack_Position_Change_01.right)) <= 1).assertTrue();
       expect(Math.abs((Math.round(Stack_Position_Change_012.top - Stack_Position_Change_01.top)) - (Math.round(Stack_Position_Change_01.bottom - Stack_Position_Change_012.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentEnd_static] END');
       done();
@@ -322,17 +328,18 @@ it('testStackPositionChangeWithAlignmentEnd_static', Level.LEVEL0, async (done: 
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentBottomStart_static
      * @tc.name     testStackPositionChangeWithAlignmentBottomStart_static
      * @tc.desc     testStackPositionChangeWithAlignmentBottomStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentBottomStart_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.BottomStart
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomStart
       });
@@ -346,17 +353,17 @@ it('testStackPositionChangeWithAlignmentBottomStart_static', Level.LEVEL0, async
       let Stack_Position_Change_01: RectValue = CommonFunc.getComponentRect('Stack_Position_Change_01');
       expect(Math.abs((Stack_Position_Change_012.left) - (Stack_Position_Change_01.left)) <= 1).assertTrue();
       expect(Math.abs((Stack_Position_Change_012.bottom) - (Stack_Position_Change_01.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentBottomStart_static] END');
       done();
@@ -365,17 +372,18 @@ it('testStackPositionChangeWithAlignmentBottomStart_static', Level.LEVEL0, async
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentBottom_static
      * @tc.name     testStackPositionChangeWithAlignmentBottom_static
      * @tc.desc     testStackPositionChangeWithAlignmentBottom_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentBottom_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.Bottom
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Bottom
       });
@@ -390,17 +398,17 @@ it('testStackPositionChangeWithAlignmentBottom_static', Level.LEVEL0, async (don
       expect(Math.abs((Stack_Position_Change_012.bottom) - (Stack_Position_Change_01.bottom)) <= 1).assertTrue();
       expect(Math.abs((Math.round(Stack_Position_Change_012.left - Stack_Position_Change_01.left)) - (Math.round(Stack_Position_Change_01.right - Stack_Position_Change_012.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentBottom_static] END');
       done();
@@ -409,17 +417,18 @@ it('testStackPositionChangeWithAlignmentBottom_static', Level.LEVEL0, async (don
     
 
 
+
 /*
      * @tc.number   testStackPositionChangeWithAlignmentBottomEnd_static
      * @tc.name     testStackPositionChangeWithAlignmentBottomEnd_static
      * @tc.desc     testStackPositionChangeWithAlignmentBottomEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackPositionChangeWithAlignmentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackPositionChangeWithAlignmentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentBottomEnd_static] START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   name: 'addAlignContent', value: Alignment.BottomEnd
+      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomEnd
       });
@@ -433,17 +442,17 @@ it('testStackPositionChangeWithAlignmentBottomEnd_static', Level.LEVEL0, async (
       let Stack_Position_Change_01: RectValue = CommonFunc.getComponentRect('Stack_Position_Change_01');
       expect(Math.abs((Stack_Position_Change_012.bottom) - (Stack_Position_Change_01.bottom)) <= 1).assertTrue();
       expect(Math.abs((Stack_Position_Change_012.right) - (Stack_Position_Change_01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.top - Stack_Position_Change_01.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.left - Stack_Position_Change_01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.bottom - Stack_Position_Change_011.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.bottom - Stack_Position_Change_012.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_011.right - Stack_Position_Change_011.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Stack_Position_Change_012.right - Stack_Position_Change_012.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       console.info('[testStackPositionChangeWithAlignmentBottomEnd_static] END');
       done();

@@ -43,15 +43,15 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 const waitUiReadyMs = 1000;
-
+let uiContext = AppStorage.get<UIContext>("uiContext");
 export default function marqueeUIJsunit() {
   describe('marqueeUIJsunit', () => {
     beforeAll(() => {
       console.info("marqueeUIJsunit beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
+      uiContext = AppStorage.get<UIContext>("uiContext")
     });
 
     beforeEach(async (): Promise<void> => {
@@ -69,7 +69,7 @@ export default function marqueeUIJsunit() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err) {
+      } catch (err: Error) {
           console.error("push marqueeUIJsunit page error:" + err);
           expect().assertFail();
       }
@@ -81,16 +81,18 @@ export default function marqueeUIJsunit() {
      * @tc.desc     marqueeUIJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('marqueeUIJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
+      // get the marquee component and test attribute
       let strJson = inspector.getInspectorByKey('marquee');
       console.info('marqueeUIJsunit_static_0100 hhe');
       const obj = JSON.parseJsonElement(strJson);
+      // to confirm allowScale
       console.info('marqueeUIJsunit_static_0100 component obj is: ' + obj.getElement('$attrs').getElement('allowScale'));
-      expect(obj.getElement('$attrs').getElement('start')).assertEqual('false');
-      const uiContext = new UIContext();
-      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(obj.getElement('$attrs').getString('start')).assertEqual('false');
+      console.info('marqueeUIJsunit_static_0100 component step is: ' + Number(obj.getElement('$attrs').getString('step')));
+      expect(Math.abs(Number(obj.getElement('$attrs').getString('step')) - uiContext!.vp2px(50)) <= 1).assertTrue();
       expect(obj.getElement('$attrs').getString('loop')).assertEqual('2');
       expect(obj.getElement('$attrs').getString('fromStart')).assertEqual('true');
       expect(obj.getElement('$attrs').getString('src')).assertEqual('Running Marquee starts rolling');
@@ -103,11 +105,13 @@ it('marqueeUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promis
      * @tc.desc     marqueeUIJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('marqueeUIJsunit_static_0200 START');
+      // modify the type attribute normal value of marquee dynamically
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'fromStart', value: true});
       await CommonFunc.sleep(200);
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('marquee');
       const obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fromStart')).assertEqual('true');
@@ -120,14 +124,16 @@ it('marqueeUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promis
      * @tc.desc     marqueeUIJsunit_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
+      //  test event
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let btn = await driver.findComponent(ON.id('start'));
       await driver.delayMs(waitUiReadyMs);
-      btn?.click();
+      btn ? await btn!.click(): null
       await driver.delayMs(5000);
+      // check the test event
       let ttx = await driver.findComponent(ON.id('text1'));
       let txt = await (ttx?.getText() as Promise<string>);
       console.info("[marqueeUIJsunit_static_0300'] component obj is: " + txt);
@@ -150,12 +156,14 @@ it('marqueeUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promis
      * @tc.desc     marqueeUIJsunit_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('marqueeUIJsunit_static_0300 START');
       await CommonFunc.sleep(100);
+      // modify the values partly attribute illegal value of marguee dynamically
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'loop', value: -30})
       await CommonFunc.sleep(1000);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('marquee');
       const obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('loop')).assertEqual('-1');
@@ -168,15 +176,16 @@ it('marqueeUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promis
      * @tc.desc     marqueeUIJsunit_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('marqueeUIJsunit_static_0400 START');
+      // modify the type attribute normal value of marquee dynamically
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'step', value: 50})
       await CommonFunc.sleep(200);
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('marquee');
       const obj = JSON.parseJsonElement(strJson);
-      const uiContext = new UIContext();
-      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs( Number(obj.getElement('$attrs').getString('step')) - uiContext!.vp2px(50)) <= 1).assertTrue();
       done();
     });
 
@@ -186,15 +195,18 @@ it('marqueeUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promis
      * @tc.desc     marqueeUIJsunit_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('marqueeUIJsunit_static_0600 START');
+      // modify the values partly attribute illegal value of marguee dynamically
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'step', value: -30});
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('marquee');
       const obj = JSON.parseJsonElement(strJson);
-      const uiContext = new UIContext();
-      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - UIContext.getFocusedUIContext()!.vp2px(6)) <= 1).assertTrue();
+      console.log("marqueeUIJsunit_static_0600" + obj.getElement('$attrs').getString('step'))
+      console.log('========================================= ' + uiContext!.vp2px(6))
+      console.log("========================================= " + (Number(obj.getElement('$attrs').getString('step')) - uiContext!.vp2px(6)));
+      expect(Math.abs( Number(obj.getElement('$attrs').getString('step')) - uiContext!.vp2px(6)) <= 1).assertTrue();
       done();
     });
 
@@ -204,14 +216,15 @@ it('marqueeUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promis
      * @tc.desc     marqueeUIJsunit_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('marqueeUIJsunit_static_0700 START');
+      // modify the type attribute normal value of marquee dynamically
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'loop', value: 2});
       await CommonFunc.sleep(100);
       let strJson = inspector.getInspectorByKey('marquee');
       const obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('loop')).assertEqual('2');
+      expect(obj.getElement('$attrs').getString('loop')).assertEqual('2');
       done();
     });
 
@@ -221,8 +234,9 @@ it('marqueeUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promis
      * @tc.desc     marqueeUIJsunit_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('marqueeUIJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('marqueeUIJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('marqueeUIJsunit_static_0800 START');
+      // modify the type attribute normal value of marquee dynamically
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'src', value: 'Running Marquee starts rolling'});
       await CommonFunc.sleep(200);

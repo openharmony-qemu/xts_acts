@@ -32,11 +32,20 @@ import {
   MenuItem,
   MenuItemOptions,
   $r,
-  ClickEvent
+  ClickEvent,
+  MenuAttribute
 } from '@ohos.arkui.component'
 import {
   State,
 } from '@ohos.arkui.stateManagement'
+
+function MenuStyles (this: MenuAttribute): this {
+  this.radius($r('sys.float.ohos_id_corner_radius_card'));
+  this.clip(true)
+  this.backgroundColor('#F0F0F0')
+  return this;
+}
+
 @Entry
 @Component
 struct Demo {
@@ -80,6 +89,7 @@ struct Demo {
         .bindSelectionMenu(TextSpanType.TEXT, this.RightClickTextCustomMenu, TextResponseType.LONG_PRESS,
           {
             onAppear: () => {
+              console.log("========================================== 11111")
               this.text2 = 'TextResponseType.LONG_PRESS'
             }
           })
@@ -97,7 +107,11 @@ struct Demo {
           Span('Hello World')
         }
         .copyOption(CopyOptions.InApp)
-        .bindSelectionMenu(TextSpanType.MIXED, this.SelectMixCustomMenu, TextResponseType.SELECT)
+        .bindSelectionMenu(TextSpanType.MIXED, this.SelectMixCustomMenu, TextResponseType.SELECT, {
+          onAppear: () => {
+
+          }
+        })
         .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
           console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
         })
@@ -134,7 +148,7 @@ struct Demo {
           MenuItem({ startIcon: $r('app.media.app_icon'), content: "Right Click Menu 3", labelInfo: "" } as MenuItemOptions)
         }
       }
-     
+      .MenuStyles()
     }
   }
 
@@ -151,6 +165,7 @@ struct Demo {
           MenuItem({ startIcon: $r('app.media.app_icon'), content: "Long Press Image Menu 3", labelInfo: "" } as MenuItemOptions)
         }
       }
+      .MenuStyles()
     }
   }
 
@@ -167,6 +182,9 @@ struct Demo {
           MenuItem({ startIcon: $r('app.media.app_icon'), content: "Select Mixed Menu 3", labelInfo: "" }as MenuItemOptions)
         }
       }
+      .MenuStyles()
     }
   }
 }
+
+

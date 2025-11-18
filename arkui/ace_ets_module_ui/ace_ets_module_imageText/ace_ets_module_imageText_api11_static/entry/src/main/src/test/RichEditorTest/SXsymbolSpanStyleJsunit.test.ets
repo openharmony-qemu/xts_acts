@@ -45,8 +45,11 @@ export default function SXsymbolSpanStyleJsunit() {
         console.info("get SXsymbolSpanStyleJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SXsymbolSpanStyleJsunit pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SXsymbolSpanStyleJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SXsymbolSpanStyleJsunit page error:" + err);
@@ -55,7 +58,6 @@ export default function SXsymbolSpanStyleJsunit() {
     });
     beforeAll(() => {
       console.info("SXsymbolSpanStyleJsunit beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -65,6 +67,10 @@ export default function SXsymbolSpanStyleJsunit() {
       console.info("SXsymbolSpanStyleJsunit after each called");
     });
 
+    afterEach(async  () => {
+      await CommonFunc.sleep(1000)
+      console.info("RichEditor after each called");
+    })
     
     /*
      * @tc.number   SXsymbolSpanStyleJsunit_static_0100
@@ -72,7 +78,7 @@ export default function SXsymbolSpanStyleJsunit() {
      * @tc.desc     SXsymbolSpanStyleJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('SXsymbolSpanStyleJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('SXsymbolSpanStyleJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       console.info('SXsymbolSpanStyleJsunit_0100 START');
       let driver = Driver.create();

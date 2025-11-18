@@ -28,11 +28,13 @@ import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-function sleep(time: int):Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, time * 1000);
+function sleep(time: number) {
+  return new Promise<string>((resolve: (value: string) => void) => {
+    setTimeout(():void => {
+      resolve("ok")
+    }, time * 1000 as Int)
+  }).then(() => {
+    console.info(`sleep ${time} over...`)
   })
 }
 
@@ -42,7 +44,6 @@ export default function propJsunit() {
 
     beforeAll(() => {
       console.info("propTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -61,8 +62,11 @@ export default function propJsunit() {
         console.info("get propTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get propTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push propTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push propTest page error:" + err);
@@ -72,7 +76,7 @@ export default function propJsunit() {
 
     afterEach(async () => {
       await sleep(1)
-      console.info("PropRef after each called");
+      console.info("Prop after each called");
     });
 
     
@@ -82,13 +86,13 @@ export default function propJsunit() {
      * @tc.desc     propTest_static_001
      * @tc.level    Level.LEVEL2
      */
-it('propTest_static_001', Level.LEVEL2, async () => {
+    it('propTest_static_001', Level.LEVEL2, async () => {
       console.info('propTest_static_001 START');
       await sleep(1)
       let strJson = inspector.getInspectorByKey('Text001');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
-      console.log(JSON.stringify(obj.getElement('$type')))
+      console.log(JSON.stringify(obj.getString('$type')))
       console.log("cd attrs.conten type1" + typeof ("10"))
       console.log("yr prop0 content-'10'" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
       expect(obj.getElement('$attrs').getString('content')).assertEqual("10");
@@ -102,7 +106,7 @@ it('propTest_static_001', Level.LEVEL2, async () => {
      * @tc.desc     propTest_static_002
      * @tc.level    Level.LEVEL2
      */
-it('propTest_static_002', Level.LEVEL2, async () => {
+    it('propTest_static_002', Level.LEVEL2, async () => {
       console.info('propTest_static_002 START');
       let strJson = inspector.getInspectorByKey('Text002');
       let obj = JSON.parseJsonElement(strJson);

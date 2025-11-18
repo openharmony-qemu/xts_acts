@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http:
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,7 +35,7 @@ struct SearchCaret {
   @State changeValue: string = '123456789'
   @State submitValue: string = ''
   @State text: string = ''
-  @State positionInfo: CaretOffset | undefined = { index: 0, x: 0, y: 0 } as CaretOffset
+  @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 } as CaretOffset
   controller: SearchController = new SearchController()
 
   build() {
@@ -58,22 +58,22 @@ struct SearchCaret {
           .key('SearchCaret1')
           .onClick((e: ClickEvent) => {
             this.controller.caretPosition(1)
-            this.positionInfo = this.controller.getCaretOffset()
-            this.text = this.positionInfo?.index + ''
+            this.positionInfo = this.controller.getCaretOffset()!
+            this.text = this.positionInfo.index + ''
           })
         Button('Caret:5')
           .key('SearchCaret5')
           .onClick((e: ClickEvent) => {
             this.controller.caretPosition(5)
-            this.positionInfo = this.controller.getCaretOffset()
-            this.text = this.positionInfo?.index + ''
+            this.positionInfo = this.controller.getCaretOffset()!
+            this.text = this.positionInfo.index + ''
           })
         Button('Caret:3')
           .key('SearchCaret3')
           .onClick((e: ClickEvent) => {
             this.controller.caretPosition(3)
-            this.positionInfo = this.controller.getCaretOffset()
-            this.text = this.positionInfo?.index + ''
+            this.positionInfo = this.controller.getCaretOffset()!
+            this.text = this.positionInfo.index + ''
           })
       }
 
@@ -82,15 +82,15 @@ struct SearchCaret {
           .key('SearchCaret20')
           .onClick((e: ClickEvent) => {
             this.controller.caretPosition(20)
-            this.positionInfo = this.controller.getCaretOffset()
-            this.text = this.positionInfo?.index + ''
+            this.positionInfo = this.controller.getCaretOffset()!
+            this.text = this.positionInfo.index + ''
           })
         Button('Caret:-1')
           .key('SearchCaret_1')
           .onClick((e: ClickEvent) => {
             this.controller.caretPosition(-1)
-            this.positionInfo = this.controller.getCaretOffset()
-            this.text = this.positionInfo?.index + ''
+            this.positionInfo = this.controller.getCaretOffset()!
+            this.text = this.positionInfo.index + ''
           })
       }
     }.width('100%')

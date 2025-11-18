@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -35,7 +35,7 @@ export default function RichEditor4() {
       console.info("RichEditor4 beforeEach start");
 
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
@@ -50,11 +50,11 @@ export default function RichEditor4() {
         console.info("get RichEditor4 state pages:" + JSON.stringify(pages));
         if (!("RichEditor4" == pages.name)) {
           console.info("get RichEditor4 pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           let driver = Driver.create();
           await driver.delayMs(2000)
-          
+          // console.info("push RichEditor4 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditor4 page error:" + err);
@@ -67,22 +67,20 @@ export default function RichEditor4() {
       console.info("RichEditor4 after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   RichEditor4_static_0100
      * @tc.name     RichEditor4_static_0100
      * @tc.desc     RichEditor4_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('RichEditor4_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      
+    it('RichEditor4_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Test stop
       console.info('[RichEditor4_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000)
       let RichEditor_supportAvoidance = await driver.findComponent(ON.id("RichEditor_emoji"));
       await CommonFunc.sleep(500)
-
-
-
         let text1 = await (RichEditor_supportAvoidance?.getText() as Promise<String>)
         await CommonFunc.sleep(500)
         await (RichEditor_supportAvoidance?.click() as Promise<void>)

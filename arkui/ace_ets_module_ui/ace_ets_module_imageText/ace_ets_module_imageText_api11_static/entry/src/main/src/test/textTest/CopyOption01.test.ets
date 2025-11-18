@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,7 +35,6 @@ export default function copyOptionJsunit() {
     beforeAll(() => {
       console.info("copyOptionJsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,8 +52,11 @@ export default function copyOptionJsunit() {
         console.info("get copyOptionJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get copyOptionJsunit pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push copyOptionJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push copyOptionJsunit page error:" + err);
@@ -75,13 +77,13 @@ export default function copyOptionJsunit() {
      * @tc.desc     testcopyOption_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('testcopyOption_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('testcopyOption_static_0001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('hoverEffect testcopyOption_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('InAppText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testcopyOption_static_0001] component copyOption strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getString('copyOption')).assertEqual("CopyOptions.None");
       console.info("[testcopyOption_static_0001] copyOption value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('copyOption'));
       done();
@@ -94,13 +96,13 @@ it('testcopyOption_static_0001', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testcopyOption_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('testcopyOption_static_0002', Level.LEVEL1, async (done: ()=>void) => {
+    it('testcopyOption_static_0002', Level.LEVEL1, async (done: ()=>void) => {
       console.info('hoverEffect testcopyOption_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('LocalDeviceText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testcopyOption_static_0002] component copyOption strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getString('copyOption')).assertEqual("CopyOptions.None");
       console.info("[testcopyOption_static_0002] copyOption value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('copyOption'));
       done();

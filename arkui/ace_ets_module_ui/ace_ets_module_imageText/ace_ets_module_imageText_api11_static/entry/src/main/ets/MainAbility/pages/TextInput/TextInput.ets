@@ -64,7 +64,9 @@ struct TextInputExample {
           .onSubmit((enterKey:EnterKeyType) :void=> {
             this.textNew = 'onSubmit'
           })
-         
+          .onEditChange(() :void=> {
+            this.textNew = 'onEditChanged'
+          })
           .onCopy((value: string) :void=> {
           })
 
@@ -182,7 +184,7 @@ struct TextInputExample {
           .key('textInput15')
 
         TextInput({ placeholder: 'textInput 16', text: this.text })
-          .type(InputType.NUMBER)
+          // .type(InputType.NUMBER)
           .enterKeyType(EnterKeyType.Go)
           .placeholderColor('#FFC0C0C0')
           .placeholderFont({ size: 30, weight: 400, family: 'Microsoft YaHei', style: FontStyle.Normal })

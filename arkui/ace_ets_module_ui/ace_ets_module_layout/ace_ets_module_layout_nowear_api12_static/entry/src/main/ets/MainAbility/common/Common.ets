@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector'
@@ -79,20 +79,20 @@ export default class CommonFunc {
     }
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // static setScreenOrientation(orientation: screen.Orientation) {
+  //   screen.getAllScreens()
+  //     .then((data: Array<screen.Screen>) => {
+  //       console.log('Succeeded in getting all screens. Data:' + JSON.stringify(data));
+  //       return data[0] as screen.Screen;
+  //     })
+  //     .then((screenClass: screen.Screen) => {
+  //       return screenClass.setOrientation(orientation);
+  //     })
+  //     .then(() => {
+  //       console.log('Succeeded in setting the vertical orientation.');
+  //     })
+  //     .catch((err: Error) => {
+  //       console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
+  //     });
+  // }
 }

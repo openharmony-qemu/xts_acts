@@ -34,18 +34,20 @@ export default function richEditorApi2() {
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi2 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi2",
+        url: "MainAbility/pages/RichEditor/richEditorApi/richEditorApi2",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get richEditorApi2 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("richEditorApi2" == pages.name)) {
           console.info("get richEditorApi2 pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push richEditorApi2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push richEditorApi2 page error:" + err);
@@ -54,7 +56,6 @@ export default function richEditorApi2() {
     });
     beforeAll(() => {
       console.info("richEditorApi2 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -71,7 +72,7 @@ export default function richEditorApi2() {
      * @tc.desc     richEditorApi2_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('richEditorApi2_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('richEditorApi2_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[richEditorApi2_0100] START');
       await CommonFunc.sleep(2000);
 
@@ -80,10 +81,13 @@ it('richEditorApi2_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       let btn1 = await driver.findComponent(ON.id('richEditorApi2_btn1'));
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      console.info('[richEditorApi2_0100] richEditorApi2_btn1 click');
+
 
       let btn2 = await driver.findComponent(ON.id('richEditorApi2_btn2'));
       await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      console.info('[richEditorApi2_0100] richEditorApi2_btn2 click');
 
       let text1 = inspector.getInspectorByKey('richEditorApi2_text1');
       let obj = JSON.parseJsonElement(text1);

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,7 +35,6 @@ export default function colorEnumJsunit() {
     beforeAll(() => {
       console.info("colorEnumJsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,8 +52,11 @@ export default function colorEnumJsunit() {
         console.info("get colorEnumJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get colorEnumJsunit pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push colorEnumJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push colorEnumJsunit page error:" + err);
@@ -75,13 +77,13 @@ export default function colorEnumJsunit() {
      * @tc.desc     testcolorTransparent_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('testcolorTransparent_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('testcolorTransparent_static_0001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('colorEnumTest testcolorTransparent_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Transparent');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testcolorTransparent_static_0001] component width strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       console.info("[testcolorTransparent_static_0001] fontColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
       expect(obj.getElement('$attrs').getString('fontColor')).assertEqual("#00000000");
       done();

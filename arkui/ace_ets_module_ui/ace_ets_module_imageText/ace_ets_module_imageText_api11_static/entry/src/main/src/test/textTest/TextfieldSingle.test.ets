@@ -34,7 +34,6 @@ export default function TextfieldSingleTest() {
     beforeAll(() => {
       console.info("TextfieldSingleTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,8 +51,11 @@ export default function TextfieldSingleTest() {
         console.info("get TextfieldSingleTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextfieldSingleTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TextfieldSingleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextfieldSingleTest page error:" + err);
@@ -68,7 +70,7 @@ export default function TextfieldSingleTest() {
      * @tc.desc     ArkUX_Text_Visual_static_0040
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0040', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0040', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0040 START');
       setTimeout(() => {
         try {
@@ -76,7 +78,7 @@ it('ArkUX_Text_Visual_static_0040', Level.LEVEL1, async (done: ()=>void) => {
           console.info('ArkUX_Text_Visual_static_0040 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Text_Visual_static_0040 obj is: " + JSON.stringify(obj));
-          let selectAll  = obj.getElement('$attrs').getString('selectAll');
+          let selectAll  = obj.getElement('$attrs').getBoolean('selectAll');
           expect(selectAll).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0040 END ');
         } catch (err) {
@@ -94,7 +96,7 @@ it('ArkUX_Text_Visual_static_0040', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0050
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0050', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0050', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0050 START');
       setTimeout(() => {
         try {
@@ -102,7 +104,7 @@ it('ArkUX_Text_Visual_static_0050', Level.LEVEL1, async (done: ()=>void) => {
           console.info('ArkUX_Text_Visual_static_0050 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Text_Visual_static_0050 obj is: " + JSON.stringify(obj));
-          let selectAll  = obj.getElement('$attrs').getString('selectAll');
+          let selectAll  = obj.getElement('$attrs').getBoolean('selectAll');
           expect(selectAll).assertEqual(false);
           console.info('ArkUX_Text_Visual_static_0050 END ');
         } catch (err) {
@@ -120,7 +122,7 @@ it('ArkUX_Text_Visual_static_0050', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0060
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0060', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0060', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0060 START');
       setTimeout(() => {
         try {
@@ -128,7 +130,7 @@ it('ArkUX_Text_Visual_static_0060', Level.LEVEL1, async (done: ()=>void) => {
           console.info('ArkUX_Text_Visual_static_0060 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Text_Visual_static_0060 obj is: " + JSON.stringify(obj));
-          let selectAll  = obj.getElement('$attrs').getString('selectAll');
+          let selectAll  = obj.getElement('$attrs').getBoolean('selectAll');
           expect(selectAll).assertEqual(false);
           console.info('ArkUX_Text_Visual_static_0060 END ');
         } catch (err) {

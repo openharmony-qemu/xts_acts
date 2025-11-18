@@ -36,7 +36,6 @@ export default function textInput_caret() {
 
     beforeAll(() => {
       console.info("textInput_caret beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -54,8 +53,11 @@ export default function textInput_caret() {
         console.info("get textInput_caret state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textInput_caret pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textInput_caret page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textInput_caret page error:" + err);
@@ -71,7 +73,7 @@ export default function textInput_caret() {
      * @tc.desc     textInput_caret_static_001
      * @tc.level    Level.LEVEL3
      */
-it('textInput_caret_static_001', Level.LEVEL3, async (done: ()=>void) => {
+    it('textInput_caret_static_001', Level.LEVEL3, async (done: ()=>void) => {
 
       console.info('[textInput_caret_static_001] START');
       let driver = Driver.create();

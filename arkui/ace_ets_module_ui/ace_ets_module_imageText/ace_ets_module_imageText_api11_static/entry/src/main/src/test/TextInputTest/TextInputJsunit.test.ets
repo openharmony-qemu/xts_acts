@@ -30,11 +30,13 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, time)
+function sleep(time: number) {
+  return new Promise<string>((resolve, reject) => {
+    setTimeout(():void => {
+      resolve('OK');
+    }, time * 1000 as Int);
+  }).then(() => {
+    console.info(`sleep ${time} over...`);
   })
 }
 
@@ -47,7 +49,6 @@ export default function textInputJsunit() {
      */
     beforeAll(() => {
       console.info("textInputJsunit beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -66,9 +67,11 @@ export default function textInputJsunit() {
         console.info("get textInputJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textInputJsunit pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textInputJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textInputJsunit page error:" + err);
@@ -90,7 +93,7 @@ export default function textInputJsunit() {
      * @tc.desc     testTextInput_static_010
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_010', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput_static_010', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput_static_010 START');
       let strJson = inspector.getInspectorByKey('textInput1');
       let obj = JSON.parseJsonElement(strJson);
@@ -98,10 +101,10 @@ it('testTextInput_static_010', Level.LEVEL1, async (done: ()=>void) => {
       console.info("[textInput1] get inspector value is: " + JSON.stringify(obj.getElement('$attrs').getString('type')));
       console.info("[textInput1] get inspector value is: " + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
       console.info("[textInput1] get inspector value is: " + obj.getElement('$attrs').getString('placeholderFont'));
-      console.info("[textInput1] get inspector value is: " + obj.getElement('$attrs').getElement('placeholderFont').getString('size'));
+      console.info("[textInput1] placeholderFont get inspector value is: " + JSON.parseJsonElement(obj.getElement('$attrs').getString('placeholderFont')).getString('size'));
       console.info("[textInput1] get inspector value is: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
       console.info("[textInput1] get inspector value is: " + JSON.stringify(obj.getElement('$attrs').getString('height')));
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Normal');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Go');
       expect(obj.getElement('$attrs').getString('caretColor')).assertEqual('#FF000000');
@@ -112,19 +115,19 @@ it('testTextInput_static_010', Level.LEVEL1, async (done: ()=>void) => {
       expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Italic');
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('40.00fp');
       expect(obj.getElement('$attrs').getString('height')).assertEqual('60.00vp');
-      expect(obj.getElement('$attrs').getString('placeholderFont')).assertContain('FontStyle.Normal');
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('placeholderFont')).getString('style')).assertContain('FontStyle.Normal');
       console.info('testTextInput_static_010 End');
       done();
     });
 
     
     /*
-     * @tc.number   testTextInput_static_020
-     * @tc.name     testTextInput_static_020
-     * @tc.desc     testTextInput_static_020
+     * @tc.number   testTextInput020
+     * @tc.name     testTextInput020
+     * @tc.desc     testTextInput020
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_020', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput020', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput020 START');
       let strJson = inspector.getInspectorByKey('textInput2');
       let obj = JSON.parseJsonElement(strJson);
@@ -137,12 +140,12 @@ it('testTextInput_static_020', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_030
-     * @tc.name     testTextInput_static_030
-     * @tc.desc     testTextInput_static_030
+     * @tc.number   testTextInput030
+     * @tc.name     testTextInput030
+     * @tc.desc     testTextInput030
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_030', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput030', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput030 START');
       let strJson = inspector.getInspectorByKey('textInput3');
       let obj = JSON.parseJsonElement(strJson);
@@ -155,12 +158,12 @@ it('testTextInput_static_030', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_040
-     * @tc.name     testTextInput_static_040
-     * @tc.desc     testTextInput_static_040
+     * @tc.number   testTextInput040
+     * @tc.name     testTextInput040
+     * @tc.desc     testTextInput040
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_040', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput040', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput040 START');
       let strJson = inspector.getInspectorByKey('textInput4');
       let obj = JSON.parseJsonElement(strJson);
@@ -173,12 +176,12 @@ it('testTextInput_static_040', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_050
-     * @tc.name     testTextInput_static_050
-     * @tc.desc     testTextInput_static_050
+     * @tc.number   testTextInput050
+     * @tc.name     testTextInput050
+     * @tc.desc     testTextInput050
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_050', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput050', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput050 START');
       let strJson = inspector.getInspectorByKey('textInput5');
       let obj = JSON.parseJsonElement(strJson);
@@ -191,12 +194,12 @@ it('testTextInput_static_050', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_060
-     * @tc.name     testTextInput_static_060
-     * @tc.desc     testTextInput_static_060
+     * @tc.number   testTextInput060
+     * @tc.name     testTextInput060
+     * @tc.desc     testTextInput060
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_060', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput060', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput060 START');
       let strJson = inspector.getInspectorByKey('textInput6');
       let obj = JSON.parseJsonElement(strJson);
@@ -209,12 +212,12 @@ it('testTextInput_static_060', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_070
-     * @tc.name     testTextInput_static_070
-     * @tc.desc     testTextInput_static_070
+     * @tc.number   testTextInput070
+     * @tc.name     testTextInput070
+     * @tc.desc     testTextInput070
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_070', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput070', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput070 START');
       let strJson = inspector.getInspectorByKey('textInput7');
       let obj = JSON.parseJsonElement(strJson);
@@ -227,12 +230,12 @@ it('testTextInput_static_070', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_080
-     * @tc.name     testTextInput_static_080
-     * @tc.desc     testTextInput_static_080
+     * @tc.number   testTextInput080
+     * @tc.name     testTextInput080
+     * @tc.desc     testTextInput080
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_080', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput080', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput080 START');
       let strJson = inspector.getInspectorByKey('textInput8');
       let obj = JSON.parseJsonElement(strJson);
@@ -245,12 +248,12 @@ it('testTextInput_static_080', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_090
-     * @tc.name     testTextInput_static_090
-     * @tc.desc     testTextInput_static_090
+     * @tc.number   testTextInput090
+     * @tc.name     testTextInput090
+     * @tc.desc     testTextInput090
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_090', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput090', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput090 START');
       let strJson = inspector.getInspectorByKey('textInput9');
       let obj = JSON.parseJsonElement(strJson);
@@ -263,12 +266,12 @@ it('testTextInput_static_090', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_100
-     * @tc.name     testTextInput_static_100
-     * @tc.desc     testTextInput_static_100
+     * @tc.number   testTextInput100
+     * @tc.name     testTextInput100
+     * @tc.desc     testTextInput100
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_100', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput100 START');
       let strJson = inspector.getInspectorByKey('textInput10');
       let obj = JSON.parseJsonElement(strJson);
@@ -281,12 +284,12 @@ it('testTextInput_static_100', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_110
-     * @tc.name     testTextInput_static_110
-     * @tc.desc     testTextInput_static_110
+     * @tc.number   testTextInput110
+     * @tc.name     testTextInput110
+     * @tc.desc     testTextInput110
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_110', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput110', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput110 START');
       let strJson = inspector.getInspectorByKey('textInput11');
       let obj = JSON.parseJsonElement(strJson);
@@ -299,12 +302,12 @@ it('testTextInput_static_110', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_120
-     * @tc.name     testTextInput_static_120
-     * @tc.desc     testTextInput_static_120
+     * @tc.number   testTextInput120
+     * @tc.name     testTextInput120
+     * @tc.desc     testTextInput120
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_120', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput120', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput120 START');
       let strJson = inspector.getInspectorByKey('textInput12');
       let obj = JSON.parseJsonElement(strJson);
@@ -317,12 +320,12 @@ it('testTextInput_static_120', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_130
-     * @tc.name     testTextInput_static_130
-     * @tc.desc     testTextInput_static_130
+     * @tc.number   testTextInput130
+     * @tc.name     testTextInput130
+     * @tc.desc     testTextInput130
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_130', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput130', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput130 START');
       let strJson = inspector.getInspectorByKey('textInput13');
       let obj = JSON.parseJsonElement(strJson);
@@ -335,12 +338,12 @@ it('testTextInput_static_130', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_140
-     * @tc.name     testTextInput_static_140
-     * @tc.desc     testTextInput_static_140
+     * @tc.number   testTextInput140
+     * @tc.name     testTextInput140
+     * @tc.desc     testTextInput140
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_140', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput140', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput140 START');
       let strJson = inspector.getInspectorByKey('textInput14');
       let obj = JSON.parseJsonElement(strJson);
@@ -353,12 +356,12 @@ it('testTextInput_static_140', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_150
-     * @tc.name     testTextInput_static_150
-     * @tc.desc     testTextInput_static_150
+     * @tc.number   testTextInput150
+     * @tc.name     testTextInput150
+     * @tc.desc     testTextInput150
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_150', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput150', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput150 START');
       let strJson = inspector.getInspectorByKey('textInput15');
       let obj = JSON.parseJsonElement(strJson);
@@ -371,17 +374,17 @@ it('testTextInput_static_150', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_160
-     * @tc.name     testTextInput_static_160
-     * @tc.desc     testTextInput_static_160
+     * @tc.number   testTextInput160
+     * @tc.name     testTextInput160
+     * @tc.desc     testTextInput160
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_160', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput160', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput160 START');
       let strJson = inspector.getInspectorByKey('textInput16');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput16] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Go');
       console.info('testTextInput160 End');
       done();
@@ -389,17 +392,17 @@ it('testTextInput_static_160', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_170
-     * @tc.name     testTextInput_static_170
-     * @tc.desc     testTextInput_static_170
+     * @tc.number   testTextInput170
+     * @tc.name     testTextInput170
+     * @tc.desc     testTextInput170
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_170', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput170', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput170 START');
       let strJson = inspector.getInspectorByKey('textInput17');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput17] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Search');
       console.info('testTextInput170 End');
       done();
@@ -407,17 +410,17 @@ it('testTextInput_static_170', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_180
-     * @tc.name     testTextInput_static_180
-     * @tc.desc     testTextInput_static_180
+     * @tc.number   testTextInput180
+     * @tc.name     testTextInput180
+     * @tc.desc     testTextInput180
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_180', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput180', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput180 START');
       let strJson = inspector.getInspectorByKey('textInput18');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput18] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Send');
       console.info('testTextInput180 End');
       done();
@@ -425,17 +428,17 @@ it('testTextInput_static_180', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_190
-     * @tc.name     testTextInput_static_190
-     * @tc.desc     testTextInput_static_190
+     * @tc.number   testTextInput190
+     * @tc.name     testTextInput190
+     * @tc.desc     testTextInput190
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_190', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput190', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput190 START');
       let strJson = inspector.getInspectorByKey('textInput19');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput19] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Next');
       console.info('testTextInput190 End');
       done();
@@ -443,17 +446,17 @@ it('testTextInput_static_190', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testTextInput_static_200
-     * @tc.name     testTextInput_static_200
-     * @tc.desc     testTextInput_static_200
+     * @tc.number   testTextInput200
+     * @tc.name     testTextInput200
+     * @tc.desc     testTextInput200
      * @tc.level    Level.LEVEL1
      */
-it('testTextInput_static_200', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextInput200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextInput200 START');
       let strJson = inspector.getInspectorByKey('textInput20');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput20] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done');
       console.info('testTextInput200 End');
       done();

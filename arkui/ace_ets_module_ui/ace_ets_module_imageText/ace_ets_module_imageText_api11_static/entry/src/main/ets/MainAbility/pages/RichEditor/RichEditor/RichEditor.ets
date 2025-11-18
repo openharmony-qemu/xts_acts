@@ -34,17 +34,17 @@ import {
 @Component
 struct RichEditorTest {
   controller: RichEditorController = new RichEditorController();
+  private spanParagraphs: Array<RichEditorParagraphResult> = new Array<RichEditorParagraphResult>();
   @State text: string = ''
-  alignMap: TextAlign[] = [TextAlign.Start, TextAlign.Center, TextAlign.End];
   build() {
     Column() {
-      Text(this.text).key('RichEditor_text').height('10%')
+      Text(this.text).id('RichEditor_text').height('10%')
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .onReady(() :void=> {
           this.controller.addTextSpan("0123456789\n", {
             style: {
               fontColor: Color.Pink,
-              fontSize: 32.0,
+              fontSize: "32",
             },
             paragraphStyle: {
               textAlign: TextAlign.Start,
@@ -85,7 +85,12 @@ struct RichEditorTest {
         }).key('RichEditor_Center')
 	  .height('10%')
         Button("getParagraphs").onClick((e:ClickEvent) => {
-    
+          this.spanParagraphs = this.controller.getParagraphs({ start: -1, end: -1 })!
+          console.log("RichEditor getParagraphs:" + JSON.stringify(this.spanParagraphs))
+          console.log("RichEditor getParagraphs textAlign:" + String(this.spanParagraphs[0].style.textAlign))
+          // let index:number = Number(this.spanParagraphs[0].style.textAlign)
+          this.text = String(this.spanParagraphs[0].style.textAlign)
+
         }).key('RichEditor_get')
 	  .height('10%')
 

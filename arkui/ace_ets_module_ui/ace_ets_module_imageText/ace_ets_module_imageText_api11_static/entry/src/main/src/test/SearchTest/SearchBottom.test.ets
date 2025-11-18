@@ -45,7 +45,6 @@ export default function search_bottom() {
   describe('search_bottom', () => {
     beforeAll(() => {
       console.info("search_bottom beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -66,8 +65,9 @@ export default function search_bottom() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push search_bottom page result: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push search_bottom page error: " + err);
         expect().assertFail();
       }
@@ -80,7 +80,7 @@ export default function search_bottom() {
      * @tc.desc     search_bottom_static_001
      * @tc.level    Level.LEVEL2
      */
-it('search_bottom_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('search_bottom_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[search_bottom_001] START');
       await CommonFunc.sleep(1000);
 
@@ -102,8 +102,8 @@ it('search_bottom_static_001', Level.LEVEL2, async (done: () => void): Promise<v
         console.log('assert click before position')
         let y1 = search_01.bottom
         await (driver.click(
-          Math.round(search_01.left + (search_01.right - search_01.left) / 2) as int,
-          Math.round(search_01.top + (search_01.bottom - search_01.top) / 2) as int
+          Math.round(search_01.left + (search_01.right - search_01.left) / 2) as Int,
+          Math.round(search_01.top + (search_01.bottom - search_01.top) / 2) as Int
         ) as Promise<void>)
         await CommonFunc.sleep(1000);
         console.log('get click after Initial value')

@@ -12,9 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from "@kit.ArkUI";
-import { TouchObject, TouchType } from '@ohos.arkui.component'
+
+import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { TouchObject, TouchType } from '@ohos.arkui.component';
+import { sendTouchEvent } from "@ohos.arkui.Test";
 
 export class RectValue {
   left: number = 0;
@@ -30,23 +33,32 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static sleep(count:int) : Promise<int> {
-    return new Promise<int>((resolve, reject) => {
-      setTimeout(() => {
-        resolve(0)
-      }, count)
+  static sleep(time: number) {
+    return new Promise<string>((resolve: (value: string) => void) => {
+      setTimeout(():void => {
+        resolve("ok")
+      }, time as Int)
+    }).then(() => {
+      console.info(`sleep ${time} over...`)
     })
   }
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj  = JSON.parseJsonElement(strJson);
-    console.info("getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo= JSON.parseJsonElement('[' + obj.getElement('$rect') + ']')
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    return Utils.rect_value = {
-      "left": Utils.rect_left, "top": Utils.rect_top, "right": Utils.rect_right, "bottom": Utils.rect_bottom
-    }
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
   static async swipe(downX: number, downY: number, upX: number, upY: number, steps: number) {
@@ -90,7 +102,7 @@ export default class Utils {
     if (drag) {
       await Utils.sleep(500)
     }
-    for (let i = 1;i <= swipeSteps; i++) {
+    for (let i = 1; i <= swipeSteps; i++) {
       let movePoint: TouchObject = {
         id: 1,
         x: downX + (xStep * i),

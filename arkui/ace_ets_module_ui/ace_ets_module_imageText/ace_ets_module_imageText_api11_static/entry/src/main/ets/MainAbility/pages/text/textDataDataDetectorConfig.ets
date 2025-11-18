@@ -23,6 +23,7 @@ import {
   ClickEvent,
   TextDataDetectorType,
   TextAlign,
+  TextDataDetectorConfig
 } from '@ohos.arkui.component'
 import {
   State,
@@ -52,8 +53,15 @@ struct TextExample7 {
           .copyOption(CopyOptions.InApp)
           .enableDataDetector(this.enableDataDetector)
           .dataDetectorConfig({types : this.types, onDetectResultUpdate: (result: string)=>{
-            
-          }})
+            console.info('识别结果 ' + result )
+            let code: string = String(JSON.parseJsonElement(result).getDouble('code'))
+            console.info('识别结果 code ' + code )
+            if (code === '0')  {
+              this.text1 = '222'
+            } else if (code === '801') {
+              this.text1 = '222'
+            }
+          }} as TextDataDetectorConfig)
           .textAlign(TextAlign.Center)
           .borderWidth(1)
           .padding(10)

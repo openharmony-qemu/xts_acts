@@ -36,8 +36,6 @@ export default function textArea_bottom() {
 
     beforeAll(() => {
       console.info("textArea_bottom beforeEach start");
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
     });
@@ -45,14 +43,14 @@ export default function textArea_bottom() {
     beforeEach(async (): Promise<void> => {
       console.info("textArea_bottom beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/TextArea/textAenEnabled.ets",
+        url: 'MainAbility/pages/TextArea/textArea_bottom',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textArea_bottom state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textArea_bottom" == pages.name)) {
           console.info("get textArea_bottom pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -63,6 +61,7 @@ export default function textArea_bottom() {
       console.info("textArea_bottom beforeEach end");
     });
 
+
     
     /*
      * @tc.number   textArea_bottom_static_001
@@ -70,7 +69,7 @@ export default function textArea_bottom() {
      * @tc.desc     textArea_bottom_static_001
      * @tc.level    Level.LEVEL2
      */
-it('textArea_bottom_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('textArea_bottom_static_001', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[textArea_bottom_static_001] START');
       await CommonFunc.sleep(1000);
@@ -91,7 +90,7 @@ it('textArea_bottom_static_001', Level.LEVEL2, async (done: ()=>void) => {
         let textArea_01 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
         let y1 = textArea_01.top
         await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as int,(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45) as int)
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)) as Int
         );
         await CommonFunc.sleep(1000);
 
@@ -112,7 +111,7 @@ it('textArea_bottom_static_001', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textArea_bottom_static_002
      * @tc.level    Level.LEVEL2
      */
-it('textArea_bottom_static_002', Level.LEVEL2, async (done: ()=>void) => {
+    it('textArea_bottom_static_002', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[textArea_bottom_static_002] START');
       await CommonFunc.sleep(1000);
@@ -134,7 +133,7 @@ it('textArea_bottom_static_002', Level.LEVEL2, async (done: ()=>void) => {
         console.log('assert position')
         let y1 = textArea_01.bottom
         await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2) as int),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2) as int)
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)) as Int
         );
         await CommonFunc.sleep(1000);
         let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
@@ -153,7 +152,7 @@ it('textArea_bottom_static_002', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textArea_bottom_static_003
      * @tc.level    Level.LEVEL2
      */
-it('textArea_bottom_static_003', Level.LEVEL2, async (done: ()=>void) => {
+    it('textArea_bottom_static_003', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[textArea_bottom_static_003] START');
       await CommonFunc.sleep(1000);
@@ -174,7 +173,7 @@ it('textArea_bottom_static_003', Level.LEVEL2, async (done: ()=>void) => {
         console.log('assert position')
         let y1 = textArea_01.bottom
         await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2) as int),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *44) as int)
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *44)) as Int
         );
         await CommonFunc.sleep(1000);
         let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');

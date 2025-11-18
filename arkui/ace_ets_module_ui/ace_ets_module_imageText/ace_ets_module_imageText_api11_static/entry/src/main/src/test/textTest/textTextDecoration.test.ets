@@ -21,7 +21,6 @@ import {
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter'
 import Utils from '../Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -31,7 +30,8 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
+import { MessageManagerBase } from '../../../ets/MainAbility/common/MessageManager2';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -44,7 +44,6 @@ export default function textTextDecorationTest() {
 
     beforeAll(() => {
       console.info("textTextDecorationTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -61,7 +60,7 @@ export default function textTextDecorationTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textTextDecorationTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textDecoration" == pages.name)) {
           console.info("get textTextDecorationTest pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -85,30 +84,23 @@ export default function textTextDecorationTest() {
      * @tc.desc     textTextDecoration_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('textTextDecoration_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextDecoration_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextDecoration_static_0100';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
- 
-      let value:ValueType = { type: undefined, color: undefined };
 
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textDecoration": JSON.stringify( value )
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 610,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<TextDecorationType|undefined>>("messageManagerTextDecorationType")?.notify({
+          name: 'textDecorationType', value: undefined
+        });
+        AppStorage.get<MessageManagerBase<ResourceColor|undefined>>("messageManagerTextDecorationColor")?.notify({
+          name: 'textDecorationColor', value: undefined
+        });
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_text_textDecoration')
       let obj  = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text decoration is: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
@@ -126,30 +118,24 @@ it('textTextDecoration_static_0100', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     textTextDecoration_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('textTextDecoration_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextDecoration_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextDecoration_static_0200';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
- 
-      let value:ValueType = { type: TextDecorationType.Underline, color: Color.Black };
 
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textDecoration": JSON.stringify( value )
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 611,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<TextDecorationType|undefined>>("messageManagerTextDecorationType")?.notify({
+          name: 'textDecorationType', value: TextDecorationType.Underline
+        });
+        AppStorage.get<MessageManagerBase<ResourceColor|undefined>>("messageManagerTextDecorationColor")?.notify({
+          name: 'textDecorationColor', value: Color.Black
+        });
+
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_text_textDecoration')
       let obj  = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text decoration is: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
@@ -158,7 +144,7 @@ it('textTextDecoration_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       .assertEqual('{"type":"TextDecorationType.Underline","color":"#FF000000","style":"TextDecorationStyle.SOLID"}');
       console.info('[' + tagName + '] END ===========================');
       done();
-    }); 
+    });
 
     
     /*
@@ -167,41 +153,34 @@ it('textTextDecoration_static_0200', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     textTextDecoration_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('textTextDecoration_static_0300', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextDecoration_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextDecoration_static_0300';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
- 
-      let value:ValueType = { type: TextDecorationType.Overline, color: Color.Red };
 
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textDecoration": JSON.stringify( value )
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 612,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<TextDecorationType|undefined>>("messageManagerTextDecorationType")?.notify({
+          name: 'textDecorationType', value: TextDecorationType.Overline
+        });
+        AppStorage.get<MessageManagerBase<ResourceColor|undefined>>("messageManagerTextDecorationColor")?.notify({
+          name: 'textDecorationColor', value: Color.Red
+        });
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_text_textDecoration')
       let obj  = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text decoration is: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
 
       expect(obj.getElement('$attrs').getString('decoration'))
       .assertEqual('{"type":"TextDecorationType.Overline","color":"#FFFF0000","style":"TextDecorationStyle.SOLID"}');
- 
-       
+
+
       console.info('[' + tagName + '] END ===========================');
       done();
-    }); 
+    });
 
      
     /*
@@ -210,41 +189,36 @@ it('textTextDecoration_static_0300', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     textTextDecoration_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('textTextDecoration_static_0400', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextDecoration_static_0400', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextDecoration_static_0400';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
-  
-      let value:ValueType = { type: TextDecorationType.None, color: Color.Blue };
 
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textDecoration": JSON.stringify( value )
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 613,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+
+        AppStorage.get<MessageManagerBase<TextDecorationType|undefined>>("messageManagerTextDecorationType")?.notify({
+          name: 'textDecorationType', value: TextDecorationType.None
+        });
+        AppStorage.get<MessageManagerBase<ResourceColor|undefined>>("messageManagerTextDecorationColor")?.notify({
+          name: 'textDecorationColor', value: Color.Blue
+        });
+
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_text_textDecoration')
       let obj  = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text decoration is: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
 
       expect(obj.getElement('$attrs').getString('decoration'))
       .assertEqual('{"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
-  
-        
+
+
       console.info('[' + tagName + '] END ===========================');
       done();
-    }); 
+    });
 
      
      /*
@@ -253,26 +227,21 @@ it('textTextDecoration_static_0400', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     textTextDecoration_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('textTextDecoration_static_0500', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextDecoration_static_0500', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextDecoration_static_0500';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
-  
-      let value:ValueType = { type: TextDecorationType.None, color: $r('app.color.color_D90013_red') };
 
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textDecoration": JSON.stringify( value )
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 613,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+
+        AppStorage.get<MessageManagerBase<TextDecorationType|undefined>>("messageManagerTextDecorationType")?.notify({
+          name: 'textDecorationType', value: TextDecorationType.None
+        });
+        AppStorage.get<MessageManagerBase<ResourceColor|undefined>>("messageManagerTextDecorationColor")?.notify({
+          name: 'textDecorationColor', value: $r('app.color.color_D90013_red')
+        });
+
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

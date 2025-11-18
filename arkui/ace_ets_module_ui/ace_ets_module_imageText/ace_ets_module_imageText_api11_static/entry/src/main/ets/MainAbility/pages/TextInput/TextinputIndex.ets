@@ -27,14 +27,12 @@ import {
 import {
   State,
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../../../hypium/index';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
-import testsuite from '../../../../src/test/List.test'
 
-function asNumber(value: int | string | Resource) {
-  return value as int;
+function asNumber(value: string) {
+  return Number.parseInt(value).toInt();
+
 }
 
 @Entry
@@ -44,11 +42,7 @@ struct textInputTest {
   text: string = ''
 
   aboutToAppear() {
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+
   }
 
   build() {
@@ -63,7 +57,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -75,7 +69,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -87,7 +81,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -99,7 +93,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -107,11 +101,11 @@ struct textInputTest {
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
-          .caretPosition(asNumber($r("app.string.textInput_Size_test")))
+          // .caretPosition(asNumber($r("app.string.textInput_Size_test")))
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -123,7 +117,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -131,11 +125,11 @@ struct textInputTest {
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
-          .caretPosition(asNumber(""))
+          // .caretPosition(asNumber(""))
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -147,7 +141,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -155,11 +149,11 @@ struct textInputTest {
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
-          .caretPosition(undefined)
+          // .caretPosition(null)
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -171,7 +165,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -184,7 +178,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -197,7 +191,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -206,11 +200,11 @@ struct textInputTest {
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
           .caretPosition(7)
-          .position(undefined)
+          // .position(null)
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "To display string text for extra long To display string text for extra long ",
@@ -224,11 +218,11 @@ struct textInputTest {
           .fontSize(20)
           .fontColor(Color.Black)
           .style(TextInputStyle.Default)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
-          .key("ArkUX_Stage_TextInput_CaretPosition_static_0100")
+          .key("ArkUX_Stage_TextInput_CaretWidth_static_0100")
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
@@ -236,11 +230,11 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
-          .key("ArkUX_Stage_TextInput_CaretPosition_static_0200")
+          .key("ArkUX_Stage_TextInput_CaretWidth_static_0200")
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
@@ -248,11 +242,11 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
-          .key("ArkUX_Stage_TextInput_CaretPosition_static_0300")
+          .key("ArkUX_Stage_TextInput_CaretWidth_static_0300")
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
@@ -260,11 +254,11 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string):void => {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
-          .key("ArkUX_Stage_TextInput_CaretPosition_static_0400")
+          .key("ArkUX_Stage_TextInput_CaretWidth_static_0400")
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
@@ -272,11 +266,11 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
-          .key("ArkUX_Stage_TextInput_CaretPosition_static_0500")
+          .key("ArkUX_Stage_TextInput_CaretWidth_static_0500")
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
@@ -284,11 +278,11 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
-          .key("ArkUX_Stage_TextInput_CaretPosition_static_0600")
+          .key("ArkUX_Stage_TextInput_CaretWidth_static_0600")
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
@@ -296,19 +290,19 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
-          .key("ArkUX_Stage_TextInput_CaretPosition_static_0700")
+          .key("ArkUX_Stage_TextInput_CaretWidth_static_0700")
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
-          .caretStyle({ width: undefined })
+          // .caretStyle({ width: null })
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -320,7 +314,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -332,7 +326,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -345,7 +339,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -358,7 +352,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string):void => {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -369,9 +363,9 @@ struct textInputTest {
           .caretStyle({ width: "7lpx" })
           .margin(20)
           .fontSize(14)
-          .width(undefined)
+          // .width(null)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -383,7 +377,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string):void => {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -395,7 +389,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -407,7 +401,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -419,7 +413,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -431,7 +425,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -444,7 +438,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -453,11 +447,11 @@ struct textInputTest {
           .placeholderFont({ size: 14, weight: 400 })
           .backgroundColor($r("sys.color.ohos_id_color_text_highlight_bg"))
           .caretColor(Color.Blue)
-          .selectedBackgroundColor(undefined)
+          // .selectedBackgroundColor(null)
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -470,7 +464,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -483,7 +477,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -497,7 +491,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -506,11 +500,11 @@ struct textInputTest {
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
           .selectedBackgroundColor(0x00ff00)
-          .backgroundColor(undefined)
+          // .backgroundColor(null)
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -524,7 +518,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
         TextInput({ text: "input your word...", controller: this.controller })
@@ -536,7 +530,7 @@ struct textInputTest {
           .margin(20)
           .fontSize(14)
           .fontColor(Color.Black)
-          .onChange((value: string) :void=> {
+          .onChange((value: string) => {
             this.text = value;
           })
       }

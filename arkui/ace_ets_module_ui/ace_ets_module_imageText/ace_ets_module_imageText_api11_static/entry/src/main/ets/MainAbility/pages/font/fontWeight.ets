@@ -12,14 +12,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { Entry, Component, Column, Text, FontWeight, Padding, TextAlign, Flex, FlexDirection, ItemAlign, FlexAlign, Builder, FlexOptions, } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import {
+  Entry,
+  Component,
+  Column,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  TextDecorationType,
+  Margin,
+  ClickEvent,
+  FontWeight,
+  Padding,
+  Builder,
+} from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ContentTable {
- 
+  // private foodItem: FoodData;
   @State fontWeight: FontWeight = FontWeight.Medium;
 
   @Builder
@@ -42,8 +56,12 @@ struct ContentTable {
   }
 
   build() {
-    Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Start } as FlexOptions) {
-  
+    Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Start }) {
+      // this.IngredientItem('Calories', 'Calories', this.foodItem.calories + 'kcal')
+      // this.IngredientItem('Nutrition', 'Protein', this.foodItem.protein + 'g')
+      // this.IngredientItem('', 'Fat', this.foodItem.fat + 'g')
+      // this.IngredientItem('', 'Carbohydrates', this.foodItem.carbohydrates + 'g')
+      // this.IngredientItem('', 'VitaminC', this.foodItem.vitaminC + 'mg')
     }
     .height(280)
     .padding({ top: 30, right: 30, left: 30 } as Padding)

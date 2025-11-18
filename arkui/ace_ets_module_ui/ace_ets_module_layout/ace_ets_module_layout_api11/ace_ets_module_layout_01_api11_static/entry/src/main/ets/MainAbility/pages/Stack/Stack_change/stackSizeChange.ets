@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -21,25 +21,25 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct StackSizeChange {
-  @State testHeight: number = 500;
-  @State testWidth: number = 500;
+  @State testHeight: double = 500;
+  @State testWidth: double = 500;
   @State testAlignContentValue: Alignment = Alignment.Center;
-  messageManager: MessageManager<Alignment> = new MessageManager<Alignment>();
+  messageManager: MessageManager<Alignment|double> = new MessageManager<Alignment|double>();
   private content: string = "StackSizeChange Page";
 
   onPageShow() {
     console.info('StackSizeChange onPageShow');
-    AppStorage.setOrCreate<MessageManager<Alignment>>("messageManager",  this.messageManager);
-    let callback: Callback<Alignment> = (message: Message<Alignment>) => {
+    AppStorage.setOrCreate<MessageManager<Alignment|double>>("messageManager",  this.messageManager);
+    let callback: Callback<Alignment|double> = (message: Message<Alignment|double>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'height') {
-        this.testHeight = message.value;
+        this.testHeight = message.value as double;
       }
       if (message.name == 'width') {
-        this.testWidth = message.value;
+        this.testWidth = message.value as double;
       }
       if (message.name == 'alignContent') {
-        this.testAlignContentValue = message.value;
+        this.testAlignContentValue = message.value as Alignment;
       }
     };
     this.messageManager.registerCallback(callback);

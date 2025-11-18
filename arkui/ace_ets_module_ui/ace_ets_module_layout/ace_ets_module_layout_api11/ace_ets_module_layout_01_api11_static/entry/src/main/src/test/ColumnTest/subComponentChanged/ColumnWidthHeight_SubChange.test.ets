@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -37,7 +37,7 @@ export default function ColumnWidthHeight_SubChange() {
   describe('ColumnSetWidthHeightTest', () => {
     beforeAll(() => {
       console.info("ColumnSetVisibility_SubChange beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,11 +54,11 @@ export default function ColumnWidthHeight_SubChange() {
         console.info("get ColumnSetWidthHeightTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ColumnSetWidthHeightTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ColumnSetWidthHeightTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetWidthHeightTest page error:" + err);
@@ -68,10 +68,10 @@ export default function ColumnWidthHeight_SubChange() {
 
     afterEach(async () => {
       await CommonFunc.sleep(2000);
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 50
       });
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
       console.info("FlexBase after each called");
@@ -89,11 +89,11 @@ export default function ColumnWidthHeight_SubChange() {
      */
 it('testColumnSubcomponentModifyHeight_static', Level.LEVEL0, async () => {
       console.info('new testColumnSubcomponentModifyHeight START');
-      const uiContext = new UIContext();
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 80
       });
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
       await CommonFunc.sleep(2000);
@@ -102,9 +102,9 @@ it('testColumnSubcomponentModifyHeight_static', Level.LEVEL0, async () => {
       let columnWidthHeight_3: RectValue = CommonFunc.getComponentRect('columnWidthHeight_3');
       let columnWidthHeight: RectValue = CommonFunc.getComponentRect('columnWidthHeight');
       expect(Math.abs(columnWidthHeight.top - columnWidthHeight_1.top) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(uiContext!.vp2px(10))) <= 1).assertTrue()
       console.info('new testColumnSubcomponentModifyHeight END');
     });
 
@@ -120,11 +120,11 @@ it('testColumnSubcomponentModifyHeight_static', Level.LEVEL0, async () => {
      */
 it('testColumnSubcomponentModifyWidth_static', Level.LEVEL0, async () => {
       console.info('new testColumnSubcomponentModifyWidth_static START');
-      const uiContext = new UIContext();
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 50
       });
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
       await CommonFunc.sleep(2000);
@@ -133,9 +133,9 @@ it('testColumnSubcomponentModifyWidth_static', Level.LEVEL0, async () => {
       let columnWidthHeight_3: RectValue = CommonFunc.getComponentRect('columnWidthHeight_3');
       let columnWidthHeight: RectValue = CommonFunc.getComponentRect('columnWidthHeight');
       expect(Math.abs(columnWidthHeight.top - columnWidthHeight_1.top) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(uiContext!.vp2px(40))) <= 1).assertTrue()
       console.info('new testColumnSubcomponentModifyWidth_static END');
     });
   })

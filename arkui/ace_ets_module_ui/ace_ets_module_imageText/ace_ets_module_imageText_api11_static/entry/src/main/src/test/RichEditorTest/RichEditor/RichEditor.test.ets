@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import {TextAlign} from '@ohos.arkui.component'
 import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from "../../../../ets/MainAbility/common/Common";
@@ -34,18 +35,20 @@ export default function RichEditorTest() {
     beforeEach(async (): Promise<void> => {
       console.info("RichEditorTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/RichEditor/RichEditorTest",
+        url: "MainAbility/pages/RichEditor/RichEditor/RichEditor",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get RichEditorTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("RichEditor" == pages.name)) {
           console.info("get RichEditorTest pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push RichEditorTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditorTest page error:" + err);
@@ -54,7 +57,6 @@ export default function RichEditorTest() {
     });
     beforeAll(() => {
       console.info("RichEditorTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -67,7 +69,7 @@ export default function RichEditorTest() {
      * @tc.desc     RichEditorTest_static_001
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorTest_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorTest_static_001', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[RichEditorTest_001] START');
       await CommonFunc.sleep(1000);
@@ -81,10 +83,10 @@ it('RichEditorTest_static_001', Level.LEVEL2, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichEditor_text');
       await CommonFunc.sleep(200);
-       let obj = JSON.parseJsonElement(strJson);
+      let obj = JSON.parseJsonElement(strJson);
       console.info("[RichEditorTest_001] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Start');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(String(TextAlign.Start));
       console.info('[RichEditorTest_001] END');
       done();
     });
@@ -96,7 +98,7 @@ it('RichEditorTest_static_001', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     RichEditorTest_static_002
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorTest_static_002', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorTest_static_002', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[RichEditorTest_002] START');
       await CommonFunc.sleep(1000);
@@ -113,7 +115,7 @@ it('RichEditorTest_static_002', Level.LEVEL2, async (done: ()=>void) => {
        let obj = JSON.parseJsonElement(strJson);
       console.info("[RichEditorTest_002] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('End');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(String(TextAlign.End));
       console.info('[RichEditorTest_002] END');
       done();
     });
@@ -125,7 +127,7 @@ it('RichEditorTest_static_002', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     RichEditorTest_static_003
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorTest_static_003', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorTest_static_003', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[RichEditorTest_003] START');
       await CommonFunc.sleep(1000);
@@ -142,7 +144,7 @@ it('RichEditorTest_static_003', Level.LEVEL2, async (done: ()=>void) => {
        let obj = JSON.parseJsonElement(strJson);
       console.info("[RichEditorTest_003] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Center');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(String(TextAlign.Center));
       console.info('[RichEditorTest_003] END');
       done();
     });

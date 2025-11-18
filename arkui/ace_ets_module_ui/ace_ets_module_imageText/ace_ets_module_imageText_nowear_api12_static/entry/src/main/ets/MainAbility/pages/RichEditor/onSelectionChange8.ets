@@ -49,7 +49,7 @@ struct onSelectionChange8 {
               style:
               {
                 fontColor: Color.Orange,
-                fontSize: 50.0
+                fontSize: 50
               }
             } as RichEditorTextSpanOptions)
 

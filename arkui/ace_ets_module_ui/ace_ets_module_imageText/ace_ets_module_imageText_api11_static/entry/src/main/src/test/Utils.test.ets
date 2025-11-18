@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,11 +28,13 @@ export default class Utils {
   static rect_screenOffsetY: number;
   static rect_value: RectValue = new RectValue();
 
-  static sleep(count:int) : Promise<int> {
-    return new Promise<int>((resolve, reject) => {
-      setTimeout(() => {
-        resolve(0)
-      }, count)
+  static sleep(time: number) {
+    return new Promise<string>((resolve: (value: string) => void) => {
+      setTimeout(():void => {
+        resolve("ok")
+      }, time as Int)
+    }).then(() => {
+      console.info(`sleep ${time} over...`)
     })
   }
 

@@ -1,17 +1,17 @@
- /**
-  * Copyright (c) 2025 Huawei Device Co., Ltd.
-  * Licensed under the Apache License, Version 2.0 (the "License");
-  * you may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at
-  *
-  *     http:
-  *
-  * Unless required by applicable law or agreed to in writing, software
-  * distributed under the License is distributed on an "AS IS" BASIS,
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  */
+// /**
+//  * Copyright (c) 2025 Huawei Device Co., Ltd.
+//  * Licensed under the Apache License, Version 2.0 (the "License");
+//  * you may not use this file except in compliance with the License.
+//  * You may obtain a copy of the License at
+//  *
+//  *     http://www.apache.org/licenses/LICENSE-2.0
+//  *
+//  * Unless required by applicable law or agreed to in writing, software
+//  * distributed under the License is distributed on an "AS IS" BASIS,
+//  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  * See the License for the specific language governing permissions and
+//  * limitations under the License.
+//  */
 import {
   Entry,
   Component,
@@ -29,90 +29,25 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
+  StoragePropRef
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct BackgroundExample {
-  @State width1: number = 80;
-  @State height1: number = 80;
-  @State padding1: number = 20;
-  @State margin1:  number = 20;
-  @State sizeWidth: string = '100%';
-  @State sizeHeight: string = '100%';
-  @State layoutWeight1: number = 1;
+  @StoragePropRef('width1') width1: number = 80
+  @StoragePropRef('height1') height1: number = 80
+  @StoragePropRef('padding1') padding1: number = 20
+  @StoragePropRef('margin1') margin1: number = 20
+  @StoragePropRef('sizeWidth') sizeWidth: string = '100%';
+  @StoragePropRef('sizeHeight') sizeHeight: string = '100%';
+  @StoragePropRef('layoutWeight1') layoutWeight1: number = 1;
   @State layoutWeight2: number = 2;
-  private stateChangCallBack :(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData):void => {
-    if (eventData != null) {
-      console.info("gauge page state change called:" + JSON.stringify(eventData));
-
-      if (((eventData.data) as Record<String, RecordData>)?.['width'] != null) {
-        this.width1 = ((eventData.data) as Record<String, RecordData>)?.['width']  as number;
-      }
-      if (((eventData.data) as Record<String, RecordData>)?.['height'] != null) {
-        this.height1 = ((eventData.data) as Record<String, RecordData>)?.['height'] as number;
-      }
-    }
-  }
-  private stateChangCallBackTwo:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData) :void => {
-
-  }
-  private stateChangCallBackOne:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData):void => {
-    console.info("size page stateChangCallBack" + JSON.stringify(eventData));
-    if (eventData) {
-      this.width1 = ((eventData.data) as Record<String, RecordData>)?.['width']  as number;
-      this.height1 = ((eventData.data) as Record<String, RecordData>)?.['height']  as number;
-      this.padding1 = ((eventData.data) as Record<String, RecordData>)?.['padding']  as number;
-      this.margin1 = ((eventData.data) as Record<String, RecordData>)?.['margin']  as number;
-    }
-  }
-  private sizeChangCallBack:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData):void => {
-    console.info("size page sizeChangCallBack" + JSON.stringify(eventData));
-    if (eventData) {
-      this.sizeWidth = String(((eventData.data) as Record<String, RecordData>)?.['width']  as number);
-      this.sizeHeight = String(((eventData.data) as Record<String, RecordData>)?.['height']  as number);
-    }
-  }
-  private weightChangCallBack:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData):void => {
-    console.info("size page weightChangCallBack" + JSON.stringify(eventData));
-    if (eventData) {
-      this.layoutWeight1 = ((eventData.data) as Record<String, RecordData>)?.['weight']  as number;
-    }
-  }
 
   onPageShow() {
     console.info('background page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 1,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
 
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 2,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBackTwo);
-
-    let stateChangeEventOne: events_emitter.InnerEvent = {
-      eventId: 34,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventOne, this.stateChangCallBackOne)
-
-    let sizeChangeEvent: events_emitter.InnerEvent = {
-      eventId: 35,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(sizeChangeEvent, this.sizeChangCallBack)
-
-    let weightChangeEvent: events_emitter.InnerEvent = {
-      eventId: 36,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(weightChangeEvent, this.weightChangCallBack)
   }
 
   build() {

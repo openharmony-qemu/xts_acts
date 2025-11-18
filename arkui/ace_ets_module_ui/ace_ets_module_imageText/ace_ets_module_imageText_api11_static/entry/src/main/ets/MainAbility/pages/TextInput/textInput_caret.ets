@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http:
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,7 +33,7 @@ struct TextInputCaret {
   @State submitValue: string = ''
   @State text: string = ''
   @State text1: string = ''
-  @State positionInfo: CaretOffset | undefined = { index: 0, x: 0, y: 0 } as CaretOffset
+  @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 } as CaretOffset
   controller: TextInputController = new TextInputController()
 
   build() {
@@ -43,8 +43,8 @@ struct TextInputCaret {
       Text(this.text).fontSize(18).margin(15).key('inputCaretText')
 
       Button('getCaret').onClick((event: ClickEvent) => {
-        this.positionInfo = this.controller.getCaretOffset()
-        this.text = this.positionInfo?.index + ''
+        this.positionInfo = this.controller.getCaretOffset()!
+        this.text = this.positionInfo.index + ''
       }).key('inputGetCaret')
 
     }.width('100%')

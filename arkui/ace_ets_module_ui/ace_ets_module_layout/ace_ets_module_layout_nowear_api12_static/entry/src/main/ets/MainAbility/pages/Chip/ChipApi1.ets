@@ -34,46 +34,45 @@ struct ChipApi1 {
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // Chip({
+      //   prefixIcon: {
+      //     src: $r('app.media.icon'),
+      //     size: { width: 16, height: 16 },
+      //     fillColor: Color.Blue,
+      //     activatedFillColor: Color.Blue
+      //   },
+      //   prefixSymbol: {
+      //     normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+      //     activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+      //   },
+      //   suffixSymbol: {
+      //     normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+      //     activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+      //   },
+      //   label: {
+      //     text: "操作块",
+      //     fontSize: 12,
+      //     fontColor: Color.Blue,
+      //     activatedFontColor: Color.White,
+      //     fontFamily: "HarmonyOS Sans",
+      //     labelMargin: { left: 20, right: 30 },
+      //   },
+      //   size: ChipSize.NORMAL,
+      //   allowClose: true,
+      //   enabled: true,
+      //   activated: true,
+      //   backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+      //   activatedBackgroundColor: "#FFFF0000",
+      //   borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
+      //   onClose:()=>{
+      //     console.log("chip on close")
+      //   },
+      //   onClicked:()=>{
+      //     console.log("chip on clicked")
+      //   },
+      // })
 
       Button('getInspectorTree').onClick((e: ClickEvent) => {
-        
         this.text1 = '' + JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
           .getArray("$children")[0]
@@ -83,7 +82,6 @@ struct ChipApi1 {
       }).id('ChipApi1_btn1')
 
       Text(this.text1).id('ChipApi1_text')
-
 
     }
   }

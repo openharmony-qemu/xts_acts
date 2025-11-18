@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +36,7 @@ export default function ColumnSetPaddingMargin__SubChange() {
   describe('ColumnSetPaddingMarginTest01', () => {
     beforeAll(() => {
       console.info("ColumnSetPaddingMarginTest01 beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,11 +53,11 @@ export default function ColumnSetPaddingMargin__SubChange() {
         console.info("get ColumnSetPaddingMarginTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSetPaddingMargin_SubChange" == pages.name)) {
           console.info("get ColumnSetPaddingMarginTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ColumnSetPaddingMarginTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetPaddingMarginTest page error:" + err);
@@ -82,19 +82,19 @@ export default function ColumnSetPaddingMargin__SubChange() {
      */
 it('testColumnParentMarPadSubMarPad_static', Level.LEVEL0, async () => {
       console.info('new testColumnParentMarPadSubMarPad_static START');
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(2000);
       let setPaddingMargin01: RectValue = CommonFunc.getComponentRect('setPaddingMargin01');
       let setPaddingMargin02: RectValue = CommonFunc.getComponentRect('setPaddingMargin02');
       let setPaddingMargin03: RectValue = CommonFunc.getComponentRect('setPaddingMargin03');
       let setPaddingMargin: RectValue = CommonFunc.getComponentRect('setPaddingMargin');
-      expect(Math.floor(Math.abs((setPaddingMargin01.top - setPaddingMargin.top) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin02.top - setPaddingMargin01.bottom) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin03.top - setPaddingMargin02.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin03.bottom - setPaddingMargin.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin01.right - setPaddingMargin01.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin02.right - setPaddingMargin02.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin03.right - setPaddingMargin03.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin01.top - setPaddingMargin.top) - uiContext!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin02.top - setPaddingMargin01.bottom) - uiContext!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin03.top - setPaddingMargin02.bottom) - uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin03.bottom - setPaddingMargin.bottom) - uiContext!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin01.right - setPaddingMargin01.left) - uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin02.right - setPaddingMargin02.left) - uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin03.right - setPaddingMargin03.left) - uiContext!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentMarPadSubMarPad_static END');
     });
   })

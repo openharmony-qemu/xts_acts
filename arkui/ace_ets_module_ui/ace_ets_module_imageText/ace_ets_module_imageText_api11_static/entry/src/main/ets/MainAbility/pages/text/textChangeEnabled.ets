@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+//onAreaChange、onVisibleAreaChange禁用
 import {
   Entry,
   Component,

@@ -50,7 +50,6 @@ export default function spanUIJsunit() {
     beforeAll(() => {
       console.info("spanUIJsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -70,8 +69,9 @@ export default function spanUIJsunit() {
           console.info("get spanUIJsunit state pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push spanUIJsunit success" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push spanUIJsunit page error:" + err);
         expect().assertFail();
       }
@@ -83,20 +83,21 @@ export default function spanUIJsunit() {
      * @tc.desc     spanUIJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('spanUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('spanUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('spanUIJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
+      // get the sapn component and test attribute
       let strJson = inspector.getInspectorByKey('testSpan');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('spanUIJsunit_static_0100 component obj is:' + obj.getElement('$attrs').getElement('content') + "--" +
+      console.info('spanUIJsunit_static_0100 component obj is:' + obj.getElement('$attrs').getString('content') + "--" +
       obj.getElement('$attrs').getElement('textCase') + "---" + obj.getElement('$attrs').getElement('letterSpacing') +
         "--" + obj.getElement('$attrs').getElement('fontSize') + "--" +
-      obj.getElement('$attrs').getElement('decoration'));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('I am Underline-span');
-      expect(obj.getElement('$attrs').getElement('textCase')).assertEqual('TextCase.Normal');
-      expect(obj.getElement('$attrs').getElement('letterSpacing')).assertEqual('10.00fp');
-      expect(obj.getElement('$attrs').getElement('fontSize')).assertEqual('12.00fp');
-      expect(obj.getElement('$attrs').getElement('decoration'))
+      obj.getElement('$attrs').getString('decoration'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('I am Underline-span');
+      expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.Normal');
+      expect(obj.getElement('$attrs').getString('letterSpacing')).assertEqual('10.00fp');
+      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('12.00fp');
+      expect(obj.getElement('$attrs').getString('decoration'))
         .assertEqual('{"type":"TextDecorationType.Underline","color":"#FFFFCCEE",' +
           '"style":"TextDecorationStyle.SOLID"}');
       console.info('spanUIJsunit_static_0100 END');
@@ -109,9 +110,10 @@ it('spanUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
      * @tc.desc     spanUIJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('spanUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('spanUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('spanUIJsunit_static_0200 START');
       await CommonFunc.sleep(1000);
+      // modify the content and textCase attribute normal value  dynamically
       const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
       spanExampleManager.message.notify({
         name: 'content', value: 'I am test'
@@ -121,11 +123,12 @@ it('spanUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<v
         name: 'textCase', value: TextCase.LowerCase
       })
       await CommonFunc.sleep(300);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('testSpan');
       let obj = JSON.parseJsonElement(strJson);
       console.info('spanUIJsunit_static_0200 component obj is: ' + JSON.stringifyJsonElement(obj));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('I am test');
-      expect(obj.getElement('$attrs').getElement('textCase')).assertEqual('TextCase.LowerCase');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('I am test');
+      expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.LowerCase');
       done();
     });
 
@@ -135,9 +138,10 @@ it('spanUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<v
      * @tc.desc     spanUIJsunit_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('spanUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('spanUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('spanUIJsunit_static_0300 START');
       await CommonFunc.sleep(1000);
+      // modify the values attribute enum textCase value of span dynamically
       const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
       spanExampleManager.message.notify({
         name: 'textCase', value: TextCase.UpperCase
@@ -146,30 +150,31 @@ it('spanUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<v
       let strJson = inspector.getInspectorByKey('testSpan');
       let obj = JSON.parseJsonElement(strJson);
       console.info('spanUIJsunit_static_0300 component obj is: ' + obj.getElement('$attrs').getElement('textCase'));
-      expect(obj.getElement('$attrs').getElement('textCase')).assertEqual('TextCase.UpperCase');
+      expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.UpperCase');
       done();
     });
 
-    /*
-     * @tc.number   spanUIJsunit_static_0400
-     * @tc.name     spanUIJsunit_static_0400
-     * @tc.desc     spanUIJsunit_static_0400
-     * @tc.level    Level.LEVEL1
-     */
-it('spanUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('spanUIJsunit_static_0400 START');
-      await CommonFunc.sleep(1000);
-      const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
-      spanExampleManager.message.notify({
-        name: 'textCase', value: 5
-      })
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('testSpan');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('spanUIJsunit_static_0400 component obj is: ' + obj.getElement('$attrs').getElement('textCase'));
-      expect(obj.getElement('$attrs').getElement('textCase')).assertEqual('TextCase.UpperCase');
-      done();
-    });
+    // /*
+    //  * @tc.number   spanUIJsunit_static_0400
+    //  * @tc.name     spanUIJsunit_static_0400
+    //  * @tc.desc     spanUIJsunit_static_0400
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('spanUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('spanUIJsunit_static_0400 START');
+    //   await CommonFunc.sleep(1000);
+    //   // modify the values illegal attribute enum textCase value of span dynamically
+    //   const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
+    //   spanExampleManager.message.notify({
+    //     name: 'textCase', value: 5  // 没有 TextCase 5
+    //   })
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('testSpan');
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info('spanUIJsunit_static_0400 component obj is: ' + obj.getElement('$attrs').getElement('textCase'));
+    //   expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.UpperCase');
+    //   done();
+    // });
 
     /*
      * @tc.number   spanUIJsunit_static_0500
@@ -177,9 +182,10 @@ it('spanUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<v
      * @tc.desc     spanUIJsunit_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('spanUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('spanUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('spanUIJsunit_static_0500 START');
       await CommonFunc.sleep(1000);
+      // modify the normal values letter space and fontSize of span dynamically
       const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
       spanExampleManager.message.notify({
         name: 'fontSize', value: 20
@@ -193,8 +199,8 @@ it('spanUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('spanUIJsunit_static_0500 component obj is: ' + obj.getElement('$attrs').getElement('letterSpacing') +
         "----" + obj.getElement('$attrs').getElement('fontSize'));
-      expect(obj.getElement('$attrs').getElement('letterSpacing')).assertEqual('25.00fp');
-      expect(obj.getElement('$attrs').getElement('fontSize')).assertEqual('20.00fp');
+      expect(obj.getElement('$attrs').getString('letterSpacing')).assertEqual('25.00fp');
+      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('20.00fp');
       done();
     });
 
@@ -204,9 +210,10 @@ it('spanUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<v
      * @tc.desc     spanUIJsunit_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('spanUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('spanUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('spanUIJsunit_static_0600 START');
       await CommonFunc.sleep(1000);
+      // modify the values decoration attribute  of span dynamically
       const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
       spanExampleManager.message.notify({
         name: 'type', value: TextDecorationType.None
@@ -218,8 +225,8 @@ it('spanUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<v
       await CommonFunc.sleep(300);
       let strJson = inspector.getInspectorByKey('testSpan');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('spanUIJsunit_static_0600 component obj is: ' + obj.getElement('$attrs').getElement('decoration'));
-      expect(obj.getElement('$attrs').getElement('decoration'))
+      console.info('spanUIJsunit_static_0600 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
+      expect(obj.getElement('$attrs').getString('decoration'))
         .assertEqual('{"type":"TextDecorationType.None","color":"#FFFFAACC",' +
           '"style":"TextDecorationStyle.SOLID"}');
       done();
@@ -231,9 +238,10 @@ it('spanUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<v
      * @tc.desc     spanUIJsunit_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('spanUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('spanUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('spanUIJsunit_static_0700 START');
       await CommonFunc.sleep(1000);
+      // modify the values decoration attribute  of span dynamically
       const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
       spanExampleManager.message.notify({
         name: 'type', value: TextDecorationType.Overline
@@ -241,8 +249,8 @@ it('spanUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<v
       await CommonFunc.sleep(300);
       let strJson = inspector.getInspectorByKey('testSpan');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('spanUIJsunit_static_0700 component obj is: ' + obj.getElement('$attrs').getElement('decoration'));
-      expect(obj.getElement('$attrs').getElement('decoration'))
+      console.info('spanUIJsunit_static_0700 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
+      expect(obj.getElement('$attrs').getString('decoration'))
         .assertEqual('{"type":"TextDecorationType.Overline","color":"#FFFFAACC",' +
           '"style":"TextDecorationStyle.SOLID"}');
       spanExampleManager.message.notify({
@@ -251,8 +259,8 @@ it('spanUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<v
       await CommonFunc.sleep(300);
       let strJson2 = inspector.getInspectorByKey('testSpan');
       let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('spanUIJsunit_static_0700 component obj2 is: ' + obj2.getElement('$attrs').getElement('decoration'));
-      expect(obj2.getElement('$attrs').getElement('decoration'))
+      console.info('spanUIJsunit_static_0700 component obj2 is: ' + obj2.getElement('$attrs').getString('decoration'));
+      expect(obj2.getElement('$attrs').getString('decoration'))
         .assertEqual('{"type":"TextDecorationType.LineThrough","color":"#FFFFAACC",' +
           '"style":"TextDecorationStyle.SOLID"}');
       done();
@@ -264,9 +272,10 @@ it('spanUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<v
      * @tc.desc     spanUIJsunit_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('spanUIJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('spanUIJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('spanUIJsunit_static_0800 START');
       await CommonFunc.sleep(1000);
+      // modify the values decoration attribute  of span dynamically
       const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
       spanExampleManager.message.notify({
         name: 'color', value: Color.Green
@@ -274,8 +283,8 @@ it('spanUIJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise<v
       await CommonFunc.sleep(300);
       let strJson = inspector.getInspectorByKey('testSpan');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('spanUIJsunit_static_0800 component obj is: ' + obj.getElement('$attrs').getElement('decoration'));
-      expect(obj.getElement('$attrs').getElement('decoration'))
+      console.info('spanUIJsunit_static_0800 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
+      expect(obj.getElement('$attrs').getString('decoration'))
         .assertEqual('{"type":"TextDecorationType.LineThrough","color":"#FF008000",' +
           '"style":"TextDecorationStyle.SOLID"}');
       spanExampleManager.message.notify({
@@ -284,38 +293,39 @@ it('spanUIJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise<v
       await CommonFunc.sleep(300);
       let strJson2 = inspector.getInspectorByKey('testSpan');
       let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('spanUIJsunit_static_0800 component obj2 is: ' + obj2.getElement('$attrs').getElement('decoration'));
-      expect(obj2.getElement('$attrs').getElement('decoration'))
+      console.info('spanUIJsunit_static_0800 component obj2 is: ' + obj2.getElement('$attrs').getString('decoration'));
+      expect(obj2.getElement('$attrs').getString('decoration'))
         .assertEqual('{"type":"TextDecorationType.LineThrough","color":"#FFEE82EE",' +
           '"style":"TextDecorationStyle.SOLID"}');
       done();
     });
 
-    /*
-     * @tc.number   spanUIJsunit_static_0900
-     * @tc.name     spanUIJsunit_static_0900
-     * @tc.desc     spanUIJsunit_static_0900
-     * @tc.level    Level.LEVEL1
-     */
-it('spanUIJsunit_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('spanUIJsunit_static_0900 START');
-      await CommonFunc.sleep(1000);
-      const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
-      spanExampleManager.message.notify({
-        name: 'type', value: 8
-      })
-      await CommonFunc.sleep(300);
-      spanExampleManager.message.notify({
-        name: 'color', value: '#FCC'
-      })
-      await CommonFunc.sleep(300);
-      let strJson = inspector.getInspectorByKey('testSpan');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('spanUIJsunit_static_0900 component obj is: ' + obj.getElement('$attrs').getElement('decoration'));
-      expect(obj.getElement('$attrs').getElement('decoration'))
-        .assertEqual('{"type":"TextDecorationType.None","color":"#FFFFCCCC",' +
-          '"style":"TextDecorationStyle.SOLID"}');
-      done();
-    });
+    // /*
+    //  * @tc.number   spanUIJsunit_static_0900
+    //  * @tc.name     spanUIJsunit_static_0900
+    //  * @tc.desc     spanUIJsunit_static_0900
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('spanUIJsunit_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('spanUIJsunit_static_0900 START');
+    //   await CommonFunc.sleep(1000);
+    //   // modify the values decoration attribute  of span illegal dynamically
+    //   const spanExampleManager = AppStorage.get<SpanExampleManager>("spanExampleManager") as SpanExampleManager
+    //   spanExampleManager.message.notify({
+    //     name: 'type', value: 8 //枚举没有8
+    //   })
+    //   await CommonFunc.sleep(300);
+    //   spanExampleManager.message.notify({
+    //     name: 'color', value: '#FCC'
+    //   })
+    //   await CommonFunc.sleep(300);
+    //   let strJson = inspector.getInspectorByKey('testSpan');
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info('spanUIJsunit_static_0900 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
+    //   expect(obj.getElement('$attrs').getString('decoration'))
+    //     .assertEqual('{"type":"TextDecorationType.None","color":"#FFFFCCCC",' +
+    //       '"style":"TextDecorationStyle.SOLID"}');
+    //   done();
+    // });
   })
 }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -21,21 +21,21 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct StackPaddingChange {
-  @State testPadding: Alignment = Alignment.Center
+  @State testPadding: double = 0
   @State testAlignContentValue: Alignment = Alignment.Center;
-  messageManager: MessageManager<Alignment> = new MessageManager<Alignment>();
+  messageManager: MessageManager<Alignment|double> = new MessageManager<Alignment|double>();
   private content: string = "StackPaddingChange Page";
 
   onPageShow() {
     console.info('StackPaddingChange onPageShow');
-    AppStorage.setOrCreate<MessageManager<Alignment>>("messageManager",  this.messageManager);
-    let callback: Callback<Alignment> = (message: Message<Alignment>) => {
+    AppStorage.setOrCreate<MessageManager<Alignment|double>>("messageManager",  this.messageManager);
+    let callback: Callback<Alignment|double> = (message: Message<Alignment|double>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'padding') {
-        this.testPadding = message.value;
+        this.testPadding = message.value as double;
       }
       if (message.name == 'alignContent') {
-        this.testAlignContentValue = message.value;
+        this.testAlignContentValue = message.value as Alignment;
       }
     };
     this.messageManager.registerCallback(callback);

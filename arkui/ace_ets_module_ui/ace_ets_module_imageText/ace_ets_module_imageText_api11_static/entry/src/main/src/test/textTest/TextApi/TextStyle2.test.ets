@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+ * you may not use Utils file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -34,7 +34,6 @@ export default function TextStyle2() {
     beforeAll(() => {
       console.info("TextStyle2 beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,9 +51,11 @@ export default function TextStyle2() {
         console.info("get TextStyle2 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextStyle2 pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TextStyle2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextStyle2 page error:" + err);
@@ -75,7 +76,7 @@ export default function TextStyle2() {
      * @tc.desc     TextStyle2_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('TextStyle2_static_0001', Level.LEVEL1, async (done: ()=>void ) => {
+    it('TextStyle2_static_0001', Level.LEVEL1, async (done: ()=>void ) => {
 
       console.info('[TextStyle2_static_0001] START');
       await CommonFunc.sleep(2000);

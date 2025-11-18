@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+//Text组件和事件禁用
 import {
   Entry,
   Component,
@@ -25,7 +25,8 @@ import {
   Margin,
   TextAlign,
   MouseButton,
-  MouseAction
+  MouseAction,
+  KeyEvent
 } from '@ohos.arkui.component'
 import {
   State,
@@ -67,7 +68,16 @@ struct textEnabledDemo {
         .enabled(false)
         .height('10%')
 
-
+      Text(this.text3).key("texEnd3")
+        .border({width: 1})
+        .textAlign(TextAlign.Center)
+        .width('90%')
+        .onKeyEvent((event:KeyEvent):boolean => {
+          this.text3 = '按键事件已触发'
+          return true
+        })
+        .enabled(false)
+        .height('10%')
 
       Text(this.text4).key("texEnd4")
         .border({width: 1})

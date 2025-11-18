@@ -51,18 +51,23 @@ struct TextExample2 {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'type') {
           this.type = message.value as TextDecorationType
+        console.log("============================= this.type  " + this.type )
       }
       if (message.name == 'color') {
           this.color = message.value as string
+        console.log("============================= this.color  " + this.color )
       }
       if (message.name == 'baselineOffset') {
-          this.baselineOffset = Number.parseInt(message.value.toString())
+        this.baselineOffset = Number.parseInt(message.value.toString())
+        console.log("============================= this.baselineOffset " + this.baselineOffset)
       }
       if (message.name == 'letterSpacing') {
           this.letterSpacing = Number.parseInt(message.value.toString())
+        console.log("============================= this.letterSpacing  " + this.letterSpacing )
       }
       if (message.name == 'textCase') {
-          this.textCase = message.value as  TextCase
+        this.textCase = message.value as  TextCase
+        console.log("============================= this.textCase " + this.textCase)
       }
     }
     this.messageManager.registerCallback(callback)
@@ -70,7 +75,7 @@ struct TextExample2 {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-      Text('decoration').fontSize(9).fontColor(0xCCCCCC)
+      Text('decoration').fontSize(9).fontColor('0xCCCCCC')
       Text('This is the text content with the decoration set to LineThrough and the color set to Red.')
         .decoration({
           type: this.type,
@@ -103,8 +108,8 @@ struct TextExample2 {
         .padding(10)
         .width('100%')
 
-     
-      Text('baselineOffset').fontSize(9).fontColor(0xCCCCCC)
+      // 文本基线偏移
+      Text('baselineOffset').fontSize(9).fontColor('0xCCCCCC')
       Text('This is the text content with baselineOffset 0.')
         .baselineOffset(this.baselineOffset)
         .fontSize(12)
@@ -124,7 +129,8 @@ struct TextExample2 {
         .padding(10)
         .width('100%')
 
-      Text('letterSpacing').fontSize(9).fontColor(0xCCCCCC)
+      // 文本字符间距
+      Text('letterSpacing').fontSize(9).fontColor('0xCCCCCC')
       Text('This is the text content with letterSpacing 0.')
         .letterSpacing(this.letterSpacing)
         .fontSize(12)
@@ -144,13 +150,14 @@ struct TextExample2 {
         .padding(10)
         .width('100%')
 
-      Text('textCase').fontSize(9).fontColor(0xCCCCCC)
+      Text('textCase').fontSize(9).fontColor('0xCCCCCC')
       Text('This is the text content with textCase set to Normal.')
         .textCase(this.textCase)
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
         .width('100%').key("text5")
+      // 文本全小写展示
       Text('This is the text content with textCase set to LowerCase.')
         .textCase(TextCase.LowerCase)
         .fontSize(12)
@@ -158,6 +165,7 @@ struct TextExample2 {
         .padding(10)
         .width('100%')
         .copyOption(CopyOptions.InApp)
+      // 文本全大写展示
       Text('This is the text content with textCase set to UpperCase.')
         .textCase(TextCase.UpperCase)
         .fontSize(12).border({ width: 1 }).padding(10)

@@ -29,11 +29,13 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-function sleep(time: int):Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, time * 1000);
+function sleep(time: number) {
+  return new Promise<string>((resolve, reject) => {
+    setTimeout(():void => {
+      resolve('OK');
+    }, time * 1000 as Int);
+  }).then(() => {
+    console.info(`sleep ${time} over...`);
   })
 }
 
@@ -43,7 +45,6 @@ export default function textAreaJsunit() {
 
     beforeAll(() => {
       console.info("textAreaTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -62,8 +63,11 @@ export default function textAreaJsunit() {
         console.info("get textAreaTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textAreaTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textAreaTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textAreaTest page error:" + err);
@@ -85,12 +89,12 @@ export default function textAreaJsunit() {
      * @tc.desc     testTextArea_static_010
      * @tc.level    Level.LEVEL1
      */
-it('testTextArea_static_010', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextArea_static_010', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextArea_static_010 START');
       let strJson = inspector.getInspectorByKey('textArea1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textArea1] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$type')).assertEqual('TextArea')
+      expect(obj.getString('$type')).assertEqual('TextArea')
       expect(obj.getElement('$attrs').getString('placeholderColor')).assertEqual('#FFC0C0C0')
       expect(obj.getElement('$attrs').getString('placeholderColor')).assertEqual('#FFC0C0C0')
       expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Start')
@@ -112,12 +116,12 @@ it('testTextArea_static_010', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testTextArea_static_020
      * @tc.level    Level.LEVEL1
      */
-it('testTextArea_static_020', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextArea_static_020', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextArea_static_020 START');
       let strJson = inspector.getInspectorByKey('textArea2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textArea2] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$type')).assertEqual('TextArea')
+      expect(obj.getString('$type')).assertEqual('TextArea')
       expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Center')
       console.info('testTextArea_static_020 End');
       done();
@@ -130,12 +134,12 @@ it('testTextArea_static_020', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testTextArea_static_030
      * @tc.level    Level.LEVEL1
      */
-it('testTextArea_static_030', Level.LEVEL1, async (done: ()=>void) => {
+    it('testTextArea_static_030', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextArea_static_030 START');
       let strJson = inspector.getInspectorByKey('textArea3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textArea3] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$type')).assertEqual('TextArea')
+      expect(obj.getString('$type')).assertEqual('TextArea')
       expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.End')
       console.info('testTextArea_static_030 End');
       done();

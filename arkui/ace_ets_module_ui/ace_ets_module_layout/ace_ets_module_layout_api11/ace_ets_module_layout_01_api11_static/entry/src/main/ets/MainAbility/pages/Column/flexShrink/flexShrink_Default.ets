@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,6 +25,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
   Color,
   EdgeEffect,ColumnOptions } from '@ohos.arkui.component';
 import {State,
+
   AppStorage} from '@ohos.arkui.stateManagement';
 
 type MessageData = number
@@ -33,14 +34,14 @@ type MessageData = number
 @Component
 struct flexShrink_Default {
   @State addflexShrink: number = 0
-  messageManager: MessageManager<MessageData> = new MessageManager<MessageData>()
+  messageManager:MessageManager<number> = new MessageManager<number>()
   onPageShow() {
     console.info('flexShrink_Default onPageShow');
     let value: Value1<MessageData> = {
       name:'messageManager',message:this.messageManager
     }
-    GlobalContext.getContext().setObject('value', value);
-    let callback: Callback<MessageData> = (message: Message<MessageData>) => {
+    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager)
+    let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addflexShrink') {
         this.addflexShrink = message.value;

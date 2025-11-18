@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
-import { Entry, Component, AttributeModifier, SearchAttribute, Column, Search, Text, ColumnOptions, Color, FontWeight,
-  FontStyle, IconOptions, SearchButtonOptions, CopyOptions, CancelButtonOptions, TextAlign, CancelButtonStyle,
+import emitter from '@ohos.events.emitter';
+import { Entry, Component, AttributeModifier, SearchAttribute, Column, Search, Text, ColumnOptions, CancelButtonStyle,
+  Color, FontWeight, FontStyle, CopyOptions, TextAlign, IconOptions, CancelButtonSymbolOptions,CancelButtonOptions
 } from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
+@Observed
 class SearchModifier implements AttributeModifier<SearchAttribute> {
   _testType: number = 0
   applyNormalAttribute(instance: SearchAttribute): void {
@@ -61,7 +62,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
         {
           fontSize: 10,
           fontColor: Color.Black
-        } as SearchButtonOptions
+        }
       )
     } else if(this._testType === 7){
       console.info(`Search.fontColor=>Color.Red`)
@@ -101,11 +102,14 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 struct SearchExample {
   @State _SearchModifier: SearchModifier = new SearchModifier();
   @State submitValue: string = ''
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void  = (eventData:events_emitter.EventData) => {
-    if (eventData != null && eventData.data != null) {
-      console.info("Search page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject).getProperty('typeValue') != null) {
-        this._SearchModifier._testType = ((eventData.data) as ESObject).getProperty('typeValue').toNumber();
+  private stateChangCallBack: (eventData: emitter.EventData) => void  = (eventData:emitter.EventData) => {
+    if (eventData != null) {
+      console.info("Search page state change called:" + JSON.stringify((eventData.data as Record<String,undefined|null|Object>)['typeValue']));
+      if ((eventData.data as Record<String,undefined|null|Object>)['typeValue'] != null) {
+        console.log("======================================= this._SearchModifier._testType" + this._SearchModifier._testType);
+        console.log("=======================================  " + Number.parseInt(`${((eventData.data as Record<String,undefined|null|Object>)!['typeValue'])!}`))
+        this._SearchModifier._testType = Number.parseInt(`${((eventData.data as Record<String,undefined|null|Object>)!['typeValue'])!}`);
+        console.log("======================================= this._SearchModifier._testType" + this._SearchModifier._testType);
       }
       else {
         this._SearchModifier._testType = 0;
@@ -115,88 +119,88 @@ struct SearchExample {
 
   onPageShow() {
 
-    let stateChangeEvent01: events_emitter.InnerEvent = {
+    let stateChangeEvent01: emitter.InnerEvent = {
       eventId: 1401,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent01, this.stateChangCallBack);
+    emitter.on(stateChangeEvent01, this.stateChangCallBack);
 
-    let stateChangeEvent02: events_emitter.InnerEvent = {
+    let stateChangeEvent02: emitter.InnerEvent = {
       eventId: 1501,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent02, this.stateChangCallBack);
+    emitter.on(stateChangeEvent02, this.stateChangCallBack);
 
-     let stateChangeEvent03: events_emitter.InnerEvent = {
+     let stateChangeEvent03: emitter.InnerEvent = {
       eventId: 1601,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent03, this.stateChangCallBack);
+    emitter.on(stateChangeEvent03, this.stateChangCallBack);
 
-    let stateChangeEvent04: events_emitter.InnerEvent = {
+    let stateChangeEvent04: emitter.InnerEvent = {
       eventId: 1701,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent04, this.stateChangCallBack);
+    emitter.on(stateChangeEvent04, this.stateChangCallBack);
 
-    let stateChangeEvent05: events_emitter.InnerEvent = {
+    let stateChangeEvent05: emitter.InnerEvent = {
       eventId: 1801,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent05, this.stateChangCallBack);
+    emitter.on(stateChangeEvent05, this.stateChangCallBack);
 
-    let stateChangeEvent06: events_emitter.InnerEvent = {
+    let stateChangeEvent06: emitter.InnerEvent = {
       eventId: 1901,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent06, this.stateChangCallBack);
+    emitter.on(stateChangeEvent06, this.stateChangCallBack);
 
-     let stateChangeEvent07: events_emitter.InnerEvent = {
+     let stateChangeEvent07: emitter.InnerEvent = {
       eventId: 2001,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent07, this.stateChangCallBack);
+    emitter.on(stateChangeEvent07, this.stateChangCallBack);
 
 
-    let stateChangeEvent08: events_emitter.InnerEvent = {
+    let stateChangeEvent08: emitter.InnerEvent = {
       eventId: 2101,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent08, this.stateChangCallBack);
+    emitter.on(stateChangeEvent08, this.stateChangCallBack);
 
-    let stateChangeEvent09: events_emitter.InnerEvent = {
+    let stateChangeEvent09: emitter.InnerEvent = {
       eventId: 2201,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent09, this.stateChangCallBack);
+    emitter.on(stateChangeEvent09, this.stateChangCallBack);
 
 
-    let stateChangeEvent10: events_emitter.InnerEvent = {
+    let stateChangeEvent10: emitter.InnerEvent = {
       eventId: 2301,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent10, this.stateChangCallBack);
+    emitter.on(stateChangeEvent10, this.stateChangCallBack);
 
-     let stateChangeEvent11: events_emitter.InnerEvent = {
+     let stateChangeEvent11: emitter.InnerEvent = {
       eventId: 2401,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent11, this.stateChangCallBack);
+    emitter.on(stateChangeEvent11, this.stateChangCallBack);
 
 
-    let stateChangeEvent12: events_emitter.InnerEvent = {
+    let stateChangeEvent12: emitter.InnerEvent = {
       eventId: 2501,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent12, this.stateChangCallBack);
+    emitter.on(stateChangeEvent12, this.stateChangCallBack);
   }
 
    build() {
     Column() {
       Text('onSubmit:' + this.submitValue).fontSize(18).margin(15)
       Search({ placeholder: 'Type to search...' })
+        .attributeModifier(this._SearchModifier)
         .key('search')
-     
         .width('90%')
         .height(40)
         .backgroundColor('#F5F5F5')

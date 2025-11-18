@@ -73,21 +73,22 @@ export default function ChipApi1() {
         console.info("get ChipApi1 state pages:" + "");
         if (!("ChipApi1" == pages.name)) {
           console.info("get ChipApi1 pages.name:" + "");
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push ChipApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ChipApi1 page error:" + err);
       }
       console.info("ChipApi1 beforeEach end");
-      
+      // done();
     });
     afterEach(async () => {
     });
 
 
+    
     /*
      * @tc.number   ChipApi1_0100
      * @tc.name     ChipApi1_0100

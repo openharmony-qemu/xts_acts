@@ -45,8 +45,11 @@ export default function SXrenderingStrategyJsunit() {
         console.info("get SXrenderingStrategyJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SXrenderingStrategyJsunit pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SXrenderingStrategyJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SXrenderingStrategyJsunit page error:" + err);
@@ -55,7 +58,6 @@ export default function SXrenderingStrategyJsunit() {
     });
     beforeAll(() => {
       console.info("SXrenderingStrategyJsunit beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -65,14 +67,18 @@ export default function SXrenderingStrategyJsunit() {
       console.info("SXrenderingStrategyJsunit after each called");
     });
 
+    afterEach(async  () => {
+      await CommonFunc.sleep(100)
+      console.info("RichEditor after each called");
+    })
     
     /*
-     * @tc.number   SXrenderingStrategyJsunit_static_0100
-     * @tc.name     SXrenderingStrategyJsunit_static_0100
-     * @tc.desc     SXrenderingStrategyJsunit_static_0100
+     * @tc.number   SXrenderingStrategyJsunit_static__0100
+     * @tc.name     SXrenderingStrategyJsunit_static__0100
+     * @tc.desc     SXrenderingStrategyJsunit_static__0100
      * @tc.level    Level.LEVEL1
      */
-it('SXrenderingStrategyJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('SXrenderingStrategyJsunit_static__0100', Level.LEVEL1, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       console.info('SXrenderingStrategyJsunit_0100 START');
       let driver = Driver.create();

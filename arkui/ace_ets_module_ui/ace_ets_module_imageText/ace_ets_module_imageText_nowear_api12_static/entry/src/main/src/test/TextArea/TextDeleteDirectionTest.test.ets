@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import hilog from '@ohos.hilog'
@@ -24,6 +24,9 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {
+  TextDeleteDirection
+} from '@ohos.arkui.component'
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -32,7 +35,6 @@ export default function TextDeleteDirectionTest() {
   describe('TextDeleteDirectionTest', () :void=> {
     beforeAll(() => {
       console.info("TextDeleteDirectionTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -41,17 +43,18 @@ export default function TextDeleteDirectionTest() {
     beforeEach(async (): Promise<void> => {
       console.info("TextDeleteDirectionTest beforeEach start");
       try {
+        let options: router.RouterOptions = {
+          url: 'MainAbility/pages/TextArea/TextDeleteDirectionTest',
+        }
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get TextDeleteDirectionTest state pages:" + "");
-        if (!("TextDeleteDirectionTest" == pages.name)) {
-          console.info("get  Context pages.name:" + '');
-          routerInstance.pushUrl({
-            url: "MainAbility/pages/TextArea/TextDeleteDirectionTest"
-          })
+        console.info("get TextDeleteDirectionTest state success " + JSON.stringify(pages));
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(4000);
+        if (!("MainAbility/pages/TextArea/TextDeleteDirectionTest" == pages.name)) {
+          console.info("get TextDeleteDirectionTest state success " + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextDeleteDirectionTest page error:" + err);
@@ -59,18 +62,19 @@ export default function TextDeleteDirectionTest() {
       console.info("TextDeleteDirectionTest foreEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       console.info("TextDeleteDirectionTest after each called");
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextDeleteDirectionTest_static_0001
      * @tc.name     TextDeleteDirectionTest_static_0001
      * @tc.desc     TextDeleteDirectionTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('TextDeleteDirectionTest_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('TextDeleteDirectionTest_static_0001', Level.LEVEL1, async (done: ()=>void) => {
       let driver = Driver.create();
       console.info('TextDeleteDirectionTest0001 START');
       await CommonFunc.sleep(1000);
@@ -83,10 +87,11 @@ it('TextDeleteDirectionTest_static_0001', Level.LEVEL1, async (done: ()=>void) =
       await (caretPosition?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       await driver.triggerKey(2071)
-      await CommonFunc.sleep(500);
-      expect(''+AppStorage.get('deleteValue')).assertEqual('这');
-      expect(''+AppStorage.get('deleteOffset')).assertEqual('0');
-      expect(''+AppStorage.get('direction')).assertEqual('1');
+      await CommonFunc.sleep(2000);
+      console.log("=============================================== _0001" + ''+AppStorage.get<string>('deleteValue'))
+      expect(''+AppStorage.get<string>('deleteValue')).assertEqual('这');
+      expect(''+AppStorage.get<number>('deleteOffset')).assertEqual('0');
+      expect(''+AppStorage.get<TextDeleteDirection>('direction')).assertEqual('1');
       AppStorage.delete('deleteValue')
       AppStorage.delete('deleteOffset')
       AppStorage.delete('direction')
@@ -95,13 +100,14 @@ it('TextDeleteDirectionTest_static_0001', Level.LEVEL1, async (done: ()=>void) =
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextDeleteDirectionTest_static_0002
      * @tc.name     TextDeleteDirectionTest_static_0002
      * @tc.desc     TextDeleteDirectionTest_static_0002
      * @tc.level    Level.LEVEL3
      */
-it('TextDeleteDirectionTest_static_0002', Level.LEVEL3, async (done: ()=>void) => {
+    it('TextDeleteDirectionTest_static_0002', Level.LEVEL3, async (done: ()=>void) => {
       let driver = Driver.create();
       console.info('TextDeleteDirectionTest0002 START');
       await CommonFunc.sleep(1000);
@@ -117,9 +123,10 @@ it('TextDeleteDirectionTest_static_0002', Level.LEVEL3, async (done: ()=>void) =
         await CommonFunc.sleep(500);
         await driver.triggerKey(2071)
         await CommonFunc.sleep(500);
-        expect(''+AppStorage.get('deleteValue')).assertEqual('这是测试删除回调文本');
-        expect(''+AppStorage.get('deleteOffset')).assertEqual('0');
-        expect(''+AppStorage.get('direction')).assertEqual('1');
+        console.log("=============================================== " + ''+AppStorage.get<string>('deleteValue'))
+        expect(''+AppStorage.get<string>('deleteValue')).assertEqual('这是测试删除回调文本');
+        expect(''+AppStorage.get<number>('deleteOffset')).assertEqual('0');
+        expect(''+AppStorage.get<TextDeleteDirection>('direction')).assertEqual('1');
 
       AppStorage.delete('deleteValue')
       AppStorage.delete('deleteOffset')
@@ -129,13 +136,14 @@ it('TextDeleteDirectionTest_static_0002', Level.LEVEL3, async (done: ()=>void) =
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextDeleteDirectionTest_static_0003
      * @tc.name     TextDeleteDirectionTest_static_0003
      * @tc.desc     TextDeleteDirectionTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('TextDeleteDirectionTest_static_0003', Level.LEVEL1, async (done: ()=>void) => {
+    it('TextDeleteDirectionTest_static_0003', Level.LEVEL1, async (done: ()=>void) => {
       let driver = Driver.create();
       console.info(' TextDeleteDirectionTest0003 START');
       await CommonFunc.sleep(1000);
@@ -151,9 +159,9 @@ it('TextDeleteDirectionTest_static_0003', Level.LEVEL1, async (done: ()=>void) =
         await CommonFunc.sleep(500);
         await driver.triggerKey(2055)
         await CommonFunc.sleep(500);
-        expect(''+AppStorage.get('deleteValue')).assertEqual('除');
-        expect(''+AppStorage.get('deleteOffset')).assertEqual('5');
-        expect(''+AppStorage.get('direction')).assertEqual('0');
+        expect(''+AppStorage.get<string>('deleteValue')).assertEqual('除');
+        expect(''+AppStorage.get<number>('deleteOffset')).assertEqual('5');
+        expect(''+AppStorage.get<TextDeleteDirection>('direction')).assertEqual('0');
 
       AppStorage.delete('deleteValue')
       AppStorage.delete('deleteOffset')
@@ -163,13 +171,14 @@ it('TextDeleteDirectionTest_static_0003', Level.LEVEL1, async (done: ()=>void) =
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextDeleteDirectionTest_static_0004
      * @tc.name     TextDeleteDirectionTest_static_0004
      * @tc.desc     TextDeleteDirectionTest_static_0004
      * @tc.level    Level.LEVEL3
      */
-it('TextDeleteDirectionTest_static_0004', Level.LEVEL3, async (done: ()=>void) => {
+    it('TextDeleteDirectionTest_static_0004', Level.LEVEL3, async (done: ()=>void) => {
       let driver = Driver.create();
       console.info(' TextDeleteDirectionTest0004 START');
       await CommonFunc.sleep(1000);
@@ -185,9 +194,9 @@ it('TextDeleteDirectionTest_static_0004', Level.LEVEL3, async (done: ()=>void) =
         await CommonFunc.sleep(500);
         await driver.triggerKey(2055)
         await CommonFunc.sleep(500);
-        expect(''+AppStorage.get('deleteValue')).assertEqual('这是测试删除回调文本');
-        expect(''+AppStorage.get('deleteOffset')).assertEqual('0');
-        expect(''+AppStorage.get('direction')).assertEqual('0');
+        expect(''+AppStorage.get<string>('deleteValue')).assertEqual('这是测试删除回调文本');
+        expect(''+AppStorage.get<number>('deleteOffset')).assertEqual('0');
+        expect(''+AppStorage.get<TextDeleteDirection>('direction')).assertEqual('0');
 
       AppStorage.delete('deleteValue')
       AppStorage.delete('deleteOffset')

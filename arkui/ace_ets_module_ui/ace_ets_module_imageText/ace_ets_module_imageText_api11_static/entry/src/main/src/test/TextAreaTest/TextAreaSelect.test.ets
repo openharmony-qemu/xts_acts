@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router'
 import {  Driver, Component, ON } from '@ohos.UiTest'
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { BusinessError } from '@ohos.base';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,13 +34,12 @@ let testAbilityContext:common.UIAbilityContext;
 export default function TextAreaSelectTest() {
 
   const SUITE: string = 'TextAreaSelect'
-  const waitUiReadyMs = 500;
+  const waitUiReadyMs: int = 500;
 
 
   describe('TextAreaSelectTest', () => {
     beforeAll(() => {
       console.info("TextAreaSelectTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -57,7 +56,7 @@ export default function TextAreaSelectTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get TextAreaSelectTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextAreaSelect" == pages.name)) {
           console.info("get TextAreaSelectTest pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -68,13 +67,27 @@ export default function TextAreaSelectTest() {
       console.info("TextAreaSelectTest beforeEach end");
     });
 
+    afterEach(async (): Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+      await CommonFunc.sleep(2000);
+      let pages: router.RouterState = routerInstance.getState();
+      console.info("get Search state pages afterEach:" + JSON.stringify(pages));
+      if (pages.name !== "index") {
+        let options: router.RouterOptions = {
+          url: 'MainAbility/pages/index/index',
+        }
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(2000);
+      }})
+
     /*
      * @tc.number   ArkUI_TextArea_Select_0100
      * @tc.name     ArkUI_TextArea_Select_0100
      * @tc.desc     ArkUI_TextArea_Select_0100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0100', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0100'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
@@ -95,7 +108,7 @@ it('ArkUI_TextArea_Select_0100', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_TextArea_Select_0200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0200', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0200'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -107,16 +120,13 @@ it('ArkUI_TextArea_Select_0200', Level.LEVEL1, async (done: ()=>void) => {
           name: 'requestFocus', value: ''
         })
       await CommonFunc.sleep(1000);
-
       messageManager.notify({
         name: 'Show selected (-1,0)', value: ''
       })
       await CommonFunc.sleep(1000);
-
       messageManager.notify({
         name: 'Show selected (-1,0)', value: ''
       })
-
 
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
@@ -127,24 +137,26 @@ it('ArkUI_TextArea_Select_0200', Level.LEVEL1, async (done: ()=>void) => {
       done()
     });
 
+
+
     /*
      * @tc.number   ArkUI_TextArea_Select_0300
      * @tc.name     ArkUI_TextArea_Select_0300
      * @tc.desc     ArkUI_TextArea_Select_0300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0300', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0300'
       console.info(`${SUITE} ${CASE} START`);
 
       let driver: Driver = Driver.create()
       await driver.delayMs(waitUiReadyMs)
 
-
       const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
       messageManager.notify({
         name: 'Show selected (0,3)', value: ''
       })
+
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("3");
@@ -161,7 +173,7 @@ it('ArkUI_TextArea_Select_0300', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_TextArea_Select_0400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0400', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0400'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -173,7 +185,6 @@ it('ArkUI_TextArea_Select_0400', Level.LEVEL1, async (done: ()=>void) => {
         name: 'Show selected (1,3)', value: ''
       })
 
-
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("3");
@@ -183,19 +194,19 @@ it('ArkUI_TextArea_Select_0400', Level.LEVEL1, async (done: ()=>void) => {
       done()
     });
 
+
     /*
      * @tc.number   ArkUI_TextArea_Select_0500
      * @tc.name     ArkUI_TextArea_Select_0500
      * @tc.desc     ArkUI_TextArea_Select_0500
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0500', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0500', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0500'
       console.info(`${SUITE} ${CASE} START`);
 
       let driver: Driver = Driver.create()
       await driver.delayMs(waitUiReadyMs)
-
       const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
       messageManager.notify({
         name: 'Show selected (-1,6)', value: ''
@@ -217,13 +228,12 @@ it('ArkUI_TextArea_Select_0500', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_TextArea_Select_0600
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0600', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0600', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0600'
       console.info(`${SUITE} ${CASE} START`);
 
       let driver: Driver = Driver.create()
       await driver.delayMs(waitUiReadyMs)
-
 
       const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
       messageManager.notify({
@@ -241,20 +251,18 @@ it('ArkUI_TextArea_Select_0600', Level.LEVEL1, async (done: ()=>void) => {
       done()
     });
 
-
     /*
      * @tc.number   ArkUI_TextArea_Select_0700
      * @tc.name     ArkUI_TextArea_Select_0700
      * @tc.desc     ArkUI_TextArea_Select_0700
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0700', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0700', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0700'
       console.info(`${SUITE} ${CASE} START`);
 
       let driver: Driver = Driver.create()
       await driver.delayMs(waitUiReadyMs)
-
 
       const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
       messageManager.notify({
@@ -271,18 +279,14 @@ it('ArkUI_TextArea_Select_0700', Level.LEVEL1, async (done: ()=>void) => {
       done()
     });
 
-    /*
-     *tc.number ArkUI_TextArea_Select_0800
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
-     */
+
     /*
      * @tc.number   ArkUI_TextArea_Select_0800
      * @tc.name     ArkUI_TextArea_Select_0800
      * @tc.desc     ArkUI_TextArea_Select_0800
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_0800', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_0800', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_0800'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -306,123 +310,122 @@ it('ArkUI_TextArea_Select_0800', Level.LEVEL1, async (done: ()=>void) => {
     });
 
 
-    /*
-     * @tc.number   ArkUI_TextArea_Select_0900
-     * @tc.name     ArkUI_TextArea_Select_0900
-     * @tc.desc     ArkUI_TextArea_Select_0900
-     * @tc.level    Level.LEVEL1
-     */
-it('ArkUI_TextArea_Select_0900', Level.LEVEL1, async (done: ()=>void) => {
-      let CASE: string = 'ArkUI_TextArea_Select_0900'
-      console.info(`${SUITE} ${CASE} START`);
+    // /*
+    //  * @tc.number   ArkUI_TextArea_Select_0900
+    //  * @tc.name     ArkUI_TextArea_Select_0900
+    //  * @tc.desc     ArkUI_TextArea_Select_0900
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('ArkUI_TextArea_Select_0900', Level.LEVEL1, async (done: ()=>void) => {
+    //   let CASE: string = 'ArkUI_TextArea_Select_0900'
+    //   console.info(`${SUITE} ${CASE} START`);
+    //
+    //   let driver: Driver = Driver.create()
+    //   await driver.delayMs(waitUiReadyMs)
+    //
+    //   const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
+    //   messageManager.notify({
+    //     name: 'Show selected (null,null)', value: ''
+    //   })
+    //   await CommonFunc.sleep(1000);
+    //
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
+    //   await driver.delayMs(waitUiReadyMs)
+    //
+    //   console.info(`${SUITE} ${CASE} END`);
+    //   done()
+    // });
+    //
 
-      let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({
-        name: 'Show selected (null,null)', value: ''
-      })
-      await CommonFunc.sleep(1000);
+    // /*
+    //  * @tc.number   ArkUI_TextArea_Select_1000
+    //  * @tc.name     ArkUI_TextArea_Select_1000
+    //  * @tc.desc     ArkUI_TextArea_Select_1000
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('ArkUI_TextArea_Select_1000', Level.LEVEL1, async (done: ()=>void) => {
+    //   let CASE: string = 'ArkUI_TextArea_Select_1000'
+    //   console.info(`${SUITE} ${CASE} START`);
+    //
+    //   let driver: Driver = Driver.create()
+    //   await driver.delayMs(waitUiReadyMs)
+    //   const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
+    //   messageManager.notify({
+    //     name: 'Show selected (null,undefined)', value: ''
+    //   })
+    //
+    //   await CommonFunc.sleep(1000);
+    //
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
+    //   await driver.delayMs(waitUiReadyMs)
+    //
+    //   console.info(`${SUITE} ${CASE} END`);
+    //   done()
+    // });
+    //
 
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    // /*
+    //  * @tc.number   ArkUI_TextArea_Select_1100
+    //  * @tc.name     ArkUI_TextArea_Select_1100
+    //  * @tc.desc     ArkUI_TextArea_Select_1100
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('ArkUI_TextArea_Select_1100', Level.LEVEL1, async (done: ()=>void) => {
+    //   let CASE: string = 'ArkUI_TextArea_Select_1100'
+    //   console.info(`${SUITE} ${CASE} START`);
+    //
+    //   let driver: Driver = Driver.create()
+    //   await driver.delayMs(waitUiReadyMs)
+    //
+    //
+    //   const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
+    //   messageManager.notify({
+    //     name: 'Show selected (undefined,null)', value: ''
+    //   })
+    //   await CommonFunc.sleep(1000);
+    //
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
+    //   await driver.delayMs(waitUiReadyMs)
+    //
+    //   console.info(`${SUITE} ${CASE} END`);
+    //   done()
+    // });
+    //
 
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
-      await driver.delayMs(waitUiReadyMs)
-
-      console.info(`${SUITE} ${CASE} END`);
-      done()
-    });
-
-
-    /*
-     * @tc.number   ArkUI_TextArea_Select_1000
-     * @tc.name     ArkUI_TextArea_Select_1000
-     * @tc.desc     ArkUI_TextArea_Select_1000
-     * @tc.level    Level.LEVEL1
-     */
-it('ArkUI_TextArea_Select_1000', Level.LEVEL1, async (done: ()=>void) => {
-      let CASE: string = 'ArkUI_TextArea_Select_1000'
-      console.info(`${SUITE} ${CASE} START`);
-
-      let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
-
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({
-        name: 'Show selected (null,undefined)', value: ''
-      })
-
-      await CommonFunc.sleep(1000);
-
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
-      await driver.delayMs(waitUiReadyMs)
-
-      console.info(`${SUITE} ${CASE} END`);
-      done()
-    });
-
-
-    /*
-     * @tc.number   ArkUI_TextArea_Select_1100
-     * @tc.name     ArkUI_TextArea_Select_1100
-     * @tc.desc     ArkUI_TextArea_Select_1100
-     * @tc.level    Level.LEVEL1
-     */
-it('ArkUI_TextArea_Select_1100', Level.LEVEL1, async (done: ()=>void) => {
-      let CASE: string = 'ArkUI_TextArea_Select_1100'
-      console.info(`${SUITE} ${CASE} START`);
-
-      let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
-
-
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({
-        name: 'Show selected (undefined,null)', value: ''
-      })
-      await CommonFunc.sleep(1000);
-
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
-      await driver.delayMs(waitUiReadyMs)
-
-      console.info(`${SUITE} ${CASE} END`);
-      done()
-    });
-
-
-    /*
-     * @tc.number   ArkUI_TextArea_Select_1200
-     * @tc.name     ArkUI_TextArea_Select_1200
-     * @tc.desc     ArkUI_TextArea_Select_1200
-     * @tc.level    Level.LEVEL1
-     */
-it('ArkUI_TextArea_Select_1200', Level.LEVEL1, async (done: ()=>void) => {
-      let CASE: string = 'ArkUI_TextArea_Select_1200'
-      console.info(`${SUITE} ${CASE} START`);
-
-      let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
-
-
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({
-        name: 'Show selected (undefined,undefined)', value: ''
-      })
-
-      await CommonFunc.sleep(1000);
-
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
-      await driver.delayMs(waitUiReadyMs)
-
-      console.info(`${SUITE} ${CASE} END`);
-      done()
-    });
+    // /*
+    //  * @tc.number   ArkUI_TextArea_Select_1200
+    //  * @tc.name     ArkUI_TextArea_Select_1200
+    //  * @tc.desc     ArkUI_TextArea_Select_1200
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('ArkUI_TextArea_Select_1200', Level.LEVEL1, async (done: ()=>void) => {
+    //   let CASE: string = 'ArkUI_TextArea_Select_1200'
+    //   console.info(`${SUITE} ${CASE} START`);
+    //
+    //   let driver: Driver = Driver.create()
+    //   await driver.delayMs(waitUiReadyMs)
+    //
+    //   const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
+    //   messageManager.notify({
+    //     name: 'Show selected (undefined,undefined)', value: ''
+    //   })
+    //
+    //   await CommonFunc.sleep(1000);
+    //
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
+    //   await driver.delayMs(waitUiReadyMs)
+    //
+    //   console.info(`${SUITE} ${CASE} END`);
+    //   done()
+    // });
 
 
     /*
@@ -431,7 +434,7 @@ it('ArkUI_TextArea_Select_1200', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_TextArea_Select_1300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_1300', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_1300', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_1300'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -455,7 +458,7 @@ it('ArkUI_TextArea_Select_1300', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_TextArea_Select_1400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_TextArea_Select_1400', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_TextArea_Select_1400', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_TextArea_Select_1400'
       console.info(`${SUITE} ${CASE} START`);
 

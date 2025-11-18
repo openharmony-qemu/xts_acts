@@ -28,22 +28,22 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  PropRef
+  Prop
 } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct prop {
   @State value: number = 0
-  private content: string = "PropRef Page";
+  private content: string = "prop Page";
   @State isPlaying: boolean = false
   @State countDownStartValue: number = 10
 
   onPageShow() {
-    console.info('PropRef page show called');
+    console.info('Prop page show called');
   }
 
   onBuildDone() {
-    console.info('PropRef page build done called');
+    console.info('Prop page build done called');
   }
 
   build() {
@@ -81,7 +81,7 @@ struct prop {
 
 @Component
 struct CountDownComponent {
-  @PropRef count: number
+  @Prop count: number
   private costOfOneAttempt: number = 0
 
   build() {

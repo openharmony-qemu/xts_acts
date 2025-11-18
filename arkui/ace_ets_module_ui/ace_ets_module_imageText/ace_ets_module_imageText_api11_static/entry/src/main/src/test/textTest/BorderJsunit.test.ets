@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -34,7 +34,6 @@ export default function borderJsunit() {
 
     beforeAll(() => {
       console.info("borderTest_five_1 beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -51,10 +50,13 @@ export default function borderJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get borderTest_five_1 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("border" == pages.name)) {
           console.info("get borderTest_five_1 pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push borderTest_five_1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push borderTest_five_1 page error:" + err);
@@ -75,7 +77,7 @@ export default function borderJsunit() {
      * @tc.desc     testBorder_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('testBorder_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBorder_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testBorder_static_0100 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('borderWidth');
@@ -93,7 +95,7 @@ it('testBorder_static_0100', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testBorder_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('testBorder_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBorder_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testBorder_static_0200 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('borderColor');
@@ -111,22 +113,22 @@ it('testBorder_static_0200', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testBorder_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('testBorder_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBorder_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testBorder_static_0300 START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "borderRadius": 70
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 3,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testBorder_static_0300] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err :Error) {
         console.log("[testBorder_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

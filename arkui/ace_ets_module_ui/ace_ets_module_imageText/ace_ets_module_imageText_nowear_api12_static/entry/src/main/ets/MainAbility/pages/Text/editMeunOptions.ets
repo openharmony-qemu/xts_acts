@@ -27,7 +27,7 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  
+  // StateDecoratedVariable
 } from '@ohos.arkui.stateManagement'
 @Entry
 @Component

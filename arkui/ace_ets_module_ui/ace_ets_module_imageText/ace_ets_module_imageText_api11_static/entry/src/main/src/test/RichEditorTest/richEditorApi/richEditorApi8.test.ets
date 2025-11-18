@@ -25,7 +25,7 @@ import {
   ResizeDirection,
   WindowMode,
   PointerMatrix,
-  MouseButton
+  MouseButton,
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -45,7 +45,7 @@ export default function richEditorApi8() {
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi8 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi8",
+        url: "MainAbility/pages/RichEditor/richEditorApi/richEditorApi8",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -54,8 +54,11 @@ export default function richEditorApi8() {
         console.info("get richEditorApi8 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get richEditorApi8 pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push richEditorApi8 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push richEditorApi8 page error:" + err);
@@ -64,7 +67,6 @@ export default function richEditorApi8() {
     });
     beforeAll(() => {
       console.info("richEditorApi8 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -81,7 +83,7 @@ export default function richEditorApi8() {
      * @tc.desc     richEditorApi8_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('richEditorApi8_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('richEditorApi8_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[richEditorApi8_0100] START');
       await CommonFunc.sleep(2000);
 
@@ -90,7 +92,7 @@ it('richEditorApi8_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor8');
 
       await driver.mouseClick({
-        x:Math.round(richEditor.left) as int + 300, y: Math.round(richEditor.top) as int + 300
+        x:(Math.round(richEditor.left) as Int) + 300, y: (Math.round(richEditor.top) as Int) + 300
       }, MouseButton.MOUSE_BUTTON_LEFT)
 
       await CommonFunc.sleep(2000);

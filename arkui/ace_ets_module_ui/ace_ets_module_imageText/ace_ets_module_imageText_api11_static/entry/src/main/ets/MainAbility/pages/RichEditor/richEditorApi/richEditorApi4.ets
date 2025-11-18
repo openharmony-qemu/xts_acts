@@ -53,7 +53,7 @@ struct richEditorApi4 {
         Button('setTypingStyle').onClick((event: ClickEvent) => {
           this.controller.setTypingStyle(
             {
-              fontSize: 50.0,
+              fontSize: 50,
               fontColor: "#FF182431",
               decoration:{ type: TextDecorationType.None, color: "#FF182431"}
             })

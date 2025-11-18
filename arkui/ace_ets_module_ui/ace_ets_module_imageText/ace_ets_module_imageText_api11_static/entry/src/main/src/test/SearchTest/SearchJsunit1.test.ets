@@ -16,16 +16,18 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import { $r } from '@ohos.arkui.component';
-import Utils from './Utils';
+import Utils from './Utils.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
+// import { resourceManager } from '@kit.LocalizationKit';
 import common from "@ohos.app.ability.common";
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -38,7 +40,6 @@ export default function searchTest() {
   describe('searchTest', () => {
     beforeAll(() => {
       console.info("searchTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -55,12 +56,13 @@ export default function searchTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get search state pages: " + JSON.stringify(pages));
-        if (!("searchPage" == pages.name)) {
+        if (!("searchPage1" == pages.name)) {
           console.info("get search pages.name: " + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push search page result: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push search page error: " + err);
       }
     });
@@ -70,31 +72,33 @@ export default function searchTest() {
       console.info("search after each called");
     })
 
-    const abilityStageContext =
-      AppStorage.get<common.AbilityStageContext>('stageContext') as common.AbilityStageContext;
+    // const abilityStageContext =
+    //   AppStorage.get<common.AbilityStageContext>('stageContext') as common.AbilityStageContext;
+    // let resourceSize = abilityStageContext.resourceManager.getNumber($r('sys.float.ohos_id_text_size_body1').id)
 
+    
     /*
      * @tc.number   testSearchCaretStyle_static_02
      * @tc.name     testSearchCaretStyle_static_02
      * @tc.desc     testSearchCaretStyle_static_02
      * @tc.level    Level.LEVEL0
      */
-it('testSearchCaretStyle_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchCaretStyle_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchCaretStyle02';
       console.info('[' + tagName + '] START============================');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 2,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 1501,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -103,21 +107,20 @@ it('testSearchCaretStyle_static_02', Level.LEVEL0, async (done: () => void): Pro
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
       expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('caretStyle')))
         .assertEqual("{\"color\":\"#FF000000\",\"width\":\"10.00vp\"}");
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
     });
 
     
-
     /*
      * @tc.number   testSearchPlaceholderFont_static_04
      * @tc.name     testSearchPlaceholderFont_static_04
      * @tc.desc     testSearchPlaceholderFont_static_04
      * @tc.level    Level.LEVEL0
      */
-it('testSearchPlaceholderFont_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchPlaceholderFont_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchPlaceholderFont04';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -125,29 +128,33 @@ it('testSearchPlaceholderFont_static_04', Level.LEVEL0, async (done: () => void)
       console.info('[' + tagName + '] component obj is: ' + strJson);
       const uiContext = new UIContext();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Search');
+      expect(obj.getString('$type')).assertEqual('Search');
+
+      // expect(obj.getElement('$attrs').getElement('placeholderFont'))
+      //   .assertEqual('{"style":"FontStyle.Normal","size":"' + uiContext.px2fp(resourceSize) +
+      //     '.00fp","weight":"400","fontFamily":"sans-serif"}');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 4,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 1701,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
-      expect(objNew.getElement('$attrs').getElement('placeholderFont'))
+      expect(objNew.getElement('$attrs').getString('placeholderFont'))
         .assertEqual("{\"style\":\"FontStyle.Normal\",\"size\":\"16.00fp\",\"fontWeight\":\"FontWeight.Normal\",\"fontFamily\":\"Arial, HarmonyOS Sans\"}");
-      expect(objNew.getElement('$attrs').getElement('$type')).assertEqual('Search');
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -159,33 +166,33 @@ it('testSearchPlaceholderFont_static_04', Level.LEVEL0, async (done: () => void)
      * @tc.desc     testSearchSearchIcon_static_05
      * @tc.level    Level.LEVEL0
      */
-it('testSearchSearchIcon_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchSearchIcon_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchSearchIcon05';
       console.info('[' + tagName + '] START============================');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 5,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 1801,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
       expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('searchIcon')))
-        .assertEqual(`{\"size\":\"${UIContext.getFocusedUIContext()!.vp2px(30)
+        .assertEqual(`{\"size\":\"${uiContext!.vp2px(30)
           .toFixed(2)}px\",\"color\":\"#FFFF0000\",\"src\":\"resource:///ohos_search.svg\"}`);
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -197,37 +204,37 @@ it('testSearchSearchIcon_static_05', Level.LEVEL0, async (done: () => void): Pro
      * @tc.desc     testSearchSearchButton_static_06
      * @tc.level    Level.LEVEL0
      */
-it('testSearchSearchButton_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchSearchButton_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchSearchButton06';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
       let strJson = inspector.getInspectorByKey('search');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Search');
-      expect(obj.getElement('$attrs').getElement('searchButton')).assertEqual("");
+      expect(obj.getString('$type')).assertEqual('Search');
+      expect(obj.getElement('$attrs').getString('searchButton')).assertEqual("");
 
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 6,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 1901,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
-      expect(objNew.getElement('$attrs').getElement('searchButton')).assertEqual("SEARCH");
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getElement('$attrs').getString('searchButton')).assertEqual("SEARCH");
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -239,30 +246,30 @@ it('testSearchSearchButton_static_06', Level.LEVEL0, async (done: () => void): P
      * @tc.desc     testSearchFontColor_static_07
      * @tc.level    Level.LEVEL0
      */
-it('testSearchFontColor_static_07', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchFontColor_static_07', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchFontColor07';
       console.info('[' + tagName + '] START============================');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 7,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 2001,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
-      expect(objNew.getElement('$attrs').getElement('fontColor')).assertEqual("#FFFF0000");
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getElement('$attrs').getString('fontColor')).assertEqual("#FFFF0000");
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -274,37 +281,37 @@ it('testSearchFontColor_static_07', Level.LEVEL0, async (done: () => void): Prom
      * @tc.desc     testSearchCopyOption_static_08
      * @tc.level    Level.LEVEL0
      */
-it('testSearchCopyOption_static_08', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchCopyOption_static_08', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchCopyOption08';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
       let strJson = inspector.getInspectorByKey('search');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Search');
-      expect(obj.getElement('$attrs').getElement('copyOption')).assertEqual("CopyOptions.Local");
+      expect(obj.getString('$type')).assertEqual('Search');
+      expect(obj.getElement('$attrs').getString('copyOption')).assertEqual("CopyOptions.Local");
 
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 8,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 2101,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
-      expect(objNew.getElement('$attrs').getElement('copyOption')).assertEqual("CopyOptions.InApp");
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getElement('$attrs').getString('copyOption')).assertEqual("CopyOptions.InApp");
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -316,7 +323,7 @@ it('testSearchCopyOption_static_08', Level.LEVEL0, async (done: () => void): Pro
      * @tc.desc     testSearchTextFont_static_09
      * @tc.level    Level.LEVEL0
      */
-it('testSearchTextFont_static_09', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchTextFont_static_09', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchTextFont09';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -324,30 +331,33 @@ it('testSearchTextFont_static_09', Level.LEVEL0, async (done: () => void): Promi
       console.info('[' + tagName + '] component obj is: ' + strJson);
       const uiContext = new UIContext();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Search');
+      expect(obj.getString('$type')).assertEqual('Search');
+      // expect(obj.getElement('$attrs').getElement('textFont'))
+      //   .assertEqual('{"fontSize":"' + uiContext.px2fp(resourceSize) +
+      //     '.00fp","fontStyle":"FontStyle.Normal","fontWeight":"400","fontFamily":"HarmonyOS Sans"}');
 
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 9,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 2201,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
-      expect(objNew.getElement('$attrs').getElement('textFont'))
+      expect(objNew.getElement('$attrs').getString('textFont'))
         .assertEqual("{\"fontSize\":\"16.00fp\",\"fontStyle\":\"FontStyle.Normal\",\"fontWeight\":\"FontWeight.Normal\",\"fontFamily\":\"Arial, HarmonyOS Sans\"}");
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -359,30 +369,30 @@ it('testSearchTextFont_static_09', Level.LEVEL0, async (done: () => void): Promi
      * @tc.desc     testSearchPlaceholderColor_static_10
      * @tc.level    Level.LEVEL0
      */
-it('testSearchPlaceholderColor_static_10', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchPlaceholderColor_static_10', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchPlaceholderColor10';
       console.info('[' + tagName + '] START============================');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 10,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 2301,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
-      expect(objNew.getElement('$attrs').getElement('placeholderColor')).assertEqual("#FFFF0000");
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getElement('$attrs').getString('placeholderColor')).assertEqual("#FFFF0000");
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -394,33 +404,33 @@ it('testSearchPlaceholderColor_static_10', Level.LEVEL0, async (done: () => void
      * @tc.desc     testSearchCancelButton_static_11
      * @tc.level    Level.LEVEL0
      */
-it('testSearchCancelButton_static_11', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchCancelButton_static_11', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchCancelButton11';
       console.info('[' + tagName + '] START============================');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 11,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 2401,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
       expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('cancelButton')))
-        .assertEqual(`{\"style\":\"CancelButtonStyle.CONSTANT\",\"icon\":{\"size\":\"${UIContext.getFocusedUIContext()!.vp2px(10)
+        .assertEqual(`{\"style\":\"CancelButtonStyle.CONSTANT\",\"icon\":{\"size\":\"${uiContext!.vp2px(10)
           .toFixed(2)}px\",\"color\":\"#FF000000\",\"src\":\"resource:///ohos_close.svg\"}}`);
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getString('$type')).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
       done();
@@ -432,37 +442,38 @@ it('testSearchCancelButton_static_11', Level.LEVEL0, async (done: () => void): P
      * @tc.desc     testSearchTextAlign_static_12
      * @tc.level    Level.LEVEL0
      */
-it('testSearchTextAlign_static_12', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSearchTextAlign_static_12', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSearchTextAlign12';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
       let strJson = inspector.getInspectorByKey('search');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Search');
-      expect(obj.getElement('$attrs').getElement('textAlign')).assertEqual("TextAlign.Start");
+      expect(obj.getString('$type')).assertEqual('Search');
+      expect(obj.getElement('$attrs').getString('textAlign')).assertEqual("TextAlign.Start");
 
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "typeValue": 12,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 2501,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
-      expect(objNew.getElement('$attrs').getElement('textAlign')).assertEqual("TextAlign.Center");
-      expect(objNew.getElement('$type')).assertEqual('Search');
+      expect(objNew.getElement('$attrs').getString('textAlign')).assertEqual("TextAlign.Center");
+      expect(objNew.getString('$type')).assertEqual('Search');
+
       console.info('[' + tagName + '] END ===========================');
       done();
     });

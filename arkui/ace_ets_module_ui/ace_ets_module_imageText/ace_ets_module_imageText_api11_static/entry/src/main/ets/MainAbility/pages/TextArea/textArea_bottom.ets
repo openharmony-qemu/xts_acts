@@ -49,7 +49,6 @@ struct textArea_bottom {
 
   onPageShow() {
     console.info('textArea_bottom onPageShow')
- 
     AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager)
   }
 

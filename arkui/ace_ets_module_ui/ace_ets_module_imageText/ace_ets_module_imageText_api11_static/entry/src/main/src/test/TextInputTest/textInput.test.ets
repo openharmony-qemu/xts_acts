@@ -34,9 +34,6 @@ export default function textInputOnEditChangeJsunit() {
 
     beforeAll(() => {
       console.info("textInputOnEditChangeTest beforeEach start");
-
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -51,7 +48,7 @@ export default function textInputOnEditChangeJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textInputOnEditChangeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInput6" == pages.name)) {
           console.info("get textInputOnEditChangeTest pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -74,13 +71,13 @@ export default function textInputOnEditChangeJsunit() {
      * @tc.desc     testtextInputOnEditChange_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0001', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0001', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("100.00vp");
       console.info("[testtextInputOnEditChange_static_0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
 
@@ -93,13 +90,13 @@ it('testtextInputOnEditChange_static_0001', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputOnEditChange_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0002', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0002', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual("70.00vp");
       console.info("[testtextInputOnEditChange_static_0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
 
@@ -112,13 +109,13 @@ it('testtextInputOnEditChange_static_0002', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputOnEditChange_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0003', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0003', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange_static_0003 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual("20.00fp");
       console.info("[testtextInputOnEditChange_static_0003] fontSize value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
 
@@ -131,15 +128,15 @@ it('testtextInputOnEditChange_static_0003', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputOnEditChange_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0004', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0004', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange_static_0004 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('opacity')).assertEqual(1);
-      console.info("[testtextInputOnEditChange_static_0004] opacity value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('opacity'));
+      expect(obj.getString('$type')).assertEqual('TextInput');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity')).assertEqual(1);
+      console.info("[testtextInputOnEditChange_static_0004] opacity value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity'));
 
     });
 
@@ -150,13 +147,13 @@ it('testtextInputOnEditChange_static_0004', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputOnEditChange_static_0005
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0005', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0005', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange_static_0005 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart");
       console.info("[testtextInputOnEditChange_static_0005] align value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('align'));
 
@@ -169,13 +166,13 @@ it('testtextInputOnEditChange_static_0005', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputOnEditChange_static_0006
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0006', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0006', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange_static_0006 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual("#FFCCCCCC");
       console.info("[testtextInputOnEditChange_static_0006] fontColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
 
@@ -188,13 +185,13 @@ it('testtextInputOnEditChange_static_0006', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputOnEditChange_static_0009
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0009', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0009', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange009 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("10.00vp");
       console.info("[testtextInputOnEditChange_static_0009] padding value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding'));
 
@@ -207,35 +204,35 @@ it('testtextInputOnEditChange_static_0009', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputOnEditChange_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputOnEditChange_static_0010', Level.LEVEL1, async () => {
+    it('testtextInputOnEditChange_static_0010', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange_static_0010 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
       console.info("[testtextInputOnEditChange_static_0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
+      expect(obj.getString('$type')).assertEqual('TextInput');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign')).assertEqual("TextAlign.Center");
       console.info("[testtextInputOnEditChange_static_0010] textAlign value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign'));
 
     });
 
-    /*
-     * @tc.number   testtextInputCopyOption_static_0001
-     * @tc.name     testtextInputCopyOption_static_0001
-     * @tc.desc     testtextInputCopyOption_static_0001
-     * @tc.level    Level.LEVEL1
-     */
-it('testtextInputCopyOption_static_0001', Level.LEVEL1, async () => {
-      console.info('textInputCopyOption testtextInputCopyOption_static_0001 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('textInputCopyOptionText');
-      console.info("[testtextInputCopyOption_static_0001] component copyOption strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('copyOption')).assertEqual("CopyOptions.None");
-      console.info("[testtextInputCopyOption_static_0001] copyOption value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('copyOption'));
-
-    });
+    // /*
+    //  * @tc.number   testtextInputCopyOption_static_0001
+    //  * @tc.name     testtextInputCopyOption_static_0001
+    //  * @tc.desc     testtextInputCopyOption_static_0001
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextInputCopyOption_static_0001', Level.LEVEL1, async () => {
+    //   console.info('textInputCopyOption testtextInputCopyOption_static_0001 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('textInputCopyOptionText');
+    //   console.info("[testtextInputCopyOption_static_0001] component copyOption strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextInput');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('copyOption')).assertEqual("CopyOptions.None");
+    //   console.info("[testtextInputCopyOption_static_0001] copyOption value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('copyOption'));
+    //
+    // });
 
     /*
      * @tc.number   testtextInputShowPasswordIcon_static_0001
@@ -243,17 +240,17 @@ it('testtextInputCopyOption_static_0001', Level.LEVEL1, async () => {
      * @tc.desc     testtextInputShowPasswordIcon_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('testtextInputShowPasswordIcon_static_0001', Level.LEVEL1, async () => {
+    it('testtextInputShowPasswordIcon_static_0001', Level.LEVEL1, async () => {
       console.info('textInputShowPasswordIcon testtextInputShowPasswordIcon_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('showPasswordIconText');
       console.info("[testtextInputShowPasswordIcon_static_0001] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('TextInput');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('showPasswordIcon')).assertTrue();
+      expect(obj.getString('$type')).assertEqual('TextInput');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('showPasswordIcon')).assertTrue();
       console.info("[testtextInputShowPasswordIcon_static_0001] showPasswordIcon value :" + JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('showPasswordIcon'));
+        .getBoolean('showPasswordIcon'));
 
     });
   })

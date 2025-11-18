@@ -13,9 +13,25 @@
  * limitations under the License.
  */
 import font from '@ohos.font';
-import { Entry, Component, Column, Text, Button, Margin, ClickEvent, TextDataDetectorType, TextAlign } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import {
+  Entry,
+  Component,
+  Column,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  TextDecorationType,
+  Margin,
+  ClickEvent,
+  TextDataDetectorType,
+  Date,
+  TextAlign,
+  Button,
+} from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -35,7 +51,7 @@ struct UIfont {
         .height('6%')
         .margin(10)
         .id('UIfont_fontDir')
-        .onClick((e: ClickEvent)=>{
+        .onClick((e:ClickEvent)=>{
           let fontConfig = font.getUIFontConfig();
           console.log("font-dir -----------" + String(fontConfig.fontDir.length));
           if (fontConfig.fontDir.length) {
@@ -48,7 +64,7 @@ struct UIfont {
         .height('6%')
         .margin(10)
         .id('UIfont_generic')
-        .onClick((e: ClickEvent)=>{
+        .onClick((e:ClickEvent)=>{
           let fontConfig = font.getUIFontConfig();
           if (fontConfig.generic.length) {
             this.text = '3'
@@ -60,7 +76,7 @@ struct UIfont {
         .height('6%')
         .margin(10)
         .id('UIfont_fallbackGroups')
-        .onClick((e: ClickEvent)=>{
+        .onClick((e:ClickEvent)=>{
           let fontConfig = font.getUIFontConfig();
           console.log("fallback------------" + String(fontConfig.fallbackGroups.length));
           if (fontConfig.fallbackGroups.length) {
@@ -73,7 +89,7 @@ struct UIfont {
         .height('6%')
         .margin(10)
         .id('UIfont_alias')
-        .onClick((e: ClickEvent)=>{
+        .onClick((e:ClickEvent)=>{
           let fontConfig = font.getUIFontConfig();
           for (let i = 0; i < fontConfig.generic.length; i ++){
             console.log("family:" + fontConfig.generic[i].family);

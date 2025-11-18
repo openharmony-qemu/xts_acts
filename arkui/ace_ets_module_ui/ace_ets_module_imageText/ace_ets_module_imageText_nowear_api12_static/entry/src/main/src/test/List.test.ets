@@ -15,7 +15,7 @@
 
 import textAreaInputTest from './TextArea/textAreaInputTest.test';
 import styledStringChange from './Text/styledStringChange.test'
-import editMeunOptionsTest from './Text/editMeunOptions.test'
+import editMeunOptionsTest from './Text/EditMenuOptions.test'
 import setTextSelection from './TextArea/setTextSelection.test'
 import TextDeleteDirectionTest from "./TextArea/TextDeleteDirectionTest.test";
 import searchTest from './Search/searchTest.test';
@@ -43,12 +43,12 @@ import RichEditorMenuPolicyJsunit from './RichEditorEnhance01/RichEditorMenuPoli
 
 
 export default function testsuite() {
-  
-  styledStringChange();
+  styledStringChange() // pass
+  editMeunOptionsTest();
   setTextSelection();
   textAreaInputTest();
   TextDeleteDirectionTest();
-  searchTest();
+  searchTest(); // pass
   onDidIMEInputTest();
   onSelectionChange1();
   onSelectionChange4();
@@ -63,7 +63,7 @@ export default function testsuite() {
   RichEditorApi5();
   RichEditorApi1();
   RichEditor1();
-  RichEditor3();
+  RichEditor3() // app died 4
   RichEditor4();
   RichEditor5();
   RichEditor6();

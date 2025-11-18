@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point} from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -37,7 +37,7 @@ export default function RichEditor3() {
       console.info("RichEditor3 beforeEach start");
 
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
@@ -52,11 +52,11 @@ export default function RichEditor3() {
         console.info("get RichEditor3 state pages:" + JSON.stringify(pages));
         if (!("RichEditor3" == pages.name)) {
           console.info("get RichEditor3 pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           let driver = Driver.create();
           await driver.delayMs(2000)
-          
+          // console.info("push RichEditor3 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditor3 page error:" + err);
@@ -69,33 +69,31 @@ export default function RichEditor3() {
       console.info("RichEditor3 after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   RichEditor3_static_0100
      * @tc.name     RichEditor3_static_0100
      * @tc.desc     RichEditor3_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('RichEditor3_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      
+    it('RichEditor3_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Test stop
       console.info('[RichEditor3_0100] START');
       let driver = Driver.create();
       let RichEditorGetAttribute = await driver.findComponent(ON.id("RichEditorGetAttribute"));
       await CommonFunc.sleep(1000);
       await (RichEditorGetAttribute?.inputText('1') as Promise<void>)
       await CommonFunc.sleep(500);
-
-
-        let PSTextAlign = await driver.findComponent(ON.id("PSTextAlign"));
-        await CommonFunc.sleep(500);
-        let PSLeadingMargin = await driver.findComponent(ON.id("PSLeadingMargin"));
-        await CommonFunc.sleep(500);
-        let PSTextAlignText = await (PSTextAlign?.getText() as Promise<String>)
-        await CommonFunc.sleep(500);
-        let PSLeadingMarginText = await (PSLeadingMargin?.getText() as Promise<String>)
-        await CommonFunc.sleep(500);
-        expect(Boolean(PSTextAlignText)).assertTrue()
-        expect(Boolean(PSLeadingMarginText)).assertTrue()
-
+      let PSTextAlign = await driver.findComponent(ON.id("PSTextAlign"));
+      await CommonFunc.sleep(500);
+      let PSLeadingMargin = await driver.findComponent(ON.id("PSLeadingMargin"));
+      await CommonFunc.sleep(500);
+      let PSTextAlignText = await (PSTextAlign?.getText() as Promise<String>)
+      await CommonFunc.sleep(500);
+      let PSLeadingMarginText = await (PSLeadingMargin?.getText() as Promise<String>)
+      await CommonFunc.sleep(500);
+      expect(Boolean(PSTextAlignText)).assertTrue()
+      expect(Boolean(PSLeadingMarginText)).assertTrue()
       await (RichEditorGetAttribute?.clearText() as Promise<void>)
       await CommonFunc.sleep(500);
       console.info('[RichEditor3_0100] END');
@@ -103,61 +101,71 @@ it('RichEditor3_static_0100', Level.LEVEL2, async (done: () => void): Promise<vo
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditor3_static_0200
      * @tc.name     RichEditor3_static_0200
      * @tc.desc     RichEditor3_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('RichEditor3_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      
+    it('RichEditor3_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Test stop
       console.info('[RichEditor3_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let setContent = await driver.findComponent(ON.id("setContent"));
       await CommonFunc.sleep(500);
       await (setContent?.click() as Promise<void>)
+      console.log("========================== setContent")
+
       await CommonFunc.sleep(500);
       let getSPans = await driver.findComponent(ON.id("getSPans"));
       await CommonFunc.sleep(500);
       await (getSPans?.click() as Promise<void>)
+      console.log("========================== setContent")
       await CommonFunc.sleep(500);
 
 
-        let PSTextAlign = await driver.findComponent(ON.id("PSTextAlign"));
-        await CommonFunc.sleep(500);
-        let PSLeadingMargin = await driver.findComponent(ON.id("PSLeadingMargin"));
-        await CommonFunc.sleep(500);
-        let LSBorderRadius = await driver.findComponent(ON.id("LSBorderRadius"));
-        await CommonFunc.sleep(500);
-        let LSMargin = await driver.findComponent(ON.id("LSMargin"));
-        await CommonFunc.sleep(500);
-        let PSTextAlignText = await (PSTextAlign?.getText() as Promise<String>)
-        await CommonFunc.sleep(500);
-        let PSLeadingMarginText = await (PSLeadingMargin?.getText() as Promise<String>)
-        await CommonFunc.sleep(500);
-        let LSBorderRadiusText = await (LSBorderRadius?.getText() as Promise<String>)
-        await CommonFunc.sleep(500);
-        let LSMarginText = await (LSMargin?.getText() as Promise<String>)
-        await CommonFunc.sleep(500);
-        expect(Boolean(PSTextAlignText)).assertTrue()
-        expect(Boolean(PSLeadingMarginText)).assertTrue()
-        expect(Boolean(LSBorderRadiusText)).assertTrue()
-        expect(Boolean(LSMarginText)).assertTrue()
+      let PSTextAlign = await driver.findComponent(ON.id("PSTextAlign"));
+      await CommonFunc.sleep(500);
+      let PSLeadingMargin = await driver.findComponent(ON.id("PSLeadingMargin"));
+      await CommonFunc.sleep(500);
+      let LSBorderRadius = await driver.findComponent(ON.id("LSBorderRadius"));
+      await CommonFunc.sleep(500);
+      let LSMargin = await driver.findComponent(ON.id("LSMargin"));
+      await CommonFunc.sleep(500);
+      console.log("========================== PSTextAlign?.getText()")
+      let PSTextAlignText = await (PSTextAlign?.getText() as Promise<String>)
+      console.log("========================== PSTextAlign?.getText()")
+      await CommonFunc.sleep(500);
+      let PSLeadingMarginText = await (PSLeadingMargin?.getText() as Promise<String>)
+      console.log("========================== PSLeadingMargin?.getText()")
+      await CommonFunc.sleep(500);
+      let LSBorderRadiusText = await (LSBorderRadius?.getText() as Promise<String>)
+      console.log("========================== LSBorderRadius?.getText()")
+      await CommonFunc.sleep(500);
+      let LSMarginText = await (LSMargin?.getText() as Promise<String>)
+      console.log("========================== LSMargin?.getText()")
+      await CommonFunc.sleep(500);
+      expect(Boolean(PSTextAlignText)).assertTrue()
+      expect(Boolean(PSLeadingMarginText)).assertTrue()
+      expect(Boolean(LSBorderRadiusText)).assertTrue()
+      expect(Boolean(LSMarginText)).assertTrue()
 
       console.info('[RichEditor3_0200] END');
       done();
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditor3_static_0300
      * @tc.name     RichEditor3_static_0300
      * @tc.desc     RichEditor3_static_0300
      * @tc.level    Level.LEVEL2
      */
-it('RichEditor3_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      
+    it('RichEditor3_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Test stop
       console.info('[RichEditor3_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -168,7 +176,7 @@ it('RichEditor3_static_0300', Level.LEVEL2, async (done: () => void): Promise<vo
       await CommonFunc.sleep(500);
       await (setContent?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      
+      // doubleClick
       let richEditor = await driver.findComponent(ON.id('RichEditorGetAttribute'));
       await CommonFunc.sleep(500);
       let centerPoint = await (richEditor?.getBoundsCenter() as Promise<Point>);
@@ -209,14 +217,15 @@ it('RichEditor3_static_0300', Level.LEVEL2, async (done: () => void): Promise<vo
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditor3_static_0400
      * @tc.name     RichEditor3_static_0400
      * @tc.desc     RichEditor3_static_0400
      * @tc.level    Level.LEVEL2
      */
-it('RichEditor3_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      
+    it('RichEditor3_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Test stop
       console.info('[RichEditor3_0400] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -276,14 +285,15 @@ it('RichEditor3_static_0400', Level.LEVEL2, async (done: () => void): Promise<vo
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditor3_static_0500
      * @tc.name     RichEditor3_static_0500
      * @tc.desc     RichEditor3_static_0500
      * @tc.level    Level.LEVEL2
      */
-it('RichEditor3_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      
+    it('RichEditor3_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Test stop
       console.info('[RichEditor3_0500] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);

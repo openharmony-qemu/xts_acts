@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,50 +12,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import ImageSpanVisibilityTest from './ImageSpanTest/ImageSpanVisibility.test';
-import APITextBackgroundStyleJsunit from './ContainerSpanTest/APITextBackgroundStyleJsunit.test';
-import ContainerSpanModifierTest from './ContainerSpanTest/ContainerSpanModifier.test';
+import textAreaInputTest from './TextAreaTest/TextAreaInputTest01.test';
 import marqueeJsunit from './marqueeTest/MarqueeJsunit.test';
-import marqueeUIJsunit from './marqueeTest/marqueeUIJsunit.test';
-import search_bottom from './SearchTest/search_bottom.test';
-import search_caret from './SearchTest/search_caret.test';
-import search_maxLength from './SearchTest/search_maxLength.test';
-import search_maxLength2 from './SearchTest/search_maxLength2.test';
-import search_top from './SearchTest/search_top.test';
-import searchTest from './SearchTest/SearchJsunit1.test';
-import SearchModifierTest from "./SearchTest/SearchModifier.test";
-import search from './SearchTest/SearchTest.test';
-import SearchTypeTest from "./SearchTest/SearchType.test";
-import span3Jsunit from './spanTest/Span3Jsunit.test';
-import spanApi1 from './spanTest/spanApi/spanApi1.test';
-import spanJsunit from './spanTest/SpanJsunit.test';
-import spanUIJsunit from './spanTest/spanUIJsunit.test';
-import SymbolGlyphFontWeightTest from "./SymbolGlyphTest/fontWeight.test";
-import SXSymbolGlyphSINGLE01Jsunit from './SymbolGlyphTest/SXSymbolGlyphSINGLE01Jsunit.test';
-import symbolGlyphApi1 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi1.test';
-import symbolGlyphApi2 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi2.test';
-import symbolGlyphApi3 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi3.test';
-import symbolGlyphApi4 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi4.test';
-import symbolGlyphApi5 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi5.test';
-import symbolSpanApi1 from './symbolSpanTest/symbolSpanApi/symbolSpanApi1.test';
-import symbolSpanApi2Test from './symbolSpanTest/symbolSpanApi/symbolSpanApi2.test';
-import SXvalueResourceJsunit from './RichEditorTest/SXvalueResourceJsunit.test';
-import textAreaInputTest from './TextAreaTest/textAreaInputTest.test';
 import textStyleJsunit from './textTest/TextStyleJsunit.test';
 import ImageTextTest from './textTest/ImageText.test';
 import TextAreaCallbackTest from './TextAreaTest/TextAreaCallback.test';
 import TextAreaSelectTest from './TextAreaTest/TextAreaSelect.test';
-import Image_QRCode_Api from './textTest/Image_QRCode_Api.test';
+import Image_QRCode_Api from './textTest/ImageQRCodeApi.test';
+import RichEditorApi from './RichEditorTest/RichEditorApi.test';
+import APIgetUIFontConfigJsunit from './fontTest/APIgetUIFontConfigJsunit.test';
+import APITextBackgroundStyleJsunit from './ContainerSpanTest/APITextBackgroundStyleJsunit.test'
+import SXrenderingStrategyJsunit from './RichEditorTest/SXrenderingStrategyJsunit.test';
+import SXsymbolSpanStyleJsunit from './RichEditorTest/SXsymbolSpanStyleJsunit.test';
+import SXsymbolStyleJsunit from './RichEditorTest/SXsymbolStyleJsunit.test';
+import SXvalueResourceJsunit from './RichEditorTest/SXvalueResourceJsunit.test'
+import SXSymbolGlyphSINGLE01Jsunit from './SymbolGlyphTest/SXSymbolGlyphSINGLE01Jsunit.test'
 import textDataDataDetectorConfig from './textTest/textDataDataDetectorConfig.test'
+import richEditorApi2 from './RichEditorTest/richEditorApi/richEditorApi2.test'
+import richEditorApi3 from './RichEditorTest/richEditorApi/richEditorApi3.test'
+import RichEditorTest from './RichEditorTest/RichEditor/RichEditor.test';
+import spanApi1 from './spanTest/spanApi/spanApi1.test';
+import symbolGlyphApi1 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi1.test'
+import symbolGlyphApi2 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi2.test'
+import symbolGlyphApi3 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi3.test'
+import symbolGlyphApi4 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi4.test'
+import symbolGlyphApi5 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi5.test'
+import symbolSpanApi2Test from './symbolSpanTest/symbolSpanApi/symbolSpanApi2.test'
+import symbolSpanApi1 from './symbolSpanTest/symbolSpanApi/symbolSpanApi1.test'
 import TextStyle from './textTest/TextApi/TextStyle.test';
 import tabsDemo from './textTest/TextApi/tabsDemo.test';
 import TextSelectionMenu from './textTest/TextApi/TextSelectionMenu.test';
 import textInputApi1 from './TextInputTest/textInputApi/textInputApi1.test'
 import textInputApiTest from './TextInputTest/textInputApi/textinputkeyNewLine.test'
+import UIfont from './fontTest/UIfont/UIfont.test';
 import TextfieldMultiTest from './textTest/TextfieldMulti.test';
 import TextfieldOtherTest from './textTest/TextfieldOther.test';
 import TextfieldSingleTest from './textTest/TextfieldSingle.test';
+import richEditorApi4 from './RichEditorTest/richEditorApi/richEditorApi4.test';
+import richEditorApi5 from './RichEditorTest/richEditorApi/richEditorApi5.test';
+import richEditorApi6 from './RichEditorTest/richEditorApi/richEditorApi6.test';
+import richEditorApi7 from './RichEditorTest/richEditorApi/richEditorApi7.test';
+import richEditorApi8 from './RichEditorTest/richEditorApi/richEditorApi8.test';
+import search from './SearchTest/SearchTest.test';
 import CurveTest from './textTest/CurveJsunit.test';
 import backgroundAndSizeSettingJsunit from './textTest/BackgroundAndSizeSettingJsunit.test';
 import borderJsunit from './textTest/BorderJsunit.test';
@@ -63,160 +61,172 @@ import textAreaJsunit from './TextAreaTest/TextAreaJsunit.test';
 import textAreaUxTest  from './TextAreaTest/textareaux.test';
 import textInputJsunit from './TextInputTest/TextInputJsunit.test';
 import propJsunit from './textTest/PropJsunit.test';
+import spanJsunit from './spanTest/SpanJsunit.test';
 import textJsunit from './textTest/TextJsunit.test';
-import outline from './textTest/outline.test';
-import stageFontTest from './textTest/stageFont.test';
-import stageMediaquery from './textTest/stageMediaquery.test';
-import textInputTest from './TextInputTest/textinput'
-import textArea_top from './TextAreaTest/textArea_top.test'
-import textArea_bottom from './TextAreaTest/textArea_bottom.test'
-import textInput_caret from './TextInputTest/textInput_caret.test';
+import outline from './textTest/Outline1.test';
+import stageFontTest from './textTest/StageFont1.test';
+import stageMediaquery from './textTest/StageMediaquery01.test';
+import textInputTest from './TextInputTest/TextInput01'
+import search_caret from './SearchTest/SearchCaret.test';
+import search_maxLength from './SearchTest/SearchMaxLength.test';
+import search_maxLength2 from './SearchTest/SearchMaxLength2.test';
+import search_top from './SearchTest/SearchTop.test'
+import search_bottom from './SearchTest/SearchBottom.test'
+import textArea_top from './TextAreaTest/TextAreaTop.test'
+import textArea_bottom from './TextAreaTest/TextAreaBottom.test'
+import textAenEnabledJsunit from './TextAreaTest/textAenEnabledJsunit.test';
+import textInput_caret from './TextInputTest/TextInputCaret.test';
 import textOneJsunit from './textTest/textOneJsunit.test';
 import textTwoJsunit from './textTest/textTwoJsunit.test';
 import textEnabledJsunit from './textTest/textEnabledJsunit.test';
 import textChangeEnabledJsunit from './textTest/textChangeEnabledJsunit.test';
+import marqueeUIJsunit from './marqueeTest/marqueeUIJsunit.test';
+import spanUIJsunit from './spanTest/SpanUIJsunit01.test';
+import fontJsunit from './fontTest/fontJsunit.test';
 import textClockJsunit from './textTest/TextClockJsunit.test';
 import textTimerJsunit from './textTest/TextTimerJsunit.test';
 import unitsModuleNameJsunit from './textTest/units.test';
-import appVersionCodeJsunit from './textTest/app.test';
-import colorEnumJsunit from './textTest/color.test';
-import copyOptionJsunit from './textTest/copyOption.test';
+import appVersionCodeJsunit from './textTest/App01.test';
+import colorEnumJsunit from './textTest/Color01.test';
+import copyOptionJsunit from './textTest/CopyOption01.test';
 import TextStyle2 from './textTest/TextApi/TextStyle2.test';
-import textMinFontSizeJsunit from './textTest/text.test';
-import textAreaOnCutJsunit from './TextAreaTest/textArea.test';
+import textMinFontSizeJsunit from './textTest/Text1.test';
+import textAreaOnCutJsunit from './TextAreaTest/TextArea01.test';
 import textInputOnEditChangeJsunit from './TextInputTest/textInput.test';
 import text3Jsunit from './textTest/Text3Jsunit.test';
+import span3Jsunit from './spanTest/Span3Jsunit.test';
+import ActsRichEditorTest from './RichEditorTest/RichEditor/Richeditor01.test';
 import textAreaJsunit3 from './TextAreaTest/TextAreaJsunit3.test';
 import textInputJsunit3 from './TextInputTest/TextInputJsunit3.test';
 import textObscuredTest from './textTest/textObscuredTest.test';
 import textSpanFontTest from './textTest/textSpanFont.test';
 import textAreaOnCaretAndKeyboardTest from './TextAreaTest/textAreaOnCaretAndKeyboard.test';
+import richEditorTest from './RichEditorTest/RichEditorJsunit.test';
 import textTextCaseTest from './textTest/textTextCase.test';
 import textTextDecorationTest from './textTest/textTextDecoration.test';
+import searchTest from './SearchTest/SearchJsunit1.test';
 import TextAreaTypeTest from "./TextAreaTest/TextAreaType.test";
+import SearchTypeTest from "./SearchTest/SearchType.test";
+import ImageSpanVisibilityTest from "./ImageSpanTest/ImageSpanVisibility.test";
 import showCounterTest from './TextInputTest/ShowCounter.test';
+import UIFontAliasInfo from './fontTest/UIFontAliasInfo.test'
 import measureOptionsTest from './textTest/measureOptionsTest.test';
+import ContainerSpanModifierTest from './ContainerSpanTest/ContainerSpanModifier.test'
+import SearchModifierTest from "./SearchTest/SearchModifier.test";
+import SymbolGlyphFontWeightTest from "./SymbolGlyphTest/FontWeight01.test";
 import SpanTextShadowTest from './textTest/SpanTextShadowTest.test';
-import RichEditorTest from './RichEditorTest/RichEditor/RichEditor.test';
-import ActsRichEditorTest from './RichEditorTest/RichEditor/Richeditor01.test';
-import richEditorApi2 from './RichEditorTest/richEditorApi/richEditorApi2.test'
-import richEditorApi3 from './RichEditorTest/richEditorApi/richEditorApi3.test'
-import richEditorApi4 from './RichEditorTest/richEditorApi/richEditorApi4.test';
-import richEditorApi5 from './RichEditorTest/richEditorApi/richEditorApi5.test';
-import richEditorApi6 from './RichEditorTest/richEditorApi/richEditorApi6.test';
-import richEditorApi7 from './RichEditorTest/richEditorApi/richEditorApi7.test';
-import richEditorApi8 from './RichEditorTest/richEditorApi/richEditorApi8.test';
-import RichEditorApi from './RichEditorTest/RichEditorApi.test';
-import richEditorTest from './RichEditorTest/RichEditorJsunit.test';
-import SXrenderingStrategyJsunit from './RichEditorTest/SXrenderingStrategyJsunit.test';
-import SXsymbolSpanStyleJsunit from './RichEditorTest/SXsymbolSpanStyleJsunit.test';
-import SXsymbolStyleJsunit from './RichEditorTest/SXsymbolStyleJsunit.test';
-import UIfont from './fontTest/UIfont/UIfont.test';
-import APIgetUIFontConfigJsunit from './fontTest/APIgetUIFontConfigJsunit.test';
-import fontJsunit from './fontTest/fontJsunit.test';
-import UIFontAliasInfo from './fontTest/UIFontAliasInfo.test';
-
-
 
 export default function testsuite() {
-    ImageSpanVisibilityTest();
-    APITextBackgroundStyleJsunit();
-    ContainerSpanModifierTest();
-    marqueeJsunit();
-    marqueeUIJsunit();
-    search_bottom();
-    search_caret();
-    search_top();
-    search_maxLength();
-    search_maxLength2();
-    searchTest();
-    SearchModifierTest();
-    search();
-    SearchTypeTest();
-    span3Jsunit();
-    spanApi1();
-    spanJsunit();
-    spanUIJsunit();
-    SymbolGlyphFontWeightTest();
-    SXSymbolGlyphSINGLE01Jsunit();
-    symbolGlyphApi1();
-    symbolGlyphApi2();
-    symbolGlyphApi3();
-    symbolGlyphApi4();
-    symbolGlyphApi5();
-    symbolSpanApi1();
-    symbolSpanApi2Test();
-    SXvalueResourceJsunit();
-    tabsDemo();
-    TextSelectionMenu();
-    TextStyle();
-    TextStyle2();
-    appVersionCodeJsunit();
-    backgroundAndSizeSettingJsunit();
-    borderJsunit();
-    colorEnumJsunit();
-    copyOptionJsunit();
-    CurveTest();
-    Image_QRCode_Api();
-    ImageTextTest();
-    measureOptionsTest();
-    outline();
-    propJsunit();
-    stageFontTest();
-    stageMediaquery();
-    textMinFontSizeJsunit();
-    text3Jsunit();
-    textChangeEnabledJsunit();
-    textClockJsunit();
-    textDataDataDetectorConfig();
-    textEnabledJsunit();
-    TextfieldMultiTest();
-    TextfieldOtherTest();
-    TextfieldSingleTest();
-    textJsunit();
-    textObscuredTest();
-    textOneJsunit();
-    textSpanFontTest();
-    textStyleJsunit();
-    textTextCaseTest();
-    textTextDecorationTest();
-    textTwoJsunit();
-    unitsModuleNameJsunit();
-    textArea_bottom();
-    textAreaOnCutJsunit();
-    textArea_top();
-    TextAreaCallbackTest();
-    textAreaInputTest();
-    textAreaJsunit();
-    textAreaJsunit3();
-    textAreaOnCaretAndKeyboardTest();
-    TextAreaSelectTest();
+    spanUIJsunit() // pass 7
+    ActsRichEditorTest(); // pass 15,其余用例非法场景
+    textAreaInputTest() // pass 1
+    stageFontTest(); // pass 5
+    stageMediaquery(); // pass 13
+    richEditorApi4(); // 之前问题已解决pass 11.08 fail， 1 个用例 JSON.stringify 相关
+    richEditorApi5(); // pass 1
+    richEditorApi6(); // pass 1
+    richEditorApi7(); // pass 1
+    richEditorApi8(); // pass 1
+    search(); // pass 96
+    textStyleJsunit(); // pass 17
+    marqueeJsunit(); // pass 3
+    ImageTextTest(); //pass 7
+    TextAreaCallbackTest(); //pass 1
+    Image_QRCode_Api(); // pass 1
+    RichEditorApi(); // pass2 fail 2 JSON.stringify相关
+
+
+    APIgetUIFontConfigJsunit(); // pass 1
+    TextAreaSelectTest(); // pass 10
+    APITextBackgroundStyleJsunit(); // pass 1
+    SXrenderingStrategyJsunit(); // pass 1
+    SXsymbolSpanStyleJsunit(); // pass 1
+    SXsymbolStyleJsunit(); // pass 1
+    SXvalueResourceJsunit(); // pass 1
+    SXSymbolGlyphSINGLE01Jsunit(); // pass 1
+    textDataDataDetectorConfig() // pass 4
+    richEditorApi2()
+    richEditorApi3() // fail 1  json.stringify
+    RichEditorTest() // pass 3
+    spanApi1() // pass 1
+    symbolGlyphApi1() // pass 1
+    symbolGlyphApi2() // pass 1
+    symbolGlyphApi3() // pass 1
+    symbolGlyphApi4() // pass 1
+    symbolGlyphApi5() // pass 1
+    symbolSpanApi2Test() // pass 2
+    symbolSpanApi1() // pass 1
+    TextStyle() // pass 8
+    tabsDemo() // pass 1
+    TextSelectionMenu() // 11.08 fail 2 uitest
+    textInputApi1() // pass 1
+    textInputApiTest() // pass 1
+
+
+
+    UIfont() // pass 4
+    TextfieldOtherTest() // pass 4
+    TextfieldSingleTest() // pass 3
+    TextfieldMultiTest() // pass 3 fail 1
+    CurveTest() // pass 4
+    backgroundAndSizeSettingJsunit() // pass 9
+    borderJsunit(); // pass 3
+    textAreaJsunit(); // pass 2  fail 1
+    textInputJsunit(); //pass 18 fail 2
+    propJsunit(); // pass 2
+    spanJsunit() // pass 3
+    textJsunit() // fail 4 Json.stringify() https://gitcode.com/m0_73853300/docs/blob/master/zh-cn/application-dev/reference/apis-arkts/js-apis-json.md#jsonstringify
+    outline() // pass 4
+    textAreaUxTest(); // pass 40
+    search_caret(); // pass 5
+    search_maxLength();// pass 2
+    search_maxLength2(); // pass 2
+    search_top(); // pass 1
+    search_bottom();// pass 1
+    textArea_top(); // pass 3
+    textAenEnabledJsunit(); // pass 2
+    textInput_caret(); // fail 1 uitest
+
+
+    textOneJsunit(); // 4 pass
+    textTwoJsunit();  // pass 5
+    textEnabledJsunit(); // pass 6
+    textChangeEnabledJsunit(); // pass 2
+    marqueeUIJsunit();  // pass7 fail 1 marqueeUIJsunit_static_0600 fail 11.08
+    fontJsunit(); // pass 6
+    textClockJsunit() // pass 6
+    textTimerJsunit() // pass 3
+    appVersionCodeJsunit(); // 11.6sdk app died
+    colorEnumJsunit(); // pass 1
+    copyOptionJsunit(); // pass 2
+    TextStyle2() // pass 1
+    unitsModuleNameJsunit() // pass 4
+    text3Jsunit(); // pass 11
+    span3Jsunit(); // pass 5
+    textMinFontSizeJsunit(); // pass 11
+    textAreaOnCutJsunit(); // pass 7 fail 2 11.08
+    textInputOnEditChangeJsunit(); // pass 9
+    textAreaJsunit3(); // pass 11 fail 2 问题已上报
+    textInputJsunit3();  // pass 11
+    textObscuredTest() // pass 5
+    textSpanFontTest(); // pass 65
+    textArea_bottom(); // pass 3
+    textAreaOnCaretAndKeyboardTest(); // pass 2
+    richEditorTest(); // pass 3
+    textTextCaseTest(); // pass 3
+    textTextDecorationTest(); // pass 5
+    searchTest(); // pass 10
+
+
+    textInputTest()
     TextAreaTypeTest();
-    textAreaUxTest();
-    textTimerJsunit();
-    textInputApi1();
-    textInputApiTest();
-    SpanTextShadowTest();
-    textInputTest();
-    textInputOnEditChangeJsunit();
-    textInput_caret();
-    textInputJsunit();
-    RichEditorTest();
-    ActsRichEditorTest();
-    richEditorApi2();
-    richEditorApi3();
-    richEditorApi4();
-    richEditorApi5();
-    richEditorApi6();
-    richEditorApi7();
-    richEditorApi8();
-    RichEditorApi();
-    richEditorTest();
-    SXrenderingStrategyJsunit();
-    SXsymbolSpanStyleJsunit();
-    SXsymbolStyleJsunit();
-    UIfont();
-    APIgetUIFontConfigJsunit();
-    fontJsunit();
+    SearchTypeTest();
+    ImageSpanVisibilityTest();
+    showCounterTest();
     UIFontAliasInfo();
+    measureOptionsTest();
+    ContainerSpanModifierTest();
+    SearchModifierTest();
+    SymbolGlyphFontWeightTest();
+    SpanTextShadowTest();
 }

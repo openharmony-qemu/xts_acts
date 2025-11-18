@@ -14,7 +14,7 @@
  */
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -52,7 +52,7 @@ export default function setTextSelection() {
             url: "MainAbility/pages/TextArea/setTextSelection"
           })
           await CommonFunc.sleep(2000);
-          
+          //console.info("push setTextSelection page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setTextSelection page error:" + err);
@@ -61,13 +61,14 @@ export default function setTextSelection() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   setTextSelection_static_0100
      * @tc.name     setTextSelection_static_0100
      * @tc.desc     setTextSelection_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('setTextSelection_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('setTextSelection_static_0100', Level.LEVEL1, async (done: ()=>void) => {//AppStorage.setOrCrea("textAreaStart")注释
       console.info('setTextSelection_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -78,19 +79,20 @@ it('setTextSelection_static_0100', Level.LEVEL1, async (done: ()=>void) => {
 
 
         let but = await driver.findComponent(ON.id('but1'));
+        console.log('=========================================== ' + but)
         await CommonFunc.sleep(500);
-        await (but?.click() as Promise<void>);
+        await but!.click()
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textAreaStart')).assertEqual("0");
-        expect('' + AppStorage.get('textAreaEnd')).assertEqual("0");
+        expect("" + AppStorage.get<int>('textAreaStart')).assertEqual("0");
+        expect("" + AppStorage.get<int>('textAreaEnd')).assertEqual("0");
         let textInput = await driver.findComponent(ON.id('textInput'));
         await CommonFunc.sleep(500);
         await (textInput?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        await (but?.click() as Promise<void>);
+        await but!.click()
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textInputStart')).assertEqual("0");
-        expect('' + AppStorage.get('textInputEnd')).assertEqual("0");
+        expect("" + AppStorage.get<int>('textInputStart')).assertEqual("0");
+        expect("" + AppStorage.get<int>('textInputEnd')).assertEqual("0");
 
       AppStorage.delete('textAreaStart');
       AppStorage.delete('textAreaEnd');
@@ -101,13 +103,14 @@ it('setTextSelection_static_0100', Level.LEVEL1, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+/*
      * @tc.number   setTextSelection_static_0200
      * @tc.name     setTextSelection_static_0200
      * @tc.desc     setTextSelection_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('setTextSelection_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('setTextSelection_static_0200', Level.LEVEL1, async (done: ()=>void) => {//AppStorage.setOrCrea("textAreaStart")注释
       console.info('setTextSelection_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -121,16 +124,16 @@ it('setTextSelection_static_0200', Level.LEVEL1, async (done: ()=>void) => {
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textAreaStart')).assertEqual("0");
-        expect('' + AppStorage.get('textAreaEnd')).assertEqual("3");
+        expect('' + AppStorage.get<int>('textAreaStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textAreaEnd')).assertEqual("3");
         let textInput = await driver.findComponent(ON.id('textInput'));
         await CommonFunc.sleep(500);
         await (textInput?.click() as Promise<void>);
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textInputStart')).assertEqual("0");
-        expect('' + AppStorage.get('textInputEnd')).assertEqual("3");
+        expect('' + AppStorage.get<int>('textInputStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textInputEnd')).assertEqual("3");
 
       AppStorage.delete('textAreaStart');
       AppStorage.delete('textAreaEnd');
@@ -141,13 +144,14 @@ it('setTextSelection_static_0200', Level.LEVEL1, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+/*
      * @tc.number   setTextSelection_static_0300
      * @tc.name     setTextSelection_static_0300
      * @tc.desc     setTextSelection_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('setTextSelection_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('setTextSelection_static_0300', Level.LEVEL1, async (done: ()=>void) => {//AppStorage.setOrCrea("textAreaStart")注释
       console.info('setTextSelection_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -161,16 +165,16 @@ it('setTextSelection_static_0300', Level.LEVEL1, async (done: ()=>void) => {
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textAreaStart')).assertEqual("0");
-        expect('' + AppStorage.get('textAreaEnd')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textAreaStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textAreaEnd')).assertEqual("0");
         let textInput = await driver.findComponent(ON.id('textInput'));
         await CommonFunc.sleep(500);
         await (textInput?.click() as Promise<void>);
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textInputStart')).assertEqual("0");
-        expect('' + AppStorage.get('textInputEnd')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textInputStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textInputEnd')).assertEqual("0");
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
         if (AppStorage.get<number>("winLeft") == 0) {
@@ -188,13 +192,14 @@ it('setTextSelection_static_0300', Level.LEVEL1, async (done: ()=>void) => {
 
 
     
-    /*
+    
+/*
      * @tc.number   setTextSelection_static_0400
      * @tc.name     setTextSelection_static_0400
      * @tc.desc     setTextSelection_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('setTextSelection_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('setTextSelection_static_0400', Level.LEVEL1, async (done: ()=>void) => {//AppStorage.setOrCrea("textAreaStart")注释
       console.info('setTextSelection_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -208,16 +213,16 @@ it('setTextSelection_static_0400', Level.LEVEL1, async (done: ()=>void) => {
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textAreaStart')).assertEqual("0");
-        expect('' + AppStorage.get('textAreaEnd')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textAreaStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textAreaEnd')).assertEqual("0");
         let textInput = await driver.findComponent(ON.id('textInput'));
         await CommonFunc.sleep(500);
         await (textInput?.click() as Promise<void>);
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textInputStart')).assertEqual("0");
-        expect('' + AppStorage.get('textInputEnd')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textInputStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textInputEnd')).assertEqual("0");
 
       AppStorage.delete('textAreaStart');
       AppStorage.delete('textAreaEnd');
@@ -228,13 +233,14 @@ it('setTextSelection_static_0400', Level.LEVEL1, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+/*
      * @tc.number   setTextSelection_static_0500
      * @tc.name     setTextSelection_static_0500
      * @tc.desc     setTextSelection_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('setTextSelection_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+    it('setTextSelection_static_0500', Level.LEVEL1, async (done: ()=>void) => {//AppStorage.setOrCrea("textAreaStart")注释
       console.info('setTextSelection_0500 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -248,16 +254,16 @@ it('setTextSelection_static_0500', Level.LEVEL1, async (done: ()=>void) => {
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textAreaStart')).assertEqual("0");
-        expect('' + AppStorage.get('textAreaEnd')).assertEqual("4");
+        expect('' + AppStorage.get<int>('textAreaStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textAreaEnd')).assertEqual("4");
         let textInput = await driver.findComponent(ON.id('textInput'));
         await CommonFunc.sleep(500);
         await (textInput?.click() as Promise<void>);
         await CommonFunc.sleep(500);
         await (but?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        expect('' + AppStorage.get('textInputStart')).assertEqual("0");
-        expect('' + AppStorage.get('textInputEnd')).assertEqual("4");
+        expect('' + AppStorage.get<int>('textInputStart')).assertEqual("0");
+        expect('' + AppStorage.get<int>('textInputEnd')).assertEqual("4");
 
       AppStorage.delete('textAreaStart');
       AppStorage.delete('textAreaEnd');

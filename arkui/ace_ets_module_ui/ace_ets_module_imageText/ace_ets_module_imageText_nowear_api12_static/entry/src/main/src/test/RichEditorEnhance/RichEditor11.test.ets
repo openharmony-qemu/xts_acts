@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -49,11 +49,11 @@ export default function RichEditor11() {
         console.info("get RichEditor11 state pages:" + JSON.stringify(pages));
         if (!("RichEditor11" == pages.name)) {
           console.info("get RichEditor11 pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           let driver = Driver.create();
           await driver.delayMs(2000)
-          
+          // console.info("push RichEditor11 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditor11 page error:" + err);
@@ -66,14 +66,15 @@ export default function RichEditor11() {
       console.info("RichEditor11 after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   RichEditor11_static_0100
      * @tc.name     RichEditor11_static_0100
      * @tc.desc     RichEditor11_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('RichEditor11_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      
+    it('RichEditor11_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Test stop
       console.info('[RichEditor11_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(1000)

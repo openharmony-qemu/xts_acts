@@ -45,14 +45,14 @@ struct FolderStackTest2 {
   build() {
     Column() {
       Text(this.text).id('FolderStackTest2_text')
-      
+      // upperItems将所需要的悬停到上半屏的id放入upperItems传入，其余组件会堆叠在下半屏区域
       FolderStack({ upperItems: ['upperitemsId'] }) {
-        
+        // 此Column会自动上移到上半屏
         Column() {
           Text('video zone').height('100%').width('100%').textAlign(TextAlign.Center).fontSize(25)
         }.backgroundColor(Color.Pink).width('100%').height('100%').id('upperitemsId')
 
-        
+        // 下列两个Column堆叠在下半屏区域
         Column() {
           Text('video title')
             .width('100%')
@@ -72,21 +72,21 @@ struct FolderStackTest2 {
         }.width('100%').height('100%').justifyContent(FlexAlign.End)
       }
       .backgroundColor(Color.Yellow)
-      
+      // 是否启动动效
       .enableAnimation(true)
-      
+      // 是否自动旋转
       .autoHalfFold(true)
-      
+      // folderStack回调 当折叠状态改变时回调
       .onFolderStateChange((msg: OnFoldStatusChangeInfo): void => {
         if (msg.foldStatus === FoldStatus.FOLD_STATUS_EXPANDED) {
           console.info('The device is currently in the expanded state')
         } else if (msg.foldStatus === FoldStatus.FOLD_STATUS_HALF_FOLDED) {
           console.info('The device is currently in the half folded state')
         } else {
-          
+          // .............
         }
       })
-      
+      // hoverStatusChange回调 当悬停状态改变时回调
       .onHoverStatusChange((msg: HoverEventParam): void => {
         console.log('this foldStatus:' + msg.foldStatus);
         console.log('this isHoverMode:' + msg.isHoverMode);
@@ -99,7 +99,7 @@ struct FolderStackTest2 {
           this.text = 'ROTATION_270'
         }
       })
-      
+      // folderStack如果不撑满页面全屏，作为普通Stack使用
       .alignContent(Alignment.Bottom)
       .height('100%')
       .width('200vp')

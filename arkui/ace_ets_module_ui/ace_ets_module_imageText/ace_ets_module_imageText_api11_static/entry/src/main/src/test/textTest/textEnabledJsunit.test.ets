@@ -35,7 +35,6 @@ export default function textEnabledJsunit() {
     beforeAll(() => {
       console.info("textEnabledJsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,8 +52,11 @@ export default function textEnabledJsunit() {
         console.info("get textEnabledJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textEnabledJsunit pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textEnabledJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textEnabledJsunit page error:" + err);
@@ -69,7 +71,7 @@ export default function textEnabledJsunit() {
      * @tc.desc     textEnabledJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('textEnabledJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('textEnabledJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textEnabledJsunit_static_0100 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('texEnd1'));
@@ -91,7 +93,7 @@ it('textEnabledJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textEnabledJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('textEnabledJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('textEnabledJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textEnabledJsunit_static_0200 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('texEnd2'));
@@ -113,7 +115,7 @@ it('textEnabledJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textEnabledJsunit_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('textEnabledJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('textEnabledJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textEnabledJsunit_static_0300 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('texEnd3'));
@@ -135,7 +137,7 @@ it('textEnabledJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textEnabledJsunit_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('textEnabledJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('textEnabledJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textEnabledJsunit_static_0400 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('texEnd4'));
@@ -157,7 +159,7 @@ it('textEnabledJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textEnabledJsunit_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('textEnabledJsunit_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+    it('textEnabledJsunit_static_0500', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textEnabledJsunit_static_0500 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('texEnd5'));
@@ -179,7 +181,7 @@ it('textEnabledJsunit_static_0500', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textEnabledJsunit_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('textEnabledJsunit_static_0600', Level.LEVEL1, async (done: ()=>void) => {
+    it('textEnabledJsunit_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textEnabledJsunit_static_0600 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('texEnd6'));

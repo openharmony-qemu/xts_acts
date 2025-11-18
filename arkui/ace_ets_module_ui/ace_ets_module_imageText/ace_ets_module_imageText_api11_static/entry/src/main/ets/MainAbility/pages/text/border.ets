@@ -19,6 +19,7 @@ import {
   Text,
   BorderStyle,
   EdgeStyles,
+  BorderRadiuses,
   BorderOptions,
   EdgeWidths,
   Length,
@@ -32,8 +33,7 @@ import {
 import {
   State,
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
@@ -43,26 +43,27 @@ struct BorderExample {
   @State border1?: BorderOptions | null = null;
   @State borderWidth1: EdgeWidths | Length | null = null;
   @State borderColor1: ResourceColor | EdgeColors| null = null;
-  private stateChangCallBack :(eventData: events_emitter.EventData) =>void  = (eventData: events_emitter.EventData) : void => {
+  private stateChangCallBack :(eventData: emitter.EventData) =>void  = (eventData: emitter.EventData) : void => {
     if (eventData != null) {
       console.info("Border page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as Record<String, RecordData>)?.['border'] != null) {
-        this.border1 = ((eventData.data) as Record<String, RecordData>)?.['border'] as BorderOptions | null;
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['border'] != null) {
+        this.border1 = data['border'] as BorderOptions | null;
       }
-      if (((eventData.data) as Record<String, RecordData>)?.['borderStyle'] != null) {
-        this.borderStyle1 = ((eventData.data) as Record<String, RecordData>)?.['borderStyle'] as BorderStyle|EdgeStyles;
+      if (data['borderStyle'] != null) {
+        this.borderStyle1 = data['borderStyle'] as BorderStyle|EdgeStyles;
       }
-      if (((eventData.data) as Record<String, RecordData>)?.['borderWidth'] != null) {
-        this.borderWidth1 = ((eventData.data) as Record<String, RecordData>)?.['borderWidth'] as  EdgeWidths | Length | null;
+      if (data['borderWidth'] != null) {
+        this.borderWidth1 = data['borderWidth'] as  EdgeWidths | Length | null;
       }
-      if (((eventData.data) as Record<String, RecordData>)?.['borderColor'] != null) {
-        this.borderColor1 = ((eventData.data) as Record<String, RecordData>)?.['borderColor'] as ResourceColor | EdgeColors| null;
+      if (data['borderColor'] != null) {
+        this.borderColor1 = data['borderColor'] as ResourceColor | EdgeColors| null;
       }
-      if (((eventData.data) as Record<String, RecordData>)?.['borderRadius'] != null) {
-        this.borderRadius1 = ((eventData.data) as Record<String, RecordData>)?.['borderRadius'] as number;
+      if (data['borderRadius'] != null) {
+        this.borderRadius1 = data['borderRadius']  as number;
       }
       console.info("Border borderStyle state change called:" + JSON.stringify(eventData));
-      switch (String(((eventData.data) as Record<String, RecordData>)?.['borderStyle'])) {
+      switch (String(data['borderStyle'])) {
         case 'Dotted':
           this.borderStyle1 = BorderStyle.Dotted;
           break;
@@ -80,11 +81,11 @@ struct BorderExample {
 
   onPageShow() {
     console.info('border page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 3,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {

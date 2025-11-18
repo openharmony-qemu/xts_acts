@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +36,6 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Stack_Text {
-  
   @State types: Array<TextDataDetectorType> = Array<TextDataDetectorType>();
   @State text: string = ''
   @State text1: string = ''
@@ -60,7 +59,7 @@ struct Stack_Text {
         .type(InputType.SCREEN_LOCK_PASSWORD)
         .type(InputType.NUMBER_DECIMAL)
         .type(InputType.USER_NAME)
-        .onSubmit((enterKey: EnterKeyType, event: SubmitEvent) => { 
+        .onSubmit((enterKey: EnterKeyType, event: SubmitEvent) => { // 用户名不正确会清空输入框和用户名并提示错误文本
           event.keepEditableState();
         } as OnSubmitCallback)
 

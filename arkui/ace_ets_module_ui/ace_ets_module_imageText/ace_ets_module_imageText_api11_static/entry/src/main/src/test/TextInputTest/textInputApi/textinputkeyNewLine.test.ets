@@ -34,7 +34,6 @@ export default function textInputApiTest() {
     beforeAll(() => {
       console.info("textInputApiTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,9 +51,11 @@ export default function textInputApiTest() {
         console.info("get textInputApiTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textInputApiTest pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textInputApiTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textInputApiTest page error:" + err);
@@ -74,7 +75,8 @@ export default function textInputApiTest() {
      * @tc.desc     textInputApiTest_static_001
      * @tc.level    Level.LEVEL2
      */
-it('textInputApiTest_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('textInputApiTest_static_001', Level.LEVEL2, async (done: ()=>void) => {
+      // default
       let strJson = inspector.getInspectorByKey('textInputkeyN');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputApiTest] get inspector value is: " + JSON.stringify(obj));

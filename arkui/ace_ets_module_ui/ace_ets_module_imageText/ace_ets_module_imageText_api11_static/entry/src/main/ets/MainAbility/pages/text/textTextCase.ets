@@ -27,54 +27,49 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
+  Observed,
+  AppStorage
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { MessageManagerBase, CallbackBase,MessageBase } from '../../common/MessageManager2';
 
+@Observed
 class TextCaseModifier  implements AttributeModifier<TextAttribute> {
-    textCase: TextCase  = TextCase.Normal;
-    applyNormalAttribute(instance: TextAttribute): void {
-      instance.textCase(this.textCase);
-    }
+  textCase: TextCase  = TextCase.Normal;
+  applyNormalAttribute(instance: TextAttribute): void {
+    instance.textCase(this.textCase);
   }
+}
 
 @Entry
 @Component
-struct TextTextCase {   
-   
+struct TextTextCase {
+
   @State textCase:TextCase  = TextCase.Normal;
   @State textCaseModifier:TextCaseModifier = new TextCaseModifier();
+  messageManagerTextCase:MessageManagerBase<TextCase> = new MessageManagerBase<TextCase>()
 
-  private stateChangCallBack : (eventData:events_emitter.EventData) =>void = (eventData:events_emitter.EventData) => {
-    if (eventData != null && eventData.data != null) {
-      console.info("textCase page state change called:" + JSON.stringify(eventData));
-
-      if (((eventData.data) as ESObject).getProperty('textCase') != null) {
-        console.info("[textCase page] textIndent change data is " + ((eventData.data) as ESObject).getProperty('textCase'));
-        this.textCase = ((eventData.data) as ESObject).getProperty('textCase').toStaticObject() as TextCase;
-        this.textCaseModifier.textCase =  ((eventData.data) as ESObject).getProperty('textCase').toStaticObject() as TextCase;
-      }
-    }
-  }
-  
 
   onPageShow() {
-    for( let i = 1; i < 5; i++){
-      let eventid = 1030 + i;
-      let stateChangeEvent: events_emitter.InnerEvent = {
-        eventId: eventid,
-        priority: events_emitter.EventPriority.LOW
+    AppStorage.setOrCreate<MessageManagerBase<TextCase>>('messageManagerTextCase', this.messageManagerTextCase)
+    let stateChangCallBack: CallbackBase<TextCase> = (message: MessageBase<TextCase>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if(message.name == "textCase"){
+        this.textCase = message.value;
+        this.textCaseModifier.textCase = message.value;
       }
-      events_emitter.on(stateChangeEvent, this.stateChangCallBack);
     }
-  } 
-  
+    this.messageManagerTextCase.registerCallback(stateChangCallBack)
+  }
+
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) { 
- 
-     
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
+
+      // 设置文本大小写
       Text('This is the text content with textCase.This is the text content with textCase.')
         .fontSize(12).border({ width: 1 }).padding(10)
-        .width('100%')        
+        .attributeModifier( this.textCaseModifier )
+        .width('100%')
         .key('key_text_textCase')
     }.height(600).width(350).padding({ left: 35, right: 35, top: 35 } as Padding)
   }

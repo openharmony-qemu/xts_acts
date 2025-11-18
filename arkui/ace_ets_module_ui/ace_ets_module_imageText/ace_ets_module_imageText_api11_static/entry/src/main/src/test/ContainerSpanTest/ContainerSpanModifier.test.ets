@@ -33,7 +33,6 @@ export default function ContainerSpanModifierTest() {
   describe('ContainerSpanModifierTest', () => {
     beforeAll(() => {
       console.info("ContainerSpanModifierTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,8 +52,9 @@ export default function ContainerSpanModifierTest() {
           console.info("get ContainerSpanModifierTest state pages.name: " + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push ContainerSpanModifierTest success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push ContainerSpanModifierTest page error: " + err);
         expect().assertFail();
       }
@@ -67,20 +67,20 @@ export default function ContainerSpanModifierTest() {
      * @tc.desc     ContainerSpanModifierTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('ContainerSpanModifierTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ContainerSpanModifierTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ContainerSpanModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContainerSpanModifier_get_radius');
       const obj = JSON.parseJsonElement(strJson);
-      console.info("[ContainerSpanModifierTest_static_0010] textBackgroundStyle: " +
+      console.info("[ContainerSpanModifierTest_static_0010] radius: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius')));
-      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getElement('topLeft'))
+      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getString('topLeft'))
         .assertEqual('12.00vp');
-      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getElement('topRight'))
+      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getString('topRight'))
         .assertEqual('12.00vp');
-      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getElement('bottomLeft'))
+      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getString('bottomLeft'))
         .assertEqual('12.00vp');
-      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getElement('bottomRight'))
+      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('radius').getString('bottomRight'))
         .assertEqual('12.00vp');
       console.info('[ContainerSpanModifierTest_static_0010] END');
       done();
@@ -93,14 +93,14 @@ it('ContainerSpanModifierTest_static_0010', Level.LEVEL1, async (done: () => voi
      * @tc.desc     ContainerSpanModifierTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-it('ContainerSpanModifierTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ContainerSpanModifierTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ContainerSpanModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContainerSpanModifier_get_type');
       const obj = JSON.parseJsonElement(strJson);
       console.info("[ContainerSpanModifierTest_static_0020] ContainerSpanInstance type is: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('text')));
-      expect(obj.getElement('$attrs').tryGetElement('text')).assertEqual(undefined);
+      obj.getElement('$attrs').getString('text'));
+      expect(obj.getElement('$attrs').getString('text')).assertEqual("ContainerSpanModifier initialized");
       console.info('[ContainerSpanModifierTest_static_0020] END');
       done();
     });

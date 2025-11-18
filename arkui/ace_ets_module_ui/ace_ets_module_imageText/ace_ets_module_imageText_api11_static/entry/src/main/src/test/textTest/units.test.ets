@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import CommonFunc from '../../../ets/MainAbility/common/Common'
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -35,7 +35,6 @@ export default function unitsModuleNameJsunit() {
 
     beforeAll(() => {
       console.info("unitsModuleNameTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -54,8 +53,11 @@ export default function unitsModuleNameJsunit() {
         console.info("get unitsModuleNameTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get unitsModuleNameTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push unitsModuleNameTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push unitsModuleNameTest page error:" + err);
@@ -73,31 +75,31 @@ export default function unitsModuleNameJsunit() {
 
     
     /*
-     * @tc.number   testunitsModuleName_static_0001
-     * @tc.name     testunitsModuleName_static_0001
-     * @tc.desc     testunitsModuleName_static_0001
+     * @tc.number   testunitsModuleName0001
+     * @tc.name     testunitsModuleName0001
+     * @tc.desc     testunitsModuleName0001
      * @tc.level    Level.LEVEL1
      */
-it('testunitsModuleName_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('testunitsModuleName0001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('unitsModuleName testunitsModuleName0001 START');
       await CommonFunc.sleep(2000);
       try {
         console.info("testunitsModuleName0001 click result is: " + JSON.stringify(inspector.sendEventByKey('moduleNameText', 10, "")));
         await CommonFunc.sleep(2000);
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 60310,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback = (eventData: emitter.EventData) => {
           console.info("testunitsModuleName0001 get event state result is: " + JSON.stringify(eventData));
           try {
-            expect(((eventData.data) as Record<String, RecordData>)?.['ModuleName']).assertFalse();
+            expect((eventData.data as ESObject)?.getProperty('ModuleName')).assertFalse();
           } catch (err) {
             console.info("testunitsModuleName0001 get event state result is: " + JSON.stringify(err));
           }
 
         }
-        events_emitter.on(innerEvent, callback);
+        emitter.on(innerEvent, callback);
       } catch (err) {
         console.info("testunitsModuleName0001 on click err : " + JSON.stringify(err));
       }
@@ -107,25 +109,25 @@ it('testunitsModuleName_static_0001', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testunitsGlobalPosition_static_0001
-     * @tc.name     testunitsGlobalPosition_static_0001
-     * @tc.desc     testunitsGlobalPosition_static_0001
+     * @tc.number   testunitsGlobalPosition0001
+     * @tc.name     testunitsGlobalPosition0001
+     * @tc.desc     testunitsGlobalPosition0001
      * @tc.level    Level.LEVEL1
      */
-it('testunitsGlobalPosition_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('testunitsGlobalPosition0001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('unitsModuleName testunitsGlobalPosition0001 START');
       await CommonFunc.sleep(2000);
       try {
         console.info("testunitsGlobalPosition0001 click result is: " + JSON.stringify(inspector.sendEventByKey('globalPositionText', 10, "")));
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 60311,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback = (eventData: emitter.EventData) => {
           console.info("testunitsGlobalPosition0001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<String, RecordData>)?.['Result']).assertEqual(true);
+          expect((eventData.data as ESObject)?.getProperty('Result')).assertEqual(true);
         }
-        events_emitter.on(innerEvent, callback);
+        emitter.on(innerEvent, callback);
       } catch (err) {
         console.info("testunitsGlobalPosition0001 on click err : " + JSON.stringify(err));
       }
@@ -135,17 +137,17 @@ it('testunitsGlobalPosition_static_0001', Level.LEVEL1, async (done: ()=>void) =
 
     
     /*
-     * @tc.number   testunitsMinWidth_static_0001
-     * @tc.name     testunitsMinWidth_static_0001
-     * @tc.desc     testunitsMinWidth_static_0001
+     * @tc.number   testunitsMinWidth0001
+     * @tc.name     testunitsMinWidth0001
+     * @tc.desc     testunitsMinWidth0001
      * @tc.level    Level.LEVEL1
      */
-it('testunitsMinWidth_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('testunitsMinWidth0001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('unitsModuleName testunitsMinWidth0001 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('minWidthText');
       console.info("[testunitsMinWidth0001] component constraintSize strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       console.info('[testunitsMinWidth0001] constraintSize value :' + JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('constraintSize')).getString('minWidth'));
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('constraintSize')).getString('minWidth')).assertEqual('200.00vp');
       console.info("[testunitsMinWidth0001] constraintSize value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('constraintSize'));
@@ -154,20 +156,20 @@ it('testunitsMinWidth_static_0001', Level.LEVEL1, async (done: ()=>void) => {
 
     
     /*
-     * @tc.number   testunitsMinWidth_static_0002
-     * @tc.name     testunitsMinWidth_static_0002
-     * @tc.desc     testunitsMinWidth_static_0002
+     * @tc.number   testunitsMinWidth0002
+     * @tc.name     testunitsMinWidth0002
+     * @tc.desc     testunitsMinWidth0002
      * @tc.level    Level.LEVEL1
      */
-it('testunitsMinWidth_static_0002', Level.LEVEL1, async (done: ()=>void) => {
+    it('testunitsMinWidth0002', Level.LEVEL1, async (done: ()=>void) => {
       console.info('unitsModuleName testunitsMinWidth0001 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('minWidthText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testunitsMinWidth0002] component constraintSize strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
-      console.info("[testunitsMinWidth0002] constraintSize is : " + JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('constraintSize')));
-      expect(obj.getElement('$attrs').getElement('constraintSize').getString('minWidth')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
+      console.info("[testunitsMinWidth0002] constraintSize is : " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('constraintSize'));
+      expect(obj.getElement('$attrs').getElement('constraintSize').tryGetElement('minWidth')).assertEqual(undefined);
       console.info("[testunitsMinWidth0002] constraintSize value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('constraintSize'));
       done();
     });

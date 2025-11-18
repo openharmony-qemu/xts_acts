@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,9 +27,6 @@ struct Grid_Col_Span_Number {
 
   onPageShow() {
     console.info('Grid_Col_Span_Number onPageShow');
-    
-    
-    
    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager)
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
@@ -49,7 +46,7 @@ struct Grid_Col_Span_Number {
           reference: BreakpointsReference.ComponentSize },
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: int) => {
+        ForEach(this.bgColors, (color: Color, index?: number) => {
           GridCol({ span: this.addSpan }) {
 
           }.borderColor(color).borderWidth(2).key("Grid_Col_Span_Number_0" + index).height(50)

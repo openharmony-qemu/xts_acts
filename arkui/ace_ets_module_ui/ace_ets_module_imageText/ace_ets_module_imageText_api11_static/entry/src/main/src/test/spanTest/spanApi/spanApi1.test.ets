@@ -45,7 +45,6 @@ export default function spanApi1() {
     beforeAll(() => {
       console.info("ImageLoadResultTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,9 +65,9 @@ export default function spanApi1() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
+          // console.info("push spanApi1 page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push spanApi1 page error:" + err);
       }
       console.info("spanApi1 beforeEach end");
@@ -85,7 +84,7 @@ export default function spanApi1() {
      * @tc.desc     spanApi1_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('spanApi1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('spanApi1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[spanApi1_0100] START');
       await CommonFunc.sleep(2000);
       let spanApi1 = inspector.getInspectorByKey('spanApi1');

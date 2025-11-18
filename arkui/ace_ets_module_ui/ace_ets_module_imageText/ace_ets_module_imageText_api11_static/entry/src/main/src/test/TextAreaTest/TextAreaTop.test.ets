@@ -30,13 +30,11 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext();
 
 export default function textArea_top() {
   describe('textArea_top', () => {
     beforeAll(() => {
       console.info("textArea_top beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -45,7 +43,7 @@ export default function textArea_top() {
     beforeEach(async (): Promise<void> => {
       console.info("textArea_top beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextArea/textAenEnabled',
+        url: 'MainAbility/pages/TextArea/textArea_top',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -54,8 +52,11 @@ export default function textArea_top() {
         console.info("get textArea_top state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textArea_top pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textArea_top page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textArea_top page error:" + err);
@@ -70,7 +71,7 @@ export default function textArea_top() {
      * @tc.desc     textArea_top_static_001
      * @tc.level    Level.LEVEL2
      */
-it('textArea_top_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('textArea_top_static_001', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[textArea_top_static_001] START');
       await CommonFunc.sleep(1000);
@@ -88,12 +89,10 @@ it('textArea_top_static_001', Level.LEVEL2, async (done: ()=>void) => {
         console.log('column_01.top' + column_01.top)
 
         let driver = Driver.create();
-        await CommonFunc.sleep(1000);
-
         await driver.click(
-         
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2) ) as int,Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45))as int
-        ) ;
+          // vp2px(100),vp2px(10)
+          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)) as Int
+        );
         await CommonFunc.sleep(1000);
 
         expect(textArea_01.top).assertEqual(column_01.top);
@@ -110,7 +109,7 @@ it('textArea_top_static_001', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textArea_top_static_002
      * @tc.level    Level.LEVEL2
      */
-it('textArea_top_static_002', Level.LEVEL2, async (done: ()=>void) => {
+    it('textArea_top_static_002', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[textArea_top_static_002] START');
       await CommonFunc.sleep(1000);
@@ -126,10 +125,11 @@ it('textArea_top_static_002', Level.LEVEL2, async (done: ()=>void) => {
         expect(textArea_01.top).assertEqual(column_01.top);
         console.log('textArea_01.top' + textArea_01.top)
         console.log('column_01.top' + column_01.top)
-
+        const uiContext = AppStorage.get<UIContext>('uiContext');
         let driver = Driver.create();
         await driver.click(
-          Math.round(UIContext.getFocusedUIContext()!.vp2px(100)) as int,Math.round(UIContext.getFocusedUIContext()!.vp2px(200) ) as int
+          Math.round(uiContext!.vp2px(100)) as Int,Math.round(uiContext!.vp2px(200)) as Int
+          // (textArea_01.left + (textArea_01.right - textArea_01.left) /2),(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)
         );
         await CommonFunc.sleep(1000);
 
@@ -148,7 +148,7 @@ it('textArea_top_static_002', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textArea_top_static_003
      * @tc.level    Level.LEVEL2
      */
-it('textArea_top_static_003', Level.LEVEL2, async (done: ()=>void) => {
+    it('textArea_top_static_003', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[textArea_top_static_003] START');
       await CommonFunc.sleep(1000);
@@ -168,7 +168,7 @@ it('textArea_top_static_003', Level.LEVEL2, async (done: ()=>void) => {
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         await driver.click(
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as int,Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44) )as int
+          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44)) as Int
         );
         await CommonFunc.sleep(1000);
 

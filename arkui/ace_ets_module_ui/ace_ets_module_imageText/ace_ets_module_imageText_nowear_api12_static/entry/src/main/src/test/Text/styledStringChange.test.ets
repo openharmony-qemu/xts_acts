@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -44,7 +44,7 @@ export default function styledStringChange() {
       console.info("styledStringChange beforeEach start");
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get styledStringChange state pages:" + "");
         if (!("styledStringChange" == pages.name)) {
@@ -53,7 +53,7 @@ export default function styledStringChange() {
             url: "MainAbility/pages/Text/styledStringChange"
           })
           await CommonFunc.sleep(2000);
-          
+          //console.info("push styledStringChange page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push styledStringChange page error:" + err);
@@ -67,29 +67,30 @@ export default function styledStringChange() {
 
     
 
-    /*
+    
+/*
      * @tc.number   styledStringChange_static_001
      * @tc.name     styledStringChange_static_001
      * @tc.desc     styledStringChange_static_001
      * @tc.level    Level.LEVEL3
      */
-it('styledStringChange_static_001', Level.LEVEL3, async (done: ()=>void) => {
+    it('styledStringChange_static_001', Level.LEVEL3, async (done: ()=>void) => {
       console.info('[styledStringChange_001] START');
       await CommonFunc.sleep(200);
       let driver: Driver = Driver.create();
       let text: Component | null= await driver.findComponent(ON.id('styledStringText'));
       let input: Component | null= await driver.findComponent(ON.id('styledStringInput'));
-      await (text?.longClick() as Promise<void>);
+      await text!.longClick();
       await CommonFunc.sleep(1000);
       let text1 = await driver.findComponent(ON.text('全选'));
       await (text1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       text?.dragTo(input!);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(4000);
 
       let strJson = inspector.getInspectorByKey('changeText');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
 
         let obj = JSON.parseJsonElement(strJson);
@@ -103,13 +104,14 @@ it('styledStringChange_static_001', Level.LEVEL3, async (done: ()=>void) => {
 
     
 
-    /*
+    
+/*
      * @tc.number   styledStringChange_static_002
      * @tc.name     styledStringChange_static_002
      * @tc.desc     styledStringChange_static_002
      * @tc.level    Level.LEVEL3
      */
-it('styledStringChange_static_002', Level.LEVEL3, async (done: ()=>void) => {
+    it('styledStringChange_static_002', Level.LEVEL3, async (done: ()=>void) => {
       console.info('[styledStringChange_002] START');
       await CommonFunc.sleep(200);
       let driver: Driver = Driver.create();

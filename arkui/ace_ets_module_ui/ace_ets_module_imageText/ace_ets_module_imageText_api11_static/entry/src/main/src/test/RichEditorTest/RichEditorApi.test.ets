@@ -25,6 +25,10 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import {
+  TextAlign,
+  LeadingMarginPlaceholder
+} from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -38,14 +42,16 @@ export default function RichEditorApi() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get RichEditorApi state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("RichEditorApi" == pages.name)) {
           console.info("get RichEditorApi pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push RichEditorApi page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditorApi page error:" + err);
@@ -54,11 +60,15 @@ export default function RichEditorApi() {
     });
     beforeAll(() => {
       console.info("RichEditorApi beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
     });
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info("RichEditorApi after each called");
+    });
+
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("RichEditorApi after each called");
@@ -71,13 +81,14 @@ export default function RichEditorApi() {
      * @tc.desc     RichEditorApi_static_001
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorApi_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorApi_static_001', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[RichEditorApi_001] START');
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('RichEditorApi_text_hello');
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
+      // console.info("[RichEditorApi_001] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('hello');
 
       console.info('[RichEditorApi_001] END');
@@ -92,7 +103,7 @@ it('RichEditorApi_static_001', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     RichEditorApi_static_002
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorApi_static_002', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorApi_static_002', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[RichEditorApi_002] START');
       await CommonFunc.sleep(1000);
 
@@ -100,13 +111,13 @@ it('RichEditorApi_static_002', Level.LEVEL2, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('RichEditorApi_btn_getParagraphs'));
       await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(2000);
-      console.log('spanParagraphs'+AppStorage.get('getParagraphs_textAlign'))
-      console.log('spanParagraphs'+JSON.stringify(AppStorage.get('getParagraphs_size')))
-      console.log('spanParagraphs'+AppStorage.get('getParagraphs_range'))
-      expect(AppStorage.get('getParagraphs_textAlign')).assertEqual(0)
-      expect(JSON.stringify(AppStorage.get('getParagraphs_size'))).assertEqual('{"size":["5.00vp","0.00vp"]}')
-      expect(''+AppStorage.get('getParagraphs_range')).assertEqual('0,4')
+      await CommonFunc.sleep(4000);
+      console.log('spanParagraphs'+ AppStorage.get<TextAlign>('getParagraphs_textAlign'))
+      console.log('spanParagraphs'+ AppStorage.get<string>('getParagraphs_size'))
+      console.log('spanParagraphs'+ AppStorage.get<[number, number]>('getParagraphs_range'))
+      expect(AppStorage.get<TextAlign>('getParagraphs_textAlign')).assertEqual(0)
+      expect(AppStorage.get<string>('getParagraphs_size')).assertEqual('{"size":["5.00vp","0.00vp"]}')
+      expect(''+AppStorage.get<[number, number]>('getParagraphs_range')).assertEqual('0,4')
       AppStorage.delete('getParagraphs_textAlign')
       AppStorage.delete('getParagraphs_size')
       AppStorage.delete('getParagraphs_range')
@@ -121,7 +132,7 @@ it('RichEditorApi_static_002', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     RichEditorApi_static_003
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorApi_static_003', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorApi_static_003', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[RichEditorApi_003] START');
       await CommonFunc.sleep(1000);
 
@@ -136,12 +147,12 @@ it('RichEditorApi_static_003', Level.LEVEL2, async (done: ()=>void) => {
       await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(2000);
       console.info('[RichEditorApi_003] btn2');
-      console.log('spanParagraphs'+AppStorage.get('getParagraphs_textAlign'))
-      console.log('spanParagraphs'+JSON.stringify(AppStorage.get('getParagraphs_size')))
-      console.log('spanParagraphs'+AppStorage.get('getParagraphs_range'))
-      expect(AppStorage.get('getParagraphs_textAlign')).assertEqual(0)
-      expect(JSON.stringify(AppStorage.get('getParagraphs_size'))).assertEqual('{"size":["10.00vp","0.00vp"]}')
-      expect(''+AppStorage.get('getParagraphs_range')).assertEqual('0,4')
+      console.log('spanParagraphs'+AppStorage.get<TextAlign>('getParagraphs_textAlign'))
+      console.log('spanParagraphs'+AppStorage.get<string>('getParagraphs_size'))
+      console.log('spanParagraphs'+AppStorage.get<[number, number]>('getParagraphs_range'))
+      expect(AppStorage.get<TextAlign>('getParagraphs_textAlign')).assertEqual(0)
+      expect(AppStorage.get<string>('getParagraphs_size')).assertEqual('{"size":["10.00vp","0.00vp"]}')
+      expect(''+AppStorage.get<[number, number]>('getParagraphs_range')).assertEqual('0,4')
       AppStorage.delete('getParagraphs_textAlign')
       AppStorage.delete('getParagraphs_size')
       AppStorage.delete('getParagraphs_range')
@@ -156,7 +167,7 @@ it('RichEditorApi_static_003', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     RichEditorApi_static_004
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorApi_static_004', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorApi_static_004', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[RichEditorApi_004] START');
       await CommonFunc.sleep(1000);
 
@@ -164,8 +175,8 @@ it('RichEditorApi_static_004', Level.LEVEL2, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       let RichEditor3 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor3')
       await driver.mouseClick({
-        x: Math.round((RichEditor3.right - RichEditor3.left) * 0.5 + RichEditor3.left) as int,
-        y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top) as int
+        x: Math.round((RichEditor3.right - RichEditor3.left) * 0.5 + RichEditor3.left) as Int,
+        y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top) as Int
       }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
 
@@ -185,20 +196,21 @@ it('RichEditorApi_static_004', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     RichEditorApi_static_005
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorApi_static_005', Level.LEVEL2, async (done: ()=>void) => {
+    it('RichEditorApi_static_005', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[RichEditorApi_005] START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let RichEditor4 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor4')
-      await driver.longClick(Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left) as int,
-        Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top) as int)
+      await driver.longClick(Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left)  as Int,
+        Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top)as Int)
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('RichEditorApi_text2');
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
+      // console.info("[RichEditorApi_005] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('SecondMenuAppear');
       console.info('[RichEditorApi_005] END');
       done();

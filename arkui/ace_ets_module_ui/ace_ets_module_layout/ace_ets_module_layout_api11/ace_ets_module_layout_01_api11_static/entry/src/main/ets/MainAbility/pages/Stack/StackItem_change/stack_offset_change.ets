@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,20 +20,22 @@ import {State,AppStorage} from '@ohos.arkui.stateManagement'
 struct Stack_Offset_Change {
   @State addOffset: Position = { x: 20, y: 20 } as Position;
   @State addAlignContent: Alignment = Alignment.TopStart;
-  messageManager: MessageManager<object> = new MessageManager<object>();
+  messageManager: MessageManager<Position|Alignment> = new MessageManager<Position|Alignment>();
   onPageShow() {
     console.info('Stack_Offset_Change onPageShow');
     /*globalThis.value = {
       name: 'messageManager', message: this.messageManager
     };*/
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<Position|Alignment>>("messageManager",  this.messageManager);
+    let callback: Callback<Position|Alignment> = (message: Message<Position|Alignment>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'addOffset') {
         this.addOffset = message.value as Position;
       }
       if (message.name == 'addAlignContent') {
+        console.log("==============================message.value " +message.value );
         this.addAlignContent = message.value as Alignment;
+        console.log("==============================message.value " + this.addAlignContent );
       }
     };
     this.messageManager.registerCallback(callback);

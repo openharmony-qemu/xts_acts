@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,7 +32,6 @@ import {
 } from '@ohos.arkui.stateManagement'
 import Log from '../../common/Log';
 import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -71,7 +70,7 @@ struct UnitsModuleName {
             let backData: events_emitter.EventData = {
               data: {
                 "ModuleName": ($r('app.string.MainAbility_label').bundleName != null)
-              } as Record<String, RecordData>
+              } as Record<String,undefined|null|Object>
             } as events_emitter.EventData
 
             let backEvent: events_emitter.InnerEvent = {
@@ -108,7 +107,7 @@ struct UnitsModuleName {
             let backData: events_emitter.EventData = {
               data: {
                 "Result": true
-              } as Record<String, RecordData>
+              } as Record<String,undefined|null|Object>
             } as events_emitter.EventData
 
             let backEvent: events_emitter.InnerEvent = {

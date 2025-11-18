@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +36,7 @@ export default function ColumnSetPadding__SubChangeMar() {
   describe('ColumnSetPadding__SubChangeMar', () => {
     beforeAll(() => {
       console.info("ColumnSetPadding__SubChangeMar beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,11 +53,11 @@ export default function ColumnSetPadding__SubChangeMar() {
         console.info("get ColumnSetPaddingTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSetPadding_SubChangeMar" == pages.name)) {
           console.info("get ColumnSetPaddingTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ColumnSetPaddingTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetPaddingTest page error:" + err);
@@ -82,19 +82,19 @@ export default function ColumnSetPadding__SubChangeMar() {
      */
 it('testColumnParentPaddingSubMargin_static', Level.LEVEL0, async () => {
       console.info('new testColumnParentPaddingSubMargin_static START');
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(2000);
       let columnSetPad_1: RectValue = CommonFunc.getComponentRect('columnSetPad_1');
       let columnSetPad_2: RectValue = CommonFunc.getComponentRect('columnSetPad_2');
       let columnSetPad_3: RectValue = CommonFunc.getComponentRect('columnSetPad_3');
       let columnSetPad: RectValue = CommonFunc.getComponentRect('columnSetPad');
-      expect(Math.abs(columnSetPad_1.top - columnSetPad.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_2.top - columnSetPad_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_3.top - columnSetPad_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_1.top - columnSetPad.top - Math.round(uiContext!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_2.top - columnSetPad_1.bottom - Math.round(uiContext!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_3.top - columnSetPad_2.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
       expect(columnSetPad.bottom).assertLess(columnSetPad_3.bottom)
-      expect(Math.abs(columnSetPad_1.right - columnSetPad_1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_2.right - columnSetPad_2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_3.right - columnSetPad_3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_1.right - columnSetPad_1.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_2.right - columnSetPad_2.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_3.right - columnSetPad_3.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentPaddingSubMargin_static END');
     });
   })

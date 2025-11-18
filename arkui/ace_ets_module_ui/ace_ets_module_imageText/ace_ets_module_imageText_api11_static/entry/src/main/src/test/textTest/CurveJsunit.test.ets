@@ -36,7 +36,6 @@ export default function CurveJsunit() {
     beforeAll(() => {
       console.info("CurveJsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -49,14 +48,14 @@ export default function CurveJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get CurveJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("curve" == pages.name)) {
           console.info("get CurveJsunit pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("push CurveJsunit page error:" + err);
       }
@@ -75,7 +74,7 @@ export default function CurveJsunit() {
      * @tc.desc     testCurve_static_001
      * @tc.level    Level.LEVEL1
      */
-it('testCurve_static_001', Level.LEVEL1, async (done: ()=>void) => {
+    it('testCurve_static_001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('curve testCurve001 START');
       let result_width: number;
       let result_height: number;
@@ -85,9 +84,9 @@ it('testCurve_static_001', Level.LEVEL1, async (done: ()=>void) => {
       console.info("curve sendEventByKey result is: " + control);
       setTimeout(() => {
         if (control) {
-          result_width = GlobalContext.getContext().getObject('widthSize') as number;
+          result_width = AppStorage.get<number>('widthSize') as number;
           console.info('curve ***** globalThis  widthSize is ' + result_width);
-          result_height = GlobalContext.getContext().getObject('heightSize') as number;
+          result_height = AppStorage.get<number>('heightSize') as number;
           console.info('curve ***** globalThis  heightSize is ' + result_height);
         } else {
           console.error('control failed');
@@ -114,7 +113,7 @@ it('testCurve_static_001', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testCurve_static_002
      * @tc.level    Level.LEVEL1
      */
-it('testCurve_static_002', Level.LEVEL1, async (done: ()=>void) => {
+    it('testCurve_static_002', Level.LEVEL1, async (done: ()=>void) => {
       console.info('curve testCurve02 START');
       let result_height: number;
       let result_width: number;
@@ -124,9 +123,9 @@ it('testCurve_static_002', Level.LEVEL1, async (done: ()=>void) => {
       console.info("curve1 sendEventByKey result is: " + control);
       setTimeout(() => {
         if (control) {
-          result_width = GlobalContext.getContext().getObject('widthSize1') as number;
+          result_width = AppStorage.get<number>('widthSize1') as number;
           console.info('curve1 ***** globalThis  widthSize1 is ' + result_width);
-          result_height = GlobalContext.getContext().getObject('heightSize1') as number;
+          result_height = AppStorage.get<number>('heightSize1') as number;
           console.info('curve1 ***** globalThis  heightSize1 is ' + result_height);
         } else {
           console.error('control failed');
@@ -153,7 +152,7 @@ it('testCurve_static_002', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testCurve_static_003
      * @tc.level    Level.LEVEL1
      */
-it('testCurve_static_003', Level.LEVEL1, async (done: ()=>void) => {
+    it('testCurve_static_003', Level.LEVEL1, async (done: ()=>void) => {  //app died
       console.info('curve testCurve_static_003 START');
       let result_height: number;
       let result_width: number;
@@ -163,9 +162,9 @@ it('testCurve_static_003', Level.LEVEL1, async (done: ()=>void) => {
       console.info("curve2 sendEventByKey result is: " + control);
       setTimeout(() => {
         if (control) {
-          result_width = GlobalContext.getContext().getObject('widthSize2') as number;
+          result_width = AppStorage.get<number>('widthSize2') as number;
           console.info('curve2 ***** globalThis  widthSize2 is ' + result_width);
-          result_height = GlobalContext.getContext().getObject('heightSize2') as number;
+          result_height = AppStorage.get<number>('heightSize2') as number;
           console.info('curve2 ***** globalThis  heightSize2 is ' + result_height);
         } else {
           console.error('control failed');
@@ -192,7 +191,7 @@ it('testCurve_static_003', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     testCurve_static_004
      * @tc.level    Level.LEVEL1
      */
-it('testCurve_static_004', Level.LEVEL1, async (done: ()=>void) => {
+    it('testCurve_static_004', Level.LEVEL1, async (done: ()=>void) => {
       console.info('curve testCurve_static_004 START');
       let result_height: number;
       let result_width: number;
@@ -202,9 +201,9 @@ it('testCurve_static_004', Level.LEVEL1, async (done: ()=>void) => {
       console.info("curve3 sendEventByKey result is: " + control);
       setTimeout(() => {
         if (control) {
-          result_width = GlobalContext.getContext().getObject('widthSize3') as number;
+          result_width = AppStorage.get<number>('widthSize3') as number;
           console.info('curve3 ***** globalThis  widthSize3 is ' + result_width);
-          result_height = GlobalContext.getContext().getObject('heightSize3') as number;
+          result_height = AppStorage.get<number>('heightSize3') as number;
           console.info('curve3 ***** globalThis  heightSize3 is ' + result_height);
         } else {
           console.error('control failed');

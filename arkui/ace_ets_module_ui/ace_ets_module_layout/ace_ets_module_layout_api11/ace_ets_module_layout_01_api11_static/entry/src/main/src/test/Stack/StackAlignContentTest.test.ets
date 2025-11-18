@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,7 +20,7 @@ import { UtilsTest,startAbility } from '../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {  Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -29,25 +29,25 @@ import { UIContext } from '@ohos.arkui.UIContext';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
-
-
-
-
-
-
-
-
-
-
-
-
+// interface optionsObj {
+//   uri: string
+// }
+// interface events_emitter.EventData {
+//   data : dataObj
+// }
+// interface dataObj {
+//   alignContentValue : Alignment
+// }
+// interface events_emitter.InnerEvent {
+//   eventId: number
+//   priority : events_emitter.EventPriority
+// }
 
 export default function StackAlignContentTest() {
   describe('StackAlignContentTest',  () => {
     beforeAll(async () => {
       console.info("stack_alignContent beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -67,8 +67,7 @@ export default function StackAlignContentTest() {
           routerInstance?.pushUrl(options);
           await UtilsTest.msSleep(2000);
         }
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.error("push stackAlignContent page error: " + err);
       }
     });
@@ -80,13 +79,14 @@ export default function StackAlignContentTest() {
  
 
 
+
 /*
      * @tc.number   testStackAlignContent_static
      * @tc.name     testStackAlignContent_static
      * @tc.desc     testStackAlignContent_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testStackAlignContent';
       console.info('[' + tagName + '] START============================');
       await UtilsTest.msSleep(1000)
@@ -100,7 +100,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData : events_emitter.EventData = {
           data: {
             'alignContentValue': Alignment.Top
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent : events_emitter.InnerEvent = {
           eventId: 181,
@@ -108,8 +108,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + `${tagName}` + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData)
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + `${tagName}` + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -124,7 +123,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData2 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.TopEnd
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent2 : events_emitter.InnerEvent = {
           eventId: 182,
@@ -132,8 +131,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent2,eventData2);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -147,7 +145,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData3 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.Start
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent3 : events_emitter.InnerEvent = {
           eventId: 183,
@@ -155,8 +153,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -170,7 +167,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData4 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.Center
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent4 : events_emitter.InnerEvent = {
           eventId: 184,
@@ -178,8 +175,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent4, eventData4);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -193,7 +189,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData5 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.End
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent5 : events_emitter.InnerEvent = {
           eventId: 185,
@@ -201,8 +197,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent5, eventData5);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -216,7 +211,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData6 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.BottomStart
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent6 : events_emitter.InnerEvent = {
           eventId: 186,
@@ -224,8 +219,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent6, eventData6);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -239,7 +233,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData7 : events_emitter.EventData = {
           data: {
             "alignContentValue":Alignment.Bottom
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent7 : events_emitter.InnerEvent = {
           eventId: 187,
@@ -247,8 +241,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent7, eventData7);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -262,7 +255,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData8 : events_emitter.EventData = {
           data: {
             "alignContentValue":Alignment.BottomEnd
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent8 : events_emitter.InnerEvent = {
           eventId: 188,
@@ -270,8 +263,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent8, eventData8);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err:BusinessError) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);

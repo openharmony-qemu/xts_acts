@@ -30,11 +30,14 @@ import {
 } from '@ohos.arkui.stateManagement'
 import font from '@ohos.font';
 import { Font} from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+
 @Entry
 @Component
 struct textSpanFont {
   aboutToAppear() {
-    const font = new Font();
+    const uiContext: UIContext = this.getUIContext();
+    const font: Font = uiContext.getFont();
     font.registerFont({
       familyName: 'zidingyi',
       familySrc: "./bohehaiyan.ttf"
@@ -137,7 +140,7 @@ struct textSpanFont {
         }
 
         Text('修改字号为0').font({ size: 0 }).key("ArkUX_Stage_Text_Font_FontSize_static_0100")
-        Text('修改字号为默认值').font({ size: 16 }).key("ArkUX_Stage_Text_Font_FontSize_static_000")
+        Text('修改字号为默认值').font({ size: 16 }).key("ArkUX_Stage_Text_Font_FontSize_static_0200")
         Text('修改字号为30px').font({ size: "30px" }).key("ArkUX_Stage_Text_Font_FontSize_static_0300")
         Text('修改字号为30fp').font({ size: "30vp" }).key("ArkUX_Stage_Text_Font_FontSize_static_0400")
         Text('修改字号为30lpx').font({ size: "30lpx" }).key("ArkUX_Stage_Text_Font_FontSize_static_0500")

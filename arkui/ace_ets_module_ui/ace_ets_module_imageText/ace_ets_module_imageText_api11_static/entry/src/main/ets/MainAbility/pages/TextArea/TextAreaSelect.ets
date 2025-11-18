@@ -44,8 +44,7 @@ struct TextAreaSelect {
   messageManager: MessageManager = new MessageManager()
 
   onPageShow() {
-
-    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager>("messageManager",  this.messageManager);
     let callback: Callback = (message: Message) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'Show selected (-2,-1)') {
@@ -58,6 +57,7 @@ struct TextAreaSelect {
         this.controller.setTextSelection(-1, 0)
       }
       if (message.name == 'Show selected (0,3)') {
+        console.log("===================================  " + 11111)
         this.controller.setTextSelection(0, 3)
       }
       if (message.name == 'Show selected (1,3)') {
@@ -65,6 +65,7 @@ struct TextAreaSelect {
         this.controller.setTextSelection(1, 3)
       }
       if (message.name == 'Show selected (-1,6)') {
+        console.log("===================================  Show selected (-1,6)" + 11111)
         this.controller.setTextSelection(-1, 6)
       }
       if (message.name == 'Show selected (0,6)') {
@@ -77,13 +78,17 @@ struct TextAreaSelect {
         this.controller.setTextSelection(0, 8)
       }
       if (message.name == 'Show selected (null,null)') {
+        // this.controller.setTextSelection(null, null)
       }
       if (message.name == 'Show selected (null,undefined)') {
+        // this.controller.setTextSelection(null, undefined)
       }
       if (message.name == 'Show selected (undefined,null)') {
+        // this.controller.setTextSelection(undefined, null)
       }
 
       if (message.name == 'Show selected(undefined,undefined)') {
+        // this.controller.setTextSelection(undefined, undefined)
       }
 
     }

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,10 +28,10 @@ import {
 import {
   State,
 } from '@ohos.arkui.stateManagement'
+import appS from '@system.app';
+import emitter from '@ohos.events.emitter';
 
-import events_emitter from '@ohos.events.emitter';
-
-import Log from '../../common/Log';
+import Log from '../../common/Log.ets';
 
 const TAG = 'ets_apiLack_add';
 
@@ -64,7 +64,21 @@ struct AppVersionCode {
         .key("versionCodeText")
         .onClick((e:ClickEvent) => {
           try {
-          
+            console.info("versionCode start to emit action state0")
+            let versionCode = appS.getInfo().versionCode; // 11.7 app died，等新版本复测
+            console.info("versionCode start to emit action state1")
+            let backData: emitter.EventData = {
+              data: {
+                "Code": versionCode
+              } as Record<String,undefined|null|Object>
+            } as emitter.EventData
+            let backEvent: emitter.InnerEvent = {
+              eventId: 60302,
+              priority: emitter.EventPriority.LOW
+            }
+            console.info("versionCode start to emit action state2")
+            console.info("versionCode start to emit action state")
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("versionCode emit action state err: " + JSON.stringify((err as Error)?.message))
           }

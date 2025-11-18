@@ -16,14 +16,14 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { Color } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -36,7 +36,6 @@ export default function marqueeJsunit() {
   describe('marqueeTest', () => {
     beforeAll(() => {
       console.info("marqueeJsunit beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -57,8 +56,9 @@ export default function marqueeJsunit() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push marquee page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push marquee page error " + JSON.stringify(err));
       }
     });
@@ -74,41 +74,41 @@ export default function marqueeJsunit() {
      * @tc.desc     testMarquee_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('testMarquee_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testMarquee_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_0100 START');
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("testMarquee_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<String, RecordData>)?.['start']).assertEqual(true);
+        expect((indexEvent.data as ESObject)?.getProperty('start')).assertEqual(true);
         done()
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 130,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("testMarquee_static_0100 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("testMarquee_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
       await CommonFunc.sleep(1000);
-      let callback1 = (eventData: events_emitter.EventData) => {
+      let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0100 get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<String, RecordData>)?.['fontColor']).assertEqual(Color.Blue);
+        expect((eventData.data as ESObject)?.getProperty('fontColor')).assertEqual(Color.Blue);
         done()
       }
-      let innerEventOne: events_emitter.InnerEvent = {
+      let innerEventOne: emitter.InnerEvent = {
         eventId: 127,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(innerEventOne, callback1);
-      } catch (err) {
-        console.info("testMarquee_static_0100 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(innerEventOne, callback1);
+      } catch (err: Error) {
+        console.info("testMarquee_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0100 END');
-
+      done()
     });
 
     /*
@@ -117,40 +117,41 @@ it('testMarquee_static_0100', Level.LEVEL1, async (done: () => void): Promise<vo
      * @tc.desc     testMarquee_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('testMarquee_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testMarquee_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_0200 START');
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("testMarquee_static_0200 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<String, RecordData>)?.['start']).assertEqual(true);
+        expect((indexEvent.data as ESObject)?.getProperty('start')).assertEqual(true);
         done()
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 130,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("testMarquee_static_0200 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("testMarquee_static_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
       await CommonFunc.sleep(1000);
-      let callback1 = (eventData: events_emitter.EventData) => {
+      let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0200 get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<String, RecordData>)?.['fontSize']).assertEqual(50);
+        expect((eventData.data as ESObject)?.getProperty('fontSize')).assertEqual(50);
         done()
       }
-      let innerEventOne: events_emitter.InnerEvent = {
+      let innerEventOne: emitter.InnerEvent = {
         eventId: 128,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(innerEventOne, callback1)
-      } catch (err) {
-        console.info("testMarquee_static_0200 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(innerEventOne, callback1)
+      } catch (err: Error) {
+        console.info("testMarquee_static_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0200 END');
+      done()
     });
 
     /*
@@ -159,40 +160,41 @@ it('testMarquee_static_0200', Level.LEVEL1, async (done: () => void): Promise<vo
      * @tc.desc     testMarquee_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('testMarquee_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testMarquee_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_0300 START');
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("testMarquee_static_0300 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<String, RecordData>)?.['start']).assertEqual(true);
+        expect((indexEvent.data as ESObject)?.getProperty('start')).assertEqual(true);
         done()
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 130,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("testMarquee_static_0300 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("testMarquee_static_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
       await CommonFunc.sleep(1000);
-      let callback1 = (eventData: events_emitter.EventData) => {
+      let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0300 get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<String, RecordData>)?.['ACTION']).assertEqual(true);
+        expect((eventData.data as ESObject)?.getProperty('ACTION')).assertEqual(true);
         done()
       }
-      let innerEventOne: events_emitter.InnerEvent = {
+      let innerEventOne: emitter.InnerEvent = {
         eventId: 129,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(innerEventOne, callback1)
-      } catch (err) {
-        console.info("testMarquee_static_0300 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(innerEventOne, callback1)
+      } catch (err: Error) {
+        console.info("testMarquee_static_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0300 END');
+      done()
     });
   })
 }

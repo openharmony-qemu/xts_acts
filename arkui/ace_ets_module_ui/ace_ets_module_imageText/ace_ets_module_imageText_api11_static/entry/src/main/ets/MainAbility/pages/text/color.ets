@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,7 +24,7 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
-import Log from '../../common/Log';
+import Log from '../../common/Log.ets';
 
 const TAG = 'ets_apiLack_add';
 
@@ -40,7 +40,7 @@ struct ColorEnum {
         .key('Transparent')
         .onClick((e:ClickEvent) => {
           let strJson = inspector.getInspectorByKey('Transparent');
-         
+          console.info("testTransparent fontColor is" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
         })
     }
     .width("100%")

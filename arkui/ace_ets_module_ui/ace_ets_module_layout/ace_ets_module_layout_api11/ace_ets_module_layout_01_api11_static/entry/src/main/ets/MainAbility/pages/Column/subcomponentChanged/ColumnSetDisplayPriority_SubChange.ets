@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,6 +25,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
   Color,
   EdgeEffect,ColumnOptions,HorizontalAlign } from '@ohos.arkui.component';
 import {State,
+
   AppStorage} from '@ohos.arkui.stateManagement';
 
 type MessageData = number
@@ -35,15 +36,15 @@ struct ColumnSetDisplayPriorityTest {
   @State testDisplayPriority1: number = 0
   @State testDisplayPriority2: number = 0
   @State testDisplayPriority3: number = 0
-  messageManager: MessageManager<MessageData> = new MessageManager<MessageData>()
+  messageManager:MessageManager<number> = new MessageManager<number>()
   private content: string = "SetDisplayPriority Page";
   onPageShow() {
     console.info('SetDisplayPriority onPageShow');
     let value: Value1<MessageData> = {
       name: 'messageManager', message: this.messageManager
     }
-    GlobalContext.getContext().setObject('value', value);
-    let callback: Callback<MessageData> = (message: Message<MessageData>) => {
+    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager)
+    let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'testpriority1') {
         this.testDisplayPriority1 = message.value;

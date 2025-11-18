@@ -48,6 +48,7 @@ struct buttonExample {
   @State start: int = 0
   @State end: int = 20
 
+  @Builder
   build() {
     Column({space:5} as ColumnOptions) {
       Text('TextDataDetectorType.EMAIL')
@@ -68,13 +69,14 @@ struct buttonExample {
       Button('OK')
         .id('buttonStyle')
         .borderRadius(8)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .width(90)
         .onClick((e:ClickEvent) => {
           console.log('ButtonType.Normal')
         })
         .buttonStyle(ButtonStyleMode.EMPHASIZED)
         .onClick((e:ClickEvent) => {
+          console.log('TextKeyAllNUMBER8898888888' + JSON.stringifyJsonElement(JSON.parseJsonElement(inspector.getInspectorByKey('TextKeyAllNUMBER8898888888')).getElement('$attrs')))
 
 
         })
@@ -147,6 +149,7 @@ struct buttonExample {
       }.height('5%')
       Button('Set text selection')
         .onClick((e:ClickEvent) => {
+          // 变更文本选中起始点、终点
           this.start = 10
           this.end = 30
         }).id('buttonSelect')

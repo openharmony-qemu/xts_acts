@@ -19,6 +19,10 @@
     {
       "name": "Caretwidth",
       "value": "10.0"
+    },
+    {
+      "name": "page_text_font_size",
+      "value": "50fp"
     }
   ]
 }

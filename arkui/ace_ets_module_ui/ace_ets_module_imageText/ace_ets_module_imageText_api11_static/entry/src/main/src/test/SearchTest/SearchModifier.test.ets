@@ -34,7 +34,6 @@ export default function SearchModifierTest() {
     beforeAll(() => {
       console.info("SearchModifierTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,8 +53,9 @@ export default function SearchModifierTest() {
           console.info("get SearchModifierTest state pages.name: " + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SearchModifierTest success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push SearchModifierTest page error: " + err);
         expect().assertFail();
       }
@@ -68,15 +68,15 @@ export default function SearchModifierTest() {
      * @tc.desc     SearchModifierTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('SearchModifierTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SearchModifierTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SearchModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchModifier_get_value');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SearchModifierTest_static_0010] textFont: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('textFont')));
-      expect(obj.getElement('$attrs').getElement('textFont')).assertContain('fontSize');
-      expect(obj.getElement('$attrs').getElement('textFont')).assertContain('15.00fp');
+      obj.getElement('$attrs').getString('textFont'));
+      expect(obj.getElement('$attrs').getString('textFont')).assertContain('fontSize');
+      expect(obj.getElement('$attrs').getString('textFont')).assertContain('15.00fp');
       console.info('[SearchModifierTest_static_0010] END');
       done();
     });
@@ -88,14 +88,14 @@ it('SearchModifierTest_static_0010', Level.LEVEL1, async (done: () => void): Pro
      * @tc.desc     SearchModifierTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-it('SearchModifierTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SearchModifierTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SearchModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchModifier_get_type');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SearchModifierTest_static_0020] SearchInstance type is: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('text')));
-      expect(obj.getElement('$attrs').getElement('content')).assertEqual('undefined');
+      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('content')));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('init SearchModifier1');
       console.info('[SearchModifierTest_static_0020] END');
       done();
     });

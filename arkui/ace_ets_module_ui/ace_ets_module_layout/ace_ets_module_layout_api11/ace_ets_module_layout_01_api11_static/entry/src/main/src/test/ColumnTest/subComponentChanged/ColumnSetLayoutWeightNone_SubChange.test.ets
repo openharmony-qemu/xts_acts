@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +36,7 @@ export default function ColumnSetLayoutWeightNone_SubChange() {
   describe('ColumnSetLayoutWeightTest',  () =>{
     beforeAll(() => {
       console.info("ColumnSetLayoutWeightTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,11 +53,11 @@ export default function ColumnSetLayoutWeightNone_SubChange() {
         console.info("get ColumnSetLayoutWeightTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSetLayoutWeightNone_SubChange" == pages.name)) {
           console.info("get ColumnSetLayoutWeightTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ColumnSetLayoutWeightTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetLayoutWeightTest page error:" + err);
@@ -82,7 +82,7 @@ export default function ColumnSetLayoutWeightNone_SubChange() {
      */
 it('testColumnSetLayoutWeightWithRateThreeTwoZero_static', Level.LEVEL0, async () => {
       console.info('new testColumnSetLayoutWeightWithRateThreeTwoZero_static START');
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(1000);
       let layoutExpectHeight1 = (190/5)*3;
       let layoutExpectHeight2 = (190/5)*2;
@@ -93,12 +93,12 @@ it('testColumnSetLayoutWeightWithRateThreeTwoZero_static', Level.LEVEL0, async (
       let setLayoutWeightNone: RectValue = CommonFunc.getComponentRect('setLayoutWeightNone');
 
       expect(Math.abs(setLayoutWeightNone1.top - setLayoutWeightNone.top) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone2.top - setLayoutWeightNone1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone3.top - setLayoutWeightNone2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone2.top - setLayoutWeightNone1.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone3.top - setLayoutWeightNone2.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
 
-      expect(Math.abs(setLayoutWeightNone1.bottom - setLayoutWeightNone1.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(layoutExpectHeight1))) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone2.bottom - setLayoutWeightNone2.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(layoutExpectHeight2))) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone3.bottom - setLayoutWeightNone3.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(layoutExpectHeight3))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone1.bottom - setLayoutWeightNone1.top - Math.round(uiContext!.vp2px(layoutExpectHeight1))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone2.bottom - setLayoutWeightNone2.top - Math.round(uiContext!.vp2px(layoutExpectHeight2))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone3.bottom - setLayoutWeightNone3.top - Math.round(uiContext!.vp2px(layoutExpectHeight3))) <= 1).assertTrue()
       console.info('new testColumnSetLayoutWeightWithRateThreeTwoZero_static END');
     });
   })

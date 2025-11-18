@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,10 +16,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {FlexAlign} from '@ohos.arkui.component'
-
+// import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
 import  RectValue from '../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
+// import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -38,6 +38,9 @@ export default function grid_rowOnBreakpointChangeJsunit() {
   describe('grid_rowOnBreakpointChangeTest', () => {
     beforeAll(async () => {
       console.info("flex beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GridRow/grid_row',
       }
@@ -49,9 +52,9 @@ export default function grid_rowOnBreakpointChangeJsunit() {
         if (!("grid_row" == pages?.name)) {
           console.info("get grid_row state success " + JSON.stringify(pages?.name));
           routerInstance?.pushUrl(options);
-          
+          // let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push grid_row page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push grid_row page error: " + err);
@@ -67,26 +70,27 @@ export default function grid_rowOnBreakpointChangeJsunit() {
     
 
 
+
 /*
      * @tc.number   testgrid_rowOnBreakpointChange001_static
      * @tc.name     testgrid_rowOnBreakpointChange001_static
      * @tc.desc     testgrid_rowOnBreakpointChange001_static
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_rowOnBreakpointChange001_static', Level.LEVEL0, async () => {
+    it('testgrid_rowOnBreakpointChange001_static', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange001_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('GridRow');
       console.info("[testgrid_rowOnBreakpointChange001_static] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('GridRow');
-      expect(obj.getElement('$attrs').getString('width')).assertEqual("100vp");
       console.info("[testgrid_rowOnBreakpointChange001_static] width value :" + obj.getElement('$attrs').getString('width'));
-
+      expect(obj.getElement('$attrs').getString('width')).assertEqual("100vp");
     });
 
     
     
+
 
 
 /*
@@ -95,20 +99,20 @@ it('testgrid_rowOnBreakpointChange001_static', Level.LEVEL0, async () => {
      * @tc.desc     testgrid_rowOnBreakpointChange002_static
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_rowOnBreakpointChange002_static', Level.LEVEL0, async () => {
+    it('testgrid_rowOnBreakpointChange002_static', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('GridRow');
       console.info("[testgrid_rowOnBreakpointChange002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('GridRow');
-      expect(obj.getElement('$attrs').getString('height')).assertEqual("100vp");
       console.info("[testgrid_rowOnBreakpointChange002] height value :" + obj.getElement('$attrs').getString('height'));
-
+      expect(obj.getElement('$attrs').getString('height')).assertEqual("100vp");
     });
 
     
     
+
 
 
 /*
@@ -117,15 +121,15 @@ it('testgrid_rowOnBreakpointChange002_static', Level.LEVEL0, async () => {
      * @tc.desc     testgrid_rowOnBreakpointChange003_static
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_rowOnBreakpointChange003_static', Level.LEVEL0, async () => {
+    it('testgrid_rowOnBreakpointChange003_static', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange003_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('GridRow');
       console.info("[testgrid_rowOnBreakpointChange003_static] component backgroundColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('GridRow');
-      expect(obj.getElement('$attrs').getString('background')).assertEqual("0xFF0000");
-      console.info("[testgrid_rowOnBreakpointChange003_static] backgroundColor value :" + obj.getElement('$attrs').getString('background'));
+      console.info("[testgrid_rowOnBreakpointChange003_static] backgroundColor value :" + obj.getElement('$attrs').getString('backgroundColor'));
+      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("0xFF0000");
     });
   })
 }
