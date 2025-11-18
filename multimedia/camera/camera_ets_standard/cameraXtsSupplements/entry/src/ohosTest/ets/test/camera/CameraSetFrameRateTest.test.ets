@@ -304,7 +304,6 @@ export default function cameraSetFrameRateTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
       AppStorage.setOrCreate('key', '');
     });
 
