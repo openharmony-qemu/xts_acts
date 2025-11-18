@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,46 +13,51 @@
  * limitations under the License.
  */
 import {
-  $r,
-  Builder,
-  Button,
-  Color,
-  Column,
-  Component,
-  CopyOptions,
-  DragEvent,
-  DragResult,
   Entry,
-  Margin,
-  ResourceColor,
+  Component,
+  $r,
+  Column,
   Text,
+  Button,
+  CopyOptions,
   TextArea,
+  ResourceColor,
+  Color,
+  Margin,
   TouchEvent,
+  DragEvent,
+  Builder,
   TouchType,
+  DragResult,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import UDC from '@ohos.data.unifiedDataChannel';
-import dragController from '@ohos.arkui.dragController'
+import dragController from "@ohos.arkui.dragController"
 import componentSnapshot from '@ohos.arkui.componentSnapshot';
 import image from '@ohos.multimedia.image';
 import curves from '@ohos.curves';
 import { BusinessError } from '@ohos.base';
+import { DragController } from '@ohos.arkui.UIContext';
 
-class tmp {
-  event: DragEvent | undefined = undefined
-  extraParams: string = ''
+let dragController = new DragController()
+class tmp{
+  event:DragEvent|undefined = undefined
+  extraParams:string = ''
 }
-
 @Entry
 @Component
 struct DragControllerPage {
-  @State pixmap: image.PixelMap | null = null
-  @State setColorText: ResourceColor = Color.Green
+  @State pixmap: image.PixelMap|null = null
+  @State setColorText:  ResourceColor = Color.Green
 
-  @Builder
-  DraggingBuilder() {
+  @Builder DraggingBuilder() {
     Column() {
       Text("DraggingBuilder")
     }
@@ -60,9 +65,7 @@ struct DragControllerPage {
     .height(100)
     .backgroundColor(Color.Blue)
   }
-
-  @Builder
-  PixmapBuilder() {
+  @Builder PixmapBuilder() {
     Column() {
       Text("PixmapBuilder")
     }
@@ -70,45 +73,67 @@ struct DragControllerPage {
     .height(100)
     .backgroundColor(Color.Blue)
   }
-
   build() {
     Column() {
       Button('拖拽至此处')
         .backgroundColor(this.setColorText)
         .id('setForegroundColor_id')
-
-
-      Button('拖起')
-        .draggable(true)
-        .id('TouchParent_id')
-        .onTouch((event?: TouchEvent) => {
-          if (event) {
-            if (event.type == TouchType.Down) {
-              let text = new UDC.UnifiedRecord()
-              let unifiedData = new UDC.UnifiedData(text)
-              console.log("one drag Down");
-              let dragInfo: dragController.DragInfo = {
-                pointerId: 0,
-                data: unifiedData,
-                extraParams: ''
-              }
-              let eve: tmp = new tmp()
-              this.getUIContext().getDragController().executeDrag((): void => {
-                this.DraggingBuilder()
-              }, dragInfo, (err: BusinessError<void> | null, eve: dragController.DragEventParam | undefined): void => {
-                console.log(`zxr ${JSON.stringify(err)}`)
-                if (eve && eve.event) {
-                  if (eve.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
-                    console.log('success');
-                  } else if (eve.event.getResult() == DragResult.DRAG_FAILED) {
-                    console.log('failed');
-                  }
-                }
-              })
-
+        .onDragEnter(() => {
+          console.log(`onDragEnter------------------`);
+          console.error(`onDragEnter---------`);
+          try {
+            console.log(`try------------------`);
+            let previewObj: dragController.DragPreview = this.getUIContext().getDragController().getDragPreview();
+            this.setColorText = Color.Pink
+            console.log(`AnimationOptions------------------`);
+            let previewAnimation: dragController.AnimationOptions = {
+              curve: curves.cubicBezierCurve(0.2,0,0,1),
             }
+            console.log(`animate------------------`);
+            previewObj.animate(previewAnimation, () => {
+              console.log(`setForegroundColor------------------`);
+              previewObj.setForegroundColor(this.setColorText);
+            });
+          } catch (error) {
+            let msg = (error as BusinessError).message;
+            let code = (error as BusinessError).code;
+            console.error(`show error code is ${code}, message is ${msg}`);
           }
-        }).margin({ top: 100 } as Margin)
+        })
+        // .onDrop(() => {
+        //   console.log('---------onDrop')
+        // })
+      Button('拖起')
+         .draggable(true)
+        .id('TouchParent_id')
+        .onTouch((event?:TouchEvent) => {
+        if(event){
+          if (event.type == TouchType.Down) {
+            let text = new UDC.UnifiedRecord()
+            let unifiedData = new UDC.UnifiedData(text)
+            console.log("one drag Down");
+            let dragInfo: dragController.DragInfo = {
+              pointerId: 0,
+              data: unifiedData,
+              extraParams: ''
+            }
+            let eve:tmp = new tmp()
+            this.getUIContext().getDragController().executeDrag((): void => {
+              this.DraggingBuilder()
+            }, dragInfo, (err: BusinessError<void>|null , eve: dragController.DragEventParam|undefined): void => {
+              console.log(`zxr ${JSON.stringify(err)}`)
+              if (eve && eve.event) {
+                if (eve.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
+                  console.log('success');
+                } else if (eve.event.getResult() == DragResult.DRAG_FAILED) {
+                  console.log('failed');
+                }
+              }
+            })
+
+          }
+        }
+      }).margin({top:100} as Margin)
     }
     .width('100%')
     .height('100%')

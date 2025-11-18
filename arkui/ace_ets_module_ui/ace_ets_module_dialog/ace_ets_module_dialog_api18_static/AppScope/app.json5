@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "com.arkui.ace.dialog.api18.static",
+    "bundleName": "com.arkui.ace.dialog.static",
     "vendor": "huawei",
     "versionCode": 1000000,
     "versionName": "1.0.0",

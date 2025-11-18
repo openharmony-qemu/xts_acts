@@ -74,7 +74,7 @@ struct Index {
 
   getDataFromUdmfRetry(event: DragEvent, callback: (data: DragEvent) => void) {
     try {
-      let data: UnifiedData = event.getData() as UnifiedData;
+      let data: UnifiedData = event.getData()!;
       if (!data) {
         return false;
       }
@@ -114,12 +114,12 @@ struct Index {
       Column() {
          Image($r('app.media.apple'))
           .id('startDrag')
-          .onDrop((dragEvent?: DragEvent) => {
-            // let dragSource = (dragEvent as DragEvent).getDragSource();
-            // AppStorage.setOrCreate<DragEvent>('dragSource1', dragSource)
-            // let isRemote = (dragEvent as DragEvent).isRemote();
-            // AppStorage.setOrCreate<DragEvent>('isRemote1', isRemote)
-          } as (dragEvent: DragEvent|undefined) => void)
+          // .onDrop((dragEvent?: DragEvent) => {
+          //   let dragSource = (dragEvent as DragEvent).getDragSource();
+          //   AppStorage.setOrCreate<DragEvent>('dragSource1', dragSource)
+          //   let isRemote = (dragEvent as DragEvent).isRemote();
+          //   AppStorage.setOrCreate<DragEvent>('isRemote1', isRemote)
+          // } as (dragEvent: DragEvent|undefined) => void)
           // .onDragStart((event: DragEvent) => {
           //   let dragSource = (event as DragEvent).getDragSource();
           //   let isRemote = (event as DragEvent).isRemote();
