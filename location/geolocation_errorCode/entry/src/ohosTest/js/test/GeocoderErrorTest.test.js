@@ -941,7 +941,7 @@ export default function geolocationTest_GeoErr() {
                             console.info("SUB_HSS_addBeaconFence_0600:catch (error)" + JSON.stringify(error));
                         }
                       }
-                      geoLocationm.addBeaconFence(fenceRequest).then((id) => {
+                      geolocationm.addBeaconFence(fenceRequest).then((id) => {
                         console.info("addBeaconFence0600 success, fence id:" + id);
                         expect(true).assertEqual(JSON.stringify(id)!=null);
                       }).catch((err) => {
