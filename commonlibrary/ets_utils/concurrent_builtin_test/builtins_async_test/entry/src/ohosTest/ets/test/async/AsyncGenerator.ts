@@ -986,8 +986,8 @@ export async function AsyncGeneratorTest059() {
   async function* generatorWithTimer() {
     const start = Date.now();
     yield 'start';
-    await new Promise(resolve => setTimeout(resolve, 10));
-    yield Date.now() - start >= 10;
+    await new Promise(resolve => setTimeout(resolve, 100));
+    yield Date.now() - start >= 99;
   }
 
   const gen = generatorWithTimer();

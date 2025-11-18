@@ -890,9 +890,9 @@ export async function AsyncIteratorTest079() {
     const asyncIterator = (async function* () {
         const inner = (async function* () {
             const start = Date.now();
-            await new Promise(resolve => setTimeout(resolve, 3));
+            await new Promise(resolve => setTimeout(resolve, 30));
             const duration = Date.now() - start;
-            yield duration >= 2 ? 'timed' : 'fast';
+            yield duration >= 29 ? 'timed' : 'fast';
         })();
         yield* inner;
     })();
