@@ -2303,13 +2303,13 @@ function testSetExternalSourceExtensionsPolicy() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0200
    * @tc.name      : test_set_external_source_extensions_policy_0200
-   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with normal admin
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with not super admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
   it("test_set_external_source_extensions_policy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
       expect(false).assertTrue();
@@ -2413,13 +2413,13 @@ function testGetExternalSourceExtensionsPolicy() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0200
    * @tc.name      : test_get_external_source_extensions_policy_0200
-   * @tc.desc      : test securityManager getExternalSourceExtensionsPolicy with normal admin
+   * @tc.desc      : test securityManager getExternalSourceExtensionsPolicy with not super admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
   it("test_get_external_source_extensions_policy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(false).assertTrue();
