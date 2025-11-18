@@ -44,16 +44,15 @@ export default function nodeList() {
       await CommonFunc.sleep(1000);
       console.info(" nodeList after each called");
     });
+
     /* *
-    * @tc.number: SUB_ACE_TYPENODE_LIST_0100
+    * @tc.number: nodeList_0100
     * @tc.name  : nodeList_0100
     * @tc.desc  : List type FrameNode node
     * @tc.level : Level 2
     * @tc.type :
     * @tc.size :
     */
-
-
     it('nodeList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('nodeList_0100 START');
       await CommonFunc.sleep(1000);
@@ -68,24 +67,23 @@ export default function nodeList() {
       console.info('[nodeList_0100] END');
       done();
     });
+
     /* *
-    * @tc.number: SUB_ACE_TYPENODE_LISTITEM_0100
-    * @tc.name  : nodeList_0100
+    * @tc.number: nodeList_0200
+    * @tc.name  : nodeList_0200
     * @tc.desc  : ListItem type FrameNode node
     * @tc.level : Level 2
     * @tc.type :
     * @tc.size :
     */
-
-
-    it('nodeList_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('nodeList_0100 START');
+    it('nodeList_0200', Level.LEVEL0, async (done: Function) => {
+      console.info('nodeList_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('listItem_node');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[nodeList_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[nodeList_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$type).assertEqual('ListItem');
-      console.info('[nodeList_0100] END');
+      console.info('[nodeList_0200] END');
       done();
     });
   })
