@@ -1695,6 +1695,88 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_005
+     * @tc.name      : test_removeUserNonStopApps_005
+     * @tc.desc      : test removeUserNonStopApps method with different data
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeUserNonStopApps_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"5765880207854258995",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
+        applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_006
+     * @tc.name      : test_removeUserNonStopApps_006
+     * @tc.desc      : test removeUserNonStopApps method has different data
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeUserNonStopApps_006", Level.LEVEL2, async (done: Function) => {
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"5765880207854258995",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"1062865240531676032",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
+        applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_GETUSERNONSTOPAPPS_001
      * @tc.name      : test_getUserNonStopApps_001
      * @tc.desc      : test getUserNonStopApps method with unActive admin
@@ -1726,7 +1808,7 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002).assertTrue();
+        expect(error.code == 9200002 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }

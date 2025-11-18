@@ -12,24 +12,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
-import GetNodeByIdNullTest from './ContextTest/GetNodeByIdNullTest.test';
-import UIContextUndefinedTest from './ContextTest/UIContextUndefinedTest.test';
+import APIgetFrameNodeByUniqueId from './ContextTest/APIgetFrameNodeByUniqueId.test';
 import UIContextOnIdle from './OnIdle/UIContextOnIdle.test';
 import GetWindowWidthAndHeight from './window/GetWindowWidthAndHeight.test';
 import PixelUnitsConversion from './xts/PixelUnitsConversion.test';
+import atomicServiceBarTest from "./UIContext/autoservice/atomicServiceBar.test";
+import UIContextApi1 from './UIContext/UIContextApi1.test';
+import UIContextTestCase from './UIContext/UIContextTestCase.test';
+
+import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
+import GetNodeByIdNullTest from './ContextTest/GetNodeByIdNullTest.test';
+import UIContextUndefinedTest from './ContextTest/UIContextUndefinedTest.test';
 import UIContextWithoutWindowTest from './ContextTest/UIContextWithoutWindow.test';
 import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
 import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
 
 export default function testsuite() {
-  CacheMaxCountForHSPTest();
-  GetNodeByIdNullTest();
-  UIContextUndefinedTest();
+  APIgetFrameNodeByUniqueId();
   UIContextOnIdle();
   GetWindowWidthAndHeight();
   PixelUnitsConversion();
+  atomicServiceBarTest();
+  UIContextApi1();
+  UIContextTestCase();
+
+  CacheMaxCountForHSPTest();
+  GetNodeByIdNullTest();
+  UIContextUndefinedTest();
   UIContextWithoutWindowTest();
   UIContextGetOpacityTest();
   IsAvailableTest();

@@ -2393,10 +2393,10 @@ export default function windowTitleBarTest() {
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
-        mainWindow.setWindowTitleButtonVisible(true,true,true);
         await terminateAbility(caseName);
         if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300002)
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
         } else {
           expect(error.code).assertEqual(801)
         }
@@ -2471,10 +2471,10 @@ export default function windowTitleBarTest() {
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
-        mainWindow.setWindowTitleButtonVisible(true,true,true);
         await terminateAbility(caseName);
         if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300002)
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
         } else {
           expect(error.code).assertEqual(801)
         }

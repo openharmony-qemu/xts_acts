@@ -37,6 +37,7 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_gridrow_gridcol:ActsAceEtsModuleLayoutGridRowGridColTest",
       "ace_ets_module_layout_blank:ActsAceEtsModuleLayoutBlankTest",
       "ace_ets_module_layout_divider:ActsAceEtsModuleLayoutDividerTest",
+      "ace_ets_module_layout_common_custom:ActsAceEtsModuleLayoutCommonCustomTest",
     ]
   } else {
     deps = [
@@ -62,6 +63,9 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_gridrow_gridcol:ActsAceEtsModuleLayoutGridRowGridColTest",
       "ace_ets_module_layout_blank:ActsAceEtsModuleLayoutBlankTest",
       "ace_ets_module_layout_divider:ActsAceEtsModuleLayoutDividerTest",
+      "ace_ets_module_layout_nowear_folderStack:ActsAceEtsModuleLayoutNowearFolderStackTest",
+      "ace_ets_module_layout_nowear_columnSplit_rowSplit:ActsAceEtsModuleLayoutNowearColumnSplitRowSplitTest",
+      "ace_ets_module_layout_common_custom:ActsAceEtsModuleLayoutCommonCustomTest",
     ]
   }
 }
