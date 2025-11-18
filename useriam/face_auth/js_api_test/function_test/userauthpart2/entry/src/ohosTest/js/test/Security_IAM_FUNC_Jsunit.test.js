@@ -665,6 +665,7 @@ export default function userauthTest() {
                     try {
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType: ${authTypeParamError[idx0]}`);
                         await userAuthNorth.getAuthLockState(authTypeParamError[idx0]);
+                        expect(null).assertFail();
                     } catch (error) {
                         console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType: ${authTypeParamError[idx0]}`);
                         expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.TYPE_NOT_SUPPORT);
@@ -674,6 +675,7 @@ export default function userauthTest() {
                 try {
                     console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType is empty`);
                     await userAuthNorth.getAuthLockState();
+                    expect(null).assertFail();
                 } catch (error) {
                     console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType is empty`);
                     expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.INVALID_PARAMETERS);
@@ -682,6 +684,7 @@ export default function userauthTest() {
                 try {
                     console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType is NULL`);
                     await userAuthNorth.getAuthLockState(null);
+                    expect(null).assertFail();
                 } catch (error) {
                     console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType is NULL`);
                     expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.INVALID_PARAMETERS);
@@ -694,6 +697,7 @@ export default function userauthTest() {
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.isLocked : ${AuthLockState.isLocked}`);
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.remainingAuthAttempts : ${AuthLockState.remainingAuthAttempts}`);
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.lockoutDuration : ${AuthLockState.lockoutDuration}`);
+                        expect(null).assertFail();
                     } catch (error) {
                         console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType: ${authType[idx0]}`);
                         expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.NOT_ENROLLED);
