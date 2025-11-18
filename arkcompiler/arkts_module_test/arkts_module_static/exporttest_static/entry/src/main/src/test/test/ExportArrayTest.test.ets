@@ -54,8 +54,10 @@ export default function exportArrayTest() {
      */
     it('exportArrayTestTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       // expect(arr4.default).assertDeepEquals([1, 2, 3]);   // case ： 问题确认中，显式的使用xxx.default，编译报错，1.2语法不支持
-      expect(arr4.arr1).assertDeepEquals([2, 3, 4]);
-      expect(arr4.arr2).assertDeepEquals([3, 4, 5]);
+      const target1: Array<number> = [2, 3, 4];
+      const target2: Array<number> = [3, 4, 5];
+      expect(arr4.arr1).assertDeepEquals(target1);
+      expect(arr4.arr2).assertDeepEquals(target2);
       // expect(arr4.arr3).assertDeepEquals([3, 4, 5]);   // case : 问题确认中，export * as XX + export {A as B} 的组合场景，编译报错
     })
 
@@ -68,7 +70,8 @@ export default function exportArrayTest() {
      * @tc.level Level 1
      */
     it('exportArrayTestTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr).assertDeepEquals([1, 2, 3]);
+      const target: Array<number> = [1, 2, 3];
+      expect(arr).assertDeepEquals(target);
     });
 
     /**
@@ -81,7 +84,8 @@ export default function exportArrayTest() {
      */
     it('exportArrayTestTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: typeArr<number> = [6, 7, 8];
-      expect(arr).assertDeepEquals([6, 7, 8]);
+      const target: Array<number> = [6, 7, 8];
+      expect(arr).assertDeepEquals(target);
     });
 
     /**
@@ -93,7 +97,8 @@ export default function exportArrayTest() {
      * @tc.level Level 1
      */
     it('exportArrayTestTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr1).assertDeepEquals([2, 3, 4]);
+      const target: Array<number> = [2, 3, 4];
+      expect(arr1).assertDeepEquals(target);
     });
 
     /**
@@ -105,7 +110,8 @@ export default function exportArrayTest() {
      * @tc.level Level 1
      */
     it('exportArrayTestTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr2).assertDeepEquals([3, 4, 5]);
+      const target: Array<number> = [3, 4, 5];
+      expect(arr2).assertDeepEquals(target);
     })
 
     /**
@@ -117,7 +123,8 @@ export default function exportArrayTest() {
      * @tc.level Level 1
      */
     it('exportArrayTestTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr3).assertDeepEquals([3, 4, 5]);
+      const target: Array<number> = [3, 4, 5];
+      expect(arr3).assertDeepEquals(target);
     })
 
     /**
@@ -129,8 +136,10 @@ export default function exportArrayTest() {
      * @tc.level Level 1
      */
     it('exportArrayTestTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr5.arr1).assertDeepEquals([2, 3, 4]);
-      expect(arr5.arr2).assertDeepEquals([3, 4, 5]);
+      const target1: Array<number> = [2, 3, 4];
+      const target2: Array<number> = [3, 4, 5];
+      expect(arr5.arr1).assertDeepEquals(target1);
+      expect(arr5.arr2).assertDeepEquals(target2);
       // expect(arr5.arr3).assertDeepEquals([3, 4, 5]);   // case : 问题确认中，export * as XX + export {A as B} 的组合场景，编译报错
     })
 
@@ -143,7 +152,8 @@ export default function exportArrayTest() {
      * @tc.level Level 1
      */
     it('exportArrayTestTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(defaultArr).assertDeepEquals([4, 5, 6]);
+      const target: Array<number> = [4, 5, 6];
+      expect(defaultArr).assertDeepEquals(target);
     })
 
     /**
@@ -156,7 +166,8 @@ export default function exportArrayTest() {
      */
     it('exportArrayTestTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: defaultTypeArr<number> = [7, 8, 9];
-      expect(arr).assertDeepEquals([7, 8, 9]);
+      const target: Array<number> = [7, 8, 9];
+      expect(arr).assertDeepEquals(target);
     })
   });
 }
