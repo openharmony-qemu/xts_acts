@@ -87,6 +87,7 @@ struct animateto {
             console.info("button1 duration test animateTo START")
           })
         })
+
       Button(this.show)
         .backgroundColor(0x317aff)
         .width(80)

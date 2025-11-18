@@ -56,6 +56,8 @@ export default class EntryAbility extends UIAbility {
         } catch (exception) {
           console.error('Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
         }
+        // Obtain a UIContext instance.
+        globalThis.uiContent = windowClass.getUIContext();
       })
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
