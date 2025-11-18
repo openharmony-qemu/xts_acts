@@ -19,11 +19,26 @@ import { Component, Driver, ON } from '@ohos.UiTest';
 export default function ImageSupportSvg2Test() {
   describe('ImageSupportSvg2Test', () => {
     beforeEach(async (done: Function) => {
-      await router.pushUrl({
-        url: 'MainAbility/pages/ImageSvg/ImageSupportSvg2'
-      })
+      console.info('ImageSupportSvg2Test beforeEach start');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/ImageSvg/ImageSupportSvg2',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get ImageSupportSvg2Test state success ' + JSON.stringify(pages));
+        if (!('ImageSupportSvg2' == pages.name)) {
+          console.info('get ImageSupportSvg2Test state success ' + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options)
+          console.info('push ImageSupportSvg2Test page success ' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push ImageSupportSvg2Test page error ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(2000);
+      console.info('ImageSupportSvg2Test beforeEach start');
       done();
-    });
+    })
 
     /**
      * @tc.name ImageSupportSvg2Test0100

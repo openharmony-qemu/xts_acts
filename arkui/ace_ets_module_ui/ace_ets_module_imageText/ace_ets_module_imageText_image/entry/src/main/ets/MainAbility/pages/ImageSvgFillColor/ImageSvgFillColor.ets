@@ -104,7 +104,7 @@ export let allCategories: FillColorCategory[] = [
     0, 'app.media.logo'),
 ]
 
-class MyImageModifier implements AttributeModifier<ImageAttribute> {
+class MyImageSVGModifier implements AttributeModifier<ImageAttribute> {
   isDark: boolean = false
 
   applyNormalAttribute(instance: ImageAttribute): void {
@@ -122,7 +122,7 @@ class MyImageModifier implements AttributeModifier<ImageAttribute> {
 @Component
 struct ImageSVGFillColor {
   @State categories: FillColorCategory[] = allCategories
-  @State modifier: MyImageModifier = new MyImageModifier()
+  @State modifier: MyImageSVGModifier = new MyImageSVGModifier()
 
   build() {
     Column() {

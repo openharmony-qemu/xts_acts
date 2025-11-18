@@ -57,7 +57,7 @@ export default function AboutToRecycleImage() {
     it('AboutToRecycleImage_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[AboutToRecycleImage_0100] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('AboutToRecycleImage');
+      let strJson = getInspectorByKey('aboutToRecycleImage');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[AboutToRecycleImage_0100] obj is: ' + JSON.stringify(obj.$attrs.height));
       expect(obj.$attrs.height).assertEqual('50.00vp');
