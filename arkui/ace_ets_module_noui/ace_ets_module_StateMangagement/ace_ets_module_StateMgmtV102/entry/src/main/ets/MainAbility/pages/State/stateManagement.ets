@@ -13,25 +13,18 @@
  * limitations under the License.
  */
 
-import Log from '../../common/Log';
 
 const TAG = 'ets_apiLack_add';
 
 @Entry
 @Component
 struct StateManagementDARK {
-  aboutToAppear() {
-    Log.showInfo(TAG, `aboutToAppear StateManagementDARK start`);
-  }
 
-  aboutToDisappear() {
-    Log.showInfo(TAG, `aboutToDisAppear StateManagementDARK end`);
-  }
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
 
-      Text("stateManagement-DARK")
+      Text('stateManagement-DARK')
         .width(100)
         .height('70%')
         .fontSize(9)
@@ -43,10 +36,10 @@ struct StateManagementDARK {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .backgroundColor(ColorMode.DARK)
-        .key("DARKText")
+        .key('DARKText')
     }
-    .width("100%")
-    .height("100%")
+    .width('100%')
+    .height('100%')
   }
 }
 

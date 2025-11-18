@@ -33,14 +33,14 @@ class SArrClassA {
 @Component
 struct StateArray {
   @State title: SArrModel[] = [new SArrModel(11), new SArrModel(1)]
-  @State ClassA: SArrClassA = new SArrClassA('Hello', new SArrModel(6))
+  @State classA: SArrClassA = new SArrClassA('Hello', new SArrModel(6))
 
   build() {
     Column() {
       Button('Reset').id('StateArray_reset').height('5%')
         .onClick(() => {
           this.title = [new SArrModel(11), new SArrModel(1)]
-          this.ClassA = new SArrClassA('Hello', new SArrModel(6))
+          this.classA = new SArrClassA('Hello', new SArrModel(6))
         })
       Text('title：' + JSON.stringify(this.title)).fontSize(9)
         .height('5%')
@@ -67,7 +67,7 @@ struct StateArray {
           this.title.push(new SArrModel(12))
         })
 
-      Text('ClassA：' + JSON.stringify(this.ClassA)).fontSize(9)
+      Text('ClassA：' + JSON.stringify(this.classA)).fontSize(9)
         .height('5%')
         .key('text_ClassA')
       Button('Click to change Parent Component Property Values').fontSize(9)
@@ -75,7 +75,7 @@ struct StateArray {
         .key('change_Parent')
         .onClick(() => {
           // 动态修改父组件属性值
-          this.ClassA.value = 'World'
+          this.classA.value = 'World'
         })
 
       Button('Click to change self Component Property Values').fontSize(9)
@@ -83,7 +83,7 @@ struct StateArray {
         .key('change_Self')
         .onClick(() => {
           // 动态修改自组件属性值
-          this.ClassA.data = new SArrModel(8)
+          this.classA.data = new SArrModel(8)
         })
     }.width('100%')
   }
