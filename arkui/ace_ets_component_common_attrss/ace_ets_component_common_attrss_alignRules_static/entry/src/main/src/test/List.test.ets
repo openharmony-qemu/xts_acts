@@ -16,6 +16,5 @@
 import alignRulesTest from './alignRules/AlignRulesTest.test';
 
 export default function testsuite() {
-  console.info('testsuite start ...');
   alignRulesTest();
 }

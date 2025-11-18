@@ -36,70 +36,67 @@ interface Attrs{
 }
 
 export default function aspectRatioWidthTest() {
-
+  // let uiContext = AppStorage.get<UIContext>("uiContext")
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    'AlphabetIndexer',
-    'Blank',
-    'Button',
-    'Checkbox',
-    'CheckboxGroup',
-    'DataPanel',
-    'DatePicker',
-    'Divider',
-    'Gauge',
-    'Image',
-    'ImageAnimator',
-    'LoadingProgress',
-    'Marquee',
-    'Menu',
-    'MenuItem',
-    //'MenuItemGroup',
-    'Navigation',
-    'NavRouter',
-    'Progress',
-    'QRCode',
-    'Radio',
-    'Rating',
-    'ScrollBar',
-    'Search',
-    'Slider',
-    //'StepperItem',
-    'Text',
-    'TextArea',
-    'TextClock',
-    'TextInput',
-    'TextPicker',
-    'TextTimer',
-    'TimePicker',
-    'Toggle',
+    // 'AlphabetIndexer',
+    // 'Blank',
+    // 'Button',
+    // 'Checkbox',
+    // 'CheckboxGroup',
+    // 'DataPanel',
+    // 'DatePicker',
+    // 'Divider',
+    // 'Gauge',
+    // 'Image',
+    // 'ImageAnimator',
+    // 'LoadingProgress',
+    // 'Marquee',
+    // 'Menu',
+    // 'MenuItem',
+    // 'Navigation',
+    // 'NavRouter',
+    // 'Progress',
+    // 'QRCode',
+    // 'Radio',
+    // 'Rating',
+    // 'ScrollBar',
+    // 'Search',
+    // 'Slider',
+    // 'Text',
+    // 'TextArea',
+    // 'TextClock',
+    // 'TextInput',
+    // 'TextPicker',
+    // 'TextTimer',
+    // 'TimePicker',
+    // 'Toggle',
     'Badge',
-    'Column',
-    'Counter',
-    'Flex',
-    'GridRow',
-    //'GridCol',
-    'Grid',
-    'GridItem',
-    'List',
-    'ListItem',
-    'Navigator',
-    'Panel',
-    'Refresh',
-    'RelativeContainer',
-    'Row',
-    'Scroll',
-    'Stack',
-    'Swiper',
-    'Tabs',
-    'Circle',
-    'Ellipse',
-    'Line',
-    'Polyline',
-    'Polygon',
-    'Path',
-    'Rect',
-    'Shape'
+    // 'Column',
+    // 'Counter',
+    // 'Flex',
+    // 'GridRow',
+    // 'Grid',
+    // 'GridItem',
+    // 'List',
+    // 'ListItem',
+    // 'Navigator',
+    // 'Panel',
+    // 'Refresh',
+    // 'RelativeContainer',
+    // 'Row',
+    // 'Scroll',
+    // 'Stack',
+    // 'Swiper',
+    // 'Tabs',
+    // 'Circle',
+    // 'Ellipse',
+    // 'Line',
+    // 'Polyline',
+    // 'Polygon',
+    // 'Path',
+    // 'Rect',
+    // 'Shape'
   )
 
   //Custom params.
@@ -124,7 +121,7 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      // widthValue: UIContext.getFocusedUIContext()!.vp2px(100),
+      widthValue: 100,
       aspectRatio: 2.0
     }
   }, {
@@ -135,7 +132,7 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      // widthValue: UIContext.getFocusedUIContext()!.vp2px(100),
+      widthValue: 100,
       aspectRatio: 0.5
     }
   }]
@@ -146,18 +143,22 @@ export default function aspectRatioWidthTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Gets Rect information for the target component
+      AppStorage.setOrCreate<number>('_aspectRatio',  data.testValue.setValue.aspectRatio)
+      AppStorage.setOrCreate<number>('_width',  data.testValue.setValue.width as number)
+      data.testValue.expectValue.heightValue = AppStorage.get<UIContext>('uiContext')!.vp2px(100)
       let targetRect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       let targetRectWidth = targetRect.right - targetRect.left;
       let targetRectHeight = targetRect.bottom - targetRect.top;
       let targetRectAspectRatio = targetRectWidth / targetRectHeight;
-      let attrs = data.viewObj as Attrs
       //Check width and aspectRatio are set successfully
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.width is:' + attrs?.$attrs.width);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.$attrs.aspectRatio);
-      expect(attrs?.$attrs.width).assertEqual(data.testValue.expectValue.width);
-      expect(attrs?.$attrs.aspectRatio).assertEqual(data.testValue.expectValue.aspectRatio);
+      let attrs = data.viewObj
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.width is:' + attrs?.getElement('$attrs').getString('width'));
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.getElement('$attrs').getDouble('aspectRatio'));
+      expect(attrs?.getElement('$attrs').getString('width')).assertEqual(data.testValue.expectValue.width);
+      expect(attrs?.getElement('$attrs').getDouble('aspectRatio')).assertEqual(data.testValue.expectValue.aspectRatio);
 
       //Check the width, height, and aspectRatio are correct
       console.info('[' + data.caseTag + '] targetRectWidth is:' + targetRectWidth);

@@ -69,7 +69,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      
+      heightValue: new UIContext().vp2px(100),
       aspectRatio: 2.0
     }
   }, {
@@ -80,7 +80,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      
+      heightValue: new UIContext().vp2px(100),
       aspectRatio: 0.5
     }
   }]
@@ -91,19 +91,21 @@ export default function aspectRatioHeightTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.aspectRatio.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Gets Rect information for the target component
+      AppStorage.setOrCreate<number>('_aspectRatio',  data.testValue.setValue.aspectRatio)
+      AppStorage.setOrCreate<number>('_height',  data.testValue.setValue.height as number)
       let targetRect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       let targetRectWidth = targetRect.right - targetRect.left;
       let targetRectHeight = targetRect.bottom - targetRect.top;
       let targetRectAspectRatio = targetRectWidth / targetRectHeight;
-      let attrs = data.viewObj as Attrs
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' + attrs?.$attrs.height);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.$attrs.aspectRatio);
+      let attrs = data.viewObj
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' + attrs?.getElement('$attrs').getString('height'));
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.getElement('$attrs').getDouble('aspectRatio'));
 
       //Check height and aspectRatio are set successfully
-      expect(attrs?.$attrs.height).assertEqual(data.testValue.expectValue.height);
-      expect(attrs?.$attrs.aspectRatio).assertEqual(data.testValue.expectValue.aspectRatio);
+      expect(attrs?.getElement('$attrs').getString('height')).assertEqual(data.testValue.expectValue.height);
+      expect(attrs?.getElement('$attrs').getDouble('aspectRatio')).assertEqual(data.testValue.expectValue.aspectRatio);
       console.info('[' + data.caseTag + '] targetRectWidth is:' + targetRectWidth);
       console.info('[' + data.caseTag + '] targetRectHeight is:' + targetRectHeight);
       console.info('[' + data.caseTag + '] targetRectAspectRatio:' + targetRectAspectRatio);

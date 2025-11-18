@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, GridRow, GridCol, Color } from '@ohos.arkui.component'
+import { Entry, Component, GridRow, GridCol, Color, CommonMethod, applyStyles } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { RouterParams } from '../../common/Utils';
@@ -20,22 +20,29 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct DefaultByGridRowPage {
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? ''
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
+  @State parentWidth: number = 0
+  @State parentHeight: number = 0
+  @State targetView: string = ""
+  @State componentKey: string = ""
 
   onPageShow() {
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    this.parentWidth = routerParamOptions.view.parentWidth
+    this.parentHeight = routerParamOptions.view.parentHeight
+    this.targetView = routerParamOptions.view.targetView ?? ""
+    this.componentKey = routerParamOptions.view.componentKey ?? ""
     console.info('DefaultByGridRowPage show called ')
   }
 
-
+  commonStyle(instance: CommonMethod){
+    instance.key(this.componentKey)
+  }
 
   //Draw screen
   build() {
     GridRow() {
       if (this.targetView == 'GridCol') {
-        GridCol()
+        GridCol().applyStyles(this.commonStyle)
       }
     }.width(this.parentWidth).height(this.parentHeight).backgroundColor(Color.Green)
   }

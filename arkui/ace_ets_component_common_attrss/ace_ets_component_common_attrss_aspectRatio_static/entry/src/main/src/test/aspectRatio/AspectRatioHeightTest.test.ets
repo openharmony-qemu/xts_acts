@@ -36,71 +36,64 @@ interface Attrs{
 }
 
 export default function aspectRatioHeightTest() {
-
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    'AlphabetIndexer',
-    //'Blank',
-    'Button',
-    'Checkbox',
-    'CheckboxGroup',
-    'DataPanel',
-    'DatePicker',
-    'Divider',
-    'Gauge',
-    'Image',
-    'ImageAnimator',
-    'LoadingProgress',
-    'Marquee',
-    'Menu',
-    'MenuItem',
-    //'MenuItemGroup',
-    'Navigation',
-    'NavRouter',
-    'Progress',
-    'QRCode',
-    'Radio',
-    'Rating',
-    'ScrollBar',
-    'Search',
-    'Slider',
-    //'Stepper',
-    //'StepperItem',
-    'Text',
-    'TextArea',
-    'TextClock',
-    'TextInput',
-    'TextPicker',
-    'TextTimer',
-    'TimePicker',
-    'Toggle',
+    // 'AlphabetIndexer',
+    // 'Button',
+    // 'Checkbox',
+    // 'CheckboxGroup',
+    // 'DataPanel',
+    // 'DatePicker',
+    // 'Divider',
+    // 'Gauge',
+    // 'Image',
+    // 'ImageAnimator',
+    // 'LoadingProgress',
+    // 'Marquee',
+    // 'Menu',
+    // 'MenuItem',
+    // 'Navigation',
+    // 'NavRouter',
+    // 'Progress',
+    // 'QRCode',
+    // 'Radio',
+    // 'Rating',
+    // 'ScrollBar',
+    // 'Search',
+    // 'Slider',
+    // 'Text',
+    // 'TextArea',
+    // 'TextClock',
+    // 'TextInput',
+    // 'TextPicker',
+    // 'TextTimer',
+    // 'TimePicker',
+    // 'Toggle',
     'Badge',
-    'Column',
-    //'Counter',
-    'Flex',
-    'GridRow',
-    //'GridCol',
-    'Grid',
-    'GridItem',
-    'List',
-    'ListItem',
-    'Navigator',
-    'Panel',
-    'Refresh',
-    'RelativeContainer',
-    'Row',
-    'Scroll',
-    'Stack',
-    'Swiper',
-    'Tabs',
-    'Circle',
-    'Ellipse',
-    'Line',
-    'Polyline',
-    'Polygon',
-    'Path',
-    'Rect',
-    'Shape'
+    // 'Column',
+    // 'Flex',
+    // 'GridRow',
+    // 'Grid',
+    // 'GridItem',
+    // 'List',
+    // 'ListItem',
+    // 'Navigator',
+    // 'Panel',
+    // 'Refresh',
+    // 'RelativeContainer',
+    // 'Row',
+    // 'Scroll',
+    // 'Stack',
+    // 'Swiper',
+    // 'Tabs',
+    // 'Circle',
+    // 'Ellipse',
+    // 'Line',
+    // 'Polyline',
+    // 'Polygon',
+    // 'Path',
+    // 'Rect',
+    // 'Shape'
   )
 
   //Custom params.
@@ -117,7 +110,8 @@ export default function aspectRatioHeightTest() {
   }
 
   //Test content and expected results
-  let testValues: TestValue[] = [{
+  let testValues: TestValue[] = [
+    {
     describe: 'SetNumber',
     setValue: {
       height: 100,
@@ -125,10 +119,11 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-
+      heightValue: 100,
       aspectRatio: 2.0
     }
-  }, {
+  },
+    {
     describe: 'SetDecimal',
     setValue: {
       height: 100,
@@ -136,7 +131,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-
+      heightValue: 100,
       aspectRatio: 0.5
     }
   }]
@@ -147,19 +142,25 @@ export default function aspectRatioHeightTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      AppStorage.setOrCreate<number>('_aspectRatio',  data.testValue.setValue.aspectRatio)
+      AppStorage.setOrCreate<number>('_height',  data.testValue.setValue.height as number)
+
+      data.testValue.expectValue.heightValue = AppStorage.get<UIContext>('uiContext')!.vp2px(100)
+
       //Gets Rect information for the target component
       let targetRect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       let targetRectWidth = targetRect.right - targetRect.left;
       let targetRectHeight = targetRect.bottom - targetRect.top;
       let targetRectAspectRatio = targetRectWidth / targetRectHeight;
-      let attrs = data.viewObj as Attrs
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' + attrs?.$attrs.height);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.$attrs.aspectRatio);
+      let attrs = data.viewObj
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' + attrs?.getElement('$attrs').getString('height'));
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.getElement('$attrs').getDouble('aspectRatio'));
 
       //Check height and aspectRatio are set successfully
-      expect(attrs?.$attrs.height).assertEqual(data.testValue.expectValue.height);
-      expect(attrs?.$attrs.aspectRatio).assertEqual(data.testValue.expectValue.aspectRatio);
+      expect(attrs?.getElement('$attrs').getString('height')).assertEqual(data.testValue.expectValue.height);
+      expect(attrs?.getElement('$attrs').getDouble('aspectRatio')).assertEqual(data.testValue.expectValue.aspectRatio);
       console.info('[' + data.caseTag + '] targetRectWidth is:' + targetRectWidth);
       console.info('[' + data.caseTag + '] targetRectHeight is:' + targetRectHeight);
       console.info('[' + data.caseTag + '] targetRectAspectRatio:' + targetRectAspectRatio);

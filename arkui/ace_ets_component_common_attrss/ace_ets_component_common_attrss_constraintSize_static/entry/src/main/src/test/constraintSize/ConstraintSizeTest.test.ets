@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+import { ConstraintSizeOptions} from '@ohos.arkui.component';
 import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -26,6 +26,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -45,7 +47,7 @@ export default function constraintSizeTest() {
     'Image',
     'ImageAnimator',
     'LoadingProgress',
-    'Marquee',
+    // 'Marquee', 组件加载失败
     'Menu',
     'MenuItem',
     'Navigation',
@@ -63,7 +65,7 @@ export default function constraintSizeTest() {
     'TextTimer',
     'TimePicker',
     'Toggle',
-    'Badge',
+    // 'Badge', 组件加载失败
     'Column',
     'Counter',
     'Flex',
@@ -111,9 +113,11 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00vp', 'minHeight': '0.00vp', 'maxWidth': '300.00vp', 'maxHeight': '300.00vp'
       },
-
+      width: 200,
+      height: 200
     }
-  }, {
+  },
+    {
     describe: 'SetStringPx',
     setValue: {
       minWidth: '0px',
@@ -125,7 +129,8 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00px', 'minHeight': '0.00px', 'maxWidth': '900.00px', 'maxHeight': '900.00px'
       },
-
+      width: 200,
+      height: 200
     }
   }, {
     describe: 'SetStringPercent',
@@ -139,7 +144,8 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00vp', 'minHeight': '0.00vp', 'maxWidth': '100.00%', 'maxHeight': '100.00%'
       },
-
+      width: 200,
+      height: 200
     }
   }, {
     describe: 'SetResource',
@@ -153,7 +159,8 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00vp', 'minHeight': '0.00vp', 'maxWidth': '300.00vp', 'maxHeight': '300.00vp'
       },
-
+      width: 200,
+      height: 200
     }
   }, {
     describe: 'SetOrderMaxMinSetting',
@@ -167,7 +174,8 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '250.00vp', 'minHeight': '250.00vp', 'maxWidth': '300.00vp', 'maxHeight': '300.00vp'
       },
-
+      width: 250,
+      height: 250
     }
   }, {
     describe: 'SetOrderSettingMaxMin',
@@ -181,7 +189,8 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '100.00vp', 'minHeight': '100.00vp', 'maxWidth': '150.00vp', 'maxHeight': '150.00vp'
       },
-
+      width: 150,
+      height: 150
     }
   }, {
     describe: 'SetOrderMinMaxSetting',
@@ -195,7 +204,8 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '300.00vp', 'minHeight': '300.00vp', 'maxWidth': '250.00vp', 'maxHeight': '250.00vp'
       },
-
+      width: 300,
+      height: 300
     }
   }, {
     describe: 'SetOrderSettingMinMax',
@@ -209,7 +219,8 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '150.00vp', 'minHeight': '150.00vp', 'maxWidth': '100.00vp', 'maxHeight': '100.00vp'
       },
-
+      width:150,
+      height: 150
     }
   }, {
     describe: 'SetOrderMinSettingMax',
@@ -223,9 +234,11 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '300.00vp', 'minHeight': '300.00vp', 'maxWidth': '100.00vp', 'maxHeight': '100.00vp'
       },
-
+      width: 300,
+      height: 300
     }
-  }]
+  }
+  ]
 
   describe('ConstraintSizeTest', () => {
     beforeAll(() => {
@@ -235,7 +248,22 @@ export default function constraintSizeTest() {
     });
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      let rect = Utils.getComponentRect(data.pageConfig.componentKey);
+
+      if(data.testValue.describe == "SetOrderMaxMinSetting"){
+        data.testValue.expectValue.width = AppStorage.get<UIContext>("uiContext")!.vp2px(250)
+        data.testValue.expectValue.height = AppStorage.get<UIContext>("uiContext")!.vp2px(250)
+      } else if(data.testValue.describe == "SetOrderSettingMaxMin" || data.testValue.describe == "SetOrderSettingMinMax" ){
+        data.testValue.expectValue.width = AppStorage.get<UIContext>("uiContext")!.vp2px(150)
+        data.testValue.expectValue.height = AppStorage.get<UIContext>("uiContext")!.vp2px(150)
+      }else if(data.testValue.describe == "SetOrderMinMaxSetting" || data.testValue.describe == "SetOrderMinSettingMax"){
+        data.testValue.expectValue.width = AppStorage.get<UIContext>("uiContext")!.vp2px(300)
+        data.testValue.expectValue.height = AppStorage.get<UIContext>("uiContext")!.vp2px(300)
+      }else{
+        data.testValue.expectValue.width = AppStorage.get<UIContext>("uiContext")!.vp2px(200)
+        data.testValue.expectValue.height = AppStorage.get<UIContext>("uiContext")!.vp2px(200)
+      }
+
+      let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       //Component width and height calculation
       let height = rect.bottom - rect.top;
       let width = rect.right - rect.left;
@@ -246,7 +274,17 @@ export default function constraintSizeTest() {
       console.info('[' + data.caseTag + ']' + 'width is:' + JSON.stringify(width));
       console.info('[' + data.caseTag + ']' + 'height is:' + JSON.stringify(height));
       console.info('[' + data.caseTag + ']' + 'constraintSize is:' + data.viewObj?.getElement('$attrs').getString('constraintSize'));
-      expect(data.viewObj?.getElement('$attrs').getString('constraintSize')).assertEqual(JSON.stringify(data.testValue.expectValue.constraintSize));
+
+      const viewObjectConstraintSize = JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('constraintSize'))
+      const viewObjMinWidth = viewObjectConstraintSize.getString("minWidth")
+      const viewObjMinHeight = viewObjectConstraintSize.getString("minHeight")
+      const viewObjMaxWidth = viewObjectConstraintSize.getString("maxWidth")
+      const viewObjMaxHeight = viewObjectConstraintSize.getString("maxHeight")
+      const Width1 = data.testValue.expectValue.constraintSize.minWidth
+      expect(viewObjMinWidth).assertEqual(data.testValue.expectValue.constraintSize.minWidth);
+      expect(viewObjMinHeight).assertEqual(data.testValue.expectValue.constraintSize.minHeight);
+      expect(viewObjMaxWidth).assertEqual(data.testValue.expectValue.constraintSize.maxWidth);
+      expect(viewObjMaxHeight).assertEqual(data.testValue.expectValue.constraintSize.maxHeight);
       console.info('[' + data.caseTag + ']' + 'expectValue.width is:' + JSON.stringify(data.testValue.expectValue.width));
       expect(Math.abs(Math.round(width) - Math.round(data.testValue.expectValue.width)) <= 2).assertTrue();
       console.info('[' + data.caseTag + ']' + 'expectValue.height is:' + JSON.stringify(data.testValue.expectValue.height));

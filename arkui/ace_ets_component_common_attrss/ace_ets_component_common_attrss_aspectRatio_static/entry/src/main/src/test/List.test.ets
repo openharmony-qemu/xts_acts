@@ -16,8 +16,6 @@ import aspectRatioWidthTest from './aspectRatio/AspectRatioWidthTest.test';
 import aspectRatioHeightTest from './aspectRatio/AspectRatioHeightTest.test';
 
 export default function testsuite() {
-
   aspectRatioWidthTest();
   aspectRatioHeightTest();
-
 }

@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
 export class RectValue {
@@ -116,7 +116,7 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = router.getParams() as RouterParams;
+      let pageParams: RouterParams = new RouterParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
@@ -172,6 +172,19 @@ export default class Utils {
       "bottom": Number(rectInfo[1][1] ?? 0)
     } as RectValue
   }
+
+  // static getComponentRectByObj(obj: ESObject): RectValue {
+  //   console.info('[getInspectorByKey] current component is: ' + obj.$type);
+  //   let rectInfo: ESObject = JSON.parse('[' + obj.$rect + ']');
+  //   let rect_value: RectValue = {
+  //     left: Number(JSON.parse('[' + rectInfo[0] + ']')[0]),
+  //     top: Number(JSON.parse('[' + rectInfo[0] + ']')[1]),
+  //     right: Number(JSON.parse('[' + rectInfo[1] + ']')[0]),
+  //     bottom: Number(JSON.parse('[' + rectInfo[1] + ']')[1])
+  //   };
+  //   console.info(JSON.stringify(rect_value));
+  //   return rect_value;
+  // }
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
@@ -261,7 +274,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -271,7 +284,7 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -284,7 +297,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -324,7 +337,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,
