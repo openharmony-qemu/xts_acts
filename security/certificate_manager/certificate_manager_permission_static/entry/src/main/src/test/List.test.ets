@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-import priCertJsAPINoPermissionTestUnit from './priCertNoPermission.test';
-import pubCertJsAPINoPermissionTestUnit from './pubCertNoPermission.test';
-import userAndSysCertNoPermissionJsTestUnit from './userAndSysCertNoPermission.test';
-import api16CertNoPermissionTestUnit from './api16CertNoPermission.test';
+import priCertJsAPINoPermissionTestUnit from './PriCertNoPermission.test';
+import pubCertJsAPINoPermissionTestUnit from './PubCertNoPermission.test';
+import userAndSysCertNoPermissionJsTestUnit from './UserAndSysCertNoPermission.test';
+import api16CertNoPermissionTestUnit from './Api16CertNoPermission.test';
 
 export default function testsuite() {
   priCertJsAPINoPermissionTestUnit();

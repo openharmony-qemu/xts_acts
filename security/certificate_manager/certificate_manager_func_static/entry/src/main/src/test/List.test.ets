@@ -12,13 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import api16CertFuncTestUnit from './api16CertFunc.test';
-import api16CertFuncTestTwoUnit from './api16CertFuncTwo.test';
-import certManagerPriCertJsAPIFunctionTestUnit from './priCertFunc.test';
-import certManagerPubCertJsAPIFunctionTestUnit from './pubCertFunc.test';
-import certManagerPubCertJsAPIFunctionTestUnitThree from './pubCertFuncThree.test';
-import certManagerPubCertJsAPIFunctionTestUnitTwo from './pubCertFuncTwo.test';
-import userCertJsAPIFunctionTestUnit from './userCertFunc.test';
+import api16CertFuncTestUnit from './Api16CertFunc.test';
+import api16CertFuncTestTwoUnit from './Api16CertFuncTwo.test';
+import certManagerPriCertJsAPIFunctionTestUnit from './PriCertFunc.test';
+import certManagerPubCertJsAPIFunctionTestUnit from './PubCertFunc.test';
+import certManagerPubCertJsAPIFunctionTestUnitThree from './PubCertFuncThree.test';
+import certManagerPubCertJsAPIFunctionTestUnitTwo from './PubCertFuncTwo.test';
+import userCertJsAPIFunctionTestUnit from './UserCertFunc.test';
 
 export default function testsuite() {
   api16CertFuncTestUnit();

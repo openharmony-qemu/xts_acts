@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import certManagerNotSystemAPPTestUnit from './certNotSystemAPP.test';
+import certManagerNotSystemAPPTestUnit from './CertNotSystemAPP.test';
 
 export default function testsuite() {
   certManagerNotSystemAPPTestUnit();
