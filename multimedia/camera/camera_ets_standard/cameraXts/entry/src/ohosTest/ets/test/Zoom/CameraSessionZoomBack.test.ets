@@ -381,8 +381,10 @@ async function setZoomRatioPhoto(done: Function, testName: string, index: number
         await sleep(SLEEP_TIME_500);
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio);
-        expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
         mPhotoSession.setZoomRatio(zoomRatioRange[index]);
+        zoomRatio = mPhotoSession.getZoomRatio();
+        console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
+        expect(zoomRatio == zoomRatioRange[index]).assertTrue();
       }
     }
     await releasePhotoSession();
@@ -426,8 +428,10 @@ async function setZoomRatioVideo(done: Function, testName: string, index: number
           await sleep(SLEEP_TIME_500);
           let zoomRatio = mVideoSession.getZoomRatio();
           console.info(TAG, testName + ' zoomRatio: ' + zoomRatio);
-          expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
           mVideoSession.setZoomRatio(zoomRatioRange[index]);
+          zoomRatio = mVideoSession.getZoomRatio();
+          console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
+          expect(zoomRatio == zoomRatioRange[index]).assertTrue();
         }
       }
     }
@@ -564,8 +568,10 @@ async function setZoomRatioPhotoPreConfig(done: Function, testName: string, inde
       } else {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
+        mVideoSession.setZoomRatio(zoomRatioRange[index]);
+        zoomRatio = mPhotoSession.getZoomRatio();
+        console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
         expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
-        mPhotoSession.setZoomRatio(zoomRatioRange[index]);
       }
     }
     await releasePhotoSession();
@@ -612,8 +618,10 @@ async function setZoomRatioVideoPreConfig(done: Function, testName: string, inde
       } else {
         let zoomRatio = mVideoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
-        expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
         mVideoSession.setZoomRatio(zoomRatioRange[index]);
+        zoomRatio = mVideoSession.getZoomRatio();
+        console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
+        expect(zoomRatio == zoomRatioRange[index]).assertTrue();
       }
     }
     await releaseVideoSession();
