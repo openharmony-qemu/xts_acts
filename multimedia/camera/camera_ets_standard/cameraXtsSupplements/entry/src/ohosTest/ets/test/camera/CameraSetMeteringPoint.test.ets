@@ -288,7 +288,6 @@ export default function CameraSetMeterPointSuppTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
