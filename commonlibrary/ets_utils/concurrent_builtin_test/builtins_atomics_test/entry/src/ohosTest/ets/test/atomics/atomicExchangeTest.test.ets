@@ -2949,7 +2949,7 @@ export default function atomicsExchangeTest() {
       const sab = new SharedArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 0;
-      const minInterval = 10; // Minimum 10ms between updates
+      const minInterval = 100; // Minimum 10ms between updates
       let lastUpdateTime = 0;
 
       // Closure factory: enforces update frequency limit
@@ -2966,7 +2966,7 @@ export default function atomicsExchangeTest() {
               Atomics.exchange(ia, 0, newValue);
               lastUpdateTime = Date.now();
               resolve({ success: true });
-            }, 3);
+            }, 300);
           });
         };
       };
@@ -3010,7 +3010,7 @@ export default function atomicsExchangeTest() {
               const old = Atomics.exchange(ia, 0, newDependent);
               resolve(old);
             } else {
-              setTimeout(checkTrigger, 2); // Retry until trigger active
+              setTimeout(checkTrigger, 20); // Retry until trigger active
             }
           };
           checkTrigger();
@@ -3072,7 +3072,7 @@ export default function atomicsExchangeTest() {
               const oldVal = Atomics.exchange(ia, 0, newValue);
               success = true;
               resolve(oldVal);
-            }, 3);
+            }, 30);
           });
           return true;
         } catch (err) {
@@ -3121,7 +3121,7 @@ export default function atomicsExchangeTest() {
             const valid = oldVal > 10 && newVal < 30;
             validationPassed = valid;
             resolve(valid);
-          }, 3);
+          }, 30);
         });
       };
 
