@@ -43,10 +43,10 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -79,7 +79,7 @@ struct propArray {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropArray', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -92,7 +92,7 @@ struct propArray {
         .height('5%')
         .key("parent_Array")
         .onClick((e: ClickEvent) => {
-
+          // 改变某一个Array值
           this.title[0] = new ModelArr(8)
         })
 
@@ -108,7 +108,7 @@ struct ChildArrProp {
 
   build() {
     Column() {
-      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
 
       Button('子组件Prop:' + JSON.stringify(this.subTitle)).fontSize(9)
         .height('5%')

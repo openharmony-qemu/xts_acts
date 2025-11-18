@@ -58,24 +58,24 @@ export default function WatchTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get WatchTest state pages:" + JSON.stringify(pages));
-        if (!("WatchTest" == pages.name)) {
+        if (!("Watch" == pages.name)) {
           console.info("get WatchTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push WatchTest page result:" + JSON.stringify(result));
+          // console.info("push WatchTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WatchTest page error:" + err);
       }
       console.info("WatchTest beforeEach end");
     });
-
+    
     /*
      * @tc.number   WatchTest_static_0100
      * @tc.name     WatchTest_static_0100
      * @tc.desc     WatchTest_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('WatchTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('WatchTest_static_0100 START');

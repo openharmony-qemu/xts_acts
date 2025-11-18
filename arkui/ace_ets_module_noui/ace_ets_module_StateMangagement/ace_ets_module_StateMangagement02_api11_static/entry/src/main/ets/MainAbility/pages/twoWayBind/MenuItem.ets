@@ -12,3 +12,54 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import {
+  Entry,
+  Column,
+  Component,
+  Button,
+  ClickEvent,
+  ForEach,
+  Text,ContentCoverOptions,Menu,FontWeight,MenuItem,
+  Row,Color,Builder,FlexAlign,$$,MenuItem,MenuItemOptions
+} from '@ohos.arkui.component'
+import {
+  State,
+  Watch,Prop,ObjectLink,
+  Link,LocalStorageProp,LocalStorageLink,Consume,Provide,
+  StorageLink,Observed,Track,LocalStorage
+} from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+
+@Entry
+@Component
+struct MenuItemTest {
+  @State select: boolean = true;
+
+  @Builder
+  MyMenu() {
+    Menu() {
+      MenuItem({
+        content: '菜单选项',
+      } as MenuItemOptions ).selected($$(this.select)).id('menuItem')
+    }
+  }
+
+  build() {
+    Row() {
+      Text(`select: ${this.select}`).fontSize(9).id('menuItemText1').height('5%')
+      Column() {
+        Text('click to show menu')
+          .height('5%')
+          .fontSize(9)
+          .fontWeight(FontWeight.Bold)
+          .id('menuItemText')
+      }
+      .bindMenu(this.MyMenu)
+      .width('100%')
+    }
+    .height('100%')
+  }
+}

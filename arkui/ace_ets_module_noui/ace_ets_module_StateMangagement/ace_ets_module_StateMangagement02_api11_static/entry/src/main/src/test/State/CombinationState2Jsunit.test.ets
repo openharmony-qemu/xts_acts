@@ -64,15 +64,14 @@ export default function CombinationState2Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CombinationState2Jsunit state pages:" + JSON.stringify(pages));
-        if (!("CombinationState2Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/CombinationState2" == pages.name)) {
           console.info("get CombinationState2Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push CombinationState2Jsunit page result:" + JSON.stringify(result));
+          // console.info("push CombinationState2Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CombinationState2Jsunit page error:" + err);
@@ -80,14 +79,19 @@ export default function CombinationState2Jsunit() {
       console.info("CombinationState2Jsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   CombinationState2Jsunit_static_0100
      * @tc.name     CombinationState2Jsunit_static_0100
      * @tc.desc     CombinationState2Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState2Jsunit_static_0100] START');
       let strJson: string = inspector.getInspectorByKey('PropLink1');
       let obj = JSON.parseJsonElement(strJson);
@@ -102,10 +106,10 @@ it('CombinationState2Jsunit_static_0100', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState2Jsunit_static_0200
      * @tc.name     CombinationState2Jsunit_static_0200
      * @tc.desc     CombinationState2Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       let strJson1 = inspector.getInspectorByKey('PropLink47');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[CombinationState2Jsunit_static_0200] component obj1 is: " + JSON.stringify(obj1));
@@ -119,10 +123,10 @@ it('CombinationState2Jsunit_static_0200', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState2Jsunit_static_0300
      * @tc.name     CombinationState2Jsunit_static_0300
      * @tc.desc     CombinationState2Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       let strJson2 = inspector.getInspectorByKey('ChildLink47');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[CombinationState2Jsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
@@ -136,10 +140,10 @@ it('CombinationState2Jsunit_static_0300', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState2Jsunit_static_0400
      * @tc.name     CombinationState2Jsunit_static_0400
      * @tc.desc     CombinationState2Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       let strJson3 = inspector.getInspectorByKey('PropLink7');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[CombinationState2Jsunit_static_0400] component obj3 is: " + JSON.stringify(obj3));
@@ -153,10 +157,10 @@ it('CombinationState2Jsunit_static_0400', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState2Jsunit_static_0500
      * @tc.name     CombinationState2Jsunit_static_0500
      * @tc.desc     CombinationState2Jsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       let strJson4 = inspector.getInspectorByKey('ChildLink7');
       let obj4 = JSON.parseJsonElement(strJson4);
       console.info("[CombinationState2Jsunit_static_0500] component obj4 is: " + JSON.stringify(obj4));
@@ -170,10 +174,10 @@ it('CombinationState2Jsunit_static_0500', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState2Jsunit_static_0600
      * @tc.name     CombinationState2Jsunit_static_0600
      * @tc.desc     CombinationState2Jsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Click and get the value of State component
       console.info('[CombinationState2Jsunit_static_0600] START');
       let driver = Driver.create()
       let qrComponent = await driver.findComponent(ON.id('PropLink1'));
@@ -193,10 +197,10 @@ it('CombinationState2Jsunit_static_0600', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState2Jsunit_static_0700
      * @tc.name     CombinationState2Jsunit_static_0700
      * @tc.desc     CombinationState2Jsunit_static_0700
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Click and get the value of State component
       console.info('[CombinationState2Jsunit_static_0700] START');
       let driver = Driver.create()
       let qrComponent = await driver.findComponent(ON.id('PropLink47'));
@@ -216,10 +220,10 @@ it('CombinationState2Jsunit_static_0700', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState2Jsunit_static_0800
      * @tc.name     CombinationState2Jsunit_static_0800
      * @tc.desc     CombinationState2Jsunit_static_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState2Jsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Click and get the value of State component
       console.info('[CombinationState2Jsunit_static_0800] START');
       let driver = Driver.create()
       let qrComponent = await driver.findComponent(ON.id('PropLink7'));

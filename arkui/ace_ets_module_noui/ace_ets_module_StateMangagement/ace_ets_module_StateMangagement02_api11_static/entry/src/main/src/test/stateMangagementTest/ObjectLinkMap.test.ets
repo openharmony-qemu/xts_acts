@@ -69,10 +69,10 @@ export default function ObjectLinkMap() {
         console.info("get ObjectLinkMap state pages:" + JSON.stringify(pages));
         if (!("ObjectLinkMap" == pages.name)) {
           console.info("get ObjectLinkMap pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ObjectLinkMap page result:" + JSON.stringify(result));
+          // console.info("push ObjectLinkMap page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObjectLinkMap page error:" + err);
@@ -80,11 +80,12 @@ export default function ObjectLinkMap() {
       console.info("ObjectLinkMap beforeEach end");
     });
 
+    
     /*
      * @tc.number   ObjectLinkMap_static_0100
      * @tc.name     ObjectLinkMap_static_0100
      * @tc.desc     ObjectLinkMap_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkMap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectLinkMap_static_0100 START');
@@ -97,18 +98,18 @@ it('ObjectLinkMap_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('ObtLinkMap_value_d');
-      console.info("[ObjectLinkMap_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ObjectLinkMap_static_0100] value: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      // console.info("[ObjectLinkMap_static_0100] component strJson is: " + strJson);
+      // console.info("[ObjectLinkMap_static_0100] value: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('4 d');
       console.info('[ObjectLinkMap_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   ObjectLinkMap_static_0200
      * @tc.name     ObjectLinkMap_static_0200
      * @tc.desc     ObjectLinkMap_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkMap_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectLinkMap_static_0200 START');
@@ -121,18 +122,18 @@ it('ObjectLinkMap_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('ObtLinkMap_value_K');
-      console.info("[ObjectLinkMap_static_0200] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ObjectLinkMap_static_0200] value: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      console.info("[ObjectLinkMap_static_0200] component JSON.parseJsonElement(strJson) is: " + strJson);
+      console.info("[ObjectLinkMap_static_0200] value: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('0 K');
       console.info('[ObjectLinkMap_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   ObjectLinkMap_static_0300
      * @tc.name     ObjectLinkMap_static_0300
      * @tc.desc     ObjectLinkMap_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkMap_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectLinkMap_static_0300 START');
@@ -145,18 +146,18 @@ it('ObjectLinkMap_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('ObtLinkMap_value_aa');
-      console.info("[ObjectLinkMap_static_0300] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ObjectLinkMap_static_0300] value: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      console.info("[ObjectLinkMap_static_0300] component JSON.parseJsonElement(strJson) is: " + strJson);
+      console.info("[ObjectLinkMap_static_0300] value: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('0 aa');
       console.info('[ObjectLinkMap_static_0300] END');
       done();
     });
-
+    
     /*
      * @tc.number   ObjectLinkMap_static_0400
      * @tc.name     ObjectLinkMap_static_0400
      * @tc.desc     ObjectLinkMap_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkMap_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectLinkMap_static_0400 START');
@@ -169,8 +170,8 @@ it('ObjectLinkMap_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('ObtLinkMap_value_b');
-      console.info("[ObjectLinkMap_static_0400] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ObjectLinkMap_static_0400] value: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      console.info("[ObjectLinkMap_static_0400] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson));
+      console.info("[ObjectLinkMap_static_0400] value: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('1 b');
       console.info('[ObjectLinkMap_static_0400] END');
       done();

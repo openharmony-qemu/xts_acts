@@ -51,14 +51,14 @@ export default function bindSheetTest() {
   describe('bindSheetTest', () => {
 
     beforeAll(() => {
-      console.info("bindSheetTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("bindSheetTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/twoWayBind/bindSheet',
       }
@@ -66,22 +66,22 @@ export default function bindSheetTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get bindSheetTest state pages:" + JSON.stringify(pages));
-        if (!("bindSheetTest" == pages.name)) {
-          console.info("get bindSheetTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+        console.info("get StateTrackTest state pages:" + JSON.stringify(pages));
+        if (!("TextClockApi" == pages.name)) {
+          console.info("get StateTrackTest pages.name:" + JSON.stringify(pages.name));
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push bindSheetTest page result:" + JSON.stringify(result));
+          // console.info("push StateTrackTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push bindSheetTest page error:" + err);
+        console.error("push StateTrackTest page error:" + err);
       }
-      console.info("bindSheetTest beforeEach end");
+      console.info("StateTrackTest beforeEach end");
     });
 
 
-
+    
     /*
      * @tc.number   bindSheetTest_0100
      * @tc.name     bindSheetTest_0100
@@ -105,7 +105,7 @@ it('bindSheetTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> =
       console.info('[bindSheetTest_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   bindSheetTest_0200
      * @tc.name     bindSheetTest_0200

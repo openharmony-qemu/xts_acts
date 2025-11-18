@@ -41,16 +41,17 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
+  Track
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,7 +59,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Observed
 class MapClassA {
-  public a: MyMap<number, string> = new MyMap<number, string>("myMap", [[0, "a"], [1, "b"], [3, "c"]])
+  @Track public a: MyMap<number, string> = new MyMap<number, string>("myMap", [[0, "a"], [1, "b"], [3, "c"]])
 
   constructor(a: MyMap<number, string>) {
     this.a = a;
@@ -84,15 +85,7 @@ export class MyMap<K, V> extends Map<K, V> {
 @Component
 struct ObjectLinkMapNested {
   @State message: MapClassA = new MapClassA(new MyMap<number, string>("myMap", [[0, "a"], [1, "b"], [3, "c"]]));
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ObjectLinkMap', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Row() {
       Column() {
@@ -111,7 +104,7 @@ struct ObjectLinkMapNested {
 
 @Component
 struct ObjectLinkMapNestedChild {
-  @ObjectLink myMap: MyMap<number, string>= new MyMap<number, string>("myMap", [[0, "a"], [1, "b"], [3, "c"]])
+  @ObjectLink myMap: MyMap<number, string>
 
   build() {
     Row() {

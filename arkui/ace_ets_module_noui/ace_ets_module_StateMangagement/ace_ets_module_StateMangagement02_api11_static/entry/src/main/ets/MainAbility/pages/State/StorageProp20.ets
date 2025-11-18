@@ -33,7 +33,7 @@ import {
   NavigationMode,
   ButtonType,
   Color,
-  DatePicker
+  DatePicker,
 } from '@ohos.arkui.component'
 import {
   State,
@@ -50,13 +50,13 @@ import {
   LocalStoragePropRef,
   LocalStorageLink,
   Observed,
-
+  Environment
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
-AppStorage.clear()
+
 @Entry
 @Component
 struct StorageProp20 {
@@ -65,15 +65,12 @@ struct StorageProp20 {
   @StoragePropRef('PropC') storProp3: string = 'gg'
   @State num: number = 0
   @State vae: string = ''
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StorageProp20', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
+
+  onPageShow() {
+    AppStorage.clear()
+    Environment.envProp<number>('Prop20', 10);
   }
+
   build(){
     Column(){
       CompStorageProp20({storProp1:this.storProp1,storProp2:this.storProp1,storProp3:this.storProp1,num:this.storProp1})
@@ -94,7 +91,7 @@ struct CompStorageProp20 {
         .key('text_state')
       Text(`Link:${this.storProp2}`).height('5%')
         .key('text_Link')
-      Text(`PropRef:${this.storProp3}`).height('5%')
+      Text(`Prop:${this.storProp3}`).height('5%')
         .key('text_Prop')
       Text(`Provide:${this.num}`).height('5%')
         .key('text_Provide')

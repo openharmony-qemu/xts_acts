@@ -69,10 +69,10 @@ export default function LinkSet() {
         console.info("get LinkSet state pages:" + JSON.stringify(pages));
         if (!("LinkSet" == pages.name)) {
           console.info("get LinkSet pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LinkSet page result:" + JSON.stringify(result));
+          // console.info("push LinkSet page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LinkSet page error:" + err);
@@ -80,11 +80,12 @@ export default function LinkSet() {
       console.info("LinkSet beforeEach end");
     });
 
+    
     /*
      * @tc.number   LinkSet_static_0100
      * @tc.name     LinkSet_static_0100
      * @tc.desc     LinkSet_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkSet_static_0100 START');
@@ -104,12 +105,12 @@ it('LinkSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[LinkSet_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkSet_static_0200
      * @tc.name     LinkSet_static_0200
      * @tc.desc     LinkSet_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkSet_static_0200 START');
@@ -129,12 +130,12 @@ it('LinkSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[LinkSet_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkSet_static_0300
      * @tc.name     LinkSet_static_0300
      * @tc.desc     LinkSet_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkSet_static_0300 START');

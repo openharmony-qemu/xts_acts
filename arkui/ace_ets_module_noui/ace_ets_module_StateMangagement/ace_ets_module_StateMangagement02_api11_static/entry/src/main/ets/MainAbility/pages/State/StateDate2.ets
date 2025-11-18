@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -59,15 +59,7 @@ import common from '@ohos.app.ability.common';
 @Component
 struct StateDatePicker2 {
   @State selectedDate: Date = new Date('2021-08-08')
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateDate2', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Column() {
       Button("Reset").id("StateDatePicker2_reset").height('5%')

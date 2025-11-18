@@ -64,15 +64,14 @@ export default function PropInit1Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropInit1Jsunit state pages:" + JSON.stringify(pages));
-        if (!("PropInit1Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/PropInit1" == pages.name)) {
           console.info("get PropInit1Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropInit1Jsunit page result:" + JSON.stringify(result));
+          // console.info("push PropInit1Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropInit1Jsunit page error:" + err);
@@ -80,19 +79,16 @@ export default function PropInit1Jsunit() {
       console.info("PropInit1Jsunit beforeEach end");
     });
 
-    afterEach(async (): Promise<void> => {
-      let driver = Driver.create()
-      const PropInit1 = AppStorage.get<Router>("PropInit1") as Router
-      PropInit1.back({
-        url: "MainAbility/pages/index/index"
-      });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
 
     /*
      * @tc.number   PropInit1Jsunit_static_0200
      * @tc.name     PropInit1Jsunit_static_0200
      * @tc.desc     PropInit1Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropInit1Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -120,7 +116,7 @@ it('PropInit1Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropInit1Jsunit_static_0400
      * @tc.name     PropInit1Jsunit_static_0400
      * @tc.desc     PropInit1Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropInit1Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

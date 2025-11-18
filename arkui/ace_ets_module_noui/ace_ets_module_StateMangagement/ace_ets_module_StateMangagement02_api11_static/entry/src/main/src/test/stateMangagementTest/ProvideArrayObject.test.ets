@@ -69,10 +69,10 @@ export default function ProvideArrayObject() {
         console.info("get ProvideArrayObject state pages:" + JSON.stringify(pages));
         if (!("ProvideArrayObject" == pages.name)) {
           console.info("get ProvideArrayObject pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ProvideArrayObject page result:" + JSON.stringify(result));
+          // console.info("push ProvideArrayObject page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ProvideArrayObject page error:" + err);
@@ -80,11 +80,12 @@ export default function ProvideArrayObject() {
       console.info("ProvideArrayObject beforeEach end");
     });
 
+    
     /*
      * @tc.number   ProvideArrayObject_static_0100
      * @tc.name     ProvideArrayObject_static_0100
      * @tc.desc     ProvideArrayObject_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideArrayObject_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideArrayObject_static_0100 START');
@@ -104,12 +105,12 @@ it('ProvideArrayObject_static_0100', Level.LEVEL0, async (done: () => void): Pro
       console.info('[ProvideArrayObject_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   ProvideArrayObject_static_0200
      * @tc.name     ProvideArrayObject_static_0200
      * @tc.desc     ProvideArrayObject_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideArrayObject_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideArrayObject_static_0200 START');
@@ -129,12 +130,12 @@ it('ProvideArrayObject_static_0200', Level.LEVEL0, async (done: () => void): Pro
       console.info('[ProvideArrayObject_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   ProvideArrayObject_static_0300
      * @tc.name     ProvideArrayObject_static_0300
      * @tc.desc     ProvideArrayObject_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideArrayObject_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideArrayObject_static_0300 START');
@@ -154,12 +155,12 @@ it('ProvideArrayObject_static_0300', Level.LEVEL0, async (done: () => void): Pro
       console.info('[ProvideArrayObject_static_0300] END');
       done();
     });
-
+    
     /*
      * @tc.number   ProvideArrayObject_static_0400
      * @tc.name     ProvideArrayObject_static_0400
      * @tc.desc     ProvideArrayObject_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideArrayObject_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideArrayObject_static_0400 START');
@@ -179,12 +180,12 @@ it('ProvideArrayObject_static_0400', Level.LEVEL0, async (done: () => void): Pro
       console.info('[ProvideArrayObject_static_0400] END');
       done();
     });
-
+    
     /*
      * @tc.number   ProvideArrayObject_static_0500
      * @tc.name     ProvideArrayObject_static_0500
      * @tc.desc     ProvideArrayObject_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideArrayObject_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideArrayObject_static_0500 START');

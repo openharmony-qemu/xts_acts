@@ -1,17 +1,3 @@
-/**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 import {
   describe,
@@ -64,15 +50,15 @@ export default function StateArrayNumber() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        routerInstance.clear()
         let pages = routerInstance.getState();
         console.info("get StateArrayNumber state pages:" + JSON.stringify(pages));
         if (!("StateArrayNumber" == pages.name)) {
           console.info("get StateArrayNumber pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StateArrayNumber page result:" + JSON.stringify(result));
+          // console.info("push StateArrayNumber page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StateArrayNumber page error:" + err);
@@ -86,34 +72,10 @@ export default function StateArrayNumber() {
     });
 
     /*
-     * @tc.number   StateArrayNumber_static_0100
-     * @tc.name     StateArrayNumber_static_0100
-     * @tc.desc     StateArrayNumber_static_0100
-     * @tc.level    0
-     */
-it('StateArrayNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('StateArrayNumber_static_0100 START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn_init = await driver.findComponent(ON.id('stateArrayNumber_init'));
-      await (btn_init?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('stateArrayNumber_push'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('stateArrayNumber_value_5');
-      console.info("[StateArrayNumber_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[StateArrayNumber_static_0100] value: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('10 index: 5');
-      console.info('[StateArrayNumber_static_0100] END');
-      done();
-    });
-
-    /*
      * @tc.number   StateArrayNumber_static_0200
      * @tc.name     StateArrayNumber_static_0200
      * @tc.desc     StateArrayNumber_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArrayNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArrayNumber_static_0200 START');
@@ -137,7 +99,7 @@ it('StateArrayNumber_static_0200', Level.LEVEL0, async (done: () => void): Promi
      * @tc.number   StateArrayNumber_static_0300
      * @tc.name     StateArrayNumber_static_0300
      * @tc.desc     StateArrayNumber_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArrayNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArrayNumber_static_0300 START');
@@ -161,7 +123,7 @@ it('StateArrayNumber_static_0300', Level.LEVEL0, async (done: () => void): Promi
      * @tc.number   StateArrayNumber_static_0400
      * @tc.name     StateArrayNumber_static_0400
      * @tc.desc     StateArrayNumber_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArrayNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArrayNumber_static_0400 START');

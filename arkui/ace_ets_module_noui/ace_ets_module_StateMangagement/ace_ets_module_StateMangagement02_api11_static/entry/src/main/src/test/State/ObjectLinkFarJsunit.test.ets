@@ -64,20 +64,24 @@ export default function ObjectLinkFarJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkFarJsunit state pages:" + JSON.stringify(pages));
-        if (!("ObjectLinkFarJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/ObjectLinkFar" == pages.name)) {
           console.info("get ObjectLinkFarJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ObjectLinkFarJsunit page result:" + JSON.stringify(result));
+          // console.info("push ObjectLinkFarJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObjectLinkFarJsunit page error:" + err);
       }
       console.info("ObjectLinkFarJsunit beforeEach end");
+    });
+
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
 
     afterEach(async (): Promise<void> => {
@@ -93,7 +97,7 @@ export default function ObjectLinkFarJsunit() {
      * @tc.number   ObjectLinkFarJsunit_static_0100
      * @tc.name     ObjectLinkFarJsunit_static_0100
      * @tc.desc     ObjectLinkFarJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkFarJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -122,7 +126,7 @@ it('ObjectLinkFarJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkFarJsunit_static_0200
      * @tc.name     ObjectLinkFarJsunit_static_0200
      * @tc.desc     ObjectLinkFarJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkFarJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -151,7 +155,7 @@ it('ObjectLinkFarJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkFarJsunit_static_0300
      * @tc.name     ObjectLinkFarJsunit_static_0300
      * @tc.desc     ObjectLinkFarJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkFarJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

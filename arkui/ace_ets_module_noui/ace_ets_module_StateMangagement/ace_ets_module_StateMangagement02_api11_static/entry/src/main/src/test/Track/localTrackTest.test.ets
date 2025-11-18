@@ -67,12 +67,12 @@ export default function localTrackTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get localTrackTestckTest state pages:" + JSON.stringify(pages));
-        if (!("localTrackTest" == pages.name)) {
+        if (!("TextClockApi" == pages.name)) {
           console.info("get localTrackTestckTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push localTrackTestckTest page result:" + JSON.stringify(result));
+          // console.info("push localTrackTestckTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push localTrackTestckTest page error:" + err);
@@ -88,7 +88,7 @@ export default function localTrackTest() {
       console.log('reset button click succ')
       await CommonFunc.sleep(2000);
     });
-
+    
     /*
      * @tc.number   localTrackTest_0100
      * @tc.name     localTrackTest_0100
@@ -108,12 +108,12 @@ it('localTrackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[localTrackTest_0100] component obj is: " + JSON.stringify(obj));
       console.info("[localTrackTest_0100] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStoragePropRef:11');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStorageProp:11');
       expect(obj1.getElement('$attrs').getString('label')).assertEqual('LocalStorageLink:10');
       console.info('[localTrackTest_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   localTrackTest_0200
      * @tc.name     localTrackTest_0200
@@ -133,7 +133,7 @@ it('localTrackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> 
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[localTrackTest_0200] component obj is: " + JSON.stringify(obj));
       console.info("[localTrackTest_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStoragePropRef:12');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStorageProp:12');
       expect(obj1.getElement('$attrs').getString('label')).assertEqual('LocalStorageLink:12');
       console.info('[localTrackTest_0200] END');
       done();

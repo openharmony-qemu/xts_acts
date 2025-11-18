@@ -65,15 +65,15 @@ export default function LocalStoagePropTwoJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        routerInstance.clear()
         let pages = routerInstance.getState();
         console.info("get LocalStoagePropTwoJsunit state pages:" + JSON.stringify(pages));
-        if (!("LocalStoagePropTwoJsunit" == pages.name)) {
+        if (!("LocalStoagePropTwo" == pages.name)) {
           console.info("get LocalStoagePropTwoJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LocalStoagePropTwoJsunit page result:" + JSON.stringify(result));
+          // console.info("push LocalStoagePropTwoJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LocalStoagePropTwoJsunit page error:" + err);
@@ -81,11 +81,16 @@ export default function LocalStoagePropTwoJsunit() {
       console.info("LocalStoagePropTwoJsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   LocalStoagePropTwoJsunit_static_0100
      * @tc.name     LocalStoagePropTwoJsunit_static_0100
      * @tc.desc     LocalStoagePropTwoJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoagePropTwoJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

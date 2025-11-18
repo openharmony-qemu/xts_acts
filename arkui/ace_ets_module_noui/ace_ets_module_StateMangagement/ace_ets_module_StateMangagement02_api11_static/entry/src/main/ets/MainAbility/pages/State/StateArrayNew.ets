@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -61,23 +61,15 @@ import common from '@ohos.app.ability.common';
 struct StateArrayNew {
   @State arr_every: Array<number> = new Array<number>(1,2,3,4,5,6,7)
   @State res_every: boolean = true
-  @State arr_some: Array<number>=new Array<number>(1,2,3,4,5,6,7)
+  @State arr_some: Array<number>=new Array<number>(1,8,3,4,5,6,7)
   @State res_some: boolean = true
   @State arr_filter: Array<string>=new Array<string>('spray','limit','elite','exuberant','destruction','present')
   @State res_filter:Array<string> = new Array<string>('spray','limit','elite','exuberant','destruction','present')
-  @State arr_reduce: Array<number>=new Array<number>(1,2,3,4,5,6,7)
+  @State arr_reduce: Array<number>=new Array<number>(1,2,3,4)
   @State res_reduce: number = 0
   @State arr_reduceRight: Array<Array<number>> = new Array<Array<number>>(new Array<number>(0,1),new Array<number>(2,3),new Array<number>(4,5))
   @State res_reduceRight: Array<number>=new Array<number>()
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateArrayNew', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Column() {
       Text('Click to every value to the array ' + this.res_every).fontSize(9)

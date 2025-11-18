@@ -4,7 +4,7 @@
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
 *
-*     http:
+*     http://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing, software
 * distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,14 +31,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef
+  LocalStorageProp
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -64,20 +64,12 @@ struct parData_Link {
   @State enum1: KFCLD = KFCLD.A
   @State class1: LinkModel = new LinkModel('Hello World')
   @State strArray: Array<string> = ['First','Second','Third']
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('LinkData', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
 
-      sonData_Link({message: this.text, numB: this.numA, boolean1: this.flag, enu: this.enum1, class2: this.class1, strArray: this.strArray})
+      sonData_Link({message: this.text, numB: this.numA, boolean1: this.flag, enu: this.enum1, class1: this.class1, strArray: this.strArray})
     }
     .width('100%')
     .height('100%')
@@ -86,12 +78,12 @@ struct parData_Link {
 
 @Component
 struct sonData_Link{
-  @Link numB: number = 1
-  @Link message: string = ''
-  @Link boolean1: boolean = false
-  @Link enu: KFCLD = KFCLD.A
-  @Link class2: LinkModel = new LinkModel('')
-  @Link strArray : Array<string> = new Array<string>('')
+  @Link numB: number
+  @Link message: string
+  @Link boolean1: boolean
+  @Link enu: KFCLD
+  @Link class1: LinkModel
+  @Link strArray : Array<string>
 
 
   build(){
@@ -102,27 +94,27 @@ struct sonData_Link{
       Button('Click to change str')
         .height('5%')
         .key(("strBtn_link"))
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message = "harmony";
         })
 
-      Text('number: ' + String(this.numB)).key(("link_num"))
+      Text('number: ' + this.numB.toString()).key(("link_num"))
         .height('5%')
         .fontSize(9)
       Button('Click to change num')
         .height('5%')
         .key(("numBtn_link"))
-        .onClick((e: ClickEvent)=>{
+        .onClick(()=>{
           this.numB++;
         })
 
-      Text('boolean: ' + String(this.boolean1)).key(("link_bon"))
+      Text('boolean: ' + this.boolean1.toString()).key(("link_bon"))
         .height('5%')
         .fontSize(9)
       Button('Click to change bool')
         .height('5%')
         .key(("bonBtn_link"))
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.boolean1 = false;
         })
 
@@ -132,18 +124,18 @@ struct sonData_Link{
       Button('Click to change enum')
         .height('5%')
         .key(("enumBtn_link"))
-      .onClick((e: ClickEvent)=>{
-        this.enu = KFCLD.B
-      })
+        .onClick(()=>{
+          this.enu = KFCLD.B
+        })
 
-      Text('class: ' + this.class2.value).key(("link_cla"))
+      Text('class: ' + this.class1.value).key(("link_cla"))
         .height('5%')
         .fontSize(9)
       Button('Click to change class')
         .height('5%')
         .key(("claBtn_link"))
-        .onClick((e: ClickEvent)=>{
-          this.class2.value = 'Hi ArkUI'
+        .onClick(()=>{
+          this.class1.value = 'Hi ArkUI'
         })
 
       Text('array: ' + this.strArray).key(("link_strArr"))
@@ -152,7 +144,7 @@ struct sonData_Link{
       Button('Click to change strArray')
         .height('5%')
         .key(("sArrBtn_link"))
-        .onClick((e: ClickEvent)=>{
+        .onClick(()=>{
           this.strArray = ['A','B','C']
         })
     }

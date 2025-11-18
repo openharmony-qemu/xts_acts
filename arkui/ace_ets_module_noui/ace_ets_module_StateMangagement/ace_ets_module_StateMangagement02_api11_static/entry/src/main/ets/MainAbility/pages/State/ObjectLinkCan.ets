@@ -38,14 +38,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -70,6 +70,8 @@ class ClassBN {
     this.numB = aValue;
   }
 }
+// 第一层变量的状态变化可以用@State监听，二层及以下变量的状态变化则需要使用@Observed/@ObjectLink监听
+//对数值进行赋值操作，会打断@ObjectLink数据同步
 @Entry
 @Component
 struct ObjectLinkFar2 {
@@ -80,7 +82,7 @@ struct ObjectLinkFar2 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkCan', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -92,6 +94,7 @@ struct ObjectLinkFar2 {
           this.classA = new ClassAN(new ClassBN(5))
           this.count = 5
         })
+      // 注意：@State无法监听到类嵌套类的属性，@ObjectLink可以监听到类嵌套@Observed修饰的类的属性
       Text('父组件').fontSize(9).height('5%')
       Text(`ClassBN + 1: ${this.classA.classB.numB}`).key("farClassBN")
         .height('5%')

@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -60,31 +60,23 @@ import common from '@ohos.app.ability.common';
 @Component
 struct StateSetSample {
   @State message: Set<number> = new Set<number>([1, 2, 3])
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateSet', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Row() {
       Column() {
 
         Button('init set').id("stateSet_init").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.message = new Set<number>([1, 2, 3])
           })
 
         Button('set new one').id("stateSet_set").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.message.add(5)
           })
 
         Button('clear').id("stateSet_clear").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.message.clear()
             if (Array.from(this.message.entries())) {
               this.message.add(0)
@@ -92,11 +84,11 @@ struct StateSetSample {
           })
 
         Button('delete the first one').id("stateSet_delete").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.message.delete(0)
           })
 
-        ForEach(Array.from(this.message.entries()), (item: [Number, Number]) => {
+        ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
           Text(`${item[0]}`).fontSize(9).id("stateSet_value_" + item[0]).height('5%')
           Divider()
         })

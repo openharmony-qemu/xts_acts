@@ -43,42 +43,36 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
+
 @Observed
 class ClassAB {
-  public num: number = 1;
+  public num: number;
 
   constructor(num: number) {
     this.num = num
   }
 }
+//@ObjectLink支持数据初始化
 @Entry
 @Component
 struct ViewAS{
   @State class_A: ClassAB = new ClassAB(5);
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ObjectLinkSpl', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Column() {
       Button("Reset").id("ViewAS_reset")
         .height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.class_A = new ClassAB(5)
         })
       Text('@State: ' + this.class_A.num).key("num_state")
@@ -86,7 +80,7 @@ struct ViewAS{
       Button('State + 1').key("adds_state")
         .height('5%')
         .backgroundColor('#E8A027')
-        .onClick((e: ClickEvent)=>{
+        .onClick(()=>{
           this.class_A.num++;
         })
 
@@ -100,7 +94,7 @@ struct ViewAS{
 
       Text("son_Link: " + this.class_A.num).key("sNum_links")
         .fontSize(9).height('5%')
-      son_Links({ numB: this.class_A })
+      son_Links({ numB: this.class_A })  // 1.1写法  $class_A
 
     }
     .width('100%')
@@ -109,15 +103,16 @@ struct ViewAS{
 }
 
 
+// 构建子组件ViewBStr用于承载@ObjectLink修饰的变量
 @Component
 struct ViewBs {
-  @ObjectLink class_C: ClassAB = new ClassAB(5);
+  @ObjectLink class_C: ClassAB;
   build() {
     Column(){
       Button('ObjectLink + 1').key(("btn_olk"))
         .height('5%')
         .backgroundColor('#E8A027')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.class_C.num += 1;
         })
     }
@@ -127,13 +122,13 @@ struct ViewBs {
 
 @Component
 struct son_Props{
-  @PropRef numA: number = 1
+  @PropRef numA: number
   build(){
     Column(){
-      Button('PropRef + 1').key(("btn_prop"))
+      Button('Prop + 1').key(("btn_prop"))
         .height('5%')
         .backgroundColor('#E8A027')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.numA += 1;
         })
     }
@@ -142,13 +137,13 @@ struct son_Props{
 
 @Component
 struct son_Links{
-  @Link numB: ClassAB = new ClassAB(5)
+  @Link numB: ClassAB
   build(){
     Column(){
       Button('Link + 1').key(("btn_link"))
         .height('5%')
         .backgroundColor('#E8A027')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.numB.num += 1;
         })
     }

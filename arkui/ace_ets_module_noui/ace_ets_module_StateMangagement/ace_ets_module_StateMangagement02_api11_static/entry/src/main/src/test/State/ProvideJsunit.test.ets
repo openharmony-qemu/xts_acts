@@ -68,12 +68,12 @@ export default function ProvideJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ProvideJsunit state pages:" + JSON.stringify(pages));
-        if (!("ProvideJsunit" == pages.name)) {
+        if (!("Provide" == pages.name)) {
           console.info("get ProvideJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ProvideJsunit page result:" + JSON.stringify(result));
+          // console.info("push ProvideJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ProvideJsunit page error:" + err);
@@ -94,14 +94,14 @@ export default function ProvideJsunit() {
      * @tc.number   ProvideJsunit_static_0001
      * @tc.name     ProvideJsunit_static_0001
      * @tc.desc     ProvideJsunit_static_0001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0001] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let btn = await driver.findComponent(ON.id('ProvideAReviewVotes'));
-     await (btn?.click() as Promise<void>);
+      await (btn?.click() as Promise<void>);
       await driver.delayMs(waitUiReadyMs);
       let ProvideA1 = await driver.findComponent(ON.id('ProvideA1'));
       let txt_ProvideA1 = await (ProvideA1?.getText() as Promise<string>)
@@ -137,7 +137,7 @@ it('ProvideJsunit_static_0001', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0002
      * @tc.name     ProvideJsunit_static_0002
      * @tc.desc     ProvideJsunit_static_0002
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0002] START');
@@ -180,7 +180,7 @@ it('ProvideJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0003
      * @tc.name     ProvideJsunit_static_0003
      * @tc.desc     ProvideJsunit_static_0003
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0003] START');
@@ -223,7 +223,7 @@ it('ProvideJsunit_static_0003', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0004
      * @tc.name     ProvideJsunit_static_0004
      * @tc.desc     ProvideJsunit_static_0004
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0004] START');
@@ -266,7 +266,7 @@ it('ProvideJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0005
      * @tc.name     ProvideJsunit_static_0005
      * @tc.desc     ProvideJsunit_static_0005
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0005] START');
@@ -309,7 +309,7 @@ it('ProvideJsunit_static_0005', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0006
      * @tc.name     ProvideJsunit_static_0006
      * @tc.desc     ProvideJsunit_static_0006
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0006] START');
@@ -352,7 +352,7 @@ it('ProvideJsunit_static_0006', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0007
      * @tc.name     ProvideJsunit_static_0007
      * @tc.desc     ProvideJsunit_static_0007
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0007] START');
@@ -395,7 +395,7 @@ it('ProvideJsunit_static_0007', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0008
      * @tc.name     ProvideJsunit_static_0008
      * @tc.desc     ProvideJsunit_static_0008
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0008] START');
@@ -438,7 +438,7 @@ it('ProvideJsunit_static_0008', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0009
      * @tc.name     ProvideJsunit_static_0009
      * @tc.desc     ProvideJsunit_static_0009
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0008] START');
@@ -481,7 +481,7 @@ it('ProvideJsunit_static_0009', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0010
      * @tc.name     ProvideJsunit_static_0010
      * @tc.desc     ProvideJsunit_static_0010
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0010] START');
@@ -524,7 +524,7 @@ it('ProvideJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0011
      * @tc.name     ProvideJsunit_static_0011
      * @tc.desc     ProvideJsunit_static_0011
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0011] START');
@@ -570,7 +570,7 @@ it('ProvideJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   ProvideJsunit_static_0012
      * @tc.name     ProvideJsunit_static_0012
      * @tc.desc     ProvideJsunit_static_0012
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideJsunit_static_0012] START');

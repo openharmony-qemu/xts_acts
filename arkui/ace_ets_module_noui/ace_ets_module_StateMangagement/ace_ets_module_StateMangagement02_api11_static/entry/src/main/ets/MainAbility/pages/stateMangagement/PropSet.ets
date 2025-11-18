@@ -45,10 +45,10 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -56,6 +56,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
+
 @Component
 struct PropSetChild {
   @PropRef message: Set<number> = new Set<number>([1, 2, 3])
@@ -64,17 +65,17 @@ struct PropSetChild {
     Column() {
 
       Button('init set').id("propSet_init").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message = new Set<number>([1, 2, 3])
         })
 
       Button('set new one').id("propSet_set").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.add(5)
         })
 
       Button('clear').id("propSet_clear").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.clear()
           if (Array.from(this.message.entries())) {
             this.message.add(0)
@@ -82,11 +83,11 @@ struct PropSetChild {
         })
 
       Button('delete the first one').id("propSet_delete").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.delete(0)
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [Number, Number]) => {
+      ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
         Text(`${item[0]}`).fontSize(9).id("propSet_value_" + item[0]).height('5%')
         Divider()
       })
@@ -100,15 +101,7 @@ struct PropSetChild {
 @Component
 struct PropSetSample11 {
   @State message: Set<number> = new Set<number>([1, 2, 3])
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('PropSet', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Row() {
       Column() {

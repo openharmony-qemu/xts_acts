@@ -64,15 +64,14 @@ export default function ObjectLinkSecJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkSecJsunit state pages:" + JSON.stringify(pages));
-        if (!("ObjectLinkSecJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/ObjectLinkSec" == pages.name)) {
           console.info("get ObjectLinkSecJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ObjectLinkSecJsunit page result:" + JSON.stringify(result));
+          // console.info("push ObjectLinkSecJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObjectLinkSecJsunit page error:" + err);
@@ -80,19 +79,16 @@ export default function ObjectLinkSecJsunit() {
       console.info("ObjectLinkSecJsunit beforeEach end");
     });
 
-    afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      const ObjectLinkSec = AppStorage.get<Router>("ObjectLinkSec") as Router
-      ObjectLinkSec.back({
-        url: "MainAbility/pages/index/index"
-      });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
 
     /*
      * @tc.number   ObjectLinkSecJsunit_static_0100
      * @tc.name     ObjectLinkSecJsunit_static_0100
      * @tc.desc     ObjectLinkSecJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSecJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -110,7 +106,7 @@ it('ObjectLinkSecJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkSecJsunit_static_0200
      * @tc.name     ObjectLinkSecJsunit_static_0200
      * @tc.desc     ObjectLinkSecJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSecJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -132,7 +128,7 @@ it('ObjectLinkSecJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkSecJsunit_static_0300
      * @tc.name     ObjectLinkSecJsunit_static_0300
      * @tc.desc     ObjectLinkSecJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSecJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -150,7 +146,7 @@ it('ObjectLinkSecJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkSecJsunit_static_0400
      * @tc.name     ObjectLinkSecJsunit_static_0400
      * @tc.desc     ObjectLinkSecJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSecJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

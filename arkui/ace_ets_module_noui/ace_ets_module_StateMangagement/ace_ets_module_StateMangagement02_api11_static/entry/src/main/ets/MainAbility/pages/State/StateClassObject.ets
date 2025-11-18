@@ -40,32 +40,36 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
-  Observed
+  Observed,
+  Track
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
+
+@Observed
 class scoClassA {
-  public value: string;
+  @Track public value: string;
 
   constructor(value: string) {
     this.value = value;
   }
 }
 
+@Observed
 class scoModel {
-  public value: string = '';
-  public name: scoClassA = new scoClassA('');
+  @Track public value: string = '';
+  @Track public name: scoClassA = new scoClassA('');
   constructor(value: string, name: scoClassA) {
     this.value = value;
     this.name = name;
@@ -76,15 +80,7 @@ class scoModel {
 @Component
 struct StateClassObject {
   @State title: scoModel = new scoModel('Hello', new scoClassA('World'));
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateClassObject', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Row() {
       Column() {
@@ -93,11 +89,15 @@ struct StateClassObject {
         Button(`Click to change Object1`).height('5%')
           .id("state_Object1")
           .onClick((e: ClickEvent) => {
+            // 动态修改Class类型赋值
+            // @State变量的更新将触发上面的Text组件内容更新
             this.title = new scoModel('Hi', new scoClassA('ArkUI'));
           })
         Button(`Click to change Object2`).height('5%')
           .id("state_Object2")
           .onClick((e: ClickEvent) => {
+            // 动态修改Class父组件属性值
+            // @State变量的更新将触发上面的Text组件内容更新
             this.title.value = "Hello ArkUI"
         })
 
@@ -106,6 +106,8 @@ struct StateClassObject {
         Button(`Click to change Class`).height('5%')
           .id("state_Class")
           .onClick((e: ClickEvent) => {
+            // 动态修改Class自组件属性值
+            // @State变量的更新将触发该Text的内容更新
             this.title.name = new scoClassA('Harmony');
           })
       }

@@ -64,15 +64,14 @@ export default function CombinationState8Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CombinationState8Jsunit state pages:" + JSON.stringify(pages));
-        if (!("CombinationState8Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/CombinationState8" == pages.name)) {
           console.info("get CombinationState8Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push CombinationState8Jsunit page result:" + JSON.stringify(result));
+          // console.info("push CombinationState8Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CombinationState8Jsunit page error:" + err);
@@ -80,11 +79,16 @@ export default function CombinationState8Jsunit() {
       console.info("CombinationState8Jsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   CombinationState8Jsunit_static_0100
      * @tc.name     CombinationState8Jsunit_static_0100
      * @tc.desc     CombinationState8Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState8Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[CombinationState8Jsunit_static_0100] START');
@@ -101,7 +105,7 @@ it('CombinationState8Jsunit_static_0100', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState8Jsunit_static_0200
      * @tc.name     CombinationState8Jsunit_static_0200
      * @tc.desc     CombinationState8Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState8Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[CombinationState8Jsunit_static_0200] START');
@@ -109,7 +113,7 @@ it('CombinationState8Jsunit_static_0200', Level.LEVEL0, async (done: () => void)
       let obj = JSON.parseJsonElement(strJson);
       console.info("[CombinationState8Jsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[CombinationState8Jsunit_static_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("@PropRef:1");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("@Prop:1");
       console.info('[CombinationState8Jsunit_static_0200] END');
       done();
     });
@@ -118,7 +122,7 @@ it('CombinationState8Jsunit_static_0200', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState8Jsunit_static_0300
      * @tc.name     CombinationState8Jsunit_static_0300
      * @tc.desc     CombinationState8Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState8Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[CombinationState8Jsunit_static_0300] START');
@@ -135,7 +139,7 @@ it('CombinationState8Jsunit_static_0300', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState8Jsunit_static_0400
      * @tc.name     CombinationState8Jsunit_static_0400
      * @tc.desc     CombinationState8Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState8Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[CombinationState8Jsunit_static_0400] START');

@@ -65,15 +65,14 @@ export default function StateComponentJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateComponentJsunit state pages:" + JSON.stringify(pages));
-        if (!("StateComponentJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/StateComponent" == pages.name)) {
           console.info("get StateComponentJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StateComponentJsunit page result:" + JSON.stringify(result));
+          // console.info("push StateComponentJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StateComponentJsunit page error:" + err);
@@ -81,22 +80,19 @@ export default function StateComponentJsunit() {
       console.info("StateComponentJsunit beforeEach end");
     });
 
-    afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      const StateComponent = AppStorage.get<Router>("StateComponent") as Router
-      StateComponent.back({
-        url: "MainAbility/pages/index/index"
-      });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
 
     /*
      * @tc.number   StateComponentJsunit_static_0100
      * @tc.name     StateComponentJsunit_static_0100
      * @tc.desc     StateComponentJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateComponentJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //get the value of title1
       console.info('StateComponentJsunit_static_0100 START');
       let strJson1 = inspector.getInspectorByKey('text_component1');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -118,7 +114,7 @@ it('StateComponentJsunit_static_0100', Level.LEVEL0, async (done: () => void): P
      * @tc.number   StateComponentJsunit_static_0200
      * @tc.name     StateComponentJsunit_static_0200
      * @tc.desc     StateComponentJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateComponentJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -140,7 +136,7 @@ it('StateComponentJsunit_static_0200', Level.LEVEL0, async (done: () => void): P
      * @tc.number   StateComponentJsunit_static_0300
      * @tc.name     StateComponentJsunit_static_0300
      * @tc.desc     StateComponentJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateComponentJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -162,7 +158,7 @@ it('StateComponentJsunit_static_0300', Level.LEVEL0, async (done: () => void): P
      * @tc.number   StateComponentJsunit_static_0400
      * @tc.name     StateComponentJsunit_static_0400
      * @tc.desc     StateComponentJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateComponentJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -184,7 +180,7 @@ it('StateComponentJsunit_static_0400', Level.LEVEL0, async (done: () => void): P
      * @tc.number   StateComponentJsunit_static_0500
      * @tc.name     StateComponentJsunit_static_0500
      * @tc.desc     StateComponentJsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateComponentJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

@@ -65,15 +65,14 @@ export default function LocalStoagePropFourJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LocalStoagePropFourJsunit state pages:" + JSON.stringify(pages));
-        if (!("LocalStoagePropFourJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/LocalStoagePropFour" == pages.name)) {
           console.info("get LocalStoagePropFourJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LocalStoagePropFourJsunit page result:" + JSON.stringify(result));
+          // console.info("push LocalStoagePropFourJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LocalStoagePropFourJsunit page error:" + err);
@@ -81,11 +80,16 @@ export default function LocalStoagePropFourJsunit() {
       console.info("LocalStoagePropFourJsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   LocalStoagePropFourJsunit_static_0100
      * @tc.name     LocalStoagePropFourJsunit_static_0100
      * @tc.desc     LocalStoagePropFourJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoagePropFourJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -93,7 +97,7 @@ it('LocalStoagePropFourJsunit_static_0100', Level.LEVEL0, async (done: () => voi
       let strJson1 = inspector.getInspectorByKey('text_state');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LocalStoagePropFourJsunit_static_0200] obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('State:1,Link:1,PropRef:1,Provide:1');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('State:1,Link:1,Prop:1,Provide:1');
 
       console.info('[LocalStoagePropFourJsunit_static_0200] END');
       done();
@@ -105,7 +109,7 @@ it('LocalStoagePropFourJsunit_static_0100', Level.LEVEL0, async (done: () => voi
      * @tc.number   LocalStoagePropFourJsunit_static_0200
      * @tc.name     LocalStoagePropFourJsunit_static_0200
      * @tc.desc     LocalStoagePropFourJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoagePropFourJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStoagePropFourJsunit_static_0200] START');

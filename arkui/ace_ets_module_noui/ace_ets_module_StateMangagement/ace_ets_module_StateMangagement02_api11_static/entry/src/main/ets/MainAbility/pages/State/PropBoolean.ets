@@ -43,10 +43,10 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -63,13 +63,13 @@ struct PropBoolean {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropBoolean', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
   build() {
     Column() {
-      Text('@PropRef 支持数据类型：Boolean').fontSize(9).height('5%')
+      Text('@Prop 支持数据类型：Boolean').fontSize(9).height('5%')
       Text('父组件State:' +this.BooleanA).width("100%").key('Boolean_Prop').height('5%')
       Button('父组件State:').width("100%")
         .height('5%')
@@ -89,7 +89,7 @@ struct ChildPropBoolean {
 
   build() {
     Column() {
-      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
 
       Button('子组件Prop: '+this.BooleanB).width("100%").height('5%')
         .key("ChildPropBoolean")

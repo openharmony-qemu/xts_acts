@@ -64,15 +64,14 @@ export default function ObjectLinkSplJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkSplJsunit state pages:" + JSON.stringify(pages));
-        if (!("ObjectLinkSplJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/ObjectLinkSpl" == pages.name)) {
           console.info("get ObjectLinkSplJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ObjectLinkSplJsunit page result:" + JSON.stringify(result));
+          // console.info("push ObjectLinkSplJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObjectLinkSplJsunit page error:" + err);
@@ -89,11 +88,16 @@ export default function ObjectLinkSplJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   ObjectLinkSplJsunit_static_0100
      * @tc.name     ObjectLinkSplJsunit_static_0100
      * @tc.desc     ObjectLinkSplJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSplJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -134,7 +138,7 @@ it('ObjectLinkSplJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkSplJsunit_static_0200
      * @tc.name     ObjectLinkSplJsunit_static_0200
      * @tc.desc     ObjectLinkSplJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSplJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -175,7 +179,7 @@ it('ObjectLinkSplJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkSplJsunit_static_0300
      * @tc.name     ObjectLinkSplJsunit_static_0300
      * @tc.desc     ObjectLinkSplJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSplJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -183,7 +187,7 @@ it('ObjectLinkSplJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('btn_prop'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('sNum_props');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkSplJsunit_static_0300] component obj is: " + JSON.stringify(obj));
@@ -216,7 +220,7 @@ it('ObjectLinkSplJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkSplJsunit_static_0400
      * @tc.name     ObjectLinkSplJsunit_static_0400
      * @tc.desc     ObjectLinkSplJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSplJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

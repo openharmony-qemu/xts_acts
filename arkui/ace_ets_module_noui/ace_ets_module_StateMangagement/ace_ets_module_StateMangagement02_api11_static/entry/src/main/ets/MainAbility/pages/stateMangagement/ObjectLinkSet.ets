@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -58,7 +58,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Observed
 class SetClassA {
-  public a: MySet<number> = new MySet<number>("Set", [1, 2, 3]);
+  public a: MySet<number>;
 
   constructor(a: MySet<number>) {
     this.a = a;
@@ -68,7 +68,7 @@ class SetClassA {
 
 @Observed
 export class MySet<T> extends Set<T> {
-  public name: string = '';
+  public name: string;
 
   constructor(name?: string, args?: T[]) {
     super(args);
@@ -84,20 +84,12 @@ export class MySet<T> extends Set<T> {
 @Component
 struct ObjectLinkSetNested {
   @State message: SetClassA = new SetClassA(new MySet<number>("Set", [1, 2, 3]));
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ObjectLinkSet', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Row() {
       Column() {
         Button('init set').id("ObtLinkSet_init").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.message.a = new MySet<number>("Set", [1, 2, 3])
           })
 
@@ -111,7 +103,7 @@ struct ObjectLinkSetNested {
 
 @Component
 struct ObjectLinkSetNestedChild {
-  @ObjectLink mySet: MySet<number>=new MySet<number>("Set", [1, 2, 3])
+  @ObjectLink mySet: MySet<number>
   @State st: string = ''
 
   build() {
@@ -119,13 +111,13 @@ struct ObjectLinkSetNestedChild {
       Column() {
 
         Button('set new one').id("ObtLinkSet_set").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.mySet.add(5)
           })
 
 
         Button('clear').id("ObtLinkSet_clear").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.mySet.clear()
             if (Array.from(this.mySet.entries())) {
               this.mySet.add(0)
@@ -135,11 +127,11 @@ struct ObjectLinkSetNestedChild {
 
         Button('delete the first one').height('5%')
           .id("ObtLinkSet_delete")
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.mySet.delete(0)
           })
 
-        ForEach(Array.from(this.mySet.entries()), (item: [Number, Number]) => {
+        ForEach(Array.from(this.mySet.entries()), (item: [number, number]) => {
           Text(`${item}`).height('5%')
             .fontSize(9)
             .id(`ObtLinkSet_value_${item[0]}`)

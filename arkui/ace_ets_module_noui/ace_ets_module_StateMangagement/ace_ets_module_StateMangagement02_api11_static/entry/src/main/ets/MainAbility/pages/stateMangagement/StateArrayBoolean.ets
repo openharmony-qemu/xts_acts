@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -65,7 +65,7 @@ struct StateArrayBoolean {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('StateArrayBoolean', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -75,7 +75,7 @@ struct StateArrayBoolean {
 
         Button('init array_number').id('stateArrayBoolean_init').height('5%')
           .onClick((e: ClickEvent) => {
-            this.message = this.message = [false, true, false, true, false]
+            this.message = [false, true, false, true, false]
           })
 
         Button('push new one').id('stateArrayBoolean_push').height('5%')

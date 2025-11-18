@@ -67,12 +67,12 @@ export default function StateTrackTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StateTrackTest state pages:" + JSON.stringify(pages));
-        if (!("StateTrackTest" == pages.name)) {
+        if (!("TextClockApi" == pages.name)) {
           console.info("get StateTrackTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StateTrackTest page result:" + JSON.stringify(result));
+          // console.info("push StateTrackTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StateTrackTest page error:" + err);
@@ -89,7 +89,7 @@ export default function StateTrackTest() {
       console.log('reset button click succ')
       await CommonFunc.sleep(2000);
     });
-
+    
     /*
      * @tc.number   StateTrackTest_0100
      * @tc.name     StateTrackTest_0100
@@ -120,7 +120,7 @@ it('StateTrackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[StateTrackTest_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateTrackTest_0200
      * @tc.name     StateTrackTest_0200

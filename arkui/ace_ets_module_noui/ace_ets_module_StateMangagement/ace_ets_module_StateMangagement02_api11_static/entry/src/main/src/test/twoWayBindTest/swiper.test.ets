@@ -51,14 +51,14 @@ export default function swiperTest() {
   describe('swiperTest', () => {
 
     beforeAll(() => {
-      console.info("swiperTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("swiperTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/twoWayBind/swiper',
       }
@@ -66,22 +66,22 @@ export default function swiperTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get swiperTest state pages:" + JSON.stringify(pages));
-        if (!("swiperTest" == pages.name)) {
-          console.info("get swiperTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+        console.info("get StateTrackTest state pages:" + JSON.stringify(pages));
+        if (!("TextClockApi" == pages.name)) {
+          console.info("get StateTrackTest pages.name:" + JSON.stringify(pages.name));
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push swiperTest page result:" + JSON.stringify(result));
+          // console.info("push StateTrackTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push swiperTest page error:" + err);
+        console.error("push StateTrackTest page error:" + err);
       }
-      console.info("swiperTest beforeEach end");
+      console.info("StateTrackTest beforeEach end");
     });
 
 
-
+    
     /*
      * @tc.number   swiperTest_0100
      * @tc.name     swiperTest_0100

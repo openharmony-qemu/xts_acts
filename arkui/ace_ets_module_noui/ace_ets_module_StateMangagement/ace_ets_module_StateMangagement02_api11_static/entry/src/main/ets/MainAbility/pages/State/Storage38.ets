@@ -12,3 +12,71 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {
+  Entry,
+  Column,
+  Component,
+  Button,
+  ClickEvent,
+  ForEach,
+  Text,
+  Row,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Builder,
+  NavPathStack,
+  FontWeight,
+  Navigation,
+  NavDestination,
+  NavigationMode,
+  ButtonType,
+  Color,
+  DatePicker
+} from '@ohos.arkui.component'
+import {
+  State,
+  Watch,
+  Link,
+  Provide,
+  Prop,
+  ObjectLink,
+  Observed,
+  Consume,
+  StorageProp,
+  StorageLink,
+  LocalStorage,
+  LocalStorageProp,
+  LocalStorageLink,
+  Observed,
+} from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage,SubscribedAbstractProperty } from '@ohos.arkui.stateManagement';
+import hilog from "@ohos.hilog";
+AppStorage.clear()
+AppStorage.setOrCreate<number>('PropA', 160);
+let storage38 = new LocalStorage();
+let link381: SubscribedAbstractProperty<number> = AppStorage.setAndRef<number>('PropA',47) as SubscribedAbstractProperty<number>
+let link382: SubscribedAbstractProperty<number> = AppStorage.setAndRef<number>('qqq',47) as SubscribedAbstractProperty<number>
+const get_storage38 = (): LocalStorage => storage38
+@Entry({ storage:'get_storage38' })
+@Component
+struct LocalStorage38 {
+  @State link1Date: number | undefined = 0;
+  @State link1Date2: number | undefined = 0;
+
+  build() {
+    Column() {
+      Text('' + this.link1Date).id("text38_link1Date").height('5%')
+      Text('' + this.link1Date2).id("text38_link1Date2").height('5%')
+      Button(`click`).width('100%').height('5%')
+        .key("Storage38Btn")
+        .onClick((e: ClickEvent) => {
+          this.link1Date = link381.get()
+          this.link1Date2 = link382.get()
+
+        })
+    }
+  }
+}

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -67,12 +67,12 @@ export default function stateManagementDARKJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get stateManagementDARKJsunit state pages:" + JSON.stringify(pages));
-        if (!("stateManagementDARKTest" == pages.name)) {
+        if (!("stateManagement" == pages.name)) {
           console.info("get stateManagementDARKJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push stateManagementDARKJsunit page result:" + JSON.stringify(result));
+          // console.info("push stateManagementDARKJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push stateManagementDARKJsunit page error:" + err);
@@ -84,20 +84,19 @@ export default function stateManagementDARKJsunit() {
       await CommonFunc.sleep(1000);
       console.info("stateManagementDARK after each called");
     });
-
-
+    
     /*
      * @tc.number   teststateManagementDARK_static_001
      * @tc.name     teststateManagementDARK_static_001
      * @tc.desc     teststateManagementDARK_static_001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('teststateManagementDARK_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('stateManagementDARK teststateManagementDARK_static_001 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('DARKText');
       console.info("[teststateManagementDARK_static_001] component textAlign strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor')).assertEqual('#FF000001');
       console.info("[teststateManagementDARK_static_001] backgroundColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor'));
       done();

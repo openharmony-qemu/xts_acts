@@ -64,15 +64,14 @@ export default function LocalStorage39Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LocalStorage39Jsunit state pages:" + JSON.stringify(pages));
-        if (!("LocalStorage39Jsunit" == pages.name)) {
+        if (!("LocalStorage39" == pages.name)) {
           console.info("get LocalStorage39Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LocalStorage39Jsunit page result:" + JSON.stringify(result));
+          // console.info("push LocalStorage39Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LocalStorage39Jsunit page error:" + err);
@@ -84,10 +83,10 @@ export default function LocalStorage39Jsunit() {
      * @tc.number   LocalStorage39Jsunit_static_0200
      * @tc.name     LocalStorage39Jsunit_static_0200
      * @tc.desc     LocalStorage39Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStorage39Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //Size获取AppStorage中存在键值对的个数
       console.info('[LocalStorage39Jsunit_static_0200] START');
       let driver = Driver.create()
       let Storage12Button1 = await driver.findComponent(ON.id('button4'));
@@ -108,7 +107,7 @@ it('LocalStorage39Jsunit_static_0200', Level.LEVEL0, async (done: () => void): P
      * @tc.number   LocalStorage39Jsunit_static_0400
      * @tc.name     LocalStorage39Jsunit_static_0400
      * @tc.desc     LocalStorage39Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStorage39Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorage39Jsunit_static_0400] START');
@@ -129,7 +128,7 @@ it('LocalStorage39Jsunit_static_0400', Level.LEVEL0, async (done: () => void): P
      * @tc.number   LocalStorage39Jsunit_static_0600
      * @tc.name     LocalStorage39Jsunit_static_0600
      * @tc.desc     LocalStorage39Jsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStorage39Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorage39Jsunit_static_0600] START');
@@ -151,7 +150,7 @@ it('LocalStorage39Jsunit_static_0600', Level.LEVEL0, async (done: () => void): P
      * @tc.number   LocalStorage39Jsunit_static_0800
      * @tc.name     LocalStorage39Jsunit_static_0800
      * @tc.desc     LocalStorage39Jsunit_static_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStorage39Jsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorage39Jsunit_static_0800] START');

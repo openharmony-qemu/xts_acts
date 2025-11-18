@@ -38,19 +38,20 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
+// 父组件arrViewB中的类对象ClassA与子组件ViewA保持数据同步时，可以使用@ObjectLink和@Observed，绑定该数据对象的父组件和其他子组件同步更新
 let nextID: number = 0
 @Observed
 class ClassA {
@@ -84,7 +85,7 @@ struct arrViewB {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkArray', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -102,7 +103,7 @@ struct arrViewB {
         .height('5%')
         .key("change_ArrObl")
         .onClick((e: ClickEvent) => {
-
+          // 改变某一个Array值
           this.arrA[0] = new ClassA(8)
         })
 

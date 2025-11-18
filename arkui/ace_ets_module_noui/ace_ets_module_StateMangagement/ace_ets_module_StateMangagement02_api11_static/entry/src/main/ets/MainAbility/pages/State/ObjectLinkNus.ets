@@ -39,14 +39,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -67,11 +67,14 @@ class StrClassA {
     this.color = color
   }
 }
+// 构建子组件ViewB用于承载@ObjectLink修饰的变量
+//@ObjectLink支持多数据类型
 @Component
 struct ViewBOlk {
   @ObjectLink class_B: StrClassA = new StrClassA("hello");
   build() {
     Row() {
+      // 将ClassB的成员变量a在UI呈现出来
       Text(`${this.class_B.name}`).height('5%').width('25%')
       Text(`${this.class_B.num}`).height('5%').width('25%')
       Text(`${this.class_B.flag}`).height('5%').width('25%')
@@ -83,13 +86,14 @@ struct ViewBOlk {
 @Entry
 @Component
 struct ViewANus {
+  // 使用@State修饰变量class_A
   @State class_A: StrClassA = new StrClassA("hello");
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkNus', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

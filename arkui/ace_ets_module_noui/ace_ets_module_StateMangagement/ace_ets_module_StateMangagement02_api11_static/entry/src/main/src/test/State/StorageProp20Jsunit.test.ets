@@ -67,12 +67,12 @@ export default function StorageProp20Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageProp20Jsunit state pages:" + JSON.stringify(pages));
-        if (!("StorageProp20Jsunit" == pages.name)) {
+        if (!("StorageProp20" == pages.name)) {
           console.info("get StorageProp20Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StorageProp20Jsunit page result:" + JSON.stringify(result));
+          // console.info("push StorageProp20Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StorageProp20Jsunit page error:" + err);
@@ -84,7 +84,7 @@ export default function StorageProp20Jsunit() {
      * @tc.number   StorageProp20Jsunit_static_0100
      * @tc.name     StorageProp20Jsunit_static_0100
      * @tc.desc     StorageProp20Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp20Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp20Jsunit_static_0100] START');
@@ -100,7 +100,7 @@ it('StorageProp20Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp20Jsunit_static_0200
      * @tc.name     StorageProp20Jsunit_static_0200
      * @tc.desc     StorageProp20Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp20Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp20Jsunit_static_0200] START');
@@ -116,14 +116,14 @@ it('StorageProp20Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp20Jsunit_static_0300
      * @tc.name     StorageProp20Jsunit_static_0300
      * @tc.desc     StorageProp20Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp20Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp20Jsunit_static_0300] START');
       let strJson1 = inspector.getInspectorByKey('text_Prop');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp20Jsunit_static_0300] obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('PropRef:10');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('Prop:10');
       console.info('[StorageProp20Jsunit_static_0300] END');
       done();
     });
@@ -132,7 +132,7 @@ it('StorageProp20Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp20Jsunit_static_0400
      * @tc.name     StorageProp20Jsunit_static_0400
      * @tc.desc     StorageProp20Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp20Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp20Jsunit_static_0400] START');

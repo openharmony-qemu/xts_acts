@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -44,19 +44,19 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, ColorMode } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 import  resourceManager  from '@ohos.resourceManager';
@@ -66,16 +66,6 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct StateManagementDARK {
-  aboutToAppear() {
-    hilog.info(0x0000, TAG, 'aboutToAppear StateManagementDARK start');
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateArrayObject', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
 
   aboutToDisappear() {
     hilog.info(0x0000, TAG, 'aboutToAppear StateManagementDARK end');
@@ -94,7 +84,7 @@ struct StateManagementDARK {
         .border({ width: 1 })
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .backgroundColor(resourceManager.ColorMode.DARK)
+        .backgroundColor(ColorMode.DARK)
         .key("DARKText")
     }
     .width("100%")

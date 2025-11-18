@@ -64,15 +64,14 @@ export default function StorageProp19Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageProp19Jsunit state pages:" + JSON.stringify(pages));
-        if (!("StorageProp19Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/StorageProp19" == pages.name)) {
           console.info("get StorageProp19Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StorageProp19Jsunit page result:" + JSON.stringify(result));
+          // console.info("push StorageProp19Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StorageProp19Jsunit page error:" + err);
@@ -80,11 +79,16 @@ export default function StorageProp19Jsunit() {
       console.info("StorageProp19Jsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   StorageProp19Jsunit_static_0200
      * @tc.name     StorageProp19Jsunit_static_0200
      * @tc.desc     StorageProp19Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp19Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0200] START');
@@ -106,7 +110,7 @@ it('StorageProp19Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp19Jsunit_static_0300
      * @tc.name     StorageProp19Jsunit_static_0300
      * @tc.desc     StorageProp19Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp19Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0300] START');
@@ -128,7 +132,7 @@ it('StorageProp19Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp19Jsunit_static_0400
      * @tc.name     StorageProp19Jsunit_static_0400
      * @tc.desc     StorageProp19Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp19Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0400] START');
@@ -150,7 +154,7 @@ it('StorageProp19Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp19Jsunit_static_0500
      * @tc.name     StorageProp19Jsunit_static_0500
      * @tc.desc     StorageProp19Jsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp19Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0500] START');

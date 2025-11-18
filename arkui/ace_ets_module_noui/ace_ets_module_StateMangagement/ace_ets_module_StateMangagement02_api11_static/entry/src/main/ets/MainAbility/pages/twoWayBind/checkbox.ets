@@ -12,3 +12,66 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import {
+  Entry,
+  Column,
+  Component,
+  Button,
+  ClickEvent,
+  ForEach,
+  Text,ContentCoverOptions,CheckBoxShape,
+  Row,Color,Builder,FlexAlign,$$,Checkbox,
+} from '@ohos.arkui.component'
+import {
+  State,
+  Watch,Prop,ObjectLink,
+  Link,LocalStorageProp,LocalStorageLink,Consume,Provide,
+  StorageLink,Observed,Track,LocalStorage
+} from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+
+@Entry
+@Component
+struct CheckboxExample {
+  @State checkboxselect1: boolean = true
+  @State checkboxselect2: boolean = false
+
+  build() {
+    Column() {
+      Text(`checkboxselect1: ${this.checkboxselect1}`).id('twoCheckboxText').height('5%')
+      Text(`checkboxselect2: ${this.checkboxselect2}`).id('twoCheckboxText1').height('5%')
+      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' }).height('5%')
+        .select(true)
+        .selectedColor(0xed6f21)
+        .shape(CheckBoxShape.CIRCLE)
+        .onChange((value: boolean) => {
+          console.info('Checkbox1 change is' + value)
+        })
+      Checkbox({ name: 'checkbox2', group: 'checkboxGroup' }).height('5%')
+        .select($$(this.checkboxselect1))
+        .selectedColor(0x39a2db)
+        .shape(CheckBoxShape.ROUNDED_SQUARE)
+        .id('twoCheckbox1')
+        .onChange((value: boolean) => {
+          console.info('Checkbox2 change is' + value)
+        })
+        .onClick(():void => {
+          console.info('Checkbox2=' + this.checkboxselect1)
+        })
+      Checkbox({ name: 'checkbox3', group: 'checkboxGroup' }).height('5%')
+        .select($$(this.checkboxselect2))
+        .selectedColor(0x39a2db)
+        .shape(CheckBoxShape.ROUNDED_SQUARE)
+        .id('twoCheckbox2')
+        .onChange((value: boolean) => {
+          console.info('Checkbox3 change is' + value)
+        })
+        .onClick(():void => {
+          console.info('checkbox3=' + this.checkboxselect2)
+        })
+    }
+  }
+}

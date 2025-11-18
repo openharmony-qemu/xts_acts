@@ -44,18 +44,20 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, Track } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
+
+@Observed
 class ClassA30 {
-  public value: number = 1;
+  @Track public value: number = 1;
 
   constructor(value: number) {
     this.value = value;
@@ -69,7 +71,7 @@ struct ChildPropObject {
 
   build() {
     Column() {
-      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
       Text('子组件Prop:' + this.subValue).fontSize(9).height('5%')
         .key("sub_prop1_S")
         .onClick((e: ClickEvent) => {
@@ -89,17 +91,18 @@ struct PropInit1 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropInit1', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
   build() {
     Row() {
       Column() {
-        Text('@PropRef本地初始化不和父组件同步').fontSize(9).height('5%')
+        Text('@Prop本地初始化不和父组件同步').fontSize(9).height('5%')
         Text('Change father: ' + this.title.value).height('5%')
           .id("prop_Object1_A")
           .onClick((e: ClickEvent) => {
+            // 动态修改Class类型赋值
             this.title.value = 111;
           })
 

@@ -39,14 +39,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -63,12 +63,14 @@ class SecClassB {
 }
 
 class SecClassA {
+  // ClassA成员变量a的类型为ClassB，从而形成嵌套结构，ClassB的成员变量b为第二层变量
   public a:SecClassB = new SecClassB(1)
 
   constructor(a:SecClassB) {
     this.a = a;
   }
 }
+// 构建子组件ViewSec用于承载@ObjectLink修饰的变量
 @Component
 struct ViewSec {
   @ObjectLink class_C: SecClassB = new SecClassB(1);
@@ -79,16 +81,19 @@ struct ViewSec {
   }
 }
 
+// 使用@State、@Provide不能监听到第二层变量的变化
 @Entry
 @Component
 struct ViewASec {
+  // 使用@State修饰变量class_A
   @State class_A: SecClassA = new SecClassA(new SecClassB(5));
+  @Provide({ alias:"indexCount" }) class_B: SecClassA = new SecClassA(new SecClassB(5));
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkSec', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -97,14 +102,17 @@ struct ViewASec {
       Column(){
         Text('@State不能接收第二层属性值').height('5%')
         Row(){
+          // 点击按钮，第二层变量发生变化
           Button('第二层变量+1')
             .height('5%')
             .width('50%')
             .key(("btn_state2"))
             .backgroundColor('#E8A027')
             .onClick((e: ClickEvent) => {
+              // 第二层变量变化，嵌套类ClassB的成员变量b加1
               this.class_A.a.b += 1;
             })
+          // 将第二层变量在UI呈现出来
           Text(`${this.class_A.a.b}`).key(("sec_state"))
             .height('5%')
             .width('50%')
@@ -114,13 +122,20 @@ struct ViewASec {
       Column(){
         Text('@Provide不能接收第二层属性值').height('5%')
         Row(){
+          // 点击按钮，第二层变量发生变化
           Button('第二层变量+1')
             .height('5%')
             .width('50%')
             .key(("btn_provide2"))
             .backgroundColor('#E8A027')
             .onClick((e: ClickEvent) => {
+              // 第二层变量变化，嵌套类ClassB的成员变量b加1
+              this.class_B.a.b += 1;
             })
+          // 将第二层变量在UI呈现出来
+          Text(`${this.class_B.a.b}`).key(("sec_provide"))
+            .height('5%')
+            .width('50%')
         }
       }
     }

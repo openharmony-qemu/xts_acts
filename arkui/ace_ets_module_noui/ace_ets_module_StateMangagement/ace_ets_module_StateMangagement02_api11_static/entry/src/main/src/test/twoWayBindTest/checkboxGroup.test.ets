@@ -51,14 +51,14 @@ export default function checkboxGroupTest() {
   describe('checkboxGroupTest', () => {
 
     beforeAll(() => {
-      console.info("checkboxGroupTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("checkboxGroupTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/twoWayBind/checkboxGroup',
       }
@@ -66,22 +66,22 @@ export default function checkboxGroupTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get checkboxGroupTest state pages:" + JSON.stringify(pages));
-        if (!("checkboxGroupTest" == pages.name)) {
-          console.info("get checkboxGroupTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+        console.info("get StateTrackTest state pages:" + JSON.stringify(pages));
+        if (!("TextClockApi" == pages.name)) {
+          console.info("get StateTrackTest pages.name:" + JSON.stringify(pages.name));
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push checkboxGroupTest page result:" + JSON.stringify(result));
+          // console.info("push StateTrackTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push checkboxGroupTest page error:" + err);
+        console.error("push StateTrackTest page error:" + err);
       }
-      console.info("checkboxGroupTest beforeEach end");
+      console.info("StateTrackTest beforeEach end");
     });
 
 
-
+    
     /*
      * @tc.number   checkboxGroupTest_0100
      * @tc.name     checkboxGroupTest_0100
@@ -109,7 +109,7 @@ it('checkboxGroupTest_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[checkboxGroupTest_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   checkboxGroupTest_0200
      * @tc.name     checkboxGroupTest_0200

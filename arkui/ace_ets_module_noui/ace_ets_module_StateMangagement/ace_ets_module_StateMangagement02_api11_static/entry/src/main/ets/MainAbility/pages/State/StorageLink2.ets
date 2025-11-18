@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -57,7 +57,10 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 AppStorage.clear()
 AppStorage.setOrCreate('Prop1', 47);
-
+let para: Record<string, number> = { 'PropA': 47 }
+let storageLink2 = new LocalStorage();
+let storage_1 = new LocalStorage(para);
+storageLink2.setOrCreate('Prop1',47);
 
 @Entry
 @Component
@@ -75,7 +78,7 @@ struct StorageLink2 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('StorageLink2', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -101,6 +104,7 @@ struct StorageLink2 {
       Button(`has4: ${this.has4}`).width("100%").height('5%')
         .key("button_son4")
         .onClick((e: ClickEvent) => {
+          this.has4 = storage_1.set('PropA',50)
         })
 
       Button(`son1: ${this.son1}`).width("100%").height('5%')

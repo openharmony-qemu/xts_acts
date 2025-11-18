@@ -64,15 +64,14 @@ export default function PropBooleanJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropBooleanJsunit state pages:" + JSON.stringify(pages));
-        if (!("PropBooleanJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/PropBoolean" == pages.name)) {
           console.info("get PropBooleanJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropBooleanJsunit page result:" + JSON.stringify(result));
+          // console.info("push PropBooleanJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropBooleanJsunit page error:" + err);
@@ -80,11 +79,16 @@ export default function PropBooleanJsunit() {
       console.info("PropBooleanJsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   PropBooleanJsunit_static_0100
      * @tc.name     PropBooleanJsunit_static_0100
      * @tc.desc     PropBooleanJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropBooleanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -101,7 +105,7 @@ it('PropBooleanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   PropBooleanJsunit_static_0200
      * @tc.name     PropBooleanJsunit_static_0200
      * @tc.desc     PropBooleanJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropBooleanJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -114,8 +118,8 @@ it('PropBooleanJsunit_static_0200', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('Boolean_Prop');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropBooleanJsunit_static_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[PropBooleanJsunit_static_0200] label: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual(undefined);
+      console.info("[PropBooleanJsunit_static_0200] label: " + JSON.stringify(obj.getElement('$attrs').tryGetElement('label')));
+      expect(obj.getElement('$attrs').tryGetElement('label')).assertEqual(undefined);
       console.info('[PropBooleanJsunit_static_0200] END');
       done();
     });
@@ -123,7 +127,7 @@ it('PropBooleanJsunit_static_0200', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   PropBooleanJsunit_static_0300
      * @tc.name     PropBooleanJsunit_static_0300
      * @tc.desc     PropBooleanJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropBooleanJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -140,7 +144,7 @@ it('PropBooleanJsunit_static_0300', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   PropBooleanJsunit_static_0400
      * @tc.name     PropBooleanJsunit_static_0400
      * @tc.desc     PropBooleanJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropBooleanJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

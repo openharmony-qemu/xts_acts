@@ -27,20 +27,22 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef
+  LocalStorageProp
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, Observed, Track } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
+
+@Observed
 class LinkAC {
-  public value: number
+  @Track public value: number
 
   constructor(value: number) {
     this.value = value
@@ -49,9 +51,9 @@ class LinkAC {
 
 @Component
 struct SonLinkAC {
-  @Link arrSon: Array<number> = [1,2,3]
-  @Link classSon: LinkAC = new LinkAC(1)
-  @Link classArrSon: Array<LinkAC> = [new LinkAC(1), new LinkAC(2)]
+  @Link arrSon: Array<number>
+  @Link classSon: LinkAC
+  @Link classArrSon: Array<LinkAC>
 
   build() {
     Column() {
@@ -88,15 +90,7 @@ struct ParentLinkAC {
   @State arr1: Array<number> = new Array<number>(1,2,3)
   @State class1: LinkAC = new LinkAC(1)
   @State classArr: Array<LinkAC> = [new LinkAC(1), new LinkAC(2)]
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('LinkClassArr', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Column() {
       Button("Reset").id("ParentLinkAC_reset")

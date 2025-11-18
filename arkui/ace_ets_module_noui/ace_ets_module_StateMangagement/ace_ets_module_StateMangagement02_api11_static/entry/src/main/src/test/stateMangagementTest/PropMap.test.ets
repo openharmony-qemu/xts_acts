@@ -69,10 +69,10 @@ export default function PropMap() {
         console.info("get PropMap state pages:" + JSON.stringify(pages));
         if (!("PropMap" == pages.name)) {
           console.info("get PropMap pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropMap page result:" + JSON.stringify(result));
+          // console.info("push PropMap page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropMap page error:" + err);
@@ -80,11 +80,12 @@ export default function PropMap() {
       console.info("PropMap beforeEach end");
     });
 
+    
     /*
      * @tc.number   PropMap_static_0100
      * @tc.name     PropMap_static_0100
      * @tc.desc     PropMap_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropMap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropMap_static_0100 START');
@@ -103,12 +104,12 @@ it('PropMap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[PropMap_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropMap_static_0200
      * @tc.name     PropMap_static_0200
      * @tc.desc     PropMap_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropMap_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropMap_static_0200 START');
@@ -127,12 +128,12 @@ it('PropMap_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[PropMap_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropMap_static_0300
      * @tc.name     PropMap_static_0300
      * @tc.desc     PropMap_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropMap_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropMap_static_0300 START');
@@ -151,12 +152,12 @@ it('PropMap_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[PropMap_static_0300] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropMap_static_0400
      * @tc.name     PropMap_static_0400
      * @tc.desc     PropMap_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropMap_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropMap_static_0400 START');

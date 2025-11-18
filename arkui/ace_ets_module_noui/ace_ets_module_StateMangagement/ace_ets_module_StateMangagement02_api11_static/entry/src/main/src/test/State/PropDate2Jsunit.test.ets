@@ -64,15 +64,14 @@ export default function PropDate2Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropDate2Jsunit state pages:" + JSON.stringify(pages));
-        if (!("PropDate2Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/PropDate2" == pages.name)) {
           console.info("get PropDate2Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropDate2Jsunit page result:" + JSON.stringify(result));
+          // console.info("push PropDate2Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropDate2Jsunit page error:" + err);
@@ -80,11 +79,16 @@ export default function PropDate2Jsunit() {
       console.info("PropDate2Jsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   PropDate2Jsunit_static_0010
      * @tc.name     PropDate2Jsunit_static_0010
      * @tc.desc     PropDate2Jsunit_static_0010
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropDate2Jsunit_static_0010 START');
@@ -101,7 +105,7 @@ it('PropDate2Jsunit_static_0010', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0020
      * @tc.name     PropDate2Jsunit_static_0020
      * @tc.desc     PropDate2Jsunit_static_0020
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropDate2Jsunit_static_0020 START');
@@ -123,7 +127,7 @@ it('PropDate2Jsunit_static_0020', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0030
      * @tc.name     PropDate2Jsunit_static_0030
      * @tc.desc     PropDate2Jsunit_static_0030
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -140,7 +144,7 @@ it('PropDate2Jsunit_static_0030', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0040
      * @tc.name     PropDate2Jsunit_static_0040
      * @tc.desc     PropDate2Jsunit_static_0040
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -162,7 +166,7 @@ it('PropDate2Jsunit_static_0040', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0050
      * @tc.name     PropDate2Jsunit_static_0050
      * @tc.desc     PropDate2Jsunit_static_0050
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -180,7 +184,7 @@ it('PropDate2Jsunit_static_0050', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0060
      * @tc.name     PropDate2Jsunit_static_0060
      * @tc.desc     PropDate2Jsunit_static_0060
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -202,7 +206,7 @@ it('PropDate2Jsunit_static_0060', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0070
      * @tc.name     PropDate2Jsunit_static_0070
      * @tc.desc     PropDate2Jsunit_static_0070
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -220,7 +224,7 @@ it('PropDate2Jsunit_static_0070', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0080
      * @tc.name     PropDate2Jsunit_static_0080
      * @tc.desc     PropDate2Jsunit_static_0080
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -241,7 +245,7 @@ it('PropDate2Jsunit_static_0080', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0090
      * @tc.name     PropDate2Jsunit_static_0090
      * @tc.desc     PropDate2Jsunit_static_0090
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -258,7 +262,7 @@ it('PropDate2Jsunit_static_0090', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0100
      * @tc.name     PropDate2Jsunit_static_0100
      * @tc.desc     PropDate2Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -280,7 +284,7 @@ it('PropDate2Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0110
      * @tc.name     PropDate2Jsunit_static_0110
      * @tc.desc     PropDate2Jsunit_static_0110
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -298,7 +302,7 @@ it('PropDate2Jsunit_static_0110', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0120
      * @tc.name     PropDate2Jsunit_static_0120
      * @tc.desc     PropDate2Jsunit_static_0120
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -320,7 +324,7 @@ it('PropDate2Jsunit_static_0120', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0130
      * @tc.name     PropDate2Jsunit_static_0130
      * @tc.desc     PropDate2Jsunit_static_0130
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0130', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -338,7 +342,7 @@ it('PropDate2Jsunit_static_0130', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0140
      * @tc.name     PropDate2Jsunit_static_0140
      * @tc.desc     PropDate2Jsunit_static_0140
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0140', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -359,7 +363,7 @@ it('PropDate2Jsunit_static_0140', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0150
      * @tc.name     PropDate2Jsunit_static_0150
      * @tc.desc     PropDate2Jsunit_static_0150
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0150', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -381,7 +385,7 @@ it('PropDate2Jsunit_static_0150', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0160
      * @tc.name     PropDate2Jsunit_static_0160
      * @tc.desc     PropDate2Jsunit_static_0160
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -403,7 +407,7 @@ it('PropDate2Jsunit_static_0160', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0170
      * @tc.name     PropDate2Jsunit_static_0170
      * @tc.desc     PropDate2Jsunit_static_0170
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -421,7 +425,7 @@ it('PropDate2Jsunit_static_0170', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0180
      * @tc.name     PropDate2Jsunit_static_0180
      * @tc.desc     PropDate2Jsunit_static_0180
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0180', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -443,7 +447,7 @@ it('PropDate2Jsunit_static_0180', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0190
      * @tc.name     PropDate2Jsunit_static_0190
      * @tc.desc     PropDate2Jsunit_static_0190
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -461,7 +465,7 @@ it('PropDate2Jsunit_static_0190', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0200
      * @tc.name     PropDate2Jsunit_static_0200
      * @tc.desc     PropDate2Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -483,7 +487,7 @@ it('PropDate2Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0210
      * @tc.name     PropDate2Jsunit_static_0210
      * @tc.desc     PropDate2Jsunit_static_0210
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -501,7 +505,7 @@ it('PropDate2Jsunit_static_0210', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0220
      * @tc.name     PropDate2Jsunit_static_0220
      * @tc.desc     PropDate2Jsunit_static_0220
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -523,7 +527,7 @@ it('PropDate2Jsunit_static_0220', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0230
      * @tc.name     PropDate2Jsunit_static_0230
      * @tc.desc     PropDate2Jsunit_static_0230
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -541,7 +545,7 @@ it('PropDate2Jsunit_static_0230', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0240
      * @tc.name     PropDate2Jsunit_static_0240
      * @tc.desc     PropDate2Jsunit_static_0240
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0240', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -563,7 +567,7 @@ it('PropDate2Jsunit_static_0240', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0250
      * @tc.name     PropDate2Jsunit_static_0250
      * @tc.desc     PropDate2Jsunit_static_0250
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -580,7 +584,7 @@ it('PropDate2Jsunit_static_0250', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0260
      * @tc.name     PropDate2Jsunit_static_0260
      * @tc.desc     PropDate2Jsunit_static_0260
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0260', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -602,7 +606,7 @@ it('PropDate2Jsunit_static_0260', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0270
      * @tc.name     PropDate2Jsunit_static_0270
      * @tc.desc     PropDate2Jsunit_static_0270
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0270', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -620,7 +624,7 @@ it('PropDate2Jsunit_static_0270', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0280
      * @tc.name     PropDate2Jsunit_static_0280
      * @tc.desc     PropDate2Jsunit_static_0280
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0280', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -642,7 +646,7 @@ it('PropDate2Jsunit_static_0280', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0290
      * @tc.name     PropDate2Jsunit_static_0290
      * @tc.desc     PropDate2Jsunit_static_0290
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0290', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -660,7 +664,7 @@ it('PropDate2Jsunit_static_0290', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0300
      * @tc.name     PropDate2Jsunit_static_0300
      * @tc.desc     PropDate2Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -682,7 +686,7 @@ it('PropDate2Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0310
      * @tc.name     PropDate2Jsunit_static_0310
      * @tc.desc     PropDate2Jsunit_static_0310
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0310', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -704,7 +708,7 @@ it('PropDate2Jsunit_static_0310', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropDate2Jsunit_static_0320
      * @tc.name     PropDate2Jsunit_static_0320
      * @tc.desc     PropDate2Jsunit_static_0320
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropDate2Jsunit_static_0320', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

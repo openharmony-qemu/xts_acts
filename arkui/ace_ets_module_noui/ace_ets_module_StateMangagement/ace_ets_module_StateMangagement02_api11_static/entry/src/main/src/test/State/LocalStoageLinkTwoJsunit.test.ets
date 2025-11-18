@@ -67,12 +67,12 @@ export default function LocalStoageLinkTwoJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LocalStoageLinkTwoJsunit state pages:" + JSON.stringify(pages));
-        if (!("LocalStoageLinkTwoJsunit" == pages.name)) {
+        if (!("LocalStoageLinkTwo" == pages.name)) {
           console.info("get LocalStoageLinkTwoJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LocalStoageLinkTwoJsunit page result:" + JSON.stringify(result));
+          // console.info("push LocalStoageLinkTwoJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LocalStoageLinkTwoJsunit page error:" + err);
@@ -84,7 +84,7 @@ export default function LocalStoageLinkTwoJsunit() {
      * @tc.number   LocalStoageLinkTwoJsunit_static_0100
      * @tc.name     LocalStoageLinkTwoJsunit_static_0100
      * @tc.desc     LocalStoageLinkTwoJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoageLinkTwoJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

@@ -64,27 +64,32 @@ export default function ObjectLinkSet() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkSet state pages:" + JSON.stringify(pages));
-        if (!("ObjectLinkSet" == pages.name)) {
+        if (!("MainAbility/pages/stateMangagement/ObjectLinkSet" == pages.name)) {
           console.info("get ObjectLinkSet pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ObjectLinkSet page result:" + JSON.stringify(result));
+          // console.info("push ObjectLinkSet page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObjectLinkSet page error:" + err);
       }
       console.info("ObjectLinkSet beforeEach end");
     });
+    
+
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
     /*
      * @tc.number   ObjectLinkSet_static_0100
      * @tc.name     ObjectLinkSet_static_0100
      * @tc.desc     ObjectLinkSet_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectLinkSet_static_0100 START');
@@ -103,12 +108,12 @@ it('ObjectLinkSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info('[ObjectLinkSet_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   ObjectLinkSet_static_0200
      * @tc.name     ObjectLinkSet_static_0200
      * @tc.desc     ObjectLinkSet_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectLinkSet_static_0200 START');
@@ -127,12 +132,12 @@ it('ObjectLinkSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info('[ObjectLinkSet_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   ObjectLinkSet_static_0300
      * @tc.name     ObjectLinkSet_static_0300
      * @tc.desc     ObjectLinkSet_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkSet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectLinkSet_static_0300 START');
