@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -48,8 +48,9 @@ export default function TextPickerDialog() {
         if (!("TextPickerDialog" == pages.name)) {
           console.info("get TextPickerDialog pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
+          // let result = await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TextPickerDialog page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextPickerDialog page error:" + err);
@@ -61,14 +62,15 @@ export default function TextPickerDialog() {
       console.info("TextPickerDialog after each called");
     });
 
-
+    
+    
     /*
      * @tc.number   TextPickerDialog_static_001
      * @tc.name     TextPickerDialog_static_001
      * @tc.desc     TextPickerDialog_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('TextPickerDialog_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('TextPickerDialog_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[TextPickerDialog_static_001] START');
       try {
         await CommonFunc.sleep(1000);
@@ -87,7 +89,7 @@ export default function TextPickerDialog() {
           .assertEqual('onWillAppear_onDidAppear_onWillDisappear_onDidDisappear');
         console.info('[TextPickerDialog_static_001] END');
         done();
-      } catch (error) {
+      }catch(error){
         expect().assertFail();
       }
     });

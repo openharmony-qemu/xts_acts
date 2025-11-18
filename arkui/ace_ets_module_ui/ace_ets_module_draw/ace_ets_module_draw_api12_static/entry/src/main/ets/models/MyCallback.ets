@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Technologies Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
-const SYNTAX_ERROR_CODE = 1002;
+const SYNTAX_ERROR_CODE: Int = 1002;
 
 export class MyCallback {
   static myCallback(callback: Callback<string>): void {

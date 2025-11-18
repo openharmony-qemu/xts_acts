@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Technologies Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ export default function APICanvasSizeTest() {
   describe('APICanvasSizeTest', () => {
     beforeAll(() => {
       console.info("APICanvasSizeTest beforeEach start");
+
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -45,10 +46,8 @@ export default function APICanvasSizeTest() {
         console.info("get APICanvasSizeTest state pages:" + JSON.stringify(pages));
         if (!("APICanvasSize" == pages.name)) {
           console.info("get APICanvasSizeTest pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push APICanvasSizeTest page error:" + err);
@@ -56,14 +55,13 @@ export default function APICanvasSizeTest() {
       console.info("APICanvasSizeTest beforeEach end");
     });
     
-    
     /*
      * @tc.number   APICanvasSizeTest_static_0100
      * @tc.name     APICanvasSizeTest_static_0100
      * @tc.desc     APICanvasSizeTest_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL2 
      */
-it('APICanvasSizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APICanvasSizeTest_static_0100', Level.LEVEL2 , async (done: () => void): Promise<void> => {
       console.info('APICanvasSizeTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -80,21 +78,20 @@ it('APICanvasSizeTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
 
       let strJson = inspector.getInspectorByKey('APICanvasSizeText1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[APICanvasSizeTest_static_0100] text1 content is: " + JSON.stringify(obj.getElement('$attrs').getDouble('content')));
-      console.info("[APICanvasSizeTest_static_0100] canvas width is: " + JSON.stringify(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content')))));
-      expect(Math.abs(Math.floor(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content'))) - widthParent * 0.8)) <= 1).assertTrue();
+      console.info("[APICanvasSizeTest_static_0100] text1 content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[APICanvasSizeTest_static_0100] canvas width is: " + JSON.stringify(AppStorage.get<UIContext>('uiContext')!.vp2px(Number(obj.getElement('$attrs').getString('content')))));
+      expect(Math.abs(Math.floor(AppStorage.get<UIContext>('uiContext')!.vp2px(Number(obj.getElement('$attrs').getString('content'))) - widthParent * 0.8)) <= 1).assertTrue();
       console.info('[APICanvasSizeTest_static_0100] END');
       done();
     });
-    
     
     /*
      * @tc.number   APICanvasSizeTest_static_0200
      * @tc.name     APICanvasSizeTest_static_0200
      * @tc.desc     APICanvasSizeTest_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL2 
      */
-it('APICanvasSizeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APICanvasSizeTest_static_0200', Level.LEVEL2 , async (done: () => void): Promise<void> => {
       console.info('APICanvasSizeTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -111,9 +108,9 @@ it('APICanvasSizeTest_static_0200', Level.LEVEL0, async (done: () => void): Prom
 
       let strJson = inspector.getInspectorByKey('APICanvasSizeText2');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[APICanvasSizeTest_static_0200] text2 content is: " + JSON.stringify(obj.getElement('$attrs').getDouble('content')));
-      console.info("[APICanvasSizeTest_static_0200] canvas height is: " + JSON.stringify(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content')))));
-      expect(Math.abs(Math.floor(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content'))) - heightParent * 0.5)) <= 1).assertTrue();
+      console.info("[APICanvasSizeTest_static_0200] text2 content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[APICanvasSizeTest_static_0200] canvas height is: " + JSON.stringify(AppStorage.get<UIContext>('uiContext')!.vp2px(Number(obj.getElement('$attrs').getString('content')))));
+      expect(Math.abs(Math.floor(AppStorage.get<UIContext>('uiContext')!.vp2px(Number(obj.getElement('$attrs').getString('content'))) - heightParent * 0.5)) <= 1).assertTrue();
       console.info('[APICanvasSizeTest_static_0200] END');
       done();
     });

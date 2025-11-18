@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -47,9 +47,10 @@ export default function DatePickerDialog() {
         console.info("get DatePickerDialog state pages:" + JSON.stringify(pages));
         if (!("DatePickerDialog" == pages.name)) {
           console.info("get DatePickerDialog pages.name:" + JSON.stringify(pages.name));
-
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push DatePickerDialog page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push DatePickerDialog page error:" + err);
@@ -60,14 +61,15 @@ export default function DatePickerDialog() {
       await CommonFunc.sleep(1000);
       console.info("DatePickerDialog after each called");
     });
-
+    
+    
     /*
      * @tc.number   DatePickerDialog_static_001
      * @tc.name     DatePickerDialog_static_001
      * @tc.desc     DatePickerDialog_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('DatePickerDialog_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('DatePickerDialog_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[DatePickerDialog_static_001] START');
       try {
         await CommonFunc.sleep(1000);
@@ -79,15 +81,15 @@ export default function DatePickerDialog() {
         let row: Component | null = await driver.findComponent(ON.id('row'));
         let point = await row!.getBoundsCenter();
         await CommonFunc.sleep(1000);
-        await driver.click((point.x + AppStorage.get<number>("winLeft")!) as Int,
-          (Math.round(point.y / 2) + AppStorage.get<number>("winTop")!) as Int)
+        await driver.click((point.x + AppStorage.get<number>("winLeft")!) as int,
+          (Math.round(point.y / 2) + AppStorage.get<number>("winTop")!) as int)
         await CommonFunc.sleep(2000);
         let text = inspector.getInspectorByKey('AppearText');
         expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content'))
           .assertEqual('onWillAppear_onDidAppear_onWillDisappear_onDidDisappear');
         console.info('[DatePickerDialog_static_001] END');
         done();
-      } catch (error) {
+      }catch(error){
         expect().assertFail();
       }
     });

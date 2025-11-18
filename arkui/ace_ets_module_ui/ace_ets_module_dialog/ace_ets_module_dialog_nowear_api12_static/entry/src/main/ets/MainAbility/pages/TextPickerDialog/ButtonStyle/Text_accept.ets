@@ -12,71 +12,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ButtonRole,
-  ButtonStyleMode,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontStyle,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  ShadowStyle,
-  Text,
-  TextPickerDialogOptions,
-  TimePickerDialogOptions
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ShadowStyle, TimePickerDialogOptions,Color,
+  ButtonStyleMode, ButtonRole, FontStyle, TextPickerDialogOptions} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct Text_accept {
-  uiContext: UIContext = this.getUIContext();
+  uiContext: UIContext = this.getUIContext()
+  private select: int = 0
+  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4', 'banana5')
   @State v: string = '';
   @State acceptButtonStyle_Text: string = '';
-  private select: int = 0;
-  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4', 'banana5');
-
   @State Text_Options: TextPickerDialogOptions = {
     range: this.fruits,
     selected: this.select,
-    disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
-    textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
-    selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
-    acceptButtonStyle: {
-      type: ButtonType.Circle,
-      style: ButtonStyleMode.NORMAL,
-      role: ButtonRole.NORMAL,
-      fontColor: Color.Red,
-      fontSize: '26fp',
-      fontWeight: FontWeight.Bolder,
-      fontStyle: FontStyle.Normal,
-      fontFamily: 'sans-serif',
-      backgroundColor: '#80834511',
-      borderRadius: 20
-    },
-    cancelButtonStyle: {
-      type: ButtonType.Normal,
-      style: ButtonStyleMode.NORMAL,
-      role: ButtonRole.NORMAL,
-      fontColor: Color.Blue,
-      fontSize: '16fp',
-      fontWeight: FontWeight.Normal,
-      fontStyle: FontStyle.Italic,
-      fontFamily: 'sans-serif',
-      backgroundColor: '#50182431',
-      borderRadius: 10
-    },
+    disappearTextStyle: {color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}},
+    textStyle: {color: Color.Black, font: {size: 20, weight: FontWeight.Normal}},
+    selectedTextStyle: {color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}},
+    acceptButtonStyle: { type: ButtonType.Circle, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Red,
+      fontSize: '26fp', fontWeight: FontWeight.Bolder, fontStyle: FontStyle.Normal, fontFamily: 'sans-serif', backgroundColor:'#80834511',
+      borderRadius: 20 },
+    cancelButtonStyle: { type: ButtonType.Normal, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Blue,
+      fontSize: '16fp', fontWeight: FontWeight.Normal, fontStyle: FontStyle.Italic, fontFamily: 'sans-serif', backgroundColor:'#50182431',
+      borderRadius: 10 },
   } as TextPickerDialogOptions;
 
   build() {
@@ -87,10 +48,10 @@ struct Text_accept {
           .margin(20)
         Button("TextPickerDialog:" + this.v)
           .margin(20)
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.uiContext.showTextPickerDialog(this.Text_Options)
             if (this.Text_Options.acceptButtonStyle!.type == ButtonType.Circle) {
-              this.acceptButtonStyle_Text = 'acceptButtonStyle_Text'
+                this.acceptButtonStyle_Text = 'acceptButtonStyle_Text'
             }
           })
           .id('btn')

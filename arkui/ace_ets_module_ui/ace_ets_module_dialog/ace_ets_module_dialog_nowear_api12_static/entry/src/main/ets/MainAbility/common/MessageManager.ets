@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Resource, TextCase, TextDecorationType } from '@ohos.arkui.component';
+import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
 
 export class Message {
   name: string = ''

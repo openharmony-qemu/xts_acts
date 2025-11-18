@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -49,9 +49,10 @@ export default function CalendarDialogCallback() {
         console.info("get CalendarDialogAJsunit state pages: " + JSON.stringify(pages));
         if (!("CalendarDialogCallback" == pages.name)) {
           console.info("get CalendarDialogAJsunit state pages.name: " + JSON.stringify(pages.name));
-
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push CalendarDialogAJsunit page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CalendarDialogAJsunit page error: " + err);
@@ -59,20 +60,20 @@ export default function CalendarDialogCallback() {
       }
     });
 
-
+    
+    
     /*
      * @tc.number   CalendarPickerDialogCallback_static_0100
      * @tc.name     CalendarPickerDialogCallback_static_0100
      * @tc.desc     CalendarPickerDialogCallback_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('CalendarPickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
+it('CalendarPickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try{
         let driver1 = Driver.create();
         let callback = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onWillAppear');
-          console.info('CalendarPickerDialogCallback_static_0100 event01: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('CalendarPickerDialogCallback_static_0100 event01: ' + ((event.data) as ESObject)?.getProperty('action'));
         }
         let event: events_emitter.InnerEvent = {
           eventId: 50001,
@@ -80,14 +81,13 @@ export default function CalendarDialogCallback() {
         }
         events_emitter.on(event, callback);
         console.info('CalendarPickerDialogCallback_static_0100 START');
-        let button: Component | null = await driver1.findComponent(ON.id('Calendar_dialog_A'));
+        let button:Component | null = await driver1.findComponent(ON.id('Calendar_dialog_A'));
         await button!.click();
         await CommonFunc.sleep(3000);
 
         let callback1 = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onDidAppear');
-          console.info('CalendarPickerDialogCallback_static_0100 event02: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('CalendarPickerDialogCallback_static_0100 event02: ' + ((event.data) as ESObject)?.getProperty('action'));
         }
         let event1: events_emitter.InnerEvent = {
           eventId: 50002,
@@ -98,8 +98,7 @@ export default function CalendarDialogCallback() {
 
         let callback2 = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onWillDisappear');
-          console.info('CalendarPickerDialogCallback_static_0100 event03: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('CalendarPickerDialogCallback_static_0100 event03: ' + ((event.data) as ESObject)?.getProperty('action'));
         }
         let event2: events_emitter.InnerEvent = {
           eventId: 50003,
@@ -110,8 +109,7 @@ export default function CalendarDialogCallback() {
 
         let callback3 = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onDidDisappear');
-          console.info('CalendarPickerDialogCallback_static_0100 event04: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('CalendarPickerDialogCallback_static_0100 event04: ' + ((event.data) as ESObject)?.getProperty('action'));
           done();
         }
         let event3: events_emitter.InnerEvent = {
@@ -122,7 +120,7 @@ export default function CalendarDialogCallback() {
         console.info('CalendarPickerDialogCallback_static_0100 START');
         await CommonFunc.sleep(3000);
         await driver1.pressBack();
-      } catch (error) {
+      }catch(error){
         expect().assertFail();
       }
     });

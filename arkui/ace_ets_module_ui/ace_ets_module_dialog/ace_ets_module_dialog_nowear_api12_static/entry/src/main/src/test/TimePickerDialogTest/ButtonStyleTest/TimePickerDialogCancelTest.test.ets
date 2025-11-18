@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -25,55 +25,53 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../../Util.test';
-import { Callback, MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-
-let tag: string = 'testTag';
 
 
-export default function TextPickerDialog_Cancel_Test() {
-  describe('TextPickerDialog_Cancel_Test', () => {
+export default function TimePickerDialog_Cancel_Test() {
 
-    beforeAll(() => {
-      console.info("TextPickerDialog_Cancel_Test beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
+  beforeAll(() => {
+    console.info("TimePickerDialog_Cancel_Test beforeAll start");
+    await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+  });
 
-
+  describe('TimePickerDialog_Cancel_Test', () => {
     beforeEach(async () => {
-      console.info("TextPickerDialog_Cancel_Test beforeEach start");
+      console.info("TimePickerDialog_Cancel_Test beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/TextPickerDialog/ButtonStyle/Text_cancel",
+        url: "MainAbility/pages/TimePickerDialog/ButtonStyle/Time_cancel",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get TextPickerDialog_Cancel_Test state pages:" + JSON.stringify(pages));
-        if (!("Text_cancel" == pages.name)) {
-          console.info("get TextPickerDialog_Cancel_Test pages.name:" + JSON.stringify(pages.name));
+        console.info("get TimePickerDialog_Cancel_Test state pages:" + JSON.stringify(pages));
+        if (!("Time_cancel" == pages.name)) {
+          console.info("get TimePickerDialog_Cancel_Test pages.name:" + JSON.stringify(pages.name));
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextPickerDialog_Cancel_Test page error:" + err);
+        console.error("push TimePickerDialog_Cancel_Test page error:" + err);
       }
-      console.info("TextPickerDialog_Cancel_Test beforeEach end");
+      console.info("TimePickerDialog_Cancel_Test beforeEach end");
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info("TextPickerDialog_Cancel_Test after each called");
+      console.info("TimePickerDialog_Cancel_Test after each called");
     });
 
-
+    
+    
     /*
-     * @tc.number   TextPickerDialog_Cancel_Test_static_001
-     * @tc.name     TextPickerDialog_Cancel_Test_static_001
-     * @tc.desc     TextPickerDialog_Cancel_Test_static_001
+     * @tc.number   TimePickerDialog_Cancel_Test_static_001
+     * @tc.name     TimePickerDialog_Cancel_Test_static_001
+     * @tc.desc     TimePickerDialog_Cancel_Test_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('TextPickerDialog_Cancel_Test_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.info('[TextPickerDialog_Cancel_Test_static_001] START');
+it('TimePickerDialog_Cancel_Test_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('[TimePickerDialog_Cancel_Test_001] START');
       try {
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();
@@ -89,9 +87,9 @@ export default function TextPickerDialog_Cancel_Test() {
         JSON.parseJsonElement(cancelButtonStyle_Text).getElement('$attrs'));
         expect(JSON.parseJsonElement(cancelButtonStyle_Text).getElement('$attrs').getString('content'))
           .assertEqual('cancelButtonStyle_Text');
-        console.info('[TextPickerDialog_Cancel_Test_static_001] END');
+        console.info('[TimePickerDialog_Cancel_Test_001] END');
         done();
-      } catch (error) {
+      }catch(error){
         expect().assertFail();
       }
     });

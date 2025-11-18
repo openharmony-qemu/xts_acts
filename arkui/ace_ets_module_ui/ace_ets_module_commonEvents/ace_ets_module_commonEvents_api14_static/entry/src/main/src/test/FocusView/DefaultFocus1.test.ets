@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { Driver, ON ,Component} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
@@ -25,12 +25,12 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
+let testAbilityContext:common.UIAbilityContext;
 export default function defaultFocus() {
 
   describe('defaultFocus', () => {
@@ -60,35 +60,35 @@ export default function defaultFocus() {
       console.info("defaultFocus after each called");
     });
 
-
+    
+    
     /*
-     * @tc.number    defaultFocus_static_0010
-     * @tc.name      defaultFocus_static_0010
-     * @tc.desc      defaultFocus_static_0010
-     * @tc.level     2
+     * @tc.number   defaultFocus_static_0010
+     * @tc.name     defaultFocus_static_0010
+     * @tc.desc     defaultFocus_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('defaultFocus_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('defaultFocus_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('defaultFocus_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[defaultFocus_0010] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[defaultFocus_0010] content is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      console.info("[defaultFocus_0010] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[defaultFocus_0010] content is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('false');
       await CommonFunc.sleep(1000);
       console.info('[defaultFocus_0010] END');
       done();
     });
-
+    
+    
     /*
-     * @tc.number    defaultFocus_static_0020
-     * @tc.name      defaultFocus_static_0020
-     * @tc.desc      defaultFocus_static_0020
-     * @tc.level     2
+     * @tc.number   defaultFocus_static_0020
+     * @tc.name     defaultFocus_static_0020
+     * @tc.desc     defaultFocus_static_0020
+     * @tc.level    Level.LEVEL0
      */
-    it('defaultFocus_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('defaultFocus_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('defaultFocus_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -96,10 +96,8 @@ export default function defaultFocus() {
       await button2.click();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[defaultFocus_0020] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[defaultFocus_0020] content is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      console.info("[defaultFocus_0020] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[defaultFocus_0020] content is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('true');
       await CommonFunc.sleep(1000);
       console.info('[defaultFocus_0020] END');

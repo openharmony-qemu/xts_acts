@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -49,7 +49,9 @@ export default function TimePickerDialogCallback() {
         if (!("TimePickerDialogCallback" == pages.name)) {
           console.info("get TimePickerDialogAJsunit state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TimePickerDialogAJsunit page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TimePickerDialogAJsunit page error: " + err);
@@ -57,21 +59,21 @@ export default function TimePickerDialogCallback() {
       }
     });
 
-
+    
+    
     /*
      * @tc.number   TimePickerDialogCallback_static_0100
      * @tc.name     TimePickerDialogCallback_static_0100
      * @tc.desc     TimePickerDialogCallback_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('TimePickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TimePickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver1 = Driver.create();
 
         let callback = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onWillAppear');
-          console.info('TimePickerDialogCallback_static_0100 event01: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('TimePickerDialogCallback_static_0100 event01: ' + ((event.data) as ESObject)?.getProperty('action'));
         }
         let event: events_emitter.InnerEvent = {
           eventId: 50001,
@@ -86,8 +88,7 @@ export default function TimePickerDialogCallback() {
 
         let callback1 = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onDidAppear');
-          console.info('TimePickerDialogCallback_static_0100 event02: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('TimePickerDialogCallback_static_0100 event02: ' + ((event.data) as ESObject)?.getProperty('action'));
         }
         let event1: events_emitter.InnerEvent = {
           eventId: 50002,
@@ -97,8 +98,7 @@ export default function TimePickerDialogCallback() {
 
         let callback2 = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onWillDisappear');
-          console.info('TimePickerDialogCallback_static_0100 event03: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('TimePickerDialogCallback_static_0100 event03: ' + ((event.data) as ESObject)?.getProperty('action'));
         }
         let event2: events_emitter.InnerEvent = {
           eventId: 50003,
@@ -108,8 +108,7 @@ export default function TimePickerDialogCallback() {
 
         let callback3 = (event: events_emitter.EventData) => {
           expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onDidDisappear');
-          console.info('TimePickerDialogCallback_static_0100 event04: ' +
-          ((event.data) as ESObject)?.getProperty('action'));
+          console.info('TimePickerDialogCallback_static_0100 event04: ' + ((event.data) as ESObject)?.getProperty('action'));
           done();
         }
         let event3: events_emitter.InnerEvent = {
@@ -118,7 +117,7 @@ export default function TimePickerDialogCallback() {
         }
         events_emitter.on(event3, callback3);
         await driver1.pressBack();
-      } catch (error) {
+      }catch(error){
         expect().assertFail();
       }
     });

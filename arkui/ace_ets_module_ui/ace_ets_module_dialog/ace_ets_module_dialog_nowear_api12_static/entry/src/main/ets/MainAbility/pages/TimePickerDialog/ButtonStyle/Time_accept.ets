@@ -12,28 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ButtonRole,
-  ButtonStyleMode,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontStyle,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  ShadowStyle,
-  Text,
-  TimePickerDialogOptions
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ShadowStyle, TimePickerDialogOptions,Color,
+  ButtonStyleMode, ButtonRole, FontStyle} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 
@@ -41,38 +22,20 @@ import { UIContext } from '@ohos.arkui.UIContext';
 @Component
 struct Time_accept {
   uiContext: UIContext = this.getUIContext()
-  @State acceptButtonStyle_Text: string = '';
   private selectTime: Date = new Date('2020-12-25T08:30:00')
+  @State acceptButtonStyle_Text: string = '';
   @State Time_Options: TimePickerDialogOptions = {
     selected: this.selectTime,
     useMilitaryTime: true,
     disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
     textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
     selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
-    acceptButtonStyle: {
-      type: ButtonType.Normal,
-      style: ButtonStyleMode.NORMAL,
-      role: ButtonRole.NORMAL,
-      fontColor: Color.Red,
-      fontSize: '26fp',
-      fontWeight: FontWeight.Bolder,
-      fontStyle: FontStyle.Normal,
-      fontFamily: 'sans-serif',
-      backgroundColor: '#80834511',
-      borderRadius: 20
-    },
-    cancelButtonStyle: {
-      type: ButtonType.Normal,
-      style: ButtonStyleMode.NORMAL,
-      role: ButtonRole.NORMAL,
-      fontColor: Color.Blue,
-      fontSize: '16fp',
-      fontWeight: FontWeight.Normal,
-      fontStyle: FontStyle.Italic,
-      fontFamily: 'sans-serif',
-      backgroundColor: '#50182431',
-      borderRadius: 10
-    },
+    acceptButtonStyle: { type: ButtonType.Normal, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Red,
+      fontSize: '26fp', fontWeight: FontWeight.Bolder, fontStyle: FontStyle.Normal, fontFamily: 'sans-serif', backgroundColor:'#80834511',
+      borderRadius: 20 },
+    cancelButtonStyle: { type: ButtonType.Normal, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Blue,
+      fontSize: '16fp', fontWeight: FontWeight.Normal, fontStyle: FontStyle.Italic, fontFamily: 'sans-serif', backgroundColor:'#50182431',
+      borderRadius: 10 },
   } as TimePickerDialogOptions
 
   build() {
@@ -83,7 +46,7 @@ struct Time_accept {
           .margin(20)
         Button("TimePickerDialog 24小时制")
           .margin(20)
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.uiContext.showTimePickerDialog(this.Time_Options)
             if (this.Time_Options.acceptButtonStyle!.type == ButtonType.Normal) {
               this.acceptButtonStyle_Text = 'acceptButtonStyle_Text'

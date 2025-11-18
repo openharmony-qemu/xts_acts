@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -25,10 +25,9 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function ButtonStyle() {
   describe('ButtonStyle', () => {
@@ -45,13 +44,15 @@ export default function ButtonStyle() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ButtonStyle state pages:" + JSON.stringify(pages));
         if (!("ButtonStyle" == pages.name)) {
           console.info("get ButtonStyle pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          // let result = await routerInstance.push(options);
           await CommonFunc.sleep(2000);
+          // console.info("push ButtonStyle page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ButtonStyle page error:" + err);
@@ -64,40 +65,35 @@ export default function ButtonStyle() {
       console.info("ButtonStyle after each called");
     });
 
-
+    
+    
     /*
      * @tc.number   ButtonStyle_static_001
      * @tc.name     ButtonStyle_static_001
      * @tc.desc     ButtonStyle_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('ButtonStyle_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('ButtonStyle_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[ButtonStyle_static_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('ButtonStyle')) as Component;
+      await CommonFunc.sleep(1000);
       await btn1!.click();
+      console.info('[ButtonStyle_static_001] click');
       await CommonFunc.sleep(1000);
-
+      console.info('[ButtonStyle_static_001] getInspectorTree start');
       let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      console.info('[ButtonStyle_static_001] getInspectorTree end');
       await CommonFunc.sleep(1000);
-      console.info("[ButtonStyle_static_001] obj2 is: " + JSON.stringifyJsonElement(obj2));
-      console.info("[ButtonStyle_static_001] obj2.$children[1].$children[0].$children[0].$children[3].$children[0] is: " +
-      JSON.stringifyJsonElement(obj2.getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[3]
-        .getArray('$children')[0]));
-      expect(obj2.getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[3]
-        .getArray('$children')[0]
-        .getElement('$attrs')
-        .getString('type')).assertEqual("ButtonType.Normal");
-
+      console.info('[ButtonStyle_static_001] CommonFunc.sleep');
+      console.info("[ButtonStyle_static_001] expect is: " + obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[3].getArray('$children')[0].getElement('$attrs').getString('type'));
+      expect(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[3].getArray('$children')[0].getElement('$attrs').getString('type')).assertEqual("ButtonType.Normal");
+      console.info('[ButtonStyle_static_001] expect');
       await CommonFunc.sleep(1000);
+      console.info('[ButtonStyle_static_001] driver.triggerKey start');
       await driver.triggerKey(2070);
+      console.info('[ButtonStyle_static_001] driver.triggerKey end');
       await CommonFunc.sleep(1000);
 
       console.info('[ButtonStyle_static_001] END');

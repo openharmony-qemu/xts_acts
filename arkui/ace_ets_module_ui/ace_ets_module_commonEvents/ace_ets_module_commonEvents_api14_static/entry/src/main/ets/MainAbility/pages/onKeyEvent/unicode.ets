@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,26 +13,28 @@
  * limitations under the License.
  */
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { sendKeyEvent } from "@ohos.arkui.Test";
 import router from '@ohos.router';
 import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  GestureEvent,
-  HorizontalAlign,
   KeyEvent,
   KeySource,
   KeyType,
-  Margin,
+  Color,
+  HorizontalAlign,
   Padding,
+  GestureEvent,
+  ColumnOptions,
+  Entry,
+  Column,
+  Text,
+  Button,
+  ClickEvent,
+  Component,
+  Margin,
   SourceTool,
-  Text
+  KeySource
 } from '@ohos.arkui.component'
 
 @Entry
@@ -59,17 +61,19 @@ struct KeyEventExample {
               },
               intentionCode: IntentionCode.INTENTION_SELECT
             }
-
+            const res = sendKeyEvent(keyEvent)
+            
           }, 20)
         })
         .id('unicode_KeyEvent')
-        .onKeyEvent((event?: KeyEvent) => {
+        .onKeyEvent((event?: KeyEvent):boolean => {
           if (event) {
+            
             if (event.unicode == 97) {
               this.label = true;
             }
           }
-          return false
+          return true
         })
     }.height(300).width('100%').padding(35)
   }

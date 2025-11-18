@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Technologies Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,6 +25,7 @@ export default function RestoreLayerTest() {
   describe('RestoreLayerTest', () => {
     beforeAll(() => {
       console.info("RestoreLayerTest beforeEach start");
+
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -43,10 +44,10 @@ export default function RestoreLayerTest() {
         console.info("get RestoreLayerTest state pages:" + JSON.stringify(pages));
         if (!("RestoreLayer" == pages.name)) {
           console.info("get RestoreLayerTest pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push RestoreLayerTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RestoreLayerTest page error:" + err);
@@ -59,14 +60,13 @@ export default function RestoreLayerTest() {
     });
 
     
-    
     /*
      * @tc.number   RestoreLayerTest_static_001
      * @tc.name     RestoreLayerTest_static_001
      * @tc.desc     RestoreLayerTest_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL3
      */
-it('RestoreLayerTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RestoreLayerTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[RestoreLayerTest_001] START');
       await CommonFunc.sleep(1000);
       let text1 = inspector.getInspectorByKey('text1');

@@ -13,75 +13,36 @@
  * limitations under the License.
  */
 
-import {
-  Button,
-  ButtonRole,
-  ButtonStyleMode,
-  ButtonType,
-  CalendarPickerDialog,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontStyle,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  Text
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ColumnOptions, CalendarPickerDialog, ButtonType, ButtonStyleMode, ButtonRole, Color, FontStyle} from '@ohos.arkui.component'
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ButtonStyleExample {
   private selectedDate: Date = new Date()
-
   build() {
     Column() {
       Button("Show CalendarPicker Dialog")
         .id("ButtonStyle")
         .margin(20)
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           console.info("CalendarDialog.show")
           CalendarPickerDialog.show({
             selected: this.selectedDate,
-            acceptButtonStyle: {
-              type: ButtonType.Normal,
-              style: ButtonStyleMode.NORMAL,
-              role: ButtonRole.NORMAL,
-              fontColor: Color.Red,
-              fontSize: '26fp',
-              fontWeight: FontWeight.Bolder,
-              fontStyle: FontStyle.Normal,
-              fontFamily: 'sans-serif',
-              backgroundColor: '#80834511',
-              borderRadius: 20
-            },
-            cancelButtonStyle: {
-              type: ButtonType.Normal,
-              style: ButtonStyleMode.NORMAL,
-              role: ButtonRole.NORMAL,
-              fontColor: Color.Blue,
-              fontSize: '16fp',
-              fontWeight: FontWeight.Normal,
-              fontStyle: FontStyle.Italic,
-              fontFamily: 'sans-serif',
-              backgroundColor: '#50182431',
-              borderRadius: 10
-            },
-            onAccept: (value: Date): void => {
+            acceptButtonStyle: { type: ButtonType.Normal, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Red,
+              fontSize: '26fp', fontWeight: FontWeight.Bolder, fontStyle: FontStyle.Normal, fontFamily: 'sans-serif', backgroundColor:'#80834511',
+              borderRadius: 20 },
+            cancelButtonStyle: { type: ButtonType.Normal, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Blue,
+              fontSize: '16fp', fontWeight: FontWeight.Normal, fontStyle: FontStyle.Italic, fontFamily: 'sans-serif', backgroundColor:'#50182431',
+              borderRadius: 10 },
+            onAccept: (value: Date):void => {
               console.info("calendar onAccept:" + JSON.stringify(value))
             },
             onCancel: () => {
               console.info("calendar onCancel")
             },
-            onChange: (value: Date): void => {
+            onChange: (value:Date):void => {
               console.info("calendar onChange:" + JSON.stringify(value))
             },
             onDidAppear: () => {
