@@ -35,7 +35,6 @@ export default function getThumbnailTestSupp() {
       await getPermission();
       await driveFn();
       await sleep(2000);
-      await createResource(globalContext, fileNameList);
     });
 
     const getThumbnailPromise =
@@ -73,84 +72,6 @@ export default function getThumbnailTestSupp() {
         console.info(TAG, testNum, `failed; error: ${error},code:${error.code}`);
         callback(error.code);
         done();
-      }
-    }
-
-    let createResource = async (context: common.UIAbilityContext, fileNameList: Array<string>) => {
-      try {
-        let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-        let imageUripng = 'file:///data/storage/el2/base/haps/entry_test/files/01.png';
-        let imageUrimpeg = 'file:///data/storage/el2/base/haps/entry_test/files/01.mpeg';
-        let imageUridng = 'file:///data/storage/el2/base/haps/entry_test/files/stm_RAW.dng';
-        let imageUrigif = 'file:///data/storage/el2/base/haps/entry_test/files/01.gif';
-        let videoUri = 'file:///data/storage/el2/base/haps/entry_test/files/01.mp4';
-        for (let i = 0; i < fileNameList.length; i++) {
-          let fileName = fileNameList[i];
-          let displayName = fileName.substring(0, fileName.lastIndexOf("."));
-          console.log(`createResource :: displayName is ${displayName}`);
-          if (fileName.endsWith(".png")) {
-            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-            let extension: string = 'png';
-            let options: photoAccessHelper.CreateOptions = {
-              title: displayName
-            }
-            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-              assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUripng);
-            await phAccessHelper.applyChanges(assetChangeRequest);
-            console.log(`createResource :: applyChange ${fileName} success !`);
-          }
-          if (fileName.endsWith(".mpeg")) {
-            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-            let extension: string = 'mpeg';
-            let options: photoAccessHelper.CreateOptions = {
-              title: displayName
-            }
-            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-            assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUrimpeg);
-            await phAccessHelper.applyChanges(assetChangeRequest);
-            console.log(`createResource :: applyChange ${fileName} success !`);
-          }
-          if (fileName.endsWith(".gif")) {
-            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-            let extension: string = 'gif';
-            let options: photoAccessHelper.CreateOptions = {
-              title: displayName
-            }
-            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-            assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUrigif);
-            await phAccessHelper.applyChanges(assetChangeRequest);
-            console.log(`createResource :: applyChange ${fileName} success !`);
-          }
-          if (fileName.endsWith(".dng")) {
-            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-            let extension: string = 'dng';
-            let options: photoAccessHelper.CreateOptions = {
-              title: displayName
-            }
-            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-            assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUridng);
-            await phAccessHelper.applyChanges(assetChangeRequest);
-            console.log(`createResource :: applyChange ${fileName} success !`);
-          }
-          if (fileName.endsWith(".mp4")) {
-            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
-            let extension: string = 'mp4';
-            let options: photoAccessHelper.CreateOptions = {
-              title: displayName
-            }
-            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-            assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
-            await phAccessHelper.applyChanges(assetChangeRequest);
-            console.log(`createResource :: applyChange ${fileName} success !`);
-          }
-        }
-      } catch (error) {
-        console.log(`createResource :: run failed, message is ${error},code is ${error.code}`);
       }
     }
 
