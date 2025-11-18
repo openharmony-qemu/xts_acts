@@ -51,7 +51,6 @@ export default function testsuite() {
   FrameNodeAnimationPage();
   TestSweepGradientOptions();
   TransitionEdgeTest();
-  ExpectedFrameRateRange();
   AnimatorResultTest();
   setExpectedFrameRateRangeTest();
   animateToTest();
@@ -73,4 +72,5 @@ export default function testsuite() {
   MotionPathExample();
   animationAdd();
   MotionPathJsunit();
+  ExpectedFrameRateRange();
 }
