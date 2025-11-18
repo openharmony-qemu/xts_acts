@@ -38,14 +38,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -70,6 +70,9 @@ class ClassBBB {
     this.numB = aValue;
   }
 }
+// 第一层变量的状态变化可以用@State监听，二层及以下变量的状态变化则需要使用@Observed/@ObjectLink监听
+//@State无法监听到类嵌套类的属性，@ObjectLink可以监听到类嵌套@Observed修饰的类的属性
+//修改值，只会导致 @ObjectLink 装饰的变量所在的组件被刷新，当前组件不会刷新
 @Entry
 @Component
 struct ObjectLinkFarClassAAA {
@@ -79,7 +82,7 @@ struct ObjectLinkFarClassAAA {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkFar', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -130,6 +133,7 @@ struct ObjectLinkSonClassBBB {
         .fontSize(9)
         .fontWeight(FontWeight.Bold)
         .onClick((e: ClickEvent) => {
+          // 修改值，只会导致 @ObjectLink 装饰的变量所在的组件被刷新
           this.classB.numB += 1
         })
 

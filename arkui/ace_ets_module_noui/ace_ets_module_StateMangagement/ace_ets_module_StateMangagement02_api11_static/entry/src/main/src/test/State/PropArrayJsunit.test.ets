@@ -64,15 +64,14 @@ export default function PropArrayJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropArrayJsunit state pages:" + JSON.stringify(pages));
-        if (!("PropArrayJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/PropArray" == pages.name)) {
           console.info("get PropArrayJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropArrayJsunit page result:" + JSON.stringify(result));
+          // console.info("push PropArrayJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropArrayJsunit page error:" + err);
@@ -80,11 +79,16 @@ export default function PropArrayJsunit() {
       console.info("PropArrayJsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   PropArrayJsunit_static_0100
      * @tc.name     PropArrayJsunit_static_0100
      * @tc.desc     PropArrayJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropArrayJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -102,7 +106,7 @@ it('PropArrayJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropArrayJsunit_static_0200
      * @tc.name     PropArrayJsunit_static_0200
      * @tc.desc     PropArrayJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropArrayJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -124,7 +128,7 @@ it('PropArrayJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropArrayJsunit_static_0300
      * @tc.name     PropArrayJsunit_static_0300
      * @tc.desc     PropArrayJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropArrayJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -141,7 +145,7 @@ it('PropArrayJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   PropArrayJsunit_static_0400
      * @tc.name     PropArrayJsunit_static_0400
      * @tc.desc     PropArrayJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropArrayJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

@@ -12,3 +12,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import {
+  Entry,
+  Column,
+  Component,
+  Button,
+  ClickEvent,
+  ForEach,Flex,
+  Text,ContentCoverOptions,Menu,FontWeight,MenuItem,FlexOptions,FlexDirection,
+  Row,Color,Builder,FlexAlign,$$,MenuItem,MenuItemOptions,ItemAlign,Radio
+} from '@ohos.arkui.component'
+import {
+  State,
+  Watch,Prop,ObjectLink,
+  Link,LocalStorageProp,LocalStorageLink,Consume,Provide,
+  StorageLink,Observed,Track,LocalStorage
+} from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+
+
+@Entry
+@Component
+struct RadioExample {
+  @State check:boolean = false
+  build() {
+    Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center } as FlexOptions) {
+      Column() {
+        Text(`Radio1 is checked: ${this.check}`).id('V1BindText').height('5%')
+        Radio({ value: 'Radio1', group: 'radioGroup' }).checked($$(this.check))
+          .radioStyle({
+            checkedBackgroundColor: Color.Pink
+          })
+          .height('3%')
+          .width(50)
+          .onChange((isChecked: boolean) => {
+            console.log('Radio1 status is ' + isChecked)
+          }).id('radio')
+      }
+
+    }
+  }
+}

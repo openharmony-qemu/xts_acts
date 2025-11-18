@@ -69,10 +69,10 @@ export default function PropSet() {
         console.info("get PropSet state pages:" + JSON.stringify(pages));
         if (!("PropSet" == pages.name)) {
           console.info("get PropSet pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropSet page result:" + JSON.stringify(result));
+          // console.info("push PropSet page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropSet page error:" + err);
@@ -80,11 +80,12 @@ export default function PropSet() {
       console.info("PropSet beforeEach end");
     });
 
+    
     /*
      * @tc.number   PropSet_static_0100
      * @tc.name     PropSet_static_0100
      * @tc.desc     PropSet_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropSet_static_0100 START');
@@ -103,12 +104,12 @@ it('PropSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[PropSet_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropSet_static_0200
      * @tc.name     PropSet_static_0200
      * @tc.desc     PropSet_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropSet_static_0200 START');
@@ -127,12 +128,12 @@ it('PropSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[PropSet_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropSet_static_0300
      * @tc.name     PropSet_static_0300
      * @tc.desc     PropSet_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropSet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropSet_static_0300 START');

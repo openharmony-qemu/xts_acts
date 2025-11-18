@@ -47,12 +47,13 @@ struct BasketViewer {
 
   updateTotal(): number {
     let total = this.shopBasket.reduce((sum: number, i: PurchaseItem) => sum + i.price, 0);
-
+    // 超过100欧元可享受折扣
     if (total >= 100) {
       total = 0.9 * total;
     }
     return total;
   }
+  // @Watch 回调
   onBasketUpdated(propName: string): void {
     this.totalPurchase = this.updateTotal();
   }
@@ -61,11 +62,11 @@ struct BasketViewer {
     Column() {
       ForEach(this.shopBasket,
         (item: PurchaseItem) => {
-          Text(`Price: ${item.price} €`).id('priceText').height('5%')
+          Text(`Price: ${item.price.toFixed(2)} €`).id('priceText').height('5%')
         },
         (item: PurchaseItem) => String(item.id)
       )
-      Text(`Total: ${this.totalPurchase} €`).id('totalText').height('5%')
+      Text(`Total: ${this.totalPurchase.toFixed(2)} €`).id('totalText').height('5%')
     }
   }
 }
@@ -79,7 +80,7 @@ struct WATCHBasketModifier {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('Watch', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

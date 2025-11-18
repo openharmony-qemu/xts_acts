@@ -42,14 +42,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -60,16 +60,8 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct StateArrayNumber {
-  @State message: Array<number> = new Array<number>(1, 2, 3, 4, 5)
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateArrayNumber', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+  @State message: number[] = [1, 2, 3, 4, 5] as number[]
+
   build() {
     Row() {
       Column() {
@@ -103,7 +95,7 @@ struct StateArrayNumber {
             this.message.shift()
           })
 
-        ForEach(Array.from(this.message.entries()), (item: [number, Number]) => {
+        ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
           Text(`${item[1]} index: ${item[0]}`).fontSize(9).id('stateArrayNumber_value_' + item[0])
             .height('5%')
           Divider()

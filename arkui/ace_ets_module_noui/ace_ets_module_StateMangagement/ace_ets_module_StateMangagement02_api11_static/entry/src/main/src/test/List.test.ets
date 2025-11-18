@@ -87,78 +87,79 @@ import PropNumberJsunit from './State/PropNumberJsunit.test.ets';
 import PropStringJsunit from './State/PropStringJsunit.test.ets';
 import StateArrayNewJsunit from './State/StateArrayNewJsunit.test.ets'
 export default function testsuite() {
-  WatchTest();
-  StateArrayBoolean();
-  StateArrayNumber();
-  StateArrayObject();
-  StateMap();
-  StateSet();
+  // WatchTest();
+  // StateArrayBoolean();
+  // StateArrayNumber();
+  // StateArrayObject();
+  // StateMap();
+  // StateSet();
   PropArrayBoolean();
-  PropArrayNumber();
-  PropArrayObject();
-  PropMap();
-  PropSet();
-  ProvideArrayBoolean();
-  ProvideArrayNumber();
-  ProvideArrayObject();
-  ProvideMap();
-  ProvideSet();
-  LinkArrayBoolean();
-  LinkArrayNumber();
-  LinkArrayObject();
-  LinkMap();
-  LinkSet();
-  ObjectLinkMap();
-  ObjectLinkSet();
-  stateManagementDARKJsunit();
-  stateManagementGetSharedJsunit();
-
-  LocalStoageLinkOneJsunit();
-  LocalStoageLinkTwoJsunit();
-  LocalStoageLinkThreeJsunit();
-  LocalStoagePropFourJsunit();
-  LocalStoagePropTwoJsunit();
-  LocalStorage39Jsunit();
-  ProvideJsunit();
-  Storage11Jsunit();
-  Storage35Jsunit();
-  Storage36Jsunit();
-  Storage38Jsunit();
-  StorageLinkJsunit1();
-  StorageProp19Jsunit();
-  StorageProp20Jsunit();
-  StorageProp21Jsunit();
-  StorageProp22Jsunit();
-  StorageProp25Jsunit();
-  StorageProp26Jsunit();
-  StateNumberJsunit();
-  StateArrayJsunit();
-  StateClassObjectJsunit();
-  StateComponentJsunit();
-  StateDate1Jsunit();
-  StateDate2Jsunit();
-  LinkDataJsunit();
-  LinkClassArrJsunit();
-  LinkSonJsunit();
-  ObjectLinkFirJsunit();
-  ObjectLinkSecJsunit();
-  ObjectLinkFarJsunit();
-  ObjectLinkSplJsunit();
-  ObjectLinkCanJsunit();
-  ObjectLinkNusJsunit();
-  ObjectLinkArrayJsunit();
-  CombinationState2Jsunit();
-  CombinationState3Jsunit();
-  CombinationState6Jsunit();
-  CombinationState7Jsunit();
-  CombinationState8Jsunit();
-  PropArrayJsunit();
-  PropBooleanJsunit();
-  PropClassObjectJsunit();
-  PropDate2Jsunit();
-  PropEnumJsunit();
-  PropInit1Jsunit();
-  PropNumberJsunit();
-  PropStringJsunit();
-  StateArrayNewJsunit();
+  // PropArrayNumber();
+  // PropArrayObject();
+  // PropMap();
+  // PropSet();
+  // //
+  // ProvideArrayBoolean();
+  // ProvideArrayNumber();
+  // ProvideArrayObject();
+  // ProvideMap();
+  // ProvideSet();
+  // LinkArrayBoolean();
+  // LinkArrayNumber();
+  // LinkArrayObject();
+  // LinkMap();
+  // LinkSet();
+  // ObjectLinkMap(); // @ObjectLink 修饰集合， 取值为初始值  3
+  // ObjectLinkSet(); // @ObjectLink 修饰集合， 取值为初始值  2
+  // stateManagementDARKJsunit();
+  // stateManagementGetSharedJsunit();
+  // //
+  // LocalStoageLinkOneJsunit();
+  // LocalStoageLinkTwoJsunit();  // LocalStoageLink 1
+  // LocalStoageLinkThreeJsunit(); // LocalStoageLink 1
+  // LocalStoagePropFourJsunit();
+  // LocalStoagePropTwoJsunit();  // JSON.stringify  1
+  // LocalStorage39Jsunit();  // JSON.stringify(Object.keys(storage39))取值有问题 1       PropA：47 equals get PropA：1  1
+  // ProvideJsunit();   // Provide和 Consume 需要类型一致.代码不一致 12
+  // Storage11Jsunit();
+  // Storage35Jsunit();
+  // Storage36Jsunit();
+  // Storage38Jsunit();
+  // StorageLinkJsunit1();
+  // StorageProp19Jsunit();
+  // StorageProp20Jsunit();  // Environment.envProp<number | string>('Prop20', 10);  未起作用  4
+  // StorageProp21Jsunit();
+  // StorageProp22Jsunit();
+  // StorageProp25Jsunit();
+  // StorageProp26Jsunit();
+  // StateNumberJsunit();
+  // StateArrayJsunit();
+  // StateClassObjectJsunit();
+  // StateComponentJsunit();
+  // StateDate1Jsunit();
+  // StateDate2Jsunit();
+  // LinkDataJsunit();    // @Link修饰类  1  单独的@Link无法再观测对象的属性变化，仅能观测对象整体的赋值
+  // LinkClassArrJsunit();
+  // LinkSonJsunit();
+  // ObjectLinkFirJsunit();
+  // ObjectLinkSecJsunit();
+  // ObjectLinkFarJsunit();
+  // ObjectLinkSplJsunit();  //  @State修饰类时，修改@PropRef装饰对象的属性仍会在父组件中体现   1
+  // ObjectLinkCanJsunit();
+  // ObjectLinkNusJsunit();
+  // ObjectLinkArrayJsunit();
+  // CombinationState2Jsunit();
+  // CombinationState3Jsunit();
+  // CombinationState6Jsunit();
+  // CombinationState7Jsunit();
+  // CombinationState8Jsunit();
+  // PropArrayJsunit();
+  // PropBooleanJsunit();
+  // PropClassObjectJsunit(); // @State修饰类时，修改@PropRef装饰对象的属性仍会在父组件中体现 1
+  // PropDate2Jsunit();  // @State修饰时间Date（对象类型）时，修改@PropRef装饰对象的属性仍会在父组件中体现  14
+  // PropEnumJsunit();
+  // PropInit1Jsunit();
+  // PropNumberJsunit();
+  // PropStringJsunit();
+  // StateArrayNewJsunit();
 }

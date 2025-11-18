@@ -69,10 +69,10 @@ export default function ProvideSet() {
         console.info("get ProvideSet state pages:" + JSON.stringify(pages));
         if (!("ProvideSet" == pages.name)) {
           console.info("get ProvideSet pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ProvideSet page result:" + JSON.stringify(result));
+          // console.info("push ProvideSet page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ProvideSet page error:" + err);
@@ -80,11 +80,12 @@ export default function ProvideSet() {
       console.info("ProvideSet beforeEach end");
     });
 
+    
     /*
      * @tc.number   ProvideSet_static_0100
      * @tc.name     ProvideSet_static_0100
      * @tc.desc     ProvideSet_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideSet_static_0100 START');
@@ -103,12 +104,12 @@ it('ProvideSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[ProvideSet_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   ProvideSet_static_0200
      * @tc.name     ProvideSet_static_0200
      * @tc.desc     ProvideSet_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideSet_static_0200 START');
@@ -127,12 +128,12 @@ it('ProvideSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[ProvideSet_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   ProvideSet_static_0300
      * @tc.name     ProvideSet_static_0300
      * @tc.desc     ProvideSet_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideSet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideSet_static_0300 START');
@@ -151,12 +152,12 @@ it('ProvideSet_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[ProvideSet_static_0300] END');
       done();
     });
-
+    
     /*
      * @tc.number   ProvideSet_static_0400
      * @tc.name     ProvideSet_static_0400
      * @tc.desc     ProvideSet_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ProvideSet_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProvideSet_static_0400 START');

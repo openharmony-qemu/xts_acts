@@ -64,15 +64,14 @@ export default function CombinationState3Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CombinationState3Jsunit state pages:" + JSON.stringify(pages));
-        if (!("CombinationState3Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/CombinationState3" == pages.name)) {
           console.info("get CombinationState3Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push CombinationState3Jsunit page result:" + JSON.stringify(result));
+          // console.info("push CombinationState3Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CombinationState3Jsunit page error:" + err);
@@ -80,20 +79,19 @@ export default function CombinationState3Jsunit() {
       console.info("CombinationState3Jsunit beforeEach end");
     });
 
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      await driver.pressBack();
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
 
     /*
      * @tc.number   CombinationState3Jsunit_static_0100
      * @tc.name     CombinationState3Jsunit_static_0100
      * @tc.desc     CombinationState3Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState3Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState3Jsunit_static_0100] START');
       let driver = Driver.create()
       let qrComponent = await driver.findComponent(ON.id('change_ClassA'));
@@ -118,10 +116,10 @@ it('CombinationState3Jsunit_static_0100', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState3Jsunit_static_0200
      * @tc.name     CombinationState3Jsunit_static_0200
      * @tc.desc     CombinationState3Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState3Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Click and get the value of State component
       console.info('[CombinationState3Jsunit_static_0200] START');
       let driver = Driver.create()
       let qrComponent = await driver.findComponent(ON.id('change_ClassA'));
@@ -147,10 +145,10 @@ it('CombinationState3Jsunit_static_0200', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState3Jsunit_static_0300
      * @tc.name     CombinationState3Jsunit_static_0300
      * @tc.desc     CombinationState3Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState3Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState3Jsunit_static_0300] START');
       let driver = Driver.create()
       let qrComponent = await driver.findComponent(ON.id('change_ClassA'));
@@ -175,10 +173,10 @@ it('CombinationState3Jsunit_static_0300', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState3Jsunit_static_0400
      * @tc.name     CombinationState3Jsunit_static_0400
      * @tc.desc     CombinationState3Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState3Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState3Jsunit_static_0400] START');
       let driver = Driver.create()
       let qrComponent = await driver.findComponent(ON.id('change_ClassA'));

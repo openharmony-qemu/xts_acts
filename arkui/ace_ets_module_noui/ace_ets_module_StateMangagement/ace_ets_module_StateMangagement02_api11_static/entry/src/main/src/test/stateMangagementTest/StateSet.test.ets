@@ -69,10 +69,10 @@ export default function StateSet() {
         console.info("get StateSet state pages:" + JSON.stringify(pages));
         if (!("StateSet" == pages.name)) {
           console.info("get StateSet pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StateSet page result:" + JSON.stringify(result));
+          // console.info("push StateSet page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StateSet page error:" + err);
@@ -80,11 +80,12 @@ export default function StateSet() {
       console.info("StateSet beforeEach end");
     });
 
+    
     /*
      * @tc.number   StateSet_static_0100
      * @tc.name     StateSet_static_0100
      * @tc.desc     StateSet_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateSet_static_0100 START');
@@ -103,12 +104,12 @@ it('StateSet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[StateSet_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateSet_static_0200
      * @tc.name     StateSet_static_0200
      * @tc.desc     StateSet_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateSet_static_0200 START');
@@ -127,12 +128,12 @@ it('StateSet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[StateSet_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateSet_static_0300
      * @tc.name     StateSet_static_0300
      * @tc.desc     StateSet_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateSet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateSet_static_0300 START');

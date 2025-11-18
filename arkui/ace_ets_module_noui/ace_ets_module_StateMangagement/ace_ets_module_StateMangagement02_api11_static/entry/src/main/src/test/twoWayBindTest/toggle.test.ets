@@ -51,14 +51,14 @@ export default function toggleTest() {
   describe('toggleTest', () => {
 
     beforeAll(() => {
-      console.info("toggleTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("toggleTest beforeEach start");
+      console.info("StateTrackTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/twoWayBind/toggle',
       }
@@ -66,22 +66,22 @@ export default function toggleTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get toggleTest state pages:" + JSON.stringify(pages));
-        if (!("toggleTest" == pages.name)) {
-          console.info("get toggleTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+        console.info("get StateTrackTest state pages:" + JSON.stringify(pages));
+        if (!("TextClockApi" == pages.name)) {
+          console.info("get StateTrackTest pages.name:" + JSON.stringify(pages.name));
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push toggleTest page result:" + JSON.stringify(result));
+          // console.info("push StateTrackTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push toggleTest page error:" + err);
+        console.error("push StateTrackTest page error:" + err);
       }
-      console.info("toggleTest beforeEach end");
+      console.info("StateTrackTest beforeEach end");
     });
 
 
-
+    
     /*
      * @tc.number   toggleTest_0100
      * @tc.name     toggleTest_0100

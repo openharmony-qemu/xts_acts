@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -65,7 +65,7 @@ struct StateMapSample {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('StateMap', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

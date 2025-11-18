@@ -64,15 +64,14 @@ export default function Storage35Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Storage35Jsunit state pages:" + JSON.stringify(pages));
-        if (!("Storage35Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/Storage35" == pages.name)) {
           console.info("get Storage35Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push Storage35Jsunit page result:" + JSON.stringify(result));
+          // console.info("push Storage35Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Storage35Jsunit page error:" + err);
@@ -80,19 +79,16 @@ export default function Storage35Jsunit() {
       console.info("Storage35Jsunit beforeEach end");
     });
 
-    afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      const Storage35 = AppStorage.get<Router>("Storage35") as Router
-      Storage35.back({
-        url: "MainAbility/pages/index/index"
-      });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
 
     /*
      * @tc.number   Storage35Jsunit_static_0100
      * @tc.name     Storage35Jsunit_static_0100
      * @tc.desc     Storage35Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('Storage35Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Storage35Jsunit_static_0100 START');
@@ -109,7 +105,7 @@ it('Storage35Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   Storage35Jsunit_static_0200
      * @tc.name     Storage35Jsunit_static_0200
      * @tc.desc     Storage35Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('Storage35Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Storage35Jsunit_static_0200 START');
@@ -126,7 +122,7 @@ it('Storage35Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   Storage35Jsunit_static_0300
      * @tc.name     Storage35Jsunit_static_0300
      * @tc.desc     Storage35Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('Storage35Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Storage35Jsunit_static_0300 START');
@@ -143,7 +139,7 @@ it('Storage35Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   Storage35Jsunit_static_0400
      * @tc.name     Storage35Jsunit_static_0400
      * @tc.desc     Storage35Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('Storage35Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Storage35Jsunit_static_0400 START');

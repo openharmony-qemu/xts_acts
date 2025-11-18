@@ -64,15 +64,14 @@ export default function LinkDataJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LinkDataJsunit state pages:" + JSON.stringify(pages));
-        if (!("LinkDataJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/LinkData" == pages.name)) {
           console.info("get LinkDataJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LinkDataJsunit page result:" + JSON.stringify(result));
+          // console.info("push LinkDataJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LinkDataJsunit page error:" + err);
@@ -80,11 +79,16 @@ export default function LinkDataJsunit() {
       console.info("LinkDataJsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   LinkDataJsunit_static_0100
      * @tc.name     LinkDataJsunit_static_0100
      * @tc.desc     LinkDataJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -102,7 +106,7 @@ it('LinkDataJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0200
      * @tc.name     LinkDataJsunit_static_0200
      * @tc.desc     LinkDataJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -124,7 +128,7 @@ it('LinkDataJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0300
      * @tc.name     LinkDataJsunit_static_0300
      * @tc.desc     LinkDataJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -142,7 +146,7 @@ it('LinkDataJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0400
      * @tc.name     LinkDataJsunit_static_0400
      * @tc.desc     LinkDataJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -164,7 +168,7 @@ it('LinkDataJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0500
      * @tc.name     LinkDataJsunit_static_0500
      * @tc.desc     LinkDataJsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -182,7 +186,7 @@ it('LinkDataJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0600
      * @tc.name     LinkDataJsunit_static_0600
      * @tc.desc     LinkDataJsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -204,7 +208,7 @@ it('LinkDataJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0700
      * @tc.name     LinkDataJsunit_static_0700
      * @tc.desc     LinkDataJsunit_static_0700
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -222,7 +226,7 @@ it('LinkDataJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0800
      * @tc.name     LinkDataJsunit_static_0800
      * @tc.desc     LinkDataJsunit_static_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -244,7 +248,7 @@ it('LinkDataJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit_static_0900
      * @tc.name     LinkDataJsunit_static_0900
      * @tc.desc     LinkDataJsunit_static_0900
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -262,7 +266,7 @@ it('LinkDataJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   LinkDataJsunit1_static_1000
      * @tc.name     LinkDataJsunit1_static_1000
      * @tc.desc     LinkDataJsunit1_static_1000
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit1_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -284,7 +288,7 @@ it('LinkDataJsunit1_static_1000', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   LinkDataJsunit1_static_1100
      * @tc.name     LinkDataJsunit1_static_1100
      * @tc.desc     LinkDataJsunit1_static_1100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit1_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -302,7 +306,7 @@ it('LinkDataJsunit1_static_1100', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   LinkDataJsunit1_static_1200
      * @tc.name     LinkDataJsunit1_static_1200
      * @tc.desc     LinkDataJsunit1_static_1200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkDataJsunit1_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

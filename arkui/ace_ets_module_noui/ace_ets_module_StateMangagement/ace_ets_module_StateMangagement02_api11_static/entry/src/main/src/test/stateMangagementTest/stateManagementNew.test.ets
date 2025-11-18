@@ -69,15 +69,14 @@ export default function stateManagementGetSharedJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get stateManagementGetSharedJsunit state pages:" + JSON.stringify(pages));
-        if (!("stateManagementGetSharedTest" == pages.name)) {
+        if (!("MainAbility/pages/stateMangagement/stateManagementNew" == pages.name)) {
           console.info("get stateManagementGetSharedJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push stateManagementGetSharedJsunit page result:" + JSON.stringify(result));
+          // console.info("push stateManagementGetSharedJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push stateManagementGetSharedJsunit page error:" + err);
@@ -85,17 +84,22 @@ export default function stateManagementGetSharedJsunit() {
       console.info("stateManagementGetSharedJsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("stateManagementGetShared after each called");
     });
 
-
+    
     /*
      * @tc.number   teststateManagementGetShared_static_0001
      * @tc.name     teststateManagementGetShared_static_0001
      * @tc.desc     teststateManagementGetShared_static_0001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('teststateManagementGetShared_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('stateManagementGetShared teststateManagementGetShared_static_0001 START');
@@ -118,12 +122,12 @@ it('teststateManagementGetShared_static_0001', Level.LEVEL0, async (): Promise<v
       console.info('teststateManagementGetShared_static_0001 END');
     });
 
-
+    
     /*
      * @tc.number   teststateManagementsetAndLink_static_0001
      * @tc.name     teststateManagementsetAndLink_static_0001
      * @tc.desc     teststateManagementsetAndLink_static_0001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('teststateManagementsetAndLink_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('stateManagementsetAndLink teststateManagementsetAndLink_static_0001 START');
@@ -146,12 +150,12 @@ it('teststateManagementsetAndLink_static_0001', Level.LEVEL0, async (): Promise<
       console.info('teststateManagementsetAndLink_static_0001 END');
     });
 
-
+    
     /*
      * @tc.number   teststateManagementsetOrCreate_static_0001
      * @tc.name     teststateManagementsetOrCreate_static_0001
      * @tc.desc     teststateManagementsetOrCreate_static_0001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('teststateManagementsetOrCreate_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('stateManagementsetOrCreate teststateManagementsetOrCreate_static_0001 START');
@@ -175,12 +179,12 @@ it('teststateManagementsetOrCreate_static_0001', Level.LEVEL0, async (): Promise
 
     });
 
-
+    
     /*
      * @tc.number   teststateManagementsetAndProp_static_0001
      * @tc.name     teststateManagementsetAndProp_static_0001
      * @tc.desc     teststateManagementsetAndProp_static_0001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('teststateManagementsetAndProp_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('teststateManagementsetAndProp_static_0001 teststateManagementsetAndProp0001 START');
@@ -203,32 +207,34 @@ it('teststateManagementsetAndProp_static_0001', Level.LEVEL0, async (): Promise<
       console.info('teststateManagementsetAndProp_static_0001 END');
     });
 
-
+    
     /*
      * @tc.number   test_staticClear_0001
      * @tc.name     test_staticClear_0001
      * @tc.desc     test_staticClear_0001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('test_staticClear_0001', Level.LEVEL0, async (): Promise<void> => {
-    console.info('test_staticClear_0001 Register a customized font in the FontManagerSTART');
-    await CommonFunc.sleep(2000);
-    try {
-      expect(false).assertFalse();
+      console.info('test_staticClear_0001 Register a customized font in the FontManagerSTART');
+      await CommonFunc.sleep(2000);
+      try {
+        let simple = AppStorage.clear();
+        console.info('simple is ' + simple)
+        expect(simple).assertTrue();  //和1.1的区别为，无订阅者返回true。
 
-    } catch (err) {
-      console.info("test_font_registerFont_0001  err : " + JSON.stringify(err));
-      expect(true).assertTrue();
+      } catch (err) {
+        console.info("test_font_registerFont_0001  err : " + JSON.stringify(err));
+        expect(true).assertTrue();
 
-    }
+      }
     });
 
-
+    
     /*
      * @tc.number   test_setAndLink_static_0001
      * @tc.name     test_setAndLink_static_0001
      * @tc.desc     test_setAndLink_static_0001
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('test_setAndLink_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('test_setAndLink_static_0001 START');
@@ -244,19 +250,19 @@ it('test_setAndLink_static_0001', Level.LEVEL0, async (): Promise<void> => {
       }
     });
 
-
+    
     /*
      * @tc.number   test_setAndProp_static_0002
      * @tc.name     test_setAndProp_static_0002
      * @tc.desc     test_setAndProp_static_0002
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('test_setAndProp_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('test_setAndProp_static_0002 START');
       await CommonFunc.sleep(2000);
       try {
         let storage = new LocalStorage()
-
+        storage.setAndRef<string>("setAndProp", '12');
         let size = storage.size();
         expect(size == 1).assertTrue();
       } catch (err) {
@@ -264,9 +270,5 @@ it('test_setAndProp_static_0002', Level.LEVEL0, async (): Promise<void> => {
         expect().assertFail();
       }
     });
-
-
   })
 }
-
-

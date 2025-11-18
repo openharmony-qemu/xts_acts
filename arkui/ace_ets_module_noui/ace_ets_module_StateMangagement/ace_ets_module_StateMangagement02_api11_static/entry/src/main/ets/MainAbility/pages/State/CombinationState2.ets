@@ -20,7 +20,8 @@ import {
   ClickEvent,
   ForEach,
   Text,
-  Row
+  Row,
+  $$
 } from '@ohos.arkui.component'
 import {
   State,
@@ -31,7 +32,6 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-AppStorage.setOrCreate('Prop1', 47);
 
 
 @Component
@@ -73,15 +73,11 @@ struct CombinationState2 {
   @State fatherState: number = 1;
   @StorageLink('Prop1') son1: number = 5;
   @State fathState: number = 7;
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('CombinationState2', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
+
+  onPageShow() {
+    AppStorage.setOrCreate<number>('Prop1', 47);
   }
+
   build() {
     Row() {
       Column() {

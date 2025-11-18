@@ -1,6 +1,6 @@
 {
   "src": [
-    "MainAbility/pages/Index/index",
+    "MainAbility/pages/index/index",
     "MainAbility/pages/Watch/Watch",
     "MainAbility/pages/State/LocalStoageLinkOne",
     "MainAbility/pages/State/LocalStoageLinkTwo",

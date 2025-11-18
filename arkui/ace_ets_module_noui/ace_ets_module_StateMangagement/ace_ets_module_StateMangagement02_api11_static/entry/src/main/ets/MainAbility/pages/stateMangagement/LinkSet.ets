@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -58,23 +58,23 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct LinkSetChild {
-  @Link message: Set<number>= new Set<number>([1, 2, 3]);
+  @Link message: Set<number>;
 
   build() {
     Column() {
 
       Button('init set').id("LinkSet_init").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message = new Set<number>([1, 2, 3])
         })
 
       Button('set new one').id("LinkSet_set").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.add(5)
         })
 
       Button('clear').id("LinkSet_clear").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.clear()
           if (Array.from(this.message.entries())) {
             this.message.add(0)
@@ -82,11 +82,11 @@ struct LinkSetChild {
         })
 
       Button('delete the first one').id("LinkSet_delete").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.delete(0)
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [Number, Number]) => {
+      ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
         Text(`${item[0]}`).fontSize(9).id("LinkSet_value_" + item[0]).height('5%')
         Divider()
       })
@@ -100,15 +100,7 @@ struct LinkSetChild {
 @Component
 struct LinkSetSample1 {
   @State message: Set<number> = new Set<number>([1, 2, 3])
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('LinkSet', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Row() {
       Column() {

@@ -12,3 +12,119 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import {
+  Entry,
+  Column,
+  Component,
+  Button,
+  ClickEvent,
+  ForEach,
+  Text,ContentCoverOptions,
+  Row,Color,Builder,FlexAlign,$$,ModalTransition
+} from '@ohos.arkui.component'
+import {
+  State,
+  Watch,Prop,ObjectLink,
+  Link,LocalStorageProp,LocalStorageLink,Consume,Provide,
+  StorageLink,Observed,Track,LocalStorage,SubscribedAbstractProperty,AbstractProperty
+} from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+
+
+@Entry
+@Component
+struct ModalTransitionExample {
+  @State isShow: boolean = false
+  @State isShow2: boolean = false
+
+  @Builder myBuilder2() {
+    Column() {
+      Button('close modal 2')
+        .height('5%')
+        .onClick(():void => {
+          this.isShow2 = false;
+        })
+        .id('btnBindContent4')
+      Text(`isShow: ${this.isShow}`).id('bindContentText4').height('5%')
+      Text(`isShow2: ${this.isShow2}`).id('bindContentText5').height('5%')
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+
+  @Builder myBuilder() {
+    Column() {
+      Button('transition modal 2')
+        .height('5%')
+        .onClick(():void => {
+          this.isShow2 = true;
+        })
+        .id('btnBindContent3')
+        .bindContentCover($$(this.isShow2), this.myBuilder2, {
+          modalTransition: ModalTransition.NONE,
+          backgroundColor: Color.Orange,
+          onWillAppear: () => {
+            console.log('BindContentCover onWillAppear.')
+          },
+          onAppear: () => {
+            console.log('BindContentCover onAppear.')
+          },
+          onWillDisappear: () => {
+            console.log('BindContentCover onWillDisappear.')
+          },
+          onDisappear: () => {
+            console.log('BindContentCover onDisappear.')
+          }
+        } as ContentCoverOptions)
+
+      Button('close modal 1')
+        .height('5%')
+        .onClick(():void => {
+          this.isShow = false;
+        })
+        .id('btnBindContent2')
+      Text(`isShow: ${this.isShow}`).id('bindContentText2').height('5%')
+      Text(`isShow2: ${this.isShow2}`).id('bindContentText3').height('5%')
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+
+  build() {
+    Column() {
+      Button('transition modal 1')
+        .onClick(():void => {
+          this.isShow = true
+        })
+        .id('btnBindContent1')
+        .height('5%')
+        .bindContentCover($$(this.isShow), this.myBuilder, {
+          modalTransition: ModalTransition.NONE,
+          backgroundColor: Color.Pink,
+          onWillAppear: () => {
+            console.log('BindContentCover onWillAppear.')
+          },
+          onAppear: () => {
+            console.log('BindContentCover onAppear.')
+          },
+          onWillDisappear: () => {
+            console.log('BindContentCover onWillDisappear.')
+          },
+          onDisappear: () => {
+            console.log('BindContentCover onDisappear.')
+          }
+        } as ContentCoverOptions)
+      Text(`isShow: ${this.isShow}`).id('bindContentText').height('5%')
+      Text(`isShow2: ${this.isShow2}`).id('bindContentText1').height('5%')
+    }
+    .justifyContent(FlexAlign.Center)
+    .backgroundColor('#ff49c8ab')
+    .width('100%')
+    .height('100%')
+  }
+}

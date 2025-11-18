@@ -45,10 +45,10 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -124,7 +124,7 @@ struct PropArrayObject {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropArrayObject', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

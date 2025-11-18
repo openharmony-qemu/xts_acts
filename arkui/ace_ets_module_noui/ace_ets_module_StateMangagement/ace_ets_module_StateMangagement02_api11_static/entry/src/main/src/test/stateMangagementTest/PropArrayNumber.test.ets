@@ -69,22 +69,23 @@ export default function PropArrayNumber() {
         console.info("get PropArrayNumber state pages:" + JSON.stringify(pages));
         if (!("PropArrayNumber" == pages.name)) {
           console.info("get PropArrayNumber pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropArrayNumber page result:" + JSON.stringify(result));
+          // console.info("push PropArrayNumber page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropArrayNumber page error:" + err);
       }
       console.info("PropArrayNumber beforeEach end");
     });
+    
 
     /*
      * @tc.number   PropArrayNumber_static_0100
      * @tc.name     PropArrayNumber_static_0100
      * @tc.desc     PropArrayNumber_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropArrayNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropArrayNumber_static_0100 START');
@@ -103,12 +104,12 @@ it('PropArrayNumber_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info('[PropArrayNumber_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropArrayNumber_static_0200
      * @tc.name     PropArrayNumber_static_0200
      * @tc.desc     PropArrayNumber_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropArrayNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropArrayNumber_static_0200 START');
@@ -127,12 +128,12 @@ it('PropArrayNumber_static_0200', Level.LEVEL0, async (done: () => void): Promis
       console.info('[PropArrayNumber_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropArrayNumber_static_0300
      * @tc.name     PropArrayNumber_static_0300
      * @tc.desc     PropArrayNumber_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropArrayNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropArrayNumber_static_0300 START');

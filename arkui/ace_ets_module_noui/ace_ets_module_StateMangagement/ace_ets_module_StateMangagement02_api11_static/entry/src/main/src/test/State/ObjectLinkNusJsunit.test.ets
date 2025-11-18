@@ -67,12 +67,12 @@ export default function ObjectLinkNusJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkNusJsunit state pages:" + JSON.stringify(pages));
-        if (!("ObjectLinkNusJsunit" == pages.name)) {
+        if (!("ObjectLinkNus" == pages.name)) {
           console.info("get ObjectLinkNusJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ObjectLinkNusJsunit page result:" + JSON.stringify(result));
+          // console.info("push ObjectLinkNusJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObjectLinkNusJsunit page error:" + err);
@@ -80,19 +80,16 @@ export default function ObjectLinkNusJsunit() {
       console.info("ObjectLinkNusJsunit beforeEach end");
     });
 
-    afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      const ObjectLinkNus = AppStorage.get<Router>("ObjectLinkNus") as Router
-      ObjectLinkNus.back({
-        url: "MainAbility/pages/index/index"
-      });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
 
     /*
      * @tc.number   ObjectLinkNusJsunit_static_0100
      * @tc.name     ObjectLinkNusJsunit_static_0100
      * @tc.desc     ObjectLinkNusJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -110,7 +107,7 @@ it('ObjectLinkNusJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkNusJsunit_static_0200
      * @tc.name     ObjectLinkNusJsunit_static_0200
      * @tc.desc     ObjectLinkNusJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -132,7 +129,7 @@ it('ObjectLinkNusJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkNusJsunit_static_0300
      * @tc.name     ObjectLinkNusJsunit_static_0300
      * @tc.desc     ObjectLinkNusJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -150,7 +147,7 @@ it('ObjectLinkNusJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkNusJsunit_static_0400
      * @tc.name     ObjectLinkNusJsunit_static_0400
      * @tc.desc     ObjectLinkNusJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -172,7 +169,7 @@ it('ObjectLinkNusJsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkNusJsunit_static_0500
      * @tc.name     ObjectLinkNusJsunit_static_0500
      * @tc.desc     ObjectLinkNusJsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -190,7 +187,7 @@ it('ObjectLinkNusJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkNusJsunit_static_0600
      * @tc.name     ObjectLinkNusJsunit_static_0600
      * @tc.desc     ObjectLinkNusJsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -212,7 +209,7 @@ it('ObjectLinkNusJsunit_static_0600', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkNusJsunit_static_0700
      * @tc.name     ObjectLinkNusJsunit_static_0700
      * @tc.desc     ObjectLinkNusJsunit_static_0700
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -221,7 +218,7 @@ it('ObjectLinkNusJsunit_static_0700', Level.LEVEL0, async (done: () => void): Pr
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkNusJsunit_static_0700] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkNusJsunit_static_0700] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("#ff0000ff");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("#FF0000FF");
       console.info('[ObjectLinkNusJsunit_static_0700] END');
       done();
     });
@@ -230,7 +227,7 @@ it('ObjectLinkNusJsunit_static_0700', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkNusJsunit_static_0800
      * @tc.name     ObjectLinkNusJsunit_static_0800
      * @tc.desc     ObjectLinkNusJsunit_static_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkNusJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -243,7 +240,7 @@ it('ObjectLinkNusJsunit_static_0800', Level.LEVEL0, async (done: () => void): Pr
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkNusJsunit_static_0800] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkNusJsunit_static_0800] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("#ffff0000");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("#FFFF0000");
       console.info('[ObjectLinkNusJsunit_static_0800] END');
       done();
     });

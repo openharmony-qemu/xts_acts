@@ -44,13 +44,14 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;;
 
-
+const CAPACITY: string[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function LocalStoageLinkOneJsunit() {
   describe('LocalStoageLinkOneJsunit', () => {
@@ -71,12 +72,12 @@ export default function LocalStoageLinkOneJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LocalStoageLinkOneJsunit state pages:" + JSON.stringify(pages));
-        if (!("LocalStoageLinkOneJsunit" == pages.name)) {
+        if (!("LocalStoageLinkOne" == pages.name)) {
           console.info("get LocalStoageLinkOneJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LocalStoageLinkOneJsunit page result:" + JSON.stringify(result));
+          // console.info("push LocalStoageLinkOneJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LocalStoageLinkOneJsunit page error:" + err);
@@ -88,7 +89,7 @@ export default function LocalStoageLinkOneJsunit() {
      * @tc.number   LocalStoageLinkOneJsunit_static_0100
      * @tc.name     LocalStoageLinkOneJsunit_static_0100
      * @tc.desc     LocalStoageLinkOneJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoageLinkOneJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -112,7 +113,7 @@ it('LocalStoageLinkOneJsunit_static_0100', Level.LEVEL0, async (done: () => void
      * @tc.number   LocalStoageLinkOneJsunit_static_0200
      * @tc.name     LocalStoageLinkOneJsunit_static_0200
      * @tc.desc     LocalStoageLinkOneJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoageLinkOneJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -136,7 +137,7 @@ it('LocalStoageLinkOneJsunit_static_0200', Level.LEVEL0, async (done: () => void
      * @tc.number   LocalStoageLinkOneJsunit_static_0300
      * @tc.name     LocalStoageLinkOneJsunit_static_0300
      * @tc.desc     LocalStoageLinkOneJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoageLinkOneJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -160,7 +161,7 @@ it('LocalStoageLinkOneJsunit_static_0300', Level.LEVEL0, async (done: () => void
      * @tc.number   LocalStoageLinkOneJsunit_static_0400
      * @tc.name     LocalStoageLinkOneJsunit_static_0400
      * @tc.desc     LocalStoageLinkOneJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoageLinkOneJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStoageLinkOneJsunit_static_0400] START');

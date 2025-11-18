@@ -40,7 +40,7 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
@@ -50,14 +50,18 @@ import {
   LocalStoragePropRef,
   LocalStorageLink,
   Observed,
-
+  // Environment
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage,Environment } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 AppStorage.clear()
 enum KFC19{K = 1,F,L}
+Environment.envProp('stringCode', 'en');
+Environment.envProp('numberCode', 2);
+Environment.envProp('booleanCode', true);
+Environment.envProp('enumCode', KFC19.K);
 
 
 @Entry
@@ -67,15 +71,6 @@ struct StorageProp19 {
   @StoragePropRef('numberCode') numberCode: number = 2;
   @StoragePropRef('booleanCode') booleanCode: boolean = true;
   @StoragePropRef('enumCode') enumCode: KFC19 = KFC19.K;
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StorageProp19', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
 
   build() {
     Column() {
@@ -102,7 +97,6 @@ struct StorageProp19 {
         .onClick((e: ClickEvent) => {
           this.enumCode = KFC19.F
         })
-
     }
   }
 }

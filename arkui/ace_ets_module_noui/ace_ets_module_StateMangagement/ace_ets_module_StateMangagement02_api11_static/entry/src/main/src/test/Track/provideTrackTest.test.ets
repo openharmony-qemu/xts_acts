@@ -67,12 +67,12 @@ export default function provideTrackTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get provideTrackTest state pages:" + JSON.stringify(pages));
-        if (!("provideTrackTest" == pages.name)) {
+        if (!("TextClockApi" == pages.name)) {
           console.info("get provideTrackTest pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push provideTrackTest page result:" + JSON.stringify(result));
+          // console.info("push provideTrackTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push provideTrackTest page error:" + err);
@@ -89,7 +89,7 @@ export default function provideTrackTest() {
       console.log('reset button click succ')
       await CommonFunc.sleep(2000);
     });
-
+    
     /*
      * @tc.number   provideTrackTest_0100
      * @tc.name     provideTrackTest_0100
@@ -120,7 +120,7 @@ it('provideTrackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[provideTrackTest_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   provideTrackTest_0200
      * @tc.name     provideTrackTest_0200

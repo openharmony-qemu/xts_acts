@@ -65,15 +65,14 @@ export default function StorageProp22Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageProp22Jsunit state pages:" + JSON.stringify(pages));
-        if (!("StorageProp22Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/StorageProp22" == pages.name)) {
           console.info("get StorageProp22Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StorageProp22Jsunit page result:" + JSON.stringify(result));
+          // console.info("push StorageProp22Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StorageProp22Jsunit page error:" + err);
@@ -81,11 +80,16 @@ export default function StorageProp22Jsunit() {
       console.info("StorageProp22Jsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   StorageProp22Jsunit_static_0100
      * @tc.name     StorageProp22Jsunit_static_0100
      * @tc.desc     StorageProp22Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StorageProp22Jsunit_static_0100 START');
@@ -102,7 +106,7 @@ it('StorageProp22Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp22Jsunit_static_0200
      * @tc.name     StorageProp22Jsunit_static_0200
      * @tc.desc     StorageProp22Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StorageProp22Jsunit_static_0200 START');
@@ -119,7 +123,7 @@ it('StorageProp22Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp22Jsunit_static_0300
      * @tc.name     StorageProp22Jsunit_static_0300
      * @tc.desc     StorageProp22Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -137,7 +141,7 @@ it('StorageProp22Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp22Jsunit_static_0400
      * @tc.name     StorageProp22Jsunit_static_0400
      * @tc.desc     StorageProp22Jsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -155,7 +159,7 @@ it('StorageProp22Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp22Jsunit_static_0500
      * @tc.name     StorageProp22Jsunit_static_0500
      * @tc.desc     StorageProp22Jsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -184,7 +188,7 @@ it('StorageProp22Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp22Jsunit_static_0600
      * @tc.name     StorageProp22Jsunit_static_0600
      * @tc.desc     StorageProp22Jsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StorageProp22Jsunit_static_0600 START');
@@ -212,7 +216,7 @@ it('StorageProp22Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp22Jsunit_static_0700
      * @tc.name     StorageProp22Jsunit_static_0700
      * @tc.desc     StorageProp22Jsunit_static_0700
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -241,7 +245,7 @@ it('StorageProp22Jsunit_static_0700', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp22Jsunit_static_0800
      * @tc.name     StorageProp22Jsunit_static_0800
      * @tc.desc     StorageProp22Jsunit_static_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp22Jsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

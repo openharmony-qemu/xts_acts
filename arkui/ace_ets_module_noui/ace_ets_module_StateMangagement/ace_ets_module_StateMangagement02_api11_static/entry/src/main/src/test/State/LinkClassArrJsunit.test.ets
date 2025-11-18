@@ -64,15 +64,14 @@ export default function LinkClassArrJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LinkClassArrJsunit state pages:" + JSON.stringify(pages));
-        if (!("LinkClassArrJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/LinkClassArr" == pages.name)) {
           console.info("get LinkClassArrJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LinkClassArrJsunit page result:" + JSON.stringify(result));
+          // console.info("push LinkClassArrJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LinkClassArrJsunit page error:" + err);
@@ -89,11 +88,16 @@ export default function LinkClassArrJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   LinkClassArrJsunit_static_0100
      * @tc.name     LinkClassArrJsunit_static_0100
      * @tc.desc     LinkClassArrJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkClassArrJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -122,7 +126,7 @@ it('LinkClassArrJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   LinkClassArrJsunit_static_0200
      * @tc.name     LinkClassArrJsunit_static_0200
      * @tc.desc     LinkClassArrJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkClassArrJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -151,7 +155,7 @@ it('LinkClassArrJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   LinkClassArrJsunit_static_0300
      * @tc.name     LinkClassArrJsunit_static_0300
      * @tc.desc     LinkClassArrJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkClassArrJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -180,7 +184,7 @@ it('LinkClassArrJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   LinkClassArrJsunit_static_0400
      * @tc.name     LinkClassArrJsunit_static_0400
      * @tc.desc     LinkClassArrJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkClassArrJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -209,7 +213,7 @@ it('LinkClassArrJsunit_static_0400', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   LinkClassArrJsunit_static_0500
      * @tc.name     LinkClassArrJsunit_static_0500
      * @tc.desc     LinkClassArrJsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkClassArrJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -238,7 +242,7 @@ it('LinkClassArrJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   LinkClassArrJsunit_static_0600
      * @tc.name     LinkClassArrJsunit_static_0600
      * @tc.desc     LinkClassArrJsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkClassArrJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

@@ -64,15 +64,14 @@ export default function PropEnumJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PropEnumJsunit state pages:" + JSON.stringify(pages));
-        if (!("PropEnumJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/PropEnum" == pages.name)) {
           console.info("get PropEnumJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropEnumJsunit page result:" + JSON.stringify(result));
+          // console.info("push PropEnumJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropEnumJsunit page error:" + err);
@@ -89,11 +88,16 @@ export default function PropEnumJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   PropEnumJsunit_static_0200
      * @tc.name     PropEnumJsunit_static_0200
      * @tc.desc     PropEnumJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropEnumJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -113,7 +117,7 @@ it('PropEnumJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[PropEnumJsunit_static_0200] component obj is: " + JSON.stringify(obj1));
       console.info("[PropEnumJsunit_static_0200] title: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("Child PropRef: 2");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("Child Prop: 2");
       console.info('[PropEnumJsunit_static_0200] END');
       done();
     });
@@ -122,7 +126,7 @@ it('PropEnumJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
      * @tc.number   PropEnumJsunit_static_0400
      * @tc.name     PropEnumJsunit_static_0400
      * @tc.desc     PropEnumJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropEnumJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -135,7 +139,7 @@ it('PropEnumJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropEnumJsunit_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[PropEnumJsunit_static_0400] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("Child PropRef: 3");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("Child Prop: 3");
 
       let strJson1 = inspector.getInspectorByKey('PropEnum');
       let obj1 = JSON.parseJsonElement(strJson1);

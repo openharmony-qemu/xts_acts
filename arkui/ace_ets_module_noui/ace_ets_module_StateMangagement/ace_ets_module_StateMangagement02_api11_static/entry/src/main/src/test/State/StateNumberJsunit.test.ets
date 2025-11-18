@@ -64,15 +64,15 @@ export default function StateNumberJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        routerInstance.clear()
         let pages = routerInstance.getState();
         console.info("get StateNumberJsunit state pages:" + JSON.stringify(pages));
-        if (!("StateNumberJsunit" == pages.name)) {
+        if (!("StateNumber" == pages.name)) {
           console.info("get StateNumberJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StateNumberJsunit page result:" + JSON.stringify(result));
+          // console.info("push StateNumberJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StateNumberJsunit page error:" + err);
@@ -80,19 +80,11 @@ export default function StateNumberJsunit() {
       console.info("StateNumberJsunit beforeEach end");
     });
 
-    afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      const StateNumber = AppStorage.get<Router>("StateNumber") as Router
-      StateNumber.back({
-        url: "MainAbility/pages/index/index"
-      });
-    });
-
     /*
      * @tc.number   StateNumberJsunit_static_0100
      * @tc.name     StateNumberJsunit_static_0100
      * @tc.desc     StateNumberJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -110,7 +102,7 @@ it('StateNumberJsunit_static_0100', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   StateNumberJsunit_static_0200
      * @tc.name     StateNumberJsunit_static_0200
      * @tc.desc     StateNumberJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -132,7 +124,7 @@ it('StateNumberJsunit_static_0200', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   StateNumberJsunit_static_0300
      * @tc.name     StateNumberJsunit_static_0300
      * @tc.desc     StateNumberJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -150,7 +142,7 @@ it('StateNumberJsunit_static_0300', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   StateNumberJsunit_static_0400
      * @tc.name     StateNumberJsunit_static_0400
      * @tc.desc     StateNumberJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -172,7 +164,7 @@ it('StateNumberJsunit_static_0400', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   StateNumberJsunit_static_0500
      * @tc.name     StateNumberJsunit_static_0500
      * @tc.desc     StateNumberJsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -190,7 +182,7 @@ it('StateNumberJsunit_static_0500', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   StateNumberJsunit_static_0600
      * @tc.name     StateNumberJsunit_static_0600
      * @tc.desc     StateNumberJsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -212,7 +204,7 @@ it('StateNumberJsunit_static_0600', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   StateNumberJsunit_static_0700
      * @tc.name     StateNumberJsunit_static_0700
      * @tc.desc     StateNumberJsunit_static_0700
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -221,7 +213,7 @@ it('StateNumberJsunit_static_0700', Level.LEVEL0, async (done: () => void): Prom
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateNumberJsunit_static_0700] component obj is: " + JSON.stringify(obj));
       console.info("[StateNumberJsunit_static_0700] label: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("enum: #ff0000ff");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("enum: #FF0000FF");
       console.info('[StateNumberJsunit_static_0700] END');
       done();
     });
@@ -230,7 +222,7 @@ it('StateNumberJsunit_static_0700', Level.LEVEL0, async (done: () => void): Prom
      * @tc.number   StateNumberJsunit_static_0800
      * @tc.name     StateNumberJsunit_static_0800
      * @tc.desc     StateNumberJsunit_static_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateNumberJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -243,7 +235,7 @@ it('StateNumberJsunit_static_0800', Level.LEVEL0, async (done: () => void): Prom
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateNumberJsunit_static_0800] component obj is: " + JSON.stringify(obj));
       console.info("[StateNumberJsunit_static_0800] label: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual("enum: #ffff0000");
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("enum: #FFFF0000");
       console.info('[StateNumberJsunit_static_0800] END');
       done();
     });

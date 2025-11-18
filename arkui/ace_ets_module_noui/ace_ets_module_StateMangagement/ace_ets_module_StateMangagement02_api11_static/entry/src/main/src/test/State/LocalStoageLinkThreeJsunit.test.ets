@@ -62,15 +62,14 @@ export default function LocalStoageLinkThreeJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LocalStoageLinkThreeJsunit state pages:" + JSON.stringify(pages));
-        if (!("LocalStoageLinkThreeTest" == pages.name)) {
+        if (!("MainAbility/pages/State/LocalStoageLinkThree" == pages.name)) {
           console.info("get LocalStoageLinkThreeJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LocalStoageLinkThreeJsunit page result:" + JSON.stringify(result));
+          // console.info("push LocalStoageLinkThreeJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LocalStoageLinkThreeJsunit page error:" + err);
@@ -78,11 +77,17 @@ export default function LocalStoageLinkThreeJsunit() {
       console.info("LocalStoageLinkThreeJsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
+    
     /*
      * @tc.number   LocalStoageLinkThreeTest_static_0100
      * @tc.name     LocalStoageLinkThreeTest_static_0100
      * @tc.desc     LocalStoageLinkThreeTest_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LocalStoageLinkThreeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LocalStoageLinkThreeTest_static_0100 START');

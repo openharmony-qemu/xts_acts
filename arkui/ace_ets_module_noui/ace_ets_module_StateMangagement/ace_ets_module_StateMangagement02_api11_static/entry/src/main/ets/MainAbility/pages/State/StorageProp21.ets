@@ -40,7 +40,7 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
@@ -50,33 +50,31 @@ import {
   LocalStoragePropRef,
   LocalStorageLink,
   Observed,
-
+  Environment
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
+
 AppStorage.clear()
 enum KFC21{D = 1,H,Y}
+Environment.envProps([
+  { key: 'stringCode', defaultValue: 'en'},
+  { key: 'numberCode', defaultValue: 2 as int},
+  { key: 'booleanCode', defaultValue: true},
+  { key: 'enumCode', defaultValue: KFC21.D as KFC21},
+])
 
 
 @Entry
 @Component
-struct StorageProp21 {
+struct StoragePropRef21 {
   @StoragePropRef('stringCode') stringCode: string = 'ab';
   @StoragePropRef('numberCode') numberCode: number = 1;
   @StoragePropRef('booleanCode') booleanCode: boolean = false;
   @StoragePropRef('enumCode') enumCode: KFC21 = KFC21.H;
 
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StorageProp21', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
   build() {
     Column() {
       Button(`button1: ${this.stringCode}`).width("100%").height('5%')

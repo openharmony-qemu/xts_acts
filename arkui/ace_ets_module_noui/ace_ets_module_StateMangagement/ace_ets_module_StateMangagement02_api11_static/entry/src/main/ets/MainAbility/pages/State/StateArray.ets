@@ -40,31 +40,35 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
-  Observed
+  Observed,
+  Track
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
+
+@Observed
 class sArrModel {
-  public value: number = 1;
+  @Track public value: number = 1;
   constructor(value: number) {
     this.value = value;
   }
 }
 
+@Observed
 class sArrClassA {
-  public value: string = '';
-  public data: sArrModel = new sArrModel(1);
+  @Track public value: string = '';
+  @Track public data: sArrModel = new sArrModel(1);
   constructor(value: string, num: sArrModel) {
     this.value = value;
     this.data = num;
@@ -76,15 +80,7 @@ class sArrClassA {
 struct StateArray {
   @State title: sArrModel[] = [new sArrModel(11), new sArrModel(1)]
   @State ClassA: sArrClassA = new sArrClassA("Hello", new sArrModel(6))
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateArray', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Column() {
       Button("Reset").id("StateArray_reset").height('5%')
@@ -99,7 +95,7 @@ struct StateArray {
         .height('5%')
         .key("change_Array")
         .onClick((e: ClickEvent) => {
-
+          // 改变某一个Array值
           this.title[0] = new sArrModel(8)
         })
 
@@ -124,7 +120,7 @@ struct StateArray {
         .height('5%')
         .key("change_Parent")
         .onClick((e: ClickEvent) => {
-
+          // 动态修改父组件属性值
           this.ClassA.value = "World"
         })
 
@@ -132,7 +128,7 @@ struct StateArray {
         .height('5%')
         .key("change_Self")
         .onClick((e: ClickEvent) => {
-
+          // 动态修改自组件属性值
           this.ClassA.data = new sArrModel(8)
         })
     }.width('100%')

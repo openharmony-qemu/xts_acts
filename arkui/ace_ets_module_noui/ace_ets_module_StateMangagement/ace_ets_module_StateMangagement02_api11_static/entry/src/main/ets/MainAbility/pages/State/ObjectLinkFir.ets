@@ -38,14 +38,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -53,6 +53,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
+// 引入FirClassA,第一层
 @Observed
 class FirClassA {
   public b:number = 1
@@ -62,27 +63,32 @@ class FirClassA {
   }
 }
 
+// 构建子组件View用于承载@ObjectLink修饰的变量
 @Component
 struct ViewFir {
   @ObjectLink classB: FirClassA = new FirClassA(1);
   build() {
     Row() {
+      // 将ClassB的成员变量b在UI呈现出来
       Text(`${this.classB.b}`)
     }
 
   }
 }
 
+// 使用@State、@Provide能监听到第一层变量的变化
 @Entry
 @Component
 struct ViewAFir {
+  // 使用@State、@Provide修饰变量class_A，以监听其变化
   @State class_A: FirClassA = new FirClassA(5);
+  @Provide({ alias:"indexCount" }) class_B: FirClassA = new FirClassA(5);
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkFir', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -91,14 +97,17 @@ struct ViewAFir {
       Column(){
         Text('@State接收第一层').height('5%')
         Row(){
+          // 点击按钮，第一层变量发生变化
           Button('第一层变量+1')
             .key(("btn_state1"))
             .backgroundColor('#E8A027')
             .onClick((e: ClickEvent) => {
+              // class_A的成员变量a加1，class_A发生变化
               this.class_A.b += 1;
             })
             .height('5%')
             .width('50%')
+          // 将第一层变量在UI呈现出来
           Text(`${this.class_A.b}`).key(("fir_state"))
             .height('5%')
             .width('50%')
@@ -108,11 +117,18 @@ struct ViewAFir {
       Column(){
         Text('@Provide接收第一层').height('5%')
         Row(){
+          // 点击按钮，第一层变量发生变化
           Button('第一层变量+1')
             .key(("btn_provide1"))
             .backgroundColor('#E8A027')
             .onClick((e: ClickEvent) => {
+              // class_B的成员变量a加1，class_B发生变化
+              this.class_B.b += 1;
             })
+            .height('5%')
+            .width('50%')
+          // 将第一层变量在UI呈现出来
+          Text(String(this.class_B.b)).key(("fir_provide"))
             .height('5%')
             .width('50%')
         }

@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -61,12 +61,16 @@ enum ABC{A= 1,B=2,C=3}
 
 class ModelLink1Person {
   name: string = ''
-  age: number = 1
-  sex: string = ''
-  constructor(name: string,age: number,sex: string) {
+  age?: number
+  sex?: string
+  constructor(name: string,age?: number,sex?: string) {
     this.name = name
-    this.age = age
-    this.sex = sex
+    if (age) {
+      this.age = age
+    }
+    if (sex) {
+      this.sex = sex
+    }
   }
 }
 
@@ -130,21 +134,13 @@ struct StorageLink1 {
   @State classArray: Array<Model>| undefined =new Array<Model>(new Model('hello world'),new Model('hello music'))
   @State objArray: Array<ModelLink1Person>| undefined = new Array<ModelLink1Person>(new ModelLink1Person('zs',12,'m'),new ModelLink1Person('ls',12,'m'))
   @State menuArray: Array<ABC>| undefined =new Array<ABC>(ABC.A,ABC.B)
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StorageLink1', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
 
   build() {
     Column() {
       Button(`num: ${this.num}`).width("100%").height('5%')
         .key("button_son1")
         .onClick((e: ClickEvent) => {
+          // AppStorage.set('PropA', this.num)
           this.son1 = 11111
           this.num = AppStorage.get<number>('Prop1');
         })
@@ -180,7 +176,7 @@ struct StorageLink1 {
       Button(`obj: ${JSON.stringify(this.obj)}`).width("100%").height('5%')
         .key("button_son6")
         .onClick((e: ClickEvent) => {
-          this.son6 = new ModelLink1Person('ls',13,'')
+          this.son6 = new ModelLink1Person('ls',13)
           this.obj = AppStorage.get<ModelLink1Person>('Prop6')
         })
 
@@ -215,7 +211,7 @@ struct StorageLink1 {
       Button(`objArray: ${JSON.stringify(this.objArray)}`).width("100%").height('5%')
         .key("button_son11")
         .onClick((e: ClickEvent) => {
-          this.son11 = new Array<ModelLink1Person>(new ModelLink1Person('ls',12,'m'),new ModelLink1Person('zs',12,'m'))
+          this.son11 = new Array<ModelLink1Person>(new ModelLink1Person('ls'),new ModelLink1Person('zs'))
           this.objArray = AppStorage.get<Array<ModelLink1Person>>('Prop11')
         })
 

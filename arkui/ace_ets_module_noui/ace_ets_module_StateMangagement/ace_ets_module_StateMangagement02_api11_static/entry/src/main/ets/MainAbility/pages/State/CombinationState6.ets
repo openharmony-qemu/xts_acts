@@ -27,7 +27,7 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume
@@ -63,6 +63,7 @@ struct ObjectLinkConsume {
 
   build() {
     Column() {
+      // @ObjectLink支持被@Consume修饰的数据初始化
       PropObjectLink6({class_A: this.class_C})
     }
   }
@@ -74,6 +75,7 @@ struct LinkObjectLink {
 
   build() {
     Column() {
+      // @ObjectLink支持被@Link修饰的数据初始化
       PropObjectLink6({class_A: this.class_A})
     }
   }
@@ -107,7 +109,7 @@ struct CombinationState6 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('CombinationState6', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

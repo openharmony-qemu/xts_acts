@@ -67,12 +67,12 @@ export default function StorageLinkJsunit2() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageLinkJsunit2 state pages:" + JSON.stringify(pages));
-        if (!("StorageLinkJsunit2" == pages.name)) {
+        if (!("TextClockApi" == pages.name)) {
           console.info("get StorageLinkJsunit2 pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StorageLinkJsunit2 page result:" + JSON.stringify(result));
+          // console.info("push StorageLinkJsunit2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StorageLinkJsunit2 page error:" + err);
@@ -84,10 +84,10 @@ export default function StorageLinkJsunit2() {
      * @tc.number   StorageLinkJsunit2_static_0100
      * @tc.name     StorageLinkJsunit2_static_0100
      * @tc.desc     StorageLinkJsunit2_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageLinkJsunit2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_static_0100] START');
       let driver = Driver.create()
       let button_son111 = await driver.findComponent(ON.id('button_son111'));
@@ -107,10 +107,10 @@ it('StorageLinkJsunit2_static_0100', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   StorageLinkJsunit2_static_0200
      * @tc.name     StorageLinkJsunit2_static_0200
      * @tc.desc     StorageLinkJsunit2_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageLinkJsunit2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_static_0200] START');
       let driver = Driver.create()
       let button_son2 = await driver.findComponent(ON.id('button_son2'));
@@ -130,10 +130,10 @@ it('StorageLinkJsunit2_static_0200', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   StorageLinkJsunit2_static_0300
      * @tc.name     StorageLinkJsunit2_static_0300
      * @tc.desc     StorageLinkJsunit2_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageLinkJsunit2_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_static_0300] START');
       let driver = Driver.create()
       let button_son3 = await driver.findComponent(ON.id('button_son3'));
@@ -153,10 +153,10 @@ it('StorageLinkJsunit2_static_0300', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   StorageLinkJsunit2_static_0400
      * @tc.name     StorageLinkJsunit2_static_0400
      * @tc.desc     StorageLinkJsunit2_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageLinkJsunit2_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_static_0400] START');
       let driver = Driver.create()
       let button_son4 = await driver.findComponent(ON.id('button_son4'));
@@ -176,10 +176,10 @@ it('StorageLinkJsunit2_static_0400', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   StorageLinkJsunit2_static_0500
      * @tc.name     StorageLinkJsunit2_static_0500
      * @tc.desc     StorageLinkJsunit2_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageLinkJsunit2_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //Click to change the value of Storage
       console.info('[StorageLinkJsunit2_static_0500] START');
       let driver = Driver.create()
       let button_son5 = await driver.findComponent(ON.id('button_son5'));
@@ -199,10 +199,10 @@ it('StorageLinkJsunit2_static_0500', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   StorageLinkJsunit2_static_0600
      * @tc.name     StorageLinkJsunit2_static_0600
      * @tc.desc     StorageLinkJsunit2_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageLinkJsunit2_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      //Click to change the value of Storage
       console.info('[StorageLinkJsunit2_static_0600] START');
       let driver = Driver.create()
       let button_son6 = await driver.findComponent(ON.id('button_son6'));

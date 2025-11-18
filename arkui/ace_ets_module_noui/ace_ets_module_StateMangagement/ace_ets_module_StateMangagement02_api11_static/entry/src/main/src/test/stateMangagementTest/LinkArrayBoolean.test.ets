@@ -68,22 +68,23 @@ export default function LinkArrayBoolean() {
         console.info("get LinkArrayBoolean state pages:" + JSON.stringify(pages));
         if (!("LinkArrayBoolean" == pages.name)) {
           console.info("get LinkArrayBoolean pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LinkArrayBoolean page result:" + JSON.stringify(result));
+          // console.info("push LinkArrayBoolean page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LinkArrayBoolean page error:" + err);
       }
       console.info("LinkArrayBoolean beforeEach end");
     });
+    
 
     /*
      * @tc.number   LinkArrayBoolean_static_0100
      * @tc.name     LinkArrayBoolean_static_0100
      * @tc.desc     LinkArrayBoolean_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArrayBoolean_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArrayBoolean_static_0100 START');
@@ -103,12 +104,12 @@ it('LinkArrayBoolean_static_0100', Level.LEVEL0, async (done: () => void): Promi
       console.info('[LinkArrayBoolean_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkArrayBoolean_static_0200
      * @tc.name     LinkArrayBoolean_static_0200
      * @tc.desc     LinkArrayBoolean_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArrayBoolean_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArrayBoolean_static_0200 START');
@@ -127,12 +128,12 @@ it('LinkArrayBoolean_static_0200', Level.LEVEL0, async (done: () => void): Promi
       console.info('[LinkArrayBoolean_static_0200] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkArrayBoolean_static_0300
      * @tc.name     LinkArrayBoolean_static_0300
      * @tc.desc     LinkArrayBoolean_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArrayBoolean_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArrayBoolean_static_0300 START');
@@ -151,12 +152,12 @@ it('LinkArrayBoolean_static_0300', Level.LEVEL0, async (done: () => void): Promi
       console.info('[LinkArrayBoolean_static_0300] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkArrayBoolean_static_0400
      * @tc.name     LinkArrayBoolean_static_0400
      * @tc.desc     LinkArrayBoolean_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArrayBoolean_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArrayBoolean_static_0400 START');

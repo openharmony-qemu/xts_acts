@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -58,23 +58,23 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct ConsumeSetChild {
-  @Consume message: Set<number>=new Set<number>([1, 2, 3]);
+  @Consume message: Set<number>;
 
   build() {
     Column() {
 
       Button('Consume init set').id("consumeSet_init").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message = new Set<number>([1, 2, 3])
         })
 
       Button('Consume set new one').id("consumeSet_set").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.add(5)
         })
 
       Button('Consume clear').id("consumeSet_clear").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.clear()
           if (Array.from(this.message.entries())) {
             this.message.add(0)
@@ -82,11 +82,11 @@ struct ConsumeSetChild {
         })
 
       Button('Consume delete').id("consumeSet_delete").height('5%')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           this.message.delete(0)
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [Number, Number]) => {
+      ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
         Text(`${item[0]}`).fontSize(9).id("provideSet_value_" + item[0]).height('5%')
         Divider()
       })
@@ -99,21 +99,13 @@ struct ConsumeSetChild {
 @Entry
 @Component
 struct ProvideSetSample {
-  @Provide message: Set<number> =new Set<number>([1, 2, 3]);
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ProvideSet', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+  @Provide message: Set<number> = new Set<number>([1, 2, 3])
+
   build() {
     Row() {
       Column() {
         Button('Provide init set').id("provideSet_add").height('5%')
-          .onClick((e: ClickEvent) => {
+          .onClick(() => {
             this.message = new Set<number>([1, 2, 3, 4])
           })
 

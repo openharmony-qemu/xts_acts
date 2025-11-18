@@ -64,15 +64,14 @@ export default function ObjectLinkCanJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ObjectLinkCanJsunit state pages:" + JSON.stringify(pages));
-        if (!("ObjectLinkCanJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/ObjectLinkCan" == pages.name)) {
           console.info("get ObjectLinkCanJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ObjectLinkCanJsunit page result:" + JSON.stringify(result));
+          // console.info("push ObjectLinkCanJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObjectLinkCanJsunit page error:" + err);
@@ -89,11 +88,16 @@ export default function ObjectLinkCanJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   ObjectLinkCanJsunit_static_0100
      * @tc.name     ObjectLinkCanJsunit_static_0100
      * @tc.desc     ObjectLinkCanJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkCanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -122,7 +126,7 @@ it('ObjectLinkCanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkCanJsunit_static_0200
      * @tc.name     ObjectLinkCanJsunit_static_0200
      * @tc.desc     ObjectLinkCanJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkCanJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -151,7 +155,7 @@ it('ObjectLinkCanJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   ObjectLinkCanJsunit_static_0300
      * @tc.name     ObjectLinkCanJsunit_static_0300
      * @tc.desc     ObjectLinkCanJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ObjectLinkCanJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

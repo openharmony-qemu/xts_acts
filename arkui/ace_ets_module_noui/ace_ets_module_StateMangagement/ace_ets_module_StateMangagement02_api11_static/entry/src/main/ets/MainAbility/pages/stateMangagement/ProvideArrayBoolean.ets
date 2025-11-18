@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  PropRef,
+  Prop,
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -58,7 +58,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct ConsumeArrayBooleanChild {
-  @Consume message: Array<boolean> = new Array<boolean>(false, true, true, false, true)
+  @Consume message: Array<boolean>
 
   build() {
     Column() {
@@ -117,7 +117,7 @@ struct ProvideArrayBoolean {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ProvideArrayBoolean', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

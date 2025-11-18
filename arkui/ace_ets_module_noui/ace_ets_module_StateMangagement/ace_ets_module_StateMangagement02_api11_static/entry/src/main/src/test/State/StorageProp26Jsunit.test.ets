@@ -65,15 +65,14 @@ export default function StorageProp26Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StorageProp26Jsunit state pages:" + JSON.stringify(pages));
-        if (!("StorageProp26Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/StorageProp26" == pages.name)) {
           console.info("get StorageProp26Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StorageProp26Jsunit page result:" + JSON.stringify(result));
+          // console.info("push StorageProp26Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StorageProp26Jsunit page error:" + err);
@@ -81,12 +80,16 @@ export default function StorageProp26Jsunit() {
       console.info("StorageProp26Jsunit beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
     /*
      * @tc.number   StorageProp26Jsunit_static_0100
      * @tc.name     StorageProp26Jsunit_static_0100
      * @tc.desc     StorageProp26Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp26Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp26Jsunit_static_0100] START');
@@ -115,7 +118,7 @@ it('StorageProp26Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   StorageProp26Jsunit_static_0300
      * @tc.name     StorageProp26Jsunit_static_0300
      * @tc.desc     StorageProp26Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StorageProp26Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp26Jsunit_static_0300] START');

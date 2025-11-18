@@ -64,15 +64,14 @@ export default function LinkSonJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get LinkSonJsunit state pages:" + JSON.stringify(pages));
-        if (!("LinkSonJsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/LinkSon" == pages.name)) {
           console.info("get LinkSonJsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LinkSonJsunit page result:" + JSON.stringify(result));
+          // console.info("push LinkSonJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LinkSonJsunit page error:" + err);
@@ -88,11 +87,16 @@ export default function LinkSonJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     /*
      * @tc.number   LinkSonJsunit_static_0100
      * @tc.name     LinkSonJsunit_static_0100
      * @tc.desc     LinkSonJsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSonJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -145,7 +149,7 @@ it('LinkSonJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   LinkSonJsunit_static_0200
      * @tc.name     LinkSonJsunit_static_0200
      * @tc.desc     LinkSonJsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSonJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -198,7 +202,7 @@ it('LinkSonJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   LinkSonJsunit_static_0300
      * @tc.name     LinkSonJsunit_static_0300
      * @tc.desc     LinkSonJsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSonJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -251,7 +255,7 @@ it('LinkSonJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   LinkSonJsunit_static_0400
      * @tc.name     LinkSonJsunit_static_0400
      * @tc.desc     LinkSonJsunit_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSonJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -303,7 +307,7 @@ it('LinkSonJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   LinkSonJsunit_static_0500
      * @tc.name     LinkSonJsunit_static_0500
      * @tc.desc     LinkSonJsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSonJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -356,7 +360,7 @@ it('LinkSonJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.number   LinkSonJsunit_static_0600
      * @tc.name     LinkSonJsunit_static_0600
      * @tc.desc     LinkSonJsunit_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkSonJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

@@ -44,10 +44,10 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
+  StorageProp,
   StorageLink,
   LocalStorage,
-  LocalStoragePropRef,
+  LocalStorageProp,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -60,15 +60,7 @@ enum KFC{A11=1,B11=2,C11=3}
 @Component
 struct PropEnum {
   @State enumA: KFC = KFC.A11
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('PropEnum', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Column() {
       Button("Reset").id("PropEnum_reset")
@@ -76,10 +68,10 @@ struct PropEnum {
         .onClick((e: ClickEvent) => {
           this.enumA = KFC.A11
         })
-      Text('@PropRef 支持数据类型：enum').fontSize(9).height('5%')
+      Text('@Prop 支持数据类型：enum').fontSize(9).height('5%')
       Text('Father State: ' + this.enumA).width("100%")
         .height('5%')
-        .key("PropEnum").backgroundColor(this.enumA)
+        .key("PropEnum").backgroundColor(this.enumA.toString())
         .onClick((e: ClickEvent) => {
           this.enumA = KFC.B11
         })
@@ -96,10 +88,10 @@ struct ChildPropEnum {
 
   build() {
     Column() {
-      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
 
-      Text('Child PropRef: ' + this.enumB).width("100%").height('5%')
-        .key("ChildPropEnum").backgroundColor(this.enumB)
+      Text('Child Prop: ' + this.enumB).width("100%").height('5%')
+        .key("ChildPropEnum").backgroundColor(this.enumB.toString())
         .onClick((e: ClickEvent) => {
           this.enumB = KFC.C11
         })

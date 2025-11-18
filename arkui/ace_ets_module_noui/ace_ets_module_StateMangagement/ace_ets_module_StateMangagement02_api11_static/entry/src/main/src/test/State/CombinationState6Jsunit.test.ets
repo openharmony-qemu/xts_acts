@@ -67,12 +67,12 @@ export default function CombinationState6Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CombinationState6Jsunit state pages:" + JSON.stringify(pages));
-        if (!("CombinationState6Jsunit" == pages.name)) {
+        if (!("MainAbility/pages/State/CombinationState6" == pages.name)) {
           console.info("get CombinationState6Jsunit pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push CombinationState6Jsunit page result:" + JSON.stringify(result));
+          // console.info("push CombinationState6Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CombinationState6Jsunit page error:" + err);
@@ -84,10 +84,10 @@ export default function CombinationState6Jsunit() {
      * @tc.number   CombinationState6Jsunit_static_0100
      * @tc.name     CombinationState6Jsunit_static_0100
      * @tc.desc     CombinationState6Jsunit_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState6Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState6Jsunit_static_0100] START');
       let strJson = inspector.getInspectorByKey('PropObjectLink1');
       let obj = JSON.parseJsonElement(strJson);
@@ -102,10 +102,10 @@ it('CombinationState6Jsunit_static_0100', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState6Jsunit_static_0200
      * @tc.name     CombinationState6Jsunit_static_0200
      * @tc.desc     CombinationState6Jsunit_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState6Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState6Jsunit_static_0200] START');
       let strJson1 = inspector.getInspectorByKey('PropObjectLink2');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -120,10 +120,10 @@ it('CombinationState6Jsunit_static_0200', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState6Jsunit_static_0300
      * @tc.name     CombinationState6Jsunit_static_0300
      * @tc.desc     CombinationState6Jsunit_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState6Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState6Jsunit_static_0300] START');
       let strJson2 = inspector.getInspectorByKey('PropObjectLink3');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -138,10 +138,10 @@ it('CombinationState6Jsunit_static_0300', Level.LEVEL0, async (done: () => void)
      * @tc.number   CombinationState6Jsunit_static_0500
      * @tc.name     CombinationState6Jsunit_static_0500
      * @tc.desc     CombinationState6Jsunit_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('CombinationState6Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      // Get the information of the State component
       console.info('[CombinationState6Jsunit_static_0500] START');
       let strJson4 = inspector.getInspectorByKey('PropObjectLink5');
       let obj4 = JSON.parseJsonElement(strJson4);

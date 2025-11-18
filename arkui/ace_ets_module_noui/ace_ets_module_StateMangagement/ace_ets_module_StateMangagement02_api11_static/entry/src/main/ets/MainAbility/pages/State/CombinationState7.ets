@@ -31,14 +31,14 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StoragePropRef,
   StorageLink
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef, LocalStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-AppStorage.setOrCreate('PropA7', 47);
 
+let storage007: LocalStorage = new LocalStorage({"PropA7":47} as Record<string, number>)
+storage007.setOrCreate('PropA7', 47);
 
 @Component
 struct SubState7 {
@@ -90,7 +90,7 @@ struct SubProp7 {
 
   build() {
     Column() {
-      Text('@PropRef:'+ this.num1).id("SubProp_text1").height('5%')
+      Text('@Prop:'+ this.num1).id("SubProp_text1").height('5%')
     }
   }
 }
@@ -101,7 +101,7 @@ struct SubProp72 {
 
   build() {
     Column() {
-      Text('@PropRef:'+ this.num1).id("SubProp_text2").height('5%')
+      Text('@Prop:'+ this.num1).id("SubProp_text2").height('5%')
     }
   }
 }
@@ -138,7 +138,7 @@ struct CombinationState7_2 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('CombinationState7', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -146,7 +146,7 @@ struct CombinationState7_2 {
   build() {
     Row() {
       Column() {
-        Text('@StorageLink和@StoragePropRef支持初始化如下装饰器修饰的数据').height('5%')
+        Text('@StorageLink和@StorageProp支持初始化如下装饰器修饰的数据').height('5%')
         Text('支持初始化@State修饰的数据').height('5%')
         SubState7({num1: this.num})
         SubState72({num1: this.numB})
@@ -155,7 +155,7 @@ struct CombinationState7_2 {
         SubLink7({num1: this.num})
         SubLink72({num1: this.numB})
 
-        Text('支持初始化@PropRef修饰的数据').height('5%')
+        Text('支持初始化@Prop修饰的数据').height('5%')
         SubProp7({num1: this.num})
         SubProp72({num1: this.numB})
 
