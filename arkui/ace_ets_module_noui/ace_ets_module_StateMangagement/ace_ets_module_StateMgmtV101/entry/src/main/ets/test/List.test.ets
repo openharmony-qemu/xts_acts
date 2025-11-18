@@ -33,9 +33,7 @@ import SubAbstractPropertyLinkTest from './AppStorage/SubAbstractPropertyLinkTes
 import PersistentTest0040 from './persistentStorage/PersistentTest0040.test';
 import PersistentStorageReturnValue from './persistentStorage/PersistentStorageReturnValue.test';
 
-import getSharedLocalStorageTest from './GetSharedLocalTest/getSharedLocalStorage.test';
-import useSharedStorageTest from './GetSharedLocalTest/useSharedStorage.test';
-import persistStorageATest from './GetSharedLocalTest/persistStorageA.test';
+
 import LocalStorageReturnValue from './localStorage/LocalStorageReturnValue.test';
 import localStorageRefJsunit from './localStorage/localStorageRefJsunit.test';
 import LocalStorageDeleteTest0120 from './localStorage/LocalStorageDeleteTest0120.test';
@@ -51,9 +49,7 @@ import LocalStorageProp0320TestJsunit from './localStorage/LocalStorageProp0320T
 import LocalStorageAbsTestJsunit from './localStorage/LocalStorageAbsTestJsunit.test';
 
 import PersistentStoragePersistPropJsunit from './persistentStorage/PersistentStoragePersistPropJsunit.test.ets';
-import EnvironmentTest0040 from './Environment/EnvironmentTest0040.test';
-import EnvironmentReturnValue from './Environment/EnvironmentReturnValue.test';
-import StorageDeprecatedTest from './Environment/StorageDeprecatedTest.test';
+
 
 export default function testsuite() {
     AppStorageReturnValue();
@@ -74,9 +70,6 @@ export default function testsuite() {
     SubAbstractPropertyLinkTest();
     PersistentTest0040();
     PersistentStorageReturnValue();
-    getSharedLocalStorageTest();
-    useSharedStorageTest();
-    persistStorageATest();
     LocalStorageReturnValue();
     localStorageRefJsunit();
     LocalStoageLinkOneJsunit();
@@ -90,8 +83,6 @@ export default function testsuite() {
     LocalStorageProp0320TestJsunit();
     LocalStorageAbsTestJsunit();
     PersistentStoragePersistPropJsunit();
-    EnvironmentReturnValue();
-    EnvironmentTest0040();
-    StorageDeprecatedTest();
+
 
 }

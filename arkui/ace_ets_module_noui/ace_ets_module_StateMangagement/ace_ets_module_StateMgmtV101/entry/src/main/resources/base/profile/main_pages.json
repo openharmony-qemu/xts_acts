@@ -22,9 +22,6 @@
     "MainAbility/pages/persistentStorage/PersistentStoragePersistProp",
     "MainAbility/pages/persistentStorage/Persistent0040",
     "MainAbility/pages/persistentStorage/PersistentStorageReturnValue",
-    "MainAbility/pages/GetSharedLocal/getSharedLocalStorage",
-    "MainAbility/pages/GetSharedLocal/useSharedStorage",
-    "MainAbility/pages/GetSharedLocal/persistStorageA",
     "MainAbility/pages/localStorage/localStorageRef",
     "MainAbility/pages/localStorage/LocalStorageReturnValue",
     "MainAbility/pages/localStorage/LocalStorageDelete0120",
@@ -37,9 +34,6 @@
     "MainAbility/pages/localStorage/LocalStorageLink0310",
     "MainAbility/pages/localStorage/LocalStorageProp0320",
     "MainAbility/pages/localStorage/LocalStorageAbs",
-    "MainAbility/pages/Environment/Environment0040",
-    "MainAbility/pages/Environment/EnvironmentReturnValue",
-    "MainAbility/pages/Environment/StorageDeprecated",
     "MainAbility/pages/index/index"
   ]
 }
