@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
+import AppStorageReturnValue from './AppStorage/AppStorageReturnValue.test';
 import appStorageJsunit from './AppStorage/AppStorageJsunit.test';
-import StorageDeprecatedTest from './AppStorage/StorageDeprecatedTest.test';
 import Storage11Jsunit from './AppStorage/Storage11Jsunit.test.ets';
 import Storage35Jsunit from './AppStorage/Storage35Jsunit.test.ets';
 import Storage36Jsunit from './AppStorage/Storage36Jsunit.test.ets';
@@ -28,7 +28,6 @@ import StorageProp25Jsunit from './AppStorage/StorageProp25Jsunit.test.ets'
 import StorageProp26Jsunit from './AppStorage/StorageProp26Jsunit.test.ets'
 import AbstractPropertyRefTest from './AppStorage/AbstractPropertyRefTest.test';
 import appStorageRefJsunit from './AppStorage/appStorageRefJsunit.test';
-import AppStorageReturnValue from './AppStorage/AppStorageReturnValue.test';
 import SubAbstractPropertyLinkTest from './AppStorage/SubAbstractPropertyLinkTest.test';
 
 import PersistentTest0040 from './persistentStorage/PersistentTest0040.test';
@@ -54,9 +53,11 @@ import LocalStorageAbsTestJsunit from './localStorage/LocalStorageAbsTestJsunit.
 import PersistentStoragePersistPropJsunit from './persistentStorage/PersistentStoragePersistPropJsunit.test.ets';
 import EnvironmentTest0040 from './Environment/EnvironmentTest0040.test';
 import EnvironmentReturnValue from './Environment/EnvironmentReturnValue.test';
+import StorageDeprecatedTest from './Environment/StorageDeprecatedTest.test';
+
 export default function testsuite() {
+    AppStorageReturnValue();
     appStorageJsunit();
-    StorageDeprecatedTest();
     Storage11Jsunit();
     Storage35Jsunit();
     Storage36Jsunit();
@@ -70,7 +71,6 @@ export default function testsuite() {
     StorageProp26Jsunit();
     AbstractPropertyRefTest();
     appStorageRefJsunit();
-    AppStorageReturnValue();
     SubAbstractPropertyLinkTest();
     PersistentTest0040();
     PersistentStorageReturnValue();
@@ -89,9 +89,9 @@ export default function testsuite() {
     LocalStorageLink0310TestJsunit();
     LocalStorageProp0320TestJsunit();
     LocalStorageAbsTestJsunit();
-
     PersistentStoragePersistPropJsunit();
     EnvironmentReturnValue();
     EnvironmentTest0040();
+    StorageDeprecatedTest();
 
 }

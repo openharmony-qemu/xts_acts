@@ -22,7 +22,7 @@ export default function StorageDeprecatedTest() {
     beforeEach(async (done: Function) => {
       console.info("StorageDeprecatedTest setup start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/AppStorage/StorageDeprecated",
+        url: "MainAbility/pages/Environment/StorageDeprecated",
       }
       try {
         router.clear();

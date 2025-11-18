@@ -1,7 +1,6 @@
 {
   "src": [
     "MainAbility/pages/AppStorage/AppStorage",
-    "MainAbility/pages/AppStorage/StorageDeprecated",
     "MainAbility/pages/AppStorage/Storage11",
     "MainAbility/pages/AppStorage/Storage12",
     "MainAbility/pages/AppStorage/Storage35",
@@ -40,6 +39,7 @@
     "MainAbility/pages/localStorage/LocalStorageAbs",
     "MainAbility/pages/Environment/Environment0040",
     "MainAbility/pages/Environment/EnvironmentReturnValue",
+    "MainAbility/pages/Environment/StorageDeprecated",
     "MainAbility/pages/index/index"
   ]
 }
