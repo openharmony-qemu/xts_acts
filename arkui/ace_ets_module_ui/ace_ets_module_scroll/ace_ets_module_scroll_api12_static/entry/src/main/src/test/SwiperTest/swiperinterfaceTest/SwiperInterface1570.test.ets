@@ -42,7 +42,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperInterface1570() {
   describe('SwiperInterface1570', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,12 +50,12 @@ export default function SwiperInterface1570() {
       console.info("SwiperInterface1570 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
+        router.clear()
         let pages = router.getState();
         console.info("get SwiperInterface1570 state pages:" + JSON.stringify(pages));
         if (!("SwiperInterface1570" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperInterface/SwiperInterface1570'
           })
           await CommonFunc.sleep(2000);
@@ -72,36 +71,38 @@ export default function SwiperInterface1570() {
       console.info("SwiperInterface1570 after each called");
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070 START");
       await CommonFunc.sleep(6000);
       let strJson2: string = inspector.getInspectorByKey('swiperinterface1570');
-      let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
+      let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('duration');
       expect(marq).assertEqual("400");
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070 END');
       done();
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580 START");
       await CommonFunc.sleep(6000);
       let strJson2: string = inspector.getInspectorByKey('swiperinterface1580');
-      let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
+      let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('duration');
       expect(marq).assertEqual("0");
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580 END');

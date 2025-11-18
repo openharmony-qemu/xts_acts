@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function swiperSyncType() {
   describe('swiperSyncType', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -63,7 +61,6 @@ export default function swiperSyncType() {
           console.info("get swiperSyncType pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push swiperSyncType page result:");
         }
       } catch (err) {
         console.error("push swiperSyncType page error:" + err);
@@ -75,14 +72,15 @@ export default function swiperSyncType() {
       console.info("swiperSyncType after each called");
     });
 
-
-    /*
-     * @tc.number    swiperSyncType_static_0100
-     * @tc.name      swiperSyncType_static_0100
-     * @tc.desc      swiperSyncType_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   swiperSyncType_static_0100
+     * @tc.name     swiperSyncType_static_0100
+     * @tc.desc     swiperSyncType_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('swiperSyncType_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('swiperSyncType_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[swiperSyncType_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

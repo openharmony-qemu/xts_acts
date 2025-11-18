@@ -104,7 +104,7 @@ struct ScrollBarExample {
       Flex({ direction: FlexDirection.Column }) {
         Scroll(this.scroller2) {
           Flex({ direction: FlexDirection.Row }) {
-            ForEach(this.arr2, (item: String, index: int) => {
+            ForEach(this.arr2, (item: string, index: int) => {
               Row() {
                 Text(item.toString())
                   .width('10%')

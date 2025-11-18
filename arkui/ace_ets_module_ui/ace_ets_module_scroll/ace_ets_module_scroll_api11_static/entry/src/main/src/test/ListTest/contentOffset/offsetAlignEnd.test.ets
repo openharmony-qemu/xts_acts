@@ -65,7 +65,7 @@ export default function offsetAlignEnd() {
           console.info("get offsetAlignEnd pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push offsetAlignEnd page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push offsetAlignEnd page error:" + err);
@@ -80,11 +80,11 @@ export default function offsetAlignEnd() {
 
 
     /*
-     * @tc.number    offsetAlignEnd_static_0100
-     * @tc.name      offsetAlignEnd_static_0100
-     * @tc.desc      offsetAlignEnd_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   offsetAlignEnd_static_0100
+       * @tc.name     offsetAlignEnd_static_0100
+       * @tc.desc     offsetAlignEnd_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('offsetAlignEnd_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[offsetAlignEnd_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -97,8 +97,8 @@ export default function offsetAlignEnd() {
       console.info('[offsetAlignEnd_static_0100] list.bottom: ' + list.bottom);
       console.info('[offsetAlignEnd_static_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
-        .assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(uiContext!.vp2px(10))) <= 1).assertTrue();
       console.info('[offsetAlignEnd_static_0100] END');
       done();
     });

@@ -21,7 +21,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { BarState } from '@ohos.arkui.component'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { RecordData } from '@ohos.base';
 
 export default function scrollBarJsunitt() {
   describe('scrollBarJsunitt', () => {
@@ -42,10 +41,10 @@ export default function scrollBarJsunitt() {
         console.info("get scrollBar state success " + JSON.stringify(pages));
         if (!("scrollBarr" == pages.name)) {
           console.info("get scrollBar success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push scrollBar page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollBar page error " + JSON.stringify(err));
@@ -57,12 +56,13 @@ export default function scrollBarJsunitt() {
       console.info("scrollBar after each called");
     });
 
+
     /*
-     * @tc.number    testScrollBar001_static_01
-     * @tc.name      testScrollBar001_static_01
-     * @tc.desc      testScrollBar001_static_01
-     * @tc.level     2
-     */
+       * @tc.number   testScrollBar001_static_01
+       * @tc.name     testScrollBar001_static_01
+       * @tc.desc     testScrollBar001_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollBar001_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollBar001_static_01] START');
       await CommonFunc.sleep(2000);
@@ -74,12 +74,13 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+
     /*
-     * @tc.number    testScrollBar002_static_02
-     * @tc.name      testScrollBar002_static_02
-     * @tc.desc      testScrollBar002_static_02
-     * @tc.level     2
-     */
+       * @tc.number   testScrollBar002_static_02
+       * @tc.name     testScrollBar002_static_02
+       * @tc.desc     testScrollBar002_static_02
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollBar002_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollBar002_static_02] START');
       let objectT: Record<string, string> = {
@@ -89,7 +90,7 @@ export default function scrollBarJsunitt() {
         let eventData: events_emitter.EventData = {
           data: {
             "directionObject": JSON.stringify(objectT)
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -97,7 +98,7 @@ export default function scrollBarJsunitt() {
         }
         console.info("[testScrollBar002_static_02] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[testScrollBar002_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -109,12 +110,13 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+
     /*
-     * @tc.number    testScrollBar003_static_03
-     * @tc.name      testScrollBar003_static_03
-     * @tc.desc      testScrollBar003_static_03
-     * @tc.level     2
-     */
+       * @tc.number   testScrollBar003_static_03
+       * @tc.name     testScrollBar003_static_03
+       * @tc.desc     testScrollBar003_static_03
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollBar003_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollBar003_static_03] START');
       await CommonFunc.sleep(2000);
@@ -126,19 +128,20 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+
     /*
-     * @tc.number    testScrollBar004_static_04
-     * @tc.name      testScrollBar004_static_04
-     * @tc.desc      testScrollBar004_static_04
-     * @tc.level     2
-     */
+       * @tc.number   testScrollBar004_static_04
+       * @tc.name     testScrollBar004_static_04
+       * @tc.desc     testScrollBar004_static_04
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollBar004_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollBar004_static_04] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "stateValue": BarState.On
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -146,7 +149,7 @@ export default function scrollBarJsunitt() {
         }
         console.info("[testScrollBar004_static_04] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[testScrollBar004_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -158,19 +161,20 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+
     /*
-     * @tc.number    testScrollBar005_static_05
-     * @tc.name      testScrollBar005_static_05
-     * @tc.desc      testScrollBar005_static_05
-     * @tc.level     2
-     */
+       * @tc.number   testScrollBar005_static_05
+       * @tc.name     testScrollBar005_static_05
+       * @tc.desc     testScrollBar005_static_05
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollBar005_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollBar005_static_05] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "stateValue": BarState.Auto
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -178,7 +182,7 @@ export default function scrollBarJsunitt() {
         }
         console.info("[testScrollBar005_static_05] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[testScrollBar005_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);

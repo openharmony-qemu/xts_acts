@@ -56,10 +56,6 @@ import { Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
-  /*
-   * scrollToIndex 属性测试
-   * */
-
 struct ScrollToIndexForGrid01 {
   @State numbers: Array<string> = new Array<string>()
   private scrollerForGrid: Scroller = new Scroller()
@@ -89,7 +85,7 @@ struct ScrollToIndexForGrid01 {
             direction: FlexDirection.Row,
             wrap: FlexWrap.Wrap,
             justifyContent: FlexAlign.SpaceBetween
-          }) { 
+          }) { // 子组件在容器主轴上行布局
             Button('30', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -109,7 +105,9 @@ struct ScrollToIndexForGrid01 {
                 this.isSmooth = false
                 const yOffsetStart: number = this.scrollerForGrid.currentOffset()!.yOffset;
                 this.scrollerForGrid.scrollToIndex(66, true)
-                setTimeout(() => {
+                console.info('xyb: yOffsetStart==>')
+                setTimeout(():void =>{
+                  console.info('xyb: 111yOffsetStart==>')
                   const yOffsetEnd: number = this.scrollerForGrid.currentOffset()!.yOffset;
                   console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>' + yOffsetEnd)
                   this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
@@ -238,6 +236,8 @@ struct ScrollToIndexForGrid01 {
           })
           .margin(5)
       }
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding(20)
+    }.width('100%').height('100%')
+    .backgroundColor(0xDCDCDC)
+    .padding(20)
   }
 }

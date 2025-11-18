@@ -26,7 +26,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-
+//12
 @Entry
 @Component
 struct finishTransitionSwiperAnimated {
@@ -90,8 +90,9 @@ struct finishTransitionSwiperAnimated {
               this.opacityList[proxy.index.toInt()] = 1 - proxy.position / this.DISPLAY_COUNT
               this.scaleList[proxy.index.toInt()] =
                 this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT)
-              this.translateList[proxy.index.toInt()] = -proxy.position * proxy.mainAxisLength +
-                (1 - this.scaleList[proxy.index.toInt()]) * proxy.mainAxisLength / 2.0
+              this.translateList[proxy.index.toInt()] =
+                -proxy.position * proxy.mainAxisLength +
+                  (1 - this.scaleList[proxy.index.toInt()]) * proxy.mainAxisLength / 2.0
             } else {
               this.opacityList[proxy.index.toInt()] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT
               this.scaleList[proxy.index.toInt()] =
@@ -104,7 +105,7 @@ struct finishTransitionSwiperAnimated {
           }
         }
       })
-      .onContentDidScroll((selectedIndex: int, index: int, position: double, mainAxisLength: double): void => {
+      .onContentDidScroll((selectedIndex: int, index: int, position: number, mainAxisLength: number): void => {
         this.strindex = 'ContentDidScroll'
         console.info('selectedIndex: ' + selectedIndex)
         console.info('index: ' + index)

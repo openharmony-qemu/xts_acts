@@ -17,7 +17,6 @@ import {
   Component,
   Column,
   Flex,
-
   Visibility,
   Button,
   Text,
@@ -47,7 +46,7 @@ struct PolygonExample {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        
+        Polygon({ width: 100, height: 100 }).points([[0, 0], [50, 100], [100, 0]]).key('polygon')
         Polygon().width(100).height(100).points([[0, 0], [0, 100], [100, 100], [100, 0]]).key('polygon1')
         Polygon().width(100).height(100).points([[50, 0], [0, 50], [20, 100], [80, 100], [100, 50]]).key('polygon2')
       }.width('100%')

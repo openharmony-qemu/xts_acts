@@ -35,8 +35,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function symbolTabs() {
   describe('symbolTabs', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -62,14 +60,15 @@ export default function symbolTabs() {
       console.info("symbolTabs beforeEach end");
     });
 
-
-    /*
-     * @tc.number    symbolTabs_static_0100
-     * @tc.name      symbolTabs_static_0100
-     * @tc.desc      symbolTabs_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   symbolTabs_static_0100
+     * @tc.name     symbolTabs_static_0100
+     * @tc.desc     symbolTabs_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('symbolTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('symbolTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[symbolTabs_static_0100] START');
       let swipeTabs = CommonFunc.getComponentRectOnScreen('tabs_normal_id');
       let top = swipeTabs.top;

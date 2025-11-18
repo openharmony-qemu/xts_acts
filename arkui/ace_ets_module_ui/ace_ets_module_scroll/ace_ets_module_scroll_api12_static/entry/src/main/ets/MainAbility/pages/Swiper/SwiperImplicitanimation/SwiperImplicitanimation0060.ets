@@ -64,7 +64,7 @@ struct SwiperImplicitanimation0060 {
       .effectMode(EdgeEffect.Spring)
       .id('implicitanimation_0060')
       .autoPlay(false, undefined)
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         this.indexstring = index.toString()
         this.targetIndexs = targetIndex.toString()
         this.currentOffset = extraInfo.currentOffset.toString()

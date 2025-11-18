@@ -93,20 +93,20 @@ struct AlphabetIndexerBorderRadius {
 
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
           .id('alphabet_borderRadius')
-          .usingPopup(true)
-          .selectedFont({ size: 16, weight: FontWeight.Bolder })
-          .popupFont({ size: 30, weight: FontWeight.Bolder })
-          .itemSize(28)
-          .alignStyle(IndexerAlign.Left)
-          .popupItemBorderRadius(10)
-          .itemBorderRadius(10)
+          .usingPopup(true) // 是否显示弹出框
+          .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项字体样式
+          .popupFont({ size: 30, weight: FontWeight.Bolder }) // 弹出框内容的字体样式
+          .itemSize(28) // 每一项的尺寸大小
+          .alignStyle(IndexerAlign.Left) // 弹出框在索引条右侧弹出
+          .popupItemBorderRadius(10) // 设置提示弹窗索引项背板圆角半径
+          .itemBorderRadius(10) // 设置索引项背板圆角半径
           .enableHapticFeedback(true)
           .onSelect((index: int): void => {
             console.info(this.value[index.toInt()] + ' Selected!')
           })
           .onRequestPopupData((index: int): string[] => {
             if (this.value[index.toInt()] == 'A') {
-              return this.arrayA 
+              return this.arrayA // 当选中A时，弹出框里面的提示文本列表显示A对应的列表arrayA，选中B、C、L时也同样
             } else if (this.value[index.toInt()] == 'B') {
               return this.arrayB
             } else if (this.value[index.toInt()] == 'C') {
@@ -114,7 +114,7 @@ struct AlphabetIndexerBorderRadius {
             } else if (this.value[index.toInt()] == 'L') {
               return this.arrayL
             } else {
-              return [''] 
+              return [] as string[]  // 选中其余子母项时，提示文本列表为空
             }
           })
           .onPopupSelect((index: int): void => {

@@ -21,7 +21,9 @@ import {
   Divider,
   Tabs,
   BarPosition,
-  TabContent
+  TabContent,
+  Margin,
+  Builder
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -33,20 +35,20 @@ struct animationDurationTabs {
   @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  @Builder tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.currentIndex === index ? 500 : 400)
+        .lineHeight(22)
+        .margin({ top: 17, bottom: 7 } as Margin)
+      Divider()
+        .strokeWidth(2)
+        .color('#007DFF')
+        .opacity(this.currentIndex === index ? 1 : 0)
+    }.width('100%')
+  }
 
   build() {
     Column() {
@@ -54,19 +56,19 @@ struct animationDurationTabs {
         Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#00CB87')
-          } 
+          } //.tabBar(this.tabBuilder(0, 'green'))
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#007DFF')
-          } 
+          } //.tabBar(this.tabBuilder(1, 'blue'))
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#FFBF00')
-          } 
+          } //.tabBar(this.tabBuilder(2, 'yellow'))
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#E67C92')
-          } 
+          } //.tabBar(this.tabBuilder(3, 'pink'))
         }
         .id('animationDuration_1')
         .onChange((index: int): void => {
@@ -81,19 +83,19 @@ struct animationDurationTabs {
         Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#00CB87')
-          } 
+          } //.tabBar(this.tabBuilder(0, 'green'))
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#007DFF')
-          } 
+          } //.tabBar(this.tabBuilder(1, 'blue'))
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#FFBF00')
-          } 
+          } //.tabBar(this.tabBuilder(2, 'yellow'))
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#E67C92')
-          } 
+          } //.tabBar(this.tabBuilder(3, 'pink'))
         }
         .id('animationDuration_2')
         .animationDuration(600)

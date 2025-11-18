@@ -79,8 +79,6 @@ struct ListExample11 {
                 .borderRadius(10)
                 .backgroundColor(0xFFFFFF)
             }
-
-            
           }, (item: number) => item.toString())
         }
         .key('list')
@@ -101,14 +99,6 @@ struct ListExample11 {
           console.info('scrollOffset:' + scrollOffset)
           console.info('ScrollState:' + scrollState)
         })
-        
-        
-        
-        
-        
-        
-        
-        
         .onReachStart(() => {
           console.info("On Reach Start")
         })

@@ -67,11 +67,11 @@ export default function valueAlphabet() {
 
 
     /*
-     * @tc.number    valueAlphabet_static_0100
-     * @tc.name      valueAlphabet_static_0100
-     * @tc.desc      valueAlphabet_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   valueAlphabet_static_0100
+       * @tc.name     valueAlphabet_static_0100
+       * @tc.desc     valueAlphabet_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('valueAlphabet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[valueAlphabet_static_0100] START');
       let strJson = inspector.getInspectorByKey('alp_outliers_value');
@@ -86,11 +86,11 @@ export default function valueAlphabet() {
 
 
     /*
-     * @tc.number    valueAlphabet_static_0200
-     * @tc.name      valueAlphabet_static_0200
-     * @tc.desc      valueAlphabet_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   valueAlphabet_static_0200
+       * @tc.name     valueAlphabet_static_0200
+       * @tc.desc     valueAlphabet_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('valueAlphabet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[valueAlphabet_static_0200] START');
       let driver: Driver = Driver.create();
@@ -109,11 +109,11 @@ export default function valueAlphabet() {
 
 
     /*
-     * @tc.number    valueAlphabet_static_0300
-     * @tc.name      valueAlphabet_static_0300
-     * @tc.desc      valueAlphabet_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   valueAlphabet_static_0300
+       * @tc.name     valueAlphabet_static_0300
+       * @tc.desc     valueAlphabet_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('valueAlphabet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[valueAlphabet_static_0300] START');
       let driver = Driver.create();

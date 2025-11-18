@@ -44,10 +44,8 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAttribute_3() {
   describe('SwiperAttribute_3', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperAttribute_3 beforeEach start");
@@ -61,8 +59,7 @@ export default function SwiperAttribute_3() {
          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperAttribute_3"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperAttribute_3 page result:");
+          await UtilsTest.msSleep(2000)
         }
       } catch (err) {
         console.error("push SwiperAttribute_3 page error:" + err);
@@ -74,14 +71,15 @@ export default function SwiperAttribute_3() {
       console.info("SwiperAttribute_3 after each called");
     });
 
-
-    /*
-     * @tc.number    SwiperAttribute_static_0070
-     * @tc.name      SwiperAttribute_static_0070
-     * @tc.desc      SwiperAttribute_static_0070
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperAttribute_static_0070
+     * @tc.name     SwiperAttribute_static_0070
+     * @tc.desc     SwiperAttribute_static_0070
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperAttribute_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperAttribute_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperAttribute_static_0070] START');
 
       let rect = CommonFunc.getComponentRectOnScreen('swiperAttribute_3')

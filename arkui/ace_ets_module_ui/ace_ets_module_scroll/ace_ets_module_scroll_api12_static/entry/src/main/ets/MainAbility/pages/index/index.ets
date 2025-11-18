@@ -35,11 +35,13 @@ import {
   ButtonType,
   ClickEvent,
   Margin,
-  FontWeight
+  FontWeight,
+  Padding,
+  LengthMetrics
 } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -48,17 +50,18 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
 
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
-      Button('Hello World2') {
+      Button('') {
         Text('next page')
           .fontSize(25)
           .fontWeight(FontWeight.Bold)
@@ -67,7 +70,7 @@ struct Index {
         top: 20
       } as Margin)
       .backgroundColor('#0D9FFB')
-      .onClick((e: ClickEvent) => {
+      .onClick(() => {
 
       })
     }

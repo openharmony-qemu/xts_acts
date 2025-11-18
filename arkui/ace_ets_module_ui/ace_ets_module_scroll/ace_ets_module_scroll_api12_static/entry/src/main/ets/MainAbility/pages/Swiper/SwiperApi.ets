@@ -81,7 +81,7 @@ struct SwiperApiTest {
             .fontSize(30)
         }, (item: number, index: int) => String(item))
       }
-      .cachedCount(2)
+      // .cachedCount(2)
       .index(1)
       .autoPlay(true, undefined)
       .interval(4000)
@@ -89,16 +89,17 @@ struct SwiperApiTest {
       .indicatorInteractive(true)
       .duration(1000)
       .itemSpace(0)
-      .indicator( 
+      .indicator( // 设置圆点导航点样式
         new DotIndicator()
           .itemWidth(15)
           .itemHeight(15)
+          // .end(undefined)
           .selectedItemWidth(15)
           .selectedItemHeight(15)
           .color(Color.Gray)
           .selectedColor(Color.Blue))
       .displayArrow({
-        
+        // 设置导航点箭头样式
         showBackground: true,
         isSidebarMiddle: true,
         backgroundSize: 24,

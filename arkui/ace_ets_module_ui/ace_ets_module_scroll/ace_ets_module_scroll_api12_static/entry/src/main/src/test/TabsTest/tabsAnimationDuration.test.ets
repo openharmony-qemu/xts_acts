@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabsAnimationDuration() {
   describe('tabsAnimationDuration', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -60,11 +58,10 @@ export default function tabsAnimationDuration() {
         router.clear();
         let pages = router.getState();
         console.info("get tabsAnimationDuration state pages: " + JSON.stringify(pages));
-        if (!("tabsAnimationDuration" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/tabsAnimationDuration" == pages.name)) {
           console.info("get tabsAnimationDuration state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push tabsAnimationDuration success: ");
         }
       } catch (err) {
         console.error("push tabsAnimationDuration page error: " + err);
@@ -72,14 +69,15 @@ export default function tabsAnimationDuration() {
       }
     });
 
-
-    /*
-     * @tc.number    tabsAnimationDuration_static_0100
-     * @tc.name      tabsAnimationDuration_static_0100
-     * @tc.desc      tabsAnimationDuration_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   tabsAnimationDuration_static_0100
+     * @tc.name     tabsAnimationDuration_static_0100
+     * @tc.desc     tabsAnimationDuration_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('tabsAnimationDuration_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabsAnimationDuration_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabsAnimationDuration_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('animationDuration_1');
@@ -87,12 +85,12 @@ export default function tabsAnimationDuration() {
       console.info("[tabsAnimationDuration_static_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[tabsAnimationDuration_static_0100] animationDuration1: " +
       JSON.stringify(obj1.getElement('$attrs').getDouble('animationDuration')));
-      expect(obj1.getElement('$attrs').getDouble('animationDuration')).assertEqual(300);
+      expect(obj1.getElement('$attrs').getInteger('animationDuration')).assertEqual(300);
 
       let strJson2 = inspector.getInspectorByKey('animationDuration_2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[tabsAnimationDuration_static_0100] component obj2 is: " + JSON.stringify(obj2));
-      expect(obj2.getElement('$attrs').getDouble('animationDuration')).assertEqual(600);
+      expect(obj2.getElement('$attrs').getInteger('animationDuration')).assertEqual(600);
       console.info('[tabsAnimationDuration_static_0100] END');
       done();
     });

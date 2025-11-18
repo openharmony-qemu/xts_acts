@@ -51,12 +51,11 @@ export default function UIComponentScrollSwiperAnimated0260() {
       console.info("UIComponentScrollSwiperAnimated0260 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get UIComponentScrollSwiperAnimated0260 state pages:" + JSON.stringify(pages));
-        if (!("UIComponentScrollSwiperAnimated0260" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/UIComponentScrollSwiperAnimated/UIComponentScrollSwiperAnimated0260" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/UIComponentScrollSwiperAnimated/UIComponentScrollSwiperAnimated0260'
           })
           await CommonFunc.sleep(2000);
@@ -71,24 +70,27 @@ export default function UIComponentScrollSwiperAnimated0260() {
       await CommonFunc.sleep(1000);
       console.info("UIComponentScrollSwiperAnimated0260 after each called");
     });
-
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260', Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.info(`SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260 start.`);
-        await CommonFunc.sleep(6000);
-        let strIndex: string = inspector.getInspectorByKey('UIComponentScrollSwiperAnimated0260_text')
-        let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
-        expect(jsonIndex).assertEqual('ContentDidScroll')
-        await CommonFunc.sleep(1000);
-        console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260 END');
-        done();
-      })
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info(`SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260 start.`);
+      await CommonFunc.sleep(6000);
+      let strIndex: string = inspector.getInspectorByKey('UIComponentScrollSwiperAnimated0260_text')
+      let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
+      expect(jsonIndex).assertEqual('ContentDidScroll')
+      await CommonFunc.sleep(1000);
+      console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260 END');
+      done();
+    })
   })
 }

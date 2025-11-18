@@ -25,7 +25,8 @@ import {
   TabContent,
   BarMode,
   ClickEvent,
-  FlexAlign
+  FlexAlign,
+  Builder
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -35,13 +36,14 @@ struct TabsExampleApi12 {
   @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
 
-  
-  
-  
-  
-  
-  
-  
+  @Builder tabBuilder(title: string,targetIndex: int) {
+    Column(){
+      Text(title).fontColor(this.currentIndex === targetIndex ? '#1698CE' : '#6B6B6B')
+    }.width('100%')
+    .height(50)
+    .justifyContent(FlexAlign.Center)
+  }
+
   build() {
     Column() {
       Text(this.currentIndex + "").key("currentIndexId")
@@ -56,7 +58,7 @@ struct TabsExampleApi12 {
           .backgroundColor('#00CB87')
           .justifyContent(FlexAlign.Center)
           .key("content01")
-        } 
+        } .tabBar(() => {this.tabBuilder('首页',0)})
 
         TabContent() {
           Column() {
@@ -67,7 +69,7 @@ struct TabsExampleApi12 {
           .backgroundColor('#007DFF')
           .justifyContent(FlexAlign.Center)
           .key("content02")
-        } 
+        } .tabBar(() => {this.tabBuilder('发现',1)})
 
         TabContent() {
           Column() {
@@ -78,7 +80,7 @@ struct TabsExampleApi12 {
           .backgroundColor('#FFBF00')
           .justifyContent(FlexAlign.Center)
           .key("content03")
-        } 
+        } .tabBar(() => {this.tabBuilder('推荐',2)})
 
         TabContent() {
           Column() {
@@ -89,7 +91,7 @@ struct TabsExampleApi12 {
           .backgroundColor('#E67C92')
           .justifyContent(FlexAlign.Center)
           .key("content04")
-        } 
+        } .tabBar(() => {this.tabBuilder('我的',3)})
 
         TabContent() {
           Column() {
@@ -100,7 +102,7 @@ struct TabsExampleApi12 {
           .backgroundColor('#E67C92')
           .justifyContent(FlexAlign.Center)
           .key("content05")
-        } 
+        } .tabBar(() => {this.tabBuilder('党史1949',4)})
       }
       .vertical(false)
       .barMode(BarMode.Fixed)

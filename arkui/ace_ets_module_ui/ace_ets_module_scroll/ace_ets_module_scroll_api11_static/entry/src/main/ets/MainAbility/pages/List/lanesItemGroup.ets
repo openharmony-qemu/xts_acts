@@ -69,7 +69,7 @@ struct lanesItemGroupExample {
       .width('90%')
       .height('40%')
       .lanes(2)
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical)
       .scrollBar(BarState.On)
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)

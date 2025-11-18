@@ -32,18 +32,13 @@ function sleep(time: number) {
 }
 
 export default function scrollbarJsunit() {
-
-
   describe('scrollbarTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    /**
-     * run before testcase
-     */
+
     beforeEach(async (): Promise<void> => {
       console.info('[scrollbarTest] before each called')
       let options: router.RouterOptions = {
@@ -51,36 +46,25 @@ export default function scrollbarJsunit() {
       }
       const routerAlp = AppStorage.get<Router>("router") as Router
       try {
+        routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("[scrollbarTest] current page is: " + JSON.stringify(pages.name));
         if (!('ScrollBar' == pages.name)) {
-          
           routerAlp.pushUrl(options);
-          
+          await UtilsTest.msSleep(4000)
         }
       } catch (err) {
         console.info("push scrollBar page error " + JSON.stringify(err));
       }
-      await sleep(2);
-    });
-
-    /**
-     * run after testcase
-     */
-    afterEach(async () => {
-      console.info('[scrollbarTest] after each called');
-      const router = AppStorage.get<Router>("router") as Router
-      router.clear();
-      await sleep(1);
     });
 
 
     /*
-     * @tc.number    testScrollbar010_static_01
-     * @tc.name      testScrollbar010_static_01
-     * @tc.desc      testScrollbar010_static_01
-     * @tc.level     2
-     */
+       * @tc.number   testScrollbar010_static_01
+       * @tc.name     testScrollbar010_static_01
+       * @tc.desc     testScrollbar010_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollbar010_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollbar010_static_01 START');
       let strJson = inspector.getInspectorByKey('scrollbar1');
@@ -95,11 +79,11 @@ export default function scrollbarJsunit() {
 
 
     /*
-     * @tc.number    testScrollbar020_static_02
-     * @tc.name      testScrollbar020_static_02
-     * @tc.desc      testScrollbar020_static_02
-     * @tc.level     2
-     */
+       * @tc.number   testScrollbar020_static_02
+       * @tc.name     testScrollbar020_static_02
+       * @tc.desc     testScrollbar020_static_02
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollbar020_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollbar020_static_02 START');
       let strJson = inspector.getInspectorByKey('scrollbar2');
@@ -114,11 +98,11 @@ export default function scrollbarJsunit() {
 
 
     /*
-     * @tc.number    testScrollbar030_static_03
-     * @tc.name      testScrollbar030_static_03
-     * @tc.desc      testScrollbar030_static_03
-     * @tc.level     2
-     */
+       * @tc.number   testScrollbar030_static_03
+       * @tc.name     testScrollbar030_static_03
+       * @tc.desc     testScrollbar030_static_03
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollbar030_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollbar030_static_03 START');
       let strJson = inspector.getInspectorByKey('scrollbar3');
@@ -133,11 +117,11 @@ export default function scrollbarJsunit() {
 
 
     /*
-     * @tc.number    testScrollbar040_static_04
-     * @tc.name      testScrollbar040_static_04
-     * @tc.desc      testScrollbar040_static_04
-     * @tc.level     2
-     */
+       * @tc.number   testScrollbar040_static_04
+       * @tc.name     testScrollbar040_static_04
+       * @tc.desc     testScrollbar040_static_04
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollbar040_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollbar040_static_04 START');
       let strJson = inspector.getInspectorByKey('scrollbar4');
@@ -152,11 +136,11 @@ export default function scrollbarJsunit() {
 
 
     /*
-     * @tc.number    testScrollbar050_static_05
-     * @tc.name      testScrollbar050_static_05
-     * @tc.desc      testScrollbar050_static_05
-     * @tc.level     2
-     */
+       * @tc.number   testScrollbar050_static_05
+       * @tc.name     testScrollbar050_static_05
+       * @tc.desc     testScrollbar050_static_05
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollbar050_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollbar050_static_05 START');
       let strJson = inspector.getInspectorByKey('scrollbar5');
@@ -171,11 +155,11 @@ export default function scrollbarJsunit() {
 
 
     /*
-     * @tc.number    testScrollbar060_static_06
-     * @tc.name      testScrollbar060_static_06
-     * @tc.desc      testScrollbar060_static_06
-     * @tc.level     2
-     */
+       * @tc.number   testScrollbar060_static_06
+       * @tc.name     testScrollbar060_static_06
+       * @tc.desc     testScrollbar060_static_06
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollbar060_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollbar060_static_06 START');
       let strJson = inspector.getInspectorByKey('scrollbar6');

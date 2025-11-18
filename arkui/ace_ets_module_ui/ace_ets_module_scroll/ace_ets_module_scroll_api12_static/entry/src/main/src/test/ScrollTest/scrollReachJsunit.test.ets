@@ -71,14 +71,15 @@ export default function scrollReachJsunit() {
         expect().assertFail();
       }
     });
-
-    /*
-     * @tc.number    scrollReachJsunit_0100
-     * @tc.name      scrollReachJsunit_0100
-     * @tc.desc      scrollReachJsunit_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   scrollReachJsunit_0100
+     * @tc.name     scrollReachJsunit_0100
+     * @tc.desc     scrollReachJsunit_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('scrollReachJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('scrollReachJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('scrollReachJsunit_0100 START');
       let driver = Driver.create();
       let onReachStartText = await driver.findComponent(ON.id('scroll_reachStart'));

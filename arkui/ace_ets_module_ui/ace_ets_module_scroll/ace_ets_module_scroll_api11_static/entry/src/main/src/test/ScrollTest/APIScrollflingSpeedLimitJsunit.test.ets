@@ -62,9 +62,9 @@ export default function APIScrollflingSpeedLimitJsunit() {
         console.info("get APIScrollflingSpeedLimitJsunit state pages:" + JSON.stringify(pages));
         if (!("APIScrollflingSpeedLimit" == pages.name)) {
           console.info("get APIScrollflingSpeedLimitJsunit state pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
-          
+          // console.info("push APIScrollflingSpeedLimitJsunit success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APIScrollflingSpeedLimitJsunit page error:" + err);
@@ -72,12 +72,13 @@ export default function APIScrollflingSpeedLimitJsunit() {
       }
     });
 
+
     /*
-     * @tc.number    APIScrollflingSpeedLimitJsunit_static_0100
-     * @tc.name      APIScrollflingSpeedLimitJsunit_static_0100
-     * @tc.desc      APIScrollflingSpeedLimitJsunit_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   APIScrollflingSpeedLimitJsunit_static_0100
+       * @tc.name     APIScrollflingSpeedLimitJsunit_static_0100
+       * @tc.desc     APIScrollflingSpeedLimitJsunit_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('APIScrollflingSpeedLimitJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('APIScrollflingSpeedLimitJsunit_static_0100 START');

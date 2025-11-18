@@ -58,13 +58,13 @@ export default function stackAlignContentJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get stack state success " + JSON.stringify(pages));
-        if (!("stack" == pages.name)) {
+        if (!("MainAbility/pages/Stack/stack" == pages.name)) {
           console.info("get stack state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push stack page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push stack page error: " + err);
       }
     });
@@ -76,42 +76,42 @@ export default function stackAlignContentJsunit() {
 
 
     /*
-     * @tc.number    teststackAlignContent_static_0001
-     * @tc.name      teststackAlignContent_static_0001
-     * @tc.desc      teststackAlignContent_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   teststackAlignContent_static_0001
+       * @tc.name     teststackAlignContent_static_0001
+       * @tc.desc     teststackAlignContent_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('teststackAlignContent_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('stackAlignContent teststackAlignContent_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Stack');
       console.info("[teststackAlignContent_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Stack');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width')).assertEqual("100.00%");
+      expect(obj.getString('$type')).assertEqual('Stack');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("100.00%");
       console.info("[teststackAlignContent_static_0001] width value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-
+      done()
     });
 
 
     /*
-     * @tc.number    teststackAlignContent_static_0002
-     * @tc.name      teststackAlignContent_static_0002
-     * @tc.desc      teststackAlignContent_static_0002
-     * @tc.level     2
-     */
+       * @tc.number   teststackAlignContent_static_0002
+       * @tc.name     teststackAlignContent_static_0002
+       * @tc.desc     teststackAlignContent_static_0002
+       * @tc.level    Level.LEVEL1
+       */
     it('teststackAlignContent_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('stackAlignContent teststackAlignContent_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Stack');
       console.info("[teststackAlignContent_static_0002] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Stack');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height')).assertEqual("150.00vp");
+      expect(obj.getString('$type')).assertEqual('Stack');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual("150.00vp");
       console.info("[teststackAlignContent_static_0002] width value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
-
+      done()
     });
   })
 }

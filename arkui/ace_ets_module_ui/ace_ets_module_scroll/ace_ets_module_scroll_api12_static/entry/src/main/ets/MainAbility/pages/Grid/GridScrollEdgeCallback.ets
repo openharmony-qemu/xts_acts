@@ -62,7 +62,7 @@ struct GridScrollEdgeCallback {
       Text(this.text1).id('GridTextByScrollEdge01')
       Button('点我滚动')
         .id('GridScrollEdgeCallback01')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 这里
           this.scroller.scrollEdge(Edge.Bottom, { velocity: 0 })
           this.text1 = 'ScrollEdgeSuccess'
         })

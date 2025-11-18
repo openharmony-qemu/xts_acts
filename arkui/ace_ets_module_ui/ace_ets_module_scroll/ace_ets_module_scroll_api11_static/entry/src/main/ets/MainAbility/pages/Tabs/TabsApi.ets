@@ -42,13 +42,13 @@ struct TabsApi {
   tabsController: TabsController = new TabsController()
   private firstTimeout: int = 3000
   private secondTimeout: int = 5000
-  private first2secondDuration: number = 2000
-  private second2thirdDuration: number = 5000
-  private first2thirdDuration: number = 2000
+  private first2secondDuration: int = 2000
+  private second2thirdDuration: int = 5000
+  private first2thirdDuration: int = 2000
   private baseCustomAnimation: (from: int, to: int) => TabContentAnimatedTransition =
     (from: int, to: int) => {
       if ((from === 0 && to === 1) || (from === 1 && to === 0)) {
-        
+        // 缩放动画
         let firstCustomTransition = {
           timeout: this.firstTimeout,
           transition: (proxy: TabContentTransitionProxy) => {
@@ -61,7 +61,7 @@ struct TabsApi {
             }
 
             animateTo({
-              duration: this.first2secondDuration.toInt(),
+              duration: this.first2secondDuration,
               onFinish: () => {
                 proxy.finishTransition()
               }
@@ -78,7 +78,7 @@ struct TabsApi {
         } as TabContentAnimatedTransition;
         return firstCustomTransition;
       } else {
-        
+        // 透明度动画
         let secondCustomTransition = {
           timeout: this.secondTimeout,
           transition: (proxy: TabContentTransitionProxy) => {
@@ -91,7 +91,7 @@ struct TabsApi {
                 this.tabContent2Opacity = 1.0
               }
               animateTo({
-                duration: this.second2thirdDuration.toInt(),
+                duration: this.second2thirdDuration,
                 onFinish: () => {
                   proxy.finishTransition()
                 }
@@ -113,7 +113,7 @@ struct TabsApi {
                 this.tabContent2Opacity = 1.0
               }
               animateTo({
-                duration: this.first2thirdDuration.toInt(),
+                duration: this.first2thirdDuration,
                 onFinish: () => {
                   proxy.finishTransition()
                 }

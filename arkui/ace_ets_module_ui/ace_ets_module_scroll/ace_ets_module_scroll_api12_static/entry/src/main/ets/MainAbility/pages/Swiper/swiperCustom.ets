@@ -36,7 +36,7 @@ struct SwiperCustomPage {
   @State translateList: number[] = new Array<number>()
   @State zIndexList: int[] = new Array<int>()
   @State message: string = 'message'
-  private DISPLAY_COUNT: Int = 2
+  private DISPLAY_COUNT: int = 2
   private MIN_SCALE: number = 0.75
   @State text: string = 'text'
 
@@ -61,6 +61,7 @@ struct SwiperCustomPage {
             .fontSize(50)
             .textAlign(TextAlign.Center)
             .backgroundColor(backgroundColor)
+            // 自定义动画变化透明度、缩放页面、抵消系统默认位移、渲染层级等
             .opacity(this.opacityList[index.toInt()])
             .scale({ x: this.scaleList[index.toInt()], y: this.scaleList[index.toInt()] })
             .translate({ x: this.translateList[index.toInt()] })
@@ -73,20 +74,20 @@ struct SwiperCustomPage {
       .indicatorInteractive(true)
       .displayCount(this.DISPLAY_COUNT, true)
       .customContentTransition({
-        
+        // 页面移除视窗时超时1000ms下渲染树
         timeout: 1000,
-        
+        // 对视窗内所有页面逐帧回调transition，在回调中修改opacity、scale、translate、zIndex等属性值，实现自定义动画
         transition: (proxy: SwiperContentTransitionProxy) => {
           this.text = 'mainAxisLength'
           if (proxy.position <= proxy.index % this.DISPLAY_COUNT ||
             proxy.position >= this.DISPLAY_COUNT + proxy.index % this.DISPLAY_COUNT) {
-            
+            // 同组页面往左滑或往右完全滑出视窗外时，重置属性值
             this.opacityList[proxy.index.toInt()] = 1.0
             this.scaleList[proxy.index.toInt()] = 1.0
             this.translateList[proxy.index.toInt()] = 0.0
             this.zIndexList[proxy.index.toInt()] = 0
           } else {
-            
+            // 同组页面往右滑且未滑出视窗外时，对同组中左右两个页面，逐帧根据position修改属性值，实现两个页面往Swiper中间靠拢并透明缩放的自定义切换动画
             if (proxy.index % this.DISPLAY_COUNT === 0) {
               this.opacityList[proxy.index.toInt()] = 1 - proxy.position / this.DISPLAY_COUNT
               this.scaleList[proxy.index.toInt()] =
@@ -104,8 +105,8 @@ struct SwiperCustomPage {
           }
         }
       })
-      .onContentDidScroll((selectedIndex: int, index: int, position: double, mainAxisLength: double): void => {
-        
+      .onContentDidScroll((selectedIndex: int, index: int, position: number, mainAxisLength: number): void => {
+        // 监听Swiper页面滑动事件，在该回调中可以实现自定义导航点切换动画等
         this.message = 'onContentDidScroll'
         console.info("onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " +
           position + ", mainAxisLength: " + mainAxisLength)

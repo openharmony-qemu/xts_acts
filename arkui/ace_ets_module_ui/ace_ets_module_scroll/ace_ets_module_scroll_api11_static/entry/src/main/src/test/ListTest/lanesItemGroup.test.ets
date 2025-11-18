@@ -65,7 +65,7 @@ export default function lanesItemGroup() {
           console.info("get lanesItemGroup pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push lanesItemGroup page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push lanesItemGroup page error:" + err);
@@ -80,11 +80,11 @@ export default function lanesItemGroup() {
 
 
     /*
-     * @tc.number    lanesItemGroup_static_0100
-     * @tc.name      lanesItemGroup_static_0100
-     * @tc.desc      lanesItemGroup_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   lanesItemGroup_static_0100
+       * @tc.name     lanesItemGroup_static_0100
+       * @tc.desc     lanesItemGroup_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('lanesItemGroup_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[lanesItemGroup_static_0100] START');
       await CommonFunc.sleep(1000);

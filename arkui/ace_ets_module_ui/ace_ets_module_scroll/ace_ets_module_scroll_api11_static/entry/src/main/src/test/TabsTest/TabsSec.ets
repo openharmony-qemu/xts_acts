@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError,RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -35,7 +35,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabsSec() {
   describe('ActsAceTabsTestSec', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,11 +50,11 @@ export default function tabsSec() {
         console.info("get IndexSec state success " + JSON.stringify(pages));
         if (!("IndexSec" == pages.name)) {
           console.info("get IndexSec state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
-          
+          // console.info("push IndexSec page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push IndexSec page error " + JSON.stringify(err));
       }
 
@@ -63,17 +62,17 @@ export default function tabsSec() {
       console.info("tabs beforeEach start");
     })
 
-    beforeEach(async (): Promise<void> => {
+    afterEach(async (): Promise<void> => {
       console.info("tabs afterEach start");
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": false,
             "barBackgroundColorColor": Color.Red,
-            "barBackgroundColorNumber": 0,
+            "barBackgroundColorNumber": 0 as number,
             "barBackgroundColorString": "#00000000",
             "barBackgroundColorResource": $r("sys.color.ohos_toggle_bg"),
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -81,7 +80,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -89,29 +88,28 @@ export default function tabsSec() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0100
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0100
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0100
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0100
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0100 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Tabs_BarOverlap_static_0100] barOverlap:" +
-      obj.getElement('$attrs').getBoolean('barOverlap'));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(false);
+      console.info("[ArkUI_Tabs_BarOverlap_static_0100] barOverlap:" + strJson);
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('false');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0200
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0200
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0200
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0200
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0200 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest2');
@@ -120,7 +118,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -128,26 +126,26 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       let obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0200] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(true);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('true');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0300
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0300
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0300
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0300
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0300 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest2');
@@ -156,7 +154,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": false,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -164,35 +162,36 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0300] change component data error: " + err.message);
       }
+
       await Utils.sleep(2000);
       let newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       let obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0300] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(false);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('false');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0400
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0400
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0400
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0400
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0400 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest2');
       console.info("ArkUI_Tabs_BarOverlap_static_0400: " + JSON.stringify(strJson))
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "barOverlap": null,
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -200,35 +199,35 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       let obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0400] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(false);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('false');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0500
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0500
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0500
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0500
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0500 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest2');
       console.info("ArkUI_Tabs_BarOverlap_static_0500: " + JSON.stringify(strJson))
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "barOverlap": undefined,
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -236,26 +235,26 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       let obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0500] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(false);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('false');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0600
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0600
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0600
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0600
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0600 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest2');
@@ -264,7 +263,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -272,22 +271,22 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       let obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0600] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(true);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('true');
 
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": false,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -295,26 +294,26 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0600] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(false);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('false');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0700
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0700
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0700
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0700
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0700 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest2');
@@ -323,7 +322,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -331,22 +330,22 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       let obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0700] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(true);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('true');
 
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "barOverlap": null,
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -354,26 +353,26 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0700] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(false);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('false');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarOverlap_static_0800
-     * @tc.name      ArkUI_Tabs_BarOverlap_static_0800
-     * @tc.desc      ArkUI_Tabs_BarOverlap_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarOverlap_static_0800
+       * @tc.name     ArkUI_Tabs_BarOverlap_static_0800
+       * @tc.desc     ArkUI_Tabs_BarOverlap_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarOverlap_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarOverlap_static_0800 start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest2');
@@ -382,7 +381,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -390,22 +389,22 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       let obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0800] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      let barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(true);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      let barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('true');
 
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "barOverlap": undefined,
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -413,26 +412,26 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       newJson = inspector.getInspectorByKey('TabsOverlapTest2');
       obj = JSON.parseJsonElement(newJson);
       console.info("[ArkUI_Tabs_BarOverlap_static_0800] barOverlap:" +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('barOverlap')));
-      barOverlapObject = obj.getElement('$attrs').getBoolean('barOverlap');
-      expect(barOverlapObject).assertEqual(false);
+      JSON.stringify(obj.getElement('$attrs').getString('barOverlap')));
+      barOverlapObject = obj.getElement('$attrs').getString('barOverlap');
+      expect(barOverlapObject).assertEqual('false');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_static_0100
-     * @tc.name      ArkUI_Tabs_BarBackgroundColor_static_0100
-     * @tc.desc      ArkUI_Tabs_BarBackgroundColor_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0100
+       * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0100
+       * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarBackgroundColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
       let strJson = inspector.getInspectorByKey('TabsOverlapTest1');
@@ -447,11 +446,11 @@ export default function tabsSec() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_static_0200
-     * @tc.name      ArkUI_Tabs_BarBackgroundColor_static_0200
-     * @tc.desc      ArkUI_Tabs_BarBackgroundColor_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0200
+       * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0200
+       * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarBackgroundColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
       let strJson = inspector.getInspectorByKey('BarBackgroundColorColor');
@@ -460,7 +459,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorColor": Color.Blue,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -468,7 +467,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -483,11 +482,11 @@ export default function tabsSec() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_static_0300
-     * @tc.name      ArkUI_Tabs_BarBackgroundColor_static_0300
-     * @tc.desc      ArkUI_Tabs_BarBackgroundColor_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0300
+       * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0300
+       * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarBackgroundColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
       let strJson = inspector.getInspectorByKey('BarBackgroundColorNumber');
@@ -495,8 +494,8 @@ export default function tabsSec() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "barBackgroundColorNumber": 123,
-          } as Record<String, RecordData>
+            "barBackgroundColorNumber": 123 as number,
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -504,7 +503,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -519,11 +518,11 @@ export default function tabsSec() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_static_0400
-     * @tc.name      ArkUI_Tabs_BarBackgroundColor_static_0400
-     * @tc.desc      ArkUI_Tabs_BarBackgroundColor_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0400
+       * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0400
+       * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarBackgroundColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
       let strJson = inspector.getInspectorByKey('BarBackgroundColorString');
@@ -532,7 +531,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorString": "#0000FF",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -540,7 +539,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -555,11 +554,11 @@ export default function tabsSec() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_static_0500
-     * @tc.name      ArkUI_Tabs_BarBackgroundColor_static_0500
-     * @tc.desc      ArkUI_Tabs_BarBackgroundColor_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0500
+       * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0500
+       * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarBackgroundColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
       let strJson = inspector.getInspectorByKey('BarBackgroundColorResource');
@@ -568,7 +567,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorResource": $r("sys.color.ohos_toggle_bg"),
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -576,7 +575,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -595,20 +594,20 @@ export default function tabsSec() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_static_0600
-     * @tc.name      ArkUI_Tabs_BarBackgroundColor_static_0600
-     * @tc.desc      ArkUI_Tabs_BarBackgroundColor_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0600
+       * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0600
+       * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarBackgroundColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
       let strJson = inspector.getInspectorByKey('BarBackgroundColorColor');
       console.info("ArkUI_Tabs_BarBackgroundColor: " + JSON.stringify(strJson))
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "barBackgroundColorColor": null,
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -616,7 +615,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -631,20 +630,20 @@ export default function tabsSec() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_static_0700
-     * @tc.name      ArkUI_Tabs_BarBackgroundColor_static_0700
-     * @tc.desc      ArkUI_Tabs_BarBackgroundColor_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0700
+       * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0700
+       * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarBackgroundColor_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
       let strJson = inspector.getInspectorByKey('BarBackgroundColorColor');
       console.info("ArkUI_Tabs_BarBackgroundColor: " + JSON.stringify(strJson))
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "barBackgroundColorColor": undefined,
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -652,7 +651,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

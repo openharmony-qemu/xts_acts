@@ -29,7 +29,11 @@ import {
   Button,
   ClickEvent,
   Scroller,
-  ListItemGroup
+  ListItemGroup,
+  ListItem,
+  TextAlign,
+  ListItemGroupStyle,
+  ListItemStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -54,17 +58,17 @@ struct focusedCardListItem {
   build() {
     Column() {
       List({ space: '4vp', initialIndex: 0, scroller: this.scroller }) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        ListItemGroup({ header: () => {this.itemHead('header')}, style: ListItemGroupStyle.CARD }) {
+          ListItem({ style: ListItemStyle.CARD }) {
+            Text('ListItemGroupStyle.CARD与ListItemStyle.CARD')
+              .id('listItem_focused_card')
+              .width('100%')
+              .height(60)
+              .focusable(true)
+              .textAlign(TextAlign.Center)
+              .backgroundColor(Color.Pink)
+          }
+        }
 
       }
       .width('90%')

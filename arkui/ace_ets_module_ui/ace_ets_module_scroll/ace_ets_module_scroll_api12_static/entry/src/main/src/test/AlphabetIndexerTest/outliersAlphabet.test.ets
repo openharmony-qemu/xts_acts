@@ -27,7 +27,6 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -36,28 +35,31 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest } from '../Util.test'
 import { UtilsTest } from '../Util.test';
+import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+function alphabetDefaultPopupSize(sysWidth: Resource) {
+  const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+  let resourcePopupSize = context?.resourceManager.getDouble(sysWidth.id)
+  const uiContext = AppStorage.get<UIContext>('uiContext')!;
+  let newPopupSize: string = Math.round(uiContext.px2vp(resourcePopupSize ?? 0)) + '.00vp'
+  return newPopupSize;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function spliceBgColor(sysColor: Resource, sysColor1: Resource) {
+  const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
+  let resourceColor = context?.resourceManager.getColorSync(sysColor.id)
+  let resourceColor1 = context?.resourceManager.getDouble(sysColor1.id)
+  let numColor1 = Math.round(resourceColor1! * 255)
+  console.info("resourceColor is: " + JSON.stringify(resourceColor?.toString(16) ?? ''));
+  console.info("numColor1 is: " + JSON.stringify(numColor1 ?? ''));
+  let newArgb: string = '#' + numColor1?.toString(16).toUpperCase() + resourceColor?.toString(16).toUpperCase().slice(2)
+  return newArgb;
+}
 
 export default function outliersAlphabet() {
   describe('outliersAlphabet', () => {
@@ -95,21 +97,21 @@ export default function outliersAlphabet() {
 
 
     /*
-     * @tc.number    outliersAlphabet_static_0100
-     * @tc.name      outliersAlphabet_static_0100
-     * @tc.desc      outliersAlphabet_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   outliersAlphabet_static_0100
+       * @tc.name     outliersAlphabet_static_0100
+       * @tc.desc     outliersAlphabet_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('outliersAlphabet_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[outliersAlphabet_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_outliers');
       console.info("[outliersAlphabet_static_0100] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[outliersAlphabet_static_0100] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[outliersAlphabet_static_0100] selectedFont: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('selectedFont')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('selectedFont')));
       console.info("[outliersAlphabet_static_0100] fontSize: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('selectedFont')
@@ -122,47 +124,43 @@ export default function outliersAlphabet() {
 
 
     /*
-     * @tc.number    outliersAlphabet_static_0200
-     * @tc.name      outliersAlphabet_static_0200
-     * @tc.desc      outliersAlphabet_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   outliersAlphabet_static_0200
+       * @tc.name     outliersAlphabet_static_0200
+       * @tc.desc     outliersAlphabet_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('outliersAlphabet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('[outliersAlphabet_static_0200] START');
-        await CommonFunc.sleep(3000);
-        let driver: Driver = Driver.create();
-        let btn = await driver.findComponent(ON.text('A'));
-        await (btn?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+      console.info('[outliersAlphabet_static_0200] START');
+      await CommonFunc.sleep(3000);
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.text('A'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
-        let strJson = inspector.getInspectorByKey('alphabetIndexer_outliers');
-        console.info("[outliersAlphabet_static_0200] component obj is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson)));
-        console.info("[outliersAlphabet_static_0200] component obj is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-        console.info("[outliersAlphabet_static_0200] popupFont: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('popupFont')));
-        console.info("[outliersAlphabet_static_0200] fontSize: " + JSON.stringify(JSON.parseJsonElement(strJson)
-          .getElement('$attrs')
-          .getElement('popupFont')
-          .getString('fontSize')));
-
-        console.info('[outliersAlphabet_static_0200] END');
-        done();
-      } catch (ERROR) {
-        expect().assertFail();
-      }
-
+      let strJson = inspector.getInspectorByKey('alphabetIndexer_outliers');
+      console.info("[outliersAlphabet_static_0200] component obj is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[outliersAlphabet_static_0200] component obj is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[outliersAlphabet_static_0200] popupFont: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('popupFont')));
+      console.info("[outliersAlphabet_static_0200] fontSize: " + JSON.stringify(JSON.parseJsonElement(strJson)
+        .getElement('$attrs')
+        .getElement('popupFont')
+        .getString('fontSize')));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('popupFont').getString('fontSize'))
+        .assertEqual(alphabetDefaultPopupSize($r('sys.float.ohos_id_text_size_headline7')));
+      console.info('[outliersAlphabet_static_0200] END');
+      done();
     });
 
 
     /*
-     * @tc.number    outliersAlphabet_static_0300
-     * @tc.name      outliersAlphabet_static_0300
-     * @tc.desc      outliersAlphabet_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   outliersAlphabet_static_0300
+       * @tc.name     outliersAlphabet_static_0300
+       * @tc.desc     outliersAlphabet_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('outliersAlphabet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[outliersAlphabet_static_0300] START');
       await CommonFunc.sleep(5000);
@@ -173,11 +171,11 @@ export default function outliersAlphabet() {
 
       let strJson = inspector.getInspectorByKey('alphabetIndexer_outliers');
       console.info("[outliersAlphabet_static_0300] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[outliersAlphabet_static_0300] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[outliersAlphabet_static_0300] popupPosition: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('popupPosition')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('popupPosition')));
       console.info("[outliersAlphabet_static_0300] popupPositionX: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('popupPosition')
@@ -185,28 +183,28 @@ export default function outliersAlphabet() {
       expect(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('popupPosition')
-        .getString('popupPositionX')).assertEqual("0.00px");
+        .getString('popupPositionX')).assertEqual("0.00vp");
       console.info('[outliersAlphabet_static_0300] END');
       done();
     });
 
 
     /*
-     * @tc.number    outliersAlphabet_static_0400
-     * @tc.name      outliersAlphabet_static_0400
-     * @tc.desc      outliersAlphabet_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   outliersAlphabet_static_0400
+       * @tc.name     outliersAlphabet_static_0400
+       * @tc.desc     outliersAlphabet_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('outliersAlphabet_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[outliersAlphabet_static_0400] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_outliers');
       console.info("[outliersAlphabet_static_0400] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[outliersAlphabet_static_0400] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[outliersAlphabet_static_0400] selected: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected')).assertEqual('0');
       console.info('[outliersAlphabet_static_0400] END');
       done();
@@ -214,11 +212,11 @@ export default function outliersAlphabet() {
 
 
     /*
-     * @tc.number    outliersAlphabet_static_0500
-     * @tc.name      outliersAlphabet_static_0500
-     * @tc.desc      outliersAlphabet_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   outliersAlphabet_static_0500
+       * @tc.name     outliersAlphabet_static_0500
+       * @tc.desc     outliersAlphabet_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('outliersAlphabet_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[outliersAlphabet_static_0500] START');
       await CommonFunc.sleep(3000);
@@ -229,16 +227,17 @@ export default function outliersAlphabet() {
 
       let strJson = inspector.getInspectorByKey('alphabetIndexer_outliers');
       console.info("[outliersAlphabet_static_0500] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[outliersAlphabet_static_0500] component obj is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[outliersAlphabet_static_0500] selectedColor: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selectedColor')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selectedColor')));
       console.info("[outliersAlphabet_static_0500] selectedBackgroundColor: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selectedBackgroundColor')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selectedBackgroundColor')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selectedColor')).assertEqual("#FFFFFFFF");
-
-
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selectedBackgroundColor'))
+        .assertEqual(spliceBgColor($r('sys.color.ohos_id_color_text_highlight_bg'),
+          $r('sys.float.ohos_id_alpha_normal_bg')));
       console.info('[outliersAlphabet_static_0500] END');
       done();
     });

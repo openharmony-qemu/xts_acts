@@ -61,10 +61,10 @@ export default function tabsApi1() {
         console.info("get tabsApi1 state pages:" + JSON.stringify(pages));
         if (!("tabsApi1" == pages.name)) {
           console.info("get tabsApi1 pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push tabsApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push tabsApi1 page error:" + err);
@@ -76,12 +76,13 @@ export default function tabsApi1() {
       console.info("tabsApi1 after each called");
     });
 
+
     /*
-     * @tc.number    tabsApi1_static_0100
-     * @tc.name      tabsApi1_static_0100
-     * @tc.desc      tabsApi1_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   tabsApi1_static_0100
+       * @tc.name     tabsApi1_static_0100
+       * @tc.desc     tabsApi1_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('tabsApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsApi1_static_0100] START');
       await CommonFunc.sleep(2000);

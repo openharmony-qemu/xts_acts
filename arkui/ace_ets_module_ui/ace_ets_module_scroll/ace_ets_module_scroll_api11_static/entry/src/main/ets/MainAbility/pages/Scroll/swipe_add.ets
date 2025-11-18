@@ -90,7 +90,7 @@ struct SwiperAddExample {
       }
       .cachedCount(2)
       .index(1)
-      
+      .autoPlay(false, undefined)
       .interval(4000)
       .indicator(true)
       .loop(false)
@@ -105,24 +105,23 @@ struct SwiperAddExample {
         arrowColor: Color.Blue
       } as ArrowStyle, false)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
         this.stringValue = 'swiper'
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("targetIndex: " + targetIndex)
         console.info("current offset: " + extraInfo.currentOffset)
         console.info("target offset: " + extraInfo.targetOffset)
         console.info("velocity: " + extraInfo.velocity)
         console.info("mode: " + SwiperDisplayMode.STRETCH)
-        
       })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })

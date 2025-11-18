@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -66,7 +66,7 @@ export default function gridRowXlJsunit() {
           console.info("get gridRow state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await Utils.sleep(2000);
-          
+          // console.info("push gridRow page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gridRow page error: " + err);
@@ -80,11 +80,11 @@ export default function gridRowXlJsunit() {
 
 
     /*
-     * @tc.number    testgridRowXl_static_0001
-     * @tc.name      testgridRowXl_static_0001
-     * @tc.desc      testgridRowXl_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   testgridRowXl_static_0001
+       * @tc.name     testgridRowXl_static_0001
+       * @tc.desc     testgridRowXl_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('testgridRowXl_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('gridRowXl testgridRowXl_static_0001 START');
       await Utils.sleep(2000);

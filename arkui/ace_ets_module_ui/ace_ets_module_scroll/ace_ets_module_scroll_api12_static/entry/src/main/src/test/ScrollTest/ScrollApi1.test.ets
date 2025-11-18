@@ -46,8 +46,6 @@ const waitUiReadyMs = 1000;
 export default function ScrollApi1() {
   describe('ScrollApi1', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -62,7 +60,7 @@ export default function ScrollApi1() {
         router.clear();
         let pages = router.getState();
         console.info("get ScrollApi1 state pages:" + JSON.stringify(pages));
-        if (!("ScrollApi1" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/ScrollApi1" == pages.name)) {
           console.info("get ScrollApi1 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -73,14 +71,15 @@ export default function ScrollApi1() {
       console.info("ScrollApi1 beforeEach end");
     });
 
-
-    /*
-     * @tc.number    ScrollApi1_0100
-     * @tc.name      ScrollApi1_0100
-     * @tc.desc      ScrollApi1_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   ScrollApi1_0100
+     * @tc.name     ScrollApi1_0100
+     * @tc.desc     ScrollApi1_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollApi1_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollApi1_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollApi1_0100 START');
       await CommonFunc.sleep(1000);
 

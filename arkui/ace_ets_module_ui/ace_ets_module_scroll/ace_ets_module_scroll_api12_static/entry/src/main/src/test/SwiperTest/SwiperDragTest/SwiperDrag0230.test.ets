@@ -57,7 +57,7 @@ export default function SwiperDrag0230() {
         console.info("get SwiperDrag0230 state pages:" + JSON.stringify(pages));
         if (!("SwiperDrag0230" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperDrag/SwiperDrag0230'
           })
           await CommonFunc.sleep(2000);
@@ -72,15 +72,15 @@ export default function SwiperDrag0230() {
       await CommonFunc.sleep(1000);
       console.info("SwiperDrag0230 after each called");
     });
-
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0230 START");
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -93,7 +93,7 @@ export default function SwiperDrag0230() {
       let jsonSwiperIndicator = JSON.parseJsonElement(strSwiper).getElement('$attrs').getString('indicator');
       expect(jsonSwiper).assertEqual('Curves.ExtremeDeceleration')
       expect(jsonSwiperIndicator).assertEqual('true')
-      let strIndex: string = inspector.getInspectorByKey('UIComponent_ScrollSwiperDrag_static_0230')
+      let strIndex: string = inspector.getInspectorByKey('UIComponent_ScrollSwiperDrag_0230')
       let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
       expect(jsonIndex).assertEqual('1')
       await CommonFunc.sleep(1000);

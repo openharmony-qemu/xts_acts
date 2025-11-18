@@ -45,7 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function offsetAlignStart() {
   describe('offsetAlignStart', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -65,7 +64,7 @@ export default function offsetAlignStart() {
           console.info("get offsetAlignStart pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push offsetAlignStart page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push offsetAlignStart page error:" + err);
@@ -80,11 +79,11 @@ export default function offsetAlignStart() {
 
 
     /*
-     * @tc.number    offsetAlignStart_static_0100
-     * @tc.name      offsetAlignStart_static_0100
-     * @tc.desc      offsetAlignStart_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   offsetAlignStart_static_0100
+       * @tc.name     offsetAlignStart_static_0100
+       * @tc.desc     offsetAlignStart_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('offsetAlignStart_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[offsetAlignStart_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -97,7 +96,8 @@ export default function offsetAlignStart() {
       console.info('[offsetAlignStart_static_0100] list.top: ' + list.top);
       console.info('[offsetAlignStart_static_0100] listItem.top: ' + listItem.top);
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(listItem.top - list.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      expect(Math.abs(Math.round(listItem.top - list.top) - Math.round(uiContext!.vp2px(10))) <= 1).assertTrue();
       console.info('[offsetAlignStart_static_0100] END');
       done();
     });

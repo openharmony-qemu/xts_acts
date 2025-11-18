@@ -27,7 +27,9 @@ import {
   TextAlign,
   Builder,
   List,
-  ForEach
+  ForEach,
+  ListItem,
+  TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -62,23 +64,23 @@ struct constraintSizeListItemGroup1 {
     Column() {
       List() {
         ForEach(this.conTable1, (item: CONTable1) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup({ header: () => {this.itemHead(item.title)} }) {
+            ForEach(item.projects, (project: string) => {
+              ListItem() {
+                Text(project)
+                  .width('100%')
+                  .height(100)
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(0xFFFFFF)
+              }
+            }, (item: string) => item)
+          }
+          .id('group_constraintSize_1')
+          .width(200)
+          .height(200)
+          .constraintSize({minWidth:100, maxWidth:300})
+          .divider({ strokeWidth: 1, color: Color.Blue })
         })
       }
       .width('100%')

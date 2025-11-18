@@ -43,7 +43,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperDrag0250() {
   describe('SwiperDrag0250', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,12 +51,11 @@ export default function SwiperDrag0250() {
       console.info("SwiperDrag0250 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperDrag0250 state pages:" + JSON.stringify(pages));
         if (!("SwiperDrag0250" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperDrag/SwiperDrag0250'
           })
           await CommonFunc.sleep(2000);
@@ -73,14 +71,15 @@ export default function SwiperDrag0250() {
       console.info("SwiperDrag0250 after each called");
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0250 START");
       await CommonFunc.sleep(3000)
       let driver = Driver.create()

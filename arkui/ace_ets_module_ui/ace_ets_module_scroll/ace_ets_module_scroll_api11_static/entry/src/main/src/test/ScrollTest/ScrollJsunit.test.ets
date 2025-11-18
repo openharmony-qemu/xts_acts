@@ -58,11 +58,11 @@ export default function ScrollJsunit() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get Scroll state success " + JSON.stringify(pages));
-        if (!("Scroll" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/ScrollA" == pages.name)) {
           console.info("get Scroll state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
-          
+          // console.info("push Scroll page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Scroll page error " + JSON.stringify(err));
@@ -75,12 +75,13 @@ export default function ScrollJsunit() {
       console.info("Scroll after each called");
     });
 
+
     /*
-     * @tc.number    testScrollGetInspectorByKey010_static_01
-     * @tc.name      testScrollGetInspectorByKey010_static_01
-     * @tc.desc      testScrollGetInspectorByKey010_static_01
-     * @tc.level     2
-     */
+       * @tc.number   testScrollGetInspectorByKey010_static_01
+       * @tc.name     testScrollGetInspectorByKey010_static_01
+       * @tc.desc     testScrollGetInspectorByKey010_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollGetInspectorByKey010_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetInspectorByKey START');
       let strJson = inspector.getInspectorByKey('scroll');
@@ -101,11 +102,11 @@ export default function ScrollJsunit() {
 
 
     /*
-     * @tc.number    testScrollGetInspectorByKey020_static_02
-     * @tc.name      testScrollGetInspectorByKey020_static_02
-     * @tc.desc      testScrollGetInspectorByKey020_static_02
-     * @tc.level     2
-     */
+       * @tc.number   testScrollGetInspectorByKey020_static_02
+       * @tc.name     testScrollGetInspectorByKey020_static_02
+       * @tc.desc     testScrollGetInspectorByKey020_static_02
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollGetInspectorByKey020_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('scroll1');
       let obj = JSON.parseJsonElement(strJson);
@@ -120,11 +121,11 @@ export default function ScrollJsunit() {
 
 
     /*
-     * @tc.number    testScrollGetInspectorByKey030
-     * @tc.name      testScrollGetInspectorByKey030
-     * @tc.desc      testScrollGetInspectorByKey030
-     * @tc.level     2
-     */
+       * @tc.number   testScrollGetInspectorByKey030
+       * @tc.name     testScrollGetInspectorByKey030
+       * @tc.desc     testScrollGetInspectorByKey030
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollGetInspectorByKey030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('scroll2');
       let obj = JSON.parseJsonElement(strJson);
@@ -139,11 +140,11 @@ export default function ScrollJsunit() {
 
 
     /*
-     * @tc.number    testScrollGetInspectorByKey040
-     * @tc.name      testScrollGetInspectorByKey040
-     * @tc.desc      testScrollGetInspectorByKey040
-     * @tc.level     2
-     */
+       * @tc.number   testScrollGetInspectorByKey040
+       * @tc.name     testScrollGetInspectorByKey040
+       * @tc.desc     testScrollGetInspectorByKey040
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollGetInspectorByKey040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('scroll3');
       let obj = JSON.parseJsonElement(strJson);

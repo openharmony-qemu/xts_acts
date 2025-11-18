@@ -45,11 +45,10 @@ let testAbilityContext: common.UIAbilityContext;
 export default function PopupAlphaTest() {
   describe('PopupAlphaTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
+
     beforeEach(async (): Promise<void> => {
       console.info("PopupAlphaTest beforeEach start");
       let options: router.RouterOptions = {
@@ -57,14 +56,12 @@ export default function PopupAlphaTest() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get PopupAlphaTest state pages: " + JSON.stringify(pages));
-        if (!("PopupAlpha" == pages.name)) {
+        if (!("MainAbility/pages/AlphabetIndexer/PopupAlpha" == pages.name)) {
           console.info("get PopupAlphaTest state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PopupAlphaTest success: ");
         }
       } catch (err) {
         console.error("push PopupAlphaTest page error: " + err);
@@ -72,12 +69,18 @@ export default function PopupAlphaTest() {
       }
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
+
     /*
-     * @tc.number    PopupAlphaTest_static_0100
-     * @tc.name      PopupAlphaTest_static_0100
-     * @tc.desc      PopupAlphaTest_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   PopupAlphaTest_static_0100
+       * @tc.name     PopupAlphaTest_static_0100
+       * @tc.desc     PopupAlphaTest_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('PopupAlphaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PopupAlphaTest_static_0100 START');
       await CommonFunc.sleep(1000);
@@ -89,12 +92,13 @@ export default function PopupAlphaTest() {
       done();
     });
 
+
     /*
-     * @tc.number    PopupAlphaTest_static_0200
-     * @tc.name      PopupAlphaTest_static_0200
-     * @tc.desc      PopupAlphaTest_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   PopupAlphaTest_static_0200
+       * @tc.name     PopupAlphaTest_static_0200
+       * @tc.desc     PopupAlphaTest_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('PopupAlphaTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PopupAlphaTest_static_0200 START');
       await CommonFunc.sleep(1000);
@@ -106,12 +110,13 @@ export default function PopupAlphaTest() {
       done();
     });
 
+
     /*
-     * @tc.number    PopupAlphaTest_static_0300
-     * @tc.name      PopupAlphaTest_static_0300
-     * @tc.desc      PopupAlphaTest_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   PopupAlphaTest_static_0300
+       * @tc.name     PopupAlphaTest_static_0300
+       * @tc.desc     PopupAlphaTest_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('PopupAlphaTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PopupAlphaTest_static_0300 START');
       await CommonFunc.sleep(1000);
@@ -123,12 +128,13 @@ export default function PopupAlphaTest() {
       done();
     });
 
+
     /*
-     * @tc.number    PopupAlphaTest_static_0400
-     * @tc.name      PopupAlphaTest_static_0400
-     * @tc.desc      PopupAlphaTest_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   PopupAlphaTest_static_0400
+       * @tc.name     PopupAlphaTest_static_0400
+       * @tc.desc     PopupAlphaTest_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('PopupAlphaTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PopupAlphaTest_static_0400 START');
       await CommonFunc.sleep(1000);

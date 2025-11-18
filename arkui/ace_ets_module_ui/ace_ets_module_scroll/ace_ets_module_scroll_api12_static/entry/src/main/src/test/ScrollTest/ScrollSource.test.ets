@@ -46,19 +46,43 @@ const waitUiReadyMs = 1000;
 export default function ScrollSource() {
   describe('ScrollSource', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
-    /*
-     * @tc.number    ScrollSource_0100
-     * @tc.name      ScrollSource_0100
-     * @tc.desc      ScrollSource_0100
-     * @tc.level     2
+    beforeEach(async (): Promise<void> => {
+      console.info("ScrollSource beforeEach start");
+      let options: router.RouterOptions = {
+        url: "MainAbility/pages/Scroll/ScrollSource",
+      }
+      try {
+        const router = AppStorage.get<Router>("router") as Router
+        let pages = router.getState();
+        console.info("get ScrollSource state pages: " + JSON.stringify(pages));
+        if (!("MainAbility/pages/Scroll/ScrollSource" == pages.name)) {
+          console.info("get ScrollSource state pages.name: " + JSON.stringify(pages.name));
+          router.pushUrl(options);
+        }
+      } catch (err) {
+        console.error("push ScrollSource page error: " + err);
+        expect().assertFail();
+      }
+    });
+
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
+    
+      
+  /*
+     * @tc.number   ScrollSource_0100
+     * @tc.name     ScrollSource_0100
+     * @tc.desc     ScrollSource_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollSource_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSource_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSource_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -70,19 +94,20 @@ export default function ScrollSource() {
       console.info("[ScrollSource_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[ScrollSource_0100] content obj is: " + obj.getElement('$attrs').getString('label'));
       expect(obj.getElement('$attrs').getString('label'))
-        .assertEqual('ScrollSource.SCROLLER_ANIMATION'); 
+        .assertEqual('ScrollSource.SCROLLER_ANIMATION'); //SCROLLER_ANIMATION
       console.info('[ScrollSource_0100] END');
       done();
     });
 
-
-    /*
-     * @tc.number    ScrollSource_0200
-     * @tc.name      ScrollSource_0200
-     * @tc.desc      ScrollSource_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   ScrollSource_0200
+     * @tc.name     ScrollSource_0200
+     * @tc.desc     ScrollSource_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollSource_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSource_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSource_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -93,7 +118,7 @@ export default function ScrollSource() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollSource_0200] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[ScrollSource_0200] content obj is: " + obj.getElement('$attrs').getString('label'));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('ScrollSource.SCROLLER'); 
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('ScrollSource.SCROLLER'); //SCROLLER
       console.info('[ScrollSource_0200] END');
       done();
     });

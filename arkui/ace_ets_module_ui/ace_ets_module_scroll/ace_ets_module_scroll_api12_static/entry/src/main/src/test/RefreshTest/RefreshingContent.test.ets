@@ -45,7 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function RefreshingContent() {
   describe('RefreshingContent', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -57,14 +56,13 @@ export default function RefreshingContent() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get RefreshingContent state pages: " + JSON.stringify(pages));
-        if (!("RefreshingContent" == pages.name)) {
+        if (!("MainAbility/pages/Refresh/RefreshingContent" == pages.name)) {
           console.info("get RefreshingContent state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push RefreshingContent success: ");
+          console.info("push RefreshingContent success");
         }
       } catch (err) {
         console.error("push RefreshingContent page error: " + err);
@@ -72,19 +70,25 @@ export default function RefreshingContent() {
       }
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info(" RefreshingContent after each called");
     });
 
-
-    /*
-     * @tc.number    RefreshingContent_static_0100
-     * @tc.name      RefreshingContent_static_0100
-     * @tc.desc      RefreshingContent_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   RefreshingContent_static_0100
+     * @tc.name     RefreshingContent_static_0100
+     * @tc.desc     RefreshingContent_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('RefreshingContent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RefreshingContent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RefreshingContent_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

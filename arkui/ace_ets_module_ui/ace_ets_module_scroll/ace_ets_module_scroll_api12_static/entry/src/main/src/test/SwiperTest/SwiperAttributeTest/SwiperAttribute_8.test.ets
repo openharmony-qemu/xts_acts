@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAttribute_8() {
   describe('SwiperAttribute_8', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -58,11 +56,10 @@ export default function SwiperAttribute_8() {
         console.info("get SwiperAttribute_8 state pages:" + JSON.stringify(pages));
         if (!("SwiperAttribute_8" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperAttribute_8"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperAttribute_8 page result:");
+          await UtilsTest.msSleep(2000)
         }
       } catch (err) {
         console.error("push SwiperAttribute_8 page error:" + err);
@@ -74,14 +71,15 @@ export default function SwiperAttribute_8() {
       console.info("SwiperAttribute_8 after each called");
     });
 
-
-    /*
-     * @tc.number    SwiperAttribute_static_0030
-     * @tc.name      SwiperAttribute_static_0030
-     * @tc.desc      SwiperAttribute_static_0030
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperAttribute_static_0030
+     * @tc.name     SwiperAttribute_static_0030
+     * @tc.desc     SwiperAttribute_static_0030
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperAttribute_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperAttribute_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperAttribute_static_0030] START');
 
       let rect = CommonFunc.getComponentRectOnScreen('swiperAttribute_8')
@@ -105,11 +103,11 @@ export default function SwiperAttribute_8() {
       console.info("SwiperAttribute_static_0030 first column text rect is " + ftLeft + " --" + ftRight + "--" + ftTop +
         "--" +
         ftBottom);
-      const uiContext = new UIContext();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftTop - fTop))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftRight - fRight))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftLeft - fLeft))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftBottom - fBottom))) - 20 <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      expect(uiContext.px2vp(Math.abs(Math.round(ftTop - fTop))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(ftRight - fRight))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(ftLeft - fLeft))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(ftBottom - fBottom))) - 20 <= 1).assertTrue();
 
       let driver = Driver.create()
       for (let i = 2; i <= 6; i++) {
@@ -121,8 +119,12 @@ export default function SwiperAttribute_8() {
           1000);
         await CommonFunc.sleep(1000);
         let columnRect = CommonFunc.getComponentRectOnScreen('swiperAttribute_80' + i);
-        console.info("SwiperAttribute_static_0030 column rect is " + columnRect.left + " --" + columnRect.right + "--" +
+        console.info("xyb: SwiperAttribute_static_0030 column rect is " + columnRect.left + " --" + columnRect.right + "--" +
         columnRect.top + "--" + columnRect.bottom);
+
+        console.info("xyb: SwiperAttribute_static_0030 column rect is " + rect.left + " --" + rect.right + "--" +
+        rect.top + "--" + rect.bottom);
+
         expect(Math.abs(Math.round(columnRect.top - rect.top)) <= 1).assertTrue();
         expect(Math.abs(Math.round(columnRect.left - rect.left)) <= 1).assertTrue();
       }

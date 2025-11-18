@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -40,7 +40,7 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct GridMaxCount {
-  @State numberData: String[] = ['5', '6', '7', '8', '9']
+  @State Number1: String[] = ['5', '6', '7', '8', '9']
   @State edgeEffect: EdgeEffect = EdgeEffect.None;
   @State alwaysEnabled: boolean = true
 
@@ -54,10 +54,10 @@ struct GridMaxCount {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("grid page state change called:" + JSON.stringify(eventData));
-    if (eventData != null) {
-      
-      
-      
+    if (eventData != null && eventData.data !== null) {
+      if ((eventData.data as Record<String,undefined|null|Object>)['alwaysEnabled'] != null) {
+        this.alwaysEnabled = (eventData.data as Record<String,undefined|null|Object>)['alwaysEnabled'] as boolean;
+      }
     }
   }
 
@@ -90,8 +90,8 @@ struct GridMaxCount {
 
       Column({ space: 5 } as ColumnOptions) {
         Grid() {
-          ForEach(this.numberData, (day: string) => {
-            ForEach(this.numberData, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
+            ForEach(this.Number1, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)
@@ -111,7 +111,7 @@ struct GridMaxCount {
         .backgroundColor(0xFAEEE0)
         .height(300)
         .maxCount(5)
-        .edgeEffect(this.edgeEffect, { alwaysEnabled: this.alwaysEnabled })
+        .edgeEffect(this.edgeEffect, { alwaysEnabled: true })
         .key("maxCountTest")
 
       }

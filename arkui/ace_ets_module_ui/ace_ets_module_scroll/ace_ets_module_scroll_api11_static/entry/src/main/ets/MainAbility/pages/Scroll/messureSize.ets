@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { Entry, Component, Column, SizeOptions, Row, Text } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -20,17 +19,17 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct messureSize {
   @State message: string = 'Hello World'
+  textSize: SizeOptions = this.getUIContext().getMeasureUtils().measureTextSize({
+    textContent: "Hello word",
+    fontSize: '50px',
+    constraintWidth: '0vp'
+  })
 
-  
-  
-  
-  
-  
   build() {
     Row() {
       Column() {
-        
-        
+        Text("" + this.textSize.width).key('width11')
+        Text("" + this.textSize.height).key('height11')
       }
       .width('100%')
     }

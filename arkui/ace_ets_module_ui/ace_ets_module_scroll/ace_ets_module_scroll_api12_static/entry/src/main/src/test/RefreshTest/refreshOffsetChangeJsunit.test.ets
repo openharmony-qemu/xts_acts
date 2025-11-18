@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function refreshOffsetChangeJsunit() {
   describe('refreshOffsetChangeJsunit', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -57,14 +55,11 @@ export default function refreshOffsetChangeJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get refreshOffsetChangeJsunit state pages: " + JSON.stringify(pages));
-        if (!("refreshOffsetChange" == pages.name)) {
+        if (!("MainAbility/pages/Refresh/refreshOffsetChange" == pages.name)) {
           console.info("get refreshOffsetChangeJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push refreshOffsetChangeJsunit success: ");
         }
       } catch (err) {
         console.error("push refreshOffsetChangeJsunit page error: " + err);
@@ -77,14 +72,19 @@ export default function refreshOffsetChangeJsunit() {
       console.info(" refreshOffsetChangeJsunit after each called");
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0100
-     * @tc.name      refreshOffsetChangeJsunit_static_0100
-     * @tc.desc      refreshOffsetChangeJsunit_static_0100
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0100
+     * @tc.name     refreshOffsetChangeJsunit_static_0100
+     * @tc.desc     refreshOffsetChangeJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Refresh_Offset2');
@@ -97,14 +97,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0200
-     * @tc.name      refreshOffsetChangeJsunit_static_0200
-     * @tc.desc      refreshOffsetChangeJsunit_static_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0200
+     * @tc.name     refreshOffsetChangeJsunit_static_0200
+     * @tc.desc     refreshOffsetChangeJsunit_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0200 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset2');
       let top = swiperOffset.top;
@@ -128,14 +129,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0300
-     * @tc.name      refreshOffsetChangeJsunit_static_0300
-     * @tc.desc      refreshOffsetChangeJsunit_static_0300
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0300
+     * @tc.name     refreshOffsetChangeJsunit_static_0300
+     * @tc.desc     refreshOffsetChangeJsunit_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0300 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset3');
       let top = swiperOffset.top;
@@ -159,14 +161,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0400
-     * @tc.name      refreshOffsetChangeJsunit_static_0400
-     * @tc.desc      refreshOffsetChangeJsunit_static_0400
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0400
+     * @tc.name     refreshOffsetChangeJsunit_static_0400
+     * @tc.desc     refreshOffsetChangeJsunit_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0400 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
       let top = swiperOffset.top;
@@ -200,14 +203,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0500
-     * @tc.name      refreshOffsetChangeJsunit_static_0500
-     * @tc.desc      refreshOffsetChangeJsunit_static_0500
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0500
+     * @tc.name     refreshOffsetChangeJsunit_static_0500
+     * @tc.desc     refreshOffsetChangeJsunit_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0500 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset2');
       let top = swiperOffset.top;
@@ -231,14 +235,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0600
-     * @tc.name      refreshOffsetChangeJsunit_static_0600
-     * @tc.desc      refreshOffsetChangeJsunit_static_0600
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0600
+     * @tc.name     refreshOffsetChangeJsunit_static_0600
+     * @tc.desc     refreshOffsetChangeJsunit_static_0600
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0600 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
       let top = swiperOffset.top;
@@ -263,14 +268,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0700
-     * @tc.name      refreshOffsetChangeJsunit_static_0700
-     * @tc.desc      refreshOffsetChangeJsunit_static_0700
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0700
+     * @tc.name     refreshOffsetChangeJsunit_static_0700
+     * @tc.desc     refreshOffsetChangeJsunit_static_0700
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0700 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
       let top = swiperOffset.top;
@@ -301,14 +307,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0800
-     * @tc.name      refreshOffsetChangeJsunit_static_0800
-     * @tc.desc      refreshOffsetChangeJsunit_static_0800
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0800
+     * @tc.name     refreshOffsetChangeJsunit_static_0800
+     * @tc.desc     refreshOffsetChangeJsunit_static_0800
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0800 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
       let top = swiperOffset.top;
@@ -339,14 +346,15 @@ export default function refreshOffsetChangeJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetChangeJsunit_static_0900
-     * @tc.name      refreshOffsetChangeJsunit_static_0900
-     * @tc.desc      refreshOffsetChangeJsunit_static_0900
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetChangeJsunit_static_0900
+     * @tc.name     refreshOffsetChangeJsunit_static_0900
+     * @tc.desc     refreshOffsetChangeJsunit_static_0900
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetChangeJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetChangeJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0900 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

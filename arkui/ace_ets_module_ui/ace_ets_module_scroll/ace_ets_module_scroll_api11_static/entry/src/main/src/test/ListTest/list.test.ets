@@ -64,34 +64,36 @@ export default function listSContentTest() {
             url: "MainAbility/pages/List/listTest"
           })
           await CommonFunc.sleep(2000);
-          
+          // console.info("push listSContent  page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push listSContent page error:" + err);
       }
       console.info("listSContent beforeEach end");
     });
-
+    
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("listSContent after each called");
     });
 
+    
 
-    /*
-     * @tc.number    listSContentTest_static_0100
-     * @tc.name      listSContentTest_static_0100
-     * @tc.desc      listSContentTest_static_0100
-     * @tc.level     2
+      
+  /*
+     * @tc.number   listSContentTest_static_0100
+     * @tc.name     listSContentTest_static_0100
+     * @tc.desc     listSContentTest_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('listSContentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('listSContentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listSContentTest_static_0100] START');
       await CommonFunc.sleep(2000);
       let json = inspector.getInspectorByKey('listTestCon');
       let Obj1 = JSON.parseJsonElement(json);
       console.info("listTestCon json info " + json);
-      expect(Obj1.getElement('$attrs').getElement('contentStartOffset')).assertEqual('10.000000');
-      expect(Obj1.getElement('$attrs').getElement('contentEndOffset')).assertEqual('10.000000');
+      expect(Obj1.getElement('$attrs').getString('contentStartOffset')).assertEqual('10.000000');
+      expect(Obj1.getElement('$attrs').getString('contentEndOffset')).assertEqual('10.000000');
       console.info('[listSContentTest_static_0100] END');
       done();
     });

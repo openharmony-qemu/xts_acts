@@ -40,20 +40,21 @@ struct gridPage3 {
   @State columnsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State rowsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
+    if (eventData != null && eventData.data !== null) {
       console.info("on state change called " + JSON.stringify(eventData))
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['columnsGap'] != null) {
+        this.columnsGap = data['columnsGap'] as string
+      }
+      if (data['rowsGap'] != null) {
+        this.rowsGap = data['rowsGap'] as string
+      }
+      if (data['columnsTemplate'] != null) {
+        this.columnsTemplate = data['columnsTemplate'] as string
+      }
+      if (data['rowsTemplate'] != null) {
+        this.rowsTemplate = data['rowsTemplate'] as string
+      }
     }
   }
 
@@ -82,7 +83,7 @@ struct gridPage3 {
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
-            } 
+            }
           }, (item: string) => item)
           GridItem() {
             Text('5')

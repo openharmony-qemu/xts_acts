@@ -33,25 +33,27 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-
-
-
-
-
+function tabsDefaultFontSize(sysWidth: Resource) {
+  const context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
+  let resourceFontSize = context?.resourceManager.getDouble(sysWidth.id)
+  const uiContext = new UIContext();
+  let newFontSize: string = Math.round(uiContext.px2vp(resourceFontSize ?? 0)) + '.00vp'
+  return newFontSize;
+}
 
 export default function tabsThird() {
   describe('ActsAceTabsTestThird', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -67,14 +69,15 @@ export default function tabsThird() {
         console.info("get IndexThird state success " + JSON.stringify(pages));
         if (!("IndexThird" == pages.name)) {
           console.info("get IndexThird state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
-          
+          await Utils.sleep(2000);
+          // console.info("push IndexThird page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push IndexThird page error " + JSON.stringify(err));
       }
-      await Utils.sleep(2000);
+
       console.info("tabs beforeEach start");
     })
 
@@ -118,7 +121,8 @@ export default function tabsThird() {
             "bottomTabBarStyleVerticalAlign": VerticalAlign.Center,
             "bottomTabBarStyleLayoutMode": LayoutMode.VERTICAL,
             "bottomTabBarStyleSymmetricExtensible": false,
-          } as Record<String, RecordData>
+
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -126,7 +130,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -134,15 +138,16 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0100
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0100
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0100
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0100
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0100] start");
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabsDefaultTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0100]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0100]: " + strJson)
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BarGridAlign_static_0100]: " +
@@ -168,21 +173,22 @@ export default function tabsThird() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0200
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0200
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0200
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0200
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0200] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0200]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0200]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10px'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -190,7 +196,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -206,21 +212,22 @@ export default function tabsThird() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0300
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0300
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0300
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0300
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0300] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0300]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0300]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10vp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -228,7 +235,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -244,21 +251,22 @@ export default function tabsThird() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0400
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0400
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0400
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0400
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0400] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0400]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0400]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginNumber": 10
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -266,7 +274,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -284,20 +292,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0500
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0500
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0500
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0500
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0500] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0500]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0500]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginNumber": -2
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -305,7 +313,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -323,20 +331,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0600
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0600
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0600
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0600
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0600] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0600]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0600]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginNumber": Math.pow(2, 16)
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -344,7 +352,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -362,20 +370,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0700
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0700
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0700
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0700
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0700] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0700]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0700]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10fp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -383,7 +391,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -401,20 +409,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0800
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0800
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0800
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0800
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0800] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0800]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0800]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10lpx'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -422,7 +430,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -440,15 +448,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_static_0900
-     * @tc.name      ArkUI_Tabs_BarGridAlign_static_0900
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_static_0900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_static_0900
+       * @tc.name     ArkUI_Tabs_BarGridAlign_static_0900
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_static_0900] start");
       let strJson = inspector.getInspectorByKey('tabsResourceTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_static_0900]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_static_0900]: " + strJson)
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BarGridAlign_static_0900]: " +
@@ -460,20 +468,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1000
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1000
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1000
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1000
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1000] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1000]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1000]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "barGridAlignMarginNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -481,7 +489,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -499,20 +507,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1100
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1100
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1100
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1100
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1100] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1100]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1100]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "barGridAlignMarginNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -520,7 +528,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -538,20 +546,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1200
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1200
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1200
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1200
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1200] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1200]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1200]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10px'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -559,7 +567,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -577,20 +585,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1300
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1300
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1300
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1300
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1300] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1300]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1300]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10vp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -598,7 +606,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -616,20 +624,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1400
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1400
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1400
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1400
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1400] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1400]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1400]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterNumber": 10
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -637,7 +645,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -655,20 +663,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1500
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1500
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1500
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1500
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1500] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1500]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1500]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterNumber": -2
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -676,7 +684,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -694,20 +702,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1600
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1600
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1600
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1600
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1600] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1600]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1600]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterNumber": Math.pow(2, 16)
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -715,7 +723,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -733,20 +741,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1700
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1700
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1700
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1700
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1700] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1700]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1700]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10fp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -754,7 +762,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -772,20 +780,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1800
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1800
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1800
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1800
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1800] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1800]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1800]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10lpx'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -793,7 +801,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -811,15 +819,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_1900
-     * @tc.name      ArkUI_Tabs_BarGridAlign_1900
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_1900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_1900
+       * @tc.name     ArkUI_Tabs_BarGridAlign_1900
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_1900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_1900] start");
       let strJson = inspector.getInspectorByKey('tabsResourceTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_1900]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_1900]: " + strJson)
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BarGridAlign_1900]: " +
@@ -833,20 +841,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2000
-     * @tc.name      ArkUI_Tabs_BarGridAlign_2000
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_2000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_2000
+       * @tc.name     ArkUI_Tabs_BarGridAlign_2000
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_2000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2000] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2000]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2000]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "barGridAlignGutterNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -854,7 +862,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -872,20 +880,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarGridAlign_2100
-     * @tc.name      ArkUI_Tabs_BarGridAlign_2100
-     * @tc.desc      ArkUI_Tabs_BarGridAlign_2100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarGridAlign_2100
+       * @tc.name     ArkUI_Tabs_BarGridAlign_2100
+       * @tc.desc     ArkUI_Tabs_BarGridAlign_2100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarGridAlign_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2100] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2100]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2100]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "barGridAlignGutterNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -893,7 +901,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -911,22 +919,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2200]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2200]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2200]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2200]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2200]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2200]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2200]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2200] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2200]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2200]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -934,7 +942,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -958,22 +966,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2300]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2300]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2300]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2300]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2300]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2300]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2300]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2300] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2300]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2300]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 3,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -981,7 +989,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1005,22 +1013,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2400]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2400]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2400]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2400]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2400]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2400]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2400]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2400] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2400]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2400]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": -2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1028,7 +1036,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1052,22 +1060,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2500]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2500]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2500]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2500]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2500]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2500]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2500]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2500] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2500]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2500]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 100000,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1075,7 +1083,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1099,22 +1107,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2600]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2600]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2600]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2600]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2600]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2600]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2600]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2600] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2600]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2600]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
+            "barGridAlignSmNumber": 'undefined',
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1122,7 +1130,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1146,22 +1154,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2700]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2700]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2700]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2700]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2700]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2700]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2700]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2700] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2700]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2700]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
+            "barGridAlignSmNumber": 'null',
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1169,7 +1177,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1193,22 +1201,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2800]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2800]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2800]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2800]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2800]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2800]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2800]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2800] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2800]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2800]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 3,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1216,7 +1224,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1240,22 +1248,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_2900]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_2900]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_2900]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_2900]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_2900]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_2900]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_2900]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2900] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_2900]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_2900]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": -2,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1263,7 +1271,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_2900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1287,22 +1295,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3000]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3000]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3000]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3000]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3000]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3000]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3000]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3000] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3000]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3000]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 100000,
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1310,7 +1318,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1334,22 +1342,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3100]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3100]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3100]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3100]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3100]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3100]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3100]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3100] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3100]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3100]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
-            
+            "barGridAlignMdNumber": 'undefined',
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1357,7 +1365,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1381,22 +1389,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3200]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3200]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3200]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3200]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3200]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3200]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3200]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3200] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3200]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3200]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
-            
+            "barGridAlignMdNumber": 'null',
             "barGridAlignLgNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1404,7 +1412,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1428,22 +1436,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3300]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3300]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3300]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3300]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3300]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3300]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3300]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3300] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3300]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3300]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 5
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1451,7 +1459,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1475,22 +1483,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3400]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3400]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3400]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3400]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3400]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3400]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3400]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3400] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3400]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3400]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": -2
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1498,7 +1506,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1522,22 +1530,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3500]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3500]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3500]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3500]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3500]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3500]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3500]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3500] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3500]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3500]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1545,7 +1553,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1569,22 +1577,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3600]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3600]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3600]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3600]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3600]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3600]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3600]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3600] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3600]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3600]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
-            
-          } as Record<String, RecordData>
+            "barGridAlignLgNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1592,7 +1600,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1616,22 +1624,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarGridAlign_3700]
-     * @tc.name      [ArkUI_Tabs_BarGridAlign_3700]
-     * @tc.desc      [ArkUI_Tabs_BarGridAlign_3700]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarGridAlign_3700]
+       * @tc.name     [ArkUI_Tabs_BarGridAlign_3700]
+       * @tc.desc     [ArkUI_Tabs_BarGridAlign_3700]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarGridAlign_3700]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_3700] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarGridAlign_3700]: " + JSON.stringify(strJson))
+      console.info("[ArkUI_Tabs_BarGridAlign_3700]: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
-            
-          } as Record<String, RecordData>
+            "barGridAlignLgNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1639,7 +1647,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarGridAlign_3700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1663,20 +1671,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarHeight_0100
-     * @tc.name      ArkUI_Tabs_BarHeight_0100
-     * @tc.desc      ArkUI_Tabs_BarHeight_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarHeight_0100
+       * @tc.name     ArkUI_Tabs_BarHeight_0100
+       * @tc.desc     ArkUI_Tabs_BarHeight_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarHeight_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarHeight_0100] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("ArkUI_Tabs_BarHeight: " + JSON.stringify(strJson))
+      console.info("ArkUI_Tabs_BarHeight: " + strJson)
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barHeightString": "auto"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1684,7 +1692,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarHeight_0100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarHeight_0100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1699,15 +1707,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BarMode_static_0100]
-     * @tc.name      [ArkUI_Tabs_BarMode_static_0100]
-     * @tc.desc      [ArkUI_Tabs_BarMode_static_0100]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BarMode_static_0100]
+       * @tc.name     [ArkUI_Tabs_BarMode_static_0100]
+       * @tc.desc     [ArkUI_Tabs_BarMode_static_0100]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BarMode_static_0100]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0100] start");
       let strJson = inspector.getInspectorByKey('tabsDefaultTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0100]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BarMode_static_0100]: " +
@@ -1719,20 +1727,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0200
-     * @tc.name      ArkUI_Tabs_BarMode_static_0200
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0200
+       * @tc.name     ArkUI_Tabs_BarMode_static_0200
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0200] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Fixed
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1740,7 +1748,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1756,20 +1764,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0300
-     * @tc.name      ArkUI_Tabs_BarMode_static_0300
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0300
+       * @tc.name     ArkUI_Tabs_BarMode_static_0300
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0300] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1777,7 +1785,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1794,21 +1802,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0400
-     * @tc.name      ArkUI_Tabs_BarMode_static_0400
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0400
+       * @tc.name     ArkUI_Tabs_BarMode_static_0400
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0400] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10px'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1816,7 +1824,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1833,21 +1841,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0500
-     * @tc.name      ArkUI_Tabs_BarMode_static_0500
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0500
+       * @tc.name     ArkUI_Tabs_BarMode_static_0500
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0500] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10vp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1855,7 +1863,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1872,21 +1880,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0600
-     * @tc.name      ArkUI_Tabs_BarMode_static_0600
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0600
+       * @tc.name     ArkUI_Tabs_BarMode_static_0600
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0600] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginNumber": 10
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1894,7 +1902,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1911,21 +1919,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0700
-     * @tc.name      ArkUI_Tabs_BarMode_static_0700
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0700
+       * @tc.name     ArkUI_Tabs_BarMode_static_0700
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0700] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1933,7 +1941,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1950,21 +1958,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0800
-     * @tc.name      ArkUI_Tabs_BarMode_static_0800
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0800
+       * @tc.name     ArkUI_Tabs_BarMode_static_0800
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0800] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1972,7 +1980,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1989,21 +1997,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_static_0900
-     * @tc.name      ArkUI_Tabs_BarMode_static_0900
-     * @tc.desc      ArkUI_Tabs_BarMode_static_0900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_static_0900
+       * @tc.name     ArkUI_Tabs_BarMode_static_0900
+       * @tc.desc     ArkUI_Tabs_BarMode_static_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_static_0900] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarMode_static_0900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_static_0900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10fp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2011,7 +2019,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_static_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2028,21 +2036,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1000
-     * @tc.name      ArkUI_Tabs_BarMode_1000
-     * @tc.desc      ArkUI_Tabs_BarMode_1000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1000
+       * @tc.name     ArkUI_Tabs_BarMode_1000
+       * @tc.desc     ArkUI_Tabs_BarMode_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1000] start");
       let strJson = inspector.getInspectorByKey('tabsStringTest');
-      console.info("[ArkUI_Tabs_BarMode_1000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10lpx'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2050,7 +2058,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2066,20 +2074,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1100
-     * @tc.name      ArkUI_Tabs_BarMode_1100
-     * @tc.desc      ArkUI_Tabs_BarMode_1100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1100
+       * @tc.name     ArkUI_Tabs_BarMode_1100
+       * @tc.desc     ArkUI_Tabs_BarMode_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1100] start");
       let strJson = inspector.getInspectorByKey('tabsResourceTest');
-      console.info("[ArkUI_Tabs_BarMode_1100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2087,7 +2095,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2103,21 +2111,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1200
-     * @tc.name      ArkUI_Tabs_BarMode_1200
-     * @tc.desc      ArkUI_Tabs_BarMode_1200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1200
+       * @tc.name     ArkUI_Tabs_BarMode_1200
+       * @tc.desc     ArkUI_Tabs_BarMode_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1200] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
-            
-          } as Record<String, RecordData>
+            "barModeMarginNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2125,7 +2133,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2141,21 +2149,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1300
-     * @tc.name      ArkUI_Tabs_BarMode_1300
-     * @tc.desc      ArkUI_Tabs_BarMode_1300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1300
+       * @tc.name     ArkUI_Tabs_BarMode_1300
+       * @tc.desc     ArkUI_Tabs_BarMode_1300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1300] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
-            
-          } as Record<String, RecordData>
+            "barModeMarginNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2163,7 +2171,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2179,21 +2187,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1400
-     * @tc.name      ArkUI_Tabs_BarMode_1400
-     * @tc.desc      ArkUI_Tabs_BarMode_1400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1400
+       * @tc.name     ArkUI_Tabs_BarMode_1400
+       * @tc.desc     ArkUI_Tabs_BarMode_1400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1400] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeNonScrollableLayoutStyle": LayoutStyle.ALWAYS_CENTER
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2201,7 +2209,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2217,21 +2225,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1500
-     * @tc.name      ArkUI_Tabs_BarMode_1500
-     * @tc.desc      ArkUI_Tabs_BarMode_1500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1500
+       * @tc.name     ArkUI_Tabs_BarMode_1500
+       * @tc.desc     ArkUI_Tabs_BarMode_1500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1500] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeNonScrollableLayoutStyle": LayoutStyle.ALWAYS_AVERAGE_SPLIT
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2239,7 +2247,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2255,21 +2263,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1600
-     * @tc.name      ArkUI_Tabs_BarMode_1600
-     * @tc.desc      ArkUI_Tabs_BarMode_1600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1600
+       * @tc.name     ArkUI_Tabs_BarMode_1600
+       * @tc.desc     ArkUI_Tabs_BarMode_1600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1600] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeNonScrollableLayoutStyle": LayoutStyle.SPACE_BETWEEN_OR_CENTER
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2277,7 +2285,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2293,21 +2301,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1700
-     * @tc.name      ArkUI_Tabs_BarMode_1700
-     * @tc.desc      ArkUI_Tabs_BarMode_1700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1700
+       * @tc.name     ArkUI_Tabs_BarMode_1700
+       * @tc.desc     ArkUI_Tabs_BarMode_1700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1700] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
-            
-          } as Record<String, RecordData>
+            "barModeNonScrollableLayoutStyle": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2315,7 +2323,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2331,21 +2339,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1800
-     * @tc.name      ArkUI_Tabs_BarMode_1800
-     * @tc.desc      ArkUI_Tabs_BarMode_1800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1800
+       * @tc.name     ArkUI_Tabs_BarMode_1800
+       * @tc.desc     ArkUI_Tabs_BarMode_1800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1800] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable,
-            
-          } as Record<String, RecordData>
+            "barModeNonScrollableLayoutStyle": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2353,7 +2361,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2369,22 +2377,22 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BarMode_1900
-     * @tc.name      ArkUI_Tabs_BarMode_1900
-     * @tc.desc      ArkUI_Tabs_BarMode_1900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BarMode_1900
+       * @tc.name     ArkUI_Tabs_BarMode_1900
+       * @tc.desc     ArkUI_Tabs_BarMode_1900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BarMode_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarMode_1900] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
-      console.info("[ArkUI_Tabs_BarMode_1900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BarMode_1900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Fixed,
             "barModeMarginString": '10px',
             "barModeNonScrollableLayoutStyle": LayoutStyle.ALWAYS_CENTER
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2392,7 +2400,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BarMode_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BarMode_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2407,15 +2415,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_SubTabBarStylePadding_0100]
-     * @tc.name      [ArkUI_Tabs_SubTabBarStylePadding_0100]
-     * @tc.desc      [ArkUI_Tabs_SubTabBarStylePadding_0100]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_SubTabBarStylePadding_0100]
+       * @tc.name     [ArkUI_Tabs_SubTabBarStylePadding_0100]
+       * @tc.desc     [ArkUI_Tabs_SubTabBarStylePadding_0100]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_SubTabBarStylePadding_0100]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0100] start");
       let strJson = inspector.getInspectorByKey('subTabBarDefaultTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0100]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0100]: " +
@@ -2441,20 +2449,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0200
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0200
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0200
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0200
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0200] start");
       let strJson = inspector.getInspectorByKey('subTabBarNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingNumber": 10
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2462,7 +2470,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2480,20 +2488,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0300
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0300
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0300
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0300
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0300] start");
       let strJson = inspector.getInspectorByKey('subTabBarStringTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingString": '10.00px',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2501,7 +2509,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2519,15 +2527,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0400
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0400
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0400
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0400
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0400] start");
       let strJson = inspector.getInspectorByKey('subTabBarResourceTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0400]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0400]: " +
@@ -2541,20 +2549,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0500
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0500
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0500
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0500
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0500] start");
       let strJson = inspector.getInspectorByKey('subTabBarNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2562,7 +2570,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2592,20 +2600,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0600
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0600
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0600
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0600
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0600] start");
       let strJson = inspector.getInspectorByKey('subTabBarNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2613,7 +2621,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2631,20 +2639,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0700
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0700
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0700
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0700
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0700] start");
       let strJson = inspector.getInspectorByKey('subTabBarNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "subTabBarStylePaddingNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2652,7 +2660,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2682,20 +2690,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0800
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0800
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0800
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0800
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0800] start");
       let strJson = inspector.getInspectorByKey('subTabBarNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "subTabBarStylePaddingNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2703,7 +2711,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2733,15 +2741,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_0900
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_0900
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_0900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0900
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0900
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_0900] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_0900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -2749,7 +2757,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2757,7 +2765,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2775,15 +2783,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1000
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1000
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1000
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1000
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1000] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingStringTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -2791,7 +2799,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightString": '10.00px',
             "subTabBarStylePaddingBottomString": '10.00px',
             "subTabBarStylePaddingLeftString": '10.00px'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2799,7 +2807,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2817,15 +2825,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1100
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1100
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1100
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1100
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1100] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingResourceTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1100]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1100]: " +
@@ -2839,15 +2847,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1200
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1200
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1200
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1200
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1200] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -2855,7 +2863,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2863,7 +2871,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2885,15 +2893,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1300
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1300
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1300
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1300
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1300] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -2901,7 +2909,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2909,7 +2917,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2928,23 +2936,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1400
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1400
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1400
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1400
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1400] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
+            "subTabBarStylePaddingTopNumber": 'undefined',
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2952,7 +2960,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2974,23 +2982,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1500
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1500
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1500
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1500
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1500] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
+            "subTabBarStylePaddingTopNumber": 'null',
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2998,7 +3006,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3020,15 +3028,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1600
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1600
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1600
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1600
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1600] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3036,7 +3044,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": -1,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3044,7 +3052,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3066,15 +3074,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1700
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1700
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1700
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1700
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1700] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3082,7 +3090,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 100000,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3090,7 +3098,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3109,23 +3117,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1800
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1800
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1800
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1800
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1800] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingTopNumber": 6,
-            
+            "subTabBarStylePaddingRightNumber": 'undefined',
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3133,7 +3141,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3155,23 +3163,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_1900
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_1900
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_1900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1900
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1900
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_1900] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_1900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingTopNumber": 6,
-            
+            "subTabBarStylePaddingRightNumber": 'null',
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3179,7 +3187,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3201,15 +3209,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2000
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2000
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2000
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2000
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2000] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3217,7 +3225,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": -1,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3225,7 +3233,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3248,15 +3256,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2100
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2100
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2100
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2100
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2100] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3264,7 +3272,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 100000,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3272,7 +3280,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3291,23 +3299,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2200
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2200
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2200
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2200
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2200] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingTopNumber": 6,
             "subTabBarStylePaddingRightNumber": 6,
-            
+            "subTabBarStylePaddingBottomNumber": 'undefined',
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3315,7 +3323,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3338,23 +3346,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2300
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2300
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2300
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2300
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2300] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingTopNumber": 6,
             "subTabBarStylePaddingRightNumber": 6,
-            
+            "subTabBarStylePaddingBottomNumber": 'null',
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3362,7 +3370,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3385,15 +3393,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2400
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2400
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2400
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2400
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2400] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3401,7 +3409,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3409,7 +3417,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3431,15 +3439,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2500
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2500
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2500
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2500
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2500] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3447,7 +3455,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3455,7 +3463,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3474,23 +3482,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2600
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2600
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2600
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2600
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2600] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingTopNumber": 6,
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
-            
-          } as Record<String, RecordData>
+            "subTabBarStylePaddingLeftNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3498,7 +3506,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3520,23 +3528,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBarStylePadding_2700
-     * @tc.name      ArkUI_Tabs_SubTabBarStylePadding_2700
-     * @tc.desc      ArkUI_Tabs_SubTabBarStylePadding_2700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2700
+       * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2700
+       * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBarStylePadding_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_SubTabBarStylePadding_2700] start");
       let strJson = inspector.getInspectorByKey('subTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_SubTabBarStylePadding_2700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingTopNumber": 6,
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
-            
-          } as Record<String, RecordData>
+            "subTabBarStylePaddingLeftNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3544,7 +3552,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3566,15 +3574,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BottomTabBarStylePadding_0100]
-     * @tc.name      [ArkUI_Tabs_BottomTabBarStylePadding_0100]
-     * @tc.desc      [ArkUI_Tabs_BottomTabBarStylePadding_0100]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BottomTabBarStylePadding_0100]
+       * @tc.name     [ArkUI_Tabs_BottomTabBarStylePadding_0100]
+       * @tc.desc     [ArkUI_Tabs_BottomTabBarStylePadding_0100]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BottomTabBarStylePadding_0100]', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarDefaultTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0100]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       let newJsonJudge = inspector.getInspectorByKey('bottomTabBarDefaultTestJudge');
@@ -3591,20 +3599,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingNumber": 10,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3612,7 +3620,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3630,20 +3638,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingString": '10.00px',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3651,7 +3659,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3669,15 +3677,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarResourceTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0400]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0400]: " +
@@ -3691,20 +3699,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingNumber": -1,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3712,7 +3720,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3731,20 +3739,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingNumber": 100000,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3752,7 +3760,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3770,20 +3778,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStylePaddingNumber": 'undefined',
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3791,7 +3799,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3810,20 +3818,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStylePaddingNumber": 'null',
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3831,7 +3839,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3850,15 +3858,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_0900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_0900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_0900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3866,7 +3874,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3874,7 +3882,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3892,15 +3900,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1000
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1000
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1000
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1000
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1000] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3908,7 +3916,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightString": '10.00px',
             "bottomTabBarStylePaddingBottomString": '10.00px',
             "bottomTabBarStylePaddingLeftString": '10.00px'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3916,7 +3924,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3934,15 +3942,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingResourceTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1100]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1100]: " +
@@ -3956,15 +3964,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -3972,7 +3980,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3980,7 +3988,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3999,15 +4007,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -4015,7 +4023,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4023,7 +4031,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4042,23 +4050,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
+            "bottomTabBarStylePaddingTopNumber": 'undefined',
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4066,7 +4074,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4085,23 +4093,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
+            "bottomTabBarStylePaddingTopNumber": 'null',
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4109,7 +4117,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4128,15 +4136,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -4144,7 +4152,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": -1,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4152,7 +4160,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4171,15 +4179,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -4187,7 +4195,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 100000,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4195,7 +4203,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4214,23 +4222,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingTopNumber": 6,
-            
+            "bottomTabBarStylePaddingRightNumber": 'undefined',
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4238,7 +4246,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4257,23 +4265,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_1900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_1900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_1900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingTopNumber": 6,
-            
+            "bottomTabBarStylePaddingRightNumber": 'null',
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4281,7 +4289,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4300,15 +4308,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2000
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2000
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2000
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2000
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2000] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -4316,7 +4324,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": -1,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4324,7 +4332,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4343,15 +4351,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -4359,7 +4367,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 100000,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4367,7 +4375,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4386,23 +4394,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingTopNumber": 6,
             "bottomTabBarStylePaddingRightNumber": 6,
-            
+            "bottomTabBarStylePaddingBottomNumber": 'undefined',
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4410,7 +4418,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4429,23 +4437,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingTopNumber": 6,
             "bottomTabBarStylePaddingRightNumber": 6,
-            
+            "bottomTabBarStylePaddingBottomNumber": 'null',
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4453,7 +4461,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4472,15 +4480,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -4488,7 +4496,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4496,7 +4504,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4515,15 +4523,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -4531,7 +4539,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4539,7 +4547,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4558,23 +4566,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingTopNumber": 6,
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStylePaddingLeftNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4582,7 +4590,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4601,23 +4609,23 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStylePadding_2700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStylePadding_2700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStylePadding_2700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStylePadding_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStylePaddingNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingTopNumber": 6,
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStylePaddingLeftNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4625,7 +4633,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4644,16 +4652,16 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
-     * @tc.name      [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
-     * @tc.desc      [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
+       * @tc.name     [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
+       * @tc.desc     [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarDefaultTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]: " + strJson);
 
         let obj = JSON.parseJsonElement(strJson);
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]: " +
@@ -4668,21 +4676,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleVerticalAlignTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleVerticalAlign": VerticalAlign.Top
-            } as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4690,7 +4698,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200] change component data error: " +
           err.message);
         }
@@ -4710,21 +4718,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleVerticalAlignTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleVerticalAlign": VerticalAlign.Center
-            } as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4732,7 +4740,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300] change component data error: " +
           err.message);
         }
@@ -4752,21 +4760,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleVerticalAlignTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleVerticalAlign": VerticalAlign.Bottom
-            } as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4774,7 +4782,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400] change component data error: " +
           err.message);
         }
@@ -4794,21 +4802,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleVerticalAlignTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
             data: {
-              
-            } as Record<String, RecordData>
+              "bottomTabBarStyleVerticalAlign": 'undefined'
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4816,7 +4824,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500] change component data error: " +
           err.message);
         }
@@ -4836,21 +4844,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleVerticalAlignTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
-            
-            
-            
+            data: {
+              "bottomTabBarStyleVerticalAlign": 'null'
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4858,7 +4866,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600] change component data error: " +
           err.message);
         }
@@ -4878,16 +4886,16 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
-     * @tc.name      [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
-     * @tc.desc      [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
+       * @tc.name     [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
+       * @tc.desc     [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarDefaultTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]: " + strJson);
 
         let obj = JSON.parseJsonElement(strJson);
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]: " +
@@ -4902,20 +4910,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLayoutModeTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLayoutMode": LayoutMode.HORIZONTAL
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4923,7 +4931,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4942,20 +4950,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLayoutModeTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLayoutMode": LayoutMode.VERTICAL
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4963,7 +4971,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4981,20 +4989,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLayoutModeTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLayoutMode": LayoutMode.AUTO
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5002,7 +5010,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5020,20 +5028,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLayoutModeTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLayoutMode": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5041,7 +5049,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5059,20 +5067,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLayoutModeTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLayoutMode": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5080,7 +5088,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5098,16 +5106,16 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
-     * @tc.name      [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
-     * @tc.desc      [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
-     * @tc.level     2
-     */
+       * @tc.number   [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
+       * @tc.name     [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
+       * @tc.desc     [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
+       * @tc.level    Level.LEVEL0
+       */
     it('[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarDefaultTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]: " + strJson);
 
         let obj = JSON.parseJsonElement(strJson);
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]: " +
@@ -5121,21 +5129,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleSymmetricExtensibleTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleSymmetricExtensible": true
-            } as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -5143,7 +5151,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200] change component data error: " +
           err.message);
         }
@@ -5162,21 +5170,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleSymmetricExtensibleTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleSymmetricExtensible": false
-            } as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -5184,7 +5192,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300] change component data error: " +
           err.message);
         }
@@ -5203,21 +5211,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleSymmetricExtensibleTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
             data: {
-              
-            } as Record<String, RecordData>
+              "bottomTabBarStyleSymmetricExtensible": 'undefined'
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -5225,7 +5233,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400] change component data error: " +
           err.message);
         }
@@ -5244,21 +5252,21 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500] start");
         let strJson = inspector.getInspectorByKey('bottomTabBarStyleSymmetricExtensibleTest');
-        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500]: " + JSON.stringify(strJson));
+        console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500]: " + strJson);
         try {
           let eventData: events_emitter.EventData = {
-            
-            
-            
+            data: {
+              "bottomTabBarStyleSymmetricExtensible": 'null'
+            } as Record<String, undefined | null | Object>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -5266,7 +5274,7 @@ export default function tabsThird() {
           }
           console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500] change component data error: " +
           err.message);
         }
@@ -5285,15 +5293,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarDefaultTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100]: " +
@@ -5354,9 +5362,17 @@ export default function tabsThird() {
         .getString('size');
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100 sizeInfo]: " + sizeInfo);
       if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.VERTICAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.bottom_tab_text_size_normal')));
       } else if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.HORIZONTAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.Caption_L_VP')));
       }
       expect(obj.getElement('$attrs')
         .getElement('tabBar')
@@ -5380,20 +5396,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.None
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5401,7 +5417,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5422,20 +5438,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.Clip
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5443,7 +5459,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5464,20 +5480,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.Ellipsis
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5485,7 +5501,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5506,20 +5522,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.MARQUEE
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5527,7 +5543,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5548,20 +5564,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleOverflow": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5569,7 +5585,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5590,20 +5606,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleOverflow": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5611,7 +5627,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5632,20 +5648,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxLines": 2
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5653,7 +5669,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5674,20 +5690,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxLines": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5695,7 +5711,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5716,20 +5732,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxLines": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5737,7 +5753,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5758,20 +5774,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleMaxLines": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5779,7 +5795,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5800,20 +5816,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleMaxLines": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5821,7 +5837,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5842,20 +5858,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeNumber": 3
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5863,7 +5879,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5884,20 +5900,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeString": '3.00fp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5905,7 +5921,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5926,15 +5942,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleResourceTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500]: " +
@@ -5951,20 +5967,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5972,7 +5988,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5993,20 +6009,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6014,7 +6030,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6035,20 +6051,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleMinFontSizeNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6056,7 +6072,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6077,20 +6093,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleMinFontSizeNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6098,7 +6114,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6119,20 +6135,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeNumber": 3
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6140,7 +6156,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6161,20 +6177,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeString": '3.00fp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6182,7 +6198,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6203,15 +6219,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleResourceTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200]: " +
@@ -6228,20 +6244,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6249,7 +6265,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6270,20 +6286,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6291,7 +6307,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6312,20 +6328,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleMaxFontSizeNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6333,7 +6349,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6354,20 +6370,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleMaxFontSizeNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6375,7 +6391,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6396,20 +6412,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": TextHeightAdaptivePolicy.MAX_LINES_FIRST
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6417,7 +6433,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6440,20 +6456,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6461,7 +6477,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6484,20 +6500,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6505,7 +6521,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6528,20 +6544,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6549,7 +6565,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6572,20 +6588,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6593,7 +6609,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6616,20 +6632,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeNumber": 15.0
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6637,7 +6653,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6666,20 +6682,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeString": '17.0fp'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6687,7 +6703,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6716,15 +6732,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleResourceTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400]: " +
@@ -6749,20 +6765,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6770,7 +6786,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6797,9 +6813,17 @@ export default function tabsThird() {
         .getString('size');
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500 sizeInfo]: " + sizeInfo);
       if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.VERTICAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.bottom_tab_text_size_normal')));
       } else if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.HORIZONTAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.Caption_L_VP')));
       }
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500] end");
       done();
@@ -6807,20 +6831,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6828,7 +6852,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6857,20 +6881,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleFontSizeNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6878,7 +6902,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6905,9 +6929,17 @@ export default function tabsThird() {
         .getString('size');
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700 sizeInfo]: " + sizeInfo);
       if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.VERTICAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.bottom_tab_text_size_normal')));
       } else if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.HORIZONTAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.Caption_L_VP')));
       }
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700] end");
       done();
@@ -6915,20 +6947,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleFontSizeNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6936,7 +6968,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6963,9 +6995,17 @@ export default function tabsThird() {
         .getString('size');
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800 sizeInfo]: " + sizeInfo);
       if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.VERTICAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.bottom_tab_text_size_normal')));
       } else if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.HORIZONTAL') {
-        
+        expect(obj.getElement('$attrs')
+          .getElement('tabBar')
+          .getElement('labelStyle')
+          .getElement('font')
+          .getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.Caption_L_VP')));
       }
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800] end");
       done();
@@ -6973,20 +7013,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Lighter
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6994,7 +7034,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7023,20 +7063,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Normal
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7044,7 +7084,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7073,20 +7113,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Regular
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7094,7 +7134,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7123,20 +7163,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Medium
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7144,7 +7184,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7173,20 +7213,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Bold
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7194,7 +7234,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7223,20 +7263,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Bolder
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7244,7 +7284,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7273,20 +7313,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": 500
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7294,7 +7334,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7323,20 +7363,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightString": '200'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7344,7 +7384,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7373,20 +7413,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": 150
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7394,7 +7434,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7423,20 +7463,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7444,7 +7484,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7473,20 +7513,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": 100000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7494,7 +7534,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7523,20 +7563,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleFontWeightNumber": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7544,7 +7584,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7573,20 +7613,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleNumberTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleFontWeightNumber": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7594,7 +7634,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7623,20 +7663,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontFamilyString": 'HarmonyOS Sans'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7644,7 +7684,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7673,15 +7713,15 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleResourceTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300]: " + strJson);
 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300]: " +
@@ -7706,20 +7746,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleFontFamilyString": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7727,7 +7767,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7756,20 +7796,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleStringTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleFontFamilyString": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7777,7 +7817,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7806,20 +7846,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontStyle": FontStyle.Normal
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7827,7 +7867,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7856,20 +7896,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontStyle": FontStyle.Italic
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7877,7 +7917,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7906,20 +7946,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            
-          } as Record<String, RecordData>
+            "bottomTabBarStyleLabelStyleFontStyle": 'undefined'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7927,7 +7967,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7956,20 +7996,20 @@ export default function tabsThird() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
-     * @tc.name      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
-     * @tc.desc      ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
+       * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
+       * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900] start");
       let strJson = inspector.getInspectorByKey('bottomTabBarStyleLabelStyleTest');
-      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900]: " + JSON.stringify(strJson));
+      console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900]: " + strJson);
       try {
         let eventData: events_emitter.EventData = {
-          
-          
-          
+          data: {
+            "bottomTabBarStyleLabelStyleFontStyle": 'null'
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7977,7 +8017,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

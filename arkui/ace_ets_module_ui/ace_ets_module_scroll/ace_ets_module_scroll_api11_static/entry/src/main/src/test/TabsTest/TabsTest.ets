@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -51,11 +51,11 @@ export default function tabs() {
         console.info("get Index state success " + JSON.stringify(pages));
         if (!("Index3" == pages.name)) {
           console.info("get Index state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
-          
+          // console.info("push Index page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push Index page error " + JSON.stringify(err));
       }
 
@@ -102,7 +102,7 @@ export default function tabs() {
             "selfIndicatorBorderRadiusStr": "5vp",
             "selfSubTabBorderRadiusStr": "20vp",
             "selfMarginTopStr": "10vp",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -110,7 +110,7 @@ export default function tabs() {
         }
         console.info("start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -118,17 +118,17 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0100
-     * @tc.name      ArkUI_Tabs_Divider_static_0100
-     * @tc.desc      ArkUI_Tabs_Divider_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0100
+       * @tc.name     ArkUI_Tabs_Divider_static_0100
+       * @tc.desc     ArkUI_Tabs_Divider_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0100 start");
       let strJson = inspector.getInspectorByKey('tabsTest5');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_Divider_static_0100] divider:" + obj.getElement('$attrs').getElement('divider'));
-      if (!obj.getElement('$attrs').getElement('divider').getString('strokeWidth')) {
+      if (!obj.getElement('$attrs').getElement('divider').tryGetString('strokeWidth')) {
         expect(true).assertTrue();
       } else {
         expect(true).assertFalse();
@@ -138,11 +138,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0200
-     * @tc.name      ArkUI_Tabs_Divider_static_0200
-     * @tc.desc      ArkUI_Tabs_Divider_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0200
+       * @tc.name     ArkUI_Tabs_Divider_static_0200
+       * @tc.desc     ArkUI_Tabs_Divider_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0200 start");
       let strJson = inspector.getInspectorByKey('tabsTest');
@@ -160,11 +160,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0300
-     * @tc.name      ArkUI_Tabs_Divider_static_0300
-     * @tc.desc      ArkUI_Tabs_Divider_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0300
+       * @tc.name     ArkUI_Tabs_Divider_static_0300
+       * @tc.desc     ArkUI_Tabs_Divider_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0300 start");
       let strJson = inspector.getInspectorByKey('tabsTest2');
@@ -181,11 +181,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0400
-     * @tc.name      ArkUI_Tabs_Divider_static_0400
-     * @tc.desc      ArkUI_Tabs_Divider_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0400
+       * @tc.name     ArkUI_Tabs_Divider_static_0400
+       * @tc.desc     ArkUI_Tabs_Divider_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0400 start");
       await Utils.sleep(2000);
@@ -203,11 +203,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0500
-     * @tc.name      ArkUI_Tabs_Divider_static_0500
-     * @tc.desc      ArkUI_Tabs_Divider_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0500
+       * @tc.name     ArkUI_Tabs_Divider_static_0500
+       * @tc.desc     ArkUI_Tabs_Divider_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0500 start");
       await Utils.sleep(2000);
@@ -225,11 +225,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0600
-     * @tc.name      ArkUI_Tabs_Divider_static_0600
-     * @tc.desc      ArkUI_Tabs_Divider_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0600
+       * @tc.name     ArkUI_Tabs_Divider_static_0600
+       * @tc.desc     ArkUI_Tabs_Divider_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0600 start");
 
@@ -237,7 +237,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -245,7 +245,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -270,11 +270,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0700
-     * @tc.name      ArkUI_Tabs_Divider_static_0700
-     * @tc.desc      ArkUI_Tabs_Divider_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0700
+       * @tc.name     ArkUI_Tabs_Divider_static_0700
+       * @tc.desc     ArkUI_Tabs_Divider_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0700 start");
 
@@ -285,7 +285,7 @@ export default function tabs() {
             "dividerColorStr": 'xxxxxxxx',
             "startMarginStr": '5px',
             "endMarginStr": '5px',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -293,7 +293,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -318,11 +318,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0800
-     * @tc.name      ArkUI_Tabs_Divider_static_0800
-     * @tc.desc      ArkUI_Tabs_Divider_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0800
+       * @tc.name     ArkUI_Tabs_Divider_static_0800
+       * @tc.desc     ArkUI_Tabs_Divider_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0800 start");
 
@@ -333,7 +333,7 @@ export default function tabs() {
             "dividerColorStr": 'red',
             "startMarginStr": '5px',
             "endMarginStr": '5px',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -341,7 +341,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -356,11 +356,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_0900
-     * @tc.name      ArkUI_Tabs_Divider_static_0900
-     * @tc.desc      ArkUI_Tabs_Divider_static_0900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_0900
+       * @tc.name     ArkUI_Tabs_Divider_static_0900
+       * @tc.desc     ArkUI_Tabs_Divider_static_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0900 start");
 
@@ -371,7 +371,7 @@ export default function tabs() {
             "dividerColorStr": 'red',
             "startMarginStr": 'xxxxxxxx',
             "endMarginStr": '5px',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -379,7 +379,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -394,11 +394,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_1000
-     * @tc.name      ArkUI_Tabs_Divider_static_1000
-     * @tc.desc      ArkUI_Tabs_Divider_static_1000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_1000
+       * @tc.name     ArkUI_Tabs_Divider_static_1000
+       * @tc.desc     ArkUI_Tabs_Divider_static_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_1000 start");
 
@@ -409,7 +409,7 @@ export default function tabs() {
             "dividerColorStr": 'red',
             "startMarginStr": '5px',
             "endMarginStr": 'xxxxxxxx',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -417,7 +417,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -432,11 +432,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_1100
-     * @tc.name      ArkUI_Tabs_Divider_static_1100
-     * @tc.desc      ArkUI_Tabs_Divider_static_1100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_1100
+       * @tc.name     ArkUI_Tabs_Divider_static_1100
+       * @tc.desc     ArkUI_Tabs_Divider_static_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_1100 start");
 
@@ -448,7 +448,7 @@ export default function tabs() {
             "startMarginStr": '5px',
             "endMarginStr": '5px',
             "selfSelectedMode": SelectedMode.BOARD,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -456,7 +456,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_1100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -480,11 +480,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_Divider_static_1200
-     * @tc.name      ArkUI_Tabs_Divider_static_1200
-     * @tc.desc      ArkUI_Tabs_Divider_static_1200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_Divider_static_1200
+       * @tc.name     ArkUI_Tabs_Divider_static_1200
+       * @tc.desc     ArkUI_Tabs_Divider_static_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_1200 start");
 
@@ -494,7 +494,7 @@ export default function tabs() {
             "strokeWidthStr": '10vp',
             "startMarginStr": '10vp',
             "endMarginStr": '10vp',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -502,7 +502,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -521,7 +521,7 @@ export default function tabs() {
             "strokeWidthStr": '10px',
             "startMarginStr": '10px',
             "endMarginStr": '10px',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -529,7 +529,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -548,7 +548,7 @@ export default function tabs() {
             "strokeWidthStr": '10fp',
             "startMarginStr": '10fp',
             "endMarginStr": '10fp',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -556,7 +556,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -575,7 +575,7 @@ export default function tabs() {
             "strokeWidthStr": '10lpx',
             "startMarginStr": '10lpx',
             "endMarginStr": '10lpx',
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -583,7 +583,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -600,11 +600,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_LabelStyle_static_0100
-     * @tc.name      ArkUI_Tabs_LabelStyle_static_0100
-     * @tc.desc      ArkUI_Tabs_LabelStyle_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_LabelStyle_static_0100
+       * @tc.name     ArkUI_Tabs_LabelStyle_static_0100
+       * @tc.desc     ArkUI_Tabs_LabelStyle_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_LabelStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_LabelStyle_static_0100 start");
 
@@ -655,11 +655,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_LabelStyle_static_0200
-     * @tc.name      ArkUI_Tabs_LabelStyle_static_0200
-     * @tc.desc      ArkUI_Tabs_LabelStyle_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_LabelStyle_static_0200
+       * @tc.name     ArkUI_Tabs_LabelStyle_static_0200
+       * @tc.desc     ArkUI_Tabs_LabelStyle_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_LabelStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_LabelStyle_static_0200 start");
       let strJson = inspector.getInspectorByKey('indicatorTest1');
@@ -685,11 +685,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_LabelStyle_static_0300
-     * @tc.name      ArkUI_Tabs_LabelStyle_static_0300
-     * @tc.desc      ArkUI_Tabs_LabelStyle_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_LabelStyle_static_0300
+       * @tc.name     ArkUI_Tabs_LabelStyle_static_0300
+       * @tc.desc     ArkUI_Tabs_LabelStyle_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_LabelStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_LabelStyle_static_0300 start");
       await Utils.sleep(2000);
@@ -717,11 +717,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_LabelStyle_static_0400
-     * @tc.name      ArkUI_Tabs_LabelStyle_static_0400
-     * @tc.desc      ArkUI_Tabs_LabelStyle_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_LabelStyle_static_0400
+       * @tc.name     ArkUI_Tabs_LabelStyle_static_0400
+       * @tc.desc     ArkUI_Tabs_LabelStyle_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_LabelStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_LabelStyle_static_0400 start");
 
@@ -749,11 +749,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_LabelStyle_static_0500
-     * @tc.name      ArkUI_Tabs_LabelStyle_static_0500
-     * @tc.desc      ArkUI_Tabs_LabelStyle_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_LabelStyle_static_0500
+       * @tc.name     ArkUI_Tabs_LabelStyle_static_0500
+       * @tc.desc     ArkUI_Tabs_LabelStyle_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_LabelStyle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_LabelStyle_static_0500 start");
 
@@ -781,11 +781,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_LabelStyle_static_0600
-     * @tc.name      ArkUI_Tabs_LabelStyle_static_0600
-     * @tc.desc      ArkUI_Tabs_LabelStyle_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_LabelStyle_static_0600
+       * @tc.name     ArkUI_Tabs_LabelStyle_static_0600
+       * @tc.desc     ArkUI_Tabs_LabelStyle_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_LabelStyle_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_LabelStyle_static_0600 start");
 
@@ -835,11 +835,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_FadingEdge_static_0100
-     * @tc.name      ArkUI_Tabs_FadingEdge_static_0100
-     * @tc.desc      ArkUI_Tabs_FadingEdge_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_FadingEdge_static_0100
+       * @tc.name     ArkUI_Tabs_FadingEdge_static_0100
+       * @tc.desc     ArkUI_Tabs_FadingEdge_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_FadingEdge_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_FadingEdge_static_0100 start");
       let strJson = inspector.getInspectorByKey('tabsTest2');
@@ -852,11 +852,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_FadingEdge_static_0200
-     * @tc.name      ArkUI_Tabs_FadingEdge_static_0200
-     * @tc.desc      ArkUI_Tabs_FadingEdge_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_FadingEdge_static_0200
+       * @tc.name     ArkUI_Tabs_FadingEdge_static_0200
+       * @tc.desc     ArkUI_Tabs_FadingEdge_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_FadingEdge_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_FadingEdge_static_0200 start");
 
@@ -864,7 +864,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "overflowFlag": true
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -872,7 +872,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_FadingEdge_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_FadingEdge_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -886,11 +886,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_FadingEdge_static_0300
-     * @tc.name      ArkUI_Tabs_FadingEdge_static_0300
-     * @tc.desc      ArkUI_Tabs_FadingEdge_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_FadingEdge_static_0300
+       * @tc.name     ArkUI_Tabs_FadingEdge_static_0300
+       * @tc.desc     ArkUI_Tabs_FadingEdge_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_FadingEdge_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_FadingEdge_static_0300 start");
 
@@ -898,7 +898,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "overflowFlag": false
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -906,7 +906,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_FadingEdge_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_FadingEdge_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -920,11 +920,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0100
-     * @tc.name      ArkUI_Tabs_IndicatorColor_0100
-     * @tc.desc      ArkUI_Tabs_IndicatorColor_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorColor_0100
+       * @tc.name     ArkUI_Tabs_IndicatorColor_0100
+       * @tc.desc     ArkUI_Tabs_IndicatorColor_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorColor_0100 start");
 
@@ -948,11 +948,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0200
-     * @tc.name      ArkUI_Tabs_IndicatorColor_0200
-     * @tc.desc      ArkUI_Tabs_IndicatorColor_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorColor_0200
+       * @tc.name     ArkUI_Tabs_IndicatorColor_0200
+       * @tc.desc     ArkUI_Tabs_IndicatorColor_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorColor_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorColor_0200 start");
       let strJson = inspector.getInspectorByKey('indicatorTest1');
@@ -967,11 +967,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0300
-     * @tc.name      ArkUI_Tabs_IndicatorColor_0300
-     * @tc.desc      ArkUI_Tabs_IndicatorColor_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorColor_0300
+       * @tc.name     ArkUI_Tabs_IndicatorColor_0300
+       * @tc.desc     ArkUI_Tabs_IndicatorColor_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorColor_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorColor_0300 start");
       let strJson = inspector.getInspectorByKey('indicatorTest2');
@@ -986,11 +986,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0400
-     * @tc.name      ArkUI_Tabs_IndicatorColor_0400
-     * @tc.desc      ArkUI_Tabs_IndicatorColor_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorColor_0400
+       * @tc.name     ArkUI_Tabs_IndicatorColor_0400
+       * @tc.desc     ArkUI_Tabs_IndicatorColor_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorColor_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorColor_0400 start");
       let strJson = inspector.getInspectorByKey('indicatorTest3');
@@ -1005,11 +1005,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0500
-     * @tc.name      ArkUI_Tabs_IndicatorColor_0500
-     * @tc.desc      ArkUI_Tabs_IndicatorColor_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorColor_0500
+       * @tc.name     ArkUI_Tabs_IndicatorColor_0500
+       * @tc.desc     ArkUI_Tabs_IndicatorColor_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorColor_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorColor_0500 start");
       let strJson = inspector.getInspectorByKey('indicatorTest4');
@@ -1024,11 +1024,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0600
-     * @tc.name      ArkUI_Tabs_IndicatorColor_0600
-     * @tc.desc      ArkUI_Tabs_IndicatorColor_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorColor_0600
+       * @tc.name     ArkUI_Tabs_IndicatorColor_0600
+       * @tc.desc     ArkUI_Tabs_IndicatorColor_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorColor_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorColor_0600 start");
 
@@ -1036,7 +1036,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorColor": "xxxxxxxx"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1044,7 +1044,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorColor_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorColor_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1067,11 +1067,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0700
-     * @tc.name      ArkUI_Tabs_IndicatorColor_0700
-     * @tc.desc      ArkUI_Tabs_IndicatorColor_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorColor_0700
+       * @tc.name     ArkUI_Tabs_IndicatorColor_0700
+       * @tc.desc     ArkUI_Tabs_IndicatorColor_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorColor_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorColor_0700 start");
 
@@ -1083,7 +1083,7 @@ export default function tabs() {
             "selfIndicatorWidth": 20,
             "selfIndicatorBorderRadius": 5,
             "selfMarginTop": 10
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1091,7 +1091,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorColor_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorColor_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1119,11 +1119,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0100
-     * @tc.name      ArkUI_Tabs_IndicatorHeight_0100
-     * @tc.desc      ArkUI_Tabs_IndicatorHeight_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorHeight_0100
+       * @tc.name     ArkUI_Tabs_IndicatorHeight_0100
+       * @tc.desc     ArkUI_Tabs_IndicatorHeight_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorHeight_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0100 start ")
       let defaultStrJson = inspector.getInspectorByKey('defaultSubTab');
@@ -1145,11 +1145,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0200
-     * @tc.name      ArkUI_Tabs_IndicatorHeight_0200
-     * @tc.desc      ArkUI_Tabs_IndicatorHeight_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorHeight_0200
+       * @tc.name     ArkUI_Tabs_IndicatorHeight_0200
+       * @tc.desc     ArkUI_Tabs_IndicatorHeight_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorHeight_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0200 start ")
       let strJson = inspector.getInspectorByKey('indicatorTest1');
@@ -1164,11 +1164,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0300
-     * @tc.name      ArkUI_Tabs_IndicatorHeight_0300
-     * @tc.desc      ArkUI_Tabs_IndicatorHeight_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorHeight_0300
+       * @tc.name     ArkUI_Tabs_IndicatorHeight_0300
+       * @tc.desc     ArkUI_Tabs_IndicatorHeight_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorHeight_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start ")
       let strJson = inspector.getInspectorByKey('indicatorTest2');
@@ -1183,11 +1183,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0400
-     * @tc.name      ArkUI_Tabs_IndicatorHeight_0400
-     * @tc.desc      ArkUI_Tabs_IndicatorHeight_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorHeight_0400
+       * @tc.name     ArkUI_Tabs_IndicatorHeight_0400
+       * @tc.desc     ArkUI_Tabs_IndicatorHeight_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorHeight_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0400 start ")
       let strJson = inspector.getInspectorByKey('indicatorTest3');
@@ -1202,11 +1202,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0500
-     * @tc.name      ArkUI_Tabs_IndicatorHeight_0500
-     * @tc.desc      ArkUI_Tabs_IndicatorHeight_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorHeight_0500
+       * @tc.name     ArkUI_Tabs_IndicatorHeight_0500
+       * @tc.desc     ArkUI_Tabs_IndicatorHeight_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorHeight_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
 
@@ -1214,7 +1214,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeight": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1222,7 +1222,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1245,11 +1245,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0600
-     * @tc.name      ArkUI_Tabs_IndicatorHeight_0600
-     * @tc.desc      ArkUI_Tabs_IndicatorHeight_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorHeight_0600
+       * @tc.name     ArkUI_Tabs_IndicatorHeight_0600
+       * @tc.desc     ArkUI_Tabs_IndicatorHeight_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
 
@@ -1257,7 +1257,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10px"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1265,7 +1265,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1281,7 +1281,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10fp"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1289,7 +1289,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1304,7 +1304,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10lpx"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1312,7 +1312,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1327,11 +1327,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0100
-     * @tc.name      ArkUI_Tabs_IndicatorWidth_0100
-     * @tc.desc      ArkUI_Tabs_IndicatorWidth_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorWidth_0100
+       * @tc.name     ArkUI_Tabs_IndicatorWidth_0100
+       * @tc.desc     ArkUI_Tabs_IndicatorWidth_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorWidth_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorWidth_0100 start");
       let strJson = inspector.getInspectorByKey('indicatorTest5');
@@ -1346,11 +1346,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0200
-     * @tc.name      ArkUI_Tabs_IndicatorWidth_0200
-     * @tc.desc      ArkUI_Tabs_IndicatorWidth_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorWidth_0200
+       * @tc.name     ArkUI_Tabs_IndicatorWidth_0200
+       * @tc.desc     ArkUI_Tabs_IndicatorWidth_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorWidth_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorWidth_0200 start");
       let strJson = inspector.getInspectorByKey('indicatorTest1');
@@ -1365,11 +1365,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0300
-     * @tc.name      ArkUI_Tabs_IndicatorWidth_0300
-     * @tc.desc      ArkUI_Tabs_IndicatorWidth_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorWidth_0300
+       * @tc.name     ArkUI_Tabs_IndicatorWidth_0300
+       * @tc.desc     ArkUI_Tabs_IndicatorWidth_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorWidth_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorWidth_0300 start");
       let strJson = inspector.getInspectorByKey('indicatorTest2');
@@ -1384,11 +1384,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0400
-     * @tc.name      ArkUI_Tabs_IndicatorWidth_0400
-     * @tc.desc      ArkUI_Tabs_IndicatorWidth_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorWidth_0400
+       * @tc.name     ArkUI_Tabs_IndicatorWidth_0400
+       * @tc.desc     ArkUI_Tabs_IndicatorWidth_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorWidth_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorWidth_0400 start");
       let strJson = inspector.getInspectorByKey('indicatorTest3');
@@ -1403,11 +1403,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0500
-     * @tc.name      ArkUI_Tabs_IndicatorWidth_0500
-     * @tc.desc      ArkUI_Tabs_IndicatorWidth_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorWidth_0500
+       * @tc.name     ArkUI_Tabs_IndicatorWidth_0500
+       * @tc.desc     ArkUI_Tabs_IndicatorWidth_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorWidth_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorWidth_0500 start");
 
@@ -1415,7 +1415,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidth": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1423,7 +1423,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1439,11 +1439,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0600
-     * @tc.name      ArkUI_Tabs_IndicatorWidth_0600
-     * @tc.desc      ArkUI_Tabs_IndicatorWidth_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorWidth_0600
+       * @tc.name     ArkUI_Tabs_IndicatorWidth_0600
+       * @tc.desc     ArkUI_Tabs_IndicatorWidth_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
 
@@ -1451,7 +1451,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10px"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1459,7 +1459,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1475,7 +1475,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10fp"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1483,7 +1483,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1498,7 +1498,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10lpx"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1506,7 +1506,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1521,11 +1521,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0100
-     * @tc.name      ArkUI_Tabs_IndicatorBorderRadius_0100
-     * @tc.desc      ArkUI_Tabs_IndicatorBorderRadius_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0100
+       * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0100
+       * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorBorderRadius_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0100 start");
       let strJson = inspector.getInspectorByKey('indicatorTest5');
@@ -1540,11 +1540,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0200
-     * @tc.name      ArkUI_Tabs_IndicatorBorderRadius_0200
-     * @tc.desc      ArkUI_Tabs_IndicatorBorderRadius_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0200
+       * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0200
+       * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorBorderRadius_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0200 start");
       let strJson = inspector.getInspectorByKey('indicatorTest1');
@@ -1559,11 +1559,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0300
-     * @tc.name      ArkUI_Tabs_IndicatorBorderRadius_0300
-     * @tc.desc      ArkUI_Tabs_IndicatorBorderRadius_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0300
+       * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0300
+       * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorBorderRadius_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0300 start");
       let strJson = inspector.getInspectorByKey('indicatorTest2');
@@ -1578,11 +1578,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0400
-     * @tc.name      ArkUI_Tabs_IndicatorBorderRadius_0400
-     * @tc.desc      ArkUI_Tabs_IndicatorBorderRadius_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0400
+       * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0400
+       * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorBorderRadius_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0400 start");
       let strJson = inspector.getInspectorByKey('indicatorTest3');
@@ -1597,11 +1597,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0500
-     * @tc.name      ArkUI_Tabs_IndicatorBorderRadius_0500
-     * @tc.desc      ArkUI_Tabs_IndicatorBorderRadius_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0500
+       * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0500
+       * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorBorderRadius_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0500 start");
 
@@ -1609,7 +1609,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadius": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1617,7 +1617,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1633,11 +1633,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0600
-     * @tc.name      ArkUI_Tabs_IndicatorBorderRadius_0600
-     * @tc.desc      ArkUI_Tabs_IndicatorBorderRadius_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0600
+       * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0600
+       * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
 
@@ -1645,7 +1645,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10px"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1653,7 +1653,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1669,7 +1669,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10fp"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1677,7 +1677,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1693,7 +1693,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10lpx"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1701,7 +1701,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1717,11 +1717,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0100
-     * @tc.name      ArkUI_Tabs_SubTabBorderRadius_0100
-     * @tc.desc      ArkUI_Tabs_SubTabBorderRadius_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0100
+       * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0100
+       * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBorderRadius_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0100 start");
       let defaultStrJson = inspector.getInspectorByKey('defaultSubTab');
@@ -1742,11 +1742,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0200
-     * @tc.name      ArkUI_Tabs_SubTabBorderRadius_0200
-     * @tc.desc      ArkUI_Tabs_SubTabBorderRadius_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0200
+       * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0200
+       * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBorderRadius_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0200 start");
       let strJson = inspector.getInspectorByKey('indicatorTest1');
@@ -1760,11 +1760,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0300
-     * @tc.name      ArkUI_Tabs_SubTabBorderRadius_0300
-     * @tc.desc      ArkUI_Tabs_SubTabBorderRadius_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0300
+       * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0300
+       * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBorderRadius_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0300 start");
       let strJson = inspector.getInspectorByKey('indicatorTest2');
@@ -1778,11 +1778,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0400
-     * @tc.name      ArkUI_Tabs_SubTabBorderRadius_0400
-     * @tc.desc      ArkUI_Tabs_SubTabBorderRadius_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0400
+       * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0400
+       * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBorderRadius_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0400 start");
       let strJson = inspector.getInspectorByKey('indicatorTest3');
@@ -1796,11 +1796,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0500
-     * @tc.name      ArkUI_Tabs_SubTabBorderRadius_0500
-     * @tc.desc      ArkUI_Tabs_SubTabBorderRadius_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0500
+       * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0500
+       * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBorderRadius_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0500 start");
 
@@ -1808,7 +1808,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadius": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1816,7 +1816,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1838,11 +1838,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0600
-     * @tc.name      ArkUI_Tabs_SubTabBorderRadius_0600
-     * @tc.desc      ArkUI_Tabs_SubTabBorderRadius_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0600
+       * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0600
+       * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
 
@@ -1850,7 +1850,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10px"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1858,7 +1858,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1873,7 +1873,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10fp"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1881,7 +1881,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1896,7 +1896,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10lpx"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1904,7 +1904,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1919,11 +1919,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0700
-     * @tc.name      ArkUI_Tabs_SubTabBorderRadius_0700
-     * @tc.desc      ArkUI_Tabs_SubTabBorderRadius_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0700
+       * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0700
+       * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SubTabBorderRadius_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0700 start");
       try {
@@ -1931,7 +1931,7 @@ export default function tabs() {
           data: {
             "selfSubTabBorderRadius": 20,
             "selfSelectedMode": SelectedMode.BOARD
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1939,7 +1939,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1955,11 +1955,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SelectedMode_static_0100
-     * @tc.name      ArkUI_Tabs_SelectedMode_static_0100
-     * @tc.desc      ArkUI_Tabs_SelectedMode_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SelectedMode_static_0100
+       * @tc.name     ArkUI_Tabs_SelectedMode_static_0100
+       * @tc.desc     ArkUI_Tabs_SelectedMode_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SelectedMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SelectedMode_static_0100 start");
       let strJson = inspector.getInspectorByKey('indicatorTest5');
@@ -1973,11 +1973,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SelectedMode_static_0200
-     * @tc.name      ArkUI_Tabs_SelectedMode_static_0200
-     * @tc.desc      ArkUI_Tabs_SelectedMode_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SelectedMode_static_0200
+       * @tc.name     ArkUI_Tabs_SelectedMode_static_0200
+       * @tc.desc     ArkUI_Tabs_SelectedMode_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SelectedMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SelectedMode_static_0200 start");
 
@@ -1992,11 +1992,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_SelectedMode_static_0300
-     * @tc.name      ArkUI_Tabs_SelectedMode_static_0300
-     * @tc.desc      ArkUI_Tabs_SelectedMode_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_SelectedMode_static_0300
+       * @tc.name     ArkUI_Tabs_SelectedMode_static_0300
+       * @tc.desc     ArkUI_Tabs_SelectedMode_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_SelectedMode_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_SelectedMode_static_0300 start");
 
@@ -2005,7 +2005,7 @@ export default function tabs() {
           data: {
             "selfIndicatorHeight": 10,
             "selfSelectedMode": SelectedMode.BOARD
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2013,7 +2013,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SelectedMode_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_SelectedMode_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2027,11 +2027,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_static_0100
-     * @tc.name      ArkUI_Tabs_IndicatorMarginTop_static_0100
-     * @tc.desc      ArkUI_Tabs_IndicatorMarginTop_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0100
+       * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0100
+       * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorMarginTop_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_static_0100 start");
       let defaultStrJson = inspector.getInspectorByKey('defaultSubTab');
@@ -2053,11 +2053,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_static_0200
-     * @tc.name      ArkUI_Tabs_IndicatorMarginTop_static_0200
-     * @tc.desc      ArkUI_Tabs_IndicatorMarginTop_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0200
+       * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0200
+       * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorMarginTop_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_static_0200 start");
       let strJson = inspector.getInspectorByKey('indicatorTest1');
@@ -2072,11 +2072,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_static_0300
-     * @tc.name      ArkUI_Tabs_IndicatorMarginTop_static_0300
-     * @tc.desc      ArkUI_Tabs_IndicatorMarginTop_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0300
+       * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0300
+       * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorMarginTop_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_static_0300 start");
       let strJson = inspector.getInspectorByKey('indicatorTest2');
@@ -2091,11 +2091,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_static_0400
-     * @tc.name      ArkUI_Tabs_IndicatorMarginTop_static_0400
-     * @tc.desc      ArkUI_Tabs_IndicatorMarginTop_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0400
+       * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0400
+       * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorMarginTop_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_static_0400 start");
       let strJson = inspector.getInspectorByKey('indicatorTest3');
@@ -2110,11 +2110,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_static_0500
-     * @tc.name      ArkUI_Tabs_IndicatorMarginTop_static_0500
-     * @tc.desc      ArkUI_Tabs_IndicatorMarginTop_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0500
+       * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0500
+       * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_static_0500 start");
 
@@ -2123,7 +2123,7 @@ export default function tabs() {
           data: {
             "selfIndicatorHeight": 10,
             "selfMarginTop": -1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2131,7 +2131,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2154,11 +2154,11 @@ export default function tabs() {
 
 
     /*
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_static_0600
-     * @tc.name      ArkUI_Tabs_IndicatorMarginTop_static_0600
-     * @tc.desc      ArkUI_Tabs_IndicatorMarginTop_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0600
+       * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0600
+       * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Tabs_IndicatorMarginTop_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_static_0600 start");
 
@@ -2166,7 +2166,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10px"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2174,7 +2174,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2190,7 +2190,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10fp"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2198,7 +2198,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2213,7 +2213,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10lpx"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2221,7 +2221,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

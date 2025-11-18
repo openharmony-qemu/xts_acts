@@ -44,7 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperMargin() {
   describe('SwiperDisplayCount', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,16 +52,15 @@ export default function SwiperMargin() {
       console.info("SwiperDisplayCount beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         await CommonFunc.sleep(1000);
         let pages = router.getState();
         console.info("get SwiperDisplayCount state pages:" + JSON.stringify(pages));
-        if (!("SwiperDisplayCount" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperDisplayCount" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperDisplayCount"
           })
-          console.info("push SwiperDisplayCount page result:");
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push SwiperDisplayCount page error:" + err);
@@ -74,21 +72,27 @@ export default function SwiperMargin() {
       console.info("SwiperDisplayCount after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    SwiperDisplayCount_static_0160
-     * @tc.name      SwiperDisplayCount_static_0160
-     * @tc.desc      SwiperDisplayCount_static_0160
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperDisplayCount_static_0160
+     * @tc.name     SwiperDisplayCount_static_0160
+     * @tc.desc     SwiperDisplayCount_static_0160
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperDisplayCount_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperDisplayCount_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperDisplayCount_static_0160] START');
 
       let strJson = inspector.getInspectorByKey('swiperDisplayCount');
       console.info("[SwiperDisplayCount_static_0160] The autoPlay value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')));
+      JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay'));
       console.info("[SwiperDisplayCount_static_0160] The loop value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
+      JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual('true');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
 

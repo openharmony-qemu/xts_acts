@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,7 +32,10 @@ import {
   Padding,
   ForEach,
   StickyStyle,
-  ListItemGroup
+  ListItemGroup,
+  TextAlign,
+  ListItem,
+  CustomBuilder
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
@@ -52,7 +55,7 @@ struct ListItemGroupExample {
   itemHead(text: string) {
     Text(text)
       .fontSize(20)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width("100%")
       .padding(10)
   }
@@ -61,7 +64,7 @@ struct ListItemGroupExample {
   itemFoot(num: number) {
     Text('共' + num + "节课")
       .fontSize(16)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width("100%")
       .padding(5)
   }
@@ -80,7 +83,7 @@ struct ListItemGroupExample {
       projects: ['历史', '地理', '政治']
     } as TimeTable,
     {
-      title: 'Thur',
+      title: 'Thurs',
       projects: ['美术', '音乐', '体育']
     } as TimeTable
   ]
@@ -89,21 +92,21 @@ struct ListItemGroupExample {
     Column() {
       List({ space: 20 }) {
         ForEach(this.timetable, (item: TimeTable, index: int) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup({ header: () => {this.itemHead(item.title)} as CustomBuilder, footer: () => {this.itemFoot(item.projects.length)} as CustomBuilder}) {
+            ForEach(item.projects, (project: string, i: int) => {
+              ListItem() {
+                Text(project)
+                  .width("100%")
+                  .height(100)
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(Color.Red)
+              }
+            }, (item: string) => item)
+          }
+          .key(item.title)
+          .borderRadius(20)
+          .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
         })
       }
       .width('90%')
@@ -111,7 +114,7 @@ struct ListItemGroupExample {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .padding({ top: 5 } as Padding)
   }
 }

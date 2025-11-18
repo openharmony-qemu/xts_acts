@@ -54,12 +54,11 @@ export default function SwiperLoopFalse() {
       console.info("SwiperLoopFalse beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperLoopFalse state pages:" + JSON.stringify(pages));
-        if (!("SwiperLoopFalse" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperLoopFalse" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperLoopFalse"
           })
           await CommonFunc.sleep(2000);
@@ -75,14 +74,20 @@ export default function SwiperLoopFalse() {
       console.info("SwiperLoopFalse after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    SwiperLoopFalse_3400
-     * @tc.name      SwiperLoopFalse_3400
-     * @tc.desc      SwiperLoopFalse_3400
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperLoopFalse_3400
+     * @tc.name     SwiperLoopFalse_3400
+     * @tc.desc     SwiperLoopFalse_3400
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperLoopFalse_3400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperLoopFalse_3400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperLoopFalse_3400] START');
 
       let strJson = inspector.getInspectorByKey('swiperLoopFalse');

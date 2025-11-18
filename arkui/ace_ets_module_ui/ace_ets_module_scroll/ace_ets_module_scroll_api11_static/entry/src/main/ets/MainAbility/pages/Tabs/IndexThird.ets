@@ -53,10 +53,9 @@ struct TabsExampleThird {
   @State barGridAlignMarginString: FP = '0.00fp'
   @State barGridAlignGutterNumber: number = 0
   @State barGridAlignGutterString: FP = '0.00fp'
-  @State barGridAlignSmNumber: int = 0
-  @State barGridAlignMdNumber: int = 0
-  @State barGridAlignLgNumber: int = 0
-  
+  @State barGridAlignSmNumber: number = 0
+  @State barGridAlignMdNumber: number = 0
+  @State barGridAlignLgNumber: number = 0
   @State barHeightString: string = '0.00vp'
   @State barModeMode: BarMode = BarMode.Fixed
   @State barModeMarginString: FP = '0.00fp'
@@ -86,7 +85,7 @@ struct TabsExampleThird {
   @State bottomTabBarStyleLayoutMode: LayoutMode = LayoutMode.VERTICAL
   @State bottomTabBarStyleSymmetricExtensible: boolean = false
   @State bottomTabBarStyleLabelStyleOverflow: TextOverflow = TextOverflow.Ellipsis
-  @State bottomTabBarStyleLabelStyleMaxLines: int = 0
+  @State bottomTabBarStyleLabelStyleMaxLines: number = 0
   @State bottomTabBarStyleLabelStyleMinFontSizeNumber: number = 0
   @State bottomTabBarStyleLabelStyleMinFontSizeString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleMaxFontSizeNumber: number = 0
@@ -96,65 +95,285 @@ struct TabsExampleThird {
   @State bottomTabBarStyleLabelStyleFontSizeNumber: number = 0
   @State bottomTabBarStyleLabelStyleFontSizeString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontWeight: FontWeight = FontWeight.Normal
-  @State bottomTabBarStyleLabelStyleFontWeightNumber: int = 0
+  @State bottomTabBarStyleLabelStyleFontWeightNumber: number = 0
   @State bottomTabBarStyleLabelStyleFontWeightString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontFamilyString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontStyle: FontStyle = FontStyle.Normal
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("tabs page state change called:" + JSON.stringify(eventData));
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>;
+      if (data['barGridAlignMarginNumber'] != null && data['barGridAlignMarginNumber'] != 'null' &&
+        data['barGridAlignMarginNumber'] != 'undefined') {
+        this.barGridAlignMarginNumber = data['barGridAlignMarginNumber'] as number;
+      }
+
+      if (data['barGridAlignMarginString'] != null && data['barGridAlignMarginString'] != 'null' &&
+        data['barGridAlignMarginString'] != 'undefined') {
+        this.barGridAlignMarginString = data['barGridAlignMarginString'] as string;
+      }
+
+      if (data['barGridAlignGutterNumber'] != null && data['barGridAlignGutterNumber'] != 'null' &&
+        data['barGridAlignGutterNumber'] != 'undefined') {
+        this.barGridAlignGutterNumber = data['barGridAlignGutterNumber'] as number;
+      }
+
+      if (data['barGridAlignGutterString'] != null && data['barGridAlignGutterString'] != 'null' &&
+        data['barGridAlignGutterString'] != 'undefined') {
+        this.barGridAlignGutterString = data['barGridAlignGutterString'] as string;
+      }
+
+      if (data['barGridAlignSmNumber'] != null && data['barGridAlignSmNumber'] != 'null' &&
+        data['barGridAlignSmNumber'] != 'undefined') {
+        this.barGridAlignSmNumber = data['barGridAlignSmNumber'] as number;
+      }
+
+      if (data['barGridAlignMdNumber'] != null && data['barGridAlignMdNumber'] != 'null' &&
+        data['barGridAlignMdNumber'] != 'undefined') {
+        this.barGridAlignMdNumber = data['barGridAlignMdNumber'] as number;
+      }
+
+      if (data['barGridAlignLgNumber'] != null && data['barGridAlignLgNumber'] != 'null' &&
+        data['barGridAlignLgNumber'] != 'undefined') {
+        this.barGridAlignLgNumber = data['barGridAlignLgNumber'] as number;
+      }
+
+      if (data['barHeightString'] != null && data['barHeightString'] != 'null' &&
+        data['barHeightString'] != 'undefined') {
+        this.barHeightString = data['barHeightString'] as string;
+      }
+
+      if (data['barModeMode'] != null && data['barModeMode'] != 'null' && data['barModeMode'] != 'undefined') {
+        this.barModeMode = data['barModeMode'] as BarMode;
+      }
+
+      if (data['barModeMarginString'] != null && data['barModeMarginString'] != 'null' &&
+        data['barModeMarginString'] != 'undefined') {
+        this.barModeMarginString = data['barModeMarginString'] as string;
+      }
+
+      if (data['barModeMarginNumber'] != null && data['barModeMarginNumber'] != 'null' &&
+        data['barModeMarginNumber'] != 'undefined') {
+        this.barModeMarginNumber = data['barModeMarginNumber'] as number;
+      }
+
+      if (data['barModeNonScrollableLayoutStyle'] != null && data['barModeNonScrollableLayoutStyle'] != 'null' &&
+        data['barModeNonScrollableLayoutStyle'] != 'undefined') {
+        this.barModeNonScrollableLayoutStyle = data['barModeNonScrollableLayoutStyle'] as LayoutStyle;
+      }
+
+      if (data['subTabBarStylePaddingNumber'] != null && data['subTabBarStylePaddingNumber'] != 'null' &&
+        data['subTabBarStylePaddingNumber'] != 'undefined') {
+        this.subTabBarStylePaddingNumber = data['subTabBarStylePaddingNumber'] as number;
+      }
+
+      if (data['subTabBarStylePaddingString'] != null && data['subTabBarStylePaddingString'] != 'null' &&
+        data['subTabBarStylePaddingString'] != 'undefined') {
+        this.subTabBarStylePaddingString = data['subTabBarStylePaddingString'] as string;
+      }
+
+      if (data['bottomTabBarStylePaddingNumber'] != null && data['bottomTabBarStylePaddingNumber'] != 'null' &&
+        data['bottomTabBarStylePaddingNumber'] != 'undefined') {
+        this.bottomTabBarStylePaddingNumber = data['bottomTabBarStylePaddingNumber'] as number;
+      }
+
+      if (data['bottomTabBarStylePaddingString'] != null && data['bottomTabBarStylePaddingString'] != 'null' &&
+        data['bottomTabBarStylePaddingString'] != 'undefined') {
+        this.bottomTabBarStylePaddingString = data['bottomTabBarStylePaddingString'] as string;
+      }
+
+      if (data['subTabBarStylePaddingTopNumber'] != null && data['subTabBarStylePaddingTopNumber'] != 'null' &&
+        data['subTabBarStylePaddingTopNumber'] != 'undefined') {
+        this.subTabBarStylePaddingTopNumber = data['subTabBarStylePaddingTopNumber'] as number;
+      }
+
+      if (data['subTabBarStylePaddingBottomNumber'] != null && data['subTabBarStylePaddingBottomNumber'] != 'null' &&
+        data['subTabBarStylePaddingBottomNumber'] != 'undefined') {
+        this.subTabBarStylePaddingBottomNumber = data['subTabBarStylePaddingBottomNumber'] as number;
+      }
+
+      if (data['subTabBarStylePaddingLeftNumber'] != null && data['subTabBarStylePaddingLeftNumber'] != 'null' &&
+        data['subTabBarStylePaddingLeftNumber'] != 'undefined') {
+        this.subTabBarStylePaddingLeftNumber = data['subTabBarStylePaddingLeftNumber'] as number;
+      }
+
+      if (data['subTabBarStylePaddingRightNumber'] != null && data['subTabBarStylePaddingRightNumber'] != 'null' &&
+        data['subTabBarStylePaddingRightNumber'] != 'undefined') {
+        this.subTabBarStylePaddingRightNumber = data['subTabBarStylePaddingRightNumber'] as number;
+      }
+
+      if (data['subTabBarStylePaddingTopString'] != null && data['subTabBarStylePaddingTopString'] != 'null' &&
+        data['subTabBarStylePaddingTopString'] != 'undefined') {
+        this.subTabBarStylePaddingTopString = data['subTabBarStylePaddingTopString'] as string;
+      }
+
+      if (data['subTabBarStylePaddingBottomString'] != null && data['subTabBarStylePaddingBottomString'] != 'null' &&
+        data['subTabBarStylePaddingBottomString'] != 'undefined') {
+        this.subTabBarStylePaddingBottomString = data['subTabBarStylePaddingBottomString'] as string;
+      }
+
+      if (data['subTabBarStylePaddingLeftString'] != null && data['subTabBarStylePaddingLeftString'] != 'null' &&
+        data['subTabBarStylePaddingLeftString'] != 'undefined') {
+        this.subTabBarStylePaddingLeftString = data['subTabBarStylePaddingLeftString'] as string;
+      }
+
+      if (data['subTabBarStylePaddingRightString'] != null && data['subTabBarStylePaddingRightString'] != 'null' &&
+        data['subTabBarStylePaddingRightString'] != 'undefined') {
+        this.subTabBarStylePaddingRightString = data['subTabBarStylePaddingRightString'] as string;
+      }
+
+      if (data['bottomTabBarStylePaddingTopNumber'] != null && data['bottomTabBarStylePaddingTopNumber'] != 'null' &&
+        data['bottomTabBarStylePaddingTopNumber'] != 'undefined') {
+        this.bottomTabBarStylePaddingTopNumber = data['bottomTabBarStylePaddingTopNumber'] as number;
+      }
+
+      if (data['bottomTabBarStylePaddingBottomNumber'] != null &&
+        data['bottomTabBarStylePaddingBottomNumber'] != 'null' &&
+        data['bottomTabBarStylePaddingBottomNumber'] != 'undefined') {
+        this.bottomTabBarStylePaddingBottomNumber = data['bottomTabBarStylePaddingBottomNumber'] as number;
+      }
+
+      if (data['bottomTabBarStylePaddingLeftNumber'] != null && data['bottomTabBarStylePaddingLeftNumber'] != 'null' &&
+        data['bottomTabBarStylePaddingLeftNumber'] != 'undefined') {
+        this.bottomTabBarStylePaddingLeftNumber = data['bottomTabBarStylePaddingLeftNumber'] as number;
+      }
+
+      if (data['bottomTabBarStylePaddingRightNumber'] != null &&
+        data['bottomTabBarStylePaddingRightNumber'] != 'null' &&
+        data['bottomTabBarStylePaddingRightNumber'] != 'undefined') {
+        this.bottomTabBarStylePaddingRightNumber = data['bottomTabBarStylePaddingRightNumber'] as number;
+      }
+
+      if (data['bottomTabBarStylePaddingTopString'] != null && data['bottomTabBarStylePaddingTopString'] != 'null' &&
+        data['bottomTabBarStylePaddingTopString'] != 'undefined') {
+        this.bottomTabBarStylePaddingTopString = data['bottomTabBarStylePaddingTopString'] as string;
+      }
+
+      if (data['bottomTabBarStylePaddingBottomString'] != null &&
+        data['bottomTabBarStylePaddingBottomString'] != 'null' &&
+        data['bottomTabBarStylePaddingBottomString'] != 'undefined') {
+        this.bottomTabBarStylePaddingBottomString = data['bottomTabBarStylePaddingBottomString'] as string;
+      }
+
+      if (data['bottomTabBarStylePaddingLeftString'] != null && data['bottomTabBarStylePaddingLeftString'] != 'null' &&
+        data['bottomTabBarStylePaddingLeftString'] != 'undefined') {
+        this.bottomTabBarStylePaddingLeftString = data['bottomTabBarStylePaddingLeftString'] as string;
+      }
+
+      if (data['bottomTabBarStylePaddingRightString'] != null &&
+        data['bottomTabBarStylePaddingRightString'] != 'null' &&
+        data['bottomTabBarStylePaddingRightString'] != 'undefined') {
+        this.bottomTabBarStylePaddingRightString = data['bottomTabBarStylePaddingRightString'] as string;
+      }
+
+      if (data['bottomTabBarStyleVerticalAlign'] != null && data['bottomTabBarStyleVerticalAlign'] != 'null' &&
+        data['bottomTabBarStyleVerticalAlign'] != 'undefined') {
+        this.bottomTabBarStyleVerticalAlign = data['bottomTabBarStyleVerticalAlign'] as VerticalAlign;
+      }
+
+      if (data['bottomTabBarStyleLayoutMode'] != null && data['bottomTabBarStyleLayoutMode'] != 'null' &&
+        data['bottomTabBarStyleLayoutMode'] != 'undefined') {
+        this.bottomTabBarStyleLayoutMode = data['bottomTabBarStyleLayoutMode'] as LayoutMode;
+      }
+
+      if (data['bottomTabBarStyleSymmetricExtensible'] != null &&
+        data['bottomTabBarStyleSymmetricExtensible'] != 'null' &&
+        data['bottomTabBarStyleSymmetricExtensible'] != 'undefined') {
+        this.bottomTabBarStyleSymmetricExtensible = data['bottomTabBarStyleSymmetricExtensible'] as boolean;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleOverflow'] != null &&
+        data['bottomTabBarStyleLabelStyleOverflow'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleOverflow'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleOverflow = data['bottomTabBarStyleLabelStyleOverflow'] as TextOverflow;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleMaxLines'] != null &&
+        data['bottomTabBarStyleLabelStyleMaxLines'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleMaxLines'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleMaxLines = data['bottomTabBarStyleLabelStyleMaxLines'] as number;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] != null &&
+        data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleMinFontSizeNumber =
+          data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] as number;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleMinFontSizeString'] != null &&
+        data['bottomTabBarStyleLabelStyleMinFontSizeString'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleMinFontSizeString'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleMinFontSizeString =
+          data['bottomTabBarStyleLabelStyleMinFontSizeString'] as string;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] != null &&
+        data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleMaxFontSizeNumber =
+          data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] as number;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleMaxFontSizeString'] != null &&
+        data['bottomTabBarStyleLabelStyleMaxFontSizeString'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleMaxFontSizeString'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleMaxFontSizeString =
+          data['bottomTabBarStyleLabelStyleMaxFontSizeString'] as string;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleHeightAdaptivePolicy'] != null &&
+        data['bottomTabBarStyleLabelStyleHeightAdaptivePolicy'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleHeightAdaptivePolicy'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleHeightAdaptivePolicy =
+          data['bottomTabBarStyleLabelStyleHeightAdaptivePolicy'] as TextHeightAdaptivePolicy;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleFontSizeNumber'] != null &&
+        data['bottomTabBarStyleLabelStyleFontSizeNumber'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleFontSizeNumber'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleFontSizeNumber = data['bottomTabBarStyleLabelStyleFontSizeNumber'] as number;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleFontSizeString'] != null &&
+        data['bottomTabBarStyleLabelStyleFontSizeString'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleFontSizeString'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleFontSizeString = data['bottomTabBarStyleLabelStyleFontSizeString'] as string;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleFontWeight'] != null &&
+        data['bottomTabBarStyleLabelStyleFontWeight'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleFontWeight'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleFontWeight = data['bottomTabBarStyleLabelStyleFontWeight'] as FontWeight;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleFontWeightNumber'] != null &&
+        data['bottomTabBarStyleLabelStyleFontWeightNumber'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleFontWeightNumber'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleFontWeightNumber =
+          data['bottomTabBarStyleLabelStyleFontWeightNumber'] as number;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleFontWeightString'] != null &&
+        data['bottomTabBarStyleLabelStyleFontWeightString'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleFontWeightString'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleFontWeightString =
+          data['bottomTabBarStyleLabelStyleFontWeightString'] as string;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleFontFamilyString'] != null &&
+        data['bottomTabBarStyleLabelStyleFontFamilyString'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleFontFamilyString'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleFontFamilyString =
+          data['bottomTabBarStyleLabelStyleFontFamilyString'] as string;
+      }
+
+      if (data['bottomTabBarStyleLabelStyleFontStyle'] != null &&
+        data['bottomTabBarStyleLabelStyleFontStyle'] != 'null' &&
+        data['bottomTabBarStyleLabelStyleFontStyle'] != 'undefined') {
+        this.bottomTabBarStyleLabelStyleFontStyle = data['bottomTabBarStyleLabelStyleFontStyle'] as FontStyle;
+      }
+    }
   }
 
   aboutToAppear() {
@@ -218,8 +437,10 @@ struct TabsExampleThird {
           Column() {
             Text('Tab1').fontSize(32)
           }.width('100%').height('100%').backgroundColor(Color.Yellow)
-        }.tabBar(SubTabBarStyle.of("tab1")
-          .padding(this.subTabBarStylePaddingNumber))
+        }
+        .tabBar(SubTabBarStyle.of("tab1")
+          .padding(this.subTabBarStylePaddingNumber)
+        )
         .key('subTabBarNumberTest')
 
         TabContent() {
@@ -227,18 +448,18 @@ struct TabsExampleThird {
             Text('Tab2').fontSize(32)
           }.width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar(BottomTabBarStyle.of('app.media.icon', "tab1")
-          .padding(this.bottomTabBarStylePaddingNumber))
+          .padding(this.bottomTabBarStylePaddingNumber)
+        )
         .key('bottomTabBarNumberTest')
       }
       .vertical(false)
       .barGridAlign({
         margin: this.barGridAlignMarginNumber,
         gutter: this.barGridAlignGutterNumber,
-        sm: this.barGridAlignSmNumber,
-        md: this.barGridAlignMdNumber,
-        lg: this.barGridAlignLgNumber
+        sm: this.barGridAlignSmNumber?.toInt(),
+        md: this.barGridAlignMdNumber?.toInt(),
+        lg: this.barGridAlignLgNumber?.toInt()
       })
-      
       .barMode(this.barModeMode,
         { margin: this.barModeMarginNumber, nonScrollableLayoutStyle: this.barModeNonScrollableLayoutStyle })
       .key('tabsNumberTest')
@@ -454,7 +675,7 @@ struct TabsExampleThird {
           .labelStyle(
             {
               overflow: this.bottomTabBarStyleLabelStyleOverflow,
-              maxLines: this.bottomTabBarStyleLabelStyleMaxLines,
+              maxLines: this.bottomTabBarStyleLabelStyleMaxLines?.toInt(),
               heightAdaptivePolicy: this.bottomTabBarStyleLabelStyleHeightAdaptivePolicy,
               font: {
                 size: $r('sys.float.ohos_id_text_size_caption'),
@@ -477,7 +698,7 @@ struct TabsExampleThird {
             maxFontSize: this.bottomTabBarStyleLabelStyleMaxFontSizeNumber,
             font: {
               size: this.bottomTabBarStyleLabelStyleFontSizeNumber,
-              weight: this.bottomTabBarStyleLabelStyleFontWeightNumber,
+              weight: this.bottomTabBarStyleLabelStyleFontWeightNumber.toInt(),
             }
           }))
         .key('bottomTabBarStyleLabelStyleNumberTest')
@@ -536,6 +757,6 @@ struct TabsExampleThird {
         .width($r('sys.float.ohos_id_subtab_horizontal_padding'))
         .key("subTabBarDefaultTestLeftJudge")
 
-    }
+    }.backgroundColor(Color.Red).width('100%').height('100%')
   }
 }

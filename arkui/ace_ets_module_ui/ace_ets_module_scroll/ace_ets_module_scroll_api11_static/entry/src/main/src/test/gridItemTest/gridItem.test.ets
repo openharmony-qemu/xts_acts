@@ -39,12 +39,12 @@ export default function gridItemOnSelectJsunit() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get gridItem state success " + JSON.stringify(pages));
-        if (!("gridItem" == pages.name)) {
+        if (!("MainAbility/pages/gridItem/gridItem" == pages.name)) {
           console.info("get gridItem state success " + JSON.stringify(pages.name));
-
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await Utils.sleep(2000);
-
+          // console.info("push gridItem page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gridItem page error: " + err);
@@ -58,34 +58,32 @@ export default function gridItemOnSelectJsunit() {
 
 
     /*
-     * @tc.number    testgridItemOnSelect0001_static_01
-     * @tc.name      testgridItemOnSelect0001_static_01
-     * @tc.desc      testgridItemOnSelect0001_static_01
-     * @tc.level     2
-     */
+       * @tc.number   testgridItemOnSelect0001_static_01
+       * @tc.name     testgridItemOnSelect0001_static_01
+       * @tc.desc     testgridItemOnSelect0001_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('testgridItemOnSelect0001_static_01', Level.LEVEL0, async () => {
-      try {
-        console.info('testgridItemOnSelect testgridItemOnSelect0001_static_01 START');
-        await Utils.sleep(2000);
-        let callback = (indexEvent: events_emitter.EventData) => {
-          console.info("onSelect_0001 get state result is: " + JSON.stringify(indexEvent));
-
-
+      console.info('testgridItemOnSelect testgridItemOnSelect0001_static_01 START');
+      await Utils.sleep(2000);
+      let callback = (indexEvent: events_emitter.EventData) => {
+        console.info("onSelect_0001 get state result is: " + JSON.stringify(indexEvent));
+        if (indexEvent.data != null) {
+          const data = indexEvent.data as Record<String, undefined | null | Object>
+          expect(data['STATUS']).assertEqual(true);
         }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 60207,
-          priority: events_emitter.EventPriority.LOW
-        }
-        inspector.sendEventByKey('onSelected', 10, "")
-        try {
-          events_emitter.on(indexEvent, callback);
-        } catch (err) {
-          console.info("onSelect_0001 on events_emitter err : " + JSON.stringify(err));
-        }
-        console.info('testgridItemOnSelect0001_static_01 END');
-      } catch (ERROR) {
-        expect().assertFail();
       }
+      let indexEvent: events_emitter.InnerEvent = {
+        eventId: 60207,
+        priority: events_emitter.EventPriority.LOW
+      }
+      inspector.sendEventByKey('onSelected', 10, "")
+      try {
+        events_emitter.on(indexEvent, callback);
+      } catch (err) {
+        console.info("onSelect_0001 on events_emitter err : " + JSON.stringify(err));
+      }
+      console.info('testgridItemOnSelect0001_static_01 END');
 
     });
 

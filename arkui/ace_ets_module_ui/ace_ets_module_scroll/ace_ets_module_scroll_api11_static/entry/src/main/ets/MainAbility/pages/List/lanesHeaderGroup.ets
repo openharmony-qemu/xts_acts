@@ -33,7 +33,9 @@ import {
   Axis,
   BarState,
   StickyStyle,
-  ListItemGroup
+  ListItemGroup,
+  ListItem,
+  TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -58,25 +60,25 @@ struct lanesHeaderGroupExample {
     Column() {
       List({ space: 5, scroller: this.scroller }) {
         ForEach(this.arr, (item0: number, groupIndex: int) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup({ header: () => this.itemHead('第' + item0 + '个ListItemGroup') }) {
+            ForEach(this.arr2, (item: number, itemIndex:int) => {
+              ListItem() {
+                Text('Group:' + (groupIndex + 1) + ', Item:' + item)
+                  .id('group_ver_item_head')
+                  .width('100%')
+                  .height(100)
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(0xFFFFFF)
+              }
+            }, (item: number) => item.toString())
+          }
         })
       }
       .width('90%')
       .height('40%')
       .lanes(2)
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical)
       .scrollBar(BarState.On)
       .friction(0.6)
       .sticky(StickyStyle.Header)

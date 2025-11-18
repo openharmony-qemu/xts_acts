@@ -38,23 +38,23 @@ struct TransitionEffectExample2 {
     Column() {
       Button(this.show).width(80).height(30).margin(30)
         .onClick((e: ClickEvent) => {
-          
+          // 点击Button控制Image的显示和消失
           if (this.flag) {
             this.show = 'hide';
           } else {
             this.show = 'show';
           }
           animateTo({ duration: 2000 }, () => {
-            
-            
+            // 第一张图的TransitionEffect包含了animation，transition的动画参数由TransitionEffect指定
+            // 第二张图的TransitionEffect不包含animation，transition的动画参数由animateTo指定
             this.flag = !this.flag;
           });
         })
       if (this.flag) {
 
-        
-        
-        
+        // Image的显示和消失配置为不同的过渡效果
+        // 出现时做从指定的透明度为0变为默认的透明度1的动画，该动画时长为1000ms，以及做从指定的绕z轴旋转180°变为默认的旋转角为0的动画，该动画1000ms后播放，时长为1000ms
+        // 消失时做从默认的透明度为1变为指定的透明度0的动画，该动画1000ms后播放，时长为1000ms，以及做从默认的旋转角0变为指定的绕z轴旋转180°的动画，该动画时长为1000ms
         Image($r('app.media.icon')).width(200).height(200)
           .key('keyImageAdd')
           .transition(
@@ -66,8 +66,8 @@ struct TransitionEffectExample2 {
                 TransitionEffect.rotate({ z: 1, angle: 180 }).animation({ duration: 1000 }))
             )
           )
-        
-        
+        // 出现时做从x方向和y方向scale都为0变为默认的x方向和y方向scale都为1的动画，该动画时长为animateTo中指定的2000ms
+        // 消失时无转场效果
         Image($r('app.media.icon')).width(200).height(200).margin({ top: 100 } as Margin)
           .transition(
             TransitionEffect.asymmetric(

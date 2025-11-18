@@ -68,19 +68,19 @@ struct ScrollDidExample {
         }.width('100%')
       }
       .id('scrollSource_scroll')
-      
-      
-      
-      
-      
-      
-      
+      .onDidScroll((xOffset: number, yOffset: number, scrollState: ScrollState):void => {
+        console.info(`onDidScroll scrollState = ${scrollState[scrollState]}, offset = ${yOffset}`)
+        this.tempOffset = scrollState
+        if (scrollState == ScrollState.Idle) {
+          console.info('ScrollState.Idle: ' + this.tempOffset)
+        }
+      })
       .height('60%')
       .scrollable(ScrollDirection.Vertical)
       .scrollBar(BarState.On)
       .scrollBarColor(Color.Gray)
       .scrollBarWidth(10)
-      
+      // .friction(0.6)
       .edgeEffect(EdgeEffect.None)
       .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState,
         scrollSource: ScrollSource): undefined | OffsetResult => {

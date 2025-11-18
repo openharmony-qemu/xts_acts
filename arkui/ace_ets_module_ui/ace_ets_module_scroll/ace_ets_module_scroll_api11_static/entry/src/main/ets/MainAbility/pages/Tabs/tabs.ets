@@ -27,7 +27,6 @@ import {
   Color
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
@@ -56,7 +55,7 @@ struct Tabs3Example {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalled,
-              } as Record<String, RecordData>
+              } as Record<String,undefined|null|Object>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 212,
@@ -121,32 +120,41 @@ struct Tabs3Example {
   }
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
+    if (eventData != null && eventData.data != null) {
       console.info("tabs page state change called:" + JSON.stringify(eventData));
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      const data = eventData.data as Record<String,undefined|null|Object>;
+      if (data['index'] != null) {
+        this.index = parseInt(data['index'] as string).toInt();
+      }
+      if (data['barPosition'] != null) {
+        this.barPosition = data['barPosition'] as BarPosition;
+      }
+      if (data['vertical'] != null) {
+        if (typeof data['vertical'] === "boolean") {
+          this.vertical = data['vertical'] as boolean;
+        } else {
+          this.vertical = false
+        }
+      }
+      if (data['scrollable'] != null) {
+        if (typeof data['scrollable'] === "boolean") {
+          this.scrollable = data['scrollable'] as boolean;
+        } else {
+          this.scrollable = false
+        }
+      }
+      if (data['barMode'] != null) {
+        // this.barMode = data['barMode'] as BarMode;
+      }
+      if (data['barWidth'] != null) {
+        this.barWidth = parseInt(data['barWidth'] as string);
+      }
+      if (data['barHeight'] != null) {
+        this.barHeight = parseInt(data['barHeight'] as string);
+      }
+      if (data['animationDuration'] != null) {
+        this.animationDuration = parseInt(data['animationDuration'] as string);
+      }
     }
   }
 }

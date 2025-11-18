@@ -49,12 +49,10 @@ export default function tabsOnContentWillChangeIndex12JsunitTest() {
         console.info("get tabsOnContentWillChangeIndex12JsunitTest state pages:" + JSON.stringify(pages));
         if (!("tabs_onContentWillChangeIndex12" == pages.name)) {
           console.info("tabsOnContentWillChangeIndex12JsunitTest  pages.name:" + JSON.stringify(pages.name));
-          
-          routerAlp.pushUrl({
-            url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex12"
-          })
+          // let result = await routerAlp.pushUrl({url:"MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex12"})
+          routerAlp.pushUrl({ url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex12" })
           await CommonFunc.sleep(2000);
-          
+          // console.info("push tabsOnContentWillChangeIndex12JsunitTest result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push tabsOnContentWillChangeIndex12JsunitTest page error:" + err);
@@ -68,20 +66,20 @@ export default function tabsOnContentWillChangeIndex12JsunitTest() {
 
 
     /*
-     * @tc.number    tabsOnContentWillChangeJsunitTest_static_0120
-     * @tc.name      tabsOnContentWillChangeJsunitTest_static_0120
-     * @tc.desc      tabsOnContentWillChangeJsunitTest_static_0120
-     * @tc.level     2
-     */
+       * @tc.number   tabsOnContentWillChangeJsunitTest_static_0120
+       * @tc.name     tabsOnContentWillChangeJsunitTest_static_0120
+       * @tc.desc     tabsOnContentWillChangeJsunitTest_static_0120
+       * @tc.level    Level.LEVEL0
+       */
     it('tabsOnContentWillChangeJsunitTest_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabsOnContentWillChangeJsunitTest_static_0120 START');
       let driver = Driver.create();
-      
+      // get the content rect value
       let tabsRect = CommonFunc.getComponentRect('content12x');
       console.info("tabsOnContentWillChangeJsunitTest_static_0120  test rect value " + tabsRect.left + "," +
       tabsRect.right + "," +
       tabsRect.top + "," + tabsRect.bottom);
-      
+      // swipe index 0 -1  right swipe to left
       await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) +
         (tabsRect.right - tabsRect.left) * 0.2 + tabsRect.left)).toInt(),
         (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +

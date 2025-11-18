@@ -31,7 +31,8 @@ import {
   Row,
   Margin,
   Text,
-  TextAlign
+  TextAlign,
+  ScrollBar
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -44,15 +45,16 @@ struct ScrollBarExampler {
   @State stateValue: BarState = BarState.Off;
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("scrollBar page state change called:" + JSON.stringify(eventData));
-    if (eventData != null) {
-      
-      
-      
-      
-      
-      
-      
-      
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['directionValue'] != null) {
+        let directionObject: Record<string, Object> =
+          JSON.parse<Object>(JSON.stringify(data['directionObject']), Type.of(new String() as Object)) as Record<string,Object>;
+        this.directionValue = directionObject['directionValue'] as ScrollBarDirection;
+      }
+      if (data['stateValue'] != null) {
+        this.stateValue = data['stateValue'] as BarState;
+      }
     }
   }
 
@@ -93,13 +95,13 @@ struct ScrollBarExampler {
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
 
-        
-        
-        
-        
-        
-        
-        
+        ScrollBar({ scroller: this.scroller, direction: this.directionValue, state: this.stateValue }) {
+          Text()
+            .width(30)
+            .height(100)
+            .borderRadius(10)
+            .backgroundColor('#C0C0C0')
+        }.key('scroll').width(30).backgroundColor('#ededed')
       }
     }
   }

@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function refreshOffsetJsunit() {
   describe('refreshOffsetJsunit', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -57,14 +55,11 @@ export default function refreshOffsetJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get refreshOffsetJsunit state pages: " + JSON.stringify(pages));
-        if (!("refreshOffset" == pages.name)) {
+        if (!("MainAbility/pages/Refresh/refreshOffset" == pages.name)) {
           console.info("get refreshOffsetJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push refreshOffsetJsunit success: ");
         }
       } catch (err) {
         console.error("push refreshOffsetJsunit page error: " + err);
@@ -77,14 +72,20 @@ export default function refreshOffsetJsunit() {
       console.info(" refreshOffsetJsunit after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    refreshOffsetJsunit_static_0100
-     * @tc.name      refreshOffsetJsunit_static_0100
-     * @tc.desc      refreshOffsetJsunit_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetJsunit_static_0100
+     * @tc.name     refreshOffsetJsunit_static_0100
+     * @tc.desc     refreshOffsetJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Refresh_Offset');
@@ -101,14 +102,15 @@ export default function refreshOffsetJsunit() {
       done();
     });
 
-
-    /*
-     * @tc.number    refreshOffsetJsunit_static_0200
-     * @tc.name      refreshOffsetJsunit_static_0200
-     * @tc.desc      refreshOffsetJsunit_static_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   refreshOffsetJsunit_static_0200
+     * @tc.name     refreshOffsetJsunit_static_0200
+     * @tc.desc     refreshOffsetJsunit_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshOffsetJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshOffsetJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetJsunit_static_0200 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset');
       let top = swiperOffset.top;

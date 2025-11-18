@@ -66,8 +66,8 @@ struct SwiperInterfaceMix0220 {
           .border({ width: 1 })
       }
       .id('swiperinterfacemix0220')
-      
-      .onChange((index: Int): void => {
+      .displayCount('auto')
+      .onChange((index: int): void => {
         this.onAnimationStart = index + ''
       })
 

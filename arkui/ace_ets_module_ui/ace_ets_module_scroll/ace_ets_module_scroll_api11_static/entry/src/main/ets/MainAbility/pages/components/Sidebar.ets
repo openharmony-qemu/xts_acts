@@ -18,7 +18,6 @@ import {
   Component,
   Column,
   Flex,
-
   Visibility,
   Button,
   Text,
@@ -46,18 +45,6 @@ struct SideBarContainerTest {
     console.info('sideBar page build done called');
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       SideBarContainer() {
@@ -82,7 +69,6 @@ struct SideBarContainerTest {
               console.info('click four')
               this.text = 'four click'
             })
-          
         }
 
         RowSplit() {
@@ -126,7 +112,6 @@ struct SideBarContainerTest {
               console.info('click four')
               this.text = 'four click'
             })
-          
         }
 
         RowSplit() {

@@ -29,7 +29,8 @@ import {
   EdgeEffect,
   SafeAreaType,
   SafeAreaEdge,
-  NestedScrollMode
+  NestedScrollMode,
+  ScrollSource
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -54,15 +55,15 @@ struct ListExampleAdd {
           }.height('18%')
         }, (item: number, index: int) => String(item))
       }
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical) // 排列方向
       .scrollBar(BarState.Off)
       .divider({
         strokeWidth: 2,
         color: 0xFFFFFF,
         startMargin: 20,
         endMargin: 20
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      }) // 每行之间的分界线
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
@@ -75,9 +76,9 @@ struct ListExampleAdd {
         scrollForward: NestedScrollMode.PARENT_FIRST,
         scrollBackward: NestedScrollMode.SELF_FIRST
       })
-      
-      
-      
+      .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
+        console.info(`onScroll scrollState = ${scrollState}, scrollOffset = ${scrollOffset}`)
+      })
       .width('90%')
     }
     .width('100%')

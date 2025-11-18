@@ -55,10 +55,6 @@ import { Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
-  /*
-   * Grid嵌套测试
-   * */
-
 struct ScrollToIndexForGrid02 {
   @State numbers: Array<string> = new Array<string>()
   private scrollerForGrid: Scroller = new Scroller()
@@ -89,13 +85,14 @@ struct ScrollToIndexForGrid02 {
             direction: FlexDirection.Row,
             wrap: FlexWrap.Wrap,
             justifyContent: FlexAlign.SpaceBetween
-          }) { 
+          }) { // 子组件在容器主轴上行布局
             Button('grid-66-true-center', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
               .borderRadius(8)
               .backgroundColor(0x317aff)
               .onClick((e: ClickEvent) => {
+
                 this.isSmooth = false
                 this.scrollerForGrid.scrollToIndex(66, true, ScrollAlign.CENTER)
               })
@@ -263,6 +260,7 @@ struct ScrollToIndexForGrid02 {
         }
 
       }
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding(20)
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+    .padding(20)
   }
 }

@@ -15,6 +15,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Refresh, RefreshStatus, Text } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -34,12 +35,13 @@ struct RefreshLevel1 {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info('[stateChangCallBack] stateChangCallBack');
-    
-    
-    
-    
-    
-    
+    if (eventData != null && eventData.data != null) {
+      console.info('[stateChangCallBack] state change called:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, RecordData>
+      if (data['promptText'] != null) {
+        this.promptText = data['promptText'] as string;
+      }
+    }
   }
 
   build() {

@@ -59,12 +59,13 @@ export default function patternLockTest() {
         router.clear();
         let pages = router.getState();
         console.info("get PatternLockIndex state success " + JSON.stringify(pages));
-        if (!("PatternLockIndex" == pages.name)) {
+        if (!("MainAbility/pages/PatternLock/PatternLockIndex" == pages.name)) {
           console.info("get PatternLockIndex state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
-          
+          await UtilsTest.msSleep(4000)
+          // console.info("push PatternLockIndex page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push PatternLockIndex page error " + JSON.stringify(err));
       }
     });
@@ -74,12 +75,13 @@ export default function patternLockTest() {
       *tc.name   Support setting the dot color
       *tc.desc   Sets the setChallengeResult property parameter to undefined
       */
+
     /*
-     * @tc.number    ArkUX_Stage_PatternLock_setChallengeResult_static_0100
-     * @tc.name      ArkUX_Stage_PatternLock_setChallengeResult_static_0100
-     * @tc.desc      ArkUX_Stage_PatternLock_setChallengeResult_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Stage_PatternLock_setChallengeResult_static_0100
+       * @tc.name     ArkUX_Stage_PatternLock_setChallengeResult_static_0100
+       * @tc.desc     ArkUX_Stage_PatternLock_setChallengeResult_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUX_Stage_PatternLock_setChallengeResult_static_0100', Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 START');
@@ -88,9 +90,9 @@ export default function patternLockTest() {
           console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 START  :' + strJson);
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_PatternLock_setChallengeResult_static_0100 component obj.getElement('$attrs').getElement('setChallengeResult') is: " +
-          JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('setChallengeResult')));
+          obj.getElement('$attrs').tryGetElement('setChallengeResult') ?? '');
           console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 ERR  ' + JSON.stringify(err));
         }
@@ -102,12 +104,13 @@ export default function patternLockTest() {
      *tc.name   Support getting the dot index
      *tc.desc   Sets the onDotConnect property parameter to undefined
      */
+
     /*
-     * @tc.number    ArkUX_Stage_PatternLock_onDotConnect_0100
-     * @tc.name      ArkUX_Stage_PatternLock_onDotConnect_0100
-     * @tc.desc      ArkUX_Stage_PatternLock_onDotConnect_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Stage_PatternLock_onDotConnect_0100
+       * @tc.name     ArkUX_Stage_PatternLock_onDotConnect_0100
+       * @tc.desc     ArkUX_Stage_PatternLock_onDotConnect_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUX_Stage_PatternLock_onDotConnect_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 START');
       try {
@@ -115,9 +118,9 @@ export default function patternLockTest() {
         console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 START  :' + strJson);
         let obj = JSON.parseJsonElement(strJson);
         console.info("ArkUX_Stage_PatternLock_onDotConnect_0100 component obj.$attrs.onDotConnect is: " +
-        JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('onDotConnect')));
+        obj.getElement('$attrs').tryGetElement('onDotConnect') ?? '');
         console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 END ');
-      } catch (err) {
+      } catch (err: Error) {
         expect().assertFail();
         console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 ERR  ' + JSON.stringify(err));
       }

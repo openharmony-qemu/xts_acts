@@ -18,54 +18,54 @@ import {
   Component,
   Column,
   Flex,
-
+  FormComponent,
   Visibility,
   Button,
   Text,
-
-
-
+  FormCallbackInfo,
+  ErrorInformation,
   TextAlign,
   Margin,
   ClickEvent,
   FontWeight,
   FlexDirection,
-  FlexAlign
+  FlexAlign,
+  FormDimension
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct FormComponentPage {
-  
+  @State dimension: FormDimension = FormDimension.Dimension_2_2
 
   build() {
     Column() {
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      FormComponent({
+        id: 0,
+        name: "four_four",
+        bundle: "com.example.myapplication",
+        ability: "com.example.myapplication.MainAbility",
+        module: "fa_widget",
+        dimension: this.dimension,
+        temporary: true
+      })
+        .size({ width: 100, height: 100 })
+        .moduleName("fa_widget")
+        .dimension(this.dimension)
+        .allowUpdate(true)
+        .visibility(Visibility.Visible)
+        .onAcquired((e: FormCallbackInfo): void => {
+          console.log('onAcquired id : ' + e.id)
+        })
+        .onRouter((o: object): void => {
+          console.log('onRouter : ')
+        })
+        .onError((error: ErrorInformation): void => {
+          console.log('error code :' + error.errcode);
+          console.log('error msg :' + error.msg);
+        })
 
 
       Text('卡片格式 ：')
@@ -81,28 +81,28 @@ struct FormComponentPage {
           .fontSize(15)
           .width(150)
           .onClick((e: ClickEvent) => {
-            
+            this.dimension = FormDimension.Dimension_1_2
           })
         Button('2X2')
           .margin({ right: 10 } as Margin)
           .fontSize(15)
           .width(150)
           .onClick((e: ClickEvent) => {
-            
+            this.dimension = FormDimension.Dimension_2_2
           })
         Button('2X4')
           .margin({ right: 10 } as Margin)
           .fontSize(15)
           .width(150)
           .onClick((e: ClickEvent) => {
-            
+            this.dimension = FormDimension.Dimension_2_4
           })
         Button('4X4')
           .margin({ right: 10 } as Margin)
           .fontSize(15)
           .width(150)
           .onClick((e: ClickEvent) => {
-            
+            this.dimension = FormDimension.Dimension_4_4
           })
 
       }

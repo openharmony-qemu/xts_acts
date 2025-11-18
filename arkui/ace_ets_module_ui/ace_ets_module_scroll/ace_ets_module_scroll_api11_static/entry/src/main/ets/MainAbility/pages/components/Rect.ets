@@ -17,7 +17,6 @@ import {
   Component,
   Column,
   Flex,
-
   Visibility,
   Button,
   Text,
@@ -51,7 +50,7 @@ struct RectExample {
       Rect().width('90%').height(50)
 
       Text('with rounded corners').fontSize(9).fontColor(0xCCCCCC).width('90%')
-      
+      Rect({ width: '90%', height: 50 } as RectOptions).radiusHeight(20).radiusWidth(20)
       Rect({ width: '90%', height: 50 } as RectOptions).radius(20)
     }.width('100%').margin({ top: 5 } as Margin)
   }

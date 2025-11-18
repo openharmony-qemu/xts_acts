@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// ListItemGroup_constraintSize_设置了width、minWidth、maxWidth
 import {
   Entry,
   Component,
@@ -20,14 +20,16 @@ import {
   Flex,
   Row,
   Text,
-  ListItemGroup,
   ListItem,
   Margin,
   Color,
   TextAlign,
   Builder,
   List,
-  ForEach
+  ForEach,
+  ListItemGroup,
+  ListItem,
+  TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -62,22 +64,22 @@ struct constraintSizeListItemGroup3 {
     Column() {
       List() {
         ForEach(this.conTable3, (item: CONTable3) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+            ListItemGroup({ header: () => {this.itemHead(item.title)} }) {
+              ForEach(item.projects, (project: string) => {
+                ListItem() {
+                  Text(project)
+                    .width('100%')
+                    .height(100)
+                    .fontSize(20)
+                    .textAlign(TextAlign.Center)
+                    .backgroundColor(0xFFFFFF)
+                }
+              }, (item: string) => item)
+            }
+            .id('group_constraintSize_3')
+            .width(200)
+            .constraintSize({minWidth:100, maxWidth:300})
+            .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
         })
       }
       .width('100%')

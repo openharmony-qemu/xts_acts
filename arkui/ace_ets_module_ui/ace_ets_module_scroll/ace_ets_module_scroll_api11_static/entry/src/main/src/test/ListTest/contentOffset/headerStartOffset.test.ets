@@ -65,7 +65,7 @@ export default function headerStartOffset() {
           console.info("get headerStartOffset pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push headerStartOffset page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push headerStartOffset page error:" + err);
@@ -80,11 +80,11 @@ export default function headerStartOffset() {
 
 
     /*
-     * @tc.number    headerStartOffset_static_0100
-     * @tc.name      headerStartOffset_static_0100
-     * @tc.desc      headerStartOffset_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   headerStartOffset_static_0100
+       * @tc.name     headerStartOffset_static_0100
+       * @tc.desc     headerStartOffset_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('headerStartOffset_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[headerStartOffset_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -100,9 +100,9 @@ export default function headerStartOffset() {
       console.info('[headerStartOffset_static_0100] listItem.top: ' + listItem.top);
       console.info('[headerStartOffset_static_0100] list.top: ' + list.top);
       await CommonFunc.sleep(1000);
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       expect(Math.abs(listItem.top - groupHeader.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(groupHeader.top - list.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
-        .assertTrue();
+      expect(Math.abs(Math.round(groupHeader.top - list.top) - Math.round(uiContext!.vp2px(10))) <= 1).assertTrue();
       console.info('[headerStartOffset_static_0100] END');
       done();
     });

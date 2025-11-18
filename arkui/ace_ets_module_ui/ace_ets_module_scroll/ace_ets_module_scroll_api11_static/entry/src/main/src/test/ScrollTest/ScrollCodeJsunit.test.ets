@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -47,14 +47,14 @@ export default function scrollCodeJsunit() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get ScrollCode state success " + JSON.stringify(pages));
-        if (!("ScrollCode" == pages.name)) {
+        if (!("scrollCode" == pages.name)) {
           console.info("get ScrollCode pages success " + JSON.stringify(pages.name));
-
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push ScrollCode page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push ScrollCode page error " + JSON.stringify(err));
       }
     });
@@ -64,19 +64,20 @@ export default function scrollCodeJsunit() {
       console.info("ScrollCode after each called");
     });
 
+
     /*
-     * @tc.number    test_scrollCode_static_001
-     * @tc.name      test_scrollCode_static_001
-     * @tc.desc      test_scrollCode_static_001
-     * @tc.level     2
-     */
+       * @tc.number   test_scrollCode_static_001
+       * @tc.name     test_scrollCode_static_001
+       * @tc.desc     test_scrollCode_static_001
+       * @tc.level    Level.LEVEL0
+       */
     it('test_scrollCode_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_scrollCode_static_001] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ScrollCode');
 
       console.info("[test_scrollCode_static_001] component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollable'))
         .assertEqual('ScrollDirection.Vertical');
@@ -86,12 +87,13 @@ export default function scrollCodeJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    test_scrollCode_static_002
-     * @tc.name      test_scrollCode_static_002
-     * @tc.desc      test_scrollCode_static_002
-     * @tc.level     2
-     */
+       * @tc.number   test_scrollCode_static_002
+       * @tc.name     test_scrollCode_static_002
+       * @tc.desc     test_scrollCode_static_002
+       * @tc.level    Level.LEVEL0
+       */
     it('test_scrollCode_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_scrollCode_static_002] START');
       await CommonFunc.sleep(1000);
@@ -99,7 +101,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "Vertical"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -107,25 +109,26 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_002] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[test_scrollCode_static_002] change scrollable error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ScrollCode');
 
       console.info("[test_scrollCode_static_002] component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollable'))
         .assertEqual('ScrollDirection.Vertical');
       done();
     });
 
+
     /*
-     * @tc.number    test_scrollCode_static_003
-     * @tc.name      test_scrollCode_static_003
-     * @tc.desc      test_scrollCode_static_003
-     * @tc.level     2
-     */
+       * @tc.number   test_scrollCode_static_003
+       * @tc.name     test_scrollCode_static_003
+       * @tc.desc     test_scrollCode_static_003
+       * @tc.level    Level.LEVEL0
+       */
     it('test_scrollCode_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_scrollCode_static_003] START');
       await CommonFunc.sleep(1000);
@@ -133,7 +136,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBar": "Off"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 186,
@@ -141,24 +144,25 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[test_scrollCode_static_003] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ScrollCode');
 
       console.info("[test_scrollCode_static_003] component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBar')).assertEqual('BarState.Off');
       done();
     });
 
+
     /*
-     * @tc.number    test_scrollCode_static_004
-     * @tc.name      test_scrollCode_static_004
-     * @tc.desc      test_scrollCode_static_004
-     * @tc.level     2
-     */
+       * @tc.number   test_scrollCode_static_004
+       * @tc.name     test_scrollCode_static_004
+       * @tc.desc     test_scrollCode_static_004
+       * @tc.level    Level.LEVEL0
+       */
     it('test_scrollCode_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_scrollCode_static_004] START');
       await CommonFunc.sleep(1000);
@@ -166,7 +170,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBarColor": "#FFB6C1"
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 187,
@@ -174,24 +178,25 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[test_scrollCode_static_004] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ScrollCode');
 
       console.info("[test_scrollCode_static_004] component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarColor')).assertEqual('#FFFFB6C1');
       done();
     });
 
+
     /*
-     * @tc.number    test_scrollCode_static_005
-     * @tc.name      test_scrollCode_static_005
-     * @tc.desc      test_scrollCode_static_005
-     * @tc.level     2
-     */
+       * @tc.number   test_scrollCode_static_005
+       * @tc.name     test_scrollCode_static_005
+       * @tc.desc     test_scrollCode_static_005
+       * @tc.level    Level.LEVEL0
+       */
     it('test_scrollCode_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_scrollCode_static_005] START');
       await CommonFunc.sleep(1000);
@@ -199,7 +204,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBarWidth": 40
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 188,
@@ -207,50 +212,47 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_005] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[test_scrollCode_static_005] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ScrollCode');
 
       console.info("[test_scrollCode_static_005] component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarWidth')).assertEqual('40.00vp');
       done();
     });
 
 
     /*
-     * @tc.number    test_scrollCode_static_006
-     * @tc.name      test_scrollCode_static_006
-     * @tc.desc      test_scrollCode_static_006
-     * @tc.level     2
-     */
+       * @tc.number   test_scrollCode_static_006
+       * @tc.name     test_scrollCode_static_006
+       * @tc.desc     test_scrollCode_static_006
+       * @tc.level    Level.LEVEL0
+       */
     it('test_scrollCode_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000)
-        let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-          console.info("[test_scrollCode_static_06] get event state result is: " + JSON.stringify(eventData));
-
+      await CommonFunc.sleep(1000)
+      let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+        console.info("[test_scrollCode_static_06] get event state result is: " + JSON.stringify(eventData));
+        if (eventData.data != null) {
+          expect((eventData.data as Record<String, undefined | null | Object>)['scrollToIndex']).assertEqual(10)
         }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 189,
-          priority: events_emitter.EventPriority.LOW
-        }
-        try {
-          events_emitter.on(innerEvent, callback)
-        } catch (err) {
-          console.info("[test_scrollCode_static_06] on events_emitter err : " + JSON.stringify(err));
-        }
-        console.info('[test_scrollCode_static_006] sendEventByKey ' +
-          JSON.stringify(inspector.sendEventByKey('button', 10, "")));
-        await CommonFunc.sleep(1000)
-        console.info('[test_scrollCode_static_006] testSendTouchEvent END');
-        done();
-      } catch (ERROR) {
-        expect().assertFail();
       }
-
+      let innerEvent: events_emitter.InnerEvent = {
+        eventId: 189,
+        priority: events_emitter.EventPriority.LOW
+      }
+      try {
+        events_emitter.on(innerEvent, callback)
+      } catch (err: Error) {
+        console.info("[test_scrollCode_static_06] on events_emitter err : " + JSON.stringify(err));
+      }
+      console.info('[test_scrollCode_static_006] sendEventByKey ' +
+      JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      await CommonFunc.sleep(1000)
+      console.info('[test_scrollCode_static_006] testSendTouchEvent END');
+      done();
     });
   })
 }

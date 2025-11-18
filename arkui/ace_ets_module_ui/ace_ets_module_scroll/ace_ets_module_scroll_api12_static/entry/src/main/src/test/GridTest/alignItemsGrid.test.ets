@@ -50,10 +50,10 @@ export default function alignItemsGrid() {
         console.info("get alignItemsGrid state pages:" + JSON.stringify(pages));
         if (!("alignItemsGrid" == pages.name)) {
           console.info("get alignItemsGrid pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push alignItemsGrid page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push alignItemsGrid page error:" + err);
@@ -67,11 +67,11 @@ export default function alignItemsGrid() {
 
 
     /*
-     * @tc.number    alignItemsGrid_0100
-     * @tc.name      alignItemsGrid_0100
-     * @tc.desc      alignItemsGrid_0100
-     * @tc.level     2
-     */
+       * @tc.number   alignItemsGrid_0100
+       * @tc.name     alignItemsGrid_0100
+       * @tc.desc     alignItemsGrid_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('alignItemsGrid_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alignItemsGrid_0100] START');
       await CommonFunc.sleep(1000);
@@ -94,11 +94,11 @@ export default function alignItemsGrid() {
 
 
     /*
-     * @tc.number    alignItemsGrid_0200
-     * @tc.name      alignItemsGrid_0200
-     * @tc.desc      alignItemsGrid_0200
-     * @tc.level     2
-     */
+       * @tc.number   alignItemsGrid_0200
+       * @tc.name     alignItemsGrid_0200
+       * @tc.desc     alignItemsGrid_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('alignItemsGrid_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alignItemsGrid_0200] START');
       await CommonFunc.sleep(1000);

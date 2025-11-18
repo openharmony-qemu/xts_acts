@@ -63,10 +63,10 @@ export default function TouchTestStrategy() {
         console.info("get TouchTestStrategy state pages: " + JSON.stringify(pages));
         if (!("TouchTestStrategy" == pages.name)) {
           console.info("get TouchTestStrategy state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push TouchTestStrategy success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TouchTestStrategy page error: " + err);
@@ -74,12 +74,13 @@ export default function TouchTestStrategy() {
       }
     });
 
+
     /*
-     * @tc.number    TouchTestStrategy_static_0100
-     * @tc.name      TouchTestStrategy_static_0100
-     * @tc.desc      TouchTestStrategy_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   TouchTestStrategy_static_0100
+       * @tc.name     TouchTestStrategy_static_0100
+       * @tc.desc     TouchTestStrategy_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('TouchTestStrategy_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TouchTestStrategy_static_0100 START');
       await CommonFunc.sleep(1000);
@@ -88,11 +89,11 @@ export default function TouchTestStrategy() {
       let gridBottom = CommonFunc.getComponentRect('border_TouchStrategy');
       let bottom = gridBottom.bottom
       let driver = Driver.create()
-      const uiContext = new UIContext();
-      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + UIContext.getFocusedUIContext()!.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt());
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(80))).toInt(),
+        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(10))).toInt());
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('listText_TouchStrategy');
       let obj = JSON.parseJsonElement(strJson);

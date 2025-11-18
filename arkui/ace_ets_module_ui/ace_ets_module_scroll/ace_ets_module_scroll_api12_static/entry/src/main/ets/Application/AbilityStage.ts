@@ -19,8 +19,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
     console.log("[Demo] MyAbilityStage onCreate")
-    AppStorage.setOrCreate<number>('stageOnCreateRun', 1, Type.from<number>());
-    AppStorage.setOrCreate<common.AbilityStageContext>('stageContext', this.context,
-      Type.from<common.AbilityContext>());
+    AppStorage.setOrCreate<number>('stageOnCreateRun', 1);
+    AppStorage.setOrCreate<common.AbilityStageContext>('stageContext', this.context);
   }
 }

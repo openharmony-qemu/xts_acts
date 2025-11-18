@@ -48,12 +48,12 @@ export default function ScrollTest2() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get Index state success " + JSON.stringify(pages));
-        if (!("Index2" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/Index2" == pages.name)) {
           console.info("get Index state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(3000);
-          
+          // console.info("push Index page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Index page error: " + err);
@@ -62,11 +62,11 @@ export default function ScrollTest2() {
 
 
     /*
-     * @tc.number    ArkUX_Scroll_Visual_static_0010
-     * @tc.name      ArkUX_Scroll_Visual_static_0010
-     * @tc.desc      ArkUX_Scroll_Visual_static_0010
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Scroll_Visual_static_0010
+       * @tc.name     ArkUX_Scroll_Visual_static_0010
+       * @tc.desc     ArkUX_Scroll_Visual_static_0010
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Scroll_Visual_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Scroll_Visual_static_0010 START');
       setTimeout(() => {

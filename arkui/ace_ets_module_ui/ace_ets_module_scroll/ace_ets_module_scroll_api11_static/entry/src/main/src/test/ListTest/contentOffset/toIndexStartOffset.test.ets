@@ -65,7 +65,7 @@ export default function toIndexStartOffset() {
           console.info("get toIndexStartOffset pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push toIndexStartOffset page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push toIndexStartOffset page error:" + err);
@@ -80,11 +80,11 @@ export default function toIndexStartOffset() {
 
 
     /*
-     * @tc.number    toIndexStartOffset_static_0100
-     * @tc.name      toIndexStartOffset_static_0100
-     * @tc.desc      toIndexStartOffset_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   toIndexStartOffset_static_0100
+       * @tc.name     toIndexStartOffset_static_0100
+       * @tc.desc     toIndexStartOffset_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('toIndexStartOffset_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[toIndexStartOffset_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -97,8 +97,8 @@ export default function toIndexStartOffset() {
       console.info('[toIndexStartOffset_static_0100] list.bottom: ' + list.bottom);
       console.info('[toIndexStartOffset_static_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext()
-      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(uiContext!.vp2px(10))) <= 1).assertTrue();
       console.info('[toIndexStartOffset_static_0100] END');
       done();
     });

@@ -72,7 +72,7 @@ struct UIComponentScrollSwiperDisplaycount0210 {
           .borderWidth(3)
           .borderColor(Color.Red)
       }.id('swiperdisplaycount0210')
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.index = index.toString()
       })
       .backgroundColor(Color.Yellow)

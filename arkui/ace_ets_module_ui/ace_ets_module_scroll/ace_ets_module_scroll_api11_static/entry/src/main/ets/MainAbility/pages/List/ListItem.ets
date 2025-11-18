@@ -52,8 +52,6 @@ struct listItem_testcase {
               .height(40)
               .fontSize(12)
           }
-          
-          
           .key('listitem')
 
           ListItem() {
@@ -62,8 +60,6 @@ struct listItem_testcase {
               .height(40)
               .fontSize(12)
           }
-          
-          
           .key('listitem2')
 
           ListItem() {
@@ -72,8 +68,6 @@ struct listItem_testcase {
               .height(40)
               .fontSize(12)
           }
-          
-          
           .key('listitem3')
 
           ListItem() {
@@ -82,11 +76,8 @@ struct listItem_testcase {
               .height(40)
               .fontSize(12)
           }
-          
-          
           .key('listitem4')
         }
-        .sticky(StickyStyle.None)
       }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 } as Padding)
     }.width(300)
     .height(300)

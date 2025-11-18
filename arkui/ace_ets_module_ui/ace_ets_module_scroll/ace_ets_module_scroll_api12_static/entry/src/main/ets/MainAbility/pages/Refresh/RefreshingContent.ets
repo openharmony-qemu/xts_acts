@@ -34,17 +34,15 @@ import { ComponentContent } from '@ohos.arkui.node';
 @Component
 struct RefreshingContent {
   @State isRefreshing: boolean = false
-  @State arr: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+  @State arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
   @State refreshStatus: RefreshStatus = RefreshStatus.Inactive
-  private contentNode?: ComponentContent<Object> = undefined
-  @State testText: string = ''
+  @State testText: string = '123'
 
   build() {
     Column() {
       Text(this.testText).key('RefreshingContent')
       Refresh({
-        refreshing: $$(this.isRefreshing).value,
-        
+        refreshing: $$(this.isRefreshing),
       }) {
         List() {
           ForEach(this.arr, (item: string) => {

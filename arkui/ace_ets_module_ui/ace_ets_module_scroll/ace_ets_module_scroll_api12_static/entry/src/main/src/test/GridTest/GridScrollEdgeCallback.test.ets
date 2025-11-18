@@ -45,14 +45,13 @@ export default function GridScrollEdgeCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info('get GridScrollEdgeCallback state pages:' + JSON.stringify(pages));
-        if (!('GridScrollEdgeCallback' == pages.name)) {
+        if (!('MainAbility/pages/Grid/GridScrollEdgeCallback' == pages.name)) {
           console.info('get GridScrollEdgeCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info('push GridScrollEdgeCallback page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push GridScrollEdgeCallback page error:' + JSON.stringify(err));
@@ -64,13 +63,18 @@ export default function GridScrollEdgeCallbackJsunit() {
       console.info('GridScrollEdgeCallback after each called');
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    GridScrollEdgeCallbackTest_1580
-     * @tc.name      GridScrollEdgeCallbackTest_1580
-     * @tc.desc      GridScrollEdgeCallbackTest_1580
-     * @tc.level     2
-     */
+       * @tc.number   GridScrollEdgeCallbackTest_1580
+       * @tc.name     GridScrollEdgeCallbackTest_1580
+       * @tc.desc     GridScrollEdgeCallbackTest_1580
+       * @tc.level    Level.LEVEL0
+       */
     it('GridScrollEdgeCallbackTest_1580', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridScrollEdgeCallbackTest_1580 START');
       let driver1 = Driver.create();

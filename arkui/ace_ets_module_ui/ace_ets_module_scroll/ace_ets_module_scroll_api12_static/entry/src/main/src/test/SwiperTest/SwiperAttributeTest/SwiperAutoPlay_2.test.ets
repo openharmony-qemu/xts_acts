@@ -53,12 +53,11 @@ export default function SwiperAutoPlay_2() {
       console.info("SwiperAutoPlay_2 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperAutoPlay_2 state pages:" + JSON.stringify(pages));
-        if (!("SwiperAutoPlay_2" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperAutoPlay_2" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperAutoPlay_2"
           })
           await CommonFunc.sleep(2000);
@@ -74,14 +73,20 @@ export default function SwiperAutoPlay_2() {
       console.info("SwiperAutoPlay_2 after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    SwiperAutoPlay_1130
-     * @tc.name      SwiperAutoPlay_1130
-     * @tc.desc      SwiperAutoPlay_1130
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperAutoPlay_1130
+     * @tc.name     SwiperAutoPlay_1130
+     * @tc.desc     SwiperAutoPlay_1130
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperAutoPlay_1130', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperAutoPlay_1130', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperAutoPlay_1130] START');
 
       let strJson = inspector.getInspectorByKey('swiperAutoPlay_2');

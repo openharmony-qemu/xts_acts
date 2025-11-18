@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function swiperCustomJsunit() {
   describe('swiperCustomJsunit', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -63,7 +61,6 @@ export default function swiperCustomJsunit() {
           console.info("get swiperCustomJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push swiperCustomJsunit success: ");
         }
       } catch (err) {
         console.error("push swiperCustomJsunit page error: " + err);
@@ -76,14 +73,15 @@ export default function swiperCustomJsunit() {
       console.info(" swiperCustomJsunit after each called");
     });
 
-
-    /*
-     * @tc.number    swiperCustomJsunit_static_0100
-     * @tc.name      swiperCustomJsunit_static_0100
-     * @tc.desc      swiperCustomJsunit_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   swiperCustomJsunit_static_0100
+     * @tc.name     swiperCustomJsunit_static_0100
+     * @tc.desc     swiperCustomJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('swiperCustomJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('swiperCustomJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperCustomJsunit_static_0100 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Swiper_Length');
       let top = swiperOffset.top;

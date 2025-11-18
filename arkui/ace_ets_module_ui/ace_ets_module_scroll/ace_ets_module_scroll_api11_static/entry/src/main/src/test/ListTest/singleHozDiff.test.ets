@@ -65,7 +65,7 @@ export default function singleHozDiff() {
           console.info("get singleHozDiff pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push singleHozDiff page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push singleHozDiff page error:" + err);
@@ -80,11 +80,11 @@ export default function singleHozDiff() {
 
 
     /*
-     * @tc.number    singleHozDiff_static_0100
-     * @tc.name      singleHozDiff_static_0100
-     * @tc.desc      singleHozDiff_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   singleHozDiff_static_0100
+       * @tc.name     singleHozDiff_static_0100
+       * @tc.desc     singleHozDiff_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('singleHozDiff_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[singleHozDiff_static_0100] START');
       await CommonFunc.sleep(1000);

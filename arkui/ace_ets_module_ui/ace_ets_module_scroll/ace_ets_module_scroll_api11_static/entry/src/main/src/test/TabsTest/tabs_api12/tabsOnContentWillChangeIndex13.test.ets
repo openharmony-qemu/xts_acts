@@ -49,12 +49,10 @@ export default function tabsOnContentWillChangeIndex13JsunitTest() {
         console.info("get tabsOnContentWillChangeIndex13JsunitTest state pages:" + JSON.stringify(pages));
         if (!("tabs_onContentWillChangeIndex13" == pages.name)) {
           console.info("tabsOnContentWillChangeIndex13JsunitTest  pages.name:" + JSON.stringify(pages.name));
-          
-          routerAlp.pushUrl({
-            url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex13"
-          })
+          // let result = await routerAlp.pushUrl({url:"MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex13"})
+          routerAlp.pushUrl({ url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex13" })
           await CommonFunc.sleep(2000);
-          
+          // console.info("push tabsOnContentWillChangeIndex13JsunitTest result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push tabsOnContentWillChangeIndex13JsunitTest page error:" + err);
@@ -68,21 +66,21 @@ export default function tabsOnContentWillChangeIndex13JsunitTest() {
 
 
     /*
-     * @tc.number    tabsOnContentWillChangeJsunitTest_static_0130
-     * @tc.name      tabsOnContentWillChangeJsunitTest_static_0130
-     * @tc.desc      tabsOnContentWillChangeJsunitTest_static_0130
-     * @tc.level     2
-     */
+       * @tc.number   tabsOnContentWillChangeJsunitTest_static_0130
+       * @tc.name     tabsOnContentWillChangeJsunitTest_static_0130
+       * @tc.desc     tabsOnContentWillChangeJsunitTest_static_0130
+       * @tc.level    Level.LEVEL0
+       */
     it('tabsOnContentWillChangeJsunitTest_static_0130', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabsOnContentWillChangeJsunitTest_static_0130 START');
       let driver = Driver.create();
-      
+      // get the content rect value
       let tabsRect = CommonFunc.getComponentRect('content13x');
       console.info("tabsOnContentWillChangeJsunitTest_static_0130  test rect value " + tabsRect.left + "," +
       tabsRect.right + "," +
       tabsRect.top + "," + tabsRect.bottom);
 
-      
+      // swipe index  0 -1   swipe direction top to bottom
       await driver.swipe(((AppStorage.get<number>("winLeft") ?? 0) +
       Math.round((tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(),
         (Math.round((AppStorage.get<number>("winTop") ?? 0) +
@@ -100,7 +98,7 @@ export default function tabsOnContentWillChangeIndex13JsunitTest() {
       let texContent = await (text01?.getText() as Promise<string>);
       expect(texContent).assertEqual("发现的内容");
 
-      
+      // swipe index  1 -2   swipe direction top to bottom
       await driver.swipe(((AppStorage.get<number>("winLeft") ?? 0) +
       Math.round((tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(),
         (Math.round((AppStorage.get<number>("winTop") ?? 0) +
@@ -119,7 +117,7 @@ export default function tabsOnContentWillChangeIndex13JsunitTest() {
       expect(texContent2).assertEqual("推荐的内容");
 
 
-      
+      // swipe index  2 -3   swipe direction top to bottom
       await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) +
         (tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(),
         (Math.round((AppStorage.get<number>("winTop") ?? 0) +

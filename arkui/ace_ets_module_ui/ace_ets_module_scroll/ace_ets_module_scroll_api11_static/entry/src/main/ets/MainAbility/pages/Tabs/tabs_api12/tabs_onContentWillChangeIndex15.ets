@@ -26,7 +26,8 @@ import {
   BarMode,
   ClickEvent,
   FlexAlign,
-  ForEach
+  ForEach,
+  Builder
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -37,13 +38,13 @@ struct TabsExampleApi12I15 {
   private controller: TabsController = new TabsController()
   @State attr: number[] = [0, 1, 2, 3, 4] as number[]
 
-  
-  
-  
-  
-  
-  
-  
+  @Builder tabBuilder(title: string,targetIndex: number) {
+    Column(){
+      Text(title).fontColor(this.currentIndex === targetIndex ? '#1698CE' : '#6B6B6B')
+    }.width('100%')
+    .height(50)
+    .justifyContent(FlexAlign.Center)
+  }
   build() {
     Column() {
       Text(this.currentIndex + "").key("currentIndex15x")
@@ -61,7 +62,7 @@ struct TabsExampleApi12I15 {
               .backgroundColor('#00CB87')
               .justifyContent(FlexAlign.Center)
               .key("content1x4")
-            } 
+            } .tabBar(() => {this.tabBuilder('首页',0)})
           }
           if (item == 1) {
             TabContent() {
@@ -73,7 +74,7 @@ struct TabsExampleApi12I15 {
               .backgroundColor('#007DFF')
               .justifyContent(FlexAlign.Center)
               .key("content2x4")
-            } 
+            } .tabBar(() => {this.tabBuilder('发现',1)})
           }
           if (item == 2) {
             TabContent() {
@@ -85,7 +86,7 @@ struct TabsExampleApi12I15 {
               .backgroundColor('#FFBF00')
               .justifyContent(FlexAlign.Center)
               .key("content3x4")
-            } 
+            } .tabBar(() => {this.tabBuilder('推荐',2)})
           }
           if (item == 3) {
             TabContent() {
@@ -97,7 +98,7 @@ struct TabsExampleApi12I15 {
               .backgroundColor('#E67C92')
               .justifyContent(FlexAlign.Center)
               .key("content4x4")
-            } 
+            } .tabBar(() => {this.tabBuilder('我的',3)})
           }
           if (item == 4) {
             TabContent() {
@@ -109,7 +110,7 @@ struct TabsExampleApi12I15 {
               .backgroundColor('#E67C92')
               .justifyContent(FlexAlign.Center)
               .key("content5x4")
-            } 
+            } .tabBar(() => {this.tabBuilder('党史1949',4)})
           }
 
           if (item == 5) {
@@ -122,7 +123,7 @@ struct TabsExampleApi12I15 {
               .backgroundColor('#E67C92')
               .justifyContent(FlexAlign.Center)
               .key("content5x4")
-            } 
+            } .tabBar(() => {this.tabBuilder('建国1950',5)})
           }
 
         })

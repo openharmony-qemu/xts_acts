@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -48,7 +48,6 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
 import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base'; 
 
 const TAG = 'ets_apiLack_add';
 
@@ -126,22 +125,19 @@ struct ListIdle {
                   .borderRadius(10)
                   .backgroundColor(0xFFFFFF)
               }
-
-              
             }, (item: number) => item.toString())
 
           }
-          
           .key("ScrollList")
-          .listDirection(Axis.Vertical) 
+          .listDirection(Axis.Vertical) // 排列方向
           .divider({
             strokeWidth: 2,
             color: 0xFFFFFF,
             startMargin: 20,
             endMargin: 20
-          }) 
-          .edgeEffect(EdgeEffect.None) 
-          .chainAnimation(false) 
+          }) // 每行之间的分界线
+          .edgeEffect(EdgeEffect.None) // 滑动到边缘无效果
+          .chainAnimation(false) // 联动特效关闭
           .onDidScroll((scrollOffset: number, scrollState: ScrollState): void => {
             console.info('scrollOffset' + scrollOffset)
             console.info('scrollState   ' + scrollState.Scroll)
@@ -153,7 +149,7 @@ struct ListIdle {
               let backData: events_emitter.EventData = {
                 data: {
                   "State": this.onScroll
-                } as Record<String, RecordData>
+                } as Record<String,undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60303,

@@ -44,7 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function UIComponentScrollSwiperDisplaycount0210() {
   describe('UIComponentScrollSwiperDisplaycount0210', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,12 +52,11 @@ export default function UIComponentScrollSwiperDisplaycount0210() {
       console.info("UIComponentScrollSwiperDisplaycount0210 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get UIComponentScrollSwiperDisplaycount0210 state pages:" + JSON.stringify(pages));
-        if (!("UIComponentScrollSwiperDisplaycount0210" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/UIComponentScrollSwiperDisplaycount/UIComponentScrollSwiperDisplaycount0210" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/UIComponentScrollSwiperDisplaycount/UIComponentScrollSwiperDisplaycount0210'
           })
           await CommonFunc.sleep(2000);
@@ -74,33 +72,37 @@ export default function UIComponentScrollSwiperDisplaycount0210() {
       console.info("UIComponentScrollSwiperDisplaycount0210 after each called");
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210', Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.info(`SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 start.`);
-        await CommonFunc.sleep(3000)
-        let driver = Driver.create()
-        let swiper = await driver.findComponent(ON.id("swiperdisplaycount0210"));
-        let point = await (swiper?.getBoundsCenter() as Promise<Point>);
-        await CommonFunc.sleep(1000);
-        await driver.fling({
-          x: point.x - 30, y: point.y
-        }, {
-          x: point.x + 30, y: point.y
-        }, 5, 1000);
-        await CommonFunc.sleep(1000);
-        let strIndex: string = inspector.getInspectorByKey('swiperdisplaycount0210_1')
-        let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
-        expect(jsonIndex).assertEqual('0')
-        await CommonFunc.sleep(1000);
-        console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 END');
-        done();
-      });
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info(`SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 start.`);
+      await CommonFunc.sleep(3000)
+      let driver = Driver.create()
+      let swiper = await driver.findComponent(ON.id("swiperdisplaycount0210"));
+      let point = await (swiper?.getBoundsCenter() as Promise<Point>);
+      await CommonFunc.sleep(1000);
+      await driver.fling({
+        x: point.x - 30, y: point.y
+      }, {
+        x: point.x + 30, y: point.y
+      }, 5, 1000);
+      await CommonFunc.sleep(1000);
+      let strIndex: string = inspector.getInspectorByKey('swiperdisplaycount0210_1')
+      let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
+      expect(jsonIndex).assertEqual('0')
+      await CommonFunc.sleep(1000);
+      console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 END');
+      done();
+    });
   })
 }

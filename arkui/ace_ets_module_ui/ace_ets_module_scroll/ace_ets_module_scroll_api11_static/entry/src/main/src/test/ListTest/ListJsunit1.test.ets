@@ -73,10 +73,10 @@ export default function listJsunit1() {
         await sleep(1);
         let pages = router.getState();
         console.info("get List state success " + JSON.stringify(pages));
-        if (!("List" == pages.name)) {
+        if (!("MainAbility/pages/List/List1" == pages.name)) {
           console.info("get List state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
-          
+          // console.info("push List page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push List page error " + JSON.stringify(err));
@@ -91,11 +91,11 @@ export default function listJsunit1() {
 
 
     /*
-     * @tc.number    listTest_static_001
-     * @tc.name      listTest_static_001
-     * @tc.desc      listTest_static_001
-     * @tc.level     2
-     */
+       * @tc.number   listTest_static_001
+       * @tc.name     listTest_static_001
+       * @tc.desc     listTest_static_001
+       * @tc.level    Level.LEVEL1
+       */
     it('listTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('++++++++++++++++ List TestCase 1 START ++++++++++++++++');
       await sleep(1)
@@ -103,7 +103,7 @@ export default function listJsunit1() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringifyJsonElement(obj));
       console.log(JSON.stringifyJsonElement(obj.getElement('$type')))
-      expect(obj.getElement('$type')).assertEqual('List')
+      expect(obj.getString('$type')).assertEqual('List')
       console.log('List‘s space is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('space')))
       console.log('List‘s initialIndex is ' +
@@ -114,13 +114,14 @@ export default function listJsunit1() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider')))
       console.log('List‘s edgeEffect is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect')))
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('initialIndex')).assertEqual('0')
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('listDirection'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('initialIndex')).assertEqual('0')
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('listDirection'))
         .assertEqual('Axis.Vertical')
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
         .assertEqual('EdgeEffect.None')
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode')).assertEqual(false)
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertEqual(false)
       console.info('++++++++++++++++ List TestCase 1 End ++++++++++++++++');
+      done();
     });
   })
 }

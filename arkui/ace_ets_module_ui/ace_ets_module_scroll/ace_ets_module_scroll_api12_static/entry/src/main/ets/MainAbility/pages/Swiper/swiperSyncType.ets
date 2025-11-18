@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { SwiperDynamicSyncSceneType, SwiperDynamicSyncScene } from '@ohos.arkui.UIContext'
+import { SwiperDynamicSyncSceneType, SwiperDynamicSyncScene, DynamicSyncScene } from '@ohos.arkui.UIContext'
 import {
   Entry,
   Component,
@@ -26,7 +26,7 @@ import {
   Button,
   ForEach,
   TextAlign,
-  ClickEvent
+  ClickEvent,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -37,11 +37,11 @@ struct sceneTypeFrame {
   private DISPLAY_COUNT: number = 2
   @State backgroundColors: Color[] = [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.Gray, Color.Orange]
   private scenes: SwiperDynamicSyncScene[] = new Array<SwiperDynamicSyncScene>()
-  private frameRateList: [number, number][][] = new Array<Array<[number, number]>>(
+  private frameRateList: [int, int][][] = new Array<Array<[int, int]>>(
     [[60, 30], [120, 60]]
   )
-  private frameRateIndex: number = 0
-  private frameRateValue: number = 0
+  private frameRateIndex: int = 0
+  private frameRateValue: int = 0
   @State frameRate: ExpectedFrameRateRange = { min: 0, max: 120, expected: 60 } as ExpectedFrameRateRange
   @State text1: string = 'setFrameRateRange'
 
@@ -63,7 +63,9 @@ struct sceneTypeFrame {
       .backgroundColor(Color.Blue)
       .autoPlay(true, undefined)
       .onAppear(() => {
-        
+        let result: Array<DynamicSyncScene> = this.getUIContext().requireDynamicSyncScene("dynamicSwiper");
+        let array: Array<SwiperDynamicSyncScene> = result.map((item: DynamicSyncScene) => { return (item as SwiperDynamicSyncScene) });
+        this.scenes = array
       })
 
       Text(this.text1).id('sceneType_swiper')
@@ -73,7 +75,7 @@ struct sceneTypeFrame {
             if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {
               this.frameRateValue = this.frameRateList[this.frameRateIndex.toInt()][0][0]
               if (this.frameRateValue !== 6666) {
-                this.frameRate.expected = this.frameRateValue.toInt()
+                this.frameRate.expected = this.frameRateValue
                 scenes.setFrameRateRange(this.frameRate)
                 this.text1 += 'Swiper1: ' + this.frameRateValue
               }
@@ -81,7 +83,7 @@ struct sceneTypeFrame {
             if (scenes.type == SwiperDynamicSyncSceneType.ANIMATION) {
               this.frameRateValue = this.frameRateList[this.frameRateIndex.toInt()][0][1]
               if (this.frameRateValue !== 6666) {
-                this.frameRate.expected = this.frameRateValue.toInt()
+                this.frameRate.expected = this.frameRateValue
                 scenes.setFrameRateRange(this.frameRate)
                 this.text1 += 'Swiper11: ' + this.frameRateValue
               }

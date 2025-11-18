@@ -33,7 +33,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function alphabetAlignStyleTest() {
   describe('alphabetAlignStyleTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -45,10 +44,9 @@ export default function alphabetAlignStyleTest() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get alphabetAlignStyleTest state pages:" + JSON.stringify(pages));
-        if (!("alphabetAlignStyle" == pages.name)) {
+        if (!("MainAbility/pages/AlphabetIndexer/alphabetAlignStyle" == pages.name)) {
           console.info("get alphabetAlignStyleTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -60,13 +58,18 @@ export default function alphabetAlignStyleTest() {
       console.info("alphabetAlignStyleTest beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    testAlphabetAlignStyle_static_001
-     * @tc.name      testAlphabetAlignStyle_static_001
-     * @tc.desc      testAlphabetAlignStyle_static_001
-     * @tc.level     2
-     */
+       * @tc.number   testAlphabetAlignStyle_static_001
+       * @tc.name     testAlphabetAlignStyle_static_001
+       * @tc.desc     testAlphabetAlignStyle_static_001
+       * @tc.level    Level.LEVEL0
+       */
     it('testAlphabetAlignStyle_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testName: string = '[testAlphabetAlignStyle_static_001]';
       console.log(`${testName} start`);
@@ -108,11 +111,11 @@ export default function alphabetAlignStyleTest() {
 
 
     /*
-     * @tc.number    testAlphabetAlignStyle_static_002
-     * @tc.name      testAlphabetAlignStyle_static_002
-     * @tc.desc      testAlphabetAlignStyle_static_002
-     * @tc.level     2
-     */
+       * @tc.number   testAlphabetAlignStyle_static_002
+       * @tc.name     testAlphabetAlignStyle_static_002
+       * @tc.desc     testAlphabetAlignStyle_static_002
+       * @tc.level    Level.LEVEL0
+       */
     it('testAlphabetAlignStyle_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testName: string = '[testAlphabetAlignStyle_static_002]';
       console.log(`${testName} start`);

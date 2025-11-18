@@ -61,10 +61,10 @@ export default function ScrollTest() {
         console.info("get ScrollTest state pages: " + JSON.stringify(pages));
         if (!("Scroll" == pages.name)) {
           console.info("get ScrollTest state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ScrollTest page result: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ScrollTest page error: " + err);
@@ -74,11 +74,11 @@ export default function ScrollTest() {
 
 
     /*
-     * @tc.number    ScrollTest_static_001
-     * @tc.name      ScrollTest_static_001
-     * @tc.desc      ScrollTest_static_001
-     * @tc.level     2
-     */
+       * @tc.number   ScrollTest_static_001
+       * @tc.name     ScrollTest_static_001
+       * @tc.desc     ScrollTest_static_001
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[ScrollTest_static_001] START');
@@ -86,11 +86,12 @@ export default function ScrollTest() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
-      await driver.swipe(((AppStorage.get<number>("winLeft") ?? 0) + Math.round(UIContext.getFocusedUIContext()!.vp2px(67))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(200))).toInt(),
-        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(67))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(133))).toInt());
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      console.info("[ScrollTest_static_001] uiContext is : " + uiContext);
+      await driver.swipe(((AppStorage.get<number>("winLeft") ?? 0) + Math.round(uiContext.vp2px(67))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(200))).toInt(),
+        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(67))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(133))).toInt());
       await CommonFunc.sleep(1000);
       console.info("[ScrollTest_static_001] swipe success");
       let strJson1 = inspector.getInspectorByKey('scrollText');
@@ -103,7 +104,5 @@ export default function ScrollTest() {
       console.info('[ScrollTest_static_001] END');
       done();
     });
-
-
   })
 }

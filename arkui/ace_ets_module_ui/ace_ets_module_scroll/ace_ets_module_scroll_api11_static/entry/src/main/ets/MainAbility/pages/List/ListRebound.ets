@@ -41,7 +41,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ListRebound {
-  @State numberData: String[] = ['0', '1', '2', '3']
+  @State Number1: String[] = ['0', '1', '2', '3']
   scroller: Scroller = new Scroller()
   @State isRefreshing: boolean = false
 
@@ -58,8 +58,8 @@ struct ListRebound {
   build() {
     Column() {
       Grid(this.scroller) {
-        ForEach(this.numberData, (day1: string) => {
-          ForEach(this.numberData, (day2: string) => {
+        ForEach(this.Number1, (day1: string) => {
+          ForEach(this.Number1, (day2: string) => {
             GridItem() {
               Text(day1 + day2)
                 .fontSize(16)
@@ -86,13 +86,11 @@ struct ListRebound {
       Column() {
         Refresh({
           refreshing: this.isRefreshing,
-          
-          
           builder: this.customBuilder
         }) {
           Grid(this.scroller) {
-            ForEach(this.numberData, (day1: string, index: int) => {
-              ForEach(this.numberData, (day2: string, index: int) => {
+            ForEach(this.Number1, (day1: string, index: int) => {
+              ForEach(this.Number1, (day2: string, index: int) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)
@@ -116,18 +114,17 @@ struct ListRebound {
           .margin({ top: 10, bottom: 30 } as Margin)
           .key('MyGrid2')
         }
+        .pullDownRatio(1)
       }
 
       Column() {
         Refresh({
           refreshing: this.isRefreshing,
-          
-          
           builder: this.customBuilder
         }) {
           Grid(this.scroller) {
-            ForEach(this.numberData, (day1: string, index: int) => {
-              ForEach(this.numberData, (day2: string, index: int) => {
+            ForEach(this.Number1, (day1: string, index: int) => {
+              ForEach(this.Number1, (day2: string, index: int) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)
@@ -151,8 +148,8 @@ struct ListRebound {
           .margin({ top: 10, bottom: 30 } as Margin)
           .key('MyGrid3')
         }
+        .pullDownRatio(1)
       }
-
     }
   }
 }

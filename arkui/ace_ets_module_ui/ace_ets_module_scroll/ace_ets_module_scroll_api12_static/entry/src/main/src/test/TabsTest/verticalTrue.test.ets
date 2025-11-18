@@ -34,7 +34,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function verticalTrue() {
   describe('verticalTrue', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -46,10 +45,9 @@ export default function verticalTrue() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get verticalTrue state pages:" + JSON.stringify(pages));
-        if (!("verticalTrue" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/verticalTrue" == pages.name)) {
           console.info("get verticalTrue pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -61,14 +59,20 @@ export default function verticalTrue() {
       console.info("verticalTrue beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    verticalTrue_static_0100
-     * @tc.name      verticalTrue_static_0100
-     * @tc.desc      verticalTrue_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   verticalTrue_static_0100
+     * @tc.name     verticalTrue_static_0100
+     * @tc.desc     verticalTrue_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('verticalTrue_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('verticalTrue_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[verticalTrue_static_0100] START');
       let swiperTabs = CommonFunc.getComponentRectOnScreen('vertical_true_callback');
       let top = swiperTabs.top;

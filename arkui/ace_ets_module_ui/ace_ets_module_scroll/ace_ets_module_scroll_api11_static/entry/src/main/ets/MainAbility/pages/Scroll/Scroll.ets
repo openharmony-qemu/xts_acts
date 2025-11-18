@@ -40,7 +40,9 @@ import {
   FontWeight,
   Button,
   ButtonType,
-  ClickEvent
+  ClickEvent,
+  ScrollState,
+  ScrollSource
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -72,9 +74,8 @@ struct ScrollTest {
     .backgroundColor(Color.Yellow)
     .height('100%')
     .enablePaging(true)
-
-    
-    
-    
+    .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
+      this.scrollText = 'true'
+    })
   }
 }

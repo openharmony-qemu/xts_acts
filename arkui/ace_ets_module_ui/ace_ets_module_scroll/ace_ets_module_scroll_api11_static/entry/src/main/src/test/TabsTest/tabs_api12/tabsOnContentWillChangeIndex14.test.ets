@@ -49,12 +49,10 @@ export default function tabsOnContentWillChangeIndex14JsunitTest() {
         console.info("get tabsOnContentWillChangeIndex14JsunitTest state pages:" + JSON.stringify(pages));
         if (!("tabs_onContentWillChangeIndex14" == pages.name)) {
           console.info("tabsOnContentWillChangeIndex14JsunitTest  pages.name:" + JSON.stringify(pages.name));
-          
-          routerAlp.pushUrl({
-            url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex14"
-          })
+          // let result = await routerAlp.pushUrl({url:"MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex14"})
+          routerAlp.pushUrl({ url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex14" })
           await CommonFunc.sleep(2000);
-          
+          // console.info("push tabsOnContentWillChangeIndex14JsunitTest result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push tabsOnContentWillChangeIndex14JsunitTest page error:" + err);
@@ -68,11 +66,11 @@ export default function tabsOnContentWillChangeIndex14JsunitTest() {
 
 
     /*
-     * @tc.number    tabsOnContentWillChangeJsunitTest_static_0140
-     * @tc.name      tabsOnContentWillChangeJsunitTest_static_0140
-     * @tc.desc      tabsOnContentWillChangeJsunitTest_static_0140
-     * @tc.level     2
-     */
+       * @tc.number   tabsOnContentWillChangeJsunitTest_static_0140
+       * @tc.name     tabsOnContentWillChangeJsunitTest_static_0140
+       * @tc.desc     tabsOnContentWillChangeJsunitTest_static_0140
+       * @tc.level    Level.LEVEL0
+       */
     it('tabsOnContentWillChangeJsunitTest_static_0140', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabsOnContentWillChangeJsunitTest_static_0140 START');
 

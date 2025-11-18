@@ -56,7 +56,7 @@ export default function SwiperInterface03() {
         console.info("get SwiperInterface03 state pages:" + JSON.stringify(pages));
         if (!("SwiperInterface03" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperInterface/SwiperInterface03'
           })
           await CommonFunc.sleep(2000);
@@ -72,17 +72,18 @@ export default function SwiperInterface03() {
       console.info("SwiperInterface03 after each called");
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0190 START");
       await CommonFunc.sleep(6000);
-      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_static_0190');
+      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_0190');
       let marq = JSON.parseJsonElement(strJson).getElement('$attrs').getString('curve');
       let marq2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator');
       expect(marq2).assertEqual("true");
@@ -93,16 +94,18 @@ export default function SwiperInterface03() {
     });
 
 
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0200 START");
       await CommonFunc.sleep(6000);
-      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_static_0200');
+      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_0200');
       let marq = JSON.parseJsonElement(strJson).getElement('$attrs').getString('curve');
       let marq2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator');
       expect(marq2).assertEqual("true");
@@ -112,17 +115,18 @@ export default function SwiperInterface03() {
       done();
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0210 START");
       await CommonFunc.sleep(6000);
-      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_static_0210');
+      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_0210');
       let marq = JSON.parseJsonElement(strJson).getElement('$attrs').getString('curve');
       let marq2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator');
       expect(marq2).assertEqual("true");
@@ -132,17 +136,18 @@ export default function SwiperInterface03() {
       done();
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0220 START");
       await CommonFunc.sleep(6000);
-      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_static_0220');
+      let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_0220');
       let marq = JSON.parseJsonElement(strJson).getElement('$attrs').getString('curve');
       let marq2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator');
       expect(marq2).assertEqual("true");

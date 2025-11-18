@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import {
   Entry,
   Component,
@@ -30,12 +29,13 @@ import {
   SubTabBarStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier'
 
 @Entry
 @Component
 struct symbolModifierIndex {
-  
-  
+  @State symbolModifier1: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
+  @State symbolModifier2: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ellipsis_bubble'));
   @State mess: string = '111'
 
   build() {
@@ -47,9 +47,10 @@ struct symbolModifierIndex {
         Tabs({ barPosition: BarPosition.Start }) {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Pink)
-          }.tabBar(new BottomTabBarStyle({
-            
-            
+          }
+          .tabBar(new BottomTabBarStyle({
+            normal: this.symbolModifier1,
+            selected: this.symbolModifier2
           } as TabBarSymbol, 'Pink'))
           .onWillShow((): void => {
             this.mess = 'Pink onWillShow'
@@ -62,10 +63,11 @@ struct symbolModifierIndex {
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Green)
-          }.tabBar(new BottomTabBarStyle({
-            
-            
-            
+          }
+          .tabBar(new BottomTabBarStyle({
+            normal: this.symbolModifier1,
+            selected: this.symbolModifier2,
+            // params: ['111']
           } as TabBarSymbol, 'Green'))
 
           TabContent() {
@@ -76,8 +78,8 @@ struct symbolModifierIndex {
 
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Blue)
-          }.tabBar(SubTabBarStyle.of('Blue')
-            .id('Blue'))
+          }
+          .tabBar(SubTabBarStyle.of('Blue').id('Blue'))
         }
         .id('tabs_normal_id')
         .vertical(false)
@@ -88,7 +90,7 @@ struct symbolModifierIndex {
         .onChange((index: int): void => {
           console.info(index.toString())
         })
-        .backgroundColor(0xF1F3F5)
+        .backgroundColor('0xF1F3F5')
       }
     }.width('100%')
     .height('100%')

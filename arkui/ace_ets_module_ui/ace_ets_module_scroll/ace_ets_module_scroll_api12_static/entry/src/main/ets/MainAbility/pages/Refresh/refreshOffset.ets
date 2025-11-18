@@ -39,7 +39,7 @@ struct RefreshOffsetExample {
   build() {
     Column() {
       Text(this.message).id('refresh_mess')
-      Refresh({ refreshing: $$(this.isRefreshing).value }) {
+      Refresh({ refreshing: $$(this.isRefreshing) }) {
         List() {
           ForEach(this.arr, (item: string) => {
             ListItem() {

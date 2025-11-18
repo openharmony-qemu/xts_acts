@@ -34,7 +34,6 @@ function sleep(time: number) {
 
 export default function gridItemJsunit() {
 
-
   describe('gridItemTest', () => {
     beforeAll(() => {
 
@@ -53,11 +52,11 @@ export default function gridItemJsunit() {
         await sleep(1);
         let pages = routerAlp.getState();
         console.info("get GridItem state success " + JSON.stringify(pages));
-        if (!("GridItem" == pages.name)) {
+        if (!("MainAbility/pages/grid/GridItem" == pages.name)) {
           console.info("get GridItem state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
-          
+          // console.info("push GridItem page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push GridItem page error " + JSON.stringify(err));
@@ -72,11 +71,11 @@ export default function gridItemJsunit() {
 
 
     /*
-     * @tc.number    gridItemTest001_static_01
-     * @tc.name      gridItemTest001_static_01
-     * @tc.desc      gridItemTest001_static_01
-     * @tc.level     2
-     */
+       * @tc.number   gridItemTest001_static_01
+       * @tc.name     gridItemTest001_static_01
+       * @tc.desc     gridItemTest001_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('gridItemTest001_static_01', Level.LEVEL0, async () => {
       console.info('gridItemTest001_static_01 START');
       await sleep(1)

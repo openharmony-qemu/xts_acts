@@ -74,8 +74,8 @@ struct paddingStartOffsetExample {
         color: 0xFFFFFF,
         startMargin: 20,
         endMargin: 20
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      }) // 每行之间的分界线
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)

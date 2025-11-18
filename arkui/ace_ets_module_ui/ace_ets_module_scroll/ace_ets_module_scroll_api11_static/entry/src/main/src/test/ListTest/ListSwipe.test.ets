@@ -44,12 +44,11 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ListSwipeTest() {
   const SUITE: string = 'ListSwipe'
-  const waitUiReadyMs = 1500
+  const waitUiReadyMs: int = 1500
 
 
   describe('ListSwipeTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -75,17 +74,17 @@ export default function ListSwipeTest() {
 
 
     /*
-     * @tc.number    ArkUI_List_Swipe_static_0100
-     * @tc.name      ArkUI_List_Swipe_static_0100
-     * @tc.desc      ArkUI_List_Swipe_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Swipe_static_0100
+       * @tc.name     ArkUI_List_Swipe_static_0100
+       * @tc.desc     ArkUI_List_Swipe_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_List_Swipe_static_0100'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
       await driver.delayMs(waitUiReadyMs)
-      
+      // 3.swipe item to left
       let baseKey: string = 'MyList1_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
       const winLeft: number = AppStorage.get<number>("winLeft") as number
@@ -95,12 +94,11 @@ export default function ListSwipeTest() {
       await driver.swipe((Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
         (Math.round(winTop + rectCenter[1])).toInt(),
         0, (Math.round(winTop + rectCenter[1])).toInt())
-
-      await sleep(8000) 
+      await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0100')
       let strJson2: string = inspector.getInspectorByKey('swipe0100')
       console.info('ArkUI_List_Swipe_static_0100 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('end EXPANDED')
       console.info(`${SUITE} ${CASE} END`);
@@ -109,11 +107,11 @@ export default function ListSwipeTest() {
 
 
     /*
-     * @tc.number    ArkUI_List_Swipe_static_0300
-     * @tc.name      ArkUI_List_Swipe_static_0300
-     * @tc.desc      ArkUI_List_Swipe_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Swipe_static_0300
+       * @tc.name     ArkUI_List_Swipe_static_0300
+       * @tc.desc     ArkUI_List_Swipe_static_0300
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_List_Swipe_static_0300'
       console.info(`${SUITE} ${CASE} START`);
@@ -125,19 +123,18 @@ export default function ListSwipeTest() {
       const winLeft: number = AppStorage.get<number>("winLeft") as number
       const winTop: number = AppStorage.get<number>("winTop") as number
       console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
-      
+      // 2.swipe right
       let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
       await driver.swipe((Math.round(winLeft + rectCenter[0])).toInt(),
         (Math.round(winTop + rectCenter[1])).toInt(),
         (Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
         (Math.round(winTop + rectCenter[1])).toInt())
 
-
-      await sleep(8000) 
+      await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0300')
       let strJson2: string = inspector.getInspectorByKey('swipe0300')
       console.info('ArkUI_List_Swipe_static_0300 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('EXPANDED')
       console.info(`${SUITE} ${CASE} END`);
@@ -146,23 +143,23 @@ export default function ListSwipeTest() {
 
 
     /*
-     * @tc.number    ArkUI_List_Swipe_static_0400
-     * @tc.name      ArkUI_List_Swipe_static_0400
-     * @tc.desc      ArkUI_List_Swipe_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Swipe_static_0400
+       * @tc.name     ArkUI_List_Swipe_static_0400
+       * @tc.desc     ArkUI_List_Swipe_static_0400
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Swipe_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_List_Swipe_static_0400'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
       await driver.delayMs(waitUiReadyMs)
 
-      
+      // 2.trigger button click, expect state change COLLAPSED and onFinish be called
       inspector.sendEventByKey('MyList2CloseButton', 10, '')
-      await sleep(8000) 
+      await sleep(3000) // wait for ui update
       let strJson2: string = inspector.getInspectorByKey('swipe0400')
       console.info('ArkUI_List_Swipe_static_0400 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('onFinish')
       console.info(`${SUITE} ${CASE} END`);
@@ -171,17 +168,17 @@ export default function ListSwipeTest() {
 
 
     /*
-     * @tc.number    ArkUI_List_Swipe_static_0500
-     * @tc.name      ArkUI_List_Swipe_static_0500
-     * @tc.desc      ArkUI_List_Swipe_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Swipe_static_0500
+       * @tc.name     ArkUI_List_Swipe_static_0500
+       * @tc.desc     ArkUI_List_Swipe_static_0500
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_List_Swipe_static_0500'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
       await driver.delayMs(waitUiReadyMs)
-      
+      // 2.swipe item to left
       let baseKey: string = 'MyList1_ListItem1'
       let strJson: string = inspector.getInspectorByKey(baseKey);
       let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
@@ -191,11 +188,11 @@ export default function ListSwipeTest() {
       await driver.swipe((Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
         (Math.round(winTop + rectCenter[1])).toInt(),
         0, (Math.round(winTop + rectCenter[1])).toInt())
-      await sleep(8000) 
+      await sleep(8000) // wait for ui update
       let strJson2: string = inspector.getInspectorByKey('swipe0500')
 
       console.info('ArkUI_List_Swipe_static_0500 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('swipe end')
       console.info(`${SUITE} ${CASE} END`);
@@ -230,9 +227,9 @@ function getRectCenterVp(rect: string) {
   let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
   const uiContext = new UIContext()
   return [
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) +
+    uiContext.px2vp(Number.parseFloat(rtn[0].trim()) +
       (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) +
+    uiContext.px2vp(Number.parseFloat(rtn[1].trim()) +
       (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
   ]
 }

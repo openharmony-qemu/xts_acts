@@ -27,11 +27,11 @@ import listSContentTest from "./ListTest/list.test"
 import tabsApi1 from './TabsTest/tabs/tabsApi1.test';
 import TouchTestStrategy from './ScrollTest/TouchTestStrategy.test';
 import ScrollTest from './ScrollTest/Scroll.test'
-
+import tabs from './TabsTest/TabsTest'
 import tabsSec from './TabsTest/TabsSec'
 import tabsThird from './TabsTest/TabsThird'
 import ActsAlphabetIndexerUxTest from './AlphabetIndexerTest/AlphabetIndexer.test'
-
+import RefreshTest from './RefreshTest/Refresh.test'
 import ScrollTest2 from './ScrollTest/Scroll2.test'
 import Tabs_itemPadMar from './TabsTest/Tabs_ItemsChange/Tabs_itemPadMar.test';
 import Tabs_itemSize from './TabsTest/Tabs_ItemsChange/Tabs_itemSize.test';
@@ -79,10 +79,10 @@ import ScrollBarJsunit from './ScrollTest/ScrollBarJsunit.test';
 import scrollCodeJsunit from './ScrollTest/ScrollCodeJsunit.test.ets';
 import tabsJsunit from './TabsTest/Tabs3Jsunit.test.ets';
 import gridJsunit from './gridTest/Grid3Jsunit.test.ets';
-
+import refreshJsunit from './RefreshTest/RefreshJsunit.test';
 import listtestIdleJsunit from './ListTest/listtest.test';
 import list_item_groupJsunit from './ListTest/list_item_group.test'
-
+import refreshDragJsunit from './RefreshTest/refresh2.test';
 import alphabetIndexerOnSelectJsunit from './AlphabetIndexerTest/alphabetIndexerAPI.test';
 import gridMaxCountJsunit from './gridTest/gridAPI.test';
 import gridItemOnSelectJsunit from './gridItemTest/gridItem.test';
@@ -94,7 +94,6 @@ import tabsBarPositionJsunit from './TabsTest/tabs.test';
 import scrollBarJsunitt from './ScrollBar/ScrollBarJsunitt.test.ets';
 import listItemJsunit2 from './ListTest/ListItemJsunit2.test';
 import gridColTest from './component/GridColJsunit.test';
-
 import conSizeGroup1 from './ListTest/conSizeGroup1.test';
 import conSizeGroup2 from './ListTest/conSizeGroup2.test';
 import conSizeGroup3 from './ListTest/conSizeGroup3.test'
@@ -114,11 +113,7 @@ import offsetAlignEnd from './ListTest/contentOffset/offsetAlignEnd.test';
 import offsetAlignStart from './ListTest/contentOffset/offsetAlignStart.test';
 
 export default function testsuite() {
-  listUxTest()
-  ActsGridTest();
-  gridScrollbarUpdateTest();
-  List07Test();
-  listJsunit();
+  listJsunit(); // editMode废弃  3
   ListDeleteTest();
   ListSwipeTest();
   ListReboundTest();
@@ -127,26 +122,18 @@ export default function testsuite() {
   TabsApi();
   APIScrollflingSpeedLimitJsunit();
   APITabsBarBackgroundBlurStyleJsunit();
-  alphabetTest()
-  gridIndexTest()
-  listSContentTest()
-  tabsApi1()
-  TouchTestStrategy()
-  ScrollTest()
-  
-  tabsSec()
-  tabsThird()
-  ActsAlphabetIndexerUxTest()
-  
-  ScrollTest2()
-  edgeEffectJsunit()
-  scrollbarJsunit();
-  alphabetIndexerJsunit();
-  gridIndexTest1();
-  gridItemJsunit();
-  listJsunit1();
-  listItemJsunit();
-  tabJsunit();
+  alphabetTest();
+  gridIndexTest();
+  listSContentTest();
+  tabsApi1();
+  TouchTestStrategy();
+  ScrollTest();
+  tabs();
+  tabsSec();
+  tabsThird();  // emit + tabs.padding 187
+  ActsAlphabetIndexerUxTest();
+  RefreshTest();
+  ScrollTest2();
   Tabs_itemPadMar();
   Tabs_itemSize();
   tabs_IndexTest();
@@ -156,45 +143,61 @@ export default function testsuite() {
   Tabs_barPosition();
   Tabs_barWidHei();
   Tabs_scrollable();
-  scroll_ScrollFrictionTest()
-  ScrollJsunit()
-  GridTest()
-  patternLock()
+  scroll_ScrollFrictionTest();
+  edgeEffectJsunit();
+  scrollbarJsunit();
+  alphabetIndexerJsunit();
+  gridIndexTest1();
+  gridItemJsunit();
+  listJsunit1();
+  listItemJsunit();
+  tabJsunit();
+  ScrollJsunit();
+  ActsGridTest();
+  gridScrollbarUpdateTest();
+  List07Test();
+  listUxTest();  // scrollSnapAlign 异常参数问题 27
+
+  tabsOnContentWillChangeJsunitTest();
+  tabsOnContentWillChangeIndex3JsunitTest();
+  tabsOnContentWillChangeIndex03JsunitTest();
+  tabsOnContentWillChangeIndex04JsunitTest();
+  tabsOnContentWillChangeIndex05JsunitTest();
+  tabsOnContentWillChangeIndex06JsunitTest();
+  tabsOnContentWillChangeIndex07JsunitTest();
+  tabsOnContentWillChangeIndex08JsunitTest();
+  tabsOnContentWillChangeIndex09JsunitTest();
+  tabsOnContentWillChangeIndex12JsunitTest();
+  tabsOnContentWillChangeIndex13JsunitTest();
+  tabsOnContentWillChangeIndex14JsunitTest();
+  tabsOnContentWillChangeIndex15JsunitTest();
+
+  GridTest();
+  patternLock();
   ScrollToIndexForGridJsunit01();
   ScrollToIndexForGridJsunit02();
   ScrollToIndexForGridJsunit03();
   ApiCommponentAddJsunit();
-  tabsOnContentWillChangeJsunitTest()
-  tabsOnContentWillChangeIndex3JsunitTest()
-  tabsOnContentWillChangeIndex03JsunitTest()
-  tabsOnContentWillChangeIndex04JsunitTest()
-  tabsOnContentWillChangeIndex05JsunitTest()
-  tabsOnContentWillChangeIndex06JsunitTest()
-  tabsOnContentWillChangeIndex07JsunitTest()
-  tabsOnContentWillChangeIndex08JsunitTest()
-  tabsOnContentWillChangeIndex09JsunitTest()
-  tabsOnContentWillChangeIndex12JsunitTest()
-  tabsOnContentWillChangeIndex13JsunitTest()
-  tabsOnContentWillChangeIndex14JsunitTest()
-  tabsOnContentWillChangeIndex15JsunitTest()
   ScrollBarJsunit();
   scrollCodeJsunit();
   tabsJsunit();
   gridJsunit();
-  
-  listtestIdleJsunit()
-  alphabetIndexerOnSelectJsunit()
-  gridMaxCountJsunit()
-  gridItemOnSelectJsunit()
-  listNewJsunit()
-  list_itemOnSelectJsunit()
-  scrollOnScrollBeginJsunit()
-  stackAlignContentJsunit()
-  tabsBarPositionJsunit()
-  scrollBarJsunitt()
-  listItemJsunit2()
+  refreshJsunit();
+  listtestIdleJsunit();   // editMode废弃  1
+  list_item_groupJsunit();  // 有问题 header|footer 2
+  refreshDragJsunit();
+  alphabetIndexerOnSelectJsunit();
+  gridMaxCountJsunit();
+  gridItemOnSelectJsunit();
+  listNewJsunit();
+  list_itemOnSelectJsunit();
+  scrollOnScrollBeginJsunit();
+  stackAlignContentJsunit();
+  tabsBarPositionJsunit();
+  scrollBarJsunitt();
+  listItemJsunit2(); // sticky | editMode  4
   gridColTest();
-  conSizeGroup1()
+  conSizeGroup1();
   conSizeGroup2();
   conSizeGroup3();
   focusedList();

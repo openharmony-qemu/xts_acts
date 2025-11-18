@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function alphabetEnableJsunit() {
   describe('alphabetEnableJsunit', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -60,7 +58,7 @@ export default function alphabetEnableJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get alphabetEnableJsunit state pages:" + JSON.stringify(pages));
-        if (!("alphabetEnable" == pages.name)) {
+        if (!("MainAbility/pages/AlphabetIndexer/alphabetEnable" == pages.name)) {
           console.info("get alphabetEnableJsunit pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -78,11 +76,11 @@ export default function alphabetEnableJsunit() {
 
 
     /*
-     * @tc.number    alphabetEnableJsunit_static_001
-     * @tc.name      alphabetEnableJsunit_static_001
-     * @tc.desc      alphabetEnableJsunit_static_001
-     * @tc.level     2
-     */
+       * @tc.number   alphabetEnableJsunit_static_001
+       * @tc.name     alphabetEnableJsunit_static_001
+       * @tc.desc     alphabetEnableJsunit_static_001
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetEnableJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alphabetEnableJsunit_static_001] START');
       await CommonFunc.sleep(1000);

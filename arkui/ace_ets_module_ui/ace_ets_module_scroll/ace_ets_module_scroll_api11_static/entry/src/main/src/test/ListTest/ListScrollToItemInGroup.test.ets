@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ListScrollToItemInGroup() {
   const SUITE: string = 'ListScrollToItemInGroup'
-  const waitUiReadyMs = 2000;
+  const waitUiReadyMs: int = 2000;
 
   describe('ListScrollToItemInGroup', () => {
     beforeAll(() => {
@@ -63,12 +63,13 @@ export default function ListScrollToItemInGroup() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages: router.RouterState = router.getState();
-        if (pages == null || !("ListScrollToItemInGroup" == pages.name)) {
+        if (pages == null || !("MainAbility/pages/List/ListScrollToItemInGroup" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           }).catch((err: Error) => {
             console.error(`${SUITE} router.pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
+          await UtilsTest.msSleep(4000)
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
@@ -82,11 +83,11 @@ export default function ListScrollToItemInGroup() {
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0001
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0001
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0001
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0001
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0001] START');
       let List: RectValue = CommonFunc.getComponentRect('MyList1');
@@ -98,11 +99,11 @@ export default function ListScrollToItemInGroup() {
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0100
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0100
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0100
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0100
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0100] START');
       let driver: Driver = Driver.create();
@@ -111,18 +112,18 @@ export default function ListScrollToItemInGroup() {
       await CommonFunc.sleep(2000);
       let List: RectValue = CommonFunc.getComponentRect('MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group0_Index1');
-      expect(Math.abs(ListItem.top - List.top) <= 1).assertEqual(true); 
+      expect(Math.abs(ListItem.top - List.top) <= 1).assertEqual(true); // 1 px error is alllowed
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0100] END');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0200
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0200
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0200
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0200
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0200] START');
       let driver: Driver = Driver.create();
@@ -132,20 +133,20 @@ export default function ListScrollToItemInGroup() {
       let center: RectValue = CommonFunc.getComponentRect('CenterLine');
       console.info("center.top: " + center.top);
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group1_Index2');
-      let middle = (ListItem.top + ListItem.bottom) / 2 - UIContext.getFocusedUIContext()!.vp2px(0.5);
+      let middle = (ListItem.top + ListItem.bottom) / 2 - (new UIContext).vp2px(0.5);
       console.info("ListItem.top: " + ListItem.top + " " + "ListItem.bottom: " + ListItem.bottom);
-      expect(Math.abs(center.top - middle) <= 1).assertEqual(true); 
+      expect(Math.abs(center.top - middle) <= 1).assertEqual(true); // 1 px error is alllowed
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0200] END');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0300
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0300
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0300
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0300
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0300
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0300] START');
       let driver: Driver = Driver.create();
@@ -155,18 +156,18 @@ export default function ListScrollToItemInGroup() {
       let List: RectValue = CommonFunc.getComponentRect('MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group2_Index2');
       console.info("ListItem.top: " + ListItem.top + " " + "ListItem.bottom: " + ListItem.bottom);
-      expect(Math.abs(List.bottom - ListItem.bottom) <= 1).assertEqual(true); 
+      expect(Math.abs(List.bottom - ListItem.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0300] END');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0400
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0400
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0400
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0400
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0400
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0400] START');
       let driver: Driver = Driver.create();
@@ -175,18 +176,18 @@ export default function ListScrollToItemInGroup() {
       await CommonFunc.sleep(2000);
       let List: RectValue = CommonFunc.getComponentRect('MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index1');
-      expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertEqual(true); 
+      expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0400] END');
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0500
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0500
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0500
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0500
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0500
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0500] START');
       let driver: Driver = Driver.create();
@@ -195,17 +196,17 @@ export default function ListScrollToItemInGroup() {
       await CommonFunc.sleep(2000);
       let List: RectValue = CommonFunc.getComponentRect('MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index11');
-      expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertEqual(true); 
+      expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0600
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0600
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0600
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0600
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0600
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0600] START');
       let OldListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index11');
@@ -214,17 +215,17 @@ export default function ListScrollToItemInGroup() {
       await btn.click();
       await CommonFunc.sleep(2000);
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index11');
-      expect(Math.abs(OldListItem.bottom - ListItem.bottom) <= 1).assertEqual(true); 
+      expect(Math.abs(OldListItem.bottom - ListItem.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
       done();
     });
 
 
     /*
-     * @tc.number    ArkUI_List_Scroll_To_Item_In_Group_static_0700
-     * @tc.name      ArkUI_List_Scroll_To_Item_In_Group_static_0700
-     * @tc.desc      ArkUI_List_Scroll_To_Item_In_Group_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0700
+       * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0700
+       * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0700
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_To_Item_In_Group_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0700] START');
       let OldListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index11');
@@ -233,7 +234,7 @@ export default function ListScrollToItemInGroup() {
       await btn.click();
       await CommonFunc.sleep(2000);
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index11');
-      expect(Math.abs(OldListItem.bottom - ListItem.bottom) <= 1).assertEqual(true); 
+      expect(Math.abs(OldListItem.bottom - ListItem.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
       done();
     });
   })

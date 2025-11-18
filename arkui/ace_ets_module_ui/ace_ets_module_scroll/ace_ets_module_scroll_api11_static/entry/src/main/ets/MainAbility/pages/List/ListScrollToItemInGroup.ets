@@ -41,7 +41,8 @@ import {
   Stack,
   ListItemStyle,
   ListItemGroup,
-  Divider
+  Divider,
+  ListItemGroupStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -65,8 +66,8 @@ struct WordListSample {
     new WordGroup('D', ['Dark', 'Dress', 'Dance', 'Dear', 'Date', 'Department', 'Dog', 'Damage', 'Decade',
       'Drum', 'Daisy', 'Deity'])
   ]
-  illegalGroupNo: number[] = [this.wordsGroup.length + 1, 0] as number[];
-  illegalIndexNo: number[] = [0, -5] as number[];
+  illegalGroupNo: int[] = [this.wordsGroup.length + 1, 0] as int[];
+  illegalIndexNo: int[] = [0, -5] as int[];
   scrollAlignStyle: ScrollAlign[] = [
     ScrollAlign.START,
     ScrollAlign.CENTER,
@@ -105,35 +106,35 @@ struct WordListSample {
                   console.info('WordListSample group:' + this.wordsGroup.indexOf(item) + ' ' +
                     'index:' + item.words.indexOf(word))
                   this.listScroller.scrollToItemInGroup(
-                    Double.toInt(this.wordsGroup.indexOf(item)),
-                    Double.toInt(item.words.indexOf(word)), true,
-                    this.scrollAlignStyle[this.wordsGroup.indexOf(item).toInt()])
+                    this.wordsGroup.indexOf(item),
+                    item.words.indexOf(word), true,
+                    this.scrollAlignStyle[this.wordsGroup.indexOf(item)])
                 })
                 .key('Btn_' + this.wordsGroup.indexOf(item) + '_' + item.words.indexOf(word))
             }
           })
         })
-        
+        // group not exist
         ListItem({ style: ListItemStyle.NONE }) {
           Button('Item_GroupNo_Not' + "_" + "Exsit")
             .backgroundColor(Color.Red)
             .onClick((e: ClickEvent) => {
               this.listScroller.scrollToItemInGroup(
-                Double.toInt(this.illegalGroupNo[0]),
-                Double.toInt(this.illegalGroupNo[1]), true,
+                this.illegalGroupNo[0],
+                this.illegalGroupNo[1], true,
                 ScrollAlign.AUTO)
             })
             .key('Btn_' + 'Err_' + 'Group')
         }
 
-        
+        // index not exist
         ListItem({ style: ListItemStyle.NONE }) {
           Button('Item_IndexNo_Not' + "_" + "Exsit")
             .backgroundColor(Color.Red)
             .onClick((e: ClickEvent) => {
               this.listScroller.scrollToItemInGroup(
-                Double.toInt(this.illegalIndexNo[0]),
-                Double.toInt(this.illegalIndexNo[1]), true,
+                this.illegalIndexNo[0],
+                this.illegalIndexNo[1], true,
                 ScrollAlign.AUTO)
             })
             .key('Btn_' + 'Err_' + 'Index')
@@ -150,23 +151,23 @@ struct WordListSample {
       Stack() {
         List({ initialIndex: 0, scroller: this.listScroller }) {
           ForEach(this.wordsGroup, (item: WordGroup, index: int) => {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            ListItemGroup({ header: () => {this.itemHead(item.title)},
+              footer: () => {this.itemFoot(item.words.length)}, style: ListItemGroupStyle.NONE }) {
+              // 循环渲染ListItem
+              ForEach(item.words, (word: string) => {
+                ListItem({ style: ListItemStyle.NONE }) {
+                  Text(word)
+                    .textAlign(TextAlign.Start)
+                    .width('80%')
+                    .fontSize(25)
+                    .backgroundColor('#fff1f3f5')
+                }
+                .height("10%")
+                .width('100%')
+                .backgroundColor(Color.Green)
+                .key('ListItem_Group' + this.wordsGroup.indexOf(item) + '_Index' + item.words.indexOf(word))
+              })
+            }
           })
         }
         .key('MyList1')

@@ -45,11 +45,11 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ScrollToIndexForGridJsunit01() {
   describe('ScrollToIndexForGridJsunit01', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
+
     beforeEach(async (): Promise<void> => {
       console.info("ScrollToIndexForGrid01 beforeEach start");
       let options: router.RouterOptions = {
@@ -57,15 +57,12 @@ export default function ScrollToIndexForGridJsunit01() {
       }
       try {
         const routerAlp = AppStorage.get<Router>("router") as Router
-        routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get ScrollToIndexForGrid01 state pages: " + JSON.stringify(pages));
         if (!("ScrollToIndexForGrid01" == pages.name)) {
           console.info("get ScrollToIndexForGrid01 state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
-          let driver = Driver.create();
-          await driver.delayMs(2000)
         }
       } catch (err) {
         console.error("push ScrollToIndexForGrid01 page error: " + err);
@@ -73,13 +70,18 @@ export default function ScrollToIndexForGridJsunit01() {
       }
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0100
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0100
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0100
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0100
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit01_static_0100] START');
 
@@ -98,11 +100,11 @@ export default function ScrollToIndexForGridJsunit01() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0200
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0200
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0200
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0200
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit01_static_0200] START');
 
@@ -126,11 +128,11 @@ export default function ScrollToIndexForGridJsunit01() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0300
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0300
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0300
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0300
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit01_static_0300] START');
 
@@ -153,11 +155,11 @@ export default function ScrollToIndexForGridJsunit01() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0400
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0400
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0400
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0400
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit01_static_0400] START');
 
@@ -188,11 +190,11 @@ export default function ScrollToIndexForGridJsunit01() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0500
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0500
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0500
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0500
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit01_static_0500] START');
 
@@ -208,17 +210,17 @@ export default function ScrollToIndexForGridJsunit01() {
       let gridItem = await driver.findComponent(ON.id("gridIndex01_128"));
       let gridItemText = await (gridItem?.getId() as Promise<string>);
 
-      
+      // 计算元素距离顶部的距离
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceY = bounds.y;
 
       let GridCom = await driver.findComponent(ON.id("GridID_Grid01"));
 
-      
+      // 计算元素中心距离顶部的距离
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
       let centerDistanceY = boundsCenter.y;
 
-      
+      // 元素距离顶部的距离小于元素中心距离顶部的距离
       expect(distanceY).assertLarger(centerDistanceY);
       expect(smoothTextObj).assertInstanceOf("Object");
       expect(gridItemText).assertEqual("gridIndex01_128");
@@ -229,11 +231,11 @@ export default function ScrollToIndexForGridJsunit01() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0600
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0600
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0600
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0600
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit01_static_0600] START');
 
@@ -264,11 +266,11 @@ export default function ScrollToIndexForGridJsunit01() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0700
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0700
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0700
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0700
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('[ScrollToIndexForGridJsunit01_static_0700] START');
@@ -286,7 +288,7 @@ export default function ScrollToIndexForGridJsunit01() {
       let gridItemText = await (gridItem?.getId() as Promise<string>);
 
       expect(gridItemText).assertEqual("gridIndex01_55");
-      expect(smoothTextObj).assertInstanceOf("Object"); 
+      expect(smoothTextObj).assertInstanceOf("Object"); //[object Object]
 
       console.info('[ScrollToIndexForGridJsunit01_static_0700] END');
       done();
@@ -294,11 +296,11 @@ export default function ScrollToIndexForGridJsunit01() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit01_static_0800
-     * @tc.name      ScrollToIndexForGridJsunit01_static_0800
-     * @tc.desc      ScrollToIndexForGridJsunit01_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit01_static_0800
+       * @tc.name     ScrollToIndexForGridJsunit01_static_0800
+       * @tc.desc     ScrollToIndexForGridJsunit01_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit01_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit01_static_0800] START');
 

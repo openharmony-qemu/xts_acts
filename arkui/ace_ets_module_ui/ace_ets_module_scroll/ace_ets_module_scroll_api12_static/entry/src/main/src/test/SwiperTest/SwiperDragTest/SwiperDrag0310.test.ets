@@ -52,12 +52,12 @@ export default function SwiperDrag0310() {
       console.info("SwiperDrag0310 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
+        router.clear()
         let pages = router.getState();
         console.info("get SwiperDrag0310 state pages:" + JSON.stringify(pages));
         if (!("SwiperDrag0310" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperDrag/SwiperDrag0310'
           })
           await CommonFunc.sleep(2000);
@@ -73,14 +73,15 @@ export default function SwiperDrag0310() {
       console.info("SwiperDrag0310 after each called");
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0310 START");
       await CommonFunc.sleep(1000)
       let driver = Driver.create()

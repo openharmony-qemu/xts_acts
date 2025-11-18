@@ -21,7 +21,6 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { RecordData } from '@ohos.base';
 
 export default function gridMaxCountJsunit() {
   describe('gridMaxCountTest', () => {
@@ -42,10 +41,10 @@ export default function gridMaxCountJsunit() {
         console.info("get grid state success " + JSON.stringify(pages));
         if (!("gridAPI" == pages.name)) {
           console.info("get grid state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await Utils.sleep(2000);
-          
+          // console.info("push grid page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push grid page error: " + err);
@@ -57,12 +56,13 @@ export default function gridMaxCountJsunit() {
       console.info("gridMaxCount after each called");
     });
 
+
     /*
-     * @tc.number    testcheckgridMaxCount0001_static_01
-     * @tc.name      testcheckgridMaxCount0001_static_01
-     * @tc.desc      testcheckgridMaxCount0001_static_01
-     * @tc.level     2
-     */
+       * @tc.number   testcheckgridMaxCount0001_static_01
+       * @tc.name     testcheckgridMaxCount0001_static_01
+       * @tc.desc     testcheckgridMaxCount0001_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('testcheckgridMaxCount0001_static_01', Level.LEVEL0, async () => {
       console.info('testcheckgridMaxCount testcheckgridMaxCount0001_static_01 START');
       await Utils.sleep(2000);
@@ -71,17 +71,16 @@ export default function gridMaxCountJsunit() {
       expect(obj.getString('$type')).assertEqual('Grid');
       console.info("[testcheckgridMaxCount0001_static_01] selectedMaxCount value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('maxCount'));
-      
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('maxCount') == 5).assertTrue();
-
     });
 
+
     /*
-     * @tc.number    testEdgeEffectOptions0002_static_02
-     * @tc.name      testEdgeEffectOptions0002_static_02
-     * @tc.desc      testEdgeEffectOptions0002_static_02
-     * @tc.level     2
-     */
+       * @tc.number   testEdgeEffectOptions0002_static_02
+       * @tc.name     testEdgeEffectOptions0002_static_02
+       * @tc.desc     testEdgeEffectOptions0002_static_02
+       * @tc.level    Level.LEVEL0
+       */
     it('testEdgeEffectOptions0002_static_02', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0002_static_02 START');
       await Utils.sleep(2000);
@@ -95,12 +94,13 @@ export default function gridMaxCountJsunit() {
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffectOptions').getBoolean('alwaysEnabled'));
     });
 
+
     /*
-     * @tc.number    testEdgeEffectOptions0003_static_03
-     * @tc.name      testEdgeEffectOptions0003_static_03
-     * @tc.desc      testEdgeEffectOptions0003_static_03
-     * @tc.level     2
-     */
+       * @tc.number   testEdgeEffectOptions0003_static_03
+       * @tc.name     testEdgeEffectOptions0003_static_03
+       * @tc.desc     testEdgeEffectOptions0003_static_03
+       * @tc.level    Level.LEVEL0
+       */
     it('testEdgeEffectOptions0003_static_03', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0003_static_03 START');
       await Utils.sleep(2000);
@@ -108,7 +108,7 @@ export default function gridMaxCountJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "alwaysEnabled": false
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 321,
@@ -116,7 +116,7 @@ export default function gridMaxCountJsunit() {
         }
         console.info("[testEdgeEffectOptions0003_static_03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[testEdgeEffectOptions0003_static_03] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

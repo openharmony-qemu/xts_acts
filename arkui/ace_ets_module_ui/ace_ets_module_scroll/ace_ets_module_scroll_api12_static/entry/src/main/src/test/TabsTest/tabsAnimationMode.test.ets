@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabsAnimationMode() {
   describe('tabsAnimationMode', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -60,11 +58,10 @@ export default function tabsAnimationMode() {
         router.clear();
         let pages = router.getState();
         console.info("get tabsAnimationMode state pages: " + JSON.stringify(pages));
-        if (!("tabsAnimationMode" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/tabsAnimationMode" == pages.name)) {
           console.info("get tabsAnimationMode state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push tabsAnimationMode success: ");
         }
       } catch (err) {
         console.error("push tabsAnimationMode page error: " + err);
@@ -72,14 +69,15 @@ export default function tabsAnimationMode() {
       }
     });
 
-
-    /*
-     * @tc.number    tabsAnimationMode_static_0100
-     * @tc.name      tabsAnimationMode_static_0100
-     * @tc.desc      tabsAnimationMode_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   tabsAnimationMode_static_0100
+     * @tc.name     tabsAnimationMode_static_0100
+     * @tc.desc     tabsAnimationMode_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('tabsAnimationMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabsAnimationMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabsAnimationMode_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('animationMode_1');

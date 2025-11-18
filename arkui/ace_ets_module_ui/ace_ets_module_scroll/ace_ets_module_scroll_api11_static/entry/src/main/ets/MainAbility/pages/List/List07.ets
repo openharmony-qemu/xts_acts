@@ -54,7 +54,7 @@ class MyDataSourceList07 implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -103,14 +103,14 @@ struct List07 {
       }
       .padding(10)
       .border({ color: 0xAAAAAA, width: 2 })
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical) // 排列方向
       .divider({
         strokeWidth: 2,
         color: 0xFFFFFF,
         startMargin: 2,
         endMargin: 2
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      }) // 每行之间的分界线
+      .edgeEffect(EdgeEffect.Spring) // 滑动到边缘无效果
       .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
@@ -118,8 +118,6 @@ struct List07 {
       .key("ArkUX_Grid_List_Swiper_0250")
       .lanes({ minLength: 100, maxLength: 150 } as LengthConstrain, 20)
       .width('100%')
-
-      
 
       List({ space: 20, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
@@ -137,14 +135,14 @@ struct List07 {
       }
       .padding(10)
       .border({ color: 0xAAAAAA, width: 2 })
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical)
       .divider({
         strokeWidth: 2,
         color: 0xFFFFFF,
         startMargin: 2,
         endMargin: 2
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      })
+      .edgeEffect(EdgeEffect.Spring)
       .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
@@ -152,8 +150,6 @@ struct List07 {
       .key("ArkUX_Grid_List_Swiper_0260")
       .lanes({ minLength: 100, maxLength: 150 } as LengthConstrain, 100)
       .width('100%')
-
-      
 
       List({ space: 20, initialIndex: 0 } as ListOptions) {
         ForEach(this.arr, (item: number, index: int) => {
@@ -171,14 +167,14 @@ struct List07 {
       }
       .padding(10)
       .border({ color: 0xAAAAAA, width: 2 })
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical)
       .divider({
         strokeWidth: 2,
         color: 0xFFFFFF,
         startMargin: 2,
         endMargin: 2
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      })
+      .edgeEffect(EdgeEffect.Spring)
       .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
@@ -187,8 +183,6 @@ struct List07 {
       .lanes(undefined)
       .width('100%')
 
-      
-
       List({ space: 20, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
@@ -205,14 +199,14 @@ struct List07 {
       }
       .padding(10)
       .border({ color: 0xAAAAAA, width: 2 })
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical)
       .divider({
         strokeWidth: 2,
         color: 0xFFFFFF,
         startMargin: 2,
         endMargin: 2
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      })
+      .edgeEffect(EdgeEffect.Spring)
       .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
@@ -221,8 +215,6 @@ struct List07 {
       .lanes({ minLength: 100, maxLength: 150 } as LengthConstrain, 500)
       .width('100%')
 
-      
-
       List({ space: 20, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
@@ -239,14 +231,14 @@ struct List07 {
       }
       .padding(10)
       .border({ color: 0xAAAAAA, width: 2 })
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical)
       .divider({
         strokeWidth: 2,
         color: 0xFFFFFF,
         startMargin: 2,
         endMargin: 2
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      })
+      .edgeEffect(EdgeEffect.Spring)
       .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)

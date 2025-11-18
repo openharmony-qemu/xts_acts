@@ -53,12 +53,11 @@ export default function SwiperImplicitanimation0070() {
       console.info("SwiperImplicitanimation0070 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperImplicitanimation0070 state pages:" + JSON.stringify(pages));
-        if (!("SwiperImplicitanimation0070" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0070" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0070'
           })
           await CommonFunc.sleep(2000);
@@ -74,18 +73,22 @@ export default function SwiperImplicitanimation0070() {
       console.info("SwiperImplicitanimation0070 after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070
-     * @tc.level     2
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070
+     * @tc.level    Level.LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070 START");
         let driver: Driver = Driver.create();
-        let swiperArrow = await driver.findComponent(ON.id("implicitanimation_static_0070"));
+        let swiperArrow = await driver.findComponent(ON.id("implicitanimation_0070"));
         let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
         await driver.fling({
           x: point2.x + 20, y: point2.y
@@ -93,17 +96,17 @@ export default function SwiperImplicitanimation0070() {
           x: point2.x - 30, y: point2.y
         }, 5, 600);
         await CommonFunc.sleep(300);
-        let strIndex: string = inspector.getInspectorByKey('implicitanimation_static_0070_1')
+        let strIndex: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
         expect(jsonIndex).assertEqual('0')
         await driver.drag(point2.x - 200, point2.y, point2.x + 150, point2.y, 500);
         await CommonFunc.sleep(300);
-        let strIndex0: string = inspector.getInspectorByKey('implicitanimation_static_0070_1')
+        let strIndex0: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex0 = JSON.parseJsonElement(strIndex0).getElement('$attrs').getString('content');
         expect(jsonIndex0).assertEqual('0')
-        let tarindex2: string = inspector.getInspectorByKey('implicitanimation_static_0070_2')
-        let jsonIndex2 = JSON.parseJsonElement(tarindex2).getElement('$attrs').getDouble('content');
-        expect(jsonIndex2 != 0).assertTrue();
+        let tarindex2: string = inspector.getInspectorByKey('implicitanimation_0070_2')
+        let jsonIndex2 = JSON.parseJsonElement(tarindex2).getElement('$attrs').getString('content');
+        expect(parseFloat(jsonIndex2) != 0).assertTrue();
         await driver.fling({
           x: point2.x + 150, y: point2.y
         }, {
@@ -116,20 +119,19 @@ export default function SwiperImplicitanimation0070() {
           x: point2.x - 250, y: point2.y
         }, 5, 5000);
         await CommonFunc.sleep(300);
-        let strIndex3: string = inspector.getInspectorByKey('implicitanimation_static_0070_1')
+        let strIndex3: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex3 = JSON.parseJsonElement(strIndex3).getElement('$attrs').getString('content');
         expect(jsonIndex3).assertEqual('1')
         await driver.drag(point2.x + 200, point2.y, point2.x - 200, point2.y, 500);
         await CommonFunc.sleep(300);
-        let strIndex4: string = inspector.getInspectorByKey('implicitanimation_static_0070_1')
+        let strIndex4: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex4 = JSON.parseJsonElement(strIndex4).getElement('$attrs').getString('content');
         expect(jsonIndex4).assertEqual('2')
-        let tarindex: string = inspector.getInspectorByKey('implicitanimation_static_0070_2')
-        let tarindex1 = JSON.parseJsonElement(tarindex).getElement('$attrs').getDouble('content');
-        expect(tarindex1 != 0).assertTrue();
+        let tarindex: string = inspector.getInspectorByKey('implicitanimation_0070_2')
+        let tarindex1 = JSON.parseJsonElement(tarindex).getElement('$attrs').getString('content');
+        expect(parseFloat(tarindex1) != 0).assertTrue();
         console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070 END');
         done();
       });
-
   })
 }

@@ -65,7 +65,7 @@ export default function offsetEdgeBtm() {
           console.info("get offsetEdgeBtm pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push offsetEdgeBtm page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push offsetEdgeBtm page error:" + err);
@@ -80,11 +80,11 @@ export default function offsetEdgeBtm() {
 
 
     /*
-     * @tc.number    offsetEdgeBtm_static_0100
-     * @tc.name      offsetEdgeBtm_static_0100
-     * @tc.desc      offsetEdgeBtm_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   offsetEdgeBtm_static_0100
+       * @tc.name     offsetEdgeBtm_static_0100
+       * @tc.desc     offsetEdgeBtm_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('offsetEdgeBtm_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[offsetEdgeBtm_static_0100] START');
       let swiperList = CommonFunc.getComponentRectOnScreen('edge_endOffset_btm');
@@ -111,8 +111,8 @@ export default function offsetEdgeBtm() {
       console.info('[offsetEdgeBtm_static_0100] list.bottom: ' + list.bottom);
       console.info('[offsetEdgeBtm_static_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
-        .assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(uiContext!.vp2px(10))) <= 1).assertTrue();
       console.info('[offsetEdgeBtm_static_0100] END');
       done();
     });

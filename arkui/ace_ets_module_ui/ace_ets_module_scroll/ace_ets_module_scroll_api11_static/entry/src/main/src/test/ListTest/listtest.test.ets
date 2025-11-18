@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -62,11 +62,11 @@ export default function listtestIdleJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get listtest state success " + JSON.stringify(pages));
-        if (!("listtest" == pages.name)) {
+        if (!("MainAbility/pages/List/listtest2" == pages.name)) {
           console.info("get listtestI state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push listtest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push listtest page error: " + err);
@@ -80,18 +80,18 @@ export default function listtestIdleJsunit() {
 
 
     /*
-     * @tc.number    testlisttestIdle_static_0001
-     * @tc.name      testlisttestIdle_static_0001
-     * @tc.desc      testlisttestIdle_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   testlisttestIdle_static_0001
+       * @tc.name     testlisttestIdle_static_0001
+       * @tc.desc     testlisttestIdle_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('testlisttestIdle_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('listtestIdle testlisttestIdle_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('ScrollList');
       console.info("[testlisttestIdle_static_0001] component controlButton strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode')).assertEqual(true);
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertEqual(true);
       console.info("[testlisttestIdle_static_0001] editMode value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode'));
       done();

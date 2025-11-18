@@ -34,8 +34,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function nestedScrollSwiper() {
   describe('nestedScrollSwiper', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -49,11 +47,9 @@ export default function nestedScrollSwiper() {
         router.clear();
         let pages = router.getState();
         console.info("get nestedScrollSwiper state pages:" + JSON.stringify(pages));
-        if (!("nestedScrollSwiper" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/nestedScrollSwiper" == pages.name)) {
           console.info("get nestedScrollSwiper pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push nestedScrollSwiper page result:");
         }
       } catch (err) {
         console.error("push nestedScrollSwiper page error:" + err);
@@ -61,14 +57,15 @@ export default function nestedScrollSwiper() {
       console.info("nestedScrollSwiper beforeEach end");
     });
 
-
-    /*
-     * @tc.number    nestedScrollSwiper_static_0100
-     * @tc.name      nestedScrollSwiper_static_0100
-     * @tc.desc      nestedScrollSwiper_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   nestedScrollSwiper_static_0100
+     * @tc.name     nestedScrollSwiper_static_0100
+     * @tc.desc     nestedScrollSwiper_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('nestedScrollSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nestedScrollSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[nestedScrollSwiper_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -103,14 +100,15 @@ export default function nestedScrollSwiper() {
       done();
     });
 
-
-    /*
-     * @tc.number    nestedScrollSwiper_static_0200
-     * @tc.name      nestedScrollSwiper_static_0200
-     * @tc.desc      nestedScrollSwiper_static_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   nestedScrollSwiper_static_0200
+     * @tc.name     nestedScrollSwiper_static_0200
+     * @tc.desc     nestedScrollSwiper_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('nestedScrollSwiper_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nestedScrollSwiper_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[nestedScrollSwiper_static_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

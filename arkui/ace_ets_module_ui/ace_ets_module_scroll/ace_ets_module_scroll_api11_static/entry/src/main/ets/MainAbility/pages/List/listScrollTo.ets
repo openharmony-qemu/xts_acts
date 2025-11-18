@@ -62,7 +62,7 @@ struct listScroll100Example {
       }
       .width('90%')
       .height('60%')
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical)
       .scrollBar(BarState.Off)
       .friction(0.6)
       .divider({
@@ -70,8 +70,8 @@ struct listScroll100Example {
         color: 0xFFFFFF,
         startMargin: 20,
         endMargin: 20
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      })
+      .edgeEffect(EdgeEffect.Spring)
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)

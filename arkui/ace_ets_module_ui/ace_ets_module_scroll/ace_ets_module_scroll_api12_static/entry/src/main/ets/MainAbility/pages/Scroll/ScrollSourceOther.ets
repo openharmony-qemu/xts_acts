@@ -85,28 +85,28 @@ struct ScrollSourceOtherExample {
         console.info("xOffset: " + xOffset + ' ' + "yOffset: " + yOffset)
         console.info("scrollState: " + scrollState)
 
-        if (scrollSource === ScrollSource.DRAG) { 
+        if (scrollSource === ScrollSource.DRAG) { //拖拽事件
           this.scrollStateValue = 'DRAG'
           console.info('scrollSource ScrollSource.FLING success')
-        } else if (scrollSource === ScrollSource.FLING) { 
+        } else if (scrollSource === ScrollSource.FLING) { //拖曳以速度结束后甩动
           this.Value = 'FLING'
           console.info('scrollSource ScrollSource.FLING success')
-        } else if (scrollSource === ScrollSource.EDGE_EFFECT) { 
+        } else if (scrollSource === ScrollSource.EDGE_EFFECT) { //使用EdgeEffect.Spring进行滚动
           this.scrollStateValue = 'EDGE_EFFECT'
           console.info('scrollSource ScrollSource.EDGE_EFFECT success')
-        } else if (scrollSource === ScrollSource.OTHER_USER_INPUT) { 
+        } else if (scrollSource === ScrollSource.OTHER_USER_INPUT) { //除拖动以外的其他用户输入，如鼠标滚轮、按键事件
           this.scrollStateValue = 'OTHER_USER_INPUT'
           console.info('scrollSource ScrollSource.OTHER_USER_INPUT success')
-        } else if (scrollSource === ScrollSource.SCROLL_BAR) { 
+        } else if (scrollSource === ScrollSource.SCROLL_BAR) { //滚动条的拖动事件
           this.SCROLL_BAR = 'SCROLL_BAR'
           console.info('scrollSource ScrollSource.SCROLL_BAR success')
-        } else if (scrollSource === ScrollSource.SCROLL_BAR_FLING) { 
+        } else if (scrollSource === ScrollSource.SCROLL_BAR_FLING) { //滚动条拖拽结束后的滑动速度
           this.SCROLL_BAR_FLING = 'SCROLL_BAR_FLING'
           console.info('scrollSource ScrollSource.SCROLL_BAR_FLING success')
-        } else if (scrollSource === ScrollSource.SCROLLER) { 
+        } else if (scrollSource === ScrollSource.SCROLLER) { //不带动画的Scroller的成员方法
           this.scrollStateValue = 'SCROLLER'
           console.info('scrollSource ScrollSource.SCROLLER success')
-        } else if (scrollSource === ScrollSource.SCROLLER_ANIMATION) { 
+        } else if (scrollSource === ScrollSource.SCROLLER_ANIMATION) { //带动画的Scroller的成员方法
           this.scrollStateValue = 'SCROLLER_ANIMATION'
           console.info('scrollSource ScrollSource.SCROLLER_ANIMATION success')
         }

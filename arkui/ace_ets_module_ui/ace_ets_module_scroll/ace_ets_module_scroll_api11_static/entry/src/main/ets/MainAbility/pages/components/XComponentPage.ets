@@ -17,7 +17,6 @@ import {
   Component,
   Column,
   Flex,
-
   Visibility,
   Button,
   Text,
@@ -27,9 +26,9 @@ import {
   Color,
   XComponent,
   XComponentController,
-
+// XComponentParameter,
   XComponentType,
-
+// OnNativeLoadCallback,
   VoidCallback
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -49,15 +48,18 @@ struct XComponentPage {
 
         })
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // XComponent({
+      //   id: '1',
+      //   type: XComponentType.NODE,
+      //   // libraryname: '3',
+      //   controller: this.xComponentController
+      // })
+      //   .onLoad((event: object | undefined): void => {
+      //     console.log('onLoad  ...' + JSON.stringify(event))
+      //   })
+      //   .onDestroy((): void => {
+      //     console.log('onDestroy  ...')
+      //   } as VoidCallback)
     }
   }
 }

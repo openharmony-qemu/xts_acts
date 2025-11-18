@@ -18,7 +18,6 @@ import {
   Component,
   Column,
   Flex,
-
   Visibility,
   Button,
   Text,
@@ -57,7 +56,7 @@ struct ShapeExample {
         Rect().width(300).height(50)
         Ellipse().width(300).height(50).offset({ x: 0, y: 60 } as Position)
         Path().width(300).height(10)
-        
+          .commands('M0 0 L900 0').offset({ x: 0, y: 120 } as Position)
       }
       .viewPort({
         x: -2,
@@ -90,7 +89,7 @@ struct ShapeExample {
       Text('border').fontSize(30).fontColor(0xCCCCCC).width(320).margin({ top: 30 } as Margin)
       Shape() {
         Path().width(300).height(10)
-        
+          .commands('M0 0 L900 0')
       }
       .viewPort({
         x: 0,
@@ -104,7 +103,7 @@ struct ShapeExample {
 
       Shape() {
         Path().width(300).height(10)
-        
+          .commands('M0 0 L900 0')
       }
       .viewPort({
         x: 0,
@@ -119,7 +118,7 @@ struct ShapeExample {
 
       Shape() {
         Path().width(300).height(10)
-        
+          .commands('M0 0 L900 0')
       }
       .viewPort({
         x: 0,
@@ -133,7 +132,7 @@ struct ShapeExample {
 
       Shape() {
         Path().width(300).height(10)
-        
+          .commands('M0 0 L900 0')
       }
       .viewPort({
         x: 0,
@@ -162,7 +161,7 @@ struct ShapeExample {
 
       Shape() {
         Path().width(300).height(60)
-        
+          .commands('M0 0 L400 0 L400 200 Z')
       }
       .viewPort({
         x: -80,

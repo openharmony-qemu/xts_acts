@@ -17,7 +17,6 @@ import {
   Component,
   Column,
   Flex,
-
   Visibility,
   Button,
   Text,
@@ -47,7 +46,7 @@ struct PolylineExample {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        
+        Polyline({ width: 100, height: 100 }).points([[0, 0], [20, 60], [100, 100]]).key('polyline')
         Polyline().width(100).height(100).points([[0, 0], [0, 100], [100, 100]]).key('polyline1')
       }.width('100%')
     }.margin({ top: 5 } as Margin)

@@ -56,9 +56,9 @@ struct ForegroundBlurStyleDemo {
     .height('100%')
     .width('100%')
     .width('100%')
-    .accessibilityGroup(true)
-    .accessibilityLevel("yes")
-    .accessibilityText("分组")
-    .accessibilityDescription("Column组件可以被选中，播报的内容是“分组”")
+    // .accessibilityGroup(true)
+    // .accessibilityLevel("yes")
+    // .accessibilityText("分组")
+    // .accessibilityDescription("Column组件可以被选中，播报的内容是“分组”")
   }
 }
