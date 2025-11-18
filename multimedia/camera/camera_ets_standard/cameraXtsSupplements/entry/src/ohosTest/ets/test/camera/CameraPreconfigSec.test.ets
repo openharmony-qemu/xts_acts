@@ -286,7 +286,6 @@ export default function cameraCanPreconfigSecTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
