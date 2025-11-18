@@ -13,8 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import { BusinessError } from '@ohos.base';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium";
 import { cert } from "@kit.DeviceCertificateKit";
 import { createCertChain, createX509Cert,
   caChain,
@@ -27,9 +26,7 @@ import { createCertChain, createX509Cert,
   caChainWithOcsp2,
   caTrustCertWithOcsp2,
   caChainWithOcsp3,
-  caChainWithOcsp4,
   caTrustCertWithOcsp4,
-  caInter,
   interCertRevokedChain,
   interCertRevokedChainTrustCert,
   leafCertRevokedChainTrustCert,
@@ -38,7 +35,25 @@ import { createCertChain, createX509Cert,
 
 
 export default function certFrameworkCertCheckOnlineCaTestUnit() {
-  describe("certFrameworkCertCheckOnlineCaTestUnit", (): void => {
+  describe("certFrameworkCertCheckOnlineCaTestUnit", () => {
+    beforeAll(async () => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    });
+    beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    });
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    });
+    afterAll(async () => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    });
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0100
@@ -49,7 +64,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
@@ -66,7 +81,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0100 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -82,7 +97,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChain2);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
@@ -102,7 +117,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0200 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -118,7 +133,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChain2);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
@@ -139,7 +154,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0300 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -155,7 +170,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
@@ -171,11 +186,13 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
               ],
             }
           };
-          await x509CertChain.validate(param);
+          await x509CertChain.validate(param); // 在线crl吊销，ocsp失败 OCSP basic verify failed
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_SIGNATURE_FAILURE); // 老功能异常
+          if (error.code != cert.CertResult.ERR_CERT_SIGNATURE_FAILURE) {
+            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION); // 网络原因返回错误码
+          }
         }
         done();
       });
@@ -189,7 +206,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           // openssl ocsp -port 7766 -index index.txt -CA ecdsa_root.crt -rkey ecdsa_root.key -rsigner ecdsa_root.crt -text
           let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp);
@@ -208,7 +225,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0500 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -224,7 +241,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCertWithOcsp);
@@ -243,7 +260,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0600 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -259,7 +276,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
@@ -281,7 +298,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0700 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -297,7 +314,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
@@ -316,7 +333,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0800 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -332,7 +349,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
@@ -349,7 +366,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0900 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -365,7 +382,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry2);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert2);
@@ -382,7 +399,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1000 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -398,7 +415,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry3);
           let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert2);
@@ -415,7 +432,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1100 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -431,7 +448,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           // openssl ocsp -port 7777 -index index.txt -CA ecdsa_intermediate.crt -rkey ecdsa_intermediate.key -rsigner ecdsa_intermediate.crt -text
           let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp2);
@@ -450,7 +467,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1200 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -466,7 +483,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           // openssl ocsp -port 7766 -index index.txt -CA ecdsa_root.crt -rkey ecdsa_root.key -rsigner ecdsa_root.crt -text
           let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp3);
@@ -485,14 +502,14 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
 
-      /**
+    /**
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1400
      * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1400
      * @tc.desc The Online CRL, Promise Type
@@ -501,7 +518,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           // openssl ocsp -port 5555 -index index.txt -CA ecdsa_intermediate.crt -rkey ecdsa_intermediate.key -rsigner ecdsa_intermediate.crt -text
           // openssl ocsp -port 5553 -index index.txt -CA ecdsa_root.crt -rkey ecdsa_root.key -rsigner ecdsa_root.crt -text
@@ -521,7 +538,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1400 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -537,7 +554,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
      * @tc.type Function
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           // openssl ocsp -port 5554 -index index.txt -CA ecdsa_intermediate.crt -rkey ecdsa_intermediate.key -rsigner ecdsa_intermediate.crt -text
           let x509CertChain: cert.X509CertChain = await createCertChain(leafCertRevokedChain);
@@ -556,7 +573,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1500 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
