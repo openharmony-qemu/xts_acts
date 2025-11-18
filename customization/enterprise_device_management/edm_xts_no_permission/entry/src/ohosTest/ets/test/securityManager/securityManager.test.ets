@@ -22,7 +22,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIP
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
-import common from '@ohos.enterprise.commom';
+import common from '@ohos.enterprise.common';
 
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';

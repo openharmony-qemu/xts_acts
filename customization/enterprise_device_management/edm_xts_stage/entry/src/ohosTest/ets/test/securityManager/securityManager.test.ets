@@ -23,7 +23,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIP
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
-import common from '@ohos.enterprise.commom';
+import common from '@ohos.enterprise.common';
 
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
@@ -2347,7 +2347,7 @@ function testSetExternalSourceExtensionsPolicy() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0400
    * @tc.name      : test_set_external_source_extensions_policy_0400
-   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with parameterverification failed
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with parameter verification failed
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
@@ -2359,7 +2359,7 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0400 error.code = ' + error.code);
-      expect(error.code == 9200012 && error.code == 801).assertTrue();
+      expect(error.code == 9200012 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
