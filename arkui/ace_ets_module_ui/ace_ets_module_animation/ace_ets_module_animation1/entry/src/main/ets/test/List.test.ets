@@ -30,7 +30,7 @@ import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test'
 import MotionPathJsunit from './MotionPathJsunit.test';
 import geometryTransition from './geometryTransitionTest/geometryTransition.test';
 import animateToJunits from './Animateto.test';
-import animationCurveTest from './animationCurve.test';
+import animationCurveTest from './AnimationCurve.test';
 import geometryTransitionJsunit from './geometryTransitionTest/GeometryTransitionJsunit.test';
 import animatorOnframeJsunit from './Animation/animator.test';
 import remoteWindowJsunit from './RemoteWindowTest/remoteWindow.test'
