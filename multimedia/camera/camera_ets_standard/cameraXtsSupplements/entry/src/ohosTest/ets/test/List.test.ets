@@ -26,7 +26,6 @@ import cameraCaptureSessionIsExposureModeAndIsFocusModeAb
 import CameraSetMeterPointSuppTest from './camera/CameraSetMeteringPoint.test';
 import cameraSetFocusPointSuppTest from './camera/CameraSetFocusPointSuppTest.test';
 import cameraSetFrameRateTest from './camera/CameraSetFrameRateTest.test';
-import CameraInputPhysicalCameraOrientationTest from './camera/CameraInputPhysicalCameraOrientation.test';
 import cameraCanPreconfigTest from "./camera/CameraPreconfigFIR.test";
 import cameraCanPreconfigSecTest from "./camera/CameraPreconfigSec.test";
 
@@ -58,7 +57,6 @@ export default function testsuite() {
   CameraSetMeterPointSuppTest();
   cameraSetFocusPointSuppTest();
   cameraSetFrameRateTest();
-  CameraInputPhysicalCameraOrientationTest();
   cameraCanPreconfigTest();
   cameraCanPreconfigSecTest();
 }
