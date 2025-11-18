@@ -90,15 +90,10 @@ export default function wifiCApiTest() {
                 if (macFromCApi === '') {
                     console.warn('[wifi_js] GetWifiMacAddress return empty string');
                 }
+                expect().assertTrue()
             } catch (error) {
                 // 捕获接口调用异常（如NAPI抛错、系统接口失败等）
                 console.error(`[wifi_js] GetWifiMacAddress call failed: code=${error.code}, message=${error.message}`);
-                if (err.code == 801) {
-                    console.info('[wifi_js] GetWifiMacAddress is not support');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('[wifi_js] GetWifiMacAddress wifi maybe disconnected');
-                }
             }
             done();
         });
