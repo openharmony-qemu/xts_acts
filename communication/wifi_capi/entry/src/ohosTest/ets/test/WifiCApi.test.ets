@@ -98,7 +98,6 @@ export default function wifiCApiTest() {
                     expect(true).assertTrue();
                 } else {
                     console.info('[wifi_js] GetWifiMacAddress wifi maybe disconnected');
-                    expect(true).assertTrue();
                 }
             }
             done();
