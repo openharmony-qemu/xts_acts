@@ -22,6 +22,9 @@ import CalendarPickerDialogWindowPropertiesTest from './calendarPickerDialogTest
 import CalendarDialogCallbackTest from './calendarPickerDialogTest/CalendarDialogCallback.test'
 import CalendarPickerDialogTest from './calendarPickerDialogTest/CalendarPickerDialog.test'
 import CalendarPickerDialogButtonStyleTest from './calendarPickerDialogTest/CalendarPickerDialogButtonStyle.test'
+import CalendarPickerDialogButtonStyleTest from './calendarPickerDialogTest/CalendarPickerDialogButtonStyle.test'
+import calendarPickerDialogBackgroundEffectTest from './calendarPickerDialogTest/calendarPickerDialogBackgroundEffect.test'
+import calendarPickerDialogBlurStyleOptionsTest from './calendarPickerDialogTest/calendarPickerDialogBlurStyleOptions.test'
 
 export default function testsuite() {
   calendarPickerDialogBackgroundBlurStyleTest();
@@ -34,4 +37,6 @@ export default function testsuite() {
   CalendarDialogCallbackTest();
   CalendarPickerDialogTest();
   CalendarPickerDialogButtonStyleTest();
+  calendarPickerDialogBackgroundEffectTest();
+  calendarPickerDialogBlurStyleOptionsTest();
 }
