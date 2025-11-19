@@ -87,5 +87,71 @@ export default function nativeApiSendableJsunit() {
       await Promise.all([p0])
       done();
     });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONG_SENDABLE_REF_0100
+     * @tc.name      testStrongSendableRef0100
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('testStrongSendableRef0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testStrongSendableRef0100";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiCreateStrongSendableRef();
+        console.info('testStrongSendableRef0100 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONG_SENDABLE_REF_0200
+     * @tc.name      testStrongSendableRef0200
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('testStrongSendableRef0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testStrongSendableRef0200";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiGetStrongSendableRef();
+        console.info('testStrongSendableRef0200 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONG_SENDABLE_REF_0300
+     * @tc.name      testStrongSendableRef0300
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('testStrongSendableRef0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testStrongSendableRef0300";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiDelStrongSendableRef();
+        console.info('testStrongSendableRef0300 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }
