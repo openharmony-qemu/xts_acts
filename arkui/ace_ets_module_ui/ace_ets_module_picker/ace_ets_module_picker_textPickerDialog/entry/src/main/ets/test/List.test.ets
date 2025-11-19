@@ -23,6 +23,10 @@ import textPickerDialogSelectedBgColorTest from './textPickerDialogTest/textPick
 import textPickerDialogSelectedTextStyleTest from './textPickerDialogTest/textPickerDialogSelectedTextStyle.test';
 import textPickerDialogShadowTest from './textPickerDialogTest/textPickerDialogShadow.test';
 import textPickerDialogTextStyleTest from './textPickerDialogTest/textPickerDialogTextStyle.test';
+import showTextPickerDialogBackgroundEffectTest from './textPickerDialogTest/showTextPickerDialogBackgroundEffect.test';
+import showTextPickerDialogBlurStyleOptionsTest from './textPickerDialogTest/showTextPickerDialogBlurStyleOptions.test';
+import textPickerDialogBackgroundEffectTest from './textPickerDialogTest/textPickerDialogBackgroundEffect.test';
+import textPickerDialogBlurStyleOptionsTest from './textPickerDialogTest/textPickerDialogBlurStyleOptions.test';
 
 export default function testsuite() {
   textPickerDialogBGBlurStyleTest();
@@ -36,4 +40,8 @@ export default function testsuite() {
   textPickerDialogSelectedTextStyleTest();
   textPickerDialogShadowTest();
   textPickerDialogTextStyleTest();
+  showTextPickerDialogBackgroundEffectTest();
+  showTextPickerDialogBlurStyleOptionsTest();
+  textPickerDialogBackgroundEffectTest();
+  textPickerDialogBlurStyleOptionsTest();
 }

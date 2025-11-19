@@ -11,6 +11,10 @@
     "MainAbility/pages/textPickerDialog/textPickerDialogSelectedBgColor",
     "MainAbility/pages/textPickerDialog/textPickerDialogSelectedTextStyle",
     "MainAbility/pages/textPickerDialog/textPickerDialogShadow",
-    "MainAbility/pages/textPickerDialog/textPickerDialogTextStyle"
+    "MainAbility/pages/textPickerDialog/textPickerDialogTextStyle",
+    "MainAbility/pages/textPickerDialog/showTextPickerDialogBackgroundEffect",
+    "MainAbility/pages/textPickerDialog/showTextPickerDialogBlurStyleOptions",
+    "MainAbility/pages/textPickerDialog/textPickerDialogBackgroundEffect",
+    "MainAbility/pages/textPickerDialog/textPickerDialogBlurStyleOptions"
   ]
 }
