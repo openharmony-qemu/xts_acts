@@ -2468,6 +2468,14 @@ function testGetExternalSourceExtensionsPolicy() {
       securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DEFAULT);
       let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(managedPolicy == common.ManagedPolicy.DEFAULT).assertTrue();
+
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DISALLOW);
+      managedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.DISALLOW).assertTrue();
+
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
+      managedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.FORCE_OPEN).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0400 error.code = ' + error.code);
       expect(error.code == 801).assertTrue();
