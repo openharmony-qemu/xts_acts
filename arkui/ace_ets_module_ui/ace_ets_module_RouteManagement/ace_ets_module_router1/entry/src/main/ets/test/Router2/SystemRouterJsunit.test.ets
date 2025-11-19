@@ -19,6 +19,11 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function systemRouterJsunit() {
   describe('systemRouterTest', () => {
+    /**
+     * @tc.number systemRouterTest001
+     * @tc.name systemRouterTest001
+     * @tc.desc systemRouterTest001
+     */
     it('systemRouterTest001', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest001] START');
       let options: router.RouterOptions = {
