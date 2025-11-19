@@ -4013,7 +4013,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
           let height1 = Math.round(drawableRect1.width / 1.2);
-          console.log(caseName + ' width1: ' + width1);
+          console.log(caseName + ' height1: ' + height1);
           expect(Math.abs(height1-drawableRect1.height)).assertLessOrEqual(3);
           await windowClass.minimize();
           await sleep(200);
