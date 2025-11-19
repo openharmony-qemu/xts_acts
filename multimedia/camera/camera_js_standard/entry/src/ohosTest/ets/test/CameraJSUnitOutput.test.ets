@@ -147,6 +147,18 @@ let createOutput = (index: number, mode: number) => {
   }
 }
 
+let createOutputByProfiles = (testNum: string, index: number, mode: number, profile: cameraObj.Profile) => {
+  let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[index], mode);
+  previewOutput = cameraManager.createPreviewOutput(profile, surfaceIds);
+  if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {
+    videoProfilesArray = cameraOutputCap.videoProfiles;
+    console.log(`${testNum} videoProfilesArray:  + ${JSON.stringify(videoProfilesArray)}`)
+  } else {
+    photoOutput = cameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
+    console.log(`${testNum} Receiver is ok + ${JSON.stringify(photoOutput)}`)
+  }
+}
+
 // 创建Session对象参数为相机模式
 let createPhotoSession = (mode: number) => {
   cameraSession = cameraManager.createSession(mode);
