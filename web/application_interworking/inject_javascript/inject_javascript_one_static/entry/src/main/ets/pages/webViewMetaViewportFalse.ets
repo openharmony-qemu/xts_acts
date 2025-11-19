@@ -22,7 +22,7 @@ import emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
-import  { BusinessError } from '@ohos.base';
+import  { BusinessError, RecordData } from '@ohos.base';
 class StringFields {
   str: string = '';
 }
@@ -55,7 +55,7 @@ struct webViewOnMetaViewportFalse {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

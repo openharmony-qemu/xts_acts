@@ -122,7 +122,7 @@ export default function ActsNotificationContentTest() {
         try {
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-            expect(err).assertEqual(null);
+            expect().assertFail();
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
@@ -201,7 +201,7 @@ export default function ActsNotificationContentTest() {
         } catch (err: BusinessError) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',
             JSON.stringify(err));
-          expect(err.code).assertEqual(401);
+          expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
           done();
         }

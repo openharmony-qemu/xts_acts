@@ -33,10 +33,8 @@ import events_emitter from '@ohos.events.emitter'
 import emitter from '@ohos.events.emitter'
 import webview from '@ohos.web.webview'
 import Utils from '../../src/test/Utils.test';
-import { BusinessError } from '@ohos.base'
-import { Callback, RecordData } from '@ohos.base'
+import { BusinessError, Callback, RecordData } from '@ohos.base'
 import buffer from '@ohos.buffer'
-import { Callback } from '@ohos.base'
 class StringFields {
   public str: string = '';
 }
@@ -64,7 +62,7 @@ struct webAdsBlockManager {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

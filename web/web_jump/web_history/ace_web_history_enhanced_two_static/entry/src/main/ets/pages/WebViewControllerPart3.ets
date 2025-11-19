@@ -30,9 +30,7 @@ import image from '@ohos.multimedia.image';
 import emitter from '@ohos.events.emitter'
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../src/test/Utils.test';
-import { BusinessError } from '@ohos.base'
-import { Callback } from '@ohos.base'
-import { Callback, RecordData } from '@ohos.base'
+import { BusinessError, Callback, RecordData } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 class StringFields {
@@ -73,7 +71,7 @@ struct WebViewControllerPart3 {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

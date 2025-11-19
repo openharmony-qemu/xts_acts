@@ -41,7 +41,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import webview from '@ohos.web.webview';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
@@ -777,7 +777,7 @@ struct WebComponent {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);
