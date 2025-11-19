@@ -80,7 +80,7 @@ export default function AbstractPropertyRefTest() {
      * @tc.desc     AbstractPropertyRefTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-it('AbstractPropertyRefTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('AbstractPropertyRefTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AbstractPropertyRefTest001 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -89,12 +89,13 @@ it('AbstractPropertyRefTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvRefA1Value'));
-      console.info("[AbstractPropertyRefTest001] component obj is: " + JSON.stringify(obj));
+      console.info("[AbstractPropertyRefTest001] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual("AbstractPropertyRefTest:10");
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id("btnClearAPTest"));
       await (btn1?.click() as Promise<void>);
       console.info('AbstractPropertyRefTest_static_0100 END');
+      done()
     });
   })
 }

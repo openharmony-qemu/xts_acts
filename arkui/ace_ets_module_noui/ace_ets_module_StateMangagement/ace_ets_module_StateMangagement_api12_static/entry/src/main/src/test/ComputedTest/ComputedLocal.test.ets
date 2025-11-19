@@ -88,7 +88,7 @@ export default function ComputedLoaclTest() {
      * @tc.desc     ComputedLoaclTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ComputedLoaclTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComputedLoaclTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ComputedLoaclTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -116,6 +116,10 @@ it('ComputedLoaclTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
       obj = JSON.parseJsonElement(strJson);
       console.info("[ComputedLocalTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Li Huaa20');
+
+      button = await driver.findComponent(ON.id('showComputedLocalText'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('computedLocalText5');
       obj = JSON.parseJsonElement(strJson);

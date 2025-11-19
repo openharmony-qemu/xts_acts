@@ -89,7 +89,7 @@ export default function ObjectArrayTest() {
      * @tc.desc     ObjectArrayTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ObjectArrayTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ObjectArrayTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ObjectArrayTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ObjectArray_1A');

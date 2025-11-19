@@ -57,7 +57,7 @@ struct  CompB{
             Button('button').height('5%')
               .type(this.type2)
               .onClick(():void => {
-
+                this.type2 = undefined
               })
               .key('coBtn2')
           }
@@ -77,7 +77,7 @@ struct  CompB{
             Button('button').height('5%')
               .fontSize(this.number2)
               .onClick(():void => {
-
+                this.number2 = undefined
               })
               .key('coBtn4')
           }

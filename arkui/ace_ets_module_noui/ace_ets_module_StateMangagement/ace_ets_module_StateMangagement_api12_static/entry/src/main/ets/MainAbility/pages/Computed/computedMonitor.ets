@@ -37,8 +37,10 @@ import {
 @ComponentV2
 struct CompuutedMonitor {
   @Local celsius: number = 20;
-  @Local computedText1: number = 0;
-  @Local computedText2: number = 0;
+  computedText1: number = 0;
+  computedText2: number = 0;
+  @Local showComputedText2: number = 0;
+  @Local showComputedText1: number = 0;
 
   @Computed
   get fahrenheit(): number {
@@ -89,12 +91,17 @@ struct CompuutedMonitor {
       Text(`Kelvin ${this.kelvin.toFixed(2)}`).id('CompuutedMonitorText3')
         .height('3%')
         .fontSize(9)
-      Text(this.computedText1.toString()).id('CompuutedMonitorText4')
+      Text(this.showComputedText1.toString()).id('CompuutedMonitorText4')
         .height('3%')
         .fontSize(9)
-      Text(this.computedText2.toString()).id('CompuutedMonitorText5')
+      Text(this.showComputedText2.toString()).id('CompuutedMonitorText5')
         .height('3%')
         .fontSize(9)
+      Button('showComputedText').onClick(() => {
+        this.showComputedText2 = this.computedText2;
+        this.showComputedText1 = this.computedText1;
+      }).id('showComputedText')
+
     }
     .width('100%')
   }

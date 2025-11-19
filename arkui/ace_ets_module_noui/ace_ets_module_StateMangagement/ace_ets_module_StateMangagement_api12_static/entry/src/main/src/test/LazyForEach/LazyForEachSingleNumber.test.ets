@@ -86,7 +86,7 @@ export default function LazyForEachSingleNumber() {
      * @tc.desc     LazyForEachSingleNumber_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachSingleNumber_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachSingleNumber_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachSingleNumber_static_001] START');
       await CommonFunc.sleep(1000);
 

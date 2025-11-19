@@ -83,7 +83,7 @@ export default function LocalStorageDeleteTest0120() {
      * @tc.desc     LocalStorageDeleteTest0120_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('LocalStorageDeleteTest0120_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LocalStorageDeleteTest0120_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('LocalStorageDeleteTest0120001 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

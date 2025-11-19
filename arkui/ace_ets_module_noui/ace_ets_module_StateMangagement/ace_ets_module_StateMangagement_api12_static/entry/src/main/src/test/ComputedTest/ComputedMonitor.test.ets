@@ -88,7 +88,7 @@ export default function ComputedMonitorTest() {
      * @tc.desc     ComputedMonitorTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ComputedMonitorTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComputedMonitorTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ComputedMonitorTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -111,6 +111,10 @@ it('ComputedMonitorTest_static_0100', Level.LEVEL0, async (done: () => void): Pr
       obj = JSON.parseJsonElement(strJson);
       console.info("[ComputedMonitorTest_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Kelvin 294.15');
+
+      button = await driver.findComponent(ON.id('showComputedText'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('CompuutedMonitorText4');
       obj = JSON.parseJsonElement(strJson);
@@ -140,6 +144,10 @@ it('ComputedMonitorTest_static_0100', Level.LEVEL0, async (done: () => void): Pr
       obj = JSON.parseJsonElement(strJson);
       console.info("[ComputedMonitorTest_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Kelvin 293.15');
+
+      button = await driver.findComponent(ON.id('showComputedText'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('CompuutedMonitorText4');
       obj = JSON.parseJsonElement(strJson);

@@ -53,7 +53,7 @@ struct makeObserved0060 {
 
   @Monitor(['message.id'])
   onStrChange(monitor: IMonitor) {
-    console.log(`name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    console.log(`name change from ${monitor.value<Any>()?.before} to ${monitor.value<Any>()?.now}`);
   }
 
   @Computed

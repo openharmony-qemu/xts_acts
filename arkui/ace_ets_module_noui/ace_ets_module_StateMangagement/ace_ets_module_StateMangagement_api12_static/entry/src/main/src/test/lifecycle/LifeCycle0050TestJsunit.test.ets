@@ -92,7 +92,7 @@ export default function LifeCycle0050TestJsunit() {
      * @tc.desc     LifeCycle0050TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LifeCycle0050TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LifeCycle0050TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LifeCycle0050TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -101,6 +101,22 @@ it('LifeCycle0050TestJsunit_static_001', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+
+      let btn1: Component|null = await driver.findComponent(ON.id("showState"));
+      console.log('btn1=======' + btn1)
+      await CommonFunc.sleep(1000);
+      await (btn1?.click() as Promise<void>);
+
+      let btn2: Component|null = await driver.findComponent(ON.id("showState2"));
+      console.log('btn2=======' + btn2)
+      await CommonFunc.sleep(1000);
+      await (btn2?.click() as Promise<void>);
+
+      let btn3: Component|null = await driver.findComponent(ON.id("showState3"));
+      console.log('btn3=======' + btn3)
+      await CommonFunc.sleep(1000);
+      await (btn3?.click() as Promise<void>);
+
       let strJson = inspector.getInspectorByKey('tvLifeCycle0050Parent');
       console.log('strJson======' + strJson)
       let obj = JSON.parseJsonElement(strJson);

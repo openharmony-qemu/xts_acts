@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -84,7 +84,7 @@ export default function LinkTest0090() {
      * @tc.desc     LinkTest0090_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LinkTest0090_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LinkTest0090_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LinkTest0090_static_001] START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -92,15 +92,23 @@ it('LinkTest0090_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      console.log('JSON.stringify(inspector.getInspectorTree())' + JSON.stringify(inspector.getInspectorTree()))
-      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-        .getArray("$children")[0]
-        .getArray("$children")[1]
-        .getArray("$children")[0]
-        .getArray("$children")[0];
+      // console.log('JSON.stringify(inspector.getInspectorTree())' + JSON.stringify(inspector.getInspectorTree()))
+      //
+      // let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      //   .getArray("$children")[0]
+      //   .getArray("$children")[1]
+      //   .getArray("$children")[0]
+      //   .getArray("$children")[0];
+      // console.info("[LinkTest0090_static_001] component obj is: " + JSON.stringify(obj));
+      // expect(obj.getElement('$attrs').getString('content')).assertEqual('100');
+      // console.info('[LinkTest0090_static_001] END');
+
+
+      let strJson = inspector.getInspectorByKey('item_0');
+      console.log("[LinkTest0090_static_001] component obj is: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
       console.info("[LinkTest0090_static_001] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('100');
-      console.info('[LinkTest0090_static_001] END');
       done();
     });
   })

@@ -33,7 +33,10 @@ import {
   BarState,
   Alignment,
   Margin,
-  Reusable
+  Reusable,
+  DataAddOperation,
+  DataExchangeOperation,
+  DataDeleteOperation
 } from '@ohos.arkui.component'
 import {
   State,
@@ -105,14 +108,15 @@ class MyDataSource extends BasicDataSource {
 
   public addData(index: int): void {
     this.dataArray.splice(index, 0, 'Hello A');
-    let dat: Dta = {type: DataOperationType.ADD, index: index,count:1}
-    let dta: DataOperation[] = new Array<DataOperation>(dat as DataOperation )
+    let dat: DataAddOperation = {type: DataOperationType.ADD, index: index,count:1}
+    let dta: DataOperation[] = [dat]
     this.notifyDatasetChange(dta);
+    console.log("=====================================this.totalCount() " + this.totalCount());
   }
   public DeleteData(index: int): void {
     this.dataArray.splice(index, 1);
-    let dat1: Dta = {type: DataOperationType.DELETE, index: index,count:1}
-    let dta1: DataOperation[] = new Array<DataOperation>(dat1 as DataOperation )
+    let dat1: DataDeleteOperation = {type: DataOperationType.DELETE, index: index,count:1}
+    let dta1: DataOperation[] = [dat1]
     this.notifyDatasetChange(dta1);
     this.totalCount()
   }
@@ -120,8 +124,8 @@ class MyDataSource extends BasicDataSource {
     let temp = this.dataArray[1];
     this.dataArray[1] = this.dataArray[2];
     this.dataArray[2] = temp
-    let dat2: Dta2 = {type: DataOperationType.EXCHANGE, index: {start:1,end:2 }}
-    let dta2: DataOperation[] = new Array<DataOperation>(dat2 as DataOperation )
+    let dat2: DataExchangeOperation = {type: DataOperationType.EXCHANGE, index: {start:1,end:2 }}
+    let dta2: DataOperation[] = [dat2]
     this.notifyDatasetChange(dta2);
   }
   public pushData(data: string): void {
@@ -145,7 +149,7 @@ struct LazyForEachDataOperationType {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('CombinationState2', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

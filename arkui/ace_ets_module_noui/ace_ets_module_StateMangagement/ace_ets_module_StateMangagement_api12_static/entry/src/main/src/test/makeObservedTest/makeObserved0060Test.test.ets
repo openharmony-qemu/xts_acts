@@ -91,7 +91,7 @@ export default function makeObserved0060Test() {
      * @tc.desc     makeObserved0060Test_static_01
      * @tc.level    Level.LEVEL0
      */
-it('makeObserved0060Test_static_01', Level.LEVEL0, async (done: ()=>void) => {
+    it('makeObserved0060Test_static_01', Level.LEVEL0, async (done: ()=>void) => {
       console.info('makeObserved0060Test_static_01 START');
       let testArr: testType[] = [
         {

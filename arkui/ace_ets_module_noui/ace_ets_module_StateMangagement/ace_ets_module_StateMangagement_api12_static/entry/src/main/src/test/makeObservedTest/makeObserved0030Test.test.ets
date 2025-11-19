@@ -92,7 +92,7 @@ export default function makeObserved0030Test() {
      * @tc.desc     makeObserved0030Test_static_01
      * @tc.level    Level.LEVEL0
      */
-it('makeObserved0030Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('makeObserved0030Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('makeObserved0030Test_static_01 START');
       await CommonFunc.sleep(1000)
       let testArr: testType[] = [

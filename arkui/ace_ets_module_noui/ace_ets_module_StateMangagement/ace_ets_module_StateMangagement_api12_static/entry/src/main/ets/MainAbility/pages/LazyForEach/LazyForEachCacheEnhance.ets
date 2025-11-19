@@ -94,7 +94,7 @@ struct LazyForEachCacheEnhanceDemo {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEachCacheEnhance', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

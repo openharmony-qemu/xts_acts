@@ -84,7 +84,7 @@ export default function appStorageV2() {
      * @tc.desc     appStorageV2_static_001
      * @tc.level    Level.LEVEL0
      */
-it('appStorageV2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('appStorageV2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[appStorageV2_static_001] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('appStorageV2_static_keys');
@@ -102,7 +102,7 @@ it('appStorageV2_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.desc     appStorageV2_static_002
      * @tc.level    Level.LEVEL0
      */
-it('appStorageV2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('appStorageV2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[appStorageV2_static_002] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

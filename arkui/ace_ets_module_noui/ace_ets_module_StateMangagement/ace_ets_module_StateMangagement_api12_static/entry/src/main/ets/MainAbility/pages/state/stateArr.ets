@@ -28,37 +28,33 @@ import {
   State,
   Watch,
   Link,
-  StorageLink
+  StorageLink,
+  UIUtils
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-interface Param {
-  param: number
+class Param1 {
+  param: int
 }
 @Entry
 @Component
 struct StateArr0010 {
-  @State arr: (number | boolean | Param)[] = new Array<number | boolean | Param>()
+  @State arr: (int | boolean | Param1)[] = [] as (int | boolean | Param1)[]
 
   aboutToAppear(): void {
     this.arr.push(0, false)
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('stateArr', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
   }
 
   build() {
     Column() {
-      Text('Hello' + JSON.stringify(this.arr)).id('tvStateArr0010Title')
+      //Hello
+      Text('Hello' + JSON.stringify(Array.from(this.arr))).id('tvStateArr0010Title')
       Button('push')
         .id('btnStateArr0010Set')
         .onClick((e: ClickEvent) => {
-          this.arr.push({ 'param': 47 } as Param)
+          this.arr.push({ 'param': 47 } as Param1)
+          console.log("===================================arr: " + JSON.stringify(UIUtils.getTarget(this.arr)));
         })
       Button('Delete')
         .id('btnStateArr0010Delete')

@@ -88,7 +88,7 @@ export default function RepeatTest0200() {
      * @tc.desc     RepeatTest0200_static_001
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0200_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0200_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0200_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -132,7 +132,7 @@ it('RepeatTest0200_static_001', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     RepeatTest0200_static_002
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0200_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0200_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0200_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -176,7 +176,7 @@ it('RepeatTest0200_static_002', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     RepeatTest0200_static_003
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0200_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0200_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0200_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

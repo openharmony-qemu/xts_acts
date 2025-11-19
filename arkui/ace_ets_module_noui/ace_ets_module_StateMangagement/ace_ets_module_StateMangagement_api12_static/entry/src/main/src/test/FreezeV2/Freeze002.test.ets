@@ -99,70 +99,73 @@ export default function FreezeV2Test03() {
       console.info("Freeze003 after each called");
     });
 
+
+    
     /*
-     * @tc.number   FreezeTest_static_0011
-     * @tc.name     FreezeTest_static_0011
-     * @tc.desc     FreezeTest_static_0011
+     * @tc.number   FreezeTest2_static_001
+     * @tc.name     FreezeTest2_static_001
+     * @tc.desc     FreezeTest2_static_001
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_0011', Level.LEVEL0, async () => {
-    //   console.info('FreezeTest_static_001 START');
-    //   let driver =  Driver.create();
-    //   let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-    //   console.log('changeMessage==========' + changeMessage)
-    //   await (changeMessage?.click() as Promise<void>);
-    //   let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
-    //   await (nextPage0?.click() as Promise<void>);
-    //   await sleep(1);
-    //   await (changeMessage?.click() as Promise<void>);
-    //
-    //   let observer1 =  driver.createUIEventObserver()
-    //   let callback1 = (UiElementInfo: UIElementInfo) => {
-    //     try {
-    //       expect(UiElementInfo.text == 'NavigationContent message:2 index:1').assertTrue();
-    //       expect(UiElementInfo.type == 'Toast').assertTrue();
-    //     } catch (err) {
-    //       console.info(err);
-    //     }
-    //   }
-    //   observer1.onceToastShow(callback1)
-    //
-    //   console.info('FreezeTest_static_001 END');
+    it('FreezeTest2_static_001', Level.LEVEL0, async () => {
+      console.info('FreezeTest2_static_001 START');
+      let driver =  Driver.create();
+      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
+      console.log('changeMessage==========' + changeMessage)
+      await (changeMessage?.click() as Promise<void>);
+      let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
+      await (nextPage0?.click() as Promise<void>);
+      await sleep(1);
+      await (changeMessage?.click() as Promise<void>);
+
+      let observer1 =  driver.createUIEventObserver()
+      let callback1 = (UiElementInfo: UIElementInfo) => {
+        try {
+          expect(UiElementInfo.text == 'NavigationContent message:2 index:1').assertTrue();
+          expect(UiElementInfo.type == 'Toast').assertTrue();
+        } catch (err) {
+          console.info(err);
+        }
+      }
+      observer1.onceToastShow(callback1)
+
+      console.info('FreezeTest2_static_001 END');
     });
 
+    
     /*
      * @tc.number   FreezeTest_static_002
      * @tc.name     FreezeTest_static_002
      * @tc.desc     FreezeTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_002', Level.LEVEL0, async () => {
-    //   console.info('FreezeTest_static_002 START');
-    //   let driver =  Driver.create();
-    //   let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-    //   console.log('changeMessage==========' + changeMessage)
-    //   await (changeMessage?.click() as Promise<void>);
-    //   let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
-    //   await (nextPage0?.click() as Promise<void>);
-    //   await sleep(1);
-    //   await (changeMessage?.click() as Promise<void>);
-    //   let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
-    //   await (nextPage1?.click() as Promise<void>);
-    //   await sleep(1);
-    //   await (changeMessage?.click() as Promise<void>);
-    //
-    //   let observer1 =  driver.createUIEventObserver()
-    //   let callback1 = (UiElementInfo: UIElementInfo) => {
-    //     try {
-    //       expect(UiElementInfo.text == 'NavigationContent message:3 index:2').assertTrue()
-    //       expect(UiElementInfo.type == 'Toast').assertTrue()
-    //     } catch (err) {
-    //       console.info(err)
-    //     }
-    //   }
-    //   observer1.onceToastShow(callback1)
-    //
-    //   console.info('FreezeTest_static_002 END');
+    it('FreezeTest_static_002', Level.LEVEL0, async () => {
+      console.info('FreezeTest_static_002 START');
+      let driver =  Driver.create();
+      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
+      console.log('changeMessage==========' + changeMessage)
+      await (changeMessage?.click() as Promise<void>);
+      let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
+      await (nextPage0?.click() as Promise<void>);
+      await sleep(1);
+      await (changeMessage?.click() as Promise<void>);
+      let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
+      await (nextPage1?.click() as Promise<void>);
+      await sleep(1);
+      await (changeMessage?.click() as Promise<void>);
+
+      let observer1 =  driver.createUIEventObserver()
+      let callback1 = (UiElementInfo: UIElementInfo) => {
+        try {
+          expect(UiElementInfo.text == 'NavigationContent message:3 index:2').assertTrue()
+          expect(UiElementInfo.type == 'Toast').assertTrue()
+        } catch (err) {
+          console.info(err)
+        }
+      }
+      observer1.onceToastShow(callback1)
+
+      console.info('FreezeTest_static_002 END');
     });
 
     
@@ -172,7 +175,7 @@ it('FreezeTest_static_002', Level.LEVEL0, async () => {
      * @tc.desc     FreezeTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_003', Level.LEVEL0, async () => {
+    it('FreezeTest_static_003', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_003 START');
       let driver =  Driver.create();
       let changeMessage = await driver.findComponent(ON.id('changeMessage'));
@@ -211,7 +214,7 @@ it('FreezeTest_static_003', Level.LEVEL0, async () => {
      * @tc.desc     FreezeTest_static_004
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_004', Level.LEVEL0, async () => {
+    it('FreezeTest_static_004', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_004 START');
       let driver =  Driver.create();
       let changeMessage = await driver.findComponent(ON.id('changeMessage'));
@@ -253,7 +256,7 @@ it('FreezeTest_static_004', Level.LEVEL0, async () => {
      * @tc.desc     FreezeTest_static_005
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_005', Level.LEVEL0, async () => {
+    it('FreezeTest_static_005', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_005 START');
       let driver =  Driver.create();
       let changeMessage = await driver.findComponent(ON.id('changeMessage'));

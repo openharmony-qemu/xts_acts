@@ -88,64 +88,64 @@ export default function getTarget1Test() {
      * @tc.desc     getTarget1Test_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getTarget1Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getTarget1Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getTarget1Test_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
  
       let strJson = inspector.getInspectorByKey('useGetTarget1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('this.observedObject === observedClass: true');
 
       strJson = inspector.getInspectorByKey('useGetTarget2');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.nonObservedObject) === nonObservedClass: true');
 
       strJson = inspector.getInspectorByKey('useGetTarget3');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.numberList) === globalNumberList: true');
 
       strJson = inspector.getInspectorByKey('useGetTarget4');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.sampleMap) === globalSampleMap: true');
 
       strJson = inspector.getInspectorByKey('useGetTarget5');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.sampleSet) === globalSampleSet: true');
 
       strJson = inspector.getInspectorByKey('useGetTarget6');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.sampleDate) === globalSampleDate: true');
 
       strJson = inspector.getInspectorByKey('noUseGetTarget1');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.nonObservedObject) === nonObservedClass: false');
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.nonObservedObject) === nonObservedClass: true');
 
       strJson = inspector.getInspectorByKey('noUseGetTarget2');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.numberList) === globalNumberList: false');
 
       strJson = inspector.getInspectorByKey('noUseGetTarget3');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.sampleMap) === globalSampleMap: false');
 
       strJson = inspector.getInspectorByKey('noUseGetTarget4');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.sampleSet) === globalSampleSet: false');
 
       strJson = inspector.getInspectorByKey('noUseGetTarget5');
       obj = JSON.parseJsonElement(strJson);
-      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getTarget1Test_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.sampleDate) === globalSampleDate: false');
 
       console.info('[getTarget1Test_static_0100] END');

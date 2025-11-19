@@ -85,7 +85,7 @@ export default function LazyForEachChangeTest0020() {
      * @tc.desc     LazyForEachChangeTest0020_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('LazyForEachChangeTest0020_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('LazyForEachChangeTest0020_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('LazyForEachChangeTest0020_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

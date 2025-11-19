@@ -66,7 +66,7 @@ export default function Monitor2Jsunit() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Monitor2Jsunit state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/ComponentV2/Monitor2" == pages.name)) {
+        if (!("Monitor2" == pages.name)) {
           console.info("get Monitor2Jsunit pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
@@ -92,7 +92,7 @@ export default function Monitor2Jsunit() {
      * @tc.desc     Monitor2Jsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Monitor2Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Monitor2Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Monitor2Jsunit_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -101,11 +101,13 @@ it('Monitor2Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<
       if (btn) {
         await (btn.click() as Promise<void>);
       }
-      let strJson = inspector.getInspectorByKey('extends_mes');
+      await CommonFunc.sleep(4000);
+      let strJson = inspector.getInspectorByKey('extends_mes_0');
+      await CommonFunc.sleep(2000);
       console.log('strJson=======' + strJson)
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[Monitor2Jsunit_static_001] component obj is: " + JSON.stringify(obj));
-      console.info("[Monitor2Jsunit_static_001] content: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[Monitor2Jsunit_static_001] component obj is: " + JSON.stringifyJsonElement(obj));
+      console.info("[Monitor2Jsunit_static_001] content: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('1-Info name change to Jack');
       console.info('[Monitor2Jsunit_static_001] END');
       done();

@@ -26,7 +26,7 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -53,7 +53,8 @@ class classA {
 
 @Component
 struct ViewA {
-  @ObjectLink a:classA = new classA(ButtonType.Circle,ButtonType.Circle,10,10)
+  //@ObjectLink a:classA = new classA(ButtonType.Circle,ButtonType.Circle,10,10)
+  @ObjectLink a:classA
   build() {
     Row() {
       Row() {
@@ -126,6 +127,7 @@ struct ViewB {
         Row() {
 
           Column() {
+            Button('compare').key('compareBtn')
             Row(){
               Column(){
                 Text("父type-->undefined").height('5%')

@@ -52,7 +52,7 @@ class MonitorInfo extends MonitorObject {
   }
   @Monitor(['name'])
   onNameChange(monitor: IMonitor) {
-    log.logStr.push(`1-Info name change to ${monitor.value()?.now}`);
+    log.logStr.push(`1-Info name change to ${monitor.value<Any>()?.now}`);
   }
 }
 @Entry
@@ -62,18 +62,21 @@ struct extendsMonitor {
   @Monitor(['info'])
   onStrChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      log.logStr.push(`2-struct: ${path} change to ${monitor.value(path)?.now}`);
+      log.logStr.push(`2-struct: ${path} change to ${monitor.value<string>(path)?.now}`);
     })
   }
   build() {
     Row(){
       Column(){
-        ForEach(log.logStr,(item:string)=>{
-          Text(`${item}`).id('extends_mes')
+        ForEach(log.logStr,(item:string, index:int)=>{
+          console.log("===================================== gen text");
+          Text(`${item}`).id('extends_mes_' + index)
         })
         Button('change name').id('extends_btn')
           .onClick(():void => {
+            console.log("===================================== extends_btn start");
             this.info.name = 'Jack'
+            console.log("===================================== extends_btn end");
           })
       }.width('100%')
     }

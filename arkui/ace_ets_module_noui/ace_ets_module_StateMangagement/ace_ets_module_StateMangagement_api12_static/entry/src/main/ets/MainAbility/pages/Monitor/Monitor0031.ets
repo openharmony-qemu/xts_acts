@@ -43,7 +43,7 @@ class Monitor0031Class {
   @Trace name: string = 'Tom'
   @Monitor(['name'])
   onNameChange(monitor: IMonitor) {
-    prompt.showToast({ message: `name: ${monitor.value()?.now}`, duration: 2000 })
+    prompt.showToast({ message: `name: ${monitor.value<Any>()?.now}`, duration: 2000 })
   }
 }
 

@@ -45,6 +45,7 @@ struct state2 {
 
   build() {
     Column() {
+      Button('compare').key('compareBtn')
       Text("State:type-->undefined").height('5%')
       Button('button').height('5%')
         .type(this.type1)
@@ -52,6 +53,7 @@ struct state2 {
           this.type1 = undefined
         })
         .key('stBtn1')
+        .id('stBtn1')
 
       Text("State:type-->null").height('5%')
       Button('button').height('5%')
@@ -60,6 +62,7 @@ struct state2 {
           this.type2 = undefined
         })
         .key('stBtn2')
+        .id('stBtn2')
 
       Text("State文本10-->undefined").height('5%')
       Button('button').height('5%')
@@ -68,6 +71,7 @@ struct state2 {
           this.number1 = undefined
         })
         .key('stBtn3')
+        .id('stBtn3')
 
       Text("State文本10-->null").height('5%')
       Button('button').height('5%')
@@ -76,6 +80,7 @@ struct state2 {
           this.number2 = undefined
         })
         .key('stBtn4')
+        .id('stBtn4')
 
 
 

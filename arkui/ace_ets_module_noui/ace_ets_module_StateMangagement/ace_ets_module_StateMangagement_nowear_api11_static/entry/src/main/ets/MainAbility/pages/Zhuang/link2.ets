@@ -25,71 +25,75 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  Link,
+  Link,AppStorage
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
+@Component
+struct  CompE{
+  // @Link type1: ButtonType | undefined = undefined
+  // @Link type2: ButtonType | undefined = undefined
+  // @Link number1: number | undefined =undefined
+  // @Link number2: number | undefined =undefined
 
+  @Link type1: ButtonType | undefined
+  @Link type2: ButtonType | undefined
+  @Link number1: number | undefined
+  @Link number2: number | undefined
+  build(){
+    Row(){
+      Column() {
 
+        Row(){
+          Column(){
+            Text("type-->undefined").height('5%')
+            Button('button').height('5%')
+              .type(this.type1)
+              .onClick((e: ClickEvent) => {
+                this.type1 = undefined
+              })
+              .key('linkBtn1')
+          }
 
+          Column(){
+            Text("type-->null").height('5%')
+            Button('button').height('5%')
+              .type(this.type2)
+              .onClick((e: ClickEvent) => {
+                this.type2 = undefined
+              })
+              .key('linkBtn2')
+          }
+        }
 
+        Row(){
+          Column(){
+            Text("文本10-->undefined").height('5%')
+            Button('button').height('5%')
+              .fontSize(this.number1)
+              .onClick((e: ClickEvent) => {
+                this.number1 = undefined
+              })
+              .key('linkBtn3')
+          }
 
+          Column(){
+            Text("文本10-->null").height('5%')
+            Button('button').height('5%')
+              .fontSize(this.number2)
+              .onClick((e: ClickEvent) => {
+                this.number2 = undefined
+              })
+              .key('linkBtn4')
+          }
+        }
 
+      }.width('100%')
+    }
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -116,7 +120,7 @@ struct Link1 {
         Row() {
 
           Column() {
-
+            Button('compare').key('compareBtn')
             Row(){
               Column(){
                 Text("Link:type->undefined")
@@ -163,7 +167,7 @@ struct Link1 {
 
             }
 
-
+            CompE({ type1:this.type1,type2:this.type2,number1:this.number1,number2:this.number2})
 
           }.width('100%')
         }

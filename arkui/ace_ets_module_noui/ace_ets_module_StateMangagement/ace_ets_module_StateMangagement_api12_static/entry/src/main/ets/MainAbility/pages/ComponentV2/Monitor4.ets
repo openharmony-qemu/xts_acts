@@ -38,7 +38,7 @@ class Frequence {
   @Trace count: number = 0;
   @Monitor(['count'])
   onCountChange(monitor: IMonitor) {
-    console.log(`count change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    console.log(`count change from ${monitor.value<Any>()?.before} to ${monitor.value<Any>()?.now}`);
   }
 }
 @Entry

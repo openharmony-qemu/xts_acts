@@ -87,7 +87,7 @@ export default function getTarget3Test() {
      * @tc.desc     getTarget3Test_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getTarget3Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getTarget3Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getTarget3Test_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -87,7 +87,7 @@ export default function LazyForEachAdd() {
      * @tc.desc     LazyForEachAdd_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachAdd_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachAdd_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachAdd_static_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

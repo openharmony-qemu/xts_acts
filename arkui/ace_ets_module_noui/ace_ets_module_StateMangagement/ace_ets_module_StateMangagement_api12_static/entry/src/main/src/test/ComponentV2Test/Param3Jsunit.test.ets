@@ -93,7 +93,7 @@ export default function Param3Jsunit() {
      * @tc.desc     Param3Jsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Param3Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Param3Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Param3Jsunit_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

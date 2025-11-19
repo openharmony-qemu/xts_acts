@@ -92,7 +92,7 @@ export default function WrapBuilder0010TestJsunit() {
      * @tc.desc     WrapBuilder0010TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('WrapBuilder0010TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('WrapBuilder0010TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[WrapBuilder0010TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('tvGlobalWrapBuilder0010');

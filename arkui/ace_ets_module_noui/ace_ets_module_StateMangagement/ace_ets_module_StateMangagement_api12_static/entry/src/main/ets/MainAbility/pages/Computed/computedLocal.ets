@@ -38,8 +38,10 @@ import {
 struct ComputedLocal {
   @Local firstName: string = 'Li';
   @Local lastName: string = 'Hua';
-  @Local computedLocalText: number = 0;
+  computedLocalText: number = 0;
+  @Local showComputedLocalText: number = 0;
   age: number = 20; // cannot trigger Computed
+
 
   @Computed
   get fullName() {
@@ -55,7 +57,7 @@ struct ComputedLocal {
       Divider()
       Text(this.fullName).id('computedLocalText3')
       Text(this.fullName).id('computedLocalText4')
-      Text(`Computed count: ${this.computedLocalText}`).id('computedLocalText5')
+      Text(`Computed count: ${this.showComputedLocalText}`).id('computedLocalText5')
       Button('changed lastName').onClick(() => {
         this.lastName += 'a';
       }).id('computedLocalButton1')
@@ -63,6 +65,9 @@ struct ComputedLocal {
       Button('changed age').onClick(() => {
         this.age++; // cannot trigger Computed
       }).id('computedLocalButton2')
+      Button('showComputedLocalText').onClick(() => {
+        this.showComputedLocalText = this.computedLocalText;
+      }).id('showComputedLocalText')
     }
   }
 }

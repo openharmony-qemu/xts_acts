@@ -20,7 +20,8 @@ import {
   ClickEvent,List,Alignment,Color,ListItem,LazyForEach,
   ForEach,FlexWrap,FlexDirection,
   Text,DataOperation,TextAlign,Reusable,
-  IDataSource,DataChangeListener,Scroller,Flex
+  IDataSource,DataChangeListener,Scroller,Flex,
+  ReuseObject
 } from '@ohos.arkui.component'
 import {
   State,
@@ -133,7 +134,6 @@ class BasicDataSourceInterface implements IDataSource<string> {
   }
 }
 
-AppStorage.setOrCreate('reuseCount', 0)
 
 @Entry
 @Component
@@ -142,6 +142,7 @@ struct LazyForEachInterface {
   @State switch1:boolean = true
   scroller: Scroller = new Scroller()
   @State parentInfo: string = 'parentInfo';
+  static { AppStorage.setOrCreate('reuseCount', 0) }
 
   aboutToAppear(): void {
     for (let i = 1; i <= 50; i++) {
@@ -221,8 +222,9 @@ struct ChildViewShow {
   @State message: string = '';
   @Link childInfo: string;
 
-  aboutToReuse(params: Record<string, ESObject>) {
+  aboutToReuse(params: ReuseObject) {
     console.info('aboutToReuse Child')
+    console.log("================================== " + JSON.stringify(params));
     this.childInfo = 'aboutToReuse'
     this.message = String (params['message'])
   }

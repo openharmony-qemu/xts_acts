@@ -96,7 +96,7 @@ export default function LifeCycle0120TestJsunit() {
      * @tc.desc     LifeCycle0120TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LifeCycle0120TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LifeCycle0120TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LifeCycle0120TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('tvLifeCycle0120Page');

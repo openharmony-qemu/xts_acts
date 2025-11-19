@@ -87,7 +87,7 @@ export default function LazyForEachSingleBoolean() {
      * @tc.desc     LazyForEachSingleBoolean_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachSingleBoolean_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachSingleBoolean_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachSingleBoolean_static_001] START');
       await CommonFunc.sleep(1000);
 

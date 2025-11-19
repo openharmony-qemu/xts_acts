@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -85,7 +85,7 @@ export default function StateTest0070() {
      * @tc.desc     StateTest0070_static_001
      * @tc.level    Level.LEVEL0
      */
-it('StateTest0070_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('StateTest0070_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StateTest0070_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -108,7 +108,7 @@ it('StateTest0070_static_001', Level.LEVEL0, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.id("btnDelState0070"));
       await CommonFunc.sleep(1000);
-      await (btn1?.click() as Promise<void>);
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.text('green'))
       expect(text == null).assertTrue()

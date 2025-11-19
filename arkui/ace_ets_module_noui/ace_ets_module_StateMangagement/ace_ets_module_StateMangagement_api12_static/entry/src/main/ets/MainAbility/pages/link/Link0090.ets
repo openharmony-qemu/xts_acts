@@ -39,10 +39,10 @@ struct ChildLink0090 {
 
   build() {
     List() {
-      ForEach(this.arrValue, (item: number)=>{
+      ForEach(this.arrValue, (item: number, index:int)=>{
         ListItem() {
           Text(String(item))
-            .id(`item_${item}`)
+            .id(`item_${index}`)
         }
       })
     }

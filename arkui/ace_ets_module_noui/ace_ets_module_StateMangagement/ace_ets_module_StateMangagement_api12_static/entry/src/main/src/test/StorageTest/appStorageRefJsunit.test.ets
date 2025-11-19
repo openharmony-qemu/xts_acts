@@ -80,7 +80,7 @@ export default function appStorageRefJsunit() {
      * @tc.desc     appStorageRefJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('appStorageRefJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('appStorageRefJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('appStorageRefJsunit001 START');
       let strJson = inspector.getInspectorByKey('app_ref_1');
       let obj = JSON.parseJsonElement(strJson);

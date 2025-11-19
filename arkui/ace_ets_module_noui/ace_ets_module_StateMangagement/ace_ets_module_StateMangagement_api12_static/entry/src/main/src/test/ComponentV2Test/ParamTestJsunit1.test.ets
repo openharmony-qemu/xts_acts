@@ -94,7 +94,7 @@ export default function ParamTestJsunit1() {
      * @tc.desc     ParamTestJsunit1_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ParamTestJsunit1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamTestJsunit1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParamTestJsunit1_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -127,7 +127,7 @@ it('ParamTestJsunit1_static_001', Level.LEVEL0, async (done: () => void): Promis
      * @tc.desc     ParamTestJsunit1_static_002
      * @tc.level    Level.LEVEL0
      */
-it('ParamTestJsunit1_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamTestJsunit1_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParamTestJsunit1_static_002] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -155,7 +155,7 @@ it('ParamTestJsunit1_static_002', Level.LEVEL0, async (done: () => void): Promis
      * @tc.desc     ParamTestJsunit1_static_003
      * @tc.level    Level.LEVEL0
      */
-it('ParamTestJsunit1_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamTestJsunit1_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParamTestJsunit1_static_003] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -184,7 +184,7 @@ it('ParamTestJsunit1_static_003', Level.LEVEL0, async (done: () => void): Promis
      * @tc.desc     ParamTestJsunit1_static_004
      * @tc.level    Level.LEVEL0
      */
-it('ParamTestJsunit1_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamTestJsunit1_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParamTestJsunit1_static_004] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -212,7 +212,7 @@ it('ParamTestJsunit1_static_004', Level.LEVEL0, async (done: () => void): Promis
      * @tc.desc     ParamTestJsunit1_static_005
      * @tc.level    Level.LEVEL0
      */
-it('ParamTestJsunit1_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamTestJsunit1_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParamTestJsunit1_static_005] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -244,7 +244,7 @@ it('ParamTestJsunit1_static_005', Level.LEVEL0, async (done: () => void): Promis
      * @tc.desc     ParamTestJsunit1_static_006
      * @tc.level    Level.LEVEL0
      */
-it('ParamTestJsunit1_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamTestJsunit1_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParamTestJsunit1_static_006] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -268,7 +268,7 @@ it('ParamTestJsunit1_static_006', Level.LEVEL0, async (done: () => void): Promis
      * @tc.desc     ParamTestJsunit1_static_007
      * @tc.level    Level.LEVEL0
      */
-it('ParamTestJsunit1_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamTestJsunit1_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParamTestJsunit1_static_007] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

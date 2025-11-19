@@ -93,7 +93,7 @@ export default function ProvideConsume0360TestJsunit() {
      * @tc.desc     ProvideConsume0360TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ProvideConsume0360TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ProvideConsume0360TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideConsume0360TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

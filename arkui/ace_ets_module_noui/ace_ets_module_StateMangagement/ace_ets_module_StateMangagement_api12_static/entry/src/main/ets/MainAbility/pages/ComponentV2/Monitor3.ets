@@ -64,7 +64,7 @@ struct paramMonitorChild {
   @Monitor(['message'])
   onChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      logger.logStr.push(`param: ${path} change to ${monitor.value(path)?.now}`);
+      logger.logStr.push(`param: ${path} change to ${monitor.value<string>(path)?.now}`);
     })
   }
   build() {

@@ -86,7 +86,7 @@ export default function Prefetcher2() {
      * @tc.desc     Prefetcher2_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Prefetcher2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Prefetcher2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Prefetcher2_static_0100 START');
       await CommonFunc.sleep(1000);
 

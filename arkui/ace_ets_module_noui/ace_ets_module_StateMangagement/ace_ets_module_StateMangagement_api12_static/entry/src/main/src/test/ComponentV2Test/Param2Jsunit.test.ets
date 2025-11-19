@@ -93,7 +93,7 @@ export default function Param2Jsunit() {
      * @tc.desc     Param2Jsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Param2Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Param2Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Param2Jsunit_static_001] START');
       let strJson1 = inspector.getInspectorByKey('param_text');
       let obj1 = JSON.parseJsonElement(strJson1);

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -84,7 +84,7 @@ export default function Observed0060TestJsunit() {
      * @tc.desc     Observed0060TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Observed0060TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Observed0060TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Observed0060TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvObserved0060ID'));

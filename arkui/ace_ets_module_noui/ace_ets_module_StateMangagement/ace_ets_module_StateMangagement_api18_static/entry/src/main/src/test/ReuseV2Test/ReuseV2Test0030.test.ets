@@ -67,7 +67,7 @@ export default function ReuseV2Test0030() {
      * @tc.desc     ReuseV2Test0030_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ReuseV2Test0030_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReuseV2Test0030_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ReuseV2Test0030_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

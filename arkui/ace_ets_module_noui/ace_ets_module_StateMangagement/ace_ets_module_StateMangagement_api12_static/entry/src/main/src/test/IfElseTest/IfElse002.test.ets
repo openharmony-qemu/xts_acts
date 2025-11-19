@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -84,7 +84,7 @@ export default function IfElse002Test() {
      * @tc.desc     IfElse002Test_static_01
      * @tc.level    Level.LEVEL0
      */
-it('IfElse002Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('IfElse002Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[IfElse002Test_static_01] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -109,7 +109,7 @@ it('IfElse002Test_static_01', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.desc     IfElse002Test_static_02
      * @tc.level    Level.LEVEL0
      */
-it('IfElse002Test_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('IfElse002Test_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[IfElse002Test_static_02] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -138,7 +138,7 @@ it('IfElse002Test_static_02', Level.LEVEL0, async (done: () => void): Promise<vo
       await CommonFunc.sleep(1000);
       let val_text_4 = JSON.parseJsonElement(inspector.getInspectorByKey('val_text_4'));
       expect(val_text_4.getElement('$attrs').getString('content')).assertEqual('out of range!');
-      await CommonFunc.sleep(1000); 
+      await CommonFunc.sleep(1000);
 
       console.info('[IfElse002Test_static_02] END');
       done();

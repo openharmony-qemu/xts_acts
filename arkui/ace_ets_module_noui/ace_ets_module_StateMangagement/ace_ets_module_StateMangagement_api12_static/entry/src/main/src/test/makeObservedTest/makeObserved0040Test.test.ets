@@ -92,7 +92,7 @@ export default function makeObserved0040Test() {
      * @tc.desc     makeObserved0040Test_static_01
      * @tc.level    Level.LEVEL0
      */
-it('makeObserved0040Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('makeObserved0040Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('makeObserved0040Test_static_01 START');
       let testArr: testType[] = [
         {

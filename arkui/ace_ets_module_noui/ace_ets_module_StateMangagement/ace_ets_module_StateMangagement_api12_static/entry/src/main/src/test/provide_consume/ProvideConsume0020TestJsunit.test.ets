@@ -93,7 +93,7 @@ export default function ProvideConsume0020TestJsunit() {
      * @tc.desc     ProvideConsume0020TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ProvideConsume0020TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ProvideConsume0020TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ProvideConsume0020TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvClass'))

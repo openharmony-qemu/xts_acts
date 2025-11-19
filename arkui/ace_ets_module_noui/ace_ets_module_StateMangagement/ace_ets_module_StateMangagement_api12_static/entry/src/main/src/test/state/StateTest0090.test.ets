@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -84,7 +84,7 @@ export default function StateTest0090() {
      * @tc.desc     StateTest0090_static_001
      * @tc.level    Level.LEVEL0
      */
-it('StateTest0090_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('StateTest0090_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StateTest0090_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -100,14 +100,14 @@ it('StateTest0090_static_001', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
 
-
+    
     /*
      * @tc.number   StateTest0090_static_002
      * @tc.name     StateTest0090_static_002
      * @tc.desc     StateTest0090_static_002
      * @tc.level    Level.LEVEL0
      */
-it('StateTest0090_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('StateTest0090_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StateTest0090_static_002] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

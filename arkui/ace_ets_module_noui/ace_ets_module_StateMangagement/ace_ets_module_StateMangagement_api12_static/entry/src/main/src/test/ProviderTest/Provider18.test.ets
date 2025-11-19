@@ -93,7 +93,7 @@ export default function ProviderTestJsunit18() {
      * @tc.desc     Provider18Test_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Provider18Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider18Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Provider18Test_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -118,7 +118,7 @@ it('Provider18Test_static_0100', Level.LEVEL0, async (done: () => void): Promise
      * @tc.desc     Provider18Test_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('Provider18Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider18Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Provider18Test_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -154,7 +154,7 @@ it('Provider18Test_static_0200', Level.LEVEL0, async (done: () => void): Promise
      * @tc.desc     Provider18Test_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('Provider18Test_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider18Test_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Provider18Test_static_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -183,7 +183,7 @@ it('Provider18Test_static_0300', Level.LEVEL0, async (done: () => void): Promise
      * @tc.desc     Provider18Test_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('Provider18Test_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider18Test_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Provider18Test_static_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -212,7 +212,7 @@ it('Provider18Test_static_0400', Level.LEVEL0, async (done: () => void): Promise
      * @tc.desc     Provider18Test_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('Provider18Test_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider18Test_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Provider18Test_static_0500 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

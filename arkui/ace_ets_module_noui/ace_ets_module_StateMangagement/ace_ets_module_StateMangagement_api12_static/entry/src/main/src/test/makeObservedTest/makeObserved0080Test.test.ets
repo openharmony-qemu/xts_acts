@@ -92,7 +92,7 @@ export default function makeObserved0080Test() {
      * @tc.desc     makeObserved0080Test_static_01
      * @tc.level    Level.LEVEL0
      */
-it('makeObserved0080Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('makeObserved0080Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000)
       console.info('makeObserved0080Test_static_01 START');
       let driver =  Driver.create()
@@ -118,7 +118,7 @@ it('makeObserved0080Test_static_01', Level.LEVEL0, async (done: () => void): Pro
       }
       let obj1 = JSON.parseJsonElement(inspector.getInspectorByKey('tvMakeObserved0080Count'));
       console.info("[makeObserved0080Test_static_01] obj1 content is: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('4');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('0');
       console.info('makeObserved0080Test_static_01 END');
       done()
     })

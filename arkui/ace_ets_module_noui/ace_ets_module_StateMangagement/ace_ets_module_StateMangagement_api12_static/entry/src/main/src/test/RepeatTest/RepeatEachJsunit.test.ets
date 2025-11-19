@@ -91,13 +91,14 @@ export default function RepeatEachJsunit() {
     });
 
 
+    
     /*
      * @tc.number   RepeatEachJsunit_static_0100
      * @tc.name     RepeatEachJsunit_static_0100
      * @tc.desc     RepeatEachJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('RepeatEachJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatEachJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RepeatEachJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -123,7 +124,7 @@ it('RepeatEachJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promi
      * @tc.desc     RepeatEachJsunit_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('RepeatEachJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatEachJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RepeatEachJsunit_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -147,7 +148,7 @@ it('RepeatEachJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promi
      * @tc.desc     RepeatEachJsunit_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('RepeatEachJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatEachJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RepeatEachJsunit_static_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -171,7 +172,7 @@ it('RepeatEachJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promi
      * @tc.desc     RepeatEachJsunit_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('RepeatEachJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatEachJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RepeatEachJsunit_static_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -195,7 +196,7 @@ it('RepeatEachJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promi
      * @tc.desc     RepeatEachJsunit_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('RepeatEachJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatEachJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RepeatEachJsunit_static_0500 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -226,7 +227,7 @@ it('RepeatEachJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promi
      * @tc.desc     RepeatEachJsunit_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('RepeatEachJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatEachJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RepeatEachJsunit_static_0600 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

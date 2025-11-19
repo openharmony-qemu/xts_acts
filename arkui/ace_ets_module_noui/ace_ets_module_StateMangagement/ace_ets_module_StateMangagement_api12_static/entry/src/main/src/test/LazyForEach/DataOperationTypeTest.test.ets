@@ -61,7 +61,7 @@ export default function DataOperationTypeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get DataOperationTypeTest state pages:" + JSON.stringify(pages));
-        if (!("DataOperationTypeTest" == pages.name)) {
+        if (!("LazyForEachDataOperationType" == pages.name)) {
           console.info("get DataOperationTypeTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
@@ -80,7 +80,7 @@ export default function DataOperationTypeTest() {
      * @tc.desc     DataOperationTypeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('DataOperationTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DataOperationTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DataOperationTypeTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -101,7 +101,7 @@ it('DataOperationTypeTest_static_0100', Level.LEVEL0, async (done: () => void): 
      * @tc.desc     DataOperationTypeTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('DataOperationTypeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DataOperationTypeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DataOperationTypeTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -122,7 +122,7 @@ it('DataOperationTypeTest_static_0200', Level.LEVEL0, async (done: () => void): 
      * @tc.desc     DataOperationTypeTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('DataOperationTypeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DataOperationTypeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DataOperationTypeTest_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

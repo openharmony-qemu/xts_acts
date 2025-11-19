@@ -76,7 +76,7 @@ export default function RepeatCloseReuseTest0110() {
      * @tc.desc     RepeatCloseReuseTest0110_static_001
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('RepeatCloseReuseTest0110_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatCloseReuseTest0110_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatCloseReuseTest0110_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

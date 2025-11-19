@@ -87,7 +87,7 @@ export default function LazyForEachCacheEnhance() {
      * @tc.desc     LazyForEachCacheEnhance_static_001
      * @tc.level    Level.LEVEL1
      */
-it('LazyForEachCacheEnhance_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('LazyForEachCacheEnhance_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachCacheEnhance_static_001] START');
       await CommonFunc.sleep(100);
       let driver = Driver.create();

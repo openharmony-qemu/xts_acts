@@ -88,13 +88,14 @@ export default function V1ToV2() {
       console.info("V1ToV2 after each called");
     });
 
+    
     /*
      * @tc.number   v1Tov2_static_001
      * @tc.name     v1Tov2_static_001
      * @tc.desc     v1Tov2_static_001
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_001] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('state_string_value'));
       await CommonFunc.sleep(1000);
@@ -109,7 +110,7 @@ it('v1Tov2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> =>
      * @tc.desc     v1Tov2_static_002
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_002] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('prop_number_value'));
       await CommonFunc.sleep(1000);
@@ -124,7 +125,7 @@ it('v1Tov2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> =>
      * @tc.desc     v1Tov2_static_003
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_003] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('provide_enum_value'));
       await CommonFunc.sleep(1000);
@@ -139,7 +140,7 @@ it('v1Tov2_static_003', Level.LEVEL0, async (done: () => void): Promise<void> =>
      * @tc.desc     v1Tov2_static_004
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_004] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('consume_null_value'));
       await CommonFunc.sleep(1000);
@@ -154,7 +155,7 @@ it('v1Tov2_static_004', Level.LEVEL0, async (done: () => void): Promise<void> =>
      * @tc.desc     v1Tov2_static_005
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_005] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('storage_link_undefined_value'));
       await CommonFunc.sleep(1000);
@@ -169,7 +170,7 @@ it('v1Tov2_static_005', Level.LEVEL0, async (done: () => void): Promise<void> =>
      * @tc.desc     v1Tov2_static_006
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_006] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('storage_prop_string_value'));
       await CommonFunc.sleep(1000);
@@ -184,7 +185,7 @@ it('v1Tov2_static_006', Level.LEVEL0, async (done: () => void): Promise<void> =>
      * @tc.desc     v1Tov2_static_007
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_007] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('func_value2'));
       await CommonFunc.sleep(1000);
@@ -199,7 +200,7 @@ it('v1Tov2_static_007', Level.LEVEL0, async (done: () => void): Promise<void> =>
      * @tc.desc     v1Tov2_static_008
      * @tc.level    Level.LEVEL0
      */
-it('v1Tov2_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('v1Tov2_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_008] START');
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('link_boolean_value'));
       await CommonFunc.sleep(1000);

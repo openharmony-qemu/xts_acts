@@ -101,7 +101,7 @@ export default class StringDataSource extends BasicDataSource implements DataMov
   }
 
 
-  public dataArray: string[] = [];
+  public dataArray: string[] = ['','','','','',''];
 
   public totalCount(): int {
     return this.dataArray.length;
@@ -121,9 +121,9 @@ export default class StringDataSource extends BasicDataSource implements DataMov
   }
 
   public moveData(from: int, to: int): void {
-    let temp: string = this.dataArray[from as int];
-    this.dataArray[from as int] = this.dataArray[to as int];
-    this.dataArray[to as int] = temp;
+    let temp: string = this.dataArray[from];
+    this.dataArray[from] = this.dataArray[to];
+    this.dataArray[to] = temp;
     this.notifyDataMove(from, to);
     this.type = DataOperationType.MOVE;
     this.index.from = from;
@@ -155,7 +155,10 @@ export default class StringDataSource extends BasicDataSource implements DataMov
 @ComponentV2
 struct RepeatLazyForEachString {
   @Local dataList: Array<string> = [];
-  @Local dataSource: Array<StringDataSource> = []
+  @Local dataSource: Array<StringDataSource> = [
+    new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource(),
+    new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource()
+  ]
 
   aboutToAppear(): void {
     for (let i = 0; i < 10; i++) {

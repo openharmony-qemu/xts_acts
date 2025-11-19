@@ -18,9 +18,9 @@ import Prop2 from './Zhuang/Prop2.test';
 import state2 from './Zhuang/state2.test';
 import provide2 from './Zhuang/provide2.test';
 export default function testsuite() {
+  state2();
+  provide2();
   link2();
   ObjectLink2();
   Prop2();
-  state2();
-  provide2();
 }

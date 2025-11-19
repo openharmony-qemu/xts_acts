@@ -76,7 +76,7 @@ struct State0090 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('State0090', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

@@ -36,18 +36,19 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-AppStorage.setAndRef('AbstractPropertyRefTest', 52)
+// AppStorage.setAndRef('AbstractPropertyRefTest', 52)
 
 @Entry
 @Component
 struct AbstractPropertyRef {
   @State refA1Value?: AbstractProperty<number> = AppStorage.ref('AbstractPropertyRefTest') as AbstractProperty<number>
+  static { AppStorage.setOrCreate('AbstractPropertyRefTest', 52.0) }
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('AbstractPropertyRef', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

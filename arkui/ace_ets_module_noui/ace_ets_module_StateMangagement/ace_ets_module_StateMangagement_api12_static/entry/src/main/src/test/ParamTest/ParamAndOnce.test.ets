@@ -88,7 +88,7 @@ export default function ParamAndOnceTest() {
      * @tc.desc     ParamAndOnceTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ParamAndOnceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ParamAndOnceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ParamAndOnceTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

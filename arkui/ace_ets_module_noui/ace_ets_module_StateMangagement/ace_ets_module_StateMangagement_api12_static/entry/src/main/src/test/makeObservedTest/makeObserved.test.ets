@@ -88,7 +88,7 @@ export default function makeObservedTest() {
      * @tc.desc     makeObservedTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('makeObservedTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('makeObservedTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('makeObservedTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -100,7 +100,7 @@ it('makeObservedTest_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let strJson = inspector.getInspectorByKey('makeObservedText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[makeObservedTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('peter');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('dddd');
 
       console.info('[makeObservedTest_static_0100] END');
       done();

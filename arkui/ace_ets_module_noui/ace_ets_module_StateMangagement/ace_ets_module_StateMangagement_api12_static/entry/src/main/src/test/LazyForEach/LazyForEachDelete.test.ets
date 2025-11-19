@@ -87,7 +87,7 @@ export default function LazyForEachDelete() {
      * @tc.desc     LazyForEachDelete_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachDelete_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachDelete_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachDelete_static_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -97,7 +97,7 @@ it('LazyForEachDelete_static_001', Level.LEVEL0, async (done: () => void): Promi
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let strJson = ('repeat_delete10');
+      let strJson = inspector.getInspectorByKey('repeat_delete10');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[LazyForEachDelete_static_001] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Item10');

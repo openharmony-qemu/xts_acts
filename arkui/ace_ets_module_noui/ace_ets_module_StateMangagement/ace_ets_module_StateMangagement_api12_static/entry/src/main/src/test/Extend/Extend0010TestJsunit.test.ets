@@ -94,7 +94,7 @@ export default function Extend0010TestJsunit() {
      * @tc.desc     Extend0010TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Extend0010TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Extend0010TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Extend0010TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tv_extend0010Id'));

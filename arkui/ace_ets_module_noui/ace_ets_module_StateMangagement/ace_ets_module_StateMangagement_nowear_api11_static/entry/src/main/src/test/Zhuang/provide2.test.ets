@@ -23,7 +23,6 @@ import {
   expect,Level
 } from '../../../../hypium/index';
 import router from '@ohos.router';
-import router from '@ohos.router';
 import {
   Component,
   Driver,
@@ -55,7 +54,7 @@ export default function provide2() {
       console.info("provide2 beforeEach start");
 
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.nowear.api11.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
@@ -71,58 +70,54 @@ export default function provide2() {
         console.info("get provide2 state pages:" + JSON.stringify(pages));
         if (!("provide2" == pages.name)) {
           console.info("get provide2 pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push provide2 page result:" + JSON.stringify(result));
+          // console.info("push provide2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push provide2 page error:" + err);
       }
       console.info("provide2 beforeEach end");
     });
-    
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      const provide2 = AppStorage.get<Router>("provide2") as Router;
-      provide2.back()
-    });
+
 
     /*
      * @tc.number   provide2_0100
      * @tc.name     provide2_0100
      * @tc.desc     provide2_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0100 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('prBtn1'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('prBtn1');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0100] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('type')));
       expect(obj.getElement('$attrs').getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
       console.info('[provide2_0100] END');
       done();
+
     });
 
     /*
      * @tc.number   provide2_0200
      * @tc.name     provide2_0200
      * @tc.desc     provide2_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0200 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('prBtn2'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('prBtn2');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0200] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0200] title: " + JSON.stringify(obj.getElement('$attrs').getString('type')));
       expect(obj.getElement('$attrs').getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
@@ -136,20 +131,20 @@ it('provide2_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
      * @tc.number   provide2_0300
      * @tc.name     provide2_0300
      * @tc.desc     provide2_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0300 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('prBtn3'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('prBtn3');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0300] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0300] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
       let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
-      let compareBtnObj = JSON.parseJsonElement(compareBtnStrJson);
+      let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[provide2_0300] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[provide2_0300] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(compareBtnObj.getElement('$attrs').getString('fontSize'));
@@ -162,20 +157,20 @@ it('provide2_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
      * @tc.number   provide2_0400
      * @tc.name     provide2_0400
      * @tc.desc     provide2_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0400 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('prBtn4'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('prBtn4');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0400] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0400] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
       let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
-      let compareBtnObj = JSON.parseJsonElement(compareBtnStrJson);
+      let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[provide2_0400] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[provide2_0400] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(compareBtnObj.getElement('$attrs').getString('fontSize'));
@@ -189,16 +184,16 @@ it('provide2_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
      * @tc.number   provide2_0500
      * @tc.name     provide2_0500
      * @tc.desc     provide2_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0500 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('coBtn1'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('coBtn1');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0500] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0500] title: " + JSON.stringify(obj.getElement('$attrs').getString('type')));
       expect(obj.getElement('$attrs').getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
@@ -211,18 +206,18 @@ it('provide2_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
      * @tc.number   provide2_0600
      * @tc.name     provide2_0600
      * @tc.desc     provide2_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0600 START');
       let driver = Driver.create()
-
-
+      // await driver.swipe(100,500,100,100)原代码注释
+      // await CommonFunc.sleep(1000);原代码注释
       let button = await driver.findComponent(ON.id('coBtn2'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('coBtn2');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0600] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0600] title: " + JSON.stringify(obj.getElement('$attrs').getString('type')));
       expect(obj.getElement('$attrs').getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
@@ -236,22 +231,22 @@ it('provide2_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
      * @tc.number   provide2_0700
      * @tc.name     provide2_0700
      * @tc.desc     provide2_0700
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0700 START');
       let driver = Driver.create()
-
-
+      // await driver.swipe(100,500,100,100)原代码注释
+      // await CommonFunc.sleep(1000);原代码注释
       let button = await driver.findComponent(ON.id('coBtn3'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('coBtn3');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0700] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0700] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
       let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
-      let compareBtnObj = JSON.parseJsonElement(compareBtnStrJson);
+      let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[provide2_0700] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[provide2_0700] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(compareBtnObj.getElement('$attrs').getString('fontSize'));
@@ -264,22 +259,22 @@ it('provide2_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
      * @tc.number   provide2_0800
      * @tc.name     provide2_0800
      * @tc.desc     provide2_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
-it('provide2_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('provide2_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provide2_0800 START');
       let driver = Driver.create()
-
-
+      // await driver.swipe(100,500,100,100)原代码注释
+      // await CommonFunc.sleep(1000);原代码注释
       let button = await driver.findComponent(ON.id('coBtn4'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('coBtn4');
-      let obj = JSON.parseJsonElement(strJson);
+      let obj= JSON.parseJsonElement(strJson);
       console.info("[provide2_0800] component obj is: " + JSON.stringify(obj));
       console.info("[provide2_0800] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
       let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
-      let compareBtnObj = JSON.parseJsonElement(compareBtnStrJson);
+      let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[provide2_0800] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[provide2_0800] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(compareBtnObj.getElement('$attrs').getString('fontSize'));

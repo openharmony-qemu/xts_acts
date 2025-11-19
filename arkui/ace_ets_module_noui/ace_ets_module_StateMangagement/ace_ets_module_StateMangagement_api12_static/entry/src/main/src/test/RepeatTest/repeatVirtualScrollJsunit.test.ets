@@ -87,14 +87,14 @@ export default function repeatVirtualScrollJsunit() {
       console.info("repeatVirtualScrollJsunit after each called");
     });
 
-
+    
     /*
      * @tc.number   repeatVirtualScrollJsunit_static_0100
      * @tc.name     repeatVirtualScrollJsunit_static_0100
      * @tc.desc     repeatVirtualScrollJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('repeatVirtualScrollJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('repeatVirtualScrollJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RepeatEachJsunit_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -118,13 +118,14 @@ it('repeatVirtualScrollJsunit_static_0100', Level.LEVEL0, async (done: () => voi
       done();
     });
 
+    
     /*
      * @tc.number   repeatVirtualScrollJsunit_static_0200
      * @tc.name     repeatVirtualScrollJsunit_static_0200
      * @tc.desc     repeatVirtualScrollJsunit_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('repeatVirtualScrollJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('repeatVirtualScrollJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('repeatVirtualScrollJsunit_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -155,7 +156,7 @@ it('repeatVirtualScrollJsunit_static_0200', Level.LEVEL0, async (done: () => voi
      * @tc.desc     repeatVirtualScrollJsunit_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('repeatVirtualScrollJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('repeatVirtualScrollJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('repeatVirtualScrollJsunit_static_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -180,13 +181,14 @@ it('repeatVirtualScrollJsunit_static_0300', Level.LEVEL0, async (done: () => voi
     });
 
 
+    
     /*
      * @tc.number   repeatVirtualScrollJsunit_static_0400
      * @tc.name     repeatVirtualScrollJsunit_static_0400
      * @tc.desc     repeatVirtualScrollJsunit_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('repeatVirtualScrollJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('repeatVirtualScrollJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('repeatVirtualScrollJsunit_static_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -216,7 +218,7 @@ it('repeatVirtualScrollJsunit_static_0400', Level.LEVEL0, async (done: () => voi
      * @tc.desc     repeatVirtualScrollJsunit_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('repeatVirtualScrollJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('repeatVirtualScrollJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('repeatVirtualScrollJsunit_static_0500 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

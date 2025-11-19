@@ -31,17 +31,17 @@ import {
   StorageLink,AppStorage,LocalStorage,AbstractProperty
 } from '@ohos.arkui.stateManagement'
 AppStorage.clear();
-let paraRef: Record<string, Any> = { 'PropBBK': 47 };
+let paraRef: Record<string, number> = { 'PropBBK': 47 };
 let storageBK: LocalStorage = new LocalStorage(paraRef);
-storageBK.setAndRef("PropBKK", 30)
+storageBK.setAndRef<number>("PropBKK", 30)
+const _get_storage_ : () => LocalStorage = () => storageBK
 
-// @Entry(storageBK)
-@Entry
+@Entry({storage : '_get_storage_' })
 @Component
 struct localStorageRef {
   private content: string = "LocalStorage";
   @State refA1Value?: AbstractProperty<number> = storageBK.ref<number>("PropBBK")
-  @State refA2Value?: AbstractProperty<number> = storageBK?.get("PropBKK")
+  @State refA2Value?: number | undefined = storageBK.get<number>("PropBKK")
 
   build() {
     Column() {
@@ -49,7 +49,7 @@ struct localStorageRef {
         .fontSize(9)
         .fontWeight(FontWeight.Bold)
 
-      Button(`ref:${storageBK.get("PropBBK")}`)
+      Button(`ref:${storageBK.get<number>("PropBBK")}`)
         .id('local_ref_1')
         .fontWeight(FontWeight.Bold)
         .fontSize(9)
