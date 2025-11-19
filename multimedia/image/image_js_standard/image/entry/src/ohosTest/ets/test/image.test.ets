@@ -7504,10 +7504,12 @@ export default function imageJsTest() {
             console.log(`${logger}, srcSupportedFormatsList: ` + JSON.stringify(srcSupportedFormatsList));
             console.log(`${logger}, dstSupportedFormatsList: ` + JSON.stringify(dstSupportedFormatsList));
             const ret = (JSON.stringify(srcSupportedFormatsList) == JSON.stringify(dstSupportedFormatsList));
-            console.log("compare result is: " + ret);
+            console.log(`${logger}, compare result is: ` + ret);
             expect(ret).assertTrue();
-            expect(srcSupportedFormatsList.includes('image/wbmp')).assertTrue();
-            expect(dstSupportedFormatsList.includes('image/wbmp')).assertTrue();
+            const need = ['image/wbmp', 'image/tiff'];
+            const allInRet = need.every(item => srcSupportedFormatsList.includes(item) && dstSupportedFormatsList.includes(item));
+            console.log(`${logger}, allInRet result is: ` + allInRet);
+            expect(allInRet).assertTrue();
             done();
         })
     

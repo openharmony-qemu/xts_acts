@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import image from "@ohos.multimedia.image";
 interface imageInfo {
     width: number;
     height: number;
     stride: number;
 }
-import image from "@ohos.multimedia.image";
 
 interface myRegion {
     x: number,
@@ -28,7 +29,7 @@ interface myRegion {
 interface decodeOptions {
   width?: number,
   height?: number,
-  pixelFormat?: image.pixelFormat,
+  pixelFormat?: image.PixelMapFormat,
   desiredRegion?: myRegion,
   cropAndScaleStrategy?: image.CropAndScaleStrategy,
   dynamicRange?: image.DecodingDynamicRange,
