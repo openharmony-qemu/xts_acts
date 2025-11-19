@@ -37,7 +37,6 @@ export default function stageFontTest() {
     beforeAll(() => {
       console.info("stageFontTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -55,8 +54,11 @@ export default function stageFontTest() {
         console.info("get stageFontTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get stageFontTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push stageFontTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push stageFontTest page error:" + err);
@@ -65,10 +67,13 @@ export default function stageFontTest() {
     });
 
     afterEach(async () => {
-
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
 
     
@@ -78,7 +83,7 @@ export default function stageFontTest() {
      * @tc.desc     Stage_Font_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('Stage_Font_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('Stage_Font_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('Stage_Font_static_0100 START');
       setTimeout(() => {
         try {
@@ -106,7 +111,7 @@ it('Stage_Font_static_0100', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     Stage_Font_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('Stage_Font_static_0200', Level.LEVEL2, async (done: ()=>void) => {
+    it('Stage_Font_static_0200', Level.LEVEL2, async (done: ()=>void) => {
       console.info('Stage_Font_static_0200 START');
       setTimeout(() => {
         try {
@@ -132,7 +137,7 @@ it('Stage_Font_static_0200', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     Stage_Font_static_0300
      * @tc.level    Level.LEVEL2
      */
-it('Stage_Font_static_0300', Level.LEVEL2, async (done: ()=>void) => {
+    it('Stage_Font_static_0300', Level.LEVEL2, async (done: ()=>void) => {
       console.info('Stage_Font_static_0300 START');
       setTimeout(() => {
         try {
@@ -156,7 +161,7 @@ it('Stage_Font_static_0300', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     Stage_Font_static_0400
      * @tc.level    Level.LEVEL2
      */
-it('Stage_Font_static_0400', Level.LEVEL2, async (done: ()=>void) => {
+    it('Stage_Font_static_0400', Level.LEVEL2, async (done: ()=>void) => {
       console.info('Stage_Font_static_0400 START');
       setTimeout(() => {
         try {
@@ -182,7 +187,7 @@ it('Stage_Font_static_0400', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     Stage_Font_static_0500
      * @tc.level    Level.LEVEL2
      */
-it('Stage_Font_static_0500', Level.LEVEL2, async (done: ()=>void) => {
+    it('Stage_Font_static_0500', Level.LEVEL2, async (done: ()=>void) => {
       console.info('Stage_Font_static_0500 START');
       setTimeout(() => {
         try {
@@ -200,5 +205,65 @@ it('Stage_Font_static_0500', Level.LEVEL2, async (done: ()=>void) => {
         done();
       }, 500)
     });
+
+    // /*
+    //  * @tc.number   Stage_Font_static_0600
+    //  * @tc.name     Stage_Font_static_0600
+    //  * @tc.desc     Stage_Font_static_0600
+    //  * @tc.level    Level.LEVEL2
+    //  */
+    // it('Stage_Font_static_0600', Level.LEVEL2, async (done: ()=>void) => {
+    //   let fontRegister:Font = AppStorage.get<Font>("fontRegister") as Font;
+    //   console.info('Stage_Font_static_0600 START');
+    //   try {
+    //     let font = fontRegister.registerFont(undefined)//TypeError: No matching call signature for registerFont(undefined) [stageFont.test.ets:227:20]，Type 'undefined' is not compatible with type 'FontOptions' at index 1 [stageFont.test.ets:227:46]
+    //     expect(font).assertUndefined();
+    //   } catch (err) {
+    //     console.error("push button page error " + JSON.stringify(err));
+    //   }
+    //   console.info('Stage_Font_static_0600 END');
+    //   done();
+    // });
+
+
+    // /*
+    //  * @tc.number   Stage_Font_static_0700
+    //  * @tc.name     Stage_Font_static_0700
+    //  * @tc.desc     Stage_Font_static_0700
+    //  * @tc.level    Level.LEVEL2
+    //  */
+    // it('Stage_Font_static_0700', Level.LEVEL2, async (done: ()=>void) => {
+    //   let fontRegister:Font = AppStorage.get<Font>("fontRegister") as Font;
+    //
+    //   console.info('Stage_Font_static_0700 START');
+    //   try {
+    //     let font = fontRegister.registerFont()//TypeError: Expected 1 arguments, got 0. [stageFont.test.ets:249:20]，TypeError: No matching call signature [stageFont.test.ets:249:20]
+    //     expect(font).assertUndefined();
+    //   } catch (err) {
+    //     console.error("push button page error " + JSON.stringify(err));
+    //   }
+    //   console.info('Stage_Font_static_0700 END');
+    //   done();
+    // });
+
+
+    // /*
+    //  * @tc.number   Stage_Font_static_0800
+    //  * @tc.name     Stage_Font_static_0800
+    //  * @tc.desc     Stage_Font_static_0800
+    //  * @tc.level    Level.LEVEL2
+    //  */
+    // it('Stage_Font_static_0800', Level.LEVEL2, async (done: ()=>void) => {
+    //   let fontRegister:Font = AppStorage.get<Font>("fontRegister") as Font;
+    //   console.info('Stage_Font_static_0800 START');
+    //   try {
+    //     let font = fontRegister.registerFont(null)//TypeError: No matching call signature for registerFont(null) [stageFont.test.ets:270:20],TypeError: Type 'null' is not compatible with type 'FontOptions' at index 1 [stageFont.test.ets:270:46]
+    //     expect(font).assertUndefined();
+    //   } catch (err) {
+    //     console.error("push button page error " + JSON.stringify(err));
+    //   }
+    //   console.info('Stage_Font_static_0800 END');
+    //   done();
+    // });
   })
 }

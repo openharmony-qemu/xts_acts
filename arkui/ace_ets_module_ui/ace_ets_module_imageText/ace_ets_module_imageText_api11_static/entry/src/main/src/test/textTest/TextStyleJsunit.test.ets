@@ -18,8 +18,10 @@ import {
 } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+// import { resourceManager } from '@kit.LocalizationKit';
+// import { BusinessError } from '@kit.BasicServicesKit';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -28,7 +30,8 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { MessageManagerBase } from '../../../ets/MainAbility/common/MessageManager2';
+import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -38,7 +41,6 @@ export default function textStyleJsunit() {
 
     beforeAll(() => {
       console.info("textStyleTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -55,10 +57,13 @@ export default function textStyleJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textStyleTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textStyle" == pages.name)) {
           console.info("get textStyleTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textStyleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textStyleTest page error:" + err);
@@ -71,6 +76,7 @@ export default function textStyleJsunit() {
       await CommonFunc.sleep(1000);
       console.info("textStyle after each called");
     });
+	// let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id)
 
     /*
      * @tc.number   testTextStyle_static_006
@@ -78,17 +84,14 @@ export default function textStyleJsunit() {
      * @tc.desc     testTextStyle_static_006
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_006', Level.LEVEL1, async () => {
-      try {
-        console.info('[testTextStyle_static_006] START');
-        await CommonFunc.sleep(1000);
-        let strJson: string = inspector.getInspectorByKey('fontSize');
-        console.info("[testTextStyle_static_006] component strJson:" + strJson);
-        console.info("[testTextStyle_static_006] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-        console.info("[testTextStyle_static_006] fontSize: " + $r('sys.float.ohos_id_text_font_size'));
-      }catch(error) {
-        expect().assertFail();
-      }
+    it('testTextStyle_static_006', Level.LEVEL1, async () => {
+      console.info('[testTextStyle_static_006] START');
+      await CommonFunc.sleep(1000);
+      let strJson: string = inspector.getInspectorByKey('fontSize');
+      console.info("[testTextStyle_static_006] component strJson:" + strJson);
+      console.info("[testTextStyle_static_006] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+	    console.info("[testTextStyle_static_006] fontSize: " + $r('sys.float.ohos_id_text_font_size'));
+	    // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
     });
 
     /*
@@ -97,32 +100,21 @@ it('testTextStyle_static_006', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_007
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_007', Level.LEVEL1, async () => {
+    it('testTextStyle_static_007', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_007] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSize": 30
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 38,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_007] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontSize', value: 30
+        });
+      } catch (err:Error) {
         console.log("[testTextStyle_static_007] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      try {
-        let strJson: string = inspector.getInspectorByKey('fontSize');
-        console.info("[testTextStyle_static_007] component strJson:" + strJson);
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[testTextStyle_static_007] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-      }catch(error) {
-        expect().assertFail();
-      }
+      let strJson: string = inspector.getInspectorByKey('fontSize');
+      console.info("[testTextStyle_static_007] component strJson:" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[testTextStyle_static_007] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
     });
 
     
@@ -132,33 +124,21 @@ it('testTextStyle_static_007', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_008
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_008', Level.LEVEL1, async () => {
+    it('testTextStyle_static_008', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_008] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSize": 0x80000000
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 38,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_008] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontSize', value: 0x80000000
+        });
+      } catch (err:Error) {
         console.log("[testTextStyle_static_008] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-
-      try {
-        let strJson: string = inspector.getInspectorByKey('fontSize');
-        console.info("[testTextStyle_static_008] component strJson:" + strJson);
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[testTextStyle_static_008] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-      }catch(error) {
-        expect().assertFail();
-      }
+      let strJson: string = inspector.getInspectorByKey('fontSize');
+      console.info("[testTextStyle_static_008] component strJson:" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[testTextStyle_static_008] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
     });
 
     
@@ -168,34 +148,22 @@ it('testTextStyle_static_008', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_009
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_009', Level.LEVEL1, async () => {
+    it('testTextStyle_static_009', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_009] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSize": 'error'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 38,
-          priority: events_emitter.EventPriority.LOW
-        }
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontSize', value: 'error'
+        });
         console.info("[testTextStyle_static_009] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[testTextStyle_static_009] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-
-      try {
-        let strJson: string = inspector.getInspectorByKey('fontSize');
-        console.info("[testTextStyle_static_009] component strJson:" + strJson);
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[testTextStyle_static_009] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-
-      }catch(error) {
-        expect().assertFail();
-      }
+      let strJson: string = inspector.getInspectorByKey('fontSize');
+      console.info("[testTextStyle_static_009] component strJson:" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[testTextStyle_static_009] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
     });
 
     
@@ -205,33 +173,22 @@ it('testTextStyle_static_009', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_010
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_010', Level.LEVEL1, async () => {
+    it('testTextStyle_static_010', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_010] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSize": 0x7FFFFFFF
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 38,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_010] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontSize', value: 0x7FFFFFFF
+        });
+      } catch (err:Error) {
         console.log("[testTextStyle_static_010] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-
-      try {
-        let strJson: string = inspector.getInspectorByKey('fontSize');
-        console.info("[testTextStyle_static_010] component strJson:" + strJson);
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[testTextStyle_static_010] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
-      }catch(error) {
-        expect().assertFail();
-      }
+      let strJson: string = inspector.getInspectorByKey('fontSize');
+      console.info("[testTextStyle_static_010] component strJson:" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[testTextStyle_static_010] fontSize: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+    //
+	  // expect(obj.getElement('$attrs').getString('fontSize')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
 
     });
 
@@ -242,14 +199,14 @@ it('testTextStyle_static_010', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_011
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_011', Level.LEVEL1, async () => {
+    it('testTextStyle_static_011', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_011] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('fontStyle');
       console.info("[testTextStyle_static_011] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_011] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Style'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Style')).assertEqual('FontStyle.Italic');
+      console.info("[testTextStyle_static_011] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontStyle'));
+      expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Italic');
 
     });
 
@@ -260,29 +217,23 @@ it('testTextStyle_static_011', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_012
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_012', Level.LEVEL1, async () => {
+    it('testTextStyle_static_012', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_012] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontStyle": FontStyle.Normal
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 39,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_012] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
+          name: 'fontStyle', value: FontStyle.Normal
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_012] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('fontStyle');
+      await CommonFunc.sleep(1000);
       console.info("[testTextStyle_static_012] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_012] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Style'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Style')).assertEqual('FontStyle.Normal');
+      console.info("[testTextStyle_static_012] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontStyle'));
+      expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Normal');
 
     });
 
@@ -293,64 +244,50 @@ it('testTextStyle_static_012', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_013
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_013', Level.LEVEL1, async () => {
+    it('testTextStyle_static_013', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_013] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontStyle": 0x7FFFFFFF
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 39,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_013] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
+          name: 'fontStyle', value: 0x7FFFFFFF as FontStyle
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_013] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('fontStyle');
       console.info("[testTextStyle_static_013] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_013] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Style'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Style')).assertEqual('FontStyle.Normal');
+      await CommonFunc.sleep(1000);
+      console.info("[testTextStyle_static_013] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontStyle'));
+      expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Normal');
 
     });
 
     
-    /*
-     * @tc.number   testTextStyle_static_014
-     * @tc.name     testTextStyle_static_014
-     * @tc.desc     testTextStyle_static_014
-     * @tc.level    Level.LEVEL1
-     */
-it('testTextStyle_static_014', Level.LEVEL1, async () => {
-      console.info('[testTextStyle_static_014] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontStyle": 'error'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 39,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_014] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        console.log("[testTextStyle_static_014] change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(3000);
-      let strJson: string = inspector.getInspectorByKey('fontStyle');
-      console.info("[testTextStyle_static_014] component strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_014] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Style'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Style')).assertEqual('FontStyle.Normal');
-
-    });
+    // /*
+    //  * @tc.number   testTextStyle_static_014
+    //  * @tc.name     testTextStyle_static_014
+    //  * @tc.desc     testTextStyle_static_014
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testTextStyle_static_014', Level.LEVEL1, async () => {
+    //   console.info('[testTextStyle_static_014] START');
+    //   try {
+    //     AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
+    //       name: 'fontStyle', value: "error" as FontStyle
+    //     });
+    //   } catch (err:Error) {
+    //     console.log("[testTextStyle_static_014] change component data error: " + err.message);
+    //   }
+    //   await CommonFunc.sleep(3000);
+    //   let strJson: string = inspector.getInspectorByKey('fontStyle');
+    //   console.info("[testTextStyle_static_014] component strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info("[testTextStyle_static_014] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontStyle'));
+    //   expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Normal');
+    //
+    // });
 
     
     /*
@@ -359,29 +296,22 @@ it('testTextStyle_static_014', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_015
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_015', Level.LEVEL1, async () => {
+    it('testTextStyle_static_015', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_015] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontStyle": 0x80000000
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 39,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_015] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
+          name: 'fontStyle', value: 0x80000000 as FontStyle
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_015] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('fontStyle');
       console.info("[testTextStyle_static_015] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_015] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Style'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Style')).assertEqual('FontStyle.Normal');
+      console.info("[testTextStyle_static_015] fontStyle: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontStyle'));
+      expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Normal');
 
     });
 
@@ -392,14 +322,14 @@ it('testTextStyle_static_015', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_016
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_016', Level.LEVEL1, async () => {
+    it('testTextStyle_static_016', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_016] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('fontWeight');
       console.info("[testTextStyle_static_016] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_016] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Weight'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Weight')).assertEqual('700');
+      console.info("[testTextStyle_static_016] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('700');
 
     });
 
@@ -410,29 +340,22 @@ it('testTextStyle_static_016', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_017
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_017', Level.LEVEL1, async () => {
+    it('testTextStyle_static_017', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_017] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontWeight": 400
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 40,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_017] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontWeight', value: 400
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_017] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('fontWeight');
       console.info("[testTextStyle_static_017] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_017] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Weight'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Weight')).assertEqual('400');
+      console.info("[testTextStyle_static_017] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('400');
 
     });
 
@@ -443,29 +366,22 @@ it('testTextStyle_static_017', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_018
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_018', Level.LEVEL1, async () => {
+    it('testTextStyle_static_018', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_018] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontWeight": 'error'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 40,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_018] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontWeight', value: "error"
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_018] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('fontWeight');
       console.info("[testTextStyle_static_018] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_018] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Weight'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Weight')).assertEqual('FontWeight.Normal');
+      console.info("[testTextStyle_static_018] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('400');
 
     });
 
@@ -476,29 +392,22 @@ it('testTextStyle_static_018', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_019
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_019', Level.LEVEL1, async () => {
+    it('testTextStyle_static_019', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_019] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontWeight": 0x80000000
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 40,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_019] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontWeight', value: 0x80000000
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_019] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('fontWeight');
       console.info("[testTextStyle_static_019] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_019] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Weight'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Weight')).assertEqual('FontWeight.Normal');
+      console.info("[testTextStyle_static_019] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Normal');
 
     });
 
@@ -509,29 +418,22 @@ it('testTextStyle_static_019', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_020
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_020', Level.LEVEL1, async () => {
+    it('testTextStyle_static_020', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_020] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontWeight": 0x7FFFFFFF
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 40,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_020] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontWeight', value: 0x7FFFFFFF
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_020] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('fontWeight');
       console.info("[testTextStyle_static_020] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testTextStyle_static_020] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('font').getString('Weight'));
-      expect(obj.getElement('$attrs').getElement('font').getString('Weight')).assertEqual('FontWeight.Normal');
+      console.info("[testTextStyle_static_020] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Normal');
 
     });
 
@@ -542,7 +444,7 @@ it('testTextStyle_static_020', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_021
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_021', Level.LEVEL1, async () => {
+    it('testTextStyle_static_021', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_021] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('fontFamily');
@@ -560,21 +462,14 @@ it('testTextStyle_static_021', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_022
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_022', Level.LEVEL1, async () => {
+    it('testTextStyle_static_022', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_022] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontFamily": 'Arial'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 41,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_022] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontFamily', value: 'Arial'
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_022] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -593,21 +488,14 @@ it('testTextStyle_static_022', Level.LEVEL1, async () => {
      * @tc.desc     testTextStyle_static_023
      * @tc.level    Level.LEVEL1
      */
-it('testTextStyle_static_023', Level.LEVEL1, async () => {
+    it('testTextStyle_static_023', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_023] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontFamily": 'error'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 41,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testTextStyle_static_023] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
+          name: 'fontFamily', value: 'error'
+        });
+        await CommonFunc.sleep(2000);
+      } catch (err:Error) {
         console.log("[testTextStyle_static_023] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);

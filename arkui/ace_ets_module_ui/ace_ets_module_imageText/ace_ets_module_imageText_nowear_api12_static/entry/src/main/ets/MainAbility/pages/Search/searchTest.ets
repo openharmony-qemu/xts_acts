@@ -35,7 +35,9 @@ struct searchTest {
           this.text2 = value
         } as EditableTextOnChangeCallback)
         .onEditChange((e:boolean) => {
-          this.text = e + ''
+          console.log("============================== onEditChange " + string(e));
+
+          this.text = string(e)
           if (e) {
             this.text3 += 1
           }
@@ -44,7 +46,9 @@ struct searchTest {
         .width(150)
         .key('searchTest2')
         .onEditChange((e:boolean) => {
-          this.text1 = e + ''
+
+          this.text1 = string(e)
+          console.log("============================== onEditChange2 " + this.text1);
         } as Callback<boolean>).height('10%')
       Text(this.text).key('searchTestText1').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
       Text(this.text1).key('searchTestText2').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
@@ -52,7 +56,10 @@ struct searchTest {
       Button('stop')
         .key('searchTestBt')
         .onClick((event: ClickEvent) => {
+          console.log("===========================Button('stop') ")
           this.controller.stopEditing()
+
+
         }).height('5%')
       Button('text')
         .key('searchTestBt2')

@@ -17,7 +17,7 @@ import { TextAlign } from '@ohos.arkui.component'
 import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from "../../../../hypium/index";
 import {  Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -27,7 +27,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -38,7 +38,6 @@ export default function textAreaJsunit3() {
 
     beforeAll(() => {
       console.info("appInfoTest_four_10 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -54,10 +53,13 @@ export default function textAreaJsunit3() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get appInfoTest_four_10 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textArea3" == pages.name)) {
           console.info("get appInfoTest_four_10 pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push appInfoTest_four_10 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push appInfoTest_four_10 page error:" + err);
@@ -78,13 +80,13 @@ export default function textAreaJsunit3() {
      * @tc.desc     textAreaTest_static_01
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_01', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_01', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_01] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textArea');
       console.info("[textAreaTest_static_01] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('TextArea');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('TextArea');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual('30.00fp');
       console.info('textAreaTest_static_01 END');
       done();
@@ -97,21 +99,21 @@ it('textAreaTest_static_01', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_02
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_02', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_02', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_02] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
-            "fontSize": '50',
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+            "fontSize": 50 as double,
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 215,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[textAreaTest_static_02] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[textAreaTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -131,13 +133,14 @@ it('textAreaTest_static_02', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_03
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_03', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_03', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_03] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textArea');
 
       console.info("[textAreaTest_static_03] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
+      // 适配开发侧非法入参修改
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual('#FF182432');
       console.info('textAreaTest_static_03 END');
       done();
@@ -150,21 +153,21 @@ it('textAreaTest_static_03', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_04
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_04', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_04', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_04] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "fontColor": '#FFFF0000',
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 216,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[textAreaTest_static_04] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[textAreaTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -184,7 +187,7 @@ it('textAreaTest_static_04', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_05
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_05', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_05', Level.LEVEL1, async (done: () => void) => {
       console.info('[testArea05] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textArea');
@@ -204,21 +207,21 @@ it('textAreaTest_static_05', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_06
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_06', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_06', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_06] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
-            "textAlign": 'TextAlign.Start',
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+            "textAlign": TextAlign.Start,
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 217,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[textAreaTest_static_06] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[textAreaTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -238,7 +241,7 @@ it('textAreaTest_static_06', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_07
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_07', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_07', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_07] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textArea');
@@ -246,9 +249,9 @@ it('textAreaTest_static_07', Level.LEVEL1, async (done: () => void) => {
       console.info("[textAreaTest_static_07] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('constructor')
+        .tryGetElement('constructor')
       ));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('text'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('constructor'))
         .assertEqual(undefined);
       console.info('textAreaTest_static_07 END');
       done();
@@ -261,21 +264,21 @@ it('textAreaTest_static_07', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_08
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_08', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_08', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_08] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "text": 'TextArea_1',
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 218,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[textAreaTest_static_08] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[textAreaTest_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -284,8 +287,8 @@ it('textAreaTest_static_08', Level.LEVEL1, async (done: () => void) => {
       console.info("[textAreaTest_static_08] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('constructor')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('text'))
+        .tryGetElement('constructor')));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('constructor'))
         .assertEqual(undefined);
       console.info('textAreaTest_static_08 END');
       done();
@@ -298,7 +301,7 @@ it('textAreaTest_static_08', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_09
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_09', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_09', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_09] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textArea');
@@ -317,21 +320,21 @@ it('textAreaTest_static_09', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_10
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_10', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_10', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_10] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "textAlign": TextAlign.Start,
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 218,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[textAreaTest_static_10] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[textAreaTest_static_10] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -351,7 +354,7 @@ it('textAreaTest_static_10', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_11
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_11', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_11', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_11] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -372,22 +375,22 @@ it('textAreaTest_static_11', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_12
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_12', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_12', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_12] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "text2": '123456789'
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 218,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[textAreaTest_static_12] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[textAreaTest_static_12] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -409,22 +412,22 @@ it('textAreaTest_static_12', Level.LEVEL1, async (done: () => void) => {
      * @tc.desc     textAreaTest_static_13
      * @tc.level    Level.LEVEL1
      */
-it('textAreaTest_static_13', Level.LEVEL1, async (done: () => void) => {
+    it('textAreaTest_static_13', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_13] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "text2": '1234567890abc'
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String,undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 218,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[textAreaTest_static_13] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[textAreaTest_static_13] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

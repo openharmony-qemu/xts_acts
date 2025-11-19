@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,10 +16,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
 import {Visibility} from '@ohos.arkui.component'
-
+// import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
 import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-
+// import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -38,7 +38,7 @@ export default function ColumnSetVisibility_SubChange() {
   describe('ColumnSetVisibilityTest', () => {
     beforeAll(async () => {
       console.info("ColumnSetVisibilityTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -70,21 +70,22 @@ export default function ColumnSetVisibility_SubChange() {
     
 
 
+
 /*
      * @tc.number   testColumnSetVisibilityNoneVisible_static
      * @tc.name     testColumnSetVisibilityNoneVisible_static
      * @tc.desc     testColumnSetVisibilityNoneVisible_static
      * @tc.level    Level.LEVEL0
      */
-it('testColumnSetVisibilityNoneVisible_static', Level.LEVEL0, async () => {
+    it('testColumnSetVisibilityNoneVisible_static', Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityNoneVisible_static START');
       try {
-        
-        
-        
-        
-        
-        
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility1', value: Visibility.None
+        // });
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility2', value: Visibility.Visible
+        // });
         AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
           name: 'testVisibility1', value: Visibility.None
         });
@@ -102,9 +103,9 @@ it('testColumnSetVisibilityNoneVisible_static', Level.LEVEL0, async () => {
         expect(Math.abs(columnSetVisibility_1.bottom - columnSetVisibility_1.top) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_1.right - columnSetVisibility_1.left) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1)
           .assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1)
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(120))) <= 1)
           .assertTrue()
 
       } catch (err) {
@@ -118,21 +119,22 @@ it('testColumnSetVisibilityNoneVisible_static', Level.LEVEL0, async () => {
     
 
 
+
 /*
      * @tc.number   testColumnSetVisibilityHiddenVisible
      * @tc.name     testColumnSetVisibilityHiddenVisible
      * @tc.desc     testColumnSetVisibilityHiddenVisible
      * @tc.level    Level.LEVEL0
      */
-it('testColumnSetVisibilityHiddenVisible', Level.LEVEL0, async () => {
+    it('testColumnSetVisibilityHiddenVisible', Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityHiddenVisible START');
       try {
-        
-        
-        
-        
-        
-        
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility1', value: Visibility.Hidden
+        // });
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility2', value: Visibility.Visible
+        // });
         AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
           name: 'testVisibility1', value: Visibility.Hidden
         });
@@ -148,9 +150,9 @@ it('testColumnSetVisibilityHiddenVisible', Level.LEVEL0, async () => {
         let columnSetVisibility_3: RectValue = CommonFunc.getComponentRect('columnSetVisibility_3');
         let columnSetVisibility: RectValue = CommonFunc.getComponentRect('columnSetVisibility');
         expect(Math.abs(columnSetVisibility.top - columnSetVisibility_1.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(40))) <= 1).assertTrue()
       } catch (err) {
         console.error('[testColumnSetVisibilityHiddenVisible] failed');
         expect().assertFail();
@@ -162,21 +164,22 @@ it('testColumnSetVisibilityHiddenVisible', Level.LEVEL0, async () => {
     
 
 
+
 /*
      * @tc.number   testColumnSetVisibilityVisible
      * @tc.name     testColumnSetVisibilityVisible
      * @tc.desc     testColumnSetVisibilityVisible
      * @tc.level    Level.LEVEL0
      */
-it('testColumnSetVisibilityVisible', Level.LEVEL0, async () => {
+    it('testColumnSetVisibilityVisible', Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityVisible START');
       try {
-        
-        
-        
-        
-        
-        
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility1', value: Visibility.Visible
+        // });
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility2', value: Visibility.Visible
+        // });
         AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
           name: 'testVisibility1', value: Visibility.Visible
         });
@@ -192,9 +195,9 @@ it('testColumnSetVisibilityVisible', Level.LEVEL0, async () => {
         let columnSetVisibility_3: RectValue = CommonFunc.getComponentRect('columnSetVisibility_3');
         let columnSetVisibility: RectValue = CommonFunc.getComponentRect('columnSetVisibility');
         expect(Math.abs(columnSetVisibility.top - columnSetVisibility_1.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(40))) <= 1).assertTrue()
       } catch (err) {
         console.error('[testColumnSetVisibilityVisible] failed');
         expect().assertFail();
@@ -206,21 +209,22 @@ it('testColumnSetVisibilityVisible', Level.LEVEL0, async () => {
     
 
 
+
 /*
      * @tc.number   testColumnSetVisibilityVisibleNone_static
      * @tc.name     testColumnSetVisibilityVisibleNone_static
      * @tc.desc     testColumnSetVisibilityVisibleNone_static
      * @tc.level    Level.LEVEL0
      */
-it('testColumnSetVisibilityVisibleNone_static', Level.LEVEL0, async () => {
+    it('testColumnSetVisibilityVisibleNone_static', Level.LEVEL0, async () => {
       console.info('new testColumnSetVisibilityVisibleNone_static START');
       try {
-        
-        
-        
-        
-        
-        
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility1', value: Visibility.Visible
+        // });
+        // GlobalContext.getContext().getObject<number>('value').message.notify({
+        //   name: 'testVisibility2', value: Visibility.None
+        // });
         AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
           name: 'testVisibility1', value: Visibility.Visible
         });
@@ -238,8 +242,8 @@ it('testColumnSetVisibilityVisibleNone_static', Level.LEVEL0, async () => {
         expect(Math.abs(columnSetVisibility_2.bottom - columnSetVisibility_2.top) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_2.right - columnSetVisibility_2.left) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_1.top - columnSetVisibility.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(170))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_1.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(170))) <= 1).assertTrue()
       } catch (err) {
         console.error('[testColumnSetVisibilityVisibleNone_static] failed');
         expect().assertFail();

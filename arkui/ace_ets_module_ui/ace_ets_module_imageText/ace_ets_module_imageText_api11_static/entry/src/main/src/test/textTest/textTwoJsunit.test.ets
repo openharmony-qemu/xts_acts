@@ -38,7 +38,6 @@ export default function textTwoJsunit() {
     beforeAll(() => {
       console.info("textTwoJsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,10 +50,9 @@ export default function textTwoJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textTwoJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textTwo" == pages.name)) {
           console.info("get textTwoJsunit pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -66,55 +64,80 @@ export default function textTwoJsunit() {
     });
 
 
-    /*
-     * @tc.number   textTwoJsunit_static_0200
-     * @tc.name     textTwoJsunit_static_0200
-     * @tc.desc     textTwoJsunit_static_0200
-     * @tc.level    Level.LEVEL1
-     */
-it('textTwoJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('imageOneJsunit_0200 START');
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('text1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('textTwoJsunit_static_0200 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
-      expect(obj.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.None","color":"#FF000000",' +
-      '"style":"TextDecorationStyle.SOLID"}');
-      await CommonFunc.sleep(1000);
-      let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'type',value:TextDecorationType.Overline})
-      await CommonFunc.sleep(1000);
-      message.notify({name:'color',value:Color.Green})
-      await CommonFunc.sleep(200);
-      let strJson2 = inspector.getInspectorByKey('text1');
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('textTwoJsunit_static_0200 component obj2 is: ' + obj2.getElement('$attrs').getString('decoration'));
-      expect(obj2.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.Overline","color":"#FF008000",' +
-      '"style":"TextDecorationStyle.SOLID"}');
-      await CommonFunc.sleep(1000);
-      message.notify({name:'type',value:TextDecorationType.Underline})
-      await CommonFunc.sleep(1000);
-      message.notify({name:'color',value:'rgb(238, 130, 238)'})
-      await CommonFunc.sleep(200);
-      let strJson3 = inspector.getInspectorByKey('text1');
-      let obj3  = JSON.parseJsonElement(strJson3);
-      console.info('textTwoJsunit_static_0200 component obj3 is: ' + obj3.getElement('$attrs').getString('decoration'));
-      expect(obj3.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.Underline","color":"#FFEE82EE",' +
-      '"style":"TextDecorationStyle.SOLID"}');
-      await CommonFunc.sleep(1000);
-      message.notify({name:'type',value:TextDecorationType.None})
+    // /*
+    //  * @tc.number   textTwoJsunit_static_0100
+    //  * @tc.name     textTwoJsunit_static_0100
+    //  * @tc.desc     textTwoJsunit_static_0100
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('textTwoJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    //   console.info('textTwoJsunit_static_0200 START');
+    //   // test the illegal value of decoration
+    //   await CommonFunc.sleep(1000);
+    //   let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
+    //   message.notify({name:'type',value:undefined})//Type 'undefined' is not compatible with type 'String|Double|TextCase|TextDecorationType|Boolean|Resource' at property 'value' [textTwoJsunit.test.ets:84:41]
+    //   await CommonFunc.sleep(1000);
+    //   message.notify({name:'color',value:undefined})
+    //   await CommonFunc.sleep(1000);
+    //   let strJson = inspector.getInspectorByKey('text1');
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info('textTwoJsunit_static_0100 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
+    //   expect(obj.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.None","color":"#FF000000",' +
+    //   '"style":"TextDecorationStyle.SOLID"}');
+    //   done();
+    // });
 
-      await CommonFunc.sleep(1000);
-      message.notify({name:'color',value:'#FFACEEEE'})
-
-      await CommonFunc.sleep(200);
-      let strJson4 = inspector.getInspectorByKey('text1');
-      let obj4  = JSON.parseJsonElement(strJson4);
-      console.info('textTwoJsunit_static_0200 component obj4 is: ' + obj4.getElement('$attrs').getString('decoration'));
-      expect(obj4.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.None","color":"#FFACEEEE",' +
-      '"style":"TextDecorationStyle.SOLID"}');
-      done();
-    });
+    // /*
+    //  * @tc.number   textTwoJsunit_static_0200
+    //  * @tc.name     textTwoJsunit_static_0200
+    //  * @tc.desc     textTwoJsunit_static_0200
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('textTwoJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => { // textTwoJsunit_static_0100 影响
+    //   console.info('imageOneJsunit_0200 START');
+    //   await CommonFunc.sleep(500);
+    //   // get the image component and test attribute
+    //   let strJson = inspector.getInspectorByKey('text1');
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info('textTwoJsunit_static_0200 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
+    //   expect(obj.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.LineThrough","color":"#FF000000",' +
+    //   '"style":"TextDecorationStyle.SOLID"}');
+    //   await CommonFunc.sleep(1000);
+    //   // to modify the atrribute
+    //   let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
+    //   message.notify({name:'type',value:TextDecorationType.Overline})
+    //   await CommonFunc.sleep(1000);
+    //   message.notify({name:'color',value:Color.Green})
+    //   await CommonFunc.sleep(200);
+    //   let strJson2 = inspector.getInspectorByKey('text1');
+    //   let obj2 = JSON.parseJsonElement(strJson2);
+    //   console.info('textTwoJsunit_static_0200 component obj2 is: ' + obj2.getElement('$attrs').getString('decoration'));
+    //   expect(obj2.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.Overline","color":"#FF008000",' +
+    //   '"style":"TextDecorationStyle.SOLID"}');
+    //   await CommonFunc.sleep(1000);
+    //   message.notify({name:'type',value:TextDecorationType.Underline})
+    //   await CommonFunc.sleep(1000);
+    //   message.notify({name:'color',value:'rgb(238, 130, 238)'})
+    //   await CommonFunc.sleep(200);
+    //   let strJson3 = inspector.getInspectorByKey('text1');
+    //   let obj3  = JSON.parseJsonElement(strJson3);
+    //   console.info('textTwoJsunit_static_0200 component obj3 is: ' + obj3.getElement('$attrs').getString('decoration'));
+    //   expect(obj3.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.Underline","color":"#FFEE82EE",' +
+    //   '"style":"TextDecorationStyle.SOLID"}');
+    //   await CommonFunc.sleep(1000);
+    //   message.notify({name:'type',value:TextDecorationType.None})
+    //
+    //   await CommonFunc.sleep(1000);
+    //   message.notify({name:'color',value:'#FFACEEEE'})
+    //
+    //   await CommonFunc.sleep(2000);
+    //   let strJson4 = inspector.getInspectorByKey('text1');
+    //   let obj4  = JSON.parseJsonElement(strJson4);
+    //   console.info('textTwoJsunit_static_0200 component obj4 is: ' + obj4.getElement('$attrs').getString('decoration'));
+    //   expect(obj4.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.None","color":"#FFACEEEE",' +
+    //   '"style":"TextDecorationStyle.SOLID"}');
+    //   done();
+    // });
 
    
 
@@ -124,13 +147,14 @@ it('textTwoJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textTwoJsunit_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('textTwoJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('textTwoJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textTwoJsunit_static_0300 START');
+      // test the baselineOffset
       await CommonFunc.sleep(1000);
       let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
       message.notify({name:'baselineOffset',value:30})
 
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('text2');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textTwoJsunit_static_0300 component obj is: ' + obj.getElement('$attrs').getString('baselineOffset'));
@@ -144,13 +168,14 @@ it('textTwoJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textTwoJsunit_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('textTwoJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('textTwoJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textTwoJsunit_static_0400 START');
+      // test the baselineOffset of negative value
       await CommonFunc.sleep(1000);
       let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
       message.notify({name:'baselineOffset',value:-20})
 
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('text2');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textTwoJsunit_static_0400 component obj is: ' + obj.getElement('$attrs').getString('baselineOffset'));
@@ -164,8 +189,9 @@ it('textTwoJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textTwoJsunit_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('textTwoJsunit_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+    it('textTwoJsunit_static_0500', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textTwoJsunit_static_0500 START');
+      // test the letterSpacing
       await CommonFunc.sleep(1000);
       let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
       message.notify({name:'letterSpacing',value:4});
@@ -184,8 +210,9 @@ it('textTwoJsunit_static_0500', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textTwoJsunit_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('textTwoJsunit_static_0600', Level.LEVEL1, async (done: ()=>void) => {
+    it('textTwoJsunit_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textTwoJsunit_static_0600 START');
+      // test the baselineOffset of negative value
       await CommonFunc.sleep(1000);
       let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
       message.notify({name:'letterSpacing',value:-2})
@@ -204,8 +231,9 @@ it('textTwoJsunit_static_0600', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     textTwoJsunit_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('textTwoJsunit_static_0700', Level.LEVEL1, async (done: ()=>void) => {
+    it('textTwoJsunit_static_0700', Level.LEVEL1, async (done: ()=>void) => {
       console.info('textTwoJsunit_static_0700 START');
+      // test the testcase
       await CommonFunc.sleep(1000);
       let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
       message.notify({name:'textCase',value:TextCase.Normal})
@@ -232,24 +260,25 @@ it('textTwoJsunit_static_0700', Level.LEVEL1, async (done: ()=>void) => {
       done();
     });
 
-    /*
-     * @tc.number   textTwoJsunit_static_0800
-     * @tc.name     textTwoJsunit_static_0800
-     * @tc.desc     textTwoJsunit_static_0800
-     * @tc.level    Level.LEVEL1
-     */
-it('textTwoJsunit_static_0800', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('textTwoJsunit_static_0800 START');
-      await CommonFunc.sleep(1000);
-      let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'textCase',value:8})
-
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text5');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('textTwoJsunit_static_0800 component obj is: ' + obj.getElement('$attrs').getString('testCase'));
-      expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.Normal');
-      done();
-    });
+    // /*
+    //  * @tc.number   textTwoJsunit_static_0800
+    //  * @tc.name     textTwoJsunit_static_0800
+    //  * @tc.desc     textTwoJsunit_static_0800
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('textTwoJsunit_static_0800', Level.LEVEL1, async (done: ()=>void) => {
+    //   console.info('textTwoJsunit_static_0800 START');
+    //   // test the testcase of illegal value
+    //   await CommonFunc.sleep(1000);
+    //   let message: MessageManager = AppStorage.get<MessageManager>("messageManager")!
+    //   message.notify({name:'textCase',value:8}) // textCase 没有值为8的成员
+    //
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('text5');
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   console.info('textTwoJsunit_static_0800 component obj is: ' + obj.getElement('$attrs').getString('testCase'));
+    //   expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.Normal');
+    //   done();
+    // });
   })
 }

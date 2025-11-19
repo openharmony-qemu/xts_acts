@@ -66,7 +66,9 @@ struct TextInputExampleKy {
           .onSubmit((enterKey:EnterKeyType) : void=> {
             this.textNew = 'onSubmit'
           })
-         
+          .onEditChange((isEditing) => {
+            this.textNew = 'onEditChanged'
+          })
           .onCopy((value: string) :void=> {
           })
           .key('textInputkeyN')

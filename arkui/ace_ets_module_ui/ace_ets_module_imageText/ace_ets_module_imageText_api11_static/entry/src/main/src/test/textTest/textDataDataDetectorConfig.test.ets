@@ -34,7 +34,6 @@ export default function textDataDataDetectorConfig() {
     beforeAll(() => {
       console.info("textDataDataDetectorConfig beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,8 +51,11 @@ export default function textDataDataDetectorConfig() {
         console.info("get textDataDataDetectorConfig state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textDataDataDetectorConfig pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textDataDataDetectorConfig page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textDataDataDetectorConfig page error:" + err);
@@ -73,7 +75,7 @@ export default function textDataDataDetectorConfig() {
      * @tc.desc     textDataDataDetectorConfig_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('textDataDataDetectorConfig_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('textDataDataDetectorConfig_static_0001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[textDataDataDetectorConfig_static_0001] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -95,7 +97,7 @@ it('textDataDataDetectorConfig_static_0001', Level.LEVEL1, async (done: ()=>void
      * @tc.desc     textDataDataDetectorConfig_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('textDataDataDetectorConfig_static_0002', Level.LEVEL1, async (done: ()=>void) => {
+    it('textDataDataDetectorConfig_static_0002', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[textDataDataDetectorConfig_static_0002] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -117,7 +119,7 @@ it('textDataDataDetectorConfig_static_0002', Level.LEVEL1, async (done: ()=>void
      * @tc.desc     textDataDataDetectorConfig_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('textDataDataDetectorConfig_static_0003', Level.LEVEL1, async (done: ()=>void) => {
+    it('textDataDataDetectorConfig_static_0003', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[textDataDataDetectorConfig_static_0003] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -140,7 +142,7 @@ it('textDataDataDetectorConfig_static_0003', Level.LEVEL1, async (done: ()=>void
      * @tc.desc     textDataDataDetectorConfig_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('textDataDataDetectorConfig_static_0004', Level.LEVEL1, async (done: ()=>void) => {
+    it('textDataDataDetectorConfig_static_0004', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[textDataDataDetectorConfig_static_0004] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

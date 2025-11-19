@@ -51,7 +51,7 @@ struct SXvalueResource {
             {
               style:
               {
-                fontSize: 30.0,
+                fontSize: 30,
               } as RichEditorSymbolSpanStyle
             })
         })
@@ -61,7 +61,7 @@ struct SXvalueResource {
 
       Button('get').key('SXvalueResourceButton')
         .onClick((e: ClickEvent) => {
-          this.controller.getSpans({ start: 0, end: 6 })?.forEach((item) => {
+          this.controller.getSpans({ start: 0, end: 6 })!.forEach((item) => {
             let a: string | undefined = (item as RichEditorTextSpanResult).valueResource?.bundleName
             if (a !== '') {
               this.text2 = 'DTS'

@@ -47,7 +47,7 @@ struct SXrenderingStrategy {
             {
               style:
               {
-                fontSize: 30.0,
+                fontSize: 30,
                 renderingStrategy: SymbolRenderingStrategy.SINGLE
               }
             })
@@ -57,7 +57,7 @@ struct SXrenderingStrategy {
         .height('50%')
       Button('get').key('SXrenderingStrategyButton')
         .onClick((e:ClickEvent) => {
-          this.controller.getSpans({ start: 0, end: 6 })?.forEach((item) => {
+          this.controller.getSpans({ start: 0, end: 6 })!.forEach((item) => {
             this.text2 = (item as RichEditorTextSpanResult).symbolSpanStyle?.renderingStrategy + ''
           })
         }).height('10%')

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+//TextArea、TextInput组件禁用
 import {
   Entry,
   Component,

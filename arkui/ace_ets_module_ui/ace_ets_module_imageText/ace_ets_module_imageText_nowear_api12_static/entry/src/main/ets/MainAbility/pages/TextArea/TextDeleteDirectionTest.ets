@@ -21,12 +21,13 @@ import {
   Button,
   TextArea,
   DeleteValue,
-  ClickEvent
+  ClickEvent,
+  TextDeleteDirection
 } from '@ohos.arkui.component'
 
 import {
   State,
-  
+  // StateDecoratedVariable
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
@@ -55,9 +56,9 @@ struct TextDeleteDirectionTest {
             console.log('deleteValue'+deleteInfo.deleteValue)
             console.log('deleteOffset'+deleteInfo.deleteOffset)
             console.log('direction'+deleteInfo.direction)
-            AppStorage.setOrCreate('deleteValue',deleteInfo.deleteValue)
-            AppStorage.setOrCreate('deleteOffset',deleteInfo.deleteOffset)
-            AppStorage.setOrCreate('direction',deleteInfo.direction)
+            AppStorage.setOrCreate<string>('deleteValue', deleteInfo.deleteValue)
+            AppStorage.setOrCreate<number>('deleteOffset', deleteInfo.deleteOffset)
+            AppStorage.setOrCreate<TextDeleteDirection>('direction',deleteInfo.direction)
           })
       }.width('100%')
     }

@@ -16,6 +16,8 @@
 import router from '@ohos.router';
 import { beforeEach, describe, expect, it, Level,beforeAll } from "../../../../hypium/index";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+// import { resourceManager } from '@kit.LocalizationKit';
+// import { BusinessError } from '@kit.BasicServicesKit';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -34,7 +36,6 @@ export default function TextfieldMultiTest() {
     beforeAll(() => {
       console.info("TextfieldMultiTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,8 +53,11 @@ export default function TextfieldMultiTest() {
         console.info("get TextfieldMultiTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextfieldMultiTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TextfieldMultiTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextfieldMultiTest page error:" + err);
@@ -69,31 +73,30 @@ export default function TextfieldMultiTest() {
      * @tc.desc     ArkUX_Text_Visual_static_0110
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0110', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0110', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0110 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Text_Visual_static_0110');
-          console.info('ArkUX_Text_Visual_static_0110 START  :' + JSON.stringify(strJson));
-          let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Text_Visual_static_0110 obj is: " + JSON.stringify(obj));
-          let cancelButton  = JSON.parseJsonElement(obj.getElement('$attrs').getString('cancelButton'));
-          let icon  = JSON.parseJsonElement(cancelButton.getString('icon'));
-          let style  = cancelButton.getString('style');
-          let size  = icon.getString('size');
-          let color  = icon.getString('color');
-          let src  = icon.getString('src');
-          expect(style).assertEqual(0);
-          expect(size).assertEqual("45.00vp");
-          expect(typeof src).assertEqual("string");
-          expect(color).assertEqual("#FF0000FF");
-          console.info('ArkUX_Text_Visual_static_0110 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Text_Visual_static_0110 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      try {
+        await CommonFunc.sleep(500);
+        let strJson = inspector.getInspectorByKey('ArkUX_Text_Visual_static_0110');
+        console.info('ArkUX_Text_Visual_static_0110 START  :' + JSON.stringify(strJson));
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("ArkUX_Text_Visual_static_0110 obj is: " + JSON.stringify(obj));
+        let cancelButton  = JSON.parseJsonElement(obj.getElement('$attrs').getString('cancelButton'));
+        let icon  = JSON.parseJsonElement(cancelButton.getString('icon'));
+        let style  = cancelButton.getDouble('style');
+        let size  = icon.getString('size');
+        let color  = icon.getString('color');
+        let src  = icon.getString('src');
+        expect(style).assertEqual(0);
+        expect(size).assertEqual("45.00vp");
+        expect(typeof src).assertEqual("string");
+        expect(color).assertEqual("#FF0000FF");
+        console.info('ArkUX_Text_Visual_static_0110 END ');
+      } catch (err) {
+        expect().assertFail();
+        console.info('ArkUX_Text_Visual_static_0110 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
 
     
@@ -103,7 +106,7 @@ it('ArkUX_Text_Visual_static_0110', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0120
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0120', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0120', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0120 START');
       setTimeout(() => {
         try {
@@ -113,7 +116,7 @@ it('ArkUX_Text_Visual_static_0120', Level.LEVEL1, async (done: ()=>void) => {
           console.info("ArkUX_Text_Visual_static_0120 obj is: " + JSON.stringify(obj));
           let cancelButton  = JSON.parseJsonElement(obj.getElement('$attrs').getString('cancelButton'));
           let icon  =  JSON.parseJsonElement(cancelButton.getString('icon'));
-          let style  = cancelButton.getString('style');
+          let style  = cancelButton.getDouble('style');
           let size  = icon.getString('size');
           let color  = icon.getString('color');
           let src  = icon.getString('src');
@@ -137,7 +140,7 @@ it('ArkUX_Text_Visual_static_0120', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0130
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0130', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0130', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0130 START');
       setTimeout(() => {
         try {
@@ -147,7 +150,7 @@ it('ArkUX_Text_Visual_static_0130', Level.LEVEL1, async (done: ()=>void) => {
           console.info("ArkUX_Text_Visual_static_0130 obj is: " + JSON.stringify(obj));
           let cancelButton  = JSON.parseJsonElement(obj.getElement('$attrs').getString('cancelButton'));
           let icon  =  JSON.parseJsonElement(cancelButton.getString('icon'));
-          let style  = cancelButton.getString('style');
+          let style  = cancelButton.getDouble('style');
           let size  = icon.getString('size');
           let color  = icon.getString('color');
           let src  = icon.getString('src');
@@ -171,7 +174,7 @@ it('ArkUX_Text_Visual_static_0130', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0140
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0140', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0140', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0140 START');
       setTimeout(() => {
         try {
@@ -181,11 +184,14 @@ it('ArkUX_Text_Visual_static_0140', Level.LEVEL1, async (done: ()=>void) => {
           console.info("ArkUX_Text_Visual_static_0140 obj is: " + JSON.stringify(obj));
           let cancelButton  = JSON.parseJsonElement(obj.getElement('$attrs').getString('cancelButton'));
           let icon  =  JSON.parseJsonElement(cancelButton.getString('icon'));
-          let style  = cancelButton.getString('style');
+          let style  = cancelButton.getDouble('style');
           let size  = icon.getString('size');
           let color  = icon.getString('color');
           let src  = icon.getString('src');
           expect(style).assertEqual(2);
+		  // let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_search_icon_height').id)
+		  // console.info("[TextInputPageJsunit_0200] size: " +px2vp(resourceSize));
+      //     expect(size).assertEqual(Math.round(px2vp(resourceSize))+".00vp");
           expect(typeof src).assertEqual("string");
           expect(color).assertEqual("#FF000000");
           console.info('ArkUX_Text_Visual_static_0140 END ');

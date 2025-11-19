@@ -17,44 +17,44 @@ import { RenderingContextSettings, OffscreenCanvas, OffscreenCanvasRenderingCont
 const canvasWidth = 1000
 const canvasHeight = 100
 
+enum FontSizeScaleThreshold {
+  SMALL = 0.9,
+  NORMAL = 1.1,
+  LEVEL_1_LARGE = 1.2,
+  LEVEL_2_LARGE = 1.4,
+  LEVEL_3_LARGE = 1.5
+}
+
 export default class LeadingMarginCreator {
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
   private offscreenCanvas: OffscreenCanvas = new OffscreenCanvas(canvasWidth, canvasHeight)
   private offContext: OffscreenCanvasRenderingContext2D = this.offscreenCanvas.getContext('2d', this.settings)
   public static instance: LeadingMarginCreator = new LeadingMarginCreator()
 
-  
+  // 获得字体字号级别，分别是从0到4级
   public getFontSizeLevel(fontSize: number) {
     const fontScaled: number = Number(fontSize) / 16
 
-    
-    
-    
-    
-    
-    
-    
-
     let fontSizeLevel: number = 1
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (fontScaled < FontSizeScaleThreshold.SMALL) {
+      fontSizeLevel = 0
+    } else if (fontScaled < FontSizeScaleThreshold.NORMAL) {
+      fontSizeLevel = 1
+    } else if (fontScaled < FontSizeScaleThreshold.LEVEL_1_LARGE) {
+      fontSizeLevel = 2
+    } else if (fontScaled < FontSizeScaleThreshold.LEVEL_2_LARGE) {
+      fontSizeLevel = 3
+    } else if (fontScaled < FontSizeScaleThreshold.LEVEL_3_LARGE) {
+      fontSizeLevel = 4
+    } else {
+      fontSizeLevel = 1
+    }
 
     return fontSizeLevel
   }
 
-  
+  // 获得字体字号级别，分别是从0到4级
   public getMarginLevel(width: number) {
     let marginLevel: number = 1
     if (width == 40) {
@@ -88,7 +88,7 @@ export default class LeadingMarginCreator {
     return this.offContext.getPixelMap(0, 0, fontSize, fontSize)
   }
 
-  
+  // 生成圆圈符号
   public genCircleMark(fontSize: number, width: number, level?: number): PixelMap {
     const indentLevel = level ?? 1
     const offsetLevel = [22, 28, 32, 34, 38]

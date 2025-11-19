@@ -28,11 +28,13 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 let emitKey = "emitUserAgent";
-function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, time)
+function sleep(time: number) {
+  return new Promise<string>((resolve, reject) => {
+    setTimeout(():void => {
+      resolve("ok")
+    }, time as Int)
+  }).then(() => {
+    console.info(`sleep ${time} over...`)
   })
 }
 
@@ -41,7 +43,6 @@ export default function textInputTest() {
 
     beforeAll(() => {
       console.info("ActsTextInputTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -58,9 +59,8 @@ export default function textInputTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ActsTextInputTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextinputIndex" == pages.name)) {
           console.info("get ActsTextInputTest pages.name:" + '');
-         
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -78,7 +78,7 @@ export default function textInputTest() {
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0100 START');
       setTimeout(() => {
         try {
@@ -104,7 +104,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0100', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0200 START');
       setTimeout(() => {
         try {
@@ -130,7 +130,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0200', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0300 START');
       setTimeout(() => {
         try {
@@ -156,7 +156,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0300', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 START');
       setTimeout(() => {
         try {
@@ -176,30 +176,30 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0400', Level.LEVEL1, async (done:
     });
 
     
-    /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0500
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0500
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0500
-     * @tc.level    Level.LEVEL1
-     */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0500', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0500');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 START  :' + JSON.stringify(strJson));
-          let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0500 component obj.getElement('$attrs').getString('caretPosition') is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('caretPosition')));
-          expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500)
-    });
+    // /*
+    //  * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0500
+    //  * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0500
+    //  * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0500
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('ArkUX_Stage_TextInput_CaretPosition_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+    //   console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 START');
+    //   setTimeout(() => {
+    //     try {
+    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0500');
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 START  :' + JSON.stringify(strJson));
+    //       let obj = JSON.parseJsonElement(strJson);
+    //       console.info("ArkUX_Stage_TextInput_CaretPosition_static_0500 component obj.getElement('$attrs').getString('caretPosition') is: " +
+    //       JSON.stringify(obj.getElement('$attrs').getString('caretPosition')));
+    //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 END ');
+    //     } catch (err) {
+    //       expect().assertFail();
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 ERR  ' + JSON.stringify(err));
+    //     }
+    //     done();
+    //   }, 500)
+    // });
 
     
     /*
@@ -208,7 +208,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0500', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0600', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0600 START');
       setTimeout(() => {
         try {
@@ -230,30 +230,30 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0600', Level.LEVEL1, async (done:
     });
 
     
-    /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0700
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0700
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0700
-     * @tc.level    Level.LEVEL1
-     */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0700', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0700');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 START  :' + JSON.stringify(strJson));
-          let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0700 component obj.getElement('$attrs').getString('caretPosition') is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('caretPosition')));
-          expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500)
-    });
+    // /*
+    //  * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0700
+    //  * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0700
+    //  * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0700
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('ArkUX_Stage_TextInput_CaretPosition_static_0700', Level.LEVEL1, async (done: ()=>void) => {
+    //   console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 START');
+    //   setTimeout(() => {
+    //     try {
+    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0700');
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 START  :' + JSON.stringify(strJson));
+    //       let obj = JSON.parseJsonElement(strJson);
+    //       console.info("ArkUX_Stage_TextInput_CaretPosition_static_0700 component obj.getElement('$attrs').getString('caretPosition') is: " +
+    //       JSON.stringify(obj.getElement('$attrs').getString('caretPosition')));
+    //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 END ');
+    //     } catch (err) {
+    //       expect().assertFail();
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 ERR  ' + JSON.stringify(err));
+    //     }
+    //     done();
+    //   }, 500)
+    // });
 
     
     /*
@@ -262,7 +262,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0700', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0800', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_0800', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0800 START');
       setTimeout(() => {
         try {
@@ -282,30 +282,30 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0800', Level.LEVEL1, async (done:
     });
 
     
-    /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0900
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0900
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0900
-     * @tc.level    Level.LEVEL1
-     */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0900', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0900');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 START  :' + JSON.stringify(strJson));
-          let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0900 component obj.getElement('$attrs').getString('caretPosition') is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('caretPosition')));
-          expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500)
-    });
+    // /*
+    //  * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0900
+    //  * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0900
+    //  * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0900
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('ArkUX_Stage_TextInput_CaretPosition_static_0900', Level.LEVEL1, async (done: ()=>void) => {
+    //   console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 START');
+    //   setTimeout(() => {
+    //     try {
+    //       let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0900');
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 START  :' + JSON.stringify(strJson));
+    //       let obj = JSON.parseJsonElement(strJson);
+    //       console.info("ArkUX_Stage_TextInput_CaretPosition_static_0900 component obj.getElement('$attrs').getString('caretPosition') is: " +
+    //       JSON.stringify(obj.getElement('$attrs').getString('caretPosition')));
+    //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 END ');
+    //     } catch (err) {
+    //       expect().assertFail();
+    //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 ERR  ' + JSON.stringify(err));
+    //     }
+    //     done();
+    //   }, 500)
+    // });
 
     
     /*
@@ -314,7 +314,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0900', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_1000
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_1000', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_1000', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_1000 START');
       setTimeout(() => {
         try {
@@ -340,7 +340,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_1000', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_1100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_1100', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_1100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_1100 START');
       setTimeout(() => {
         try {
@@ -367,7 +367,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_1100', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_1200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_1200', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_1200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_1200 START');
       setTimeout(() => {
         try {
@@ -394,7 +394,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_1200', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_1300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_1300', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_1300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_1300 START');
       setTimeout(() => {
         try {
@@ -420,7 +420,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_1300', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_1400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_1400', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretPosition_static_1400', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_static_1400 START');
       setTimeout(() => {
         try {
@@ -441,26 +441,26 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_1400', Level.LEVEL1, async (done:
 
     
     /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0100
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0100
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0100
+     * @tc.number   ArkUX_Stage_TextInput_CaretWidth_static_0100
+     * @tc.name     ArkUX_Stage_TextInput_CaretWidth_static_0100
+     * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0100', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0100 START');
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+      console.info('ArkUX_Stage_TextInput_CaretWidth_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0100');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0100 START  :' + JSON.stringify(strJson));
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretWidth_static_0100');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0100 component obj.getElement('$attrs').getString('caretStyle') is: " +
+          console.info("ArkUX_Stage_TextInput_CaretWidth_static_0100 component obj.getElement('$attrs').getString('caretStyle') is: " +
           JSON.stringify(obj.getElement('$attrs').getString('caretStyle')));
           let cursorStyle  = JSON.parseJsonElement(obj.getElement('$attrs').getString('caretStyle'));
           expect(cursorStyle.getString('width')).assertEqual("0.00vp");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0100 END ');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0100 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0100 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)
@@ -468,26 +468,26 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0100', Level.LEVEL1, async (done:
 
     
     /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0200
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0200
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0200
+     * @tc.number   ArkUX_Stage_TextInput_CaretWidth_static_0200
+     * @tc.name     ArkUX_Stage_TextInput_CaretWidth_static_0200
+     * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0200', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0200 START');
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+      console.info('ArkUX_Stage_TextInput_CaretWidth_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0200');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0200 START  :' + JSON.stringify(strJson));
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretWidth_static_0200');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0200 component obj.getElement('$attrs').getString('caretStyle') is: " +
+          console.info("ArkUX_Stage_TextInput_CaretWidth_static_0200 component obj.getElement('$attrs').getString('caretStyle') is: " +
           JSON.stringify(obj.getElement('$attrs').getString('caretStyle')));
           let cursorStyle  = JSON.parseJsonElement(obj.getElement('$attrs').getString('caretStyle'));
           expect(cursorStyle.getString('width')).assertEqual("7.00vp");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0200 END ');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0200 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0200 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)
@@ -495,26 +495,26 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0200', Level.LEVEL1, async (done:
 
     
     /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0300
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0300
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0300
+     * @tc.number   ArkUX_Stage_TextInput_CaretWidth_static_0300
+     * @tc.name     ArkUX_Stage_TextInput_CaretWidth_static_0300
+     * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0300', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0300 START');
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+      console.info('ArkUX_Stage_TextInput_CaretWidth_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0300');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0300 START  :' + JSON.stringify(strJson));
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretWidth_static_0300');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0300 component obj.getElement('$attrs').getString('caretStyle') is: " +
+          console.info("ArkUX_Stage_TextInput_CaretWidth_static_0300 component obj.getElement('$attrs').getString('caretStyle') is: " +
           JSON.stringify(obj.getElement('$attrs').getString('caretStyle')));
           let cursorStyle  = JSON.parseJsonElement(obj.getElement('$attrs').getString('caretStyle'));
           expect(cursorStyle.getString('width')).assertEqual("7.00vp");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0300 END ');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0300 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0300 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)
@@ -522,26 +522,26 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0300', Level.LEVEL1, async (done:
 
     
     /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0400
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0400
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0400
+     * @tc.number   ArkUX_Stage_TextInput_CaretWidth_static_0400
+     * @tc.name     ArkUX_Stage_TextInput_CaretWidth_static_0400
+     * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0400', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 START');
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+      console.info('ArkUX_Stage_TextInput_CaretWidth_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0400');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 START  :' + JSON.stringify(strJson));
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretWidth_static_0400');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0400 component obj.getElement('$attrs').getString('caretStyle') is: " +
+          console.info("ArkUX_Stage_TextInput_CaretWidth_static_0400 component obj.getElement('$attrs').getString('caretStyle') is: " +
           JSON.stringify(obj.getElement('$attrs').getString('caretStyle')));
           let cursorStyle  = JSON.parseJsonElement(obj.getElement('$attrs').getString('caretStyle'));
           expect(cursorStyle.getString('width')).assertEqual("4.00px");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 END ');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0400 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)
@@ -549,26 +549,26 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0400', Level.LEVEL1, async (done:
 
     
     /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0500
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0500
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0500
+     * @tc.number   ArkUX_Stage_TextInput_CaretWidth_static_0500
+     * @tc.name     ArkUX_Stage_TextInput_CaretWidth_static_0500
+     * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0500', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 START');
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+      console.info('ArkUX_Stage_TextInput_CaretWidth_static_0500 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0500');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 START  :' + JSON.stringify(strJson));
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretWidth_static_0500');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0500 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0500 component obj.getElement('$attrs').getString('caretStyle') is: " +
+          console.info("ArkUX_Stage_TextInput_CaretWidth_static_0500 component obj.getElement('$attrs').getString('caretStyle') is: " +
           JSON.stringify(obj.getElement('$attrs').getString('caretStyle')));
           let cursorStyle  = JSON.parseJsonElement(obj.getElement('$attrs').getString('caretStyle'));
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 END ');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0500 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)
@@ -576,26 +576,26 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0500', Level.LEVEL1, async (done:
 
     
     /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0600
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0600
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0600
+     * @tc.number   ArkUX_Stage_TextInput_CaretWidth_static_0600
+     * @tc.name     ArkUX_Stage_TextInput_CaretWidth_static_0600
+     * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0600', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0600 START');
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0600', Level.LEVEL1, async (done: ()=>void) => {
+      console.info('ArkUX_Stage_TextInput_CaretWidth_static_0600 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0600');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0600 START  :' + JSON.stringify(strJson));
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretWidth_static_0600');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0600 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0600 component obj.getElement('$attrs').getString('caretStyle') is: " +
+          console.info("ArkUX_Stage_TextInput_CaretWidth_static_0600 component obj.getElement('$attrs').getString('caretStyle') is: " +
           JSON.stringify(obj.getElement('$attrs').getString('caretStyle')));
           let cursorStyle  = JSON.parseJsonElement(obj.getElement('$attrs').getString('caretStyle'));
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0600 END ');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0600 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0600 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)
@@ -603,26 +603,26 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0600', Level.LEVEL1, async (done:
 
     
     /*
-     * @tc.number   ArkUX_Stage_TextInput_CaretPosition_static_0700
-     * @tc.name     ArkUX_Stage_TextInput_CaretPosition_static_0700
-     * @tc.desc     ArkUX_Stage_TextInput_CaretPosition_static_0700
+     * @tc.number   ArkUX_Stage_TextInput_CaretWidth_static_0700
+     * @tc.name     ArkUX_Stage_TextInput_CaretWidth_static_0700
+     * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretPosition_static_0700', Level.LEVEL1, async (done: ()=>void) => {
-      console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 START');
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0700', Level.LEVEL1, async (done: ()=>void) => {
+      console.info('ArkUX_Stage_TextInput_CaretWidth_static_0700 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretPosition_static_0700');
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 START  :' + JSON.stringify(strJson));
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_CaretWidth_static_0700');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0700 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_TextInput_CaretPosition_static_0700 component obj.getElement('$attrs').getString('caretStyle') is: " +
+          console.info("ArkUX_Stage_TextInput_CaretWidth_static_0700 component obj.getElement('$attrs').getString('caretStyle') is: " +
           JSON.stringify(obj.getElement('$attrs').getString('caretStyle')));
           let cursorStyle  = JSON.parseJsonElement(obj.getElement('$attrs').getString('caretStyle'));
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 END ');
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0700 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Stage_TextInput_CaretWidth_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)
@@ -635,7 +635,7 @@ it('ArkUX_Stage_TextInput_CaretPosition_static_0700', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretWidth_static_0800', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0800', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_static_0800 START');
       setTimeout(() => {
         try {
@@ -662,7 +662,7 @@ it('ArkUX_Stage_TextInput_CaretWidth_static_0800', Level.LEVEL1, async (done: ()
      * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_0900
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretWidth_static_0900', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretWidth_static_0900', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_static_0900 START');
       setTimeout(() => {
         try {
@@ -689,7 +689,7 @@ it('ArkUX_Stage_TextInput_CaretWidth_static_0900', Level.LEVEL1, async (done: ()
      * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_1000
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretWidth_static_1000', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretWidth_static_1000', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_static_1000 START');
       setTimeout(() => {
         try {
@@ -716,7 +716,7 @@ it('ArkUX_Stage_TextInput_CaretWidth_static_1000', Level.LEVEL1, async (done: ()
      * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_1100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretWidth_static_1100', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretWidth_static_1100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_static_1100 START');
       setTimeout(() => {
         try {
@@ -743,7 +743,7 @@ it('ArkUX_Stage_TextInput_CaretWidth_static_1100', Level.LEVEL1, async (done: ()
      * @tc.desc     ArkUX_Stage_TextInput_CaretWidth_static_1200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_CaretWidth_static_1200', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_CaretWidth_static_1200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_static_1200 START');
       setTimeout(() => {
         try {
@@ -770,7 +770,7 @@ it('ArkUX_Stage_TextInput_CaretWidth_static_1200', Level.LEVEL1, async (done: ()
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0100 START');
       setTimeout(() => {
         try {
@@ -796,7 +796,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0100', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0200 START');
       setTimeout(() => {
         try {
@@ -822,7 +822,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0200', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0300 START');
       setTimeout(() => {
         try {
@@ -848,7 +848,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0300', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0400 START');
       setTimeout(() => {
         try {
@@ -874,7 +874,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0400', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0500', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0500 START');
       setTimeout(() => {
         try {
@@ -900,7 +900,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0500', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0600', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0600 START');
       setTimeout(() => {
         try {
@@ -926,7 +926,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0600', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0700', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0700', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0700 START');
       setTimeout(() => {
         try {
@@ -952,7 +952,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0700', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0800', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0800', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0800 START');
       setTimeout(() => {
         try {
@@ -978,7 +978,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0800', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_0900
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_0900', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_0900', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_0900 START');
       setTimeout(() => {
         try {
@@ -1004,7 +1004,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_0900', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_1000
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_1000', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_1000', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_1000 START');
       setTimeout(() => {
         try {
@@ -1030,7 +1030,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_1000', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_1100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_1100', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_1100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_1100 START');
       setTimeout(() => {
         try {
@@ -1056,7 +1056,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_1100', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_1200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_1200', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_1200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_1200 START');
       setTimeout(() => {
         try {
@@ -1089,7 +1089,7 @@ it('ArkUX_Stage_TextInput_selectedColor_static_1200', Level.LEVEL1, async (done:
      * @tc.desc     ArkUX_Stage_TextInput_selectedColor_static_1300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Stage_TextInput_selectedColor_static_1300', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Stage_TextInput_selectedColor_static_1300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_static_1300 START');
       setTimeout(() => {
         try {

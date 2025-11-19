@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +36,7 @@ export default function ColumnSetFlexShink_SubChange() {
   describe('ColumnSetFlexShinkTest', () => {
     beforeAll(() => {
       console.info("ColumnSetFlexShinkTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,11 +53,11 @@ export default function ColumnSetFlexShink_SubChange() {
         console.info("get ColumnSetFlexShinkTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSetFlexShink_SubChange" == pages.name)) {
           console.info("get ColumnSetFlexShinkTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ColumnSetFlexShinkTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetFlexShinkTest page error:" + err);
@@ -82,7 +82,7 @@ export default function ColumnSetFlexShink_SubChange() {
      */
 it('testColumnSetFlexShink_static', Level.LEVEL0, async () => {
       console.info('new testColumnSetFlexShink START');
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(2000);
       let columnSetFlexShink_1: RectValue = CommonFunc.getComponentRect('columnSetFlexShink_1');
       let columnSetFlexShink_2: RectValue = CommonFunc.getComponentRect('columnSetFlexShink_2');
@@ -90,9 +90,9 @@ it('testColumnSetFlexShink_static', Level.LEVEL0, async () => {
       let columnSetFlexShink: RectValue = CommonFunc.getComponentRect('columnSetFlexShink');
 
       expect(Math.abs(columnSetFlexShink.top - columnSetFlexShink_1.top) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShink_2.top - columnSetFlexShink_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShink_3.top - columnSetFlexShink_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShink.bottom - columnSetFlexShink_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShink_2.top - columnSetFlexShink_1.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShink_3.top - columnSetFlexShink_2.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShink.bottom - columnSetFlexShink_3.bottom - Math.round(uiContext!.vp2px(40))) <= 1).assertTrue()
       console.info('new testColumnSetFlexShink END');
     });
   })

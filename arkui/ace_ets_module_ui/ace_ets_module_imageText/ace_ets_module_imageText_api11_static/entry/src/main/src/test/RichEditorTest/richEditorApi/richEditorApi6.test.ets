@@ -26,7 +26,7 @@ import {
   WindowMode,
   PointerMatrix,
   MouseButton,
-  Point
+  Point,
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -46,16 +46,15 @@ export default function richEditorApi6() {
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi6 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi6",
+        url: "MainAbility/pages/RichEditor/richEditorApi/richEditorApi6",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get richEditorApi6 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("richEditorApi6" == pages.name)) {
           console.info("get richEditorApi6 pages.name:" + '');
-         
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -66,7 +65,6 @@ export default function richEditorApi6() {
     });
     beforeAll(() => {
       console.info("richEditorApi6 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -82,16 +80,16 @@ export default function richEditorApi6() {
      * @tc.desc     richEditorApi6_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('richEditorApi6_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('richEditorApi6_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[richEditorApi6_0100] START');
       await CommonFunc.sleep(2000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(300);
       let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor6');
-	  let clickButton = await driver.findComponent(ON.id('RichEditor6'))
-	  let point : Point = await (clickButton?.getBoundsCenter() as Promise<Point>);
-	  await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT)
+      let clickButton = await driver.findComponent(ON.id('RichEditor6'))
+      let point : Point = await (clickButton?.getBoundsCenter() as Promise<Point>);
+      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT)
       await CommonFunc.sleep(1000);
 
       console.info("text1111");

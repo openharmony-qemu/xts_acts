@@ -28,21 +28,27 @@ import {
 import {
   State,
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import mediaquery from '@ohos.mediaquery'
-import { RecordData } from '@ohos.base';
-
+import MediaQueryResult from '@ohos.mediaquery'
 @Entry
 @Component
 struct stageMediaquery {
   @State color: string = '#000';
   @State text: string = 'Test';
- 
 
   listener: mediaquery.MediaQueryListener = this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)');
   aboutToAppear() {
-
+    // this.listener.on('change', (mediaQueryResult) => {
+    //   if (mediaQueryResult.matches) {
+    //     this.color = '#FFD700'
+    //     this.text = 'Landscape'
+    //   } else {
+    //     this.color = '#DB7093'
+    //     this.text = 'Portrait'
+    //   }
+    // })
   }
 
   aboutToDisappear() {
@@ -64,7 +70,25 @@ struct stageMediaquery {
         .textOverflow({ overflow: TextOverflow.None })
         .key("offText")
         .onClick((e:ClickEvent) => {
-     
+          // this.listener.off('change', (mediaQueryResult) => {
+          //   console.log(JSON.stringify(mediaQueryResult))
+          //   let result = true
+          //   try {
+          //     let backData: emitter.EventData = {
+          //       data: {
+          //         "STATUS": result
+          //       } as Record<String,undefined|null|Object>
+          //     } as emitter.EventData
+          //     let backEvent: emitter.InnerEvent = {
+          //       eventId: 60218,
+          //       priority: emitter.EventPriority.LOW
+          //     }
+          //     console.info("onSelect start to emit action state")
+          //     emitter.emit(backEvent, backData)
+          //   } catch (err) {
+          //     console.info("onSelect emit action state err: " + JSON.stringify((err as Error)?.message))
+          //   }
+          // })
         })
       Text("mediaQuery-MatchMediaSync")
         .width(100)
@@ -83,17 +107,17 @@ struct stageMediaquery {
           console.log('mediaQuery-MatchMediaSync: ' + JSON.stringify(this.listener))
           let result = (this.listener != null)
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "STATUS": result
-              } as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+              } as Record<String,undefined|null|Object>
+            } as emitter.EventData
+            let backEvent: emitter.InnerEvent = {
               eventId: 60219,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("onSelect start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("onSelect emit action state err: " + JSON.stringify((err as Error)?.message))
           }

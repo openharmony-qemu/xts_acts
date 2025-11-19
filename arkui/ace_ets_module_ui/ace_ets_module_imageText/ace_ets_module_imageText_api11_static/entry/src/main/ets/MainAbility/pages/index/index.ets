@@ -37,7 +37,7 @@ import {
   FontWeight
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router,UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 
 @Entry
@@ -47,7 +47,9 @@ struct Index {
     try {
       let router = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router);
-    } catch (error) {
+      const uiContext: UIContext = this.getUIContext()
+      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

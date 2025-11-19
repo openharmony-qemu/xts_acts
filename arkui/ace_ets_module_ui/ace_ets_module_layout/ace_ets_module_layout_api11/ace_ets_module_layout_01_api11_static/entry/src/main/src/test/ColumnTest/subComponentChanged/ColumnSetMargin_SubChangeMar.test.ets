@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +36,7 @@ export default function ColumnSetMargin_SubChangeMar() {
   describe('ColumnSetMargin_SubChangeMar',  () =>{
     beforeAll(() => {
       console.info("ColumnSetMargin_SubChangeMar beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,11 +53,11 @@ export default function ColumnSetMargin_SubChangeMar() {
         console.info("get ColumnSetMarginTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSetMargin_SubChangeMar" == pages.name)) {
           console.info("get ColumnSetMarginTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ColumnSetMarginTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetMarginTest page error:" + err);
@@ -82,18 +82,18 @@ export default function ColumnSetMargin_SubChangeMar() {
      */
 it('testColumnParentMarginSubMargin_static', Level.LEVEL0, async () => {
       console.info('new testColumnParentMarginSubMargin_static START');
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(2000);
       let columnSetMar_1: RectValue = CommonFunc.getComponentRect('columnSetMar_1');
       let columnSetMar_2: RectValue = CommonFunc.getComponentRect('columnSetMar_2');
       let columnSetMar_3: RectValue = CommonFunc.getComponentRect('columnSetMar_3');
       let columnSetMar: RectValue = CommonFunc.getComponentRect('columnSetMar');
-      expect(Math.abs(columnSetMar_1.top - columnSetMar.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_2.top - columnSetMar_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_3.top - columnSetMar_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_1.right - columnSetMar_1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_2.right - columnSetMar_2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_3.right - columnSetMar_3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_1.top - columnSetMar.top - Math.round(uiContext!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_2.top - columnSetMar_1.bottom - Math.round(uiContext!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_3.top - columnSetMar_2.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_1.right - columnSetMar_1.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_2.right - columnSetMar_2.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_3.right - columnSetMar_3.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
       expect(Math.abs(columnSetMar.bottom - columnSetMar_3.bottom) <= 1).assertTrue()
       console.info('new testColumnParentMarginSubMargin_static END');
     });

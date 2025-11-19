@@ -18,7 +18,7 @@ import { Entry, Column, Component, RichEditor, Margin, Button, Text, RichEditorC
 @Component
 struct RichEditor11 {
   controller: RichEditorController = new RichEditorController();
-  @State len:int = 0
+  @State len:number = 0
   build() {
     Column() {
       Text(''+this.len).id('RichEditor11_Text')
@@ -30,10 +30,8 @@ struct RichEditor11 {
         .id('RichEditor11_double')
       Button('getSelection')
         .onClick((e: ClickEvent)=>{
-          let richEditorSelection = this.controller.getSelection()
-          if (richEditorSelection !== undefined) {
-            this.len = richEditorSelection.selection[1] - richEditorSelection.selection[0]
-          }
+          let richEditorSelection = this.controller.getSelection()!
+          this.len = richEditorSelection.selection[1] - richEditorSelection.selection[0]
         }).margin({
           top:50
         } as Margin)

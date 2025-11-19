@@ -46,7 +46,6 @@ export default function SXSymbolGlyphSINGLE01Jsunit() {
     beforeAll(() => {
       console.info("SXSymbolGlyphSINGLE01Jsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,9 +65,9 @@ export default function SXSymbolGlyphSINGLE01Jsunit() {
           console.info("get SXSymbolGlyphSINGLE01Jsunit state pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
+          // console.info("push SXSymbolGlyphSINGLE01Jsunit success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push SXSymbolGlyphSINGLE01Jsunit page error:" + err);
         expect().assertFail();
       }
@@ -80,7 +79,7 @@ export default function SXSymbolGlyphSINGLE01Jsunit() {
      * @tc.desc     SXSymbolGlyphSINGLE01Jsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('SXSymbolGlyphSINGLE01Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SXSymbolGlyphSINGLE01Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('SXSymbolGlyphSINGLE01Jsunit_0100 START');
       let strcontent = inspector.getInspectorByKey('SXSymbolGlyphSINGLE01Key');
@@ -89,8 +88,8 @@ it('SXSymbolGlyphSINGLE01Jsunit_static_0100', Level.LEVEL1, async (done: () => v
       console.info('SXSymbolGlyphSINGLE01Jsunit_0100 component obj is: ' + obj);
       console.info('SXSymbolGlyphSINGLE01Jsunit_0100 component obj.$attrs is: ' + obj.getElement('$attrs'));
       console.info('SXSymbolGlyphSINGLE01Jsunit_0100 component obj.$attrs.textBackgroundStyle is: ' +
-      obj.getElement('$attrs').getElement('renderingStrategy'));
-      expect(obj.getElement('$attrs').getElement('renderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
+      obj.getElement('$attrs').getString('renderingStrategy'));
+      expect(obj.getElement('$attrs').getString('renderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
       console.info('SXSymbolGlyphSINGLE01Jsunit_0100 END')
       done();
     });

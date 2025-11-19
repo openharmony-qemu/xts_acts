@@ -26,7 +26,8 @@ import {
   FontStyle,
   Color,
   FontWeight,
-  Text
+  Text,
+  Length
 } from '@ohos.arkui.component'
 import {
   State,
@@ -36,11 +37,11 @@ import {
 struct TextAreaExample2 {
   @State text: string = 'TextArea';
   @State fontColor: string = "#FF182432";
-  @State fontSize: number = 30;
+  @State fontSize: Double = 30;
   @State textAlign: TextAlign = TextAlign.Center;
-  @State caretIndex: int | undefined = 9999;
+  @State caretIndex: number = 9999;
   @State text2: string = '';
-  @State positionInfo: CaretOffset | undefined = { index: 9999, x: 0, y: 0 } as CaretOffset;
+  @State positionInfo: CaretOffset = { index: 9999, x: 0, y: 0 } as CaretOffset;
   controller: TextAreaController = new TextAreaController();
 
   onPageShow() {
@@ -74,21 +75,29 @@ struct TextAreaExample2 {
   private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("fang--->A");
     if (eventData != null && eventData.data != null) {
-      console.info("swiper page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject).getProperty('fontSize') != null) {
-        this.fontSize = ((eventData.data) as ESObject).getProperty('fontSize').toNumber();
+      const data = eventData.data as Record<String,undefined|null|Object>
+      console.info("swiper page state change called:" + JSON.stringify(data));
+      if (data['fontSize'] != null) {
+        console.log("======================================= data['fontSize'] " + data['fontSize'])
+        this.fontSize = data['fontSize'] as double
+        // this.fontSize = Number.parseInt(`${data['fontSize']}`);
+        console.log("======================================= this.fontSize " + this.fontSize)
       }
-      if (((eventData.data) as ESObject).getProperty('fontColor') != null) {
-        this.fontColor = ((eventData.data) as ESObject).getProperty('fontColor').toString();
+      if (data['fontColor'] != null) {
+        this.fontColor = data!['fontColor'] as string;
+        console.log("======================================= this.fontColor " + this.fontColor)
       }
-      if (((eventData.data) as ESObject).getProperty('textAlign') != null) {
-        this.textAlign = ((eventData.data) as ESObject).getProperty('textAlign').toStaticObject() as TextAlign;
+      if (data['textAlign'] != null) {
+        this.textAlign = data['textAlign'] as TextAlign;
+        console.log("======================================= this.textAlign " + this.textAlign)
       }
-      if (((eventData.data) as ESObject).getProperty('text') != null) {
-        this.text = ((eventData.data) as ESObject).getProperty('text').toString();
+      if (data['text'] != null) {
+        this.text = data['text'] as string;
+        console.log("======================================= this.text " + this.text)
       }
-      if (((eventData.data) as ESObject).getProperty('text2') != null) {
-        this.text2 = ((eventData.data) as ESObject).getProperty('text2').toString();
+      if (data['text2'] != null) {
+        this.text2 = data['text2'] as string;
+        console.log("======================================= this.text2 " + this.text2)
       }
     }
   }
@@ -107,7 +116,7 @@ struct TextAreaExample2 {
         .fontFamily("sans-serif")
         .fontStyle(FontStyle.Normal)
         .fontColor(this.fontColor)
-       
+        .inputFilter(`^[\u4E00-\u9FA5A-Za-z0-9_]+$`)
         .onChange((value: string) :void=> {
           this.text = value
         })
@@ -135,9 +144,9 @@ struct TextAreaExample2 {
         .onClick((e:ClickEvent) => {
           console.info('text length:' + this.text2.length)
           this.controller.caretPosition(this.text2.length)
-          this.positionInfo = this.controller.getCaretOffset()
-          console.info("index:" + this.positionInfo?.index)
-          this.caretIndex = this.positionInfo?.index
+          this.positionInfo = this.controller.getCaretOffset()!
+          console.info("index:" + this.positionInfo.index)
+          this.caretIndex = this.positionInfo.index
         })
         .key('caretOffsetBtn1')
 

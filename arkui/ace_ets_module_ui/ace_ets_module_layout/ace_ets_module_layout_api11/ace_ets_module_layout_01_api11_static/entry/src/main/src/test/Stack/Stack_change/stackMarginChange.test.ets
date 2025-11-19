@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import {Alignment} from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
@@ -39,7 +39,7 @@ export default function stackMarginChange() {
   describe('stackMarginChangeTest', () => {
     beforeAll(async () => {
       console.info("stackMarginChangeTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -70,21 +70,22 @@ export default function stackMarginChange() {
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentTopStart_static
      * @tc.name     testStackMarginAlignContentTopStart_static
      * @tc.desc     testStackMarginAlignContentTopStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentTopStart_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopStart
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -97,11 +98,11 @@ it('testStackMarginAlignContentTopStart_static', Level.LEVEL0, async (done: () =
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
       expect(Math.abs((stackMarginKey01.left) - (stackMarginKey.left)) <= 1).assertTrue();
       expect(Math.abs((stackMarginKey01.top) - (stackMarginKey.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopStart')
@@ -113,21 +114,22 @@ it('testStackMarginAlignContentTopStart_static', Level.LEVEL0, async (done: () =
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentTop_static
      * @tc.name     testStackMarginAlignContentTop_static
      * @tc.desc     testStackMarginAlignContentTop_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentTop_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentTop_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Top
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Top
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -138,14 +140,14 @@ it('testStackMarginAlignContentTop_static', Level.LEVEL0, async (done: () => voi
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.top) - (stackMarginKey.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Top')
@@ -157,21 +159,22 @@ it('testStackMarginAlignContentTop_static', Level.LEVEL0, async (done: () => voi
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentTopEnd_static
      * @tc.name     testStackMarginAlignContentTopEnd_static
      * @tc.desc     testStackMarginAlignContentTopEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentTopEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentTopEnd_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.TopEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.TopEnd
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -182,13 +185,13 @@ it('testStackMarginAlignContentTopEnd_static', Level.LEVEL0, async (done: () => 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.right) - (stackMarginKey.right)) <= 1).assertTrue();
       expect(Math.abs((stackMarginKey01.top) - (stackMarginKey.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopEnd')
@@ -200,21 +203,22 @@ it('testStackMarginAlignContentTopEnd_static', Level.LEVEL0, async (done: () => 
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentStart_static
      * @tc.name     testStackMarginAlignContentStart_static
      * @tc.desc     testStackMarginAlignContentStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentStart_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Start
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Start
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -226,13 +230,13 @@ it('testStackMarginAlignContentStart_static', Level.LEVEL0, async (done: () => v
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
       expect(Math.abs((stackMarginKey01.left) - (stackMarginKey.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start')
@@ -244,21 +248,22 @@ it('testStackMarginAlignContentStart_static', Level.LEVEL0, async (done: () => v
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentCenter_static
      * @tc.name     testStackMarginAlignContentCenter_static
      * @tc.desc     testStackMarginAlignContentCenter_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentCenter_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Center
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Center
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -269,15 +274,15 @@ it('testStackMarginAlignContentCenter_static', Level.LEVEL0, async (done: () => 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center')
@@ -289,21 +294,22 @@ it('testStackMarginAlignContentCenter_static', Level.LEVEL0, async (done: () => 
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentEnd_static
      * @tc.name     testStackMarginAlignContentEnd_static
      * @tc.desc     testStackMarginAlignContentEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentEnd_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.End
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.End
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -314,14 +320,14 @@ it('testStackMarginAlignContentEnd_static', Level.LEVEL0, async (done: () => voi
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.right) - (stackMarginKey.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.End')
@@ -333,21 +339,22 @@ it('testStackMarginAlignContentEnd_static', Level.LEVEL0, async (done: () => voi
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentBottomStart_static
      * @tc.name     testStackMarginAlignContentBottomStart_static
      * @tc.desc     testStackMarginAlignContentBottomStart_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentBottomStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentBottomStart_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomStart
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomStart
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -359,12 +366,12 @@ it('testStackMarginAlignContentBottomStart_static', Level.LEVEL0, async (done: (
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
       expect(Math.abs((stackMarginKey01.left) - (stackMarginKey.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.bottom) - (stackMarginKey.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomStart')
@@ -376,21 +383,22 @@ it('testStackMarginAlignContentBottomStart_static', Level.LEVEL0, async (done: (
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentBottom_static
      * @tc.name     testStackMarginAlignContentBottom_static
      * @tc.desc     testStackMarginAlignContentBottom_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentBottom_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentBottom_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.Bottom
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.Bottom
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -401,14 +409,14 @@ it('testStackMarginAlignContentBottom_static', Level.LEVEL0, async (done: () => 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.bottom) - (stackMarginKey.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Bottom')
@@ -420,21 +428,22 @@ it('testStackMarginAlignContentBottom_static', Level.LEVEL0, async (done: () => 
     
 
 
+
 /*
      * @tc.number   testStackMarginAlignContentBottomEnd_static
      * @tc.name     testStackMarginAlignContentBottomEnd_static
      * @tc.desc     testStackMarginAlignContentBottomEnd_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackMarginAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackMarginAlignContentBottomEnd_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testStackMarginAlignContentBottomEnd_static START');
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      // globalThis.value.message.notify({
+      //   name: 'alignContent', value: Alignment.BottomEnd
+      // });
+      // globalThis.value.message.notify({
+      //   name: 'margin', value: 20
+      // });
+      AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'alignContent', value: Alignment.BottomEnd
       });
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
@@ -445,13 +454,13 @@ it('testStackMarginAlignContentBottomEnd_static', Level.LEVEL0, async (done: () 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.right) - (stackMarginKey.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.bottom) - (stackMarginKey.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomEnd')

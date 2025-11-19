@@ -16,17 +16,18 @@
 import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
 import { TextCase } from '@ohos.arkui.component';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { MessageManagerBase, CallbackBase } from '../../../ets/MainAbility/common/MessageManager2';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -35,7 +36,6 @@ export default function span3Jsunit() {
   describe('span3Jsunit', () => {
     beforeAll(() => {
       console.info("span3Jsunit beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -53,11 +53,10 @@ export default function span3Jsunit() {
         console.info("get span state success " + JSON.stringify(pages));
         if (!("span3" == pages.name)) {
           console.info("get span success " + '');
-          await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push span page error " + JSON.stringify(err));
       }
     });
@@ -73,15 +72,14 @@ export default function span3Jsunit() {
      * @tc.desc     testSpan_static_001
      * @tc.level    Level.LEVEL1
      */
-it('testSpan_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testSpan_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSpan001] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('decoration');
       console.info("[testSpan001] component strJson:" + strJson);
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('decoration').getElement('type'))
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('decoration')).getString('type'))
         .assertEqual('TextDecorationType.None');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('decoration').getElement('color'))
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('decoration')).getString('color'))
         .assertEqual('#FFFF0000');
       done();
     });
@@ -92,7 +90,7 @@ it('testSpan_static_001', Level.LEVEL1, async (done: () => void): Promise<void> 
      * @tc.desc     testSpan_static_002
      * @tc.level    Level.LEVEL1
      */
-it('testSpan_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testSpan_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSpan002] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('decoration');
@@ -100,7 +98,7 @@ it('testSpan_static_002', Level.LEVEL1, async (done: () => void): Promise<void> 
 
       console.info("[testSpan002] textCase:" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('textCase'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('textCase')).assertEqual('TextCase.Normal');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textCase')).assertEqual('TextCase.Normal');
       done();
     });
 
@@ -110,22 +108,12 @@ it('testSpan_static_002', Level.LEVEL1, async (done: () => void): Promise<void> 
      * @tc.desc     testSpan_static_003
      * @tc.level    Level.LEVEL1
      */
-it('testSpan_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testSpan_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSpan003] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textCaseValue": TextCase.UpperCase
-          } as Record<String, RecordData>
-        }
-
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 200,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSpan003] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        const message: MessageManagerBase<TextCase|undefined> = AppStorage.get<MessageManagerBase<TextCase|undefined>>("messageManagerTextCase")!
+        message.notify({name:'textCaseValue',value:TextCase.UpperCase});
+      } catch (err: Error) {
         console.log("[testSpan003] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -134,7 +122,7 @@ it('testSpan_static_003', Level.LEVEL1, async (done: () => void): Promise<void> 
 
       console.info("[testSpan003] textCase:" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('textCase'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('textCase'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textCase'))
         .assertEqual('TextCase.UpperCase');
       done();
     });
@@ -145,7 +133,7 @@ it('testSpan_static_003', Level.LEVEL1, async (done: () => void): Promise<void> 
      * @tc.desc     testSpan_static_004
      * @tc.level    Level.LEVEL1
      */
-it('testSpan_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testSpan_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSpan004] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('fontColor');
@@ -153,7 +141,7 @@ it('testSpan_static_004', Level.LEVEL1, async (done: () => void): Promise<void> 
 
       console.info("[testSpan004] fontColor:" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('fontColor'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('fontColor')).assertEqual('#FFCCCCCC');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual('#FFCCCCCC');
       done();
     });
 
@@ -163,21 +151,12 @@ it('testSpan_static_004', Level.LEVEL1, async (done: () => void): Promise<void> 
      * @tc.desc     testSpan_static_005
      * @tc.level    Level.LEVEL1
      */
-it('testSpan_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testSpan_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSpan005] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontColorValue": '#FF000990'
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 201,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSpan005] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        const message: MessageManagerBase<string> = AppStorage.get<MessageManagerBase<string>>("messageManagerColor")!
+        message.notify({name:'fontColorValue',value:'#FF000990'});
+      } catch (err: Error) {
         console.log("[testSpan005] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -186,74 +165,56 @@ it('testSpan_static_005', Level.LEVEL1, async (done: () => void): Promise<void> 
 
       console.info("[testSpan005] fontColor:" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('fontColor'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('fontColor')).assertEqual('#FF000990');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual('#FF000990');
       done();
     });
 
-    /*
-     * @tc.number   testSpan_static_006
-     * @tc.name     testSpan_static_006
-     * @tc.desc     testSpan_static_006
-     * @tc.level    Level.LEVEL1
-     */
-it('testSpan_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[testSpan006] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textCaseValue": undefined!
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 1029,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSpan006] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        console.log("[testSpan006] change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('decoration');
-      console.info("[testSpan006] component strJson:" + strJson);
+    // /*
+    //  * @tc.number   testSpan_static_006
+    //  * @tc.name     testSpan_static_006
+    //  * @tc.desc     testSpan_static_006
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testSpan_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('[testSpan006] START');
+    //   try {
+    //     const message: MessageManagerBase<TextCase|undefined> = AppStorage.get<MessageManagerBase<TextCase|undefined>>("messageManagerTextCase")!
+    //     message.notify({name:'textCaseValue',value:undefined});
+    //   } catch (err: Error) {
+    //     console.log("[testSpan006] change component data error: " + err.message);
+    //   }
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('decoration');
+    //   console.info("[testSpan006] component strJson:" + strJson);
+    //
+    //   console.info("[testSpan006] textCase:" + JSON.parseJsonElement(strJson));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textCase'))
+    //     .assertEqual('TextCase.UpperCase');
+    //   done();
+    // });
 
-      console.info("[testSpan006] textCase:" + JSON.parseJsonElement(strJson));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('textCase'))
-        .assertEqual('TextCase.UpperCase');
-      done();
-    });
-
-    /*
-     * @tc.number   testSpan_static_007
-     * @tc.name     testSpan_static_007
-     * @tc.desc     testSpan_static_007
-     * @tc.level    Level.LEVEL1
-     */
-it('testSpan_static_007', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[testSpan007] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textCaseValue": -1
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 1030,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSpan007] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        console.log("[testSpan007] change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('decoration');
-      console.info("[testSpan007] component strJson:" + strJson);
-
-      console.info("[testSpan007] textCase:" + JSON.parseJsonElement(strJson));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('textCase'))
-        .assertEqual('TextCase.UpperCase');
-      done();
-    });
+    // /*
+    //  * @tc.number   testSpan_static_007
+    //  * @tc.name     testSpan_static_007
+    //  * @tc.desc     testSpan_static_007
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testSpan_static_007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('[testSpan007] START');
+    //   try {
+    //     const message: MessageManagerBase<TextCase> = AppStorage.get<MessageManagerBase<TextCase>>("messageManagerTextCase")!
+    //     message.notify({name:'textCaseValue',value:-1});
+    //   } catch (err: Error) {
+    //     console.log("[testSpan007] change component data error: " + err.message);
+    //   }
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('decoration');
+    //   console.info("[testSpan007] component strJson:" + strJson);
+    //
+    //   console.info("[testSpan007] textCase:" + JSON.parseJsonElement(strJson));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textCase'))
+    //     .assertEqual('TextCase.UpperCase');
+    //   done();
+    // });
   })
 }

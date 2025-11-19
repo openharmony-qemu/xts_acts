@@ -35,7 +35,6 @@ export default function Image_QRCode_Api() {
     beforeAll(() => {
       console.info("Image_QRCode_Api beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,8 +52,11 @@ export default function Image_QRCode_Api() {
         console.info("get Image_QRCode_Api state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get Image_QRCode_Api pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push Image_QRCode_Api page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Image_QRCode_Api page error:" + err);
@@ -74,7 +76,7 @@ export default function Image_QRCode_Api() {
      * @tc.desc     Image_QRCode_Api_static_001
      * @tc.level    Level.LEVEL2
      */
-it('Image_QRCode_Api_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('Image_QRCode_Api_static_001', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[Image_QRCode_Api_static_001] START');
       await CommonFunc.sleep(1000);
 
@@ -82,7 +84,7 @@ it('Image_QRCode_Api_static_001', Level.LEVEL2, async (done: ()=>void) => {
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       console.info("[Image_QRCode_Api_static_001] obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('opacity')).assertEqual(0.5);
+      expect(obj.getElement('$attrs').getDouble('opacity')).assertEqual(0.5);
 
       console.info('[Image_QRCode_Api_static_001] END');
       done();
@@ -95,7 +97,7 @@ it('Image_QRCode_Api_static_001', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     Image_QRCode_Api_static_002
      * @tc.level    Level.LEVEL2
      */
-it('Image_QRCode_Api_static_002', Level.LEVEL2, async (done: ()=>void) => {
+    it('Image_QRCode_Api_static_002', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[Image_QRCode_Api_static_002] START');
       await CommonFunc.sleep(1000);
 

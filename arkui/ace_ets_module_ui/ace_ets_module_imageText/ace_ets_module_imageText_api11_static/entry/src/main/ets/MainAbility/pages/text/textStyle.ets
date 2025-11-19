@@ -1,17 +1,17 @@
- /**
-  * Copyright (c) 2025 Huawei Device Co., Ltd.
-  * Licensed under the Apache License, Version 2.0 (the "License");
-  * you may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at
-  *
-  *     http:
-  *
-  * Unless required by applicable law or agreed to in writing, software
-  * distributed under the License is distributed on an "AS IS" BASIS,
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  */
+// /**
+//  * Copyright (c) 2025 Huawei Device Co., Ltd.
+//  * Licensed under the Apache License, Version 2.0 (the "License");
+//  * you may not use this file except in compliance with the License.
+//  * You may obtain a copy of the License at
+//  *
+//  *     http://www.apache.org/licenses/LICENSE-2.0
+//  *
+//  * Unless required by applicable law or agreed to in writing, software
+//  * distributed under the License is distributed on an "AS IS" BASIS,
+//  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  * See the License for the specific language governing permissions and
+//  * limitations under the License.
+//  */
 import {
   Entry,
   Component,
@@ -25,12 +25,14 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { MessageManagerBase, CallbackBase, MessageBase } from '../../common/MessageManager2';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct TextStyle1 {
   @State fontColor: Color = Color.Red;
-  @State fontSize: int = 20;
+  @State fontSize: number = 20;
   @State fontStyle: FontStyle = FontStyle.Italic;
   @State fontWeight: int = 700;
   @State fontFamily: string = 'sans-serif';
@@ -83,49 +85,42 @@ struct TextStyle1 {
     .width('100%')
     .height('100%')
   }
+  messageManagerFontStyle: MessageManagerBase<FontStyle> = new MessageManagerBase<FontStyle>()
+  messageManagerColor: MessageManagerBase<Color> = new MessageManagerBase<Color>()
+  messageManager: MessageManagerBase<number|int|string> = new MessageManagerBase<number|int|string>()
+
 
   onPageShow() {
-    let fontColorChangeEvent: events_emitter.InnerEvent = {
-      eventId: 37,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(fontColorChangeEvent, this.textStyleChangCallBack);
-    let fontSizeChangeEvent: events_emitter.InnerEvent = {
-      eventId: 38,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(fontSizeChangeEvent, this.textStyleChangCallBack);
-    let fontStyleChangeEvent: events_emitter.InnerEvent = {
-      eventId: 39,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(fontStyleChangeEvent, this.textStyleChangCallBack);
-    let fontWeightChangeEvent: events_emitter.InnerEvent = {
-      eventId: 40,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(fontWeightChangeEvent, this.textStyleChangCallBack);
-    let fontFamilyChangeEvent: events_emitter.InnerEvent = {
-      eventId: 41,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(fontFamilyChangeEvent, this.textStyleChangCallBack);
-  }
-
-  textStyleChangCallBack:(eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) :void=> {
-    console.info("textStyle page stateChangCallBack" + JSON.stringify(eventData));
-    if (eventData && eventData.data) {
-      if (((eventData.data) as ESObject).getProperty('fontColor')) {
-        this.fontColor = ((eventData.data) as ESObject).getProperty('fontColor').toStaticObject() as Color;
-      } else if (((eventData.data) as ESObject).getProperty('fontSize')) {
-        this.fontSize = ((eventData.data) as ESObject).getProperty('fontSize').toNumber() as int;
-      } else if (((eventData.data) as ESObject).getProperty('fontWeight')) {
-        this.fontWeight = ((eventData.data) as ESObject).getProperty('fontWeight').toNumber() as int;
-      } else if (((eventData.data) as ESObject).getProperty('fontFamily')) {
-        this.fontFamily = ((eventData.data) as ESObject).getProperty('fontFamily').toString();
-      } else {
-        this.fontStyle = ((eventData.data) as ESObject).getProperty('fontStyle').toStaticObject() as FontStyle;
+    AppStorage.setOrCreate<MessageManagerBase<FontStyle>>('messageManagerFontStyle', this.messageManagerFontStyle);
+    AppStorage.setOrCreate<MessageManagerBase<Color>>('messageManagerColor', this.messageManagerColor);
+    AppStorage.setOrCreate<MessageManagerBase<number|int|string>>('messageManager', this.messageManager);
+    let callbackFontStyle: CallbackBase<FontStyle> = (message: MessageBase<FontStyle>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'fontStyle') {
+        this.fontStyle = message.value
       }
     }
+    let callbackColor: CallbackBase<Color> = (message: MessageBase<Color>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'Color') {
+        this.fontColor = message.value
+      }
+    }
+    let callback: CallbackBase<number|int|string> = (message: MessageBase<number|int|string>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'fontSize') {
+        this.fontSize = message.value as number
+      }
+      if (message.name == 'fontWeight') {
+        this.fontWeight = message.value as int
+        console.log("================================== this.fontWeight" + this.fontWeight)
+      }
+      if (message.name == 'fontFamily') {
+        this.fontFamily = message.value as string
+      }
+    }
+    this.messageManagerFontStyle.registerCallback(callbackFontStyle)
+    this.messageManagerColor.registerCallback(callbackColor)
+    this.messageManager.registerCallback(callback)
   }
 }

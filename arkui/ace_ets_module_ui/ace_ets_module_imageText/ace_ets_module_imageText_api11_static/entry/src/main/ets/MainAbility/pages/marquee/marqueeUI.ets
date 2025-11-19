@@ -42,7 +42,7 @@ struct MarqueeExample {
   @State start: boolean = false
   @State fromStart: boolean = true
   @State step: number = 50
-  @State loop: number = 2
+  @State loop: int = 2
   @State src: string = "Running Marquee starts rolling"
   @State message1: string = "message1"
   @State message2: string = "message2"
@@ -60,10 +60,14 @@ struct MarqueeExample {
       const marqueeMessage: Message = message
       console.error('message = ' + marqueeMessage.name + "--" + marqueeMessage.value)
       if (marqueeMessage.name == 'step') {
+        console.log("================================= marqueeMessage.value: " + marqueeMessage.value.toString())
         this.step = Number.parseInt(marqueeMessage.value.toString())
+        console.log("================================= step: " + this.step)
       }
       if (marqueeMessage.name == 'loop') {
-        this.loop = Number.parseInt(marqueeMessage.value.toString())
+        console.log("============================================  loop")
+        this.loop = Number.parseInt(marqueeMessage.value.toString()) as Int
+        console.log("============================================   this.loop" +  this.loop)
       }
       if (marqueeMessage.name == 'src') {
         this.src = marqueeMessage.value as string
@@ -72,7 +76,9 @@ struct MarqueeExample {
         this.allowScale = marqueeMessage.value as boolean
       }
       if (marqueeMessage.name == 'fromStart') {
+        console.log("============================================  fromStart")
         this.fromStart = marqueeMessage.value as boolean
+        console.log("============================================   this.fromStart" +  this.fromStart)
       }
       if (marqueeMessage.name == 'start') {
         this.start = marqueeMessage.value as boolean
@@ -86,7 +92,7 @@ struct MarqueeExample {
       Marquee({
         start: this.start,
         step: this.step,
-        loop: this.loop as int,
+        loop: this.loop,
         fromStart: this.fromStart,
         src: this.src
       })

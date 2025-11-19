@@ -32,7 +32,9 @@ import {
   Row,
   RichEditorSpanType,
   RichEditorResponseType,
-  RowOptions
+  RowOptions,
+  Dimension,
+  LeadingMarginPlaceholder
 } from '@ohos.arkui.component'
 import {
   State,
@@ -110,16 +112,18 @@ struct RichEditorApi {
         Button("getParagraphs")
           .id('RichEditorApi_btn_getParagraphs')
           .onClick((e:ClickEvent) => {
-            let getParagraphs = this.controller2.getParagraphs({ start: -1, end: -1 })
-            if (getParagraphs !== undefined) {
-              let textAlign = getParagraphs[0].style.textAlign
-              let size = getParagraphs[0].style.leadingMargin
-              let range = getParagraphs[0].range
-              AppStorage.setOrCreate('getParagraphs_textAlign',textAlign)
-              AppStorage.setOrCreate('getParagraphs_size',size)
-              AppStorage.setOrCreate('getParagraphs_range',range)
-              this.spanParagraphs = JSON.stringify(this.controller2.getParagraphs({ start: -1, end: -1 }))
-            }
+            let getParagraphs = this.controller2.getParagraphs({ start: -1, end: -1 })!
+
+            let textAlign = getParagraphs[0].style.textAlign as TextAlign
+            let size = getParagraphs[0].style.leadingMargin
+            let range = getParagraphs[0].range
+            console.log("===================================== " + JSON.stringify(size));
+            AppStorage.setOrCreate<TextAlign>('getParagraphs_textAlign',textAlign)
+            AppStorage.setOrCreate<string>('getParagraphs_size', JSON.stringify(size))
+            AppStorage.setOrCreate<[int, int]>('getParagraphs_range',range)
+            this.spanParagraphs = JSON.stringify(this.controller2.getParagraphs({ start: -1, end: -1 })
+
+            )
           })
       }.height('10%')
 

@@ -33,6 +33,7 @@ struct OutlineExample {
   build() {
     Column() {
       Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        // 线段
         Text('DASHED')
           .id("outline")
           .backgroundColor(Color.Pink)

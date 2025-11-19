@@ -48,7 +48,7 @@ struct RichEditorApi5 {
       .width("100%")
       .padding({bottom:50} as Padding)
       RichEditor({ controller: this.controller } as RichEditorOptions)
-        
+        // 绑定自定义键盘
         .borderWidth(1)
         .borderColor(Color.Red)
         .width("100%")

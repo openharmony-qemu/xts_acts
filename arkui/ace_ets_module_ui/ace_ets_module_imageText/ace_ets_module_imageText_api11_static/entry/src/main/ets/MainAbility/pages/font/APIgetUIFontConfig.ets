@@ -13,9 +13,22 @@
  * limitations under the License.
  */
 import font from '@ohos.font';
-import { Entry, Component, Column, Text, Button, Margin, ClickEvent} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-
+import {
+  Entry,
+  Component,
+  Column,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  TextDecorationType,
+  Margin,
+  ClickEvent,
+  Button,
+} from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct APIgetUIFontConfig {
@@ -28,7 +41,7 @@ struct APIgetUIFontConfig {
         .width('60%')
         .height('6%')
         .margin(10)
-        .onClick((e: ClickEvent)=>{
+        .onClick((e:ClickEvent)=>{
           let fontConfig = font.getUIFontConfig();
           this.text = fontConfig?.fontDir?.length + ''
         })

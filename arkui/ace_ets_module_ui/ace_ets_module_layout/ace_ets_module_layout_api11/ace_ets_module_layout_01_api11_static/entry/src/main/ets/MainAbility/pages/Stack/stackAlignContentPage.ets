@@ -4,18 +4,20 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
+
 import events_emitter from '@ohos.events.emitter';
 import {Entry,Component,Column,Text,Flex,Stack,FlexDirection,Alignment,ItemAlign,Margin,TextAlign,TextOverflow,FontWeight,GridRow,FlexAlign,GridCol,AttributeModifier,StackAttribute} from '@ohos.arkui.component'
-import {State} from '@ohos.arkui.stateManagement'
+import {State, Observed} from '@ohos.arkui.stateManagement'
+
+@Observed
 class MyStackAlignContentModifier implements AttributeModifier<StackAttribute> {
   alignContentValue: Alignment = Alignment.TopStart
   applyNormalAttribute(instance: StackAttribute): void {
@@ -31,10 +33,11 @@ struct StackAlignContentExample {
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null) {
       console.info("stackAlignContent page state change called:" + JSON.stringify(eventData));
-      if (eventData.data?.["alignContentValue"] != null) {
-        this.mod1.alignContentValue = eventData.data?.["alignContentValue"] as Alignment;
-        
-        this.alignContentValue = eventData.data?.["alignContentValue"] as Alignment;
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data["alignContentValue"] != null) {
+        this.mod1.alignContentValue = data["alignContentValue"] as Alignment;
+        //old test
+        this.alignContentValue = data["alignContentValue"] as Alignment;
       }
     }
   }
@@ -144,4 +147,4 @@ struct StackAlignContentExample {
 
     }
   }
-}*/
+}

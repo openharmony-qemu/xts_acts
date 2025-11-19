@@ -100,6 +100,7 @@ struct SpanExample {
           .decoration({ type: TextDecorationType.None, color: Color.Red })
       }
 
+      // 文本横线添加
       Text('Text Decoration').fontSize(9).fontColor(0xCCCCCC)
       Text() {
         Span(this.content)
@@ -127,6 +128,7 @@ struct SpanExample {
           .key("testspan")
       }
 
+      // 文本字符间距
       Text('LetterSpacing').fontSize(9).fontColor(0xCCCCCC)
       Text() {
         Span('span letter spacing')
@@ -147,6 +149,7 @@ struct SpanExample {
       }
 
 
+      // 文本大小写展示设置
       Text('Text Case').fontSize(9).fontColor(0xCCCCCC)
       Text() {
         Span('I am Lower-span').fontSize(12)

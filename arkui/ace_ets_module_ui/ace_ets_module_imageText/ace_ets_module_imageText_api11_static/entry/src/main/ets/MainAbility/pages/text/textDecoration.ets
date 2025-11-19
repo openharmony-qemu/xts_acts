@@ -26,67 +26,60 @@ import {
   FlexDirection,
   ItemAlign,
   FlexAlign,
+  Color
 } from '@ohos.arkui.component'
 import {
   State,
+  AppStorage,
+  Observed
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter';
-interface ValueType {
-  type?:TextDecorationType,
-  color?:ResourceColor
-}
+import { MessageManagerBase, CallbackBase,MessageBase } from '../../common/MessageManager2';
+
+@Observed
 class TextDecorationModifier  implements AttributeModifier<TextAttribute> {
-  textDecorationType: TextDecorationType  = TextDecorationType.LineThrough;
-  textDecorationColor: ResourceColor = '#FFEEAF';
+  textDecorationType: TextDecorationType|undefined  = TextDecorationType.LineThrough;
+  textDecorationColor: ResourceColor|undefined = '#FFEEAF';
 
-    applyNormalAttribute(instance: TextAttribute): void {
-      instance.decoration({type: this.textDecorationType,color:this.textDecorationColor});
-    }
+  applyNormalAttribute(instance: TextAttribute): void {
+    instance.decoration({type: this.textDecorationType,color:this.textDecorationColor});
+  }
 }
-
 
 
 @Entry
 @Component
 struct TextDecoration {
 
-  @State textDecorationType: TextDecorationType  = TextDecorationType.LineThrough
-  @State textDecorationColor: ResourceColor = '#FFEEAF'
+  @State textDecorationType: TextDecorationType|undefined  = TextDecorationType.LineThrough
+  @State textDecorationColor: ResourceColor|undefined = '#FFEEAF'
   @State textDecorationModifier: TextDecorationModifier = new TextDecorationModifier()
-
-  private stateChangCallBack :(eventData:events_emitter.EventData) =>void = (eventData:events_emitter.EventData) => {
-    if (eventData != null && eventData.data != null && eventData.data != undefined) {
-      console.info("TextDecoration page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject).getProperty('textDecoration').isNull() || ((eventData.data) as ESObject).getProperty('textDecoration').isUndefined()) {
-        console.info("[TextDecoration page] TextDecoration type change data is " + ((eventData.data) as ESObject).getProperty('textDecoration').toStaticObject().toString());
-
-        let data = ((eventData.data) as ESObject).getProperty('textDecoration').toStaticObject() as ValueType
-          if (data.color === 'app.color.color_D90013_red') {
-            data.color = $r('app.color.color_D90013_red')
-          }
-          this.textDecorationType = (data.type) as TextDecorationType;
-          this.textDecorationColor = (data.color) as ResourceColor;
-          this.textDecorationModifier.textDecorationType = (data.type) as TextDecorationType;
-          this.textDecorationModifier.textDecorationColor = (data.color) as ResourceColor;
-
-      }
-    }
-  }
+  messageManagerTextDecorationType:MessageManagerBase<TextDecorationType|undefined> = new MessageManagerBase<TextDecorationType|undefined>()
+  messageManagerTextDecorationColor:MessageManagerBase<ResourceColor|undefined> = new MessageManagerBase<ResourceColor|undefined>()
 
   onPageShow() {
-    for( let i = 0; i < 5; i++){
-      let eventid = 610 + i;
-      let stateChangeEvent: events_emitter.InnerEvent = {
-        eventId: eventid,
-        priority: events_emitter.EventPriority.LOW
+    AppStorage.setOrCreate<MessageManagerBase<TextDecorationType|undefined>>('messageManagerTextDecorationType', this.messageManagerTextDecorationType)
+    AppStorage.setOrCreate<MessageManagerBase<ResourceColor|undefined>>('messageManagerTextDecorationColor', this.messageManagerTextDecorationColor)
+    let callbackType: CallbackBase<TextDecorationType|undefined> = (message: MessageBase<TextDecorationType|undefined>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'textDecorationType') {
+        this.textDecorationType = message.value;
+        this.textDecorationModifier.textDecorationType = message.value;
       }
-      events_emitter.on(stateChangeEvent, this.stateChangCallBack);
     }
+    let callbackColor: CallbackBase<ResourceColor|undefined> = (message: MessageBase<ResourceColor|undefined>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if(message.name == "textDecorationColor"){
+        this.textDecorationColor = message.value;
+        this.textDecorationModifier.textDecorationColor = message.value;
+      }
+    }
+    this.messageManagerTextDecorationType.registerCallback(callbackType)
+    this.messageManagerTextDecorationColor.registerCallback(callbackColor)
   }
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-      Text('decoration').fontSize(9).fontColor(0xCCCCCC)
+      Text('decoration').fontSize(9).fontColor(Color.Red)
       Text('This is the text content with the decoration  ')
         .attributeModifier(this.textDecorationModifier)
         .fontSize(12)
@@ -94,6 +87,6 @@ struct TextDecoration {
         .padding(10)
         .width('100%')
         .key('key_text_textDecoration')
-     }.height(700).width(350).padding({ left: 35, right: 35, top: 35 } as Padding)
+    }.height(700).width(350).padding({ left: 35, right: 35, top: 35 } as Padding)
   }
 }

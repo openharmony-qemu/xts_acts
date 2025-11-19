@@ -45,7 +45,6 @@ export default function symbolGlyphApi5() {
     beforeAll(() => {
       console.info("symbolGlyphApi5 beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -63,12 +62,10 @@ export default function symbolGlyphApi5() {
         console.info("get symbolGlyphApi5 state pages:" + JSON.stringify(pages));
         if (!("symbolGlyphApi5" == pages.name)) {
           console.info("get symbolGlyphApi5 pages.name:" + '');
-          await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push symbolGlyphApi5 page error:" + err);
       }
       console.info("symbolGlyphApi5 beforeEach end");
@@ -86,13 +83,13 @@ export default function symbolGlyphApi5() {
      * @tc.desc     symbolGlyphApi5_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('symbolGlyphApi5_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('symbolGlyphApi5_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[symbolGlyphApi5_static_0100] START');
       await CommonFunc.sleep(2000);
 
       let symbolGlyphApi5 = inspector.getInspectorByKey('symbolGlyphApi5');
       let Obj1 = JSON.parseJsonElement(symbolGlyphApi5);
-      expect(Obj1.getElement('$attrs').getElement('effectStrategy')).assertEqual('SymbolEffectStrategy.HIERARCHICAL');
+      expect(Obj1.getElement('$attrs').getString('effectStrategy')).assertEqual('SymbolEffectStrategy.HIERARCHICAL');
       console.info('[testRichEditor_0100] END');
       done();
     });

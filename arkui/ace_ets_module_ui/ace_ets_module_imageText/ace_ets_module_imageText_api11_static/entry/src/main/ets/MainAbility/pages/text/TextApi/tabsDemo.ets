@@ -48,7 +48,7 @@ struct TabsCustomAnimationExample {
   private first2thirdDuration: int = 2000
   private baseCustomAnimation: (from: int, to: int) => TabContentAnimatedTransition = (from: int, to: int) => {
     if ((from === 0 && to === 1) || (from === 1 && to === 0)) {
-     
+      // 缩放动画
       let firstCustomTransition = {
         timeout: this.firstTimeout,
         transition: (proxy: TabContentTransitionProxy) => {
@@ -78,6 +78,7 @@ struct TabsCustomAnimationExample {
       } as TabContentAnimatedTransition;
       return firstCustomTransition;
     } else {
+      // 透明度动画
       let secondCustomTransition = {
         timeout: this.secondTimeout,
         transition: (proxy: TabContentTransitionProxy) => {
@@ -174,7 +175,9 @@ struct TabsCustomAnimationExample {
       .barMode(BarMode.Scrollable)
       .onChange((index: int) : void=> {
         console.info("onChange index: " + index)
+        console.log("==============================this.Text " + this.Text);
         this.Text = '456'
+        console.log("==============================this.Text " + this.Text);
       })
       .onTabBarClick((index: int) :void=> {
         console.info("onTabBarClick index: " + index)

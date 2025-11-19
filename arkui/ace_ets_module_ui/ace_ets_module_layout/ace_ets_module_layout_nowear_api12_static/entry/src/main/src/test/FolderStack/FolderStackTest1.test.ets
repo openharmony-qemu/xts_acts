@@ -65,16 +65,16 @@ export default function FolderStackTest1() {
         console.info("get FolderStackTest1 state pages:" + "");
         if (!("FolderStackTest1" == pages.name)) {
           console.info("get FolderStackTest1 pages.name:" + "");
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push FolderStackTest1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push FolderStackTest1 page error:" + err);
       }
       console.info("FolderStackTest1 beforeEach end");
-      
+      // done();
     });
 
     afterEach(async () => {
@@ -83,11 +83,12 @@ export default function FolderStackTest1() {
     });
 
 
+    
     /*
      * @tc.number   FolderStackTest1_static_0100
      * @tc.name     FolderStackTest1_static_0100
      * @tc.desc     FolderStackTest1_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
     it('FolderStackTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('FolderStackTest1_static_0100 START');

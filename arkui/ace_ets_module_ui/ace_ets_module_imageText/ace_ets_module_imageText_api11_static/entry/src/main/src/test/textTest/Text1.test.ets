@@ -36,7 +36,6 @@ export default function textMinFontSizeJsunit() {
     beforeAll(() => {
       console.info("textMinFontSizeTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,8 +53,11 @@ export default function textMinFontSizeJsunit() {
         console.info("get textMinFontSizeTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textMinFontSizeTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textMinFontSizeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textMinFontSizeTest page error:" + err);
@@ -75,7 +77,7 @@ export default function textMinFontSizeJsunit() {
      * @tc.desc     testtextMinFontSize_static_0001
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0001', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0001', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -94,7 +96,7 @@ it('testtextMinFontSize_static_0001', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0002
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0002', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0002', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -102,6 +104,7 @@ it('testtextMinFontSize_static_0002', Level.LEVEL2, async () => {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getString('height')).assertEqual("70.00vp");
+      // console.info("[testtextMinFontSize_static_0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
 
     });
 
@@ -112,7 +115,7 @@ it('testtextMinFontSize_static_0002', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0003
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0003', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0003', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0003 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -120,6 +123,7 @@ it('testtextMinFontSize_static_0003', Level.LEVEL2, async () => {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual("30.00px");
+      // console.info("[testtextMinFontSize_static_0003] fontSize value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
 
     });
 
@@ -130,7 +134,7 @@ it('testtextMinFontSize_static_0003', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0004
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0004', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0004', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0004 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -138,6 +142,7 @@ it('testtextMinFontSize_static_0004', Level.LEVEL2, async () => {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getInteger('opacity')).assertEqual(1);
+      // console.info("[testtextMinFontSize_static_0004] opacity value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('opacity'));
 
     });
 
@@ -148,7 +153,7 @@ it('testtextMinFontSize_static_0004', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0005
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0005', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0005', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0005 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -156,6 +161,7 @@ it('testtextMinFontSize_static_0005', Level.LEVEL2, async () => {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart");
+      // console.info("[testtextMinFontSize_static_0005] align value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('align'));
 
     });
 
@@ -166,7 +172,7 @@ it('testtextMinFontSize_static_0005', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0006
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0006', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0006', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0006 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -174,6 +180,7 @@ it('testtextMinFontSize_static_0006', Level.LEVEL2, async () => {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(obj.getElement('$attrs').getString('fontColor')).assertEqual("#FFCCCCCC");
+      // console.info("[testtextMinFontSize_static_0006] fontColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
     });
 
     
@@ -183,7 +190,7 @@ it('testtextMinFontSize_static_0006', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0007
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0007', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0007', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0007 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -201,7 +208,7 @@ it('testtextMinFontSize_static_0007', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0009
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0009', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0009', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize009 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -220,7 +227,7 @@ it('testtextMinFontSize_static_0009', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0010', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0010', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0010 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -239,7 +246,7 @@ it('testtextMinFontSize_static_0010', Level.LEVEL2, async () => {
      * @tc.desc     testtextMinFontSize_static_0011
      * @tc.level    Level.LEVEL2
      */
-it('testtextMinFontSize_static_0011', Level.LEVEL2, async () => {
+    it('testtextMinFontSize_static_0011', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextMinFontSize_static_0011 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -258,7 +265,7 @@ it('testtextMinFontSize_static_0011', Level.LEVEL2, async () => {
      * @tc.desc     testtextCopyOptionText_static_0001
      * @tc.level    Level.LEVEL2
      */
-it('testtextCopyOptionText_static_0001', Level.LEVEL2, async () => {
+    it('testtextCopyOptionText_static_0001', Level.LEVEL2, async () => {
       console.info('textMinFontSize testtextCopyOptionText_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('copyOptionText');

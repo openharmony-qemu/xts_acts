@@ -34,7 +34,6 @@ export default function SymbolGlyphFontWeightTest() {
     beforeAll(() => {
       console.info("SymbolGlyphFontWeightTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,9 +53,9 @@ export default function SymbolGlyphFontWeightTest() {
           console.info("get SymbolGlyphFontWeightTest state pages.name: " + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
+          // console.info("push SymbolGlyphFontWeightTest success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push SymbolGlyphFontWeightTest page error: " + err);
         expect().assertFail();
       }
@@ -69,14 +68,14 @@ export default function SymbolGlyphFontWeightTest() {
      * @tc.desc     SymbolGlyphFontWeightTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_default');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0010] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Normal');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Normal');
       console.info('[SymbolGlyphFontWeightTest_static_0010] END');
       done();
     });
@@ -88,14 +87,14 @@ it('SymbolGlyphFontWeightTest_static_0010', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_undefined');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0020] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Normal');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Normal');
       console.info('[SymbolGlyphFontWeightTest_static_0020] END');
       done();
     });
@@ -107,14 +106,14 @@ it('SymbolGlyphFontWeightTest_static_0020', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0030
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0030 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_500');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0030] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('500');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('500');
       console.info('[SymbolGlyphFontWeightTest_static_0030] END');
       done();
     });
@@ -126,14 +125,14 @@ it('SymbolGlyphFontWeightTest_static_0030', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0040
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0040 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_Lighter');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0040] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Lighter');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Lighter');
       console.info('[SymbolGlyphFontWeightTest_static_0040] END');
       done();
     });
@@ -145,14 +144,14 @@ it('SymbolGlyphFontWeightTest_static_0040', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0050
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0050', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0050', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0050 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_Normal');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0050] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Normal');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Normal');
       console.info('[SymbolGlyphFontWeightTest_static_0050] END');
       done();
     });
@@ -164,14 +163,14 @@ it('SymbolGlyphFontWeightTest_static_0050', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0060
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0060', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0060', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0060 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_Regular');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0060] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Regular');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Regular');
       console.info('[SymbolGlyphFontWeightTest_static_0060] END');
       done();
     });
@@ -183,14 +182,14 @@ it('SymbolGlyphFontWeightTest_static_0060', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0070
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0070', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0070', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0070 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_Medium');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0070] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Medium');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
       console.info('[SymbolGlyphFontWeightTest_static_0070] END');
       done();
     });
@@ -202,14 +201,14 @@ it('SymbolGlyphFontWeightTest_static_0070', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0080
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0080', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0080', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0080 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_Bold');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0080] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Bold');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bold');
       console.info('[SymbolGlyphFontWeightTest_static_0080] END');
       done();
     });
@@ -221,14 +220,14 @@ it('SymbolGlyphFontWeightTest_static_0080', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0090
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0090', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0090', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0090 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_Bolder');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0090] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('FontWeight.Bolder');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
       console.info('[SymbolGlyphFontWeightTest_static_0090] END');
       done();
     });
@@ -240,14 +239,14 @@ it('SymbolGlyphFontWeightTest_static_0090', Level.LEVEL1, async (done: () => voi
      * @tc.desc     SymbolGlyphFontWeightTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('SymbolGlyphFontWeightTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphFontWeightTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphFontWeightTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_FontWeight_30');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolGlyphFontWeightTest_static_0100] fontWeight: " +
-      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('fontWeight')));
-      expect(obj.getElement('$attrs').getElement('fontWeight')).assertEqual('900');
+      obj.getElement('$attrs').getString('fontWeight'));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('900');
       console.info('[SymbolGlyphFontWeightTest_static_0100] END');
       done();
     });

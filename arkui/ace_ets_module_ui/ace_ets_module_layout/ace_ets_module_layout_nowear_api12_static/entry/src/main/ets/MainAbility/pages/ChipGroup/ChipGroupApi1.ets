@@ -28,64 +28,64 @@ import { ClickEvent } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
-  
+  // @Preview
 @Component
 struct ChipGroupApi1 {
   @State selected_index: Array<number> = [0, 1, 2, 3, 4, 5, 6] as Array<number>;
   @State selected_state: boolean = true;
-  
-  
-  
-  
+  // @State prefixModifierNormal: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_star'));
+  // @State prefixModifierActivated: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Red]);
+  // @State suffixModifierNormal: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
+  // @State suffixModifierActivated: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')).fontColor([Color.Red]);
   @State text1: string = ''
 
   @Builder
   ChipGroupSuffix(): void {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // IconGroupSuffix({
+    //   items: [
+    //     new SymbolGlyphModifier($r('sys.symbol.magnifyingglass'))
+    //       .onClick(() => {
+    //         if (this.selected_state == false) {
+    //           this.selected_index = [0, 1, 2, 3, 4, 5, 6];
+    //           this.selected_state = true;
+    //         } else {
+    //           this.selected_index = [];
+    //           this.selected_state = false;
+    //         }
+    //       })
+    //   ]
+    // })
   }
 
   build() {
     Column() {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // ChipGroup({
+      //   items: [
+      //     {
+      //       // prefixSymbol: { normal: this.prefixModifierNormal, activated: this.prefixModifierActivated },
+      //       label: { text: "操作块1" },
+      //       // suffixSymbol: { normal: this.suffixModifierNormal, activated: this.suffixModifierActivated },
+      //       allowClose: false,
+      //     }
+      //   ],
+      //   itemStyle: {
+      //     size: ChipSize.NORMAL,
+      //     backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+      //     fontColor: $r('sys.color.ohos_id_color_text_primary'),
+      //     selectedBackgroundColor: $r('sys.color.ohos_id_color_emphasize'),
+      //     selectedFontColor: $r('sys.color.ohos_id_color_text_primary_contrary'),
+      //   },
+      //   selectedIndexes: this.selected_index,
+      //   multiple: true,
+      //   chipGroupSpace: { itemSpace: 8, endSpace: 0 },
+      //   onChange: (activatedChipsIndex: Array<number>) => {
+      //     console.log('chips on clicked, activated index ' + activatedChipsIndex)
+      //   },
+      //   suffix: this.ChipGroupSuffix.bind(this)
+      // })
 
       Button('getInspectorTree').onClick((e: ClickEvent) => {
-        
+        // this.text1 = '' + JSON.parse(JSON.stringify(getInspectorTree())).$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$type
         this.text1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
           .getArray("$children")[0]

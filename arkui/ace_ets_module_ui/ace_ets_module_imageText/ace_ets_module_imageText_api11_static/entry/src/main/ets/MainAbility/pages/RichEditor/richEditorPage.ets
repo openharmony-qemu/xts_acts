@@ -20,17 +20,21 @@ import {
   CopyOptions,
   RichEditorController,
   RichEditorOptions,
-  AttributeModifier,
   Row,
   RichEditor,
   Column,
-  Color
+  Color,
+  AttributeModifier
 } from '@ohos.arkui.component'
 import {
   State,
+  Observed,
+  AppStorage
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter';
+import { MessageManagerBase, CallbackBase,MessageBase } from '../../common/MessageManager2';
 
+
+@Observed
 class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   _testType: CopyOptions = CopyOptions.None
   applyNormalAttribute(instance: RichEditorAttribute): void {
@@ -43,54 +47,25 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 @Component
 struct RichEditorExample {
   @State _RichEditorModifier: RichEditorModifier = new RichEditorModifier();
+  messageManagerRichEditorPage:MessageManagerBase<CopyOptions> = new MessageManagerBase<CopyOptions>()
 
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
 
-  private stateChangCallBack:(eventData:events_emitter.EventData) =>void = (eventData:events_emitter.EventData) => {
-
-    console.info('receive call back')
-    if (eventData != null && eventData.data != null) {
-      console.info("RichEditor page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject).getProperty('typeValue') != null) {
-        this._RichEditorModifier._testType = ((eventData.data) as ESObject).getProperty('typeValue').toStaticObject() as CopyOptions;
-      }
-      else {
-        this._RichEditorModifier._testType = 0 as CopyOptions;
-      }
-    }
-  }
-
-
   onPageShow() {
-    let stateChangeEvent01: events_emitter.InnerEvent = {
-      eventId: 301,
-      priority: events_emitter.EventPriority.LOW
+    AppStorage.setOrCreate<MessageManagerBase<CopyOptions>>('messageManagerRichEditorPage', this.messageManagerRichEditorPage)
+    let stateChangCallBack: CallbackBase<CopyOptions> = (message: MessageBase<CopyOptions>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if(message.name == "typeValue"){
+        this._RichEditorModifier._testType = message.value;
+      }
     }
-    events_emitter.on(stateChangeEvent01, this.stateChangCallBack);
-
-    let stateChangeEvent02: events_emitter.InnerEvent = {
-      eventId: 302,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent02, this.stateChangCallBack);
-
-     let stateChangeEvent03: events_emitter.InnerEvent = {
-      eventId: 303,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent03, this.stateChangCallBack);
-
-    let stateChangeEvent04: events_emitter.InnerEvent = {
-      eventId: 304,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent04, this.stateChangCallBack);
+    this.messageManagerRichEditorPage.registerCallback(stateChangCallBack)
   }
 
   build() {
     Column() {
-
+ 
       Row() {
         RichEditor(this.options)
         .onReady(() :void=> {
@@ -100,6 +75,7 @@ struct RichEditorExample {
         .height(300)
         .width('100%')
         .key('key_RichEditor')
+        .attributeModifier(this._RichEditorModifier)
       }.padding(20)
     }
   }

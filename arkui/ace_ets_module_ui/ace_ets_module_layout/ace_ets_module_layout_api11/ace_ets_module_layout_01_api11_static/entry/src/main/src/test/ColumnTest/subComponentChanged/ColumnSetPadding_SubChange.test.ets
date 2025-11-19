@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +36,7 @@ export default function ColumnSetPadding__SubChange() {
   describe('ColumnSetPadding__SubChange', () => {
     beforeAll(() => {
       console.info("ColumnSetPadding__SubChange beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,11 +53,11 @@ export default function ColumnSetPadding__SubChange() {
         console.info("get ColumnSetPaddingTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSetPadding_SubChange" == pages.name)) {
           console.info("get ColumnSetPaddingTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ColumnSetPaddingTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSetPaddingTest page error:" + err);
@@ -81,19 +81,19 @@ export default function ColumnSetPadding__SubChange() {
      */
 it('testColumnParentPaddingSubMarPad_static', Level.LEVEL0, async () => {
       console.info('new testColumnParentPaddingSubMarPad_static START');
-      const uiContext = new UIContext();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(2000);
       let columnSetPadding_1: RectValue = CommonFunc.getComponentRect('columnSetPadding_1');
       let columnSetPadding_2: RectValue = CommonFunc.getComponentRect('columnSetPadding_2');
       let columnSetPadding_3: RectValue = CommonFunc.getComponentRect('columnSetPadding_3');
       let columnSetPadding: RectValue = CommonFunc.getComponentRect('columnSetPadding');
-      expect(Math.abs(columnSetPadding_1.top - columnSetPadding.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_2.top - columnSetPadding_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_3.top - columnSetPadding_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_1.top - columnSetPadding.top - Math.round(uiContext!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_2.top - columnSetPadding_1.bottom - Math.round(uiContext!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_3.top - columnSetPadding_2.bottom - Math.round(uiContext!.vp2px(30))) <= 1).assertTrue()
       expect(columnSetPadding.bottom).assertLess(columnSetPadding_3.bottom)
-      expect(Math.abs(columnSetPadding_1.right - columnSetPadding_1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_2.right - columnSetPadding_2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_3.right - columnSetPadding_3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_1.right - columnSetPadding_1.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_2.right - columnSetPadding_2.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_3.right - columnSetPadding_3.left - Math.round(uiContext!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentPaddingSubMarPad_static END');
     });
   })

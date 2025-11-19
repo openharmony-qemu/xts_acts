@@ -45,9 +45,11 @@ export default function SXvalueResourceJsunit() {
         console.info("get SXvalueResourceJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SXvalueResourceJsunit pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SXvalueResourceJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SXvalueResourceJsunit page error:" + err);
@@ -56,7 +58,6 @@ export default function SXvalueResourceJsunit() {
     });
     beforeAll(() => {
       console.info("SXvalueResourceJsunit beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -72,7 +73,7 @@ export default function SXvalueResourceJsunit() {
      * @tc.desc     SXvalueResourceJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('SXvalueResourceJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('SXvalueResourceJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       console.info('SXvalueResourceJsunit_0100 START');
       let driver = Driver.create();

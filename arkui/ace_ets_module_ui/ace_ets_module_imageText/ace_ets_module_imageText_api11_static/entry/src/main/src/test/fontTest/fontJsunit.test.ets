@@ -15,51 +15,46 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
+import inspector from '@ohos.arkui.inspector'
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+const uiContext = new UIContext();
 
 export default function fontJsunit() {
   describe('fontJsunit', () => {
     beforeAll(() => {
-      console.info("fontJsunit beforeEach start");
+      console.info("APIgetUIFontConfigJsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
+
     beforeEach(async (): Promise<void> => {
-      console.info("fontJsunit beforeEach start");
+      console.info("APIgetUIFontConfigJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/font/fontAdd',
+        url:'MainAbility/pages/font/fontAdd',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info("get GridColOffsetJsunit state pages: " + JSON.stringify(pages));
+        let pages:router.RouterState = routerInstance.getState();
+        console.info("get APIgetUIFontConfigJsunit state pages:" + JSON.stringify(pages));
         if (!("fontAdd" == pages.name)) {
-          console.info("get GridColOffsetJsunit state pages.name: " + JSON.stringify(pages.name));
+          console.info("get APIgetUIFontConfigJsunit pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push GridColOffsetJsunit page error: " + err);
-        expect().assertFail();
+        console.error("push APIgetUIFontConfigJsunit page error:" + err);
       }
+      console.info("APIgetUIFontConfigJsunit beforeEach end");
     });
+
 
     /*
      * @tc.number   fontJsunit_static_0100
@@ -67,9 +62,10 @@ export default function fontJsunit() {
      * @tc.desc     fontJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('fontJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('fontJsunit_0100 START');
-      if (AppStorage.get<number>("winLeft") == 0) {
+    it('fontJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the font
+      console.info('fontJsunit_static_0100 START');
+      if (AppStorage.get<number>('winLeft') == 0) {
         let driver = Driver.create();
         let btn = await driver.findComponent(ON.id('getSystemFontList'));
         await (btn?.click() as Promise<void>);
@@ -92,8 +88,9 @@ it('fontJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.desc     fontJsunit_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('fontJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('fontJsunit_0200 START');
+    it('fontJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the font
+      console.info('fontJsunit_static_0200 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('getgetFontByName'));
       await (btn?.click() as Promise<void>);
@@ -111,10 +108,11 @@ it('fontJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.desc     fontJsunit_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('fontJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('fontJsunit_0300 START');
+    it('fontJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the font
+      console.info('fontJsunit_static_0300 START');
       try {
-        let font = AppStorage.get<UIContext>("uiContext")?.getFont()
+        let font: Object | null = uiContext.getFont().getSystemFontList()
         expect(font !=null).assertTrue();
       } catch (err) {
         console.error("fontJsunit_0300 error " + JSON.stringify(err));
@@ -128,10 +126,11 @@ it('fontJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.desc     fontJsunit_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('fontJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('fontJsunit_0400 START');
+    it('fontJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the font
+      console.info('fontJsunit_static_0400 START');
       try {
-        let font = AppStorage.get<UIContext>("uiContext")?.getFont().getFontByName('HarmonyOS Sans Italic')
+        let font: Object | null = uiContext.getFont().getFontByName('HarmonyOS Sans Italic')
         expect(font !=null).assertTrue();
       } catch (err) {
         console.error("fontJsunit_0400 error " + JSON.stringify(err));
@@ -145,10 +144,11 @@ it('fontJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.desc     fontJsunit_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('fontJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('fontJsunit_0500 START');
+    it('fontJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the font
+      console.info('fontJsunit_static_0500 START');
       try {
-        let font = AppStorage.get<UIContext>("uiContext")?.getUIInspector();
+        let font: Object | null = uiContext.getUIInspector();
         expect(font !=null).assertTrue();
       } catch (err) {
         console.error("fontJsunit_0500 error " + JSON.stringify(err));
@@ -162,15 +162,19 @@ it('fontJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.desc     fontJsunit_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('fontJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('fontJsunit_0600 START');
+    it('fontJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the font
+      console.info('fontJsunit_static_0600 START');
       try {
-        let font = AppStorage.get<UIContext>("uiContext")?.getComponentUtils();
+        let font: Object | null = uiContext.getComponentUtils();
         expect(font !=null).assertTrue();
       } catch (err) {
         console.error("fontJsunit_0600 error " + JSON.stringify(err));
       }
       done();
     });
+
+
+
   })
 }

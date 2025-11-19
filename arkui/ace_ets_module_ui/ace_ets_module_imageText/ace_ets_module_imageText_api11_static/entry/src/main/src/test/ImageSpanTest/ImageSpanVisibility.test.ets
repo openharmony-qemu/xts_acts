@@ -34,7 +34,6 @@ export default function ImageSpanVisibilityTest() {
   describe('ImageSpanVisibilityTest', () => {
     beforeAll(() => {
       console.info("ImageSpanVisibilityTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,9 +53,9 @@ export default function ImageSpanVisibilityTest() {
           console.info("get ImageSpanVisibilityTest state pages.name: " + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
+          // console.info("push ImageSpanVisibilityTest success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push ImageSpanVisibilityTest page error: " + err);
         expect().assertFail();
       }
@@ -69,7 +68,7 @@ export default function ImageSpanVisibilityTest() {
      * @tc.desc     ImageSpanVisibilityTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('ImageSpanVisibilityTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageSpanVisibilityTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageSpanVisibilityTest_static_0010 START');
       await CommonFunc.sleep(1000);
       const strJson = inspector.getInspectorByKey('ImageSpan_Visibility_None');
@@ -88,7 +87,7 @@ it('ImageSpanVisibilityTest_static_0010', Level.LEVEL0, async (done: () => void)
      * @tc.desc     ImageSpanVisibilityTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('ImageSpanVisibilityTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageSpanVisibilityTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageSpanVisibilityTest_static_0020 START');
       await CommonFunc.sleep(1000);
       const strJson = inspector.getInspectorByKey('ImageSpan_Visibility_Hidden');
@@ -107,7 +106,7 @@ it('ImageSpanVisibilityTest_static_0020', Level.LEVEL0, async (done: () => void)
      * @tc.desc     ImageSpanVisibilityTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-it('ImageSpanVisibilityTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageSpanVisibilityTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageSpanVisibilityTest_static_0030 START');
       await CommonFunc.sleep(1000);
       const strJson = inspector.getInspectorByKey('ImageSpan_Visibility_Visible');
@@ -126,7 +125,7 @@ it('ImageSpanVisibilityTest_static_0030', Level.LEVEL0, async (done: () => void)
      * @tc.desc     ImageSpanVisibilityTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-it('ImageSpanVisibilityTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageSpanVisibilityTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageSpanVisibilityTest_static_0040 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_Visibility_default');
@@ -145,7 +144,7 @@ it('ImageSpanVisibilityTest_static_0040', Level.LEVEL0, async (done: () => void)
      * @tc.desc     ImageSpanVisibilityTest_static_0050
      * @tc.level    Level.LEVEL0
      */
-it('ImageSpanVisibilityTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageSpanVisibilityTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageSpanVisibilityTest_static_0050 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_Visibility_undefined');

@@ -3,8 +3,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -12,9 +12,10 @@
  * limitations under the License.*/
 
 
+
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import {
   Component,
   Driver,
@@ -23,10 +24,9 @@ import {
   DisplayRotation,
   ResizeDirection,
   WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+  PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -34,53 +34,35 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
-import { UtilsTest } from "../Util.test"
-
+import { BusinessError } from '@ohos.base';
+import {UtilsTest} from "../Util.test"
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function inspectorJsunit() {
   describe('inspectorTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(1000)
-      console.info("inspectorJsunit beforeEach start");
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
-        },
-      }, (err: BusinessError | null): void => {
-        if (err != null) {
-          hilog.info(domain, tag, '%{public}s', '-----' + err.code);
-        }
-        hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
-      });
-      await CommonFunc.sleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.arkui.ace.layout.static")
-      await CommonFunc.sleep(2000)
+      console.info("inspectorJsunit beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async ():Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/inspector/inspector',
       }
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
+        const routerInstance=AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-
+        // console.info("get inspector state success " + JSON.stringify(pages));
         if (!("inspector" == pages.name)) {
           console.info("get inspector state success " + JSON.stringify(pages.name));
-
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options)
           await CommonFunc.sleep(2000);
-
+          // console.info("push inspector page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push inspector page error: " + err);
@@ -90,6 +72,7 @@ export default function inspectorJsunit() {
     afterEach(async (): Promise<void> => {
       console.info("inspectorTest after each called");
     });
+
 
 
     /*
@@ -104,12 +87,14 @@ export default function inspectorJsunit() {
       let strJson = inspector.getInspectorByKey('inspectorApiOne');
       console.info("[testInspectorTestAdd_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual("50.00fp");
-      console.info("[testInspectorTestAdd_static_0001] fontSize value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+      console.info("[testInspectorTestAdd_static_0001] fontSize value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
 
     });
+
+
+
 
 
     /*
@@ -124,13 +109,52 @@ export default function inspectorJsunit() {
       let strJson = inspector.getInspectorByKey('inspectorApiOne');
       console.info("[testInspectorTestAdd0002] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'))
-        .assertEqual("FontWeight.Bold");
-      console.info("[testInspectorTestAdd0002] fontWeight value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
+      expect(obj.getString('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight')).assertEqual("FontWeight.Bold");
+      console.info("[testInspectorTestAdd0002] fontWeight value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
 
     });
+
+
+
+
+    /*
+         * @tc.number   testInspectorTestAdd_static_0003
+         * @tc.name     testInspectorTestAdd_static_0003
+         * @tc.desc     testInspectorTestAdd_static_0003
+         * @tc.level    Level.LEVEL0
+         */
+    it('testInspectorTestAdd_static_0003', Level.LEVEL0, async (): Promise<void> => {
+      console.info("testInspectorTestAdd0003 start test");
+      let innerEvent1: events_emitter.InnerEvent = {
+        eventId: 60208,
+        priority: events_emitter.EventPriority.LOW
+      }
+      let callback1: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+        console.info("eventData.data?.getInspectorNodes result is: " + (eventData.data as ESObject)?.getProperty('getInspectorNodes'));
+        try {
+          console.info("callback1 success");
+          console.info("inspector_101 eventData.data?.result result is: " + (eventData.data as ESObject)?.getProperty('result'));
+          expect((eventData.data as ESObject)?.getProperty('result')).assertEqual("success");
+          console.info("inspector_101 end: ");
+          if ((eventData.data as ESObject)?.getProperty('getInspectorNodes') != null) {
+            console.info("eventData.data?.result result is: " + (eventData.data as ESObject)?.getProperty('result'));
+            expect((eventData.data as ESObject)?.getProperty('result')).assertEqual("success");
+          }
+        } catch (err) {
+          console.info("inspector_101 on events_emitter err : " + JSON.stringify(err));
+        }
+
+      }
+      try {
+        events_emitter.on(innerEvent1, callback1);
+        console.info("inspector_101 click result is: " + JSON.stringify(inspector.sendEventByKey('inspectorApiOne', 10, "")));
+      } catch (err) {
+        console.info("inspector_101 on events_emitter err : " + JSON.stringify(err));
+      }
+    });
+
+
 
     /*
          * @tc.number   testInspectorTestAdd_static_0004
@@ -139,37 +163,34 @@ export default function inspectorJsunit() {
          * @tc.level    Level.LEVEL0
          */
     it('testInspectorTestAdd_static_0004', Level.LEVEL0, async (): Promise<void> => {
-      try {
-        let innerEvent2: events_emitter.InnerEvent = {
-          eventId: 60209,
-          priority: events_emitter.EventPriority.LOW
-        }
-        let callback2: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-
-          try {
-            console.info("callback2 success");
-
-
-            console.info("inspector_102 end");
-          } catch (err) {
-            console.info("inspector_102 on events_emitter err : " + JSON.stringify(err));
-          }
-
-        }
+      let innerEvent2: events_emitter.InnerEvent = {
+        eventId: 60209,
+        priority: events_emitter.EventPriority.LOW
+      }
+      let callback2: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+        console.info("eventData.data?.getInspectorNodeById result is: " + (eventData.data as ESObject)?.getProperty('getInspectorNodeById'));
         try {
-          console.info("inspector_102 click result is: " +
-          JSON.stringify(inspector.sendEventByKey('inspectorApiTwo', 10, "")));
-          events_emitter.on(innerEvent2, callback2);
-          await CommonFunc.sleep(2000);
-
+          console.info("callback2 success");
+          console.info("inspector_102 eventData.data?.result result is: " + (eventData.data as ESObject)?.getProperty('result'));
+          expect((eventData.data as ESObject)?.getProperty('result')).assertEqual("success");
+          console.info("inspector_102 end");
         } catch (err) {
           console.info("inspector_102 on events_emitter err : " + JSON.stringify(err));
         }
-      } catch (ERROR) {
-        expect().assertFail();
-      }
 
+      }
+      try {
+        console.info("inspector_102 click result is: " + JSON.stringify(inspector.sendEventByKey('inspectorApiTwo', 10, "")));
+        events_emitter.on(innerEvent2, callback2);
+        await CommonFunc.sleep(2000);
+
+      } catch (err) {
+        console.info("inspector_102 on events_emitter err : " + JSON.stringify(err));
+      }
     });
+
+
+
 
 
     /*
@@ -181,7 +202,7 @@ export default function inspectorJsunit() {
     it('testInspectorTestAdd_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('testInspectorTestAdd0005 START');
       try {
-        let data: Record<String, RecordData> = {
+        let data: Record<String,undefined|null|Object> = {
           "setColor": 'red'
         }
         let eventData: events_emitter.EventData = {
@@ -200,6 +221,7 @@ export default function inspectorJsunit() {
     });
 
 
+
     /*
          * @tc.number   testInspectorTestAdd_static_0006
          * @tc.name     testInspectorTestAdd_static_0006
@@ -207,33 +229,29 @@ export default function inspectorJsunit() {
          * @tc.level    Level.LEVEL0
          */
     it('testInspectorTestAdd_static_0006', Level.LEVEL0, async (): Promise<void> => {
-      try {
-        let innerEvent3: events_emitter.InnerEvent = {
-          eventId: 60210,
-          priority: events_emitter.EventPriority.LOW
-        }
-        let callback3: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-          try {
-            console.info("callback3 success");
-
-
-            console.info("inspector_103 end");
-          } catch (err) {
-            console.info("inspector_103 on events_emitter err : " + JSON.stringify(err));
-          }
-
-        }
+      let innerEvent3: events_emitter.InnerEvent = {
+        eventId: 60210,
+        priority: events_emitter.EventPriority.LOW
+      }
+      let callback3: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         try {
-          console.info("inspector_103 click result is: " +
-          JSON.stringify(inspector.sendEventByKey('inspectorApiFour', 10, "")));
-          events_emitter.on(innerEvent3, callback3);
+          console.info("callback3 success");
+          console.info("inspector_103 eventData.data?.result result is: " + (eventData.data as ESObject)?.getProperty('catchStatus'));
+          expect((eventData.data as ESObject)?.getProperty('catchStatus')).assertEqual("callBackSuccess");
+          console.info("inspector_103 end");
         } catch (err) {
           console.info("inspector_103 on events_emitter err : " + JSON.stringify(err));
         }
+
+      }
+      try {
+        console.info("inspector_103 click result is: " + JSON.stringify(inspector.sendEventByKey('inspectorApiFour', 10, "")));
+        events_emitter.on(innerEvent3, callback3);
       } catch (err) {
-        expect().assertFail();
+        console.info("inspector_103 on events_emitter err : " + JSON.stringify(err));
       }
     });
+
 
 
     /*
@@ -247,15 +265,18 @@ export default function inspectorJsunit() {
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('getFilteredInspectorTree'))
+      console.info('[testInspectorTestAdd007] findcomponent');
       await (btn?.click() as Promise<void>);
+      console.info('[testInspectorTestAdd007] click success');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text01_id');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("response: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("response: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertContain("401");
       console.info('[testInspectorTestAdd007] END');
       done();
     });
+
 
 
     /*

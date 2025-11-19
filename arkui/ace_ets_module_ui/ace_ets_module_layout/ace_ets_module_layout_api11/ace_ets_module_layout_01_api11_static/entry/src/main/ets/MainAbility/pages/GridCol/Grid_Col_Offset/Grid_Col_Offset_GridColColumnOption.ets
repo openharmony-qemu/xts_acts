@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,16 +27,13 @@ struct Grid_Col_Offset_GridColColumnOption {
 
   onPageShow() {
     console.info('Grid_Col_Offset_GridColColumnOption onPageShow');
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
     let callback: Callback<string> = (message: Message<string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addWidth') {
         this.addWidth = message.value;
       } else if (message.name == 'addSpan') {
-        this.addSpan = (Number.parseInt(message.value)).toInt();
+        this.addSpan = Number.parseInt(message.value).toInt();
       }
     };
     this.messageManager.registerCallback(callback);
@@ -51,7 +48,7 @@ struct Grid_Col_Offset_GridColColumnOption {
           reference: BreakpointsReference.ComponentSize },
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: int) => {
+        ForEach(this.bgColors, (color: Color, index?: number) => {
           GridCol({
             span: this.addSpan,
             offset: {

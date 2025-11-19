@@ -35,7 +35,6 @@ export default function symbolSpanApi2Test() {
     beforeAll(() => {
       console.info("symbolSpanApi2Test beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -56,9 +55,9 @@ export default function symbolSpanApi2Test() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
+          // console.info("push symbolSpanApi2 page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push symbolSpanApi2 page error:" + err);
       }
       console.info("symbolSpanApi2 beforeEach end");
@@ -76,13 +75,13 @@ export default function symbolSpanApi2Test() {
      * @tc.desc     symbolSpanApi2Test_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('symbolSpanApi2Test_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('symbolSpanApi2Test_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[symbolSpanApi2Test_0100] START');
       await CommonFunc.sleep(2000);
       let symbolSpanApi = inspector.getInspectorByKey('singleSym');
       console.info("[symbolSpanApi2Test_0100]  " + JSON.parseJsonElement(symbolSpanApi))
       let Obj1 = JSON.parseJsonElement(symbolSpanApi);
-      expect(Obj1.getElement('$attrs').getElement('renderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
+      expect(Obj1.getElement('$attrs').getString('renderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
       console.info('[testRichEditor_0100] END');
       done();
     });
@@ -94,13 +93,13 @@ it('symbolSpanApi2Test_static_0100', Level.LEVEL2, async (done: () => void): Pro
      * @tc.desc     lifeCycleTest_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('lifeCycleTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('lifeCycleTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[symbolSpanApi2Test_0200] START');
       await CommonFunc.sleep(2000);
       let obj2 = inspector.getInspectorByKey('lifecycle');
       console.info("[symbolSpanApi2Test_0200]  " + JSON.parseJsonElement(obj2))
       let Obj1 = JSON.parseJsonElement(obj2);
-      expect(Obj1.getElement('$attrs').getElement('content')).assertEqual('life test');
+      expect(Obj1.getElement('$attrs').getString('content')).assertEqual('life test');
       console.info('[testRichEditor_0100] END');
       done();
     });

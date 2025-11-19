@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -49,10 +49,10 @@ export default function onSelectionChange15() {
         console.info("get onSelectionChange15 state pages:" + JSON.stringify(pages));
         if (!("onSelectionChange15" == pages.name)) {
           console.info("get onSelectionChange15 pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.push(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push onSelectionChange15 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push onSelectionChange15 page error:" + err);
@@ -64,13 +64,14 @@ export default function onSelectionChange15() {
       console.info("onSelectionChange15 after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   onSelectionChange15_static_0100
      * @tc.name     onSelectionChange15_static_0100
      * @tc.desc     onSelectionChange15_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('onSelectionChange15_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('onSelectionChange15_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[onSelectionChange15_0100] START');
       await CommonFunc.sleep(1000);
 

@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -34,7 +34,6 @@ export default function backgroundAndSizeSettingJsunit() {
 
     beforeAll(() => {
       console.info("backgroundAndSizeSettingTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -50,11 +49,9 @@ export default function backgroundAndSizeSettingJsunit() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
-        console.info("get backgroundAndSizeSettingTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
-          console.info("get backgroundAndSizeSettingTest pages.name:" + '');
+        if (!("backgroundAndSizeSetting" == pages.name)) {
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(2000);;
         }
       } catch (err) {
         console.error("push backgroundAndSizeSettingTest page error:" + err);
@@ -74,7 +71,7 @@ export default function backgroundAndSizeSettingJsunit() {
      * @tc.desc     testBackgroundAndSizeSetting_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testBackgroundAndSizeSetting_static_0100 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('fontColor');
@@ -92,24 +89,8 @@ it('testBackgroundAndSizeSetting_static_0100', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testBackgroundAndSizeSetting_static_0200 START');
-      await CommonFunc.sleep(1000);
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "color": '0xFF0000'
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 2,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testBackgroundAndSizeSetting_static_0200 start pages");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("testBackgroundAndSizeSetting_static_0200 change component data error: " + err.message);
-      }
       await CommonFunc.sleep(3000);
       let strJson: string = inspector.getInspectorByKey('backgroundColor');
       let obj = JSON.parseJsonElement(strJson);
@@ -125,7 +106,7 @@ it('testBackgroundAndSizeSetting_static_0200', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testBackgroundAndSizeSetting_static_0300 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('backgroundColor');
@@ -143,7 +124,7 @@ it('testBackgroundAndSizeSetting_static_0300', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testBackgroundAndSizeSetting_static_0400] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('centerRow');
@@ -163,7 +144,7 @@ it('testBackgroundAndSizeSetting_static_0400', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0500', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testBackgroundAndSizeSetting_static_0500] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('innerRow');
@@ -181,24 +162,14 @@ it('testBackgroundAndSizeSetting_static_0500', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0600', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testBackgroundAndSizeSetting_static_0600] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "width": '200',
-            "height": '200',
-            "padding": '10',
-            "margin": '40'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 34,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBackgroundAndSizeSetting_static_0600] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>("width1", 200)
+        AppStorage.setOrCreate<number>("height1", 200)
+        AppStorage.setOrCreate<number>("padding1", 10)
+        AppStorage.setOrCreate<number>("margin1", 40)
+      } catch (err: Error) {
         console.log("[testBackgroundAndSizeSetting_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -219,23 +190,13 @@ it('testBackgroundAndSizeSetting_static_0600', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0700', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0700', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testBackgroundAndSizeSetting_static_0700] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "width": '80%',
-            "height": '80%'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 35,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBackgroundAndSizeSetting_static_0700] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<string>("sizeWidth", '80%')
+        AppStorage.setOrCreate<string>("sizeHeight", '80%')
+      } catch (err: Error) {
         console.log("[testBackgroundAndSizeSetting_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -254,7 +215,7 @@ it('testBackgroundAndSizeSetting_static_0700', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0800', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0800', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testBackgroundAndSizeSetting_static_0800] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('layoutWeight1');
@@ -271,29 +232,19 @@ it('testBackgroundAndSizeSetting_static_0800', Level.LEVEL1, async (done: ()=>vo
      * @tc.desc     testBackgroundAndSizeSetting_static_0900
      * @tc.level    Level.LEVEL1
      */
-it('testBackgroundAndSizeSetting_static_0900', Level.LEVEL1, async (done: ()=>void) => {
+    it('testBackgroundAndSizeSetting_static_0900', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testBackgroundAndSizeSetting_static_0900] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "weight": '3'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 36,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBackgroundAndSizeSetting_static_0900] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>("layoutWeight1", 3)
+      } catch (err: Error) {
         console.log("[testBackgroundAndSizeSetting_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('layoutWeight1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testBackgroundAndSizeSetting_static_0900] component strJson:" + strJson);
-      expect(obj.getElement('$attrs').getString('layoutWeight')).assertEqual(3);
+      expect(obj.getElement('$attrs').getDouble('layoutWeight')).assertEqual(3);
       console.info('[testBackgroundAndSizeSetting_static_0900] END');
       done();
     });

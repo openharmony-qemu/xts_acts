@@ -18,7 +18,7 @@ import {
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import Utils from '../Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -28,7 +28,8 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
+import { MessageManagerBase } from '../../../ets/MainAbility/common/MessageManager2';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -37,9 +38,6 @@ export default function textTextCaseTest() {
   describe('textTextCaseTest',  ()=> {
     beforeAll(() => {
       console.info("textTextCaseTest beforeEach start");
-
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -54,7 +52,7 @@ export default function textTextCaseTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textTextCaseTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textTextCase" == pages.name)) {
           console.info("get textTextCaseTest pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -66,12 +64,6 @@ export default function textTextCaseTest() {
     });
 
 
-
-    afterEach(async ()=> {
-      Utils.sleep(1000);
-      console.info("textTextCase after each called");
-    })
-
     
     /*
      * @tc.number   textTextCase_static_0100
@@ -79,27 +71,19 @@ export default function textTextCaseTest() {
      * @tc.desc     textTextCase_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('textTextCase_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextCase_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextCase_static_0100';
       console.info('[' + tagName + '] START============================');
-      Utils.sleep(1000)
+      await CommonFunc.sleep(2000);
 
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textCase": TextCase.Normal
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1030,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<TextCase>>("messageManagerTextCase")?.notify({
+          name: 'textCase', value: TextCase.Normal
+        });
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      Utils.sleep(2000);
+      await CommonFunc.sleep(2000);
 
       let strJsonNew = inspector.getInspectorByKey('key_text_textCase');
       let obj  = JSON.parseJsonElement(strJsonNew);
@@ -118,27 +102,19 @@ it('textTextCase_static_0100', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     textTextCase_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('textTextCase_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextCase_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextCase_static_0200';
       console.info('[' + tagName + '] START============================');
-      Utils.sleep(1000)
+      await CommonFunc.sleep(2000);
 
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textCase": TextCase.LowerCase
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1031,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<TextCase>>("messageManagerTextCase")?.notify({
+          name: 'textCase', value: TextCase.LowerCase
+        });
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      Utils.sleep(2000);
+      await CommonFunc.sleep(2000);
 
       let strJsonNew = inspector.getInspectorByKey('key_text_textCase');
       let obj  = JSON.parseJsonElement(strJsonNew);
@@ -157,27 +133,20 @@ it('textTextCase_static_0200', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     textTextCase_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('textTextCase_static_0300', Level.LEVEL0, async (done: ()=>void) => {
+    it('textTextCase_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       let tagName = 'textTextCase_static_0300';
       console.info('[' + tagName + '] START============================');
-      Utils.sleep(1000)  
+      await CommonFunc.sleep(2000);
         
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "textCase": TextCase.UpperCase
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1032,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('[' + tagName + '] start to publish emit');
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.get<MessageManagerBase<TextCase>>("messageManagerTextCase")?.notify({
+          name: 'textCase', value: TextCase.UpperCase
+        });
+
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      Utils.sleep(2000);
+      await CommonFunc.sleep(2000);
     
       let strJsonNew = inspector.getInspectorByKey('key_text_textCase');
       let obj  = JSON.parseJsonElement(strJsonNew);

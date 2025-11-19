@@ -36,7 +36,6 @@ export default function ImageTextTest() {
     beforeAll(() => {
       console.info("ImageTextTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,8 +53,11 @@ export default function ImageTextTest() {
         console.info("get ImageTextTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ImageTextTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push ImageTextTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ImageTextTest page error:" + err);
@@ -70,7 +72,7 @@ export default function ImageTextTest() {
      * @tc.desc     ArkUI_Image_Text_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_Image_Text_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_Image_Text_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_Image_Text_static_0100'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -97,7 +99,7 @@ it('ArkUI_Image_Text_static_0100', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_Image_Text_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_Image_Text_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_Image_Text_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_Image_Text_static_0200'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -130,17 +132,17 @@ it('ArkUI_Image_Text_static_0200', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_Image_Text_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_Image_Text_static_0300', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_Image_Text_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_Image_Text_static_0300'
       console.info(`${SUITE} ${CASE} START`);
 
       let strJson: string = inspector.getInspectorByKey('ImageText_Text1');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('textIndent')).assertEqual(undefined)
+      expect(obj.getElement('$attrs').tryGetElement('textIndent')).assertEqual(undefined)
       if (inspector.sendEventByKey('ImageText_Button1', 10, '')) {
         let strJson: string = inspector.getInspectorByKey('ImageText_Text1');
 
-        expect(obj.getElement('$attrs').getString('textIndent')).assertEqual(undefined)
+        expect(obj.getElement('$attrs').tryGetElement('textIndent')).assertEqual(undefined)
       }
       console.info(`${SUITE} ${CASE} END`);
       done();
@@ -153,7 +155,7 @@ it('ArkUI_Image_Text_static_0300', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_Image_Text_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_Image_Text_static_0400', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_Image_Text_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_Image_Text_static_0400'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -178,7 +180,7 @@ it('ArkUI_Image_Text_static_0400', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_Image_Text_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_Image_Text_static_0500', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_Image_Text_static_0500', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_Image_Text_static_0500'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -200,7 +202,7 @@ it('ArkUI_Image_Text_static_0500', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_Image_Text_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_Image_Text_static_0600', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_Image_Text_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_Image_Text_static_0600'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -222,7 +224,7 @@ it('ArkUI_Image_Text_static_0600', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUI_Image_Text_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('ArkUI_Image_Text_static_0700', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUI_Image_Text_static_0700', Level.LEVEL1, async (done: ()=>void) => {
       let CASE: string = 'ArkUI_Image_Text_static_0700'
       console.info(`${SUITE} ${CASE} START`);
 

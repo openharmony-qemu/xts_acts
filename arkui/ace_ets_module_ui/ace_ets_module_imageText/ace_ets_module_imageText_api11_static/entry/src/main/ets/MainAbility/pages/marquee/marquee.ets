@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   Entry,
   Component,
@@ -30,7 +30,6 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -65,18 +64,18 @@ struct MarqueeExample {
           console.log('Marquee animation complete onStart')
           console.info('Onstart current action state is: ' + this.fontColor);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "fontColor": this.fontColor,
-              } as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+              }  as Record<String,undefined|null|Object>
+            }
+            let backEvent: emitter.InnerEvent = {
               eventId: 127,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("Onstart start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("Onstart emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -84,18 +83,18 @@ struct MarqueeExample {
           console.log('Marquee animation complete onBounce')
           console.info('Onbounce current action state is: ' + this.fontSize);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "fontSize": this.fontSize,
-              } as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+              } as Record<String,undefined|null|Object>
+            }
+            let backEvent: emitter.InnerEvent = {
               eventId: 128,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("Onbounce start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("Onbounce emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -104,18 +103,18 @@ struct MarqueeExample {
           this.onActionCalledThree = true;
           console.info('Onfinish current action state is: ' + this.onActionCalledThree);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalledThree,
-              } as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+              } as Record<String,undefined|null|Object>
+            }
+            let backEvent: emitter.InnerEvent = {
               eventId: 129,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("Onfinish start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("Onfinish emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -124,18 +123,18 @@ struct MarqueeExample {
         .onClick((e: ClickEvent) => {
           this.start = true
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "start": this.start,
-              } as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+              } as Record<String,undefined|null|Object>
+            }
+            let backEvent: emitter.InnerEvent = {
               eventId: 130,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

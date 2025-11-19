@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,6 +28,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UtilsTest } from '../../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -36,7 +37,7 @@ export default function Column_Space() {
   describe('column_SpaceTest', () => {
     beforeAll(() => {
       console.info("column_SpaceTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,11 +54,11 @@ export default function Column_Space() {
         console.info("get column_SpaceTest state pages:" + JSON.stringify(pages));
         if (!("Column_Space" == pages.name)) {
           console.info("get column_SpaceTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push column_SpaceTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push column_SpaceTest page error:" + err);
@@ -73,16 +74,17 @@ export default function Column_Space() {
     
 
 
+
 /*
      * @tc.number   testColumnSpaceToThirty_static
      * @tc.name     testColumnSpaceToThirty_static
      * @tc.desc     testColumnSpaceToThirty_static
      * @tc.level    Level.LEVEL0
      */
-it('testColumnSpaceToThirty_static', Level.LEVEL0, async () => {
+    it('testColumnSpaceToThirty_static', Level.LEVEL0, async () => {
       console.info('[testColumnSpaceToThirty_static] START');
-      const uiContext = new UIContext();
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'addSpace', value: 30
       });
       await CommonFunc.sleep(3000);
@@ -96,18 +98,19 @@ it('testColumnSpaceToThirty_static', Level.LEVEL0, async () => {
       expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - (Column_Space_013.top - Column_Space_012.bottom))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column_Space_01.top - Column_Space_011.top)) <= 1).assertTrue();
       expect(Column_Space_013.bottom).assertLess(Column_Space_01.bottom);
-      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - uiContext!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - uiContext!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - uiContext!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - uiContext!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[testColumnSpaceToThirty_static] END');
     });
     
     
+
 
 
 /*
@@ -116,10 +119,10 @@ it('testColumnSpaceToThirty_static', Level.LEVEL0, async () => {
      * @tc.desc     testColumnSpaceToFifty_static
      * @tc.level    Level.LEVEL0
      */
-it('testColumnSpaceToFifty_static', Level.LEVEL0, async () => {
+    it('testColumnSpaceToFifty_static', Level.LEVEL0, async () => {
       console.info('[testColumnSpaceToFifty] START');
-      const uiContext = new UIContext();
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'addSpace', value: 50
       });
       await CommonFunc.sleep(3000);
@@ -135,19 +138,20 @@ it('testColumnSpaceToFifty_static', Level.LEVEL0, async () => {
       expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - (Column_Space_013.top - Column_Space_012.bottom))) <= 2).assertTrue();
       expect(Math.floor(Math.abs(Column_Space_01.top - Column_Space_011.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column_Space_013.bottom - Column_Space_01.bottom)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.top - Column_Space_012.bottom) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - uiContext!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.top - Column_Space_012.bottom) - uiContext!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - uiContext!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - uiContext!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - uiContext!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[testColumnSpaceToFifty] END');
     });
     
     
+
 
 
 /*
@@ -156,10 +160,10 @@ it('testColumnSpaceToFifty_static', Level.LEVEL0, async () => {
      * @tc.desc     testColumnSpaceToSeventy_static
      * @tc.level    Level.LEVEL0
      */
-it('testColumnSpaceToSeventy_static', Level.LEVEL0, async () => {
+    it('testColumnSpaceToSeventy_static', Level.LEVEL0, async () => {
       console.info('[testColumnSpaceToSeventy] START');
-      const uiContext = new UIContext();
-      GlobalContext.getContext().getObject<number>('value')?.message.notify({
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'addSpace', value: 70
       });
       await CommonFunc.sleep(3000);
@@ -177,13 +181,13 @@ it('testColumnSpaceToSeventy_static', Level.LEVEL0, async () => {
         .assertTrue();
       expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - (Column_Space_013.top - Column_Space_012.bottom))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - uiContext!.vp2px(70))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - uiContext!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - uiContext!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - uiContext!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - uiContext!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[testColumnSpaceToSeventy] END');
     });

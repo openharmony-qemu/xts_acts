@@ -25,7 +25,7 @@ import {
 
 import {
   State,
-  
+  // StateDecoratedVariable
 } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
@@ -41,9 +41,9 @@ struct TextAreaInputTestExample {
           .width('90%')
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-          .onDragStart((event: DragEvent, extraParams?: string):(() => void)=> {
-            this.text = 'Text--onDragStart'
-          })
+          // .onDragStart((event: DragEvent, extraParams?: string):(() => void)=> {
+          //   this.text = 'Text--onDragStart'
+          // })
           .onDragEnd((event: DragEvent, extraParams?: string):void=>{
             this.text = 'Text--onDragEnd'
           })

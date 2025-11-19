@@ -36,7 +36,6 @@ export default function TextAreaTypeTest() {
     beforeAll(() => {
       console.info("TextAreaTypeTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,8 +53,11 @@ export default function TextAreaTypeTest() {
         console.info("get TextAreaTypeTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextAreaTypeTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TextAreaTypeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextAreaTypeTest page error:" + err);
@@ -71,7 +73,7 @@ export default function TextAreaTypeTest() {
      * @tc.desc     TextAreaTypeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('TextAreaTypeTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
+    it('TextAreaTypeTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[TextAreaTypeTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('TextAreaType_NORMAL');
       let obj = JSON.parseJsonElement(strJson);
@@ -88,7 +90,7 @@ it('TextAreaTypeTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.desc     TextAreaTypeTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('TextAreaTypeTest_static_0020', Level.LEVEL0, async (done: ()=>void) => {
+    it('TextAreaTypeTest_static_0020', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[TextAreaTypeTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('TextAreaType_NUMBER');
       let obj = JSON.parseJsonElement(strJson);

@@ -34,7 +34,6 @@ export default function TextfieldOtherTest() {
     beforeAll(() => {
       console.info("TextfieldOtherTest beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,8 +51,11 @@ export default function TextfieldOtherTest() {
         console.info("get TextfieldOtherTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextfieldOtherTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TextfieldOtherTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextfieldOtherTest page error:" + err);
@@ -68,7 +70,7 @@ export default function TextfieldOtherTest() {
      * @tc.desc     ArkUX_Text_Visual_static_0070
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0070', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0070', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0070 START');
       setTimeout(() => {
         try {
@@ -77,10 +79,10 @@ it('ArkUX_Text_Visual_static_0070', Level.LEVEL1, async (done: ()=>void) => {
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Text_Visual_static_0070 obj is: " + JSON.stringify(obj));
           let showCounter  = obj.getElement('$attrs').getElement('showCounter');
-          let value  = showCounter.getElement('value');
+          let value  = showCounter.getBoolean('value');
           let options  = showCounter.getElement('options');
-          let thresholdPercentage  = options.getString('thresholdPercentage');
-          let highlightBorder  = options.getString('highlightBorder');
+          let thresholdPercentage  = options.getDouble('thresholdPercentage');
+          let highlightBorder  = options.getBoolean('highlightBorder');
           expect(value).assertEqual(true);
           expect(thresholdPercentage).assertEqual(40);
           expect(highlightBorder).assertEqual(true);
@@ -100,7 +102,7 @@ it('ArkUX_Text_Visual_static_0070', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0080
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0080', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0080', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0080 START');
       setTimeout(() => {
         try {
@@ -109,10 +111,10 @@ it('ArkUX_Text_Visual_static_0080', Level.LEVEL1, async (done: ()=>void) => {
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Text_Visual_static_0080 obj is: " + JSON.stringify(obj));
           let showCounter  = obj.getElement('$attrs').getElement('showCounter');
-          let value  = showCounter.getElement('value');
+          let value  = showCounter.getBoolean('value');
           let options  = showCounter.getElement('options');
-          let thresholdPercentage  = options.getString('thresholdPercentage');
-          let highlightBorder  = options.getString('highlightBorder');
+          let thresholdPercentage  = options.getDouble('thresholdPercentage');
+          let highlightBorder  = options.getBoolean('highlightBorder');
           expect(value).assertEqual(false);
           expect(thresholdPercentage).assertEqual(40);
           expect(highlightBorder).assertEqual(false);
@@ -132,7 +134,7 @@ it('ArkUX_Text_Visual_static_0080', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0090
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0090', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0090', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0090 START');
       setTimeout(() => {
         try {
@@ -141,10 +143,10 @@ it('ArkUX_Text_Visual_static_0090', Level.LEVEL1, async (done: ()=>void) => {
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Text_Visual_static_0090 obj is: " + JSON.stringify(obj));
           let showCounter  = obj.getElement('$attrs').getElement('showCounter');
-          let value  = showCounter.getElement('value');
+          let value  = showCounter.getBoolean('value');
           let options  = showCounter.getElement('options');
-          let thresholdPercentage  = options.getString('thresholdPercentage');
-          let highlightBorder  = options.getString('highlightBorder');
+          let thresholdPercentage  = options.getDouble('thresholdPercentage');
+          let highlightBorder  = options.getBoolean('highlightBorder');
           expect(value).assertEqual(true);
           expect(thresholdPercentage).assertEqual(40);
           expect(highlightBorder).assertEqual(false);
@@ -165,7 +167,7 @@ it('ArkUX_Text_Visual_static_0090', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     ArkUX_Text_Visual_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('ArkUX_Text_Visual_static_0010', Level.LEVEL1, async (done: ()=>void) => {
+    it('ArkUX_Text_Visual_static_0010', Level.LEVEL1, async (done: ()=>void) => {
       console.info('ArkUX_Text_Visual_static_0010 START');
       setTimeout(() => {
         try {
@@ -174,10 +176,10 @@ it('ArkUX_Text_Visual_static_0010', Level.LEVEL1, async (done: ()=>void) => {
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Text_Visual_static_0010 obj is: " + JSON.stringify(obj));
           let showCounter  = obj.getElement('$attrs').getElement('showCounter');
-          let value  = showCounter.getElement('value');
+          let value  = showCounter.getBoolean('value');
           let options  = showCounter.getElement('options');
-          let thresholdPercentage  = options.getString('thresholdPercentage');
-          let highlightBorder  = options.getString('highlightBorder');
+          let thresholdPercentage  = options.getDouble('thresholdPercentage');
+          let highlightBorder  = options.getBoolean('highlightBorder');
           expect(value).assertEqual(false);
           expect(thresholdPercentage).assertEqual(-1);
           expect(highlightBorder).assertEqual(true);

@@ -28,105 +28,110 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
+  AppStorage
 } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog';
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import { MessageManagerBase, CallbackBase, MessageBase } from '../../common/MessageManager2';
 
-function asNumber(val: string | int | null | undefined) {
-  return val as int;
+// function asNumber(val: string | number | null | undefined) {
+//   return val as int;
+// }
+function asNumber(val: string) {
+  console.log("================= asNumber" + Number.parseInt(val).toInt())
+  return Number.parseInt(val).toInt();
 }
-function asBoolean(val: boolean | string | number | null | undefined) {
-  return val as boolean;
+
+function asBoolean(val: boolean | undefined) {  //测试接口只支持 undefined、 boolean
+  // return val as boolean;
+  if (val == undefined){
+    return undefined
+  }else{
+    return val
+  }
 }
 
 @Entry
 @Component
 struct textAreaUx {
+
+  messageManagerText: MessageManagerBase<string> = new MessageManagerBase<string>()
+
   onPageShow() {
-    let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+    AppStorage.setOrCreate<MessageManagerBase<string>>('messageManagerTextAreaUx', this.messageManagerText)
+    let callbackTextCase: CallbackBase<string> = (message: MessageBase<string>) => {
+      console.error('message = ' + message.name + " -- " + message.value)
+      if (message.name == 'TextNum') {
+        this.textNum = message.value
+        this.isNum = true
+        this.flag = true
+      }
+      if (message.name == "TextStr") {
+        console.log("======================================= TextStr" + message.value);
+        this.textStr = message.value
+        this.flag = true
+        this.isNum = false
+      }
+      if (message.name == "TextErr" && message.value == "null") {
+        console.info("valueChangeCallBack TextNull:" + JSON.stringify(message));
+        this.flag = false
+        this.isNull = true
+      }
+      if (message.name == "TextErr" && message.value == "undefined") {
+        console.info("valueChangeCallBack TextErr:" + JSON.stringify(message));
+        this.flag = false
+        this.isNull = false
+      }
+
+      if (message.name == "BoolTrue") {
+        console.info("valueChangeCallBack TextAreaShowCounterTrue:" + JSON.stringify(message));
+        this.boolFlag = true
+        this.bool = true
+      }
+      if (message.name == "BoolFalse") {
+        this.boolFlag = true
+        this.bool = false
+      }
+      // if ((eventData.data as ESObject).getProperty('type').toString() == "BoolErrNum" && eventData.data != null) {
+      //   console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
+      //   this.boolFlag = false
+      //   this.boolIsNum = true
+      //   this.boolNum = ((eventData.data) as ESObject).getProperty('text').toNumber()
+      // }
+      // if ((eventData.data as ESObject).getProperty('type').toString() == "BoolErrStr") {
+      //   console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
+      //   this.boolFlag = false
+      //   this.boolIsNum = false
+      //   this.boolIsStr = true
+      //   this.boolStr = (eventData.data as ESObject).getProperty('text').toString()
+      // }
+      // if ((eventData.data as ESObject).getProperty('type').toString() == "BoolErrNull") {
+      //   console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
+      //   this.boolFlag = false
+      //   this.boolIsNum = false
+      //   this.boolIsStr = false
+      //   this.boolIsNull = true
+      // }
+      if (message.name == "BoolErrUndefined") {
+        console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(message));
+        this.boolFlag = false
+        this.boolIsNum = false
+        this.boolIsStr = false
+        this.boolIsNull = false
+      }
     }
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info("key==>pages res : onPageShow")
+    this.messageManagerText.registerCallback(callbackTextCase)
   }
 
-  private valueChangeCallBack:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData) => {
-    console.info("key==> page valueChangeCallBack");
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextNum") {
-      console.info("valueChangeCallBack TextNum:" + JSON.stringify(eventData));
-      this.flag = true
-      this.isNum = true
-      this.textNum = Double.toInt(((eventData.data) as ESObject).getProperty('text').toNumber())
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextStr") {
-      console.info("valueChangeCallBack TextStr:" + JSON.stringify(eventData));
-      this.flag = true
-      this.isNum = false
-      this.textStr = ((eventData.data) as Record<String, RecordData>)?.['text'] as string
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextErr" && ((eventData.data) as Record<String, RecordData>)?.['text'] == "null") {
-      console.info("valueChangeCallBack TextNull:" + JSON.stringify(eventData));
-      this.flag = false
-      this.isNull = true
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextErr" && ((eventData.data) as Record<String, RecordData>)?.['text'] == "undefined") {
-      console.info("valueChangeCallBack TextErr:" + JSON.stringify(eventData));
-      this.flag = false
-      this.isNull = false
-    }
-
-
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolTrue") {
-      console.info("valueChangeCallBack TextAreaShowCounterTrue:" + JSON.stringify(eventData));
-      this.boolFlag = true
-      this.bool = true
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolFalse") {
-      console.info("valueChangeCallBack TextAreaShowCounterTrue:" + JSON.stringify(eventData));
-      this.boolFlag = true
-      this.bool = false
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNum" && eventData.data != null) {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = true
-      this.boolNum = ((eventData.data) as ESObject).getProperty('text').toNumber()
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrStr") {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = false
-      this.boolIsStr = true
-      this.boolStr = ((eventData.data) as Record<String, RecordData>)?.['text'] as string
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNull") {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = false
-      this.boolIsStr = false
-      this.boolIsNull = true
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrUndefined") {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = false
-      this.boolIsStr = false
-      this.boolIsNull = false
-    }
-
-  }
 
   aboutToAppear() {
-      console.info("textAreaUx aboutToAppear")
+    console.info("textAreaUx aboutToAppear")
   }
 
   @State flag: boolean = false
   @State isNum: boolean = false
   @State isNull: boolean = false
   @State errFlag: boolean = false
-  @State textNum: int = 2
+  @State textNum: string = '2'
   @State textStr: string = ''
   @State boolFlag: boolean = false
   @State bool: boolean = false
@@ -169,9 +174,11 @@ struct textAreaUx {
         .height(56)
         .margin(20)
         .fontSize(16)
-        .maxLength(asNumber(this.flag ? (this.isNum ? this.textNum : this.textStr) : (this.isNull ? null : undefined)))
-        .showCounter(asBoolean(this.boolFlag ? this.bool : (this.boolIsNum ? this.boolNum :
-          (this.boolIsStr ? this.boolStr : (this.boolIsNull ? null : undefined)))))
+        // .maxLength(asNumber(this.flag ? (this.isNum ? this.textNum : this.textStr) : (this.isNull ? null : undefined)) as int)
+        .maxLength(this.flag ? asNumber(this.isNum ? this.textNum : this.textStr) :  undefined)
+        .showCounter(asBoolean(this.boolFlag ? this.bool :  undefined))
+        // .showCounter(asBoolean(this.boolFlag ? this.bool : (this.boolIsNum ? this.boolNum :
+        //   (this.boolIsStr ? this.boolStr : (this.boolIsNull ? null : undefined)))))
         .backgroundColor('#FFFFFF')
         .onChange((value: string) :void=> {
           this.text = value

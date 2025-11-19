@@ -45,7 +45,6 @@ export default function symbolSpanApi1() {
     beforeAll(() => {
       console.info("symbolSpanApi1 beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,9 +65,9 @@ export default function symbolSpanApi1() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
+          // console.info("push symbolSpanApi1 page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push symbolSpanApi1 page error:" + err);
       }
       console.info("symbolSpanApi1 beforeEach end");
@@ -86,13 +85,13 @@ export default function symbolSpanApi1() {
      * @tc.desc     symbolSpanApi1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('symbolSpanApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('symbolSpanApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[symbolSpanApi1_static_0100] START');
       await CommonFunc.sleep(2000);
 
       let symbolSpanApi1 = inspector.getInspectorByKey('symbolSpanApi1');
       let Obj1 = JSON.parseJsonElement(symbolSpanApi1);
-      expect(Obj1.getElement('$attrs').getElement('effectStrategy')).assertEqual('SymbolEffectStrategy.NONE');
+      expect(Obj1.getElement('$attrs').getString('effectStrategy')).assertEqual('SymbolEffectStrategy.NONE');
       console.info('[testRichEditor_0100] END');
       done();
     });

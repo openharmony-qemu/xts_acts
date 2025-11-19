@@ -34,7 +34,6 @@ export default function textInputApi1() {
 
     beforeAll(() => {
       console.info("textInputApi1 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -52,9 +51,11 @@ export default function textInputApi1() {
         console.info("get textInputApi1 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textInputApi1 pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textInputApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textInputApi1 page error:" + err);
@@ -75,7 +76,7 @@ export default function textInputApi1() {
      * @tc.desc     textInputApi1_static_001
      * @tc.level    Level.LEVEL2
      */
-it('textInputApi1_static_001', Level.LEVEL2, async (done: ()=>void) => {
+    it('textInputApi1_static_001', Level.LEVEL2, async (done: ()=>void) => {
 
       console.info('[textInputApi1_static_001] START');
       await CommonFunc.sleep(1000);
@@ -84,6 +85,7 @@ it('textInputApi1_static_001', Level.LEVEL2, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       await (text?.inputText('9') as Promise<void>);
       await CommonFunc.sleep(1000);
+      //回车点击
       await driver.triggerKey(2054);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textInputApi1_text');

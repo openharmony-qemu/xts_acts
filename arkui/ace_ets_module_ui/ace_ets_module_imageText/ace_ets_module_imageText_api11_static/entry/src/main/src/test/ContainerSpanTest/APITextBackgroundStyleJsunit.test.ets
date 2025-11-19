@@ -53,7 +53,6 @@ export default function APITextBackgroundStyleJsunit() {
   describe('APITextBackgroundStyleJsunit', (): void => {
     beforeAll(() => {
       console.info("APITextBackgroundStyleJsunit beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -73,8 +72,9 @@ export default function APITextBackgroundStyleJsunit() {
           console.info("get APITextBackgroundStyleJsunit state pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push APITextBackgroundStyleJsunit success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push APITextBackgroundStyleJsunit page error:" + err);
         expect().assertFail();
       }
@@ -86,7 +86,7 @@ export default function APITextBackgroundStyleJsunit() {
      * @tc.desc     APITextBackgroundStyleJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('APITextBackgroundStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APITextBackgroundStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('APITextBackgroundStyleJsunit_0100 START');
       const strJson = inspector.getInspectorByKey('APITextBackgroundStyleSpan');
@@ -95,8 +95,8 @@ it('APITextBackgroundStyleJsunit_static_0100', Level.LEVEL0, async (done: () => 
       console.info('APITextBackgroundStyleJsunit_0100 component obj is: ' + JSON.stringifyJsonElement(obj));
       console.info('APITextBackgroundStyleJsunit_0100 component obj.$attrs is: ' + obj.getElement('$attrs'));
       console.info('APITextBackgroundStyleJsunit_0100 component obj.$attrs.textBackgroundStyle is: ' +
-      obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getElement('color')).assertEqual('#FF209B08');
+      obj.getElement('$attrs').getElement('textBackgroundStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textBackgroundStyle').getString('color')).assertEqual('#FF209B08');
       console.info('APITextBackgroundStyleJsunit_0100 END')
       done();
     });

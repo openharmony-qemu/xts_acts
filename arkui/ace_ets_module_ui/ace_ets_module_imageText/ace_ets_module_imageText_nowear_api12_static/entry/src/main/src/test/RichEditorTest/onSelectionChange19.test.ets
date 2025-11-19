@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,10 +50,10 @@ export default function onSelectionChange19() {
         console.info("get onSelectionChange19 state pages:" + JSON.stringify(pages));
         if (!("onSelectionChange19" == pages.name)) {
           console.info("get onSelectionChange19 pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.push(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push onSelectionChange19 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push onSelectionChange19 page error:" + err);
@@ -65,13 +65,14 @@ export default function onSelectionChange19() {
       console.info("onSelectionChange19 after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   onSelectionChange19_static_0100
      * @tc.name     onSelectionChange19_static_0100
      * @tc.desc     onSelectionChange19_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('onSelectionChange19_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+    it('onSelectionChange19_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[onSelectionChange19_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -113,7 +114,7 @@ it('onSelectionChange19_static_0100', Level.LEVEL0, async (done: ()=>void) => {
         await CommonFunc.sleep(2500);
 
         let richEditor2 = await driver.findComponent(ON.id('onSelectionChange19_RichEditor'));
-        
+        // doubleClick
         let centerPoint = await (richEditor2?.getBoundsCenter() as Promise<Point>);
         let point = `${centerPoint.x} ${centerPoint.y}`;
         let cmd = `uinput -T -d ${point} -u ${point} -i 50 -d ${point} -u ${point}`;

@@ -24,7 +24,7 @@ import {
   DisplayRotation,
   ResizeDirection,
   WindowMode,
-  PointerMatrix
+  PointerMatrix,
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -44,7 +44,7 @@ export default function richEditorApi5() {
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi5 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi5",
+        url: "MainAbility/pages/RichEditor/richEditorApi/richEditorApi5",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -53,9 +53,11 @@ export default function richEditorApi5() {
         console.info("get richEditorApi5 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get richEditorApi5 pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push richEditorApi5 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push richEditorApi5 page error:" + err);
@@ -64,7 +66,6 @@ export default function richEditorApi5() {
     });
     beforeAll(() => {
       console.info("richEditorApi5 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -80,7 +81,7 @@ export default function richEditorApi5() {
      * @tc.desc     richEditorApi5_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('richEditorApi5_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('richEditorApi5_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[richEditorApi5_0100] START');
       await CommonFunc.sleep(2000);
 

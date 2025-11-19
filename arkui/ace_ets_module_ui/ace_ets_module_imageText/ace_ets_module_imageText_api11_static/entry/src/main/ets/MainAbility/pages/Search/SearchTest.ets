@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { MessageManagerBase, CallbackBase, MessageBase } from '../../common/MessageManager2';
+import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
 import {
   Entry,
   Component,
@@ -44,105 +45,64 @@ export class SliderExampleManager {
 @Entry
 @Component
 struct SliderExample {
-  @State caretWidthNumber: undefined | number = 5
-  @State caretWidthString: undefined | string = '15px'
+  @State caretWidthNumber: number = 5
+  @State caretWidthString: string = '15px'
   @State caretWidthResource: undefined | Resource = $r('sys.float.ohos_id_text_margin_vertical')
   @State caretColorColor: undefined | Color = Color.Red
-  @State caretColorNumber: undefined | int = 0x000000
-  @State caretColorString: undefined | string = '#ff9a35'
+  @State caretColorNumber: number = 0x000000
+  @State caretColorString: string = '#ff9a35'
   @State caretColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
-  @State leftSearchIconSizeNumber: undefined | number = 20
-  @State leftSearchIconSizeString: undefined | string = '50px'
-  @State leftSearchIconSizeResource: undefined | Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
-  @State leftSearchIconColorColor: undefined | Color = Color.Red
-  @State leftSearchIconColorNumber: undefined | int = 0x000000
-  @State leftSearchIconColorString: undefined | string = '#ff9a35'
+  @State leftSearchIconSizeNumber: number = 20
+  @State leftSearchIconSizeString: string = '50px'
+  @State leftSearchIconSizeResource: Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
+  @State leftSearchIconColorColor: Color = Color.Red
+  @State leftSearchIconColorNumber:  int = 0x000000
+  @State leftSearchIconColorString: string = '#ff9a35'
   @State leftSearchIconColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
-  @State searchSrcPath: undefined | string = 'common/icon.png'
+  @State searchSrcPath: string = 'common/icon.png'
   @State searchSrcPathResource: undefined | Resource = $r('sys.media.ohos_app_icon')
-  @State rightButtonStyleParam: undefined | CancelButtonStyle = CancelButtonStyle.INPUT
-  @State rightCancelIconSizeNumber: undefined | number = 20
-  @State rightCancelIconSizeString: undefined | string = '50px'
-  @State rightCancelIconSizeResource: undefined | Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
-  @State rightCancelIconColorColor: undefined | Color = Color.Red
-  @State rightCancelIconColorNumber: undefined | int = 0x000000
-  @State rightCancelIconColorString: undefined | string = '#ff9a35'
+  @State rightButtonStyleParam: CancelButtonStyle = CancelButtonStyle.INPUT
+  @State rightCancelIconSizeNumber: number = 20
+  @State rightCancelIconSizeString: string = '50px'
+  @State rightCancelIconSizeResource: Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
+  @State rightCancelIconColorColor: Color = Color.Red
+  @State rightCancelIconColorNumber: number = 0x000000
+  @State rightCancelIconColorString: string = '#ff9a35'
   @State rightCancelIconColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
-  @State rightIconSrcPath: undefined | string = 'common/icon.png'
+  @State rightIconSrcPath: string = 'common/icon.png'
   @State rightIconSrcPathResource: undefined | Resource = $r('sys.media.ohos_app_icon')
-  @State searchButtonFontSizeNumber: undefined | number = 20
-  @State searchButtonFontSizeString: undefined | string = '10vp'
+  @State searchButtonFontSizeNumber: number = 20
+  @State searchButtonFontSizeString: string = '10vp'
   @State searchButtonFontSizeResource: undefined | Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
   @State searchButtonFontColorColor: undefined | Color = Color.Blue
-  @State searchButtonFontColorNumber: undefined | int = 0x000000
-  @State searchButtonFontColorString: undefined | string = '#ff9a35'
+  @State searchButtonFontColorNumber: number = 0x000000
+  @State searchButtonFontColorString: string = '#ff9a35'
   @State searchButtonFontColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
-  @State textColorColor: undefined | Color = Color.Red
-  @State textColorNumber: undefined | int = 0x000000
-  @State textColorString: undefined | string = '#ff9a35'
+  @State textColorColor: Color = Color.Red
+  @State textColorNumber: number = 0x000000
+  @State textColorString: string = '#ff9a35'
   @State textColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
   @State placeholderFont: undefined | Font = { size: '16sp', weight: FontWeight.Normal } as Font
   @State textFont: undefined | Font = { size: '16sp', weight: FontWeight.Normal } as Font
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("search page state change called:" + JSON.stringify(eventData));
+    console.info("======================================== search page state change called:" + JSON.stringify(eventData));
     if (eventData.data === null || eventData.data === undefined) {
       return
     }
-    this.caretWidthNumber =
-      ((eventData.data) as ESObject).getProperty('caretWidthNumber') === -1 ? undefined : ((eventData.data) as ESObject).getProperty('caretWidthNumber').toNumber();
-    this.caretWidthString = ((eventData.data) as ESObject).getProperty('caretWidthString').toString();
-    this.caretWidthResource = ((eventData.data) as ESObject).getProperty('caretWidthResource').toStaticObject() as Resource;
-    this.caretColorColor = ((eventData.data) as ESObject).getProperty('caretColorColor') .toStaticObject() as Color;
-    this.caretColorNumber =
-      ((eventData.data) as ESObject).getProperty('caretColorNumber') === -1 ? undefined : Double.toInt(((eventData.data) as ESObject).getProperty('caretColorNumber').toNumber());
-    this.caretColorString = ((eventData.data) as ESObject).getProperty('caretColorString').toString();
-    this.caretColorResource = ((eventData.data) as ESObject).getProperty('caretColorResource').toStaticObject() as Resource;
-    this.leftSearchIconSizeNumber =
-      ((eventData.data) as ESObject).getProperty('leftSearchIconSizeNumber') ? undefined : ((eventData.data) as ESObject).getProperty('leftSearchIconSizeNumber').toNumber();
-    this.leftSearchIconSizeString = ((eventData.data) as ESObject).getProperty('leftSearchIconSizeString').toString();
-    this.leftSearchIconSizeResource = ((eventData.data) as ESObject).getProperty('leftSearchIconSizeResource').toStaticObject() as Resource;
-    this.leftSearchIconColorColor = ((eventData.data) as ESObject).getProperty('leftSearchIconColorColor') .toStaticObject() as Color;
-    this.leftSearchIconColorNumber = ((eventData.data) as ESObject).getProperty('leftSearchIconColorNumber') === -1 ? undefined :
-      Double.toInt(((eventData.data) as ESObject).getProperty('leftSearchIconColorNumber') .toNumber());
-    this.leftSearchIconColorString = ((eventData.data) as ESObject).getProperty('leftSearchIconColorString').toString();
-    this.leftSearchIconColorResource = ((eventData.data) as ESObject).getProperty('leftSearchIconColorResource').toStaticObject() as Resource;
-    this.searchSrcPath =
-      ((eventData.data) as ESObject).getProperty('searchSrcPath') === -1 ? undefined : ((eventData.data) as ESObject).getProperty('searchSrcPath').toString();
-    this.searchSrcPathResource = ((eventData.data) as ESObject).getProperty('searchSrcPathResource').toStaticObject() as Resource;
-    this.rightButtonStyleParam = ((eventData.data) as ESObject).getProperty('rightButtonStyleParam') === -1 ? undefined :
-    ((eventData.data) as ESObject).getProperty('rightButtonStyleParam') .toStaticObject() as CancelButtonStyle;
-    this.rightCancelIconSizeNumber = ((eventData.data) as ESObject).getProperty('rightCancelIconSizeNumber') === -1 ? undefined :
-      ((eventData.data) as ESObject).getProperty('rightCancelIconSizeNumber') .toNumber();
-    this.rightCancelIconSizeString = ((eventData.data) as ESObject).getProperty('rightCancelIconSizeString').toString();
-    this.rightCancelIconSizeResource = ((eventData.data) as ESObject).getProperty('rightCancelIconSizeResource').toStaticObject() as Resource;
-    this.rightCancelIconColorColor = ((eventData.data) as ESObject).getProperty('rightCancelIconColorColor') .toStaticObject() as Color;
-    this.rightCancelIconColorNumber = ((eventData.data) as ESObject).getProperty('rightCancelIconColorNumber') === -1 ? undefined :
-      Double.toInt(((eventData.data) as ESObject).getProperty('rightCancelIconColorNumber').toNumber());
-    this.rightCancelIconColorString = ((eventData.data) as ESObject).getProperty('rightCancelIconColorString').toString();
-    this.rightCancelIconColorResource = ((eventData.data) as ESObject).getProperty('rightCancelIconColorResource').toStaticObject() as Resource;
-    this.rightIconSrcPath =
-      ((eventData.data) as ESObject).getProperty('rightIconSrcPath') === -1 ? undefined : ((eventData.data) as ESObject).getProperty('rightIconSrcPath').toString();
-    this.rightIconSrcPathResource = ((eventData.data) as ESObject).getProperty('rightIconSrcPathResource').toStaticObject() as Resource;
-    this.searchButtonFontSizeNumber = ((eventData.data) as ESObject).getProperty('searchButtonFontSizeNumber') .toNumber();
-    this.searchButtonFontSizeString = ((eventData.data) as ESObject).getProperty('searchButtonFontSizeString') === -1 ? undefined :
-      ((eventData.data) as ESObject).getProperty('searchButtonFontSizeString').toString();
-    this.searchButtonFontSizeResource = ((eventData.data) as ESObject).getProperty('searchButtonFontSizeResource').toStaticObject() as Resource;
-    this.searchButtonFontColorColor = ((eventData.data) as ESObject).getProperty('searchButtonFontColorColor') .toStaticObject() as Color;
-    this.searchButtonFontColorNumber = ((eventData.data) as ESObject).getProperty('searchButtonFontColorNumber') === -1 ? undefined :
-      Double.toInt(((eventData.data) as ESObject).getProperty('searchButtonFontColorNumber').toNumber());
-    this.searchButtonFontColorString = ((eventData.data) as ESObject).getProperty('searchButtonFontColorString').toString();
-    this.searchButtonFontColorResource = ((eventData.data) as ESObject).getProperty('searchButtonFontColorResource').toStaticObject() as Resource;
-    this.textColorColor = ((eventData.data) as ESObject).getProperty('textColorColor') .toStaticObject() as Color;
-    this.textColorNumber =
-      ((eventData.data) as ESObject).getProperty('textColorNumber') === -1 ? undefined : Double.toInt(((eventData.data) as ESObject).getProperty('textColorNumber').toNumber());
-    this.textColorString = ((eventData.data) as ESObject).getProperty('textColorString').toString();
-    this.textColorResource = ((eventData.data) as ESObject).getProperty('textColorResource').toStaticObject() as Resource;
   }
   messageManager: MessageManager = new MessageManager()
-
+  messageManager_base: MessageManagerBase<number|int|string> = new MessageManagerBase<number|int|string>()
+  messageManager_color: MessageManagerBase<Color> = new MessageManagerBase<Color>()
+  messageManager_resource: MessageManagerBase<Resource> = new MessageManagerBase<Resource>()
+  messageManager_CancelButtonStyle: MessageManagerBase<CancelButtonStyle> = new MessageManagerBase<CancelButtonStyle>()
   onPageShow() {
     console.info('search onPageShow')
- 
+    AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManagerBase<number|int|string>>('messageManagerBase', this.messageManager_base);
+    AppStorage.setOrCreate<MessageManagerBase<Color>>('messageManagerColor', this.messageManager_color);
+    AppStorage.setOrCreate<MessageManagerBase<Resource>>('messageManagerResource', this.messageManager_resource);
+    AppStorage.setOrCreate<MessageManagerBase<CancelButtonStyle>>('messageManager_CancelButtonStyle', this.messageManager_CancelButtonStyle);
     const sliderExampleManager = new SliderExampleManager();
     sliderExampleManager.message = this.messageManager;
     sliderExampleManager.name = 'messageManager'
@@ -177,19 +137,150 @@ struct SliderExample {
         this.textColorResource = message.value as Resource
       }
     }
+    let callbackBase: CallbackBase<number|int|string> = (message: MessageBase<number|int|string>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'caretWidthNumber') {
+        this.caretWidthNumber = message.value as number
+        console.log("==============================================caretWidthNumber " + this.caretWidthNumber)
+      }
+
+      if (message.name == 'leftSearchIconSizeNumber') {
+        this.leftSearchIconSizeNumber = message.value as number
+        console.log("==============================================leftSearchIconSizeNumber " + this.leftSearchIconSizeNumber)
+      }
+      if (message.name == 'rightCancelIconSizeNumber') {
+        this.rightCancelIconSizeNumber = message.value as number
+
+        console.log("==============================================rightCancelIconSizeNumber " + this.rightCancelIconSizeNumber)
+      }
+      if (message.name == 'searchButtonFontSizeString') {
+        this.searchButtonFontSizeString = message.value as string
+        console.log("==============================================searchButtonFontSizeString " + this.searchButtonFontSizeString)
+      }
+      if (message.name == 'searchButtonFontSizeNumber') {
+        this.searchButtonFontSizeNumber = message.value as number
+        console.log("==============================================searchButtonFontSizeNumber " + this.searchButtonFontSizeNumber)
+      }
+      if (message.name == 'searchButtonFontColorNumber') {
+        this.searchButtonFontColorNumber = message.value as number
+        console.log("==============================================searchButtonFontColorNumber " + this.searchButtonFontColorNumber)
+      }
+
+      if (message.name == 'searchButtonFontColorString') {
+        this.searchButtonFontColorString = message.value as string
+        console.log("==============================================searchButtonFontColorString " + this.searchButtonFontColorString)
+      }
+
+      if (message.name == 'textColorString') {
+        this.textColorString = message.value as string
+        console.log("==============================================textColorString " + this.textColorString)
+      }
+      if (message.name == 'textColorNumber') {
+        this.textColorNumber = message.value as number
+        console.log("==============================================textColorNumber " + this.textColorNumber)
+      }
+      if (message.name == 'caretWidthString') {
+        this.caretWidthString = message.value as string
+
+        console.log("==============================================caretWidthString " + this.caretWidthString)
+      }
+      if (message.name == 'caretColorNumber') {
+        this.caretColorNumber = message.value as number
+        console.log("==============================================caretColorNumber " + this.caretColorNumber)
+      }
+      if (message.name == 'caretColorString') {
+        this.caretColorString = message.value as string
+        console.log("==============================================caretColorString " + this.caretColorString)
+      }
+      if (message.name == 'leftSearchIconSizeString') {
+        this.leftSearchIconSizeString = message.value as string
+        console.log("==============================================leftSearchIconSizeString " + this.leftSearchIconSizeString)
+      }
+
+      if (message.name == 'leftSearchIconColorNumber') {
+        this.leftSearchIconColorNumber = message.value as int
+        console.log("==============================================leftSearchIconColorNumber " + this.leftSearchIconColorNumber)
+      }
+      if (message.name == 'leftSearchIconColorString') {
+        this.leftSearchIconColorString = message.value as string
+        console.log("==============================================leftSearchIconColorString " + this.leftSearchIconColorString)
+      }
+      if (message.name == 'searchSrcPath') {
+        this.searchSrcPath = message.value as string
+        console.log("==============================================searchSrcPath " + this.searchSrcPath)
+      }
+      if (message.name == 'rightCancelIconSizeString') {
+        this.rightCancelIconSizeString = message.value as string
+        console.log("==============================================rightCancelIconSizeString " + this.rightCancelIconSizeString)
+      }
+      if (message.name == 'rightCancelIconColorNumber') {
+        this.rightCancelIconColorNumber = message.value as number
+        console.log("==============================================rightCancelIconColorNumber " + this.rightCancelIconColorNumber)
+      }
+      if (message.name == 'rightCancelIconColorString') {
+        this.rightCancelIconColorString = message.value as string
+        console.log("==============================================rightCancelIconColorString " + this.rightCancelIconColorString)
+      }
+      if (message.name == 'rightIconSrcPath') {
+        this.rightIconSrcPath = message.value as string
+        console.log("==============================================rightIconSrcPath " + this.rightIconSrcPath)
+      }
+    }
+
+    let callbackColor: CallbackBase<Color> = (message: MessageBase<Color>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'searchButtonFontColorColor') {
+        this.searchButtonFontColorColor = message.value
+        console.log("==============================================searchButtonFontColorColor " + this.searchButtonFontColorColor)
+      }
+      if (message.name == 'textColorColor') {
+        this.textColorColor = message.value
+        console.log("==============================================textColorColor " + this.textColorColor)
+      }
+      if (message.name == 'caretColorColor') {
+        this.caretColorColor = message.value
+        console.log("==============================================caretColorColor " + this.caretColorColor)
+      }
+      if (message.name == 'leftSearchIconColorColor') {
+        this.leftSearchIconColorColor = message.value
+        console.log("==============================================caretColorColor " + this.leftSearchIconColorColor)
+      }
+      if (message.name == 'rightCancelIconColorColor') {
+        this.rightCancelIconColorColor = message.value
+        console.log("==============================================caretColorColor " + this.rightCancelIconColorColor)
+      }
+    }
+
+    let callbackResource: CallbackBase<Resource> = (message: MessageBase<Resource>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'leftSearchIconSizeResource') {
+        this.leftSearchIconSizeResource = message.value
+      }
+      if (message.name == 'rightCancelIconSizeResource') {
+        this.rightCancelIconSizeResource = message.value
+      }
+    }
+
+    let callbackCancelButtonStyle: CallbackBase<CancelButtonStyle> = (message: MessageBase<CancelButtonStyle>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'rightButtonStyleParam') {
+        this.rightButtonStyleParam = message.value
+      }
+    }
+    this.messageManager_CancelButtonStyle.registerCallback(callbackCancelButtonStyle)
+    this.messageManager_resource.registerCallback(callbackResource)
+    this.messageManager_color.registerCallback(callbackColor)
+    this.messageManager_base.registerCallback(callbackBase)
     this.messageManager.registerCallback(callback)
   }
 
   aboutToAppear() {
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 183,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
 
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    emitter.on(stateChangeEvent, this.stateChangCallBack)
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
   }
@@ -282,7 +373,7 @@ struct SliderExample {
           style: this.rightButtonStyleParam,
           icon: {
             size: this.rightCancelIconSizeNumber,
-            color: this.rightCancelIconColorNumber,
+            color: this.rightCancelIconColorNumber as int,
             src: this.rightIconSrcPath
           } as IconOptions
         } as CancelButtonOptions)
@@ -290,12 +381,12 @@ struct SliderExample {
           'Search',
           {
             fontSize: this.searchButtonFontSizeNumber,
-            fontColor: this.searchButtonFontColorNumber
+            fontColor: this.searchButtonFontColorNumber as int
           }
         )
         .placeholderFont(this.placeholderFont)
         .textFont(this.textFont)
-        .fontColor(this.textColorNumber)
+        .fontColor(this.textColorNumber as int)
         .key('searchTestfontcaretcolor')
 
       Search({ value: '', placeholder: 'Type to search...' })
@@ -326,7 +417,7 @@ struct SliderExample {
         .margin(5)
         .caretStyle({
           width: this.caretWidthNumber,
-          color: this.caretColorNumber
+          color: this.caretColorNumber as int
         })
         .searchIcon({
           size: this.leftSearchIconSizeNumber,
@@ -337,7 +428,7 @@ struct SliderExample {
           style: this.rightButtonStyleParam,
           icon: {
             size: this.rightCancelIconSizeNumber,
-            color: this.rightCancelIconColorNumber,
+            color: this.rightCancelIconColorNumber as int,
             src: this.rightIconSrcPath
           } as IconOptions
         } as CancelButtonOptions)
@@ -345,12 +436,12 @@ struct SliderExample {
           'Search',
           {
             fontSize: this.searchButtonFontSizeNumber,
-            fontColor: this.searchButtonFontColorNumber
+            fontColor: this.searchButtonFontColorNumber as int
           }
         )
         .placeholderFont(this.placeholderFont)
         .textFont(this.textFont)
-        .fontColor(this.textColorNumber)
+        .fontColor(this.textColorNumber as int)
         .key('searchTestNumber')
 
       Search({ value: '', placeholder: 'Type to search...' })

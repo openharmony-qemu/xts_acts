@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -35,7 +35,6 @@ export default function appVersionCodeJsunit() {
 
     beforeAll(() => {
       console.info("appVersionCodeTest beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -54,8 +53,11 @@ export default function appVersionCodeJsunit() {
         console.info("get appVersionCodeTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get appVersionCodeTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push appVersionCodeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push appVersionCodeTest page error:" + err);
@@ -76,25 +78,27 @@ export default function appVersionCodeJsunit() {
      * @tc.desc     testappVersionCode_static_0011
      * @tc.level    Level.LEVEL1
      */
-it('testappVersionCode_static_0011', Level.LEVEL1, async (done: ()=>void) => {
+    it('testappVersionCode_static_0011', Level.LEVEL1, async (done: ()=>void) => {
       console.info('appVersionCode testappVersionCode_static_0011 START');
       await CommonFunc.sleep(1000);
       try {
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 60302,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback = (eventData: emitter.EventData) => {
           console.info("testappVersionCode_0011 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<String, RecordData>)?.['Code']).assertEqual(1000000);
+          const data = eventData.data as Record<String,undefined|null|Object>
+          expect(data['Code'] as int).assertEqual(1000000);
         }
-        console.info("testappVersion click result is: " + JSON.stringify(inspector.sendEventByKey('versionCodeText', 10, "")));
-        events_emitter.on(innerEvent, callback);
+        const result = inspector.sendEventByKey('versionCodeText', 10, "")
+        console.info("testappVersion click result is: " + result);
+        emitter.on(innerEvent, callback);
       } catch (err) {
 
 
 
-        console.info("testappVersionCode_0011 on events_emitter err : " + JSON.stringify(err));
+        console.info("testappVersionCode_0011 on emitter err : " + JSON.stringify(err));
       }
       console.info('testappVersionCode_0011 END');
       done();

@@ -14,7 +14,7 @@
  */
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
@@ -59,7 +59,7 @@ export default function editMeunOptionsTest() {
           console.info("editMeunOptionsTest beforeEach 59 line[dyx]");
           await CommonFunc.sleep(2000);
           console.info("editMeunOptionsTest beforeEach 61 line[dyx]");
-          
+          //console.info("push editMeunOptionsTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push editMeunOptionsTest page error:" + err);
@@ -68,13 +68,14 @@ export default function editMeunOptionsTest() {
     });
     
     
-    /*
+    
+/*
      * @tc.number   editMeunOptionsTest_static_0100
      * @tc.name     editMeunOptionsTest_static_0100
      * @tc.desc     editMeunOptionsTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('editMeunOptionsTest_static_0100', Level.LEVEL2, async (done :()=> void) => {
+    it('editMeunOptionsTest_static_0100', Level.LEVEL2, async (done :()=> void) => {
       console.info('editMeunOptionsTest_0100 START');
       try {
         let driver =  Driver.create()
@@ -92,13 +93,14 @@ it('editMeunOptionsTest_static_0100', Level.LEVEL2, async (done :()=> void) => {
     });
 
     
-    /*
+    
+/*
      * @tc.number   editMeunOptionsTest_static_0200
      * @tc.name     editMeunOptionsTest_static_0200
      * @tc.desc     editMeunOptionsTest_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('editMeunOptionsTest_static_0200', Level.LEVEL2, async (done: ()=>void) => {
+    it('editMeunOptionsTest_static_0200', Level.LEVEL2, async (done: ()=>void) => {
       console.info('editMeunOptionsTest_0200 START');
       try {
         let driver =  Driver.create()
@@ -116,13 +118,14 @@ it('editMeunOptionsTest_static_0200', Level.LEVEL2, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+/*
      * @tc.number   editMeunOptionsTest_static_0300
      * @tc.name     editMeunOptionsTest_static_0300
      * @tc.desc     editMeunOptionsTest_static_0300
      * @tc.level    Level.LEVEL2
      */
-it('editMeunOptionsTest_static_0300', Level.LEVEL2, async (done: ()=>void) => {
+    it('editMeunOptionsTest_static_0300', Level.LEVEL2, async (done: ()=>void) => {
       console.info('editMeunOptionsTest_0300 START');
 
       try {

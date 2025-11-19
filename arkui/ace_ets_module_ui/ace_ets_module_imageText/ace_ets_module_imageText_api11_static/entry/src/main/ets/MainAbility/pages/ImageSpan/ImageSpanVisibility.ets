@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Text, ImageSpan, Visibility, $r, FlexAlign, HorizontalAlign } from '@ohos.arkui.component';
+import { Entry, Component, Column, Text, Visibility, $r, FlexAlign, HorizontalAlign,
+  ImageSpan, Visibility} from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
@@ -25,6 +26,7 @@ struct ImageSpanVisibility {
     Column() {
       Text('Visibility.None').fontSize(15).width('90%').height('5%')
       Text() {
+        // 隐藏不参与占位
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_None')
           .visibility(Visibility.None)
@@ -34,6 +36,7 @@ struct ImageSpanVisibility {
 
       Text('Visibility.Hidden').fontSize(15).width('90%').height('5%')
       Text() {
+        // 隐藏参与占位
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_Hidden')
           .visibility(Visibility.Hidden)
@@ -43,6 +46,7 @@ struct ImageSpanVisibility {
 
       Text('Visibility.Visible').fontSize(15).width('90%').height('5%')
       Text() {
+        // 正常显示，组件默认的显示模式
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_Visible')
           .visibility(Visibility.Visible)
@@ -52,6 +56,7 @@ struct ImageSpanVisibility {
 
       Text('Visibility: default').fontSize(15).width('90%').height('5%')
       Text() {
+        // 正常显示
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_default')
           .width('90%')
@@ -60,6 +65,7 @@ struct ImageSpanVisibility {
 
       Text('Visibility: undefined').fontSize(15).width('90%').height('5%')
       Text() {
+        // 正常显示
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_undefined')
           .visibility(undefined)

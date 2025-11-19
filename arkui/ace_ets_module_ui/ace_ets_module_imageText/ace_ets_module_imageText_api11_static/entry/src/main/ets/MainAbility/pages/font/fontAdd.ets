@@ -14,15 +14,32 @@
  * limitations under the License.
  */
 import font from '@ohos.font';
-import { Entry, Component, Column, Text, Button, Margin, ClickEvent , Array} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import {
+  Entry,
+  Component,
+  Column,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  TextDecorationType,
+  Margin,
+  ClickEvent,
+  Button,
+} from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { Font } from '@ohos.arkui.UIContext'
+
+const Font = new Font();
+
 @Entry
 @Component
 struct FontExample {
-  fontList: Array<string> = new Array<string>('');
-  fontMessage: Font = new Font();
-  fontInfo: font.FontInfo = this.fontMessage.getFontByName('');
+  fontList: Array<string> = new Array<string>();
+  Font: Font = this.getUIContext().getFont();
+  fontInfo: font.FontInfo | undefined = undefined;
   @State value:string=''
   @State value1:string=''
 
@@ -37,8 +54,8 @@ struct FontExample {
       Button("getSystemFontList")
         .width('60%')
         .height('6%')
-        .onClick((e: ClickEvent)=>{
-          this.fontList = this.fontMessage.getSystemFontList()
+        .onClick((e:ClickEvent)=>{
+          this.fontList = this.Font.getSystemFontList()
           this.value = this.fontList.toString()
         }).margin({top:20} as Margin).key("getSystemFontList")
 
@@ -46,21 +63,21 @@ struct FontExample {
         .width('60%')
         .height('6%')
         .key("getgetFontByName")
-        .onClick((e: ClickEvent)=>{
-          this.fontInfo = this.fontMessage.getFontByName('HarmonyOS Sans Italic')
+        .onClick((e:ClickEvent)=>{
+          this.fontInfo = this.Font.getFontByName('HarmonyOS Sans Italic')
           if(this.fontInfo != null) {
-             this.value1 = this.fontInfo.fullName
-             console.log("getFontByName(): path = " + this.fontInfo.path)
-             console.log("getFontByName(): postScriptName = " + this.fontInfo.postScriptName)
-             console.log("getFontByName(): fullName = " + this.fontInfo.fullName)
-             console.log("getFontByName(): Family = " + this.fontInfo.family)
-             console.log("getFontByName(): Subfamily = " + this.fontInfo.subfamily)
-             console.log("getFontByName(): weight = " + this.fontInfo.weight)
-             console.log("getFontByName(): width = " + this.fontInfo.width)
-             console.log("getFontByName(): italic = " + this.fontInfo.italic)
-             console.log("getFontByName(): monoSpace = " + this.fontInfo.monoSpace)
-             console.log("getFontByName(): symbolic = " + this.fontInfo.symbolic)
-          } 
+             this.value1 = this.fontInfo!.fullName
+             console.log("getFontByName(): path = " + this.fontInfo!.path)
+             console.log("getFontByName(): postScriptName = " + this.fontInfo!.postScriptName)
+             console.log("getFontByName(): fullName = " + this.fontInfo!.fullName)
+             console.log("getFontByName(): Family = " + this.fontInfo!.family)
+             console.log("getFontByName(): Subfamily = " + this.fontInfo!.subfamily)
+             console.log("getFontByName(): weight = " + this.fontInfo!.weight)
+             console.log("getFontByName(): width = " + this.fontInfo!.width)
+             console.log("getFontByName(): italic = " + this.fontInfo!.italic)
+             console.log("getFontByName(): monoSpace = " + this.fontInfo!.monoSpace)
+             console.log("getFontByName(): symbolic = " + this.fontInfo!.symbolic)
+          }
           
         }).margin({top:20} as Margin)
     }.width('100%').height('100%')

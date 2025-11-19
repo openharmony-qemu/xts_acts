@@ -35,7 +35,6 @@ export default function textAreaOnCaretAndKeyboardTest() {
   describe('textAreaOnCaretAndKeyboardTest', () => {
     beforeAll(() => {
       console.info("textAreaOnCaretAndKeyboardTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -48,14 +47,14 @@ export default function textAreaOnCaretAndKeyboardTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textAreaOnCaretAndKeyboardTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaOnCaretAndKeyboard" == pages.name)) {
           console.info("get textAreaOnCaretAndKeyboardTest pages.name:" + '');
-         
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textAreaOnCaretAndKeyboardTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textAreaOnCaretAndKeyboardTest page error:" + err);
@@ -76,7 +75,7 @@ export default function textAreaOnCaretAndKeyboardTest() {
      * @tc.desc     textAreaOnCaretAndKeyboard001
      * @tc.level    Level.LEVEL1
      */
-it('textAreaOnCaretAndKeyboard001', Level.LEVEL1, async () => {
+    it('textAreaOnCaretAndKeyboard001', Level.LEVEL1, async () => {
       console.info('textAreaOnCaretAndKeyboard001 START');
       let driver: Driver = Driver.create();
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));
@@ -116,7 +115,7 @@ it('textAreaOnCaretAndKeyboard001', Level.LEVEL1, async () => {
      * @tc.desc     textAreaOnCaretAndKeyboard_static_002
      * @tc.level    Level.LEVEL1
      */
-it('textAreaOnCaretAndKeyboard_static_002', Level.LEVEL1, async () => {
+    it('textAreaOnCaretAndKeyboard_static_002', Level.LEVEL1, async () => {
       console.info('textAreaOnCaretAndKeyboard_static_002 START');
       let driver = Driver.create();
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));

@@ -31,54 +31,27 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
+  StoragePropRef
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct TextAreaExample2 {
-  @State text: string = 'TextInput';
-  @State inputType: InputType = InputType.Normal;
-  @State fontSize: number = 16;
-  @State fontColor: Color = Color.Black;
-  @State textAlign: TextAlign = TextAlign.Start;
-  @State caretIndex: int | undefined = 9999;
-  @State text2: string = ''
-  @State positionInfo: CaretOffset | undefined = { index: 9999, x: 0, y: 0 } as CaretOffset;
+  @StoragePropRef('text') text: string = 'TextInput';
+  @StoragePropRef('inputType') inputType: InputType = InputType.Normal
+  @StoragePropRef('fontSize') fontSize: number = 16
+  @StoragePropRef('fontColor') fontColor: Color = Color.Black
+  @StoragePropRef('textAlign') textAlign: TextAlign = TextAlign.Start;
+  @State caretIndex: number = 9999
+  @StoragePropRef('text2') text2: string = ''
+  @State positionInfo: CaretOffset = { index: 9999, x: 0, y: 0 } as CaretOffset
   controller: TextInputController = new TextInputController()
   controller2: TextInputController = new TextInputController()
 
   onPageShow() {
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 225,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
   }
 
-  private stateChangCallBack:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData) => {
-    if (eventData != null && eventData.data != null) {
-      console.info("swiper page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject).getProperty('fontSize') != null) {
-        this.fontSize = ((eventData.data) as ESObject).getProperty('fontSize').toNumber();
-      }
-      if (((eventData.data) as ESObject).getProperty('fontColor') != null) {
-        this.fontColor = ((eventData.data) as ESObject).getProperty('fontColor').toStaticObject() as Color;
-      }
-      if (((eventData.data) as ESObject).getProperty('textAlign') != null) {
-        this.textAlign = ((eventData.data) as ESObject).getProperty('textAlign').toStaticObject() as TextAlign;
-      }
-      if (((eventData.data) as ESObject).getProperty('type') != null) {
-        this.inputType = ((eventData.data) as ESObject).getProperty('type').toStaticObject() as InputType;
-      }
-      if (((eventData.data) as ESObject).getProperty('Text') != null) {
-        this.text = ((eventData.data) as ESObject).getProperty('text').toString();
-      }
-      if (((eventData.data) as ESObject).getProperty('text2') != null) {
-        this.text2 = ((eventData.data) as ESObject).getProperty('text2').toString();
-      }
-    }
-  }
 
   build() {
     Column() {
@@ -94,7 +67,7 @@ struct TextAreaExample2 {
         .fontFamily("sans-serif")
         .fontStyle(FontStyle.Normal)
         .fontColor(this.fontColor)
-       
+        .inputFilter('^[\u4E00-\u9FA5A-Za-z0-9_]+$')
         .onChange((value: string) :void=> {
           this.text = value
         })
@@ -125,9 +98,9 @@ struct TextAreaExample2 {
           console.info('text2 length:' + this.text2.length)
           this.controller2.caretPosition(this.text2.length)
           console.info('getCaretOffset')
-          this.positionInfo = this.controller2.getCaretOffset()
-          console.info("index:" + this.positionInfo?.index)
-          this.caretIndex = this.positionInfo?.index
+          this.positionInfo = this.controller2.getCaretOffset()!
+          console.info("index:" + this.positionInfo.index)
+          this.caretIndex = this.positionInfo.index
         })
         .key('caretOffsetBtn2')
 

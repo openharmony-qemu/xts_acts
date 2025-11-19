@@ -46,7 +46,6 @@ export default function search_caret() {
   describe('search_caret', () => {
     beforeAll(() => {
       console.info("search_caret beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -64,11 +63,11 @@ export default function search_caret() {
         console.info("get search_caret state pages: " + JSON.stringify(pages));
         if (!("search_caret" == pages.name)) {
           console.info("get search_caret state pages.name: " + '');
-          await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push search_caret page result: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push search_caret page error: " + err);
         expect().assertFail();
       }
@@ -81,7 +80,7 @@ export default function search_caret() {
      * @tc.desc     search_caret_static_001
      * @tc.level    Level.LEVEL3
      */
-it('search_caret_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('search_caret_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[search_caret_static_001] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('SearchCaret1'));
@@ -90,7 +89,7 @@ it('search_caret_static_001', Level.LEVEL3, async (done: () => void): Promise<vo
       console.info('search_caret_static_002 click success');
       let strJson1 = inspector.getInspectorByKey('SearchCaretText');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('1');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('1');
       console.info('[search_caret_static_001] END');
       done();
     });
@@ -102,7 +101,7 @@ it('search_caret_static_001', Level.LEVEL3, async (done: () => void): Promise<vo
      * @tc.desc     search_caret_static_002
      * @tc.level    Level.LEVEL3
      */
-it('search_caret_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('search_caret_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[search_caret_static_002] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('SearchCaret5'));
@@ -111,7 +110,7 @@ it('search_caret_static_002', Level.LEVEL3, async (done: () => void): Promise<vo
       console.info('search_caret_static_002 click success');
       let strJson1 = inspector.getInspectorByKey('SearchCaretText');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('5');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('5');
       console.info('[search_caret_static_002] END');
       done();
     });
@@ -123,7 +122,7 @@ it('search_caret_static_002', Level.LEVEL3, async (done: () => void): Promise<vo
      * @tc.desc     search_caret_static_003
      * @tc.level    Level.LEVEL3
      */
-it('search_caret_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('search_caret_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[search_caret_static_003] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('SearchCaret3'));
@@ -132,7 +131,7 @@ it('search_caret_static_003', Level.LEVEL3, async (done: () => void): Promise<vo
       console.info('search_caret_static_003 click success');
       let strJson1 = inspector.getInspectorByKey('SearchCaretText');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('3');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('3');
       console.info('[search_caret_static_003] END');
       done();
     });
@@ -144,7 +143,7 @@ it('search_caret_static_003', Level.LEVEL3, async (done: () => void): Promise<vo
      * @tc.desc     search_caret_static_004
      * @tc.level    Level.LEVEL3
      */
-it('search_caret_static_004', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('search_caret_static_004', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[search_caret_static_004] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('SearchCaret20'));
@@ -153,7 +152,7 @@ it('search_caret_static_004', Level.LEVEL3, async (done: () => void): Promise<vo
       console.info('search_caret_static_004 click success');
       let strJson1 = inspector.getInspectorByKey('SearchCaretText');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('9');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('9');
       console.info('[search_caret_static_004] END');
       done();
     });
@@ -165,7 +164,7 @@ it('search_caret_static_004', Level.LEVEL3, async (done: () => void): Promise<vo
      * @tc.desc     search_caret_static_005
      * @tc.level    Level.LEVEL3
      */
-it('search_caret_static_005', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('search_caret_static_005', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[search_caret_static_005] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('SearchCaret_1'));
@@ -174,7 +173,7 @@ it('search_caret_static_005', Level.LEVEL3, async (done: () => void): Promise<vo
       console.info('search_caret_static_005 click success');
       let strJson1 = inspector.getInspectorByKey('SearchCaretText');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('0');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('0');
       console.info('[search_caret_static_005] END');
       done();
     });

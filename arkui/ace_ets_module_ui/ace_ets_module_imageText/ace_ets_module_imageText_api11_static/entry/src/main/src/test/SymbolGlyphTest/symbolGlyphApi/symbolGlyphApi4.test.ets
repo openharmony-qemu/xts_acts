@@ -45,7 +45,6 @@ export default function symbolGlyphApi4() {
     beforeAll(() => {
       console.info("symbolGlyphApi4 beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,9 +65,9 @@ export default function symbolGlyphApi4() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-         
+          // console.info("push symbolGlyphApi4 page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push symbolGlyphApi4 page error:" + err);
       }
       console.info("symbolGlyphApi4 beforeEach end");
@@ -86,13 +85,13 @@ export default function symbolGlyphApi4() {
      * @tc.desc     symbolGlyphApi4_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('symbolGlyphApi4_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('symbolGlyphApi4_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[symbolGlyphApi4_static_0100] START');
       await CommonFunc.sleep(2000);
 
       let symbolGlyphApi4 = inspector.getInspectorByKey('symbolGlyphApi4');
       let Obj1 = JSON.parseJsonElement(symbolGlyphApi4);
-      expect(Obj1.getElement('$attrs').getElement('effectStrategy')).assertEqual('SymbolEffectStrategy.SCALE');
+      expect(Obj1.getElement('$attrs').getString('effectStrategy')).assertEqual('SymbolEffectStrategy.SCALE');
       console.info('[testRichEditor_0100] END');
       done();
     });

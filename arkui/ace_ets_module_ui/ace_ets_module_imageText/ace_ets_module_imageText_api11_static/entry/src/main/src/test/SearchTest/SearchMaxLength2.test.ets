@@ -46,7 +46,6 @@ export default function search_maxLength2() {
   describe('search_maxLength2', () => {
     beforeAll(() => {
       console.info("search_maxLength2 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -67,8 +66,9 @@ export default function search_maxLength2() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push search_maxLength2 page result: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push search_maxLength2 page error: " + err);
         expect().assertFail();
       }
@@ -81,7 +81,7 @@ export default function search_maxLength2() {
      * @tc.desc     SearchMaxLength2_static_001
      * @tc.level    Level.LEVEL3
      */
-it('SearchMaxLength2_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SearchMaxLength2_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('SearchMaxLength2_static_001 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('SearchMaxLength9'));
@@ -96,7 +96,7 @@ it('SearchMaxLength2_static_001', Level.LEVEL3, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[SearchMaxLength2_static_001] component obj is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1)));
-      expect(obj2.getElement('$attrs').getElement('value')).assertEqual('123456789');
+      expect(obj2.getElement('$attrs').getString('value')).assertEqual('123456789');
       console.info('[SearchMaxLength2_static_001] END');
       done();
     });
@@ -108,7 +108,7 @@ it('SearchMaxLength2_static_001', Level.LEVEL3, async (done: () => void): Promis
      * @tc.desc     SearchMaxLength2_static_002
      * @tc.level    Level.LEVEL3
      */
-it('SearchMaxLength2_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SearchMaxLength2_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('SearchMaxLength2_static_002 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('SearchMaxLength5'));
@@ -123,7 +123,7 @@ it('SearchMaxLength2_static_002', Level.LEVEL3, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       console.info("[SearchMaxLength2_static_002] component obj is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1)));
-      expect(obj4.getElement('$attrs').getElement('value')).assertEqual('12345');
+      expect(obj4.getElement('$attrs').getString('value')).assertEqual('12345');
       console.info('[SearchMaxLength2_static_002] END');
       done();
     });

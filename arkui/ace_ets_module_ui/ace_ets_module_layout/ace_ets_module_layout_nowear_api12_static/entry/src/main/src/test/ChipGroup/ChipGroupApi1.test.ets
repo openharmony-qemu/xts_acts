@@ -24,6 +24,7 @@ import {
   Level
 } from '../../../../hypium/index';
 import router from '@ohos.router';
+// import { sendEventByKey } from '@internal.full.global'
 import {
   Component,
   Driver,
@@ -72,21 +73,22 @@ export default function ChipGroupApi1() {
         console.info("get ChipGroupApi1 state pages:" + "");
         if (!("ChipGroupApi1" == pages.name)) {
           console.info("get ChipGroupApi1 pages.name:" + "");
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push ChipGroupApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ChipGroupApi1 page error:" + err);
       }
       console.info("ChipGroupApi1 beforeEach end");
-      
+      // done();
     });
     afterEach(async () => {
     });
 
 
+    
     /*
      * @tc.number   ChipGroupApi1_static_0100
      * @tc.name     ChipGroupApi1_static_0100
@@ -100,13 +102,17 @@ export default function ChipGroupApi1() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id("ChipGroupApi1_btn1"));
+      console.info('ChipGroupApi1_static_0100 findComponent');
       await (btn1?.click() as Promise<void>)
+      console.info('ChipGroupApi1_static_0100 START');
+      console.info('ChipGroupApi1_static_0100 CLICK SUCCESS');
       await CommonFunc.sleep(1000);
 
-      
-
+      // sendEventByKey('ChipGroupApi1_btn1', 10, "")
+      console.info('ChipGroupApi1_static_0100 CLICK SUCCESS');
 
       let text1 = inspector.getInspectorByKey('ChipGroupApi1_text1');
+      console.info('ChipGroupApi1_static_0100 getInspectorByKey1 SUCCESS');
       expect(JSON.stringify(JSON.parseJsonElement(text1).getElement("$attrs").getString('content')))
         .assertEqual('"SymbolGlyph"');
       await CommonFunc.sleep(1000);

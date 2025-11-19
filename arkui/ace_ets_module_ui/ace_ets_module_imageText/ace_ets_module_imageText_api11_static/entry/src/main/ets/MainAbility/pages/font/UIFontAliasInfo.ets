@@ -14,9 +14,22 @@
  */
 
 import font from '@ohos.font';
-import { Entry, Component, Column, Text, Button, Margin, ClickEvent } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import {
+  Entry,
+  Component,
+  Column,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  TextDecorationType,
+  Margin,
+  ClickEvent,
+  Button,
+} from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct FontExample {
@@ -31,7 +44,7 @@ struct FontExample {
         .width('60%')
         .height('6%')
         .margin(50)
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let fontConfig = font.getUIFontConfig();
           console.log('font-dir -----------' + String(fontConfig.fontDir.length));
           for (let i = 0; i < fontConfig.fontDir.length; i++) {
@@ -61,9 +74,9 @@ struct FontExample {
               fontConfig.fallbackGroups[i].fallback[j].family);
             }
           }
-          AppStorage.setOrCreate('UIFontName', this.name);
-          AppStorage.setOrCreate('UIFontWeight', this.weight);
-          AppStorage.setOrCreate('UIFontTo', this.to);
+          AppStorage.setOrCreate<string>('UIFontName', this.name);
+          AppStorage.setOrCreate<string>('UIFontWeight', this.weight);
+          AppStorage.setOrCreate<string>('UIFontTo', this.to);
         })
     }.width('100%')
   }

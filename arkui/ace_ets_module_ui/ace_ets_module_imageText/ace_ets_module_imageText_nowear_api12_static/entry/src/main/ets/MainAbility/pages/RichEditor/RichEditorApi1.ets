@@ -34,10 +34,7 @@ struct RichEditorApi1 {
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .onEditingChange((isEditing: boolean):void => {
-          let tempIsEditing = this.controller.isEditing()
-          if (tempIsEditing !== undefined) {
-            this.controllerIsEditing = tempIsEditing!
-          }
+          this.controllerIsEditing = this.controller.isEditing()!
         })
         .key('RichEditorApi1_1')
         .height(400)

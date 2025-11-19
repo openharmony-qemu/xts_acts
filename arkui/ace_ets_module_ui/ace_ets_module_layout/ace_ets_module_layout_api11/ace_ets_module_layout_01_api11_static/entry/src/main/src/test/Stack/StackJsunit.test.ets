@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,15 +31,15 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
-
-
-
-
-
-
-
-
+// function sleep(time: number) {
+//   return new Promise<void>((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, time * 1000);
+//   }).then(() => {
+//     console.info(`sleep ${time} over...`);
+//   })
+// }
 
 
 export default function StackJsunit() {
@@ -48,7 +48,7 @@ export default function StackJsunit() {
   describe('StackTest', () => {
     beforeAll(async () => {
       console.info("StackTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -65,22 +65,23 @@ export default function StackJsunit() {
         if (!("Stack" == pages?.name)) {
           console.info("get Stack state success " + JSON.stringify(pages?.name));
           routerInstance?.pushUrl(options);
-          
-          
+          // let result = await router.push(options);
+          // console.info("push Stack page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Stack page error " + JSON.stringify(err));
       }
-      
-      
+      // await sleep(2);
+      // done();
     });
 
     afterEach(async () => {
-      
+      // await sleep(1);
       console.info("Stack after each called");
     });
     
     
+
 
 
 /*
@@ -89,7 +90,7 @@ export default function StackJsunit() {
      * @tc.desc     testStackGetInspectorByKey010_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey010_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey010_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetInspectorByKey START');
       let strJson = inspector.getInspectorByKey('stack');
       let obj = JSON.parseJsonElement(strJson);
@@ -106,13 +107,14 @@ it('testStackGetInspectorByKey010_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey020_static
      * @tc.name     testStackGetInspectorByKey020_static
      * @tc.desc     testStackGetInspectorByKey020_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey020_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey020_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack1 component obj is: " + JSON.stringify(obj));
@@ -127,13 +129,14 @@ it('testStackGetInspectorByKey020_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey030_static
      * @tc.name     testStackGetInspectorByKey030_static
      * @tc.desc     testStackGetInspectorByKey030_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey030_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey030_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack2 component obj is: " + JSON.stringify(obj));
@@ -147,13 +150,14 @@ it('testStackGetInspectorByKey030_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey040_static
      * @tc.name     testStackGetInspectorByKey040_static
      * @tc.desc     testStackGetInspectorByKey040_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey040_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey040_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack3 component obj is: " + JSON.stringify(obj));
@@ -166,13 +170,14 @@ it('testStackGetInspectorByKey040_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey050_static
      * @tc.name     testStackGetInspectorByKey050_static
      * @tc.desc     testStackGetInspectorByKey050_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey050_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey050_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack4');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack4 component obj is: " + JSON.stringify(obj));
@@ -186,13 +191,14 @@ it('testStackGetInspectorByKey050_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey060_static
      * @tc.name     testStackGetInspectorByKey060_static
      * @tc.desc     testStackGetInspectorByKey060_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey060_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey060_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack5');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack5 component obj is: " + JSON.stringify(obj));
@@ -206,13 +212,14 @@ it('testStackGetInspectorByKey060_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey070_static
      * @tc.name     testStackGetInspectorByKey070_static
      * @tc.desc     testStackGetInspectorByKey070_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey070_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey070_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack6');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack6 component obj is: " + JSON.stringify(obj));
@@ -226,13 +233,14 @@ it('testStackGetInspectorByKey070_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey080_static
      * @tc.name     testStackGetInspectorByKey080_static
      * @tc.desc     testStackGetInspectorByKey080_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey080_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey080_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack7');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack7 component obj is: " + JSON.stringify(obj));
@@ -246,13 +254,14 @@ it('testStackGetInspectorByKey080_static', Level.LEVEL0, async (done: () => void
     
 
 
+
 /*
      * @tc.number   testStackGetInspectorByKey090_static
      * @tc.name     testStackGetInspectorByKey090_static
      * @tc.desc     testStackGetInspectorByKey090_static
      * @tc.level    Level.LEVEL0
      */
-it('testStackGetInspectorByKey090_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testStackGetInspectorByKey090_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('stack8');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd stack8 component obj is: " + JSON.stringify(obj));

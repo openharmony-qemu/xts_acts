@@ -37,7 +37,6 @@ export default function textTimerJsunit() {
     beforeAll(() => {
       console.info("appInfoTest_four_14 beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -55,8 +54,11 @@ export default function textTimerJsunit() {
         console.info("get appInfoTest_four_14 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get appInfoTest_four_14 pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push appInfoTest_four_14 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push appInfoTest_four_14 page error:" + err);
@@ -79,18 +81,18 @@ export default function textTimerJsunit() {
      * @tc.desc     textTimer_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('textTimer_static_0100', Level.LEVEL1, async (done: ()=>void) :Promise<void>=> {
+    it('textTimer_static_0100', Level.LEVEL1, async (done: ()=>void) :Promise<void>=> {
       console.info('[textTimer_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textTimer');
       console.info("[textTimer_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[textTimer_static_0100] expect(obj.getElement('$type')) is: " + (JSON.parseJsonElement(strJson).getElement('$type')));
-      console.info("[textTimer_static_0100] obj.getElement('$attrs').getString('type') is: " + (JSON.parseJsonElement(strJson).getElement('$attrs').getString('type')));
+      console.info("[textTimer_static_0100] expect(obj.getString('$type')) is: " + (JSON.parseJsonElement(strJson).getString('$type')));
+      // console.info("[textTimer_static_0100] obj.getElement('$attrs').getString('type') is: " + (JSON.parseJsonElement(strJson).getElement('$attrs').getString('type')));
       if (true) {
         done();
         return Promise.resolve();
       }
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('TextTimer');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('TextTimer');
       done();
     });
 
@@ -101,7 +103,7 @@ it('textTimer_static_0100', Level.LEVEL1, async (done: ()=>void) :Promise<void>=
      * @tc.desc     textTimer_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('textTimer_static_0200', Level.LEVEL1, async (done: ()=>void) :Promise<void>=> {
+    it('textTimer_static_0200', Level.LEVEL1, async (done: ()=>void) :Promise<void>=> {
       console.info('[textTimer_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textTimer');
@@ -120,20 +122,26 @@ it('textTimer_static_0200', Level.LEVEL1, async (done: ()=>void) :Promise<void>=
      * @tc.desc     textTimer_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('textTimer_static_0300', Level.LEVEL1, async (done: ()=>void) :Promise<void>=> {
-      console.info('[textTimer_static_0300] START');
-      await CommonFunc.sleep(1000);
-
+    it('textTimer_static_0300', Level.LEVEL1, async (done: ()=>void) :Promise<void>=> {
       try {
-        let strJson: string = inspector.getInspectorByKey('textTimer');
-        if (true) {
+        console.info('[textTimer_static_0300] START');
+          await CommonFunc.sleep(1000);
+          let strJson: string = inspector.getInspectorByKey('textTimer');
+          if (true) {
+            done();
+            return Promise.resolve();
+          }
+          // const textTimerAttribute = new TextTimerAttribute();
+          // textTimerAttribute.onTimer((utc: number, elapsedTime: number) => {
+          //   console.info('textTimer notCountDown utc is：' + utc + ', elapsedTime: ' + elapsedTime)
+          // });
+          // textTimerAttribute.fontColor(Color.Black);
+          // textTimerAttribute.fontSize(50);
+          // textTimerAttribute.format('hh:mm:ss.ms');
           done();
-          return Promise.resolve();
-        }
-      }catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
-      done();
     });
   })
 }

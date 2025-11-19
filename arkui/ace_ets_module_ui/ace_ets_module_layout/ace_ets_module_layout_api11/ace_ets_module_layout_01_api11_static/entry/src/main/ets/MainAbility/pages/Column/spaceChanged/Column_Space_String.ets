@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,7 +18,6 @@ import {State,AppStorage} from '@ohos.arkui.stateManagement'
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-
 @Entry
 @Component
 struct Column_Space_String {
@@ -26,10 +25,6 @@ struct Column_Space_String {
   messageManager: MessageManager<string> = new MessageManager<string>()
   onPageShow() {
     console.info('Column_Space_String onPageShow');
-    
-    
-    
-    
     let context = this.getUIContext() as UIContext
     AppStorage.setOrCreate<UIContext>("context",  context);
     AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);

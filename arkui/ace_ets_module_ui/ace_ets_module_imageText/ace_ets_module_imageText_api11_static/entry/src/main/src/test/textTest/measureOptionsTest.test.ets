@@ -37,7 +37,6 @@ export default function measureOptionsTest() {
 
     beforeAll(() => {
       console.info("measureOptionsTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -55,8 +54,11 @@ export default function measureOptionsTest() {
         console.info("get measureOptionsTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get measureOptionsTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push measureOptionsTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push measureOptionsTest page error:" + err);
@@ -76,7 +78,7 @@ export default function measureOptionsTest() {
      * @tc.desc     measureOptionsTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('measureOptionsTest_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+    it('measureOptionsTest_static_0001', Level.LEVEL1, async (done: ()=>void) => {
       let driver = Driver.create();
       console.info('SizeOptions measureOptionsTest_static_0001 START');
       await CommonFunc.sleep(1000);

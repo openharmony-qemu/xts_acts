@@ -25,68 +25,29 @@ import {
   FlexDirection,
   ItemAlign,
   FlexAlign,
-  TextClock
+  TextClock,
+  ResourceColor
+
 } from '@ohos.arkui.component'
 import {
   State,
+  StoragePropRef
 } from '@ohos.arkui.stateManagement'
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct Second {
-  @State accumulateTime: long = 0;
-  @State fontSize: number = 20;
-  @State fontColor: Color = Color.Red;
-  @State format: string = "hhmmss";
-  @State onActionCalled: boolean = false;
+  @State accumulateTime: number = 0;
+  @StoragePropRef('fontSize') fontSize: number = 20;
+  @StoragePropRef('fontColor') fontColor: ResourceColor = Color.Red;
+  @StoragePropRef('format') format: string = "hhmmss";
+  @StoragePropRef('onActionCalled') onActionCalled: boolean = false;
   @State onActionCalledOne: boolean = false;
   controller: TextClockController = new TextClockController();
 
   onPageShow() {
     console.info('swiper page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 219,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-
-    let stateChangeEventOne: events_emitter.InnerEvent = {
-      eventId: 220,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventOne, this.stateChangCallBack)
-
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 221,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack)
-
-    let stateChangeEventThree: events_emitter.InnerEvent = {
-      eventId: 222,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventThree, this.stateChangCallBack)
-  }
-
-  private stateChangCallBack :(eventData: events_emitter.EventData)=> void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("swiper page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject).getProperty('fontSize') != null) {
-        this.fontSize = ((eventData.data) as ESObject).getProperty('fontSize').toNumber();
-      }
-      if (((eventData.data) as ESObject).getProperty('fontColor') != null) {
-        this.fontColor = ((eventData.data) as ESObject).getProperty('fontColor').toStaticObject() as Color;
-      }
-      if (((eventData.data) as ESObject).getProperty('format') != null) {
-        this.format = ((eventData.data) as ESObject).getProperty('format').toString();
-      }
-      if (((eventData.data) as ESObject).getProperty('onActionCalled') != null) {
-        this.onActionCalled = ((eventData.data) as ESObject).getProperty('onActionCalled').toBoolean();
-      }
-    }
   }
 
   build() {
@@ -104,17 +65,17 @@ struct Second {
           this.onActionCalled = true;
           console.info('onChange current action state is: ' + this.onActionCalled);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalled,
-              } as Record<string, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+              } as Record<String,undefined|null|Object>
+            } as emitter.EventData
+            let backEvent: emitter.InnerEvent = {
               eventId: 223,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("onChange start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("onChange emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -133,17 +94,17 @@ struct Second {
           this.onActionCalledOne = true;
           console.info('button2 current action state is: ' + this.onActionCalledOne);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalledOne,
-              }  as Record<string, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+              } as Record<String,undefined|null|Object>
+            } as emitter.EventData
+            let backEvent: emitter.InnerEvent = {
               eventId: 224,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button2 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
           }

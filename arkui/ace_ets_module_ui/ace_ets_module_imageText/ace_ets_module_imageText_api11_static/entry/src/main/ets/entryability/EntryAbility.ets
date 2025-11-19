@@ -21,6 +21,7 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
+import common from "@ohos.app.ability.common";
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -29,6 +30,7 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
+    AppStorage.setOrCreate<common.UIAbilityContext>('stageContext', this.context);
     try {
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
@@ -49,26 +51,26 @@ class EntryAbility extends UIAbility {
           try {
             let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
             let wRect: window.Rect | undefined = properties?.windowRect;
-            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
-            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0 );
+            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0 );
             hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
             hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
+          // Obtain a UIContext instance.
           if (windowClass !== null) {
-            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
+            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext() );
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e) {
+    } catch (e: Error) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy():Promise<void> {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined;
   }
 
   onWindowStageDestroy() {

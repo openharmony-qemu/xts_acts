@@ -30,10 +30,9 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function TextSelectionMenu() {
-  describe('TextSelectionMenu', () => {
+  describe('TextSelectionMenu', ()  => {
     beforeAll(() => {
       console.info("TextSelectionMenu beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -49,11 +48,13 @@ export default function TextSelectionMenu() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get TextSelectionMenu state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextSelectionMenu" == pages.name)) {
           console.info("get TextSelectionMenu pages.name:" + '');
-         
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TextSelectionMenu page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextSelectionMenu page error:" + err);
@@ -62,10 +63,19 @@ export default function TextSelectionMenu() {
     });
 
 
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("TextSelectionMenu after each called");
-    });
+    afterEach(async (): Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+      await CommonFunc.sleep(2000);
+      let pages: router.RouterState = routerInstance.getState();
+      console.info("get Search state pages afterEach:" + JSON.stringify(pages));
+      if (pages.name !== "index") {
+        let options: router.RouterOptions = {
+          url: 'MainAbility/pages/index/index',
+        }
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(2000);
+      }})
 
     
     /*
@@ -74,12 +84,16 @@ export default function TextSelectionMenu() {
      * @tc.desc     TextSelectionMenu_static_001
      * @tc.level    Level.LEVEL2
      */
-it('TextSelectionMenu_static_001', Level.LEVEL2, async (done: ()=>void ) => {
+    it('TextSelectionMenu_static_001', Level.LEVEL2, async (done: ()=>void ) => {
       console.info('[TextSelectionMenu_static_001] START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
+      let text3 = CommonFunc.getComponentRectOnScreen('Text_bindSelectionMenu_test')
+      let x: int = Math.floor(((text3.right-text3.left)*0.5+text3.left)) as int
+      let y: int = Math.floor(((text3.bottom-text3.top)*0.5+text3.top)) as int
+      await driver.mouseClick({ x: x, y: y}, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('textApi_text1_test');
@@ -100,13 +114,16 @@ it('TextSelectionMenu_static_001', Level.LEVEL2, async (done: ()=>void ) => {
      * @tc.desc     TextSelectionMenu_static_002
      * @tc.level    Level.LEVEL2
      */
-it('TextSelectionMenu_static_002', Level.LEVEL2, async (done: ()=>void ) => {
+    it('TextSelectionMenu_static_002', Level.LEVEL2, async (done: ()=>void ) => {
       console.info('[TextSelectionMenu_static_002] START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-   
+      let test4 = CommonFunc.getComponentRectOnScreen('text_TextResponseType')
+      let x: int = Math.floor((test4.right-test4.left)*0.2+test4.left) as int
+      let y: int = Math.floor((test4.bottom-test4.top)*0.5+test4.top) as int
+      await driver.longClick(x, y)
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('textApi_text2');

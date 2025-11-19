@@ -23,14 +23,14 @@ struct RichEditor7 {
   controller2: RichEditorController   = new RichEditorController()
   @State enterTypeALl: EnterKeyType[] = [ EnterKeyType.Done, EnterKeyType.Go,  EnterKeyType.Search, EnterKeyType.Send, EnterKeyType.Next, EnterKeyType.PREVIOUS, EnterKeyType.NEW_LINE]
   @State enterTypeAllStr: string[] = ['Done', 'Go', 'Search', 'Send', 'Next', 'PREVIOUS', 'NEW_LINE']
-  @State enterType: number = 0
-  @State enterKey: string = this.enterTypeALl[this.enterType.toInt()].toString()
+  @State enterType: int = 0
+  @State enterKey: string = this.enterTypeALl[this.enterType].toString()
   @State IsShowCustomKeyboard: boolean = false
   @State IsCallKeepEditableState: boolean = false
-  @State start: int = -1
-  @State end: int = -1
+  @State start: number = -1
+  @State end: number = -1
   @State content: string = ''
-  @State selectCaret: int = 0
+  @State selectCaret: number = 0
   @State counter: string = ''
   @State isSetEnterKeyType: boolean = false
   @State isEditing1: boolean = false
@@ -47,15 +47,13 @@ struct RichEditor7 {
             Button(item + '')
               .hitTestBehavior(HitTestMode.Block)
               .width('10%').onClick((e: ClickEvent) => {
-              let tempOffset = this.controller.getCaretOffset()
-              if (tempOffset !== undefined) {
-                let CaretOffset = tempOffset!
-                this.controller.addTextSpan(item + '',
-                  {
-                    offset: CaretOffset
-                  })
-                this.controller.setCaretOffset(CaretOffset + 1)
-              }
+              let CaretOffset = this.controller.getCaretOffset()
+              this.controller.addTextSpan(item + '',
+                {
+                  offset: CaretOffset
+                })
+              this.controller.setCaretOffset(CaretOffset!.toInt() + 1)
+
             })
           }
         })
@@ -93,10 +91,7 @@ struct RichEditor7 {
           })
           .onEditingChange((isEditing: boolean):void => {
             this.isEditing1 = isEditing
-            let tempIsEditing = this.controller.isEditing()
-            if (tempIsEditing !== undefined) {
-              this.controllerIsEditing1 = tempIsEditing!
-            }
+            this.controllerIsEditing1 = this.controller.isEditing()!
             console.log('Juan Current Editing Status:' + isEditing)
             console.log('Juan this.controller.isEditable():' + this.controller.isEditing())
           })
@@ -114,7 +109,7 @@ struct RichEditor7 {
         }.width('100%')
 
         Row() {
-          Button('回车键类型: ' + this.enterTypeAllStr[this.enterType.toInt()]).id('EnterType')
+          Button('回车键类型: ' + this.enterTypeAllStr[this.enterType]).id('EnterType')
             .onClick((e: ClickEvent) => {
               this.enterType++
               if (this.enterType > (this.enterTypeALl.length - 1)) {
@@ -150,7 +145,7 @@ struct RichEditor7 {
           .border({ width: 1 })
           .borderWidth(1)
           .borderColor(Color.Red)
-          .enterKeyType(this.enterTypeALl[this.enterType.toInt()])
+          .enterKeyType(this.enterTypeALl[this.enterType])
           .onSubmit((enterKey: EnterKeyType, event: SubmitEvent): void => {
             this.enterKey = enterKey.toString();
 
@@ -163,10 +158,7 @@ struct RichEditor7 {
           })
           .onEditingChange((isEditing: boolean): void  => {
             this.isEditing2 = isEditing
-            let tempIsEditing = this.controller2.isEditing()
-            if (tempIsEditing !== undefined) {
-              this.controllerIsEditing2 = tempIsEditing!
-            }
+            this.controllerIsEditing2 = this.controller2.isEditing()!
             console.log('Juan Current Editing Status:' + isEditing)
             console.log('Juan this.controller.isEditable():' + this.controller.isEditing())
           })

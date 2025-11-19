@@ -13,18 +13,19 @@
  * limitations under the License.
  */
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { ResourceColor } from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import { describe, beforeEach, afterEach, it, expect, Level,beforeAll } from "../../../../hypium/index";
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -38,7 +39,6 @@ export default function textClockJsunit() {
 
     beforeAll(() => {
       console.info("appInfoTest_four_11 beforeEach start");
-
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -55,7 +55,7 @@ export default function textClockJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get appInfoTest_four_11 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textClock" == pages.name)) {
           console.info("get appInfoTest_four_11 pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -78,11 +78,12 @@ export default function textClockJsunit() {
      * @tc.desc     textClockTest_static_01
      * @tc.level    Level.LEVEL2
      */
-it('textClockTest_static_01', Level.LEVEL2, async (done: ()=>void) => {
+    it('textClockTest_static_01', Level.LEVEL2, async (done: ()=>void) => {
       console.info('textClockTest_static_01 START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textClock');
       let obj = JSON.parseJsonElement(strJson);
+      // console.info("textClockTest_static_01 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('30.00fp');
       await CommonFunc.sleep(1000);
       done();
@@ -95,22 +96,12 @@ it('textClockTest_static_01', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textClockTest_static_02
      * @tc.level    Level.LEVEL2
      */
-it('textClockTest_static_02', Level.LEVEL2, async (done: ()=>void) => {
+    it('textClockTest_static_02', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[textClockTest_static_02] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSize": 30
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 219,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[textClockTest_static_02] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>("fontSize", 30)
+      } catch (err: Error) {
         console.log("[textClockTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -127,7 +118,7 @@ it('textClockTest_static_02', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textClockTest_static_03
      * @tc.level    Level.LEVEL2
      */
-it('textClockTest_static_03', Level.LEVEL2, async (done: ()=>void) => {
+    it('textClockTest_static_03', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[textClockTest_static_03] START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('textClock');
@@ -145,21 +136,11 @@ it('textClockTest_static_03', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textClockTest_static_04
      * @tc.level    Level.LEVEL2
      */
-it('textClockTest_static_04', Level.LEVEL2, async (done: ()=>void) => {
+    it('textClockTest_static_04', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[textClockTest_static_04] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontColor": '#FF000990'
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 220,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[textClockTest_static_04] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<ResourceColor>("fontColor", '#FF000990')
+      } catch (err:Error) {
         console.log("[textClockTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -178,7 +159,7 @@ it('textClockTest_static_04', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textClockTest_static_05
      * @tc.level    Level.LEVEL2
      */
-it('textClockTest_static_05', Level.LEVEL2, async (done: ()=>void) => {
+    it('textClockTest_static_05', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[textClockTest_static_05] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('textClock');
@@ -196,21 +177,11 @@ it('textClockTest_static_05', Level.LEVEL2, async (done: ()=>void) => {
      * @tc.desc     textClockTest_static_06
      * @tc.level    Level.LEVEL2
      */
-it('textClockTest_static_06', Level.LEVEL2, async (done: ()=>void) => {
+    it('textClockTest_static_06', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[textClockTest_static_06] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "format": '20',
-          }as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 221,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[textClockTest_static_06] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<string>("format", '20')
+      } catch (err:Error) {
         console.log("[textClockTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

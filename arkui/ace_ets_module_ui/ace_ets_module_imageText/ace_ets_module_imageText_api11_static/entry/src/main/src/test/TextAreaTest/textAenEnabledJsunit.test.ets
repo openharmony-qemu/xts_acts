@@ -31,12 +31,11 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function textArea_bottom() {
-  describe('textArea_bottom', () => {
+export default function textAenEnabledJsunit() {
+  describe('textAenEnabledJsunit', () => {
 
     beforeAll(() => {
-      console.info("textArea_bottom beforeEach start");
-
+      console.info("textAenEnabledJsunit beforeEach start");
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -44,7 +43,7 @@ export default function textArea_bottom() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("textArea_bottom beforeEach start");
+      console.info("textAenEnabledJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/TextArea/textAenEnabled",
       }
@@ -52,62 +51,64 @@ export default function textArea_bottom() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
-        console.info("get textArea_bottom state pages:" + JSON.stringify(pages));
+        console.info("get textAenEnabledJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
-          console.info("get textArea_bottom pages.name:" + '');
-         
+          console.info("get textAenEnabledJsunit pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textAenEnabledJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textArea_bottom page error:" + err);
+        console.error("push textAenEnabledJsunit page error:" + err);
       }
-      console.info("textArea_bottom beforeEach end");
+      console.info("textAenEnabledJsunit beforeEach end");
     });
 
     
     /*
-     * @tc.number   textArea_bottom_static_0100
-     * @tc.name     textArea_bottom_static_0100
-     * @tc.desc     textArea_bottom_static_0100
+     * @tc.number   textAenEnabledJsunit_static_0100
+     * @tc.name     textAenEnabledJsunit_static_0100
+     * @tc.desc     textAenEnabledJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('textArea_bottom_static_0100', Level.LEVEL1, async (done: ()=>void) => {
+    it('textAenEnabledJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
 
-      console.info('textArea_bottom_static_0100 START');
+      console.info('textAenEnabledJsunit_static_0100 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('taText'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('taEnable');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[textArea_bottom_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[textArea_bottom_static_0100] text1: " + obj.getElement('$attrs').getString('content'));
+      console.info("[textAenEnabledJsunit_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[textAenEnabledJsunit_static_0100] text1: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual("TextArea组件事件触发");
-      console.info('[textArea_bottom_static_0100] END');
+      console.info('[textAenEnabledJsunit_static_0100] END');
       done();
     });
 
     
     /*
-     * @tc.number   textArea_bottom_static_0200
-     * @tc.name     textArea_bottom_static_0200
-     * @tc.desc     textArea_bottom_static_0200
+     * @tc.number   textAenEnabledJsunit_static_0200
+     * @tc.name     textAenEnabledJsunit_static_0200
+     * @tc.desc     textAenEnabledJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('textArea_bottom_static_0200', Level.LEVEL1, async (done: ()=>void) => {
+    it('textAenEnabledJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
 
-      console.info('textArea_bottom_static_0200 START');
+      console.info('textAenEnabledJsunit_static_0200 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('tiText'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('tiEnable');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[textArea_bottom_static_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[textArea_bottom_static_0200] text2: " + obj.getElement('$attrs').getString('content'));
+      console.info("[textAenEnabledJsunit_static_0200] component obj is: " + JSON.stringify(obj));
+      console.info("[textAenEnabledJsunit_static_0200] text2: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual("TextInput组件事件触发");
-      console.info('[textArea_bottom_static_0200] END');
+      console.info('[textAenEnabledJsunit_static_0200] END');
       done();
     });
 

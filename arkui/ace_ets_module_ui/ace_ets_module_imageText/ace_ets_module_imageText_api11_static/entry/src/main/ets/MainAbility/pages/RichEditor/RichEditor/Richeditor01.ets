@@ -70,7 +70,7 @@ struct Richeditor01 {
         Flex({ wrap: FlexWrap.Wrap }) {
           Button('添加文本')
             .borderRadius(8)
-            .backgroundColor(0x317aff)
+            .backgroundColor('0x317aff')
             .fontColor(Color.White)
             .width(90)
             .margin({ bottom: 5, right: 5 } as Margin)
@@ -79,7 +79,7 @@ struct Richeditor01 {
                 offset: 0,
                 style: {
                   fontColor: Color.Red,
-                  fontSize: 8.0,
+                  fontSize: 8,
                   fontStyle: FontStyle.Italic,
                   fontWeight: FontWeight.Lighter,
                   fontFamily: "sans-serif",
@@ -90,7 +90,7 @@ struct Richeditor01 {
             .key("addSpan")
           Button('添加图片')
             .borderRadius(8)
-            .backgroundColor(0x317aff)
+            .backgroundColor('0x317aff')
             .fontColor(Color.White)
             .width(90)
             .margin({ bottom: 5, right: 5 } as Margin)
@@ -106,7 +106,7 @@ struct Richeditor01 {
             })
           Button('修改样式')
             .borderRadius(8)
-            .backgroundColor(0x317aff)
+            .backgroundColor('0x317aff')
             .fontColor(Color.White)
             .width(90)
             .margin({ bottom: 5, right: 5 } as Margin)
@@ -114,7 +114,7 @@ struct Richeditor01 {
               this.controller.updateSpanStyle({
                 textStyle: {
                   fontColor: Color.Blue,
-                  fontSize: 12.0,
+                  fontSize: 12,
                   fontStyle: FontStyle.Italic,
                   fontWeight: FontWeight.Bolder,
                   fontFamily: "sans-serif",
@@ -124,7 +124,7 @@ struct Richeditor01 {
             })
           Button('删除')
             .borderRadius(8)
-            .backgroundColor(0x317aff)
+            .backgroundColor('0x317aff')
             .fontColor(Color.White)
             .width(90)
             .margin({ bottom: 5, right: 5 } as Margin)
@@ -136,7 +136,7 @@ struct Richeditor01 {
             })
           Button('getSpans')
             .borderRadius(8)
-            .backgroundColor(0x317aff)
+            .backgroundColor('0x317aff')
             .fontColor(Color.White)
             .width(90)
             .margin({ bottom: 5, right: 5 } as Margin)
@@ -173,13 +173,16 @@ struct Richeditor01 {
               spanPosition: { spanIndex: 10, spanRange: [10, 10] },
               value: "aaaaa",
               textStyle: {
-                fontColor: Color.Black,
-                fontSize: 12.0,
+                fontColor: Color.Red,
+                fontSize: 8,
                 fontStyle: FontStyle.Italic,
-                fontWeight: FontWeight.Bold,
+                fontWeight: FontWeight.Lighter,
                 fontFamily: "sans-serif",
-                decoration: { type: TextDecorationType.Underline, color: Color.Pink }
-              },
+                decoration: {
+                  type: TextDecorationType.None,
+                  color: Color.Red
+                }
+              } ,
               offsetInSpan: [10, 100]
             }
             let SpanPosition: RichEditorSpanPosition = { spanIndex: 20, spanRange: [20, 20] }
@@ -190,7 +193,6 @@ struct Richeditor01 {
             TextSpanResult.offsetInSpan.toString()
             RichEditorTextSpanResult.offsetInSpan.toString()
             console.log("wxh test app onIMEInputComplete")
-          
           })
           .key('Stage_RichEditor_Test_2400')
           .aboutToDelete((RichEditorDeleteValue: RichEditorDeleteValue):Boolean => {
@@ -236,7 +238,7 @@ struct Richeditor01 {
             ImageSpanResult.offsetInSpan.toString()
             ImageSpanResult.spanPosition.spanIndex.toString()
             ImageSpanResult.spanPosition.spanRange.toString()
-           
+            ImageSpanResult?.valuePixelMap?.isEditable.valueOf()
             ImageSpanResult?.valueResourceStr?.toString()
             ImageSpanResult.imageStyle.size.toString()
             ImageSpanResult.imageStyle.verticalAlign.toString()
@@ -263,7 +265,7 @@ struct Richeditor01 {
                 offset: 6,
                 style: {
                   fontColor: Color.Black,
-                  fontSize: 30.0,
+                  fontSize: "30",
                   fontStyle: FontStyle.Italic,
                   fontWeight: FontWeight.Bolder,
                   fontFamily: "sans-serif",
@@ -289,7 +291,7 @@ struct Richeditor01 {
             console.log("mim_log: onSelect selection start: " + value.selection[0])
             console.log("mim_log: onSelect selection end: " + value.selection[1])
             console.log("mim_log: onSelect spans length: " + value.spans.length);
-           
+            // return { selection: [10, 10], spans: (null) }
           })
           .borderWidth(1)
           .borderColor(Color.Green)

@@ -24,7 +24,7 @@ import {
   DisplayRotation,
   ResizeDirection,
   WindowMode,
-  PointerMatrix
+  PointerMatrix,
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -44,7 +44,7 @@ export default function richEditorApi4() {
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi4 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi4",
+        url: "MainAbility/pages/RichEditor/richEditorApi/richEditorApi4",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -53,8 +53,11 @@ export default function richEditorApi4() {
         console.info("get richEditorApi4 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get richEditorApi4 pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push richEditorApi4 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push richEditorApi4 page error:" + err);
@@ -63,7 +66,6 @@ export default function richEditorApi4() {
     });
     beforeAll(() => {
       console.info("richEditorApi4 beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -79,7 +81,7 @@ export default function richEditorApi4() {
      * @tc.desc     richEditorApi4_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('richEditorApi4_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('richEditorApi4_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[richEditorApi4_0100] START');
       await CommonFunc.sleep(500);
 
@@ -97,16 +99,17 @@ it('richEditorApi4_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       let obj1 = JSON.parseJsonElement(text1);
 
       let content  = JSON.parseJsonElement(obj1.getElement('$attrs').getString('content'));
+      console.log("======================================== " + obj1.getElement('$attrs').getString('content') )
       console.info('[richEditorApi4_0100] content:' + content.getElement('fontSize'));
       console.info('[richEditorApi4_0100] content:' + content.getElement('fontColor'));
-      console.info('[richEditorApi4_0100] content:' + content.getElement('fontFeature'));
-      console.info('[richEditorApi4_0100] content:' + content.getElement('decoration').getString('type'));
+      console.info('[richEditorApi4_0100] content:' + content.tryGetString('fontFeature'));
+      console.info('[richEditorApi4_0100] content:' + content.getElement('decoration').getElement('type').getDouble('value'));
       console.info('[richEditorApi4_0100] content:' + content.getElement('decoration').getString('color'));
-      expect('' + content.getString('fontSize')).assertEqual('50');
+      expect('' + content.getString('fontSize')).assertEqual('50.00vp');
       expect('' + content.getString('fontColor')).assertEqual('#FF182431');
-      expect('' + content.getString('fontFeature')).assertEqual('');
-      expect('' + content.getElement('decoration').getString('type')).assertEqual('0');
-      expect('' + content.getElement('decoration').getString('color')).assertEqual('#FF182431');
+      expect('' + content.tryGetString('fontFeature')).assertEqual('');
+      expect('' + content.getElement('decoration').getElement('type').getDouble('value')).assertEqual('0');
+      expect(content.getElement('decoration').getString('color')).assertEqual('#FF182431');
 
       console.info('[testRichEditor_0100] END');
       done();

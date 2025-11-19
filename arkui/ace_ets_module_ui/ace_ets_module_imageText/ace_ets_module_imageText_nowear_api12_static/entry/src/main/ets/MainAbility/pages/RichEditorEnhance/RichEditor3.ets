@@ -36,18 +36,14 @@ struct RichEditor3 {
           this.layoutStyleMargin = '';
           this.paragraphStyleTextAlign = '';
           this.paragraphStyleLeadingMargin = '';
-          this.controller.getSpans({ start: -1, end: -1 })?.forEach((item,index) => {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+          this.controller.getSpans({ start: -1, end: -1 })!.forEach((item,index) => {
+            if(item instanceof RichEditorImageSpanResult){
+              this.layoutStyleBorderRadius += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle?.layoutStyle?.borderRadius)
+              this.layoutStyleMargin += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle.layoutStyle?.margin)
+            } else {
+              this.paragraphStyleTextAlign += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.textAlign)
+              this.paragraphStyleLeadingMargin += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.leadingMargin)
+            }
           })
         }).id('getSPans').height('5%').width('30%')
         Button('getSelection').onClick((e: ClickEvent) => {
@@ -55,19 +51,15 @@ struct RichEditor3 {
           this.layoutStyleMargin = '';
           this.paragraphStyleTextAlign = '';
           this.paragraphStyleLeadingMargin = '';
-          let selection = this.controller.getSelection()?.spans;
-          selection?.forEach((item,index) => {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+          let selection = this.controller.getSelection()!.spans;
+          selection.forEach((item,index) => {
+            if(item instanceof RichEditorImageSpanResult){
+              this.layoutStyleBorderRadius += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle.layoutStyle?.borderRadius)
+              this.layoutStyleMargin += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle.layoutStyle?.margin)
+            } else {
+              this.paragraphStyleTextAlign += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.textAlign)
+              this.paragraphStyleLeadingMargin += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.leadingMargin)
+            }
           })
         }).id('getSelection').height('5%').width('30%')
         Button('setContent').onClick((e: ClickEvent) => {
@@ -97,22 +89,21 @@ struct RichEditor3 {
           this.layoutStyleMargin = '';
           this.paragraphStyleTextAlign = '';
           this.paragraphStyleLeadingMargin = '';
-          value.richEditorDeleteSpans.forEach((item,index) => {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+          value.richEditorDeleteSpans.forEach((item, index) => {
+            console.log("=============================item " )
+            if(item instanceof RichEditorImageSpanResult){
+              this.layoutStyleBorderRadiusDelete = '';
+              this.layoutStyleMarginDelete = '';
+              console.log("=============================item test RichEditorImageSpanResult " )
+              this.layoutStyleBorderRadiusDelete += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle.layoutStyle?.borderRadius)
+              this.layoutStyleMarginDelete += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle.layoutStyle?.margin)
+            }else{
+              console.log("=============================item test RichEditorTextSpanResult " )
+              this.paragraphStyleTextAlignDelete = '';
+              this.paragraphStyleLeadingMarginDelete = '';
+              this.paragraphStyleTextAlignDelete += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.textAlign)
+              this.paragraphStyleLeadingMarginDelete += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.leadingMargin)
+            }
           })
           return true;
         })
@@ -123,17 +114,13 @@ struct RichEditor3 {
           this.paragraphStyleLeadingMargin = 'onSelect-';
           let selection = value.spans;
           selection.forEach((item,index) => {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            if(item instanceof RichEditorImageSpanResult){
+              this.layoutStyleBorderRadius += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle.layoutStyle?.borderRadius)
+              this.layoutStyleMargin += JSON.stringify(index + ':' + (item as RichEditorImageSpanResult).imageStyle.layoutStyle?.margin)
+            } else {
+              this.paragraphStyleTextAlign += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.textAlign)
+              this.paragraphStyleLeadingMargin += JSON.stringify(index + ':' + (item as RichEditorTextSpanResult).paragraphStyle?.leadingMargin)
+            }
           })
         })
         .onIMEInputComplete((value: RichEditorTextSpanResult): void =>{
@@ -141,12 +128,8 @@ struct RichEditor3 {
           this.layoutStyleMargin = '';
           this.paragraphStyleTextAlign = '';
           this.paragraphStyleLeadingMargin = '';
-          
-          
-          
-          
-          
-          
+          this.paragraphStyleTextAlign += JSON.stringify((value as RichEditorTextSpanResult).paragraphStyle?.textAlign)
+          this.paragraphStyleLeadingMargin += JSON.stringify((value as RichEditorTextSpanResult).paragraphStyle?.leadingMargin)
         })
       Row(){
         Text('PSTextAlign:').fontSize(10)

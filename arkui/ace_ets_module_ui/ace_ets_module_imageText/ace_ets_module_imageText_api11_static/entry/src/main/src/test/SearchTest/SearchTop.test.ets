@@ -45,7 +45,6 @@ export default function search_top() {
   describe('search_top', () => {
     beforeAll(() => {
       console.info("search_top beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await CommonFunc.sleep(4000)
@@ -66,8 +65,9 @@ export default function search_top() {
           await CommonFunc.sleep(2000);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push search_top page result: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push search_top page error: " + err);
         expect().assertFail();
       }
@@ -80,7 +80,7 @@ export default function search_top() {
      * @tc.desc     search_top_static_001
      * @tc.level    Level.LEVEL2
      */
-it('search_top_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('search_top_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       console.info('[search_top_001] START');
       await CommonFunc.sleep(1000);
@@ -101,7 +101,7 @@ it('search_top_static_001', Level.LEVEL2, async (done: () => void): Promise<void
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         const uiContext = new UIContext();
-        await (driver.click(Math.round(UIContext.getFocusedUIContext()!.vp2px(200)) as int, Math.round(UIContext.getFocusedUIContext()!.vp2px(20)) as int) as Promise<void>);
+        await (driver.click(Math.round(uiContext.vp2px(200)) as Int, Math.round(uiContext.vp2px(20)) as Int) as Promise<void>);
         await CommonFunc.sleep(1000);
 
         expect(search_01.top).assertEqual(Column_1.top);

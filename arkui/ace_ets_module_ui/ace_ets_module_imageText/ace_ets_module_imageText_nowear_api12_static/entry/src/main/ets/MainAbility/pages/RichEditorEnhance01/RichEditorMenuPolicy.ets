@@ -38,7 +38,7 @@ import {
 @Component
 struct RichEditorMenuPolicy {
   controller: RichEditorController = new RichEditorController();
-  
+  options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
   @State start: int = -1;
   @State end: int = -1;
   @State message: string = "[-1, -1]"
@@ -49,7 +49,7 @@ struct RichEditorMenuPolicy {
   build() {
     Column() {
       Column() {
-        RichEditor({ controller: this.controller } as RichEditorOptions)
+        RichEditor(this.options)
           .id("RichEditorMenuPolicyCon")
           .clip(true)
           .padding(10)
@@ -59,7 +59,7 @@ struct RichEditorMenuPolicy {
                 style:
                 {
                   fontColor: Color.Orange,
-                  fontSize: 60.0
+                  fontSize: 60
                 },
                 gesture:
                 {

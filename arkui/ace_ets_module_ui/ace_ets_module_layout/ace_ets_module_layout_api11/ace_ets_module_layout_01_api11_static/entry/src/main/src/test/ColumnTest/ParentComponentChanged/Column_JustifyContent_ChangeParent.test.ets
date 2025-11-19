@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,10 +16,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
 import {FlexAlign} from '@ohos.arkui.component'
-
+// import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
 import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-
+// import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -39,7 +39,7 @@ export default function column_JustifyContent_ChangeParent() {
   describe('Column_JustifyContent_ChangeParentTest', () => {
     beforeAll(async () => {
       console.info("Column_JustifyContent_ChangeParentTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -73,17 +73,18 @@ export default function column_JustifyContent_ChangeParent() {
     
 
 
+
 /*
      * @tc.number   testColumnJustifyContentChangeParentFlexAlignCenter_static
      * @tc.name     testColumnJustifyContentChangeParentFlexAlignCenter_static
      * @tc.desc     testColumnJustifyContentChangeParentFlexAlignCenter_static
      * @tc.level    Level.LEVEL0
      */
-it('testColumnJustifyContentChangeParentFlexAlignCenter_static', Level.LEVEL0, async () => {
+    it('testColumnJustifyContentChangeParentFlexAlignCenter_static', Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignCenter_static START');
-      
-      
-      
+      // GlobalContext.getContext().getObject<number>('value').message.notify({
+      //   name: 'justifyContent', value: FlexAlign.Center
+      // })
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.Center
       });
@@ -95,7 +96,7 @@ it('testColumnJustifyContentChangeParentFlexAlignCenter_static', Level.LEVEL0, a
       let locationText2 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnJustifyContentChange1');
-      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - (locationColumn.right - locationText1.right))) <= 1)
         .assertTrue();
@@ -103,27 +104,27 @@ it('testColumnJustifyContentChangeParentFlexAlignCenter_static', Level.LEVEL0, a
         .assertTrue();
       expect(Math.floor(Math.abs((locationText3.left - locationColumn.left) - (locationColumn.right - locationText3.right))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationColumn.bottom - locationText3.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((locationColumn.bottom - locationText3.bottom) - AppStorage.get<UIContext>("uiContext")!.vp2px(20))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - (locationText3.top - locationText2.bottom))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('new testColumnJustifyContentChangeParentFlexAlignCenter_static END');
     });
@@ -132,17 +133,18 @@ it('testColumnJustifyContentChangeParentFlexAlignCenter_static', Level.LEVEL0, a
     
 
 
+
 /*
      * @tc.number   testColumnJustifyContentChangeParentFlexAlignEnd
      * @tc.name     testColumnJustifyContentChangeParentFlexAlignEnd
      * @tc.desc     testColumnJustifyContentChangeParentFlexAlignEnd
      * @tc.level    Level.LEVEL0
      */
-it('testColumnJustifyContentChangeParentFlexAlignEnd', Level.LEVEL0, async () => {
+    it('testColumnJustifyContentChangeParentFlexAlignEnd', Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignEnd START');
-      
-      
-      
+      // GlobalContext.getContext().getObject<number>('value').message.notify({
+      //   name: 'justifyContent', value: FlexAlign.End
+      // })
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.End
       });
@@ -154,7 +156,7 @@ it('testColumnJustifyContentChangeParentFlexAlignEnd', Level.LEVEL0, async () =>
       let locationText2 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnJustifyContentChange1');
-      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - (locationColumn.right - locationText1.right))) <= 1)
         .assertTrue();
@@ -162,26 +164,26 @@ it('testColumnJustifyContentChangeParentFlexAlignEnd', Level.LEVEL0, async () =>
         .assertTrue();
       expect(Math.floor(Math.abs((locationText3.left - locationColumn.left) - (locationColumn.right - locationText3.right))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(40))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs(locationText3.bottom - locationColumn.bottom)) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - (locationText3.top - locationText2.bottom))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - AppStorage.get<UIContext>("uiContext")!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('new testColumnJustifyContentChangeParentFlexAlignEnd END');
     });
@@ -190,17 +192,18 @@ it('testColumnJustifyContentChangeParentFlexAlignEnd', Level.LEVEL0, async () =>
     
 
 
+
 /*
      * @tc.number   testColumnJustifyContentChangeParentFlexAlignSpaceBetween
      * @tc.name     testColumnJustifyContentChangeParentFlexAlignSpaceBetween
      * @tc.desc     testColumnJustifyContentChangeParentFlexAlignSpaceBetween
      * @tc.level    Level.LEVEL0
      */
-it('testColumnJustifyContentChangeParentFlexAlignSpaceBetween', Level.LEVEL0, async () => {
+    it('testColumnJustifyContentChangeParentFlexAlignSpaceBetween', Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceBetween START');
-      
-      
-      
+      // GlobalContext.getContext().getObject<number>('value').message.notify({
+      //   name: 'justifyContent', value: FlexAlign.SpaceBetween
+      // })
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceBetween
       });
@@ -212,7 +215,7 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceBetween', Level.LEVEL0, as
       let locationText2 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnJustifyContentChange1');
-      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - (locationColumn.right - locationText1.right))) <= 1)
         .assertTrue();
@@ -220,26 +223,26 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceBetween', Level.LEVEL0, as
         .assertTrue();
       expect(Math.floor(Math.abs((locationText3.left - locationColumn.left) - (locationColumn.right - locationText3.right))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.top) - (locationColumn.top))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText3.bottom) - (locationColumn.bottom))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - (locationText3.top - locationText2.bottom))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - AppStorage.get<UIContext>("uiContext")!.vp2px(50))) <= 1)
         .assertTrue();
-      
-      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      //Known issues with use case notes
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceBetween END');
     });
@@ -248,17 +251,18 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceBetween', Level.LEVEL0, as
     
 
 
+
 /*
      * @tc.number   testColumnJustifyContentChangeParentFlexAlignSpaceAround
      * @tc.name     testColumnJustifyContentChangeParentFlexAlignSpaceAround
      * @tc.desc     testColumnJustifyContentChangeParentFlexAlignSpaceAround
      * @tc.level    Level.LEVEL0
      */
-it('testColumnJustifyContentChangeParentFlexAlignSpaceAround', Level.LEVEL0, async () => {
+    it('testColumnJustifyContentChangeParentFlexAlignSpaceAround', Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceAround START');
-      
-      
-      
+      // GlobalContext.getContext().getObject<number>('value').message.notify({
+      //   name: 'justifyContent', value: FlexAlign.SpaceAround
+      // })
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceAround
       });
@@ -270,7 +274,7 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceAround', Level.LEVEL0, asy
       let locationText2 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnJustifyContentChange1');
-      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - (locationColumn.right - locationText1.right))) <= 1)
         .assertTrue();
@@ -278,27 +282,27 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceAround', Level.LEVEL0, asy
         .assertTrue();
       expect(Math.floor(Math.abs((locationText3.left - locationColumn.left) - (locationColumn.right - locationText3.right))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - (locationText3.top - locationText2.bottom))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - UIContext.getFocusedUIContext()!.vp2px(100 / 3))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - AppStorage.get<UIContext>("uiContext")!.vp2px(100 / 3))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - (locationColumn.bottom - locationText3.bottom))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - UIContext.getFocusedUIContext()!.vp2px(50 / 3))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50 / 3))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceAround END');
     });
@@ -307,17 +311,18 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceAround', Level.LEVEL0, asy
     
 
 
+
 /*
      * @tc.number   testColumnJustifyContentChangeParentFlexAlignSpaceEvenly
      * @tc.name     testColumnJustifyContentChangeParentFlexAlignSpaceEvenly
      * @tc.desc     testColumnJustifyContentChangeParentFlexAlignSpaceEvenly
      * @tc.level    Level.LEVEL0
      */
-it('testColumnJustifyContentChangeParentFlexAlignSpaceEvenly', Level.LEVEL0, async () => {
+    it('testColumnJustifyContentChangeParentFlexAlignSpaceEvenly', Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceEvenly START');
-      
-      
-      
+      // GlobalContext.getContext().getObject<number>('value').message.notify({
+      //   name: 'justifyContent', value: FlexAlign.SpaceEvenly
+      // })
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceEvenly
       });
@@ -329,7 +334,7 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceEvenly', Level.LEVEL0, asy
       let locationText2 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnJustifyContentChange1');
-      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - (locationColumn.right - locationText1.right))) <= 1)
         .assertTrue();
@@ -337,7 +342,7 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceEvenly', Level.LEVEL0, asy
         .assertTrue();
       expect(Math.floor(Math.abs((locationText3.left - locationColumn.left) - (locationColumn.right - locationText3.right))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationColumn.right - locationText1.right) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText2.top - locationText1.bottom) - (locationText3.top - locationText2.bottom))) <= 2)
         .assertTrue();
@@ -345,19 +350,19 @@ it('testColumnJustifyContentChangeParentFlexAlignSpaceEvenly', Level.LEVEL0, asy
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - (locationText2.top - locationText1.bottom))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceEvenly END');
     });

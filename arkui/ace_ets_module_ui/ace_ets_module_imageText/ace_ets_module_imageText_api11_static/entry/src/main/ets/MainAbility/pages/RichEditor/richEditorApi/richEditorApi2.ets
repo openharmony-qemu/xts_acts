@@ -56,9 +56,13 @@ struct richEditorApi2 {
         })
       }).height('10%').id('richEditorApi2_btn1')
       Button('get').onClick((event: ClickEvent) => {
-        this.controller.getSpans({ start: 0, end: 1 })?.forEach((item) => {
-          this.text1  +=  JSON.stringify((item as RichEditorImageSpanResult).imageStyle)
+        console.log("this.controller.getSpans start");
+        this.controller.getSpans({ start: 0, end: 1 })!.forEach((item) => {
+          if(item instanceof RichEditorImageSpanResult){
+            this.text1  +=  JSON.stringify((item as RichEditorImageSpanResult).imageStyle)
+          }
         })
+        console.log("this.controller.getSpans end");
       }).height('10%').id('richEditorApi2_btn2')
 
       Text('' + this.text1).key('richEditorApi2_text1').height('10%').textAlign(TextAlign.Center)

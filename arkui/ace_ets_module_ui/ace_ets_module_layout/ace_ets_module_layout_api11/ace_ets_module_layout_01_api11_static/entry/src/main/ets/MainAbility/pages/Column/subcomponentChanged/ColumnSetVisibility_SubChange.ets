@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * *     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,11 +13,9 @@
  * limitations under the License.
  */
 
-
 import { MessageManager, Callback,Message } from '../../../common/MessageManager';
 import {Entry,Component,Column,Text,HorizontalAlign,ColumnOptions,Padding,Visibility} from '@ohos.arkui.component'
 import {State,AppStorage} from '@ohos.arkui.stateManagement'
-
 
 @Entry
 @Component
@@ -28,10 +26,6 @@ struct ColumnSetVisibilityTest {
   private content: string = "ColumnSetVisibility Page";
   onPageShow() {
     console.info('ColumnSetVisibility onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);

@@ -36,7 +36,6 @@ export default function textChangeEnabledJsunit() {
     beforeAll(() => {
       console.info("textChangeEnabledJsunit beforeEach start");
 
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,8 +53,11 @@ export default function textChangeEnabledJsunit() {
         console.info("get textChangeEnabledJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textChangeEnabledJsunit pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push textChangeEnabledJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textChangeEnabledJsunit page error:" + err);
@@ -70,13 +72,13 @@ export default function textChangeEnabledJsunit() {
      * @tc.desc     textChangeEnabledJsunit_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('textChangeEnabledJsunit_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('textChangeEnabledJsunit_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('textChangeEnabledJsunit_static_0100 START');
       let strJson = inspector.getInspectorByKey('aCanEnable');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textChangeEnabledJsunit_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[textChangeEnabledJsunit_static_0100] enabled: " + JSON.stringify(obj.getElement('$attrs').getString('enabled')));
-      expect(obj.getElement('$attrs').getString('enabled')).assertEqual(false);
+      console.info("[textChangeEnabledJsunit_static_0100] enabled: " + JSON.stringify(obj.getElement('$attrs').getBoolean('enabled')));
+      expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(false);
       console.info('[textChangeEnabledJsunit_static_0100] END');
       done();
     });
@@ -87,13 +89,13 @@ it('textChangeEnabledJsunit_static_0100', Level.LEVEL2, async (done: ()=>void) =
      * @tc.desc     textChangeEnabledJsunit_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('textChangeEnabledJsunit_static_0200', Level.LEVEL2, async (done: ()=>void) => {
+    it('textChangeEnabledJsunit_static_0200', Level.LEVEL2, async (done: ()=>void) => {
       console.info('textChangeEnabledJsunit_static_0200 START');
       let strJson = inspector.getInspectorByKey('vCanEnable');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textChangeEnabledJsunit_static_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[textChangeEnabledJsunit_static_0200] enabled: " + JSON.stringify(obj.getElement('$attrs').getString('enabled')));
-      expect(obj.getElement('$attrs').getString('enabled')).assertEqual(false);
+      console.info("[textChangeEnabledJsunit_static_0200] enabled: " + JSON.stringify(obj.getElement('$attrs').getBoolean('enabled')));
+      expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(false);
       console.info('[textChangeEnabledJsunit_static_0200] END');
       done();
     });

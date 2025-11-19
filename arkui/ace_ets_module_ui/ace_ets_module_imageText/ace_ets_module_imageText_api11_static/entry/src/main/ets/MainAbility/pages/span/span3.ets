@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   Entry,
   Component,
@@ -32,77 +32,47 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { MessageManagerBase, CallbackBase, MessageBase } from '../../common/MessageManager2';
 
 class CustomEventData {
   fontColorValue?: Color
   textCaseValue?: TextCase
 }
 
+
 @Entry
 @Component
 struct Span3Example {
   @State decorationValue: DecorationStyleInterface =
     { type: TextDecorationType.None, color: Color.Red } as DecorationStyleInterface
-  @State textCaseValue: TextCase = TextCase.Normal
+  @State textCaseValue: TextCase|undefined = TextCase.Normal
   @State fontSizeValue: number = 40
-  @State fontColorValue: Color = Color.Brown
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData): void => {
-      console.info("span page state change called:" + JSON.stringify(eventData));
-      const customEventData = eventData.data as CustomEventData | undefined;
-      if (eventData !== null && customEventData !== null && customEventData !== undefined) {
-        if (customEventData.textCaseValue !== null && customEventData.textCaseValue !== undefined) {
-          this.textCaseValue = customEventData.textCaseValue!;
-        }
-        if (customEventData.fontColorValue !== null && customEventData.fontColorValue !== undefined) {
-          this.fontColorValue = customEventData.fontColorValue!;
-        }
-      }
-    }
+  @State fontColorValue: Color|string|int = 0xCCCCCC
+
+  messageManagerTextCase: MessageManagerBase<TextCase|undefined> = new MessageManagerBase<TextCase|undefined>()
+  messageManagerColor: MessageManagerBase<string> = new MessageManagerBase<string>()
 
   onPageShow() {
     console.info('span page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 199,
-      priority: events_emitter.EventPriority.LOW
+    AppStorage.setOrCreate<MessageManagerBase<TextCase|undefined>>('messageManagerTextCase', this.messageManagerTextCase)
+    AppStorage.setOrCreate<MessageManagerBase<string>>('messageManagerColor', this.messageManagerColor)
+    let callbackTextCase: CallbackBase<TextCase|undefined> = (message: MessageBase<TextCase|undefined>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'textCaseValue') {
+        this.textCaseValue = message.value
+        console.log("============================= this.textCaseValue " + this.textCaseValue)
+      }
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    let callbackColor: CallbackBase<string> = (message: MessageBase<string>) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'fontColorValue') {
+        this.fontColorValue = message.value
+        console.log("============================= this.fontColorValue " + this.fontColorValue)
+      }
+    }
+    this.messageManagerTextCase.registerCallback(callbackTextCase)
+    this.messageManagerColor.registerCallback(callbackColor)
 
-    let stateChangeEvent2: events_emitter.InnerEvent = {
-      eventId: 200,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent2, this.stateChangCallBack);
-
-    let stateChangeEvent3: events_emitter.InnerEvent = {
-      eventId: 201,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent3, this.stateChangCallBack);
-
-    let stateChangeEvent4: events_emitter.InnerEvent = {
-      eventId: 1029,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent4, this.stateChangCallBack);
-
-    let stateChangeEvent5: events_emitter.InnerEvent = {
-      eventId: 1030,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent5, this.stateChangCallBack);
-
-    let stateChangeEvent6: events_emitter.InnerEvent = {
-      eventId: 1031,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent6, this.stateChangCallBack);
-
-    let stateChangeEvent7: events_emitter.InnerEvent = {
-      eventId: 1032,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent7, this.stateChangCallBack);
   }
 
   build() {

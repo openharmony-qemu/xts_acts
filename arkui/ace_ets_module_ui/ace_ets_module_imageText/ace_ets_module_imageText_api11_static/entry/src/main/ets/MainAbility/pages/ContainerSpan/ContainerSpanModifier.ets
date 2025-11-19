@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import { Entry, Component, AttributeModifier, ContainerSpanAttribute, Column,TextArea, Text, ContainerSpan, ImageSpan, $r, ColumnOptions } from '@ohos.arkui.component';
+import { Entry, Component, AttributeModifier, ContainerSpanAttribute, Column, TextArea, Text, ContainerSpan, $r,
+  ColumnOptions, ImageSpan, ContainerSpan } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 class ContainerSpanAttributeModifier implements AttributeModifier<ContainerSpanAttribute> {
   applyNormalAttribute(instance: ContainerSpanAttribute): void {
-    instance.textBackgroundStyle({ color: "#7F007DFF", radius: "12vp" })
+    instance.textBackgroundStyle({ color: "#7F007DFF", radius: {topLeft: "12vp", topRight: "12vp", bottomLeft:"12vp", bottomRight:"12vp"}})
   }
 }
 
@@ -30,7 +31,6 @@ struct ContainerSpanModifier1 {
   @State modifier: ContainerSpanAttributeModifier = new ContainerSpanAttributeModifier();
 
   aboutToAppear(): void {
-   
     this.value = "ContainerSpanModifier initialized";
   }
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+// import { drawing } from '@ohos.graphics.drawing'
 import drawing from '@ohos.graphics.drawing'
 import { CustomSpan, CustomSpanMeasureInfo, CustomSpanMetrics, DrawContext, CustomSpanDrawInfo, Canvas,} from '@ohos.arkui.component'
 import { UIContext } from '@ohos.arkui.UIContext'
@@ -34,21 +34,21 @@ export class MyCustomSpan extends CustomSpan {
     let canvas = context.canvas;
 
     const brush = new drawing.Brush();
-    
+    // brush.setColor({ alpha: 255, red: 0, green: 74, blue: 175 });
     const font = new drawing.Font();
     font.setSize(25);
-    
+    // const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.attachBrush(brush);
     canvas.drawRect({
       left: drawInfo.x + 10,
-      right: drawInfo.x + UIContext.getFocusedUIContext()!.vp2px(this.width) - 10,
+      right: drawInfo.x + uiContext.vp2px(this.width) - 10,
       top: drawInfo.lineTop + 10,
       bottom: drawInfo.lineBottom - 10
     });
 
-    
+    // brush.setColor({ alpha: 255, red: 23, green: 169, blue: 141 });
     canvas.attachBrush(brush);
-    
+    // canvas.drawTextBlob(textBlob, options.x + 20, options.lineBottom - 15);
     canvas.detachBrush();
   }
 
