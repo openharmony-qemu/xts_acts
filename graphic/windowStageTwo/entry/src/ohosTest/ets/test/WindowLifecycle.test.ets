@@ -2354,13 +2354,18 @@ export default function WindowLifecycle() {
     it('testWindowEvent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowEvent_0200';
       let windoweventChange:Array<window.WindowEventType> = [];
-      let config: window.Configuration = {
-        name: message,
+      let config1: window.Configuration = {
+        name: "testWindowEvent_0200_1",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      }
+      let config2: window.Configuration = {
+        name: "testWindowEvent_0200_2",
         windowType: window.WindowType.TYPE_DIALOG,
         ctx: context
       }
       try{
-        let windowClass = await window.createWindow(config);
+        let windowClass = await window.createWindow(config1);
         console.info(message + ' createSubWindow success ' + JSON.stringify(windowClass));
         windowClass.on('windowEvent', (data) => {
           console.info(message + ' Window event happened. Event:' + JSON.stringify(data));
@@ -2371,7 +2376,7 @@ export default function WindowLifecycle() {
         await windowClass.showWindow();
         console.info(message + ' windowClass showWindow success ');
         await sleep(300)
-        let windowClass2 =await  windowStage.createSubWindow('testWindowEvent_01002')
+        let windowClass2 =await window.createWindow(config2)
         await windowClass2.setUIContent('testability/pages/Index2')
         await windowClass2.showWindow();
         console.info(message + ' windowClass2 showWindow success ');
