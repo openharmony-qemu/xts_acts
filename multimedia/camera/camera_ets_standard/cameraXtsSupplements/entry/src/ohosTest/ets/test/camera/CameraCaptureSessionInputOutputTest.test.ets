@@ -190,7 +190,7 @@ async function captureSessionAddInputTest(testName: string, done: Function, call
     mCaptureSession.beginConfig();
     console.info(TAG, testName + 'beginConfig passed.')
     let res = mCaptureSession.addInput(mCameraInput);
-    console.log(TAG,testName,res,'1111111111')
+    console.log(TAG,testName,res,'addInput')
     await mCameraInput.open();
     mCaptureSession.addOutput(mPreviewOutput);
     mCaptureSession.addOutput(mPhotoOutput);
