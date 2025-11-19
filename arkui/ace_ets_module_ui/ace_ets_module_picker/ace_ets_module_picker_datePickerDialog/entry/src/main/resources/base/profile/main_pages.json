@@ -11,6 +11,9 @@
     "MainAbility/pages/datePickerDialog/stageDatePickerDialog",
     "MainAbility/pages/datePickerDialog/DatePickerDialogOptions",
     "MainAbility/pages/datePickerDialog/DatePickerDialogUI",
-    "MainAbility/pages/datePickerDialog/DatePickerDialogWindowProperties"
+    "MainAbility/pages/datePickerDialog/DatePickerDialogWindowProperties",
+    "MainAbility/pages/datePickerDialog/DatePickerDialogAppearText",
+    "MainAbility/pages/datePickerDialog/DatePickerDialogButtonStyle",
+    "MainAbility/pages/datePickerDialog/DatePickerDialogCallback"
   ]
 }

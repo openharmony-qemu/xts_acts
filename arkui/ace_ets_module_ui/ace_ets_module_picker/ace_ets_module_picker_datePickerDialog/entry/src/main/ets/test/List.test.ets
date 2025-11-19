@@ -24,6 +24,9 @@ import stageDatePickerDialogTest from './datePickerDialogTest/stageDatePickerDia
 import DatePickerDialogOptionsTest from './datePickerDialogTest/DatePickerDialogOptions.test';
 import DatePickerDialogUITest from './datePickerDialogTest/DatePickerDialogUI.test';
 import DatePickerDialogWindowPropertiesTest from './datePickerDialogTest/DatePickerDialogWindowProperties.test';
+import DatePickerDialogAppearTextTest from './datePickerDialogTest/DatePickerDialogAppearText.test';
+import DatePickerDialogButtonStyleTest from './datePickerDialogTest/DatePickerDialogButtonStyle.test';
+import DatePickerDialogCallbackTest from './datePickerDialogTest/DatePickerDialogCallback.test';
 
 export default function testsuite() {
   datePickerDialogEventsTest();
@@ -37,4 +40,7 @@ export default function testsuite() {
   DatePickerDialogOptionsTest();
   DatePickerDialogUITest();
   DatePickerDialogWindowPropertiesTest();
+  DatePickerDialogAppearTextTest();
+  DatePickerDialogButtonStyleTest();
+  DatePickerDialogCallbackTest();
 }
