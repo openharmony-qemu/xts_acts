@@ -36,8 +36,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, SweepGradientOptions, AlignRuleOption } from '@ohos.arkui.component'
-import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, SweepGradientOptions } from '@ohos.arkui.component'
+import { State, StorageProp, AppStorage } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -611,7 +611,50 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	}
 }
 
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+// 	mSweepGradient: SweepGradientOptions = {
+// 		center: [20, 30],
+// 		start: 25,
+// 		end: 35,
+// 		rotation: 12,
+// 		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
+// 		repeating: true
+// 	}
+//
+// 	applyNormalAttribute(instance: NavigatorAttribute): void {
+// 		instance.sweepGradient(this.mSweepGradient)
+// 	}
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+// 	mSweepGradient: SweepGradientOptions = {
+// 		center: [20, 30],
+// 		start: 25,
+// 		end: 35,
+// 		rotation: 12,
+// 		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
+// 		repeating: true
+// 	}
+//
+// 	applyNormalAttribute(instance: NavRouterAttribute): void {
+// 		instance.sweepGradient(this.mSweepGradient)
+// 	}
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+// 	mSweepGradient: SweepGradientOptions = {
+// 		center: [20, 30],
+// 		start: 25,
+// 		end: 35,
+// 		rotation: 12,
+// 		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
+// 		repeating: true
+// 	}
+//
+// 	applyNormalAttribute(instance: PanelAttribute): void {
+// 		instance.sweepGradient(this.mSweepGradient)
+// 	}
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
 	mSweepGradient: SweepGradientOptions = {
@@ -954,7 +997,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		/* sweepGradient not supported */
+		// instance.sweepGradient(this.mSweepGradient)
 	}
 }
 
@@ -1686,9 +1729,9 @@ struct SweepGradientPage {
 	@State _sweepGradientMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
 	@State _sweepGradientNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
 	@State _sweepGradientNavigationModifier: NavigationModifier = new NavigationModifier()
-	
-	
-	
+	// @State _sweepGradientNavigatorModifier: NavigatorModifier = new NavigatorModifier()
+	// @State _sweepGradientNavRouterModifier: NavRouterModifier = new NavRouterModifier()
+	// @State _sweepGradientPanelModifier: PanelModifier = new PanelModifier()
 	@State _sweepGradientPathModifier: PathModifier = new PathModifier()
 	@State _sweepGradientPolygonModifier: PolygonModifier = new PolygonModifier()
 	@State _sweepGradientPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1733,13 +1776,13 @@ struct SweepGradientPage {
 	@State _sweepGradientXComponentModifier: XComponentModifier = new XComponentModifier()
 	@State targetView: string = '';
 	@State componentKey: string = '';
-	@State parentWidth: double = 0;
-	@State parentHeight: double = 0;
-	@State columns: int = 0;
-	@State gutter: int = 0;
+	@State parentWidth: number = 0;
+	@State parentHeight: number = 0;
+	@State columns: number = 0
+	@State gutter: number = 0
 	@State parentBackGroundColor: string = '#FFFF00'
   @State parentComponentKey: string = '';
-	@StoragePropRef('_sweepGradient') _sweepGradient: SetValue = {
+	@StorageProp('_sweepGradient') _sweepGradient: SetValue = {
 		height: 0,sweepGradient: {
 			center: [0, 0],
 			start: 0,
@@ -1757,16 +1800,16 @@ struct SweepGradientPage {
 		this.componentKey = viewElement.getString("componentKey")
 		this.parentWidth = viewElement.getDouble("parentWidth")
 		this.parentHeight = viewElement.getDouble("parentHeight")
-		this.columns = (viewElement.getDouble("columns")).toInt()
-		this.gutter = (viewElement.getDouble("gutter")).toInt()
+		this.columns = viewElement.getDouble("columns")
+		this.gutter = viewElement.getDouble("gutter")
 		this.parentComponentKey = viewElement.getString("parentComponentKey")
 		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}
 
-  
-  
-  
-  
+  // @Styles
+  // commonStyle() {
+  //   .key(this.componentKey)
+  // }
 
 	build() {
 		Column() {
@@ -1837,7 +1880,7 @@ struct SweepGradientPage {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity.toInt(),
+					loop: Infinity as Int,
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
@@ -1848,7 +1891,7 @@ struct SweepGradientPage {
         Navigation(new NavPathStack()) {
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._sweepGradientNavigationModifier)
 			}
 			if (this.targetView == 'Menu') {
 				Menu() {
@@ -1859,18 +1902,18 @@ struct SweepGradientPage {
 					.attributeModifier(this._sweepGradientMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				// NavRouter() {
+				// 	Row() {
+				// 		Image($r('app.media.icon'))
+				// 	}
+				//
+				// 	NavDestination() {
+				// 		Text('NavDestination')
+				// 			.fontSize(10)
+				// 	}
+				// }
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._sweepGradientNavRouterModifier)
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
@@ -1928,7 +1971,7 @@ struct SweepGradientPage {
 					}
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._sweepGradientStepperModifier)
 			}
 			if (this.targetView == 'StepperItem') {
 				Stepper() {
@@ -1939,7 +1982,7 @@ struct SweepGradientPage {
 					}
 						.backgroundColor(Color.Red)
 						.commonStyle(this.componentKey)
-						
+						// .attributeModifier(this._sweepGradientStepperItemModifier)
 				}
 					.backgroundColor(Color.Yellow)
 					.width('100%')
@@ -2160,22 +2203,22 @@ struct SweepGradientPage {
 					.height('100%')
 			}
 			if (this.targetView == 'Navigator') {
-				
-				
-				
-				
-				
-				
-				
-				
+				// Navigator() {
+				// 	Text('Go to back page')
+				// 		.width('100%')
+				// 		.height(20)
+				// }
+				// 	.backgroundColor(Color.Red)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._sweepGradientNavigatorModifier)
 			}
 			if (this.targetView == 'Panel') {
-				
-				
-				
-				
-				
-				
+				// Panel(true) {
+				// 	Text('Text')
+				// }
+				// 	.backgroundColor(Color.Yellow)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._sweepGradientPanelModifier)
 			}
 			if (this.targetView == 'Refresh') {
 				Refresh({ refreshing: true }) {
@@ -2193,7 +2236,7 @@ struct SweepGradientPage {
 						.alignRules({
 							top: { anchor: '__container__', align: VerticalAlign.Top },
 							left: { anchor: '__container__', align: HorizontalAlign.Start }
-						} as AlignRuleOption)
+						})
 						.id('constraintSize')
 				}
 					.commonStyle(this.componentKey)
@@ -2252,7 +2295,7 @@ struct SweepGradientPage {
 						.backgroundColor(Color.Orange)
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._sweepGradientSideBarContainerModifier)
 			}
 			if (this.targetView == 'Stack') {
 				Stack() {
@@ -2271,7 +2314,7 @@ struct SweepGradientPage {
 					.indicator(true)
 					.backgroundColor(Color.White)
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._sweepGradientSwiperModifier)
 			}
 			if (this.targetView == 'Tabs') {
 				Tabs() {

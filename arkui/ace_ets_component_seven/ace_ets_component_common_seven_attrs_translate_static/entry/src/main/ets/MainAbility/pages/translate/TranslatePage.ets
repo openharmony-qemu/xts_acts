@@ -36,8 +36,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,TranslateOptions,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, TranslateOptions, AlignRuleOption } from '@ohos.arkui.component'
-import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, TranslateOptions } from '@ohos.arkui.component'
+import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -344,7 +344,29 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	}
 }
 
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+// 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
+//
+// 	applyNormalAttribute(instance: NavigatorAttribute): void {
+// 		instance.translate(this.mTranslate)
+// 	}
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+// 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
+//
+// 	applyNormalAttribute(instance: NavRouterAttribute): void {
+// 		instance.translate(this.mTranslate)
+// 	}
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+// 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
+//
+// 	applyNormalAttribute(instance: PanelAttribute): void {
+// 		instance.translate(this.mTranslate)
+// 	}
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
@@ -526,7 +548,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		/* translate not supported */
+		// instance.translate(this.mTranslate)
 	}
 }
 
@@ -1127,9 +1149,9 @@ struct TranslatePage {
 	@State _translateMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
 	@State _translateNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
 	@State _translateNavigationModifier: NavigationModifier = new NavigationModifier()
-	
-	
-	
+	// @State _translateNavigatorModifier: NavigatorModifier = new NavigatorModifier()
+	// @State _translateNavRouterModifier: NavRouterModifier = new NavRouterModifier()
+	// @State _translatePanelModifier: PanelModifier = new PanelModifier()
 	@State _translatePathModifier: PathModifier = new PathModifier()
 	@State _translatePolygonModifier: PolygonModifier = new PolygonModifier()
 	@State _translatePolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1172,15 +1194,15 @@ struct TranslatePage {
 	@State _translateWebModifier: WebModifier = new WebModifier()
 	@State _translateWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _translateXComponentModifier: XComponentModifier = new XComponentModifier()
-	@State targetView: string = '';
-	@State componentKey: string = '';
-	@State parentWidth: double = 0;
-	@State parentHeight: double = 0;
-	@State columns: int = 0;
-	@State gutter: int = 0;
-	@State parentBackGroundColor: string =  '#FFFF00'
-	@State parentComponentKey: string =  '';
-	@StoragePropRef('_translateObj') _translate: SetValue = {
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number =  0
+  @State gutter: number =  0
+  @State parentBackGroundColor: string =  '#FFFF00'
+  @State parentComponentKey: string =  '';
+	@StorageProp('_translateObj') _translate: SetValue = {
 	height: 0, translate: { x: 0, y: 0, z: 0}
 }
 
@@ -1192,8 +1214,8 @@ struct TranslatePage {
 		this.componentKey = viewElement.getString("componentKey")
 		this.parentWidth = viewElement.getDouble("parentWidth")
 		this.parentHeight = viewElement.getDouble("parentHeight")
-		this.columns = (viewElement.getDouble("columns")).toInt()
-		this.gutter = (viewElement.getDouble("gutter")).toInt()
+		this.columns = viewElement.getDouble("columns")
+		this.gutter = viewElement.getDouble("gutter")
 		this.parentComponentKey = viewElement.getString("parentComponentKey")
 		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}
@@ -1268,7 +1290,7 @@ struct TranslatePage {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity.toInt(),
+					loop: Infinity as Int,
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
@@ -1279,7 +1301,7 @@ struct TranslatePage {
         Navigation(new NavPathStack()) {
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._translateNavigationModifier)
 			}
 			if (this.targetView == 'Menu') {
 				Menu() {
@@ -1290,18 +1312,18 @@ struct TranslatePage {
 					.attributeModifier(this._translateMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				// NavRouter() {
+				// 	Row() {
+				// 		Image($r('app.media.icon'))
+				// 	}
+				//
+				// 	NavDestination() {
+				// 		Text('NavDestination')
+				// 			.fontSize(10)
+				// 	}
+				// }
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._translateNavRouterModifier)
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
@@ -1359,7 +1381,7 @@ struct TranslatePage {
 					}
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._translateStepperModifier)
 			}
 			if (this.targetView == 'StepperItem') {
 				Stepper() {
@@ -1370,7 +1392,7 @@ struct TranslatePage {
 					}
 						.backgroundColor(Color.Red)
 						.commonStyle(this.componentKey)
-						
+						// .attributeModifier(this._translateStepperItemModifier)
 				}
 					.backgroundColor(Color.Yellow)
 					.width('100%')
@@ -1591,22 +1613,22 @@ struct TranslatePage {
 					.height('100%')
 			}
 			if (this.targetView == 'Navigator') {
-				
-				
-				
-				
-				
-				
-				
-				
+				// Navigator() {
+				// 	Text('Go to back page')
+				// 		.width('100%')
+				// 		.height(20)
+				// }
+				// 	.backgroundColor(Color.Red)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._translateNavigatorModifier)
 			}
 			if (this.targetView == 'Panel') {
-				
-				
-				
-				
-				
-				
+				// Panel(true) {
+				// 	Text('Text')
+				// }
+				// 	.backgroundColor(Color.Yellow)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._translatePanelModifier)
 			}
 			if (this.targetView == 'Refresh') {
 				Refresh({ refreshing: true }) {
@@ -1624,7 +1646,7 @@ struct TranslatePage {
 						.alignRules({
 							top: { anchor: '__container__', align: VerticalAlign.Top },
 							left: { anchor: '__container__', align: HorizontalAlign.Start }
-						} as AlignRuleOption)
+						})
 						.id('constraintSize')
 				}
 					.commonStyle(this.componentKey)
@@ -1683,7 +1705,7 @@ struct TranslatePage {
 						.backgroundColor(Color.Orange)
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._translateSideBarContainerModifier)
 			}
 			if (this.targetView == 'Stack') {
 				Stack() {
@@ -1702,7 +1724,7 @@ struct TranslatePage {
 					.indicator(true)
 					.backgroundColor(Color.White)
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._translateSwiperModifier)
 			}
 			if (this.targetView == 'Tabs') {
 				Tabs() {

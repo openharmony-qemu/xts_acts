@@ -36,12 +36,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, AlignRuleOption } from '@ohos.arkui.component'
-import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions } from '@ohos.arkui.component'
+import { State, StorageProp, AppStorage } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -49,7 +49,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
 }
 
 class BadgeModifier implements AttributeModifier<BadgeAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: BadgeAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -57,7 +57,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 }
 
 class ButtonModifier implements AttributeModifier<ButtonAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ButtonAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -65,7 +65,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 }
 
 class BlankModifier implements AttributeModifier<BlankAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: BlankAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -73,7 +73,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
 }
 
 class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: CalendarPickerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -81,7 +81,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
 }
 
 class CanvasModifier implements AttributeModifier<CanvasAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: CanvasAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -89,7 +89,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 }
 
 class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: CheckboxAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -97,7 +97,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 }
 
 class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: CheckboxGroupAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -105,7 +105,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
 }
 
 class CircleModifier implements AttributeModifier<CircleAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: CircleAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -113,7 +113,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
 }
 
 class ColumnModifier implements AttributeModifier<ColumnAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ColumnAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -121,7 +121,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 }
 
 class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ColumnSplitAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -129,7 +129,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 }
 
 class CounterModifier implements AttributeModifier<CounterAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: CounterAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -137,7 +137,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
 }
 
 class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: DataPanelAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -145,7 +145,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 }
 
 class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: DatePickerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -153,7 +153,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 }
 
 class DividerModifier implements AttributeModifier<DividerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: DividerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -161,7 +161,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
 }
 
 class EllipseModifier implements AttributeModifier<EllipseAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: EllipseAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -169,7 +169,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 }
 
 class FlexModifier implements AttributeModifier<FlexAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: FlexAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -177,7 +177,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
 }
 
 class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: FlowItemAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -185,7 +185,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 }
 
 class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: FormLinkAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -193,7 +193,7 @@ class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 }
 
 class GaugeModifier implements AttributeModifier<GaugeAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: GaugeAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -201,7 +201,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 }
 
 class GridModifier implements AttributeModifier<GridAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: GridAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -209,7 +209,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
 }
 
 class GridColModifier implements AttributeModifier<GridColAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: GridColAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -217,7 +217,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
 }
 
 class GridItemModifier implements AttributeModifier<GridItemAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: GridItemAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -225,7 +225,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 }
 
 class GridRowModifier implements AttributeModifier<GridRowAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: GridRowAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -233,7 +233,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 }
 
 class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: HyperlinkAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -241,7 +241,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 }
 
 class ImageModifier implements AttributeModifier<ImageAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ImageAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -249,7 +249,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
 }
 
 class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ImageAnimatorAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -257,7 +257,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
 }
 
 class LineModifier implements AttributeModifier<LineAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: LineAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -265,7 +265,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
 }
 
 class ListModifier implements AttributeModifier<ListAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ListAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -273,7 +273,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
 }
 
 class ListItemModifier implements AttributeModifier<ListItemAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ListItemAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -281,7 +281,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 }
 
 class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ListItemGroupAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -289,7 +289,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
 }
 
 class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: LoadingProgressAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -297,7 +297,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
 }
 
 class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: MarqueeAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -305,7 +305,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 }
 
 class MenuModifier implements AttributeModifier<MenuAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: MenuAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -313,7 +313,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
 }
 
 class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: MenuItemAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -321,7 +321,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 }
 
 class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: MenuItemGroupAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -329,7 +329,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
 }
 
 class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: NavDestinationAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -337,17 +337,39 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
 }
 
 class NavigationModifier implements AttributeModifier<NavigationAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: NavigationAttribute): void {
 		instance.tabIndex(this.mTabIndex)
 	}
 }
 
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+// 	mTabIndex: Int = 1
+//
+// 	applyNormalAttribute(instance: NavigatorAttribute): void {
+// 		instance.tabIndex(this.mTabIndex)
+// 	}
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+// 	mTabIndex: Int = 1
+//
+// 	applyNormalAttribute(instance: NavRouterAttribute): void {
+// 		instance.tabIndex(this.mTabIndex)
+// 	}
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+// 	mTabIndex: Int = 1
+//
+// 	applyNormalAttribute(instance: PanelAttribute): void {
+// 		instance.tabIndex(this.mTabIndex)
+// 	}
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: PathAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -355,7 +377,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
 }
 
 class PolygonModifier implements AttributeModifier<PolygonAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: PolygonAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -363,7 +385,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 }
 
 class PolylineModifier implements AttributeModifier<PolylineAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: PolylineAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -371,7 +393,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 }
 
 class ProgressModifier implements AttributeModifier<ProgressAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ProgressAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -379,7 +401,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 }
 
 class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: QRCodeAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -387,7 +409,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 }
 
 class RadioModifier implements AttributeModifier<RadioAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RadioAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -395,7 +417,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
 }
 
 class RatingModifier implements AttributeModifier<RatingAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RatingAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -403,7 +425,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
 }
 
 class RectModifier implements AttributeModifier<RectAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RectAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -411,7 +433,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
 }
 
 class RefreshModifier implements AttributeModifier<RefreshAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RefreshAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -419,7 +441,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 }
 
 class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RelativeContainerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -427,7 +449,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
 }
 
 class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RemoteWindowAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -435,7 +457,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 }
 
 class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RichEditorAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -443,7 +465,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 }
 
 class RichTextModifier implements AttributeModifier<RichTextAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RichTextAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -451,7 +473,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 }
 
 class RowModifier implements AttributeModifier<RowAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RowAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -459,7 +481,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
 }
 
 class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: RowSplitAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -467,7 +489,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 }
 
 class ScrollModifier implements AttributeModifier<ScrollAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ScrollAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -475,7 +497,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 }
 
 class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ScrollBarAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -483,7 +505,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 }
 
 class SearchModifier implements AttributeModifier<SearchAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: SearchAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -491,7 +513,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 }
 
 class SelectModifier implements AttributeModifier<SelectAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: SelectAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -499,7 +521,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
 }
 
 class ShapeModifier implements AttributeModifier<ShapeAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ShapeAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -507,7 +529,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 }
 
 class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: SideBarContainerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -515,7 +537,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
 }
 
 class SliderModifier implements AttributeModifier<SliderAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: SliderAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -523,15 +545,15 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 }
 
 class SpanModifier implements AttributeModifier<SpanAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		/* tabIndex not supported */
+		// instance.tabIndex(this.mTabIndex)
 	}
 }
 
 class StackModifier implements AttributeModifier<StackAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: StackAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -539,7 +561,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 }
 
 class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: StepperAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -547,7 +569,7 @@ class StepperModifier implements AttributeModifier<StepperAttribute> {
 }
 
 class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: StepperItemAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -555,7 +577,7 @@ class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
 }
 
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: SwiperAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -563,7 +585,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 }
 
 class TabContentModifier implements AttributeModifier<TabContentAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TabContentAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -571,7 +593,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 }
 
 class TabsModifier implements AttributeModifier<TabsAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TabsAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -579,7 +601,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
 }
 
 class TextModifier implements AttributeModifier<TextAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TextAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -587,7 +609,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
 }
 
 class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TextAreaAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -595,7 +617,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 }
 
 class TextClockModifier implements AttributeModifier<TextClockAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TextClockAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -603,7 +625,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 }
 
 class TextInputModifier implements AttributeModifier<TextInputAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TextInputAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -611,7 +633,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 }
 
 class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TextPickerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -619,7 +641,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 }
 
 class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TextTimerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -627,7 +649,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 }
 
 class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: TimePickerAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -635,7 +657,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 }
 
 class ToggleModifier implements AttributeModifier<ToggleAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: ToggleAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -643,7 +665,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 }
 
 class VideoModifier implements AttributeModifier<VideoAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: VideoAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -651,7 +673,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
 }
 
 class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: WaterFlowAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -659,7 +681,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 }
 
 class WebModifier implements AttributeModifier<WebAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: WebAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -667,7 +689,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
 }
 
 class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: WindowSceneAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -675,7 +697,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 }
 
 class XComponentModifier implements AttributeModifier<XComponentAttribute> {
-	mTabIndex: int = 1
+	mTabIndex: Int = 1
 
 	applyNormalAttribute(instance: XComponentAttribute): void {
 		instance.tabIndex(this.mTabIndex)
@@ -697,8 +719,8 @@ function commonStyle(this: BlankAttribute, componentKey: string): this {
 	return this
 }
 
-function commonStyleButton(this: ButtonAttribute, componentKey: string, _tabIndex: number | undefined): this {
-	this.tabIndex(_tabIndex?.toInt() ?? 0)
+function commonStyleButton(this: ButtonAttribute, componentKey: string, _tabIndex: Int | undefined): this {
+	this.tabIndex(_tabIndex)
 	this.key(componentKey)
 	return this
 }
@@ -1125,9 +1147,9 @@ struct TabIndexPage {
 	@State _tabIndexMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
 	@State _tabIndexNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
 	@State _tabIndexNavigationModifier: NavigationModifier = new NavigationModifier()
-	
-	
-	
+	// @State _tabIndexNavigatorModifier: NavigatorModifier = new NavigatorModifier()
+	// @State _tabIndexNavRouterModifier: NavRouterModifier = new NavRouterModifier()
+	// @State _tabIndexPanelModifier: PanelModifier = new PanelModifier()
 	@State _tabIndexPathModifier: PathModifier = new PathModifier()
 	@State _tabIndexPolygonModifier: PolygonModifier = new PolygonModifier()
 	@State _tabIndexPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1170,15 +1192,15 @@ struct TabIndexPage {
 	@State _tabIndexWebModifier: WebModifier = new WebModifier()
 	@State _tabIndexWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _tabIndexXComponentModifier: XComponentModifier = new XComponentModifier()
-	@State targetView: string = '';
-	@State componentKey: string = '';
-	@State parentWidth: double = 0;
-	@State parentHeight: double = 0;
-	@State columns: int = 0;
-	@State gutter: int = 0;
-	@State parentBackGroundColor: string = '#FFFF00'
-	@State parentComponentKey: string =  '';
-	@StoragePropRef('_tabIndex') _tabIndex: SetValue = {
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0
+  @State gutter: number = 0
+  @State parentBackGroundColor: string = '#FFFF00'
+  @State parentComponentKey: string =  '';
+	@StorageProp('_tabIndex') _tabIndex: SetValue = {
 		height: 0,tabIndex: 0
 	}
 
@@ -1190,16 +1212,16 @@ struct TabIndexPage {
 		this.componentKey = viewElement.getString("componentKey")
 		this.parentWidth = viewElement.getDouble("parentWidth")
 		this.parentHeight = viewElement.getDouble("parentHeight")
-		this.columns = (viewElement.getDouble("columns")).toInt()
-		this.gutter = (viewElement.getDouble("gutter")).toInt()
+		this.columns = viewElement.getDouble("columns")
+		this.gutter = viewElement.getDouble("gutter")
 		this.parentComponentKey = viewElement.getString("parentComponentKey")
 		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}
 
-  
-  
-  
-  
+  // @Styles
+  // commonStyle() {
+  //   .key(this.componentKey)
+  // }
 
 	build() {
 		Column() {
@@ -1210,7 +1232,7 @@ struct TabIndexPage {
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					.commonStyleButton(this.componentKey, this._tabIndex.tabIndex)
+					.commonStyleButton(this.componentKey, this._tabIndex.tabIndex as Int)
 					.attributeModifier(this._tabIndexButtonModifier)
 			}
 			if (this.targetView == 'Blank') {
@@ -1270,7 +1292,7 @@ struct TabIndexPage {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity.toInt(),
+					loop: Infinity as Int,
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
@@ -1281,7 +1303,7 @@ struct TabIndexPage {
         Navigation(new NavPathStack()) {
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._tabIndexNavigationModifier)
 			}
 			if (this.targetView == 'Menu') {
 				Menu() {
@@ -1292,18 +1314,18 @@ struct TabIndexPage {
 					.attributeModifier(this._tabIndexMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				// NavRouter() {
+				// 	Row() {
+				// 		Image($r('app.media.icon'))
+				// 	}
+				//
+				// 	NavDestination() {
+				// 		Text('NavDestination')
+				// 			.fontSize(10)
+				// 	}
+				// }
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._tabIndexNavRouterModifier)
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
@@ -1361,7 +1383,7 @@ struct TabIndexPage {
 					}
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._tabIndexStepperModifier)
 			}
 			if (this.targetView == 'StepperItem') {
 				Stepper() {
@@ -1372,7 +1394,7 @@ struct TabIndexPage {
 					}
 						.backgroundColor(Color.Red)
 						.commonStyle(this.componentKey)
-						
+						// .attributeModifier(this._tabIndexStepperItemModifier)
 				}
 					.backgroundColor(Color.Yellow)
 					.width('100%')
@@ -1593,22 +1615,22 @@ struct TabIndexPage {
 					.height('100%')
 			}
 			if (this.targetView == 'Navigator') {
-				
-				
-				
-				
-				
-				
-				
-				
+				// Navigator() {
+				// 	Text('Go to back page')
+				// 		.width('100%')
+				// 		.height(20)
+				// }
+				// 	.backgroundColor(Color.Red)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._tabIndexNavigatorModifier)
 			}
 			if (this.targetView == 'Panel') {
-				
-				
-				
-				
-				
-				
+				// Panel(true) {
+				// 	Text('Text')
+				// }
+				// 	.backgroundColor(Color.Yellow)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._tabIndexPanelModifier)
 			}
 			if (this.targetView == 'Refresh') {
 				Refresh({ refreshing: true }) {
@@ -1626,7 +1648,7 @@ struct TabIndexPage {
 						.alignRules({
 							top: { anchor: '__container__', align: VerticalAlign.Top },
 							left: { anchor: '__container__', align: HorizontalAlign.Start }
-						} as AlignRuleOption)
+						})
 						.id('constraintSize')
 				}
 					.commonStyle(this.componentKey)
@@ -1685,7 +1707,7 @@ struct TabIndexPage {
 						.backgroundColor(Color.Orange)
 				}
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._tabIndexSideBarContainerModifier)
 			}
 			if (this.targetView == 'Stack') {
 				Stack() {
@@ -1704,7 +1726,7 @@ struct TabIndexPage {
 					.indicator(true)
 					.backgroundColor(Color.White)
 					.commonStyle(this.componentKey)
-					
+					// .attributeModifier(this._tabIndexSwiperModifier)
 			}
 			if (this.targetView == 'Tabs') {
 				Tabs() {

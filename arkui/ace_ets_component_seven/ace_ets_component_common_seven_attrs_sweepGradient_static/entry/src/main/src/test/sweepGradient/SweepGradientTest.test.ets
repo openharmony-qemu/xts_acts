@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,7 +25,7 @@ export default function sweepGradientTest() {
     'Button'
   ]
 
-  
+  //Page related configuration, this parameter is required.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -46,7 +46,7 @@ export default function sweepGradientTest() {
     columns: columns
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [{
     describe: 'SetSweepGradient',
     setValue: {
