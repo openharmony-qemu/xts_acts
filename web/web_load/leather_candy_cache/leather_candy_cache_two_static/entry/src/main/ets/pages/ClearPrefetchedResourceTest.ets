@@ -28,7 +28,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview'
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
@@ -54,7 +54,7 @@ struct clearPrefetchedResourceTest {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

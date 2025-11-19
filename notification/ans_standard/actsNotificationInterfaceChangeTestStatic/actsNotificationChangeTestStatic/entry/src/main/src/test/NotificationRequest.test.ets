@@ -40,19 +40,40 @@ export default function ActsNotificationRequestTest() {
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(2000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-
+    
     /**
-     * @tc.number  Acts_NotificationRequest_Static_0100
-     * @tc.name  Acts_NotificationRequest_Static_0100
-     * @tc.desc  Set notificationSlotType attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.number Acts_NotificationRequest_Static_0100
+     * @tc.name Acts_NotificationRequest_Static_0100
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
      */
     it('Acts_NotificationRequest_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME:string = 'Acts_NotificationRequest_Static_0100';
+        notificationManager.isNotificationEnabled((err, data) => {
+          if (err) {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          } else {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback success`)
+            expect(data).assertFalse();
+          }
+        });
+
+        await Utils.msSleep(200);
+
+        await notificationManager.isNotificationEnabled().then((data: boolean) => {
+          console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
+          expect(data).assertFalse();
+        }).catch((err: BusinessError) :void  => {
+          console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
+          expect(true).assertFalse();
+          done()
+        });
 
         notificationManager.requestEnableNotification(testAbilityContext,(err: BusinessError | null) => {
           if (err) {
@@ -64,16 +85,42 @@ export default function ActsNotificationRequestTest() {
 
         await Utils.msSleep(1500);
         let driver = Driver.create();
-        hilog.info(0x0000, 'testTag', `${TAG} driver is ${JSON.stringify(driver)}`);
+        hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} driver is ${JSON.stringify(driver)}`);
         await driver.assertComponentExist(ON.text('允许'));
         let button = await driver.findComponent(ON.text('允许'));
-        hilog.info(0x0000, 'testTag',`${TAG} button is ${JSON.stringify(button)}`);
+        hilog.info(0x0000, 'testTag',`${TEST_CASE_NAME} button is ${JSON.stringify(button)}`);
         if (button !== null) {
           await button.click();
           await Utils.msSleep(1500);
         } else {
           hilog.info(0x0000, 'testTag',`button is null`)
         }
+
+        notificationManager.isNotificationEnabled((err, data) => {
+          if (err) {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          } else {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback success`)
+            expect(data).assertTrue();
+          }
+        });
+
+        await Utils.msSleep(200);
+
+        let notificationenable: boolean = notificationManager.isNotificationEnabledSync();
+        expect(notificationenable).assertTrue()
+
+        await Utils.msSleep(200);
+
+        await notificationManager.isNotificationEnabled().then((data: boolean) => {
+            console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
+            expect(data).assertTrue();
+          }).catch((err: BusinessError) : void => {
+            console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
+            expect(true).assertFalse();
+          });
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 1,
@@ -115,9 +162,9 @@ export default function ActsNotificationRequestTest() {
 
 
     /**
-     * @tc.number  Acts_NotificationRequest_Static_0200
-     * @tc.name  Acts_NotificationRequest_Static_0200
-     * @tc.desc  Set notificationSlotType attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.number Acts_NotificationRequest_Static_0200
+     * @tc.name Acts_NotificationRequest_Static_0200
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
      */
     it('Acts_NotificationRequest_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -152,7 +199,7 @@ export default function ActsNotificationRequestTest() {
         try {
           notificationManager.publish(notificationRequest, (data: BusinessError | null) => {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
-            expect(data).assertEqual(null);
+            expect().assertFail();
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
@@ -163,11 +210,11 @@ export default function ActsNotificationRequestTest() {
           done();
         }
       })
-
+    
     /**
-     * @tc.number  Acts_NotificationRequest_Static_0300
-     * @tc.name  Acts_NotificationRequest_Static_0300
-     * @tc.desc  Set notificationSlotType attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.number Acts_NotificationRequest_Static_0300
+     * @tc.name Acts_NotificationRequest_Static_0300
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
      */
     it('Acts_NotificationRequest_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -235,11 +282,11 @@ export default function ActsNotificationRequestTest() {
         }
       })
 
-
+    
     /**
-     * @tc.number  Acts_NotificationRequest_Static_0400
-     * @tc.name  Acts_NotificationRequest_Static_0400
-     * @tc.desc  Set notificationSlotType attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.number Acts_NotificationRequest_Static_0400
+     * @tc.name Acts_NotificationRequest_Static_0400
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.OTHER_TYPES.
      */
     it('Acts_NotificationRequest_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -287,11 +334,11 @@ export default function ActsNotificationRequestTest() {
         }
       })
 
-
+      
     /**
-     * @tc.number  Acts_NotificationRequest_Static_0600
-     * @tc.name  Acts_NotificationRequest_Static_0600
-     * @tc.desc  Construct the notificationRequest.
+     * @tc.number Acts_NotificationRequest_Static_0600
+     * @tc.name Acts_NotificationRequest_Static_0600
+     * @tc.desc Construct the notificationRequest.
      */
     it('Acts_NotificationRequest_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

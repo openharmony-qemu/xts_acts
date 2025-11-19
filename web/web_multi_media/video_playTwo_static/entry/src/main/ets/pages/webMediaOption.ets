@@ -20,7 +20,7 @@ import hilog from '@ohos.hilog';
 import image from '@ohos.multimedia.image';
 import events_emitter from '@ohos.events.emitter';
 import { Web ,WebMediaOptions,OnAudioStateChangedEvent} from '@ohos.arkui.component';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import { Hypium } from '../../../hypium';
 import Utils from '../../src/test/Util.test.ets';
@@ -60,7 +60,7 @@ struct WebMediaOption{
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

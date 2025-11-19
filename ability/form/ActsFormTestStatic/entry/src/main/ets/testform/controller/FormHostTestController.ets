@@ -1,7 +1,7 @@
 
 import { expect } from '../../../../hypium/index';
 import hilog from '@ohos.hilog';
-import { BusinessError, AsyncCallback, Callback } from '@ohos.base';
+import { BusinessError, AsyncCallback, Callback, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import formHost from '@ohos.app.form.formHost';
 import formProvider from '@ohos.app.form.formProvider';
@@ -78,7 +78,7 @@ export class FormHostTestController {
   // -----------------------------
 
   createEventData(isSuccess: boolean): emitter.EventData {
-    let data: Record<String, Object> = {
+    let data: Record<String, RecordData> = {
       'isSuccess': isSuccess 
     };
 
