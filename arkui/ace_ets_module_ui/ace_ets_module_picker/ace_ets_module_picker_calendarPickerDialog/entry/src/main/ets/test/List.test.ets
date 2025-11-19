@@ -17,11 +17,21 @@ import calendarPickerDialogBackgroundColorTest from './calendarPickerDialogTest/
 import calendarPickerDialogBackgroundShadowTest from './calendarPickerDialogTest/calendarPickerDialogBackgroundShadow.test'
 import calendarPickerDialogStartEndTest from './calendarPickerDialogTest/calendarPickerDialogStartEndTest.test'
 import dialogDisableDateRangeAndMarkTodayTest from './calendarPickerDialogTest/dialogDisableDateRangeAndMarkToday.test'
+import CalendarPickerDialogExitsTest from './calendarPickerDialogTest/CalendarPickerDialogExits.test'
+import CalendarPickerDialogWindowPropertiesTest from './calendarPickerDialogTest/CalendarPickerDialogWindowProperties.test'
+import CalendarDialogCallbackTest from './calendarPickerDialogTest/CalendarDialogCallback.test'
+import CalendarPickerDialogTest from './calendarPickerDialogTest/CalendarPickerDialog.test'
+import CalendarPickerDialogButtonStyleTest from './calendarPickerDialogTest/CalendarPickerDialogButtonStyle.test'
 
 export default function testsuite() {
-    calendarPickerDialogBackgroundBlurStyleTest();
-    calendarPickerDialogBackgroundColorTest();
-    calendarPickerDialogBackgroundShadowTest();
-    calendarPickerDialogStartEndTest();
-    dialogDisableDateRangeAndMarkTodayTest();
+  calendarPickerDialogBackgroundBlurStyleTest();
+  calendarPickerDialogBackgroundColorTest();
+  calendarPickerDialogBackgroundShadowTest();
+  calendarPickerDialogStartEndTest();
+  dialogDisableDateRangeAndMarkTodayTest();
+  CalendarPickerDialogExitsTest();
+  CalendarPickerDialogWindowPropertiesTest();
+  CalendarDialogCallbackTest();
+  CalendarPickerDialogTest();
+  CalendarPickerDialogButtonStyleTest();
 }
