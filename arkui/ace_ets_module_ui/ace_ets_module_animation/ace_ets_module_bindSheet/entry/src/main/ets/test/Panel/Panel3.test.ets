@@ -23,7 +23,7 @@ export default function panelBackgroundMaskJsunit() {
     beforeAll(async () => {
       console.info("flex beforeEach start");
      let options:router.RouterOptions = {
-        url:'MainAbility/pages/panel/panel',
+        url:'MainAbility/pages/Panel/Panel3',
       }
       try {
         router.clear();
