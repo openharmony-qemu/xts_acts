@@ -38,6 +38,11 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.number systemRouterTest002
+     * @tc.name systemRouterTest002
+     * @tc.desc systemRouterTest002
+     */
     it('systemRouterTest002', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest002] START');
       let options: router.RouterOptions = {
@@ -73,6 +78,11 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.number systemRouterTest003
+     * @tc.name systemRouterTest003
+     * @tc.desc systemRouterTest003
+     */
     it('systemRouterTest003', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest003] START');
       await Utils.sleep(1000);
@@ -85,6 +95,11 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.number systemRouterTest004
+     * @tc.name systemRouterTest004
+     * @tc.desc systemRouterTest004
+     */
     it('systemRouterTest004', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest004] START');
       router.clear();
@@ -115,6 +130,11 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.number systemRouterTest005
+     * @tc.name systemRouterTest005
+     * @tc.desc systemRouterTest005
+     */
     it('systemRouterTest005', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest005] START');
       let options: router.RouterOptions = {

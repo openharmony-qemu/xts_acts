@@ -47,7 +47,6 @@ export default function Router3() {
       router.back()
       console.info("Router3 after each called");
     });
-
     /**
      * @tc.number Router3_0100
      * @tc.name Router3_0100
@@ -56,6 +55,7 @@ export default function Router3() {
      * @tc.type :
      * @tc.size :
      */
+
     it('Router3_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Router3_0100] START');
       await CommonFunc.sleep(1000);

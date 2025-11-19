@@ -60,7 +60,7 @@ export default function routerReplaceJsunit() {
 
     /**
      * @tc.number routerReplaceJsunit_0100
-     * @tc.name testReplace
+     * @tc.name routerReplaceJsunit_0100
      * @tc.desc The replace interface does not set params
      * @tc.level Level 3
      * @tc.type

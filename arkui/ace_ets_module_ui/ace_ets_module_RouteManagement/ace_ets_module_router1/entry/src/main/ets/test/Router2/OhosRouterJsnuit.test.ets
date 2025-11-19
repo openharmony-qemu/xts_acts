@@ -47,10 +47,7 @@ export default function OhosRouterJsunit() {
     /**
      * @tc.number ohosRouterTest001
      * @tc.name ohosRouterTest001
-     * @tc.desc ohosRouterTest001
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc
      */
     it('ohosRouterTest001', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest001] START');
@@ -64,7 +61,7 @@ export default function OhosRouterJsunit() {
         let pages = router.getState();
         expect(pages.index).assertEqual(3);
         expect(pages.name).assertEqual('ohosRouterA');
-        expect(pages.path).assertEqual('MainAbility/pages/Router/');
+        expect(pages.path).assertEqual('MainAbility/pages/Router2/');
       } catch (err) {
         console.error("[ohosRouterTest001] push page error: " + err);
       }
@@ -75,10 +72,7 @@ export default function OhosRouterJsunit() {
     /**
      * @tc.number ohosRouterTest002
      * @tc.name ohosRouterTest002
-     * @tc.desc ohosRouterTest002
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc
      */
     it('ohosRouterTest002', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest002] START');
@@ -116,10 +110,7 @@ export default function OhosRouterJsunit() {
     /**
      * @tc.number ohosRouterTest003
      * @tc.name ohosRouterTest003
-     * @tc.desc ohosRouterTest003
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc
      */
     it('ohosRouterTest003', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest003] START');
@@ -136,10 +127,7 @@ export default function OhosRouterJsunit() {
     /**
      * @tc.number ohosRouterTest004
      * @tc.name ohosRouterTest004
-     * @tc.desc ohosRouterTest004
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc
      */
     it('ohosRouterTest004', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest004] START');
@@ -156,7 +144,7 @@ export default function OhosRouterJsunit() {
       }
       await CommonFunc.sleep(2000);
       let optionsB: router.RouterOptions = {
-        url: 'MainAbility/pages/Router/ohosRouterB'
+        url: 'MainAbility/pages/Router2/ohosRouterB'
       }
       try {
         let result = await router.replace(optionsB);
@@ -174,10 +162,7 @@ export default function OhosRouterJsunit() {
     /**
      * @tc.number ohosRouterTest005
      * @tc.name ohosRouterTest005
-     * @tc.desc ohosRouterTest005
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc
      */
     it('ohosRouterTest005', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest005] START');

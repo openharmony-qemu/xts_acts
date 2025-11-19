@@ -47,7 +47,6 @@ export default function Router4() {
       router.back()
       console.info("Router4 after each called");
     });
-
     /**
      * @tc.number Router4_0100
      * @tc.name Router4_0100
@@ -56,6 +55,7 @@ export default function Router4() {
      * @tc.type :
      * @tc.size :
      */
+
     it('Router4_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Router4_0100] START');
 

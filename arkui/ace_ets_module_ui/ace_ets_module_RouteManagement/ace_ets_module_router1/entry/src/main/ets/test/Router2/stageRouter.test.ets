@@ -54,6 +54,11 @@ export default function stageRouterTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.number testrouterstage0001
+     * @tc.name testrouterstage0001
+     * @tc.desc testrouterstage0001
+     */
     it('testrouterstage0001', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0001 START');
@@ -78,6 +83,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0002
+     * @tc.name testrouterstage0002
+     * @tc.desc testrouterstage0002
+     */
     it('testrouterstage0002', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0002 START');
@@ -107,7 +117,11 @@ export default function stageRouterTest() {
       done();
     });
 
-
+    /**
+     * @tc.number testrouterstage0003
+     * @tc.name testrouterstage0003
+     * @tc.desc testrouterstage0003
+     */
     it('testrouterstage0003', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0003 START');
@@ -136,6 +150,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0004
+     * @tc.name testrouterstage0004
+     * @tc.desc testrouterstage0004
+     */
     it('testrouterstage0004', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0004 START');
@@ -159,6 +178,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0005
+     * @tc.name testrouterstage0005
+     * @tc.desc testrouterstage0005
+     */
     it('testrouterstage0005', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0005 START');
@@ -184,6 +208,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0006
+     * @tc.name testrouterstage0006
+     * @tc.desc testrouterstage0006
+     */
     it('testrouterstage0006', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0006 START');
@@ -210,6 +239,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0007
+     * @tc.name testrouterstage0007
+     * @tc.desc testrouterstage0007
+     */
     it('testrouterstage0007', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0007 START');
@@ -235,6 +269,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0008
+     * @tc.name testrouterstage0008
+     * @tc.desc testrouterstage0008
+     */
     it('testrouterstage0008', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0008 START');
@@ -261,6 +300,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0009
+     * @tc.name testrouterstage0009
+     * @tc.desc testrouterstage0009
+     */
     it('testrouterstage0009', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0009 START');
@@ -278,6 +322,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0010
+     * @tc.name testrouterstage0010
+     * @tc.desc testrouterstage0010
+     */
     it('testrouterstage0010', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0010 START');
@@ -293,6 +342,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0011
+     * @tc.name testrouterstage0011
+     * @tc.desc testrouterstage0011
+     */
     it('testrouterstage0011', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0011 START');
@@ -308,6 +362,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0012
+     * @tc.name testrouterstage0012
+     * @tc.desc testrouterstage0012
+     */
     it('testrouterstage0012', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0012 START');
@@ -323,6 +382,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0013
+     * @tc.name testrouterstage0013
+     * @tc.desc testrouterstage0013
+     */
     it('testrouterstage0013', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0013 START');
@@ -340,6 +404,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0014
+     * @tc.name testrouterstage0014
+     * @tc.desc testrouterstage0014
+     */
     it('testrouterstage0014', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0014 START');
@@ -355,6 +424,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0015
+     * @tc.name testrouterstage0015
+     * @tc.desc testrouterstage0015
+     */
     it('testrouterstage0015', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0015 START');
@@ -370,6 +444,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0016
+     * @tc.name testrouterstage0016
+     * @tc.desc testrouterstage0016
+     */
     it('testrouterstage0016', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0016 START');
@@ -398,6 +477,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0017
+     * @tc.name testrouterstage0017
+     * @tc.desc testrouterstage0017
+     */
     it('testrouterstage0017', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0017 START');
@@ -427,6 +511,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0018
+     * @tc.name testrouterstage0018
+     * @tc.desc testrouterstage0018
+     */
     it('testrouterstage0018', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0018 START');
@@ -455,6 +544,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0019
+     * @tc.name testrouterstage0019
+     * @tc.desc testrouterstage0019
+     */
     it('testrouterstage0019', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0019 START');
@@ -484,6 +578,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0020
+     * @tc.name testrouterstage0020
+     * @tc.desc testrouterstage0020
+     */
     it('testrouterstage0020', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0020 START');
@@ -509,6 +608,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0021
+     * @tc.name testrouterstage0021
+     * @tc.desc testrouterstage0021
+     */
     it('testrouterstage0021', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0021 START');
@@ -535,6 +639,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0022
+     * @tc.name testrouterstage0022
+     * @tc.desc testrouterstage0022
+     */
     it('testrouterstage0022', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0022 START');
@@ -560,6 +669,11 @@ export default function stageRouterTest() {
       done();
     });
 
+    /**
+     * @tc.number testrouterstage0023
+     * @tc.name testrouterstage0023
+     * @tc.desc testrouterstage0023
+     */
     it('testrouterstage0023', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
       console.info('testrouterstage0023 START');
