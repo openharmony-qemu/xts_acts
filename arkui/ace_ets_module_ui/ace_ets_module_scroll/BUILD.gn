@@ -17,9 +17,13 @@ group("ActsAceEtsModuleScrollTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
     deps = [
+      "ace_ets_module_arcScroll:ActsAceEtsModuleArcScrollTest",
       "ace_ets_module_arcScroll_api18:ActsAceEtsModuleArcScrollApi18Test",
       "ace_ets_module_grid:ActsAceEtsModuleGridTest",
+      "ace_ets_module_grid02:ActsAceEtsModuleGrid02Test",
       "ace_ets_module_list:ActsAceEtsModuleListTest",
+      "ace_ets_module_list03:ActsAceEtsModuleList03Test",
+      "ace_ets_module_refresh:ActsAceEtsModuleRefreshTest",
       "ace_ets_module_scroll_api11:ActsAceEtsModuleScrollApi11Test",
       "ace_ets_module_scroll_api12:ActsAceEtsModuleScrollApi12Test",
       "ace_ets_module_scroll_api13:ActsAceEtsModuleScrollApi13Test",
@@ -36,9 +40,15 @@ group("ActsAceEtsModuleScrollTest") {
     ]
   } else {
     deps = [
+      "ace_ets_module_arcScroll:ActsAceEtsModuleArcScrollTest",
       "ace_ets_module_arcScroll_api18:ActsAceEtsModuleArcScrollApi18Test",
       "ace_ets_module_grid:ActsAceEtsModuleGridTest",
+      "ace_ets_module_grid02:ActsAceEtsModuleGrid02Test",
       "ace_ets_module_list:ActsAceEtsModuleListTest",
+      "ace_ets_module_list03:ActsAceEtsModuleList03Test",
+      "ace_ets_module_nowear_scroll:ActsAceEtsModuleNowearScrollTest",
+      "ace_ets_module_nowear_waterflow:ActsAceEtsModuleNowearWaterFlowTest",
+      "ace_ets_module_refresh:ActsAceEtsModuleRefreshTest",
       "ace_ets_module_scroll_api11:ActsAceEtsModuleScrollApi11Test",
       "ace_ets_module_scroll_api12:ActsAceEtsModuleScrollApi12Test",
       "ace_ets_module_scroll_api13:ActsAceEtsModuleScrollApi13Test",
