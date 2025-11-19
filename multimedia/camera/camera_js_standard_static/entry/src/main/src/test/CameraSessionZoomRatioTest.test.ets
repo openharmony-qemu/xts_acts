@@ -41,7 +41,7 @@ let indexOne: int = 1;
 
 export default function cameraSessionZoomRatioTest() {
 
-  let receiver: image.ImageReceiver;
+  let receiver: image.ImageReceiver | undefined;
   let mPhotoSurface: string = "";
   let surfaceId: string = '';
 
@@ -66,7 +66,7 @@ export default function cameraSessionZoomRatioTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + mPhotoSurface)
     } else {
       console.log(TAG + 'Photo receiver is created failed')

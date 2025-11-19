@@ -37,7 +37,7 @@ let mVideoOutput: camera.VideoOutput | null = null;
 let nbiasRangeArray: Array<number> ;
 let nzoomRatioRange: Array<number> = [];
 
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 export default function cameraConcurrentTest() {
 
@@ -75,7 +75,7 @@ export default function cameraConcurrentTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')

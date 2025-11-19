@@ -153,8 +153,8 @@ export default function image10bitPixelMap() {
       return bufferRead
     }
 
-    const testImageSourceCreatePixelMap = async (file: string | int | ArrayBuffer, desiredFormat: image.PixelMapFormat): Promise<image.PixelMap> => {
-      let imageSource: image.ImageSource;
+    const testImageSourceCreatePixelMap = async (file: string | int | ArrayBuffer, desiredFormat: image.PixelMapFormat): Promise<image.PixelMap | undefined> => {
+      let imageSource: image.ImageSource | undefined;
       if (file instanceof string) {
         let buffer = await getBuffer(file as string);
         imageSource = image.createImageSource(buffer);
@@ -163,15 +163,25 @@ export default function image10bitPixelMap() {
       } else {
         imageSource = image.createImageSource(file as int);
       }
+
+      if (imageSource == undefined) {
+        hilog.info(0x0000, 'image10bitPixelMap', `imageSource is undefined, testImageSourceCreatePixelMap failed`);
+        return undefined;
+      }
+
       let decodingOpt: image.DecodingOptions = {
         editable: true,
         desiredPixelFormat: desiredFormat,
         desiredDynamicRange: image.DecodingDynamicRange.HDR
       }
-      let pixelMap = await imageSource.createPixelMap(decodingOpt);
-      if (pixelMap.getImageInfoSync().pixelFormat != desiredFormat) {
+      let pixelMap = await imageSource!.createPixelMap(decodingOpt);
+      if (pixelMap == undefined) {
+        hilog.info(0x0000, 'image10bitPixelMap', `pixelMap is undefined, testImageSourceCreatePixelMap failed`);
+        return undefined;
+      }
+      if (pixelMap!.getImageInfoSync().pixelFormat != desiredFormat) {
         try {
-          await pixelMap.convertPixelFormat(desiredFormat);
+          await pixelMap!.convertPixelFormat(desiredFormat);
         } catch (error) {
           hilog.info(0x0000, "image10bitPixelMap", 'convertPixelFormat failed, msg:%{public}s', JSON.stringify(error));
         }
@@ -179,7 +189,7 @@ export default function image10bitPixelMap() {
       return pixelMap;
     }
 
-    const testCreatePixelMap = async (fileName: string, expectFormat: image.PixelMapFormat): Promise<image.PixelMap> => {
+    const testCreatePixelMap = async (fileName: string, expectFormat: image.PixelMapFormat): Promise<image.PixelMap | undefined> => {
       if (isSupportHdr) {
         return testImageSourceCreatePixelMap(fileName, expectFormat);
       } else {
@@ -203,6 +213,7 @@ export default function image10bitPixelMap() {
       }
       if (res) {
         logger.log('no change after writeBuffer');
+        expect(true).assertTrue();
         done();
       }
     }

@@ -196,7 +196,6 @@ export default function imageWebp() {
               done();
             } catch (err) {
               console.info(`${testNum} getimageInfo err ` + JSON.stringify(err));
-
             }
           } catch (error) {
             console.log(`${testNum} fail `);
