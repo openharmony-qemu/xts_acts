@@ -18,16 +18,16 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
   Row, ClickEvent, Margin, ButtonType,Stepper, StepperItem, ItemState, Color} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MessageManager, Callback, Message } from '../../utils/MessageManager';
+import { MessageManager, Callback, Message } from '../../common/MessageManager';
 
 @Entry
 @Component
 struct StepperExample {
-  @State currentIndex: Int = 0
+  @State currentIndex: int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State disabled: ItemState = ItemState.Normal
-  messageManager: MessageManager = new MessageManager()
+  messageManager: MessageManager<number> = new MessageManager<number>()
 
   build() {
     Stepper({
@@ -97,50 +97,23 @@ struct StepperExample {
     .onSkip(() => {
       console.log('onSkip')
     })
-    .onChange((prevIndex: Int, index: Int) => {
-      this.currentIndex = index
+    .onChange((prevIndex: int, index: int) => {
+      this.currentIndex = index as int
     })
     .align(Alignment.Center)
     .key('stepper')
   }
 
   onPageShow() {
-    AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager)
-
-    let callback = (message: Message) => {
+    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager)
+    let callback:Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'index') {
+        this.currentIndex = message.value as int
       }
     }
     this.messageManager.registerCallback(callback)
-
-    console.info('stepper page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 202,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 909,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack);
-
-    let stateChangeEventThree: events_emitter.InnerEvent = {
-      eventId: 910,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventThree, this.stateChangCallBack);
-
-    let stateChangeEventFour: events_emitter.InnerEvent = {
-      eventId: 940,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventFour, this.stateChangCallBack);
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info("stepper page stateChangCallBack" + JSON.stringify(eventData));
-  }
+
 }

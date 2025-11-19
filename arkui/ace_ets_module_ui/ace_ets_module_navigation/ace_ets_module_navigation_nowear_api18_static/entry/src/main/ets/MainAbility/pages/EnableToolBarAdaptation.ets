@@ -14,7 +14,7 @@
  */
 import { Entry, Column,Builder, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, ButtonType, NavPathStack, Navigation, ColumnOptions,
-  NavDestination, Navigation, Color, NavigationTitleMode, $r, NavigationMode} from '@ohos.arkui.component'
+  NavDestination, Navigation, Color, NavigationTitleMode, $r, NavigationMode,NavPathInfo} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State, Provide, Consume } from '@ohos.arkui.stateManagement';
@@ -27,6 +27,7 @@ import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 @Entry
 @Component
 struct EnableToolBarAdaptation {
+  @Provide({alias:'pageInfos'}) pageInfos: NavPathStack = new NavPathStack()
   @State isEnable: boolean = false;
   @State showText: boolean = false;
 
@@ -49,72 +50,74 @@ struct EnableToolBarAdaptation {
 
   build() {
     Navigation(new NavPathStack()) {
-      Column({space: '5vp'} as ColumnOptions) {
-        Button('Landscape')
-          .fontColor(Color.Black)
-          .focusable(true)
-          .onClick((e:ClickEvent) => {
-            this.changeOrientation(true);
-          })
-          .id('landscapeId')
-          .height('10%')
+        Column({ space: '5vp' } as ColumnOptions) {
+          Button('Landscape')
+            .fontColor(Color.Black)
+            .focusable(true)
+            .onClick((e: ClickEvent) => {
+              this.changeOrientation(true);
+            })
+            .id('landscapeId')
+            .height('10%')
 
-        Button('Portrait')
-          .fontColor(Color.Black)
-          .focusable(true)
-          .onClick((e:ClickEvent) => {
-            this.changeOrientation(false);
-          })
-          .id('portraitId')
-          .height('10%')
+          Button('Portrait')
+            .fontColor(Color.Black)
+            .focusable(true)
+            .onClick((e: ClickEvent) => {
+              this.changeOrientation(false);
+            })
+            .id('portraitId')
+            .height('10%')
 
-        Button('changeEnable').id('changeEnableId').onClick((e:ClickEvent) => {
-          this.isEnable = !this.isEnable
-        }).height('10%')
-        Button('showText').id('showTextId').onClick((e:ClickEvent) => {
-          this.showText = !this.showText
-        }).height('10%')
-        Button('push one').id('pushOneId').onClick((e:ClickEvent) => {
-          
-        }).height('10%')
+          Button('changeEnable').id('changeEnableId').onClick((e: ClickEvent) => {
+            this.isEnable = !this.isEnable
+          }).height('10%')
+          Button('showText').id('showTextId').onClick((e: ClickEvent) => {
+            this.showText = !this.showText
+          }).height('10%')
+          Button('push one').id('pushOneId').onClick((e: ClickEvent) => {
+            console.log("======================================== this.pageInfos.pushPath start");
+            this.pageInfos.pushPath(new NavPathInfo('pageOne',undefined))
+            console.log("======================================== this.pageInfos.pushPath end");
+          }).height('10%')
+        }
       }
+      .title('Title')
+      .titleMode(NavigationTitleMode.Mini)
+      .enableToolBarAdaptation(this.isEnable)
+      .navDestination(this.pageMap)
+      .toolbarConfiguration([
+        { value: 'a', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+        { value: 'b', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+        { value: 'c', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+        { value: 'd', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+        { value: 'e', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+      ], { hideItemValue: this.showText })
+      .mode(NavigationMode.Stack)
     }
-    .title('Title')
-    .titleMode(NavigationTitleMode.Mini)
-    .enableToolBarAdaptation(this.isEnable)
-    .navDestination(this.pageMap)
-    .toolbarConfiguration([
-      {value: 'a', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'b', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'c', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'd', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'e', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-    ], {hideItemValue: this.showText})
-    .mode(NavigationMode.Stack)
   }
-}
 
-@Component
-struct PageOne2 {
+  @Component
+  struct  PageOne2 {
   @Consume('pageInfos') pageInfos: NavPathStack;
   @State navShowText: boolean = false;
 
   build() {
     NavDestination() {
-      Button('showText').id('navShowTextId').onClick((e:ClickEvent) => {
+      Button('showText').id('navShowTextId').onClick((e: ClickEvent) => {
         this.navShowText = !this.navShowText
       }).height('10%')
-      Button('pop').id('popId').onClick((e:ClickEvent) => {
+      Button('pop').id('popId').onClick((e: ClickEvent) => {
         this.pageInfos.pop()
       }).height('10%')
     }
     .title('pageOne')
     .toolbarConfiguration([
-      {value: 'a1', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'b2', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'c3', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'd4', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-      {value: 'e5', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
-    ], {hideItemValue: this.navShowText})
+      { value: 'a1', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+      { value: 'b2', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+      { value: 'c3', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+      { value: 'd4', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+      { value: 'e5', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')) },
+    ], { hideItemValue: this.navShowText })
   }
 }

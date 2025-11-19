@@ -1,6 +1,21 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { Entry, Column,Builder, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, ButtonType, SymbolGlyphModifier, NavPathStack, Navigation, ColumnOptions,
-  NavDestination, Navigation, LaunchMode, NavigationTitleMode, NavPathInfo} from '@ohos.arkui.component'
+  NavDestination, Navigation, LaunchMode, NavigationTitleMode, NavPathInfo, NavigationOptions} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State, Provide, Consume } from '@ohos.arkui.stateManagement';
@@ -19,7 +34,7 @@ class NavParam {
 @Component
 struct OnNewParamPage {
   @Provide stack: NavPathStack = new NavPathStack()
-
+  @Provide({alias: 'paramString'}) paramString: string = ''
 
   @Builder
   pageMap(name: string) {
@@ -61,12 +76,12 @@ struct OnNewParamPage {
   build() {
     Column() {
       Column() {
-  
+        Text(this.paramString).id('paramId').height('10%')
       }
       Navigation(this.stack) {
         Button('pushPath pageOne')
           .onClick((e:ClickEvent) => {
-  
+            this.stack.pushPath(new NavPathInfo('pageOne',null))
           })
           .id('pushId')
           .height('10%')
@@ -104,7 +119,7 @@ struct lifeCyclePush {
 
   aboutToAppear(): void {
     if (this.pushLifeCycle === 'aboutToAppear' && this.targetName !== '__NA__') {
-
+      this.stack.pushPath(new NavPathInfo(this.targetName, new NavParam('aboutToAppear ' + this.targetName + ' ' + this.launchModeToString(this.targetLaunchMode))), {launchMode: this.targetLaunchMode} as NavigationOptions)
     }
   }
 
@@ -116,6 +131,7 @@ struct lifeCyclePush {
       this.name = context.pathInfo.name
     })
     .onNewParam((param: Object|null|undefined):void => {
+      console.log("==============================onNewParam ")
       this.paramString = JSON.stringify(param);
       console.log('TestTag', this.name, 'onNewParam, param: ' + JSON.stringify(param))
     })
@@ -126,16 +142,18 @@ struct lifeCyclePush {
 struct Dest {
   @Consume stack: NavPathStack
   @State name: string = 'NA'
-  @Consume('paramString') paramString: string;
+  @Consume paramString: string;
 
   build() {
     NavDestination() {
       NavBody()
     }
     .onReady((context) => {
+      console.log("==============================onReady " + this.paramString)
       this.name = context.pathInfo.name
     })
     .onNewParam((param:  Object|null|undefined):void => {
+      console.log("==============================onNewParam ")
       this.paramString = JSON.stringify(param);
       console.log('TestTag', this.name, 'onNewParam, param: ' + JSON.stringify(param))
     })
@@ -149,25 +167,25 @@ struct NavBody {
     Column() {
       Button('STANDARD')
         .onClick((e:ClickEvent) => {
-
+          this.stack.pushPath(new NavPathInfo('pageOne', new NavParam('push pageOne STANDARD')), {launchMode: LaunchMode.STANDARD} as NavigationOptions)
         })
         .id('standardId')
         .height('10%')
       Button('NEW_INSTANCE')
         .onClick((e:ClickEvent) => {
-
+          this.stack.pushPath(new NavPathInfo('pageOne', new NavParam('push pageOne NEW_INSTANCE')), {launchMode: LaunchMode.NEW_INSTANCE} as NavigationOptions)
         })
         .id('instanceId')
         .height('10%')
       Button('MOVE_TO_TOP_SINGLETON')
         .onClick((e:ClickEvent) => {
-
+          this.stack.pushPath(new NavPathInfo('pageOne', new NavParam('MOVE_TO_TOP_SINGLETON')), {launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON} as NavigationOptions)
         })
         .id('moveId')
         .height('10%')
       Button('POP_TO_SINGLETON')
         .onClick((e:ClickEvent) => {
- 
+          this.stack.pushPath(new NavPathInfo('pageOne', new NavParam('10')), {launchMode: LaunchMode.POP_TO_SINGLETON} as NavigationOptions)
         })
         .id('popId')
         .height('10%')

@@ -16,17 +16,18 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,Curve,PopInfo,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,CalendarAlign,ToolbarItemStatus,NavigationMenuItem,SymbolRenderingStrategy,ToolbarItem, SafeAreaType,SafeAreaEdge,Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,CalendarAlign,ToolbarItemStatus,NavigationMenuItem,wrapBuilder,SymbolRenderingStrategy,ToolbarItem, SafeAreaType,SafeAreaEdge,Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { SymbolGlyphModifier } from "@ohos.arkui.modifier";
 import { ComponentContent } from '@ohos.arkui.node';
-@Builder function PlaceholderPage(a: string){
+@Builder
+function PlaceholderPage(){
   Column({space:10} as ColumnOptions) {
     Text('分栏模式占位页面').id('text1Id')
       .fontSize(28)
@@ -36,7 +37,9 @@ import { ComponentContent } from '@ohos.arkui.node';
 
 }
 
-@Builder function PlaceholderPage2(){
+
+@Builder
+function PlaceholderPage2(){
   Column({space:10} as ColumnOptions) {
     Text('分栏模式占位页面').id('text2Id')
       .fontSize(28)
@@ -53,10 +56,10 @@ function PlaceholderPage3() {
 @Entry
 @Component
 struct SplitPlaceholder {
-  
-  
-  
-  
+  @Provide({alias:'navPathStack'}) navPathStack: NavPathStack = new NavPathStack();
+  placeholder:ComponentContent = new ComponentContent(this.getUIContext(),wrapBuilder(PlaceholderPage))
+  placeholder2:ComponentContent = new ComponentContent(this.getUIContext(),wrapBuilder(PlaceholderPage2))
+  placeholder3:ComponentContent = new ComponentContent(this.getUIContext(),wrapBuilder(PlaceholderPage3))
 
   @State menuItems: Array<NavigationMenuItem> = [
     {
@@ -96,33 +99,33 @@ struct SplitPlaceholder {
     }
   ] as Array<ToolbarItem>
   @State message :string = ''
-  
+  @State splitPlaceholder:(ComponentContent<undefined>) [] = [this.placeholder, this.placeholder2, this.placeholder3]
   @State splitPlaceholderIndex:number = 0
   @State navBarPosition:NavBarPosition[] =[NavBarPosition.Start,NavBarPosition.End]
   @State NavBarPositionString:string[] =['Start','End']
-  @State navBarPositionIndex:number = 0
+  @State navBarPositionIndex:Int = 0
   @State hideNavBar:boolean[] =[false, true]
-  @State hideNavBarIndex:number = 0
+  @State hideNavBarIndex:Int = 0
   @State SafeAreaEdgeType: (SafeAreaType) [] = [SafeAreaType.SYSTEM]
   @State SafeAreaEdge: Array<Array<SafeAreaEdge|undefined>>|Array<Array<undefined>|Array<SafeAreaEdge>> = [[undefined],[SafeAreaEdge.TOP], [SafeAreaEdge.BOTTOM],[SafeAreaEdge.START],[SafeAreaEdge.END]]
   @State SafeAreaEdgeIndex:number =0
   @State SafeAreaEdgeString:string[] =['undefined', 'TOP', 'BOTTOM','START','END']
   @State enableDragBar:boolean[]=[true, false]
-  @State enableDragBarIndex:number =0
+  @State enableDragBarIndex:Int =0
   @State enableMode:boolean []=[false, true]
-  @State enableModeIndex:number = 0
+  @State enableModeIndex:Int = 0
 
   build() {
-    
+    Navigation(this.navPathStack) {
       Scroll() {
-        Column({space:10} as ColumnOptions) {
+        Column({ space: 10 } as ColumnOptions) {
           Button('splitPlaceholder', { stateEffect: true, type: ButtonType.Capsule })
             .width('80%')
             .height('10%')
             .id('btn1')
             .backgroundColor(Color.Blue)
             .onClick((e: ClickEvent) => {
-                this.splitPlaceholderIndex = 0
+              this.splitPlaceholderIndex = 0
             })
 
           Button('splitPlaceholder2', { stateEffect: true, type: ButtonType.Capsule })
@@ -163,18 +166,18 @@ struct SplitPlaceholder {
 
         }
       }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    }
+    .enableModeChangeAnimation(this.enableMode[this.enableModeIndex])
+    .enableDragBar(this.enableDragBar[this.enableDragBarIndex])
+    .hideNavBar(this.hideNavBar[this.hideNavBarIndex])
+    .navBarPosition(this.navBarPosition[this.navBarPositionIndex])
+    .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')), undefined)
+    .titleMode(NavigationTitleMode.Mini)
+    .menus(this.menuItems, undefined)
+    .toolbarConfiguration(this.toolItems)
+    .title('一级页面')
+    // .splitPlaceholder(this.splitPlaceholder[this.splitPlaceholderIndex])
+    .mode(NavigationMode.Split)
+    .navBarWidthRange(['50%','100%'])//第二个undefined
   }
 }

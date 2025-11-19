@@ -65,13 +65,14 @@ export default function StepperTest1() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   StepperTest1_static_0100
      * @tc.name     StepperTest1_static_0100
      * @tc.desc     StepperTest1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('StepperTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('StepperTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StepperTest1_0100] START');
       await CommonFunc.sleep(1000);
 

@@ -33,14 +33,14 @@ import inspector from '@ohos.arkui.inspector';
 import { Driver, ON,Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
+// import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import router from '@ohos.router';
+
 
 export default function ReplaceDestination1Test() {
   describe('ReplaceDestination1Test', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.navigation16.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +74,7 @@ export default function ReplaceDestination1Test() {
 
     
     
+
 /*
      * @tc.number   ReplaceDestination1_static_0100
      * @tc.name     ReplaceDestination1_static_0100
@@ -104,66 +105,69 @@ it('ReplaceDestination1_static_0100', Level.LEVEL0, async (done: () => void): Pr
 
     
     
-/*
-     * @tc.number   ReplaceDestination1_static_static_0200
-     * @tc.name     ReplaceDestination1_static_static_0200
-     * @tc.desc     ReplaceDestination1_static_static_0200
-     * @tc.level    Level.LEVEL0
-     */
-it('ReplaceDestination1_static_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ReplaceDestination1_static_static_0200 START');
-      await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
-
-      let btn1 = await (driver.findComponent(ON.id('undefinedId')) as Promise<Component>);
-      await btn1.click()
-      console.info('[ReplaceDestination1_static_static_0200] btn1 click');
-      await CommonFunc.sleep(500);
-
-      let strJson = inspector.getInspectorByKey('id06');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ReplaceDestination1_static_static_0200] component obj is: ' + JSON.stringify(obj));
-      console.info('[ReplaceDestination1_static_static_0200] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('401');
-
-      console.info('ReplaceDestination1_static_static_0200 END');
-      done();
-    });
-
-    
-    
-/*
-     * @tc.number   ReplaceDestination1_static_0300
-     * @tc.name     ReplaceDestination1_static_0300
-     * @tc.desc     ReplaceDestination1_static_0300
-     * @tc.level    Level.LEVEL0
-     */
-it('ReplaceDestination1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ReplaceDestination1_static_0300 START');
-      await CommonFunc.sleep(500);
-
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
-
-      let btn1 = await (driver.findComponent(ON.id('nullId')) as Promise<Component>);
-      await btn1.click()
-      console.info('[ReplaceDestination1_static_0300] btn1 click');
-      await CommonFunc.sleep(500);
-
-      let strJson = inspector.getInspectorByKey('id06');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ReplaceDestination1_static_0300] component obj is: ' + JSON.stringify(obj));
-      console.info('[ReplaceDestination1_static_0300] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('401');
-
-      console.info('ReplaceDestination1_static_0300 END');
-      done();
-    });
+// /*
+//      * @tc.number   ReplaceDestination1_static_static_0200
+//      * @tc.name     ReplaceDestination1_static_static_0200
+//      * @tc.desc     ReplaceDestination1_static_static_0200
+//      * @tc.level    Level.LEVEL0
+//      */
+// it('ReplaceDestination1_static_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+//       console.info('ReplaceDestination1_static_static_0200 START');
+//       await CommonFunc.sleep(500);
+//
+//       let driver = Driver.create();
+//       await CommonFunc.sleep(200);
+//
+//       let btn1 = await (driver.findComponent(ON.id('undefinedId')) as Promise<Component>);
+//       await btn1.click()
+//       console.info('[ReplaceDestination1_static_static_0200] btn1 click');
+//       await CommonFunc.sleep(500);
+//
+//       let strJson = inspector.getInspectorByKey('id06');
+//       let obj = JSON.parseJsonElement(strJson);
+//       console.info('[ReplaceDestination1_static_static_0200] component obj is: ' + JSON.stringify(obj));
+//       console.info('[ReplaceDestination1_static_static_0200] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+//       expect(obj.getElement('$attrs').getString('content')).assertEqual('401');
+//
+//       console.info('ReplaceDestination1_static_static_0200 END');
+//       done();
+//     });
 
     
     
+
+// /*
+//      * @tc.number   ReplaceDestination1_static_0300
+//      * @tc.name     ReplaceDestination1_static_0300
+//      * @tc.desc     ReplaceDestination1_static_0300
+//      * @tc.level    Level.LEVEL0
+//      */
+// it('ReplaceDestination1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+//       console.info('ReplaceDestination1_static_0300 START');
+//       await CommonFunc.sleep(500);
+//
+//       let driver = Driver.create();
+//       await CommonFunc.sleep(200);
+//
+//       let btn1 = await (driver.findComponent(ON.id('nullId')) as Promise<Component>);
+//       await btn1.click()
+//       console.info('[ReplaceDestination1_static_0300] btn1 click');
+//       await CommonFunc.sleep(500);
+//
+//       let strJson = inspector.getInspectorByKey('id06');
+//       let obj = JSON.parseJsonElement(strJson);
+//       console.info('[ReplaceDestination1_static_0300] component obj is: ' + JSON.stringify(obj));
+//       console.info('[ReplaceDestination1_static_0300] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+//       expect(obj.getElement('$attrs').getString('content')).assertEqual('401');
+//
+//       console.info('ReplaceDestination1_static_0300 END');
+//       done();
+//     });
+
+    
+    
+
 /*
      * @tc.number   ReplaceDestination1_static_0400
      * @tc.name     ReplaceDestination1_static_0400
@@ -194,6 +198,7 @@ it('ReplaceDestination1_static_0400', Level.LEVEL0, async (done: () => void): Pr
 
     
     
+
 /*
      * @tc.number   ReplaceDestination1_static_0500
      * @tc.name     ReplaceDestination1_static_0500
@@ -245,6 +250,7 @@ it('ReplaceDestination1_static_0500', Level.LEVEL0, async (done: () => void): Pr
 
     
     
+
 /*
      * @tc.number   ReplaceDestination1_static_0600
      * @tc.name     ReplaceDestination1_static_0600

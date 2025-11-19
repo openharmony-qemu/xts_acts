@@ -40,7 +40,6 @@ import router from '@ohos.router';
 export default function ReplaceDestination2() {
   describe('ReplaceDestination2', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.navigation16.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +73,7 @@ export default function ReplaceDestination2() {
 
     
     
+
 /*
      * @tc.number   ReplaceDestination2_static_0100
      * @tc.name     ReplaceDestination2_static_0100

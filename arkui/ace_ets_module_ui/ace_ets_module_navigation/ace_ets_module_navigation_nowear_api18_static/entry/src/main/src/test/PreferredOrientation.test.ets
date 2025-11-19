@@ -47,13 +47,15 @@ export default function PreferredOrientation() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get PreferredOrientation state pages:' + JSON.stringify(pages));
         if (!('PreferredOrientation' == pages.name)) {
           console.info('get PreferredOrientation pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info('push PreferredOrientation page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push PreferredOrientation page error:' + err);
@@ -68,11 +70,12 @@ export default function PreferredOrientation() {
     });
 
 
-    /**
-     * @tc.number    PreferredOrientation_static_0100
-     * @tc.name      PreferredOrientation_static_0100
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   PreferredOrientation_static_0100
+     * @tc.name     PreferredOrientation_static_0100
+     * @tc.desc     PreferredOrientation_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('PreferredOrientation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PreferredOrientation_static_0100 START');
@@ -94,11 +97,12 @@ export default function PreferredOrientation() {
       done();
     });
 
-    /**
-     * @tc.number    PreferredOrientation_static_0200
-     * @tc.name      PreferredOrientation_static_0200
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   PreferredOrientation_static_0200
+     * @tc.name     PreferredOrientation_static_0200
+     * @tc.desc     PreferredOrientation_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('PreferredOrientation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PreferredOrientation_static_0200 START');
@@ -126,11 +130,12 @@ export default function PreferredOrientation() {
       done();
     });
 
-    /**
-     * @tc.number    PreferredOrientation_static_0300
-     * @tc.name      PreferredOrientation_static_0300
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   PreferredOrientation_static_0300
+     * @tc.name     PreferredOrientation_static_0300
+     * @tc.desc     PreferredOrientation_static_0300
+     * @tc.level    Level.LEVEL0
      */
     it('PreferredOrientation_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PreferredOrientation_static_0300 START');
@@ -163,11 +168,12 @@ export default function PreferredOrientation() {
       done();
     });
 
-    /**
-     * @tc.number    PreferredOrientation_static_0400
-     * @tc.name      PreferredOrientation_static_0400
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   PreferredOrientation_static_0400
+     * @tc.name     PreferredOrientation_static_0400
+     * @tc.desc     PreferredOrientation_static_0400
+     * @tc.level    Level.LEVEL0
      */
     it('PreferredOrientation_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PreferredOrientation_static_0400 START');
@@ -194,11 +200,12 @@ export default function PreferredOrientation() {
       done();
     });
 
-    /**
-     * @tc.number    PreferredOrientation_static_0500
-     * @tc.name      PreferredOrientation_static_0500
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   PreferredOrientation_static_0500
+     * @tc.name     PreferredOrientation_static_0500
+     * @tc.desc     PreferredOrientation_static_0500
+     * @tc.level    Level.LEVEL0
      */
     it('PreferredOrientation_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PreferredOrientation_static_0500 START');

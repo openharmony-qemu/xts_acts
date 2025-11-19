@@ -62,13 +62,14 @@ export default function sideBarShowSideBarJsunit() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   testsideBarShowSideBar_static_0001
      * @tc.name     testsideBarShowSideBar_static_0001
      * @tc.desc     testsideBarShowSideBar_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testsideBarShowSideBar_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testsideBarShowSideBar_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('SideBarContainer');
@@ -81,13 +82,14 @@ it('testsideBarShowSideBar_static_0001', Level.LEVEL0, async (done: () => void):
 });
 
     
-    /*
+    
+/*
      * @tc.number   testsideBarShowSideBar_static_0002
      * @tc.name     testsideBarShowSideBar_static_0002
      * @tc.desc     testsideBarShowSideBar_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testsideBarShowSideBar_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testsideBarShowSideBar_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('SideBarContainer');
@@ -100,13 +102,14 @@ it('testsideBarShowSideBar_static_0002', Level.LEVEL0, async (done: () => void):
 });
 
     
-    /*
+    
+/*
      * @tc.number   testsideBarShowSideBar_static_0003
      * @tc.name     testsideBarShowSideBar_static_0003
      * @tc.desc     testsideBarShowSideBar_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testsideBarShowSideBar_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testsideBarShowSideBar_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0003 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('SideBarContainer');

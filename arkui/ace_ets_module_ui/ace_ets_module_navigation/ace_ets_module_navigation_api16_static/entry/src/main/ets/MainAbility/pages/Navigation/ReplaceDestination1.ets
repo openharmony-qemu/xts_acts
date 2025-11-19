@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -48,6 +48,7 @@ struct ReplaceDestination1 {
       Column({space: '5vp'} as ColumnOptions) {
         Text(this.code100006).id('id06').height('5%')
         Button('push pageTwo').id('pageOneId').onClick((e: ClickEvent) => {
+          console.log('[replaceDestination pageOne] start')
           this.pageInfos.replaceDestination(new NavPathInfo('pageTwo',null))
             .then(() => {
               console.log('[replaceDestination pageOne] success')
@@ -58,28 +59,28 @@ struct ReplaceDestination1 {
             })
         }).height('10%')
 
-        Button('push undefined').id('undefinedId').onClick((e: ClickEvent) => {
-          this.pageInfos.replaceDestination(new NavPathInfo('',null))
-            .then(() => {
-              console.log('[replaceDestination pageOne] success')
-            })
-            .catch((error: Error) => {
-              this.code100006 = error.code + '';
-              console.log(`[replaceDestination undefined] failed, error code ${error.code}`)
-            })
-        }).height('10%')
+        // Button('push undefined').id('undefinedId').onClick((e: ClickEvent) => {
+        //   this.pageInfos.replaceDestination(undefined)
+        //     .then(() => {
+        //       console.log('[replaceDestination pageOne] success')
+        //     })
+        //     .catch((error: Error) => {
+        //       this.code100006 = error.code + '';
+        //       console.log(`[replaceDestination undefined] failed, error code ${error.code}`)
+        //     })
+        // }).height('10%')
 
-        Button('push null').id('nullId').onClick((e: ClickEvent) => {
-          console.log(`[replaceDestination null`)
-          this.pageInfos.replaceDestination(new NavPathInfo('',null))
-            .then(() => {
-              console.log('[replaceDestination pageOne] success')
-            })
-            .catch((error: Error) => {
-              this.code100006 = error.code + '';
-              console.log(`[replaceDestination null] failed, error code ${error.code}`)
-            })
-        }).height('10%')
+        // Button('push null').id('nullId').onClick((e: ClickEvent) => {
+        //   console.log(`[replaceDestination null`)
+        //   this.pageInfos.replaceDestination(null)
+        //     .then(() => {
+        //       console.log('[replaceDestination pageOne] success')
+        //     })
+        //     .catch((error: Error) => {
+        //       this.code100006 = error.code + '';
+        //       console.log(`[replaceDestination null] failed, error code ${error.code}`)
+        //     })
+        // }).height('10%')
 
         Button('replace pageOne').id('replaceId').onClick((e: ClickEvent) => {
           this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null))
@@ -122,7 +123,8 @@ struct PageOne {
     .title('pageOne')
     .onReady((): void => {
       this.stacks = this.pageInfos.getAllPathName()
-      console.log('this.pageInfos: ', this.stacks)
+      console.log('PageOne stackId this.pageInfos: ', this.pageInfos.getAllPathName())
+      console.log('PageOne stackId this.pageInfos: ', this.stacks)
     })
   }
 }
@@ -154,11 +156,11 @@ struct PageFour {
     NavDestination() {
       Column({space: '5vp'} as ColumnOptions) {
         Button('LaunchModeMoveTOTopSingleton').id('moveId').onClick((e: ClickEvent) => {
-          
+          console.log("============================================ moveId ");
           this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON, animated: true } )
         }).height('10%')
         Button('LaunchModePopToSingleton').id('popId').onClick((e: ClickEvent) => {
-          
+          console.log("============================================ popId ");
           this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.POP_TO_SINGLETON, animated: undefined } )
         }).height('10%')
       }

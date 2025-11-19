@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -40,7 +40,7 @@ struct ReplaceDestination2 {
   }
 
   build() {
-    
+    Navigation(this.pageInfos) {
       Column({space: '5vp'} as ColumnOptions) {
         Text(this.code100005).id('id05')
         Button('push pageOne').id('pageTwoId').onClick((e: ClickEvent) => {
@@ -56,7 +56,8 @@ struct ReplaceDestination2 {
       }
       .width('100%')
       .height('100%')
-    
+  }
+  .title('Title')
     
   }
 }

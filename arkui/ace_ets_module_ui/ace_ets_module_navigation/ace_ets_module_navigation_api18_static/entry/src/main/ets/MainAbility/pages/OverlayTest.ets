@@ -7,7 +7,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume,StorageLink
+  Prop,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -34,11 +34,13 @@ function overlayBuilder() {
 @Component
 struct OverlayTest {
   pathStack: NavPathStack = new NavPathStack();
-  builderComponent: ComponentContent<never> = new ComponentContent<never>(this.getUIContext(), wrapBuilder(overlayBuilder))
+  // @Provide({ allowOverride: 'pathStack' }) pathStack: NavPathStack = new NavPathStack();
+  builderComponent:ComponentContent<never> = new ComponentContent<never>(this.getUIContext(), wrapBuilder(overlayBuilder))
   clickItems: Array<ClickItem> = [{
     name: 'push pageOne',
     callback: () => {
-      this.pathStack.pushDestination(new NavPathInfo( 'pageOne', 'overlay')).then(() => {
+      console.log("============================= ")
+      this.pathStack.pushDestination(new NavPathInfo( 'pageOne', new Object())).then(() => {
         console.log('testOnActive pageOne success');
       }).catch((err: Error) => {
         console.log(`testOnActive pageOne failed: ${err.code}, message: ${err.message}`);

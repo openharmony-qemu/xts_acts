@@ -28,7 +28,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import { MessageManager, Callback, Message } from '../../../ets/MainAbility/utils/MessageManager';
+import { MessageManager, Callback, Message } from '../../../ets/MainAbility/common/MessageManager';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
@@ -36,7 +36,7 @@ export default function StepperJsunit11() {
   describe('StepperJsunit11', () => {
 
     beforeAll(() => {
-      console.info("stepper beforeAll start");
+      console.info("StepperJsunit11 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -48,11 +48,12 @@ export default function StepperJsunit11() {
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
-        let pages: router.RouterState = routerInstance.getState();
+        let pages = routerInstance.getState();
         console.info("get stepper state success " + JSON.stringify(pages));
         if (!("stepper" == pages.name)) {
           console.info("get stepper state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          // await routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
       } catch (err) {
@@ -65,39 +66,46 @@ export default function StepperJsunit11() {
       console.info("stepper after each called");
     });
 
-    /*
-     * @tc.number       stepperTest_static_0100
-     * @tc.name         stepperTest_static_0100
-     * @tc.desc         stepperTest_static_0100
+
+    
+/*
+     * @tc.number   stepperTest_static_0100
+     * @tc.name     stepperTest_static_0100
+     * @tc.desc     stepperTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('stepperTest_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('stepperTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('stepperTest_static_0100 START');
       let strJson: string = inspector.getInspectorByKey('stepper');
       console.info("stepperTest_static_0100 component strJson:" + strJson);
       console.info("stepperTest_static_0100 component obj is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Stepper');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stepper');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual('0');
       console.info('stepperTest_static_0100 END');
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_static_0200
-     * @tc.name         stepperTest_static_0200
-     * @tc.desc         stepperTest_static_0200
+
+    
+/*
+     * @tc.number   stepperTest_static_0200
+     * @tc.name     stepperTest_static_0200
+     * @tc.desc     stepperTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('stepperTest_static_0200',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('stepperTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('stepperTest_static_0200 START');
       let strJson: string = inspector.getInspectorByKey('stepper');
       console.info("stepperTest_static_0200 component strJson:" + strJson);
       console.info("stepperTest_static_0200 component obj is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual('0');
       try {
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 202,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("stepperTest_static_0200 start to publish emit");
+        const globalMessage = AppStorage.get<MessageManager<number>>('messageManager');
+        await Utils.sleep(1000);
+        globalMessage!.notify({
+          name: 'index', value: 1
+        })
+        await Utils.sleep(2000);
       } catch (err) {
         console.log("stepperTest_static_0200 change component data error: " + (err as BusinessError).message);
       }
@@ -109,15 +117,18 @@ export default function StepperJsunit11() {
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_static_0400
-     * @tc.name         stepperTest_static_0400
-     * @tc.desc         stepperTest_static_0400
+
+    
+/*
+     * @tc.number   stepperTest_static_0400
+     * @tc.name     stepperTest_static_0400
+     * @tc.desc     stepperTest_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('stepperTest_static_0400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('stepperTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       await Utils.sleep(1000);
-      const globalMessage = AppStorage.get<MessageManager>('messageManager');
+      const globalMessage = AppStorage.get<MessageManager<number>>('messageManager');
       globalMessage!.notify({
         name: 'index', value: -558038585
       })
@@ -129,14 +140,17 @@ export default function StepperJsunit11() {
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_static_0500
-     * @tc.name         stepperTest_static_0500
-     * @tc.desc         stepperTest_static_0500
+
+    
+/*
+     * @tc.number   stepperTest_static_0500
+     * @tc.name     stepperTest_static_0500
+     * @tc.desc     stepperTest_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('stepperTest_static_0500',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('stepperTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[stepperTest_static_0500] START');
-      const globalMessage = AppStorage.get<MessageManager>('messageManager');
+      const globalMessage = AppStorage.get<MessageManager<number>>('messageManager');
       await Utils.sleep(1000);
       globalMessage!.notify({
         name: 'index', value: -10
@@ -149,23 +163,31 @@ export default function StepperJsunit11() {
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_static_0300
-     * @tc.name         stepperTest_static_0300
-     * @tc.desc         stepperTest_static_0300
+
+    
+/*
+     * @tc.number   stepperTest_static_0300
+     * @tc.name     stepperTest_static_0300
+     * @tc.desc     stepperTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('stepperTest_static_0300',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('stepperTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('stepperTest_static_0300v START');
       let strJson: string = inspector.getInspectorByKey('stepper');
       console.info("stepperTest_static_0300 component strJson:" + strJson);
       console.info("stepperTest_static_0300 component obj is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       try {
-
+        let eventData: events_emitter.EventData = {
+          data: {
+            "currentIndex": 11111111,
+          } as Record<String,undefined|null|Object>
+        }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 909,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("stepperTest_static_0300 start to publish emit");
+        events_emitter.emit(indexEvent, eventData);
       } catch (err) {
         console.log("stepperTest_static_0300 change component data error: " + (err as BusinessError).message);
       }

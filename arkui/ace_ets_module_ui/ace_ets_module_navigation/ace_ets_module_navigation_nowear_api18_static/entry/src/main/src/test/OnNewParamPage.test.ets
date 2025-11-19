@@ -47,15 +47,15 @@ export default function OnNewParamPage() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnNewParamPage state pages:" + JSON.stringify(pages));
         if (!("OnNewParamPage" == pages.name)) {
           console.info("get OnNewParamPage pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
+          // let result = await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push OnNewParamPage page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push OnNewParamPage page error:" + err);
@@ -70,13 +70,14 @@ export default function OnNewParamPage() {
     });
 
 
-    /**
-     * @tc.number    OnNewParamPage_static_0100
-     * @tc.name      OnNewParamPage_static_0100
-     * @tc.desc      Test OnNewParamPage LaunchMode.STANDARD\LaunchMode.NEW_INSTANCE\LaunchMode.POP_TO_SINGLETON\LaunchMode.MOVE_TO_TOP_SINGLETON
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnNewParamPage_static_0100
+     * @tc.name     OnNewParamPage_static_0100
+     * @tc.desc     OnNewParamPage_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('OnNewParamPage_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnNewParamPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnNewParamPage_static_0100 START');
       await CommonFunc.sleep(500);
 

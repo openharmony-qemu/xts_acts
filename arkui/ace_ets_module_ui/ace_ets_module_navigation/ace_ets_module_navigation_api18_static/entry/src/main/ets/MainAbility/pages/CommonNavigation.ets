@@ -17,11 +17,11 @@ import {
   NavigationTitleMode,Image,NavigationMode,Column,NavDestinationActiveReason,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
+,NavPathStack,NavDestinationContext} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -29,25 +29,26 @@ import events_emitter from '@ohos.events.emitter'
 
 @Component
 struct PageOne {
-  @State tag:string = ""
+  @State tag:Object|null|undefined = ""
   @State param:string = ""
 
   build() {
     NavDestination() {
-      Text(this.tag)
+      Text(this.tag?.toString() ?? "")
     }.title('pageOne Standard')
     .onActive((reason: NavDestinationActiveReason) => {
       this.tag = reason + '';
       console.log(`${this.tag} pageOne is onActive: ${reason}`);
       console.log(`${this.tag} pageOne param is : ${this.param}`);
       AppStorage.setOrCreate<NavDestinationActiveReason>('onActive', reason);
-    }).onInactive((reason: NavDestinationActiveReason) => {
+    })
+    .onInactive((reason: NavDestinationActiveReason) => {
       this.tag = reason + ''
       console.log(`${this.tag} pageOne is onInActive: ${reason}`);
       AppStorage.setOrCreate<NavDestinationActiveReason>('onInactive', reason);
     })
-    .onReady((context) => {
-      this.param = context?.pathInfo?.param as string;
+    .onReady((context:NavDestinationContext) => {
+      // this.param = context?.pathInfo?.param as string;
       console.log(`onReady pageOne is param: ${this.param}`)
     })
   }
@@ -55,13 +56,14 @@ struct PageOne {
 
 @Component
 export struct CommonNavigation {
-  pathStack?: NavPathStack = new NavPathStack()
+  pathStack?: NavPathStack
+  // @Consume('pathStack') pathStack: NavPathStack;
   title:string = ''
 
   @Builder
   PageBuilder(name: string, param: Object|null|undefined) {
     if (name == 'pageOne') {
-      PageOne({tag: param as string})
+      PageOne({tag: param })
     }
   }
 

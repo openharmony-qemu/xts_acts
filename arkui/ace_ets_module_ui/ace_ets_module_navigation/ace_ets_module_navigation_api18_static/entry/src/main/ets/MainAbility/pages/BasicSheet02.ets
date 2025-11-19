@@ -13,16 +13,75 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,Curve,PopInfo,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,SheetMode,NavDestinationActiveReason, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide,Consume,StorageLink
-} from '@ohos.arkui.stateManagement';
+  Entry,
+  Component,
+  $r,
+  Scroll,
+  Builder,
+  List,
+  ListItem,
+  Resource,
+  animateTo,
+  Curve,
+  PopInfo,
+  HorizontalAlign,
+  AnimateParam,
+  NavDestinationTransition,
+  Search,
+  TextAlign,
+  Axis,
+  NavBarPosition,
+  FlexAlign,
+  NavPathInfo,
+  NavDestinationContext,
+  NavigationTitleMode,
+  Image,
+  NavigationMode,
+  Column,
+  Navigation,
+  ButtonType,
+  NavDestination,
+  Stack,
+  ColumnOptions,
+  TextInput,
+  SearchController,
+  NavigationOperation,
+  PanGesture,
+  Position,
+  EffectType,
+  EffectComponent,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  NavDestinationMode,
+  Dimension,
+  TextOverflow,
+  GestureEvent,
+  FontWeight,
+  Axis,
+  Margin,
+  Swiper,
+  ForEach,
+  PickerTextStyle,
+  SheetMode,
+  NavDestinationActiveReason,
+  CalendarAlign,
+  Visibility,
+  Date,
+  NavigationCommonTitle,
+  NavDestinationCommonTitle,
+  Alignment,
+  BarStyle,
+  LaunchMode,
+  NavPathStack,
+  ContentCoverOptions
+} from '@ohos.arkui.component';
+import { State, Link, Prop, Provide, Consume, StorageLink } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import { CommonNavigation } from './CommonNavigation';
@@ -65,10 +124,16 @@ struct ModalComponent {
       Scroll() {
         Column() {
           ForEach(this.clickItem, (item: ClickItem) => {
-            Button(item.name).width(300).height(30).margin(10).onClick(item.callback).id(item.id)
+            Button(item.name)
+              .width(300)
+              .height(30)
+              .margin(10)
+              .onClick(item.callback)
+              .id(item.id)
           })
         }
       }.height('50%')
+
       Navigation(this.pathStack) {
       }.title('Modal Navigation').width('100%').navDestination(this.pageBuilder)
     }.backgroundColor(Color.Yellow.toString())
@@ -86,16 +151,16 @@ struct BasicSheet02 {
     {
       name: 'push pageOne',
       callback: () => {
-        
-        this.pathStack.pushPath(new NavPathInfo('pageOne',null))
+
+        this.pathStack.pushPath(new NavPathInfo('pageOne', null))
       },
       id: 'allSheetPushId'
     } as ClickItem, {
-      name: '开启全模态',
-      callback: () => {
-        this.isShow = true;
-      },
-      id: 'openAllSheetId'
+    name: '开启全模态',
+    callback: () => {
+      this.isShow = true;
+    },
+    id: 'openAllSheetId'
   } as ClickItem
   ]
 
@@ -109,14 +174,21 @@ struct BasicSheet02 {
       Scroll() {
         Column() {
           ForEach(this.clickItem, (item: ClickItem) => {
-            Button(item.name).width(300).height(30).margin(10).onClick(item.callback).id(item.id)
+            Button(item.name)
+              .width(300)
+              .height(30)
+              .margin(10)
+              .onClick(item.callback)
+              .id(item.id)
           })
         }
       }.height('50%')
 
-      CommonNavigation({pathStack: this.pathStack})
-        
-
+      Column() {
+        CommonNavigation({ pathStack: this.pathStack })
+      }
+      .bindContentCover(this.isShow, this.ModalBuilder, {
+      } as ContentCoverOptions)
     }
   }
 }

@@ -70,7 +70,8 @@ export default function UIContextNavDestinationUpdate() {
     });
 
 
-        /*
+        
+/*
      * @tc.number   UIContextNavDestinationUpdate_static_0100
      * @tc.name     UIContextNavDestinationUpdate_static_0100
      * @tc.desc     UIContextNavDestinationUpdate_static_0100
@@ -95,7 +96,8 @@ it('UIContextNavDestinationUpdate_static_0100', Level.LEVEL0, async (done: () =>
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   UIContextNavDestinationUpdate_static_0200
      * @tc.name     UIContextNavDestinationUpdate_static_0200
      * @tc.desc     UIContextNavDestinationUpdate_static_0200
@@ -130,7 +132,8 @@ it('UIContextNavDestinationUpdate_static_0200', Level.LEVEL0, async (done: () =>
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   UIContextNavDestinationUpdate_static_0300
      * @tc.name     UIContextNavDestinationUpdate_static_0300
      * @tc.desc     UIContextNavDestinationUpdate_static_0300
