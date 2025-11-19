@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -80,10 +80,10 @@ export default function animatorOnframeJsunit() {
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0001
-     * @tc.name      testanimatorOnframe_static_0001
-     * @tc.desc      testanimatorOnframe_static_0001
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0001
+     * @tc.name     testanimatorOnframe_static_0001
+     * @tc.desc     testanimatorOnframe_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0001 START');
@@ -91,17 +91,17 @@ export default function animatorOnframeJsunit() {
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0001] component width strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('width')).assertEqual("100.00vp");
       console.info("[testanimatorOnframe0001] width value :" + typeParam.getElement('$attrs').getString('width'));
       done();
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0002
-     * @tc.name      testanimatorOnframe_static_0002
-     * @tc.desc      testanimatorOnframe_static_0002
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0002
+     * @tc.name     testanimatorOnframe_static_0002
+     * @tc.desc     testanimatorOnframe_static_0002
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0002 START');
@@ -109,36 +109,37 @@ export default function animatorOnframeJsunit() {
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0002] component height strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('height')).assertEqual("70.00vp");
       console.info("[testanimatorOnframe0002] height value :" + typeParam.getElement('$attrs').getString('height'));
       done();
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0003
-     * @tc.name      testanimatorOnframe_static_0003
-     * @tc.desc      testanimatorOnframe_static_0003
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0003
+     * @tc.name     testanimatorOnframe_static_0003
+     * @tc.desc     testanimatorOnframe_static_0003
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0003 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
+      await CommonFunc.sleep(2000);
       console.info("[testanimatorOnframe0003] component fontSize strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('fontSize')).assertEqual("20.00fp");
       console.info("[testanimatorOnframe0003] fontSize value :" + typeParam.getElement('$attrs').getString('fontSize'));
       done();
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0004
-     * @tc.name      testanimatorOnframe_static_0004
-     * @tc.desc      testanimatorOnframe_static_0004
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0004
+     * @tc.name     testanimatorOnframe_static_0004
+     * @tc.desc     testanimatorOnframe_static_0004
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0004 START');
@@ -147,17 +148,17 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0004] component opacity strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
-      expect(typeParam.getElement('$type')).assertEqual('Text');
-      expect(typeParam.getElement('$attrs').getString('opacity')).assertEqual(1);
-      console.info("[testanimatorOnframe0004] opacity value :" + typeParam.getElement('$attrs').getString('opacity'));
+      expect(typeParam.getString('$type')).assertEqual('Text');
+      expect(typeParam.getElement('$attrs').getDouble('opacity')).assertEqual(1);
+      console.info("[testanimatorOnframe0004] opacity value :" + typeParam.getElement('$attrs').getDouble('opacity'));
       done();
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0005
-     * @tc.name      testanimatorOnframe_static_0005
-     * @tc.desc      testanimatorOnframe_static_0005
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0005
+     * @tc.name     testanimatorOnframe_static_0005
+     * @tc.desc     testanimatorOnframe_static_0005
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0005 START');
@@ -166,17 +167,17 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0005] component align strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart");
       console.info("[testanimatorOnframe0005] align value :" + typeParam.getElement('$attrs').getString('align'));
       done();
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0006
-     * @tc.name      testanimatorOnframe_static_0006
-     * @tc.desc      testanimatorOnframe_static_0006
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0006
+     * @tc.name     testanimatorOnframe_static_0006
+     * @tc.desc     testanimatorOnframe_static_0006
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0006 START');
@@ -185,7 +186,7 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0006] component fontColor strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('fontColor')).assertEqual("#FFCCCCCC");
       console.info("[testanimatorOnframe0006] fontColor value :" +
       typeParam.getElement('$attrs').getString('fontColor'));
@@ -193,10 +194,10 @@ export default function animatorOnframeJsunit() {
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0007
-     * @tc.name      testanimatorOnframe_static_0007
-     * @tc.desc      testanimatorOnframe_static_0007
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0007
+     * @tc.name     testanimatorOnframe_static_0007
+     * @tc.desc     testanimatorOnframe_static_0007
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0007 START');
@@ -205,7 +206,7 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0007] component lineHeight strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('lineHeight')).assertEqual("25.00fp");
       console.info("[testanimatorOnframe0007] lineHeight value :" +
       typeParam.getElement('$attrs').getString('lineHeight'));
@@ -213,10 +214,10 @@ export default function animatorOnframeJsunit() {
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0009
-     * @tc.name      testanimatorOnframe_static_0009
-     * @tc.desc      testanimatorOnframe_static_0009
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0009
+     * @tc.name     testanimatorOnframe_static_0009
+     * @tc.desc     testanimatorOnframe_static_0009
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe009 START');
@@ -225,17 +226,17 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0009] component padding strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('padding')).assertEqual("10.00vp");
       console.info("[testanimatorOnframe0009] padding value :" + typeParam.getElement('$attrs').getString('padding'));
       done();
     });
 
     /*
-     * @tc.number    testanimatorOnframe_static_0010
-     * @tc.name      testanimatorOnframe_static_0010
-     * @tc.desc      testanimatorOnframe_static_0010
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0010
+     * @tc.name     testanimatorOnframe_static_0010
+     * @tc.desc     testanimatorOnframe_static_0010
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0010 START');
@@ -244,7 +245,7 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0010] component textAlign strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
-      expect(typeParam.getElement('$type')).assertEqual('Text');
+      expect(typeParam.getString('$type')).assertEqual('Text');
       expect(typeParam.getElement('$attrs').getString('textAlign')).assertEqual("TextAlign.Center");
       console.info("[testanimatorOnframe0010] textAlign value :" +
       typeParam.getElement('$attrs').getString('textAlign'));
@@ -253,25 +254,28 @@ export default function animatorOnframeJsunit() {
 
 
     /*
-     * @tc.number    testanimatorOnframe_static_0011
-     * @tc.name      testanimatorOnframe_static_0011
-     * @tc.desc      testanimatorOnframe_static_0011
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_0011
+     * @tc.name     testanimatorOnframe_static_0011
+     * @tc.desc     testanimatorOnframe_static_0011
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0011 START');
-      await CommonFunc.sleep(2000);
-
       let driver = Driver.create();
       await driver.delayMs(1000);
       let playBtn = await driver.findComponent(ON.id('Play'));
+      await CommonFunc.sleep(2000);
+      console.log('test result ' + JSON.stringify(playBtn))
+
       await (playBtn?.click() as Promise<void>);
+      await CommonFunc.sleep(5000);
       console.info('[testanimatorOnframe0011] playBtn click');
-      await driver.delayMs(5000);
+      await CommonFunc.sleep(2000);
 
-      let strJson3: string = inspector.getInspectorByKey('Test003');
+      let strJson3 = inspector.getInspectorByKey('Test003');
+      await CommonFunc.sleep(2000);
       let typeParam = JSON.parseJsonElement(strJson3);
-
+      console.log('test strJson3 ' + strJson3)
       console.info('[testanimatorOnframe_static_0011] strJson3: ' +
       typeParam.getElement('$attrs').getString('content'));
       expect(typeParam.getElement('$attrs').getString('content')).assertEqual('250');
@@ -281,12 +285,11 @@ export default function animatorOnframeJsunit() {
       done();
     });
 
-
     /*
-     * @tc.number    testanimatorOnframe_static_012
-     * @tc.name      testanimatorOnframe_static_012
-     * @tc.desc      testanimatorOnframe_static_012
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_012
+     * @tc.name     testanimatorOnframe_static_012
+     * @tc.desc     testanimatorOnframe_static_012
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0011 START');
@@ -301,12 +304,11 @@ export default function animatorOnframeJsunit() {
       done();
     });
 
-
     /*
-     * @tc.number    testanimatorOnframe_static_013
-     * @tc.name      testanimatorOnframe_static_013
-     * @tc.desc      testanimatorOnframe_static_013
-     * @tc.level     2
+     * @tc.number   testanimatorOnframe_static_013
+     * @tc.name     testanimatorOnframe_static_013
+     * @tc.desc     testanimatorOnframe_static_013
+     * @tc.level    Level.LEVEL0
      */
     it('testanimatorOnframe_static_013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe013 START');

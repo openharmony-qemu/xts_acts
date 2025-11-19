@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,7 +43,6 @@ export default function remoteWindowJsunit() {
         console.info("get remoteWindowJsunit state pages:" + JSON.stringify(pages));
         if (!("remoteWindow" == pages.name)) {
           console.info("get remoteWindowJsunit pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -59,17 +58,20 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0001
-     * @tc.name      testRemoteWindow_static_0001
-     * @tc.desc      testRemoteWindow_static_0001
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0001
+     * @tc.name     testRemoteWindow_static_0001
+     * @tc.desc     testRemoteWindow_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('remoteWindow testRemoteWindow_static_0001 START');
-      await UtilsTest.msSleep(2000);
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0001] component width strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      console.log('test start 011')
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      console.log('test after 011')
+      await Utils.sleep(2000);
+      // console.info("[testRemoteWindow_static_0001] component width strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00vp');
       console.info("[testRemoteWindow_static_0001] width value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
@@ -77,17 +79,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0002
-     * @tc.name      testRemoteWindow_static_0002
-     * @tc.desc      testRemoteWindow_static_0002
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0002
+     * @tc.name     testRemoteWindow_static_0002
+     * @tc.desc     testRemoteWindow_static_0002
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0002 START');
-      await UtilsTest.msSleep(2000);
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0002] component height strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0002] component height strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('70.00vp');
       console.info("[testRemoteWindow_static_0002] height value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
@@ -95,17 +98,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0003
-     * @tc.name      testRemoteWindow_static_0003
-     * @tc.desc      testRemoteWindow_static_0003
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0003
+     * @tc.name     testRemoteWindow_static_0003
+     * @tc.desc     testRemoteWindow_static_0003
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0003 START');
-      await UtilsTest.msSleep(2000);
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0003] component fontSize strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0003] component fontSize strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual('20.00fp');
       console.info("[testRemoteWindow_static_0003] fontSize value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
@@ -113,17 +117,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0004
-     * @tc.name      testRemoteWindow_static_0004
-     * @tc.desc      testRemoteWindow_static_0004
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0004
+     * @tc.name     testRemoteWindow_static_0004
+     * @tc.desc     testRemoteWindow_static_0004
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0004 START');
-      await UtilsTest.msSleep(2000);
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0004] component opacity strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0004] component opacity strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity')).assertEqual(1);
       console.info("[testRemoteWindow_static_0004] opacity value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity'));
@@ -131,17 +136,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0005
-     * @tc.name      testRemoteWindow_static_0005
-     * @tc.desc      testRemoteWindow_static_0005
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0005
+     * @tc.name     testRemoteWindow_static_0005
+     * @tc.desc     testRemoteWindow_static_0005
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0005 START');
-      await UtilsTest.msSleep(2000);
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0005] component align strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0005] component align strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual('Alignment.TopStart');
       console.info("[testRemoteWindow_static_0005] align value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('align'));
@@ -149,17 +155,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0006
-     * @tc.name      testRemoteWindow_static_0006
-     * @tc.desc      testRemoteWindow_static_0006
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0006
+     * @tc.name     testRemoteWindow_static_0006
+     * @tc.desc     testRemoteWindow_static_0006
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0006 START');
-      await UtilsTest.msSleep(2000);
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0006] component fontColor strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0006] component fontColor strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual('#FFCCCCCC');
       console.info("[testRemoteWindow_static_0006] fontColor value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
@@ -167,17 +174,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0007
-     * @tc.name      testRemoteWindow_static_0007
-     * @tc.desc      testRemoteWindow_static_0007
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0007
+     * @tc.name     testRemoteWindow_static_0007
+     * @tc.desc     testRemoteWindow_static_0007
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0007 START');
-      await UtilsTest.msSleep(2000)
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0007] component lineHeight strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0007] component lineHeight strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight')).assertEqual('25.00fp');
       console.info("[testRemoteWindow_static_0007] lineHeight value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight'));
@@ -185,17 +193,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0009
-     * @tc.name      testRemoteWindow_static_0009
-     * @tc.desc      testRemoteWindow_static_0009
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0009
+     * @tc.name     testRemoteWindow_static_0009
+     * @tc.desc     testRemoteWindow_static_0009
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow009 START');
-      await UtilsTest.msSleep(2000)
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0009] component padding strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0009] component padding strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual('10.00vp');
       console.info("[testRemoteWindow_static_0009] padding value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding'));
@@ -203,17 +212,18 @@ export default function remoteWindowJsunit() {
     });
 
     /*
-     * @tc.number    testRemoteWindow_static_0010
-     * @tc.name      testRemoteWindow_static_0010
-     * @tc.desc      testRemoteWindow_static_0010
-     * @tc.level     2
+     * @tc.number   testRemoteWindow_static_0010
+     * @tc.name     testRemoteWindow_static_0010
+     * @tc.desc     testRemoteWindow_static_0010
+     * @tc.level    Level.LEVEL0
      */
     it('testRemoteWindow_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0010 START');
-      await UtilsTest.msSleep(2000)
-      let strJson: string = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      console.info("[testRemoteWindow_static_0010] component textAlign strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
+      await Utils.sleep(2000);
+      console.info("[testRemoteWindow_static_0010] component textAlign strJson:" + JSON.stringify(strJson));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign'))
         .assertEqual('TextAlign.Center');
       console.info("[testRemoteWindow_static_0010] textAlign value :" +

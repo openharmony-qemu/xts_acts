@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
-  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
+  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -1143,7 +1143,7 @@ struct useEffectPage {
   @State componentKey: string = '';
   @State parentWidth: number = 0;
   @State parentHeight: number = 0;
-  @State columns: int = 0;
+  @State columns: number = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
 
@@ -1155,7 +1155,7 @@ struct useEffectPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = viewElement.getInteger("columns")
+    this.columns = viewElement.getDouble("columns")
     this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     attrsManager.registerDataChange((value: SetValue) => {
@@ -1247,7 +1247,7 @@ struct useEffectPage {
   // }
 
   build() {
-    GridRow({ columns: this.columns, gutter: this.gutter, /*margin: 0 */}) {
+    GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').commonStyle(this.componentKey).attributeModifier(this._useEffectButttonMod)
@@ -1490,7 +1490,7 @@ struct useEffectPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption)
+              })
               .id('constraintSize')
           }.commonStyle(this.componentKey).attributeModifier(this._useEffectRelativeContainerMod)
         } else if (this.targetView == 'Row') {

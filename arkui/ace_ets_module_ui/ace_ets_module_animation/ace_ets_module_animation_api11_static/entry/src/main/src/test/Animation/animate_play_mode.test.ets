@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,9 +43,9 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 interface Ani {
-  duration: int
+  duration: number
   curve: curves.Curve
-  delay: int
+  delay: number
   iterations: number
   playMode: PlayMode
 }
@@ -81,18 +81,16 @@ export default function playModeReverseJsunit() {
       console.info("playModeReverseTest beforeEach end");
     });
 
-
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("playModeReverse after each called");
     });
 
-
     /*
-     * @tc.number    testPlayModeReverse_static_0001
-     * @tc.name      testPlayModeReverse_static_0001
-     * @tc.desc      testPlayModeReverse_static_0001
-     * @tc.level     2
+     * @tc.number   testPlayModeReverse_static_0001
+     * @tc.name     testPlayModeReverse_static_0001
+     * @tc.desc     testPlayModeReverse_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('testPlayModeReverse_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PlayModeReverse testPlayModeReverse0001 START');
@@ -100,13 +98,13 @@ export default function playModeReverseJsunit() {
       let strJson: string = inspector.getInspectorByKey('Reverse');
       console.info("[testradioGroup0001] component width strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
-      expect(typeParam.getElement('$type')).assertEqual('Button');
+      expect(typeParam.getString('$type')).assertEqual('Button');
       let param1: Ani = {
-        duration: 3000,
-        curve: curves.Curve.EaseOut,
-        delay: 1000,
-        iterations: 1,
-        playMode: PlayMode.Reverse
+        duration: 3000, // 动画时长
+        curve: curves.Curve.EaseOut, // 动画曲线
+        delay: 1000, // 动画延迟
+        iterations: 1, // 播放次数
+        playMode: PlayMode.Reverse // 动画模式
       }
       expect(typeParam.getElement('$attrs').getString('animation')).assertEqual(param1);
       console.info("[testPlayModeReverse0001] width value :" + typeParam.getElement('$attrs').getString('animation'));
@@ -114,10 +112,10 @@ export default function playModeReverseJsunit() {
     });
 
     /*
-     * @tc.number    testPlayModeAlternate_static_0001
-     * @tc.name      testPlayModeAlternate_static_0001
-     * @tc.desc      testPlayModeAlternate_static_0001
-     * @tc.level     2
+     * @tc.number   testPlayModeAlternate_static_0001
+     * @tc.name     testPlayModeAlternate_static_0001
+     * @tc.desc     testPlayModeAlternate_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('testPlayModeAlternate_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('radioGroup testPlayModeAlternate0001 START');
@@ -125,7 +123,7 @@ export default function playModeReverseJsunit() {
       let strJson: string = inspector.getInspectorByKey('Alternate');
       console.info("[testPlayModeAlternate0001] component padding strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
-      expect(typeParam.getElement('$type')).assertEqual('Button');
+      expect(typeParam.getString('$type')).assertEqual('Button');
       let param1: Ani = {
         duration: 3000,
         curve: curves.Curve.EaseOut,

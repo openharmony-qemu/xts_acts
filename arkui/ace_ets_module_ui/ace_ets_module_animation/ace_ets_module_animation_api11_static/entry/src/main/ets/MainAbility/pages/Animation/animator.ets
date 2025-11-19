@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,6 +25,7 @@ import {
   Column,
   Component,
   Curve,
+  PlayMode,
   Entry,
   ExpectedFrameRateRange,
   FillMode,
@@ -36,7 +37,6 @@ import {
   List,
   ListItem,
   Margin,
-  PlayMode,
   Row,
   Scroll,
   ScrollDirection,
@@ -63,28 +63,32 @@ struct AnimatorOnframe {
   private test004Animator: AnimatorResult | undefined = undefined
   private test005Animator: AnimatorResult | undefined = undefined
 
+  aboutToAppear() {
+    this.create003animator()
+    this.create004animator()
+    this.create005animator()
+    console.log(`aboutToAppear AnimatorOnframe start`)
+  }
+
   create003animator() {
     this.test003Animator = animator.create(
       new SimpleAnimatorOptions(100, 200)
-        .duration(1000)
-        .delay(1000)
+        .duration(1000 as Int)
+        .delay(1000 as Int)
         .fill(FillMode.Forwards)
         .easing('ease')
-        .iterations(2)
+        .iterations(2 as Int)
         .direction(PlayMode.Normal)
     )
     if (this.test003Animator) {
-
       this.test003Animator!.setExpectedFrameRateRange({
         min: 30,
         expected: 60,
         max: 120
       })
-
       this.test003Animator!.onFrame = (value: number) => {
         this.test003Width = 50 + value
       }
-
       this.test003Animator!.onFinish = () => {
         this.test003onFinish = '1'
       }
@@ -147,7 +151,7 @@ struct AnimatorOnframe {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('#FFCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -160,7 +164,7 @@ struct AnimatorOnframe {
         .fontSize(10)
         .backgroundColor(Color.Green)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .textAlign(TextAlign.Center)
@@ -172,7 +176,7 @@ struct AnimatorOnframe {
         .fontSize(10)
         .backgroundColor(Color.Yellow)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .textAlign(TextAlign.Center)
@@ -190,16 +194,19 @@ struct AnimatorOnframe {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key('Test005')
-      Button('Play').onClick((e: ClickEvent) => {
-        this.test003Animator?.play()
-        this.test004Animator?.play()
-        this.test005Animator?.play()
-      })
+      Button('Play')
+        .onClick((e: ClickEvent) => {
+          console.log('test click start ')
+          // this.test003Animator?.play()
+          // this.test004Animator?.play()
+          // this.test005Animator?.play()
+        })
         .height('5%')
         .key('Play')
-      Button('Cancel').onClick((e: ClickEvent) => {
-        this.test005Animator?.cancel()
-      })
+      Button('Cancel')
+        .onClick((e: ClickEvent) => {
+          this.test005Animator?.cancel()
+        })
         .key('Cancel')
         .height('5%')
     }

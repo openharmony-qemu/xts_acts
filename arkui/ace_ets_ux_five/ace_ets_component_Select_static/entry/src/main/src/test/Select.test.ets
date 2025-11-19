@@ -60,146 +60,137 @@ export default function SelectTest() {
       }
     });
 
-    
-    
-/*
-     * @tc.number   ArkUX_Select_Visual_0030
-     * @tc.name     ArkUX_Select_Visual_0030
-     * @tc.desc     ArkUX_Select_Visual_0030
+
+    /*
+     * @tc.number   ArkUX_Select_Visual_static_0030
+     * @tc.name     ArkUX_Select_Visual_static_0030
+     * @tc.desc     ArkUX_Select_Visual_static_0030
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_Select_Visual_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ArkUX_Select_Visual_0030 START');
+    it('ArkUX_Select_Visual_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Select_Visual_static_0030 START');
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0030');
-          console.info('ArkUX_Select_Visual_0030 START  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Select_Visual_static_0030 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Select_Visual_0030 obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Select_Visual_static_0030 obj is: " + JSON.stringify(obj));
           let optionWidth = obj.getElement('$attrs').getString('optionWidth');
           let optionHeight = obj.getElement('$attrs').getString('optionHeight');
           expect(optionWidth).assertEqual("300.000000");
           expect(optionHeight).assertEqual("300.000000");
-          console.info('ArkUX_Select_Visual_0030 END ');
+          console.info('ArkUX_Select_Visual_static_0030 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Select_Visual_0030 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Select_Visual_static_0030 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500);
     });
 
-    
-    
-/*
-     * @tc.number   ArkUX_Select_Visual_0040
-     * @tc.name     ArkUX_Select_Visual_0040
-     * @tc.desc     ArkUX_Select_Visual_0040
+    /*
+     * @tc.number   ArkUX_Select_Visual_static_0040
+     * @tc.name     ArkUX_Select_Visual_static_0040
+     * @tc.desc     ArkUX_Select_Visual_static_0040
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_Select_Visual_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ArkUX_Select_Visual_0040 START');
+    it('ArkUX_Select_Visual_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Select_Visual_static_0040 START');
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0040');
-          console.info('ArkUX_Select_Visual_0040 START  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Select_Visual_static_0040 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Select_Visual_0040 obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Select_Visual_static_0040 obj is: " + JSON.stringify(obj));
           let optionWidth = obj.getElement('$attrs').getString('optionWidth');
           let optionHeight = obj.getElement('$attrs').getString('optionHeight');
           expect(optionWidth).assertEqual("600.000000");
           expect(optionHeight).assertEqual("600.000000");
-          console.info('ArkUX_Select_Visual_0040 END ');
+          console.info('ArkUX_Select_Visual_static_0040 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Select_Visual_0040 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Select_Visual_static_0040 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500);
     });
 
-    
-    
-/*
-     * @tc.number   ArkUX_Select_Visual_0050
-     * @tc.name     ArkUX_Select_Visual_0050
-     * @tc.desc     ArkUX_Select_Visual_0050
+    /*
+     * @tc.number   ArkUX_Select_Visual_static_0050
+     * @tc.name     ArkUX_Select_Visual_static_0050
+     * @tc.desc     ArkUX_Select_Visual_static_0050
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_Select_Visual_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ArkUX_Select_Visual_0050 START');
+    it('ArkUX_Select_Visual_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Select_Visual_static_0050 START');
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0050');
-          console.info('ArkUX_Select_Visual_0050 START  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Select_Visual_static_0050 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Select_Visual_static_0050 obj is: " + JSON.stringify(obj));
           let optionWidth = obj.getElement('$attrs').getString('optionWidth');
           let optionHeight = obj.getElement('$attrs').getString('optionHeight');
           expect(optionWidth).assertEqual("900.000000");
           expect(optionHeight).assertEqual("900.000000");
-          console.info('ArkUX_Select_Visual_0050 END ');
+          console.info('ArkUX_Select_Visual_static_0050 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Select_Visual_0050 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Select_Visual_static_0050 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500);
     });
 
-    
-    
-/*
-     * @tc.number   ArkUX_Select_Visual_0060
-     * @tc.name     ArkUX_Select_Visual_0060
-     * @tc.desc     ArkUX_Select_Visual_0060
+    /*
+     * @tc.number   ArkUX_Select_Visual_static_0060
+     * @tc.name     ArkUX_Select_Visual_static_0060
+     * @tc.desc     ArkUX_Select_Visual_static_0060
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_Select_Visual_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ArkUX_Select_Visual_0060 START');
+    it('ArkUX_Select_Visual_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Select_Visual_static_0060 START');
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0060');
-          console.info('ArkUX_Select_Visual_0060 START  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Select_Visual_static_0060 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Select_Visual_0060 obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Select_Visual_static_0060 obj is: " + JSON.stringify(obj));
           let optionWidth = obj.getElement('$attrs').getString('optionWidth');
           let optionHeight = obj.getElement('$attrs').getString('optionHeight');
           expect(optionWidth).assertEqual("1200.000000");
           expect(optionHeight).assertEqual("1200.000000");
-          console.info('ArkUX_Select_Visual_0060 END ');
+          console.info('ArkUX_Select_Visual_static_0060 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Select_Visual_0060 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Select_Visual_static_0060 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500);
     });
 
-    
-    
-/*
-     * @tc.number   ArkUX_Select_Visual_0070
-     * @tc.name     ArkUX_Select_Visual_0070
-     * @tc.desc     ArkUX_Select_Visual_0070
+    /*
+     * @tc.number   ArkUX_Select_Visual_static_0070
+     * @tc.name     ArkUX_Select_Visual_static_0070
+     * @tc.desc     ArkUX_Select_Visual_static_0070
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_Select_Visual_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ArkUX_Select_Visual_0070 START');
+    it('ArkUX_Select_Visual_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ArkUX_Select_Visual_static_0070 START');
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0070');
-          console.info('ArkUX_Select_Visual_0070 START  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Select_Visual_static_0070 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Select_Visual_0070 obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Select_Visual_static_0070 obj is: " + JSON.stringify(obj));
           let optionWidth = obj.getElement('$attrs').getString('optionWidth');
           let optionHeight = obj.getElement('$attrs').getString('optionHeight');
           expect(optionWidth).assertEqual("1500.000000");
           expect(optionHeight).assertEqual("1500.000000");
-          console.info('ArkUX_Select_Visual_0070 END ');
+          console.info('ArkUX_Select_Visual_static_0070 END ');
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUX_Select_Visual_0070 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Select_Visual_static_0070 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500);

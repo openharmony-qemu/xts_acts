@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import RectValue from './Rect'
 import inspector from '@ohos.arkui.inspector'
-import { RecordData } from '@ohos.base'
 
 export default class Utils {
   static rect_left: number;
@@ -34,20 +33,20 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: string, eventId: Long) {
-    let eventData: events_emitter.EventData = {
-      data: {
-        "msg": message
-      } as Record<string, RecordData>
-    }
-    let event: events_emitter.InnerEvent = {
-      eventId: eventId,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.emit(event, eventData)
+  static sendEvent(message: string, eventId: number) {
+    // let eventData: emitter.EventData = {
+    //   data: {
+    //     "msg": message
+    //   } as Record<string,object>
+    // }
+    // let event: emitter.InnerEvent = {
+    //   eventId: eventId,
+    //   priority: emitter.EventPriority.LOW
+    // }
+    // emitter.emit(event, eventData)
   }
 
-
+  //获取组件所占矩形区域坐标
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> =

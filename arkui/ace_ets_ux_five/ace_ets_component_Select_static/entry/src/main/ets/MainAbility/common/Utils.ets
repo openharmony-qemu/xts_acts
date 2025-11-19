@@ -13,11 +13,7 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import {
-  __memo_context_type,
-  __memo_id_type,
-  State
-} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
 import {
   Button,
   ButtonAttribute,
