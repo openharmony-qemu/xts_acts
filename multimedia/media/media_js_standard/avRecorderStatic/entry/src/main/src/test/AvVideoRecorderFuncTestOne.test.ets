@@ -400,7 +400,7 @@ export function avVideoRecorderTestOne() {
           console.error('Failed to createCameraInput errorCode = ' + error);
         }
         // 监听cameraInput错误信息
-        cameraInput.on('error', cameraDevice, (error: BusinessError|null) => {
+        cameraInput.onError(cameraDevice, (error: BusinessError|null) => {
           console.log(`Camera input error code: ${error!!.code}`);
         })
 
@@ -415,7 +415,7 @@ export function avVideoRecorderTestOne() {
           console.error('Failed to create the videoOutput instance. errorCode = ' + error);
         }
         // 监听视频输出错误信息
-        videoOutput.on('error', (error: BusinessError|null) => {
+        videoOutput.onError((error: BusinessError|null) => {
           console.log(`Preview output error code: ${error!!.code}`);
         })
 
@@ -442,7 +442,7 @@ export function avVideoRecorderTestOne() {
         }
 
         // 监听session错误信息
-        captureSession?.on('error', (error: BusinessError|null) => {
+        captureSession?.onError((error: BusinessError|null) => {
           console.log(`Capture session error code: ${error!!.code}`);
         })
 
@@ -526,15 +526,15 @@ export function avVideoRecorderTestOne() {
     let setAvRecorderCallback =async  (avRecorder: media.AVRecorder, done: () => void) => {
       await commonFun.sleep(1000)
       // 状态机变化回调函数
-      avRecorder.on('stateChange', (state, reason) => {
+      avRecorder.onStateChange((state, reason) => {
         console.info(TAG + 'current state is: ' + state);
       })
       // 录制监听回调函数
-      avRecorder.on('audioCapturerChange', (AudioCapturerChangeInfo) => {
+      avRecorder.onAudioCapturerChange((AudioCapturerChangeInfo) => {
         console.info(TAG + 'audioCapturerChange');
       });
       // 错误上报回调函数
-      avRecorder.on('error', (err: BusinessError|null) => {
+      avRecorder.onError((err: BusinessError|null) => {
         try {
           console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
           await releaseRecorderPromise(avRecorder, done);
@@ -546,7 +546,7 @@ export function avVideoRecorderTestOne() {
     }
 
     let setPhotoAssetAvailableCallback = (avRecorder: media.AVRecorder, done: () => void) => {
-      avRecorder.on('photoAssetAvailable', (asset: photoAccessHelper.PhotoAsset) => {
+      avRecorder.onPhotoAssetAvailable((asset: photoAccessHelper.PhotoAsset) => {
         console.info(TAG + 'photoAssetAvailable called');
         if (asset != undefined) {
           commonFun.saveVideo(asset);
@@ -560,7 +560,7 @@ export function avVideoRecorderTestOne() {
 
     let setOffPhotoAssetAvailableCallback = (avRecorder: media.AVRecorder, done: () => void) => {
       console.info('set off photoAssetAvailable ');
-      avRecorder.off('photoAssetAvailable');
+      avRecorder.offPhotoAssetAvailable();
       console.info('AVRecorder off photoAssetAvailable success');
     }
     eventEmitter.on(CREATE_CALLBACK_EVENT, (eventData: eventEmitter.EventData) => {
@@ -647,10 +647,10 @@ export function avVideoRecorderTestOne() {
     let setOffAvRecorderCallback =async  (avRecorder: media.AVRecorder, done: Function) => {
       await commonFun.sleep(1000)
       // 关闭状态机变化回调函数
-      avRecorder.off('stateChange');
+      avRecorder.offStateChange();
       console.info('AVRecorder off stateChange success');
       // 关闭错误上报回调函数
-      avRecorder.off('error');
+      avRecorder.offError();
       console.info('AVRecorder off error success');
     }
     eventEmitter.on(SETOFFCALLBACK_EVENT, (eventData: eventEmitter.EventData) => {
@@ -1135,7 +1135,7 @@ export function avVideoRecorderTestOne() {
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
       await commonFun.sleep(1000)
-      avRecorder.off('audioCapturerChange')
+      avRecorder.offAudioCapturerChange()
       avRecorder.release((err: BusinessError|null) => {
         console.info('case release called');
         if (err == null) {

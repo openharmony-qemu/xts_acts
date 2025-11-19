@@ -20,6 +20,7 @@ group("ActsAceEtsModuleRouteManagementTest") {
       "ace_ets_module_RouteManagement_api11:ActsAceEtsModuleRouteManagementApi11Test",
       "ace_ets_module_RouteManagement_api12:ActsAceEtsModuleRouteManagementApi12Test",
       "ace_ets_module_RouteManagement_api18:ActsAceEtsModuleRouteManagementApi18Test",
+      "ace_ets_module_Route1:ActsAceEtsModuleRouter1Test",
     ]
   } else {
     deps = [
@@ -27,6 +28,8 @@ group("ActsAceEtsModuleRouteManagementTest") {
       "ace_ets_module_RouteManagement_api12:ActsAceEtsModuleRouteManagementApi12Test",
       "ace_ets_module_RouteManagement_api18:ActsAceEtsModuleRouteManagementApi18Test",
       "ace_ets_module_RouteManagement_nowear_api12:ActsAceEtsModuleRouteManagementNoWearApi12Test",
+      "ace_ets_module_Route1:ActsAceEtsModuleRouter1Test",
+      "ace_ets_module_router_nowear:ActsAceEtsModuleRouterNoWearTest",
     ]
   }
 }

@@ -783,7 +783,7 @@ export default function actsWifiErrorCode201Test() {
                 console.info("wifiStateChange off 201 fail,has no permission but api is true");
             } catch (error) {
                 console.error(`wifiStateChange off failed, code is ${error.code}, message is ${error.message}`);
-                expect(error.code).assertEqual("201")
+                expect(error.code).assertEqual("2501000")
             }
             done();
         })
@@ -814,7 +814,7 @@ export default function actsWifiErrorCode201Test() {
                 console.info("wifiConnectionChange off 201 fail,has no permission but api is true");
             } catch (error) {
                 console.error(`wifiConnectionChange off failed, code is ${error.code}, message is ${error.message}`);
-                expect(error.code).assertEqual("201")
+                expect(error.code).assertEqual("2501000")
             }
             done();
         })
@@ -845,7 +845,7 @@ export default function actsWifiErrorCode201Test() {
                 console.info("wifiScanStateChange off 201 fail,has no permission but api is true");
             } catch (error) {
                 console.error(`wifiScanStateChange off failed, code is ${error.code}, message is ${error.message}`);
-                expect(error.code).assertEqual("201")
+                expect(error.code).assertEqual("2501000")
             }
             done();
         })
@@ -876,7 +876,7 @@ export default function actsWifiErrorCode201Test() {
                 console.info("wifiRssiChange off 201 fail,has no permission but api is true");
             } catch (error) {
                 console.error(`wifiRssiChange off failed, code is ${error.code}, message is ${error.message}`);
-                expect(error.code).assertEqual("201")
+                expect(error.code).assertEqual("2501000")
             }
             done();
         })

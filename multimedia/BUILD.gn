@@ -26,6 +26,7 @@ group("multimedia") {
       "media/media_ets_standard/mediaXts:media_xts_hap",
       "camera/camera_ets_standard/cameraXtsSupplements:cameraXts_supp_ets_hap",
       "media/media_ets_standard/mediaXtsSupplement:mediaXts_supp_ets_hap",
+      "image/image_ets_standard/imageXtsSupplement:imageXts_supp_ets_hap",
     ]
   }
   if (is_standard_system) {
@@ -59,6 +60,7 @@ group("multimedia") {
       "audio/audio_js_standard/audioVoipStatic:audio_voip_js_static_hap",
       "audio/audio_js_standard/audio_ndk_test:audioDemo_ndk_hap",
       "audio/audio_js_standard/audio_c_cover_test:ActsAudioCCoverTest",
+      "audio/audio_js_standard/AudioSuiteEngine:ActsAudioSuiteEngineTest",
       "audio/audio_ohndk_test:ActsAudioNdkTest",
       "audio_ndk/oh_audio_render_test:ActsAudioRenderTest",
       "audio_ndk/oh_audio_stream_builder_test:ActsAudioStreamBuildeTest",
@@ -118,7 +120,6 @@ group("multimedia") {
       "image/image_ets_standard/imageQualityEnhancement:image_quality_enhancement_hap",
       "image/image_ets_standard/pictureNdk:picture_ndk_hap",
       "image/image_ets_standard/sendableImageSource:ActsSendableImageSourceTest",
-      "image/image_ets_standard/imageXtsSupplement:imageXts_supp_ets_hap",
       "image/image_js_standard/image:image_js_hap",
       "image/image_js_standard/imageColorSpaceTransfer:image_colorspace_transfer_hap",
       "image/image_js_standard/imageColorspace:image_colorspace_js_hap",

@@ -32,5 +32,6 @@ group("ActsAceEtsModuleStateMangagementTest") {
     "ace_ets_module_StateMgmtV2:ActsAceEtsModuleStateMgmtV2Test",
     "ace_ets_module_StateMgmtV102:ActsAceEtsModuleStateMgmtV102Test",
     "ace_ets_module_StateMgmtV103:ActsAceEtsModuleStateMgmtV103Test",
+    "ace_ets_module_StateMgmtV101:ActsAceEtsModuleStateMgmtV101Test",
   ]
 }

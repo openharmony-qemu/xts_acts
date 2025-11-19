@@ -52,7 +52,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testDecoration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testDecoration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testDecoration"
       console.info(msg + 'begin');
       try {
@@ -77,7 +77,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testTextStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextStyle"
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
@@ -120,7 +120,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testParagraphStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testParagraphStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphStyle"
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
@@ -176,7 +176,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testPlaceholderSpan', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testPlaceholderSpan', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testPlaceholderSpan"
       console.info(msg + 'begin');
       try {
@@ -202,7 +202,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testRange"
       console.info(msg + 'begin');
       try {
@@ -225,7 +225,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testTextBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextBox"
       console.info(msg + 'begin');
       try {
@@ -250,7 +250,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testPositionWithAffinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testPositionWithAffinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testPositionWithAffinity"
       console.info(msg + 'begin');
       try {
@@ -271,7 +271,7 @@ export default function graphicTextInterface() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testTextTab', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextTab', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextTab"
       console.info(msg + 'begin');
       try {

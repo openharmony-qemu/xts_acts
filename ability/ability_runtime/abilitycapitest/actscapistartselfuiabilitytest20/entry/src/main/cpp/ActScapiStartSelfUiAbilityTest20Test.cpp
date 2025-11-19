@@ -1129,7 +1129,9 @@ napi_value StartSelfUIAbilityInstanceKeyNotSupport(napi_env env, napi_callback_i
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value StartSelfUIAbilityNoError(napi_env env, napi_callback_info info)
@@ -1164,7 +1166,9 @@ napi_value StartSelfUIAbilityUpperLimitReached(napi_env env, napi_callback_info 
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value StartSelfUIAbilityWithStartOptionsInstanceKeyNotSupport(napi_env env, napi_callback_info info)
@@ -1185,7 +1189,9 @@ napi_value StartSelfUIAbilityWithStartOptionsInstanceKeyNotSupport(napi_env env,
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value StartSelfUIAbilityWithStartOptionsNoError(napi_env env, napi_callback_info info)
@@ -1222,7 +1228,9 @@ napi_value StartSelfUIAbilityWithStartOptionsUpperLimitReached(napi_env env, nap
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value StartSelfUIAbilityWithStartOptionsNoSuchAbility(napi_env env, napi_callback_info info)
@@ -1296,7 +1304,9 @@ napi_value StartSelfUIAbilityWithStartOptionsInvalidAppInstanceKey(napi_env env,
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value StartSelfUIAbilityWithStartOptionsVisibilitySettingDisabled(napi_env env, napi_callback_info info)
@@ -1801,7 +1811,9 @@ napi_value AbilityRuntimeErrorCodeInvalidAppInstanceKeyCode(napi_env env, napi_c
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value AbilityRuntimeErrorCodeUpperLimitReachedCode(napi_env env, napi_callback_info info)
@@ -1819,7 +1831,9 @@ napi_value AbilityRuntimeErrorCodeUpperLimitReachedCode(napi_env env, napi_callb
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value AbilityRuntimeErrorAppInstanceKeyNotSupportCode(napi_env env, napi_callback_info info)
@@ -1840,7 +1854,9 @@ napi_value AbilityRuntimeErrorAppInstanceKeyNotSupportCode(napi_env env, napi_ca
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value ApplicationContextGetVersionCodeNoError(napi_env env, napi_callback_info info)

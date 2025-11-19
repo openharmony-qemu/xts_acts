@@ -16,6 +16,7 @@
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium'
 import { BusinessError } from '@ohos.base';
 import contact from '@ohos.contact';
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
 
 const ExpectFail = () => {
   try {
@@ -35,6 +36,10 @@ const ExpectTrue = (n: boolean) => {
 
 export default function NoPermissionTest() {
   describe('NoPermissionTest', () => {
+
+    let fileName = 'NoPermissionTest.jpg';
+    SavePhoto(fileName);
+    let uri = GetUri(fileName);
 
     let contactData: contact.Contact = {
       id: 0,
@@ -64,7 +69,7 @@ export default function NoPermissionTest() {
         phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
       }],
       portrait: {
-        uri: "content://head/0"
+        uri: uri
       },
       postalAddresses: [{
         city: "南京",

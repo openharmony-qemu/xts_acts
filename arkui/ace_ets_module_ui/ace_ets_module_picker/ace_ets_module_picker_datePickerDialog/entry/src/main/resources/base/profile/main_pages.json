@@ -1,0 +1,13 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/datePickerDialog/datePickerDialog",
+    "MainAbility/pages/datePickerDialog/datePickerDialogBGBlurStyle",
+    "MainAbility/pages/datePickerDialog/datePickerDialogBGColor",
+    "MainAbility/pages/datePickerDialog/datePickerDialogCanLoop",
+    "MainAbility/pages/datePickerDialog/datePickerDialogEnableHapticFeedback",
+    "MainAbility/pages/datePickerDialog/datePickerDialogMode",
+    "MainAbility/pages/datePickerDialog/datePickerDialogShadow",
+    "MainAbility/pages/datePickerDialog/stageDatePickerDialog"
+  ]
+}

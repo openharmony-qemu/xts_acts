@@ -40,7 +40,7 @@ export default function graphicDrawingFontInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testSetScaleX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testSetScaleX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " ====testSetScaleX==== "
       try {
         console.log(msg + " ready go ! ")
@@ -69,7 +69,7 @@ export default function graphicDrawingFontInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testSetSkewX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testSetSkewX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " ====testSetSkewX==== "
       try {
         console.log(msg + " ready go ! ")
