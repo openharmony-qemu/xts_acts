@@ -32,7 +32,8 @@ import {
   FlexDirection,
   ItemAlign,
   FlexAlign,
-  Canvas
+  Canvas,
+  ImageBitmap
 } from '@ohos.arkui.component';
 
 @Entry
@@ -57,7 +58,7 @@ struct CanvasRenderer1 {
           offctx.drawImage(this.img, 0, 0, 400, 200)
 
           let image = this.offCanvas.transferToImageBitmap()
-          this.context.transferFromImageBitmap(image)
+          this.context.transferFromImageBitmap(image as ImageBitmap)
         })
 
       Canvas(this.context)
@@ -72,7 +73,7 @@ struct CanvasRenderer1 {
           offctx.drawImage(this.img, 0, 300, 400, 500)
 
           let image = this.offCanvas.transferToImageBitmap()
-          this.context.transferFromImageBitmap(image)
+          this.context.transferFromImageBitmap(image as ImageBitmap)
         })
 
       Canvas(this.context)
@@ -87,7 +88,7 @@ struct CanvasRenderer1 {
           offctx.drawImage(this.img, 0, 600, 400, 800)
 
           let image = this.offCanvas.transferToImageBitmap()
-          this.context.transferFromImageBitmap(image)
+          this.context.transferFromImageBitmap(image as ImageBitmap)
         })
     }
     .width('100%')

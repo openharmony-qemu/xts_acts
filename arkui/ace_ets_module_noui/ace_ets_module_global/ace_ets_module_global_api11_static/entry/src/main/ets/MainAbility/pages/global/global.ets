@@ -67,7 +67,7 @@ struct GlobalExample {
   testOffscreenCanvas() {
     this.offContext.drawImage(this.img, 0, 0, 100, 100);
     let bitmap = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(bitmap);
+    this.context.transferFromImageBitmap(bitmap as ImageBitmap);
   }
 
   testImageData() {

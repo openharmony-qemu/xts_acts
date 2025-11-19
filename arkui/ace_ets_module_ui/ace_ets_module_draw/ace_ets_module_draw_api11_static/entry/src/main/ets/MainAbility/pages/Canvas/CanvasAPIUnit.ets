@@ -25,7 +25,8 @@ import {
   CanvasRenderingContext2D,
   OffscreenCanvasRenderingContext2D,
   Scroll,
-  Canvas
+  Canvas,
+  ImageBitmap
 } from '@ohos.arkui.component';
 
 @Entry
@@ -108,42 +109,42 @@ struct CanvasAPIUnit {
     this.offContext.font = '50px'
     this.offContext.fillText("Hello World!", 20, 100)
     let image = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image);
+    this.context.transferFromImageBitmap(image as ImageBitmap);
   }
 
   off_context_font2() {
     this.offContext.font = '50vp'
     this.offContext.fillText("Hello World!", 20, 100)
     let image = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image);
+    this.context.transferFromImageBitmap(image as ImageBitmap);
   }
 
   off_context_font3() {
     this.offContext.font = 'italic 50vp '
     this.offContext.fillText("Hello World!", 20, 100)
     let image = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image);
+    this.context.transferFromImageBitmap(image as ImageBitmap);
   }
 
   off_context_font4() {
     this.offContext.font = 'italic 50vp 500 '
     this.offContext.fillText("Hello World!", 20, 100)
     let image = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image);
+    this.context.transferFromImageBitmap(image as ImageBitmap);
   }
 
   off_context_font5() {
     this.offContext.font = 'italic 50vp 500 sans-serif '
     this.offContext.fillText("Hello World!", 20, 100)
     let image = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image);
+    this.context.transferFromImageBitmap(image as ImageBitmap);
   }
 
   off_context_font6() {
     this.offContext.font = "50"
     this.offContext.fillText("Hello World!", 20, 100)
     let image = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image);
+    this.context.transferFromImageBitmap(image as ImageBitmap);
   }
 
   context_putImageData1() {
@@ -222,7 +223,7 @@ struct CanvasAPIUnit {
     }
     this.offContext.putImageData(imageData, "50px", "50px")
     let image = this.offContext.transferToImageBitmap()
-    this.context.transferFromImageBitmap(image)
+    this.context.transferFromImageBitmap(image as ImageBitmap)
   }
 
   off_context_putImageData2() {
@@ -235,7 +236,7 @@ struct CanvasAPIUnit {
     }
     this.offContext.putImageData(imageData, 50, 50)
     let image = this.offContext.transferToImageBitmap()
-    this.context.transferFromImageBitmap(image)
+    this.context.transferFromImageBitmap(image as ImageBitmap)
   }
 
   off_context_putImageData3() {
@@ -248,7 +249,7 @@ struct CanvasAPIUnit {
     }
     this.offContext.putImageData(imageData, "50vp", "50vp")
     let image = this.offContext.transferToImageBitmap()
-    this.context.transferFromImageBitmap(image)
+    this.context.transferFromImageBitmap(image as ImageBitmap)
   }
 
   off_context_putImageData4() {
@@ -261,7 +262,7 @@ struct CanvasAPIUnit {
     }
     this.offContext.putImageData(imageData, "50px", "50px", "50px", "50px", "75px", "75px")
     let image = this.offContext.transferToImageBitmap()
-    this.context.transferFromImageBitmap(image)
+    this.context.transferFromImageBitmap(image as ImageBitmap)
   }
 
   off_context_putImageData5() {
@@ -274,7 +275,7 @@ struct CanvasAPIUnit {
     }
     this.offContext.putImageData(imageData, "50vp", "50vp", "50vp", "50vp", "50vp", "50vp")
     let image = this.offContext.transferToImageBitmap()
-    this.context.transferFromImageBitmap(image)
+    this.context.transferFromImageBitmap(image as ImageBitmap)
   }
 
   off_context_putImageData6() {
@@ -287,6 +288,6 @@ struct CanvasAPIUnit {
     }
     this.offContext.putImageData(imageData, 50, 50, 50, 50, 50, 50)
     let image = this.offContext.transferToImageBitmap()
-    this.context.transferFromImageBitmap(image)
+    this.context.transferFromImageBitmap(image as ImageBitmap)
   }
 }

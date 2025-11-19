@@ -74,7 +74,7 @@ struct Canvas2Example {
     this.offContext.fillStyle = '#0000ff';
     this.offContext.fillRect(20, 160, 150, 100);
     let image = this.offContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image);
+    this.context.transferFromImageBitmap(image as ImageBitmap);
   }
 
   offScreenToDataURL() {
