@@ -31,8 +31,8 @@ class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<image.Imag
   }
 }
 
-async function onDataPreparedPromiseImageSourceTest(done: Function, testName: string, fetchOptions: photoAccessHelper.FetchOptions,
-  requestOptions: photoAccessHelper.RequestOptions) {
+const onDataPreparedPromiseImageSourceTest = async (done: Function, testName: string, fetchOptions: photoAccessHelper.FetchOptions,
+  requestOptions: photoAccessHelper.RequestOptions,callback: (err: number) => void) => {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -48,7 +48,7 @@ async function onDataPreparedPromiseImageSourceTest(done: Function, testName: st
     });
   } catch (error) {
     console.info(TAG, `failed; error: ${error}`, testName);
-    expect().assertFail();
+    callback(error.code);
     done();
   }
 }
@@ -63,8 +63,8 @@ class MediaDataHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayB
   }
 }
 
-async function onDataPreparedPromiseArrayBufferTest(done: Function, testName: string, fetchOptions: photoAccessHelper.FetchOptions,
-  requestOptions: photoAccessHelper.RequestOptions) {
+const onDataPreparedPromiseArrayBufferTest = async (done: Function, testName: string, fetchOptions: photoAccessHelper.FetchOptions,
+  requestOptions: photoAccessHelper.RequestOptions,callback: (err: number) => void) => {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -80,39 +80,7 @@ async function onDataPreparedPromiseArrayBufferTest(done: Function, testName: st
     });
   } catch (error) {
     console.info(TAG, `failed; error: ${error}`, testName);
-    expect().assertFail();
-    done();
-  }
-}
-
-class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto> {
-  onDataPrepared = (data: photoAccessHelper.MovingPhoto, map: Map<string, string>) => {
-    if (data === undefined) {
-      console.error('Error occurred when preparing data');
-      return;
-    }
-    console.info('on image data prepared, photo quality is ' + map['quality']);
-  }
-}
-
-async function onDataPreparedPromiseMovingPhotoTest(done: Function, testName: string, fetchOptions: photoAccessHelper.FetchOptions,
-  requestOptions: photoAccessHelper.RequestOptions) {
-  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
-  try {
-    const handler = new MovingPhotoHandler();
-    phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
-      console.info(TAG, 'fetchResult success');
-      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-      let requestId =
-        await photoAccessHelper.MediaAssetManager.requestMovingPhoto(testContext, photoAsset, requestOptions, handler);
-      console.info(TAG, 'requestMovingPhoto', requestId);
-      await photoAccessHelper.MediaAssetManager.cancelRequest(testContext, requestId);
-      done();
-    });
-  } catch (error) {
-    console.info(TAG, `failed; error: ${error}`, testName);
-    expect().assertFail();
+    callback(error.code);
     done();
   }
 }
@@ -152,7 +120,9 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
-      await onDataPreparedPromiseImageSourceTest(done, testName, fetchOptions, requestOptions);
+      await onDataPreparedPromiseImageSourceTest(done, testName, fetchOptions, requestOptions,(errCode) => {
+        expect().assertFail();
+      })
     })
 
     /**
@@ -169,7 +139,9 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
       };
-      await onDataPreparedPromiseImageSourceTest(done, testName, fetchOptions, requestOptions);
+      await onDataPreparedPromiseImageSourceTest(done, testName, fetchOptions, requestOptions,(errCode) => {
+        expect().assertFail();
+      })
     })
 
     /**
@@ -186,7 +158,9 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
       };
-      await onDataPreparedPromiseImageSourceTest(done, testName, fetchOptions, requestOptions);
+      await onDataPreparedPromiseImageSourceTest(done, testName, fetchOptions, requestOptions,(errCode) => {
+        expect().assertFail();
+      })
     })
 
     /**
@@ -203,7 +177,9 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
-      await onDataPreparedPromiseArrayBufferTest(done, testName, fetchOptions, requestOptions);
+      await onDataPreparedPromiseArrayBufferTest(done, testName, fetchOptions, requestOptions,(errCode) => {
+        expect().assertFail();
+      })
     })
 
     /**
@@ -220,7 +196,9 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
       };
-      await onDataPreparedPromiseArrayBufferTest(done, testName, fetchOptions, requestOptions);
+      await onDataPreparedPromiseArrayBufferTest(done, testName, fetchOptions, requestOptions,(errCode) => {
+        expect().assertFail();
+      })
     })
 
     /**
@@ -237,9 +215,10 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
       };
-      await onDataPreparedPromiseArrayBufferTest(done, testName, fetchOptions, requestOptions);
+      await onDataPreparedPromiseArrayBufferTest(done, testName, fetchOptions, requestOptions,(errCode) => {
+        expect().assertFail();
+      })
     })
-
 
   })
 }
