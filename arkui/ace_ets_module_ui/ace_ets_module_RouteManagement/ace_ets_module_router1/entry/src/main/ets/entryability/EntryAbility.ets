@@ -58,6 +58,8 @@ export default class EntryAbility extends UIAbility {
           console.error('Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
         }
       })
+
+      globalThis.uiContent = windowStage.getMainWindowSync().getUIContext();
     });
   }
 
