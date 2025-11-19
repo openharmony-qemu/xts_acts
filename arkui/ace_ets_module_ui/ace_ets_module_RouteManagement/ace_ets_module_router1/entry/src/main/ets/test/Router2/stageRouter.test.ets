@@ -28,7 +28,7 @@ export default function stageRouterTest() {
     beforeEach(async (done: Function) => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/stageRouter',
+        url: 'MainAbility/pages/Router2/stageRouter',
       }
       try {
         router.clear();
@@ -64,7 +64,7 @@ export default function stageRouterTest() {
       console.info('testrouterstage0001 START');
       let result: ESObject;
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/pushUrlasync.ets',
+        url: 'MainAbility/pages/Router2/pushUrlasync.ets',
         params: {
           data1: 'message',
           data2: {
@@ -94,7 +94,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.pushUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets',
           params: {
             data1: 'message',
             data2: {
@@ -128,7 +128,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.pushUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets',
           params: {
             data1: 'message',
             data2: {
@@ -161,7 +161,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.pushUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets',
           params: {
             data1: 'message',
             data2: {
@@ -189,7 +189,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.replaceUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets',
           params: {
             data1: 'message'
           }
@@ -219,7 +219,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.replaceUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets',
           params: {
             data1: 'message'
           }
@@ -250,7 +250,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.replaceUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets',
           params: {
             data1: 'message'
           }
@@ -280,7 +280,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.replaceUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets',
           params: {
             data1: 'message'
           }
@@ -311,7 +311,7 @@ export default function stageRouterTest() {
       let result: ESObject;
       try {
         result = router.back({
-          url: 'MainAbility/pages/pushUrlasync.ets'
+          url: 'MainAbility/pages/Router2/pushUrlasync.ets'
         })
         expect(result).assertUndefined();
         console.info("push button page success " + JSON.stringify(result));
