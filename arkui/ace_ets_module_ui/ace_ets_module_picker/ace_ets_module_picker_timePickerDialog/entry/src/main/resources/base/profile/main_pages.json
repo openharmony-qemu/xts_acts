@@ -6,6 +6,10 @@
     "MainAbility/pages/timePickerDialog/timePickerDialogBGColor",
     "MainAbility/pages/timePickerDialog/timePickerDialogEnableHapticFeedback",
     "MainAbility/pages/timePickerDialog/timePickerDialogSelectedArea",
-    "MainAbility/pages/timePickerDialog/timePickerDialogShadow"
+    "MainAbility/pages/timePickerDialog/timePickerDialogShadow",
+    "MainAbility/pages/timePickerDialog/showTimePickerDialogBackgroundEffect",
+    "MainAbility/pages/timePickerDialog/showTimePickerDialogBlurStyleOptions",
+    "MainAbility/pages/timePickerDialog/timePickerDialogBackgroundEffect",
+    "MainAbility/pages/timePickerDialog/timePickerDialogBlurStyleOptions"
   ]
 }

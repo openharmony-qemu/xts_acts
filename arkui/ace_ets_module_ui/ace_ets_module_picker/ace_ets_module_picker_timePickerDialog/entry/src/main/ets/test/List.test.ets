@@ -18,6 +18,10 @@ import timePickerDialogEnableHapticFeedbackTest from './timePickerDialogTest/tim
 import timePickerDialogSelectedAreaTest from './timePickerDialogTest/timePickerDialogSelectedArea.test';
 import timePickerDialogShadowTest from './timePickerDialogTest/timePickerDialogShadow.test';
 import addEnableCascadeApiTest from './timePickerDialogTest/addEnableCascadeApi.test';
+import showTimePickerDialogBackgroundEffectTest from './timePickerDialogTest/showTimePickerDialogBackgroundEffect.test';
+import showTimePickerDialogBlurStyleOptionsTest from './timePickerDialogTest/showTimePickerDialogBlurStyleOptions.test';
+import timePickerDialogBackgroundEffectTest from './timePickerDialogTest/timePickerDialogBackgroundEffect.test';
+import timePickerDialogBlurStyleOptionsTest from './timePickerDialogTest/timePickerDialogBlurStyleOptions.test';
 
 export default function testsuite() {
   timePickerDialogBGBlurStyleTest();
@@ -26,4 +30,8 @@ export default function testsuite() {
   timePickerDialogSelectedAreaTest();
   timePickerDialogShadowTest();
   addEnableCascadeApiTest();
+  showTimePickerDialogBackgroundEffectTest();
+  showTimePickerDialogBlurStyleOptionsTest();
+  timePickerDialogBackgroundEffectTest();
+  timePickerDialogBlurStyleOptionsTest();
 }
