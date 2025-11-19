@@ -44,7 +44,7 @@ export default function search_maxLength2() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0020
+      * @tc.number: SUB_ACE_SearchMaxLength2_001
       * @tc.name  : SearchMaxLength2_001
       * @tc.desc  : set maxLength to 9
       * @tc.level : Level 3
@@ -72,7 +72,7 @@ export default function search_maxLength2() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0040
+      * @tc.number: SUB_ACE_SearchMaxLength2_002
       * @tc.name  : SearchMaxLength2_002
       * @tc.desc  : set maxLength   first add and then subtract
       * @tc.level : Level 3

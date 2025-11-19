@@ -44,11 +44,11 @@ export default function search_maxLength() {
     });
 
     /* *
-          * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0010
-          * @tc.name  : SearchMaxLength_001
-          * @tc.desc  : set maxLength to 6
-          * @tc.level : Level 3
-          */
+    * @tc.number: SUB_ACE_SearchMaxLength_001
+    * @tc.name  : SearchMaxLength_001
+    * @tc.desc  : set maxLength to 6
+    * @tc.level : Level 3
+    */
     it('SearchMaxLength_001', Level.LEVEL3, async (done:Function)=> {
 
       console.info('SearchMaxLength_001 START');
@@ -72,7 +72,7 @@ export default function search_maxLength() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0030
+      * @tc.number: SUB_ACE_SearchMaxLength_003
       * @tc.name  : SearchMaxLength_003
       * @tc.desc  : set maxLength to 4
       * @tc.level : Level 3

@@ -41,7 +41,7 @@ struct TextAreaShowCounter {
         text: this.text,
         controller: this.controller
       })
-        .key("ArkUX_Text_Visual_0080")
+        .key('ArkUX_Text_Visual_0080')
         .placeholderFont({ size: 16, weight: 400 })
         .width(336)
         .height(56)
@@ -52,7 +52,7 @@ struct TextAreaShowCounter {
         text: this.text,
         controller: this.controller
       })
-        .key("ArkUX_Text_Visual_0090")
+        .key('ArkUX_Text_Visual_0090')
         .placeholderFont({ size: 16, weight: 400 })
         .width(336)
         .height(56)
@@ -63,7 +63,7 @@ struct TextAreaShowCounter {
         text: this.text,
         controller: this.controller
       })
-        .key("ArkUX_Text_Visual_0100")
+        .key('ArkUX_Text_Visual_0100')
         .placeholderFont({ size: 16, weight: 400 })
         .width(336)
         .height(56)

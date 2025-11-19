@@ -48,7 +48,7 @@ export default function textAreaAutoFillTest() {
     });
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0100
+     * @tc.number: AutoFillTextAreaTest_0100
      * @tc.name: AutoFillTextAreaTest_0100
      * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
      * @tc.size      : MediumTest
@@ -408,8 +408,8 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1700
-     * @tc.name: AutoFillTextAreaTest_1700
+     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1600
+     * @tc.name: AutoFillTextAreaTest_1600
      * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
      * @tc.size      : MediumTest
      * @tc.type      : Function

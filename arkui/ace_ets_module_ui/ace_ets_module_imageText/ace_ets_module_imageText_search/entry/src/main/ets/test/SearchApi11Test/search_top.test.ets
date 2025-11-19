@@ -45,7 +45,7 @@ export default function search_top() {
 
     /* *
     * @tc.number: SUB_ACE_TS_COMPONENT_search_top_001
-    * @tc.name  : testSearch
+    * @tc.name  : search_top_001
     * @tc.desc  : Click to trigger the keyboard when search is at the top
     * @tc.level : Level 2
     */

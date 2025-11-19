@@ -30,7 +30,7 @@ export default function searchTest() {
         router.clear();
         let pages = router.getState();
         console.info("get search state pages: " + JSON.stringify(pages));
-        if (!("searchPage" == pages.name)) {
+        if (!("searchPage1" == pages.name)) {
           console.info("get search pages.name: " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
@@ -46,50 +46,6 @@ export default function searchTest() {
       await CommonFunc.sleep(1000);
       console.info("search after each called");
     })
-    /**
-     * @tc.number testSearchSelectionMenuHidden01
-     * @tc.name   Test the Search property of the SelectionMenuHidden component
-     * @tc.desc   set the SelectionMenuHidden property value is boolean
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
-    /** .key()取不到属性值 */ 
-    // it('testSelectionMenuHidden01', Level.LEVEL0, async (done: Function) => {
-    //   let tagName = 'testSearchSelectionMenuHidden01';
-    //   console.info('[' + tagName + '] START============================');
-    //   await CommonFunc.sleep(1000)
-    //   let strJson = getInspectorByKey('search');
-    //   console.info('[' + tagName + '] component obj is: ' + strJson);
-    //   let obj:ESObject = JSON.parse(strJson);
-    //   expect(obj.$type).assertEqual('Search');
-    //   expect(obj.$attrs.selectionMenuHidden).assertEqual("false");
-
-    //   try {
-    //     let eventData: events_emitter.EventData = {
-    //       data: {
-    //         "typeValue": 1,
-    //       }
-    //     }
-    //     let innerEvent: events_emitter.InnerEvent = {
-    //       eventId: 1401,
-    //       priority: events_emitter.EventPriority.LOW
-    //     }
-    //     console.info('[' + tagName + '] start to publish emit');
-    //     events_emitter.emit(innerEvent, eventData);
-    //   } catch (err) {
-    //     console.log('[' + tagName + '] change component data error: ' + err.message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //   let strJsonNew = getInspectorByKey('search');
-    //   let objNew = JSON.parse(strJsonNew);
-    //   console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
-    //   expect(objNew.$attrs.selectionMenuHidden).assertEqual("false");
-    //   expect(objNew.$type).assertEqual('Search');
-
-    //   console.info('[' + tagName + '] END ===========================');
-    //   done();
-    // });
 
     /**
      * @tc.number testSearchCaretStyle02
@@ -127,50 +83,6 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
-    /**
-     * @tc.number testSearchEnableKeyboardOnFocus03
-     * @tc.name   Test the Search property of the EnableKeyboardOnFocus component
-     * @tc.desc   set the EnableKeyboardOnFocus property value is boolean
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
-    /** .key()取不到属性值 */ 
-    // it('testSearchEnableKeyboardOnFocus03', Level.LEVEL0, async (done: Function) => {
-    //   let tagName = 'testSearchEnableKeyboardOnFocus03';
-    //   console.info('[' + tagName + '] START============================');
-    //   await CommonFunc.sleep(1000)
-    //   let strJson = getInspectorByKey('search');
-    //   console.info('[' + tagName + '] component obj is: ' + strJson);
-    //   let obj = JSON.parse(strJson);
-    //   expect(obj.$type).assertEqual('Search');
-    //   expect(obj.$attrs.enableKeyboardOnFocus).assertEqual("true");
-
-    //   try {
-    //     let eventData: events_emitter.EventData = {
-    //       data: {
-    //         "typeValue": 3,
-    //       }
-    //     }
-    //     let innerEvent: events_emitter.InnerEvent = {
-    //       eventId: 1601,
-    //       priority: events_emitter.EventPriority.LOW
-    //     }
-    //     console.info('[' + tagName + '] start to publish emit');
-    //     events_emitter.emit(innerEvent, eventData);
-    //   } catch (err) {
-    //     console.log('[' + tagName + '] change component data error: ' + err.message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //   let strJsonNew = getInspectorByKey('search');
-    //   let objNew = JSON.parse(strJsonNew);
-    //   console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
-    //   expect(objNew.$attrs.enableKeyboardOnFocus).assertEqual("false");
-    //   expect(objNew.$type).assertEqual('Search');
-
-    //   console.info('[' + tagName + '] END ===========================');
-    //   done();
-    //   });
 
      /**
      * @tc.number testSearchPlaceholderFont04
@@ -218,6 +130,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+
     /**
      * @tc.number testSearchSearchIcon05
      * @tc.name   Test the Search property of the SearchIcon component
@@ -254,6 +167,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+
     /**
      * @tc.number testSearchSearchButton06
      * @tc.name   Test the Search property of the SearchButton component
@@ -297,6 +211,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+
     /**
      * @tc.number testSearchFontColor07
      * @tc.name   Test the Search property of the FontColor component
@@ -333,6 +248,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+
     /**
      * @tc.number testSearchCopyOption08
      * @tc.name   Test the Search property of the CopyOption component
@@ -376,6 +292,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+
     /**
      * @tc.number testSearchTextFont09
      * @tc.name   Test the Search property of the TextFont component
@@ -423,6 +340,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+
     /**
      * @tc.number testSearchPlaceholderColor10
      * @tc.name   Test the Search property of the PlaceholderColor component
@@ -459,6 +377,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+
     /**
      * @tc.number testSearchCancelButton11
      * @tc.name   Test the Search property of the CancelButton component
@@ -495,6 +414,7 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
+    
     /**
      * @tc.number testSearchTextAlign12
      * @tc.name   Test the Search property of the TextAlign component

@@ -23,7 +23,7 @@ export default function searchButton() {
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Search/searchButton',
+        url: 'MainAbility/pages/SearchApi16/searchButton',
       }
       try {
         router.clear();
@@ -46,9 +46,9 @@ export default function searchButton() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+     * @tc.number       searchButton0001
      * @tc.name         searchButton0001
-     * @tc.desic        When the content of the search component is 
+     * @tc.desc         When the content of the search component is 
                           empty, the search button is dimmed
      */
     it('searchButton0001', Level.LEVEL1, async () => {

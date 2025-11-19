@@ -44,7 +44,7 @@ export default function search_caret() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0270
+      * @tc.number: SUB_ACE_search_caret_001
       * @tc.name  : search_caret_001
       * @tc.desc  : set caretPosition to 1
       * @tc.level : Level 3
@@ -66,7 +66,7 @@ export default function search_caret() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0290
+      * @tc.number: SUB_ACE_search_caret_002
       * @tc.name  : search_caret_002
       * @tc.desc  : set caretPosition to 5
       * @tc.level : Level 3
@@ -88,7 +88,7 @@ export default function search_caret() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0310
+      * @tc.number: SUB_ACE_search_caret_003
       * @tc.name  : search_caret_003
       * @tc.desc  : set caretPosition to 3
       * @tc.level : Level 3
@@ -110,7 +110,7 @@ export default function search_caret() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0280
+      * @tc.number: SUB_ACE_search_caret_004
       * @tc.name  : search_caret_004
       * @tc.desc  : set caretPosition to 20
       * @tc.level : Level 3
@@ -132,11 +132,11 @@ export default function search_caret() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0300
-      * @tc.name  : search_caret_005
-      * @tc.desc  : set caretPosition to -1
-      * @tc.level : Level 3
-      */
+    * @tc.number: SUB_ACE_search_caret_005
+    * @tc.name  : search_caret_005
+    * @tc.desc  : set caretPosition to -1
+    * @tc.level : Level 3
+    */
     it('search_caret_005', Level.LEVEL3, async (done: Function) => {
 
       console.info('[search_caret_005] START');
@@ -152,6 +152,5 @@ export default function search_caret() {
       console.info('[search_caret_005] END');
       done();
     });
-
   })
 }

@@ -45,7 +45,7 @@ export default function textArea_bottom() {
 
     /* *
     * @tc.number: SUB_ACE_TS_COMPONENT_textArea_bottom_001
-    * @tc.name  : testSearch
+    * @tc.name  : textArea_bottom_001
     * @tc.desc  : When textArea is in the bottom, clicking on the top of the input box triggers the keyboard
     * @tc.level : Level 2
     */
@@ -85,8 +85,8 @@ export default function textArea_bottom() {
     });
 
     /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textArea_bottom_001
-    * @tc.name  : testSearch
+    * @tc.number: SUB_ACE_TS_COMPONENT_textArea_bottom_002
+    * @tc.name  : textArea_bottom_002
     * @tc.desc  : When textArea is in the bottom, clicking on the middle of the input box triggers the keyboard
     * @tc.level : Level 2
     */
@@ -120,13 +120,12 @@ export default function textArea_bottom() {
 
         expect(y1).assertEqual(y2);
       }
-
       done();
     });
 
     /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textArea_bottom_001
-    * @tc.name  : testSearch
+    * @tc.number: SUB_ACE_TS_COMPONENT_textArea_bottom_003
+    * @tc.name  : textArea_bottom_003
     * @tc.desc  : When textArea is in the bottom, clicking on the bottom of the input box triggers the keyboard
     * @tc.level : Level 2
     */
@@ -156,10 +155,8 @@ export default function textArea_bottom() {
         await CommonFunc.sleep(1000);
         let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
         let y2 = textArea_02.bottom
-
         expect(y1).assertEqual(y2);
       }
-
       done();
     });
 

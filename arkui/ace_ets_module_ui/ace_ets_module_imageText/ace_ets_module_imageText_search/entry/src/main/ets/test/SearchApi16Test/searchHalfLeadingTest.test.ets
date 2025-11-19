@@ -65,7 +65,7 @@ export default function searchHalfLeadingTest() {
     });
 	
 	 /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+    * @tc.number       searchHalfLeadingTest0002
     * @tc.name         searchHalfLeadingTest0002
     * @tc.desc         Test searchHalfLeadingTest Normal value :false
     * @tc.size         MediumTest
@@ -84,7 +84,7 @@ export default function searchHalfLeadingTest() {
     });
 	
 	  /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+    * @tc.number       searchHalfLeadingTest0003
     * @tc.name         searchHalfLeadingTest0003
     * @tc.desc         Test searchHalfLeadingTest abnormal value :undefined
     * @tc.size         MediumTest
@@ -103,7 +103,7 @@ export default function searchHalfLeadingTest() {
     });
 	
 	 /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+    * @tc.number       searchHalfLeadingTest0004
     * @tc.name         searchHalfLeadingTest0004
     * @tc.desc         Test searchHalfLeadingTest abnormal value :null
     * @tc.size         MediumTest

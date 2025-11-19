@@ -24,7 +24,7 @@ export default function search_bottom() {
     beforeEach(async (done: Function) => {
       console.info("search_bottom beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Search/search_bottom',
+        url: 'MainAbility/pages/SearchApi11/search_bottom',
       }
       try {
         router.clear();
