@@ -30,7 +30,7 @@ struct TextAreaShowCounter {
         text: this.text,
         controller: this.controller
       })
-        .key("ArkUX_Text_Visual_0070")
+        .key('ArkUX_Text_Visual_0070')
         .placeholderFont({ size: 16, weight: 400 })
         .width(336)
         .height(56)

@@ -43,7 +43,7 @@ export default function TextInputEvent() {
     });
 
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0010
+     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_001
      * @tc.name       : TextInputEvent_001
      * @tc.desc       : onWillInsert Test
      * @tc.size       : MediumTest
@@ -76,7 +76,7 @@ export default function TextInputEvent() {
     });
 
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0020
+     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_002
      * @tc.name       : TextInputEvent_002
      * @tc.desc       : onWillInsert Test
      * @tc.size       : MediumTest
@@ -109,7 +109,7 @@ export default function TextInputEvent() {
     });
 
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0030
+     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_003
      * @tc.name       : TextInputEvent_003
      * @tc.desc       : onWillInsert Test
      * @tc.size       : MediumTest
@@ -142,7 +142,7 @@ export default function TextInputEvent() {
     });
 
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0040
+     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_004
      * @tc.name       : TextInputEvent_004
      * @tc.desc       : onWillInsert Test
      * @tc.size       : MediumTest
@@ -175,14 +175,14 @@ export default function TextInputEvent() {
     });
 
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0090
+     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_005
      * @tc.name       : TextInputEvent_005
      * @tc.desc       : onWillInsert Test
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('TextInputEvent_005',  Level.LEVEL0, async (done: Function) => {
+    it('TextInputEvent_005',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_005] START');
 
       await CommonFunc.sleep(1000);
@@ -207,14 +207,14 @@ export default function TextInputEvent() {
     });
 
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0110
+     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_006
      * @tc.name       : TextInputEvent_006
      * @tc.desc       : onWillInsert Test
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('TextInputEvent_006',  Level.LEVEL0, async (done: Function) => {
+    it('TextInputEvent_006',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_006] START');
 
       await CommonFunc.sleep(1000);
@@ -243,14 +243,14 @@ export default function TextInputEvent() {
     });
 
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0110
+     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_007
      * @tc.name       : TextInputEvent_007
      * @tc.desc       : onWillInsert Test
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('TextInputEvent_007',  Level.LEVEL0, async (done: Function) => {
+    it('TextInputEvent_007',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_007] START');
 
       await CommonFunc.sleep(1000);
