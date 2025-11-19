@@ -34,7 +34,7 @@ struct PanelBackgroundMask {
   build() {
     Column() {
 
-      Text("panel-OnHeightChange")
+      Text('panel-OnHeightChange')
         .width(100)
         .height(70)
         .fontSize(20)
@@ -46,17 +46,17 @@ struct PanelBackgroundMask {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onHeightChangeText")
+        .key('onHeightChangeText')
         .onClick(() => {
           this.mode = PanelMode.Half
         })
 
       Panel(true) {
         Column() {
-          Text("panel-BackgroundMask").fontSize(30)
+          Text('panel-BackgroundMask').fontSize(30)
         }
       }
-      .key("panel")
+      .key('panel')
       .mode(this.mode)
       .backgroundColor('green')
       .type(PanelType.Foldable)
@@ -71,20 +71,20 @@ struct PanelBackgroundMask {
         try {
           let backData: events_emitter.EventData = {
             data: {
-              "result": "success"
+              'result': 'success'
             }
           }
           let backEvent: events_emitter.InnerEvent = {
             eventId: 10111,
             priority: events_emitter.EventPriority.LOW
           }
-          console.info("onHeightChange start to emit action state")
+          console.info('onHeightChange start to emit action state')
           events_emitter.emit(backEvent, backData)
         } catch (err) {
-          console.info("testpanelOnHeightChange0002 emit action state err: " + JSON.stringify((err as Error)?.message))
+          console.info('testpanelOnHeightChange0002 emit action state err: ' + JSON.stringify((err as Error)?.message))
         }
       })
 
-    }.width("100%").height("100%")
+    }.width('100%').height('100%')
   }
 }
