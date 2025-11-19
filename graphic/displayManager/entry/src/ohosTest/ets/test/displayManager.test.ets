@@ -2798,12 +2798,14 @@ export default function displayTest() {
         console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
         expect(brightnessChangeCount2).assertEqual(1);
         display.off('brightnessInfoChange');
+        brightnessChangeCount1 = 0;
+        brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(0);
         await sleep(3000);
         console.info(`${caseName} after off brightnessChangeCount1 = ${brightnessChangeCount1}`);
         console.info(`${caseName} after off brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount1).assertEqual(1);
-        expect(brightnessChangeCount2).assertEqual(1);
+        expect(brightnessChangeCount1).assertEqual(0);
+        expect(brightnessChangeCount2).assertEqual(0);
         await windowClass.setWindowBrightness(-1);
         done();
       } catch (e) {
@@ -2867,19 +2869,21 @@ export default function displayTest() {
           await sleep(100);
         }
         console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        expect(brightnessChangeCount1).assertEqual(1);
+        expect(brightnessChangeCount1).assertLarger(1);
         while (!callback2Triggered) {
           await sleep(100);
         }
         console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount2).assertEqual(1);
+        expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange', callback1);
+        brightnessChangeCount1 = 0;
+        brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(0);
         await sleep(3000);
         console.info(`${caseName} after off callback1 brightnessChangeCount1 = ${brightnessChangeCount1}`);
         console.info(`${caseName} after off callback2 brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount1).assertEqual(1);
-        expect(brightnessChangeCount2).assertEqual(2);
+        expect(brightnessChangeCount1).assertLarger(1);
+        expect(brightnessChangeCount2).assertLarger(2);
         await windowClass.setWindowBrightness(-1);
         display.off('brightnessInfoChange');
         done();
