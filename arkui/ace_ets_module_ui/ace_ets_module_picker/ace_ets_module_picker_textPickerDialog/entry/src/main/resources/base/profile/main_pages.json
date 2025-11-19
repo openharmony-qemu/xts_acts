@@ -15,6 +15,10 @@
     "MainAbility/pages/textPickerDialog/showTextPickerDialogBackgroundEffect",
     "MainAbility/pages/textPickerDialog/showTextPickerDialogBlurStyleOptions",
     "MainAbility/pages/textPickerDialog/textPickerDialogBackgroundEffect",
-    "MainAbility/pages/textPickerDialog/textPickerDialogBlurStyleOptions"
+    "MainAbility/pages/textPickerDialog/textPickerDialogBlurStyleOptions",
+    "MainAbility/pages/textPickerDialog/textPickerDialogAcceptButtonStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogAppearText",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogCallback",
+    "MainAbility/pages/textPickerDialog/textPickerDialogCancelButtonStyle"
   ]
 }

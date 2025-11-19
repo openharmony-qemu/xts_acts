@@ -27,6 +27,10 @@ import showTextPickerDialogBackgroundEffectTest from './textPickerDialogTest/sho
 import showTextPickerDialogBlurStyleOptionsTest from './textPickerDialogTest/showTextPickerDialogBlurStyleOptions.test';
 import textPickerDialogBackgroundEffectTest from './textPickerDialogTest/textPickerDialogBackgroundEffect.test';
 import textPickerDialogBlurStyleOptionsTest from './textPickerDialogTest/textPickerDialogBlurStyleOptions.test';
+import textPickerDialogAcceptButtonStyleTest from './textPickerDialogTest/textPickerDialogAcceptButtonStyle.test';
+import TextPickerDialogAppearTextTest from './textPickerDialogTest/TextPickerDialogAppearText.test';
+import TextPickerDialogCallbackTest from './textPickerDialogTest/TextPickerDialogCallback.test';
+import textPickerDialogCancelButtonStyleTest from './textPickerDialogTest/textPickerDialogCancelButtonStyle.test';
 
 export default function testsuite() {
   textPickerDialogBGBlurStyleTest();
@@ -44,4 +48,8 @@ export default function testsuite() {
   showTextPickerDialogBlurStyleOptionsTest();
   textPickerDialogBackgroundEffectTest();
   textPickerDialogBlurStyleOptionsTest();
+  textPickerDialogAcceptButtonStyleTest();
+  TextPickerDialogAppearTextTest();
+  TextPickerDialogCallbackTest();
+  textPickerDialogCancelButtonStyleTest();
 }
