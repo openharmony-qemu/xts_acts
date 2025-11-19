@@ -77,6 +77,9 @@ import ImageSourceCreatePictureGif from './image/ImageSourceCreatePictureGif.tes
 import ImageSourceCreatePictureJpeg from './image/ImageSourceCreatePictureJpeg.test';
 import ImageSourceCreatePictureJpg from './image/ImageSourceCreatePictureJpg.test';
 import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.test';
+import createImageSourceTest from './image/ImageCreateImageSource.test';
+import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
+import sendableCreatePixelMapSyncTest from './sendableImage/SendAbleCreatePixelMapSync.test';
 
 
 export default function testsuite() {
@@ -144,4 +147,7 @@ export default function testsuite() {
   ImageSourceCreatePictureJpeg();
   ImageSourceCreatePictureJpg();
   ImageSourceCreatePictureOrf();
+  createImageSourceTest();
+  sendableCreatePixelMap();
+  sendableCreatePixelMapSyncTest();
 }

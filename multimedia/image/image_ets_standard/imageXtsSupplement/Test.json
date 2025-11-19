@@ -86,7 +86,14 @@
                 "./resource/image/mimeType_test.pef ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/test.raf->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/test.rw2->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
-                "./resource/image/test.tiff->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
+                "./resource/image/test.tiff->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_aisr.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/mimeType_test.orf ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test.pef ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test.raf ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test.rw2 ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/mimeType_test.srw ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_exif.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
             ]
         },
         {
