@@ -25,10 +25,44 @@ import NavigatorTargetJsunit from './Navigator/navigator.test'
 import PageInfo1 from './UIContext/PageInfo1.test'
 import NavigationAdd from './Navigation/NavigationAdd.test'
 
+import NavigationTitleTextModifier from './Navigation/NavigationTitleTextModifier.test'
+import EntryOptionPage2 from './Navigation/EntryOptionPage2.test'
+import EntryOptionPage from './Navigation/EntryOptionPage.test'
+import NavigationCustomTitlePage from './Navigation/NavigationCustomTitlePage.test'
+import TitleOptionsToolOptions from './Navigation/TitleOptionsToolOptions.test'
+import BarStylePage from './Navigation/BarStylePage.test'
+import HideToolBarNavPage from './Navigation/HideToolBarNavPage.test'
+import NavDestinationUIObserver from './Navigation/NavDestinationUIObserver.test'
+
+import SafeAreaPadding from './BarStyleTest/SafeAreaPadding.test'
+import NavigationEnableDragBar from './EnableDragBarTest/NavigationEnableDragBar.test'
+import NavigationBindToScrollable from './BindToScrollable/NavigationBindToScrollable.test'
+import NavigationBindToNestedScrollable from './BindToScrollable/NavigationBindToNestedScrollable.test'
+import Recoverable from './Navigation/Recoverable.test'
+import SystemTransition from './Navigation/SystemTransition.test'
+import RouterRecoverable from './Navigation/RouterRecoverable.test'
+import RouterRecoverable2 from './Navigation/RouterRecoverable2.test'
+import SystemTransition2 from './Navigation/SystemTransition2.test'
+
+import EnableModeChangeAnimation from './Navigation/EnableModeChangeAnimation.test';
+import OnResultPage from './Navigation/OnResultPage.test';
+import CustomTransitionPage from './NavDestination/CustomTransitionPage.test';
+import HideBackButtonPage from './NavDestination/HideBackButtonPage.test';
+import SystemTransition2 from './NavDestination/SystemTransition2.test';
+
+import ReplaceDestination1Test from './Navigation/ReplaceDestination1.test'
+import ReplaceDestination2 from './Navigation/ReplaceDestination2.test'
+import QueryRouterPageInfoUndefined from './Navigation/QueryRouterPageInfoUndefined.test'
+import PushDestination401 from './Navigation/PushDestination401.test'
+
+import OnActivePage from './OnActivePage.test'
+import PathStackPage from './PathStackPage.test'
+import NavDestinationStateActive from './NavDestinationStateActive.test'
+
 export default function testsuite() {
   InterceptionTest();
   NavigationTest();
-  EnableShowHideWithContentCoverPage()
+  EnableShowHideWithContentCoverPage();
   SplitPlaceholder();
   UIContextNavDestinationUpdate();
   StepperModifierPage();
@@ -36,5 +70,38 @@ export default function testsuite() {
   StepperModifierTest();
   NavigatorTargetJsunit();
   PageInfo1();
-  NavigationAdd()
+  NavigationAdd();
+
+  NavigationTitleTextModifier();
+  EntryOptionPage();
+  EntryOptionPage2();
+  NavigationCustomTitlePage();
+  TitleOptionsToolOptions();
+  BarStylePage();
+  HideToolBarNavPage();
+  NavDestinationUIObserver();
+
+  SafeAreaPadding();
+  NavigationEnableDragBar();
+  NavigationBindToScrollable();
+  NavigationBindToNestedScrollable();
+  Recoverable();
+  SystemTransition();
+  RouterRecoverable();
+  SystemTransition2();
+
+  EnableModeChangeAnimation();
+  OnResultPage();
+  CustomTransitionPage();
+  HideBackButtonPage();
+  SystemTransition2();
+
+  ReplaceDestination1Test();
+  ReplaceDestination2();
+  QueryRouterPageInfoUndefined();
+  PushDestination401();
+
+  PathStackPage();
+  OnActivePage();
+  NavDestinationStateActive();
 } 
