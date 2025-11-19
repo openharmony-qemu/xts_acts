@@ -2327,8 +2327,70 @@ export default function WindowLifecycle() {
         expect(windoweventChange[1]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
         expect(windoweventChange[2]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
         expect(windoweventChange[3]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
-        expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
-        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
+        expect(windoweventChange[6]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
+        done();
+      }catch (err) {
+        console.error(message + ' failed: '+err);
+        if(err.code == 801){
+          done()
+        }else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+
+
+    })
+    /**
+     * @tc.number    : testWindowEvent_0200
+     * @tc.name      : testWindowEvent_0200
+     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3 
+     */
+    it('testWindowEvent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testWindowEvent_0200';
+      let windoweventChange:Array<window.WindowEventType> = [];
+      let config: window.Configuration = {
+        name: message,
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      }
+      try{
+        let windowClass = await window.createWindow(config);
+        console.info(message + ' createSubWindow success ' + JSON.stringify(windowClass));
+        windowClass.on('windowEvent', (data) => {
+          console.info(message + ' Window event happened. Event:' + JSON.stringify(data));
+          windoweventChange.push(data);
+          console.info(message + ' windoweventChange:' + JSON.stringify(windoweventChange));
+        });
+        await windowClass.setUIContent('testability/pages/Index2')
+        await windowClass.showWindow();
+        console.info(message + ' windowClass showWindow success ');
+        await sleep(300)
+        let windowClass2 =await  windowStage.createSubWindow('testWindowEvent_01002')
+        await windowClass2.setUIContent('testability/pages/Index2')
+        await windowClass2.showWindow();
+        console.info(message + ' windowClass2 showWindow success ');
+        await sleep(300)
+        await windowClass2.destroyWindow();
+        console.info(message + ' windowClass2 destroyWindow success ');
+        await sleep(300)
+        await windowClass.minimize();
+        console.info(message + ' windowClass minimize success ');
+        await sleep(300)
+        await windowClass.destroyWindow();
+        console.info(message + ' windowClass destroyWindow success ');
+        await sleep(300)
+        expect(windoweventChange[0]).assertEqual(window.WindowEventType.WINDOW_SHOWN);
+        expect(windoweventChange[1]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
+        expect(windoweventChange[2]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[3]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
+        expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
         expect(windoweventChange[6]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
         done();
       }catch (err) {
