@@ -30,5 +30,7 @@ group("ActsAceEtsModuleStateMangagementTest") {
     "ace_ets_module_StateMgmtMix:ActsAceEtsModuleStateMgmtMixTest",
     "ace_ets_module_StateMgmtUI:ActsAceEtsModuleStateMgmtUITest",
     "ace_ets_module_StateMgmtV2:ActsAceEtsModuleStateMgmtV2Test",
+    "ace_ets_module_StateMgmtV101:ActsAceEtsModuleStateMgmtV101Test",
+
   ]
 }
