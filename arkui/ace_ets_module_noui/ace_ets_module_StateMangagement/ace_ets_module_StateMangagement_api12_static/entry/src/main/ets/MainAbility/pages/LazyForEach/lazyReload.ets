@@ -37,7 +37,8 @@ import {
   NodeContainer,
   ListScroller,
   Builder,
-  wrapBuilder
+  wrapBuilder,
+  DataReloadOperation
 } from '@ohos.arkui.component'
 import {
   State,
@@ -103,8 +104,8 @@ class MyDataSourceB extends BasicDataSourceB {
   }
 
   public reloadData(): void {
-    let typeA: Type1 = {type: DataOperationType.RELOAD}
-    let typeAry: DataOperation[] = new Array<DataOperation>(typeA as DataOperation)
+    let typeA: DataReloadOperation = {type: DataOperationType.RELOAD}
+    let typeAry: DataOperation[] =[typeA]
     this.notifyDatasetChange(typeAry);
   }
 
@@ -129,7 +130,7 @@ struct MyLazyReload {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('lazyReload', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

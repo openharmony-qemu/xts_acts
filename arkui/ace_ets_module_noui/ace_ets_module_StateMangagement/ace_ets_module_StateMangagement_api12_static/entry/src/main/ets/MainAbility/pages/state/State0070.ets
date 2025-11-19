@@ -28,6 +28,7 @@ import {
   State,
   Watch,
   Link,
+  UIUtils,
   StorageLink
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -36,30 +37,24 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct State0070 {
-  @State private strArr: string[] = new Array<string>('red', 'green', 'yellow')
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('State0070', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+  @State private strArr: string[] = ['red', 'green', 'yellow']
+
   build() {
     Column() {
-      Text(JSON.stringify(this.strArr))
+      Text(`${this.strArr}`)
         .id('tvState0070')
       Text(this.strArr[1])
       Button('Add gray')
         .id('btnAddState0070')
         .onClick((e: ClickEvent)=>{
+          console.log(`ww: ${this.strArr.length}`)
           this.strArr.push('gray')
         })
       Button('Update red to white')
         .id('btnUpdateState0070')
         .onClick((e: ClickEvent)=>{
           this.strArr[0] = 'white'
+          console.log("===================================arr: " + `${Array.from(this.strArr)}`);
         })
       Button('Delete green')
         .id('btnDelState0070')

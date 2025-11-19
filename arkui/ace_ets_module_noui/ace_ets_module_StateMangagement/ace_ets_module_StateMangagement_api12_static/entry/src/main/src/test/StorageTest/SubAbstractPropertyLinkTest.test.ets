@@ -83,7 +83,7 @@ export default function SubAbstractPropertyLinkTest() {
      * @tc.desc     SubAbstractPropertyLinkTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-it('SubAbstractPropertyLinkTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SubAbstractPropertyLinkTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('SubAbstractPropertyLinkTest001 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

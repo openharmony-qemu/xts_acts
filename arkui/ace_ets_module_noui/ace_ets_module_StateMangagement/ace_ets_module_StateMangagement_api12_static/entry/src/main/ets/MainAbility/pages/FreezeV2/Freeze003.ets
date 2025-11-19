@@ -68,7 +68,7 @@ export struct Child {
   @Monitor(['bookTest.name'])
   onMessageChange(monitor: IMonitor) {
     prompt.showToast({
-      message: `The book name change from ${monitor.value()?.before} to ${monitor.value()?.now}`,
+      message: `The book name change from ${monitor.value<Any>()?.before} to ${monitor.value<Any>()?.now}`,
       duration: 500
     })
   }

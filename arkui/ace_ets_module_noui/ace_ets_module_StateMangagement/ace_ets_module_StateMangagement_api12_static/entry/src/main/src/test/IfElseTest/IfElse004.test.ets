@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -84,7 +84,7 @@ export default function IfElse004Test() {
      * @tc.desc     IfElse004Test_static_01
      * @tc.level    Level.LEVEL0
      */
-it('IfElse004Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('IfElse004Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[IfElse004Test_static_01] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -127,7 +127,7 @@ it('IfElse004Test_static_01', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.desc     IfElse004Test_static_02
      * @tc.level    Level.LEVEL0
      */
-it('IfElse004Test_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('IfElse004Test_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[IfElse004Test_static_02] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

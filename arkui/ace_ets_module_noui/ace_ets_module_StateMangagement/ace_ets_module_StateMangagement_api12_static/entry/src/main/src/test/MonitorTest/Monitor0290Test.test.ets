@@ -88,7 +88,7 @@ export default function Monitor0290Test() {
      * @tc.desc     Monitor0290Test_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Monitor0290Test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Monitor0290Test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Monitor0290Test_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

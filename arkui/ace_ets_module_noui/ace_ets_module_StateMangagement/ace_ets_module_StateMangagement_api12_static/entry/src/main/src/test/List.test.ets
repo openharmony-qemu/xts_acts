@@ -184,193 +184,191 @@ import RepeatTest0010 from './RepeatTest/RepeatTest0010.test';
 import RepeatTest0400 from './RepeatTest/RepeatTest0400.test';
 
 export default function testsuite() {
-  // // ExtendTrackTest(); //全pass 注释
-  // Extend0010TestJsunit(); //一个断言失败 颜色不相等 backgroundColor 页面代码有注释
-  //
-  // //全pass 注释
-  // // Foreach1();
-  // // FreezeV2Test();
-  // // FreezeV2Child();
-  //
-  // LazyForEachAdd();  //页面白屏 Null cannot be cast to @ohos.UiTest.Component
-  // LazyForEachDelete();  //页面白屏 Null cannot be cast to @ohos.UiTest.Component
-  // LazyForEachMove();  //页面白屏 Null cannot be cast to @ohos.UiTest.Component
-  // LazyForEachCacheEnhance();
-  // LazyForEachVisibleAreaChange();
-  // // LazyForEachSingleBoolean();  //pass 注释
-  // // LazyForEachSingleNumber();  //pass 注释
-  // // LazyForEachSingleString();  //pass 注释
-  // // NestTrackTest(); //全pass 注释
-  // // StaticTrackTest(); //全pass 注释
-  // getSharedLocalStorageTest(); //expect propAM:undefined equals propAM:47
-  // useSharedStorageTest(); //expect propBM:0 equals propBM:40
-  //
-  // //全pass 注释
-  // // ObjectArrayTest();
-  // // OnlyObserveTest();
-  // // TrackDateTest();
-  // // TrackMapTest();
-  // // TrackSetTest();
-  // // TwoNestTrackTest();
-  // // ArrayTrackTest();
-  // // Monitor1Test();
-  // // Monitor2Test();
-  // // Monitor3Test();
-  // // Monitor4Test();
-  // // Monitor5Test();
-  // // Monitor6Test();
-  //
-  // RepeatEachJsunit();
-  // RepeatForeachNumberBool();
-  // RepeatForeachString();
-  // // RepeatLazyForEachBooleanSource(); //pass 注释
-  // // RepeatLazyForEachNumberSource(); //pass 注释
-  // // RepeatLazyForEachStringSource(); //pass 注释
-  //
-  // //全pass 注释
-  // // RepeatIfElseObject();
-  // // RepeatIfElseBoolean();
-  // // RepeatGridBoolean();
-  // // RepeatGridNumber();
-  // // RepeatListBoolean();
-  // // RepeatListNumber();
-  // // RepeatNestObject();
-  // // RepeatObservedV2Nest();
-  // // RepeatSwiperBoolean();
-  // // RepeatSwiperNumber();
-  // // RepeatV1Boolean();
-  // // RepeatV1Object();
-  //
-  // persistStorageATest();  //expect PropAX:1 equals PropAX:47
-  // appStorageRefJsunit();   //
-  // localStorageRefJsunit();  //
-  //
-  //
-  // IMonitorTest();
-  // // Local1Jsunit();  //全pass 注释
-  // // Local2Jsunit();  //全pass 注释
-  // // Param1Jsunit(); //全pass 注释
-  // // Param2Jsunit(); //全pass 注释
-  // // Param3Jsunit(); //全pass 注释
-  // // Param4Jsunit(); //全pass 注释
-  // // Monitor1Jsunit(); //全pass 注释
-  // Monitor2Jsunit(); //inspector.getInspectorByKey('extends_mes');null 空指针
-  // Monitor3Jsunit(); //await (btn?.click() as Promise<void>)空指针
-  // // Monitor4Jsunit(); //全pass 注释
-  // // repeatCountJsunit();  //全pass 注释
-  // // repeatNoTemplateIdJsunit(); //全pass 注释
-  // // repeatKeyJsunit(); //全pass 注释
-  // repeatVirtualScrollJsunit();
-  // // LocalTestJsunit();  //全pass 注释
-  // // ComponentV2TestJsunit(); //全pass 注释
-  // // ParamTestJsunit();  //全pass 注释
-  // // ParamTestJsunit1(); //全pass 注释
-  // // Provider1Test();  //全pass 注释
-  // // Provider2Test();  //全pass 注释
-  // // Provider3Test();  //全pass 注释
-  // // Provider4Test();  //全pass 注释
-  // // Provider5Test();  //全pass 注释
-  // // Provider14Test();  //全pass 注释
-  // // Provider15Test();  //全pass 注释
-  // // Provider18Test();  //全pass 注释
-  // getTarget1Test(); //使用最新SDK尝试 未解决
-  // // getTarget2Test();  //全pass 注释
-  // // getTarget3Test(); //全pass 注释
-  // getTarget4Test();
-  // getTarget5Test();  //expect Tom equals Bob
-  // // getTarget6Test(); //全pass 注释
-  // // ComputedTest(); //全pass 注释
-  // makeObservedTest();
-  // makeObserved0020Test();  //collections.Array不存在 页面注释导致页面白屏1用例
-  // // makeObserved0030Test();  //pass 注释
-  // makeObserved0040Test();  //collections.Set 页面注释页面未加载1用例
-  // makeObserved0050Test();  //页面白屏1用例
-  // makeObserved0060Test();  //pass 注释
-  // makeObserved0070Test();  //页面有注释 1
-  // makeObserved0080Test();
-  // // makeObserved0110Test(); //pass 注释
-  // makeObserved0120Test();  //页面有注释 1
-  // makeObserved0130Test();
-  // makeObserved0150Test();
-  // twoWayBindTest();
-  //
-  // //全pass 注释
-  // // IfElse001Test();
-  // // IfElse002Test();
-  // // IfElse003Test();
-  // // IfElse004Test();
-  // // IfElse005Test();
-  //
-  // LifeCycle0050TestJsunit();
-  // //全pass 注释
-  // // WrapBuilder0010TestJsunit();
-  // // ProvideConsume0020TestJsunit();
-  // // ProvideConsume0030TestJsunit();
-  // // ProvideConsume0040TestJsunit(); //全pass 注释
-  // ProvideConsume0050TestJsunit();
-  // // ProvideConsume0080TestJsunit();  //全pass 注释
-  // // ProvideConsume0360TestJsunit(); //全pass 注释
-  // Link0100TestJsunit();
-  // // StateMap0010TestJsunit(); //全pass 注释
-  // // StateSet0010TestJsunit(); //全pass 注释
-  // stateArr();
-  // // Observed0060TestJsunit(); //全pass 注释
-  // LocalStorageLink0310TestJsunit(); //页面有注释 2用例
-  // LocalStorageProp0320TestJsunit(); //页面有注释 2用例
-  // LocalStorageAbsTestJsunit(); //页面未加载
-  // ComputedLocalTest(); //create page failed, name: Error message: Attempt to modify state variables from @Computed function
-  // ComputedMonitorTest(); //create page failed, name: Error message: Attempt to modify state variables from @Computed function
-  // ComputedTraceTest(); //create page failed, name: Error message: Attempt to modify state variables from @Computed function
-  //
-  // //全pass 注释
-  // // ParamAndOnceTest();
-  // // ParamChangeTest();
-  // // EventTest();
-  // // Monitor0031Test();
-  // // Monitor0034Test();
-  // // Provider0300Test();
-  // // Monitor0260Test();
-  //
-  // Monitor0280Test();
-  // // Monitor0290Test(); //全pass 注释
-  // Monitor0300Test();
-  // LinkTest0090(); //get('content')不存在
-  // // RepeatTest0040(); //全pass 注释
-  // MakeObservedTest0090(); //expect Jerry equals Tom
-  // // V1ToV2();  //全pass 注释
-  // V2ToV1(); //@BuilderParam注释导致1用例failed
-  // Prefetcher1();  // 页面编译不通过 页面注释 1用例
-  // Prefetcher2(); // 页面编译不通过 页面注释 1用例
-  // appStorageV2(); // 页面编译不通过 页面注释 2用例
-  // persistenceV2(); // 页面编译不通过 页面注释 3用例
-  // // StateTest0040();  //全pass 注释
-  // // StateTest0080();  //全pass 注释
-  // // WrapBuilder0020Test(); //全pass 注释
-  // StateTest0070();
-  // StateTest0090();
-  // // LazyForEachTest0470(); //全pass 注释
-  // // IfElseTest0100(); //全pass 注释
-  // // RepeatTest0200(); //全pass 注释
-  // MakeObservedTest0300();
-  // // WatchLinkTest0050(); //全pass 注释
-  // // ProvideConsumeTest0010(); //全pass 注释
-  // // ProviderTest0270(); //全pass 注释
-  // StateUndefinedTest0010(); //页面注释导致1用例failed
-  // AbstractPropertyRefTest();  //页面未加载
-  // SubAbstractPropertyLinkTest(); //页面未加载
-  // EnvironmentTest0040();
-  // // LocalStorageDeleteTest0120(); //全pass 注释
-  // LazyForEachInterface(); //@Reusable生命周期函数未调用
-  // // RepeatTest0010(); //全pass 注释
-  // // RepeatTest0020(); //全pass 注释
-  // // RepeatTest0400(); //全pass 注释
-  //
-  //
-  // // FreezeV2Test03(); //代码有注释
-  // makeObserved0100Test(); //pass 注释
-  // DataOperationTypeTest();  // 10.13SDK app died DataOperationTypeTest_static_0100
-  // lazyChangeJsunit();  //10.13SDK app died lazyChangeJsunit_static_0100
-  // lazyReloadJsunit();  //10.13 app died lazyReloadJsunit_static_0100
-  // LazyForEachTest0120();  //10.13SDK app died LazyForEachTest0120_static_0100
-  // LazyForEachChangeTest0020();  //10.13SDK app died LazyForEachChangeTest0020_static_0100
+  ExtendTrackTest(); //全pass 注释
+  Extend0010TestJsunit(); //一个断言失败 颜色不相等 backgroundColor 页面代码有注释
+
+  //全pass 注释
+  Foreach1();
+  FreezeV2Test();
+  FreezeV2Child();
+
+  LazyForEachAdd();  //pass
+  LazyForEachDelete();  //pass
+  LazyForEachMove();  //pass
+  LazyForEachCacheEnhance(); //app died
+  LazyForEachVisibleAreaChange(); //expect 0 equals 2
+  LazyForEachSingleBoolean();  //pass 注释
+  LazyForEachSingleNumber();  //pass 注释
+  LazyForEachSingleString();  //pass 注释
+  NestTrackTest(); //全pass 注释
+  StaticTrackTest(); //全pass 注释
+  getSharedLocalStorageTest(); //expect propAM:undefined equals propAM:47
+  useSharedStorageTest(); //expect propBM:0 equals propBM:40
+
+  //全pass 注释
+  ObjectArrayTest();
+  OnlyObserveTest();
+  TrackDateTest();
+  TrackMapTest();
+  TrackSetTest();
+  TwoNestTrackTest();
+  ArrayTrackTest();
+  Monitor1Test();
+  Monitor2Test();
+  Monitor3Test();
+  Monitor4Test();
+  Monitor5Test();
+  Monitor6Test();
+
+  RepeatEachJsunit(); //断言失败
+  RepeatForeachNumberBool(); //断言失败
+  RepeatForeachString(); //断言失败
+  RepeatLazyForEachBooleanSource(); //pass 注释
+  RepeatLazyForEachNumberSource(); //pass 注释
+  RepeatLazyForEachStringSource(); //pass 注释
+
+  //全pass 注释
+  RepeatIfElseObject();
+  RepeatIfElseBoolean();
+  RepeatGridBoolean();
+  RepeatGridNumber();
+  RepeatListBoolean();
+  RepeatListNumber();
+  RepeatNestObject();
+  RepeatObservedV2Nest();
+  RepeatSwiperBoolean();
+  RepeatSwiperNumber();
+  RepeatV1Boolean();
+  RepeatV1Object();
+
+  persistStorageATest();  //页面有注释@Entry(obj.storage)不支持
+  appStorageRefJsunit();   //pass 注释
+  localStorageRefJsunit();
+
+
+  IMonitorTest();  //全pass 注释
+  Local1Jsunit();  //全pass 注释
+  Local2Jsunit();  //全pass 注释
+  Param1Jsunit(); //全pass 注释
+  Param2Jsunit(); //全pass 注释
+  Param3Jsunit(); //全pass 注释
+  Param4Jsunit(); //全pass 注释
+  Monitor1Jsunit(); //全pass 注释
+  Monitor2Jsunit(); // app died
+  Monitor3Jsunit(); //await (btn?.click() as Promise<void>)空指针
+  Monitor4Jsunit(); //全pass 注释
+  repeatCountJsunit();  //全pass 注释
+  repeatNoTemplateIdJsunit(); //全pass 注释
+  repeatKeyJsunit(); //全pass 注释
+  repeatVirtualScrollJsunit();
+  LocalTestJsunit();  //全pass 注释
+  ComponentV2TestJsunit(); //全pass 注释
+  ParamTestJsunit();  //全pass 注释
+  ParamTestJsunit1(); //全pass 注释
+  Provider1Test();  //全pass 注释
+  Provider2Test();  //全pass 注释
+  Provider3Test();  //全pass 注释
+  Provider4Test();  //全pass 注释
+  Provider5Test();  //全pass 注释
+  Provider14Test();  //全pass 注释
+  Provider15Test();  //全pass 注释
+  Provider18Test();  //全pass 注释
+  getTarget1Test(); // pass
+  getTarget2Test();  //全pass 注释
+  getTarget3Test(); //全pass 注释
+  getTarget4Test(); //全pass 注释
+  getTarget5Test();  //全pass 注释
+  getTarget6Test(); //全pass 注释
+  ComputedTest(); //全pass 注释
+  makeObservedTest(); //全pass 注释
+  makeObserved0020Test();  //collections.Array不存在 页面注释导致页面白屏1用例
+  makeObserved0030Test();  //pass 注释
+  makeObserved0040Test();  //collections.Set 页面注释页面未加载1用例
+  makeObserved0050Test();  // 删除用例
+  makeObserved0060Test();  //pass 注释
+  makeObserved0070Test();  //页面有注释 1
+  makeObserved0080Test(); //pass 注释
+  makeObserved0110Test(); //pass 注释
+  makeObserved0120Test();  //页面有注释 1
+  makeObserved0130Test(); //强基语法中UIUtils.makeObserved入参不支持class，建议该删除用例
+  makeObserved0150Test(); //pass 注释
+  twoWayBindTest();//pass 注释
+
+  IfElse001Test();
+  IfElse002Test();
+  IfElse003Test();
+  IfElse004Test();
+  IfElse005Test();
+
+  LifeCycle0050TestJsunit();  //pass
+  WrapBuilder0010TestJsunit();
+  ProvideConsume0020TestJsunit();
+  ProvideConsume0030TestJsunit();
+  ProvideConsume0040TestJsunit(); //全pass 注释
+  ProvideConsume0050TestJsunit(); // pass
+  ProvideConsume0080TestJsunit();  //全pass 注释
+  ProvideConsume0360TestJsunit(); //全pass 注释
+  Link0100TestJsunit(); //全pass 注释
+  StateMap0010TestJsunit(); //全pass 注释
+  StateSet0010TestJsunit(); //全pass 注释
+  stateArr();  // pass
+  Observed0060TestJsunit(); //全pass 注释
+  LocalStorageLink0310TestJsunit(); //页面有注释 2用例
+  LocalStorageProp0320TestJsunit(); //页面有注释 2用例
+  LocalStorageAbsTestJsunit(); //pass
+  ComputedLocalTest(); // pass
+  ComputedMonitorTest(); // pass
+  ComputedTraceTest(); //pass
+
+  //全pass 注释
+  ParamAndOnceTest();
+  ParamChangeTest();
+  EventTest();
+  Monitor0031Test();
+  Monitor0034Test();
+  Provider0300Test();
+  Monitor0260Test();
+
+  Monitor0280Test(); //全pass 注释
+  Monitor0290Test(); //全pass 注释
+  Monitor0300Test(); //全pass 注释
+  LinkTest0090(); //全pass 注释
+  RepeatTest0040(); //全pass 注释
+  MakeObservedTest0090(); //pass
+  V1ToV2();  //全pass 注释
+  V2ToV1(); //@BuilderParam注释导致1用例failed
+  Prefetcher1();  // 页面编译不通过 页面注释 1用例
+  Prefetcher2(); // 页面编译不通过 页面注释 1用例
+  appStorageV2(); // 页面编译不通过 页面注释 2用例
+  persistenceV2(); // 页面编译不通过 页面注释 3用例
+  StateTest0040();  //全pass 注释
+  StateTest0080();  //全pass 注释
+  WrapBuilder0020Test(); //全pass 注释
+  StateTest0070(); //pass
+  StateTest0090();
+  LazyForEachTest0470(); //全pass 注释
+  IfElseTest0100(); //全pass 注释
+  RepeatTest0200(); //全pass 注释
+  MakeObservedTest0300();
+  WatchLinkTest0050(); //全pass 注释
+  ProvideConsumeTest0010(); //全pass 注释
+  ProviderTest0270(); //全pass 注释
+  StateUndefinedTest0010(); //页面注释导致1用例failed
+  AbstractPropertyRefTest();  //pass
+  SubAbstractPropertyLinkTest(); //pass
+  EnvironmentTest0040();  //页面有注释
+  LocalStorageDeleteTest0120(); //全pass 注释
+  LazyForEachInterface(); //@Reusable生命周期函数未调用
+  RepeatTest0010(); //全pass 注释
+  RepeatTest0020(); //全pass 注释
+  RepeatTest0400(); //全pass 注释
+
+
+  FreezeV2Test03(); //代码有注释
+  makeObserved0100Test(); //pass 注释
+  DataOperationTypeTest();  // pass
+  lazyChangeJsunit();  //pass
+  lazyReloadJsunit(); // pass
+  LazyForEachTest0120();  // pass
+  LazyForEachChangeTest0020();  //pass
 }

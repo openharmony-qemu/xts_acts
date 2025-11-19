@@ -89,7 +89,7 @@ export default function LazyForEachInterface() {
      * @tc.desc     LazyForEachInterface_static_001
      * @tc.level    Level.LEVEL1
      */
-it('LazyForEachInterface_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('LazyForEachInterface_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachInterface_static_001] START');
       await CommonFunc.sleep(100);
       let driver: Driver = Driver.create();
@@ -108,7 +108,7 @@ it('LazyForEachInterface_static_001', Level.LEVEL1, async (done: () => void): Pr
      * @tc.desc     LazyForEachInterface_static_002
      * @tc.level    Level.LEVEL1
      */
-it('LazyForEachInterface_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('LazyForEachInterface_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachInterface_static_002] START');      
       await CommonFunc.sleep(100);
       let driver: Driver = Driver.create();

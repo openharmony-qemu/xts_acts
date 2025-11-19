@@ -92,7 +92,7 @@ struct Observed0060 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('Observed0060', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

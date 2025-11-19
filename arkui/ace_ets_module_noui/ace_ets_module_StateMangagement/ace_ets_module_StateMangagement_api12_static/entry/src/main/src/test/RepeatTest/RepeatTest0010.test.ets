@@ -88,7 +88,7 @@ export default function RepeatTest0010() {
      * @tc.desc     RepeatTest0010_static_001
      * @tc.level    Level.LEVEL3
      */
-it('RepeatTest0010_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('RepeatTest0010_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0010_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

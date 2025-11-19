@@ -161,7 +161,10 @@ export default class StringDataSource extends BasicDataSource implements DataAdd
 @ComponentV2
 struct RepeatLazyForEachString {
   @Local dataList: Array<string> = new Array<string>();
-  @Local dataSource: Array<StringDataSource> = new Array<StringDataSource>()
+  @Local dataSource: Array<StringDataSource> = [
+    new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource,
+    new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource
+  ]
 
   aboutToAppear(): void {
     for (let i = 0; i < 10; i++) {
@@ -183,7 +186,7 @@ struct RepeatLazyForEachString {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEachAdd', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

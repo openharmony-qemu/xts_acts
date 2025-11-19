@@ -86,7 +86,7 @@ export default function RepeatTest0040() {
      * @tc.desc     RepeatTest0040_static_001
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0040_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0040_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0040_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -108,14 +108,14 @@ it('RepeatTest0040_static_001', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-
+    
     /*
      * @tc.number   RepeatTest0040_static_002
      * @tc.name     RepeatTest0040_static_002
      * @tc.desc     RepeatTest0040_static_002
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0040_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0040_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0040_static_002] START');
       await CommonFunc.sleep(2000);
       let treeStr: string = JSON.stringify(inspector.getInspectorTree())
@@ -141,7 +141,7 @@ it('RepeatTest0040_static_002', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     RepeatTest0040_static_003
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0040_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0040_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0040_static_003] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -167,7 +167,7 @@ it('RepeatTest0040_static_003', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     RepeatTest0040_static_004
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0040_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0040_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0040_static_004] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -186,14 +186,14 @@ it('RepeatTest0040_static_004', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-
+    
     /*
      * @tc.number   RepeatTest0040_static_005
      * @tc.name     RepeatTest0040_static_005
      * @tc.desc     RepeatTest0040_static_005
      * @tc.level    Level.LEVEL0
      */
-it('RepeatTest0040_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatTest0040_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0040_static_005] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

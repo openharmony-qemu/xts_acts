@@ -95,7 +95,7 @@ export default function Foreach1() {
      * @tc.desc     foreach1_static_001
      * @tc.level    Level.LEVEL0
      */
-it('foreach1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('foreach1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[foreach1_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -118,7 +118,7 @@ it('foreach1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> 
      * @tc.desc     foreach1_static_002
      * @tc.level    Level.LEVEL0
      */
-it('foreach1_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('foreach1_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[foreach1_static_002] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -144,7 +144,7 @@ it('foreach1_static_002', Level.LEVEL0, async (done: () => void): Promise<void> 
      * @tc.desc     foreach1_static_003
      * @tc.level    Level.LEVEL0
      */
-it('foreach1_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('foreach1_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[foreach1_static_003] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -176,7 +176,7 @@ it('foreach1_static_003', Level.LEVEL0, async (done: () => void): Promise<void> 
      * @tc.desc     foreach1_static_004
      * @tc.level    Level.LEVEL0
      */
-it('foreach1_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('foreach1_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[foreach1_static_004] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -202,7 +202,7 @@ it('foreach1_static_004', Level.LEVEL0, async (done: () => void): Promise<void> 
      * @tc.desc     foreach1_static_005
      * @tc.level    Level.LEVEL0
      */
-it('foreach1_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('foreach1_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[foreach1_static_005] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

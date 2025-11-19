@@ -125,6 +125,7 @@ struct RepeatParent {
             ChildItem({ item: obj.item })
           })
           .key((item: string) => item)
+          .virtualScroll({ disableVirtualScroll: true })
       }
       .justifyContent(FlexAlign.Center)
       .width('100%')

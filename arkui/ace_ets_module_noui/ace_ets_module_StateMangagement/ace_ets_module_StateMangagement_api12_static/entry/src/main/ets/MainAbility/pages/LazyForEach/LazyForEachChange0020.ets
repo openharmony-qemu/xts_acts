@@ -33,7 +33,8 @@ import {
   BarState,
   Alignment,
   Margin,
-  Reusable
+  Reusable,
+  DataChangeOperation
 } from '@ohos.arkui.component'
 import {
   State,
@@ -101,8 +102,8 @@ class MyDataSourceChange0020 extends BasicDataSourceChange0020 {
 
   public changeData(index: int, data: string): void {
     this.dataArray.splice(index, 1, data);
-    let dat: Dta = { type: DataOperationType.CHANGE, index: index, key: String(index) }
-    let dta: DataOperation[] = new Array<DataOperation>(dat as DataOperation )
+    let dat: DataChangeOperation = { type: DataOperationType.CHANGE, index: index, key: String(index) }
+    let dta: DataOperation[] = [dat]
     this.notifyDatasetChange(dta);
   }
 }
@@ -121,7 +122,7 @@ struct LazyForEachChange0020 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEachChange0020', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

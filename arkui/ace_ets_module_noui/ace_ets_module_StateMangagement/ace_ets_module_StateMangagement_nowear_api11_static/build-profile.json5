@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 {
   "app": {
     "signingConfigs": [
@@ -20,8 +21,9 @@
     "products": [
       {
         "name": "default",
+        "signingConfig": "default",
         "arkTSVersion": "1.2",
-        "compatibleSdkVersion": '20',
+        "compatibleSdkVersion": '22',
         "compileSdkVersion": '22',
         "runtimeOS": "OpenHarmony",
         "buildOption": {

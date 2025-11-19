@@ -156,7 +156,7 @@ struct LazyForEach0470 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEach0470', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

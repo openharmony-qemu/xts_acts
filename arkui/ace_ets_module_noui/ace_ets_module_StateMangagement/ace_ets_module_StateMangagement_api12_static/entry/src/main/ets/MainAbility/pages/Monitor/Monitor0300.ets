@@ -36,9 +36,9 @@ import {
 @ObservedV2
 class Monitor0300Person {
   @Trace name: string
-  @Trace age: number
+  @Trace age: int
 
-  constructor(name: string, age: number) {
+  constructor(name: string, age: int) {
     this.name = name
     this.age = age
   }
@@ -48,21 +48,22 @@ class Monitor0300Person {
 class Monitor0300Class {
   @Trace person: Monitor0300Person
   @Trace nameChange: string = 'Tom'
-  @Trace ageChange: number = 23
+  @Trace ageChange: int = 23
 
   @Monitor(['person.name'])
   onNameChange(monitor: IMonitor) {
-    this.nameChange = String(monitor.value()?.now)
+    this.nameChange = String(monitor.value<Any>()?.now)
     console.log('person.name: ' + this.nameChange)
   }
 
   @Monitor(['person.age'])
   onAgeChange(monitor: IMonitor) {
-    this.ageChange = Number(monitor.value()?.now)
+    this.ageChange = monitor.value<Any>()?.now as Int
+
     console.log('person.age: ' + this.ageChange)
   }
 
-  constructor(name: string, age: number) {
+  constructor(name: string, age: int) {
     this.person = new Monitor0300Person(name, age)
   }
 }

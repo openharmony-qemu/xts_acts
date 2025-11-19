@@ -45,7 +45,9 @@ struct fuziIndex {
       Button(`change value parent`).onClick(() => {
         this.value++;
       }).id('V2bindButton1')
-      fuziStar({ value: this.value!! })
+      fuziStar({ value: this.value, changeFactory: (type: number) => {
+        this.value = type;
+      } })
     }
   }
 }
@@ -54,13 +56,13 @@ struct fuziIndex {
 @ComponentV2
 struct fuziStar {
   @Param value: number = 0;
-  @Event $value: (val: number) => void = (val: number) => {};
+  @Event changeFactory: (val: number) => void = (val: number) => {};
 
   build() {
     Column() {
       Text(`${this.value}`).id('V2bindText2')
       Button(`change value child`).onClick(() => {
-        this.$value(10);
+        this.changeFactory(10);
       }).id('V2bindButton2')
     }
   }

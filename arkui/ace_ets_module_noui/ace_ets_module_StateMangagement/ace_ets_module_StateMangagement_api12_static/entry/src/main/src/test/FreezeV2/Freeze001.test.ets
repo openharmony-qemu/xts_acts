@@ -104,7 +104,7 @@ export default function FreezeV2Test() {
      * @tc.desc     FreezeTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_001', Level.LEVEL0, async () => {
+    it('FreezeTest_static_001', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_001 START');
       let driver =  Driver.create()
       let changeIndex = await driver.findComponent(ON.id('changeIndex'));

@@ -57,7 +57,7 @@ struct WatchLink0050 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('WatchLink0050', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

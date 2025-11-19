@@ -46,7 +46,7 @@ struct IfElse001 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('IfElse001', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

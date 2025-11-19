@@ -80,16 +80,14 @@ export default function Provider2Test() {
       console.info("Provider2Test beforeEach end");
     });
 
-
-    //pass过 注释
-
+    
     /*
      * @tc.number   Provider2Test_static_0100
      * @tc.name     Provider2Test_static_0100
      * @tc.desc     Provider2Test_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Provider2Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider2Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Provider2Test_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -115,7 +113,7 @@ it('Provider2Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     Provider2Test_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('Provider2Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider2Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Provider2Test_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

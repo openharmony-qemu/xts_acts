@@ -89,7 +89,7 @@ export default function Provider0300Test() {
      * @tc.desc     Provider0300Test_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Provider0300Test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Provider0300Test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Provider0300Test_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

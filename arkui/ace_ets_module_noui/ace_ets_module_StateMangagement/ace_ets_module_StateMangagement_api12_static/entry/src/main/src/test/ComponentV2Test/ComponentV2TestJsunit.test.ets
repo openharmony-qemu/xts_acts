@@ -93,7 +93,7 @@ export default function ComponentV2TestJsunit() {
      * @tc.desc     ComponentV2TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ComponentV2TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComponentV2TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ComponentV2TestJsunit_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -116,7 +116,7 @@ it('ComponentV2TestJsunit_static_001', Level.LEVEL0, async (done: () => void): P
      * @tc.desc     ComponentV2TestJsunit_static_002
      * @tc.level    Level.LEVEL0
      */
-it('ComponentV2TestJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComponentV2TestJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ComponentV2TestJsunit_static_002] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -139,7 +139,7 @@ it('ComponentV2TestJsunit_static_002', Level.LEVEL0, async (done: () => void): P
      * @tc.desc     ComponentV2TestJsunit_static_003
      * @tc.level    Level.LEVEL0
      */
-it('ComponentV2TestJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComponentV2TestJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ComponentV2TestJsunit_static_003] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -162,7 +162,7 @@ it('ComponentV2TestJsunit_static_003', Level.LEVEL0, async (done: () => void): P
      * @tc.desc     ComponentV2TestJsunit_static_004
      * @tc.level    Level.LEVEL0
      */
-it('ComponentV2TestJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComponentV2TestJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ComponentV2TestJsunit_static_004] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -191,7 +191,7 @@ it('ComponentV2TestJsunit_static_004', Level.LEVEL0, async (done: () => void): P
      * @tc.desc     ComponentV2TestJsunit_static_005
      * @tc.level    Level.LEVEL0
      */
-it('ComponentV2TestJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComponentV2TestJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ComponentV2TestJsunit_static_005] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

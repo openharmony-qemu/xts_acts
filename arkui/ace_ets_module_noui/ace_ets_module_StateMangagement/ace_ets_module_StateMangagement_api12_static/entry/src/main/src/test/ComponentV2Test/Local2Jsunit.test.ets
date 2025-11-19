@@ -90,7 +90,7 @@ export default function Local2Jsunit() {
      * @tc.desc     Local2Jsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Local2Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Local2Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Local2Jsunit_static_001] START');
       let strJson1 = inspector.getInspectorByKey('num_text');
       let obj1 = JSON.parseJsonElement(strJson1);

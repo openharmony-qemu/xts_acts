@@ -95,7 +95,7 @@ export default function RepeatListNumber() {
      * @tc.desc     RepeatListNumber_static_001
      * @tc.level    Level.LEVEL0
      */
-it('RepeatListNumber_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatListNumber_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatListNumber_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

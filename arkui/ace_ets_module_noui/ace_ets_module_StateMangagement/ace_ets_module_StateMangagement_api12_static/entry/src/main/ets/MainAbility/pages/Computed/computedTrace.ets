@@ -37,7 +37,7 @@ import {
 class Name {
   @Trace firstName: string = 'Li';
   @Trace lastName: string = 'Hua';
-  @Trace testNumber: number = 0;
+  testNumber: number = 0;
 
   @Computed
   get fullName() {
@@ -52,6 +52,7 @@ const name: Name = new Name();
 @ComponentV2
 struct ComputedTrace {
   name1: Name = name;
+  @State showTestNumber:number = 0
 
   build() {
     Column() {
@@ -61,7 +62,11 @@ struct ComputedTrace {
         this.name1.lastName += 'a';
       })
         .id('computedTraceButton')
-      Text(`Computed call count ${this.name1.testNumber.toString()}`).id('computedTraceText3')
+      Text(`Computed call count ${this.showTestNumber.toString()}`).id('computedTraceText3')
+      Button('showTestNumber').onClick(() => {
+        this.showTestNumber = this.name1.testNumber;
+      })
+        .id('showTestNumber')
     }
   }
 }

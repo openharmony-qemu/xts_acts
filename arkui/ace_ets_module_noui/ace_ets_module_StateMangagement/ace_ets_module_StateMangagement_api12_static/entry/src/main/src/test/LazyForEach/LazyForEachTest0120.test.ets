@@ -80,7 +80,7 @@ export default function LazyForEachTest0120() {
      * @tc.desc     LazyForEachTest0120_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-it('LazyForEachTest0120_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('LazyForEachTest0120_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('LazyForEachTest0120001 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -94,22 +94,23 @@ it('LazyForEachTest0120_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Leve
       btn = await driver.findComponent(ON.id("LazyForEach0120_2"));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      // let obj = JSON.parseJsonElement(String(inspector.getInspectorTree()))
-      //   .$children[0]
-      //   .$children[2]
-      //   .$children[1]
-      //   .$children[0];
-      // console.info("[LazyForEachTest0120001] list index 1 is: " + JSON.stringify(obj));
-      // expect(obj.getElement('$attrs').getString('content')).assertEqual("Hello1");
+      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray('$children')[0]
+        .getArray('$children')[2]
+        .getArray('$children')[1]
+        .getArray('$children')[0];
+      console.info("[LazyForEachTest0120001] list index 1 is: " + JSON.stringify(obj));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("Hello1");
       await CommonFunc.sleep(1000);
-      // obj = JSON.parse(String(inspector.getInspectorTree()))
-      //   .$children[0]
-      //   .$children[2]
-      //   .$children[2]
-      //   .$children[0];
-      // console.info("[LazyForEachTest0120001] list index 2 is: " + JSON.stringify(obj));
-      // expect(obj.getElement('$attrs').getString('content')).assertEqual("Hello0");
+      obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray('$children')[0]
+        .getArray('$children')[2]
+        .getArray('$children')[2]
+        .getArray('$children')[0];
+      console.info("[LazyForEachTest0120001] list index 2 is: " + JSON.stringify(obj));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("Hello0");
       console.info('LazyForEachTest0120_static_0100 END');
+      done();
     });
   })
 }

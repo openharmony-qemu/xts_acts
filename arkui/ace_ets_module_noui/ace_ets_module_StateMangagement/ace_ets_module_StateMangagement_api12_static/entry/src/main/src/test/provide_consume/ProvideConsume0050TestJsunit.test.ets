@@ -92,7 +92,7 @@ export default function ProvideConsume0050TestJsunit() {
      * @tc.desc     assertContain_static
      * @tc.level    Level.LEVEL0
      */
-it('assertContain_static', Level.LEVEL0, async () => {
+    it('assertContain_static', Level.LEVEL0, async () => {
       await CommonFunc.sleep(1000);
       console.info('[ProvideConsume0100Test_001] START');
       await CommonFunc.sleep(1000);

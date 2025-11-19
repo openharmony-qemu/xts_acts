@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -84,7 +84,7 @@ export default function Link0100TestJsunit() {
      * @tc.desc     Link0100TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Link0100TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Link0100TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Link0100TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();

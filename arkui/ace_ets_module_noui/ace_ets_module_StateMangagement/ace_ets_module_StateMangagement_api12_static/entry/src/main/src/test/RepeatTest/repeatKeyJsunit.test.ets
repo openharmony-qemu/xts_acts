@@ -93,20 +93,20 @@ export default function repeatKeyJsunit() {
      * @tc.desc     RepeatKey_static_001
      * @tc.level    Level.LEVEL0
      */
-it('RepeatKey_static_001', Level.LEVEL0, async () => {
+    it('RepeatKey_static_001', Level.LEVEL0, async () => {
       console.info('RepeatKey_static_001 START');
       expect(!!inspector.getInspectorByKey('one')).assertTrue();
       console.info('RepeatKey_static_001 END');
     });
 
-
+    
     /*
      * @tc.number   RepeatKey_static_002
      * @tc.name     RepeatKey_static_002
      * @tc.desc     RepeatKey_static_002
      * @tc.level    Level.LEVEL0
      */
-it('RepeatKey_static_002', Level.LEVEL0, async () => {
+    it('RepeatKey_static_002', Level.LEVEL0, async () => {
       console.info('RepeatKey_static_001 START');
       expect(!inspector.getInspectorByKey('one1')).assertTrue();
       console.info('RepeatKey_static_001 END');

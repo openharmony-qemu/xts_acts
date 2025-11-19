@@ -95,7 +95,7 @@ export default function RepeatSwiperNumber() {
      * @tc.desc     RepeatSwiperNumber_static_001
      * @tc.level    Level.LEVEL0
      */
-it('RepeatSwiperNumber_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatSwiperNumber_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatSwiperNumber_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

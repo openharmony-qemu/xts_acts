@@ -89,7 +89,7 @@ export default function TwoNestTrackTest() {
      * @tc.desc     TwoNestTrackTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('TwoNestTrackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TwoNestTrackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TwoNestTrackTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

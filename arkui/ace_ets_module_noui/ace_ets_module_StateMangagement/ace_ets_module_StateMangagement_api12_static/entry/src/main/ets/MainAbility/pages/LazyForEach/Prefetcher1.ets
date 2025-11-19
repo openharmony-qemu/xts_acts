@@ -160,7 +160,7 @@
 //     try {
 //       let router = uiContext.getRouter();
 //       AppStorage.setOrCreate<Router>('Prefetcher1', router);
-//     } catch (error) {
+//     } catch (error: Error) {
 //       console.log('error ' + error);
 //     }
 //   }

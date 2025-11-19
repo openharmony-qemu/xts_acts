@@ -40,7 +40,7 @@ struct ChildMonitor0280 {
 
   @Monitor(['val'])
   onChange(monitor: IMonitor) {
-    this.name += monitor.value()?.now
+    this.name += monitor.value<Any>()?.now
   }
 
   build() {

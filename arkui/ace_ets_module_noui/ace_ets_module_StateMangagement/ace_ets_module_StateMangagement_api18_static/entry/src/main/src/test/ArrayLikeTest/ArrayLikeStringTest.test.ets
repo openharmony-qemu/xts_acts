@@ -66,7 +66,7 @@ export default function ArrayLikeStringTest() {
      * @tc.desc     ArrayLikeStringTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ArrayLikeStringTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArrayLikeStringTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArrayLikeStringTest_001] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(2000);

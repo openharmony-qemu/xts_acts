@@ -27,7 +27,9 @@ import {
   DataOperation,
   LazyForEach,
   IDataSource,
-  DataOperationType
+  DataOperationType,
+  DataAddOperation,
+  DataExchangeOperation
 } from '@ohos.arkui.component'
 import {
   State,
@@ -99,15 +101,15 @@ class MyDataSource0120 extends BasicDataSource0120 {
     return this.dataArray[index as int];
   }
 
-  public addData(index: int, count: number, key: Array<string>): void {
+  public addData(index: int, count: int, key: Array<string>): void {
     this.dataArray.splice(index, 0, 'HelloA');
-    let dat: Dta = {
+    let dat: DataAddOperation = {
       type: DataOperationType.ADD,
       index: index,
       count: count,
       key: key
     }
-    let dta: DataOperation[] = new Array<DataOperation>(dat as DataOperation )
+    let dta: DataOperation[] = [dat]
     this.notifyDatasetChange(dta);
   }
 
@@ -115,12 +117,12 @@ class MyDataSource0120 extends BasicDataSource0120 {
     let temp = this.dataArray[1];
     this.dataArray[1] = this.dataArray[2];
     this.dataArray[2] = temp
-    let dat1: Dta1 = {
+    let dat1: DataExchangeOperation = {
       type: DataOperationType.EXCHANGE,
       index: { start: 1, end: 2 },
       key: { start: 'key0120_1', end: 'key0120_2' }
     }
-    let dta1: DataOperation[] = new Array<DataOperation>(dat1 as DataOperation )
+    let dta1: DataOperation[] = [dat1]
     this.notifyDatasetChange(dta1);
   }
 
@@ -142,7 +144,7 @@ struct LazyForEach0120 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEach0120', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

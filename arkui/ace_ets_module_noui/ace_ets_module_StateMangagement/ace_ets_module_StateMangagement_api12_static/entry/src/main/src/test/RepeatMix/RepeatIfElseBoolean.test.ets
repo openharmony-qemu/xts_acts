@@ -95,7 +95,7 @@ export default function RepeatIfElseBoolean() {
      * @tc.desc     RepeatIfElseBoolean_static_001
      * @tc.level    Level.LEVEL0
      */
-it('RepeatIfElseBoolean_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RepeatIfElseBoolean_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatIfElseBoolean_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

@@ -88,7 +88,7 @@ export default function Monitor6Test() {
      * @tc.desc     Monitor6Test_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Monitor6Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Monitor6Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Monitor6Test_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -109,7 +109,7 @@ it('Monitor6Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
      * @tc.desc     Monitor6Test_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('Monitor6Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Monitor6Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Monitor6Test_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -130,7 +130,7 @@ it('Monitor6Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
      * @tc.desc     Monitor6Test_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('Monitor6Test_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Monitor6Test_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Monitor6Test_static_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -151,7 +151,7 @@ it('Monitor6Test_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
      * @tc.desc     Monitor6Test_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('Monitor6Test_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Monitor6Test_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Monitor6Test_static_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

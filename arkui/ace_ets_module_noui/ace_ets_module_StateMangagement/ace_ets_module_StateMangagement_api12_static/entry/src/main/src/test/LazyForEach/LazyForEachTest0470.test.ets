@@ -84,7 +84,7 @@ export default function LazyForEachTest0470() {
      * @tc.desc     LazyForEachTest0470_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachTest0470_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachTest0470_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachTest0470_static_001] START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -128,7 +128,7 @@ it('LazyForEachTest0470_static_001', Level.LEVEL0, async (done: () => void): Pro
      * @tc.desc     LazyForEachTest0470_static_002
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachTest0470_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachTest0470_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachTest0470_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -172,7 +172,7 @@ it('LazyForEachTest0470_static_002', Level.LEVEL0, async (done: () => void): Pro
      * @tc.desc     LazyForEachTest0470_static_003
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachTest0470_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachTest0470_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachTest0470_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

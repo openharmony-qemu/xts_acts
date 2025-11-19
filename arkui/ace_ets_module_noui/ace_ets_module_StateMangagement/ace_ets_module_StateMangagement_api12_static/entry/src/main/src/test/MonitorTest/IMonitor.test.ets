@@ -91,7 +91,7 @@ export default function IMonitorTest() {
      * @tc.desc     IMonitorTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('IMonitorTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('IMonitorTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IMonitorTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,8 +103,8 @@ it('IMonitorTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson1 = inspector.getInspectorByKey('IMonitorValue_now');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[IMonitorTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Tom');
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('IMonitor succ');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Hello World');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('Hello World!');
       console.info('[IMonitorTest_static_0100] END');
       done();
     });

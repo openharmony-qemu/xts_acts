@@ -86,7 +86,7 @@ export default function persistenceV2() {
      * @tc.desc     persistenceV2_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('persistenceV2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('persistenceV2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[persistenceV2_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('persistenceV2_static_keys');
@@ -104,7 +104,7 @@ it('persistenceV2_static_0100', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     persistenceV2_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('persistenceV2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('persistenceV2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[persistenceV2_static_0200] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -140,7 +140,7 @@ it('persistenceV2_static_0200', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     persistenceV2_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('persistenceV2_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('persistenceV2_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[persistenceV2_static_0300] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

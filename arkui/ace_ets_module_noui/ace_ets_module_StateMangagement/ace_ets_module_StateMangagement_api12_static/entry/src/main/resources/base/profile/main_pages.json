@@ -10,6 +10,7 @@
     "MainAbility/pages/LazyForEach/LazyForEachSingleNumber",
     "MainAbility/pages/LazyForEach/LazyForEachSingleString",
     "MainAbility/pages/Storage/appStorageRef",
+    "MainAbility/pages/Storage/localStorageRef",
     "MainAbility/pages/IfElse/IfElse001",
     "MainAbility/pages/IfElse/IfElse002",
     "MainAbility/pages/IfElse/IfElse003",
@@ -43,6 +44,7 @@
     "MainAbility/pages/state/StateUndefined0010",
     "MainAbility/pages/Storage/AbstractPropertyRef",
     "MainAbility/pages/LazyForEach/LazyForEach0120",
-    "MainAbility/pages/LazyForEach/LazyForEachChange0020"
+    "MainAbility/pages/LazyForEach/LazyForEachChange0020",
+    "MainAbility/pages/LazyForEach/LazyForEachInterface"
   ]
 }

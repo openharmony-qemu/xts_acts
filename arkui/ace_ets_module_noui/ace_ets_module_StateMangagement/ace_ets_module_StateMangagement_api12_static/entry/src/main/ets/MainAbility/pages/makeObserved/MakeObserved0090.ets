@@ -33,7 +33,7 @@ import {
   StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
 } from '@ohos.arkui.stateManagement'
 
-@Observed
+@ObservedV2
 class ClassMakeObserved0090 {
   @Track
   private _name: string

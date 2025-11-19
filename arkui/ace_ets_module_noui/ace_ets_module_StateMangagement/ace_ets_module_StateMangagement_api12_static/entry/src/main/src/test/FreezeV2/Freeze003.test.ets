@@ -93,7 +93,7 @@ export default function FreezeV2Child() {
      * @tc.desc     FreezeV2Child_static_01
      * @tc.level    Level.LEVEL0
      */
-it('FreezeV2Child_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('FreezeV2Child_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000)
       console.info('FreezeV2Child_static_01 START');
       let driver =  Driver.create()

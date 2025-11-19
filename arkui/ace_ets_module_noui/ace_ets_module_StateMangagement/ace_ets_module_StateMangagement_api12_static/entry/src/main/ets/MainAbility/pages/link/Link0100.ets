@@ -26,12 +26,16 @@ import {
   State,
   Watch,
   Link,
-  StorageLink
+  StorageLink,
+  Track,
+  Observed
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
+@Observed
 class Link0100Class {
+  @Track
   age: number = 0
 }
 

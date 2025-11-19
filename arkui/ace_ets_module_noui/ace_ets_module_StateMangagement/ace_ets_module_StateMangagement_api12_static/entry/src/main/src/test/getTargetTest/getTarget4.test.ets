@@ -88,7 +88,7 @@ export default function getTarget4Test() {
      * @tc.desc     getTarget4Test_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getTarget4Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getTarget4Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getTarget4Test_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -101,7 +101,7 @@ it('getTarget4Test_static_0100', Level.LEVEL0, async (done: () => void): Promise
       strJson = inspector.getInspectorByKey('useGetTarget4_2');
       obj = JSON.parseJsonElement(strJson);
       console.info("[getTarget4Test_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.InfoV1Observed) === g0: false');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('UIUtils.getTarget(this.InfoV1Observed) === g0: true');
 
       console.info('[getTarget4Test_static_0100] END');
       done();

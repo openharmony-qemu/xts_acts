@@ -68,7 +68,7 @@ export default function useSharedStorageTest() {
      * @tc.desc     useSharedStorageTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('useSharedStorageTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('useSharedStorageTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('useSharedStorageTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('useSharedStorage_1');

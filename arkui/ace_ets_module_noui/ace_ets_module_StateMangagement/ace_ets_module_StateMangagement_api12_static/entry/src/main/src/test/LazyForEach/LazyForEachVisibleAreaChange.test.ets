@@ -85,7 +85,7 @@ export default function LazyForEachVisibleAreaChange() {
      * @tc.desc     LazyForEachVisibleAreaChange_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LazyForEachVisibleAreaChange_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LazyForEachVisibleAreaChange_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachVisibleAreaChange_static_001] START');
       await CommonFunc.sleep(500);
       let driver = Driver.create();

@@ -91,7 +91,7 @@ export default function makeObserved0100Test() {
      * @tc.desc     makeObserved0100Test_static_01
      * @tc.level    Level.LEVEL0
      */
-it('makeObserved0100Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('makeObserved0100Test_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000)
 
       console.info('makeObserved0100Test_static_01 START');

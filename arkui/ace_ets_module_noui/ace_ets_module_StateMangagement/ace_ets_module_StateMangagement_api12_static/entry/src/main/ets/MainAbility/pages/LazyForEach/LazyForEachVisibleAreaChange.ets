@@ -137,7 +137,7 @@ struct LazyForEachVisibleAreaChangeDemo {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEachVisibleAreaChange', router);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

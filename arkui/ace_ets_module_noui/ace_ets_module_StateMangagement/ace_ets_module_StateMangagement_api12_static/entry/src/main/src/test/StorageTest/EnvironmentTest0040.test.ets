@@ -83,7 +83,7 @@ export default function EnvironmentTest0040() {
      * @tc.desc     EnvironmentTest0040_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-it('EnvironmentTest0040_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('EnvironmentTest0040_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('EnvironmentTest0040001 START');
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvKeysOne'));

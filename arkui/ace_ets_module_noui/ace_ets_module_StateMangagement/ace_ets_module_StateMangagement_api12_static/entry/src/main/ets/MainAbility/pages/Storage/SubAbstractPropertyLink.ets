@@ -28,10 +28,11 @@ import {
   State,
   Watch,
   Link,
-  StorageLink,AppStorage,SubscribedAbstractProperty
+  StorageLink,AppStorage,SubscribedAbstractProperty,
+  // Preview
 } from '@ohos.arkui.stateManagement'
 
-AppStorage.setOrCreate('SubAbstractPropertyLinkTest', 52)
+
 
 // @Preview({
 //   title: 'SubAbstractPropertyLink',
@@ -41,8 +42,8 @@ AppStorage.setOrCreate('SubAbstractPropertyLinkTest', 52)
 @Entry
 @Component
 struct SubAbstractPropertyLink {
-  @State propValue?: SubscribedAbstractProperty<number> = AppStorage.link('SubAbstractPropertyLinkTest') as SubscribedAbstractProperty<number>
-
+  @State propValue?: SubscribedAbstractProperty<number> = AppStorage.link<number>('SubAbstractPropertyLinkTest') as SubscribedAbstractProperty<number>
+  static { AppStorage.setOrCreate('SubAbstractPropertyLinkTest', 52.0) }
   build() {
     Column() {
       Text(this.propValue?.info() + ':' + this.propValue?.get().toString())

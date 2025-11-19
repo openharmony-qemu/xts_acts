@@ -88,7 +88,7 @@ export default function ArrayTrackTest() {
      * @tc.desc     ArrayTrackTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArrayTrackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArrayTrackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArrayTrackTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

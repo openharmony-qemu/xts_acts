@@ -76,7 +76,7 @@ struct V1GetTarget {
 
       Text('不使用getTarget')
       Text(`UIUtils.getTarget(this.nonObservedObject) === nonObservedClass: ${this.nonObservedObject ===
-        nonObservedClass}`).id('noUseGetTarget1') // true
+        nonObservedClass}`).id('noUseGetTarget1') // true // 规格变化
       Text(`UIUtils.getTarget(this.numberList) === globalNumberList: ${this.numberList ===
         globalNumberList}`).id('noUseGetTarget2') // true
       Text(`UIUtils.getTarget(this.sampleMap) === globalSampleMap: ${this.sampleMap ===

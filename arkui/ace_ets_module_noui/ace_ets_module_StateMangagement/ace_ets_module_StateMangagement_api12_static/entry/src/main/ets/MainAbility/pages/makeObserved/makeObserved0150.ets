@@ -47,10 +47,13 @@ class Info {
 
 class A {
 }
-
+@ObservedV2
 class Info2 {
+  @Trace
   id: number = 0;
+  @Trace
   age: number = 0;
+  @Trace
   a: A | null = new A()
 
   constructor(id: number) {

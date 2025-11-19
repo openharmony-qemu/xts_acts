@@ -95,7 +95,7 @@ export default function LocalStorageLink0310TestJsunit() {
      * @tc.desc     LocalStorageLink0310TestJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LocalStorageLink0310TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LocalStorageLink0310TestJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorageLink0310TestJsunit_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -152,7 +152,7 @@ it('LocalStorageLink0310TestJsunit_static_001', Level.LEVEL0, async (done: () =>
      * @tc.desc     LocalStorageLink0310TestJsunit_static_002
      * @tc.level    Level.LEVEL0
      */
-it('LocalStorageLink0310TestJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LocalStorageLink0310TestJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorageLink0310TestJsunit_static_002] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

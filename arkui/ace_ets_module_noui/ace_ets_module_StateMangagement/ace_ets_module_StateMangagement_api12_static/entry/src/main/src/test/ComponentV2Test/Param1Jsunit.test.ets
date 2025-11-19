@@ -93,7 +93,7 @@ export default function Param1Jsunit() {
      * @tc.desc     Param1Jsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('Param1Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Param1Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Param1Jsunit_static_001] START');
       let strJson1 = inspector.getInspectorByKey('param_local');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -117,7 +117,7 @@ it('Param1Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.desc     Param1Jsunit_static_002
      * @tc.level    Level.LEVEL0
      */
-it('Param1Jsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Param1Jsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Param1Jsunit_static_002] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

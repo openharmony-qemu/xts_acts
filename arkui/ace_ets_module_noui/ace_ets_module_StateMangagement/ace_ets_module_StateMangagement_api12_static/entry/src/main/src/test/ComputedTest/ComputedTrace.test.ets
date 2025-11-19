@@ -67,7 +67,7 @@ export default function ComputedTraceTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ComputedTraceTest state pages:" + JSON.stringify(pages));
-        if (!("ComputedTraceTest" == pages.name)) {
+        if (!("computedTrace" == pages.name)) {
           console.info("get ComputedTraceTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
@@ -88,7 +88,7 @@ export default function ComputedTraceTest() {
      * @tc.desc     ComputedTraceTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ComputedTraceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ComputedTraceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ComputedTraceTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -106,6 +106,10 @@ it('ComputedTraceTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
       obj = JSON.parseJsonElement(strJson);
       console.info("[ComputedTraceTest_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Li Huaa');
+
+      button = await driver.findComponent(ON.id('showTestNumber'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('computedTraceText3');
       obj = JSON.parseJsonElement(strJson);
