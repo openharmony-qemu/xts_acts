@@ -234,5 +234,49 @@ export default function nativeApiStringJsunit() {
       expect(value).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number    SUB_NAPI_EXTERNSTRING_0100
+     * @tc.name      testExternString0100
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('testExternString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testExternString0100";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiCreateExternalStringUtf16();
+        console.info('testExternString0100 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_EXTERNSTRING_0200
+     * @tc.name      testExternString0200
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('testExternString0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testExternString0200";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiCreateExternalStringAscii();
+        console.info('testExternString0200 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }
