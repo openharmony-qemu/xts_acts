@@ -1,0 +1,64 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_OHImageNDKSupplement_wLV23PHRhe1cnSe1zKYApYyxM_u7oeWglcLjdkK43_k=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BC9D7E55AD045F9DEF03038944E4B137F4C83853DC2C431AD27EBA0D60E8B9B3AE344CBAC28DF93",
+          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_OHImageNDKSupplement_wLV23PHRhe1cnSe1zKYApYyxM_u7oeWglcLjdkK43_k=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_OHImageNDKSupplement_wLV23PHRhe1cnSe1zKYApYyxM_u7oeWglcLjdkK43_k=.p12",
+          "storePassword": "0000001BCB76A9030F5A67D7B777BF2EF3A031A2648D59734E88AF25EDE0E0F843F5E8FFA3E2004C44C49F"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": 23,
+        "compatibleSdkVersion": 23,
+        "runtimeOS": "OpenHarmony",
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
