@@ -12,41 +12,71 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
-import { State ,Link} from '@ohos.arkui.stateManagement'
 
+import {
+  Component,ColumnAttribute,
+  Text,
+  Button,$r,
+  ClickEvent,AlignRuleOption,
+  Column,
+  List,
+  ListItemGroup,
+  Stepper,
+  StepperItem,
+  ListItem,
+  StickyStyle,
+  Position,
+  TextAlign,TextAttribute,
+  Color,
+  ItemState,
+  Margin
+} from '@ohos.arkui.component';
+import { Link, State } from '@ohos.arkui.stateManagement';
+
+function itemStyle(this: ColumnAttribute): this {
+  this.width(336)
+  this.height(621)
+  this.margin({ top: 48, left: 12 } as Margin)
+  this.borderRadius(24)
+  this.backgroundColor('#FFFFFF')
+  return this;
+}
+function itemTextStyle(this: TextAttribute): this {
+  this.fontColor('#182431')
+  this.fontSize(36)
+  this.fontWeight(500)
+  this.opacity(0.4)
+  this.margin({ top: 82, bottom: 40 } as Margin)
+  return this;
+}
 
 
 @Component
 export struct StepperView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: number = 0
+  @State currentIndex: number = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
-  @Link _alignRules: AlignRuleOption = {
-    top: { anchor: "__container__", align: VerticalAlign.Top }};
+  @Link _alignRules!: AlignRuleOption;
   private componentKey: string = '';
   private subassemblyWidth: number = 0;
   private subassemblyHeight: number = 0;
 
   build() {
     Stepper({
-      index: this.currentIndex
+      index: this.currentIndex as Int
     }) {
       StepperItem() {
         Column() {
           Text('Page One')
-            
-
-
+          .itemTextStyle()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
-        
+        } .itemStyle()
       }
       .nextLabel('Next')
       .status(this.firstState)
@@ -54,16 +84,13 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Two')
-            
-
-
+          .itemTextStyle()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
-        
+        }.itemStyle()
       }
       .nextLabel('Next')
       .prevLabel('Previous')
@@ -72,27 +99,21 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Three')
-            
-
-
+          .itemTextStyle()
           Button('change status:' + this.thirdState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.thirdState = this.thirdState === ItemState.Waiting ? ItemState.Normal : ItemState.Waiting
             })
-        }
-        
+        }.itemStyle()
       }
       .status(this.thirdState)
 
       StepperItem() {
         Column() {
           Text('Page Four')
-            
-
-
-        }
-        
+          .itemTextStyle()
+        }.itemStyle()
       }
     }
     .id('subassembly')

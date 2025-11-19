@@ -48,22 +48,26 @@ export default function defaultFlexByGridRowTest() {
   }
 
   //Test content and expected results
-  let testValues: TestValue[] = [{
+  let testValues: TestValue[] = [
+    {
     describe: 'FlexBasis',
     expectValue: {
       flexBasis: 'auto'
     }
-  }, {
+  },
+    {
     describe: 'FlexGrow',
     expectValue: {
       flexGrow: 0
     }
-  }, {
+  },
+    {
     describe: 'AlignSelf',
     expectValue: {
       alignSelf: 'ItemAlign.Auto'
     }
-  }]
+  }
+  ]
 
 
   describe('DefaultFlexByGridRowTest', () => {
@@ -79,8 +83,8 @@ export default function defaultFlexByGridRowTest() {
         expect(data.viewObj!.getElement('$attrs').getString('flexBasis')).assertEqual(data.testValue.expectValue.flexBasis);
       } else if (data.testValue.describe == 'FlexGrow') {
         // Test flexGrow defaults
-        console.info('[' + data.caseTag + ']data.viewObj.$attrs.flexGrow:' + data.viewObj!.getElement('$attrs').getString('flexGrow'));
-        expect(data.viewObj!.getElement('$attrs').getString('flexGrow')).assertEqual(data.testValue.expectValue.flexGrow);
+        console.info('[' + data.caseTag + ']data.viewObj.$attrs.flexGrow:' + data.viewObj!.getElement('$attrs').getDouble('flexGrow'));
+        expect(data.viewObj!.getElement('$attrs').getDouble('flexGrow')).assertEqual(data.testValue.expectValue.flexGrow);
       } else if (data.testValue.describe == 'AlignSelf') {
         // Test alignSelf defaults
         console.info('[' + data.caseTag + ']data.viewObj.$attrs.alignSelf:' + data.viewObj!.getElement('$attrs').getString('alignSelf'));

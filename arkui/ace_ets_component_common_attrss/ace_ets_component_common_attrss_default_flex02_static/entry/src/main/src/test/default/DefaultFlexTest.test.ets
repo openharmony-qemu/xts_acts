@@ -113,18 +113,18 @@ export default function defaultFlexTest() {
         expect(data.viewObj!.getElement('$attrs').getString('flexBasis')).assertEqual(data.testValue.expectValue.flexBasis);
       } else if (data.testValue.describe == 'FlexGrow') {
         // Test flexGrow defaults
-        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexGrow:' + data.viewObj!.getElement('$attrs').getString('flexGrow'));
-        expect(data.viewObj!.getElement('$attrs').getString('flexGrow')).assertEqual(data.testValue.expectValue.flexGrow);
+        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexGrow:' + data.viewObj!.getElement('$attrs').getDouble('flexGrow'));
+        expect(data.viewObj!.getElement('$attrs').getDouble('flexGrow')).assertEqual(data.testValue.expectValue.flexGrow);
       } else if (data.testValue.describe == 'FlexShrink') {
         // Test flexShrink defaults
-        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexShrink:' + data.viewObj!.getElement('$attrs').getString('flexShrink'));
+        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexShrink:' + data.viewObj!.getElement('$attrs').getDouble('flexShrink'));
         if ((data.pageConfig.containerView == 'Row') || (data.pageConfig.containerView == 'Column')) {
           console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
-          expect(data.viewObj!.getElement('$attrs').getString('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkRowColumn);
+          expect(data.viewObj!.getElement('$attrs').getDouble('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkRowColumn);
         } else if ((data.pageConfig.containerView == 'FlexRow') || (data.pageConfig.containerView == 'FlexRowReverse')
           || (data.pageConfig.containerView == 'FlexColumn') || (data.pageConfig.containerView == 'FlexColumnReverse')) {
           console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
-          expect(data.viewObj!.getElement('$attrs').getString('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkFlex);
+          expect(data.viewObj!.getElement('$attrs').getDouble('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkFlex);
         }
       } else if (data.testValue.describe == 'AlignSelf') {
         // Test alignSelf defaults

@@ -36,12 +36,19 @@ export default function AlignRulesTest() {
     'Stack', 'Tabs', 'Circle', 'Ellipse', 'Line', 'Polyline', 'Polygon', 'Path',
     'Rect', 'Shape', 'Panel', 'Refresh', 'RelativeContainer', 'Swiper', 'Navigator',
     'TextTimer', 'ScrollBar', 'Menu')
-
   //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 300;
   let parentHeight = 300;
   let subassemblyWidth = 100;
   let subassemblyHeight = 100;
+  let subassemblyCenter: AlignRuleOption = {
+    center: {
+      anchor: '__container__', align: VerticalAlign.Center
+    },
+    middle: {
+      anchor: '__container__', align: HorizontalAlign.Center
+    }
+  }
 
   //Page config, this param is required.
   let pageConfig: PageConfig = {
@@ -52,7 +59,7 @@ export default function AlignRulesTest() {
     parentHeight: parentHeight,
     subassemblyWidth: subassemblyWidth,
     subassemblyHeight: subassemblyHeight,
-    // subassemblyCenter: subassemblyCenter,
+    subassemblyCenter: subassemblyCenter,
     parentComponentKey: 'parentComponentKey',
     referenceComponentKey: 'referenceComponentKey'
   }
@@ -241,6 +248,8 @@ export default function AlignRulesTest() {
   }
   ]
 
+  // testAlignRulesBadgeSubassemblyVerticalCenterHorizontally
+
   describe('AlignRulesTest', () => {
     beforeAll(() => {
       console.info("alignRulesTest beforeAll start");
@@ -249,7 +258,7 @@ export default function AlignRulesTest() {
     });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-
+      // AppStorage.setOrCreate<AlignRuleOption>('_alignRules',  data.testValue.setValue)
       //Obtain the region information of the target component.
       console.info('[' + data.caseTag + '] get targetComponent rect after position changed.');
       let rec: RectValue = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
