@@ -197,7 +197,7 @@ export default function ImageSourceCreatePictureGif() {
         done();
       } catch (error) {
         console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
-        expect(error.code).assertUndefined();
+        expect(error.code).assertEqual('401');
         done();
       }
     })
@@ -221,7 +221,7 @@ export default function ImageSourceCreatePictureGif() {
         done();
       } catch (error) {
         console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
-        expect(error.code).assertUndefined();
+        expect(error.code).assertEqual('401');
         done();
       }
     })
@@ -246,7 +246,7 @@ export default function ImageSourceCreatePictureGif() {
         done();
       } catch (error) {
         console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
-        expect(error.code).assertUndefined();
+        expect(error.code).assertEqual('401');
         done();
       }
     })
