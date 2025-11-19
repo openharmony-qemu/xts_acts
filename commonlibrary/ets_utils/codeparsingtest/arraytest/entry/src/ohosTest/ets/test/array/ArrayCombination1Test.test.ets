@@ -1247,7 +1247,7 @@ export default function ArrayConstructor1Test() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('ArrayConstructor1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('ArrayConstructor1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const ta = new Float32Array([NaN, NaN, NaN]);
       const r = Array.from(ta.filter(x => true)).sort();
       expect(r.length).assertEqual(3);
