@@ -61,6 +61,7 @@ export default function EnableSwipeBackRouter() {
       await driver.delayMs(500);
 
       let btn1: Component = await driver.findComponent(ON.id('pushId'));
+      expect(btn1 !== null).assertTrue();
       await btn1.click();
       console.info('[EnableSwipeBackRouter_0100] btn1 click');
       await driver.delayMs(500);
@@ -113,6 +114,7 @@ export default function EnableSwipeBackRouter() {
       await driver.assertComponentExist(ON.id('enableId'));
 
       let btn3: Component = await driver.findComponent(ON.id('enableId'));
+      expect(btn3 !== null).assertTrue();
       await btn3.click();
       console.info('[EnableSwipeBackRouter_0200] btn3 click');
       await driver.delayMs(1000);

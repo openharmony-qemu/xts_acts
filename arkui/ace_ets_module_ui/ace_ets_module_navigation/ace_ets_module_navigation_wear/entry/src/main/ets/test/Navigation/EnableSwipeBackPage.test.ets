@@ -61,6 +61,7 @@ export default function EnableSwipeBackPage() {
       await driver.delayMs(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('pushId'));
+      expect(btn1 !== null).assertTrue();
       await btn1.click();
       console.info('[EnableSwipeBackPage_0100] btn1 click');
       await driver.delayMs(500);
@@ -113,6 +114,7 @@ export default function EnableSwipeBackPage() {
       await driver.assertComponentExist(ON.id('enableId'));
 
       let btn3: Component = await driver.findComponent(ON.id('enableId'));
+      expect(btn3 !== null).assertTrue();
       await btn3.click();
       console.info('[EnableSwipeBackPage_0200] btn3 click');
       await driver.delayMs(1000);
