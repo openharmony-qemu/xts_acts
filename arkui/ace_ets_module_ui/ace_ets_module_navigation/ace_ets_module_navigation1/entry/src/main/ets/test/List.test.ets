@@ -60,6 +60,8 @@ import PathStackPage from './PathStackPage.test'
 import NavDestinationStateActive from './NavDestinationStateActive.test'
 
 export default function testsuite() {
+  PathStackPage();
+
   InterceptionTest();
   NavigationTest();
   EnableShowHideWithContentCoverPage();
@@ -101,7 +103,6 @@ export default function testsuite() {
   QueryRouterPageInfoUndefined();
   PushDestination401();
 
-  PathStackPage();
   OnActivePage();
   NavDestinationStateActive();
 } 
