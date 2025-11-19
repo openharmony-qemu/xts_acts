@@ -42,14 +42,14 @@ export default function ArrayConstructorTestErr() {
     })
 
     /**
-     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST4900
-     * @tc.name ArrayConstructor1Test049
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5900
+     * @tc.name ArrayConstructor1Test059
      * @tc.desc Test Method Combination in Array/TypedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('ArrayConstructor1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('ArrayConstructor1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');
       const d2 = new Date('2021-01-01');
       const arr = [d1, d2];
@@ -62,14 +62,14 @@ export default function ArrayConstructorTestErr() {
     });
 
     /**
-     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14200
-     * @tc.name ArrayConstructor1Test142
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST24200
+     * @tc.name ArrayConstructor1Test242
      * @tc.desc Test Method Combination in Array/TypedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('ArrayConstructor1Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('ArrayConstructor1Test242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');
       const d2 = new Date('2021-01-01');
       const arr = [d1, d2];

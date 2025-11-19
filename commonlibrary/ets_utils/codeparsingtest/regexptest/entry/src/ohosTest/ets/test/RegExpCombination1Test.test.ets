@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import * as RegExpCombination1 from './RegExpCombination1';
+import * as RegExpCombination1 from './RegExpCombiNation1.test';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
