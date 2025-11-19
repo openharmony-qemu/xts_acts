@@ -168,6 +168,8 @@
   "MainAbility/pages/RichEditorApi20/setTypingParagraphStyle",
   "MainAbility/pages/RichEditorApi20/RichEditorEnableAutoSpacing",
   "MainAbility/pages/RichEditorApi20/RichEditorTextMenuItemId",
-  "MainAbility/pages/RichEditorApi21/ScrollBarColor"
+  "MainAbility/pages/RichEditorApi21/ScrollBarColor",
+  "MainAbility/pages/RichEditorApi22/richEditorObserver",
+  "MainAbility/pages/RichEditorApi22/richEditorSupportSvg2"
   ]
 }

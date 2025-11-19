@@ -188,6 +188,9 @@ import RichEditorUndoStyleTest from './RichEditorApi20Test/RichEditorUndoStyle.t
 import RichEditorEnableAutoSpacingTest from './RichEditorApi20Test/RichEditorEnableAutoSpacing.test';
 
 import RichEditorScrollBarColorTest from './RichEditorApi21Test/ScrollBarColor.test';
+import richEditorObserverTest from './RichEditorApi22Test/richEditorObserver.test';
+import richEditorSupportSvg2Test from './RichEditorApi22Test/richEditorSupportSvg2.test';
+
 
 export default function testsuite() {
   PresetTest();
@@ -365,4 +368,7 @@ export default function testsuite() {
   RichEditorEnableAutoSpacingTest();
 
   RichEditorScrollBarColorTest();      // Api21
+
+  richEditorObserverTest()             // Api22
+  richEditorSupportSvg2Test()
 }
