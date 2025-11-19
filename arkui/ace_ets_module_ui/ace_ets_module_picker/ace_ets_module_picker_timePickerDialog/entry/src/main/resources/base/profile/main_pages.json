@@ -16,6 +16,8 @@
     "MainAbility/pages/timePickerDialog/timePickerDialogWindowProperties",
     "MainAbility/pages/timePickerDialog/DateTimeOptions",
     "MainAbility/pages/timePickerDialog/TimePickerDialogAppearText",
-    "MainAbility/pages/timePickerDialog/TimePickerDialogCallback"
+    "MainAbility/pages/timePickerDialog/TimePickerDialogCallback",
+    "MainAbility/pages/timePickerDialog/timePickerDialogAcceptButtonStyle",
+    "MainAbility/pages/timePickerDialog/timePickerDialogCancelButtonStyle"
   ]
 }
