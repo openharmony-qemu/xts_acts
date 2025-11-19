@@ -67,8 +67,10 @@ export default class SetMissionContinueState extends EmbeddableUIAbility {
         }
       });
     });
-    this.context.terminateSelf(()=>{
-    });
+
+    setTimeout(() => { 
+      this.context.terminateSelf(); 
+    }, 500);
   }
 
   onBackground(): void {
