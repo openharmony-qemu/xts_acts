@@ -59,11 +59,11 @@ export class OpenHarmonyTestRunner implements TestRunner {
       cmd += ' -D'
     }
 
-    // setTimeout(() => {
+    setTimeout(() => {
       hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
       hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
-    // }, 5000);
+    }, 5000);
 
     hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
 
