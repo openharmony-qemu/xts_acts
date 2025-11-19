@@ -52,8 +52,8 @@ import {
     dataGroupId: "invalidDataGroupId",
   }
   
-  export default function abilityTest() {
-    describe('RelationStoreError1001Test', () => {
+  export default function RelationStoreError1001Test() {
+    describe('RelationStoreError1001Test', (): void => {
       beforeAll(async () => {
         hilog.info(domain, tag, '%{public}s', 'beforeAll');
         await Utils.msSleep(2000)
