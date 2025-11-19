@@ -14,11 +14,9 @@
  */
 
 
-
-
 import enabledTest from './enabled/EnabledTest.test';
 
 export default function testsuite() {
-  enabledTest ()
-
+  console.log('============ list start')
+  enabledTest()
 }

@@ -15,29 +15,26 @@
 
 
 import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
   Button,
   ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Flex,
-  Margin,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
   ButtonType,
   ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  Image,
+  ImageFit,
+  ItemAlign,
   Margin,
-  FontWeight
+  Scroller,
+  Text,
+  TextAttribute,
 } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -48,7 +45,8 @@ struct Index {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('router', router);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
+    } catch (error: Error) {
       console.log('error ' + error);
     }
 

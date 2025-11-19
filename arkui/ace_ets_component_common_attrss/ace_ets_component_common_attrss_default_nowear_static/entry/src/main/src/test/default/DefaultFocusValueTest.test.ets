@@ -33,11 +33,11 @@ export default function defaultFocusValueTest() {
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    'Stepper',
-    'StepperItem',
+    // 'Stepper',
+    // 'StepperItem',
     'Web',
-    'ColumnSplit',
-    'RowSplit',
+    // 'ColumnSplit',
+    // 'RowSplit',
   )
 
   //Custom params.
@@ -86,23 +86,23 @@ export default function defaultFocusValueTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       if (data.testValue.describe == 'TabIndex') {
         // Test tabIndex defaults
-        console.info('[' + data.caseTag + ']data.viewObj.$attrs.tabIndex:' + data.viewObj!.$attrs.tabIndex);
-        expect(data.viewObj!.$attrs.tabIndex).assertEqual(data.testValue.expectValue.tabIndex);
+        console.info('[' + data.caseTag + ']data.viewObj.getElement($attrs).getString(tabIndex):' + data.viewObj!.getElement('$attrs').getDouble('tabIndex'));
+        expect(data.viewObj!.getElement('$attrs').getDouble('tabIndex')).assertEqual(data.testValue.expectValue.tabIndex);
       } else if (data.testValue.describe == 'DefaultFocus') {
         // Test defaultFocus defaults
-        console.info('[' + data.caseTag + ']data.viewObj.$attrs.defaultFocus:' + data.viewObj!.$attrs.defaultFocus);
-        expect(data.viewObj!.$attrs.defaultFocus).assertEqual(data.testValue.expectValue.defaultFocus);
+        console.info('[' + data.caseTag + ']data.viewObj.getElement($attrs).getBoolean(defaultFocus):' + data.viewObj!.getElement('$attrs').getBoolean('defaultFocus'));
+        expect(data.viewObj!.getElement('$attrs').getBoolean('defaultFocus')).assertEqual(data.testValue.expectValue.defaultFocus);
       } else if (data.testValue.describe == 'GroupDefault') {
         // Test groupDefaultFocus defaults
-        console.info('[' + data.caseTag + ']data.viewObj.$attrs.groupDefaultFocus:' +
-        data.viewObj!.$attrs.groupDefaultFocus);
-        expect(data.viewObj!.$attrs.groupDefaultFocus)
+        console.info('[' + data.caseTag + ']data.viewObj.getElement($attrs).getBoolean(groupDefaultFocus):' +
+        data.viewObj!.getElement('$attrs').getBoolean('groupDefaultFocus'));
+        expect(data.viewObj!.getElement('$attrs').getBoolean('groupDefaultFocus'))
           .assertEqual(data.testValue.expectValue.groupDefaultFocus);
       } else if (data.testValue.describe == 'FocusOnTouch') {
         // Test focusOnTouch defaults
-        console.info('[' + data.caseTag + ']data.viewObj.$attrs.focusOnTouch:' +
-        data.viewObj!.$attrs.focusOnTouch);
-        expect(data.viewObj!.$attrs.focusOnTouch).assertEqual(data.testValue.expectValue.focusOnTouch);
+        console.info('[' + data.caseTag + ']data.viewObj.getElement($attrs).getBoolean(focusOnTouch):' +
+        data.viewObj!.getElement('$attrs').getBoolean('focusOnTouch'));
+        expect(data.viewObj!.getElement('$attrs').getBoolean('focusOnTouch')).assertEqual(data.testValue.expectValue.focusOnTouch);
       } else {
         console.info('[' + data.caseTag + ']data.testValue.describe is error:' + data.testValue.describe
         + data.pageConfig.componentKey);

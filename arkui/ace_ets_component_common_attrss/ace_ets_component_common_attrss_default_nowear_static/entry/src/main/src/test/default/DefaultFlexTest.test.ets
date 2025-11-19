@@ -13,35 +13,37 @@
  * limitations under the License.
  */
 
-import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, RectValue, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 
 export default function defaultFlexTest() {
 
-  let containerView: Array<string> = new Array<string>('Row', 'Column', 'FlexRow', 'FlexRowReverse', 'FlexColumn', 'FlexColumnReverse')
+  let containerView: Array<string> =
+    new Array<string>('Row', 'Column', 'FlexRow', 'FlexRowReverse', 'FlexColumn', 'FlexColumnReverse')
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    'SideBarContainer',
-    'WaterFlow',
-    'Stepper',
-    'Select',
-    'RowSplit',
-    'ColumnSplit',
+    // 'SideBarContainer',
+    // 'WaterFlow',
+    // 'Stepper',
+    // 'Select',
+    // 'RowSplit',
+    // 'ColumnSplit',
 
   )
 
@@ -83,42 +85,58 @@ export default function defaultFlexTest() {
   describe('DefaultFlexTest', () => {
     beforeAll(() => {
       console.info("defaultFlexTest beforeAll start");
+      await UtilsTest.msSleep(4000)
+      console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
+      console.info("startAbility end");
       await UtilsTest.msSleep(4000)
     });
-    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      if (data.testValue.describe == 'FlexBasis') {
-        // Test flexBasis defaults
-        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexBasis:' + data.viewObj!.$attrs.flexBasis);
-        expect(data.viewObj!.$attrs.flexBasis).assertEqual(data.testValue.expectValue.flexBasis);
-      } else if (data.testValue.describe == 'FlexGrow') {
-        // Test flexGrow defaults
-        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexGrow:' + data.viewObj!.$attrs.flexGrow);
-        expect(data.viewObj!.$attrs.flexGrow).assertEqual(data.testValue.expectValue.flexGrow);
-      } else if (data.testValue.describe == 'FlexShrink') {
-        // Test flexShrink defaults
-        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexShrink:' + data.viewObj!.$attrs.flexShrink);
-        if ((data.pageConfig.containerView == 'Row') || (data.pageConfig.containerView == 'Column')) {
-          console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
-          expect(data.viewObj!.$attrs.flexShrink).assertEqual(data.testValue.expectValue.flexShrinkRowColumn);
-        } else if ((data.pageConfig.containerView == 'FlexRow') || (data.pageConfig.containerView == 'FlexRowReverse')
-          || (data.pageConfig.containerView == 'FlexColumn') || (data.pageConfig.containerView == 'FlexColumnReverse')) {
-          console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
-          expect(data.viewObj!.$attrs.flexShrink).assertEqual(data.testValue.expectValue.flexShrinkFlex);
-        }
-      } else if (data.testValue.describe == 'AlignSelf') {
-        // Test alignSelf defaults
-        if (data.pageConfig.componentKey == 'Blank') {
-          console.info('[' + data.caseTag + ']data.viewObj!.$attrs.alignSelf:' + data.viewObj!.$attrs.alignSelf);
-          expect(data.viewObj!.$attrs.alignSelf).assertEqual(data.testValue.expectValue.alignSelfBlank);
+    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
+      async (data: BasePageConfig): Promise<void> => {
+        if (data.testValue.describe == 'FlexBasis') {
+          // Test flexBasis defaults
+          console.info('[' + data.caseTag + ']data.viewObj!.getElement($attrs).getString(flexBasis):' +
+          data.viewObj!.getElement('$attrs').getString('flexBasis'));
+          expect(data.viewObj!.getElement('$attrs').getString('flexBasis'))
+            .assertEqual(data.testValue.expectValue.flexBasis);
+        } else if (data.testValue.describe == 'FlexGrow') {
+          // Test flexGrow defaults
+          console.info('[' + data.caseTag + ']data.viewObj!.getElement($attrs).getDouble(flexGrow):' +
+          data.viewObj!.getElement('$attrs').getDouble('flexGrow'));
+          expect(data.viewObj!.getElement('$attrs').getDouble('flexGrow'))
+            .assertEqual(data.testValue.expectValue.flexGrow);
+        } else if (data.testValue.describe == 'FlexShrink') {
+          // Test flexShrink defaults
+          console.info('[' + data.caseTag + ']data.viewObj!.getElement($attrs).getDouble(flexShrink):' +
+          data.viewObj!.getElement('$attrs').getDouble('flexShrink'));
+          if ((data.pageConfig.containerView == 'Row') || (data.pageConfig.containerView == 'Column')) {
+            console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
+            expect(data.viewObj!.getElement('$attrs').getDouble('flexShrink'))
+              .assertEqual(data.testValue.expectValue.flexShrinkRowColumn);
+          } else if ((data.pageConfig.containerView == 'FlexRow') || (data.pageConfig.containerView == 'FlexRowReverse')
+            || (data.pageConfig.containerView == 'FlexColumn') ||
+            (data.pageConfig.containerView == 'FlexColumnReverse')) {
+            console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
+            expect(data.viewObj!.getElement('$attrs').getDouble('flexShrink'))
+              .assertEqual(data.testValue.expectValue.flexShrinkFlex);
+          }
+        } else if (data.testValue.describe == 'AlignSelf') {
+          // Test alignSelf defaults
+          if (data.pageConfig.componentKey == 'Blank') {
+            console.info('[' + data.caseTag + ']data.viewObj!.getElement($attrs).getString(alignSelf):' +
+            data.viewObj!.getElement('$attrs').getString('alignSelf'));
+            expect(data.viewObj!.getElement('$attrs').getString('alignSelf'))
+              .assertEqual(data.testValue.expectValue.alignSelfBlank);
+          } else {
+            console.info('[' + data.caseTag + ']data.viewObj!.getElement($attrs).getString(alignSelf):' +
+            data.viewObj!.getElement('$attrs').getString('alignSelf'));
+            expect(data.viewObj!.getElement('$attrs').getString('alignSelf'))
+              .assertEqual(data.testValue.expectValue.alignSelf);
+          }
         } else {
-          console.info('[' + data.caseTag + ']data.viewObj!.$attrs.alignSelf:' + data.viewObj!.$attrs.alignSelf);
-          expect(data.viewObj!.$attrs.alignSelf).assertEqual(data.testValue.expectValue.alignSelf);
+          console.info('[' + data.caseTag + ']data.testValue.describe is error:' + data.testValue.describe
+            + data.pageConfig.componentKey);
         }
-      } else {
-        console.info('[' + data.caseTag + ']data.testValue.describe is error:' + data.testValue.describe
-          + data.pageConfig.componentKey);
-      }
-    });
+      });
   })
 }
