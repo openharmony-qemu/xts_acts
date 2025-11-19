@@ -39,6 +39,7 @@ import {
   SizeOptions,
   Text,
   ThemeColorMode,
+  ImageBitmap
 } from '@ohos.arkui.component';
 import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -68,7 +69,7 @@ struct OffscreenCanvasFreeze {
             offContext.fillRect(0, 0, this.offCanvas.width, 150)
             let image = this.offCanvas.transferToImageBitmap()
             this.context.setTransform(1, 0, 0, 1, 50, 200)
-            this.context.transferFromImageBitmap(image)
+            this.context.transferFromImageBitmap(image as ImageBitmap)
           })
       }
     }.width('100%').height('100%')
