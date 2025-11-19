@@ -189,10 +189,9 @@ import {
   WebAttribute,
   WebviewController,
   WindowSceneAttribute,
-  XComponentAttribute,
-  AlignRuleOption
+  XComponentAttribute
 } from '@ohos.arkui.component';
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -528,7 +527,20 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   mSepia: number= 10
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     console.info(`sepia page show ${JSON.stringify(this.mSepia)}`)
+//     instance.sepia(this.mSepia)
+//   }
+// }
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   mSepia: number= 10
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     console.info(`sepia page show ${JSON.stringify(this.mSepia)}`)
+//     instance.sepia(this.mSepia)
+//   }
+// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mSepia: number = 10
 
@@ -1192,6 +1204,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1385,9 +1398,9 @@ struct sepiaPage {
   @State _sepiaMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _sepiaMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _sepiaNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  
+  // @State _sepiaNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _sepiaNavigationMod: NavigationModifier = new NavigationModifier()
-  
+  // @State _sepiaNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _sepiaPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _sepiaPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _sepiaQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1426,12 +1439,12 @@ struct sepiaPage {
   @State _sepiaXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
   @State parentComponentKey: string = '';
-  @StoragePropRef('_sepia') _sepia: SetValue = {
+  @StorageProp('_sepia') _sepia: SetValue = {
     height: 0, sepia: 0
   }
 
@@ -1443,13 +1456,13 @@ struct sepiaPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
 
   build() {
-    GridRow({ columns: this.columns, gutter: this.gutter }) {
+    GridRow({ columns: this.columns as Int, gutter: this.gutter }) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
@@ -1497,7 +1510,7 @@ struct sepiaPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: Infinity as Int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey).attributeModifier(this._sepiaMarqueeMod)
@@ -1509,7 +1522,15 @@ struct sepiaPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._sepiaMenuMod)
         } else if (this.targetView == 'NavRouter') {
-
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.commonStyle(this.componentKey).attributeModifier(this._sepiaNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1687,13 +1708,13 @@ struct sepiaPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._sepiaNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
@@ -1707,7 +1728,7 @@ struct sepiaPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption)
+              })
               .id('constraintSize')
           }.commonStyle(this.componentKey).attributeModifier(this._sepiaRelativeContainerMod)
         } else if (this.targetView == 'Row') {

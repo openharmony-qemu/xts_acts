@@ -189,10 +189,9 @@ import {
   WebAttribute,
   WebviewController,
   WindowSceneAttribute,
-  XComponentAttribute,
-  AlignRuleOption
+  XComponentAttribute
 } from '@ohos.arkui.component';
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -528,20 +527,20 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   mSaturate: number = 10
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
+//     instance.saturate(this.mSaturate)
+//   }
+// }
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   mSaturate: number = 10
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
+//     instance.saturate(this.mSaturate)
+//   }
+// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mSaturate: number = 10
 
@@ -1205,6 +1204,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1362,7 +1362,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct saturatePage {
-  @StoragePropRef('_saturate') _saturate: SetValue = {
+  @StorageProp('_saturate') _saturate: SetValue = {
     height: 0, saturate: 0
   }
   @State _saturateAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
@@ -1401,9 +1401,9 @@ struct saturatePage {
   @State _saturateMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _saturateMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _saturateNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  
+  // @State _saturateNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _saturateNavigationMod: NavigationModifier = new NavigationModifier()
-  
+  // @State _saturateNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _saturatePatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _saturatePluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _saturateQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1442,10 +1442,10 @@ struct saturatePage {
   @State _saturateXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
   @State parentComponentKey: string = '';
 
   onPageShow() {
@@ -1456,13 +1456,13 @@ struct saturatePage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
 
   build() {
-    GridRow({ columns: this.columns, gutter: this.gutter }) {
+    GridRow({ columns: this.columns as Int, gutter: this.gutter }) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
@@ -1510,7 +1510,7 @@ struct saturatePage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: Infinity as Int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey).attributeModifier(this._saturateMarqueeMod)
@@ -1522,15 +1522,15 @@ struct saturatePage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._saturateMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.commonStyle(this.componentKey).attributeModifier(this._saturateNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1708,13 +1708,13 @@ struct saturatePage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._saturateNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
@@ -1728,7 +1728,7 @@ struct saturatePage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption)
+              })
               .id('constraintSize')
           }.commonStyle(this.componentKey).attributeModifier(this._saturateRelativeContainerMod)
         } else if (this.targetView == 'Row') {
