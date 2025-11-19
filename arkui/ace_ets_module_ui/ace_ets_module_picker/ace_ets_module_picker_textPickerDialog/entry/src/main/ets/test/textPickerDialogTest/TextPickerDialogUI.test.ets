@@ -43,7 +43,7 @@ export default function TextPickerDialogAJsunit() {
     });
 
     /**
-     * @tc.number SUB_ACE_TextPickerDialogWindowPropertiesTest_0100
+     * @tc.number TextPickerDialogAJsunit_0100
      * @tc.name TextPickerDialogWindowPropertiesTest_0100
      * @tc.desc set api
      * @tc.level: Level 2

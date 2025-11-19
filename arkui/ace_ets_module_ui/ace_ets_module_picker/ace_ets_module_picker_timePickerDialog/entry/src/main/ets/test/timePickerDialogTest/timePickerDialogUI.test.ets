@@ -41,9 +41,15 @@ export default function TimePickerDialogUITest() {
       done()
     });
 
-
+    /*
+     * @tc.number: TimePickerDialogUITest_0100
+     * @tc.name  : TimePickerDialogUITest_0100
+     * @tc.desc  : set api
+     * @tc.level : Level 2
+     * @tc.type  :
+     * @tc.size  :
+     */
     it('TimePickerDialogUITest_0100', Level.LEVEL2, async (done: Function) => {
-
       console.info('TimePickerDialogUITest_0100 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('TimePicker_dialog_A'));
@@ -60,6 +66,5 @@ export default function TimePickerDialogUITest() {
       await CommonFunc.sleep(1000);
       done();
     });
-
   })
 }
