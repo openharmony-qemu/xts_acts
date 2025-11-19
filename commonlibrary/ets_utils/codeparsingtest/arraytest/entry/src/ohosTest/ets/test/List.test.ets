@@ -45,9 +45,9 @@ import ArrayCombinationTest2 from './array/ArrayCombination002.test';
 import ArrayCombinationTest3 from './array/ArrayCombination003.test';
 import ArrayCombinationTest4 from './array/ArrayCombination004.test';
 
-import ArrayConstructor1Test from './ArrayCombination1Test.test';
-import ArrayConstructor2Test from './ArrayCombination2Test.test';
-import ArrayConstructorTestErr from './ArrayCombinationTestErr.test';
+import ArrayConstructor1Test from './array/ArrayCombination1Test.test';
+import ArrayConstructor2Test from './array/ArrayCombination2Test.test';
+import ArrayConstructorTestErr from './array/ArrayCombinationTestErr.test';
 export default function testsuite() {
   ArrayCombinationTest1();
   ArrayCombinationTest2();
