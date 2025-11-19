@@ -26,7 +26,7 @@ async function createPixelMapSyncPromiseTest(done: Function, testName: string, c
     done();
   } catch (error) {
     console.info(TAG, `failed; error:`,JSON.stringify(error),error.code, testName);
-    expect().assertFail();
+    callback(error.code);
     done();
   }
 }
@@ -39,7 +39,7 @@ async function createPixelMapSyncOptsPromiseTest(done: Function, testName: strin
     done();
   } catch (error) {
     console.info(TAG, `failed; error:`,JSON.stringify(error),error.code, testName);
-    expect().assertFail();
+    callback(error.code);
     done();
   }
 }
@@ -52,7 +52,7 @@ async function createPixelMapSyncAbnormalPromiseTest(done: Function, testName: s
     done();
   } catch (error) {
     console.info(TAG, `failed; error:`,JSON.stringify(error),error.code, testName);
-    expect().assertFail();
+    callback(error.code);
     done();
   }
 }
