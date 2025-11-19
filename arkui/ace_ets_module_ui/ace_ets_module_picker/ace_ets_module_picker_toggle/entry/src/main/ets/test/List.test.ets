@@ -17,10 +17,10 @@ import toggleJsunit from './Toggle/ToggleJsunit.test';
 import toggle3Jsunit from './Toggle/Toggle3Jsunit.test';
 import ToggleJsunit from './Toggle/Toggle4Jsunit.test';
 
-import ToggleContentModifier from './ToggleTest/ToggleContentModifier.test';
-import ToggleSwitchStyle from './ToggleTest/ToggleSwitchStyle.test';
-import ToggleContentIsOn from './ToggleTest/ToggleIsOn.test';
-import ToggleContentEnabled from './ToggleTest/ToggleEnabled.test';
+import ToggleContentModifier from './Toggle/ToggleContentModifier.test';
+import ToggleSwitchStyle from './Toggle/ToggleSwitchStyle.test';
+import ToggleContentIsOn from './Toggle/ToggleIsOn.test';
+import ToggleContentEnabled from './Toggle/ToggleEnabled.test';
 
 import toggleNode from './Toggle/toggleNode.test';
 import toggleOnChangeModifierTest from './Toggle/toggleOnChangeModifier.test';
