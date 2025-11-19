@@ -301,8 +301,5 @@ export default function webViewContCreatePdfAndOthersError() {
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
 
- 
-
-
   })
 }
