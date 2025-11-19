@@ -14,10 +14,64 @@
  */
 import InputPresetTest from './PresetTest/InputPresetTest.test';
 
+import APIgetUIFontConfigJsunit from './FontTest/APIgetUIFontConfigJsunit.test';
+import FontJsunit from './FontTest/FontJsunit.test';
+import StageFontTest from './FontTest/StageFontTest.test';
+import UIFontAliasInfo from './FontTest/UIFontAliasInfo.test';
+import UIfontTest from './FontTest/UIfontTest.test';
+
+import ContextGetMeasureUtils from './MeasureTest/ContextGetMeasureUtils.test';
+import GetLayoutTest from './MeasureTest/GetLayoutTest.test';
 import MeasureJsunitTest from './MeasureTest/MeasureJsunitTest.test';
+import MeasureOptionsTest from './MeasureTest/MeasureOptionsTest.test';
+import TextCommonTextComputing1 from './MeasureTest/TextCommonTextComputing1.test';
+import TextCommonTextComputing2 from './MeasureTest/TextCommonTextComputing2.test';
+import TextCommonTextComputing3 from './MeasureTest/TextCommonTextComputing3.test';
+import TextCommonTextComputing4 from './MeasureTest/TextCommonTextComputing4.test';
+import TextCommonTextComputing5 from './MeasureTest/TextCommonTextComputing5.test';
+import TextCommonTextComputing6 from './MeasureTest/TextCommonTextComputing6.test';
+import TextCommonTextComputing7 from './MeasureTest/TextCommonTextComputing7.test';
+import TextCommonTextComputing8 from './MeasureTest/TextCommonTextComputing8.test';
+import TextCommonTextComputing9 from './MeasureTest/TextCommonTextComputing9.test';
+import TextGetParagraphsTest from './MeasureTest/TextGetParagraphsTest.test';
+
+import BindSelectionMenuTest from './BindSelectionMenuTest.test';
+import KeyboardAvoidModeTest from './KeyboardAvoidMode.test';
+import ResourceModifierTest from './ResourceModifier.test';
+import ResourceNormalTest from './ResourceNormal.test';
+import TextAddApi1 from './TextAddApi1.test';
+import TextMenuItemIdEqualsTest from './TextMenuItemIdEqualsTest.test';
+import TextMenuType from './TextMenuType.test';
 
 export default function testsuite() {
   InputPresetTest()
+  // FontTest
+  APIgetUIFontConfigJsunit()
+  FontJsunit()
+  StageFontTest()
+  UIFontAliasInfo()
+  UIfontTest()
   // MeasureTest
+  ContextGetMeasureUtils()
+  GetLayoutTest()
   MeasureJsunitTest()
+  MeasureOptionsTest()
+  TextCommonTextComputing1()
+  TextCommonTextComputing2()
+  TextCommonTextComputing3()
+  TextCommonTextComputing4()
+  TextCommonTextComputing5()
+  TextCommonTextComputing6()
+  TextCommonTextComputing7()
+  TextCommonTextComputing8()
+  TextCommonTextComputing9()
+  TextGetParagraphsTest()
+
+  BindSelectionMenuTest()
+  KeyboardAvoidModeTest()
+  ResourceModifierTest()
+  ResourceNormalTest()
+  TextAddApi1()
+  TextMenuItemIdEqualsTest()
+  TextMenuType()
 }
