@@ -20,12 +20,12 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { OverlayOptions, Alignment } from '@ohos.arkui.component'
 
 export default function OverlayTest() {
-  
+  //A list of components that support the position attribute, which is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Custom params.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -76,11 +76,11 @@ export default function OverlayTest() {
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       console.info('[' + data.caseTag + '] overlayTest');
-      
+      // console.info('[' + data.caseTag + '] check overlay.' + ` ${data.testValue.setValue.overlay.options.align} ${data.testValue.setValue.overlay.options.offset.x} ${data.testValue.setValue.overlay.options.offset.y} ${data.testValue.setValue.overlay.value}`);
       console.info('[' + data.testValue.expectValue.overlay + '] expectValue');
       console.info('[' + data.viewObj!.getElement('$attrs').getElement('overlay') + '] viewObj.$attrs.overlay');
       expect(data.viewObj!.getElement('$attrs').getElement('overlay').getString('title')).assertEqual(data.testValue.expectValue.overlay.value);

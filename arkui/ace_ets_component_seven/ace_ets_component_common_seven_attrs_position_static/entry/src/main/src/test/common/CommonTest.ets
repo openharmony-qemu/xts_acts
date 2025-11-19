@@ -62,7 +62,12 @@ export default class CommonTest {
             caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
           }
 
-          
+          /**
+           * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
+           * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
+           * @tc.desc Test whether the state of different components
+           *            after modifying their properties meets expectations
+           */
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
             //Push page.
@@ -101,7 +106,7 @@ export default class CommonTest {
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err) {
+            } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);

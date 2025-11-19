@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,8 +25,8 @@ import { NavigationView } from '../../view/position/NavigationView';
 import { attrsManager } from '../../common/AttrsManager'
 import router from '@ohos.router'
 import {
-  AlignRuleOption,
   $r,
+  AlignRuleOption,
   AlphabetIndexer,
   AlphabetIndexerAttribute,
   AttributeModifier,
@@ -213,7 +213,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component'
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -1305,7 +1305,7 @@ struct PositionPage {
   //Use for Scroll,Grid,DataPanel.
   public valueArr: number[] = [5, 10, 10, 7, 9, 10, 10, 10, 10] as number[]
   // @State _position: Position = { x: 1, y: 1 } as Position;
-  @StorageProp('_position') _position: Position = { x: 1, y: 1 } as Position;
+  @StoragePropRef('_position') _position: Position = { x: 1, y: 1 } as Position;
   @State _positionAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _positionBadgeMod: BadgeModifier = new BadgeModifier()
   //Blank Component is not found on build
@@ -1401,7 +1401,7 @@ struct PositionPage {
   @State componentKey: string = '';
   @State parentWidth: number = 0;
   @State parentHeight: number = 0;
-  @State columns: int = 0;
+  @State columns: Int = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
   @State parentBackGroundColor: string = '';
@@ -1444,8 +1444,8 @@ struct PositionPage {
         } else if (this.targetView == 'Blank') {
           Blank()
             .backgroundColor(Color.Yellow)
-            .commonStyleBlank(this.componentKey, this._position)
             .attributeModifier(this._positionBlankMod)
+            .commonStyleBlank(this.componentKey, this._position)
         } else if (this.targetView == 'Checkbox') {
           Checkbox().commonStyle(this.componentKey).attributeModifier(this._positionCheckboxMod)
         } else if (this.targetView == 'CheckboxGroup') {

@@ -14,12 +14,12 @@
  */
 
 import {
-  Component,
   AlphabetIndexer,
   AlphabetIndexerOptions,
+  Component,
+  FontWeight,
   IndexerAlign,
-  Position,
-  FontWeight
+  Position
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
@@ -44,6 +44,6 @@ export struct AlphabetIndexerView {
       .itemSize(28)
       .alignStyle(IndexerAlign.Left)
       .position(this._position)
-      .key(this.componentKey)
+      .key(this.componentKey as String)
   }
 }

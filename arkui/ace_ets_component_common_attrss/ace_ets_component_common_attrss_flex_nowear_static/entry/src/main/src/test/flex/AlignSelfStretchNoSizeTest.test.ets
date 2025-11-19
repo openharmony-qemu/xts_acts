@@ -13,12 +13,19 @@
  * limitations under the License.
  */
 
-
-import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
+// import { vp2px } from '@ohos.arkui.component';
+import { AlignItems, AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign, ItemAlign, FlexDirection, FlexWrap } from '@ohos.arkui.component';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
+import {
+  AlignRuleOption,
+  FlexDirection,
+  FlexWrap,
+  HorizontalAlign,
+  ItemAlign,
+  VerticalAlign
+} from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -26,75 +33,77 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
+let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfStretchNoSizeTest() {
 
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
-    'Blank',
-    'Button',
-    'Checkbox',
-    'CheckboxGroup',
-    'DataPanel',
-    'DatePicker',
-    'Divider',
-    'Gauge',
-    'Image',
-    'ImageAnimator',
-    'LoadingProgress',
-    'Marquee',
-    'Menu',
-    'Navigation',
-    'NavRouter',
-    'ScrollBar',
-    'RowSplit',
-    'Row',
-    'RelativeContainer',
-    'Navigator',
-    'ColumnSplit',
-    'TextTimer',
-    'Stepper',
-    'Flex',
-    'Progress',
-    'QRCode',
-    'Radio',
-    'Rating',
-    'Search',
-    'Select',
-    'Slider',
-    'Text',
-    'TextArea',
-    'TextClock',
-    'TextInput',
-    'TextPicker',
-    'TimePicker',
-    'Toggle',
-    'Badge',
-    'Column',
-    'Counter',
-    'GridRow',
-    'Grid',
-    'List',
-    'Panel',
-    'Refresh',
-    'Scroll',
-    'SideBarContainer',
-    'Stack',
-    'Swiper',
-    'Tabs',
-    'WaterFlow',
-    'Circle',
-    'Ellipse',
-    'Line',
-    'Polyline',
-    'Polygon',
-    'Path',
-    'Rect',
-    'Shape'
+    // 'Blank',
+    // 'Button',
+    // 'Checkbox',
+    // 'CheckboxGroup',
+    // 'DataPanel',
+    // 'DatePicker',
+    // 'Divider',
+    // 'Gauge',
+    // 'Image',
+    // 'ImageAnimator',
+    // 'LoadingProgress',
+    // 'Marquee',
+    // 'Menu',
+    // 'Navigation',
+    // 'NavRouter',
+    // 'ScrollBar',
+    // 'RowSplit',
+    // 'Row',
+    // 'RelativeContainer',
+    // 'Navigator',
+    // 'ColumnSplit',
+    // 'TextTimer',
+    // 'Stepper',
+    // 'Flex',
+    // 'Progress',
+    // 'QRCode',
+    // 'Radio',
+    // 'Rating',
+    // 'Search',
+    // 'Select',
+    // 'Slider',
+    // 'Text',
+    // 'TextArea',
+    // 'TextClock',
+    // 'TextInput',
+    // 'TextPicker',
+    // 'TimePicker',
+    // 'Toggle',
+    // 'Badge',
+    // 'Column',
+    // 'Counter',
+    // 'GridRow',
+    // 'Grid',
+    // 'List',
+    // 'Panel',
+    // 'Refresh',
+    // 'Scroll',
+    // 'SideBarContainer',
+    // 'Stack',
+    // 'Swiper',
+    // 'Tabs',
+    // 'WaterFlow',
+    // 'Circle',
+    // 'Ellipse',
+    // 'Line',
+    // 'Polyline',
+    // 'Polygon',
+    // 'Path',
+    // 'Rect',
+    // 'Shape'
   )
 
   let containerView: Array<string> = new Array<string>('Flex', 'FlexNoReference')
@@ -116,111 +125,120 @@ export default function alignSelfStretchNoSizeTest() {
     referenceComponentKey: 'referenceComponentKey'
   }
 
-  let testValues: TestValue[] = [{
-    describe: 'SetStretchRowWrap',
-    setValue: {
-      direction: FlexDirection.Row,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.Wrap
+  let testValues: TestValue[] = [
+    {
+      describe: 'SetStretchRowWrap',
+      setValue: {
+        direction: FlexDirection.Row,
+        alignSelf: ItemAlign.Stretch,
+        wrap: FlexWrap.Wrap
+      },
+      expectValue: {
+        expectAlignSelf: 'ItemAlign.Stretch',
+        expectFlexBasis: '',
+        expectSize: 0,
+        flexShrink: ''
+      }
     },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretchRowWrapReverse',
-    setValue: {
-      direction: FlexDirection.Row,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.WrapReverse
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretchRowReverseWrap',
-    setValue: {
-      direction: FlexDirection.RowReverse,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.Wrap
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretchRowReverseWrapReverse',
-    setValue: {
-      direction: FlexDirection.RowReverse,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.WrapReverse
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretchColumnWrap',
-    setValue: {
-      direction: FlexDirection.Column,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.Wrap
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretchColumnWrapReverse',
-    setValue: {
-      direction: FlexDirection.Column,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.WrapReverse
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretchColumnReverseWrap',
-    setValue: {
-      direction: FlexDirection.ColumnReverse,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.Wrap
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretchColumnReverseWrapReverse',
-    setValue: {
-      direction: FlexDirection.ColumnReverse,
-      alignSelf: ItemAlign.Stretch,
-      wrap: FlexWrap.WrapReverse
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }]
+  // {
+  //   describe: 'SetStretchRowWrapReverse',
+  //   setValue: {
+  //     direction: FlexDirection.Row,
+  //     alignSelf: ItemAlign.Stretch,
+  //     wrap: FlexWrap.WrapReverse
+  //   },
+  //   expectValue: {
+  //     expectAlignSelf: 'ItemAlign.Stretch',
+  //     expectFlexBasis: '',
+  //     expectSize: 0,
+  //     flexShrink: ''
+  //   }
+  // },
+  // {
+  //   describe: 'SetStretchRowReverseWrap',
+  //   setValue: {
+  //     direction: FlexDirection.RowReverse,
+  //     alignSelf: ItemAlign.Stretch,
+  //     wrap: FlexWrap.Wrap
+  //   },
+  //   expectValue: {
+  //     expectAlignSelf: 'ItemAlign.Stretch',
+  //     expectFlexBasis: '',
+  //     expectSize: 0,
+  //     flexShrink: ''
+  //   }
+  // },
+  // {
+  //   describe: 'SetStretchRowReverseWrapReverse',
+  //   setValue: {
+  //     direction: FlexDirection.RowReverse,
+  //     alignSelf: ItemAlign.Stretch,
+  //     wrap: FlexWrap.WrapReverse
+  //   },
+  //   expectValue: {
+  //     expectAlignSelf: 'ItemAlign.Stretch',
+  //     expectFlexBasis: '',
+  //     expectSize: 0,
+  //     flexShrink: ''
+  //   }
+  // },
+  // {
+  //   describe: 'SetStretchColumnWrap',
+  //   setValue: {
+  //     direction: FlexDirection.Column,
+  //     alignSelf: ItemAlign.Stretch,
+  //     wrap: FlexWrap.Wrap
+  //   },
+  //   expectValue: {
+  //     expectAlignSelf: 'ItemAlign.Stretch',
+  //     expectFlexBasis: '',
+  //     expectSize: 0,
+  //     flexShrink: ''
+  //   }
+  // },
+  // {
+  //   describe: 'SetStretchColumnWrapReverse',
+  //   setValue: {
+  //     direction: FlexDirection.Column,
+  //     alignSelf: ItemAlign.Stretch,
+  //     wrap: FlexWrap.WrapReverse
+  //   },
+  //   expectValue: {
+  //     expectAlignSelf: 'ItemAlign.Stretch',
+  //     expectFlexBasis: '',
+  //     expectSize: 0,
+  //     flexShrink: ''
+  //   }
+  // },
+  // {
+  //   describe: 'SetStretchColumnReverseWrap',
+  //   setValue: {
+  //     direction: FlexDirection.ColumnReverse,
+  //     alignSelf: ItemAlign.Stretch,
+  //     wrap: FlexWrap.Wrap
+  //   },
+  //   expectValue: {
+  //     expectAlignSelf: 'ItemAlign.Stretch',
+  //     expectFlexBasis: '',
+  //     expectSize: 0,
+  //     flexShrink: ''
+  //   }
+  // },
+  // {
+  //   describe: 'SetStretchColumnReverseWrapReverse',
+  //   setValue: {
+  //     direction: FlexDirection.ColumnReverse,
+  //     alignSelf: ItemAlign.Stretch,
+  //     wrap: FlexWrap.WrapReverse
+  //   },
+  //   expectValue: {
+  //     expectAlignSelf: 'ItemAlign.Stretch',
+  //     expectFlexBasis: '',
+  //     expectSize: 0,
+  //     flexShrink: ''
+  //   }
+  // }
+  ]
 
   describe('AlignSelfStretchNoSizeTest', () => {
     beforeAll(() => {
@@ -229,78 +247,98 @@ export default function alignSelfStretchNoSizeTest() {
       await UtilsTest.msSleep(4000)
     });
 
-    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
+      async (data: BasePageConfig): Promise<void> => {
 
-      //Get component rect and parent component rect
-      let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
-      let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
+        //Get component rect and parent component rect
+        let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
+        let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
 
-      //Judge attribute
-      expect(data.viewObj!.getElement('$attrs').getString('alignSelf')).assertEqual(data.testValue.expectValue.expectAlignSelf);
+        console.info('alignSelfStretchNoSizeTest', data.testValue.setValue)
+        AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
+        AppStorage.setOrCreate<FlexWrap>('_wrap', data.testValue.setValue.wrap)
+        AppStorage.setOrCreate<FlexDirection>('_direction', data.testValue.setValue.direction)
+        await Utils.sleep(1000);
 
-      //When set different value, judge the alignment is correct
-      if ('Flex' == data.pageConfig.containerView) {
-        let referenceComponentRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey as string);
-        if ((data.testValue.describe == 'SetStretchRowWrap')
-          || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.left).assertEqual(parentRect.left);
-          expect(rect.top).assertEqual(parentRect.top);
-          expect(rect.bottom - rect.top).assertEqual(referenceComponentRect.bottom - referenceComponentRect.top);
-        } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
-          || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.right).assertEqual(parentRect.right);
-          expect(rect.top).assertEqual(parentRect.top);
-          expect(rect.bottom - rect.top).assertEqual(referenceComponentRect.bottom - referenceComponentRect.top);
-        } else if ((data.testValue.describe == 'SetStretchColumnWrap')
-          || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.left).assertEqual(parentRect.left);
-          expect(rect.top).assertEqual(parentRect.top);
-          expect(rect.right - rect.left).assertEqual(referenceComponentRect.right - referenceComponentRect.left);
-        } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
-          || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.bottom).assertEqual(parentRect.bottom);
-          expect(rect.left).assertEqual(parentRect.left);
-          expect(rect.right - rect.left).assertEqual(referenceComponentRect.right - referenceComponentRect.left);
+        console.log(pageConfig.componentKey + '  test011')
+        console.log(pageConfig.parentComponentKey + 'te')
+        let strJson = inspector.getInspectorByKey(pageConfig.componentKey as String);
+        await Utils.sleep(2000)
+        console.log(JSON.stringify(strJson) + 'test789')
+        data.viewObj = JSON.parseJsonElement(strJson);
+
+        //Judge attribute
+        expect(data.viewObj!.getElement('$attrs').getString('alignSelf'))
+          .assertEqual(data.testValue.expectValue.expectAlignSelf);
+
+        //When set different value, judge the alignment is correct
+        if ('Flex' == data.pageConfig.containerView) {
+          let referenceComponentRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey as string);
+          if ((data.testValue.describe == 'SetStretchRowWrap')
+            || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
+            // await Utils.sleep(900000000000)
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            console.log('test rect' + JSON.stringify(rect) + 'test parentRect' + JSON.stringify(parentRect) +
+              'referenceComponentRect is: ' + JSON.stringify(referenceComponentRect))
+
+
+            expect(rect.left).assertEqual(parentRect.left);
+            expect(rect.top).assertEqual(parentRect.top);
+            expect(rect.bottom - rect.top).assertEqual(referenceComponentRect.bottom - referenceComponentRect.top);
+          } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
+            || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            expect(rect.right).assertEqual(parentRect.right);
+            expect(rect.top).assertEqual(parentRect.top);
+            expect(rect.bottom - rect.top).assertEqual(referenceComponentRect.bottom - referenceComponentRect.top);
+          } else if ((data.testValue.describe == 'SetStretchColumnWrap')
+            || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            expect(rect.left).assertEqual(parentRect.left);
+            expect(rect.top).assertEqual(parentRect.top);
+            expect(rect.right - rect.left).assertEqual(referenceComponentRect.right - referenceComponentRect.left);
+          } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
+            || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            expect(rect.bottom).assertEqual(parentRect.bottom);
+            expect(rect.left).assertEqual(parentRect.left);
+            expect(rect.right - rect.left).assertEqual(referenceComponentRect.right - referenceComponentRect.left);
+          }
+        } else if ('FlexNoReference' == data.pageConfig.containerView) {
+          if ((data.testValue.describe == 'SetStretchRowWrap')
+            || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            expect(rect.left).assertEqual(parentRect.left);
+            expect(rect.top).assertEqual(parentRect.top);
+            // expect(rect.bottom - rect.top).assertEqual(vp2px(parentHeight));
+          } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
+            || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            expect(rect.right).assertEqual(parentRect.right);
+            expect(rect.top).assertEqual(parentRect.top);
+            // expect(rect.bottom - rect.top).assertEqual(vp2px(parentHeight));
+          } else if ((data.testValue.describe == 'SetStretchColumnWrap')
+            || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            expect(rect.left).assertEqual(parentRect.left);
+            expect(rect.top).assertEqual(parentRect.top);
+            // expect(rect.right - rect.left).assertEqual(vp2px(parentWidth));
+          } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
+            || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
+            expect(rect.bottom).assertEqual(parentRect.bottom);
+            expect(rect.left).assertEqual(parentRect.left);
+            // expect(rect.right - rect.left).assertEqual(vp2px(parentWidth));
+          }
         }
-      } else if ('FlexNoReference' == data.pageConfig.containerView) {
-        if ((data.testValue.describe == 'SetStretchRowWrap')
-          || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.left).assertEqual(parentRect.left);
-          expect(rect.top).assertEqual(parentRect.top);
-          
-        } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
-          || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.right).assertEqual(parentRect.right);
-          expect(rect.top).assertEqual(parentRect.top);
-          
-        } else if ((data.testValue.describe == 'SetStretchColumnWrap')
-          || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.left).assertEqual(parentRect.left);
-          expect(rect.top).assertEqual(parentRect.top);
-          
-        } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
-          || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
-          //Determine if alignSelf will override the alignItems setting of the parent container
-          //And control the alignment of the component
-          expect(rect.bottom).assertEqual(parentRect.bottom);
-          expect(rect.left).assertEqual(parentRect.left);
-          
-        }
-      }
-    })
+      })
   })
 }

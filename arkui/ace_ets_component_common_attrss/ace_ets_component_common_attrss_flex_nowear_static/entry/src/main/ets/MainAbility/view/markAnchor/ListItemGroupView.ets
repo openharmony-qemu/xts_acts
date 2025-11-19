@@ -14,21 +14,21 @@
  */
 
 import {
-  Component,
-  Text,
+  Builder,
   Button,
   ClickEvent,
-  Column,
-  List,
-  ListItemGroup,
-  ForEach,
-  Builder,
-  ListItem,
-  StickyStyle,
-  Position,
-  TextAlign,
   Color,
-  ListItemGroupOptions
+  Column,
+  Component,
+  ForEach,
+  List,
+  ListItem,
+  ListItemGroup,
+  ListItemGroupOptions,
+  Position,
+  StickyStyle,
+  Text,
+  TextAlign
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
@@ -72,7 +72,30 @@ export struct ListItemGroupView {
 
   build() {
     List({ space: 20 }) {
-
+      //未交付
+      // ListItemGroup({ header: this.itemHead('Monday'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .width(this.subassemblyWidth)
+      // .height(this.subassemblyHeight)
+      // .borderRadius(20)
+      // .markAnchor(this._markAnchor)
+      // .key(this.componentKey as String)
+      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+      //
+      // ListItemGroup({ header: this.itemHead('Tuesday'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .borderRadius(20)
+      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
     }
     .width(this.parentWidth)
     .height(this.parentHeight)
