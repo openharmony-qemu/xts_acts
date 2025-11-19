@@ -156,6 +156,23 @@
         "MainAbility/pages/back_router/EnableAlertBeforeBackPage",
         "MainAbility/pages/ohosRouter/RouterMode",
         "MainAbility/pages/ohosRouter/RouterModeCall",
-        "MainAbility/pages/ohosRouter/RouterCall"
+        "MainAbility/pages/ohosRouter/RouterCall",
+        "MainAbility/pages/Router2/Router1",
+        "MainAbility/pages/Router2/Router2",
+        "MainAbility/pages/Router2/Router3",
+        "MainAbility/pages/Router2/Router4",
+        "MainAbility/pages/Router2/pageA",
+        "MainAbility/pages/Router2/pageB",
+        "MainAbility/pages/Router2/pageC",
+        "MainAbility/pages/Router2/pageOne",
+        "MainAbility/pages/Router2/pageTwo",
+        "MainAbility/pages/Router2/pushUrlasync",
+        "MainAbility/pages/Router2/stageRouter",
+	    "MainAbility/pages/Router2/deReplace",
+        "MainAbility/pages/Router2/routerReplace",
+	    "MainAbility/pages/Router2/systemRouterA",
+        "MainAbility/pages/Router2/systemRouterB",
+	    "MainAbility/pages/Router/ohosRouterA",
+        "MainAbility/pages/Router/ohosRouterB"
     ]
 }

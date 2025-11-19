@@ -125,11 +125,20 @@ import RouterMode from './ohosRouterTest/RouterMode.test';
 import RouterModeCall from './ohosRouterTest/RouterModeCall.test';
 import RouterCall from './ohosRouterTest/RouterCall.test';
 
+import Router1 from './Router2/Router1.test'
+import Router2 from './Router2/Router2.test'
+import Router3 from './Router2/Router3.test'
+import Router4 from './Router2/Router4.test'
+import stageRouterTest from './Router2/stageRouter.test'
+import routerReplaceJsunit from './Router2/routerReplaceJsunit.test';
+import systemRouterJsunit from './Router2/SystemRouterJsunit.test';
+import ohosRouterJsunit from './Router2/OhosRouterJsnuit.test';
+
 export default function testsuite() {
   OnNewParamRouter();
   RouterReplaceUrl401();
   pageRouteTest();
-    router_getStateByUrl1();
+  router_getStateByUrl1();
   router_getStateByUrl2();
   router_getStateByIndex3();
   router_getStateByIndex4();
@@ -238,4 +247,13 @@ export default function testsuite() {
   RouterMode();
   RouterModeCall();
   RouterCall();
+
+  Router1();
+  Router2();
+  Router3();
+  Router4();
+  stageRouterTest();
+  routerReplaceJsunit();
+  systemRouterJsunit();
+  ohosRouterJsunit();
 }
