@@ -21,6 +21,8 @@ import CameraDeprecatedCaptureSessionTest from './camera/CameraDeprecatedCapture
 import getSupportedSceneModesTest from './camera/getSupportedSceneModes.test';
 import CameraSessionPreviewRotationTest from "./camera/CameraSessionPreviewRotation.test";
 import CameraDeviceTest from './camera/CameraDeviceTest.test';
+import CameraSessionInputOutputTest from './camera/CameraSessionInputOutputTest.test';
+import CameraCaptureSessionInputOutputTest from './camera/CameraCaptureSessionInputOutputTest.test';
 import cameraCaptureSessionIsExposureModeAndIsFocusModeAb
   from './camera/CameraCaptureSessionIsExposureModeAndIsFocusModeAb.test';
 import CameraSetMeterPointSuppTest from './camera/CameraSetMeteringPoint.test';
@@ -53,6 +55,9 @@ export default function testsuite() {
   getSupportedSceneModesTest();
   CameraSessionPreviewRotationTest();
   CameraDeviceTest();
+  CameraSessionInputOutputTest();
+  CameraCaptureSessionInputOutputTest();
+
   cameraCaptureSessionIsExposureModeAndIsFocusModeAb();
   CameraSetMeterPointSuppTest();
   cameraSetFocusPointSuppTest();
