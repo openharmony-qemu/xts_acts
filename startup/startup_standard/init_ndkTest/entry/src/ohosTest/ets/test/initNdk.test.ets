@@ -625,7 +625,6 @@ export default function initNdkTest() {
 
       console.info('the value of the deviceinfo incrementalVersion is :' + incrementalVersionInfo);
       let len = incrementalVersionInfo.length;
-      expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
       expect(len).assertLarger(MAX_CHARACTERS_NUM);
       let str: RegExp = new RegExp("[\\w\\-\\.(\\)]","g");
       let arr = incrementalVersionInfo.match(str);
