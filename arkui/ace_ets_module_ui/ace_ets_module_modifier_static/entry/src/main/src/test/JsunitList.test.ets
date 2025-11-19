@@ -84,77 +84,84 @@ import textAreaJsunit from './TextAreaJsunit.test';
 import textInputJsunit from './TextInput.test';
 import gridNestedScrollJsunit from './GridNestedScroll.test';
 import listNestedScrollJsunit from './ListNestedScroll.test';
+import scrollEnablePagingJsunit from "./ScrollEnablePaging.test"
 
 export default function testsuite() {
-  common9Jsunit();
-  common1Jsunit();
-  shortcutKeyJsunit();
-  geometryTransitionJsunit();
-  motionPathJsunit();
-  sharedTransitionJsunit();
-  transitionJsunit();
-  columnJsunit();
-  rowJsunit();
-  blankJsunit();
-  dividerJsunit();
-  gridColJsunit();
-  gridRowJsunit();
-  navDestinationJsunit();
-  navigationJsunit()
-  navigatorJsunit();
-  navRouterJsunit();
-  stackJsunit();
-  tabsFirstJsunit();
-  gridJsunit();
-  gridNestedScrollJsunit();
-  gridItemJsunit();
-  listJsunit();
-  listNestedScrollJsunit();
-  listItemJsunit();
-  listItemGroupJsunit();
-  scrollNestedScrollJsunit();
-  scrollJsunit();
-  swiperJsunit();
-  buttonJsunit();
-  checkboxJsunit();
-  checkBoxGroupJsunit();
-  counterJsunit();
-  datePickerJsunit();
-  radioJsunit();
-  ratingJsunit();
-  sliderJsunit();
-  textpickerJsunit();
-  timepickerJsunit();
-  toggleJsunit();
-  imageSpanJsunit();
-  patternLockJsunit();
-  richEditorJsunit();
-  searchJsunit();
-  spanJsunit();
-  textJsunit();
-  textAreaJsunit();
-  textInputJsunit();
-  imageJsunit();
-  imageAnimatorJsunit();
-  videoJsunit();
-  dataPanelJsunit();
-  gaugeJsunit();
-  loadingProgressJsunit();
-  marqueeJsunit();
-  progressJsunit();
-  qrCodeJsunitJsunit();
-  textClockJsunit();
-  textTimerJsunit();
-  lineJsunit();
-  pathJsunit();
-  polygonJsunit();
-  polyLineJsunit();
-  rectJsunit();
-  shapeJsunit();
-  alphabetIndexerJsunit();
-  formComponentJsunit();
-  hyperLinkJsunit();
-  menuItemJsunit();
-  menuJsunit();
-  panelJsunit();
+
+  gridNestedScrollJsunit(); // pass 1
+  common9Jsunit(); // pass 49 fail 3
+  common1Jsunit(); //pass 36 fail 7 废弃 2
+  shortcutKeyJsunit(); // pass 1
+  geometryTransitionJsunit(); // pass 1
+  motionPathJsunit(); // pass 1
+  sharedTransitionJsunit(); // pass 1
+  transitionJsunit(); // pass 1
+  columnJsunit(); // pass 3
+  rowJsunit(); // pass 2 fail 1(onchange 未修改)
+  blankJsunit(); // pass 1 fail 1(onchange 未修改)
+  dividerJsunit(); // pass 4 fail 1(onchange 未修改)
+  gridColJsunit(); // pass 4 fail 1(onchange 未修改)
+  gridRowJsunit(); // pass 2
+  navDestinationJsunit(); // pass 2
+  navigationJsunit() // pass 12 fail 1 (onchange 未修改)
+  navigatorJsunit(); //  fail 5 废弃
+  navRouterJsunit(); // fail 2 废弃
+  stackJsunit(); // pass 1 fail 1(onchange 未修改)
+  tabsFirstJsunit(); // fail 5 编译失败  Cannot find imported element 'TabsModifier'
+  gridJsunit(); // pass 18 fail 1(onchange 未修改)
+
+  gridItemJsunit(); // pass 6 fail 1(onchange 未修改)
+  listJsunit(); // pass 17 fail 1// .editMode属性 废弃
+  listNestedScrollJsunit();  // pass 1
+  listItemJsunit();  // pass 2 fail 1(onchange 未修改)
+  listItemGroupJsunit(); // pass 1 fail 1(onchange 未修改)
+  scrollNestedScrollJsunit(); // pass 1
+  scrollJsunit(); // pass 10
+  swiperJsunit(); // pass 16 fail 1(onchange 未修改)
+  buttonJsunit();// pass 16 fail 1(onchange 未修改)
+  checkboxJsunit(); // pass 4 fail 1 (onchange 未修改)
+  checkBoxGroupJsunit(); // pass 4 fail 1 (onchange 未修改)
+  counterJsunit(); // pass 3
+  datePickerJsunit(); // pass 4 fail 1 (onchange 未修改)
+  radioJsunit(); // pass 2 fail 1 (onchange 未修改)
+  ratingJsunit(); // pass 3 fail 1 (onchange 未修改)
+  sliderJsunit(); // pass 13 fail 1 (onchange 未修改)
+  textpickerJsunit(); // pass 6 fail 1 (onchange 未修改)
+  timepickerJsunit(); // pass 4 fail 1 (onchange 未修改)
+  toggleJsunit();  // pass 3
+  imageSpanJsunit();// pass 2 fail 1 (onchange 未修改)
+  patternLockJsunit(); // pass 9
+  richEditorJsunit(); //fail 2 Cannot find imported element 'RichEditorModifier'
+  searchJsunit();// pass 12 fail 1 (onchange 未修改)
+  spanJsunit(); //pass 9  fail 2 letterSpacing、lineHeight 单位，
+  textJsunit(); // pass 21 fail 2 letterSpacing 单位、 (onchange 未修改)
+  textAreaJsunit(); //pass 16 fail 2 textArea.fontSize 单位、 (onchange 未修改)
+  textInputJsunit();//pass 24  fail 2 textinput.fontSize 单位不对、 (onchange 未修改)
+
+  imageJsunit();  // pass 15
+  imageAnimatorJsunit(); // pass 7 fail 1 imageAnimatorTest_static_0007 images  对不上
+  videoJsunit(); // pass 6
+  dataPanelJsunit(); // pass 5 fail 1(onchange 未修改)
+  gaugeJsunit();  //pass 9
+  loadingProgressJsunit(); // pass 3
+  marqueeJsunit(); // pass 5 fail 1 (onchange 未修改)
+  progressJsunit(); // pass 3 fail 1 (onchange 未修改)
+  qrCodeJsunitJsunit(); // pass 3 fail 1(onchange 未修改)
+  textClockJsunit(); // pass 7
+  textTimerJsunit(); // pass 6 fail 1(onchange 未修改)
+
+  lineJsunit(); // pass 3
+  pathJsunit(); // pass 2
+  polygonJsunit(); // pass 2
+  polyLineJsunit(); // pass 2
+
+  rectJsunit(); // pass 4
+  shapeJsunit(); // pass 14
+  alphabetIndexerJsunit(); //fail 18  Cannot find imported element 'AlphabetIndexerModifier'
+  formComponentJsunit(); //fail 6 Cannot find imported element 'FormComponentModifier'
+  hyperLinkJsunit(); // pass 1 fail 1(onchange 未修改)
+  menuItemJsunit(); // pass 6 fail 1(onchange 未修改)
+  menuJsunit(); // pass 3 fail 1(onchange 未修改)
+  panelJsunit(); // fail 11 废弃
+  scrollEnablePagingJsunit() // pass 1
 }

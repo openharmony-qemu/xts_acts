@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function navigatorJsunit() {
       }
     });
 
-    /**
-     * @tc.number test_Navigator_static_0021
-     * @tc.name test_Navigator_static_0021
-     * @tc.desc Set params values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_Navigator_static_0021
+     * @tc.name     test_Navigator_static_0021
+     * @tc.desc     test_Navigator_static_0021
+     * @tc.level    Level.LEVEL0
      */
     it('test_Navigator_static_0021', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_Navigator_static_0021] START');
@@ -75,13 +74,12 @@ export default function navigatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_Navigator_static_0022
-     * @tc.name test_Navigator_static_0022
-     * @tc.desc Set active values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_Navigator_static_0022
+     * @tc.name     test_Navigator_static_0022
+     * @tc.desc     test_Navigator_static_0022
+     * @tc.level    Level.LEVEL0
      */
     it('test_Navigator_static_0022', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_Navigator_static_0022] START');
@@ -93,13 +91,12 @@ export default function navigatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_Navigator_static_0023
-     * @tc.name test_Navigator_static_0023
-     * @tc.desc Set target values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_Navigator_static_0023
+     * @tc.name     test_Navigator_static_0023
+     * @tc.desc     test_Navigator_static_0023
+     * @tc.level    Level.LEVEL0
      */
     it('test_Navigator_static_0023', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_Navigator_static_0023] START');
@@ -111,13 +108,12 @@ export default function navigatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_Navigator_static_0024
-     * @tc.name test_Navigator_static_0024
-     * @tc.desc Set type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_Navigator_static_0024
+     * @tc.name     test_Navigator_static_0024
+     * @tc.desc     test_Navigator_static_0024
+     * @tc.level    Level.LEVEL0
      */
     it('test_Navigator_static_0024', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_Navigator_static_0024] START');
@@ -129,13 +125,12 @@ export default function navigatorJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_Navigator_static_0025
-     * @tc.name test_Navigator_static_0025
-     * @tc.desc Change type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_Navigator_static_0025
+     * @tc.name     test_Navigator_static_0025
+     * @tc.desc     test_Navigator_static_0025
+     * @tc.level    Level.LEVEL0
      */
     it('test_Navigator_static_0025', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('test_Navigator_static_0025 START');

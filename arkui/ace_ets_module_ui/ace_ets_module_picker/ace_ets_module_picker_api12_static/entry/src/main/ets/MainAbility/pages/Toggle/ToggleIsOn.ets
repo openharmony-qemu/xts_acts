@@ -14,15 +14,17 @@
  */
 
 import { Entry, Column, Component, Margin,Builder, Row,TimePicker, Toggle, TimePickerFormat,ClickEvent,
-  Text, TextPicker,Color,Button,FontWeight,Color,ToggleType,ColumnOptions,ToggleConfiguration } from '@ohos.arkui.component'
+  Text, TextPicker,Color,Button,FontWeight,Color,ToggleType,ColumnOptions,ToggleConfiguration
+,ContentModifier,ToggleConfiguration,WrappedBuilder,wrapBuilder,CustomBuilderT} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-// class MyToggleStyle implements ContentModifier<ToggleConfiguration> {
-//   constructor() { }
-//   applyContent(): WrappedBuilder<[ToggleConfiguration]> {
-//     return wrapBuilder(buildToggle)
-//   }
-// }
+class MyToggleStyle implements ContentModifier<ToggleConfiguration> {
+  constructor() { }
+
+  applyContent(): WrappedBuilder<CustomBuilderT<ToggleConfiguration>>{
+    return wrapBuilder<CustomBuilderT<ToggleConfiguration>>(buildToggle)
+  }
+}
 @Builder function buildToggle(config: ToggleConfiguration) {
   Column({ space: 10 } as ColumnOptions) {
     Text('isOn status is: ' + config.isOn)
@@ -39,7 +41,7 @@ struct ToggleContentTest {
   build() {
     Column({ space: 50 } as ColumnOptions) {
       Toggle({ type: ToggleType.Switch, isOn: false })
-        // .contentModifier(new MyToggleStyle())
+        .contentModifier(new MyToggleStyle())
         .onChange((isOn: boolean):void => {
           console.info('Switch Log:' + isOn)
         })

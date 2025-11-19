@@ -68,12 +68,13 @@ export default function slideRange() {
     });
 
 
+    
     /*
-    * @tc.number      slideRange_static_001
-    * @tc.name        slideRange_static_001
-    * @tc.desc        Test slideRange, minResponsiveDistance
-    * @tc.level       Level 2
-    */
+     * @tc.number   slideRange_static_001
+     * @tc.name     slideRange_static_001
+     * @tc.desc     slideRange_static_001
+     * @tc.level    Level.LEVEL1
+     */
     it('slideRange_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[slideRange_static_001] START');
       let strJson = inspector.getInspectorByKey('slideRangeValue');

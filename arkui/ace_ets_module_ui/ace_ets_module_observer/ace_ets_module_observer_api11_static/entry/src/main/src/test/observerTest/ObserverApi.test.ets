@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -53,7 +53,6 @@ export default function ObserverApi() {
         console.info("get ObserverApi state success " + JSON.stringify(pages));
         if (!("ObserverApi" == pages.name)) {
           console.info("get ObserverApi state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -68,13 +67,14 @@ export default function ObserverApi() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   ObserverApi_static_001
      * @tc.name     ObserverApi_static_001
      * @tc.desc     ObserverApi_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ObserverApi_001] START');
       await CommonFunc.sleep(1000);
 
@@ -86,9 +86,10 @@ it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info("[ObserverApi_001] btn1")
 
       let btn2 = await driver.findComponent(ON.id('ObserverApi_pushToPageTwo'));
+      console.info("[ObserverApi_001] find btn2")
       await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(2000);
-      console.info("[ObserverApi_001] btn2")
+      console.info("[ObserverApi_001] click btn2")
 
       let btn3 = await driver.findComponent(ON.id('ObserverApi2_getText'));
       await (btn3?.click() as Promise<void>)
@@ -128,13 +129,14 @@ it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/*
      * @tc.number   ObserverApi_static_002
      * @tc.name     ObserverApi_static_002
      * @tc.desc     ObserverApi_static_002
      * @tc.level    Level.LEVEL0
      */
-it('ObserverApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ObserverApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ObserverApi_002] START');
       await CommonFunc.sleep(1000);
 

@@ -51,9 +51,7 @@ export default function gradientHeight() {
         if (!("gradientHeight" == pages.name)) {
           console.info("get gradientHeight state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-          // console.info("push gradientHeight page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gradientHeight page error: " + err);
@@ -65,13 +63,19 @@ export default function gradientHeight() {
       console.info("gradientHeight after each called");
     });
 
+    /*
+     * @tc.number   gradientHeightTest_static_0100
+     * @tc.name     gradientHeightTest_static_0100
+     * @tc.desc     gradientHeightTest_static_0100
+     * @tc.level    Level.LEVEL1
+     */
     it('gradientHeightTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('gradientHeightText_static_0100 START');
       let strJson = inspector.getInspectorByKey('gradientHeightXTS');
       console.info("gradientHeightText_static_0100 component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("gradientHeightText_static_0100 component obj is: " + JSON.stringifyJsonElement(obj));
-      console.info("[gradientHeightText_static_0100] title: " + obj.getElement('$attrs').getString('gradientHeight'));
+      console.info("[gradientHeightText_static_0100] gradientHeight: " + obj.getElement('$attrs').getString('gradientHeight'));
       expect(obj.getElement('$attrs').getString('gradientHeight')).assertEqual("100.00vp");
       console.info('gradientHeightText_static_0100 END');
       done();

@@ -19,8 +19,8 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct gradientHeightExample {
-  private select: int = 1;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+  private select: int = 1
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4']
 
   build() {
     Column() {

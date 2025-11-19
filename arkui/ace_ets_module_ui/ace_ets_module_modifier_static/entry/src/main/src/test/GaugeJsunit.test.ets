@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,13 +55,12 @@ export default function gaugeJsunit() {
       }
     });
 
-    /**
-     * @tc.number testGaugeStatic0121
-     * @tc.name testGaugeStatic0121
-     * @tc.desc Set strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0121
+     * @tc.name     testGaugeStatic0121
+     * @tc.desc     testGaugeStatic0121
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0121', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0121] START');
@@ -75,13 +74,12 @@ export default function gaugeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0122
-     * @tc.name testGaugeStatic0122
-     * @tc.desc Set endAngle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0122
+     * @tc.name     testGaugeStatic0122
+     * @tc.desc     testGaugeStatic0122
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0122', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0122] START');
@@ -95,13 +93,12 @@ export default function gaugeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0123
-     * @tc.name testGaugeStatic0123
-     * @tc.desc Set startAngle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0123
+     * @tc.name     testGaugeStatic0123
+     * @tc.desc     testGaugeStatic0123
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0123', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0123] START');
@@ -115,13 +112,12 @@ export default function gaugeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0124
-     * @tc.name testGaugeStatic0124
-     * @tc.desc Set value values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0124
+     * @tc.name     testGaugeStatic0124
+     * @tc.desc     testGaugeStatic0124
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0124', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0124] START');
@@ -135,13 +131,12 @@ export default function gaugeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0125
-     * @tc.name testGaugeStatic0125
-     * @tc.desc Set colors values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0125
+     * @tc.name     testGaugeStatic0125
+     * @tc.desc     testGaugeStatic0125
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0125', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0125] START');
@@ -155,13 +150,12 @@ export default function gaugeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0126
-     * @tc.name testGaugeStatic0126
-     * @tc.desc Set indicator values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0126
+     * @tc.name     testGaugeStatic0126
+     * @tc.desc     testGaugeStatic0126
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0126', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0126] START');
@@ -176,13 +170,12 @@ export default function gaugeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0127
-     * @tc.name testGaugeStatic0127
-     * @tc.desc Set shadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0127
+     * @tc.name     testGaugeStatic0127
+     * @tc.desc     testGaugeStatic0127
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0127', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0127] START');
@@ -191,20 +184,19 @@ export default function gaugeJsunit() {
       console.info("[testGaugeStatic0127] JSON.parseJsonElement(strJsonNew) testGaugeStatic0127JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')));
       let trackShadow = JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('trackShadow');
-      expect(Number(trackShadow?.getDouble('radius'))).assertEqual(5);
-      expect(Number(trackShadow?.getDouble('offsetX'))).assertEqual(15);
-      expect(Number(trackShadow?.getDouble('offsetY'))).assertEqual(15);
+      expect(Number(trackShadow?.getString('radius'))).assertEqual(5);
+      expect(Number(trackShadow?.getString('offsetX'))).assertEqual(15);
+      expect(Number(trackShadow?.getString('offsetY'))).assertEqual(15);
       console.info('[testGaugeStatic0127] END');
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0128
-     * @tc.name testGaugeStatic0128
-     * @tc.desc Set shadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0128
+     * @tc.name     testGaugeStatic0128
+     * @tc.desc     testGaugeStatic0128
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0128', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGaugeStatic0128] START');
@@ -213,18 +205,17 @@ export default function gaugeJsunit() {
       console.info("[testGaugeStatic0128] JSON.parseJsonElement(strJsonNew) testGaugeStatic0128 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')));
 
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('description')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').tryGetElement('description')).assertEqual(undefined);
       console.info('[testGaugeStatic0128] END');
       done();
     });
 
-    /**
-     * @tc.number testGaugeStatic0129
-     * @tc.name testGaugeStatic0129
-     * @tc.desc Change strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testGaugeStatic0129
+     * @tc.name     testGaugeStatic0129
+     * @tc.desc     testGaugeStatic0129
+     * @tc.level    Level.LEVEL0
      */
     it('testGaugeStatic0129', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGaugeStatic0129 START');

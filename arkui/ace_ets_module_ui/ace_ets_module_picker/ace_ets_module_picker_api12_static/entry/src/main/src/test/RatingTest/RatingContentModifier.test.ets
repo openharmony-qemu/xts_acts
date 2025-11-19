@@ -67,12 +67,13 @@ export default function RatingContentModifier() {
     });
 
 
+    
     /*
-    * @tc.number      RatingContentModifier_static_001
-    * @tc.name        RatingContentModifier_static_001
-    * @tc.desc        Test triggerChange for triggering rating changes
-    * @tc.level       Level 2
-    */
+     * @tc.number   RatingContentModifier_static_001
+     * @tc.name     RatingContentModifier_static_001
+     * @tc.desc     RatingContentModifier_static_001
+     * @tc.level    Level.LEVEL1
+     */
     it('RatingContentModifier_static_001', Level.LEVEL1, async (done: () => void): Promise<void> =>  {
       console.info('[RatingContentModifier_static_001] START');
       await Utils.sleep(1000);

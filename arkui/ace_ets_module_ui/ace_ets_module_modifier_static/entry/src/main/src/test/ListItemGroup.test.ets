@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,13 +58,12 @@ export default function listItemGroupJsunit() {
       }
     });
 
-    /**
-     * @tc.number testList_item_group_static_0007
-     * @tc.name testList_item_group_static_0007
-     * @tc.desc Set divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testList_item_group_static_0007
+     * @tc.name     testList_item_group_static_0007
+     * @tc.desc     testList_item_group_static_0007
+     * @tc.level    Level.LEVEL0
      */
     it('testList_item_group_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testList_item_group_static_0007 START');
@@ -81,13 +80,12 @@ export default function listItemGroupJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testList_item_group_static_0008
-     * @tc.name testList_item_group_static_0008
-     * @tc.desc Change divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testList_item_group_static_0008
+     * @tc.name     testList_item_group_static_0008
+     * @tc.desc     testList_item_group_static_0008
+     * @tc.level    Level.LEVEL0
      */
     it('testList_item_group_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testList_item_group_static_0008 START');

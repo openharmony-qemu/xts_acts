@@ -49,7 +49,9 @@ export default function EnableHapticFeedbackTest() {
         if (!('datePickerEnableHapticFeedback' == pages.name)) {
           console.info('get datePickerEnableHapticFeedback pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push datePickerEnableHapticFeedback page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push datePickerEnableHapticFeedback page error:' + err);

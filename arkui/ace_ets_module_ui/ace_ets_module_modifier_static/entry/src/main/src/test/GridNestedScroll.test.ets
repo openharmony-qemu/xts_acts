@@ -15,9 +15,10 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import Utils from './Utils';
+import Utils from './Utils.test';
+import { UIContext } from '@ohos.arkui.UIContext';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -62,13 +63,12 @@ export default function gridNestedScrollJsunit() {
       }
     });
 
-    /**
-     * @tc.number ArkUI_Stage_gridNestedScrollStatic01
-     * @tc.name ArkUI_Stage_gridNestedScrollStatic01
-     * @tc.desc Set nestedScroll values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_gridNestedScrollStatic01
+     * @tc.name     ArkUI_Stage_gridNestedScrollStatic01
+     * @tc.desc     ArkUI_Stage_gridNestedScrollStatic01
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_gridNestedScrollStatic01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_gridNestedScrollStatic01] START');
@@ -78,7 +78,8 @@ export default function gridNestedScrollJsunit() {
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      await driver.swipe(Math.round(x) as int, Math.round(y + uiContext!.vp2px(60)) as int, Math.round(x) as int, Math.round(y - uiContext!.vp2px(60)) as int);
       console.info('[ArkUI_Stage_gridNestedScrollStatic01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

@@ -35,6 +35,7 @@ class DatePickerModifier3 implements AttributeModifier<DatePickerAttribute> {
 }
 class DatePickerModifier4 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
+    // instance.enableHapticFeedback(null)
   }
 }
 

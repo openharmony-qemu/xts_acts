@@ -63,13 +63,12 @@ export default function dividerJsunit() {
       }
     })
 
-    /**
-     * @tc.number ArkUI_TextPicker_DividerJsunit_static_1000
-     * @tc.name   ArkUI_TextPicker_DividerJsunit_static_1000
-     * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+    
+    /*
+     * @tc.number   ArkUI_TextPicker_DividerJsunit_static_1000
+     * @tc.name     ArkUI_TextPicker_DividerJsunit_static_1000
+     * @tc.desc     ArkUI_TextPicker_DividerJsunit_static_1000
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUI_TextPicker_DividerJsunit_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_TextPicker_DividerJsunit_static_1000] START');

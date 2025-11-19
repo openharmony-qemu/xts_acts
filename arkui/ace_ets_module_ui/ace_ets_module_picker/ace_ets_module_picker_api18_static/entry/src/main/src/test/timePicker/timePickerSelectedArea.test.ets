@@ -43,14 +43,15 @@ export default function timePickerSelectedAreaTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get timePickerSelectedAreaTest state pages:' + JSON.stringify(pages));
-        if (!('timePickerSelectedArea' == pages.name)) {
+        if (!('MainAbility/pages/timePicker/timePickerSelectedArea' == pages.name)) {
           console.info('get timePickerSelectedAreaTest pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push timePickerSelectedAreaTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push timePickerSelectedAreaTest page error:' + err);

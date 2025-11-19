@@ -12,24 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,Video,Resource,$r,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,Video,Resource,$r,PlaybackSpeed,$rawfile,ImageFit,Column,Margin,VideoAttribute,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { VideoModifier } from "@ohos.arkui.modifier";
 
+class CustomModifier extends VideoModifier {
+  applyVideoAttribute(instance: VideoAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
 
-
-
-
-
-
-
-
-
-
+  onChange1() {
+    this.muted(true)
+  }
+}
 
 @Entry
 @Component
@@ -39,17 +39,17 @@ struct VideoExample {
   @State curRate: PlaybackSpeed = PlaybackSpeed.Speed_Forward_1_00_X
   @State isAutoPlay: boolean = false
 
-  
-  
-  
-  
-  
-  
+  @State customModifier: VideoModifier = new CustomModifier()
+    .muted(false)
+    .autoPlay(false)
+    .controls(true)
+    .loop(false)
+    .objectFit(ImageFit.Cover)
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-        
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Column() {
@@ -60,7 +60,7 @@ struct VideoExample {
         })
           .width(250)
           .height(200)
-          
+          .attributeModifier(this.customModifier as CustomModifier)
           .key('video')
       }
     }

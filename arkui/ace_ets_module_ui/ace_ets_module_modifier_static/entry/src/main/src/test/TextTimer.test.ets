@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,13 +57,12 @@ export default function textTimer() {
       }
     });
 
-    /**
-     * @tc.number textTimerJsunit_static_0100
-     * @tc.name textTimerJsunit_static_0100
-     * @tc.desc Set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTimerJsunit_static_0100
+     * @tc.name     textTimerJsunit_static_0100
+     * @tc.desc     textTimerJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('textTimerJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTimerJsunit_static_0100 START');
@@ -75,13 +74,12 @@ export default function textTimer() {
       done();
     });
 
-    /**
-     * @tc.number textTimerJsunit_static_0200
-     * @tc.name textTimerJsunit_static_0200
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTimerJsunit_static_0200
+     * @tc.name     textTimerJsunit_static_0200
+     * @tc.desc     textTimerJsunit_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('textTimerJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTimerJsunit_static_0200 START');
@@ -93,13 +91,12 @@ export default function textTimer() {
       done();
     });
 
-    /**
-     * @tc.number textTimerJsunit_static_0300
-     * @tc.name textTimerJsunit_static_0300
-     * @tc.desc Set format values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTimerJsunit_static_0300
+     * @tc.name     textTimerJsunit_static_0300
+     * @tc.desc     textTimerJsunit_static_0300
+     * @tc.level    Level.LEVEL0
      */
     it('textTimerJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTimerJsunit_static_0300 START');
@@ -111,13 +108,12 @@ export default function textTimer() {
       done();
     });
 
-    /**
-     * @tc.number textTimerJsunit_static_0400
-     * @tc.name textTimerJsunit_static_0400
-     * @tc.desc Set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTimerJsunit_static_0400
+     * @tc.name     textTimerJsunit_static_0400
+     * @tc.desc     textTimerJsunit_static_0400
+     * @tc.level    Level.LEVEL0
      */
     it('textTimerJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTimerJsunit_static_0400 START');
@@ -129,13 +125,12 @@ export default function textTimer() {
       done();
     });
 
-    /**
-     * @tc.number textTimerJsunit_static_0500
-     * @tc.name textTimerJsunit_static_0500
-     * @tc.desc Set fontStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTimerJsunit_static_0500
+     * @tc.name     textTimerJsunit_static_0500
+     * @tc.desc     textTimerJsunit_static_0500
+     * @tc.level    Level.LEVEL0
      */
     it('textTimerJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTimerJsunit_static_0500 START');
@@ -147,13 +142,12 @@ export default function textTimer() {
       done();
     });
 
-    /**
-     * @tc.number textTimerJsunit_static_0600
-     * @tc.name textTimerJsunit_static_0600
-     * @tc.desc Set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTimerJsunit_static_0600
+     * @tc.name     textTimerJsunit_static_0600
+     * @tc.desc     textTimerJsunit_static_0600
+     * @tc.level    Level.LEVEL0
      */
     it('textTimerJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTimerJsunit_static_0600 START');
@@ -164,13 +158,12 @@ export default function textTimer() {
       console.info('textTimerJsunit_static_0600 END');
       done();
     });
-    /**
-     * @tc.number textTimerJsunit_static_0601
-     * @tc.name textTimerJsunit_static_0601
-     * @tc.desc Change fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTimerJsunit_static_0601
+     * @tc.name     textTimerJsunit_static_0601
+     * @tc.desc     textTimerJsunit_static_0601
+     * @tc.level    Level.LEVEL0
      */
     it('textTimerJsunit_static_0601', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTimerJsunit_static_0601 START');
@@ -178,10 +171,10 @@ export default function textTimer() {
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
-      let strJsonNew = inspector.getInspectorByKey('TextTimerKey1'); 
+      let strJsonNew = inspector.getInspectorByKey('TextTimerKey1'); //测试组件的key名称
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textTimerJsunit_static_0601 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('fontSize')).assertEqual('5.00fp'); 
+      expect(objNew.getElement('$attrs').getString('fontSize')).assertEqual('5.00fp'); //
       console.info('textTimerJsunit_static_0601 END');
       done();
     });

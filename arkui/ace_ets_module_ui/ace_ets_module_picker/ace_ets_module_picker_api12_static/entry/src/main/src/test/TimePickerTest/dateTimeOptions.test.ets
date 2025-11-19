@@ -61,12 +61,13 @@ export default function dateTimeOptions() {
         expect().assertFail();
       }
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : dateTimeOptions_static_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    
+    /*
+     * @tc.number   dateTimeOptions_static_0100
+     * @tc.name     dateTimeOptions_static_0100
+     * @tc.desc     dateTimeOptions_static_0100
+     * @tc.level    Level.LEVEL1
+     */
     it('dateTimeOptions_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>  {
       console.info('dateTimeOptions_static_0100 START');
       let driver = Driver.create()
@@ -77,8 +78,8 @@ export default function dateTimeOptions() {
       let strJson = inspector.getInspectorByKey('dateTimeOptionsValue');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[dateTimeOptions_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
-      console.info("[dateTimeOptions_static_0100] title: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"hour":"numeric","minute":"2-digit","second":"numeric"}');
+      console.info("[dateTimeOptions_static_0100] content: " + obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"second":"numeric","minute":"2-digit","hour":"numeric"}');
       console.info('[dateTimeOptions_static_0100] END');
       done();
     });

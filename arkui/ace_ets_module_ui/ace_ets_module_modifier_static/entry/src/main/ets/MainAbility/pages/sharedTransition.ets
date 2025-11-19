@@ -12,21 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,Search,Rect, RichEditor,SearchController,SharedTransitionEffectType,List,NavPathStack, Position,ListItem,Ellipse,LineCapStyle,LineJoinStyle,NavDestination,Shape,Path,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,Search,Rect, RichEditor,SearchController,SharedTransitionEffectType,List,NavPathStack, Position,ListItem,Ellipse,LineCapStyle,LineJoinStyle,NavDestination,Shape,Path,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
-import { RecordData } from '@ohos.base';
-
-interface EventD {
-  duration?: int
-  delay?: int
-  type?: SharedTransitionEffectType
-}
 @Entry
 @Component
 struct SharedTransition7Example {
@@ -39,8 +32,8 @@ struct SharedTransition7Example {
     List() {
       ListItem() {
         Row() {
-          
-            Navigation({}) {
+          // Navigation({ target: 'pages/sharedTransition2', type: NavigationType.Push }) {
+          Navigation(new NavPathStack()) {
             Image($r('app.media.icon')).width(50).height(50)
               .sharedTransition('sharedImage1', { duration: this.duration, delay: this.delay, type: this.type })
           }
@@ -55,7 +48,7 @@ struct SharedTransition7Example {
                   "duration": this.duration,
                   "delay": this.delay,
                   "type": this.type
-                } as Record<String, RecordData>
+                } as Record<String,undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 193,
@@ -80,20 +73,24 @@ struct SharedTransition7Example {
       eventId: 194,
       priority: events_emitter.EventPriority.LOW
     }
-    
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
   }
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info("sharedTransition page state change called:" + JSON.stringify(eventData));
-      if ((eventData.data as EventD)?.duration != null) {
-        this.duration = (eventData.data as EventD)?.duration ?? 1000;
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data["duration"] != null) {
+        this.duration = data["duration"] as int;
+        console.log("=============================== this.duration " + this.duration)
       }
-      if ((eventData.data as EventD)?.delay != null) {
-        this.delay = (eventData.data as EventD)?.delay ?? 0;
+      if (data["delay"] != null) {
+        this.delay = data["delay"] as int;
+        console.log("=============================== this.delay " + this.delay)
       }
-      if ((eventData.data as EventD)?.type != null) {
-        this.type = (eventData.data as EventD)?.type ?? SharedTransitionEffectType.Static;
+      if (data["type"] != null) {
+        this.type = data["type"] as SharedTransitionEffectType;
+        console.log("=============================== this.type " + this.type);
       }
     }
   }

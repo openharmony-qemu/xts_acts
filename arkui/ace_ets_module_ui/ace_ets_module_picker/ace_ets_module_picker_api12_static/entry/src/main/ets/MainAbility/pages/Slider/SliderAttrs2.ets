@@ -20,8 +20,8 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct SliderAttrsTest2 {
-  @State value2: double = 0
-  @State value3: double = 0
+  @State value2: number = 0
+  @State value3: number = 0
 
   build() {
     Column({ space: 20 } as ColumnOptions) {
@@ -30,7 +30,7 @@ struct SliderAttrsTest2 {
         .width('300vp')
         .id('SliderAttrs2_slider2')
         .sliderInteractionMode(SliderInteraction.SLIDE_AND_CLICK)
-        .onChange((value: double, mode: SliderChangeMode):void => {
+        .onChange((value: number, mode: SliderChangeMode):void => {
           this.value2 = value
         })
       Text((this.value2 > 0)?'true':'false').id('SliderAttrs2_text2')

@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,13 +56,12 @@ export default function sliderTest() {
       }
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_010
-     * @tc.name ArkUX_Stage_Slider_static_010
-     * @tc.desc set stepSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_010
+     * @tc.name     ArkUX_Stage_Slider_static_010
+     * @tc.desc     ArkUX_Stage_Slider_static_010
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_010 START');
@@ -74,13 +73,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_011
-     * @tc.name ArkUX_Stage_Slider_static_011
-     * @tc.desc set stepColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_011
+     * @tc.name     ArkUX_Stage_Slider_static_011
+     * @tc.desc     ArkUX_Stage_Slider_static_011
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_011 START');
@@ -92,13 +90,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_012
-     * @tc.name ArkUX_Stage_Slider_static_012
-     * @tc.desc set blockBorderWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_012
+     * @tc.name     ArkUX_Stage_Slider_static_012
+     * @tc.desc     ArkUX_Stage_Slider_static_012
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_012 START');
@@ -110,13 +107,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_013
-     * @tc.name ArkUX_Stage_Slider_static_013
-     * @tc.desc set trackBorderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_013
+     * @tc.name     ArkUX_Stage_Slider_static_013
+     * @tc.desc     ArkUX_Stage_Slider_static_013
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_013 START');
@@ -128,13 +124,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_014
-     * @tc.name ArkUX_Stage_Slider_static_014
-     * @tc.desc set showTips values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_014
+     * @tc.name     ArkUX_Stage_Slider_static_014
+     * @tc.desc     ArkUX_Stage_Slider_static_014
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_014 START');
@@ -146,13 +141,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_015
-     * @tc.name ArkUX_Stage_Slider_static_015
-     * @tc.desc set blockBorderColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_015
+     * @tc.name     ArkUX_Stage_Slider_static_015
+     * @tc.desc     ArkUX_Stage_Slider_static_015
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_015 START');
@@ -164,13 +158,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_017
-     * @tc.name ArkUX_Stage_Slider_static_017
-     * @tc.desc set blockSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_017
+     * @tc.name     ArkUX_Stage_Slider_static_017
+     * @tc.desc     ArkUX_Stage_Slider_static_017
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_017 START');
@@ -183,13 +176,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_018
-     * @tc.name ArkUX_Stage_Slider_static_018
-     * @tc.desc set blockColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_018
+     * @tc.name     ArkUX_Stage_Slider_static_018
+     * @tc.desc     ArkUX_Stage_Slider_static_018
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_018 START');
@@ -201,13 +193,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_019
-     * @tc.name ArkUX_Stage_Slider_static_019
-     * @tc.desc set trackColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_019
+     * @tc.name     ArkUX_Stage_Slider_static_019
+     * @tc.desc     ArkUX_Stage_Slider_static_019
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_019', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_019 START');
@@ -219,13 +210,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_020
-     * @tc.name ArkUX_Stage_Slider_static_020
-     * @tc.desc set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_020
+     * @tc.name     ArkUX_Stage_Slider_static_020
+     * @tc.desc     ArkUX_Stage_Slider_static_020
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_020 START');
@@ -237,13 +227,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_021
-     * @tc.name ArkUX_Stage_Slider_static_021
-     * @tc.desc set showSteps values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_021
+     * @tc.name     ArkUX_Stage_Slider_static_021
+     * @tc.desc     ArkUX_Stage_Slider_static_021
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_021', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_021 START');
@@ -255,13 +244,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_022
-     * @tc.name ArkUX_Stage_Slider_static_022
-     * @tc.desc set trackThickness values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_022
+     * @tc.name     ArkUX_Stage_Slider_static_022
+     * @tc.desc     ArkUX_Stage_Slider_static_022
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_022', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_022 START');
@@ -273,13 +261,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_023
-     * @tc.name ArkUX_Stage_Slider_static_023
-     * @tc.desc set blockType values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_023
+     * @tc.name     ArkUX_Stage_Slider_static_023
+     * @tc.desc     ArkUX_Stage_Slider_static_023
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_023', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_023 START');
@@ -291,13 +278,12 @@ export default function sliderTest() {
       done();
     });
 
-    /**
-     * @tc.number ArkUX_Stage_Slider_static_0110
-     * @tc.name ArkUX_Stage_Slider_static_0110
-     * @tc.desc Change stepSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUX_Stage_Slider_static_0110
+     * @tc.name     ArkUX_Stage_Slider_static_0110
+     * @tc.desc     ArkUX_Stage_Slider_static_0110
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_Stage_Slider_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Slider_static_0110 START');

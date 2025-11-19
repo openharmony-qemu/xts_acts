@@ -15,7 +15,7 @@
 
 import { describe, beforeEach, afterEach, it, expect, Level, beforeAll} from "../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
-import Utils from './Utils';
+import Utils from './Utils.test';
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,14 +26,13 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
 import { BusinessError } from '@ohos.base';
-
 import { UtilsTest, startAbility } from './Util.test';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext()
+
 interface Action {
   ACTION: boolean
 }
@@ -60,11 +59,11 @@ export default function scrollNestedScrollJsunit() {
         console.info("get scrollNestedScroll state pages:" + JSON.stringify(pages));
         if (pages == null || !("scrollNestedScroll" == pages.name)) {
           console.info("get scrollNestedScroll pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push scrollNestedScroll page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollNestedScroll page error:" + err);
@@ -72,13 +71,12 @@ export default function scrollNestedScrollJsunit() {
       console.info("scrollNestedScroll beforeEach end");
     });
 
-    /**
-     * @tc.number ArkUI_Stage_scrollNestedScroll_static_01
-     * @tc.name ArkUI_Stage_scrollNestedScroll_static_01
-     * @tc.desc Set nestedScroll values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_scrollNestedScroll_static_01
+     * @tc.name     ArkUI_Stage_scrollNestedScroll_static_01
+     * @tc.desc     ArkUI_Stage_scrollNestedScroll_static_01
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_scrollNestedScroll_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] START');
@@ -88,7 +86,8 @@ export default function scrollNestedScrollJsunit() {
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      await driver.swipe(Math.round(x) as int, Math.round(y + uiContext!.vp2px(60)) as int, Math.round(x) as int, Math.round(y - uiContext!.vp2px(60)) as int);
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

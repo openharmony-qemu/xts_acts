@@ -45,14 +45,15 @@ export default function EnableHapticFeedbackModifierTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get datePickerEnableHapticFeedbackModifier state pages:' + JSON.stringify(pages));
         if (!('datePickerEnableHapticFeedbackModifier' == pages.name)) {
           console.info('get datePickerEnableHapticFeedbackModifier pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push datePickerEnableHapticFeedbackModifier page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push datePickerEnableHapticFeedbackModifier page error:' + err);

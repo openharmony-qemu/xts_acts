@@ -16,24 +16,24 @@ import { Entry,Builder,Component,Video,BarPosition,Resource,$r,FlexAlign,Divider
 import {
   State,
   Link,
-  PropRef
+  Prop
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+// import { TabsModifier } from "@ohos.arkui.modifier";
 
+// class CustomModifier extends TabsModifier {
+//   applyNormalAttribute(instance: TabsAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+  // }
 
-
-
-
-
-
-
-
-
-
+  // onChangeTabs() {
+  //   this.barBackgroundColor('#FF122345')
+  // }
+// }
 
 @Component
 struct ModifierComponent {
-  
+  // @Link customModifier: TabsModifier
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: number = 0
@@ -58,32 +58,32 @@ struct ModifierComponent {
   build() {
     Column(){
       Button("change value").onClick((e: ClickEvent) => {
-        
+        // (this.customModifier as CustomModifier).onChangeTabs();
       }).key("changeButton")
 
       Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }
-        
+        // .tabBar(this.TabBuilder(0, 'green'))
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF')
         }
-        
+        // .tabBar(this.TabBuilder(1, 'blue'))
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00')
         }
-        
+        // .tabBar(this.TabBuilder(2, 'yellow'))
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#E67C92')
         }
-        
+        // .tabBar(this.TabBuilder(3, 'pink'))
       }
     .key('tabsTest')
-        
+        // .attributeModifier(this.customModifier as CustomModifier)
         .onChange((index: int) => {
           this.currentIndex = index
         })
@@ -97,25 +97,25 @@ struct ModifierComponent {
 @Component
 struct TestPage {
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // @State customModifier: TabsAttribute = new CustomModifier()
+  //   .barGridAlign({ sm: -2, margin: 10, gutter: '15px' })
+  //   .barBackgroundColor("rgb(255, 100, 255)")
+  //   .barOverlap(true)
+  //   .divider({ strokeWidth: 2, color: Color.Red, startMargin: 0, endMargin: 0 })
+  //   .fadingEdge(true)
+  //   .animationDuration(300)
+  //   .barHeight("100vp")
+  //   .barWidth("156vp")
+  //   .scrollable(true)
+  //   .barPosition(BarPosition.Start)
+  //   .vertical(true)
+  //   .barMode(BarMode.Scrollable, { margin: 0, nonScrollableLayoutStyle: LayoutStyle.ALWAYS_CENTER })
 
   @Builder
   modifierBuilder() {
     Column() {
-      
-      
+      //这里是Modifier属性UI
+      // ModifierComponent({ customModifier: this.customModifier })
     }
   }
 

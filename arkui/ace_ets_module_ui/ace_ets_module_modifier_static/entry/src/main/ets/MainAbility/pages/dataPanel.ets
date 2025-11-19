@@ -12,23 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,Counter,DataPanel,DataPanelType,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,ColumnOptions,Counter,DataPanel,DataPanelAttribute,DataPanelType,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
+import { DataPanelModifier } from "@ohos.arkui.modifier";
 
+class CustomModifier extends DataPanelModifier {
+  applyNormalAttribute(instance: DataPanelAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
 
-
-
-
-
-
-
-
-
-
+  onChange1() {
+    this.strokeWidth(5)
+  }
+}
 
 @Entry
 @Component
@@ -37,12 +37,12 @@ struct dataPanel_testcase {
   @State myHeight: string = "100"
   @State active: boolean = false
   private content: string = "DataPanel Page"
-
-
-
-
-
-
+  @State customModifier: DataPanelModifier = new CustomModifier()
+        .trackShadow({ radius: 6, offsetX: 2, offsetY: 1 })
+        .strokeWidth(25)
+        .trackBackgroundColor('#08182431')
+        .valueColors(['#FF123456', '#FF654321'])
+        .closeEffect(true)
 
 
   onPageShow() {
@@ -59,13 +59,13 @@ struct dataPanel_testcase {
         Text(`${this.content}`)
           .fontSize(50)
         Button("change value").onClick((e: ClickEvent) => {
-
+          (this.customModifier as CustomModifier).onChange1();
         }).key("changeButton")
         DataPanel({ values: [20, 40, 20], max: 100, type: DataPanelType.Line })
           .width(this.myWidth)
           .height(this.myHeight)
           .key('DataPanelKey1')
-
+          .attributeModifier(this.customModifier as CustomModifier)
 
 
         DataPanel({ values: [20, 40, 20], max: 100, type: DataPanelType.Circle })

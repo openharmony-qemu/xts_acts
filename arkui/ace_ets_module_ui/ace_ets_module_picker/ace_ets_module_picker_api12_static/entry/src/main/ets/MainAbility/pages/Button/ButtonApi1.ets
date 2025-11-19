@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component,   Text, Button, ClickEvent, ButtonRole} from '@ohos.arkui.component'
+import { Entry, Column, Component, Button, ButtonRole} from '@ohos.arkui.component'
 @Entry
 @Component
 struct ButtonApi1 {

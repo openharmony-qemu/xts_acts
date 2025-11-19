@@ -15,6 +15,7 @@
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox, Position,XComponent,
   Slider,SliderChangeMode,SliderConfiguration,
   ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration
+,ContentModifier,SliderConfiguration,WrappedBuilder,wrapBuilder,CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -34,23 +35,24 @@ import { State } from '@ohos.arkui.stateManagement';
   }
 }
 
-// class MySliderStyle implements ContentModifier<SliderConfiguration> {
-//
-//   constructor() {}
-//   applyContent() : WrappedBuilder<[SliderConfiguration]> {
-//     return wrapBuilder(buildSlider)
-//   }
-// }
+class MySliderStyle implements ContentModifier<SliderConfiguration> {
+
+  constructor() {}
+
+  applyContent(): WrappedBuilder<CustomBuilderT<SliderConfiguration>>{
+    return wrapBuilder<CustomBuilderT<SliderConfiguration>>(buildSlider)
+  }
+}
 
 
 @Entry
 @Component
 struct SliderContentModifierTest {
-  @State sliderValue: double = 0
-  @State sliderMin: double = 0
-  @State sliderMax: double = 100
-  @State sliderStep: double = 1
-  @State sliderChangeMode: int = 0
+  @State sliderValue: number = 0
+  @State sliderMin: number = 0
+  @State sliderMax: number = 100
+  @State sliderStep: number = 1
+  @State sliderChangeMode: number = 0
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
@@ -60,11 +62,11 @@ struct SliderContentModifierTest {
         max: this.sliderMax,
         step:this.sliderStep,
       })
-        .onChange((value: double, mode: SliderChangeMode):void => {
+        .onChange((value: number, mode: SliderChangeMode):void => {
           this.sliderValue = value
           this.sliderChangeMode = mode
         })
-        // .contentModifier(new MySliderStyle())
+        .contentModifier(new MySliderStyle())
 
       Text('mode'+ this.sliderChangeMode.toString()).id('SliderContentModifier_text2')
 

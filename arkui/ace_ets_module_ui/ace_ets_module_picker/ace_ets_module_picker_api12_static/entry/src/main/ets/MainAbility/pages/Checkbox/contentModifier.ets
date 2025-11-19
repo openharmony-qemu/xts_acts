@@ -14,41 +14,42 @@
  */
 
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
-  ColumnOptions, Shape, Path, Builder, CheckBoxConfiguration, Margin, Visibility, LineJoinStyle, ToggleType
+  ColumnOptions, Shape, Path, Builder, CheckBoxConfiguration, Margin, Visibility, LineJoinStyle, ToggleType,
+  ContentModifier, Color,WrappedBuilder,CustomBuilderT,wrapBuilder
+
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-// class MyCheckboxStyle_Content implements ContentModifier<CheckBoxConfiguration> {
-//   selectedColor: Color = Color.White
-//   constructor(selectedColor: Color) {
-//     this.selectedColor = selectedColor;
-//   }
-//   applyContent() : WrappedBuilder<[CheckBoxConfiguration]>
-//   {
-//     return wrapBuilder(buildCheckbox_Content)
-//   }
-// }
+class MyCheckboxStyle_Content implements ContentModifier<CheckBoxConfiguration> {
+  selectedColor: Color = Color.White
+  constructor(selectedColor: Color) {
+    this.selectedColor = selectedColor;
+  }
+  applyContent():  WrappedBuilder<CustomBuilderT<CheckBoxConfiguration>>{
+    return wrapBuilder<CustomBuilderT<CheckBoxConfiguration>>(buildCheckbox_Content)
+  }
+}
 
 @Builder function buildCheckbox_Content(config: CheckBoxConfiguration) {
   Column({space:10} as ColumnOptions) {
     Text(config.name  + (config.selected ? "（ 选中 ）" : "（ 非选中 ）")).margin({right : 70, top : 50} as Margin)
     Text(config.enabled ? "enabled true" : "enabled false").margin({right : 110} as Margin)
     Shape() {
-      // Path().width(100).height(100).commands('M100 0 L0 100 L50 200 L150 200 L200 100 Z').fillOpacity(0).strokeWidth(3).onClick((e:ClickEvent)=>{
-      //   if (config.selected) {
-      //     config.triggerChange(false)
-      //     console.log("config.triggerChange: " + config.triggerChange)
-      //   } else {
-      //     config.triggerChange(true)
-      //     console.log("config.triggerChange: " + config.triggerChange)
-      //   }
-      // }).opacity(config.enabled ? 1 : 0.1)
-      // Path().width(10).height(10).commands('M50 0 L100 100 L0 100 Z')
-      //   .id("ContentModifierMessage")
-      //   .visibility(config.selected ? Visibility.Visible : Visibility.Hidden)
-        // .fill(config.selected ? (config.contentModifier as MyCheckboxStyle_Content).selectedColor : Color.Black)
-        // .stroke((config.contentModifier as MyCheckboxStyle_Content).selectedColor)
-        // .margin({left:11,top:10} as Margin)
-        // .opacity(config.enabled ? 1 : 0.1)
+      Path().width(100).height(100).commands('M100 0 L0 100 L50 200 L150 200 L200 100 Z').fillOpacity(0).strokeWidth(3).onClick((e:ClickEvent)=>{
+        if (config.selected) {
+          config.triggerChange(false)
+          console.log("config.triggerChange: " + config.triggerChange)
+        } else {
+          config.triggerChange(true)
+          console.log("config.triggerChange: " + config.triggerChange)
+        }
+      }).opacity(config.enabled ? 1 : 0.1)
+      Path().width(10).height(10).commands('M50 0 L100 100 L0 100 Z')
+        .id("ContentModifierMessage")
+        .visibility(config.selected ? Visibility.Visible : Visibility.Hidden)
+        .fill(config.selected ? (config.contentModifier as MyCheckboxStyle_Content).selectedColor : Color.Black)
+        .stroke((config.contentModifier as MyCheckboxStyle_Content).selectedColor)
+        .margin({left:11,top:10} as Margin)
+        .opacity(config.enabled ? 1 : 0.1)
     }
     .width(300)
     .height(200)
@@ -66,7 +67,7 @@ struct contentModifierExample {
   build() {
     Column({ space: 100 } as ColumnOptions) {
       Checkbox({ name: '复选框状态', group: 'checkboxGroup' })
-        // .contentModifier(new MyCheckboxStyle_Content(Color.Red))
+        .contentModifier(new MyCheckboxStyle_Content(Color.Red))
         .onChange((value: boolean): void => {
           console.info('Checkbox change is' + value)
         }).enabled(this.checkboxEnabled)

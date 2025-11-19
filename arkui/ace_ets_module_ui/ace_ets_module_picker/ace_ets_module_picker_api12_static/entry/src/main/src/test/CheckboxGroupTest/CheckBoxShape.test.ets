@@ -64,6 +64,12 @@ export default function CheckBoxShape() {
       console.info("CheckBoxShape after each called");
     });
 
+    /*
+     * @tc.number   CheckBoxShapeTest_static_0100
+     * @tc.name     CheckBoxShapeTest_static_0100
+     * @tc.desc     CheckBoxShapeTest_static_0100
+     * @tc.level    Level.LEVEL1
+     */
     it('CheckBoxShapeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>    {
       console.info('CheckBoxShapeText_static_0100 START');
       let strJson = inspector.getInspectorByKey('CheckBoxShapeXTS');

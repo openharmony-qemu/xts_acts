@@ -62,44 +62,42 @@ export default function TimePickerAddApi() {
       }
     });
 
+    
+
     /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TimePickerAddApi_static_0010
-     * @tc.name       : TimePickerAddApi_static_001
-     * @tc.desc       : TimePicker Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number   TimePickerAddApi_static_001
+     * @tc.name     TimePickerAddApi_static_001
+     * @tc.desc     TimePickerAddApi_static_001
+     * @tc.level    Level.LEVEL3
      */
-
     it('TimePickerAddApi_static_001', Level.LEVEL3, async (done: () => void): Promise<void> =>  {
-
       console.info('[TimePickerAddApi_static_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let pos = CommonFunc.getComponentRectOnScreen('TimePickerAddApi')
+      console.log("================================================== " + JSON.stringify(pos))
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(pos.right - UIContext.getFocusedUIContext()!.vp2px(100)) as int,Math.round(pos.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) as int,Math.round(pos.right - UIContext.getFocusedUIContext()!.vp2px(100))as int,Math.round(pos.top) as int);
+      await driver.swipe(Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)) as int, Math.round(pos.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)) as int,Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100))as int,Math.round(pos.top) as int);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TimePicker_001] component obj is: " + JSON.stringifyJsonElement(obj));
       await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('second');
 
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('second');
       console.info('[TimePicker_001] END');
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TimePickerAddApi_static_0020
-     * @tc.name       : TimePickerAddApi_static_002
-     * @tc.desc       : TimePicker Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
+    
 
+    /*
+     * @tc.number   TimePickerAddApi_static_002
+     * @tc.name     TimePickerAddApi_static_002
+     * @tc.desc     TimePickerAddApi_static_002
+     * @tc.level    Level.LEVEL3
+     */
     it('TimePickerAddApi_static_002', Level.LEVEL3, async (done: () => void): Promise<void> =>  {
 
       console.info('[TimePickerAddApi_static_001] START');

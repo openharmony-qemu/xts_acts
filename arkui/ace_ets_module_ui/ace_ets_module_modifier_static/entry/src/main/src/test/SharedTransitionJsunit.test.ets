@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { SharedTransitionEffectType} from '@ohos.arkui.component';
@@ -67,13 +67,12 @@ export default function sharedTransitionJsunit() {
       console.info("sharedTransition after each called");
     });
 
-    /**
-     * @tc.number sharedTransitionTest_static_0100
-     * @tc.name sharedTransitionTest_static_0100
-     * @tc.desc Set sharedTransition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   sharedTransitionTest_static_0100
+     * @tc.name     sharedTransitionTest_static_0100
+     * @tc.desc     sharedTransitionTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sharedTransitionTest_static_0100 START');
@@ -83,7 +82,7 @@ export default function sharedTransitionJsunit() {
             "duration": 2000,
             "delay": 5,
             "type": SharedTransitionEffectType.Exchange
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 194,
@@ -91,16 +90,17 @@ export default function sharedTransitionJsunit() {
         }
         events_emitter.emit(indexEvent, eventData);
        await UtilsTest.msSleep(2500);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("sharedTransitionTest_static_0100 change component data error: " + err.message);
       }
       let callback = (indexEventOne: events_emitter.EventData) => {
+        const data = indexEventOne.data as Record<String,undefined|null|Object>
         console.info("sharedTransitionTest_static_0100 get state result is: " + JSON.stringify(indexEventOne));
         try {
-          expect((indexEventOne.data as EventD)?.duration).assertEqual(2000);
-          expect((indexEventOne.data as EventD)?.delay).assertEqual(5);
-          expect((indexEventOne.data as EventD)?.type).assertEqual(SharedTransitionEffectType.Exchange);
-        } catch (err) {
+          expect(data["duration"] as int).assertEqual(2000);
+          expect(data["delay"]  as int).assertEqual(5);
+          expect(data["type"] as SharedTransitionEffectType).assertEqual(SharedTransitionEffectType.Exchange);
+        } catch (err: Error) {
           console.info("sharedTransitionTest_static_0100 error: " + err.message);
         }
 
@@ -115,7 +115,7 @@ export default function sharedTransitionJsunit() {
         console.info("sharedTransitionTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("sharedTransitionTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('Navigator', 10, "")));
-     await UtilsTest.msSleep(2000);
+       await UtilsTest.msSleep(2000);
       console.info('sharedTransitionTest_static_0100 END');
       done();
     });

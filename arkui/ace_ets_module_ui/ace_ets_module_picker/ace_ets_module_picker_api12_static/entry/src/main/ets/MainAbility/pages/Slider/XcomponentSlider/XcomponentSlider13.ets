@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox, Position,XComponent,
-  Slider, XComponentParameters,XComponentController,XComponentType,Slider,SliderChangeMode,SliderChangeMode,
+  Slider, XComponentParameters,XComponentController,XComponentType,Slider,SurfaceRect,SliderChangeMode,SliderChangeMode,
   ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration,
   Axis
 } from '@ohos.arkui.component'
@@ -23,9 +23,9 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct XSlider13 {
   private surfaceId: string = ''
-    private xComponentContext: Record<string, () => void> = {} as Record<string, () => void>
+    private xComponentContext: SurfaceRect = {surfaceWidth:0, surfaceHeight:0 } as SurfaceRect
   xComponentController: XComponentController = new XComponentController()
-  @State outSetValueOne: double = 20
+  @State outSetValueOne: number = 20
 
   build() {
     Row() {
@@ -45,15 +45,15 @@ struct XSlider13 {
           .id('XSlider13')
           .width('400px')
           .showTips(true)
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.outSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
       }
       .onLoad(():void => {
-        // this.xComponentController.setXComponentSurfaceSize({ surfaceWidth: 1920, surfaceHeight: 1300 })
+        this.xComponentController.setXComponentSurfaceRect({ surfaceWidth: 1920, surfaceHeight: 1300 })
         this.surfaceId = this.xComponentController.getXComponentSurfaceId()
-        // this.xComponentContext = this.xComponentController.getXComponentContext() as Record<string, () => void>
+        // this.xComponentContext = this.xComponentController.getXComponentSurfaceRect()
       })
       .width(100)
       .height(200)
