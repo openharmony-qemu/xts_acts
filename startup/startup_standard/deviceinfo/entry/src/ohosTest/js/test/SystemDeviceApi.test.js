@@ -99,18 +99,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceBrand01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceBrand01 start');
-        let ret = false;
-
-        console.info('the value of the deviceinfo brand is :' + brandInfo);
-
-        expect(brandInfo).assertInstanceOf('String');
+        
         if (brandInfo != "" && brandInfo != null && brandInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo brand is :' + brandInfo);
+            expect(brandInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value Brand is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceBrand01 ：end');
@@ -123,18 +119,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceManufacture01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceManufacture01 start');
-        let ret = false;
 
-        console.info('the value of the deviceinfo manufacture is :' + manufactureInfo);
-
-        expect(manufactureInfo).assertInstanceOf('String');
         if (manufactureInfo != "" && manufactureInfo != null && manufactureInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo manufacture is :' + manufactureInfo);
+            expect(manufactureInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value Manufacture is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceManufacture01 ：end');
@@ -147,18 +139,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceModel01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceModel01 start');
-        let ret = false;
 
-        console.info('the value of the deviceinfo model is :' + deviceModelInfo);
-
-        expect(deviceModelInfo).assertInstanceOf('String');
         if (deviceModelInfo != "" && deviceModelInfo != null && deviceModelInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo model is :' + deviceModelInfo);
+            expect(deviceModelInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value Model is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceModel01 : end');
@@ -171,18 +159,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceProduct01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceProduct01 start');
-        let ret = false;
-
-        console.info('the value of the deviceinfo product is :' + deviceProductInfo);
-
-        expect(deviceProductInfo).assertInstanceOf('String');
+        
         if (deviceProductInfo != "" && deviceProductInfo != null && deviceProductInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo product is :' + deviceProductInfo);
+            expect(deviceProductInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value Product is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceProduct01 ：end');
@@ -195,18 +179,16 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceApiVersion01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceApiVersion01 start');
-        let ret = false;
-
         console.info('the value of the deviceinfo sdkApiVersion is :' + apiVersionInfo);
 
         expect(apiVersionInfo).assertInstanceOf('Number');
         if (apiVersionInfo >= 0) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo sdkApiVersion is :' + apiVersionInfo);
+            expect().assertTrue();
 			done();
         }else {
             console.info('the return value ApiVersion is not larger than 0.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceApiVersion01 ：end');
@@ -219,18 +201,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceType01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceType01 start');
-        let ret = false;
-
-        console.info('the value of the deviceinfo deviceType is :' + deviceTypeInfo);
-
-        expect(deviceTypeInfo).assertInstanceOf('String');
+        
         if (deviceTypeInfo != "" && deviceTypeInfo != null && deviceTypeInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo deviceType is :' + deviceTypeInfo);
+            expect(deviceTypeInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value Type is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceType01 : end');
@@ -243,18 +221,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceLanguage01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceLanguage01 start');
-        let ret = false;
 
-        console.info('the value of the deviceinfo language is :' + languageInfo);
-
-        expect(languageInfo).assertInstanceOf('String');
         if (languageInfo != "" && languageInfo != null && languageInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo language is :' + languageInfo);
+            expect(languageInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value Language is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceLanguage01 : end');
@@ -267,18 +241,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceRegion01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceRegion01 start');
-        let ret = false;
-
-        console.info('the value of the deviceinfo region is :' + regionInfo);
-
-        expect(regionInfo).assertInstanceOf('String');
+        
         if (regionInfo != "" && regionInfo != null && regionInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo region is :' + regionInfo);
+            expect(regionInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value Region is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceRegion01 : end');
@@ -291,18 +261,16 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceWindowWidth01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceWindowWidth01 start');
-        let ret = false;
-
         console.info('the value of the deviceinfo window width is :' + windowWidthInfo);
 
         expect(windowWidthInfo).assertInstanceOf('Number');
         if (windowWidthInfo >= 0) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo window width is :' + windowWidthInfo);
+            expect().assertTrue();
 			done();
         }else {
             console.info('the return value WindowWidth is not larger than 0.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceWindowWidth01 : end');
@@ -315,18 +283,16 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceWindowHeight01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceWindowHeight01 start');
-        let ret = false;
-
         console.info('the value of the deviceinfo window height is :' + windowHeightInfo);
 
         expect(windowHeightInfo).assertInstanceOf('Number');
         if (windowHeightInfo >= 0) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo window height is :' + windowHeightInfo);
+            expect().assertTrue();
 			done();
         }else {
             console.info('the return value WindowHeight is not larger than 0.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceWindowHeight01 : end');
@@ -339,18 +305,16 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceScreenDensity01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceScreenDensity01 start');
-        let ret = false;
-
         console.info('the value of the deviceinfo screen density is :' + screenDensityInfo);
 
         expect(screenDensityInfo).assertInstanceOf('Number');
         if (screenDensityInfo >= 0) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo screen density is :' + screenDensityInfo);
+            expect().assertTrue();
 			done();
         }else {
             console.info('the return value ScreenDensity is not larger than 0.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceScreenDensity01 : end');
@@ -363,18 +327,14 @@ describe('SystemDeviceTest', function () {
      */
     it('testDeviceScreenShape01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testDeviceScreenShape01 start');
-        let ret = false;
-
-        console.info('the value of the deviceinfo screenShape is :' + screenShapeInfo);
-
-        expect(screenShapeInfo).assertInstanceOf('String');
+       
         if (screenShapeInfo != "" && screenShapeInfo != null && screenShapeInfo != undefined) {
-            ret = true;
-            expect(ret).assertTrue();
+            console.info('the value of the deviceinfo screenShape is :' + screenShapeInfo);
+            expect(screenShapeInfo).assertInstanceOf('String');
 			done();
         }else {
             console.info('the return value ScreenShape is null or incorrect.');
-            expect(false).assertTrue();
+            expect().assertFail();
 			done();
         }
         console.info('testDeviceScreenShape01 : end');
