@@ -20,6 +20,7 @@ import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
 // import { MyCallback } from '../models/MyCallback';
 import window from '@ohos.window'
+import settings from '@ohos.settings';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
@@ -75,12 +76,18 @@ export default function ErrorCode201() {
         let windowStage: window.WindowStage;
         let win: window.Window;
         let context: common.UIAbilityContext;
+        let isPCStatus: string = '';
         beforeAll(() => {
             
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+                isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+                //isPCStatus == '' 非PC设备
+                //isPCStatus == '1' PC设备状态栏dock未融合
+                //isPCStatus == '0' PC设备状态栏dock融合
+                hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
