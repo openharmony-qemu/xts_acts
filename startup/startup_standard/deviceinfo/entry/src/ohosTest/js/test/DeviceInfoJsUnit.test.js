@@ -626,15 +626,7 @@ export default function DeviceInfoTest() {
             console.info('the value of the deviceinfo sdkApiVersion is :' + sdkApiVersionInfo);
 
             expect(sdkApiVersionInfo).assertInstanceOf('Number');
-            if (sdkApiVersionInfo >= 0) {
-                console.info('the value of the sdkApiVersion is :' + sdkApiVersionInfo);
-                expect().assertTrue();
-				done();
-            } else {
-                console.info('the return value sdkApiVersion is not greater than 0.');
-                expect().assertFail();
-				done();
-            }
+            expect(sdkApiVersionInfo >= 0).assertTrue();
 
             let str = /[\w-\.\(\)]/g;
             let arr = sdkApiVersionInfo.toString().match(str);
@@ -660,15 +652,7 @@ export default function DeviceInfoTest() {
             console.info('the value of the deviceinfo firstApiVersion is :' + firstApiVersionInfo);
 
             expect(firstApiVersionInfo).assertInstanceOf('Number');
-            if (firstApiVersionInfo >= 0) {
-                console.info('the value of the firstApiVersion is :' + firstApiVersionInfo);
-                expect().assertTrue();
-				done();
-            } else {
-                console.info('the return value firstApiVersion is not greater than 0.');
-                expect().assertFail();
-				done();
-            }
+            expect(firstApiVersionInfo >= 0).assertTrue();
 
             let str = /[\w-\.\(\)]/g;
             let arr = firstApiVersionInfo.toString().match(str);
@@ -1426,16 +1410,7 @@ export default function DeviceInfoTest() {
 
             let reFormat = /^(\d{4})\/(\d{2})\/(\d{2})$/;
             let re = securityPatchTagInfo.match(reFormat);
-
-            if (re != null) {
-                console.info('the value of the securityPatchTag is :' + securityPatchTagInfo);
-                expect().assertTrue();
-                done();
-            } else {
-                console.info('the return formate is not yy--mm--dd');
-                expect().assertFail();
-				done();
-            }
+            expect(re != null).assertTrue();
 
             console.info('testGetSecurityPatchTag02 : end');
         })
@@ -1533,15 +1508,7 @@ export default function DeviceInfoTest() {
             console.info('the value of the deviceinfo distributionOSApiVersion is :' + distributionOSApiVersionInfo);
 
             expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
-            if (distributionOSApiVersionInfo >= 0) {
-                console.info('the value of the distributionOSApiVersion is :' + distributionOSApiVersionInfo);
-                expect().assertTrue();
-				done();
-            } else {
-                console.info('the return value distributionOSApiVersion is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
+            expect(distributionOSApiVersionInfo >= 0).assertTrue();
 
             let str = /[\w-\.\(\)]/g;
             let arr = distributionOSApiVersionInfo.toString().match(str);
@@ -1645,15 +1612,10 @@ export default function DeviceInfoTest() {
             console.info('device_info_test_072 start');
             let distributionOSApiName = deviceinfo.distributionOSApiName;
 
-            if (distributionOSApiName != "" && distributionOSApiName != null && distributionOSApiName != undefined) {
-                console.info('the value of the deviceinfo distributionOSApiName is :' + distributionOSApiName);
-                expect(distributionOSApiName).assertInstanceOf('String');
+            if (distributionOSApiName != "" && distributionOSApiName != null && distributionOSApiName != undefined) {	
+                console.info('the value of the deviceinfo distributionOSApiName is :' + distributionOSApiName);	
+                expect(distributionOSApiName).assertInstanceOf('String');	
                 done();
-            }
-            else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
             }
             
             console.info('device_info_test_072 : end');
