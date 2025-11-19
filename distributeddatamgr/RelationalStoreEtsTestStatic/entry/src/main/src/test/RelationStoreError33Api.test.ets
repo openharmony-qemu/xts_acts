@@ -47,7 +47,7 @@ import {
   let rdbStore: relationalStore.RdbStore;
   
   export default function RelationStoreError33Test() {
-    describe('RelationStoreError33Test', () => {
+    describe('RelationStoreError33Test', (): void => {
       beforeAll(async () : Promise<void> => {
         console.info(TAG + "*************Unit Test Begin*************");
         console.info(TAG + 'beforeAll');
