@@ -14,6 +14,10 @@
     "MainAbility/pages/datePickerDialog/DatePickerDialogWindowProperties",
     "MainAbility/pages/datePickerDialog/DatePickerDialogAppearText",
     "MainAbility/pages/datePickerDialog/DatePickerDialogButtonStyle",
-    "MainAbility/pages/datePickerDialog/DatePickerDialogCallback"
+    "MainAbility/pages/datePickerDialog/DatePickerDialogCallback",
+    "MainAbility/pages/datePickerDialog/datePickerDialogBackgroundEffect",
+    "MainAbility/pages/datePickerDialog/datePickerDialogBlurStyleOptions",
+    "MainAbility/pages/datePickerDialog/showDatePickerDialogBackgroundEffect",
+    "MainAbility/pages/datePickerDialog/showDatePickerDialogBlurStyleOptions"
   ]
 }

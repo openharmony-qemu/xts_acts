@@ -27,6 +27,10 @@ import DatePickerDialogWindowPropertiesTest from './datePickerDialogTest/DatePic
 import DatePickerDialogAppearTextTest from './datePickerDialogTest/DatePickerDialogAppearText.test';
 import DatePickerDialogButtonStyleTest from './datePickerDialogTest/DatePickerDialogButtonStyle.test';
 import DatePickerDialogCallbackTest from './datePickerDialogTest/DatePickerDialogCallback.test';
+import datePickerDialogBackgroundEffectTest from './datePickerDialogTest/datePickerDialogBackgroundEffect.test';
+import datePickerDialogBlurStyleOptionsTest from './datePickerDialogTest/datePickerDialogBlurStyleOptions.test';
+import showDatePickerDialogBackgroundEffectTest from './datePickerDialogTest/showDatePickerDialogBackgroundEffect.test';
+import showDatePickerDialogBlurStyleOptionsTest from './datePickerDialogTest/showDatePickerDialogBlurStyleOptions.test';
 
 export default function testsuite() {
   datePickerDialogEventsTest();
@@ -43,4 +47,8 @@ export default function testsuite() {
   DatePickerDialogAppearTextTest();
   DatePickerDialogButtonStyleTest();
   DatePickerDialogCallbackTest();
+  datePickerDialogBackgroundEffectTest();
+  datePickerDialogBlurStyleOptionsTest();
+  showDatePickerDialogBackgroundEffectTest();
+  showDatePickerDialogBlurStyleOptionsTest();
 }
