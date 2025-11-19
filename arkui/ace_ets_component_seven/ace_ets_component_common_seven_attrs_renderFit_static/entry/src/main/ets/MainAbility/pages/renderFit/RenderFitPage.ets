@@ -201,10 +201,9 @@ import {
   WebAttribute,
   WebviewController,
   WindowSceneAttribute,
-  XComponentAttribute,
-  AlignRuleOption
+  XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -540,20 +539,20 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   mRenderFit: RenderFit = RenderFit.RIGHT
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
+//    instance.renderFit(this.mRenderFit)
+//   }
+// }
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   mRenderFit: RenderFit = RenderFit.RIGHT
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
+//    instance.renderFit(this.mRenderFit)
+//   }
+// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mRenderFit: RenderFit = RenderFit.RIGHT
 
@@ -1216,6 +1215,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1373,7 +1373,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct renderFitPage {
-  @StoragePropRef('_renderFit') _renderFit: SetValue = {
+  @StorageProp('_renderFit') _renderFit: SetValue = {
     height: 0, renderFit: RenderFit.LEFT
   }
   @State _renderFitAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
@@ -1412,9 +1412,9 @@ struct renderFitPage {
   @State _renderFitMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _renderFitMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _renderFitNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  
+  // @State _renderFitNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _renderFitNavigationMod: NavigationModifier = new NavigationModifier()
-  
+  // @State _renderFitNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _renderFitPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _renderFitPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _renderFitQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1453,10 +1453,10 @@ struct renderFitPage {
   @State _renderFitXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: Int = 0;
+  @State gutter: number = 0;
   @State parentComponentKey: string = '';
 
   onPageShow() {
@@ -1467,8 +1467,8 @@ struct renderFitPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns") as Int
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
 
@@ -1523,7 +1523,7 @@ struct renderFitPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: Infinity as Int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey).attributeModifier(this._renderFitMarqueeMod)
@@ -1535,15 +1535,15 @@ struct renderFitPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._renderFitMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.commonStyle(this.componentKey).attributeModifier(this._renderFitNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1721,13 +1721,13 @@ struct renderFitPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._renderFitNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
@@ -1741,7 +1741,7 @@ struct renderFitPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption)
+              })
               .id('constraintSize')
           }.commonStyle(this.componentKey).attributeModifier(this._renderFitRelativeContainerMod)
         } else if (this.targetView == 'Row') {
