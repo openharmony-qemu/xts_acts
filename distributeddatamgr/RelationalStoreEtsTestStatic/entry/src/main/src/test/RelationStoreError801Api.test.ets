@@ -64,8 +64,8 @@ import {
     'blobType': new Uint8Array([1, 2, 3]),
   };
   
-  export default function abilityTest() {
-    describe('RelationStoreError801Test', () => {
+  export default function RelationStoreError801Test() {
+    describe('RelationStoreError801Test', (): void => {
       beforeAll(async () => {
         console.log(TAG + 'beforeAll');
         await Utils.msSleep(2000)
