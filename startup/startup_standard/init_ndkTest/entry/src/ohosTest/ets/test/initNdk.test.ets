@@ -44,7 +44,7 @@ export default function initNdkTest() {
         }        
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -84,16 +84,15 @@ export default function initNdkTest() {
     it('testOHGetManufacture001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let manufactureInfo: string = initndk.oHGetManufacture();
 
-      let ret = false;
-      expect(manufactureInfo).assertInstanceOf('String');
+      
       if (manufactureInfo != "" && manufactureInfo != null && manufactureInfo != undefined) {
-          ret = true;
-          expect(ret).assertTrue();
-          done();
+        console.info('the value of the manufacture is :' + manufactureInfo);
+        expect(manufactureInfo).assertInstanceOf('String');
+        done();
       } else {
-          console.info('the return value Manufacture is null or incorrect.');
-          expect(false).assertTrue();
-          done();
+        console.info('the return value Manufacture is null or incorrect.');
+        expect().assertFail();
+        done();
       }
     });
 
@@ -124,16 +123,15 @@ export default function initNdkTest() {
     it('testOHGetBrand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let brandInfo: string = initndk.oHGetBrand();
 
-      let ret = false;
-      expect(brandInfo).assertInstanceOf('String');
+     
       if (brandInfo != "" && brandInfo != null && brandInfo != undefined) {
-          ret = true;
-          expect(ret).assertTrue();
-          done();
+        console.info('the value of the brand is :' + brandInfo);
+        expect(brandInfo).assertInstanceOf('String');
+        done();
       } else {
-          console.info('the return value Manufacture is null or incorrect.');
-          expect(false).assertTrue();
-          done();
+        console.info('the return value Manufacture is null or incorrect.');
+        expect().assertFail();
+        done();
       }
     });
 
@@ -162,19 +160,17 @@ export default function initNdkTest() {
      * @tc.level      : Level 0
      */
     it('testOHGetMarketName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let ret = false;
       let marketNameInfo: string = initndk.oHGetMarketName();
 
-      console.info('the value of the deviceinfo marketName is :' + marketNameInfo);
-      expect(marketNameInfo).assertInstanceOf('String');
+      
       if (marketNameInfo != "" && marketNameInfo != null && marketNameInfo != undefined) {
-          ret = true;
-          expect(ret).assertTrue();
-          done();
+        console.info('the value of the deviceinfo marketName is :' + marketNameInfo);
+        expect(marketNameInfo).assertInstanceOf('String');
+        done();
       } else {
-          console.info('the return value marketName is null or incorrect.');
-          expect(false).assertTrue();
-          done();
+        console.info('the return value marketName is null or incorrect.');
+        expect().assertFail();
+        done();
       }
     });
 
@@ -201,7 +197,7 @@ export default function initNdkTest() {
         } 
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -253,7 +249,7 @@ export default function initNdkTest() {
         }       
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -306,7 +302,7 @@ export default function initNdkTest() {
         }       
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -346,18 +342,15 @@ export default function initNdkTest() {
      */
     it('testOHGetHardwareModel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let hardwareModelInfo: string = initndk.oHGetHardwareModel();
-
-      let ret = false;
-      console.info('the value of the deviceinfo hardwareModel is :' + hardwareModelInfo);
-      expect(hardwareModelInfo).assertInstanceOf('String');
+     
       if (hardwareModelInfo != "" && hardwareModelInfo != null && hardwareModelInfo != undefined) {
-          ret = true;
-          expect(ret).assertTrue();
-          done();
+        console.info('the value of the deviceinfo hardwareModel is :' + hardwareModelInfo);
+        expect(hardwareModelInfo).assertInstanceOf('String');
+        done();
       } else {
-          console.info('the return value HardwareModel is null or incorrect.');
-          expect(false).assertTrue();
-          done();
+        console.info('the return value HardwareModel is null or incorrect.');
+        expect().assertFail();
+        done();
       }
     });
 
@@ -402,7 +395,7 @@ export default function initNdkTest() {
         }  
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -456,7 +449,7 @@ export default function initNdkTest() {
         
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -496,18 +489,17 @@ export default function initNdkTest() {
      */
     it('testOHGetSecurityPatchTag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let securityPatchTagInfo: string = initndk.oHGetSecurityPatchTag();
-      let ret = false;
       console.info('the value of the deviceinfo securityPatchTag is :' + securityPatchTagInfo);
       let reFormat = new RegExp("^(\\d{4})/(\\d{2})/(\\d{2})$");
       let re = securityPatchTagInfo.match(reFormat);
       if (re != null) {
-          ret = true;
-          expect(ret).assertTrue();
-          done();
+        console.info('the return formate is yy--mm--dd');
+        expect().assertTrue();
+        done();
       } else {
-          console.info('the return formate is not yy--mm--dd');
-          expect(false).assertTrue();
-          done();
+        console.info('the return formate is not yy--mm--dd');
+        expect().assertFail();
+        done();
       }
     });
 
@@ -535,7 +527,7 @@ export default function initNdkTest() {
         }   
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -563,7 +555,7 @@ export default function initNdkTest() {
         }  
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -615,7 +607,7 @@ export default function initNdkTest() {
         } 
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -668,7 +660,7 @@ export default function initNdkTest() {
         }       
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -696,7 +688,7 @@ export default function initNdkTest() {
         }       
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -759,16 +751,15 @@ export default function initNdkTest() {
     it('testOHGetSdkApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sdkApiVersionInfo: number = initndk.oHGetSdkApiVersion();
 
-      let ret = false;
       console.info('the value of the deviceinfo sdkApiVersion is :' + sdkApiVersionInfo);
       expect(sdkApiVersionInfo).assertInstanceOf('Number');
       if (sdkApiVersionInfo >= 0) {
-          ret = true;
-          expect(ret).assertTrue();
+        console.info('the return value SdkApiVersion is not negative number.');
+          expect().assertTrue();
           done();
       } else {
           console.info('the return value SdkApiVersion is null or incorrect.');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
       }
     });
@@ -805,17 +796,16 @@ export default function initNdkTest() {
     it('testOHGetFirstApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstApiVersionInfo: number = initndk.oHGetFirstApiVersion();
 
-      let ret = false;
       console.info('the value of the deviceinfo firstApiVersion is :' + firstApiVersionInfo);
       expect(firstApiVersionInfo).assertInstanceOf('Number');
       if (firstApiVersionInfo >= 0) {
-          ret = true;
-          expect(ret).assertTrue();
-          done();
+        console.info('the return value FirstApiVersion is not negative number.');
+        expect().assertTrue();
+        done();
       } else {
-          console.info('the return value FirstApiVersion is null or incorrect.');
-          expect(false).assertTrue();
-          done();
+        console.info('the return value FirstApiVersion is null or incorrect.');
+        expect().assertFail();
+        done();
       }
     });
 
@@ -830,17 +820,15 @@ export default function initNdkTest() {
     it('testOHGetVersionId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let versionIdInfo: string = initndk.oHGetVersionId();
 
-      let ret = false;
-      console.info('the value of the deviceinfo versionId is :' + versionIdInfo);
-      expect(versionIdInfo).assertInstanceOf('String');
+      
       if (versionIdInfo != "" && versionIdInfo != null && versionIdInfo != undefined) {
-          ret = true;
-          expect(ret).assertTrue();
-          done();
+        console.info('the value of the deviceinfo versionId is :' + versionIdInfo);
+        expect(versionIdInfo).assertInstanceOf('String');
+        done();
       } else {
-          console.info('the return value VersionId is null or incorrect.');
-          expect(false).assertTrue();
-          done();
+        console.info('the return value VersionId is null or incorrect.');
+        expect().assertFail();
+        done();
       }
     });
 
@@ -886,7 +874,7 @@ export default function initNdkTest() {
         }   
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -940,7 +928,7 @@ export default function initNdkTest() {
         }        
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -993,7 +981,7 @@ export default function initNdkTest() {
         }  
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -1049,7 +1037,7 @@ export default function initNdkTest() {
         } 
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -1102,7 +1090,7 @@ export default function initNdkTest() {
         }
       } else {
         console.info('the return value is null or incorrect.');
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     });
@@ -1220,16 +1208,15 @@ export default function initNdkTest() {
     it('testOHGetDistributionOSApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let distributionOSApiVersionInfo: number = initndk.oHGetDistributionOSApiVersion();
 
-      let ret = false;
       console.info('the value of the deviceinfo distributionOSApiVersion is :' + distributionOSApiVersionInfo);
       expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
       if (distributionOSApiVersionInfo >= 0) {
-          ret = true;
-          expect(ret).assertTrue();
+        console.info('the return value DistributionOSApiVersion is not negative number.');
+          expect().assertTrue();
           done();
       } else {
           console.info('the return value DistributionOSApiVersion is less than 0.');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
       }
     });
