@@ -10,6 +10,9 @@
     "MainAbility/pages/timePickerDialog/showTimePickerDialogBackgroundEffect",
     "MainAbility/pages/timePickerDialog/showTimePickerDialogBlurStyleOptions",
     "MainAbility/pages/timePickerDialog/timePickerDialogBackgroundEffect",
-    "MainAbility/pages/timePickerDialog/timePickerDialogBlurStyleOptions"
+    "MainAbility/pages/timePickerDialog/timePickerDialogBlurStyleOptions",
+    "MainAbility/pages/timePickerDialog/timePickerDialogOptions",
+    "MainAbility/pages/timePickerDialog/timePickerDialogUI",
+    "MainAbility/pages/timePickerDialog/timePickerDialogWindowProperties"
   ]
 }
