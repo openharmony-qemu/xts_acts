@@ -1335,7 +1335,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest5700
      * @tc.name builtinsArrayCopyToPrototypebTest5700
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 全量拷贝到起始位置
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 全量拷贝到起始位置
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1344,8 +1344,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest5700';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, undefined, null];
-        const dst: FixedArray<NullishType> = [undefined, undefined, undefined];
+        const src: FixedArray<Any> = [null, undefined, null];
+        const dst: FixedArray<Any> = [undefined, undefined, undefined];
         copyTo(src, dst, 0, 0, 3);
         expect(dst[0] === null).assertTrue();
         expect(dst[1] === undefined).assertTrue();
@@ -1357,7 +1357,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest5800
      * @tc.name builtinsArrayCopyToPrototypebTest5800
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 拷贝前缀片段到起始位置
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 拷贝前缀片段到起始位置
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1366,8 +1366,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest5800';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, undefined, null, undefined];
-        const dst: FixedArray<NullishType> = [null, null, null, null];
+        const src: FixedArray<Any> = [null, undefined, null, undefined];
+        const dst: FixedArray<Any> = [null, null, null, null];
         copyTo(src, dst, 0, 0, 2);
         expect(dst[0] === null).assertTrue();
         expect(dst[1] === undefined).assertTrue();
@@ -1380,7 +1380,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest5900
      * @tc.name builtinsArrayCopyToPrototypebTest5900
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 中间片段拷贝到偏移位置
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 中间片段拷贝到偏移位置
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1389,8 +1389,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest5900';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [undefined, null, undefined, null, undefined];
-        const dst: FixedArray<NullishType> = [null, null, null, null, null];
+        const src: FixedArray<Any> = [undefined, null, undefined, null, undefined];
+        const dst: FixedArray<Any> = [null, null, null, null, null];
         copyTo(src, dst, 1, 1, 4);
         expect(dst[0] === null).assertTrue();
         expect(dst[1] === null).assertTrue();
@@ -1404,7 +1404,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest6000
      * @tc.name builtinsArrayCopyToPrototypebTest6000
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 前缀片段拷贝到dst中间
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 前缀片段拷贝到dst中间
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1413,8 +1413,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest6000';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, null, undefined, undefined];
-        const dst: FixedArray<NullishType> = [undefined, undefined, undefined, undefined, undefined];
+        const src: FixedArray<Any> = [null, null, undefined, undefined];
+        const dst: FixedArray<Any> = [undefined, undefined, undefined, undefined, undefined];
         copyTo(src, dst, 2, 0, 2);
         expect(dst[0] === undefined).assertTrue();
         expect(dst[1] === undefined).assertTrue();
@@ -1428,7 +1428,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest6100
      * @tc.name builtinsArrayCopyToPrototypebTest6100
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 空区间拷贝(srcStart==srcEnd)不改变dst
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 空区间拷贝(srcStart==srcEnd)不改变dst
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1437,8 +1437,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest6100';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [undefined, null, undefined];
-        const dst: FixedArray<NullishType> = [null, undefined, null];
+        const src: FixedArray<Any> = [undefined, null, undefined];
+        const dst: FixedArray<Any> = [null, undefined, null];
         copyTo(src, dst, 1, 2, 2);
         expect(dst[0] === null).assertTrue();
         expect(dst[1] === undefined).assertTrue();
@@ -1450,7 +1450,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest6200
      * @tc.name builtinsArrayCopyToPrototypebTest6200
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 覆盖dst中间区间
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 覆盖dst中间区间
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1459,8 +1459,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest6200';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [undefined, undefined, undefined];
-        const dst: FixedArray<NullishType> = [null, null, null, null];
+        const src: FixedArray<Any> = [undefined, undefined, undefined];
+        const dst: FixedArray<Any> = [null, null, null, null];
         copyTo(src, dst, 1, 0, 2);
         expect(dst[0] === null).assertTrue();
         expect(dst[1] === undefined).assertTrue();
@@ -1473,7 +1473,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest6300
      * @tc.name builtinsArrayCopyToPrototypebTest6300
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 单元素拷贝到末尾-1位置
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 单元素拷贝到末尾-1位置
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1482,8 +1482,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest6300';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, undefined, null];
-        const dst: FixedArray<NullishType> = [undefined, undefined, undefined];
+        const src: FixedArray<Any> = [null, undefined, null];
+        const dst: FixedArray<Any> = [undefined, undefined, undefined];
         copyTo(src, dst, 2, 1, 2);
         expect(dst[0] === undefined).assertTrue();
         expect(dst[1] === undefined).assertTrue();
@@ -1495,7 +1495,7 @@ export default function builtinsArrayCopyToPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyToPrototypebTest6400
      * @tc.name builtinsArrayCopyToPrototypebTest6400
-     * @tc.desc copyTo(self: FixedArray<NullishType>, ...) 尾部片段拷贝到dst尾部
+     * @tc.desc copyTo(self: FixedArray<Any>, ...) 尾部片段拷贝到dst尾部
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1504,8 +1504,8 @@ export default function builtinsArrayCopyToPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyToPrototypebTest6400';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, undefined, null, undefined];
-        const dst: FixedArray<NullishType> = [null, null, null, null, null];
+        const src: FixedArray<Any> = [null, undefined, null, undefined];
+        const dst: FixedArray<Any> = [null, null, null, null, null];
         copyTo(src, dst, 3, 2, 4);
         expect(dst[0] === null).assertTrue();
         expect(dst[1] === null).assertTrue();

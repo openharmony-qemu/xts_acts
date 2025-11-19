@@ -36,7 +36,7 @@ async function testHappyPathImpl(): Promise<string> {
   let group: taskpool.TaskGroup = new taskpool.TaskGroup();
   group.addTask(task1);
   group.addTask(task2);
-  let task: Promise<NullishType> = taskpool.execute(group, taskpool.Priority.HIGH);
+  let task: Promise<Any> = taskpool.execute(group, taskpool.Priority.HIGH);
 
   await (task);
   let res1: number = sab[1];
@@ -54,7 +54,7 @@ async function testHappyPathImplCombined(): Promise<string> {
   let group: taskpool.TaskGroup = new taskpool.TaskGroup();
   group.addTask(new taskpool.Task(indexSetter, sab, Number(1)));
   group.addTask(indexSetter, sab, Number(2));
-  let task: Promise<NullishType> = taskpool.execute(group, taskpool.Priority.HIGH);
+  let task: Promise<Any> = taskpool.execute(group, taskpool.Priority.HIGH);
   await (task);
   let res1: number = sab[1];
   let res2: number = sab[2];
@@ -81,7 +81,7 @@ async function testRepeatsImpl(): Promise<string> {
     group.addTask(task);
   }
 
-  let p: Promise<NullishType> = taskpool.execute(group);
+  let p: Promise<Any> = taskpool.execute(group);
 
   await (p);
 

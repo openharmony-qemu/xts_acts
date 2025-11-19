@@ -61,11 +61,11 @@ export default function TaskpoolTestTask() {
     //     let testTask2: taskpool.Task = new taskpool.Task(printArgs, 200.0);
     //     let taskgroup1: taskpool.TaskGroup = new taskpool.TaskGroup('name');
     //     taskgroup1.addTask(testTask2);
-    //     taskpool.execute(testTask1).then((res: NullishType) => {
+    //     taskpool.execute(testTask1).then((res: Any) => {
     //       console.info(`${caseName}: testTask1 return value: ${JSON.stringify(res)}`);
     //       isTerminate1 = true;
     //     });
-    //     taskpool.execute(taskgroup1).then((res: NullishType) => {
+    //     taskpool.execute(taskgroup1).then((res: Any) => {
     //       console.info(`${caseName}: testTask2 return value: ${JSON.stringify(res)}`);
     //       isTerminate2 = true;
     //     });
@@ -94,15 +94,15 @@ export default function TaskpoolTestTask() {
     //     let testTask1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
     //     let testTask2: taskpool.Task = new taskpool.Task(printArgs, 200.0);
     //     let testTask3: taskpool.Task = new taskpool.Task(printArgs, 300.0);
-    //     taskpool.execute(testTask1).then((res: NullishType) => {
+    //     taskpool.execute(testTask1).then((res: Any) => {
     //       console.info(`${caseName}: testTask1 return value: ${JSON.stringify(res)}`);
     //       isTerminate1 = true;
     //     });
-    //     taskpool.execute(testTask2).then((res: NullishType) => {
+    //     taskpool.execute(testTask2).then((res: Any) => {
     //       console.info(`${caseName}: testTask2 return value: ${JSON.stringify(res)}`);
     //       isTerminate2 = true;
     //     });
-    //     taskpool.execute(testTask3).then((res: NullishType) => {
+    //     taskpool.execute(testTask3).then((res: Any) => {
     //       isTerminate3 = true;
     //     });
     //     const taskInfo_0: taskpool.TaskInfo = taskpool.getTaskPoolInfo().taskInfos[0];
@@ -130,15 +130,15 @@ export default function TaskpoolTestTask() {
     //     let testTask1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
     //     let testTask2: taskpool.Task = new taskpool.Task(printArgs, 200.0);
     //     let testTask3: taskpool.Task = new taskpool.Task(printArgs, 300.0);
-    //     taskpool.execute(testTask1).then((res: NullishType) => {
+    //     taskpool.execute(testTask1).then((res: Any) => {
     //       console.info(`${caseName}: testTask1 return value: ${JSON.stringify(res)}`);
     //       isTerminate1 = true;
     //     });
-    //     taskpool.execute(testTask2).then((res: NullishType) => {
+    //     taskpool.execute(testTask2).then((res: Any) => {
     //       console.info(`${caseName}: testTask2 return value: ${JSON.stringify(res)}`);
     //       isTerminate2 = true;
     //     });
-    //     taskpool.execute(testTask3).then((res: NullishType) => {
+    //     taskpool.execute(testTask3).then((res: Any) => {
     //       console.info(`${caseName}: testTask3 return value: ${JSON.stringify(res)}`);
     //       isTerminate3 = true;
     //     });
@@ -160,14 +160,14 @@ export default function TaskpoolTestTask() {
     //     let testTask1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
     //     let testTask2: taskpool.Task = new taskpool.Task(printArgs, 200.0);
     //     let testTask3: taskpool.Task = new taskpool.Task(printArgs, 300.0);
-    //     taskpool.execute(testTask1).then((res: NullishType) => {
+    //     taskpool.execute(testTask1).then((res: Any) => {
     //       console.info(`${caseName}: testTask1 return value: ${JSON.stringify(res)}`);
     //       isTerminate1 = true;
     //     });
-    //     taskpool.execute(testTask2).then((res: NullishType) => {
+    //     taskpool.execute(testTask2).then((res: Any) => {
     //       console.info(`${caseName}: testTask2 return value: ${JSON.stringify(res)}`);
     //     });
-    //     taskpool.execute(testTask3).then((res: NullishType) => {
+    //     taskpool.execute(testTask3).then((res: Any) => {
     //       console.info(`${caseName}: testTask3 return value: ${JSON.stringify(res)}`);
     //     });
     //     const taskPoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();

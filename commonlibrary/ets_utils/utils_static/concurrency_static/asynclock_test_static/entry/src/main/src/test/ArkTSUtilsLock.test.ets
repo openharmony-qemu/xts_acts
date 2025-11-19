@@ -976,13 +976,13 @@ export default function arkTSUtilsLockTest() {
           let task2: taskpool.Task = new taskpool.Task(exclusiveTimeTask, lockName);
           let state1: boolean = false;
           let state2: boolean = false;
-          taskpool.execute(task1).then((value: NullishType) => {
+          taskpool.execute(task1).then((value: Any) => {
             const res = value as Array<Number>;
             A = res[1];
             state1 = true;
           })
           await sleep(200);
-          taskpool.execute(task2).then((value: NullishType) => {
+          taskpool.execute(task2).then((value: Any) => {
             const res = value as Array<Number>;
             B = res[1];
             state2 = true;
@@ -1020,13 +1020,13 @@ export default function arkTSUtilsLockTest() {
           let task2: taskpool.Task = new taskpool.Task(sharedTimeTask, lockName);
           let state1: boolean = false;
           let state2: boolean = false;
-          taskpool.execute(task1).then((value: NullishType) => {
+          taskpool.execute(task1).then((value: Any) => {
             const res = value as Array<Number>;
             A = res[1];
             state1 = true;
           })
           await sleep(200);
-          taskpool.execute(task2).then((value: NullishType) => {
+          taskpool.execute(task2).then((value: Any) => {
             const res = value as Array<Number>;
             B = res[1];
             state2 = true;
@@ -1061,12 +1061,12 @@ export default function arkTSUtilsLockTest() {
           let task2: taskpool.Task = new taskpool.Task(exclusiveTask, TAG, 'B');
           let state1: boolean = false;
           let state2: boolean = false;
-          taskpool.execute(task1).then((value: NullishType) => {
+          taskpool.execute(task1).then((value: Any) => {
             res += (value as string);
             state1 = true;
           })
           await sleep(200);
-          taskpool.execute(task2).then((value: NullishType) => {
+          taskpool.execute(task2).then((value: Any) => {
             res += (value as string);
             state2 = true;
           })
@@ -1105,7 +1105,7 @@ export default function arkTSUtilsLockTest() {
           let job1 = async () => {
             let eaw = new EAWorker()
             eaw.start()
-            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: NullishType) => {
+            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: Any) => {
               const res = value as Array<number>;
               l1_start = res[0];
               l1_end = res[1];
@@ -1116,7 +1116,7 @@ export default function arkTSUtilsLockTest() {
           let job2 = async () => {
             let eaw = new EAWorker()
             eaw.start()
-            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: NullishType) => {
+            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: Any) => {
               const res = value as Array<number>;
               l2_start = res[0];
               l2_end = res[1];
@@ -1165,10 +1165,10 @@ export default function arkTSUtilsLockTest() {
           let lock = AsyncLock.request(TAG);
           let task1: taskpool.Task = new taskpool.Task(locksTask, lock, AsyncLockMode.SHARED);
           let task2: taskpool.Task = new taskpool.Task(locksTask, lock, AsyncLockMode.EXCLUSIVE);
-          await taskpool.execute(task1).then((value: NullishType) => {
+          await taskpool.execute(task1).then((value: Any) => {
             res += (value as string);
           })
-          taskpool.execute(task2).then((value: NullishType) => {
+          taskpool.execute(task2).then((value: Any) => {
             res += (value as string);
           })
           expect(res).assertEqual('A');
@@ -1198,12 +1198,12 @@ export default function arkTSUtilsLockTest() {
           let task2: taskpool.Task = new taskpool.Task(locksTask, lock, AsyncLockMode.SHARED);
           let state1: boolean = false;
           let state2: boolean = false;
-          taskpool.execute(task1).then((value: NullishType) => {
+          taskpool.execute(task1).then((value: Any) => {
             res += (value as string);
             state1 = true;
           })
           await sleep(200);
-          taskpool.execute(task2).then((value: NullishType) => {
+          taskpool.execute(task2).then((value: Any) => {
             res += (value as string);
             state2 = true;
           })
@@ -1237,12 +1237,12 @@ export default function arkTSUtilsLockTest() {
           let task2: taskpool.Task = new taskpool.Task(lockExclusiveTask, lock, 'B');
           let state1: boolean = false;
           let state2: boolean = false;
-          taskpool.execute(task1).then((value: NullishType) => {
+          taskpool.execute(task1).then((value: Any) => {
             res += (value as string);
             state1 = true;
           })
           await sleep(200);
-          taskpool.execute(task2).then((value: NullishType) => {
+          taskpool.execute(task2).then((value: Any) => {
             res += (value as string);
             state2 = true;
           })

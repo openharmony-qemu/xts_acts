@@ -981,7 +981,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_4900
      * @tc.name builtinsFloatPrototypebTest4900
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1001,7 +1001,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5000
      * @tc.name builtinsFloatPrototypebTest5000
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1021,7 +1021,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5100
      * @tc.name builtinsFloatPrototypebTest5100
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1041,7 +1041,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5200
      * @tc.name builtinsFloatPrototypebTest5200
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1061,7 +1061,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5300
      * @tc.name builtinsFloatPrototypebTest5300
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1080,7 +1080,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5400
      * @tc.name builtinsFloatPrototypebTest5400
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1099,7 +1099,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5500
      * @tc.name builtinsFloatPrototypebTest5500
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1118,7 +1118,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5600
      * @tc.name builtinsFloatPrototypebTest5600
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1139,7 +1139,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5700
      * @tc.name builtinsFloatPrototypebTest5700
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1159,7 +1159,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5800
      * @tc.name builtinsFloatPrototypebTest5800
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1179,7 +1179,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_5900
      * @tc.name builtinsFloatPrototypebTest5900
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1199,7 +1199,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_6000
      * @tc.name builtinsFloatPrototypebTest6000
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1219,7 +1219,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_6100
      * @tc.name builtinsFloatPrototypebTest6100
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1238,7 +1238,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_6200
      * @tc.name builtinsFloatPrototypebTest6200
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1257,7 +1257,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_6300
      * @tc.name builtinsFloatPrototypebTest6300
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1277,7 +1277,7 @@ export default function builtinsFloatPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_6400
      * @tc.name builtinsFloatPrototypebTest6400
-     * @tc.desc test equals(other: NullishType): boolean
+     * @tc.desc test equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

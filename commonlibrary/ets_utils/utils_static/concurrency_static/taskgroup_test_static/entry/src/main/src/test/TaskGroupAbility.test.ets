@@ -137,7 +137,7 @@ export default function TaskGroupAbilityTest() {
 
         CountStr1.count = ""
         CountStr2.count = ""
-        await taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        await taskpool.execute(taskGroup).then((num: Array<Any>) => {
 
           const result1 = (num[0])
           const result2 = (num[1])
@@ -184,12 +184,12 @@ export default function TaskGroupAbilityTest() {
       for (let i = 0; i < 1; i++) {
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -236,11 +236,11 @@ export default function TaskGroupAbilityTest() {
 
       for (let i = 0; i < 1; i++) {
         try {
-           taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+           taskpool.execute(taskGroup).then((num: Array<Any>) => {
             Count3.count = Count3.count + (num[0] as Number)
             Count4.count = Count4.count + (num[1] as Number)
             console.info('======', Count3.count, Count4.count)
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
             count++
             // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -285,7 +285,7 @@ export default function TaskGroupAbilityTest() {
 
       for (let i = 0; i < 1; i++) {
         await sleep(100)
-         taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((num: Array<Any>) => {
           CountBol1.count = Boolean(num[0])
           CountBol2.count = Boolean(num[1])
           console.info('======', CountBol1.count, CountBol2.count)
@@ -323,12 +323,12 @@ export default function TaskGroupAbilityTest() {
       for (let i = 0; i < 1; i++) {
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -373,12 +373,12 @@ export default function TaskGroupAbilityTest() {
       for (let i = 0; i < 1; i++) {
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -419,7 +419,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUndefined1, undefined);
         taskGroup.addTask(printUndefined2, undefined);
         await sleep(100)
-         taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((num: Array<Any>) => {
           CountUndefined1.count
           CountUndefined2.count
           console.info('======', CountUndefined1.count, CountUndefined2.count)
@@ -452,12 +452,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUndefined4, undefined);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -500,12 +500,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printNull4, null);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -550,7 +550,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printArray2, Array2);
 
         await sleep(100)
-         taskpool.execute(taskGroup).then((results: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((results: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -588,12 +588,12 @@ export default function TaskGroupAbilityTest() {
 
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -640,7 +640,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printMap2, map2);
 
         await sleep(100)
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -677,12 +677,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printMap4, map2);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -729,7 +729,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printSet1, set1);
         taskGroup.addTask(printSet2, set2);
         await sleep(100)
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -770,12 +770,12 @@ export default function TaskGroupAbilityTest() {
 
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -822,7 +822,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printInt8Array2, int8Array2);
 
         await sleep(100)
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -860,12 +860,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printInt8Array4, int8Array2);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -911,7 +911,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUint8Array1, uint8Array1);
         taskGroup.addTask(printUint8Array2, uint8Array2);
         await sleep(100)
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -949,12 +949,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUint8Array4, uint8Array2);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -1001,7 +1001,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printInt16Array2, int16Array2);
 
         await sleep(100)
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -1039,12 +1039,12 @@ export default function TaskGroupAbilityTest() {
 
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -1090,7 +1090,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUint16Array2, uint16Array2);
 
         await sleep(100)
-         taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -1128,12 +1128,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUint16Array4, uint16Array2);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -1179,7 +1179,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printInt32Array1, int32Array1);
         taskGroup.addTask(printInt32Array2, int32Array2);
         await sleep(100)
-         taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -1217,12 +1217,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printInt32Array4, int32Array2);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
@@ -1268,7 +1268,7 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUint32Array2, uint32Array2);
 
         await sleep(100)
-         taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
@@ -1306,12 +1306,12 @@ export default function TaskGroupAbilityTest() {
         taskGroup.addTask(printUint32Array4, uint32Array2);
         try {
           const promise = taskpool.execute(taskGroup)
-            .then((num: Array<NullishType>) => {
+            .then((num: Array<Any>) => {
               Count3.count++
               Count4.count++
               console.info('======', Count3.count, Count4.count)
             })
-            .catch((error: NullishType) => {
+            .catch((error: Any) => {
               // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
               count++
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)

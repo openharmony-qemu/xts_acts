@@ -72,10 +72,10 @@ export default function taskPoolErrorSuccess2Test() {
 
 
       for (let i = 0; i < 1; i++) {
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
           count2 ++
           console.info('======2', count2, (e as BusinessError).message)
@@ -113,10 +113,10 @@ export default function taskPoolErrorSuccess2Test() {
 
 
       for (let i = 0; i < 1; i++) {
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
           count2 ++
           console.info('======2', count2, (e as BusinessError).message)
@@ -154,10 +154,10 @@ export default function taskPoolErrorSuccess2Test() {
 
 
       for (let i = 0; i < 1; i++) {
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
           count2 ++
           console.info('======2', count2, (e as BusinessError).message)
@@ -195,10 +195,10 @@ export default function taskPoolErrorSuccess2Test() {
 
 
       for (let i = 0; i < 1; i++) {
-         taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+         taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
           count2 ++
           console.info('======2', count2, (e as BusinessError).message)

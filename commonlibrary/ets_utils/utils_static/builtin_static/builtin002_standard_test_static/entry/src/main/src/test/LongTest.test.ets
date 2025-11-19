@@ -638,7 +638,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2800
      * @tc.name builtinsLongPrototypebTest2800
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -658,7 +658,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2900
      * @tc.name builtinsLongPrototypebTest2900
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -678,7 +678,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_3000
      * @tc.name builtinsLongPrototypebTest3000
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -697,7 +697,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_3100
      * @tc.name builtinsLongPrototypebTest3100
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -716,7 +716,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_3200
      * @tc.name builtinsLongPrototypebTest3200
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -735,7 +735,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_1600
      * @tc.name builtinsLongPrototypebTest1600
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -755,7 +755,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_3300
      * @tc.name builtinsLongPrototypebTest3300
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -775,7 +775,7 @@ export default function builtinsLongPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_3400
      * @tc.name builtinsLongPrototypebTest3400
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

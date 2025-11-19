@@ -140,7 +140,7 @@ export default function taskTest() {
         console.info(`${TAG} test start`);
         try {
           let task: taskpool.Task = new taskpool.Task(task002, 22);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as string).assertEqual('22');
             let arguments = task.arguments;
             expect(arguments?.length).assertEqual(1);
@@ -170,7 +170,7 @@ export default function taskTest() {
         let task: taskpool.Task = new taskpool.Task(taskName, task002, 20);
         let name = task.name as string;
         expect(String(name)).assertEqual('taskName');
-        await taskpool.execute(task).then((value: NullishType) => {
+        await taskpool.execute(task).then((value: Any) => {
           expect(value as string).assertEqual('20');
         });
       } catch (err) {
@@ -198,7 +198,7 @@ export default function taskTest() {
           let task: taskpool.Task = new taskpool.Task(task004);
           let totalDuration: Number = task.totalDuration;
           expect(totalDuration >= 0).assertEqual(true);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as string).assertEqual('20');
           });
         } catch (err) {
@@ -226,7 +226,7 @@ export default function taskTest() {
           let task: taskpool.Task = new taskpool.Task(task004);
           let ioDuration: Number = task.ioDuration;
           expect(ioDuration >= 0).assertEqual(true);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as string).assertEqual('20');
           });
         } catch (err) {
@@ -254,7 +254,7 @@ export default function taskTest() {
           let task: taskpool.Task = new taskpool.Task(task004);
           let cpuDuration: Number = task.cpuDuration;
           expect(cpuDuration >= 0).assertEqual(true);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as string).assertEqual('20');
           });
         } catch (err) {
@@ -340,7 +340,7 @@ export default function taskTest() {
       try {
         let taskName: string = "taskName";
         let task: taskpool.Task = new taskpool.Task(taskName, task002, 20);
-        taskpool.execute(task).then((value: NullishType) => {
+        taskpool.execute(task).then((value: Any) => {
           expect(value as string).assertEqual('20');
           let name = task.name as string;
           expect(String(name)).assertEqual(taskName);
@@ -368,7 +368,7 @@ export default function taskTest() {
         console.info(`${TAG} test start`);
         try {
           let task: taskpool.Task = new taskpool.Task(task004);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as string).assertEqual('20');
             let totalDuration: Number = task.totalDuration;
             expect(totalDuration >= 0).assertEqual(true);
@@ -396,7 +396,7 @@ export default function taskTest() {
         console.info(`${TAG} test start`);
         try {
           let task: taskpool.Task = new taskpool.Task(task004);
-          await taskpool.execute(task).then((value:NullishType) => {
+          await taskpool.execute(task).then((value:Any) => {
             let cpuDuration: Number = task.cpuDuration;
             expect(cpuDuration >= 0).assertEqual(true);
             expect(value as string).assertEqual('20');
@@ -425,7 +425,7 @@ export default function taskTest() {
         try {
           let task: taskpool.Task = new taskpool.Task(taskSendData001, 'test');
           task.onReceiveData(printLog);
-          await taskpool.execute(task).then((value:NullishType) => {
+          await taskpool.execute(task).then((value:Any) => {
             expect(value as string).assertEqual('test');
             expect(executedFlag).assertEqual(true);
           });
@@ -454,7 +454,7 @@ export default function taskTest() {
         try {
           let task: taskpool.Task = new taskpool.Task(taskSendData002, 2n);
           task.onReceiveData(printLog);
-          await taskpool.execute(task).then((value:NullishType) => {
+          await taskpool.execute(task).then((value:Any) => {
             taskValue = true;
           });
           expect(taskValue).assertTrue();
@@ -484,7 +484,7 @@ export default function taskTest() {
             return 'hi';
           });
           task.onReceiveData(printLog);
-          await taskpool.execute(task).then((value:NullishType) => {
+          await taskpool.execute(task).then((value:Any) => {
             expect(true).assertEqual(true);
           });
         } catch (error) {
@@ -512,7 +512,7 @@ export default function taskTest() {
         try {
           let task: taskpool.Task = new taskpool.Task(onReceiveData001);
           task.onReceiveData(printLog);
-          await taskpool.execute(task).then((value:NullishType) => {
+          await taskpool.execute(task).then((value:Any) => {
             taskFlag = true;
           });
           expect(taskFlag).assertEqual(true);
@@ -542,7 +542,7 @@ export default function taskTest() {
           task.onReceiveData(() => {
             taskFlag = true;
           });
-          await taskpool.execute(task).then((value:NullishType) => {
+          await taskpool.execute(task).then((value:Any) => {
             expect(taskFlag).assertEqual(true);
             expect(value as number).assertEqual(1);
           });
@@ -573,7 +573,7 @@ export default function taskTest() {
           task.onReceiveData((data:number) => {
             taskValue = data;
           });
-          await taskpool.execute(task).then((value:NullishType) => {
+          await taskpool.execute(task).then((value:Any) => {
             expect(taskValue).assertEqual(10);
             expect(value as number).assertEqual(1);
           });
@@ -601,7 +601,7 @@ export default function taskTest() {
         let taskValue: number = 0;
         try {
           let task: taskpool.Task = new taskpool.Task(onReceiveData006, Number(1));
-          task.onReceiveData((data: number): NullishType => {
+          task.onReceiveData((data: number): Any => {
             taskValue = data + 1;
             return null;
           });
@@ -634,7 +634,7 @@ export default function taskTest() {
           let task: taskpool.Task = new taskpool.Task(onReceiveData001);
           task.onEnqueued(() => {
           });
-          await taskpool.execute(task).then((res:NullishType) => {
+          await taskpool.execute(task).then((res:Any) => {
             expect(true).assertEqual(true);;
           });
         } catch (error) {
@@ -663,7 +663,7 @@ export default function taskTest() {
           let task: taskpool.Task = new taskpool.Task(onReceiveData004, simpleCallback);
           task.onEnqueued(() => {
           });
-          await taskpool.execute(task).then((res:NullishType) => {
+          await taskpool.execute(task).then((res:Any) => {
             taskFlag = true;
           });
           expect(taskFlag).assertEqual(true);
@@ -692,7 +692,7 @@ export default function taskTest() {
         let task: taskpool.Task = new taskpool.Task(onReceiveData001);
         task.onStartExecution(() => {
         });
-        await taskpool.execute(task).then((value:NullishType) => {
+        await taskpool.execute(task).then((value:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
@@ -721,7 +721,7 @@ export default function taskTest() {
         let task: taskpool.Task = new taskpool.Task(onReceiveData004, simpleCallback);
         task.onStartExecution(() => {
         });
-        await taskpool.execute(task).then((res:NullishType) => {
+        await taskpool.execute(task).then((res:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
@@ -751,7 +751,7 @@ export default function taskTest() {
         let task: taskpool.Task = new taskpool.Task(onExecutionSucceeded001, testError);
         task.onExecutionFailed((e: Error) => {
         })
-        await taskpool.execute(task).then((value:NullishType) => {
+        await taskpool.execute(task).then((value:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
@@ -780,7 +780,7 @@ export default function taskTest() {
         let task: taskpool.Task = new taskpool.Task(onReceiveData001);
         task.onExecutionSucceeded(() => {
         });
-        await taskpool.execute(task).then((value:NullishType) => {
+        await taskpool.execute(task).then((value:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
@@ -809,7 +809,7 @@ export default function taskTest() {
         let task: taskpool.Task = new taskpool.Task(onReceiveData004, simpleCallback);
         task.onExecutionSucceeded(() => {
         });
-        await taskpool.execute(task).then((value:NullishType) => {
+        await taskpool.execute(task).then((value:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);

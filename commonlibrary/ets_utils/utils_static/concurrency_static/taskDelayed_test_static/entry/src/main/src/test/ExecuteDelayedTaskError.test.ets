@@ -726,7 +726,7 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           taskpool.executeDelayed(100, nTask)
-          taskpool.executeDelayed(100, eTask).catch((err: NullishType) => {
+          taskpool.executeDelayed(100, eTask).catch((err: Any) => {
             console.log(`promiseNormalTask catch Task ${caseName} executed`);
             try {
               throw new Error(`Error in task ${caseName}`)
