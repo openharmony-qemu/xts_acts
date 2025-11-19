@@ -56,10 +56,13 @@ done();
     });
 
     /*
-     * @tc.number       dragAdaptationTest
-     * @tc.name         dragAdaptationTest_001
-     * @tc.desic        dragAdaptationTest_001
-     */
+    * @tc.number     : SUB_dragAdaptationTest_001
+    * @tc.name       : dragAdaptationTest_001
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('dragAdaptationTest_001', Level.LEVEL0, async () => {
       if (globalThis.winLeft == 0) {
         let driver = Driver.create();

@@ -18,8 +18,8 @@ import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function enableEdgeAutoScroll() {
-  describe('enableEdgeAutoScroll', () => {
+export default function enableEdgeAutoScroll_true() {
+  describe('enableEdgeAutoScroll_true', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/DragInteractionOptions/enableEdgeAutoScroll_true',

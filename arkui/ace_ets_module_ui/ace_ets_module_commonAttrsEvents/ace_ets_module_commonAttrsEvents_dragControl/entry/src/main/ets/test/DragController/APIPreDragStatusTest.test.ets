@@ -47,7 +47,7 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number    SUB_APIPreDragStatusTest_0010
      * @tc.name      APIPreDragStatusTest_0010
      * @tc.desc      api test ACTION_DETECTING_STATUS
      * @tc.level:    Level
@@ -72,7 +72,7 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number   SUB_APIPreDragStatusTest_0020
     * @tc.name      APIPreDragStatusTest_0020
      * @tc.desc      api test READY_TO_TRIGGER_DRAG_ACTION
      * @tc.level:    Level
@@ -101,7 +101,7 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number   SUB_APIPreDragStatusTest_0030
     * @tc.name      APIPreDragStatusTest_0030
      * @tc.desc      api test PREVIEW_LIFT_STARTED
      * @tc.level:    Level
@@ -129,7 +129,7 @@ export default function APIPreDragStatusTest() {
       done();
     });
     /**
-     * @tc.number
+     * @tc.number   SUB_APIPreDragStatusTest_0040
     * @tc.name      APIPreDragStatusTest_0040
      * @tc.desc      api test PREVIEW_LIFT_FINISHED
      * @tc.level:    Level
@@ -158,7 +158,7 @@ export default function APIPreDragStatusTest() {
       done();
     });
     /**
-     * @tc.number
+     * @tc.number   SUB_APIPreDragStatusTest_0050
     * @tc.name      APIPreDragStatusTest_0050
      * @tc.desc      api test PREVIEW_LANDING_STARTED
      * @tc.level:    Level
@@ -187,7 +187,7 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number   SUB_APIPreDragStatusTest_0060
     * @tc.name      APIPreDragStatusTest_0060
      * @tc.desc      api test PREVIEW_LANDING_FINISHED
      * @tc.level:    Level

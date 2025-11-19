@@ -46,6 +46,15 @@ export default function enableJsunit() {
       console.info("enable after each called");
     });
 
+    /*
+    * @tc.number     : SUB_testEnable01
+    * @tc.name       : testEnable01
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
+
     it('testEnable01', Level.LEVEL0, async (done: Function) => {
       console.info('[testEnable01] START');
       await CommonFunc.sleep(1000);
@@ -55,6 +64,15 @@ export default function enableJsunit() {
       console.info('[testEnable01] END');
       done()
     });
+
+    /*
+    * @tc.number     : SUB_testEnable03
+    * @tc.name       : testEnable03
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('testEnable03', Level.LEVEL0, async (done: Function) => {
       console.info('[testEnable03] START');
       try {
@@ -80,6 +98,14 @@ export default function enableJsunit() {
       done()
     });
 
+    /*
+    * @tc.number     : SUB_testEnable04
+    * @tc.name       : testEnable04
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('testEnable04', Level.LEVEL0, async (done: Function) => {
       console.info('testEnable04 START');
       try {
@@ -104,6 +130,14 @@ export default function enableJsunit() {
       done()
     });
 
+    /*
+    * @tc.number     : SUB_testEnable02
+    * @tc.name       : testEnable02
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('testEnable02', Level.LEVEL0, async (done: Function) => {
       console.info('[testEnable02] START');
       try {

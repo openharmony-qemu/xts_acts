@@ -56,6 +56,15 @@ done();
       console.info("dragEvent after each called");
     });
 
+    /*
+    * @tc.number     : SUB_dragEventTest_0100
+    * @tc.name       : dragEventTest_0100
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
+
     it('dragEventTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('dragEventTest_0100 START');
       let rect: RectValue = Utils.getComponentRect('apple')
@@ -83,6 +92,15 @@ done();
       console.info('dragEventTest_0100 END');
       done();
     });
+
+    /*
+      * @tc.number     : SUB_dragEventTest_0200
+      * @tc.name       : dragEventTest_0200
+      * @tc.desc       : test
+      * @tc.size       : MediumTest
+      * @tc.type       : Function
+      * @tc.level      : Level 0
+      */
 
     it('dragEventTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('dragEventTest_0200 START');
@@ -113,6 +131,14 @@ done();
       done();
     });
 
+    /*
+    * @tc.number     : SUB_dragEventTest_0300
+    * @tc.name       : dragEventTest_0300
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('dragEventTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('dragEventTest_0300 START');
       let rect = Utils.getComponentRect('banana')
@@ -141,6 +167,14 @@ done();
       done();
     });
 
+    /*
+    * @tc.number     : SUB_dragEventTest_0400
+    * @tc.name       : dragEventTest_0400
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('dragEventTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('dragEventTest_0400 START');
       let rect = Utils.getComponentRect('mango')
@@ -169,6 +203,14 @@ done();
       done();
     });
 
+    /*
+    * @tc.number     : SUB_dragEventTest_0500
+    * @tc.name       : dragEventTest_0500
+    * @tc.desc       : test
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('dragEventTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('dragEventTest_0500 START');
       let rect = Utils.getComponentRect('strawberry')
