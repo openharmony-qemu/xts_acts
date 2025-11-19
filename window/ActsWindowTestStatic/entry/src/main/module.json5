@@ -58,7 +58,10 @@
     ],
     "requestPermissions": [
       {"name": "ohos.permission.PRIVACY_WINDOW"},
-      {"name": "ohos.permission.SYSTEM_FLOAT_WINDOW"}
+      {"name": "ohos.permission.SYSTEM_FLOAT_WINDOW"},
+      {
+        "name": "ohos.permission.SET_WINDOW_TRANSPARENT"
+      }
     ]
   }
 }
