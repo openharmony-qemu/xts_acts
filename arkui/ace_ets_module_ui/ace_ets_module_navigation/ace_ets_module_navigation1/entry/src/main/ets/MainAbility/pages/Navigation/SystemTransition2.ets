@@ -21,9 +21,9 @@ struct SystemTransition2 {
   @Builder
   pageMap(name: string) {
     if (name == 'pageOne2') {
-      PageOne2()
+      PageOne299()
     } else if (name == 'pageTwo2') {
-      PageTwo2()
+      PageTwo299()
     }
   }
 
@@ -50,7 +50,7 @@ struct SystemTransition2 {
 }
 
 @Component
-struct PageOne2 {
+struct PageOne299 {
   @Consume('pageInfos') pageInfos: NavPathStack;
 
   build() {
@@ -69,7 +69,7 @@ struct PageOne2 {
 }
 
 @Component
-struct PageTwo2 {
+struct PageTwo299 {
   @Consume('pageInfos') pageInfos: NavPathStack;
 
   build() {

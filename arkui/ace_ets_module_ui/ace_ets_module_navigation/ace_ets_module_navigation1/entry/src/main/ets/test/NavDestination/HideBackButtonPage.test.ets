@@ -97,6 +97,9 @@ export default function HideBackButtonPage() {
 
       await driver.assertComponentExist(ON.type('BackButton'));
 
+      let backButton2: Component | null = await driver.findComponent(ON.type('BackButton'));
+      expect(backButton2 !== null).assertTrue();
+
       console.info('HideBackButtonPage_0200 END');
       done();
     });
@@ -126,6 +129,9 @@ export default function HideBackButtonPage() {
 
       await driver.assertComponentExist(ON.type('BackButton'));
 
+      let backButton3: Component | null = await driver.findComponent(ON.type('BackButton'));
+      expect(backButton3 !== null).assertTrue();
+
       console.info('HideBackButtonPage_0300 END');
       done();
     });
@@ -153,6 +159,9 @@ export default function HideBackButtonPage() {
       await CommonFunc.sleep(500);
 
       await driver.assertComponentExist(ON.type('BackButton'));
+
+      let backButton4: Component | null = await driver.findComponent(ON.type('BackButton'));
+      expect(backButton4 !== null).assertTrue();
 
       console.info('HideBackButtonPage_0400 END');
       done();

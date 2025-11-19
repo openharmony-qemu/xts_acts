@@ -21,9 +21,9 @@ struct HideBackButtonPage {
   @Builder
   pageMap(name: string) {
     if (name == 'pageOne') {
-      PageOne2()
+      PageOne27()
     } else if (name == 'pageTwo') {
-      PageTwo2()
+      PageTwo27()
     } else if (name == 'pageThree') {
       PageThree2()
     } else if (name == 'pageFour') {
@@ -61,7 +61,7 @@ struct HideBackButtonPage {
 }
 
 @Component
-struct PageOne2 {
+struct PageOne27 {
   @Consume('pageInfos') pageInfos: NavPathStack;
   build() {
     NavDestination() {
@@ -75,7 +75,7 @@ struct PageOne2 {
 }
 
 @Component
-struct PageTwo2 {
+struct PageTwo27 {
   @Consume('pageInfos') pageInfos: NavPathStack;
   build() {
     NavDestination() {

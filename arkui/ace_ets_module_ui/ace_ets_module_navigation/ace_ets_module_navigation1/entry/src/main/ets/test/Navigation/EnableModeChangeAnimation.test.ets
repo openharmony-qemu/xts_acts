@@ -88,8 +88,8 @@ export default function EnableModeChangeAnimation() {
     });
 
         /**
-     * @tc.number    EnableModeChangeAnimation_0100
-     * @tc.name      EnableModeChangeAnimation_0100
+     * @tc.number    EnableModeChangeAnimation_0200
+     * @tc.name      EnableModeChangeAnimation_0200
      * @tc.desc      Test EnableModeChangeAnimation false
      * @tc.level     Level 2
      */

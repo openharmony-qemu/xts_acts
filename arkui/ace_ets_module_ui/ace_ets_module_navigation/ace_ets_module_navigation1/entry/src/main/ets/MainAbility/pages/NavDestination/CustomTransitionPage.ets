@@ -32,9 +32,9 @@ struct CustomTransitionPage {
   @Builder
   pageMap(name: string) {
     if (name == 'pageOne') {
-      PageOne()
+      PageOne77()
     } else if (name == 'pageTwo') {
-      PageTwo()
+      PageTwo77()
     }
   }
 
@@ -66,7 +66,7 @@ struct CustomTransitionPage {
 }
 
 @Component
-struct PageOne {
+struct PageOne77 {
   @Consume('pageInfos') pageInfos: NavPathStack;
 
   @Consume('pushTrue') pushTrue: number;
@@ -111,7 +111,7 @@ struct PageOne {
 }
 
 @Component
-struct PageTwo {
+struct PageTwo77 {
   @Consume('pageInfos') pageInfos: NavPathStack;
 
   @Consume('pushTrue') pushTrue: number;

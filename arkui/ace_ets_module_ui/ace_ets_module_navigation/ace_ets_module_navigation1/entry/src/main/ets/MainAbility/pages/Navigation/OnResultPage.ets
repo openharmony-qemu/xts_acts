@@ -21,7 +21,7 @@ struct OnResultPage {
   @Builder
   pageMap(name: string) {
     if (name == 'pageOne') {
-      PageOne1()
+      PageOne188()
     } else if (name == 'pageTwo') {
       PageTwo1()
     } else if (name == 'pageDialog') {
@@ -46,7 +46,7 @@ struct OnResultPage {
 }
 
 @Component
-struct PageOne1 {
+struct PageOne188 {
   @Consume('pageInfos') pageInfos: NavPathStack;
   @State info: string = '';
   build() {

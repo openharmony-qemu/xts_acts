@@ -48,7 +48,7 @@ import EnableModeChangeAnimation from './Navigation/EnableModeChangeAnimation.te
 import OnResultPage from './Navigation/OnResultPage.test';
 import CustomTransitionPage from './NavDestination/CustomTransitionPage.test';
 import HideBackButtonPage from './NavDestination/HideBackButtonPage.test';
-import SystemTransition2 from './NavDestination/SystemTransition2.test';
+import NavSystemTransition2 from './NavDestination/SystemTransition2.test';
 
 import ReplaceDestination1Test from './Navigation/ReplaceDestination1.test'
 import ReplaceDestination2 from './Navigation/ReplaceDestination2.test'
@@ -94,7 +94,7 @@ export default function testsuite() {
   OnResultPage();
   CustomTransitionPage();
   HideBackButtonPage();
-  SystemTransition2();
+  NavSystemTransition2();
 
   ReplaceDestination1Test();
   ReplaceDestination2();

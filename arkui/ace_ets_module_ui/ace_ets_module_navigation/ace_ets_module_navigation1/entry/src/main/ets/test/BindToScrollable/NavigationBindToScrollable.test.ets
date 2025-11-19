@@ -87,6 +87,9 @@ export default function NavigationBindToScrollable() {
         await driver.delayMs(1000);
       }
 
+      let titleBar: Component | null = await driver.findComponent(ON.type('TitleBar'));
+      expect(titleBar !== null).assertTrue();
+
       console.info('NavigationBindToScrollable_0100 END');
       done();
     });
