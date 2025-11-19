@@ -207,7 +207,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component'
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -1743,7 +1743,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct pixelStretchEffectPage {
-  @StorageProp('_pixelStretchEffect') _pixelStretchEffect: PixelStretchEffectOptions = {
+  @StoragePropRef('_pixelStretchEffect') _pixelStretchEffect: PixelStretchEffectOptions = {
     top: -10,
     left: -10,
     right: 10,
@@ -1864,8 +1864,8 @@ struct pixelStretchEffectPage {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._pixelStretchEffectTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-            .applyStyles(this.commonStyleAlp1)
             .attributeModifier(this._pixelStretchEffectAlphabetIndexerMod)
+            .applyStyles(this.commonStyleAlp1)
         } else if (this.targetView == 'Blank') {
           Blank()
             .backgroundColor(Color.Yellow)

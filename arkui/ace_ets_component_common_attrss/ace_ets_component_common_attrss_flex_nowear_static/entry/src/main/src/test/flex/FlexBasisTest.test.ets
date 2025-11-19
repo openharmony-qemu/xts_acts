@@ -13,12 +13,11 @@
  * limitations under the License.
  */
 
-
-import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
+import { AlignItems, AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
+import Utils, { BasePageConfig, PageConfig, RectValue, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign, ItemAlign } from '@ohos.arkui.component';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { AlignRuleOption, HorizontalAlign, ItemAlign, VerticalAlign } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -26,12 +25,21 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext } from '@ohos.arkui.UIContext';
+import inspector from '@ohos.arkui.inspector';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
+let testAbilityContext: common.UIAbilityContext;
 
 export default function flexBasisTest() {
+
+  console.info("flexBasisTest beforeAll start");
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+
+  let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
 
   let supportView: Array<string> = new Array<string>(
     'RowSplit',
@@ -42,7 +50,15 @@ export default function flexBasisTest() {
     'WaterFlow'
   )
 
-  let containerView: Array<string> = new Array<string>('Row', 'Column', 'FlexRow', 'FlexRowReverse', 'FlexColumn', 'FlexColumnReverse')
+  let containerView: Array<string> =
+    new Array<string>(
+      'Row',
+      'Column',
+      'FlexRow',
+      'FlexRowReverse',
+      'FlexColumn',
+      'FlexColumnReverse'
+    )
 
   let parentWidth = 300;
   let parentHeight = 300;
@@ -59,80 +75,89 @@ export default function flexBasisTest() {
     targetHeight: targetHeight
   }
 
-  let testValues: TestValue[] = [{
-    describe: 'SetNumber',
-    setValue: {
-      flexBasis: 100.00
+  let testValues: TestValue[] = [
+    {
+      describe: 'SetNumber',
+      setValue: {
+        flexBasis: 100.00
+      },
+      expectValue: {
+        expectFlexBasis: '100.00vp',
+        expectSize: uiContext.vp2px(100.00)
+      }
     },
-    expectValue: {
-      expectFlexBasis: '100.00vp',
-      expectAlignSelf: '',
-      expectSize: 0,
-      flexShrink: ''
-
-    }
-  }, {
-    describe: 'SetStringPx',
-    setValue: {
-      flexBasis: '200.00px'
+    {
+      describe: 'SetStringPx',
+      setValue: {
+        flexBasis: '200.00px'
+      },
+      expectValue: {
+        expectFlexBasis: '200.00px',
+        expectSize: 200.00
+      }
     },
-    expectValue: {
-      expectFlexBasis: '200.00px',
-      expectAlignSelf: '',
-      expectSize: 200.00,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStringPercent',
-    setValue: {
-      flexBasis: '50%'
-    },
-    expectValue: {
-      expectFlexBasis: 'undefined',
-      expectAlignSelf: '',
-      expectSize: 200.00,
-      flexShrink: ''
-
-    }
-  }]
+    {
+      describe: 'SetStringPercent',
+      setValue: {
+        flexBasis: '50%'
+      },
+      expectValue: {
+        expectSize: uiContext.vp2px(120)
+      }
+    }]
 
   describe('FlexBasisTest', () => {
     beforeAll(() => {
-      console.info("flexBasisTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
-    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
+      async (data: BasePageConfig): Promise<void> => {
 
-      //Verify the flexBasis is or not be set success
-      console.info('[' + data.caseTag + '] check the flexBasis is or not be set success');
-      if (data.testValue.describe == 'SetNumber' || data.testValue.describe == 'SetStringPx') {
-        expect(data.viewObj!.getElement('$attrs').getString('flexBasis')).assertEqual(data.testValue.expectValue.expectFlexBasis);
-        console.info('[' + data.caseTag + '] data.viewObj.$attrs.flexBasis' + data.viewObj!.getElement('$attrs').getString('flexBasis'));
-      }
+        console.info('alignSelfPage', data.testValue.setValue)
+        AppStorage.setOrCreate<number | string>('_flexBasis', data.testValue.setValue.flexBasis)
+        await Utils.sleep(1000);
 
-      //Get target component rect
-      console.info('[' + data.caseTag + '] Get target component rect');
-      let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
+        console.log(pageConfig.componentKey + '  test011')
+        let strJson = inspector.getInspectorByKey(pageConfig.componentKey as String);
+        await Utils.sleep(2000)
+        console.log(JSON.stringify(strJson) + 'test789')
+        data.viewObj = JSON.parseJsonElement(strJson);
 
-      console.info('[' + data.caseTag + '] check the size of the component in the spindle ' +
-        'direction has been changed by flexBasis ');
+        //Verify the flexBasis is or not be set success
+        console.info('[' + data.caseTag + '] check the flexBasis is or not be set success');
+        if (data.testValue.describe == 'SetNumber' || data.testValue.describe == 'SetStringPx') {
+          expect(data.viewObj!.getElement('$attrs').getString('flexBasis'))
+            .assertEqual(data.testValue.expectValue.expectFlexBasis);
+          console.info('[' + data.caseTag + '] data.viewObj.$attrs.flexBasis' +
+          data.viewObj!.getElement('$attrs').getString('flexBasis'));
+        }
 
-      //Verify the size is or not be the expect size
-      if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
-        || data.pageConfig.containerView == 'FlexRowReverse') {
+        //Get target component rect
+        console.info('[' + data.caseTag + '] Get target component rect');
+        let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
 
-        let realWidth = rect.right - rect.left;
-        console.info('[' + data.caseTag + '] realWidth : ' + realWidth);
-        expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize))) <= 1).assertTrue();
-      } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn'
-        || data.pageConfig.containerView == 'FlexColumnReverse') {
+        console.info('[' + data.caseTag + '] check the size of the component in the spindle ' +
+          'direction has been changed by flexBasis ');
 
-        let realHeight = rect.bottom - rect.top;
-        console.info('[' + data.caseTag + '] realHeight : ' + realHeight);
-        expect(Math.floor(Math.abs(realHeight - (data.testValue.expectValue.expectSize))) <= 1).assertTrue();
-      }
-    })
+        //Verify the size is or not be the expect size
+        if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
+          || data.pageConfig.containerView == 'FlexRowReverse') {
+
+          let realWidth = rect.right - rect.left;
+          console.log('test rect is: ' + JSON.stringify(rect))
+          console.info('[' + data.caseTag + '] realWidth : ' + realWidth);
+          console.log('test rect is: ' + data.testValue.expectValue.expectSize)
+
+          expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize as Double))) <= 1).assertTrue();
+        } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn'
+          || data.pageConfig.containerView == 'FlexColumnReverse') {
+
+          let realHeight = rect.bottom - rect.top;
+          console.info('[' + data.caseTag + '] realHeight : ' + realHeight);
+          expect(Math.floor(Math.abs(realHeight - (data.testValue.expectValue.expectSize as Double))) <= 1)
+            .assertTrue();
+        }
+      })
   })
 }

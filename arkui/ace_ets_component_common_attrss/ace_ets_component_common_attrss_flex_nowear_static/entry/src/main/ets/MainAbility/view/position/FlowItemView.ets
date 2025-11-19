@@ -14,15 +14,15 @@
  */
 
 import {
-  Component,
-  ColumnOptions,
-  Column,
-  WaterFlow,
-  FlowItem,
-  Text,
-  FlexDirection,
   Color,
-  Position
+  Column,
+  ColumnOptions,
+  Component,
+  FlexDirection,
+  FlowItem,
+  Position,
+  Text,
+  WaterFlow
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
@@ -47,7 +47,7 @@ export struct FlowItemView {
         .height('100%')
         .position(this._position)
         .backgroundColor(Color.White)
-        .key(this.componentKey)
+        .key(this.componentKey as String)
 
         FlowItem() {
           Column() {
@@ -63,7 +63,7 @@ export struct FlowItemView {
       .backgroundColor(0xFAEEE0)
       .width(this.parentWidth)
       .height(this.parentHeight)
-      .key(this.parentComponentKey)
+      .key(this.parentComponentKey as String)
       .layoutDirection(FlexDirection.Column)
     }
   }

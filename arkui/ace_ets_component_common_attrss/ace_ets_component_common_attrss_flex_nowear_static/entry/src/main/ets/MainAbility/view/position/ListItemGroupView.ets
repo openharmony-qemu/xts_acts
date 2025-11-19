@@ -14,20 +14,20 @@
  */
 
 import {
-  Component,
-  List,
-  ListItemGroup,
-  ListItem,
-  FlowItem,
-  Text,
-  FlexDirection,
-  Color,
-  Position,
   Builder,
-  TextAlign,
+  Color,
+  Component,
+  FlexDirection,
+  FlowItem,
   ForEach,
+  List,
+  ListItem,
+  ListItemGroup,
+  ListItemGroupOptions,
+  Position,
   StickyStyle,
-  ListItemGroupOptions
+  Text,
+  TextAlign
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
@@ -71,11 +71,32 @@ export struct ListItemGroupView {
 
   build() {
     List({ space: 20 }) {
-
+      // ListItemGroup({ header: this.itemHead('Group1'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .borderRadius(20)
+      // .position(this._position)
+      // .key(this.componentKey as String)
+      // .divider({ strokeWidth: 1, color: Color.Blue })
+      //
+      // ListItemGroup({ header: this.itemHead('Group2'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .borderRadius(20)
+      // .key(this.referenceComponentKey)
+      // .divider({ strokeWidth: 1, color: Color.Blue })
     }
     .width(this.parentWidth)
     .height(this.parentHeight)
-    .key(this.parentComponentKey)
+    .key(this.parentComponentKey as String)
     .sticky(StickyStyle.Header)
   }
 }

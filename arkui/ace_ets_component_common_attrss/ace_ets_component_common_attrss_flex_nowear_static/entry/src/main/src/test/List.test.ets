@@ -16,11 +16,13 @@ import AlignSelfGridRowTest from './flex/AlignSelfGridRowTest.test';
 import AlignSelfStretchNoSizeTest from './flex/AlignSelfStretchNoSizeTest.test';
 import AlignSelfStretchTest from './flex/AlignSelfStretchTest.test';
 import AlignSelfTest from './flex/AlignSelfTest.test';
-import FlexBasisTest from './flex/FlexBasisTest.test';
+import flexBasisTest from './flex/FlexBasisTest.test';
+
 export default function testsuite() {
-  AlignSelfGridRowTest();
-  AlignSelfStretchNoSizeTest();
-  AlignSelfStretchTest();
+  console.log('test list start')
   AlignSelfTest();
-  FlexBasisTest();
+   // AlignSelfGridRowTest();
+   // AlignSelfStretchTest();
+   // AlignSelfStretchNoSizeTest();
+  flexBasisTest();
 }

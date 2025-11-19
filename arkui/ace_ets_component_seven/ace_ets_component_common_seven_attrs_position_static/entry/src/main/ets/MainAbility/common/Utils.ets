@@ -104,7 +104,7 @@ export class PageConfig {
   buttonHeight: number;
   componentWidth: number;
   componentHeight: number;
-  columns: int;
+  columns: number;
   gutter: number;
   targetComponentHeight: number;
   targetComponentWidth: number;
@@ -303,7 +303,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -313,14 +313,14 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

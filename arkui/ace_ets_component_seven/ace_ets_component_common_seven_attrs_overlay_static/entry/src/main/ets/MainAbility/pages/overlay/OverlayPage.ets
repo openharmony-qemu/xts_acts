@@ -199,10 +199,9 @@ import {
   WebAttribute,
   WebviewController,
   WindowSceneAttribute,
-  XComponentAttribute,
-  AlignRuleOption
+  XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { OverlayOpt1, OverlayOpt3, RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -547,32 +546,32 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+// 	mValue: string = 'Test Title'
+// 	options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 }}
+//
+// 	applyNormalAttribute(instance: NavigatorAttribute): void {
+// 		instance.overlay(this.mValue, this.options)
+// 	}
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+// 	mValue: string = 'Test Title'
+// 	options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 }}
+//
+// 	applyNormalAttribute(instance: NavRouterAttribute): void {
+// 		instance.overlay(this.mValue, this.options)
+// 	}
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+// 	mValue: string = 'Test Title'
+// 	options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 }}
+//
+// 	applyNormalAttribute(instance: PanelAttribute): void {
+// 		instance.overlay(this.mValue, this.options)
+// 	}
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
   mValue: string = 'Test Title'
@@ -777,7 +776,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 } }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-	/* overlay not supported */
+
   }
 }
 
@@ -1395,9 +1394,9 @@ struct OverlayPage {
   @State _overlayMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _overlayNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
   @State _overlayNavigationModifier: NavigationModifier = new NavigationModifier()
-  
-  
-  
+  // @State _overlayNavigatorModifier: NavigatorModifier = new NavigatorModifier()
+  // @State _overlayNavRouterModifier: NavRouterModifier = new NavRouterModifier()
+  // @State _overlayPanelModifier: PanelModifier = new PanelModifier()
   @State _overlayPathModifier: PathModifier = new PathModifier()
   @State _overlayPolygonModifier: PolygonModifier = new PolygonModifier()
   @State _overlayPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1442,13 +1441,13 @@ struct OverlayPage {
   @State _overlayXComponentModifier: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
   @State parentComponentKey: string = '';
   @State parentBackGroundColor: string = '';
-  @StoragePropRef('_overlay') _overlay: SetValue = {
+  @StorageProp('_overlay') _overlay: SetValue = {
     height: 0,
     overlay: {
       value: '',
@@ -1464,8 +1463,8 @@ struct OverlayPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
   }
@@ -1539,7 +1538,7 @@ struct OverlayPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: Infinity as Int,
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -1561,18 +1560,18 @@ struct OverlayPage {
         .attributeModifier(this._overlayMenuModifier)
       }
       if (this.targetView == 'NavRouter') {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // NavRouter() {
+        // 	Row() {
+        // 		Image($r('app.media.icon'))
+        // 	}
+        //
+        // 	NavDestination() {
+        // 		Text('NavDestination')
+        // 			.fontSize(10)
+        // 	}
+        // }
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._overlayNavRouterModifier)
       }
       if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Eclipse })
@@ -1882,22 +1881,22 @@ struct OverlayPage {
         .height('100%')
       }
       if (this.targetView == 'Navigator') {
-        
-        
-        
-        
-        
-        
-        
-        
+        // Navigator() {
+        // 	Text('Go to back page')
+        // 		.width('100%')
+        // 		.height(20)
+        // }
+        // 	.backgroundColor(Color.Red)
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._overlayNavigatorModifier)
       }
       if (this.targetView == 'Panel') {
-        
-        
-        
-        
-        
-        
+        // Panel(true) {
+        // 	Text('Text')
+        // }
+        // 	.backgroundColor(Color.Yellow)
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._overlayPanelModifier)
       }
       if (this.targetView == 'Refresh') {
         Refresh({ refreshing: true }) {
@@ -1915,7 +1914,7 @@ struct OverlayPage {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            } as AlignRuleOption)
+            })
             .id('constraintSize')
         }
         .commonStyle(this.componentKey)

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+// import { vp2px } from '@ohos.arkui.component';
 import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -26,10 +26,36 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
+// class PageConfig {
+//   testName: string = '';
+//   pageName: string = '';
+//   pageUrl: string = '';
+//   parentWidth: number = 0;
+//   parentHeight: number = 0;
+//   targetWidth: number = 0;
+//   targetHeight: number = 0;
+//   compareWidth: number = 0;
+//   compareHeight: number = 0;
+//   parentComponentKey: string = '';
+//   referenceComponentKey: string = '';
+// }
+//
+// class TestValue {
+//   describe: string = '';
+//   setValue: SetValue = new SetValue();
+//   expectValue: ESObject;
+// }
+//
+// class SetValue {
+//   direction: FlexDirection = FlexDirection.Row;
+//   alignSelf: ItemAlign = ItemAlign.Auto;
+//   wrap: FlexWrap = FlexWrap.NoWrap;
+// }
 
 export default function alignSelfStretchTest() {
 
@@ -239,6 +265,18 @@ export default function alignSelfStretchTest() {
       let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
       let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
 
+      console.info('AlignSelfStretchPage',data.testValue.setValue)
+      AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
+      AppStorage.setOrCreate<FlexWrap>('_wrap', data.testValue.setValue.wrap)
+      AppStorage.setOrCreate<FlexDirection>('_direction', data.testValue.setValue.direction)
+      await Utils.sleep(1000);
+
+      console.log(pageConfig.componentKey + '  test011')
+      let strJson = inspector.getInspectorByKey(pageConfig.componentKey as String);
+      await Utils.sleep(2000)
+      console.log(JSON.stringify(strJson) + 'test789')
+      data.viewObj = JSON.parseJsonElement(strJson);
+
       //Verify attribute
       expect(data.viewObj!.getElement('$attrs').getString('alignSelf')).assertEqual(data.testValue.expectValue.expectAlignSelf);
 
@@ -281,28 +319,28 @@ export default function alignSelfStretchTest() {
           //And control the alignment of the component
           expect(rect.left).assertEqual(parentRect.left);
           expect(rect.top).assertEqual(parentRect.top);
-          
+          // expect(rect.bottom - rect.top).assertEqual(vp2px(parentHeight));
         } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
         || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
           //Determine if alignSelf will override the alignItems setting of the parent container
           //And control the alignment of the component
           expect(rect.right).assertEqual(parentRect.right);
           expect(rect.top).assertEqual(parentRect.top);
-          
+          // expect(rect.bottom - rect.top).assertEqual(vp2px(parentHeight));
         } else if ((data.testValue.describe == 'SetStretchColumnWrap')
         || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
           //Determine if alignSelf will override the alignItems setting of the parent container
           //And control the alignment of the component
           expect(rect.left).assertEqual(parentRect.left);
           expect(rect.top).assertEqual(parentRect.top);
-          
+          // expect(rect.right - rect.left).assertEqual(vp2px(parentWidth));
         } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
         || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
           //Determine if alignSelf will override the alignItems setting of the parent container
           //And control the alignment of the component
           expect(rect.bottom).assertEqual(parentRect.bottom);
           expect(rect.left).assertEqual(parentRect.left);
-          
+          // expect(rect.right - rect.left).assertEqual(vp2px(parentWidth));
         }
       }
     })

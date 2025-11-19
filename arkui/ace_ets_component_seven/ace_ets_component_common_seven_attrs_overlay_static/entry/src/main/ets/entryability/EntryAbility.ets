@@ -28,10 +28,12 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
-
+  onDestroy(): Promise<void> {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+  }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    
+    // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
     AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);
@@ -57,7 +59,7 @@ export default class EntryAbility extends UIAbility {
         } catch (exception) {
           hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
         }
-        
+        // Obtain a UIContext instance.
         if (windowClass !== null) {
           AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
         }
@@ -66,23 +68,18 @@ export default class EntryAbility extends UIAbility {
     });
   }
 
-    onDestroy(): Promise<void> | undefined {
-hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-return undefined;
-}
-
   onWindowStageDestroy(): void {
-    
+    // Main window is destroyed, release UI related resources
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    
+    // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    
+    // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

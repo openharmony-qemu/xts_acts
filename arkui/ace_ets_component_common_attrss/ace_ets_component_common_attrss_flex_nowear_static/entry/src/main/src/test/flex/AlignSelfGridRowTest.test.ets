@@ -13,13 +13,18 @@
  * limitations under the License.
  */
 
-
-import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
+import { AlignRuleOption, HorizontalAlign, ItemAlign, VerticalAlign } from '@ohos.arkui.component';
+import { AlignItems, AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
+import Utils, {
+  BasePageConfig,
+  DefaultAlign,
+  PageConfig,
+  RectValue,
+  TestValue
+} from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign, ItemAlign } from '@ohos.arkui.component';
-import { jsonx } from "std/core";
+import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { jsonx } from 'std/core';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -27,10 +32,13 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
+let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfGridRowTest() {
 
@@ -57,88 +65,78 @@ export default function alignSelfGridRowTest() {
     GridRow: ItemAlign.Start
   }
 
-  let testValues: TestValue[] = [{
-    describe: 'SetAuto',
-    setValue: {
-      defaultAlignItems: defaultAlignItems,
-      alignSelf: ItemAlign.Auto
-    },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Auto',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStart',
-    setValue: {
-      defaultAlignItems: {
-        Row: VerticalAlign.Center,
-        Column: HorizontalAlign.Center,
-        Flex: ItemAlign.Center,
-        GridRow: ItemAlign.Center
+  let testValues: TestValue[] = [
+    {
+      describe: 'SetAuto',
+      setValue: {
+        defaultAlignItems: defaultAlignItems,
+        alignSelf: ItemAlign.Auto
       },
-      alignSelf: ItemAlign.Start
+      expectValue: {
+        expectAlignSelf: 'ItemAlign.Auto'
+      }
     },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Start',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetCenter',
-    setValue: {
-      defaultAlignItems: defaultAlignItems,
-      alignSelf: ItemAlign.Center
+    {
+      describe: 'SetStart',
+      setValue: {
+        defaultAlignItems: {
+          Row: VerticalAlign.Center,
+          Column: HorizontalAlign.Center,
+          Flex: ItemAlign.Center,
+          GridRow: ItemAlign.Center
+        },
+        alignSelf: ItemAlign.Start
+      },
+      expectValue: {
+        expectAlignSelf: 'ItemAlign.Start'
+      }
     },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Center',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetEnd',
-    setValue: {
-      defaultAlignItems: defaultAlignItems,
-      alignSelf: ItemAlign.End
+    {
+      describe: 'SetCenter',
+      setValue: {
+        defaultAlignItems: defaultAlignItems,
+        alignSelf: ItemAlign.Center
+      },
+      expectValue: {
+        expectAlignSelf: 'ItemAlign.Center'
+      }
     },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.End',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetStretch',
-    setValue: {
-      defaultAlignItems: defaultAlignItems,
-      alignSelf: ItemAlign.Stretch
+    {
+      describe: 'SetEnd',
+      setValue: {
+        defaultAlignItems: defaultAlignItems,
+        alignSelf: ItemAlign.End
+      },
+      expectValue: {
+        expectAlignSelf: 'ItemAlign.End'
+      }
     },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
-    }
-  }, {
-    describe: 'SetBaseLine',
-    setValue: {
-      defaultAlignItems: defaultAlignItems,
-      alignSelf: ItemAlign.Baseline
+    {
+      describe: 'SetStretch',
+      setValue: {
+        defaultAlignItems: defaultAlignItems,
+        alignSelf: ItemAlign.Stretch
+      },
+      expectValue: {
+        expectAlignSelf: 'ItemAlign.Stretch'
+      }
     },
-    expectValue: {
-      expectAlignSelf: 'ItemAlign.Baseline',
-      expectFlexBasis: '',
-      expectSize: 0,
-      flexShrink: ''
+    {
+      describe: 'SetBaseLine',
+      setValue: {
+        defaultAlignItems: defaultAlignItems,
+        alignSelf: ItemAlign.Baseline
+      },
+      expectValue: {
+        expectAlignSelf: 'ItemAlign.Baseline'
+      }
     }
-  }]
+  ]
 
   describe('AlignSelfGridRowTest', () => {
     beforeAll(() => {
       console.info("alignSelfGridRowTest beforeAll start");
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -148,25 +146,43 @@ export default function alignSelfGridRowTest() {
       //Get component rect and parent component rect
       let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
       let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
+      console.log('parentComponentKey is ' + data.pageConfig.parentComponentKey + 'componentKey is ' +
+      data.pageConfig.componentKey)
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
+
+      console.info('alignSelfPage', data.testValue.setValue)
+      AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
+      AppStorage.setOrCreate<ItemAlign>('_alignItemsForFlex', data.testValue.setValue.defaultAlignItems.Flex)
+      AppStorage.setOrCreate<VerticalAlign>('_alignItemsForRow', data.testValue.setValue.defaultAlignItems.Row)
+      AppStorage.setOrCreate<HorizontalAlign>('_alignItemsForColumn', data.testValue.setValue.defaultAlignItems.Column)
+      AppStorage.setOrCreate<ItemAlign>('_alignItemsForGridRow', data.testValue.setValue.defaultAlignItems.GridRow)
+      await Utils.sleep(1000);
 
       //Get viewObj in order to judge attribute is set success
-      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey as string);
-      
+      // let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey as string);
+
+      console.log(pageConfig.componentKey + '  test011')
+      let strJson = inspector.getInspectorByKey(pageConfig.componentKey as String);
+      await Utils.sleep(2000)
+      console.log(JSON.stringify(strJson) + 'test789')
+      data.viewObj = JSON.parseJsonElement(strJson);
+
       //Verify attribute
-      expect(viewObj.getElement('$attrs').getString('alignSelf')).assertEqual(data.testValue.expectValue.expectAlignSelf);
+      expect(data.viewObj!.getElement('$attrs').getString('alignSelf'))
+        .assertEqual(data.testValue.expectValue.expectAlignSelf);
 
       //When set different value, judge the alignment is correct
       if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
         //When alignSelf : ItemAlign.Auto or ItemAlign.Start
         expect(rect.top).assertEqual(parentRect.top);
-        expect(rect.left).assertEqual(parentRect.left);
+        expect(rect.left).assertEqual(parentRect.left as Double);
       } else if (data.testValue.describe == 'SetCenter') {
         //When alignSelf : ItemAlign.Center
-        let rectY = Utils.getRectVerticalCenterY(data.pageConfig.componentKey as RectValue);
+        let rectY = Utils.getRectVerticalCenterY(rect);
         console.info('[' + data.caseTag + '] rectY : '
           + rectY);
 
-        let parentRectY = Utils.getRectVerticalCenterY(data.pageConfig.parentComponentKey as RectValue);
+        let parentRectY = Utils.getRectVerticalCenterY(parentRect);
         console.info('[' + data.caseTag + '] parentRectY : '
           + parentRectY);
 
@@ -177,7 +193,7 @@ export default function alignSelfGridRowTest() {
         expect(rect.left).assertEqual(parentRect.left);
       } else if (data.testValue.describe == 'SetStretch') {
         //When alignSelf : ItemAlign.Stretch
-
+        expect(rect.bottom - rect.top).assertEqual(uiContext!.vp2px(parentHeight));
       }
     })
   })
