@@ -2,10 +2,8 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/SheetType/sheetTypeSide",
-    "MainAbility/pages/SheetType/sheetTypeSide",
     "MainAbility/pages/SheetType/dismissSheetAction",
     "MainAbility/pages/SheetType/enableFloatingDragBar",
-    "MainAbility/pages/SheetType/sheetTypeContentCover",
     "MainAbility/pages/SheetType/sheetTypeContentCover",
     "MainAbility/pages/SheetType/modalTransition",
     "MainAbility/pages/BindContentCover/bindContentCover",
