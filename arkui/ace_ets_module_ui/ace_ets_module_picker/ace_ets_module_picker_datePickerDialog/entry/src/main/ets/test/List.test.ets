@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import datePickerDialogTest from './datePickerDialogTest/datePickerDialog.test';
+import datePickerDialogEventsTest from './datePickerDialogTest/datePickerDialogEvents.test';
 import datePickerDialogBGBlurStyleTest from './datePickerDialogTest/datePickerDialogBGBlurStyle.test';
 import datePickerDialogBGColorTest from './datePickerDialogTest/datePickerDialogBGColor.test';
 import datePickerDialogCanLoopTest from './datePickerDialogTest/datePickerDialogCanLoop.test';
@@ -21,9 +21,12 @@ import datePickerDialogEnableHapticFeedbackTest from './datePickerDialogTest/dat
 import datePickerDialogModeTest from './datePickerDialogTest/datePickerDialogMode.test';
 import datePickerDialogShadowTest from './datePickerDialogTest/datePickerDialogShadow.test';
 import stageDatePickerDialogTest from './datePickerDialogTest/stageDatePickerDialog.test';
+import DatePickerDialogOptionsTest from './datePickerDialogTest/DatePickerDialogOptions.test';
+import DatePickerDialogUITest from './datePickerDialogTest/DatePickerDialogUI.test';
+import DatePickerDialogWindowPropertiesTest from './datePickerDialogTest/DatePickerDialogWindowProperties.test';
 
 export default function testsuite() {
-  datePickerDialogTest();
+  datePickerDialogEventsTest();
   datePickerDialogBGBlurStyleTest();
   datePickerDialogBGColorTest();
   datePickerDialogCanLoopTest();
@@ -31,4 +34,7 @@ export default function testsuite() {
   datePickerDialogModeTest();
   datePickerDialogShadowTest();
   stageDatePickerDialogTest();
+  DatePickerDialogOptionsTest();
+  DatePickerDialogUITest();
+  DatePickerDialogWindowPropertiesTest();
 }
