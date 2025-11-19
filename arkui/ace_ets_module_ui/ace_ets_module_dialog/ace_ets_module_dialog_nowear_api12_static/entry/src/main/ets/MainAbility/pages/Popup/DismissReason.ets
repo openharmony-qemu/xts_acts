@@ -12,33 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ButtonRole,
-  ButtonStyleMode,
-  ButtonType,
-  CalendarPickerDialog,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  DismissPopupAction,
-  DismissReason,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontStyle,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Placement,
-  PopupOptions,
-  PopupStateChangeParam,
-  Row,
-  Text
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  DismissPopupAction,PopupOptions,Placement,PopupStateChangeParam,DismissReason,
+  Row, ClickEvent, Margin, ColumnOptions, CalendarPickerDialog, ButtonType, ButtonStyleMode, ButtonRole, Color, FontStyle} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 
@@ -47,11 +23,10 @@ import { UIContext } from '@ohos.arkui.UIContext';
 struct DismissReason1 {
   @State handlePopup: boolean = false
   @State flag: string = "start"
-
   build() {
     Column() {
       Button(this.flag).id("DismissReason_Button")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.handlePopup = !this.handlePopup
         })
         .bindPopup(this.handlePopup, {
@@ -67,7 +42,7 @@ struct DismissReason1 {
           placement: Placement.Bottom,
           enableArrow: false,
           targetSpace: '15vp',
-          onStateChange: (e: PopupStateChangeParam): void => {
+          onStateChange: (e:PopupStateChangeParam):void => {
             if (!e.isVisible) {
               this.handlePopup = false
             }
@@ -78,8 +53,8 @@ struct DismissReason1 {
               if (dismissPopupAction.reason == DismissReason.PRESS_BACK) {
                 dismissPopupAction.dismiss()
                 this.flag = "DismissReason succ"
-              }
-              if (dismissPopupAction.reason == DismissReason.CLOSE_BUTTON) {
+              } 
+              if (dismissPopupAction.reason == DismissReason.CLOSE_BUTTON){
                 this.flag = "CLOSE_BUTTON succ"
               }
             }

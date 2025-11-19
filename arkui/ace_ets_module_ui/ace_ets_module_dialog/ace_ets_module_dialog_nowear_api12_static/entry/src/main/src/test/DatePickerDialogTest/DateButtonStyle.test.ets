@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -25,10 +25,9 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function DateButtonStyle() {
   describe('DateButtonStyle', () => {
@@ -51,9 +50,10 @@ export default function DateButtonStyle() {
         console.info("get DateButtonStyle state pages:" + JSON.stringify(pages));
         if (!("DateButtonStyle" == pages.name)) {
           console.info("get DateButtonStyle pages.name:" + JSON.stringify(pages.name));
-
+          // let result = await router.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push DateButtonStyle page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push DateButtonStyle page error:" + err);
@@ -64,14 +64,15 @@ export default function DateButtonStyle() {
       await CommonFunc.sleep(1000);
       console.info("DateButtonStyle after each called");
     });
-
+    
+    
     /*
      * @tc.number   DateButtonStyle_static_001
      * @tc.name     DateButtonStyle_static_001
      * @tc.desc     DateButtonStyle_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('DateButtonStyle_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('DateButtonStyle_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[DateButtonStyle_static_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -82,19 +83,8 @@ export default function DateButtonStyle() {
       let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
       console.info("[DateButtonStyle_static_001] obj2 is: " + JSON.stringify(obj2));
-      console.info("[DateButtonStyle_static_001] obj2.$children[1].$children[0].$children[0].$children[2].$children[0] is: " +
-      JSON.stringifyJsonElement(obj2.getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[2]
-        .getArray('$children')[0]));
-      expect(obj2.getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[2]
-        .getArray('$children')[0]
-        .getElement('$attrs')
-        .getString('type')).assertEqual("ButtonType.Normal");
+      console.info("[DateButtonStyle_static_001] obj2.$children[1].$children[0].$children[0].$children[2].$children[0] is: " + JSON.stringifyJsonElement(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[2].getArray('$children')[0]));
+      expect(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[2].getArray('$children')[0].getElement('$attrs').getString('type')).assertEqual("ButtonType.Normal");
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070);

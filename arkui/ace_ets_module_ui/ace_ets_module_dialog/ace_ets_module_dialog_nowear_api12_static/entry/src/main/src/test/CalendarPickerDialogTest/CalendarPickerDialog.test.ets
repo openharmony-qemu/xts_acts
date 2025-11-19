@@ -14,8 +14,8 @@
  */
 
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -49,9 +49,10 @@ export default function CalendarPickerDialog() {
         console.info("get CalendarPickerDialog state pages:" + JSON.stringify(pages));
         if (!("CalendarPickerDialog" == pages.name)) {
           console.info("get CalendarPickerDialog pages.name:" + JSON.stringify(pages.name));
-
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push CalendarPickerDialog page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CalendarPickerDialog page error:" + err);
@@ -62,31 +63,31 @@ export default function CalendarPickerDialog() {
       await CommonFunc.sleep(1000);
       console.info("CalendarPickerDialog after each called");
     });
-
+    
+    
     /*
      * @tc.number   CalendarPickerDialog_static_001
      * @tc.name     CalendarPickerDialog_static_001
      * @tc.desc     CalendarPickerDialog_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('CalendarPickerDialog_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
+it('CalendarPickerDialog_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
         console.info('[CalendarPickerDialog_static_001] START');
         await CommonFunc.sleep(1000);
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let btn1: Component | null = await driver.findComponent(ON.id('CalendarPicker'));
+        let btn1:Component | null = await driver.findComponent(ON.id('CalendarPicker'));
         await btn1!.click();
         await CommonFunc.sleep(1000);
-        let confirmBtn: Component | null = await driver.findComponent(ON.text('确定'));
+        let confirmBtn:Component | null = await driver.findComponent(ON.text('确定'));
         await confirmBtn!.click();
         await CommonFunc.sleep(2000);
         let text = inspector.getInspectorByKey('AppearText');
-        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content'))
-          .assertEqual('onWillAppear_onDidAppear_onWillDisappear_onDidDisappear');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('onWillAppear_onDidAppear_onWillDisappear_onDidDisappear');
         console.info('[CalendarPickerDialog_static_001] END');
         done();
-      } catch (error) {
+      }catch(error){
         expect().assertFail();
       }
     });

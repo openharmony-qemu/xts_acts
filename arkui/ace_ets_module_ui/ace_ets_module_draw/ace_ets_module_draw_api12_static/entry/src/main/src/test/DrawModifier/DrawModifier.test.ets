@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Technologies Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,16 +35,18 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import {UtilsTest,startAbility} from '../Util.test'
-let domain: number = 0x0000;
+import { UtilsTest, startAbility } from '../Util.test'
+
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function DrawModifier() {
   describe('DrawModifier', () => {
 
     beforeAll(() => {
       console.info("DrawModifier beforeEach start");
+
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -58,15 +60,13 @@ export default function DrawModifier() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextClockApiTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("DrawModifier" == pages.name)) {
           console.info("get TextClockApiTest pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextClockApiTest page error:" + err);
@@ -79,15 +79,14 @@ export default function DrawModifier() {
       console.info("DrawModifier after each called");
     });
 
-    
-    
+
     /*
      * @tc.number   DrawModifier_static_001
      * @tc.name     DrawModifier_static_001
      * @tc.desc     DrawModifier_static_001
      * @tc.level    Level.LEVEL0
      */
-it('DrawModifier_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DrawModifier_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[DrawModifier_static_001] START');
 
       await CommonFunc.sleep(1000);
@@ -95,7 +94,7 @@ it('DrawModifier_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
       let button = await driver.findComponent(ON.id('DrawModifierBt'));
       if (button) {
         await button.click();
-      } else{
+      } else {
         console.log('Button not found!')
       }
       await CommonFunc.sleep(1000);
@@ -110,15 +109,14 @@ it('DrawModifier_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
 
-    
-    
+
     /*
      * @tc.number   DrawModifier_static_002
      * @tc.name     DrawModifier_static_002
      * @tc.desc     DrawModifier_static_002
      * @tc.level    Level.LEVEL0
      */
-it('DrawModifier_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DrawModifier_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[DrawModifier_static_002] START');
 
       await CommonFunc.sleep(1000);
@@ -140,15 +138,14 @@ it('DrawModifier_static_002', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
 
-    
-    
+
     /*
      * @tc.number   DrawModifier_static_003
      * @tc.name     DrawModifier_static_003
      * @tc.desc     DrawModifier_static_003
      * @tc.level    Level.LEVEL0
      */
-it('DrawModifier_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DrawModifier_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[DrawModifier_static_003] START');
 
       await CommonFunc.sleep(1000);

@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -47,9 +47,10 @@ export default function PopupOptionsTest() {
         console.info("get PopupOptionsTest state pages:" + JSON.stringify(pages));
         if (!("PopupOptions" == pages.name)) {
           console.info("get PopupOptionsTest pages.name:" + JSON.stringify(pages.name));
-
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push PopupOptionsTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PopupOptionsTest page error:" + err);
@@ -61,14 +62,15 @@ export default function PopupOptionsTest() {
       console.info("PopupOptionsTest after each called");
     });
 
-
+    
+    
     /*
      * @tc.number   PopupOptionsTest_static_001
      * @tc.name     PopupOptionsTest_static_001
      * @tc.desc     PopupOptionsTest_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('PopupOptionsTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('PopupOptionsTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[PopupOptionsTest_static_001] START');
       try {
         await CommonFunc.sleep(1000);
@@ -81,7 +83,7 @@ export default function PopupOptionsTest() {
         expect(JSON.parseJsonElement(message).getElement('$attrs').getString('content')).assertEqual('message');
         console.info('[PopupOptionsTest_static_001] END');
         done();
-      } catch (error) {
+      }catch(error){
         expect().assertFail();
       }
     });

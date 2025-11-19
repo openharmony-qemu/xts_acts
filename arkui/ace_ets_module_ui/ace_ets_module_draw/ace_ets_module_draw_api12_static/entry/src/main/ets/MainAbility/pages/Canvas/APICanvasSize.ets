@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Technologies Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,10 @@ struct APICanvasSize {
         .width('80%')
         .height('50%')
         .backgroundColor('#ffff00')
-
+        .onReady(() => {
+          this.context.canvas!.drawCircle(50, 50, 50)   //Error line
+          this.context.invalidate()
+        } as VoidCallback)
 
       Row() {
         Button('get width').key('APICanvasSizeButton1')

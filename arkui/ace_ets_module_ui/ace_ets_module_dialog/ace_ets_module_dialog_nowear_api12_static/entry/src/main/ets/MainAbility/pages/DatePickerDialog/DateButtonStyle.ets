@@ -12,33 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ButtonRole,
-  ButtonStyleMode,
-  ButtonType,
-  CalendarPickerDialog,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  DismissPopupAction,
-  DismissReason,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontStyle,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Placement,
-  PopupOptions,
-  PopupStateChangeParam,
-  Row,
-  Text
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  DismissPopupAction,PopupOptions,Placement,PopupStateChangeParam,DismissReason,
+  Row, ClickEvent, Margin, ColumnOptions, CalendarPickerDialog, ButtonType, ButtonStyleMode, ButtonRole, Color, FontStyle} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 
@@ -47,46 +23,27 @@ import { UIContext } from '@ohos.arkui.UIContext';
 struct DateButtonStyleExample {
   selectedDate: Date = new Date("2010-1-1")
   uiContext: UIContext = this.getUIContext()
-
   build() {
     Column() {
       Button("DatePickerDialog")
         .id("DateButtonStyle")
         .margin(20)
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showDatePickerDialog({
             start: new Date("2000-1-1"),
             end: new Date("2100-12-31"),
             selected: this.selectedDate,
-            showTime: true,
-            useMilitaryTime: false,
-            disappearTextStyle: { color: Color.Pink, font: { size: '22fp', weight: FontWeight.Bold } },
-            textStyle: { color: '#ff00ff00', font: { size: '18fp', weight: FontWeight.Normal } },
-            selectedTextStyle: { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } },
-            acceptButtonStyle: {
-              type: ButtonType.Normal,
-              style: ButtonStyleMode.NORMAL,
-              role: ButtonRole.NORMAL,
-              fontColor: Color.Red,
-              fontSize: '26fp',
-              fontWeight: FontWeight.Bolder,
-              fontStyle: FontStyle.Normal,
-              fontFamily: 'sans-serif',
-              backgroundColor: '#80834511',
-              borderRadius: 20
-            },
-            cancelButtonStyle: {
-              type: ButtonType.Normal,
-              style: ButtonStyleMode.NORMAL,
-              role: ButtonRole.NORMAL,
-              fontColor: Color.Blue,
-              fontSize: '16fp',
-              fontWeight: FontWeight.Normal,
-              fontStyle: FontStyle.Italic,
-              fontFamily: 'sans-serif',
-              backgroundColor: '#50182431',
-              borderRadius: 10
-            },
+            showTime:true,
+            useMilitaryTime:false,
+            disappearTextStyle: {color: Color.Pink, font: {size: '22fp', weight: FontWeight.Bold}},
+            textStyle: {color: '#ff00ff00', font: {size: '18fp', weight: FontWeight.Normal}},
+            selectedTextStyle: {color: '#ff182431', font: {size: '14fp', weight: FontWeight.Regular}},
+            acceptButtonStyle: { type: ButtonType.Normal, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Red,
+              fontSize: '26fp', fontWeight: FontWeight.Bolder, fontStyle: FontStyle.Normal, fontFamily: 'sans-serif', backgroundColor:'#80834511',
+              borderRadius: 20 },
+            cancelButtonStyle: { type: ButtonType.Normal, style: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL, fontColor: Color.Blue,
+              fontSize: '16fp', fontWeight: FontWeight.Normal, fontStyle: FontStyle.Italic, fontFamily: 'sans-serif', backgroundColor:'#50182431',
+              borderRadius: 10 },
             onDateAccept: (value: Date) => {
               this.selectedDate = value
               console.info("DatePickerDialog:onDateAccept()" + value.toString())

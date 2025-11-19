@@ -13,19 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  Level,
-  Size,
-  TestType
-} from '../../../../hypium/index'
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level,TestType,Size } from "../../../../hypium/index"
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -58,74 +47,76 @@ export default function primary() {
         if (!('primary' == pages.name)) {
           console.info('get primary state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
-
+          // let result = await routerInstance.pushUrl(options)
           await CommonFunc.sleep(2000);
+          // console.info('push primary page success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push primary page error ' + JSON.stringify(err));
       }
     });
 
-
+    
+    
     /*
      * @tc.number   primary_static_0100
      * @tc.name     primary_static_0100
      * @tc.desc     primary_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('primary_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.info('primary_static_0100 START');
-        try {
-          let driver = Driver.create()
-          await CommonFunc.sleep(1000);
-          let button: Component | null = await driver.findComponent(ON.id('primary1'));
-          await button!.click();
-          await CommonFunc.sleep(1000);
-          await driver.triggerKey(2054);
-          console.info('primary_static_0100 Enter');
-          await CommonFunc.sleep(1500);
-          let button1: Component | null = await driver.findComponent(ON.text('按钮1'));
-          expect(button1 == null).assertTrue()
-          await CommonFunc.sleep(1000);
-          console.info('primary_static_0100 END');
-          done();
-        } catch (e) {
-          e = e as BusinessError;
-          expect().assertFail();
-        }
-      });
+it('primary_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('primary_static_0100 START');
+      try{
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button:Component | null = await driver.findComponent(ON.id('primary1')) ;
+        await button!.click();
+        await CommonFunc.sleep(1000);
+        await driver.triggerKey(2054);
+        console.info('primary_static_0100 Enter');
+        await CommonFunc.sleep(1500);
+        let button1:Component | null = await driver.findComponent(ON.text('按钮1'));
+        expect(button1 == null).assertTrue()
+        // await button1.click(); // 1.1 注释
+        await CommonFunc.sleep(1000);
+        console.info('primary_static_0100 END');
+        done();
+      }catch(e:BusinessError){
+        expect().assertFail();
+      }
+    });
 
-
+    
+    
     /*
      * @tc.number   primary_static_0200
      * @tc.name     primary_static_0200
      * @tc.desc     primary_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('primary_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.info('primary_static_0200 START');
-        try {
-          let driver = Driver.create()
-          await CommonFunc.sleep(1000);
-          let button: Component | null = await driver.findComponent(ON.id('primary2'));
-          await button!.click();
-          await CommonFunc.sleep(1000);
-          await driver.triggerKey(2054);
-          console.info('primary_static_0200 Enter');
-          await CommonFunc.sleep(1500);
-          let button1: Component | null = await driver.findComponent(ON.text('按钮1'));
-          expect(button1 != null).assertTrue()
-          await button1!.click();
-          await CommonFunc.sleep(1000);
-          console.info('primary_static_0200 END');
-          done();
-        } catch (e) {
-          e = e as BusinessError;
-          expect().assertFail();
-        }
-      });
-
+it('primary_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('primary_static_0200 START');
+      try{
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button:Component | null = await driver.findComponent(ON.id('primary2'));
+        await button!.click();
+        await CommonFunc.sleep(1000);
+        await driver.triggerKey(2054);
+        console.info('primary_static_0200 Enter');
+        await CommonFunc.sleep(1500);
+        let button1:Component | null = await driver.findComponent(ON.text('按钮1'));
+        console.info('primary_static_0200 button1 ' + button1);
+        await CommonFunc.sleep(2000);
+        expect(button1 != null).assertTrue()
+        await button1!.click();
+        await CommonFunc.sleep(1000);
+        console.info('primary_static_0200 END');
+        done();
+      }catch(e:BusinessError){
+        expect().assertFail();
+      }
+    });
+    
   })
 }

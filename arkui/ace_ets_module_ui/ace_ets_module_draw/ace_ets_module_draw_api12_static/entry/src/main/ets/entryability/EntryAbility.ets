@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Technologies Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,26 +49,26 @@ class EntryAbility extends UIAbility {
           try {
             let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
             let wRect: window.Rect | undefined = properties?.windowRect;
-            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0 );
-            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0 );
+            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
+            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
             hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
             hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
+          // Obtain a UIContext instance.
           if (windowClass !== null) {
-            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext() );
+            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e) {
+    } catch (e: Error) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy():Promise<void> {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined;
   }
 
   onWindowStageDestroy() {

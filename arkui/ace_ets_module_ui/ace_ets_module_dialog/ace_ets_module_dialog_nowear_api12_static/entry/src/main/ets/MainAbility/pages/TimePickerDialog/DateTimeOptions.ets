@@ -12,24 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ButtonType,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  RowOptions,
-  ShadowStyle,
-  Text
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ShadowStyle,  RowOptions} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 import intl from '@ohos.intl';
@@ -40,15 +24,15 @@ struct TimerPickerDialogExample {
   uiContext: UIContext = this.getUIContext()
   @State indexNumber1: number = 0
   @State isMilitaryTime: boolean = false
-  @State opt: Array<intl.DateTimeOptions | undefined | null> = new Array<intl.DateTimeOptions | undefined | null>(
+  @State opt: Array<intl.DateTimeOptions|undefined|null> = new Array<intl.DateTimeOptions|undefined|null>(
     { hour: 'numeric', minute: 'numeric' },
     { hour: 'numeric', minute: '2-digit' },
     { hour: 'numeric', minute: 'undefined' },
     { hour: 'numeric', minute: 'null' },
     { hour: 'numeric', minute: '' },
   )
-  selectedDate: Date = new Date("2010-1-1")
   private selectTime: Date = new Date("2025-05-6T08:30:01")
+  selectedDate: Date = new Date("2010-1-1")
 
   showdatepicker() {
     this.uiContext.showDatePickerDialog({
@@ -57,7 +41,7 @@ struct TimerPickerDialogExample {
       selected: this.selectedDate,
       showTime: true,
       useMilitaryTime: this.isMilitaryTime,
-      dateTimeOptions: this.opt[this.indexNumber1.toInt()]!,
+      dateTimeOptions: this.opt[this.indexNumber1.toInt()] as intl.DateTimeOptions,
       onDateAccept: (value: Date) => {
         this.selectedDate = value
       }
@@ -68,31 +52,30 @@ struct TimerPickerDialogExample {
     Column() {
       Button('TimePicker 12/24-hour format')
         .margin(15)
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.isMilitaryTime = !this.isMilitaryTime
         })
       Row({ space: 2 } as RowOptions) {
         Button("Set TimeType ++")
           .id("DateTimeOptions")
           .margin({ top: 15 } as Margin)
-          .onClick((e: ClickEvent) => {
-            this.indexNumber1++
-            if (this.indexNumber1 > this.opt.length - 1) {
+          .onClick((e:ClickEvent) => {
+            this.indexNumber1 ++
+            if(this.indexNumber1 > this.opt.length -1) {
               this.indexNumber1 = 0
             }
-            this.showdatepicker();
+            // this.showdatepicker();
           })
         Button("Set TimeType --")
-          .margin({ top: 15 } as Margin)
-          .onClick((e: ClickEvent) => {
-            this.indexNumber1--
-            if (this.indexNumber1 < 0) {
+          .margin({ top: 15 }  as Margin)
+          .onClick((e:ClickEvent) => {
+            this.indexNumber1 --
+            if(this.indexNumber1 < 0) {
               this.indexNumber1 = this.opt.length - 1
             }
             this.showdatepicker();
           })
       }
-
       Text(`${this.indexNumber1 + 1} / ${this.opt.length}`)
       Text(`${JSON.stringify(this.opt[this.indexNumber1.toInt()])} / ${this.isMilitaryTime}`)
         .id("DateTimeOptionsValue")

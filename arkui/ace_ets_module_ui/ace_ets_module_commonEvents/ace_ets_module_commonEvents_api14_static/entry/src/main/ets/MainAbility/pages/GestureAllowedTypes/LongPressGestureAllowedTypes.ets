@@ -4,38 +4,38 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
+  LongPressGesture,
+  Color,
+  HorizontalAlign,
+  Padding,
+  GestureEvent,
+  ColumnOptions,
+  Entry,
+  Column,
+  Text,
   Button,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
   Component,
-  Entry,
-  GestureEvent,
-  HorizontalAlign,
-  LongPressGesture,
   Margin,
-  Padding,
-  SourceTool,
-  Text
+  SourceTool
 } from '@ohos.arkui.component'
 
 @Entry
 @Component
 struct LongPressGestureAllowedTypes {
-  @State types: Array<SourceTool | undefined | null> = new Array<SourceTool | undefined | null>();
+  @State types: Array<SourceTool> = new Array<SourceTool>();
   @State result: string = 'allowed types default';
 
   build() {
@@ -51,7 +51,7 @@ struct LongPressGestureAllowedTypes {
           .id('LongPressGestureAllowedTypes_Text')
           .gesture(
             LongPressGesture({ fingers: 1 })
-
+              .allowedTypes(this.types)
               .onAction((event: GestureEvent) => {
                 this.result = 'allowed types success'
               })
@@ -72,7 +72,7 @@ struct LongPressGestureAllowedTypes {
         Button('Invalid').id('Invalid_type')
           .onClick((e: ClickEvent) => {
             this.result = 'allowed types default';
-            this.types = [null, undefined];
+            this.types = [SourceTool.Unknown];  //null undefined
           })
       }
       .alignItems(HorizontalAlign.Center)

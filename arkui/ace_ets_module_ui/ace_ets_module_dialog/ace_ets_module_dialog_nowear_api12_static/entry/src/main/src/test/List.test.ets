@@ -20,19 +20,20 @@ import CalendarDialogCallback from './CalendarPickerDialogTest/CalendarDialogCal
 import DatePickerDialogCallback from './DatePickerDialogTest/DatePickerDialogCallback.test.ets';
 import TextPickerDialogCallback from './TextPickerDialogTest/TextPickerDialogCallback.test.ets';
 import TimePickerDialogCallback from './TimePickerDialogTest/TimePickerDialogCallback.test.ets';
-import TimePickerDialog_Accept_Test from './TimePickerDialogTest/ButtonStyleTest/TimePickerDialog_Accept_Test.test.ets';
-import TimePickerDialog_Cancel_Test from './TimePickerDialogTest/ButtonStyleTest/TimePickerDialog_Cancel_Test.test.ets';
-import TextPickerDialog_Accept_Test from './TextPickerDialogTest/ButtonStyleTest/TextPickerDialog_Accept_Test.test.ets';
-import TextPickerDialog_Cancel_Test from './TextPickerDialogTest/ButtonStyleTest/TextPickerDialog_Cancel_Test.test.ets';
+import TimePickerDialog_Accept_Test from './TimePickerDialogTest/ButtonStyleTest/TimePickerDialogAcceptTest.test';
+import TimePickerDialog_Cancel_Test from './TimePickerDialogTest/ButtonStyleTest/TimePickerDialogCancelTest.test';
+import TextPickerDialog_Accept_Test from './TextPickerDialogTest/ButtonStyleTest/TextPickerDialogAcceptTest.test';
+import TextPickerDialog_Cancel_Test from './TextPickerDialogTest/ButtonStyleTest/TextPickerDialogCancelTest.test';
 import ButtonStyle from './CalendarPickerDialogTest/ButtonStyle.test';
 import DateButtonStyle from './DatePickerDialogTest/DateButtonStyle.test';
 import PopupOptionsTest from './PopupTest/PopupApiTest/PopupApiTest.test';
 import DismissReasonTest from './PopupTest/DismissReason.test';
 import DateTimeOptions from './TimePickerDialogTest/DateTimeOptions.test';
 
-import primary from './AlertDialogTest/primary.test';
+import primary from './AlertDialogTest/Primary01.test';
 
 export default function testsuite() {
+  ButtonStyle()
   primary()
   TextPickerDialog();
   DatePickerDialog();
@@ -46,7 +47,7 @@ export default function testsuite() {
   TimePickerDialog_Cancel_Test();
   TextPickerDialog_Accept_Test();
   TextPickerDialog_Cancel_Test();
-  PopupOptionsTest()
+  PopupOptionsTest() // 未转测注释
   ButtonStyle();
   DateButtonStyle();
   DismissReasonTest();

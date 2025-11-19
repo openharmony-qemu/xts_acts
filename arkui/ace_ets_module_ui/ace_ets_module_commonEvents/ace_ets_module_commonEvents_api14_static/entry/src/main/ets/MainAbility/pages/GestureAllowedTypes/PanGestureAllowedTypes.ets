@@ -4,57 +4,32 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State,AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  GestureEvent,
-  HorizontalAlign,
-  LongPressGesture,
-  Margin,
-  Padding,
-  PanDirection,
-  PanGesture,
-  PanGestureOptions,
-  SourceTool,
-  Text
-} from '@ohos.arkui.component'
+import {PanGesture,PanDirection,PanGestureOptions,LongPressGesture,Color,HorizontalAlign,Padding,GestureEvent,ColumnOptions,Entry,Column,Text,Button,ClickEvent,Component,Margin,SourceTool} from '@ohos.arkui.component'
 
 @Entry
 @Component
 struct PanGestureAllowedTypes {
-  @State types: Array<SourceTool | undefined | null> = new Array<SourceTool | undefined | null>();
+  @State types: Array<SourceTool> = new Array<SourceTool>();
   @State result: string = 'allowed types default';
-  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left })
-
+  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left})
   build() {
-    Column({ space: 10 } as ColumnOptions) {
-      Text('Pan')
-        .fontSize(20)
-        .width(240)
-        .height(80)
-        .margin({ left: 0, top: 0 } as Margin)
-        .padding({ left: 0, top: 0 } as Padding)
-        .backgroundColor(Color.Yellow)
-        .key('PanGestureAllowedTypes_Text')
+    Column({space: 10} as ColumnOptions) {
+      Text('Pan').fontSize(20).width(240).height(80)
+        .margin({left:0,top:0} as Margin).padding({left:0,top:0} as Padding).backgroundColor(Color.Yellow).key('PanGestureAllowedTypes_Text')
         .gesture(
           PanGesture(this.panOption)
-
+            .allowedTypes(this.types)
             .onActionStart((event: GestureEvent) => {
               this.result = 'allowed types success'
             })
@@ -76,15 +51,10 @@ struct PanGestureAllowedTypes {
           this.types = [SourceTool.Finger];
         })
       Button('Invalid').id('Invalid_type')
-        .onClick((e: ClickEvent) => {
-          this.result = 'allowed types default';
-          this.types = [null, undefined];
-        })
-    }
-    .alignItems(HorizontalAlign.Start)
-    .width('100%')
-    .height('100%')
-    .backgroundColor('#ffbebaba')
-    .key('PanGestureAllowedTypes_Father')
+          .onClick((e: ClickEvent) => {
+            this.result = 'allowed types default';
+            this.types = [SourceTool.Unknown];   //null   undefined
+          })
+    }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('PanGestureAllowedTypes_Father')
   }
 }
