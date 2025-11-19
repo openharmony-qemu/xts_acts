@@ -43,9 +43,9 @@ export default function TextAreaCallbackTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Callback_0100
-     *tc.name   TextArea.onEditChange
-     *tc.desc   TextArea.onEditChange
+     *@tc.number ArkUI_TextArea_Callback_0100
+     *@tc.name   TextArea.onEditChange
+     *@tc.desc   TextArea.onEditChange
      */
     it('ArkUI_TextArea_Callback_0100', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_TextArea_Callback_0100'

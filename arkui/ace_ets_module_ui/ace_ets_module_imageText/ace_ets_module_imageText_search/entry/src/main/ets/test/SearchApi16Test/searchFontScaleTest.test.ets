@@ -48,7 +48,7 @@ export default function searchFontScaleTest() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0001
      * @tc.name         searchFontScaleTest0001
-     * @tc.desic        Test searchFontScaleTest abnormal value :undefined
+     * @tc.desc         Test searchFontScaleTest abnormal value :undefined
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -69,7 +69,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0002
      * @tc.name         searchFontScaleTest0002
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.string')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.string')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -90,7 +90,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0003
      * @tc.name         searchFontScaleTest0003
-     * @tc.desic        Test searchFontScaleTest Normal value 
+     * @tc.desc        Test searchFontScaleTest Normal value 
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -111,7 +111,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0004
      * @tc.name         searchFontScaleTest0004
-     * @tc.desic        Test searchFontScaleTest abnormal value :less than minimum
+     * @tc.desc        Test searchFontScaleTest abnormal value :less than minimum
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -132,7 +132,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0005
      * @tc.name         searchFontScaleTest0005
-     * @tc.desic        Test searchFontScaleTest abnormal value :Greater than maximum
+     * @tc.desc        Test searchFontScaleTest abnormal value :Greater than maximum
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -153,7 +153,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0006
      * @tc.name         searchFontScaleTest0006
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.boolean')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.boolean')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -174,7 +174,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0007
      * @tc.name         searchFontScaleTest0007
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.color')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.color')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -195,7 +195,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0008
      * @tc.name         searchFontScaleTest0008
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.float')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.float')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -216,7 +216,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0009
      * @tc.name         searchFontScaleTest0009
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.integer')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.integer')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -238,7 +238,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0010
      * @tc.name         searchFontScaleTest00010
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.intarray')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.intarray')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -259,7 +259,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0011
      * @tc.name         searchFontScaleTest0011
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.pattern')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.pattern')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -281,7 +281,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0012
      * @tc.name         searchFontScaleTest0012
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.plural')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.plural')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1
@@ -303,7 +303,7 @@ export default function searchFontScaleTest() {
 	/*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0013
      * @tc.name         searchFontScaleTest0013
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.strarray')
+     * @tc.desc        Test searchFontScaleTest reference value :$r('app.strarray')
 	 * @tc.size         MediumTest
 	 * @tc.type         Function
 	 * @tc.level        1

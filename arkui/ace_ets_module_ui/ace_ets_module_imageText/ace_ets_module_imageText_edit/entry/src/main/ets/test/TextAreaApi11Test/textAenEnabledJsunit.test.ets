@@ -24,7 +24,7 @@ export default function textAenEnabledJsunit() {
     beforeEach(async (done: Function) => {
       console.info("textAenEnabledJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextArea/textAenEnabled',
+        url: 'MainAbility/pages/TextAreaApi11/textAenEnabled',
       }
       try {
         router.clear();
@@ -43,6 +43,12 @@ export default function textAenEnabledJsunit() {
       done();
     });
 
+    /**
+    * @tc.number: textAenEnabledJsunit_0100
+    * @tc.name  : textAenEnabledJsunit_0100
+    * @tc.desc  : test TextArea
+    * @tc.level : Level 1
+    */
     it('textAenEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('textAenEnabledJsunit_0100 START');
@@ -59,22 +65,26 @@ export default function textAenEnabledJsunit() {
       done();
     });
 
-    it('textAenEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
-
-      console.info('textAenEnabledJsunit_0100 START');
+    /**
+    * @tc.number: textAenEnabledJsunit_0200
+    * @tc.name  : textAenEnabledJsunit_0200
+    * @tc.desc  : test TextArea
+    * @tc.level : Level 1
+    */
+    it('textAenEnabledJsunit_0200', Level.LEVEL1, async (done: Function) => {
+      console.info('textAenEnabledJsunit_0200 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('tiText'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('tiEnable');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[textAenEnabledJsunit_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[textAenEnabledJsunit_0100] text2: " + JSON.stringify(obj.$attrs.content));
+      console.info("[textAenEnabledJsunit_0200] component obj is: " + JSON.stringify(obj));
+      console.info("[textAenEnabledJsunit_0200] text2: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual("TextInput组件事件触发");
-      console.info('[textAenEnabledJsunit_0100] END');
+      console.info('[textAenEnabledJsunit_0200] END');
       done();
     });
-
   })
 }
 

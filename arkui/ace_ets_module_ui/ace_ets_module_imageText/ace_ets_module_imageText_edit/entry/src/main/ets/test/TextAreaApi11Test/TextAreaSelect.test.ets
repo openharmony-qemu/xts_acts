@@ -51,9 +51,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0100
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0100
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0100', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0100'
@@ -70,9 +70,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0200
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0200
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0200', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0200'
@@ -103,9 +103,9 @@ export default function TextAreaSelectTest() {
 
 
     /*
-     *tc.number ArkUI_TextArea_Select_0300
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0300
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0300', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0300'
@@ -127,9 +127,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0400
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0400
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0400', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0400'
@@ -152,9 +152,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0500
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0500
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0500', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0500'
@@ -176,9 +176,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0600
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0600
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0600', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0600'
@@ -202,9 +202,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0700
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0700
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0700', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0700'
@@ -227,9 +227,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0800
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0800
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0800', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0800'
@@ -253,9 +253,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_0900
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_0900
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_0900', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_0900'
@@ -278,9 +278,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_1000
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_1000
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_1000', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_1000'
@@ -303,9 +303,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_1100
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_1100
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_1100', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_1100'
@@ -329,9 +329,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_1200
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_1200
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_1200', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_1200'
@@ -355,9 +355,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_1300
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_1300
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_1300', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_1300'
@@ -377,9 +377,9 @@ export default function TextAreaSelectTest() {
     });
 
     /*
-     *tc.number ArkUI_TextArea_Select_1400
-     *tc.name   Textarea support selecting text by setting start and end of cursor
-     *tc.desc   Textarea support selecting text by setting start and end of cursor
+     *@tc.number ArkUI_TextArea_Select_1400
+     *@tc.name   Textarea support selecting text by setting start and end of cursor
+     *@tc.desc   Textarea support selecting text by setting start and end of cursor
      */
     it('ArkUI_TextArea_Select_1400', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_TextArea_Select_1400'

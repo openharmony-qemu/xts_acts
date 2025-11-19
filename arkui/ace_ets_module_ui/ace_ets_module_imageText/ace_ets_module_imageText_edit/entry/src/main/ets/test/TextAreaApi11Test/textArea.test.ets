@@ -28,7 +28,7 @@ export default function textAreaOnCutJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get textArea state success " + JSON.stringify(pages));
-        if (!("textArea" == pages.name)) {
+        if (!("textArea6" == pages.name)) {
           console.info("get textArea state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
@@ -45,9 +45,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+     * @tc.number       testtextAreaOnCut0001
      * @tc.name         testtextAreaOnCut0001
-     * @tc.desic         acetextAreaOnCutEtsTest0001
+     * @tc.desc         acetextAreaOnCutEtsTest0001
      */
     it('testtextAreaOnCut0001', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0001 START');
@@ -62,9 +62,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+     * @tc.number       testtextAreaOnCut0002
      * @tc.name         testtextAreaOnCut0002
-     * @tc.desic         acetextAreaOnCutEtsTest0002
+     * @tc.desc         acetextAreaOnCutEtsTest0002
      */
     it('testtextAreaOnCut0002', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0002 START');
@@ -79,9 +79,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+     * @tc.number       testtextAreaOnCut0003
      * @tc.name         testtextAreaOnCut0003
-     * @tc.desic         acetextAreaOnCutEtsTest0003
+     * @tc.desc         acetextAreaOnCutEtsTest0003
      */
     it('testtextAreaOnCut0003', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0003 START');
@@ -96,9 +96,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+     * @tc.number       testtextAreaOnCut0004
      * @tc.name         testtextAreaOnCut0004
-     * @tc.desic         acetextAreaOnCutEtsTest0004
+     * @tc.desc         acetextAreaOnCutEtsTest0004
      */
     it('testtextAreaOnCut0004', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0004 START');
@@ -113,9 +113,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
+     * @tc.number       testtextAreaOnCut0005
      * @tc.name         testtextAreaOnCut0005
-     * @tc.desic         acetextAreaOnCutEtsTest0005
+     * @tc.desc         acetextAreaOnCutEtsTest0005
      */
     it('testtextAreaOnCut0005', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0005 START');
@@ -130,9 +130,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
+     * @tc.number       testtextAreaOnCut0006
      * @tc.name         testtextAreaOnCut0006
-     * @tc.desic         acetextAreaOnCutEtsTest0006
+     * @tc.desc         acetextAreaOnCutEtsTest0006
      */
     it('testtextAreaOnCut0006', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0006 START');
@@ -147,9 +147,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
+     * @tc.number       testtextAreaOnCut0009
      * @tc.name         testtextAreaOnCut0009
-     * @tc.desic         acetextAreaOnCutEtsTest0009
+     * @tc.desc         acetextAreaOnCutEtsTest0009
      */
     it('testtextAreaOnCut0009', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut009 START');
@@ -164,9 +164,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
+     * @tc.number       testtextAreaOnCut0010
      * @tc.name         testtextAreaOnCut0010
-     * @tc.desic         acetextAreaOnCutEtsTest0010
+     * @tc.desc         acetextAreaOnCutEtsTest0010
      */
     it('testtextAreaOnCut0010', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0010 START');
@@ -181,9 +181,9 @@ export default function textAreaOnCutJsunit() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
+     * @tc.number       testtextAreaOnCut0011
      * @tc.name         testtextAreaOnCut0011
-     * @tc.desic         acetextAreaOnCutEtsTest0011
+     * @tc.desc         acetextAreaOnCutEtsTest0011
      */
     it('testtextAreaCopyOption0011', Level.LEVEL1, async () => {
       console.info('textAreaCopyOption testtextAreaCopyOption0011 START');

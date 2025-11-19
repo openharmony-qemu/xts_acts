@@ -46,80 +46,79 @@ export default function searchHalfLeadingTest() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         searchHalfLeadingTest0001
-     * @tc.desic        Test searchHalfLeadingTest Normal value :true
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
-     */
+    * @tc.number       searchHalfLeadingTest0001
+    * @tc.name         searchHalfLeadingTest0001
+    * @tc.desc         Test searchHalfLeadingTest Normal value :true
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('searchHalfLeadingTest0001',  Level.LEVEL0, async () => {
-        let driver = Driver.create();
-        console.info('searchHalfLeadingTest searchHalfLeadingTest0001 START');
-        await CommonFunc.sleep(1000);
-        let search1 = getInspectorByKey('search1');
-        let obj: ESObject = JSON.parse(search1);
-        console.log('searchHalfLeadingTest0001---' + obj.$attrs.halfLeading)
-        expect(obj.$attrs.halfLeading).assertEqual(true);
-        console.info("[searchHalfLeadingTest0001] end");
+      let driver = Driver.create();
+      console.info('searchHalfLeadingTest searchHalfLeadingTest0001 START');
+      await CommonFunc.sleep(1000);
+      let search1 = getInspectorByKey('search1');
+      let obj: ESObject = JSON.parse(search1);
+      console.log('searchHalfLeadingTest0001---' + obj.$attrs.halfLeading)
+      expect(obj.$attrs.halfLeading).assertEqual(true);
+      console.info("[searchHalfLeadingTest0001] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         searchHalfLeadingTest0002
-     * @tc.desic        Test searchHalfLeadingTest Normal value :false
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
-     */
+	 /*
+    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+    * @tc.name         searchHalfLeadingTest0002
+    * @tc.desc         Test searchHalfLeadingTest Normal value :false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('searchHalfLeadingTest0002',  Level.LEVEL0, async () => {
-        let driver = Driver.create();
-        console.info('searchHalfLeadingTest searchHalfLeadingTest0002 START');
-        await CommonFunc.sleep(1000);
-        let search2 = getInspectorByKey('search2');
-        let obj: ESObject = JSON.parse(search2);
-        console.log('searchHalfLeadingTest0002---' + obj.$attrs.halfLeading)
-        expect(obj.$attrs.halfLeading).assertEqual(false);
-        console.info("[searchHalfLeadingTest0002] end");
+      let driver = Driver.create();
+      console.info('searchHalfLeadingTest searchHalfLeadingTest0002 START');
+      await CommonFunc.sleep(1000);
+      let search2 = getInspectorByKey('search2');
+      let obj: ESObject = JSON.parse(search2);
+      console.log('searchHalfLeadingTest0002---' + obj.$attrs.halfLeading)
+      expect(obj.$attrs.halfLeading).assertEqual(false);
+      console.info("[searchHalfLeadingTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         searchHalfLeadingTest0003
-     * @tc.desic        Test searchHalfLeadingTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
-     */
+	  /*
+    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+    * @tc.name         searchHalfLeadingTest0003
+    * @tc.desc         Test searchHalfLeadingTest abnormal value :undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('searchHalfLeadingTest0003',  Level.LEVEL0, async () => {
-        let driver = Driver.create();
-        console.info('searchHalfLeadingTest searchHalfLeadingTest0003 START');
-        await CommonFunc.sleep(1000);
-        let search3 = getInspectorByKey('search3');
-        let obj: ESObject = JSON.parse(search3);
-        console.log('searchHalfLeadingTest0003---' + obj.$attrs.halfLeading)
-        expect(obj.$attrs.halfLeading).assertEqual(false);
-        console.info("[searchHalfLeadingTest0003] end");
+      let driver = Driver.create();
+      console.info('searchHalfLeadingTest searchHalfLeadingTest0003 START');
+      await CommonFunc.sleep(1000);
+      let search3 = getInspectorByKey('search3');
+      let obj: ESObject = JSON.parse(search3);
+      console.log('searchHalfLeadingTest0003---' + obj.$attrs.halfLeading)
+      expect(obj.$attrs.halfLeading).assertEqual(false);
+      console.info("[searchHalfLeadingTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         searchHalfLeadingTest0004
-     * @tc.desic        Test searchHalfLeadingTest abnormal value :null
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
-     */
+	 /*
+    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+    * @tc.name         searchHalfLeadingTest0004
+    * @tc.desc         Test searchHalfLeadingTest abnormal value :null
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('searchHalfLeadingTest0004',  Level.LEVEL0, async () => {
-        let driver = Driver.create();
-        console.info('searchHalfLeadingTest searchHalfLeadingTest0004 START');
-        await CommonFunc.sleep(1000);
-        let search4 = getInspectorByKey('search4');
-        let obj: ESObject = JSON.parse(search4);
-        console.log('searchHalfLeadingTest0004---' + obj.$attrs.halfLeading)
-        expect(obj.$attrs.halfLeading).assertEqual(false);
-        console.info("[searchHalfLeadingTest0004] end");
+      let driver = Driver.create();
+      console.info('searchHalfLeadingTest searchHalfLeadingTest0004 START');
+      await CommonFunc.sleep(1000);
+      let search4 = getInspectorByKey('search4');
+      let obj: ESObject = JSON.parse(search4);
+      console.log('searchHalfLeadingTest0004---' + obj.$attrs.halfLeading)
+      expect(obj.$attrs.halfLeading).assertEqual(false);
+      console.info("[searchHalfLeadingTest0004] end");
     });
-	
   })
 }

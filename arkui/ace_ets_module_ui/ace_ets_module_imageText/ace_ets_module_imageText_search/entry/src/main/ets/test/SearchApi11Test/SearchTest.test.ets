@@ -931,7 +931,7 @@ export default function search() {
     });
 
     /*
-     *tc.number ArkUI_Stage_Search_CaretStyle_2300
+     * @tc.number ArkUI_Stage_Search_CaretStyle_2300
      * @tc.name Tests the caretStyle property of the search component
      * @tc.desc Set the value of caretStyle.color as $r('app.color.Caretcolor')
      */
@@ -948,7 +948,7 @@ export default function search() {
     });
 
     /*
-     *tc.number ArkUI_Stage_Search_CaretStyle_2400
+     * @tc.number ArkUI_Stage_Search_CaretStyle_2400
      * @tc.name Tests the caretStyle property of the search component
      * @tc.desc Set the value of caretStyle.color as $r('app.float.Caretwidth')
      */
@@ -965,7 +965,7 @@ export default function search() {
     });
 
     /*
-     *tc.number ArkUI_Stage_Search_CaretStyle_2500
+     * @tc.number ArkUI_Stage_Search_CaretStyle_2500
      * @tc.name Tests the caretStyle property of the search component
      * @tc.desc Set the value of caretStyle.color as $r('app.string.Caretwidth001')
      */
@@ -982,7 +982,7 @@ export default function search() {
     });
 
     /*
-     *tc.number ArkUI_Stage_Search_CaretStyle_2600
+     * @tc.number ArkUI_Stage_Search_CaretStyle_2600
      * @tc.name Tests the caretStyle property of the search component
      * @tc.desc Set the value of caretStyle.color as $r('app.integer.Caretwidth')
      */
@@ -999,7 +999,7 @@ export default function search() {
     });
 
     /*
-     *tc.number ArkUI_Stage_Search_CaretStyle_2700
+     * @tc.number ArkUI_Stage_Search_CaretStyle_2700
      * @tc.name Tests the caretStyle property of the search component
      * @tc.desc Set the value of fontcolor as 0xff0000, assert caretStyle.caretColor
      */
