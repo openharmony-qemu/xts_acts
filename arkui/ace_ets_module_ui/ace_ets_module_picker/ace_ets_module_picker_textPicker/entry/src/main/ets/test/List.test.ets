@@ -29,6 +29,7 @@ import textPickerOnScrollStopTest from './textPicker/textPickerOnScrollStopTest.
 import textPickerSecTest from './textPicker/textPickerSec.test';
 import textPickerSelectedAreaTest from './textPicker/textPickerSelectedArea.test';
 import textPickerTextStyleThreeTest from './textPicker/textPickerTextStyleThree.test';
+import textPickerValueTest from './textPicker/textPickerValue.test';
 
 export default function testsuite() {
     textPickerSelectedBackgroundStyleTest();
@@ -47,4 +48,5 @@ export default function testsuite() {
     textPickerSecTest();
     textPickerSelectedAreaTest();
     textPickerTextStyleThreeTest();
+    textPickerValueTest();
 }
