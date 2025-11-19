@@ -21,6 +21,7 @@ group("ActsWebForwardBackwardCacheTest") {
       "forward_backward_cache_seven:ActsWebForwardBackwardCacheSevenTest",
       "forward_backward_cache_six:ActsWebForwardBackwardCacheSixTest",
       "forward_backward_cache_three:ActsWebForwardBackwardCacheThreeTest",
+      "forward_backward_cache_three_static:ActsWebForwardBackwardCacheThreeStaticTest",
       "forward_backward_cache_two:ActsWebForwardBackwardCacheTwoTest",
     ]
   }

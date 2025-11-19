@@ -138,7 +138,7 @@ export default function WebDataBaseTest() {
         Utils.emitEvent('emitonSwitchNextPage1', 10)
         await Utils.msSleep(1000);
         inspector.sendEventByKey('WebDataBaseButton', 10, '');
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         done();
       })
   })
