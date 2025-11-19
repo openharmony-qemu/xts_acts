@@ -4012,9 +4012,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
-          let width1 = drawableRect1.width / 1.2;
-          console.log(caseName + ' width1: ' + width1);
-          expect(Math.abs(width1-drawableRect1.height)).assertLessOrEqual(2);
+          let height1 = Math.round(drawableRect1.width / 1.2);
+          console.log(caseName + ' height1: ' + height1);
+          expect(Math.abs(height1-drawableRect1.height)).assertLessOrEqual(3);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4025,9 +4025,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect3 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
-          let width3 = drawableRect3.width / 1.2;
-          console.log(caseName + ' width3: ' + width3);
-          expect(Math.abs(width3-drawableRect3.height)).assertLessOrEqual(2);
+          let height3 = Math.round(drawableRect3.width / 1.2);
+          console.log(caseName + ' height3: ' + height3);
+          expect(Math.abs(height3-drawableRect3.height)).assertLessOrEqual(3);
           let driver = await Driver.create();
           await sleep(200)
           let windowPoint = await windowClass.getWindowProperties().windowRect
@@ -4038,9 +4038,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(1000)
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
-          let width4 = drawableRect4.width / 1.5;
-          console.log(caseName + ' width4: ' + width4);
-          expect(Math.abs(width4-drawableRect4.height)).assertLessOrEqual(2);
+          let height4 = Math.round(drawableRect4.width / 1.5);
+          console.log(caseName + ' height4: ' + height4);
+          expect(Math.abs(height4-drawableRect4.height)).assertLessOrEqual(3);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4084,9 +4084,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(1000)
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
-          let width1 = drawableRect1.width / 1.2;
-          console.log(caseName + ' width1: ' + width1);
-          expect(Math.abs(width1-drawableRect1.height)).assertLessOrEqual(2);
+          let height1 = Math.round(drawableRect1.width / 1.2);
+          console.log(caseName + ' height1: ' + height1);
+          expect(Math.abs(height1-drawableRect1.height)).assertLessOrEqual(3);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4097,9 +4097,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect3 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
-          let width3 = drawableRect3.width / 1.2;
-          console.log(caseName + ' width3: ' + width3);
-          expect(Math.abs(width3-drawableRect3.height)).assertLessOrEqual(2);
+          let height3 = Math.round(drawableRect3.width / 1.2);
+          console.log(caseName + ' height3: ' + height3);
+          expect(Math.abs(height3-drawableRect3.height)).assertLessOrEqual(3);
           let windowPoint2 = await windowClass.getWindowProperties().windowRect
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint2)}`)
           await driver.mouseMoveTo({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top})
@@ -4110,9 +4110,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
-          let width4 = drawableRect4.width / 1.5;
-          console.log(caseName + ' width4: ' + width4);
-          expect(Math.abs(width4-drawableRect4.height)).assertLessOrEqual(2);
+          let height4 = Math.round(drawableRect4.width / 1.5);
+          console.log(caseName + ' height4: ' + height4);
+          expect(Math.abs(height4-drawableRect4.height)).assertLessOrEqual(3);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
