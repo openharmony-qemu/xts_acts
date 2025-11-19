@@ -13,6 +13,9 @@
     "MainAbility/pages/timePickerDialog/timePickerDialogBlurStyleOptions",
     "MainAbility/pages/timePickerDialog/timePickerDialogOptions",
     "MainAbility/pages/timePickerDialog/timePickerDialogUI",
-    "MainAbility/pages/timePickerDialog/timePickerDialogWindowProperties"
+    "MainAbility/pages/timePickerDialog/timePickerDialogWindowProperties",
+    "MainAbility/pages/timePickerDialog/DateTimeOptions",
+    "MainAbility/pages/timePickerDialog/TimePickerDialogAppearText",
+    "MainAbility/pages/timePickerDialog/TimePickerDialogCallback"
   ]
 }

@@ -25,6 +25,9 @@ import timePickerDialogBlurStyleOptionsTest from './timePickerDialogTest/timePic
 import timePickerDialogOptionsTest from './timePickerDialogTest/timePickerDialogOptions.test';
 import timePickerDialogUITest from './timePickerDialogTest/timePickerDialogUI.test';
 import timePickerDialogWindowPropertiesTest from './timePickerDialogTest/timePickerDialogWindowProperties.test';
+import DateTimeOptionsTest from './timePickerDialogTest/DateTimeOptions.test';
+import TimePickerDialogAppearTextTest from './timePickerDialogTest/TimePickerDialogAppearText.test';
+import TimePickerDialogCallbackTest from './timePickerDialogTest/TimePickerDialogCallback.test';
 
 export default function testsuite() {
   timePickerDialogBGBlurStyleTest();
@@ -40,4 +43,7 @@ export default function testsuite() {
   timePickerDialogOptionsTest();
   timePickerDialogUITest();
   timePickerDialogWindowPropertiesTest();
+  DateTimeOptionsTest();
+  TimePickerDialogAppearTextTest();
+  TimePickerDialogCallbackTest();
 }
