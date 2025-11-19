@@ -14,33 +14,33 @@
  */
 
 import {
-  Component,
-  Text,
+  Alignment,
+  Builder,
   Button,
   ClickEvent,
-  Column,
-  Builder,
-  WaterFlow,
-  ForEach,
-  FlowItem,
-  Alignment,
-  Margin,
   Color,
-  Position,
+  Column,
+  Component,
   FlexDirection,
-  Scroller
+  FlowItem,
+  ForEach,
+  Margin,
+  Position,
+  Scroller,
+  Text,
+  WaterFlow
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct WaterFlowView {
   @Link _position!: Position;
-  private componentKey: string = '';
   @State minSize: number = 50
   @State maxSize: number = 100
   @State fontSize: number = 24
-  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
+  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
   scroller: Scroller = new Scroller()
+  private componentKey: string = '';
   private itemWidthArray: number[] = [] as number[]
   private itemHeightArray: number[] = [] as number[]
 
@@ -75,15 +75,15 @@ export struct WaterFlowView {
 
   build() {
     WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: int) => {
+      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: Int) => {
         FlowItem() {
           Column() {
             Text('N' + item).fontSize(12).height('16')
           }
         }
-        .width(this.itemWidthArray[item.toInt()])
-        .height(this.itemHeightArray[item.toInt()])
-        .backgroundColor(this.colors[item.toInt() % 5])
+        .width(this.itemWidthArray[item as int])
+        .height(this.itemHeightArray[item as int])
+        .backgroundColor((this.colors[(item % 5) as int]).toInt())
       }, (item: number) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')
@@ -101,7 +101,7 @@ export struct WaterFlowView {
     .onReachEnd(() => {
       console.info('onReachEnd')
     })
-    .backgroundColor(0xFAEEE0)
+    .backgroundColor('0xFAEEE0')
     .width('100%')
     .height('80%')
     .layoutDirection(FlexDirection.Column)

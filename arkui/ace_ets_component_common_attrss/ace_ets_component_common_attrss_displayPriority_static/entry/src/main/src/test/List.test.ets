@@ -14,10 +14,9 @@
  */
 
 
-
 import displayPriorityTest from './displayPriority/DisplayPriorityTest.test';
 
 export default function testsuite() {
+  console.log('test list start ')
   displayPriorityTest()
-
 }

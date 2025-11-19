@@ -14,41 +14,95 @@
  */
 
 import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Margin,
-  Text,
-  Row,
-  Scroll,
-  Flex,
-  FlexDirection,
-  FlexAlign,
-  TextAlign,
-  FontWeight,
+  $r,
+  AlignRuleOption,
   AlphabetIndexer,
+  applyStyles,
+  Axis,
+  BarState,
+  Blank,
+  BreakPoints,
+  BreakpointsReference,
+  Builder,
+  Button,
   Checkbox,
   CheckboxGroup,
+  Circle,
+  Color,
+  Column,
+  ColumnOptions,
+  ColumnSplit,
+  CommonMethod,
+  Component,
+  Counter,
   DataPanel,
+  DataPanelType,
   DatePicker,
   Divider,
+  Ellipse,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FlowItem,
+  FontWeight,
+  ForEach,
   Gauge,
+  Grid,
+  GridCol,
+  GridColColumnOption,
+  GridColOptions,
+  GridItem,
+  GridRow,
+  GridRowDirection,
+  GutterOption,
+  HorizontalAlign,
   Image,
   ImageAnimator,
+  ImageFit,
+  Line,
+  List,
+  ListItem,
+  ListItemGroup,
   LoadingProgress,
+  Margin,
   Marquee,
   Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemOptions,
+  Path,
+  Polygon,
+  Polyline,
   Progress,
+  ProgressType,
   QRCode,
   Radio,
   Rating,
+  Rect,
+  RectOptions,
+  Refresh,
+  RelativeContainer,
+  Row,
+  RowSplit,
+  Scroll,
   ScrollBar,
-  Stepper,
+  Scroller,
   Search,
   Select,
+  Shape,
+  SideBarContainer,
+  SideBarContainerType,
   Slider,
+  SliderStyle,
+  Stack,
+  Stepper,
+  StepperItem,
+  Swiper,
+  TabContent,
+  Tabs,
   Text,
+  TextAlign,
   TextArea,
   TextClock,
   TextInput,
@@ -56,117 +110,74 @@ import {
   TextTimer,
   TimePicker,
   Toggle,
-  Counter,
-  Flex,
-  GridRow,
-  Grid,
-  List,
-  RelativeContainer,
-  Row,
-  Refresh,
-  Scroll,
-  SideBarContainer,
-  Stack,
-  Swiper,
-  Tabs,
-  WaterFlow,
-  Circle,
-  Ellipse,
-  Line,
-  Polyline,
-  Polygon,
-  Path,
-  Rect,
-  Shape,
-  ColumnSplit,
-  RowSplit,
-  Blank,
-  GridCol,
-  AlphabetIndexer,
-  HorizontalAlign,
-  Color,
-  Builder,
-  DataPanelType,
-  $r,
-  MenuItem,
-  ProgressType,
-  BarState,
-  StepperItem,
-  Scroller,
-  Axis,
   ToggleType,
-  GridRowDirection,
-  GridItem,
-  ListItem,
-  SliderStyle,
-  SideBarContainerType,
-  TabContent,
-  FlowItem,
-  ImageFit,
-  MenuItemOptions,
   VerticalAlign,
-  AlignRuleOption,
-  GridColColumnOption,
-  GridColOptions,
-  ColumnOptions,
-  RectOptions,
-  MenuItemGroup,
+  WaterFlow,
   Web,
-  GutterOption,
-  BreakPoints,
-  ForEach,
-  ListItemGroup,
-  BreakpointsReference,
 } from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager } from '../../common/AttrsManager';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { Router, UIContext } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
+import { RouterParams } from '../../common/Utils';
 
 /**
  * Test page of common attribute: defaultFocus
  */
-class View {
-  targetView: string = '';
-  componentKey: string = '';
-  textComponentKey: string = '';
-  referenceComponentKey: string = '';
-}
 
-class RouterParams {
-  view: View = new View()
-}
 @Entry
 @Component
 struct DefaultFocusPage {
-  private scroller: Scroller = new Scroller() //For Scroll and Scroll
-  private arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'] //For Scroll
-  @State _defaultFocus: boolean = true;
+  @StorageProp("_defaultFocus") _defaultFocus: boolean = true
   @State callback: string = '';
   @State referenceCallback: string = '';
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
-  @State textComponentKey: string =
-    (this.getUIContext().getRouter().getParams() as RouterParams).view.textComponentKey
-  @State referenceComponentKey: string =
-    (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey
+  @State targetView: string = ''
+  @State componentKey: string = ''
+  @State textComponentKey: string = ''
+  @State referenceComponentKey: string = ''
+  private scroller: Scroller = new Scroller() //For Scroll and Scroll
+  private arr: string[] =
+    ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'] //For Scroll
 
   onPageShow() {
     console.info('[DefaultFocusPage] page show called ');
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    AppStorage.setOrCreate<boolean>('_defaultFocus', routerParamOptions.view.testValue.setValue)
 
-    //Register data change call back.
-    attrsManager.registerDataChange((value: boolean) => {
-      this._defaultFocus = value;
-    })
+    try {
+      console.log('aboutToAppear routerParamOptions before' + this.targetView)
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      this.callback = '';
+      this.referenceCallback = '';
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.textComponentKey = routerParamOptions.view.textComponentKey
+      this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+      console.log('aboutToAppear routerParamOptions success' + this.targetView)
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
+
   }
 
+  /**
+   * Set common style.
+   */
 
+  commonStyle(instance: CommonMethod) {
+    instance.key(this.componentKey)
+    instance.defaultFocus(this._defaultFocus)
+    instance.onFocus(() => {
+      this.callback = 'onFocus'
+      console.info('[DefaultFocusPage] targetComponent onFocus called');
+    })
+    instance.onBlur(() => {
+      this.callback = 'onBlur'
+      console.info('[DefaultFocusPage] targetComponent onBlur called');
+    })
+    instance.focusable(true)
+  }
 
   build() {
     Column() {
@@ -191,22 +202,22 @@ struct DefaultFocusPage {
         })
       if (this.targetView == 'Button') {
         Button('Button').width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextInput') {
         TextInput().width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextArea') {
         TextArea().width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Search') {
         Search().width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Text') {
         Text('Text').width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Image') {
         Image($r('app.media.icon')).width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'List') {
         List() {
           ListItem() {
@@ -217,7 +228,7 @@ struct DefaultFocusPage {
               .backgroundColor(Color.White)
           }
         }.width(200).height(100).backgroundColor(Color.Blue)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Grid') {
         Grid() {
           GridItem() {
@@ -230,65 +241,65 @@ struct DefaultFocusPage {
           }
         }
         .width(200).height(100)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Checkbox') {
         Checkbox({ name: 'checkbox1' }).width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'CheckboxGroup') {
         CheckboxGroup().width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'DatePicker') {
         DatePicker({}).width(200).height(100)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'ImageAnimator') {
         ImageAnimator()
           .backgroundColor(Color.Blue).width(200).height(300)
 
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
         }.backgroundColor(Color.Yellow).width(200)
         .height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'MenuItem') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
             .width(200).height(300)
-          
+            .applyStyles(this.commonStyle)
         }.backgroundColor(Color.Yellow).width(200).height(300)
       } else if (this.targetView == 'MenuItemGroup') {
         Menu() {
           MenuItemGroup({ header: 'MenuItemGroup' }) {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
           }.width(200).height(300)
-          
+          .applyStyles(this.commonStyle)
         }.backgroundColor(Color.Yellow).width(200).height(300)
       } else if (this.targetView == 'Radio') {
         Radio({ value: 'Radio1', group: 'radioGroup' })
           .width(200)
           .height(300)
 
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Rating') {
         Rating({ rating: 3.5 })
           .width(200)
           .height(300)
 
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Select') {
         Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
           { value: 'bbb', icon: '/common/public_icon.svg' }])
           .width(200)
           .height(300)
 
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Slider') {
         Slider()
           .width(200)
           .height(300)
 
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Stepper') {
         Stepper() {
           StepperItem() {
@@ -297,7 +308,7 @@ struct DefaultFocusPage {
             }
           }
         }
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'StepperItem') {
         Stepper() {
           StepperItem() {
@@ -307,7 +318,7 @@ struct DefaultFocusPage {
             }
           }
 
-          
+          .applyStyles(this.commonStyle)
           .backgroundColor(Color.Red)
           .width('100%')
           .height('100%')
@@ -317,22 +328,23 @@ struct DefaultFocusPage {
           .width(200)
           .height(300)
 
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'TimePicker') {
         TimePicker().width(200).height(300)
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Toggle') {
         Toggle({ type: ToggleType.Switch }).width(200).height(300)
 
-        
-      }else if (this.targetView == 'Web') {
-
-      }else if (this.targetView == 'AlphabetIndexer') {
+          .applyStyles(this.commonStyle)
+      } else if (this.targetView == 'Web') {
+        // Web({ src: '', controller: new WebController() })
+        //   .applyStyles(this.commonStyle)
+      } else if (this.targetView == 'AlphabetIndexer') {
         AlphabetIndexer({ arrayValue: ['A', 'B', 'C', 'D'], selected: 0 })
           .width(200)
           .height(300)
 
-        
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Column') {
         Column() {
           Button('Button')
@@ -340,7 +352,7 @@ struct DefaultFocusPage {
         .width(200)
         .height(300)
 
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'ColumnSplit') {
         ColumnSplit() {
           Text('1')
@@ -356,7 +368,7 @@ struct DefaultFocusPage {
             .textAlign(TextAlign.Center)
             .focusable(true)
         }.width(200).height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Counter') {
         Counter() {
           Button('Button')
@@ -364,7 +376,7 @@ struct DefaultFocusPage {
         .width(200)
         .height(300)
 
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Flex') {
         Flex() {
           Button('Button')
@@ -372,7 +384,7 @@ struct DefaultFocusPage {
         .width(200)
         .height(300)
 
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'GridCol') {
         GridRow({
           columns: 1,
@@ -384,7 +396,7 @@ struct DefaultFocusPage {
             }.width('100%').height('20vp')
           }
 
-          
+          .applyStyles(this.commonStyle)
           .backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')
@@ -393,19 +405,29 @@ struct DefaultFocusPage {
         GridRow({
           columns: 5,
           gutter: { x: 5, y: 10 } as GutterOption,
-          breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
+          breakpoints: {
+            value: ['400vp', '600vp', '800vp'],
+            reference: BreakpointsReference.WindowSize
+          } as BreakPoints,
           direction: GridRowDirection.Row
         }) {
           ForEach([Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue,],
             (color: Color) => {
-              GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } as GridColOptions) {
+              GridCol({
+                span: {
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  lg: 4
+                } as GridColColumnOption
+              } as GridColOptions) {
                 Row() {
                   Button('Button')
                 }.width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
         }
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'GridItem') {
         Grid() {
           GridItem() {
@@ -416,7 +438,7 @@ struct DefaultFocusPage {
               .height('100%')
               .textAlign(TextAlign.Center)
           }.width(200).height(300)
-          
+          .applyStyles(this.commonStyle)
         }
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
@@ -432,7 +454,7 @@ struct DefaultFocusPage {
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.White)
           }
-          
+          .applyStyles(this.commonStyle)
         }.width(200).height(300).listDirection(Axis.Vertical)
       } else if (this.targetView == 'ListItemGroup') {
         List({ space: 0, initialIndex: 0 }) {
@@ -445,7 +467,7 @@ struct DefaultFocusPage {
                 .backgroundColor(Color.White)
             }
           }.backgroundColor(Color.Yellow)
-          
+          .applyStyles(this.commonStyle)
         }
         .backgroundColor(Color.Pink)
         .width(300)
@@ -456,7 +478,7 @@ struct DefaultFocusPage {
           Button('Button')
         }
         .backgroundColor(Color.Blue).width(200).height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('1')
@@ -472,7 +494,7 @@ struct DefaultFocusPage {
             .textAlign(TextAlign.Center)
             .focusable(true)
         }.width(200).height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Scroll') {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
@@ -491,7 +513,7 @@ struct DefaultFocusPage {
             }, (item: string) => item)
           }.margin({ right: 15 } as Margin)
         }.width(200).height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
@@ -509,13 +531,13 @@ struct DefaultFocusPage {
             Text('SideBarContainer content').fontSize(25)
           }.backgroundColor(Color.Orange)
         }.width(200).height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Stack') {
         Stack() {
           Button('Button')
         }
         .backgroundColor(Color.Blue).width(200).height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
           ForEach(['1', '2', '3'], (item: string) => {
@@ -527,20 +549,20 @@ struct DefaultFocusPage {
         .width(200)
         .height(300)
 
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Tabs') {
         Tabs() {
           TabContent() {
             Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
           }.tabBar('Tabs1')
         }.backgroundColor(Color.Blue).width(200).height(300)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'TabContent') {
         Tabs() {
           TabContent() {
             Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
           }.tabBar('Tabs1')
-          
+          .applyStyles(this.commonStyle)
         }.width(200).height(300)
       }
     }.width('100%').height('100%')

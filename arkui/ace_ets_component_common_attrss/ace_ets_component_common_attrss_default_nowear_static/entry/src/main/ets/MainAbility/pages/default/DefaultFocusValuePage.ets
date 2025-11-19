@@ -14,159 +14,229 @@
  */
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router';
-import { Entry, Component, TextTimerController, Scroller, Row, MenuItemOptions, AlphabetIndexer, Button, Checkbox,
-  CheckboxGroup, DatePicker, Image, ImageAnimator, Menu, Radio, Rating, Search, Select, Slider, Stepper, Text,
-  TextArea, TextInput, TextPicker, TimePicker, Toggle, Column, ColumnSplit, Counter, Flex, GridRow, Grid, List,
-  RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, Color, $r, MenuItem, MenuItemGroup, StepperItem,
-  ToggleType, TextAlign, GridCol, GridItem, ListItem, ListItemGroup, SideBarContainerType, ForEach, TabContent } from '@ohos.arkui.component'
+import {
+  $r,
+  AlphabetIndexer,
+  applyStyles,
+  Button,
+  Checkbox,
+  CheckboxGroup,
+  Color,
+  Column,
+  ColumnSplit,
+  CommonMethod,
+  Component,
+  Counter,
+  DatePicker,
+  Entry,
+  Flex,
+  ForEach,
+  Grid,
+  GridCol,
+  GridItem,
+  GridRow,
+  Image,
+  ImageAnimator,
+  List,
+  ListItem,
+  ListItemGroup,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemOptions,
+  Radio,
+  Rating,
+  Row,
+  RowSplit,
+  Scroll,
+  Scroller,
+  Search,
+  Select,
+  SideBarContainer,
+  SideBarContainerType,
+  Slider,
+  Stack,
+  Stepper,
+  StepperItem,
+  Swiper,
+  TabContent,
+  Tabs,
+  Text,
+  TextAlign,
+  TextArea,
+  TextInput,
+  TextPicker,
+  TextTimerController,
+  TimePicker,
+  Toggle,
+  ToggleType
+} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct DefaultFocusValuePage {
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? ''
-  @State targetGroupView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetGroupView ?? ''
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; //Use by AlphabetIndexer TextPicker
+  @State parentWidth: number = 0
+  @State parentHeight: number = 0
+  @State targetView: string = ''
+  @State targetGroupView: string = ''
+  @State componentKey: string = '';
+  // controller: WebController = new WebController() //Use by Web
   textTimerController: TextTimerController = new TextTimerController() //Use by TextTimer
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; //Use by AlphabetIndexer TextPicker
   private scroller: Scroller = new Scroller() //Use by Scroll
 
   onPageShow() {
     console.info('DefaultFocusValuePage show called ')
+    try {
+      console.log('aboutToAppear routerParamOptions before' + this.targetView)
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      this.parentWidth = routerParamOptions.view.parentWidth
+      this.parentHeight = routerParamOptions.view.parentHeight
+      this.targetView = routerParamOptions.view.targetView
+      this.targetGroupView = routerParamOptions.view.targetGroupView ?? ''
+      this.componentKey = routerParamOptions.view.componentKey ?? ''
+      console.log('aboutToAppear routerParamOptions success' + this.targetView)
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
+  commonStyle(instance: CommonMethod) {
+    instance.key(this.componentKey)
+  }
 
   //Draw screen
   build() {
     Row() {
       if (this.targetView == 'AlphabetIndexer') {
-        AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
+        AlphabetIndexer({ arrayValue: this.value, selected: 0 }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Button') {
-        Button('button')
+        Button('button').applyStyles(this.commonStyle)
       } else if (this.targetView == 'Checkbox') {
-        Checkbox()
+        Checkbox().applyStyles(this.commonStyle)
       } else if (this.targetView == 'CheckboxGroup') {
-        CheckboxGroup()
+        CheckboxGroup().applyStyles(this.commonStyle)
       } else if (this.targetView == 'DatePicker') {
-        DatePicker()
+        DatePicker().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Image') {
-        Image($r('app.media.icon'))
+        Image($r('app.media.icon')).applyStyles(this.commonStyle)
       } else if (this.targetView == 'ImageAnimator') {
         ImageAnimator()
           .images([{ src: $r('app.media.icon') }])
-          
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'MenuItem') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
+            .applyStyles(this.commonStyle)
         }
       } else if (this.targetView == 'MenuItemGroup') {
         Menu() {
           MenuItemGroup({ header: 'MenuItemGroup' }) {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-          }
+          }.applyStyles(this.commonStyle)
         }
       } else if (this.targetView == 'Radio') {
-        Radio({ value: 'Radio1', group: 'radioGroup' })
+        Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Rating') {
-        Rating()
+        Rating().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Search') {
-        Search()
+        Search().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Select') {
-        Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }])
+        Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Slider') {
-        Slider()
+        Slider().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Stepper') {
         Stepper() {
           StepperItem()
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'StepperItem') {
         Stepper() {
-          StepperItem()
+          StepperItem().applyStyles(this.commonStyle)
         }
       } else if (this.targetView == 'Text') {
-        Text('text')
+        Text('text').applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextArea') {
-        TextArea()
+        TextArea().applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextInput') {
-        TextInput()
+        TextInput().applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextPicker') {
-        TextPicker({ range: this.value })
+        TextPicker({ range: this.value }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'TimePicker') {
-        TimePicker()
+        TimePicker().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Toggle') {
-        Toggle({ type: ToggleType.Switch })
+        Toggle({ type: ToggleType.Switch }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Web') {
+        // Web({ src: '', controller: this.controller }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Column') {
-        Column()
+        Column().applyStyles(this.commonStyle)
       } else if (this.targetView == 'ColumnSplit') {
         ColumnSplit() {
           Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
           Text('2').width('100%').height(50).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
           Text('3').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Counter') {
-        Counter()
+        Counter().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Flex') {
-        Flex()
+        Flex().applyStyles(this.commonStyle)
       } else if (this.targetView == 'GridCol') {
         GridRow() {
-          GridCol()
+          GridCol().applyStyles(this.commonStyle)
         }
       } else if (this.targetView == 'GridRow') {
-        GridRow()
+        GridRow().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Grid') {
-        Grid()
+        Grid().applyStyles(this.commonStyle)
       } else if (this.targetView == 'GridItem') {
         Grid() {
-          GridItem()
+          GridItem().applyStyles(this.commonStyle)
         }
       } else if (this.targetView == 'List') {
-        List().width(100).height(100)
+        List().applyStyles(this.commonStyle).width(100).height(100)
       } else if (this.targetView == 'ListItem') {
         List() {
           ListItem() {
             Text('ListItem')
           }
-            
+          .applyStyles(this.commonStyle)
         }.width(100).height(100)
       } else if (this.targetView == 'ListItemGroup') {
         List() {
           ListItemGroup()
-            
+            .applyStyles(this.commonStyle)
         }.width(100).height(100)
       } else if (this.targetView == 'Row') {
-        Row()
+        Row().applyStyles(this.commonStyle)
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('1')
           Text('2')
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Scroll') {
-        Scroll(this.scroller)
+        Scroll(this.scroller).applyStyles(this.commonStyle)
       } else if (this.targetView == 'SideBarContainer') {
-        SideBarContainer(SideBarContainerType.Embed)
+        SideBarContainer(SideBarContainerType.Embed).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Stack') {
-        Stack()
+        Stack().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3], (item: Int, index: int) => {
+          ForEach([1, 2, 3], (item: Int, index: Int) => {
             Text('Swiper' + item)
-          }, (item: Int, index: int) => String(item))
+          }, (item: Int, index: Int) => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.Pink)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Tabs') {
-        Tabs()
+        Tabs().applyStyles(this.commonStyle)
       } else if (this.targetView == 'TabContent') {
         Tabs() {
-          TabContent()
+          TabContent().applyStyles(this.commonStyle)
         }
       }
     }.width(this.parentWidth).height(this.parentHeight).backgroundColor(Color.Green)

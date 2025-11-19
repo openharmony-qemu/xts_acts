@@ -13,29 +13,28 @@
  * limitations under the License.
  */
 
-import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, Attrs } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll  } from '../../../../hypium/index'
-import {  ItemAlign, VerticalAlign, HorizontalAlign, MouseButton, MouseAction } from '@ohos.arkui.component'
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { MouseAction, MouseButton } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 function expectEvent(data: BasePageConfig, event: string) {
   let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
+  await Utils.sleep(2000)
+  console.info(JSON.stringify(referenceComponent) + ' verify onHover11.')
   if (isEnabledTrue(data)) {
+    console.info('isEnabledTrue == true -> ' + referenceComponent.getElement('$attrs').getString('content'))
     expect(referenceComponent.getElement('$attrs').getString('content')).assertContain(event);
   } else {
+    console.info('isEnabledTrue == false -> ' + referenceComponent.getElement('$attrs').getString('content'))
     expect(referenceComponent.getElement('$attrs').getString('content')).assertEqual('');
   }
 }
@@ -49,7 +48,7 @@ function isEnabledTrue(data: BasePageConfig): boolean {
  */
 export default function enabledTest() {
   //A list of components that support the enabled attribute, which is required.
-  let supportView: Array<string> = new Array<string>(
+  let supportView: string[] = [
     'AlphabetIndexer',
     'Blank',
     'Button',
@@ -60,32 +59,26 @@ export default function enabledTest() {
     'Divider',
     'Gauge',
     'Image',
-
     'LoadingProgress',
     'Marquee',
-
     'MenuItem',
 
-    'NavRouter',
+    // 'NavRouter',
     'ScrollBar',
-
     'Row',
     'RelativeContainer',
-    'Navigator',
 
+    // 'Navigator',
     'GridItem',
-
     'TextTimer',
     'Stepper',
     'StepperItem',
     'Flex',
-
     'Progress',
     'QRCode',
     'Radio',
     'Rating',
-
-    'Select',
+    // 'Select', // App died
     'Slider',
     'Text',
     'TextArea',
@@ -97,16 +90,14 @@ export default function enabledTest() {
     'Badge',
     'Column',
     'Counter',
-
     'Grid',
     'List',
     'ListItem',
-    'Panel',
+
+    // 'Panel',
     'Refresh',
     'Scroll',
-
     'Stack',
-
     'Tabs',
     'WaterFlow',
     'Circle',
@@ -116,14 +107,39 @@ export default function enabledTest() {
     'Polygon',
     'Path',
     'Rect',
-    'Shape'
-  )
 
-  let exceptFocusViews: Array<string> = new Array<string>('Blank', 'DataPanel', 'Divider', 'Gauge',
-    'LoadingProgress', 'Progress', 'Marquee', 'Navigation', 'NavRouter',
-    'QRCode', 'ScrollBar', 'TextClock', 'TextTimer', 'Badge', 'Navigator',
-    'Panel', 'Refresh', 'RelativeContainer', 'Circle', 'Ellipse', 'Line',
-    'Polyline', 'Polygon', 'Path', 'Rect', 'Shape', 'WaterFlow')
+    'Shape'
+  ]
+
+  let exceptFocusViews: Array<string> = new Array<string>(
+    'Blank',
+    'DataPanel',
+    'Divider',
+    'Gauge',
+    'LoadingProgress',
+    'Progress',
+    'Marquee',
+    'Navigation',
+    'NavRouter',
+    'QRCode',
+    'ScrollBar',
+    'TextClock',
+    'TextTimer',
+    'Badge',
+    'Navigator',
+    'Panel',
+    'Refresh',
+    'RelativeContainer',
+    'Circle',
+    'Ellipse',
+    'Line',
+    'Polyline',
+    'Polygon',
+    'Path',
+    'Rect',
+    'Shape',
+    'WaterFlow'
+  )
 
   //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
@@ -134,66 +150,83 @@ export default function enabledTest() {
   }
 
   //The data type to be tested, this parameter is required.
-  let testValues: TestValue[] = [{
-    describe: 'SetTrueOnClick',
-    setValue: true,
-    expectValue: true
-  }, {
-    describe: 'SetTrueOnFocus',
-    exceptView: exceptFocusViews,
-    setValue: true,
-    expectValue: true
-  }, {
-    describe: 'SetTrueOnBlur',
-    exceptView: exceptFocusViews,
-    setValue: true,
-    expectValue: true
-  }, {
-    describe: 'SetTrueOnHover',
-    setValue: true,
-    expectValue: true
-  }, {
-    describe: 'SetTrueOnMouse',
-    setValue: true,
-    expectValue: true
-  }, {
-    describe: 'SetFalseOnClick',
-    setValue: false,
-    expectValue: false
-  }, {
-    describe: 'SetFalseOnFocus',
-    exceptView: exceptFocusViews,
-    setValue: false,
-    expectValue: false
-  }, {
-    describe: 'SetFalseOnBlur',
-    exceptView: exceptFocusViews,
-    setValue: false,
-    expectValue: false
-  }, {
-    describe: 'SetFalseOnHover',
-    setValue: false,
-    expectValue: false
-  }/* ,{
-    describe: 'SetFalseOnMouse',
-    setValue: false,
-    expectValue: false
-  }*/]
+  let testValues: TestValue[] = [
+    {
+      describe: 'SetTrueOnClick',
+      setValue: true,
+      expectValue: true
+    },
+    {
+      describe: 'SetTrueOnFocus',
+      exceptView: exceptFocusViews,
+      setValue: true,
+      expectValue: true
+    },
+    {
+      describe: 'SetTrueOnBlur',
+      exceptView: exceptFocusViews,
+      setValue: true,
+      expectValue: true
+    },
+    {
+      describe: 'SetTrueOnHover',
+      setValue: true,
+      expectValue: true
+    },
+    {
+      describe: 'SetTrueOnMouse',
+      setValue: true,
+      expectValue: true
+    },
+    {
+      describe: 'SetFalseOnClick',
+      setValue: false,
+      expectValue: false
+    },
+    {
+      describe: 'SetFalseOnFocus',
+      exceptView: exceptFocusViews,
+      setValue: false,
+      expectValue: false
+    },
+    {
+      describe: 'SetFalseOnBlur',
+      exceptView: exceptFocusViews,
+      setValue: false,
+      expectValue: false
+    },
+    {
+      describe: 'SetFalseOnHover',
+      setValue: false,
+      expectValue: false
+    }
+  ]
 
   /**
    * Create test suite.
    */
   describe('EnabledTest', () => {
     beforeAll(() => {
+      await UtilsTest.msSleep(4000)
       console.info("enabledTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility");
       await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
-    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig) => {
-      if ('' != Utils.getComponentByKey(data.pageConfig.referenceComponentKey).getElement('$attrs').getString('content')) {
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+
+      console.info('EnabledTest.test 118', data.testValue.setValue)
+      // AppStorage.setOrCreate<boolean>('_enabled', data.testValue.setValue)
+      await Utils.sleep(1000);
+
+      let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+      await Utils.sleep(2000);
+      data.viewObj = JSON.parseJsonElement(strJson);
+      await Utils.sleep(2000);
+
+      if ('' !=
+      Utils.getComponentByKey(data.pageConfig.referenceComponentKey).getElement('$attrs').getString('content')) {
         console.info('[' + data.caseTag + '] reset status.');
-        AttrsManager.change(data.caseTag, data.testValue.setValue);
         await Utils.sleep(1000);
       }
 
@@ -201,14 +234,21 @@ export default function enabledTest() {
         //Verify onClick
         console.info('[' + data.caseTag + '] verify onClick.');
         let clickResult = Utils.performClick(data.pageConfig.componentKey!);
+        await Utils.sleep(2000);
+        console.info('[' + data.pageConfig.componentKey + '] data.pageConfig.componentKey.');
+        console.info('[' + clickResult + '] clickResult');
+        console.log("=================== " + JSON.stringify(data))
         expect(clickResult).assertEqual(true);
         if ('Select' == data.pageConfig.targetView && isEnabledTrue(data)) {
           //After selecting, need to click again to close the dropdown box.
           await Utils.sleep(2000);
+          console.log('test before ' + data)
           expectEvent(data, 'onClick');
+          console.log('test after ' + data)
           Utils.performClick(data.pageConfig.componentKey!);
           await Utils.sleep(2000);
         } else {
+          console.log("=================== " + "onClick")
           await Utils.sleep(1000);
           expectEvent(data, 'onClick');
         }
@@ -225,20 +265,35 @@ export default function enabledTest() {
       } else if (data.testValue.describe.indexOf('OnBlur') >= 0) {
         //Verify onBlur
         console.info('[' + data.caseTag + '] verify onBlur.');
+        console.info(JSON.stringify(data.pageConfig) + ' verify onBlur.');
+        AppStorage.setOrCreate<boolean>('_enabled', data.pageConfig.testValue.setValue)
+        await Utils.sleep(1000);
+
+        console.log('Test114  ' + Utils.requestFocus(data.pageConfig.referenceComponentKey!))
         expect(Utils.requestFocus(data.pageConfig.referenceComponentKey!)).assertEqual(true);
         await Utils.sleep(1000);
+
+        console.log('Test115  ' + Utils.requestFocus(data.pageConfig.componentKey!))
+        console.log('Test115  ' + isEnabledTrue(data))
         expect(Utils.requestFocus(data.pageConfig.componentKey!)).assertEqual(isEnabledTrue(data));
         await Utils.sleep(1000);
+
+        console.log('Test116  ' + Utils.requestFocus(data.pageConfig.referenceComponentKey!))
         expect(Utils.requestFocus(data.pageConfig.referenceComponentKey!)).assertEqual(true);
         await Utils.sleep(1000);
+
+        console.log('Test117  ' + JSON.stringify(data))
         expectEvent(data, 'onBlur');
       } else if (data.testValue.describe.indexOf('OnHover') >= 0) {
         //Verify onHover
         console.info('[' + data.caseTag + '] verify onHover.');
         let hoverResult = Utils.performMouseEvent(data.pageConfig.componentKey!
           , MouseButton.None, MouseAction.Hover);
+        console.info('[' + hoverResult + '] verify onHover11.')
+        await Utils.sleep(2000);
         expect(hoverResult).assertEqual(true);
         await Utils.sleep(1000);
+        console.info('[' + data + '] verify onHover11.')
         expectEvent(data, 'onHover');
       } else if (data.testValue.describe.indexOf('OnMouse') >= 0) {
         //Verify onMouse

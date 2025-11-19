@@ -14,21 +14,15 @@
  */
 
 
-import {
-  Entry,
-  Text,
-  Column,
-  Component,
-  FontWeight,
-  Row} from '@ohos.arkui.component'
+import { Column, Component, Entry, FontWeight, Row, Text } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct Index {
   @State message: string = 'Hello World'
+
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {
@@ -39,6 +33,7 @@ struct Index {
     }
 
   }
+
   build() {
     Row() {
       Column() {

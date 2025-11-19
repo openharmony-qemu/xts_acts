@@ -23,10 +23,9 @@ export default class MainAbility extends Ability {
     globalThis.abilityLaunchParam = launchParam;
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy() {
     // Ability is destroying, release resources for this ability
     console.log('[Demo] MainAbility onDestroy');
-    return undefined;
   }
 
   onWindowStageCreate(windowStage) {

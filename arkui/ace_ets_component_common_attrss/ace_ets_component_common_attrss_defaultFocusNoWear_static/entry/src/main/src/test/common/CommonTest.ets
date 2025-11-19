@@ -17,8 +17,9 @@ import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
 export default class CommonTest {
   /**
@@ -28,21 +29,22 @@ export default class CommonTest {
    * @param testValues   : test values
    * @param functions    : [0]:executeTest, [last] checkTestResult
    */
-  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[],
+    ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
-        if (temp.exceptView.indexOf(targetView) < 0) {
+      let lastIndex: Int = 0;
+      testValues.forEach((temp: TestValue, index: Int) => {
+        if (temp.exceptView == undefined || temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index) => {
+      testValues.forEach((testValue: TestValue, index: Int) => {
 
         //If there are components that need to be excluded, do not generate cases.
-        if (testValue.exceptView.indexOf(targetView) < 0) {
+        if (testValue.exceptView == undefined || testValue.exceptView.indexOf(targetView) < 0) {
           let currentIndex = index;
           let sharePage = true;
           if (pageConfig.sharePage != undefined) {
@@ -59,7 +61,7 @@ export default class CommonTest {
             caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
           }
 
-          
+
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
             //Push page.
@@ -68,6 +70,7 @@ export default class CommonTest {
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
+            console.log('pageConfig ' + JSON.stringify(pageConfig))
             await Utils.pushPage(pageConfig);
             try {
               //If there is no call back functions, do nothing.
@@ -88,25 +91,15 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              if (funcs.length > 1) {
-                let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
-                //Set custom params to data, can be used by check test result.
-                if (customParams) {
-                  data.customParams = customParams;
-                }
-              } else {
-                //If there is only an assertion function, automatically modify the status value
-                console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
-                await Utils.sleep(1000);
-              }
+
+              AppStorage.setOrCreate<boolean>('_defaultFocus', data.testValue.setValue)
 
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-              await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
-
-            } catch (err) {
+            } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);
@@ -141,7 +134,8 @@ export default class CommonTest {
     }
   }
 
-  static initTestByContainerView(pageConfig: PageConfig, containerView: string[], supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+  static initTestByContainerView(pageConfig: PageConfig, containerView: string[], supportView: string[],
+    testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     containerView.forEach(container => {
       pageConfig.containerView = container;
       CommonTest.initTest(pageConfig, supportView, testValues, ...functions);

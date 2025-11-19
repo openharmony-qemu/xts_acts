@@ -33,7 +33,7 @@ export struct AlphabetIndexerView {
     'V', 'W', 'X', 'Y', 'Z']
 
   build() {
-    AlphabetIndexer({ arrayValue: this.value, selected: 0 as int } as AlphabetIndexerOptions)
+    AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
       .selectedColor(0xFFFFFF)
       .popupColor(0xFFFAF0)
       .selectedBackgroundColor(0xCCCCCC)
