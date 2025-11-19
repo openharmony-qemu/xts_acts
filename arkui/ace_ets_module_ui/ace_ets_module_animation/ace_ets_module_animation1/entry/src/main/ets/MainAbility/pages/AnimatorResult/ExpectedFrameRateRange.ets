@@ -60,7 +60,7 @@ struct ExpectedFrameRateRange {
                     }
                   }
                   let backEvent: events_emitter.InnerEvent = {
-                    eventId: 51,
+                    eventId: 60,
                     priority: events_emitter.EventPriority.LOW
                   }
                   console.info('onFinish start to emit action state')

@@ -28,15 +28,29 @@ import ParticleAnimatorTest from './Particle/ParticleAnimatorTest.test'
 import ParticleAttributeTest from './Particle/ParticleAttributeTest.test'
 import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test'
 import MotionPathJsunit from './MotionPathJsunit.test';
+import geometryTransition from './geometryTransitionTest/geometryTransition.test';
+import animateToJunits from './Animateto.test';
+import animationCurveTest from './AnimationCurve.test';
+import geometryTransitionJsunit from './geometryTransitionTest/GeometryTransitionJsunit.test';
+import animatorOnframeJsunit from './Animation/animator.test';
+import remoteWindowJsunit from './RemoteWindowTest/remoteWindow.test'
+import AnimationJsunit from './AnimationTest/AnimationJsunit.test';
+import animateJsunit from './AnimationTest/AnimateJsunit.test';
+import animationStatusJsunit from './AnimationTest/AnimationStatusJsunit.test';
+import pageTransitionJsunit from './Animation/PageTransitionJsunit.test';
+import curvesJsunit from './CurvesJsunit.test';
+import WorkerUseCurvesTest from './WorkerUseCurves.test';
+import MotionPathExample from './MotionPathExample.test';
+import animationAdd from './Animation/animationAdd.test';
 
 export default function testsuite() {
+  animateJsunit();
   FrameNodeAnimation();
   ParticleEmitter();
   Vector2TTest();
   FrameNodeAnimationPage();
   TestSweepGradientOptions();
   TransitionEdgeTest();
-  ExpectedFrameRateRange();
   AnimatorResultTest();
   setExpectedFrameRateRangeTest();
   animateToTest();
@@ -44,5 +58,19 @@ export default function testsuite() {
   ParticleAnimatorTest();
   ParticleAttributeTest();
   ParticleJsunit();
+  animateToJunits();
+  animationCurveTest();
+  geometryTransition()
+  geometryTransitionJsunit()
+  animatorOnframeJsunit()
+  remoteWindowJsunit()
+  AnimationJsunit();
+  animationStatusJsunit();
+  curvesJsunit();
+  pageTransitionJsunit();
+  WorkerUseCurvesTest();
+  MotionPathExample();
+  animationAdd();
   MotionPathJsunit();
+  ExpectedFrameRateRange();
 }
