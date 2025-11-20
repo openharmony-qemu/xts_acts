@@ -73,7 +73,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -104,7 +104,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -137,7 +137,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -170,7 +170,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -210,7 +210,7 @@ export default function formHostTest() {
       } catch (error: Error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
         expect(code).assertEqual(202);
         done();
       }
@@ -236,7 +236,7 @@ export default function formHostTest() {
       } catch (error: Error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
         expect(code).assertEqual(202);
         done();
       }
@@ -290,8 +290,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.DeleteFormWithCallback);
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 end');
     })
 
@@ -325,8 +324,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.DeleteFormWithPromise);
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 end');
     })
 
@@ -1093,8 +1091,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithPromise);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 end');
     })
 
@@ -1111,8 +1108,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithPromise, true);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest002 end');
     })
 
@@ -1129,8 +1125,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithCallback);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 end');
     })
 
@@ -1147,8 +1142,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithCallback, true);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest002 end');
     })
 
@@ -1301,8 +1295,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithPromise);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest001 end');
     })
 
@@ -1319,8 +1312,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithPromise, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest002 end');
     })
 
@@ -1337,8 +1329,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.OnFormUninstallWithoutString);
       hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 end');
     })
 
@@ -1355,8 +1346,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithCallback);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest001 end');
     })
 
@@ -1373,8 +1363,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.OffFormUninstallWithoutString);
       hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 end');
     })
 
@@ -1391,8 +1380,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithCallback, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest002 end');
     })
 
@@ -1545,8 +1533,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithPromise);
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest001 end');
     })
 
@@ -1563,8 +1550,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithPromise, true);
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest002 end');
     })
 
@@ -1581,8 +1567,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithCallback);
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest001 end');
     })
 
@@ -1599,8 +1584,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithCallback, true);
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest002 end');
     })
 
@@ -1617,8 +1601,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithCallback);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest001 end');
     })
 
@@ -1635,8 +1618,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithCallback, true);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest002 end');
     })
 
@@ -1653,8 +1635,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithPromise);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest001 end');
     })
 
@@ -1671,8 +1652,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithPromise, true);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest002 end');
     })
 
@@ -1689,8 +1669,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithCallback);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 end');
     })
 
@@ -1707,8 +1686,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithCallback, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest002 end');
     })
 
@@ -1725,8 +1703,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithPromise);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 end');
     })
 
@@ -1743,8 +1720,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithPromise, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest002 end');
     })
 
@@ -1762,8 +1738,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetPublishFormResult);
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 end');
     })
 
@@ -1780,8 +1755,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetPublishFormResult, true);
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest002 end');
     })
 
@@ -2002,8 +1976,7 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.UpdateFormLockedStateWithPromise);
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 end');
     })
 
