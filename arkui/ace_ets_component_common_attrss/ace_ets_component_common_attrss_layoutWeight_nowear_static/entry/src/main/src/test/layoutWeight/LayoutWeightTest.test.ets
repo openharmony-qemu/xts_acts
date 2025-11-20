@@ -25,18 +25,14 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightTest() {
-  console.info("layoutWeightTest beforeAll start");
-  await UtilsTest.msSleep(4000)
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-  let context:UIContext = AppStorage.get<UIContext>('uiContext') as UIContext
+  const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',
@@ -67,7 +63,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      height: context.vp2px(400)
+      height: uiContext.vp2px(400)
     }
   }, {
     describe: 'SetNumberDecimal',
@@ -76,7 +72,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 1.5,
-      height: context.vp2px(360)
+      height: uiContext.vp2px(360)
     }
   }, {
     describe: 'SetString',
@@ -85,17 +81,20 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      height: context.vp2px(400)
+      height: uiContext.vp2px(400)
     }
   }]
 
   describe('LayoutWeightTest', () => {
     beforeAll(() => {
-
+      console.info("layoutWeightTest beforeAll start");
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
-      
+      //Component width and height calculation
       let height = rect.bottom - rect.top;
       let attrs = data.viewObj
       console.info('[' + data.caseTag + ']' + 'rect.bottom is:' + JSON.stringify(rect.bottom));

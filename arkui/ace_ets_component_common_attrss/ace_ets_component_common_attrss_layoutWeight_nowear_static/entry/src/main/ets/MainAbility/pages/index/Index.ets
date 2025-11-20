@@ -15,7 +15,7 @@
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import common2D from '@ohos.graphics.displaySync'
 
 @Entry
@@ -29,15 +29,15 @@ struct Index {
       console.log('AppStorage.setOrCreate<UIContext>(uiContext, uiContext)')
       AppStorage.setOrCreate<Router>('router', router1);
       AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
-    } catch (e) {
-      console.log('e' + e);
+    } catch (error: Error) {
+      console.log('error ' + error);
     }
   }
 
   build() {
     Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
-        
+        //.fontSize(uiContext.vp2px(50))
         .fontSize(50)
       Button(' ') {
         Text('next page')

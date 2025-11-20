@@ -24,7 +24,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
@@ -32,11 +32,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightFlexTest() {
-  console.info("layoutWeightFlexTest beforeAll start");
-  await UtilsTest.msSleep(4000)
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-  let context:UIContext = AppStorage.get<UIContext>('uiContext') as UIContext
+  const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',
@@ -67,16 +63,20 @@ export default function layoutWeightFlexTest() {
     },
     expectValue: {
       layoutWeight: 1,
-      width: context.vp2px(200)
+      width: uiContext.vp2px(200)
     }
   }]
   describe('LayoutWeightFlexTest', () => {
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
     beforeAll(() => {
-
+      console.info("layoutWeightFlexTest beforeAll start");
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
-      
+      // //Component width and height calculation
       let width = rect.right - rect.left;
       let attrs = data.viewObj
       console.info('[' + data.caseTag + ']' + 'rect.right is:' + JSON.stringify(rect.right));

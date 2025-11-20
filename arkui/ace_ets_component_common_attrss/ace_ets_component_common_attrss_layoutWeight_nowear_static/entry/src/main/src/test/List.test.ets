@@ -18,6 +18,6 @@ import layoutWeightTest from './layoutWeight/LayoutWeightTest.test';
 export default function testsuite() {
 
   layoutWeightRowTest();
-  
-  
+  layoutWeightFlexTest();
+  layoutWeightTest();
 }

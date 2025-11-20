@@ -14,7 +14,7 @@
  */
 
 
-import {Color,$r} from '@ohos.arkui.component'
+import { Color,$r} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, expect,beforeAll } from '../../../../hypium/index';
@@ -25,7 +25,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 let domain: int = 0x0000;
@@ -35,6 +35,7 @@ interface Attrs{
   $attrs: number
 }
 export default function gridSpanTest() {
+  const uiContext = AppStorage.get<UIContext>('uiContext')!
   let supportView:Array<string> = new Array <string>(
     'Select',
     'Stepper',
@@ -46,7 +47,7 @@ export default function gridSpanTest() {
     'WaterFlow'
   )
 
-  
+  //Custom params.
   let parentWidth = 320;
   let parentHeight = 200;
   let gutter = 10;

@@ -19,41 +19,41 @@ import {ListItemGroup,BreakpointsReference,BreakPoints,GridRowOptions,GutterOpti
   BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,
   ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,CommonMethod,applyStyles,
   MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,
-
+// Styles,
   AlphabetIndexer,WebviewController,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,Stepper,
-  TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType
+  TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType,
+  AlignRuleOption
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct GridSpanPage {
-  @StoragePropRef('_gridSpan') _gridSpan: int = 1
+  @StorageProp('_gridSpan') _gridSpan: number = 1
   @State targetView: string = '';
   @State componentKey: string ='';
   @State parentWidth: number = 0;
   @State parentHeight: number = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
 
   onPageShow() {
     console.info('gridSpan page show called ')
-    AppStorage.setOrCreate<int>('_gridSpan', 1)
+    AppStorage.setOrCreate<number>('_gridSpan', 1)
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('routerParamOptions==========' + JSON.stringify(routerParamOptions))
-      let routerParamOptionsSetValue = routerParamOptions.view.testValue.setValue as int;
-      AppStorage.setOrCreate<int>('_gridSpan', routerParamOptionsSetValue)
+      AppStorage.setOrCreate<number>('_gridSpan', routerParamOptions.view.testValue.setValue)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
-      this.columns = routerParamOptions.view.columns as int
-      this.gutter = routerParamOptions.view.gutter as int
-    } catch (error) {
+      this.columns = routerParamOptions.view.columns
+      this.gutter = routerParamOptions.view.gutter
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
 
@@ -61,19 +61,19 @@ struct GridSpanPage {
 
   }
   commonStyle(instance: CommonMethod){
-    
+    //instance.gridSpan(this._gridSpan)
     instance.height('100%')
-    
+    //instance.key(this.componentKey)
   }
 
   build() {
     GridRow({
-      columns: this.columns as int,
-      gutter: { x: this.gutter as int, y: this.gutter as int } as GutterOption,
+      columns: this.columns as Int,
+      gutter: { x: this.gutter as number, y: this.gutter as number } as GutterOption,
       breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
       direction: GridRowDirection.Row
     } as GridRowOptions) {
-      GridCol({span:this._gridSpan}) {
+      GridCol({span:this._gridSpan as Int}) {
         if (this.targetView == 'ListItem') {
           List({ space: 0, initialIndex: 0 }) {
             ListItem() {
@@ -236,7 +236,7 @@ struct GridSpanPage {
               Marquee({
                 start: true,
                 step: 50,
-                loop: Number.MAX_VALUE.toInt(),
+                loop: Number.MAX_VALUE as Int,
                 fromStart: true,
                 src: 'Running Marquee starts rolling'
               })
@@ -254,16 +254,16 @@ struct GridSpanPage {
               .applyStyles(this.commonStyle)
 
             } else if (this.targetView == 'NavRouter') {
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
+              // NavRouter() {
+              //   Row() {
+              //     Image($r('app.media.icon'))
+              //   }
+              //
+              //   NavDestination() {
+              //     Text('NavDestination').fontSize(10)
+              //   }
+              // }
+              //.applyStyles(this.commonStyle)
 
             } else if (this.targetView == 'Progress') {
               Progress({ value: 10, type: ProgressType.Eclipse })
@@ -470,16 +470,16 @@ struct GridSpanPage {
               .applyStyles(this.commonStyle)
               .width("100%").height("100%")
             } else if (this.targetView == 'Navigator') {
-              
-              
-              
-              
-              
+              // Navigator() {
+              //   Text('Go to back page').width('100%').height(20)
+              // }
+              //.applyStyles(this.commonStyle)
+              // .backgroundColor(Color.Red)
             } else if (this.targetView == 'Panel') {
-              
-              
-              
-              
+              // Panel(true) {
+              //   Text('Text')
+              // }.backgroundColor(Color.Yellow)
+              //.applyStyles(this.commonStyle)
 
             } else if (this.targetView == 'Refresh') {
               Refresh({ refreshing: true }) {

@@ -14,6 +14,23 @@
  */
 import {Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
 import { State ,Link } from '@ohos.arkui.stateManagement'
+// @Styles
+// function itemStyle() {
+//   .width(336)
+//   .height(621)
+//   .margin({ top: 48, left: 12 })
+//   .borderRadius(24)
+//   .backgroundColor('#FFFFFF')
+// }
+//
+// @Extend(Text)
+// function itemTextStyle() {
+//   .fontColor('#182431')
+//   .fontSize(36)
+//   .fontWeight(500)
+//   .opacity(0.4)
+//   .margin({ top: 82, bottom: 40 })
+// }
 
 
 @Component
@@ -34,7 +51,7 @@ export struct StepperView {
         Column() {
           Text('Page One')
             
-
+//.itemTextStyle()
 
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
@@ -42,7 +59,7 @@ export struct StepperView {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
         }
-
+//.itemStyle()
 
       }
       .nextLabel('Next')
@@ -52,7 +69,7 @@ export struct StepperView {
         Column() {
           Text('Page Two')
             
-
+//.itemTextStyle()
 
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
@@ -60,7 +77,7 @@ export struct StepperView {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
         }
-
+//.itemStyle()
 
       }
       .nextLabel('Next')
@@ -71,7 +88,7 @@ export struct StepperView {
         Column() {
           Text('Page Three')
             
-
+//.itemTextStyle()
 
           Button('change status:' + this.thirdState)
             .backgroundColor('#007dFF')
@@ -79,7 +96,7 @@ export struct StepperView {
               this.thirdState = this.thirdState === ItemState.Waiting ? ItemState.Normal : ItemState.Waiting
             })
         }
-
+//.itemStyle()
 
       }
       .status(this.thirdState)
@@ -88,10 +105,10 @@ export struct StepperView {
         Column() {
           Text('Page Four')
             
-
+//.itemTextStyle()
 
         }
-
+//.itemStyle()
 
       }
     }

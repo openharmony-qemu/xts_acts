@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams,CustomValue } from '../../common/Utils';
 import router from '@ohos.router'
 import { StepperView } from '../../view/alignRules/StepperView';
@@ -55,7 +54,6 @@ import {
   TextCase,
   TextDecorationType,
   Resource,
-  // AlignRuleParam,
   VerticalAlign,
   HorizontalAlign,
   RelativeContainer,
@@ -135,10 +133,13 @@ import {
   // Point,
   // MenuItemOptions,
   NavPathStack,
-  HitTestMode
+  HitTestMode,
+  CommonMethod,applyStyles,
+  AlignRuleOption,
+  TouchEvent
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -147,65 +148,72 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct HitTestBehaviorPage {
-  @State _hitTestBehavior: HitTestMode = HitTestMode.Default;
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView??''
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey??''
-  @State TargetEventCallBackStr: string = ''
-  @State ChildEventCallBackStr: string = ''
-  @State BrotherEventCallBackStr: string = ''
-  @State containerView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.containerView??''
-  @State referenceTargetComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceTargetComponentKey
-  @State referenceBrotherComponentKey: string =(this.getUIContext().getRouter().getParams() as RouterParams).view.referenceBrotherComponentKey
-  @State referenceChildComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceChildComponentKey
+  @StoragePropRef('_hitTestBehavior') _hitTestBehavior: HitTestMode = HitTestMode.Default;
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State TargetEventCallBackStr: string = '';
+  @State ChildEventCallBackStr: string = '';
+  @State BrotherEventCallBackStr: string = '';
+  @State containerView: string = '';
+  @State referenceTargetComponentKey: string = '';
+  @State referenceBrotherComponentKey: string ='';
+  @State referenceChildComponentKey: string = '';
 
   onPageShow() {
-    attrsManager.registerDataChange((value: CustomValue) => {
-      this._hitTestBehavior = value.HitTestMode
-      this.TargetEventCallBackStr = ''
-      this.ChildEventCallBackStr = ''
-      this.BrotherEventCallBackStr = ''
-    })
+    console.info('Margin page show called ')
+    try {
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      AppStorage.setOrCreate<HitTestMode>('_hitTestBehavior', routerParamOptions.view.testValue.setValue.HitTestMode)
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.TargetEventCallBackStr = routerParamOptions.view.TargetEventCallBackStr
+      this.ChildEventCallBackStr = routerParamOptions.view.ChildEventCallBackStr
+      this.BrotherEventCallBackStr = routerParamOptions.view.BrotherEventCallBackStr
+      this.referenceTargetComponentKey = routerParamOptions.view.referenceTargetComponentKey
+      this.referenceBrotherComponentKey = routerParamOptions.view.referenceBrotherComponentKey
+      this.referenceChildComponentKey = routerParamOptions.view.referenceChildComponentKey
+
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
   /**
    * Set common style.
    */
-  // @Styles
-  // commonStyle(){
-  //   .width(100)
-  //   .height(100)
-  //   .hitTestBehavior(this._hitTestBehavior)
-  //   .id(this.componentKey)
-  //   .onTouch((event: TouchEvent) => {
-  //     console.info('[HitTestBehaviorPage] ' + this.targetView + ' onTouch called at' + event.timestamp);
-  //     this.TargetEventCallBackStr = 'onTargetTouch'
-  //   })
-  // }
-  //
-  // @Styles
-  // onChildTouchStyle(){
-  //   .width(100)
-  //   .height(100)
-  //   .onTouch((event: TouchEvent) => {
-  //     console.info('[HitTestBehaviorPage] ' + this.targetView + ' onTouch called at' + event.timestamp);
-  //     this.ChildEventCallBackStr = 'onChildTouch'
-  //   })
-  // }
-  //
-  // @Styles
-  // onBrotherTouchStyle(){
-  //   .width(100)
-  //   .height(100)
-  //   .onTouch((event: TouchEvent) => {
-  //     console.info('[HitTestBehaviorPage] ' + this.targetView + ' onTouch called at' + event.timestamp);
-  //     this.BrotherEventCallBackStr = 'onBrotherTouch'
-  //   })
-  // }
+  commonStyle(instance: CommonMethod){
+   instance.width(100)
+   instance.height(100)
+   instance.hitTestBehavior(this._hitTestBehavior)
+   instance.id(this.componentKey)
+   instance.onTouch((event: TouchEvent) => {
+      console.info('[HitTestBehaviorPage] ' + this.targetView + ' onTouch called at' + event.timestamp);
+      this.TargetEventCallBackStr = 'onTargetTouch'
+    })
+  }
+
+  onChildTouchStyle(instance: CommonMethod){
+    instance.width(100)
+    instance.height(100)
+    instance.onTouch((event: TouchEvent) => {
+      console.info('[HitTestBehaviorPage] ' + this.targetView + ' onTouch called at' + event.timestamp);
+      this.ChildEventCallBackStr = 'onChildTouch'
+    })
+  }
+
+  onBrotherTouchStyle(instance: CommonMethod){
+    instance.width(100)
+    instance.height(100)
+    instance.onTouch((event: TouchEvent) => {
+      console.info('[HitTestBehaviorPage] ' + this.targetView + ' onTouch called at' + event.timestamp);
+      this.BrotherEventCallBackStr = 'onBrotherTouch'
+    })
+  }
 
   @Builder
   buttonBrotherView() {
     Button('')
-      //.onBrotherTouchStyle()
+      .applyStyles(this.onBrotherTouchStyle)
       .id('button')
   }
 
@@ -213,107 +221,107 @@ struct HitTestBehaviorPage {
   buildTargetView() {
     if (this.targetView == 'Button') {
       Button('') {
-        Text()//.onChildTouchStyle()
-      }//.commonStyle()
+        Text().applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Blank') {
       Row() {
-        Blank().backgroundColor(Color.Yellow)//.commonStyle()
+        Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
       }
     } else if (this.targetView == 'Text') {
       Text('text1') {
-        Span('span')//.onChildTouchStyle()
-      }//.commonStyle()
+        Span('span').applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Checkbox') {
-      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })//.commonStyle()
+      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'CheckboxGroup') {
-      CheckboxGroup({ group: 'checkboxGroup' })//.commonStyle()
+      CheckboxGroup({ group: 'checkboxGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'DataPanel') {
-      DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })//.commonStyle()
+      DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'DatePicker') {
       DatePicker({
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
-      })//.commonStyle()
+      }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Divider') {
-      Divider()//.commonStyle()
+      Divider().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Gauge') {
       Gauge({ value: 105 })
-        //.commonStyle()
+        .applyStyles(this.commonStyle)
         .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
     } else if (this.targetView == 'Image') {
       Image($r('app.media.icon'))
         .draggable(false)
-        //.commonStyle()
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Marquee') {
       Marquee({
         start: true,
         step: 50,
-        loop: Number.MAX_VALUE as int,
+        loop: Number.MAX_VALUE as Int,
         fromStart: true,
         src: 'Running Marquee starts rolling'
-      })//.commonStyle()
+      }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Progress') {
-      Progress({ value: 10, type: ProgressType.Eclipse })//.commonStyle()
+      Progress({ value: 10, type: ProgressType.Eclipse }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'QRCode') {
-      QRCode('Running Marquee starts rolling')//.commonStyle()
+      QRCode('Running Marquee starts rolling').applyStyles(this.commonStyle)
     } else if (this.targetView == 'Radio') {
-      Radio({ value: 'Radio1', group: 'radioGroup' })//.commonStyle()
+      Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'ScrollBar') {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text()
           .width(100)
           .height(100)
           .backgroundColor('#C0C0C0')
-          //.onChildTouchStyle()
-      }//.commonStyle()
+          .applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Select') {
       Select([{ value: 'aaa' },
-        { value: 'bbb' }])//.commonStyle()
+        { value: 'bbb' }]).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextArea') {
       TextArea({
         placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-      })//.commonStyle()
+      }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextClock') {
-      TextClock({ timeZoneOffset: -8 }).format('hms')//.commonStyle()
+      TextClock({ timeZoneOffset: -8 }).format('hms').applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextInput') {
-      TextInput({ placeholder: 'input your word...' })//.commonStyle()
+      TextInput({ placeholder: 'input your word...' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextPicker') {
-      TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })//.commonStyle()
+      TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextTimer') {
       TextTimer({ isCountDown: true, count: 30000 })
         .format('mm:ss.SS')
         .fontColor(Color.Black)
-        //.commonStyle()
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'TimePicker') {
       TimePicker({
         selected: new Date('2022-07-22T08:00:00')
-      })//.commonStyle()
+      }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Toggle') {
       Toggle({ type: ToggleType.Button, isOn: false }) {
-        Text('status button').fontColor('#182431').fontSize(12)//.onChildTouchStyle()
-      }//.commonStyle()
+        Text('status button').fontColor('#182431').fontSize(12).applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Circle') {
-      Circle()//.commonStyle()
+      Circle().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Ellipse') {
-      Ellipse()//.commonStyle()
+      Ellipse().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Line') {
-      Line()//.commonStyle().backgroundColor(Color.Black)
+      Line().applyStyles(this.commonStyle).backgroundColor(Color.Black)
     } else if (this.targetView == 'Polyline') {
-      Polyline()//.commonStyle()
+      Polyline().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Polygon') {
-      Polygon()//.commonStyle()
+      Polygon().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Path') {
-      Path()//.commonStyle()
+      Path().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Rect') {
-      Rect()//.commonStyle()
+      Rect().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Shape') {
       // Shape() {
-      //   Rect().width(100).height(100)//.onChildTouchStyle()
-      // }//.commonStyle()
+      //   Rect().width(100).height(100).applyStyles(this.onChildTouchStyle)
+      // }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Column') {
       Column() {
-        Column().width(100).height(100).backgroundColor(0xAFEEEE)//.onChildTouchStyle()
-      }//.commonStyle()
+        Column().width(100).height(100).backgroundColor(0xAFEEEE).applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'ColumnSplit') {
       ColumnSplit() {
         Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
@@ -322,21 +330,21 @@ struct HitTestBehaviorPage {
           .height(50)
           .backgroundColor(0xF5DEB3)
           .textAlign(TextAlign.Center)
-          //.onChildTouchStyle()
-      }//.commonStyle()
+          .applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Flex') {
       Flex() {
         Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-          //.onChildTouchStyle()
-      }//.commonStyle()
+          .applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Grid') {
       Grid() {
         GridItem() {
           Text('day').backgroundColor(Color.White)
             .width('100%').height('100%').textAlign(TextAlign.Center)
-        }//.onChildTouchStyle()
+        }.applyStyles(this.onChildTouchStyle)
       }.backgroundColor(0xFAEEE0)
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'List') {
       List() {
         ListItem() {
@@ -347,48 +355,48 @@ struct HitTestBehaviorPage {
             .textAlign(TextAlign.Center)
             .borderRadius(10)
             .backgroundColor(0xFFFFFF)
-        }//.onChildTouchStyle()
-      }//.commonStyle()
+        }.applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigator') {
       // Navigator({ target: '' }) {
-      //   Text('Go to back page').width('100%').height(20)//.onChildTouchStyle()
-      // }//.commonStyle().backgroundColor(Color.Red)
+      //   Text('Go to back page').width('100%').height(20).applyStyles(this.onChildTouchStyle)
+      // }.applyStyles(this.commonStyle).backgroundColor(Color.Red)
     } else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
         Row()
           .width(100)
           .height(50)
           .backgroundColor('#FF3333')
-          // .alignRules({
-          //   top: { anchor: '__container__', align: VerticalAlign.Top }as AlignRuleParam<VerticalAlign>,
-          //   left: { anchor: '__container__', align: HorizontalAlign.Start }as AlignRuleParam<HorizontalAlign>
-          // })
-          //.onChildTouchStyle()
-      }//.commonStyle()
+          .alignRules({
+            top: { anchor: '__container__', align: VerticalAlign.Top },
+            left: { anchor: '__container__', align: HorizontalAlign.Start }
+          } as AlignRuleOption)
+          .applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Row') {
       Row() {
-        Button('buttonRow')//.onChildTouchStyle()
-      }//.commonStyle()
+        Button('buttonRow').applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'RowSplit') {
       RowSplit() {
-        Text('Text')//.onChildTouchStyle()
-      }//.commonStyle()
+        Text('Text').applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Scroll') {
       Scroll() {
         Column() {
-          ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:int) => {
+          ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:Int) => {
             Text('Scroll' + item+'')
               .width('90%')
               .height(150)
               .backgroundColor(Color.White)
               .textAlign(TextAlign.Center)
-          }, (item: Int,index:int) => item+'')
-        }.width('100%')//.onChildTouchStyle()
-      }.scrollBar(BarState.On)//.commonStyle()
+          }, (item: Int,index:Int) => item+'')
+        }.width('100%').applyStyles(this.onChildTouchStyle)
+      }.scrollBar(BarState.On).applyStyles(this.commonStyle)
     } else if (this.targetView == 'SideBarContainer') {
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
-          ForEach([1, 2, 3], (item: Int,index:int) => {
+          ForEach([1, 2, 3], (item: Int,index:Int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image($r('app.media.icon')).width(50).height(50)
               Text('Index0' + item).fontSize(25)
@@ -401,36 +409,36 @@ struct HitTestBehaviorPage {
         Column() {
           Text('SideBarContainer content').fontSize(25)
         }.backgroundColor(Color.Orange)
-        //.onChildTouchStyle()
-      }//.commonStyle()
+        .applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Stack') {
       Stack() {
-        Button('buttonStack')//.onChildTouchStyle()
-      }//.commonStyle()
+        Button('buttonStack').applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Swiper') {
       Swiper() {
-        ForEach([1, 2, 3], (item: Int,index:int) => {
+        ForEach([1, 2, 3], (item: Int,index:Int) => {
           Text('Swiper' + item).width('90%').height(50)
-            //.onChildTouchStyle()
-        }, (item: Int,index:int) => item+'')
-      }.indicator(true).backgroundColor(Color.White)//.commonStyle()
+            .applyStyles(this.onChildTouchStyle)
+        }, (item: Int,index:Int) => item+'')
+      }.indicator(true).backgroundColor(Color.White).applyStyles(this.commonStyle)
     } else if (this.targetView == 'WaterFlow') {
       WaterFlow() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:int) => {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:Int) => {
           FlowItem() {
             Column() {
               Text('WaterFlow' + item).fontSize(12).height('16')
               Image($r('app.media.icon')).width(50).height(50).objectFit(ImageFit.Fill)
             }
-          }//.onChildTouchStyle()
-        }, (item: Int,index:int) => item+'')
-      }//.commonStyle()
+          }.applyStyles(this.onChildTouchStyle)
+        }, (item: Int,index:Int) => item+'')
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'GridItem') {
       Grid() {
         GridItem() {
           Text('GridItem1').backgroundColor(Color.White)
             .width('100%').height('100%').textAlign(TextAlign.Center)
-        }//.onBrotherTouchStyle()
+        }.applyStyles(this.onBrotherTouchStyle)
 
         GridItem() {
           Text('GridItem2')
@@ -438,8 +446,8 @@ struct HitTestBehaviorPage {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-            //.onChildTouchStyle()
-        }//.commonStyle()
+            .applyStyles(this.onChildTouchStyle)
+        }.applyStyles(this.commonStyle)
       }
       .width('100%')
       .height('70%')
@@ -450,13 +458,13 @@ struct HitTestBehaviorPage {
           Column() {
             Text('Page One')
           }
-        }//.onBrotherTouchStyle()
+        }.applyStyles(this.onBrotherTouchStyle)
 
         StepperItem() {
           Column() {
             Text('Page One')
-          }//.onChildTouchStyle()
-        }.width('100%').height('100%')//.commonStyle()
+          }.applyStyles(this.onChildTouchStyle)
+        }.width('100%').height('100%').applyStyles(this.commonStyle)
       }
     } else if (this.targetView == 'FlowItem') {
       WaterFlow() {
@@ -465,14 +473,14 @@ struct HitTestBehaviorPage {
             Text('WaterFlow').fontSize(12).height('16')
             Image($r('app.media.icon')).width(50).height(50).objectFit(ImageFit.Fill)
           }
-        }//.onBrotherTouchStyle()
+        }.applyStyles(this.onBrotherTouchStyle)
 
         FlowItem() {
           Column() {
             Text('WaterFlow').fontSize(12).height('16')
             Image($r('app.media.icon')).width(50).height(50).objectFit(ImageFit.Fill)
-          }//.onChildTouchStyle()
-        }//.commonStyle().width('100%').height('100%')
+          }.applyStyles(this.onChildTouchStyle)
+        }.applyStyles(this.commonStyle).width('100%').height('100%')
       }
     } else if (this.targetView == 'ListItem') {
       List({ space: 20, initialIndex: 0 }) {
@@ -481,43 +489,43 @@ struct HitTestBehaviorPage {
             .width('100%')
             .textAlign(TextAlign.Center)
             .backgroundColor(Color.White)
-        }//.onBrotherTouchStyle()
+        }.applyStyles(this.onBrotherTouchStyle)
 
         ListItem() {
           Text('item1')
             .width('100%')
             .textAlign(TextAlign.Center)
             .backgroundColor(Color.White)
-            //.onChildTouchStyle()
-        }//.commonStyle()
+            .applyStyles(this.onChildTouchStyle)
+        }.applyStyles(this.commonStyle)
       }.width('100%').height('70%')
     } else if (this.targetView == 'TabContent') {
       Tabs() {
         TabContent() {
           Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
-        }.tabBar('Tabs1')//.onBrotherTouchStyle()
+        }.tabBar('Tabs1').applyStyles(this.onBrotherTouchStyle)
 
         TabContent() {
-          Text('referenceComponent').width('100%').height('100%').backgroundColor(Color.Orange)//.onChildTouchStyle()
-        }.tabBar('Tabs2')//.commonStyle()
+          Text('referenceComponent').width('100%').height('100%').backgroundColor(Color.Orange).applyStyles(this.onChildTouchStyle)
+        }.tabBar('Tabs2').applyStyles(this.commonStyle)
       }.width('100%')
       .height('70%')
     } else if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })//.commonStyle()
+      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'ImageAnimator') {
       ImageAnimator()
         .images([{ src: $r('app.media.icon') }])
-        //.commonStyle()
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'LoadingProgress') {
       LoadingProgress()
-        //.commonStyle()
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Menu') {
       Menu() {
         MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions )
-          //.onChildTouchStyle()
-      }.backgroundColor(Color.Yellow)//.commonStyle()
+          .applyStyles(this.onChildTouchStyle)
+      }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigation') {
-      Navigation(new NavPathStack())//.commonStyle()
+      Navigation(new NavPathStack()).applyStyles(this.commonStyle)
     } else if (this.targetView == 'NavRouter') {
       // NavRouter() {
       //   Row() {
@@ -527,40 +535,40 @@ struct HitTestBehaviorPage {
       //   NavDestination() {
       //     Text('NavDestination').fontSize(10)
       //   }
-      //   //.onChildTouchStyle()
-      // }//.commonStyle()
+      //   .applyStyles(this.onChildTouchStyle)
+      // }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Rating') {
-      Rating({ rating: 3.5, indicator: false })//.commonStyle()
+      Rating({ rating: 3.5, indicator: false }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
-      Search()//.commonStyle()
+      Search().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Slider') {
       Slider({
         value: 50,
         min: 0,
         max: 100,
         style: SliderStyle.OutSet
-      } as SliderOptions).showTips(true)//.commonStyle()
+      } as SliderOptions).showTips(true).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Stepper') {
       Stepper() {
         StepperItem() {
           Column() {
             Text('Page One')
           }
-        }//.onChildTouchStyle()
-      }//.commonStyle()
+        }.applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Badge') {
       Badge({
         count: 50,
         style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }as BadgeStyle
       } as BadgeParamWithNumber) {
         Button('message')
-          .width(100).height(50).backgroundColor(0x317aff)//.onChildTouchStyle()
-      }//.commonStyle()
+          .width(100).height(50).backgroundColor(0x317aff).applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Counter') {
       Counter() {
         Button('buttonCounter')
-          //.onChildTouchStyle()
-      }//.commonStyle()
+          .applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'GridRow') {
       GridRow({
         columns: 1,
@@ -570,55 +578,55 @@ struct HitTestBehaviorPage {
         ForEach([Color.Red], (color: Color) => {
           GridCol({ span: 1 }) {
             Row().width('100%').height('20vp')
-          }.borderColor(color).borderWidth(2)//.onChildTouchStyle()
+          }.borderColor(color).borderWidth(2).applyStyles(this.onChildTouchStyle)
         })
-      }//.commonStyle()
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Panel') {
       // Panel(true) {
-      //   Text('Text')//.onChildTouchStyle()
-      // }.backgroundColor(Color.Yellow)//.commonStyle()
+      //   Text('Text').applyStyles(this.onChildTouchStyle)
+      // }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: false }) {
-        Text('123')//.onChildTouchStyle()
-      }//.commonStyle()
+        Text('123').applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Tabs') {
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
-        }//.onChildTouchStyle()
-      }//.commonStyle()
+        }.applyStyles(this.onChildTouchStyle)
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'MenuItem') {
       Menu() {
         MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-          //.onBrotherTouchStyle()
-        MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)//.commonStyle()
+          .applyStyles(this.onBrotherTouchStyle)
+        MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).applyStyles(this.commonStyle)
       }.width('100%').height('70%').backgroundColor(Color.Yellow)
     } else if (this.targetView == 'MenuItemGroup') {
       Menu() {
         MenuItemGroup({ header: 'MenuItemGroup' } as MenuItemGroupOptions) {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-        }//.onBrotherTouchStyle()
+        }.applyStyles(this.onBrotherTouchStyle)
 
         MenuItemGroup({ header: 'MenuItemGroup' } as MenuItemGroupOptions) {
-          MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)//.onChildTouchStyle()
-        }//.commonStyle()
+          MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).applyStyles(this.onChildTouchStyle)
+        }.applyStyles(this.commonStyle)
       }.width('100%').height('70%').backgroundColor(Color.Yellow)
     } else if (this.targetView == 'ListItemGroup') {
       List({ space: 0, initialIndex: 0 }) {
-        ListItemGroup().backgroundColor(Color.Yellow)//.onBrotherTouchStyle()
+        ListItemGroup().backgroundColor(Color.Yellow).applyStyles(this.onBrotherTouchStyle)
         ListItemGroup() {
-          ListItem()//.onChildTouchStyle()
-        }.backgroundColor(Color.Red)//.commonStyle()
+          ListItem().applyStyles(this.onChildTouchStyle)
+        }.backgroundColor(Color.Red).applyStyles(this.commonStyle)
       }
     } else if (this.targetView == 'GridCol') {
       GridRow({}) {
         GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption   } as GridColOptions) {
           Row().width('100%').height('20vp')
-        }//.onBrotherTouchStyle()
+        }.applyStyles(this.onBrotherTouchStyle)
 
         GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }as GridColOptions) {
-          Row().width('100%').height('20vp')//.onChildTouchStyle()
-        }//.commonStyle()
+          Row().width('100%').height('20vp').applyStyles(this.onChildTouchStyle)
+        }.applyStyles(this.commonStyle)
       }.width('100%').height('70%')
     }
   }
