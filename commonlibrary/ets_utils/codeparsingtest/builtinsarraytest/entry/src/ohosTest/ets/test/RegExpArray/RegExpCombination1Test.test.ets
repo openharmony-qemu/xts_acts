@@ -2878,7 +2878,7 @@ export default function RegExpCombination1Test() {
       re149.exec(str149);
       expect(re149.lastIndex).assertEqual(2);
       let exec149_3 = re149.exec(str149);
-      expect(exec149_3).assertEquals(["q"]);
+      expect(exec149_3).assertDeepEquals(["q"]);
       expect(re149.lastIndex).assertEqual(4);
       let exec149_4 = re149.exec(str149);
       expect(exec149_4?.index).assertEqual(4);

@@ -879,11 +879,11 @@ export default function ArrayConstructor1Test() {
       const d2 = new Date('2021-01-01');
       const arr = [d1, d2];
       const r1 = arr.map(x => x).reverse();
-      expect(r1[0]).assertEquals("2021-01-01T00:00:00.000Z");
-      expect(r1[1]).assertEquals("2020-01-01T00:00:00.000Z");
+      expect(r1[0]).assertDeepEquals("2021-01-01T00:00:00.000Z");
+      expect(r1[1]).assertDeepEquals("2020-01-01T00:00:00.000Z");
       const typedArr = new Float64Array([d1.getTime(), d2.getTime()]);
       const r2 = Array.from(typedArr.map(x => x)).reverse();
-      expect(r2).assertEquals([d2.getTime(), d1.getTime()]);
+      expect(r2).assertDeepEquals([d2.getTime(), d1.getTime()]);
     });
 
     /**
@@ -2084,8 +2084,8 @@ export default function ArrayConstructor1Test() {
       const d2 = new Date('2021-01-01');
       const arr = [d1, d2];
       const r = arr.map(x => x).reverse();
-      expect(r[0]).assertEquals("2021-01-01T00:00:00.000Z");
-      expect(r[1]).assertEquals("2020-01-01T00:00:00.000Z");
+      expect(r[0]).assertDeepEquals("2021-01-01T00:00:00.000Z");
+      expect(r[1]).assertDeepEquals("2020-01-01T00:00:00.000Z");
     });
 
     /**
