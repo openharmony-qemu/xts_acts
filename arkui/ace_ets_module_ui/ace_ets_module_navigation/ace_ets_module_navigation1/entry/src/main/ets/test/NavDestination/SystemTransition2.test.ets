@@ -19,7 +19,7 @@ import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 export default function SystemTransition() {
-  describe('SystemTransition', () => {
+  describe('NavDestinationSystemTransition', () => {
     beforeEach(async (done: Function) => {
       console.info('SystemTransition beforeEach start');
       let options: router.RouterOptions = {
@@ -49,12 +49,12 @@ export default function SystemTransition() {
 
 
     /**
-     * @tc.number    SystemTransition_0100
-     * @tc.name      SystemTransition_0100
+     * @tc.number    NavDestinationSystemTransition_0100
+     * @tc.name      NavDestinationSystemTransition_0100
      * @tc.desc      Test systemTransition and NavigationSystemTransitionType.FADE
      * @tc.level     Level 2
      */
-    it('SystemTransition_0100',  Level.LEVEL0, async (done: Function) => {
+    it('NavDestinationSystemTransition_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0100 START');
       await CommonFunc.sleep(200);
 
@@ -82,12 +82,12 @@ export default function SystemTransition() {
     });
 
     /**
-     * @tc.number    SystemTransition_0200
-     * @tc.name      SystemTransition_0200
+     * @tc.number    NavDestinationSystemTransition_0200
+     * @tc.name      NavDestinationSystemTransition_0200
      * @tc.desc      Test systemTransition and NavigationSystemTransitionType.EXPLODE
      * @tc.level     Level 2
      */
-    it('SystemTransition_0200',  Level.LEVEL0, async (done: Function) => {
+    it('NavDestinationSystemTransition_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -115,12 +115,12 @@ export default function SystemTransition() {
     });
 
     /**
-     * @tc.number    SystemTransition_0300
-     * @tc.name      SystemTransition_0300
+     * @tc.number    NavDestinationSystemTransition_0300
+     * @tc.name      NavDestinationSystemTransition_0300
      * @tc.desc      Test systemTransition and NavigationSystemTransitionType.SLIDE_RIGHT
      * @tc.level     Level 2
      */
-    it('SystemTransition_0300',  Level.LEVEL0, async (done: Function) => {
+    it('NavDestinationSystemTransition_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0300 START');
       await CommonFunc.sleep(1000);
 
@@ -148,12 +148,12 @@ export default function SystemTransition() {
     });
 
     /**
-     * @tc.number    SystemTransition_0400
-     * @tc.name      SystemTransition_0400
+     * @tc.number    NavDestinationSystemTransition_0400
+     * @tc.name      NavDestinationSystemTransition_0400
      * @tc.desc      Test systemTransition and NavigationSystemTransitionType.SLIDE_BOTTOM
      * @tc.level     Level 2
      */
-    it('SystemTransition_0400',  Level.LEVEL0, async (done: Function) => {
+    it('NavDestinationSystemTransition_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0400 START');
       await CommonFunc.sleep(1000);
 
