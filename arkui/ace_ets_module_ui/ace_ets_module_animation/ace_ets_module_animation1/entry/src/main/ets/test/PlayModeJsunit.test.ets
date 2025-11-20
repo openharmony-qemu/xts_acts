@@ -22,7 +22,7 @@ export default function playModeTest() {
     beforeEach(async (done: Function) => {
       console.info("playMode beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/button/playMode',
+        url: 'MainAbility/pages/playMode',
       }
       try {
         router.clear();

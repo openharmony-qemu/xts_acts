@@ -29,7 +29,7 @@ export default function stageAnimatorTest() {
     beforeEach(async (done: Function) => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/button/stageAnimator',
+        url: 'MainAbility/pages/stageAnimator',
       }
       try {
         router.clear();
