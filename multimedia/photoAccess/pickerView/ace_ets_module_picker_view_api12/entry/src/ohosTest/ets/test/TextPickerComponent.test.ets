@@ -139,6 +139,25 @@ async function clickBigPicture(driver: Driver) {
   await CommonFunc.sleep(1000);
 }
 
+function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> {
+  return new Promise((resolve, reject) => {
+    const evt: events_emitter.InnerEvent = { eventId: code, priority: events_emitter.EventPriority.LOW };
+    const t = setTimeout(() => { events_emitter.off(code); reject(new Error('timeout')); }, timeout);
+    events_emitter.on(evt, (ev) => {
+      clearTimeout(t);
+      events_emitter.off(code);
+      resolve(ev?.data?.msg);
+    });
+  });
+}
+
+async function clickExitBrowserButton(driver: Driver) {
+  const exitButton: Component | null = await driver.findComponent(ON.id('exitBrowser'));
+  await exitButton!.click();
+  console.info('testPicker55: clicked exitBrowser, browser closed');
+  await CommonFunc.sleep(800);
+}
+
 async function testCompleteButton(driver: Driver, options: router.RouterOptions, textMode: number) {
   let buttonText: string = '';
   switch (textMode) {
@@ -2590,6 +2609,145 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker54 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker55
+     * @tc.name      : testPicker55
+     * @tc.desc      : Testing PickerItem movingPhotoBadgeState == 2
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker55', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) { done(); return; }
+
+      const code: number = EventType.SELECT_ITEM_INFO;
+
+      const pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE;
+      pickerOptions.isMovingPhotoBadgeShown = true;
+      pickerOptions.selectMode = SelectMode.MULTI_SELECT;
+      pickerOptions.isSearchSupported = false;
+
+
+      const options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: { eventId: code, pickerOptions }
+      };
+      await routeToUrl(options);
+
+
+      const strJson: string = getInspectorByKey('PhotoPickerComponent');
+
+      expect(JSON.parse(strJson)?.$attrs?.visibility).assertEqual('Visibility.Visible');
+
+
+      await CommonFunc.sleep(600);
+      const images: Array<Component> = await driver.findComponents(ON.type('Image'));
+      expect(images && images.length > 0).assertTrue();
+      if(!images || images.length === 0) {
+        console.log("Any image found! Fail!");
+        router.back();
+        console.info('testPicker55 finish!');
+        done();
+        return;
+      }
+      await images[0].click();
+      console.info('testPicker55: browser mode opened!');
+      await CommonFunc.sleep(500);
+
+
+      let movingBtn: Component | null = await driver.findComponent(ON.text('Moving picture'));
+      if (movingBtn === null) {
+        console.log("Any button found! Fail!");
+        await clickExitBrowserButton(driver);
+      } else {
+        await movingBtn!.click();
+        await CommonFunc.sleep(3000);
+        console.info('testPicker55: clicked "Moving picture" button');
+
+        await clickExitBrowserButton(driver);
+
+        const checkboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        expect(checkboxes && checkboxes.length > 0).assertTrue();
+        const itemPromise = waitForSelectItemInfo(code, 5000);
+        await checkboxes[0].click();
+        console.info('testPicker55: Checkbox selected!');
+
+        const selectedItem = await itemPromise;
+
+        console.info('testPicker55: ItemInfo -> ' + JSON.stringify(selectedItem));
+        console.info('testPicker55: movingPhotoBadgeState -> ' + JSON.stringify(selectedItem.movingPhotoBadgeState));
+        expect(selectedItem.movingPhotoBadgeState).assertEqual(2);
+      }
+
+      router.back();
+      console.info('testPicker55 finish');
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker56
+     * @tc.name      : testPicker56
+     * @tc.desc      : Testing PickerItem movingPhotoBadgeState == 0
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker56', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) { done(); return; }
+
+      const code: number = EventType.SELECT_ITEM_INFO;
+
+      const pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE;
+      pickerOptions.isMovingPhotoBadgeShown = true;
+      pickerOptions.selectMode = SelectMode.MULTI_SELECT;
+      pickerOptions.isSearchSupported = false;
+
+      const options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: { eventId: code, pickerOptions }
+      };
+      await routeToUrl(options);
+
+      const strJson: string = getInspectorByKey('PhotoPickerComponent');
+
+      expect(JSON.parse(strJson)?.$attrs?.visibility).assertEqual('Visibility.Visible');
+
+      let selectedItem: ItemInfo | null = null;
+      const callback = (event: events_emitter.EventData) => {
+        selectedItem = event?.data?.msg as ItemInfo;
+      };
+      const listenEvt: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(listenEvt, callback);
+
+      await CommonFunc.sleep(600);
+      const checkboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+
+      if (!checkboxes || checkboxes.length === 0) {
+        console.info('testPicker56: Grid is empty. Test is ending!');
+      } else {
+        await checkboxes[0].click();
+        console.info('testPicker56: Checkbox selected!');
+        await CommonFunc.sleep(800);
+
+        if (selectedItem === null) {
+          console.info('testPicker56: Did not get ItemInfo, event is not triggered!');
+        } else {
+          console.info('testPicker56: ItemInfo -> ' + JSON.stringify(selectedItem));
+          expect((selectedItem as ItemInfo).movingPhotoBadgeState).not().assertUndefined();
+        }
+      }
+
+      events_emitter.off(listenEvt.eventId);
+      router.back();
+      console.info('testPicker56 finish!');
       done();
     });
   })
