@@ -51,8 +51,7 @@ interface MenuItem {
 @Component
 struct TabTitleBarLabelTest {
   private readonly tabItems: Array<TabTitleBarTabItem> =
-    [new TabTitleBarTabItem(), new TabTitleBarTabItem(), new TabTitleBarTabItem(),
-      new TabTitleBarTabItem(), new TabTitleBarTabItem()];
+    [{title:'tab1'},{title:'tab2'},{title:'tab3'},{title:'Happy'},{title:'tab4'}];
   private readonly menuItems: Array<TabTitleBarMenuItem> = [
     {
       value: $r('app.media.icon'),

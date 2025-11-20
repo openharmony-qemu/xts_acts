@@ -67,13 +67,13 @@ export default function selectDialogTest() {
       await Utils.sleep(1000);
       console.info('selectDialogTest after each called');
     })
- /*
+
+    /*
      * @tc.number   selectDialogTest_static_0100
      * @tc.name     selectDialogTest_static_0100
      * @tc.desc     selectDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    
     it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[selectDialogTest_static_0100] START');

@@ -65,7 +65,7 @@ export default function customContentDialogTest() {
      * @tc.desc     customContentDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('customContentDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('customContentDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[customContentDialogTest_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

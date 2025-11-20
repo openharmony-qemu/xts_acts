@@ -1,6 +1,6 @@
 {
   "src": [
-    "MainAbility/pages/index/Index",
+    "MainAbility/pages/index/index",
     "MainAbility/pages/dialog/alertDialogTest",
     "MainAbility/pages/dialog/confirmDialogTest",
     "MainAbility/pages/dialog/customContentDialogTest",

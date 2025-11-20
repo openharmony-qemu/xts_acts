@@ -19,8 +19,8 @@ import tabTitleBarLabelTest from './tabTitleBar/tabTitleBarLabelTest.test';
 import toolBarModifierPage from './toolBar/toolBarModifierPage.test';
 
 export default function testsuite() {
-  composeTitleBarTest();
-  selectTitleBarLabelTest();
-  tabTitleBarLabelTest();
-  toolBarModifierPage(); //pass:1
+  composeTitleBarTest(); //11.13 pass:1
+  selectTitleBarLabelTest(); //11.13 pass:1
+  tabTitleBarLabelTest(); //11.13 pass:1
+  toolBarModifierPage(); //11.13 pass:1
 }

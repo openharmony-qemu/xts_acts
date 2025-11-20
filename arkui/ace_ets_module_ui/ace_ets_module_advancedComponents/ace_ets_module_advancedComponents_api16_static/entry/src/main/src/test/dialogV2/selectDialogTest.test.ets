@@ -70,7 +70,7 @@ export default function selectDialogTest() {
      * @tc.desc     selectDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[selectDialogTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
@@ -100,7 +100,7 @@ it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.desc     selectDialogTest_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('selectDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('selectDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[selectDialogTest_static_0200] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

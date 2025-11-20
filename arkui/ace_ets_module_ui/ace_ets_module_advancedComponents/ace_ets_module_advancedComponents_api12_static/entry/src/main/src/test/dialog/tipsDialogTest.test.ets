@@ -85,7 +85,6 @@ export default function tipsDialogTest() {
      * @tc.desc     tipsDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    
     it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[tipsDialogTest_static_0100] START');
@@ -109,7 +108,7 @@ export default function tipsDialogTest() {
         done();
       });
 
-     /*
+    /*
      * @tc.number   tipsDialogTest_static_0200
      * @tc.name     tipsDialogTest_static_0200
      * @tc.desc     tipsDialogTest_static_0200
@@ -138,7 +137,7 @@ export default function tipsDialogTest() {
         done();
       });
 
-     /*
+    /*
      * @tc.number   tipsDialogTest_static_0300
      * @tc.name     tipsDialogTest_static_0300
      * @tc.desc     tipsDialogTest_static_0300
