@@ -12,19 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  Entry,
-  FontWeight,
-  Margin,
-  Padding,
-  Row,
-  TimePickerResult
-} from '@ohos.arkui.component';
+import { Entry, Component, Row, Column, Margin, Color, FontWeight, Button, ClickEvent, Padding, TimePickerResult } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -45,7 +33,7 @@ struct TimePickerDialogExampleA {
             onAccept: (value: TimePickerResult) => {
               // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectTime.setHours(value.hour, value.minute)
                 console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
               }
             },

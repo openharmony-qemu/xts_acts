@@ -29,7 +29,9 @@ import {
   RichEditorOptions,
   Row,
   ShadowType,
-  RichEditorUpdateTextSpanStyleOptions
+  RichEditorUpdateTextSpanStyleOptions,
+  Resource,
+  ColoringStrategy
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -167,19 +169,17 @@ struct textShadowTest {
         this.controller.getSpans({
           start: -1,
           end: -1
-        })?.forEach(item => {
-          
+        })!.forEach(item => {
           if (item instanceof RichEditorImageSpanResult && item.imageStyle !== undefined) {
           } else {
-            
             if (item instanceof RichEditorTextSpanResult && item.symbolSpanStyle !== undefined) {
             } else {
               this.shadowOptionsArr = (item as RichEditorTextSpanResult).textStyle.textShadow
-              this.shadowOptionsArr?.forEach((shadowItem, index) => {
-                AppStorage.setOrCreate('shadowRadius' + index, shadowItem.radius)
-                AppStorage.setOrCreate('shadowColor' + index, shadowItem.color)
-                AppStorage.setOrCreate('shadowOffsetX' + index, shadowItem.offsetX)
-                AppStorage.setOrCreate('shadowOffsetY' + index, shadowItem.offsetY)
+              this.shadowOptionsArr?.forEach((shadowItem:ShadowOptions, index:Int) => {
+                AppStorage.setOrCreate<number|Resource|undefined>('shadowRadius' + index, shadowItem.radius)
+                AppStorage.setOrCreate<undefined|Color|String|Resource|ColoringStrategy>('shadowColor' + index, shadowItem.color)
+                AppStorage.setOrCreate<number|Resource|undefined>('shadowOffsetX' + index, shadowItem.offsetX)
+                AppStorage.setOrCreate<number|Resource|undefined>('shadowOffsetY' + index, shadowItem.offsetY)
               })
             }
           }

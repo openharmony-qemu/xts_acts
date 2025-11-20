@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach, afterAll } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -59,19 +59,21 @@ export default function nodeWaterFlow() {
     
 
 
-    /*
+    
+/*
      * @tc.number   nodeWaterFlow_static_0100
      * @tc.name     nodeWaterFlow_static_0100
      * @tc.desc     nodeWaterFlow_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeWaterFlow_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let size = await driver.getDisplaySize();
       if (size.x != 466 && size.y != 466) {
         let button = await driver.findComponent(ON.type('WaterFlow'));
+        await CommonFunc.sleep(1000);
         let type1 = await button!.getType();
         await CommonFunc.sleep(1000);
         let strJson = inspector.getInspectorByKey('waterFlow_node');
@@ -86,13 +88,14 @@ it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<
     
 
 
-    /*
+    
+/*
      * @tc.number   nodeWaterFlow_static_0200
      * @tc.name     nodeWaterFlow_static_0200
      * @tc.desc     nodeWaterFlow_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('nodeWaterFlow_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('nodeWaterFlow_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeWaterFlow_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

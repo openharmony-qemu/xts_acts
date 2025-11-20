@@ -21,16 +21,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Component
 struct SearchStopBackPress {
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
   build() {
     Column() {
       Text('Search:stopBackPress').height('10%')

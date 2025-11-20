@@ -50,13 +50,11 @@ export default function RichEditorOnDoubleClickTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get RichEditorOnDoubleClickTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("onDoubleClickOnHover" == pages.name)) {
           console.info("get RichEditorOnDoubleClickTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorOnDoubleClickTest page error:" + err);
@@ -66,18 +64,19 @@ export default function RichEditorOnDoubleClickTest() {
 
 
      
-    /*
+    
+/*
      * @tc.number   RichEditorOnDoubleClickTest_static_0010
      * @tc.name     RichEditorOnDoubleClickTest_static_0010
      * @tc.desc     RichEditorOnDoubleClickTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('RichEditorOnDoubleClickTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorOnDoubleClickTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorOnDoubleClickTest_0010 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);
       let RichEditor = await driver.findComponent(ON.id('RichEditor_OnDoubleClickOnHover'));
-      let point:Point = await (RichEditor?.getBoundsCenter() as Promise<Point>)
+      let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x: point.x , y: point.y })
       await CommonFunc.sleep(1000);
@@ -90,23 +89,24 @@ it('RichEditorOnDoubleClickTest_static_0010', Level.LEVEL0, async (done: () => v
     });
 
      
-    /*
+    
+/*
      * @tc.number   RichEditorOnDoubleClickTest_static_0020
      * @tc.name     RichEditorOnDoubleClickTest_static_0020
      * @tc.desc     RichEditorOnDoubleClickTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('RichEditorOnDoubleClickTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorOnDoubleClickTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorOnDoubleClickTest_0020 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);
       let RichEditor = await driver.findComponent(ON.id('RichEditor_OnDoubleClickOnHover'));
-      let point:Point = await (RichEditor?.getBoundsCenter() as Promise<Point>)
+      let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x:point.x , y:point.y })
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('OnDoubleClickOnHover'));
-      let point2:Point = await (text?.getBoundsCenter() as Promise<Point>)
+      let point2:Point = await text!.getBoundsCenter()
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x:point2.x , y:point2.y })
       await CommonFunc.sleep(1000);

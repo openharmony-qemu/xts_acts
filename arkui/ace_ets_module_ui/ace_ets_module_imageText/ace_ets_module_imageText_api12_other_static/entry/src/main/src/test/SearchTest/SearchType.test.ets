@@ -61,11 +61,9 @@ export default function SearchTypeTest() {
         console.info("get SearchTypeTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SearchTypeTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SearchTypeTest page error:" + err);
@@ -74,6 +72,7 @@ export default function SearchTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   SearchTypeTest_static_0010
      * @tc.name     SearchTypeTest_static_0010
@@ -91,6 +90,7 @@ export default function SearchTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   SearchTypeTest_static_0020
      * @tc.name     SearchTypeTest_static_0020
@@ -108,6 +108,7 @@ export default function SearchTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   SearchTypeTest_static_0030
      * @tc.name     SearchTypeTest_static_0030
@@ -125,6 +126,7 @@ export default function SearchTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   SearchTypeTest_static_0040
      * @tc.name     SearchTypeTest_static_0040

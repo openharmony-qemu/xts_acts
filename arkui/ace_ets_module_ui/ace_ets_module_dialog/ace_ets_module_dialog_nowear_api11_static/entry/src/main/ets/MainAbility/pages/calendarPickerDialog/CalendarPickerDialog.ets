@@ -12,24 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  CalendarPickerDialog,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  Entry,
-  Margin,
-  Padding
-} from '@ohos.arkui.component';
+import { Entry, Component, Column, Margin, Color, Button, ClickEvent, Padding, CalendarPickerDialog } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date()
-
   build() {
     Column() {
       Button("Show CalendarPicker Dialog")
@@ -39,13 +28,13 @@ struct CalendarPickerDialogExample {
           console.info("CalendarDialog.show")
           CalendarPickerDialog.show({
             selected: this.selectedDate,
-            onAccept: (value: Date): void => {
+            onAccept: (value: Date):void => {
               console.info("calendar onAccept:" + JSON.stringify(value))
             },
             onCancel: () => {
               console.info("calendar onCancel")
             },
-            onChange: (value: Date): void => {
+            onChange: (value: Date):void => {
               console.info("calendar onChange:" + JSON.stringify(value))
             }
           })

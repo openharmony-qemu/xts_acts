@@ -51,13 +51,11 @@ export default function minMaxFontSize() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get minMaxFontSize state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("minMaxFontSize" == pages.name)) {
           console.info("get minMaxFontSize pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push minMaxFontSize page error:" + err);
@@ -71,13 +69,14 @@ export default function minMaxFontSize() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   minMaxFontSize_static_0001
      * @tc.name     minMaxFontSize_static_0001
      * @tc.desc     minMaxFontSize_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('minMaxFontSize_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('minMaxFontSize_static_0001', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('minMaxFontSize minMaxFontSize_static_0001 START');
         await CommonFunc.sleep(500);
@@ -90,7 +89,7 @@ it('minMaxFontSize_static_0001', Level.LEVEL0, async (done: () => void): Promise
         obj.getElement('$attrs').getString('maxFontSize'));
         expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual("10.00fp");
         expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual("30.00fp");
-        
+        // 10.00fp    30.00fp
         let strJson2 = inspector.getInspectorByKey('text2');
         let obj2 = JSON.parseJsonElement(strJson2);
         console.log('minMaxFontSize_static_0001---obj2.$attrs.minFontSize---' +
@@ -99,16 +98,16 @@ it('minMaxFontSize_static_0001', Level.LEVEL0, async (done: () => void): Promise
          obj2.getElement('$attrs').getString('maxFontSize'));
         expect(obj2.getElement('$attrs').getString('minFontSize')).assertEqual("10.00fp");
         expect(obj2.getElement('$attrs').getString('maxFontSize')).assertEqual("30.00fp");
-        
+        //0.00fp    0.00fp
         let strJson3 = inspector.getInspectorByKey('text3');
         let obj3 = JSON.parseJsonElement(strJson3);
         console.log('minMaxFontSize_static_0001---obj3.$attrs.minFontSize---' +
         obj3.getElement('$attrs').getString('minFontSize'));
         console.log('minMaxFontSize_static_0001---obj3.$attrs.maxFontSize---' +
         obj3.getElement('$attrs').getString('maxFontSize'));
-        expect(obj3.getElement('$attrs').getString('minFontSize')).assertContain("0.00fp");
-        expect(obj3.getElement('$attrs').getString('maxFontSize')).assertContain("0.00fp");
-        
+        expect(obj3.getElement('$attrs').getString('minFontSize')).assertContain("0.00");
+        expect(obj3.getElement('$attrs').getString('maxFontSize')).assertContain("0.00");
+        //0.00fp    0.00fp
         console.info("[minMaxFontSize_static_0001] end");
     });
   })

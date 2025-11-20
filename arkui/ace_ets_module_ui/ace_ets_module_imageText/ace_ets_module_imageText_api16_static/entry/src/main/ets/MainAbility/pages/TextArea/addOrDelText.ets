@@ -46,17 +46,6 @@ struct addOrDelTextDemo {
   controller2: TextInputController = new TextInputController();
   controller3: SearchController = new SearchController();
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
-
   build() {
     Column() {
       Text().height('10%')
@@ -116,9 +105,9 @@ struct addOrDelTextDemo {
         Button('del3')
           .id('del3')
           .onClick((e:ClickEvent) => {
-            this.controller1.deleteText({start: 1, end: 2})
-            this.controller2.deleteText({start: -1, end: -2})
-            
+            // this.controller1.deleteText({start: 1.1, end: 2.3})
+            // this.controller2.deleteText({start: -1.1, end: -2.3})
+            // this.controller3.deleteText({start: null, end: -1})
           })
           .width('45%')
 
@@ -126,8 +115,8 @@ struct addOrDelTextDemo {
           .id('del4')
           .onClick((e:ClickEvent) => {
             this.controller1.deleteText({start: -1, end: -1})
-            
-            
+            // this.controller2.deleteText({start: -1, end: null})
+            //this.controller3.deleteText({start: null, end: -1})
           })
           .width('45%')
       }.height('10%')
@@ -137,15 +126,15 @@ struct addOrDelTextDemo {
           .onClick((e:ClickEvent) => {
             this.controller1.deleteText({start: undefined, end: -1})
             this.controller2.deleteText({start: undefined, end: 1})
-            
+            //this.controller3.deleteText({start: null, end: 1})
           })
           .width('45%')
 
         Button('del6')
           .id('del6')
           .onClick((e:ClickEvent) => {
-            
-            
+            //this.controller1.deleteText({start: undefined, end: null})
+            //this.controller2.deleteText({start: 2, end: null})
             this.controller3.deleteText({start: 2, end: undefined})
           })
           .width('45%')
@@ -155,7 +144,7 @@ struct addOrDelTextDemo {
           .id('del7')
           .onClick((e:ClickEvent) => {
             this.controller1.deleteText(undefined)
-            
+            // this.controller2.deleteText(null)
             this.controller3.deleteText()
           })
           .width('45%')

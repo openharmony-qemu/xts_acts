@@ -53,10 +53,8 @@ export default function ImageOrientationTest() {
         console.info("get ImageOrientationTest state pages: " + JSON.stringify(pages));
         if (!("imageTwo" == pages.name)) {
           console.info("get ImageOrientationTest state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ImageOrientationTest page error: " + err);
@@ -64,20 +62,21 @@ export default function ImageOrientationTest() {
       }
     });
 
-    /*
+    
+/*
      * @tc.number   ImageOrientationTest_static_0100
      * @tc.name     ImageOrientationTest_static_0100
      * @tc.desc     ImageOrientationTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ImageOrientationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOrientationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageOrientationTest_0100 START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      
+      // get the image component and test attribute
       let button = await driver.findComponent(ON.id('changeOrientation'));
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('imageOrientation');
       let obj = JSON.parseJsonElement(strJson);

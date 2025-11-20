@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -54,12 +54,11 @@ export default function touchAbleJsunit() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get touchAbleJsunit state pages:" + JSON.stringify(pages));
-
-
-        routerInstance.pushUrl(options);
-        await CommonFunc.sleep(2000);
-
+        if (!("touchAble" == pages.name)) {
+          console.info("get touchAble state pages.name:" + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
       } catch (err) {
         console.error("push touchAbleJsunit page error:" + err);
       }
@@ -72,31 +71,31 @@ export default function touchAbleJsunit() {
     });
 
     /*
-     * @tc.number    testTouchAble001
-     * @tc.name      testTouchAble001
-     * @tc.desc      testTouchAble001
-     * @tc.level     2
+     * @tc.number   testTouchAble_static_001
+     * @tc.name     testTouchAble_static_001
+     * @tc.desc     testTouchAble_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('testTouchAble001', Level.LEVEL0, async (): Promise<void> => {
+    it('testTouchAble_static_001', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(1000)
       let strJson: string = inspector.getInspectorByKey('ellipse');
       console.info("[testTouchAble001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('focusable')).assertEqual(false);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('focusable')).assertEqual(false);
     });
 
-
     /*
-     * @tc.number    testTouchAble002
-     * @tc.name      testTouchAble002
-     * @tc.desc      testTouchAble002
-     * @tc.level     2
+     * @tc.number   testTouchAble_static_002
+     * @tc.name     testTouchAble_static_002
+     * @tc.desc     testTouchAble_static_002
+     * @tc.level    Level.LEVEL0
      */
-    it('testTouchAble002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testTouchAble_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       let callbackTwo = (eventData: events_emitter.EventData) => {
         console.info("[testTouchAble002] get event state result is: " + JSON.stringify(eventData));
-        let act = eventData.data as Action
-        expect(act?.ACTION).assertEqual('Ellipse Clicked')
+        // let act = eventData.data as Action
+        const data = eventData.data as Record<string, Object | undefined | null>
+        expect(data['ACTION']).assertEqual('Ellipse Clicked')
         console.info('[testTouchAble002] END');
         done()
       }

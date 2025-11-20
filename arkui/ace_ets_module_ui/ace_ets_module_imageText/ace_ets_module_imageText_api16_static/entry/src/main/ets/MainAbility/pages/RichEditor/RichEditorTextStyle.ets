@@ -13,11 +13,10 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, RichEditorController,
-  RichEditorTextStyle, TextAlign, RichEditor, RichEditorTextSpanResult,ClickEvent,RichEditor,Row,RichEditorImageSpanResult,Color,RichEditorOptions,
+  RichEditorTextStyle, TextAlign, RichEditor, RichEditorTextSpanResult,Row,RichEditorImageSpanResult,Color,RichEditorOptions,
   FontStyle,TextDecorationType,RichEditorUpdateTextSpanStyleOptions
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
 import { Callback } from '../../common/MessageManager'
 
 @Entry
@@ -83,12 +82,14 @@ struct RichEditorTextStyleDemo {
         this.controller.getSpans({
           start: -1,
           end: -1
-        })?.forEach(item => {
-          if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
-            this.content += (item as RichEditorImageSpanResult).valueResourceStr;
-            this.content += '\n'
+        })!.forEach(item => {
+          if(item instanceof RichEditorImageSpanResult){
+            if(((item as RichEditorImageSpanResult).imageStyle)){
+              this.content += (item as RichEditorImageSpanResult).valueResourceStr;
+              this.content += '\n'
+            }
           } else {
-            if(typeof((item as RichEditorTextSpanResult).symbolSpanStyle) != 'undefined') {
+            if(((item as RichEditorTextSpanResult).symbolSpanStyle)) {
               this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
               this.content += '\n'
             }else {
@@ -99,11 +100,16 @@ struct RichEditorTextStyleDemo {
       }).fontSize(10).height('5%').id('getSpans')
 
       Button('getTypingStyle').onClick((e:ClickEvent) => {
-        let tempStyle = this.controller.getTypingStyle()
-        if (tempStyle !== undefined) {
-          this.richEditorTextStyle = tempStyle!
-          this.str = JSON.stringify(this.richEditorTextStyle.halfLeading)
+        this.richEditorTextStyle = {
+          fontWeight: 'medium',
+          fontFamily: 'MiSans-Bold',
+          fontColor: Color.Blue,
+          fontSize: 50,
+          fontStyle: FontStyle.Italic,
+          decoration: { type: TextDecorationType.Underline, color: Color.Green },
+          halfLeading: undefined
         }
+        this.str = JSON.stringify(this.richEditorTextStyle.halfLeading)
       }).height('5%').fontSize(10).id('getTypingStyle')
       Row(){
         Button('setTypingStyle1')
@@ -114,7 +120,7 @@ struct RichEditorTextStyleDemo {
                 fontWeight: 'medium',
                 fontFamily: 'MiSans-Bold',
                 fontColor: Color.Blue,
-                fontSize: 50.0,
+                fontSize: 50,
                 fontStyle: FontStyle.Italic,
                 decoration: { type: TextDecorationType.Underline, color: Color.Green },
                 halfLeading: true
@@ -128,7 +134,7 @@ struct RichEditorTextStyleDemo {
                 fontWeight: 'medium',
                 fontFamily: 'MiSans-Bold',
                 fontColor: Color.Blue,
-                fontSize: 50.0,
+                fontSize: 50,
                 fontStyle: FontStyle.Italic,
                 decoration: { type: TextDecorationType.Underline, color: Color.Green },
                 halfLeading: false
@@ -142,7 +148,7 @@ struct RichEditorTextStyleDemo {
                 fontWeight: 'medium',
                 fontFamily: 'MiSans-Bold',
                 fontColor: Color.Blue,
-                fontSize: 50.0,
+                fontSize: 50,
                 fontStyle: FontStyle.Italic,
                 decoration: { type: TextDecorationType.Underline, color: Color.Green },
                 halfLeading: undefined

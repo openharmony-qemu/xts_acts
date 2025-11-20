@@ -1,4 +1,4 @@
-import { Entry, Component, Column, RichEditor, Button, TextAlign, BorderOptions, Color, FontWeight, LayoutManager, ClickEvent, RichEditorController,RichEditorOptions } from '@ohos.arkui.component';
+import { Entry, Component, Column, RichEditor, Button, TextAlign, BorderOptions, Color, FontWeight, LayoutManager, ClickEvent, RichEditorController,RichEditorOptions, LayoutManager } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -31,13 +31,13 @@ struct getRectsForRange {
       Button(this.str)
         .key("getRectsForRange_Key")
         .onClick((e:ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
+          let layoutManager: LayoutManager = this.controller.getLayoutManager()!
+          if(layoutManager){
+            // let boxes = layoutManager.getRectsForRange({start:0,end:4}, 0, 0)
+            // if (boxes) {
+            //   this.str = "getRectsForRange successful"
+            // }
+          }
         })
     }
   }

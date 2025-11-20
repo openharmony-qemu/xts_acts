@@ -27,6 +27,7 @@ import {
   Marquee,
   RichEditor,
   RichEditorOptions,
+  RichEditorController,
   RichText,
   RichTextAttribute,
   AttributeModifier,
@@ -34,18 +35,18 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
+class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 
-
-
-
-
-
+applyNormalAttribute(RichTextInstance: RichTextAttribute): void {
+  RichTextInstance.width(200);
+}
+}
 
 @Entry
 @Component
 struct RichTextModifier1 {
   @State value: string = 'init';
-  
+  @State modifier: RichTextModifier = new RichTextModifier();
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>' +
     '<h1 style="text-align: center;"><i>h1斜体</i></h1>' +
     '<h1 style="text-align: center;"><u>h1下划线</u></h1>' +
@@ -58,13 +59,14 @@ struct RichTextModifier1 {
     '<p>这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</p>';
 
   aboutToAppear(): void {
-    
+    // this.value = typeof RichTextInstance;
+    this.value = typeof undefined;
   }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       RichText(this.data)
-      
+      .attributeModifier(this.modifier)
         .id('RichTextModifier_get_width')
         .height('20%')
 

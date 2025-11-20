@@ -60,11 +60,9 @@ export default function BounceSymbolEffectTest() {
         console.info("get BounceSymbolEffectTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get BounceSymbolEffectTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push BounceSymbolEffectTest page error:" + err);
@@ -78,6 +76,7 @@ export default function BounceSymbolEffectTest() {
     });
 
 
+    
     /*
      * @tc.number   BounceSymbolEffectTest_static_001
      * @tc.name     BounceSymbolEffectTest_static_001
@@ -99,6 +98,7 @@ export default function BounceSymbolEffectTest() {
     });
 
 
+    
     /*
      * @tc.number   BounceSymbolEffectTest_static_002
      * @tc.name     BounceSymbolEffectTest_static_002
@@ -122,6 +122,7 @@ export default function BounceSymbolEffectTest() {
     });
 
 
+    
     /*
      * @tc.number   BounceSymbolEffectTest_static_003
      * @tc.name     BounceSymbolEffectTest_static_003
@@ -143,6 +144,7 @@ export default function BounceSymbolEffectTest() {
     });
 
 
+    
     /*
      * @tc.number   BounceSymbolEffectTest_static_004
      * @tc.name     BounceSymbolEffectTest_static_004
@@ -165,6 +167,7 @@ export default function BounceSymbolEffectTest() {
     });
 
 
+    
     /*
      * @tc.number   BounceSymbolEffectTest_static_005
      * @tc.name     BounceSymbolEffectTest_static_005

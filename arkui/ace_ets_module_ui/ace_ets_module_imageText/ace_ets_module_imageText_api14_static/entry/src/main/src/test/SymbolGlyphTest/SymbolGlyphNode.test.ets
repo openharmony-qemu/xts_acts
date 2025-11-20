@@ -49,13 +49,11 @@ export default function SymbolGlyphNodeTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get SymbolGlyphNodeTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SymbolGlyphNode" == pages.name)) {
           console.info("get SymbolGlyphNodeTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SymbolGlyphNodeTest page error:" + err);
@@ -64,13 +62,14 @@ export default function SymbolGlyphNodeTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   SymbolGlyphNodeTest_static_0010
      * @tc.name     SymbolGlyphNodeTest_static_0010
      * @tc.desc     SymbolGlyphNodeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('SymbolGlyphNodeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphNodeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SymbolGlyphNodeTest_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SymbolGlyph_Node_id');

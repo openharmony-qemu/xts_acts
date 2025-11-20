@@ -60,7 +60,7 @@ struct TextOnChangeOptions {
           this.newPreviewTextOffset = '' + previewText?.offset;
           this.rangeBefore = '' + options?.rangeBefore.start + '-' + options?.rangeBefore.end;
           this.rangeAfter = '' + options?.rangeAfter.start + '-' + options?.rangeAfter.end;
-          
+          // return true;
         })
         .onWillChange((value: EditableTextChangeValue) => {
           return true;
@@ -77,7 +77,7 @@ struct TextOnChangeOptions {
           this.newPreviewTextOffset = '' + previewText?.offset;
           this.rangeBefore = '' + options?.rangeBefore.start + '-' + options?.rangeBefore.end;
           this.rangeAfter = '' + options?.rangeAfter.start + '-' + options?.rangeAfter.end;
-          
+          // return true;
         })
         .onWillChange((value: EditableTextChangeValue) => {
           return true;
@@ -94,7 +94,7 @@ struct TextOnChangeOptions {
           this.newPreviewTextOffset = '' + previewText?.offset;
           this.rangeBefore = '' + options?.rangeBefore.start + '-' + options?.rangeBefore.end;
           this.rangeAfter = '' + options?.rangeAfter.start + '-' + options?.rangeAfter.end;
-          
+          // return true;
         })
         .onWillChange((value: EditableTextChangeValue) => {
           return true;

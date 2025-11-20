@@ -13,13 +13,10 @@
  * limitations under the License.
  */
 import { MarqueeDynamicSyncSceneType, MarqueeDynamicSyncScene ,DynamicSyncScene } from '@ohos.arkui.UIContext';
-import { Entry,FlexDirection,ItemAlign,TextClock,Margin,MarqueeUpdateStrategy,FlexAlign,Marquee,Flex,TextClockController,ExpectedFrameRateRange, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit } from '@ohos.arkui.component'
+import { Entry,FlexDirection,ItemAlign,TextClock,Margin,MarqueeUpdateStrategy,FlexAlign,Marquee,Flex,TextClockController,ExpectedFrameRateRange,
+  Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,Image,ImageFit } from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
-
-import {
-  State,
-  AppStorage
-} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct MarqueeDynamicSyncSceneTypeExample {
@@ -28,10 +25,10 @@ struct MarqueeDynamicSyncSceneTypeExample {
   @State marqueeText: string = 'Running Marquee'
   private fromStart: boolean = true
   private step: number = 10
-  private loop: int = Number.POSITIVE_INFINITY as int
+  private loop: number = Number.POSITIVE_INFINITY
   controller: TextClockController = new TextClockController()
-  convert2time(value: long): string{
-    let date = new Date(Number(value+'000').toLong());
+  convert2time(value: Long): string{
+    let date = new Date(value+'000');
     let hours = String(date.getHours()).padStart(2, '0');
     let minutes = String(date.getMinutes()).padStart(2, '0');
     let seconds = String(date.getSeconds()).padStart(2, '0');
@@ -45,7 +42,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
       Marquee({
         start: this.start,
         step: this.step,
-        loop: this.loop,
+        loop: Number.parseInt(this.loop.toString()).toInt(),
         fromStart: this.fromStart,
         src: this.marqueeText + this.src
       })
@@ -59,7 +56,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
         .margin({ bottom: 2 } as Margin)
         .id('dynamicMarquee_type')
         .onAppear(()=>{
-          
+          // this.scenes = this.getUIContext().requireDynamicSyncScene('dynamicMarquee_type') as MarqueeDynamicSyncScene[]
         })
 
       Button('Start')
@@ -80,7 +77,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
 
       TextClock({ timeZoneOffset: -8, controller: this.controller } )
         .format('hms')
-        .onDateChange((value: long) => {
+        .onDateChange((value: Long) => {
           this.src = this.convert2time(value) + AppStorage.get('MarqueeDynamicSyncSceneType');
         })
         .margin(1)

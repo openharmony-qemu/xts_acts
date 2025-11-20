@@ -62,13 +62,13 @@ export default function addOrDelText() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get addOrDelText state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("addOrDelText" == pages.name)) {
           console.info("get addOrDelText pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push addOrDelText page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push addOrDelText page error:" + err);
@@ -76,25 +76,24 @@ export default function addOrDelText() {
       console.info("addOrDelText beforeEach end");
     });
 
-
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0001
      * @tc.name     addOrDelText_static_0001
      * @tc.desc     addOrDelText_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0001 START');
       await CommonFunc.sleep(500);
       let add = await driver.findComponent(ON.id('add'));
       await CommonFunc.sleep(500);
-      await (add?.click() as Promise<void>);
-      ;
+      add?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');
@@ -120,31 +119,32 @@ it('addOrDelText_static_0001', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
 
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0002
      * @tc.name     addOrDelText_static_0002
      * @tc.desc     addOrDelText_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0002 START');
       await CommonFunc.sleep(500);
       let del11 = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del11?.click() as Promise<void>);
+      del11?.click();
       await CommonFunc.sleep(500);
       let add11 = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add11?.click() as Promise<void>);
+      add11?.click();
       await CommonFunc.sleep(500);
       let add = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add?.click() as Promise<void>);
+      add?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');
@@ -171,27 +171,28 @@ it('addOrDelText_static_0002', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
 
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0003
      * @tc.name     addOrDelText_static_0003
      * @tc.desc     addOrDelText_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0003 START');
       await CommonFunc.sleep(500);
       let del11 = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del11?.click() as Promise<void>);
+      del11?.click();
       await CommonFunc.sleep(500);
       let add11 = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add11?.click() as Promise<void>);
+      add11?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');
@@ -218,27 +219,28 @@ it('addOrDelText_static_0003', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
 
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0004
      * @tc.name     addOrDelText_static_0004
      * @tc.desc     addOrDelText_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0004 START');
       await CommonFunc.sleep(500);
       let del11 = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del11?.click() as Promise<void>);
+      del11?.click();
       await CommonFunc.sleep(500);
       let add11 = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add11?.click() as Promise<void>);
+      add11?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del3'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');
@@ -265,27 +267,28 @@ it('addOrDelText_static_0004', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
 
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0005
      * @tc.name     addOrDelText_static_0005
      * @tc.desc     addOrDelText_static_0005
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0005 START');
       await CommonFunc.sleep(500);
       let del11 = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del11?.click() as Promise<void>);
+      del11?.click();
       await CommonFunc.sleep(500);
       let add11 = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add11?.click() as Promise<void>);
+      add11?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del4'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');
@@ -312,27 +315,28 @@ it('addOrDelText_static_0005', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
 
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0006
      * @tc.name     addOrDelText_static_0006
      * @tc.desc     addOrDelText_static_0006
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0006 START');
       await CommonFunc.sleep(500);
       let del11 = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del11?.click() as Promise<void>);
+      del11?.click();
       await CommonFunc.sleep(500);
       let add11 = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add11?.click() as Promise<void>);
+      add11?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del5'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');
@@ -359,27 +363,28 @@ it('addOrDelText_static_0006', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
 
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0007
      * @tc.name     addOrDelText_static_0007
      * @tc.desc     addOrDelText_static_0007
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0007 START');
       await CommonFunc.sleep(500);
       let del11 = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del11?.click() as Promise<void>);
+      del11?.click();
       await CommonFunc.sleep(500);
       let add11 = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add11?.click() as Promise<void>);
+      add11?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del6'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');
@@ -407,27 +412,28 @@ it('addOrDelText_static_0007', Level.LEVEL1, async (done: () => void): Promise<v
 
 
 
-    /*
+    
+/*
      * @tc.number   addOrDelText_static_0008
      * @tc.name     addOrDelText_static_0008
      * @tc.desc     addOrDelText_static_0008
      * @tc.level    Level.LEVEL1
      */
-it('addOrDelText_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('addOrDelText_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('addOrDelText addOrDelText_static_0008 START');
       await CommonFunc.sleep(500);
       let del11 = await driver.findComponent(ON.id('del2'));
       await CommonFunc.sleep(500);
-      await (del11?.click() as Promise<void>);
+      del11?.click();
       await CommonFunc.sleep(500);
       let add11 = await driver.findComponent(ON.id('add2'));
       await CommonFunc.sleep(500);
-      await (add11?.click() as Promise<void>);
+      add11?.click();
       await CommonFunc.sleep(500);
       let del = await driver.findComponent(ON.id('del7'));
       await CommonFunc.sleep(500);
-      await (del?.click() as Promise<void>);
+      del?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('textArea');

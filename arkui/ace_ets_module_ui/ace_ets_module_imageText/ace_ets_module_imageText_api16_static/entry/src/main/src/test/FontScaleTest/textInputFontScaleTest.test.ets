@@ -53,10 +53,10 @@ export default function textInputFontScaleTest() {
         console.info("get textInputFontScaleTest state success " + JSON.stringify(pages));
         if (!("textInputFontScaleTest" == pages.name)) {
           console.info("get textInputFontScaleTest state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push textInputFontScaleTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textInputFontScaleTest page error: " + err);
@@ -69,13 +69,14 @@ export default function textInputFontScaleTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0001
      * @tc.name     textInputFontScaleTest_static_0001
      * @tc.desc     textInputFontScaleTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0001 START');
         await CommonFunc.sleep(1000);
@@ -89,13 +90,14 @@ it('textInputFontScaleTest_static_0001', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0002
      * @tc.name     textInputFontScaleTest_static_0002
      * @tc.desc     textInputFontScaleTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0002 START');
         await CommonFunc.sleep(1000);
@@ -109,13 +111,14 @@ it('textInputFontScaleTest_static_0002', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0003
      * @tc.name     textInputFontScaleTest_static_0003
      * @tc.desc     textInputFontScaleTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0003 START');
         await CommonFunc.sleep(1000);
@@ -129,13 +132,14 @@ it('textInputFontScaleTest_static_0003', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0004
      * @tc.name     textInputFontScaleTest_static_0004
      * @tc.desc     textInputFontScaleTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0004 START');
         await CommonFunc.sleep(1000);
@@ -149,13 +153,14 @@ it('textInputFontScaleTest_static_0004', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0005
      * @tc.name     textInputFontScaleTest_static_0005
      * @tc.desc     textInputFontScaleTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0005 START');
         await CommonFunc.sleep(1000);
@@ -170,13 +175,14 @@ it('textInputFontScaleTest_static_0005', Level.LEVEL1, async (done: () => void):
 	
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0006
      * @tc.name     textInputFontScaleTest_static_0006
      * @tc.desc     textInputFontScaleTest_static_0006
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0006', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0006 START');
         await CommonFunc.sleep(1000);
@@ -190,13 +196,14 @@ it('textInputFontScaleTest_static_0006', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0007
      * @tc.name     textInputFontScaleTest_static_0007
      * @tc.desc     textInputFontScaleTest_static_0007
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0007', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0007 START');
         await CommonFunc.sleep(1000);
@@ -210,13 +217,14 @@ it('textInputFontScaleTest_static_0007', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0008
      * @tc.name     textInputFontScaleTest_static_0008
      * @tc.desc     textInputFontScaleTest_static_0008
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0008', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0008 START');
         await CommonFunc.sleep(1000);
@@ -230,13 +238,14 @@ it('textInputFontScaleTest_static_0008', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0009
      * @tc.name     textInputFontScaleTest_static_0009
      * @tc.desc     textInputFontScaleTest_static_0009
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0009', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0009 START');
         await CommonFunc.sleep(1000);
@@ -251,13 +260,14 @@ it('textInputFontScaleTest_static_0009', Level.LEVEL1, async (done: () => void):
 	
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0010
      * @tc.name     textInputFontScaleTest_static_0010
      * @tc.desc     textInputFontScaleTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0010', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0010 START');
         await CommonFunc.sleep(1000);
@@ -271,13 +281,14 @@ it('textInputFontScaleTest_static_0010', Level.LEVEL1, async (done: () => void):
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0011
      * @tc.name     textInputFontScaleTest_static_0011
      * @tc.desc     textInputFontScaleTest_static_0011
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0011', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0011 START');
         await CommonFunc.sleep(1000);
@@ -292,13 +303,14 @@ it('textInputFontScaleTest_static_0011', Level.LEVEL1, async (done: () => void):
 	
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0012
      * @tc.name     textInputFontScaleTest_static_0012
      * @tc.desc     textInputFontScaleTest_static_0012
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0012', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0012', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0012 START');
         await CommonFunc.sleep(1000);
@@ -313,13 +325,14 @@ it('textInputFontScaleTest_static_0012', Level.LEVEL1, async (done: () => void):
 	
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputFontScaleTest_static_0013
      * @tc.name     textInputFontScaleTest_static_0013
      * @tc.desc     textInputFontScaleTest_static_0013
      * @tc.level    Level.LEVEL1
      */
-it('textInputFontScaleTest_static_0013', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textInputFontScaleTest_static_0013', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0013 START');
         await CommonFunc.sleep(1000);

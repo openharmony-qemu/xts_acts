@@ -64,16 +64,14 @@ export default function ParagraphStyle1() {
         console.info("get ParagraphStyle1 state pages:" + JSON.stringify(pages));
         if (!("ParagraphStyle1" == pages.name)) {
           console.info("get ParagraphStyle1 pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ParagraphStyle1 page error: " + err);
       }
-      
+      // done();
     });
 
     afterEach(async () => {
@@ -82,6 +80,7 @@ export default function ParagraphStyle1() {
     });
 
 
+    
     /*
      * @tc.number   ParagraphStyle_static_10001
      * @tc.name     ParagraphStyle_static_10001
@@ -94,7 +93,7 @@ export default function ParagraphStyle1() {
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('text'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_0_textAlign ' +
       AppStorage.get<undefined | TextAlign>('StyledString1_0_textAlign'));
@@ -124,8 +123,8 @@ export default function ParagraphStyle1() {
       AppStorage.get<undefined | TextAlign>('StyledString1_3_textAlign'));
       expect('' + AppStorage.get<undefined | TextAlign>('StyledString1_3_textAlign')).assertEqual('2');
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_3_maxLines ' +
-      AppStorage.get<undefined | number>('StyledString1_3_maxLines'));
-      expect('' + AppStorage.get<undefined | number>('StyledString1_3_maxLines')).assertEqual('1');
+      AppStorage.get<undefined | int>('StyledString1_3_maxLines'));
+      expect('' + AppStorage.get<undefined | int>('StyledString1_3_maxLines')).assertEqual('1');
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_3_wordBreak ' +
       AppStorage.get<undefined | WordBreak>('StyledString1_3_wordBreak'));
       expect('' + AppStorage.get<undefined | WordBreak>('StyledString1_3_wordBreak')).assertEqual('1');

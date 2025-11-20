@@ -26,14 +26,14 @@ struct ImageOrientation {
   @State rotateDegree: number = 0
   @State fit: ImageFit = ImageFit.Cover
 
-  @State orientationIdx: number = 0
-  @State fitsIdx: number = 0
+  @State orientationIdx: int = 0
+  @State fitsIdx: int = 0
   @State orientationArr: Array<ImageRotateOrientation> = [
-    ImageRotateOrientation.AUTO,
-    ImageRotateOrientation.UP,
-    ImageRotateOrientation.RIGHT,
-    ImageRotateOrientation.DOWN,
-    ImageRotateOrientation.LEFT,
+    ImageRotateOrientation.AUTO,//0
+    ImageRotateOrientation.UP,//1
+    ImageRotateOrientation.RIGHT,//2
+    ImageRotateOrientation.DOWN,//3
+    ImageRotateOrientation.LEFT,//4
   ]
   @State fitsArr: Array<ImageFit> = [
     ImageFit.Contain,
@@ -60,8 +60,8 @@ struct ImageOrientation {
         .height('50%')
         .width('50%')
         .border({ width: 1, color: Color.Red })
-        .objectFit(this.fitsArr[this.fitsIdx.toInt()])
-        .orientation(this.orientationArr[this.orientationIdx.toInt()])
+        .objectFit(this.fitsArr[this.fitsIdx])
+        .orientation(this.orientationArr[this.orientationIdx])
         .padding({ left: 10, right: 10, top: 20, bottom: 20 } as Padding)
         .rotate({ angle: this.rotateDegree })
         .objectRepeat(ImageRepeat.XY)

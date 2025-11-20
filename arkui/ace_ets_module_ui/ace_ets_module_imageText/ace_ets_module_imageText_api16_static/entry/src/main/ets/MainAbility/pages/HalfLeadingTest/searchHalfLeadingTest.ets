@@ -34,7 +34,7 @@ struct searchHalfLeadingTest {
           .id('search3')
           .height('10%')
         Search({ value: this.text} as SearchOptions)
-          
+          // .halfLeading(null)
           .id('search4')
           .height('10%')
       }

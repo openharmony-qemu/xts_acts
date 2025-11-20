@@ -56,16 +56,14 @@ export default function ImageAttachment() {
         console.info("get ImageAttachment state pages:" + JSON.stringify(pages));
         if (!("ImageAttachment" == pages.name)) {
           console.info("get ImageAttachment pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ImageAttachment page error: " + err);
       }
-      
+      // done();
     });
 
     afterEach(async () => {
@@ -74,6 +72,7 @@ export default function ImageAttachment() {
     });
 
 
+    
     /*
      * @tc.number   ImageAttachment_static_0001
      * @tc.name     ImageAttachment_static_0001
@@ -86,11 +85,11 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('setImage1'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(500);
       let get = await driver.findComponent(ON.id('getImage'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      get!.click();
       await CommonFunc.sleep(500);
       console.info('StyledString ImageAttachment_static_0001_static marginTop ' + AppStorage.get<number>('marginTop'));
       expect('' + AppStorage.get<number>('marginTop')).assertEqual('10');
@@ -128,6 +127,7 @@ export default function ImageAttachment() {
     });
 
 
+    
     /*
      * @tc.number   ImageAttachment_static_0002
      * @tc.name     ImageAttachment_static_0002
@@ -140,11 +140,11 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('setImage2'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(500);
       let get = await driver.findComponent(ON.id('getImage'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ImageAttachment_static_0002_static marginTop ' + AppStorage.get<number>('marginTop'));
       expect('' + AppStorage.get<number>('marginTop')).assertEqual('0');
@@ -182,6 +182,7 @@ export default function ImageAttachment() {
     });
 
 
+    
     /*
      * @tc.number   ImageAttachment_static_0003
      * @tc.name     ImageAttachment_static_0003
@@ -194,11 +195,11 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('setImage3'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(500);
       let get = await driver.findComponent(ON.id('getImage'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ImageAttachment_static_0003_static marginTop ' + AppStorage.get<number>('marginTop'));
       expect('' + AppStorage.get<number>('marginTop')).assertEqual('0');
@@ -236,6 +237,7 @@ export default function ImageAttachment() {
     });
 
 
+    
     /*
      * @tc.number   ImageAttachment_static_0004
      * @tc.name     ImageAttachment_static_0004
@@ -248,11 +250,11 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('setImage4'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(500);
       let get = await driver.findComponent(ON.id('getImage'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ImageAttachment_static_0004_static marginTop ' + AppStorage.get<number>('marginTop'));
       expect('' + AppStorage.get<number>('marginTop')).assertEqual('10');
@@ -290,6 +292,7 @@ export default function ImageAttachment() {
     });
 
 
+    
     /*
      * @tc.number   ImageAttachment_static_0005
      * @tc.name     ImageAttachment_static_0005
@@ -302,11 +305,11 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('setImage5'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(500);
       let get = await driver.findComponent(ON.id('getImage'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ImageAttachment_static_0005_static marginTop ' + AppStorage.get<number>('marginTop'));
       expect('' + AppStorage.get<number>('marginTop')).assertEqual('0');
@@ -344,6 +347,7 @@ export default function ImageAttachment() {
     });
 
 
+    
     /*
      * @tc.number   ImageAttachment_static_0006
      * @tc.name     ImageAttachment_static_0006
@@ -356,11 +360,11 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('setImage6'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(500);
       let get = await driver.findComponent(ON.id('getImage'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ImageAttachment_static_0006_static marginTop ' + AppStorage.get<number>('marginTop'));
       expect('' + AppStorage.get<number>('marginTop')).assertEqual('undefined');

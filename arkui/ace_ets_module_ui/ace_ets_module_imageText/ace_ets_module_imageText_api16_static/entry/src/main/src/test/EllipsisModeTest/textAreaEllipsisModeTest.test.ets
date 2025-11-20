@@ -54,10 +54,10 @@ export default function textAreaEllipsisModeTest() {
         console.info("get textAreaEllipsisModeTest state success " + JSON.stringify(pages));
         if (!("textAreaEllipsisModeTest" == pages.name)) {
           console.info("get textAreaEllipsisModeTest state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push textAreaEllipsisModeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textAreaEllipsisModeTest page error: " + err);
@@ -70,13 +70,14 @@ export default function textAreaEllipsisModeTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   textAreaEllipsisModeTest_static_0001
      * @tc.name     textAreaEllipsisModeTest_static_0001
      * @tc.desc     textAreaEllipsisModeTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('textAreaEllipsisModeTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaEllipsisModeTest_static_0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0001 START');
         await CommonFunc.sleep(1000);
@@ -88,13 +89,14 @@ it('textAreaEllipsisModeTest_static_0001', Level.LEVEL1, async (done: () => void
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textAreaEllipsisModeTest_static_0002
      * @tc.name     textAreaEllipsisModeTest_static_0002
      * @tc.desc     textAreaEllipsisModeTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('textAreaEllipsisModeTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaEllipsisModeTest_static_0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0002 START');
         await CommonFunc.sleep(1000);
@@ -106,13 +108,14 @@ it('textAreaEllipsisModeTest_static_0002', Level.LEVEL1, async (done: () => void
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textAreaEllipsisModeTest_static_0003
      * @tc.name     textAreaEllipsisModeTest_static_0003
      * @tc.desc     textAreaEllipsisModeTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('textAreaEllipsisModeTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaEllipsisModeTest_static_0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0003 START');
         await CommonFunc.sleep(1000);
@@ -124,13 +127,14 @@ it('textAreaEllipsisModeTest_static_0003', Level.LEVEL1, async (done: () => void
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textAreaEllipsisModeTest_static_0004
      * @tc.name     textAreaEllipsisModeTest_static_0004
      * @tc.desc     textAreaEllipsisModeTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('textAreaEllipsisModeTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaEllipsisModeTest_static_0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0004 START');
         await CommonFunc.sleep(1000);
@@ -142,13 +146,14 @@ it('textAreaEllipsisModeTest_static_0004', Level.LEVEL1, async (done: () => void
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textAreaEllipsisModeTest_static_0005
      * @tc.name     textAreaEllipsisModeTest_static_0005
      * @tc.desc     textAreaEllipsisModeTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-it('textAreaEllipsisModeTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaEllipsisModeTest_static_0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0005 START');
         await CommonFunc.sleep(1000);

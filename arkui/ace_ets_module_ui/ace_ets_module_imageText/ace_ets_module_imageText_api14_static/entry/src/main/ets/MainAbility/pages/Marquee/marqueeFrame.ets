@@ -36,7 +36,7 @@ struct Frame {
         .backgroundColor('#FFFFCC')
       Marquee({
         start: this.start,
-        loop: Number.POSITIVE_INFINITY as int,
+        loop: Number.parseInt(Number.POSITIVE_INFINITY.toString()).toInt(),
         src: 'ABCDEFGHIJKLMNabcdefghijklmn',
       })
         .key('maquee_frame')
@@ -52,7 +52,7 @@ struct Frame {
           if (currentUIContext) {
             let dynamicMarquee = currentUIContext.requireDynamicSyncScene('dynamicMarquee');
             if (dynamicMarquee) {
-              
+              // this.scenes = dynamicMarquee as DynamicSyncScene[];
               if (this.scenes) {
                 this.requireFlag = 'MarqueerequireDynamicSyncScene succ';
               }

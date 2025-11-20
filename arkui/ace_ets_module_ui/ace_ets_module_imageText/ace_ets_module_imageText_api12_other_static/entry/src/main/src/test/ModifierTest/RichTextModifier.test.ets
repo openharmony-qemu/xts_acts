@@ -55,20 +55,19 @@ export default function RichTextModifierTest() {
         console.info("get RichTextModifierTest state pages:" + JSON.stringify(pages));
         if (!("RichTextModifier" == pages.name)) {
           console.info("get RichTextModifierTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichTextModifierTest page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
      * @tc.number   RichTextModifierTest_static_0010
      * @tc.name     RichTextModifierTest_static_0010
@@ -78,7 +77,7 @@ export default function RichTextModifierTest() {
     it('RichTextModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichTextModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('RichTextModifier_get_getString("width")');
+      let strJson = inspector.getInspectorByKey('RichTextModifier_get_width');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[RichTextModifierTest_static_0010] RichTextModifier width:" +
       JSON.stringify(obj.getElement("$attrs").getString("width")));
@@ -88,6 +87,7 @@ export default function RichTextModifierTest() {
     });
 
 
+    
     /*
      * @tc.number   RichTextModifierTest_static_0020
      * @tc.name     RichTextModifierTest_static_0020

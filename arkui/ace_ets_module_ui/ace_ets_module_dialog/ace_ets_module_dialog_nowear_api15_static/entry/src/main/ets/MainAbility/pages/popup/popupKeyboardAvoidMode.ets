@@ -12,29 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  $r,
-  Builder,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomPopupOptions,
-  Entry,
-  FlexAlign,
-  Image,
-  KeyboardAvoidMode,
-  Margin,
-  Placement,
-  PopupOptions,
-  PopupStateChangeParam,
-  Row,
-  RowOptions,
-  Text,
-  TextInput
-} from '@ohos.arkui.component'
+import { Entry, Component, Builder, Row, Column, Button, Text, TextInput, $r, Image, ColumnOptions, RowOptions, KeyboardAvoidMode, ClickEvent, FlexAlign, Margin, PopupStateChangeParam,
+  Placement, Color, CustomPopupOptions, PopupOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -83,6 +62,7 @@ struct popupKeyboardAvoidMode {
           })
           .bindPopup(this.handlePopup, {
             message: 'This is a popup with PopupOptions',
+            // placementOnTop: true,
             showInSubWindow: false,
             keyboardAvoidMode: this.keyboardAvoidMode,
             autoCancel: false,
@@ -101,7 +81,7 @@ struct popupKeyboardAvoidMode {
                 console.info('cancel Button click')
               }
             },
-            onStateChange: (e: PopupStateChangeParam): void => {
+            onStateChange: (e: PopupStateChangeParam):void => {
               console.info(JSON.stringify(e.isVisible))
               if (!e.isVisible) {
                 this.handlePopup = false
@@ -123,7 +103,7 @@ struct popupKeyboardAvoidMode {
             keyboardAvoidMode: this.keyboardAvoidMode,
             enableArrow: true,
             showInSubWindow: false,
-            onStateChange: (e: PopupStateChangeParam): void => {
+            onStateChange: (e: PopupStateChangeParam):void => {
               if (!e.isVisible) {
                 this.customPopup = false
               }

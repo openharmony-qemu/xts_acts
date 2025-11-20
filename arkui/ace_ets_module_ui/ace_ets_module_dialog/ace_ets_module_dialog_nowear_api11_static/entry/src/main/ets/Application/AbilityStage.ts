@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import AbilityStage from '@ohos.app.ability.AbilityStage';
-import common from '@ohos.app.ability.common';
+import AbilityStage from "@ohos.app.ability.AbilityStage";
+import common from "@ohos.app.ability.common";
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default class MyAbilityStage extends AbilityStage {

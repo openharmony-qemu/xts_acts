@@ -50,13 +50,13 @@ export default function TextAreaStopBackPressTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextAreaStopBackPressTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextAreaStopBackPress" == pages.name)) {
           console.info("get TextAreaStopBackPressTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push TextAreaStopBackPressTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextAreaStopBackPressTest page error:" + err);
@@ -65,13 +65,14 @@ export default function TextAreaStopBackPressTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextAreaStopBackPressTest_static_0010
      * @tc.name     TextAreaStopBackPressTest_static_0010
      * @tc.desc     TextAreaStopBackPressTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('TextAreaStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaStopBackPressTest_0010] START');
       let strJson = inspector.getInspectorByKey('TextArea_stopBackPress_true');
       let obj = JSON.parseJsonElement(strJson);
@@ -82,13 +83,14 @@ it('TextAreaStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => voi
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextAreaStopBackPressTest_static_0020
      * @tc.name     TextAreaStopBackPressTest_static_0020
      * @tc.desc     TextAreaStopBackPressTest_static_0020
      * @tc.level    Level.LEVEL2
      */
-it('TextAreaStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaStopBackPressTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('TextArea_stopBackPress_false');
       let obj = JSON.parseJsonElement(strJson);
@@ -99,13 +101,14 @@ it('TextAreaStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => voi
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextAreaStopBackPressTest_static_0030
      * @tc.name     TextAreaStopBackPressTest_static_0030
      * @tc.desc     TextAreaStopBackPressTest_static_0030
      * @tc.level    Level.LEVEL2
      */
-it('TextAreaStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaStopBackPressTest_static_0030] START');
       let strJson = inspector.getInspectorByKey('TextArea_stopBackPress_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -116,13 +119,14 @@ it('TextAreaStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => voi
     });
 
     
-    /*
+    
+/*
      * @tc.number   TextAreaStopBackPressTest_static_0040
      * @tc.name     TextAreaStopBackPressTest_static_0040
      * @tc.desc     TextAreaStopBackPressTest_static_0040
      * @tc.level    Level.LEVEL2
      */
-it('TextAreaStopBackPressTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaStopBackPressTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaStopBackPressTest_static_0040] START');
       let strJson = inspector.getInspectorByKey('TextArea_stopBackPress_undefined');
       let obj = JSON.parseJsonElement(strJson);

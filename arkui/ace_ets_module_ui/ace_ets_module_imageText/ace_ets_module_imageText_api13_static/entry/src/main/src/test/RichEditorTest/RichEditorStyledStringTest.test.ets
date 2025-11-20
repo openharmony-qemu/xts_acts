@@ -47,16 +47,16 @@ export default function RichEditorStyledStringTest() {
         url: 'MainAbility/pages/RichEditor/RichEditorStyledStringTest',
       }
       try {
-        const router = AppStorage.get<Router>("router") as Router
-        router.clear();
-        let pages = router.getState();
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages = routerInstance.getState();
         console.info("get RichEditorStyledStringTest state pages:" + JSON.stringify(pages));
         if (!("RichEditorStyledStringTest" == pages.name)) {
           console.info("get RichEditorStyledStringTest pages.name:" + JSON.stringify(pages.name));
-          
-          router.pushUrl(options);
+          // let result = await router.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push RichEditorStyledStringTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditorStyledStringTest page error:" + err);
@@ -70,18 +70,19 @@ export default function RichEditorStyledStringTest() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   RichEditorStyledStringTest_static_0100
      * @tc.name     RichEditorStyledStringTest_static_0100
      * @tc.desc     RichEditorStyledStringTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorStyledStringTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RichEditorStyledStringTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorStyledStringTest_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('searchStyle'));
-      await (button1?.click() as Promise<void>);
+      button1?.click()
       await CommonFunc.sleep(1000);
 
       let text1 =inspector.getInspectorByKey('gestureId');
@@ -111,6 +112,7 @@ it('RichEditorStyledStringTest_static_0100', Level.LEVEL2, async (done: () => vo
 
       let text6 =inspector.getInspectorByKey('urlId');
       let Obj6 = JSON.parseJsonElement(text6);
+      console.info('RichEditorStyledStringTest_0100 END:' + Obj6.getElement('$attrs').getString('content'));
       expect(Obj6.getElement('$attrs').getString('content')).assertEqual('7');
       await CommonFunc.sleep(500);
       console.info('RichEditorStyledStringTest_0100 END');

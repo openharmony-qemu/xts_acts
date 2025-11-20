@@ -62,16 +62,14 @@ export default function ParagraphStyle3() {
         console.info("get ParagraphStyle3 state pages:" + JSON.stringify(pages));
         if (!("ParagraphStyle3" == pages.name)) {
           console.info("get ParagraphStyle3 pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ParagraphStyle3 page error: " + err);
       }
-      
+      // done();
     });
 
     afterEach(async () => {
@@ -80,6 +78,7 @@ export default function ParagraphStyle3() {
     });
 
 
+    
     /*
      * @tc.number   ParagraphStyle_static_30001
      * @tc.name     ParagraphStyle_static_30001
@@ -92,7 +91,7 @@ export default function ParagraphStyle3() {
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('text'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ParagraphStyle10001 StyledString5_textAlign ' +
       AppStorage.get<undefined | TextAlign>('StyledString5_textAlign'));
@@ -101,8 +100,8 @@ export default function ParagraphStyle3() {
       AppStorage.get<undefined | number>('StyledString5_textIndent'));
       expect('' + AppStorage.get<undefined | number>('StyledString5_textIndent')).assertEqual('undefined');
       console.info('StyledString ParagraphStyle10001 StyledString5_maxLines ' +
-      AppStorage.get<undefined | number>('StyledString5_maxLines'));
-      expect('' + AppStorage.get<undefined | number>('StyledString5_maxLines')).assertEqual('-5');
+      AppStorage.get<undefined | int>('StyledString5_maxLines'));
+      expect('' + AppStorage.get<undefined | int>('StyledString5_maxLines')).assertEqual('-5');
       console.info('StyledString ParagraphStyle10001 StyledString5_wordBreak ' +
       AppStorage.get<undefined | WordBreak>('StyledString5_wordBreak'));
       expect('' + AppStorage.get<undefined | WordBreak>('StyledString5_wordBreak')).assertEqual('2');

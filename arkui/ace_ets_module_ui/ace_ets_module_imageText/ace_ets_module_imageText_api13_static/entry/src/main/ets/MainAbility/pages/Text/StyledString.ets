@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,State} from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { ResourceColor, Entry, Component,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
+import { ResourceColor, Entry, Component,RichEditorController,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
   Search,Text,TextStyle,MutableStyledString,TextController,TextController,UrlStyle,TextController,StyledStringKey,Color,TextOptions,ColumnOptions,CopyOptions,
   FontStyle,Margin,StyleOptions
 } from '@ohos.arkui.component';
@@ -31,15 +31,15 @@ import { ResourceColor, Entry, Component,RichEditorOptions,Column,RichEditor,Fle
 @Entry
 @Component
 struct styled_string_StyleString {
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    fontStyleAttr1: TextStyle ={ fontColor: Color.Blue };
+    mutableStyledString2: MutableStyledString = new MutableStyledString("test hello world",[
+        {
+            start: 0,
+            length: 5,
+            styledKey: StyledStringKey.URL,
+            styledValue: new UrlStyle('xxx.cn')
+        }
+        ]);
     @State fontColor1: ResourceColor = Color.Red;
     controller: TextController = new TextController();
     options: TextOptions = { controller: this.controller } as TextOptions;
@@ -47,13 +47,13 @@ struct styled_string_StyleString {
     @State styledKey1: StyledStringKey = StyledStringKey.DECORATION
 
    onPageShow() {
-        
+        this.controller2.setStyledString(this.mutableStyledString2)
     }
 
     build() {
         Column() {
             Column({ space: 10 } as ColumnOptions) {
-                
+                // 显示配了字体各种样式的属性字符串，Text组件亦配置冲突部分生效属性字符串配置，未冲突区间生效Text组件属性设置值
                 Text(this.styledKey1 + '').fontSize(12).id('urlId')
 
                 Text(undefined, this.options)
@@ -67,8 +67,8 @@ struct styled_string_StyleString {
 
                 Button('查询文本样式').id('searchStyle')
                     .onClick((e:ClickEvent) => {
-                        
-                        
+                        let styles = this.mutableStyledString2.getStyles(0, this.mutableStyledString2.length)!
+                        this.styledKey1 = styles[0].styledKey
                     })
                     .margin({ top: 10 } as Margin)
             }.width('100%')

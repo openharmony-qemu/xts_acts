@@ -52,10 +52,10 @@ export default function searchHalfLeadingTest() {
         console.info("get searchHalfLeadingTest state success " + JSON.stringify(pages));
         if (!("searchHalfLeadingTest" == pages.name)) {
           console.info("get searchHalfLeadingTest state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push searchHalfLeadingTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push searchHalfLeadingTest page error: " + err);
@@ -68,74 +68,78 @@ export default function searchHalfLeadingTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   searchHalfLeadingTest_static_0001
      * @tc.name     searchHalfLeadingTest_static_0001
      * @tc.desc     searchHalfLeadingTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('searchHalfLeadingTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchHalfLeadingTest_static_0001', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0001 START');
         await CommonFunc.sleep(1000);
         let search1 = inspector.getInspectorByKey('search1');
         let obj = JSON.parseJsonElement(search1);
-        console.log('searchHalfLeadingTest0001---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(true);
+        console.log('searchHalfLeadingTest0001---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+        expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(true);
         console.info("[searchHalfLeadingTest0001] end");
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   searchHalfLeadingTest_static_0002
      * @tc.name     searchHalfLeadingTest_static_0002
      * @tc.desc     searchHalfLeadingTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('searchHalfLeadingTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchHalfLeadingTest_static_0002', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0002 START');
         await CommonFunc.sleep(1000);
         let search2 = inspector.getInspectorByKey('search2');
         let obj = JSON.parseJsonElement(search2);
-        console.log('searchHalfLeadingTest0002---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(false);
+        console.log('searchHalfLeadingTest0002---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+        expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(false);
         console.info("[searchHalfLeadingTest0002] end");
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   searchHalfLeadingTest_static_0003
      * @tc.name     searchHalfLeadingTest_static_0003
      * @tc.desc     searchHalfLeadingTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('searchHalfLeadingTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchHalfLeadingTest_static_0003', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0003 START');
         await CommonFunc.sleep(1000);
         let search3 = inspector.getInspectorByKey('search3');
         let obj = JSON.parseJsonElement(search3);
-        console.log('searchHalfLeadingTest0003---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(false);
+        console.log('searchHalfLeadingTest0003---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+        expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(false);
         console.info("[searchHalfLeadingTest0003] end");
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   searchHalfLeadingTest_static_0004
      * @tc.name     searchHalfLeadingTest_static_0004
      * @tc.desc     searchHalfLeadingTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('searchHalfLeadingTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchHalfLeadingTest_static_0004', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0004 START');
         await CommonFunc.sleep(1000);
         let search4 = inspector.getInspectorByKey('search4');
         let obj = JSON.parseJsonElement(search4);
-        console.log('searchHalfLeadingTest0004---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(false);
+        console.log('searchHalfLeadingTest0004---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+        expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(false);
         console.info("[searchHalfLeadingTest0004] end");
     });
 	

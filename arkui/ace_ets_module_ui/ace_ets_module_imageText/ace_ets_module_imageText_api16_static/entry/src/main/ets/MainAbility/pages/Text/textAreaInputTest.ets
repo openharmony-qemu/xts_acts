@@ -13,52 +13,43 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  $r,
   Column,
-  Row,
-  Text,
+  ColumnOptions,
   Component,
+  CopyOptions,
+  DragEvent,
+  DragItemInfo,
+  Entry,
+  Margin,
+  Row,
   Search,
   SymbolGlyph,
-  Margin,
-  $r,
-  ColumnOptions,
-  CopyOptions,
-  TextArea,
-  DragEvent,
-  DragItemInfo
+  Text,
+  TextArea
 } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct TextAreaInputTestExample {
   @State text: string = '';
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
   build() {
     Column({ space: 20 } as ColumnOptions) {
-      Column(){
+      Column() {
         Text('这是一段测试文本这是一段测试文本')
           .id('textArea1')
           .draggable(true)
           .width('90%')
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-          .onDragStart((event: DragEvent, extraParams?: string):(() => void) => {
+          .onDragStart((event: DragEvent, extraParams?: string) => {
             this.text = 'Text--onDragStart'
+            return {} as DragItemInfo
           })
-          .onDragEnd((event: DragEvent, extraParams?: string):void =>{
+          .onDragEnd((event: DragEvent, extraParams?: string): void => {
             this.text = 'Text--onDragEnd'
           })
 

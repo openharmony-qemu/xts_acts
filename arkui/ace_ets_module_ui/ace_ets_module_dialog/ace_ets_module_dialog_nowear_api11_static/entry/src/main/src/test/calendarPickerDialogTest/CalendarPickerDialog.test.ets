@@ -12,32 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index'
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import deviceInfo from '@ohos.deviceInfo'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import { UtilsTest } from '../Util.test';
-
+// import { vp2px } from '@ohos.arkui.component'
 
 
 export default function CalendarPickerDialog() {
@@ -49,7 +40,7 @@ export default function CalendarPickerDialog() {
       await UtilsTest.msSleep(4000)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("CalendarPickerDialog beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/calendarPickerDialog/CalendarPickerDialog',
@@ -70,8 +61,9 @@ export default function CalendarPickerDialog() {
       }
     });
 
-
-    /*
+    
+    
+/*
      * @tc.number   CalendarPickerDialog_static_0100
      * @tc.name     CalendarPickerDialog_static_0100
      * @tc.desc     CalendarPickerDialog_static_0100
@@ -82,7 +74,7 @@ export default function CalendarPickerDialog() {
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('CalendarPickerDialog'));
-      button!.click();
+      button?.click();
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
@@ -90,11 +82,10 @@ export default function CalendarPickerDialog() {
       windowClass = await window.getLastWindow(abilityContext);
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[CalendarPickerDialog_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
+      expect(properties.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,
-        Math.round(AppStorage.get<number>("winTop") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int);
+      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int);
       await CommonFunc.sleep(1000);
       console.info('[CalendarPickerDialog_static_0100] END');
       done();

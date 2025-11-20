@@ -29,7 +29,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest } from '../Utils.test';
-let domain: Int = 0x0000;
+// let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
@@ -48,20 +48,18 @@ export default function RichEditorMenuType() {
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi2 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi2",
+        url: "MainAbility/pages/RichEditor/RichEditorMenuType",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get richEditorApi2 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/RichEditor/RichEditorMenuType" == pages.name)) {
           console.info("get richEditorApi2 pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push richEditorApi2 page error:" + err);
@@ -69,14 +67,19 @@ export default function RichEditorMenuType() {
       console.info("richEditorApi2 beforeEach end");
     });
 
+    afterAll(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+    })
 
-    /*
+    
+/*
      * @tc.number   RichEditorMenuType_static_0100
      * @tc.name     RichEditorMenuType_static_0100
      * @tc.desc     RichEditorMenuType_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorMenuType_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RichEditorMenuType_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorMenuType_0100 START');
       await CommonFunc.sleep(1000);
       let strJson =inspector.getInspectorByKey('richEditorMenuType1');
@@ -88,13 +91,14 @@ it('RichEditorMenuType_static_0100', Level.LEVEL2, async (done: () => void): Pro
     });
 
 
-    /*
+    
+/*
      * @tc.number   RichEditorMenuType_static_0200
      * @tc.name     RichEditorMenuType_static_0200
      * @tc.desc     RichEditorMenuType_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorMenuType_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RichEditorMenuType_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorMenuType_0200 START');
       await CommonFunc.sleep(1000);
       let strJson =inspector.getInspectorByKey('richEditorMenuType2');

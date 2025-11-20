@@ -55,20 +55,19 @@ export default function SymbolSpanModifierTest() {
         console.info("get SymbolSpanModifierTest state pages:" + JSON.stringify(pages));
         if (!("SymbolSpanModifier" == pages.name)) {
           console.info("get SymbolSpanModifierTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SymbolSpanModifierTest page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
      * @tc.number   SymbolSpanModifierTest_static_0010
      * @tc.name     SymbolSpanModifierTest_static_0010
@@ -78,7 +77,9 @@ export default function SymbolSpanModifierTest() {
     it('SymbolSpanModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SymbolSpanModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
+      console.info('SymbolSpanModifierTest_static_0010 SymbolSpanModifier_get_fontSize');
       let strJson = inspector.getInspectorByKey('SymbolSpanModifier_get_fontSize');
+      console.info('SymbolSpanModifierTest_static_0010 getInspectorByKey');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolSpanModifierTest_static_0010] SymbolSpanModifier fontSize:" +
       JSON.stringify(obj.getElement("$attrs").getString('fontSize')));
@@ -88,6 +89,7 @@ export default function SymbolSpanModifierTest() {
     });
 
 
+    
     /*
      * @tc.number   SymbolSpanModifierTest_static_0020
      * @tc.name     SymbolSpanModifierTest_static_0020
@@ -97,7 +99,9 @@ export default function SymbolSpanModifierTest() {
     it('SymbolSpanModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SymbolSpanModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
+      console.info('SymbolSpanModifierTest_static_0010 SymbolSpanModifier_get_type');
       let strJson = inspector.getInspectorByKey('SymbolSpanModifier_get_type');
+      console.info('SymbolSpanModifierTest_static_0010 getInspectorByKey');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SymbolSpanModifierTest_static_0020] SymbolSpanInstance type is: " +
       JSON.stringify(obj.getElement("$attrs").getString("text")));

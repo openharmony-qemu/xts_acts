@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -68,12 +68,13 @@ struct onChild {
       .listDirection(Axis.Vertical)
       .scrollBar(BarState.Off)
       .edgeEffect(EdgeEffect.Spring)
-      .onScrollIndex((start: int, end: int): void => {
+      .onScrollIndex((start: Int, end: Int): void => {
         console.info('first' + start)
         console.info('last' + end)
       })
-
-
+      .onDidScroll((scrollOffset: number, scrollState: ScrollState): void => {
+        console.info(`onScroll scrollState = ScrollState` + scrollState + `, scrollOffset = ` + scrollOffset)
+      })
       .width('100%')
       .height('65%')
 
@@ -86,7 +87,7 @@ struct onChild {
         .margin({ top: 80 } as Margin)
         .onClick((e: ClickEvent) => {
           this.text = 'click the button'
-
+          this.getUIContext().getPromptAction().showToast({ message: 'you click the button.', duration: 3000 })
         })
     }
     .width('100%')
@@ -96,8 +97,11 @@ struct onChild {
     .padding({ left: 12, right: 12, bottom: 24 } as Padding)
     .onChildTouchTest((touchinfo: Array<TouchTestInfo>): TouchResult => {
       this.text = 'onChildTouch'
-
-
+      for (let info of touchinfo) {
+        if (info.id == 'MyList') {
+          return { id: info.id, strategy: TouchTestStrategy.FORWARD_COMPETITION }
+        }
+      }
       return { strategy: TouchTestStrategy.DEFAULT }
     })
   }

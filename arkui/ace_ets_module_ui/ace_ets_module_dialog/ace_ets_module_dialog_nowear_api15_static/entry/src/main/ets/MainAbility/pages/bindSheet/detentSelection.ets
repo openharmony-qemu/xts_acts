@@ -12,18 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Builder,
-  Button,
-  ClickEvent,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  FlexAlign,
-  SheetSize,
-  Text
-} from '@ohos.arkui.component'
+import { Entry, Component, Builder, Column, Button, Text, ColumnOptions, SheetSize, ClickEvent, FlexAlign, SheetType } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -65,6 +54,21 @@ struct detentSelection {
         .id('bindSheet')
         .onClick((e: ClickEvent) => {
           this.isShow = true
+        })
+        .bindSheet(this.isShow, this.myBuilder, {
+          // detents: [SheetSize.MEDIUM, SheetSize.FIT_CONTENT, SheetSize.LARGE],
+          preferType: SheetType.BOTTOM,
+          detentSelection: this.detentSelection,
+          onAppear: () => {
+            console.log('BindSheet onAppear.')
+          },
+          onDisappear: () => {
+            console.log('BindSheet onDisappear.')
+          },
+          onDetentsDidChange: (value: Int) => {
+            this.value = value
+            console.log('BindSheet onDetentsDidChange.' + value)
+          }
         })
     }
     .justifyContent(FlexAlign.Center)

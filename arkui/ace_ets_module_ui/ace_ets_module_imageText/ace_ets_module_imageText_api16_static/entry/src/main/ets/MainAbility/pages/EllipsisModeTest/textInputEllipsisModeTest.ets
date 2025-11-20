@@ -51,7 +51,7 @@ struct textInputEllipsisModeTest {
           .height('10%')
         TextInput({ text: this.text} as TextInputOptions)
           .textOverflow(TextOverflow.Ellipsis)
-          
+          // .ellipsisMode(null)
           .style(TextInputStyle.Inline)
           .id('input5')
           .height('10%')

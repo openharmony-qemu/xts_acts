@@ -32,6 +32,10 @@ import StyledString from './styledString/StyledString.test';
 import StyledStringURL from './styledString/StyledStringURL.test';
 import KeyboardAvoidMode from './UIContext/KeyboardAvoidMode.test'
 export default function testsuite() {
+  textAreaNode();
+  RichEditorOnHoverTest();
+  getRectsForRangeTest();
+
   imageSpanJsunit();
   MarqueeDynamicSyncSceneTest();
   SetFrameRateRangeTest();
@@ -39,9 +43,7 @@ export default function testsuite() {
   SymbolGlyphNodeTest();
   textAreaInputTest();
   textCaretColor();
-  textAreaNode();
-  RichEditorOnHoverTest();
-  getRectsForRangeTest();
+
   RichEditorOnWillChangeTest();
   RichEditorOnDoubleClickTest();
 

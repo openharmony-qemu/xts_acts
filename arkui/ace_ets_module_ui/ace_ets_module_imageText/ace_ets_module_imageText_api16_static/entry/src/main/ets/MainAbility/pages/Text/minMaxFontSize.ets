@@ -68,16 +68,6 @@ struct minMaxFontSizeDemo {
     this.controller1.setStyledString(this.mutableStyledString2)
   }
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
   build() {
     Column({space:20} as ColumnOptions) {
       Column() {

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -42,14 +42,12 @@ import {
 @Component
 struct assemblyCallback {
   @State message: string = 'Blank';
-  uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
-  
-  listener11: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('11') as inspector.ComponentObserver
-  listener12: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('12') as inspector.ComponentObserver
-  listener13: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('13') as inspector.ComponentObserver
-  listener14: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('14') as inspector.ComponentObserver
-  listener15: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('15') as inspector.ComponentObserver
-  listener16: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('16') as inspector.ComponentObserver
+  // listener11: inspector.ComponentObserver = inspector.createComponentObserver('11')
+  // listener12: inspector.ComponentObserver = inspector.createComponentObserver('12')
+  // listener13: inspector.ComponentObserver = inspector.createComponentObserver('13')
+  // listener14: inspector.ComponentObserver = inspector.createComponentObserver('14')
+  // listener15: inspector.ComponentObserver = inspector.createComponentObserver('15')
+  // listener16: inspector.ComponentObserver = inspector.createComponentObserver('16')
   private scroller: Scroller = new Scroller();
 
   build() {
@@ -125,29 +123,29 @@ struct assemblyCallback {
     let draw16: () => void = () => {
       console.log("skScrollBar, draw")
     }
-    let Func11layout = layout11
-    let Func11draw = draw11
-    this.listener11.onLayout(Func11layout)
-    this.listener11.onDraw(Func11draw)
-    let Func12layout = layout12
-    let Func12draw = draw12
-    this.listener12.onLayout(Func12layout)
-    this.listener12.onDraw(Func12draw)
-    let Func13layout = layout13
-    let Func13draw = draw13
-    this.listener13.onLayout(Func13layout)
-    this.listener13.onDraw(Func13draw)
-    let Func14layout = layout14
-    let Func14draw = draw14
-    this.listener14.onLayout(Func14layout)
-    this.listener14.onDraw(Func14draw)
-    let Func15layout = layout15
-    let Func15draw = draw15
-    this.listener15.onLayout(Func15layout)
-    this.listener15.onDraw(Func15draw)
-    let Func16layout = layout16
-    let Func16draw = draw16
-    this.listener16.onLayout(Func16layout)
-    this.listener16.onDraw(Func16draw)
+    // let Func11layout = layout11 // bind current js instance
+    // let Func11draw = draw11 // bind current js instance
+    // this.listener11.on('layout', Func11layout)
+    // this.listener11.on('draw', Func11draw)
+    // let Func12layout = layout12 // bind current js instance
+    // let Func12draw = draw12 // bind current js instance
+    // this.listener12.on('layout', Func12layout)
+    // this.listener12.on('draw', Func12draw)
+    // let Func13layout = layout13 // bind current js instance
+    // let Func13draw = draw13 // bind current js instance
+    // this.listener13.on('layout', Func13layout)
+    // this.listener13.on('draw', Func13draw)
+    // let Func14layout = layout14 // bind current js instance
+    // let Func14draw = draw14 // bind current js instance
+    // this.listener14.on('layout', Func14layout)
+    // this.listener14.on('draw', Func14draw)
+    // let Func15layout = layout15 // bind current js instance
+    // let Func15draw = draw15 // bind current js instance
+    // this.listener15.on('layout', Func15layout)
+    // this.listener15.on('draw', Func15draw)
+    // let Func16layout = layout16 // bind current js instance
+    // let Func16draw = draw16 // bind current js instance
+    // this.listener16.on('layout', Func16layout)
+    // this.listener16.on('draw', Func16draw)
   }
 }

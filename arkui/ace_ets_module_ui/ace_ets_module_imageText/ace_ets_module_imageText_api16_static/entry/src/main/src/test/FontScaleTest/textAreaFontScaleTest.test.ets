@@ -53,10 +53,10 @@ export default function textAreaFontScaleTest() {
         console.info("get textAreaFontScaleTest state success " + JSON.stringify(pages));
         if (!("textAreaFontScaleTest" == pages.name)) {
           console.info("get textAreaFontScaleTest state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push textAreaFontScaleTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textAreaFontScaleTest page error: " + err);
@@ -69,13 +69,14 @@ export default function textAreaFontScaleTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0001
      * @tc.name     textAreaFontScaleTest_static_0001
      * @tc.desc     textAreaFontScaleTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0001 START');
         await CommonFunc.sleep(1000);
@@ -87,15 +88,16 @@ it('textAreaFontScaleTest_static_0001', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.850000");
         console.info("[textAreaFontScaleTest0001] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0002
      * @tc.name     textAreaFontScaleTest_static_0002
      * @tc.desc     textAreaFontScaleTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0002 START');
         await CommonFunc.sleep(1000);
@@ -107,15 +109,16 @@ it('textAreaFontScaleTest_static_0002', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.500000");
         console.info("[textAreaFontScaleTest0002] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0003
      * @tc.name     textAreaFontScaleTest_static_0003
      * @tc.desc     textAreaFontScaleTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0003 START');
         await CommonFunc.sleep(1000);
@@ -127,15 +130,16 @@ it('textAreaFontScaleTest_static_0003', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.500000");
         console.info("[textAreaFontScaleTest0003] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0004
      * @tc.name     textAreaFontScaleTest_static_0004
      * @tc.desc     textAreaFontScaleTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0004 START');
         await CommonFunc.sleep(1000);
@@ -149,13 +153,14 @@ it('textAreaFontScaleTest_static_0004', Level.LEVEL1, async (done: () => void): 
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0005
      * @tc.name     textAreaFontScaleTest_static_0005
      * @tc.desc     textAreaFontScaleTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0005 START');
         await CommonFunc.sleep(1000);
@@ -168,14 +173,15 @@ it('textAreaFontScaleTest_static_0005', Level.LEVEL1, async (done: () => void): 
         console.info("[textAreaFontScaleTest0005] end");
     });
 
-	
-    /*
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0006
      * @tc.name     textAreaFontScaleTest_static_0006
      * @tc.desc     textAreaFontScaleTest_static_0006
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0006', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0006 START');
         await CommonFunc.sleep(1000);
@@ -187,15 +193,16 @@ it('textAreaFontScaleTest_static_0006', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.850000");
         console.info("[textAreaFontScaleTest0006] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0007
      * @tc.name     textAreaFontScaleTest_static_0007
      * @tc.desc     textAreaFontScaleTest_static_0007
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0007', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0007 START');
         await CommonFunc.sleep(1000);
@@ -207,15 +214,16 @@ it('textAreaFontScaleTest_static_0007', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.850000");
         console.info("[textAreaFontScaleTest0007] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0008
      * @tc.name     textAreaFontScaleTest_static_0008
      * @tc.desc     textAreaFontScaleTest_static_0008
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0008', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0008 START');
         await CommonFunc.sleep(1000);
@@ -227,15 +235,16 @@ it('textAreaFontScaleTest_static_0008', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.600000");
         console.info("[textAreaFontScaleTest0008] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0009
      * @tc.name     textAreaFontScaleTest_static_0009
      * @tc.desc     textAreaFontScaleTest_static_0009
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0009', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0009 START');
         await CommonFunc.sleep(1000);
@@ -247,16 +256,17 @@ it('textAreaFontScaleTest_static_0009', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("1.000000");
         console.info("[textAreaFontScaleTest0009] end");
     });
-	
-	
-	
-    /*
+
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0010
      * @tc.name     textAreaFontScaleTest_static_0010
      * @tc.desc     textAreaFontScaleTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0010', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0010 START');
         await CommonFunc.sleep(1000);
@@ -268,15 +278,16 @@ it('textAreaFontScaleTest_static_0010', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.850000");
         console.info("[textAreaFontScaleTest0010] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0011
      * @tc.name     textAreaFontScaleTest_static_0011
      * @tc.desc     textAreaFontScaleTest_static_0011
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0011', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0011 START');
         await CommonFunc.sleep(1000);
@@ -288,16 +299,17 @@ it('textAreaFontScaleTest_static_0011', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.850000");
         console.info("[textAreaFontScaleTest0011] end");
     });
-	
-	
-	
-    /*
+
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0012
      * @tc.name     textAreaFontScaleTest_static_0012
      * @tc.desc     textAreaFontScaleTest_static_0012
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0012', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0012', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0012 START');
         await CommonFunc.sleep(1000);
@@ -309,16 +321,17 @@ it('textAreaFontScaleTest_static_0012', Level.LEVEL1, async (done: () => void): 
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.850000");
         console.info("[textAreaFontScaleTest0012] end");
     });
-	
-	
-	
-    /*
+
+
+
+    
+/*
      * @tc.number   textAreaFontScaleTest_static_0013
      * @tc.name     textAreaFontScaleTest_static_0013
      * @tc.desc     textAreaFontScaleTest_static_0013
      * @tc.level    Level.LEVEL1
      */
-it('textAreaFontScaleTest_static_0013', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('textAreaFontScaleTest_static_0013', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0013 START');
         await CommonFunc.sleep(1000);

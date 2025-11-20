@@ -50,13 +50,11 @@ export default function RichEditorOnHoverTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get RichEditorOnHoverTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
-          console.info("get RichEditorOnHoverTest pages.name:" + "");
-          
-          
+        if (!("onHover" == pages.name)) {
+          console.info("get RichEditorOnHoverTest pages.name:" + pages.name);
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorOnHoverTest page error:" + err);
@@ -66,18 +64,19 @@ export default function RichEditorOnHoverTest() {
 
 
      
-    /*
+    
+/*
      * @tc.number   RichEditorOnHoverTest_static_0010
      * @tc.name     RichEditorOnHoverTest_static_0010
      * @tc.desc     RichEditorOnHoverTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorOnHoverTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RichEditorOnHoverTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorOnHoverTest_0010 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);
       let RichEditor = await driver.findComponent(ON.id('RichEditor_onHover_id'));
-      let point:Point = await (RichEditor?.getBoundsCenter() as Promise<Point>)
+      let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({x:point.x , y:point.y })
       await CommonFunc.sleep(1000);
@@ -91,23 +90,24 @@ it('RichEditorOnHoverTest_static_0010', Level.LEVEL2, async (done: () => void): 
     });
 
      
-    /*
+    
+/*
      * @tc.number   RichEditorOnHoverTest_static_0020
      * @tc.name     RichEditorOnHoverTest_static_0020
      * @tc.desc     RichEditorOnHoverTest_static_0020
      * @tc.level    Level.LEVEL2
      */
-it('RichEditorOnHoverTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RichEditorOnHoverTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorOnHoverTest_0020 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);
       let RichEditor = await driver.findComponent(ON.id('RichEditor_onHover_id'));
-      let point:Point = await (RichEditor?.getBoundsCenter() as Promise<Point>)
+      let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({x:point.x , y:point.y })
       await CommonFunc.sleep(1000);
       let text2 = await driver.findComponent(ON.id('onHover_text2_id'));
-      let point2:Point = await (text2?.getBoundsCenter() as Promise<Point>)
+      let point2:Point = await text2!.getBoundsCenter()
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({x:point2.x , y:point2.y })
       await CommonFunc.sleep(1000);

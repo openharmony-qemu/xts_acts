@@ -35,16 +35,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct TextInputStopBackPress {
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
   build() {
     Column({ space: 1 } as ColumnOptions) {
       Text('TextInput:stopBackPress').height('10%')

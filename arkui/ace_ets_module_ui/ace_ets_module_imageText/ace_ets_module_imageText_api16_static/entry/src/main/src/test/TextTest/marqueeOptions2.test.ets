@@ -52,13 +52,13 @@ export default function marqueeOptionsTest2() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get marqueeOptionsTest2 state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("marqueeOptionsTest2" == pages.name)) {
           console.info("get marqueeOptionsTest2 pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push marqueeOptionsTest2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push marqueeOptionsTest2 page error:" + err);
@@ -67,23 +67,24 @@ export default function marqueeOptionsTest2() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   marqueeOptionsTest2_static_0100
      * @tc.name     marqueeOptionsTest2_static_0100
      * @tc.desc     marqueeOptionsTest2_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('marqueeOptionsTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('marqueeOptionsTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('marqueeOptionsTest2_static_0100 START');
       await CommonFunc.sleep(5000);
 
       let text1 = inspector.getInspectorByKey('marqueeOptionsTest2_text1');
       console.info("marqueeOptionsTest2_static_01001 " + JSON.stringifyJsonElement(JSON.parseJsonElement(text1).getElement('$attrs')))
-      expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('"MarqueeState.BOUNCE"');
+      expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('MarqueeState.BOUNCE');
 
       let text2 = inspector.getInspectorByKey('marqueeOptionsTest2_text2');
       console.info("marqueeOptionsTest2_static_01002 " + JSON.stringifyJsonElement(JSON.parseJsonElement(text2).getElement('$attrs')))
-      expect(JSON.parseJsonElement(text2).getElement('$attrs').getString('content')).assertEqual('"MarqueeState.FINISH"');
+      expect(JSON.parseJsonElement(text2).getElement('$attrs').getString('content')).assertEqual('MarqueeState.FINISH');
       await CommonFunc.sleep(1000);
 
       console.info('marqueeOptionsTest2_0100 END');

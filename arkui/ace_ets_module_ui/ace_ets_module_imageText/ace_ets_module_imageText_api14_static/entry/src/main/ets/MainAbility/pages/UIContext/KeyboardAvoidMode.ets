@@ -18,6 +18,11 @@ import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { Entry, Component, Column, Text, Button, ClickEvent} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
+export interface GlobalMessage<T> {
+  name: string,
+  message: MessageManager<T>
+}
+
 @Entry
 @Component
 struct UIContextKeyboardAvoidMode {
@@ -25,12 +30,11 @@ struct UIContextKeyboardAvoidMode {
   @State text:string = ''
   @State value:string = ''
   onPageShow() {
-    
-    
-    
-    
-    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
-    
+    const globalMessage: GlobalMessage<string> = {
+      name: 'messageManager', message: this.messageManager
+    } as GlobalMessage<string>;
+    AppStorage.setOrCreate<GlobalMessage<string>>('UIContextKeyboardAvoidMode', globalMessage);
+    AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
     let callback: Callback<string> = (message: Message<string>) => {
 	  if(message.value == 'OFFSET_WITH_CARET'){
 		let uiContext :UIContext = this.getUIContext();

@@ -51,10 +51,8 @@ export default function KeyboardAvoidModeTest() {
         console.info("get KeyboardAvoidModeTest state pages: " + JSON.stringify(pages));
         if (!("KeyboardAvoidMode" == pages.name)) {
           console.info("get KeyboardAvoidModeTest state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push KeyboardAvoidModeTest page error: " + err);
@@ -63,25 +61,26 @@ export default function KeyboardAvoidModeTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   KeyboardAvoidModeTest_static_0100
      * @tc.name     KeyboardAvoidModeTest_static_0100
      * @tc.desc     KeyboardAvoidModeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('KeyboardAvoidModeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('KeyboardAvoidModeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('KeyboardAvoidModeTest_static_0100 START');
-      
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   value:'OFFSET_WITH_CARET'
+      // });
+      // AppStorage.setOrCreate("messageManager", this.messageManager);
       const message: MessageManager<object> = AppStorage.get<MessageManager<object>>("messageManager")!
       message.notify({name: "", value:'OFFSET_WITH_CARET'})
       let driver = Driver.create();
 	    await CommonFunc.sleep(1000);
 	    let button = await driver.findComponent(ON.id('getKeyboardAvoidMode'));
 	    await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Text');
       let obj = JSON.parseJsonElement(strJson);
@@ -91,24 +90,25 @@ it('KeyboardAvoidModeTest_static_0100', Level.LEVEL2, async (done: () => void): 
       done();
     });
 	
-    /*
+    
+/*
      * @tc.number   KeyboardAvoidModeTest_static_0200
      * @tc.name     KeyboardAvoidModeTest_static_0200
      * @tc.desc     KeyboardAvoidModeTest_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('KeyboardAvoidModeTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('KeyboardAvoidModeTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('KeyboardAvoidModeTest_static_0200 START');
-      
-      
-      
+      // globalThis.value.message.notify({
+      //   value:'RESIZE_WITH_CARET'
+      // });
       const message: MessageManager<object> = AppStorage.get<MessageManager<object>>("messageManager")!
       message.notify({name: "",value:'RESIZE_WITH_CARET'})
 	    let driver = Driver.create();
 	    await CommonFunc.sleep(1000);
 	    let button = await driver.findComponent(ON.id('getKeyboardAvoidMode'));
 	    await CommonFunc.sleep(1000);
-	    await (button?.click() as Promise<void>)
+	    button?.click()
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Text');
       let obj = JSON.parseJsonElement(strJson);

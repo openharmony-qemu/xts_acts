@@ -50,7 +50,7 @@ struct textAreaEllipsisModeTest {
           .height('10%')
         TextArea({ text: this.text} as TextAreaOptions)
           .textOverflow(TextOverflow.Ellipsis)
-          
+          // .ellipsisMode(null)
           .maxLines(1)
           .id('area5')
           .height('10%')

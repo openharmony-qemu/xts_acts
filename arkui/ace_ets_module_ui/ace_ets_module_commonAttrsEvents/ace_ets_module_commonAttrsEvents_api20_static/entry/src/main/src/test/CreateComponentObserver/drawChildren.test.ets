@@ -67,7 +67,7 @@ export default function DrawChildrenTest() {
      * @tc.desc     DrawChildrenTest_static_001
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('DrawChildrenTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('DrawChildrenTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('DrawChildrenTest_static_001 START');
       await Utils.sleep(SLEEP_TIME_1000);
       let strJson = inspector.getInspectorByKey('Button1');
@@ -93,7 +93,7 @@ it('DrawChildrenTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
      * @tc.desc     DrawChildrenTest_static_002
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('DrawChildrenTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('DrawChildrenTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('DrawChildrenTest_static_002 START');
       await Utils.sleep(SLEEP_TIME_1000);
       let strJson = inspector.getInspectorByKey('Button2');
@@ -120,7 +120,7 @@ it('DrawChildrenTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
      * @tc.desc     DrawChildrenTest_static_003
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('DrawChildrenTest_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('DrawChildrenTest_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('DrawChildrenTest_static_003 START');
       await Utils.sleep(SLEEP_TIME_1000);
       let strJson = inspector.getInspectorByKey('Button3');

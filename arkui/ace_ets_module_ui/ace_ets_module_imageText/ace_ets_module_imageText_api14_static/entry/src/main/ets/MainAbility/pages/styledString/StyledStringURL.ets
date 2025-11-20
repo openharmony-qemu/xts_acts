@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Component, TextController, MutableStyledString, StyledStringKey, Row, Text,Column, Color, Button, ClickEvent, FlexDirection,
-  TextArea, BackgroundColorStyle, StyledStringValue, UrlStyle, Flex,FlexOptions, TextOverflow, CopyOptions, ItemAlign, Padding, SpanStyle} from '@ohos.arkui.component'
+  TextArea, BackgroundColorStyle, StyledStringValue, UrlStyle, Flex,FlexOptions, TextOverflow, CopyOptions, ItemAlign, Padding} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -29,13 +29,13 @@ struct StyledStringURLExample3 {
     styledValue: this.urlString
   }]);
   controller: TextController = new TextController();
-  
-  
-  
+  onPageShow() {
+    this.controller.setStyledString(this.mutableStyledString)
+  }
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-      
+      // 超出maxLines截断内容展示
       Text('这是一段测试文本')
         .textOverflow({ overflow: TextOverflow.Clip })
         .maxLines(1)
@@ -53,8 +53,8 @@ struct StyledStringURLExample3 {
           .width('30%')
           .id('but')
           .onClick((e: ClickEvent) => {
-            let style = this.mutableStyledString.getStyles(0, 5, StyledStringKey.URL) as Array<SpanStyle>
-            this.text = JSON.stringify(style[0].styledKey)
+            this.text = JSON.stringify(this.mutableStyledString
+              .getStyles(0, 5,StyledStringKey.URL)![0].styledKey)
           })
       }
     }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 } as Padding)

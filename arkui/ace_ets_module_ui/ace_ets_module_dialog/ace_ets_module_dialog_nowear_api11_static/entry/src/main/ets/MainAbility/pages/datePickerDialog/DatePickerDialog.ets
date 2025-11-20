@@ -12,17 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  Entry,
-  FontWeight,
-  Margin,
-  Padding
-} from '@ohos.arkui.component';
+import { Entry, Component, Column, Margin, Color, FontWeight, Button, ClickEvent, Padding } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -40,11 +30,11 @@ struct DatePickerDialogExample {
             start: new Date("2000-1-1"),
             end: new Date("2100-12-31"),
             selected: this.selectedDate,
-            showTime: true,
-            useMilitaryTime: false,
-            disappearTextStyle: { color: Color.Pink, font: { size: '22fp', weight: FontWeight.Bold } },
-            textStyle: { color: '#ff00ff00', font: { size: '18fp', weight: FontWeight.Normal } },
-            selectedTextStyle: { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } },
+            showTime:true,
+            useMilitaryTime:false,
+            disappearTextStyle: {color: Color.Pink, font: {size: '22fp', weight: FontWeight.Bold}},
+            textStyle: {color: '#ff00ff00', font: {size: '18fp', weight: FontWeight.Normal}},
+            selectedTextStyle: {color: '#ff182431', font: {size: '14fp', weight: FontWeight.Regular}},
             onDateAccept: (value: Date) => {
               this.selectedDate = value
               console.info("DatePickerDialog:onDateAccept()" + value.toString())

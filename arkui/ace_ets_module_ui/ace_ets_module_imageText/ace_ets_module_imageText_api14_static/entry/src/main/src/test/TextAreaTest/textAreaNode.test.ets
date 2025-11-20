@@ -50,13 +50,11 @@ export default function TextAreaNodeTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get TextAreaNodeTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaNode" == pages.name)) {
           console.info("get TextAreaNodeTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextAreaNodeTest page error:" + err);
@@ -69,15 +67,15 @@ export default function TextAreaNodeTest() {
       await CommonFunc.sleep(1000);
       console.info("textAreaNode after each called");
     })
-    
 
-    /*
+    
+/*
      * @tc.number   textAreaNode_static_0100
      * @tc.name     textAreaNode_static_0100
      * @tc.desc     textAreaNode_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('textAreaNode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaNode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       let tagName = 'textAreaNode0100';
       console.info('[' + tagName + '] START============================');
@@ -86,17 +84,19 @@ it('textAreaNode_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[' + tagName + '] Search width is: ' + JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('width'));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('fontSize')).assertEqual('16.00fp');
       console.info('[' + tagName + '] END ===========================');
+      done();
     });
 
     
 
-    /*
+    
+/*
      * @tc.number   textAreaNode_static_0200
      * @tc.name     textAreaNode_static_0200
      * @tc.desc     textAreaNode_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('textAreaNode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaNode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaNode0200';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_Node_001');
@@ -108,13 +108,14 @@ it('textAreaNode_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
 
     
 
-    /*
+    
+/*
      * @tc.number   textAreaNode_static_0300
      * @tc.name     textAreaNode_static_0300
      * @tc.desc     textAreaNode_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('textAreaNode_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaNode_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaNode0300';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_Node_001');

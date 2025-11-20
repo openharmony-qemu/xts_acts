@@ -49,12 +49,12 @@ export default function CustomSpan() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CustomSpan state success " + JSON.stringify(pages));
-        
+        // let result = routerInstance.replaceUrl(options);
         routerInstance.replaceUrl(options);
         if (!("CustomSpan" == pages.name)) {
           console.info("get CustomSpan state success " + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CustomSpan page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CustomSpan page error: " + err);
@@ -67,19 +67,20 @@ export default function CustomSpan() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   CustomSpan_static_0001
      * @tc.name     CustomSpan_static_0001
      * @tc.desc     CustomSpan_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('CustomSpan_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('CustomSpan_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('StyledString CustomSpan0001 START');
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('invalidate'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set?.click()
       await CommonFunc.sleep(500);
       console.info('StyledString CustomSpan0001 CustomSpanFontSize ' + AppStorage.get<number>('CustomSpanFontSize'));
       expect('' + AppStorage.get<number>('CustomSpanFontSize')).assertEqual('30');

@@ -34,7 +34,7 @@ struct textAreaHalfLeadingTest {
           .id('area3')
           .height('10%')
         TextArea({ text: this.text} as TextAreaOptions)
-          
+          // .halfLeading(null)
           .id('area4')
           .height('10%')
       }

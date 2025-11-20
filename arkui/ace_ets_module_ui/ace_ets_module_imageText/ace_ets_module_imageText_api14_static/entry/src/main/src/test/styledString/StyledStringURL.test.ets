@@ -50,10 +50,8 @@ export default function StyledStringURL() {
         console.info("get StyledStringURL state pages: " + JSON.stringify(pages));
         if (!("StyledStringURL" == pages.name)) {
           console.info("get StyledStringURL state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push StyledStringURL page error: " + err);
@@ -62,19 +60,20 @@ export default function StyledStringURL() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   StyledStringURL_static_0100
      * @tc.name     StyledStringURL_static_0100
      * @tc.desc     StyledStringURL_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('StyledStringURL_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('StyledStringURL_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('StyledStringURL_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('but'));
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       let obj = JSON.parseJsonElement(strJson);

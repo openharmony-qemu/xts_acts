@@ -42,16 +42,16 @@ export default function ImageLoadResultTest() {
             }, 4000);
           })
         await p
-      } catch (e) {
+      } catch (e: Error) {
         console.log("ImageLoadResultTest beforeAll start error " + e)
       }
-      
+      //
       console.info("ImageLoadResultTest beforeAll start22");
-      
+      // await UtilsTest.sleep(10000)
       console.info("ImageLoadResultTest beforeAll start33");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
       console.info("ImageLoadResultTest beforeAll start44");
-      
+      // await UtilsTest.sleep(4000)
 
     });
 
@@ -67,11 +67,9 @@ export default function ImageLoadResultTest() {
         console.info("get ImageLoadResultTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ImageLoadResultTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ImageLoadResultTest page error:" + err);
@@ -80,6 +78,7 @@ export default function ImageLoadResultTest() {
     });
 
 
+    
     /*
      * @tc.number   ImageLoadResultTest_static_0010
      * @tc.name     ImageLoadResultTest_static_0010
@@ -102,6 +101,7 @@ export default function ImageLoadResultTest() {
     });
 
 
+    
     /*
      * @tc.number   ImageLoadResultTest_static_0020
      * @tc.name     ImageLoadResultTest_static_0020
@@ -112,11 +112,11 @@ export default function ImageLoadResultTest() {
       console.info('[ImageLoadResultTest_0020] START');
       await CommonFunc.sleep(500);
       console.info("[ImageLoadResultTest_0020] componentWidth:"
-        + JSON.stringify(AppStorage.get('ImageLoadResult.componentWidth')));
+        + JSON.stringify(AppStorage.get<number>('ImageLoadResult.componentWidth')));
       console.info("[ImageLoadResultTest_0020] componentHeight:"
-        + JSON.stringify(AppStorage.get('ImageLoadResult.componentHeight')));
-      expect(AppStorage.get('ImageLoadResult.componentWidth'))
-        .assertEqual(AppStorage.get('ImageLoadResult.componentHeight'));
+        + JSON.stringify(AppStorage.get<number>('ImageLoadResult.componentHeight')));
+      expect(AppStorage.get<number>('ImageLoadResult.componentWidth'))
+        .assertEqual(AppStorage.get<number>('ImageLoadResult.componentHeight'));
       AppStorage.delete('ImageLoadResult.componentWidth')
       AppStorage.delete('ImageLoadResult.componentHeight')
       console.info('[ImageLoadResultTest_0020] END');

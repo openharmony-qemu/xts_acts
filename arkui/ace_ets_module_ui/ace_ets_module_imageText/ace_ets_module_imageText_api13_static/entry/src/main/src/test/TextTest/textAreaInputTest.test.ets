@@ -45,16 +45,14 @@ export default function textAreaInputTest() {
         url: 'MainAbility/pages/Text/textAreaInputTest',
       }
       try {
-        const router = AppStorage.get<Router>("router") as Router
-        router.clear();
-        let pages = router.getState();
-        
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info("get textAreaInputTest state success " + JSON.stringify(pages));
         if (!("textAreaInputTest" == pages.name)) {
-          
-          
-          router.pushUrl(options)
+          console.info("get textAreaInputTest state success " + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textAreaInputTest page error: " + err);
@@ -67,13 +65,14 @@ export default function textAreaInputTest() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   textAreaInputTest_static_0001
      * @tc.name     textAreaInputTest_static_0001
      * @tc.desc     textAreaInputTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (AppStorage.get<number>('winLeft') == 0) {
         let driver = Driver.create();
         console.info('textAreaInputTest textAreaInputTest0001 START');
@@ -82,52 +81,51 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
         await CommonFunc.sleep(500);
         let textArea2 = await driver.findComponent(ON.id('textArea2'));
         await CommonFunc.sleep(500);
-        await (textArea2?.click() as Promise<void>)
+        textArea2?.click()
         await CommonFunc.sleep(500);
         await driver.triggerKey(2070);
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
-        await (button1?.click() as Promise<void>)
+        button1?.click()
         await CommonFunc.sleep(500);
 
-        await (textArea1?.click() as Promise<void>)
+        textArea1?.click()
         await CommonFunc.sleep(500);
         let button3 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
-        await (button3?.click() as Promise<void>)
+        button3?.click()
         console.info('textAreaInputTest0001 全选 success');
         await CommonFunc.sleep(500);
 
-        
+        textArea1?.dragTo(textArea1!);
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 dragTo success');
         let button4 = await driver.findComponent(ON.text('取消'));
         await CommonFunc.sleep(500);
-        await (button4?.click() as Promise<void>)
+        button4?.click()
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 取消 success');
 
-        await (textArea1?.longClick() as Promise<void>)
+        await (textArea1?.longClick() as Promise<void>);
         await CommonFunc.sleep(500);
         let button5 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
-        await (button5?.click() as Promise<void>)
+        button5?.click()
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 全选 success');
         let button6 = await driver.findComponent(ON.text('复制'));
         await CommonFunc.sleep(500);
-        await (button6?.click() as Promise<void>)
+        button6?.click()
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 复制 success');
-        
-        await (textArea1?.dragTo(textArea2!) as Promise<void>)
+        textArea1?.dragTo(textArea2!)
         await CommonFunc.sleep(500);
         let Text7 = await driver.findComponent(ON.text('长按内容至浮起，可拖拽到底部小艺'));
         if(Text7){
           let button7 = await driver.findComponent(ON.type('Button'));
           await CommonFunc.sleep(500);
-          await (button7?.click() as Promise<void>)
+          button7?.click()
         }
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 Button success');

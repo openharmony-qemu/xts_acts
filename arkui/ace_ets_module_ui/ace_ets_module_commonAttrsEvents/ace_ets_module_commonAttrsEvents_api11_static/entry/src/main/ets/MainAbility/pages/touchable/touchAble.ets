@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,12 +36,12 @@ import {
   Stack,
   Text,
   TouchEvent,
-  TouchType
+  TouchType,HitTestMode
 } from '@ohos.arkui.component'
-import { RecordData } from '@ohos.base'
 
 @Entry
 @Component
+  // @Preview
 struct TouchAbleExample {
   @State text1: string = '';
   @State text2: string = '';
@@ -63,7 +63,8 @@ struct TouchAbleExample {
         .width(150)
         .height(80)
         .key('ellipse')
-
+        // .touchable(this.touchableValue) //被下一行代码平替
+        .hitTestBehavior(HitTestMode.Default)
         .onClick((e: ClickEvent) => {
           this.text2 = 'Ellipse Clicked';
           console.info("touchAble text2:" + this.text2);
@@ -71,7 +72,7 @@ struct TouchAbleExample {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.text2
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 237,

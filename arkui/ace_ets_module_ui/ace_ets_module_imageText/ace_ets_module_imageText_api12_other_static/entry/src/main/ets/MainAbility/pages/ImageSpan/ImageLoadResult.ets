@@ -39,10 +39,10 @@ struct ImageLoadResult1 {
           .width(100)
           .height(100)
           .onComplete((result: ImageLoadResult) => {
-            AppStorage.setOrCreate('ImageLoadResult.width', result.width)
-            AppStorage.setOrCreate('ImageLoadResult.height', result.height)
-            AppStorage.setOrCreate('ImageLoadResult.componentWidth', result.componentWidth)
-            AppStorage.setOrCreate('ImageLoadResult.componentHeight', result.componentHeight)
+            AppStorage.setOrCreate<number>('ImageLoadResult.width', result.width ?? 0)
+            AppStorage.setOrCreate<number>('ImageLoadResult.height', result.height ?? 0)
+            AppStorage.setOrCreate<number>('ImageLoadResult.componentWidth', result.componentWidth ?? 0)
+            AppStorage.setOrCreate<number>('ImageLoadResult.componentHeight', result.componentHeight ?? 0)
           } as ImageCompleteCallback)
       }
     }.width('100%').height('100%')

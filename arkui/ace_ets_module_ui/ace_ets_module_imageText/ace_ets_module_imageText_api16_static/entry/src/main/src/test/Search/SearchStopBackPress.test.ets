@@ -49,13 +49,13 @@ export default function SearchStopBackPressTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get SearchStopBackPressTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SearchStopBackPress" == pages.name)) {
           console.info("get SearchStopBackPressTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push SearchStopBackPressTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SearchStopBackPressTest page error:" + err);
@@ -64,13 +64,14 @@ export default function SearchStopBackPressTest() {
     });
     
     
-    /*
+    
+/*
      * @tc.number   SearchStopBackPressTest_static_0010
      * @tc.name     SearchStopBackPressTest_static_0010
      * @tc.desc     SearchStopBackPressTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('SearchStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchStopBackPressTest_static_0010] START');
       let strJson:string = inspector.getInspectorByKey('Search_stopBackPress_true');
       let obj = JSON.parseJsonElement(strJson);
@@ -81,13 +82,14 @@ it('SearchStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => void)
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchStopBackPressTest_static_0020
      * @tc.name     SearchStopBackPressTest_static_0020
      * @tc.desc     SearchStopBackPressTest_static_0020
      * @tc.level    Level.LEVEL2
      */
-it('SearchStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchStopBackPressTest_static_0020] START');
       let strJson:string = inspector.getInspectorByKey('Search_stopBackPress_false');
       let obj = JSON.parseJsonElement(strJson);
@@ -98,13 +100,14 @@ it('SearchStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => void)
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchStopBackPressTest_static_0030
      * @tc.name     SearchStopBackPressTest_static_0030
      * @tc.desc     SearchStopBackPressTest_static_0030
      * @tc.level    Level.LEVEL2
      */
-it('SearchStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchStopBackPressTest_static_0030] START');
       let strJson:string = inspector.getInspectorByKey('Search_stopBackPress_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -115,13 +118,14 @@ it('SearchStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => void)
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchStopBackPressTest_static_0040
      * @tc.name     SearchStopBackPressTest_static_0040
      * @tc.desc     SearchStopBackPressTest_static_0040
      * @tc.level    Level.LEVEL2
      */
-it('SearchStopBackPressTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchStopBackPressTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchStopBackPressTest_static_0040] START');
       let strJson:string = inspector.getInspectorByKey('Search_stopBackPress_undefined');
       let obj = JSON.parseJsonElement(strJson);

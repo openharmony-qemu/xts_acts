@@ -44,7 +44,7 @@ struct RichEditorSymbolSpanStyleTest {
             offset: 10,
             style: {
               fontColor: [Color.Red],
-              fontSize: 30.0,
+              fontSize: 30,
               fontWeight: 200,
               renderingStrategy: SymbolRenderingStrategy.SINGLE,
               effectStrategy: SymbolEffectStrategy.NONE
@@ -94,11 +94,9 @@ struct RichEditorSymbolSpanStyleTest {
         .onClick((e: ClickEvent) => {
           this.controller.getSpans({
             start: 0,
-          })?.forEach((item) => {
-            
+          })!.forEach((item) => {
             if (item instanceof RichEditorImageSpanResult && item.imageStyle !== undefined) {
             } else {
-              
               if (item instanceof RichEditorTextSpanResult && item.symbolSpanStyle !== undefined) {
                 (item as RichEditorTextSpanResult).symbolSpanStyle?.fontColor
                 console.log('fontColor' + (item as RichEditorTextSpanResult).symbolSpanStyle?.fontColor)
@@ -107,16 +105,16 @@ struct RichEditorSymbolSpanStyleTest {
                 console.log('effectStrategy' + (item as RichEditorTextSpanResult).symbolSpanStyle?.effectStrategy)
                 console.log('spanIndex' + (item as RichEditorTextSpanResult).spanPosition?.spanIndex)
                 console.log('item' + JSON.stringify(item))
-                AppStorage.setOrCreate('symbolSpanStyleFontColor',
-                  (item as RichEditorTextSpanResult).symbolSpanStyle?.fontColor)
-                AppStorage.setOrCreate('symbolSpanStyleFontSize',
-                  (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize)
-                AppStorage.setOrCreate('symbolSpanStyleFontWeight',
-                  (item as RichEditorTextSpanResult).symbolSpanStyle?.fontWeight)
-                AppStorage.setOrCreate('symbolSpanStyleEffectStrategy',
-                  (item as RichEditorTextSpanResult).symbolSpanStyle?.effectStrategy)
-                AppStorage.setOrCreate('symbolSpanStyleSpanIndex',
-                  (item as RichEditorTextSpanResult).spanPosition?.spanIndex)
+                AppStorage.setOrCreate<string>('symbolSpanStyleFontColor',
+                 "" + (item as RichEditorTextSpanResult).symbolSpanStyle?.fontColor)
+                AppStorage.setOrCreate<string>('symbolSpanStyleFontSize',
+                  "" +  (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize)
+                AppStorage.setOrCreate<string>('symbolSpanStyleFontWeight',
+                  "" +   (item as RichEditorTextSpanResult).symbolSpanStyle?.fontWeight)
+                AppStorage.setOrCreate<string>('symbolSpanStyleEffectStrategy',
+                  "" +   (item as RichEditorTextSpanResult).symbolSpanStyle?.effectStrategy)
+                AppStorage.setOrCreate<string>('symbolSpanStyleSpanIndex',
+                  "" +  (item as RichEditorTextSpanResult).spanPosition?.spanIndex)
               } else {
               }
             }

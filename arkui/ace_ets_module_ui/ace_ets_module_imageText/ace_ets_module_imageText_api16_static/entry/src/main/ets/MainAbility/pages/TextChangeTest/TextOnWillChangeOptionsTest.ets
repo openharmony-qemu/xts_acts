@@ -12,9 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Row, Column, Text, SearchController, TextAreaController, TextInputController, TextAlign, Search, PreviewText,
-  TextChangeOptions, EditableTextChangeValue, TextArea, TextInput} from '@ohos.arkui.component'
+import {
+  Entry,
+  Component,
+  Row,
+  Column,
+  Text,
+  SearchController,
+  TextAreaController,
+  TextInputController,
+  TextAlign,
+  Search,
+  PreviewText,
+  TextChangeOptions,
+  EditableTextChangeValue,
+  TextArea,
+  TextInput,
+  Color
+} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct TextOnWillChangeOptions {
@@ -26,9 +43,10 @@ struct TextOnWillChangeOptions {
   @State newPreviewTextOffset: string = ''
   @State rangeBefore: string = ''
   @State rangeAfter: string = ''
-  controller1: SearchController  = new SearchController();
+  controller1: SearchController = new SearchController();
   controller2: TextAreaController = new TextAreaController();
   controller3: TextInputController = new TextInputController();
+
   build() {
     Column() {
       Row(){

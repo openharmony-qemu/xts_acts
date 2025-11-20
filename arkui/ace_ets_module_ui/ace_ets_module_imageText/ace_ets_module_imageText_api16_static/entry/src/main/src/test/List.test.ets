@@ -22,6 +22,7 @@ import marqueeOptionsTest2 from './TextTest/marqueeOptions2.test';
 import minMaxFontSize from './TextTest/minMaxFontSize.test';
 import textAreaInputTest from './TextTest/textAreaInputTest.test';
 import RichEditorTextStyle from './RichEditorTest/RichEditorTextStyle.test';
+import preventDefault from './Hyperlink/preventDefault.test';
 
 import textAreaEllipsisModeTest from './EllipsisModeTest/textAreaEllipsisModeTest.test';
 import textInputEllipsisModeTest from './EllipsisModeTest/textInputEllipsisModeTest.test';
@@ -38,26 +39,27 @@ import TextOnWillChangeOptionsTest from './TextChangeTest/TextOnWillChangeOption
 
 
 export default function testsuite() {
-  searchButton();
-  SearchStopBackPressTest();
-  addOrDelText();
-  TextAreaStopBackPressTest();
-  TextInputStopBackPressTest();
-  marqueeOptionsTest1();
-  marqueeOptionsTest2();
-  minMaxFontSize();
-  textAreaInputTest();
-  RichEditorTextStyle();
+  bindSelectionMenuTest(); //11.13SDK: pass:9
+  TextOnWillChangeOptionsTest(); //11.13SDK:pass:6
+  TextOnChangeOptionsTest(); //11.13SDK:pass:6
+  textInputHalfLeadingTest(); //11.13SDK:pass:4
+  textInputFontScaleTest(); //11.13SDK:pass:13
+  textAreaFontScaleTest(); //11.13SDK:pass:13
+  searchFontScaleTest(); //11.13SDK:pass:13
+  RichEditorTextStyle(); //11.13SDK:pass:6
+  marqueeOptionsTest1(); //11.13SDK：pass：2
+  marqueeOptionsTest2(); //11.13SDK：pass:1
+  addOrDelText(); //11.13SDK：pass:4 failed：4 004，005，006，007 4个用例涉及异常值
+  searchButton(); //11.13SDK：pass:1
+  SearchStopBackPressTest(); //11.13SDK：pass:4
+  TextAreaStopBackPressTest(); //11.13SDK：pass:4
+  TextInputStopBackPressTest(); //11.13SDK：pass:4
+  minMaxFontSize(); //11.13SDK：pass:1
+  textAreaInputTest(); // 11.13SDK:pass:1
+  preventDefault(); //11.13SDK：pass:1
+  textAreaEllipsisModeTest(); //11.13SDK：pass:5
+  textInputEllipsisModeTest(); //11.13SDK：pass:5
+  searchHalfLeadingTest(); //11.13SDK：pass:4
+  textAreaHalfLeadingTest(); //11.13SDK：pass:4
 
-  textAreaEllipsisModeTest();
-  textInputEllipsisModeTest();
-  searchFontScaleTest();
-  textAreaFontScaleTest();
-  textInputFontScaleTest();
-  searchHalfLeadingTest();
-  textAreaHalfLeadingTest();
-  textInputHalfLeadingTest();
-  bindSelectionMenuTest();
-  TextOnChangeOptionsTest();
-  TextOnWillChangeOptionsTest();
 }

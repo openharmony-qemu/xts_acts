@@ -64,16 +64,14 @@ export default function ParagraphStyle2() {
         console.info("get ParagraphStyle2 state pages:" + JSON.stringify(pages));
         if (!("ParagraphStyle2" == pages.name)) {
           console.info("get ParagraphStyle2 pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ParagraphStyle2 page error: " + err);
       }
-      
+      // done();
     });
 
     afterEach(async () => {
@@ -82,6 +80,7 @@ export default function ParagraphStyle2() {
     });
 
 
+    
     /*
      * @tc.number   ParagraphStyle_static_20001
      * @tc.name     ParagraphStyle_static_20001
@@ -94,7 +93,7 @@ export default function ParagraphStyle2() {
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('text'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>)
+      get!.click()
       await CommonFunc.sleep(500);
       console.info('StyledString ParagraphStyle10001 StyledString2_textAlign ' +
       AppStorage.get<undefined | TextAlign>('StyledString2_textAlign'));
@@ -103,8 +102,8 @@ export default function ParagraphStyle2() {
       AppStorage.get<undefined | number>('StyledString2_textIndent'));
       expect('' + AppStorage.get<undefined | number>('StyledString2_textIndent')).assertEqual('0');
       console.info('StyledString ParagraphStyle10001 StyledString2_maxLines ' +
-      AppStorage.get<undefined | number>('StyledString2_maxLines'));
-      expect('' + AppStorage.get<undefined | number>('StyledString2_maxLines')).assertEqual('1');
+      AppStorage.get<undefined | int>('StyledString2_maxLines'));
+      expect('' + AppStorage.get<undefined | int>('StyledString2_maxLines')).assertEqual('1');
       console.info('StyledString ParagraphStyle10001 StyledString2_wordBreak ' +
       AppStorage.get<undefined | WordBreak>('StyledString2_wordBreak'));
       expect('' + AppStorage.get<undefined | WordBreak>('StyledString2_wordBreak')).assertEqual('0');
@@ -122,8 +121,8 @@ export default function ParagraphStyle2() {
       AppStorage.get<undefined | number>('StyledString3_textIndent'));
       expect('' + AppStorage.get<undefined | number>('StyledString3_textIndent')).assertEqual('0');
       console.info('StyledString ParagraphStyle10001 StyledString3_maxLines ' +
-      AppStorage.get<undefined | number>('StyledString3_maxLines'));
-      expect('' + AppStorage.get<undefined | number>('StyledString3_maxLines')).assertEqual('1');
+      AppStorage.get<undefined | int>('StyledString3_maxLines'));
+      expect('' + AppStorage.get<undefined | int>('StyledString3_maxLines')).assertEqual('1');
       console.info('StyledString ParagraphStyle10001 StyledString3_wordBreak ' +
       AppStorage.get<undefined | WordBreak>('StyledString3_wordBreak'));
       expect('' + AppStorage.get<undefined | WordBreak>('StyledString3_wordBreak')).assertEqual('2');
@@ -141,8 +140,8 @@ export default function ParagraphStyle2() {
       AppStorage.get<undefined | number>('StyledString4_textIndent'));
       expect('' + AppStorage.get<undefined | number>('StyledString4_textIndent')).assertEqual('undefined');
       console.info('StyledString ParagraphStyle10001 StyledString4_maxLines ' +
-      AppStorage.get<undefined | number>('StyledString4_maxLines'));
-      expect('' + AppStorage.get<undefined | number>('StyledString4_maxLines')).assertEqual('1');
+      AppStorage.get<undefined | int>('StyledString4_maxLines'));
+      expect('' + AppStorage.get<undefined | int>('StyledString4_maxLines')).assertEqual('1');
       console.info('StyledString ParagraphStyle10001 StyledString4_wordBreak ' +
       AppStorage.get<undefined | WordBreak>('StyledString4_wordBreak'));
       expect('' + AppStorage.get<undefined | WordBreak>('StyledString4_wordBreak')).assertEqual('3');

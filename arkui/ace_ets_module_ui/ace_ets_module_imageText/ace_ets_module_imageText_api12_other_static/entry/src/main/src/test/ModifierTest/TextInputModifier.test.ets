@@ -55,20 +55,19 @@ export default function TextInputModifierTest() {
         console.info("get TextInputModifierTest state pages:" + JSON.stringify(pages));
         if (!("TextInputModifier" == pages.name)) {
           console.info("get TextInputModifierTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextInputModifierTest page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
      * @tc.number   TextInputModifierTest_static_0010
      * @tc.name     TextInputModifierTest_static_0010
@@ -88,6 +87,7 @@ export default function TextInputModifierTest() {
     });
 
 
+    
     /*
      * @tc.number   TextInputModifierTest_static_0020
      * @tc.name     TextInputModifierTest_static_0020

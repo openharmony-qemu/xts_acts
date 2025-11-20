@@ -45,107 +45,117 @@ export default function BarStateTest() {
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi2 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi2",
+        url: "MainAbility/pages/RichEditor/barState",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
-        console.info("get richEditorApi2 state pages:" + JSON.stringify(pages));
+        console.info("get BarStateTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
-          console.info("get richEditorApi2 pages.name:" + '');
-          
-          
+          console.info("get BarStateTest pages.name:" + '');
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push BarStateTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push richEditorApi2 page error:" + err);
+        console.error("push BarStateTest page error:" + err);
       }
-      console.info("richEditorApi2 beforeEach end");
+      console.info("BarStateTest beforeEach end");
     });
 
-    /*
+    
+/*
      * @tc.number   BarStateTest_static_0010
      * @tc.name     BarStateTest_static_0010
      * @tc.desc     BarStateTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('BarStateTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('BarStateTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0010] START');
       let strJson =inspector.getInspectorByKey('RichEditor_BarState_Auto');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[BarStateTest_static_0010] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
-      expect(obj.getElement('$attrs').getString('barState')).assertEqual(1);
+      console.info('[BarStateTest_static_0010] BarState: ' + JSON.stringify(obj.getElement('$attrs').getDouble('barState')));
+      expect(obj.getElement('$attrs').getDouble('barState')).assertEqual(1);
       console.info('[BarStateTest_static_0010] END');
       done();
     });
 
 
-    /*
+    
+/*
      * @tc.number   BarStateTest_static_0020
      * @tc.name     BarStateTest_static_0020
      * @tc.desc     BarStateTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('BarStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('BarStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('RichEditor_BarState_Off');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[BarStateTest_static_0020] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
-      expect(obj.getElement('$attrs').getString('barState')).assertEqual(0);
+      console.info('[BarStateTest_static_0020] BarState: ' + JSON.stringify(obj.getElement('$attrs').getDouble('barState')));
+      expect(obj.getElement('$attrs').getDouble('barState')).assertEqual(0);
       console.info('[BarStateTest_static_0020] END');
       done();
     });
 
 
-    /*
+    
+/*
      * @tc.number   BarStateTest_static_0030
      * @tc.name     BarStateTest_static_0030
      * @tc.desc     BarStateTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-it('BarStateTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('BarStateTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0030] START');
       let strJson =inspector.getInspectorByKey('RichEditor_BarState_On');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[BarStateTest_static_0030] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
-      expect(obj.getElement('$attrs').getString('barState')).assertEqual(2);
+      console.info('[BarStateTest_static_0030] BarState: ' + JSON.stringify(obj.getElement('$attrs').getDouble('barState')));
+      expect(obj.getElement('$attrs').getDouble('barState')).assertEqual(2);
       console.info('[BarStateTest_static_0030] END');
       done();
     });
 
 
-    /*
+    
+/*
      * @tc.number   BarStateTest_static_0040
      * @tc.name     BarStateTest_static_0040
      * @tc.desc     BarStateTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-it('BarStateTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('BarStateTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0040] START');
       let strJson =inspector.getInspectorByKey('RichEditor_barState_default');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[BarStateTest_static_0040] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
-      expect(obj.getElement('$attrs').getString('barState')).assertEqual(1);
+      console.info('[BarStateTest_static_0040] BarState: ' + JSON.stringify(obj.getElement('$attrs').getDouble('barState')));
+      expect(obj.getElement('$attrs').getDouble('barState')).assertEqual(1);
       console.info('[BarStateTest_static_0040] END');
       done();
     });
 
 
-    /*
+    
+/*
      * @tc.number   BarStateTest_static_0050
      * @tc.name     BarStateTest_static_0050
      * @tc.desc     BarStateTest_static_0050
      * @tc.level    Level.LEVEL0
      */
-it('BarStateTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('BarStateTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0050] START');
       let strJson = inspector.getInspectorByKey('RichEditor_barState_undefined');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[BarStateTest_static_0050] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
-      expect(obj.getElement('$attrs').getString('barState')).assertEqual(1);
+      console.info('[BarStateTest_static_0050] BarState: ' + JSON.stringify(obj.getElement('$attrs').getDouble('barState')));
+      expect(obj.getElement('$attrs').getDouble('barState')).assertEqual(1);
       console.info('[BarStateTest_static_0050] END');
       done();
     });

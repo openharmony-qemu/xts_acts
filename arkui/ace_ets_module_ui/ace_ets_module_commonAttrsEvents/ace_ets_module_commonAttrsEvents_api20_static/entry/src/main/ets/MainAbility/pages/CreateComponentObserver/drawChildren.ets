@@ -65,19 +65,19 @@ struct TextTimerExample {
             this.Text_A_1 += 90;
           }).id('Button2')
           Text('text1off' + this.message1).onClick((e:ClickEvent) => {
-            // this.listener1.off('drawChildren', this.onDrawChildren1);
+            this.listener1.offDrawChildren(this.onDrawChildren1);
             this.Text_w_1 += 10;
           }).id('Button3')
         }
     }
   }
-  // uiInspector:UIInspector = this.getUIContext().getUIInspector();
-  // listener1:inspector.ComponentObserver = this.uiInspector.createComponentObserver("Column1") as inspector.ComponentObserver;
-  // listener2:inspector.ComponentObserver = this.uiInspector.createComponentObserver("Column2") as inspector.ComponentObserver;
+  uiInspector:UIInspector = this.getUIContext().getUIInspector();
+  listener1:inspector.ComponentObserver = this.uiInspector.createComponentObserver("Column1") as inspector.ComponentObserver;
+  listener2:inspector.ComponentObserver = this.uiInspector.createComponentObserver("Column2") as inspector.ComponentObserver;
   // listener1: inspector.ComponentObserver = inspector.createComponentObserver('Column1');
   // listener2: inspector.ComponentObserver = inspector.createComponentObserver('Column2');
-  // aboutToAppear() {
-  //   this.listener1.on('drawChildren', this.onDrawChildren1);
-  //   this.listener2.on('drawChildren', this.onDrawChildren2);
-  // }
+  aboutToAppear() {
+    this.listener1.onDrawChildren( this.onDrawChildren1);
+    this.listener2.onDrawChildren( this.onDrawChildren2);
+  }
 }

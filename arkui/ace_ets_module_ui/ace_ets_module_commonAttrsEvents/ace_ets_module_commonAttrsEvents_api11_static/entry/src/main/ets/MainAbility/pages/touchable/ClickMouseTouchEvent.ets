@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -70,14 +70,14 @@ struct ClickExample {
             this.windowY = "onClick: " + event.windowY
           })
           .onTouch((event: TouchEvent) => {
-            this.displayX = "onTouch: " + event.getHistoricalPoints()![0].touchObject.displayX
-            this.displayY = "onTouch: " + event.getHistoricalPoints()![0].touchObject.displayY
-            this.windowX = "onTouch: " + event.getHistoricalPoints()![0].touchObject.windowX
-            this.windowY = "onTouch: " + event.getHistoricalPoints()![0].touchObject.windowY
+            this.displayX = "onTouch: " + event!.getHistoricalPoints()![0].touchObject.displayX
+            this.displayY = "onTouch: " + event!.getHistoricalPoints()![0].touchObject.displayY
+            this.windowX = "onTouch: " + event!.getHistoricalPoints()![0].touchObject.windowX
+            this.windowY = "onTouch: " + event!.getHistoricalPoints()![0].touchObject.windowY
           })
           .onKeyEvent((event: KeyEvent) => {
             this.intentionCode = "KeyEvent: " + event.intentionCode
-            return false
+            return false;
           })
 
         Button('Mouse').width(100).height(40).id("Mouse_click")

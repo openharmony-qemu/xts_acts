@@ -55,20 +55,19 @@ export default function RichEditorModifierTest() {
         console.info("get RichEditorModifierTest state pages:" + JSON.stringify(pages));
         if (!("RichEditorModifier" == pages.name)) {
           console.info("get RichEditorModifierTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorModifierTest page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
      * @tc.number   RichEditorModifierTest_static_0010
      * @tc.name     RichEditorModifierTest_static_0010
@@ -89,6 +88,7 @@ export default function RichEditorModifierTest() {
     });
 
 
+    
     /*
      * @tc.number   RichEditorModifierTest_static_0020
      * @tc.name     RichEditorModifierTest_static_0020

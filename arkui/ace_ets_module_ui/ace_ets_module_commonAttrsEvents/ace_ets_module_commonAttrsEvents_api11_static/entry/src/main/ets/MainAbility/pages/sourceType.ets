@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -41,7 +41,6 @@ import {
   TouchEvent,
   TouchType
 } from '@ohos.arkui.component'
-import { RecordData } from '@ohos.base'
 
 @Entry
 @Component
@@ -53,7 +52,7 @@ struct ClickExample {
   build() {
     Column() {
       Button('Touch')
-        .backgroundColor(0x2788D9)
+        // .backgroundColor(0x2788D9)
         .width(100)
         .height(500)
         .fontSize(20)
@@ -81,7 +80,7 @@ struct ClickExample {
             let backData: events_emitter.EventData = {
               data: {
                 "event": JSON.stringify(event),
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 198,
