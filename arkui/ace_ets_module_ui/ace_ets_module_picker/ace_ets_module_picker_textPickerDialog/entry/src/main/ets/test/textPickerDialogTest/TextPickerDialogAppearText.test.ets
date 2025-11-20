@@ -71,7 +71,7 @@ export default function TextPickerDialogAppearTextTest() {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('TextPickerDialogAppearTextTest'));
+      let btn1 = await driver.findComponent(ON.id('textPickerDialogAppearText'));
       await btn1.click();
       await CommonFunc.sleep(1000);
       let row: Component = await driver.findComponent(ON.id('row'));

@@ -58,7 +58,7 @@ export default function TimePickerDialogAppearTextTest() {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('TimePickerDialogAppearText.test.ets'));
+      let btn1 = await driver.findComponent(ON.id('TimePickerDialogAppearText'));
       await btn1.click();
       await CommonFunc.sleep(1000);
       let row: Component = await driver.findComponent(ON.id('row'));

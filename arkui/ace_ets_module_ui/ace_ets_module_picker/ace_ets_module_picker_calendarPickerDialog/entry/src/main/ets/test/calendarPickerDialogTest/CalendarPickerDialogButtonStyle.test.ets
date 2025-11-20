@@ -57,7 +57,7 @@ export default function CalendarPickerDialogButtonStyleTest() {
       console.info('[CalendarPickerDialogButtonStyleTest_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('CalendarPickerDialogButtonStyleTest'));
+      let btn1 = await driver.findComponent(ON.id('ButtonStyle'));
       await btn1.click();
       await CommonFunc.sleep(1000);
 

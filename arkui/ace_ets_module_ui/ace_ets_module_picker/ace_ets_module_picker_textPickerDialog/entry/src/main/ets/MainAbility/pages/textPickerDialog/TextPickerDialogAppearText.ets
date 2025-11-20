@@ -28,7 +28,7 @@ struct TextPickerDialogAppearTextPage {
           .margin(10)
           .id('AppearText')
         Button("TextPickerDialog:" + this.v)
-          .id('TextPickerDialog')
+          .id('textPickerDialogAppearText')
           .margin(20)
           .onClick(() => {
             TextPickerDialog.show({

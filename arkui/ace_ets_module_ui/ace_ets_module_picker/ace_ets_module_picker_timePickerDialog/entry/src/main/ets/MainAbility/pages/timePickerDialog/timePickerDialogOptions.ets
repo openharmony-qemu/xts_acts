@@ -39,7 +39,7 @@ struct TimePickerDialogOptionsPage {
               console.info("TimePickerDialog: onChange()" + JSON.stringify(value))
             }
           })
-        }).key('TimePickerDialog')
+        }).key('TimePickerDialogOptions')
     }.width('100%')
   }
 }

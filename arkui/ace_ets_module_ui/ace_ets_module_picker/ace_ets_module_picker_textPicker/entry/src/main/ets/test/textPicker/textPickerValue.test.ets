@@ -22,13 +22,13 @@ export default function TextPickerValue() {
     beforeEach(async (done: Function) => {
       console.info('TextPickerValue beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/textPicker/TextPickerValue',
+        url: 'MainAbility/pages/textPicker/textPickerValue',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info('get TextPickerValue state pages:' + JSON.stringify(pages));
-        if (!('TextPickerValue' === pages.name)) {
+        if (!('textPickerValue' === pages.name)) {
           console.info('get TextPickerValue pages.name:' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await Utils.sleep(2500);
