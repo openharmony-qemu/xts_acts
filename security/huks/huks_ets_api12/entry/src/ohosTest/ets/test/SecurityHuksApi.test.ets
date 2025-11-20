@@ -51,6 +51,13 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET).assertEqual(12000016);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST).assertEqual(12000017);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_ARGUMENT).assertEqual(12000018);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_EXISTS).assertEqual(12000019);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXTERNAL_MODULE).assertEqual(12000020);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_LOCKED).assertEqual(12000021);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_INCORRECT).assertEqual(12000022);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_NO_AUTH).assertEqual(12000023);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_BUSY).assertEqual(12000024);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXCEED_LIMIT).assertEqual(12000025);
     })
 
     /**
@@ -601,7 +608,7 @@ export default function SecurityHuksApiTest() {
      * @tc.size   SmallTest
      * @tc.level  Level3
      */
-    it('SUB_Security_HUKS_Api_API20_Interface_2600', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('SUB_Security_HUKS_Api_API22_Interface_2600', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksKeyClassType.HUKS_KEY_CLASS_DEFAULT).assertEqual(0);
       expect(huks.HuksKeyClassType.HUKS_KEY_CLASS_EXTENSION).assertEqual(1);
     })
