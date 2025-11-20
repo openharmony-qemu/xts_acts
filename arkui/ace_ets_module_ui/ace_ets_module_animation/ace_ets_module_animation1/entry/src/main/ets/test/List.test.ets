@@ -43,7 +43,7 @@ import WorkerUseCurvesTest from './WorkerUseCurves.test';
 import MotionPathExample from './MotionPathExample.test';
 import animationAdd from './Animation/animationAdd.test';
 import playModeTest from './PlayModeJsunit.test';
-import stageAnimatorTest from './Animation/StageAnimator.test';
+import stageAnimatorTest from './StageAnimator.test';
 
 export default function testsuite() {
   animateJsunit();
