@@ -53,7 +53,7 @@ struct TimePickerPage {
   build() {
     Column() {
       Button('TimePickerDialog1')
-        .key('TimePickerDialog1')
+        .id('TimePickerDialog1')
         .margin(20)
         .onClick(() => {
           TimePickerDialog.show({
@@ -90,7 +90,7 @@ struct TimePickerPage {
           })
         })
       Button('TimePickerDialog2')
-        .key('TimePickerDialog2')
+        .id('TimePickerDialog2')
         .margin(20)
         .onClick(() => {
           TimePickerDialog.show({
@@ -127,7 +127,7 @@ struct TimePickerPage {
           })
         })
       Button('TimePickerDialog3')
-        .key('TimePickerDialog3')
+        .id('TimePickerDialog3')
         .margin(20)
         .onClick(() => {
           TimePickerDialog.show({
@@ -164,7 +164,7 @@ struct TimePickerPage {
           })
         })
       Button('TimePickerDialog4')
-        .key('TimePickerDialog4')
+        .id('TimePickerDialog4')
         .margin(20)
         .onClick(() => {
           TimePickerDialog.show({

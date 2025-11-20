@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { router } from '@kit.ArkUI';
 import CommonFunc from '../../MainAbility/common/Common';
+import { Driver, ON, Component} from '@ohos.UiTest';
 
 export default function TimePickerDialogApiEnableCascadeTest() {
   describe('TimePickerDialogApiEnableCascade', () => {
