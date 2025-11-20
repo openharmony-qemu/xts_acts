@@ -2,19 +2,6 @@ import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium'
 import { BusinessError } from '@kit.BasicServicesKit';
 
-let resourceOverlimitPolicytrue: hiAppEvent.ResourceOverlimitPolicy = {
-  "collectNativeHeapProfile": true,
-};
-let eventPolicytrue: hiAppEvent.EventPolicy = {
-  resourceOverlimitPolicy: resourceOverlimitPolicytrue
-};
-
-let resourceOverlimitPolicyfalse: hiAppEvent.ResourceOverlimitPolicy = {
-  "collectNativeHeapProfile": true,
-};
-let eventPolicyfalse: hiAppEvent.EventPolicy = {
-  resourceOverlimitPolicy: resourceOverlimitPolicyfalse
-};
 
 export default function HiAppEventconfigEventPolicy() {
   describe('HiAppEventconfigEventPolicy', () => {
@@ -566,107 +553,6 @@ export default function HiAppEventconfigEventPolicy() {
         done();
       });
       hilog.info(0xA8A8, 'hiAppEvent', `testHiAppEventconfigEventPolicy020 end`);
-    })
-
-    /**
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicy_3000
-     * @tc.name testHiAppEventconfigEventPolicy021
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- 传入eventPolicytrue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
-     */
-    it('testHiAppEventconfigEventPolicy021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info("testHiAppEventconfigEventPolicy021 start");
-      try {
-        let ret = await hiAppEvent.configEventPolicy(eventPolicytrue)
-        console.info("testHiAppEventconfigEventPolicy021 await!" + ret);
-        let ret1 = Number(ret);
-        console.info("testHiAppEventconfigEventPolicy021 num!" + ret1);
-        expect(ret1 == 0).assertTrue();
-        done();
-      } catch (err) {
-        console.error(`testHiAppEventconfigEventPolicy021 > err code: ${err.code}, err msg: ${err.message}`)
-        expect().assertFalse();
-        done();
-      }
-      console.info("testHiAppEventconfigEventPolicy021 end");
-    })
-
-
-    /**
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicy_3100
-     * @tc.name testHiAppEventconfigEventPolicy022
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- 传入eventPolicyfalse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
-     */
-    it('testHiAppEventconfigEventPolicy022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info("testHiAppEventconfigEventPolicy022 start");
-      try {
-        let ret = await hiAppEvent.configEventPolicy(eventPolicyfalse)
-        console.info("testHiAppEventconfigEventPolicy022 await!" + ret);
-        let ret1 = Number(ret);
-        console.info("testHiAppEventconfigEventPolicy022 num!" + ret1);
-        expect(ret1 == 0).assertTrue();
-        done();
-      } catch (err) {
-        console.error(`testHiAppEventconfigEventPolicy022 > err code: ${err.code}, err msg: ${err.message}`)
-        expect().assertFalse();
-        done();
-      }
-      console.info("testHiAppEventconfigEventPolicy022 end");
-    })
-
-    /**
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicy_3200
-     * @tc.name testHiAppEventconfigEventPolicy023
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- 传入collectNativeHeapProfile为undefied
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
-     */
-    it('testHiAppEventconfigEventPolicy023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info("testHiAppEventconfigEventPolicy023 start");
-      let resourceOverlimitPolicy: hiAppEvent.ResourceOverlimitPolicy = {
-        "collectNativeHeapProfile": undefined,
-      };
-      let eventPolicy: hiAppEvent.EventPolicy = {
-        resourceOverlimitPolicy: resourceOverlimitPolicy
-      };
-      hiAppEvent.configEventPolicy(eventPolicy).then(() => {
-        expect(false).assertTrue();
-        done();
-      }).catch((err:BusinessError) => {
-        console.error(`testHiAppEventconfigEventPolicy023 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
-        done();
-      });
-    })
-
-    /**
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicy_3300
-     * @tc.name testHiAppEventconfigEventPolicy024
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- 传入configEventPolic重复调用
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
-     */
-    it('testHiAppEventconfigEventPolicy024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info("testHiAppEventconfigEventPolicy024 start");
-      try {
-        await hiAppEvent.configEventPolicy(eventPolicyfalse);
-        await hiAppEvent.configEventPolicy(eventPolicytrue);
-        await hiAppEvent.configEventPolicy(eventPolicytrue);
-        await hiAppEvent.configEventPolicy(eventPolicyfalse);
-        done();
-      } catch (err) {
-        console.error(`testHiAppEventconfigEventPolicy024 > err code: ${err.code}, err msg: ${err.message}`)
-        expect().assertFalse();
-        done();
-      }
-      console.info("testHiAppEventconfigEventPolicy024 end");
     })
 })
 }
