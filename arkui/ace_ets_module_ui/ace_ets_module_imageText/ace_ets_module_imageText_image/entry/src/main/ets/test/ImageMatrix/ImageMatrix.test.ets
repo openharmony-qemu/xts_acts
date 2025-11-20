@@ -71,7 +71,7 @@ export default function ImageMatrixTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ImageMatrixTest_0100] strJson is: ' + strJson);
       console.info('[ImageMatrixTest_0100] ImageMatrixTest obj is: ' + JSON.stringify(obj.$attrs.ImageMatrixTest));
-      expect(obj.$attrs.ImageMatrixTest).assertEqual(
+      expect(obj.$attrs.imageMatrix).assertEqual(
         '4.532353,2.110965,-0.040063,0.000000,\n' +
         '-2.009852,4.342766,1.449440,0.000000,\n' +
         '0.129348,-0.259554,0.957027,0.000000,\n' +
