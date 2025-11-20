@@ -67,6 +67,7 @@ import flexVisibility_BaselineJsunit from './FlexTest/alignItems/ItemAlign_Basel
 import flexAlignSelf_BaselineJsunit from './FlexTest/alignItems/ItemAlign_Baseline/FlexAlignSelfJsunit.test.ets';
 import flexTextMargin_BaselineJsunit from './FlexTest/alignItems/ItemAlign_Baseline/FlexTextMarginJsunit.test.ets';
 import flexJsunit from './FlexTest/FlexJsunit.test';
+import FlexJsunitTest2 from './FlexTest/FlexJsunitTest2.test.ets'
 import flexWrapJsunit from './FlexTest/FlexWrapJsunit.test.ets';
 import directionJsunit from './FlexTest/DirectionJsunit.test.ets';
 import direction2Jsunit from './FlexTest/Direction2Jsunit.test.ets';
@@ -136,6 +137,7 @@ export default function testsuite() {
   flexAlignSelf_BaselineJsunit()
   flexTextMargin_BaselineJsunit()
   flexJsunit();
+  FlexJsunitTest2();
   flexWrapJsunit();
   directionJsunit();
   direction2Jsunit();
