@@ -13,10 +13,22 @@
  * limitations under the License.
  */
 
-import refreshJsunit from './RefreshJsunit.test';
-import RefreshUxTest from './RefreshUx.test';
+import refreshJsunit from './Refresh/RefreshJsunit.test';
+import RefreshUxTest from './Refresh/refreshUx.test';
+import refreshOffsetJsunit from './Refresh/refreshOffsetJsunit.test';
+import refreshOffsetChangeJsunit from './Refresh/refreshOffsetChangeJsunit.test';
+import refreshResource from './Refresh/refreshResource.test';
+import refreshString from './Refresh/refreshString.test';
+import RefreshingContent from './Refresh/RefreshingContent.test';
+import maxDownRefresh from './Refresh/maxDownRefresh.test';
 
 export default function testsuite() {
   refreshJsunit()
   RefreshUxTest()
+  refreshOffsetJsunit()
+  refreshOffsetChangeJsunit()
+  refreshResource()
+  refreshString()
+  RefreshingContent()
+  maxDownRefresh()
 }
