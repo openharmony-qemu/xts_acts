@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -71,6 +72,7 @@ export default function SimNoCardPublic1() {
               }
             });
           } catch(err) {
+            let err = err as BusinessError;
             console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName} test end`);
@@ -121,6 +123,7 @@ export default function SimNoCardPublic1() {
                 }
               });
             } catch (err) {
+              let err = err as BusinessError;
               console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
               ExpectFail();
               console.info(`${caseName} test end`);
@@ -172,7 +175,8 @@ export default function SimNoCardPublic1() {
               console.info(`${caseName} test end`);
               done();
             }
-          }).catch((err) => {
+          }).catch((err: Error) => {
+            let err = err as BusinessError;
             console.info(`${caseName} failed, err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
@@ -202,7 +206,7 @@ export default function SimNoCardPublic1() {
           if (data === false) {
             console.info(`${caseName}:success have not card,data->${JSON.stringify(data)}`);
             ExpectTrue(data === false);
-            sim.getSimLabel(1).then((data: sim.SimLabel) => {
+            sim.getSimLabel(1).then((data: sim.SimLabel | undefined) => {
               if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
                 console.info(`${caseName} sim card is PSIM, data->${JSON.stringify(data)}`);
                 ExpectTrue(true);
@@ -219,7 +223,8 @@ export default function SimNoCardPublic1() {
                 console.info(`${caseName} test end`);
                 done();
               }
-            }).catch((err) => {
+            }).catch((err: Error) => {
+              let err = err as BusinessError;
               console.info(`${caseName} failed, err->` + err);
               ExpectFail();
               console.info(`${caseName} test end`);
@@ -273,6 +278,7 @@ export default function SimNoCardPublic1() {
               done();
             }
           } catch (err) {
+            let err = err as BusinessError;
             console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName} test end`);
@@ -321,6 +327,7 @@ export default function SimNoCardPublic1() {
                 done();
               }
             } catch (err) {
+              let err = err as BusinessError;
               console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
               ExpectFail();
               console.info(`${caseName} test end`);
