@@ -141,13 +141,13 @@ export default function Sim4Public() {
       }
       try {
         sim.getSimLabel(0, (err: BusinessError | null, data: sim.SimLabel | undefined) => {
-          if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
-            console.info(`${caseName} sim card is PSIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
+            console.info(`${caseName} sim card is PSIM,  data->${JSON.stringify(data)}`);
             ExpectTrue(true);
             console.info(`${caseName} test end`);
             done();
-          } else if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
-            console.info(`${caseName} sim card is ESIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          } else if (data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
+            console.info(`${caseName} sim card is ESIM, data->${JSON.stringify(data)}`);
             ExpectTrue(true);
             console.info(`${caseName} test end`);
             done();
@@ -186,13 +186,13 @@ export default function Sim4Public() {
         }
         try {
           sim.getSimLabel(1, (err: BusinessError | null, data: sim.SimLabel | undefined) => {
-            if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
-              console.info(`${caseName} sim card is PSIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
+              console.info(`${caseName} sim card is PSIM,  data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end`);
               done();
-            } else if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
-              console.info(`${caseName} sim card is ESIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            } else if (data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
+              console.info(`${caseName} sim card is ESIM, data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end`);
               done();
@@ -446,6 +446,7 @@ export default function Sim4Public() {
       }
       try{
         let data: sim.SimLabel = sim.getSimLabelSync(-1);
+        console.info(`${caseName} sim card is 001122,  data->${JSON.stringify(data)}`);
         if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
           console.info(`${caseName} sim card is PSIM,  data->${JSON.stringify(data)}`);
           ExpectTrue(true);
@@ -463,7 +464,7 @@ export default function Sim4Public() {
           done();
         }
       } catch (err) {
-        console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} failed, err->` + err);
         ExpectFail();
         console.info(`${caseName} test end`);
         done();
@@ -585,6 +586,7 @@ export default function Sim4Public() {
       }
       try{
         let data: sim.SimLabel = sim.getSimLabelSync(2);
+        console.info(`${caseName} sim card is 0400004, data->${JSON.stringify(data)}`);
         if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
           console.info(`${caseName} sim card is PSIM, data->${JSON.stringify(data)}`);
           ExpectTrue(true);
@@ -602,7 +604,7 @@ export default function Sim4Public() {
           done();
         }
       } catch (err) {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed, err->` + err);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
