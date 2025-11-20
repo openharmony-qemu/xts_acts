@@ -1249,16 +1249,9 @@ export default function ArrayConstructor1Test() {
      */
    
     it('ArrayConstructor1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const ta = new Float32Array([NaN, NaN, NaN]);
-      const filtered = ta.filter(x => true);
-      const r: number[] = [];
-      for (let i = 0; i < filtered.length; i++) {
-        r.push(filtered[i]);
-      }
-      r.sort();
-
-      expect(r.length).assertEqual(3);
-      r.forEach(x => expect(Number.isNaN(x)).assertTrue());
+      const arr = ["ab"];
+      const r = arr.flatMap(x => x.split('')).sort();
+      expect(r).assertDeepEquals(['a', 'b']);
     });
 
     /**
