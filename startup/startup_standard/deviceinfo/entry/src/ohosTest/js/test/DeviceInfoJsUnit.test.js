@@ -1672,15 +1672,8 @@ export default function DeviceInfoTest() {
 				    done();
                 }
             }else{
-                if (diskSN == "") {
-                    console.info('the return value diskSN is null .');
-                    expect().assertTrue();
-				    done();
-                } else {
-                    console.info('the return value diskSN is not null or incorrect.');
-                    expect().assertFail();
-				    done();
-                }
+                expect(diskSN == "").assertTrue();
+                done();
             }
             console.info('device_info_test_074 : end');
         })
@@ -1823,14 +1816,7 @@ export default function DeviceInfoTest() {
 
             console.info('the value of the deviceinfo bootCount is :' + bootCount);
             expect(bootCount).assertInstanceOf('Number');
-            if (bootCount > -1) {
-                console.info('the value of the bootCount is :' + bootCount);
-                expect().assertTrue();
-            }else {
-                console.info('the return value ProductModeAlias is null or incorrect.');
-                expect().assertFail();
-                done();               
-            }
+            expect(bootCount > -1).assertTrue();
 
             console.info('device_info_test_081 end');
         })
