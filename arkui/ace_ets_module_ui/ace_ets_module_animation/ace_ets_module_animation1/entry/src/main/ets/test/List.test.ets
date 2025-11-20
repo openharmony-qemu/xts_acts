@@ -42,6 +42,8 @@ import curvesJsunit from './CurvesJsunit.test';
 import WorkerUseCurvesTest from './WorkerUseCurves.test';
 import MotionPathExample from './MotionPathExample.test';
 import animationAdd from './Animation/animationAdd.test';
+import playModeTest from './PlayModeJsunit.test';
+import stageAnimatorTest from './Animation/StageAnimator.test';
 
 export default function testsuite() {
   animateJsunit();
@@ -73,4 +75,6 @@ export default function testsuite() {
   animationAdd();
   MotionPathJsunit();
   ExpectedFrameRateRange();
+  playModeTest();
+  stageAnimatorTest();
 }

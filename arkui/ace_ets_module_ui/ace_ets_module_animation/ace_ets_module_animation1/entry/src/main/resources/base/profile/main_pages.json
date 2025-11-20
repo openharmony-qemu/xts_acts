@@ -33,6 +33,8 @@
         "MainAbility/pages/Animation/animationStatus",
         "MainAbility/pages/Animation/pageTransition",
 		"MainAbility/pages/WorkerUseCurves",
-		"MainAbility/pages/MotionPathExample"
+		"MainAbility/pages/MotionPathExample",
+		"MainAbility/pages/playMode",
+		"MainAbility/pages/stageAnimator"
     ]
 }
