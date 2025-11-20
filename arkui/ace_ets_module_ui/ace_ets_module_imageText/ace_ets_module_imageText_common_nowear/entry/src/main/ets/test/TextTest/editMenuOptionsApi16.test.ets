@@ -42,7 +42,6 @@ export default function editMenuOptions() {
       done();
     });
     
-
     /*
      * @tc.number       SUB_ACE_editMenuOptions0001
      * @tc.name         editMenuOptions0001

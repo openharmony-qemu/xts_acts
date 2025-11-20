@@ -416,10 +416,10 @@ export default function TextStateJsunit() {
     })
 
     /**
-     * @tc.number ArkUX_Stage_Text_TextShadow_1500
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetX value to 5.0 and the offsetY  value to 5.0 in the textShadow
-     */
+    * @tc.number ArkUX_Stage_Text_TextShadow_1600
+    * @tc.name Test the textShadow property of the text component
+    * @tc.desc Set the radius value to 1.0 and the offsetX value to 5.0 and the offsetY  value to 5.0 in the textShadow
+    */
     it('ArkUX_Stage_Text_TextShadow_1600', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1600] START');
       setTimeout(() => {
@@ -850,7 +850,7 @@ export default function TextStateJsunit() {
     })
 
     /**
-     * @tc.number ArkUX_Stage_Text_TextOverflow_0800
+     * @tc.number ArkUX_Stage_Text_TextOverflow_0900
      * @tc.name Test the textOverflow property of the text component
      * @tc.desc Set the textOverflow property value to TextOverflow.Clip and the fontSize value to 15.00fp
      */

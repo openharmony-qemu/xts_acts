@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -62,22 +62,22 @@ struct MovingPhotoViewApi18 {
     aiController: this.aiController
   }
   @State src: photoAccessHelper.MovingPhoto | undefined = undefined;
-  @State ImageFit: ImageFit | undefined | null = ImageFit.Contain;
-  @State start: string = "Init";
-  @State stop: string = "Init";
-  @State pause: string = "Init";
-  @State finish: string = "Init";
-  @State error: string = "Init";
-  @State play: string = "Init";
-  @State stopPlay: string = "Init";
-  @State complete: string = "Init";
+  @State imageFit: ImageFit | undefined | null = ImageFit.Contain;
+  @State start: string = 'Init';
+  @State stop: string = 'Init';
+  @State pause: string = 'Init';
+  @State finish: string = 'Init';
+  @State error: string = 'Init';
+  @State play: string = 'Init';
+  @State stopPlay: string = 'Init';
+  @State complete: string = 'Init';
   @State flag: boolean = false;
   @State autoPlayFlag: boolean = false;
   @State repeatPlayFlag: boolean = false;
   @State autoPlayPeriodStart: number = -1;
   @State autoPlayPeriodEnd: number = -1;
   @State enableAnalyzerFlag: boolean = false;
-  @State refresh: string = "Init";
+  @State refresh: string = 'Init';
   aboutToAppear(): void {
     checkResourceFile(context)
     example111()
@@ -96,24 +96,24 @@ struct MovingPhotoViewApi18 {
             .width(200)
             .height(200)
             .muted(this.flag)
-            .objectFit(this.ImageFit)
+            .objectFit(this.imageFit)
             .onStart(() => {
-              this.start = "onStart succ"
+              this.start = 'onStart succ'
             })
             .onStop(() => {
-              this.stop = "onStop succ"
+              this.stop = 'onStop succ'
             })
             .onPause(() => {
-              this.pause = "onPause succ"
+              this.pause = 'onPause succ'
             })
             .onFinish(() => {
-              this.finish = "onFinish succ"
+              this.finish = 'onFinish succ'
             })
             .onError(() => {
-              this.error = "onError succ"
+              this.error = 'onError succ'
             })
             .onComplete(() => {
-              this.complete = "onComplete succ"
+              this.complete = 'onComplete succ'
             })
             .autoPlay(this.autoPlayFlag)
             .autoPlayPeriod(this.autoPlayPeriodStart, this.autoPlayPeriodEnd)
@@ -125,11 +125,11 @@ struct MovingPhotoViewApi18 {
           Button('Play').id('MovingPhotoViewApi18_playButton')
             .onClick(() => {
               this.controller.startPlayback()
-              this.play = "startPlayback succ"
+              this.play = 'startPlayback succ'
             })
           Button('Stop').id('MovingPhotoViewApi18_stopButton')
             .onClick(() => {
-              this.stop = "onStop succ"
+              this.stop = 'onStop succ'
             })
         }
 
@@ -137,7 +137,7 @@ struct MovingPhotoViewApi18 {
           Button('StopPlay').id('MovingPhotoViewApi18_stopPlay')
             .onClick(() => {
               this.controller.stopPlayback()
-              this.stopPlay = "stopPlayback succ"
+              this.stopPlay = 'stopPlayback succ'
             })
           Button('mute').id('MovingPhotoViewApi18_true')
             .onClick(() => {
@@ -148,7 +148,7 @@ struct MovingPhotoViewApi18 {
         Row(){
           Button('error').id('MovingPhotoViewApi18_errorButton')
             .onClick(() => {
-              this.error = "onError succ"
+              this.error = 'onError succ'
             })
           Button('setAutoPlayPeriod').id('MovingPhotoViewApi18_setAutoPlayPeriod')
             .onClick(() => {
@@ -176,7 +176,7 @@ struct MovingPhotoViewApi18 {
           Button('Refresh').id('MovingPhotoViewApi18_refreshButton')
             .onClick(() => {
               this.controller.refreshMovingPhoto()
-              this.refresh = "refresh succ"
+              this.refresh = 'refresh succ'
             })
         }
 

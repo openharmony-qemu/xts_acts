@@ -69,6 +69,12 @@ export default function editMenuIdAIWriterTest() {
         await driver.assertComponentExist(ON.text('全选'));
       }
       await driver.triggerKey(2070)
+      let strJson1 = getInspectorByKey('flag');
+      await CommonFunc.sleep(200);
+      let obj1: ESObject = JSON.parse(strJson1);
+      console.info("[editMenuIdAIWriterTest_0100] obj1 is: " + JSON.stringify(obj1));
+      await CommonFunc.sleep(500);
+      expect(obj1.$type).assertEqual('Text');
       console.info('editMenuIdAIWriterTest_0100 END');
       done();
     });
@@ -100,6 +106,12 @@ export default function editMenuIdAIWriterTest() {
         await driver.assertComponentExist(ON.text('全选'));
       }
       await driver.triggerKey(2070)
+      let strJson1 = getInspectorByKey('flag');
+      await CommonFunc.sleep(200);
+      let obj1: ESObject = JSON.parse(strJson1);
+      console.info("[editMenuIdAIWriterTest_0200] obj1 is: " + JSON.stringify(obj1));
+      await CommonFunc.sleep(500);
+      expect(obj1.$type).assertEqual('Text');
       console.info('editMenuIdAIWriterTest_0200 END');
       done();
     });

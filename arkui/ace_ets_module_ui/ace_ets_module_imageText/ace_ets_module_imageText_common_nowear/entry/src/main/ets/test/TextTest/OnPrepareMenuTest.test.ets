@@ -64,9 +64,14 @@ export default function OnPrepareMenuTest() {
       await driver.assertComponentExist(ON.text('prepare1'))
       let Button = await driver.findComponent(ON.text('prepare1'));
       if(Button){
-         expect("").assertEqual("")
+        let strJson1 = getInspectorByKey('TestOnPrepareMenu');
+        await CommonFunc.sleep(200);
+        let obj1: ESObject = JSON.parse(strJson1);
+        console.info("[OnPrepareMenuTest0001] obj1 is: " + JSON.stringify(obj1));
+        await CommonFunc.sleep(500);
+        expect(obj1.$type).assertEqual('TextArea');
      }else{
-         expect("false").assertEqual("")
+        expect("false").assertEqual("")
      }
       console.info("[OnPrepareMenuTest0001] end");
       done();
