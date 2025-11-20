@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,6 +28,7 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -42,7 +43,7 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function OnTouch2() {
@@ -56,19 +57,17 @@ export default function OnTouch2() {
     beforeEach(async (): Promise<void> => {
       console.info("OnTouch2 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/OnTouch2',
+        url: "MainAbility/pages/onTouch/OnTouch2",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnTouch2 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/onTouch/OnTouch2" == pages.name)) {
           console.info("get OnTouch2 pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push OnTouch2 page error:" + err);
@@ -77,33 +76,36 @@ export default function OnTouch2() {
     });
 
 
+    
     /*
-     * @tc.number    OnTouch2_static_0100
-     * @tc.name      OnTouch2_static_0100
-     * @tc.desc      OnTouch2_static_0100
-     * @tc.level     2
+     * @tc.number   OnTouch2_static_0100
+     * @tc.name     OnTouch2_static_0100
+     * @tc.desc     OnTouch2_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('OnTouch2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('OnTouch2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('OnTouch2_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Touch3');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[OnTouch2_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[OnTouch2_0100] title: " + JSON.stringify(obj.getString('content')));
-      expect(obj.getString('content')).assertEqual('PanGesture offset:X:10Y:20');
+      console.info("[OnTouch2_0100] title: " + obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('PanGesture offset:X:10Y:20');
       console.info('[OnTouch2_0100] END');
       done();
     });
 
+    
     /*
-     * @tc.number    OnTouch2_0200
-     * @tc.name      OnTouch2_0200
-     * @tc.desc      OnTouch2_0200
-     * @tc.level     2
+     * @tc.number   OnTouch2_static_0200
+     * @tc.name     OnTouch2_static_0200
+     * @tc.desc     OnTouch2_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('OnTouch2_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('OnTouch2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnTouch2_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -111,10 +113,11 @@ export default function OnTouch2() {
       await (Column?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Touch4');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[OnTouch2_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[OnTouch2_0200] title: " + JSON.stringify(obj.getString('content')));
-      expect((Number(obj.getString('content')) - 100) < 10).assertEqual(true);
+      console.info("[OnTouch2_0200] title: " + obj.getElement('$attrs').getString('content'));
+      expect((Number(obj.getElement('$attrs').getString('content')) - 100) < 10).assertEqual(true);
       console.info('[OnTouch2_0200] END');
       done();
     });

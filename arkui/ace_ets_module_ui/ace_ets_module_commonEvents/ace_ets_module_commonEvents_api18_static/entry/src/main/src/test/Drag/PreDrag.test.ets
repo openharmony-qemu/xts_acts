@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -53,7 +53,7 @@ export default function PreDrag() {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push PreDragTest success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push PreDragTest page error: ' + err);
@@ -67,13 +67,14 @@ export default function PreDrag() {
     });
 
 
+    
     /*
-     * @tc.number    PreDragTest_static_0010
-     * @tc.name      PreDragTest_static_0010
-     * @tc.desc      PreDragTest_static_0010
-     * @tc.level     2
+     * @tc.number   PreDragTest_static_0010
+     * @tc.name     PreDragTest_static_0010
+     * @tc.desc     PreDragTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('PreDragTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PreDragTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PreDragTest_static_0010 START');
       let driver = Driver.create();
       let grid = await driver.findComponent(ON.id('drag'));

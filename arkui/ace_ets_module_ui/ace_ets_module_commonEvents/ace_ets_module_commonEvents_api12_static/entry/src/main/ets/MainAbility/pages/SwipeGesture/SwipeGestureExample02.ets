@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,29 +13,29 @@
  * limitations under the License.
  */
 import {
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  GestureEvent,
-  HorizontalAlign,
-  Margin,
-  Padding,
-  Row,
-  SourceTool,
-  Span,
-  SwipeDirection,
-  SwipeGesture,
-  Text,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  GestureEvent,
+  Padding,
+  Span,
+  HorizontalAlign,
+  SwipeGesture,
+  SwipeDirection,
+  SourceTool
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -72,6 +72,8 @@ struct SwipeGestureExample02 {
   @State time: number = 0
   @State timestamp: number = 0
 
+
+
   build() {
     Column({ space: 10 } as ColumnOptions) {
       Text('SwipeGesture02')
@@ -83,7 +85,50 @@ struct SwipeGestureExample02 {
         .backgroundColor(Color.Yellow)
         .key('SwipeGestureExample02_Click')
         .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
+        .gesture(
+          SwipeGesture({ direction: SwipeDirection.Vertical })
+            .onAction((event: GestureEvent) => {
+              console.log('SwipeGesture02 11111111111')
+              if (event) {
+                console.log('SwipeGesture02 22222222222')
+                this.time = Date.now()
+                this.timestamp = event.timestamp
+                this.repeat = event.repeat + ''
+                this.offsetX = event.offsetX
+                this.offsetY = event.offsetY
+                this.angle = event.angle + ''
+                this.scale1 = event.scale + ''
+                this.pinchCenterX = event.pinchCenterX + ''
+                this.pinchCenterY = event.pinchCenterY + ''
+                this.speed = event.speed + ''
+                this.fingerList_id = event.fingerList[0].id + ''
+                this.fingerList_globalX = event.fingerList[0].globalX + ''
+                this.fingerList_globalY = event.fingerList[0].globalY + ''
+                this.fingerList_localX = event.fingerList[0].localX + ''
+                this.fingerList_localY = event.fingerList[0].localY + ''
+                this.fingerList_displayX = event.fingerList[0].displayX + ''
+                this.fingerList_displayY = event.fingerList[0].displayY + ''
+                this.target_area_width = event.target.area.width + ''
+                this.target_area_height = event.target.area.height + ''
+                this.target_area_position_x = event.target.area.position.x + ''
+                this.target_area_position_y = event.target.area.position.y + ''
+                this.target_area_globalPosition_x = event.target.area.globalPosition.x + ''
+                this.target_area_globalPosition_y = event.target.area.globalPosition.y + ''
+                this.source = event.source + ''
+                this.pressure = event.pressure + ''
+                this.tiltX = event.tiltX + ''
+                this.tiltY = event.tiltY + ''
+                this.sourceTool = SourceTool[event.sourceTool] + ''
+                this.velocityX = event.velocityX + ''
+                this.velocityY = event.velocityY + ''
+                this.velocity = event.velocity + ''
+                console.log('SwipeGesture02 33333333333333333')
 
+              }
+              console.log('SwipeGesture02 444444444')
+
+            })
+        )
 
       Text(`repeat:${this.repeat}`).key('SwipeGestureExample02_repeat')
       Text(`${this.offsetX}`).key('SwipeGestureExample02_offsetX')

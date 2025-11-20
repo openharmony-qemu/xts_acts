@@ -53,15 +53,14 @@ export default function arcSwiperContent() {
       console.info("arcSwiperContent beforeEach end");
     });
 
-    /**
-     * @tc.number    arcSwiperContent_001
-     * @tc.name      arcSwiperContent_static_0100
-     * @tc.desc      ArcSwiper custom switching animation.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   arcSwiperContent_static_0100
+     * @tc.name     arcSwiperContent_static_0100
+     * @tc.desc     arcSwiperContent_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('arcSwiperContent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('arcSwiperContent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[arcSwiperContent_static_0100] START');
       let swipeTabs = CommonFunc.getComponentRectOnScreen('arcs_customContent');
       let top = swipeTabs.top;

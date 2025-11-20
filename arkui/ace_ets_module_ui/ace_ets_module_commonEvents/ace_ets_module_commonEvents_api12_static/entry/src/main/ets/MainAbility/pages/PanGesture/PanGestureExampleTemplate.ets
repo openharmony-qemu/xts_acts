@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT Wtemplate_arrANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,6 +38,7 @@ import {
   PanGestureOptions,
   Row,
   Scroll,
+  SourceTool,
   Span,
   TapGesture,
   Text,
@@ -70,6 +71,10 @@ struct PanGestureExampleTemplate {
   @State endTime: number = 0
   @State cnt: number = 0
   @State inputTemplate_arr: Array<number> = new Array<number>()
+  private panOption: PanGestureOptions = new PanGestureOptions({
+    direction: (PanDirection.Left | PanDirection.Right | PanDirection.All | PanDirection.Horizontal |
+    PanDirection.Vertical) as PanDirection
+  })
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
@@ -95,7 +100,28 @@ struct PanGestureExampleTemplate {
           }
           this.cnt += event.getHistoricalPoints()!.length
         })
-
+        .gesture(
+          PanGesture(this.panOption)
+            .onActionUpdate((event: GestureEvent) => {
+              if (event) {
+                this.template_arr.push(event.timestamp)
+                this.time = Date.now()
+                this.timestamp = event.timestamp
+                this.offsetX = event.offsetX
+                this.offsetY = event.offsetY
+                this.pinchCenterX = event.pinchCenterX + ''
+                this.pinchCenterY = event.pinchCenterY + ''
+                this.fingerList_globalX = event.fingerList[0].globalX + ''
+                this.fingerList_globalY = event.fingerList[0].globalY + ''
+                this.fingerList_localX = event.fingerList[0].localX + ''
+                this.fingerList_localY = event.fingerList[0].localY + ''
+                this.target_area_position_x = event.target.area.position.x + ''
+                this.target_area_position_y = event.target.area.position.y + ''
+                this.target_area_globalPosition_x = event.target.area.globalPosition.x + ''
+                this.target_area_globalPosition_y = event.target.area.globalPosition.y + ''
+              }
+            })
+        )
 
       Button('template').id('PanGestureExampleTemplate_template')
         .onClick((e: ClickEvent) => {
@@ -120,6 +146,8 @@ struct PanGestureExampleTemplate {
         })
       Text(`templateFlag:${this.template_flag}`).key('PanGestureExampleTemplate_Text')
 
-    }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba')
+    }.alignItems(HorizontalAlign.Start).width('100%').height('100%')
+
+    .backgroundColor('#ffbebaba')
   }
 }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,7 +28,7 @@ import {
   Text,
   TextAlign,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
@@ -59,7 +59,7 @@ struct ScrollExample {
             .fontSize(20)
             .height('50%')
             .margin({ top: 1, bottom: 1 } as Margin)
-            .backgroundColor(Color.Green)
+            .backgroundColor(Color.Green)// 通过设置ratios为[0.0, 1.0]，实现当组件完全显示或完全消失在屏幕中时触发回调
             .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number): void => {
               console.info("Test Text isVisible: " + isVisible + ", currentRatio:" + currentRatio)
               if (isVisible && currentRatio >= 1.0) {
@@ -99,7 +99,7 @@ struct ScrollExample {
             Text(item.toString())
               .width('90%')
               .height('20%')
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor('0xFFFFFF')
               .borderRadius(15)
               .fontSize(16)
               .textAlign(TextAlign.Center)
@@ -109,12 +109,21 @@ struct ScrollExample {
         }.width('100%')
       }
       .id('onVisibleAreaApproximateChange_scroll_id')
-      .backgroundColor(0x317aff)
+      .backgroundColor('0x317aff')
       .scrollable(ScrollDirection.Vertical)
       .scrollBar(BarState.On)
       .scrollBarColor(Color.Gray)
       .scrollBarWidth(10)
+      .onDidScroll((xOffset: number, yOffset: number) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
+      .onScrollEdge((side: Edge) => {
+        console.info('To the edge')
+      })
+      .onScrollStop(() => {
+        console.info('Scroll Stop')
+      })
 
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+    }.width('100%').height('100%').backgroundColor('0xDCDCDC')
   }
 }

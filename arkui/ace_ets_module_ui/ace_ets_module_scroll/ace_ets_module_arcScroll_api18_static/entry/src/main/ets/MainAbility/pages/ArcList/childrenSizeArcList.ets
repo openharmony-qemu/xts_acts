@@ -94,6 +94,27 @@ struct listChildrenSizeArcList {
         .clipShape(new CircleShape({ width: '100%', height: '100%' }))
         .backgroundColor(Color.White)
 
+        // ArcList({ initialIndex: 0, header: this.tabBar1, scroller: this.scroller }) {
+        //   ForEach(this.numItems, (item: number, index: number) => {
+        //     ArcListItem() {
+        //       Button('' + item, { type: ButtonType.Capsule })
+        //         .width(this.listSize)
+        //         .height('100px')
+        //         .fontSize('40px')
+        //         .focusable(true)
+        //         .focusOnTouch(true)
+        //         .backgroundColor(0x17A98D)
+        //     }.align(Alignment.Center)
+        //   }, (item: string, index: number) => item + index)
+        // }
+        // .space(LengthMetrics.px(10))
+        // .borderRadius(this.watchSize)
+        // .focusable(true)
+        // .focusOnTouch(true)
+        // .defaultFocus(true)
+        // .childrenMainSize(this.listChildrenSize)
+        // .backgroundColor(this.getColor())
+
       }
       .align(Alignment.Center)
       .width(this.watchSize)

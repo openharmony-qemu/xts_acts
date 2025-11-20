@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,9 @@ export default function mouseEventTest() {
         if (!('Mouse' == pages.name)) {
           console.info('get mouseEvent state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
+          // let result = await router.push(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push mouseEvent success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push mouseEvent page error: ' + err);
@@ -61,13 +61,14 @@ export default function mouseEventTest() {
       }
     });
 
+    
     /*
-     * @tc.number    Mouse1_static_0100
-     * @tc.name      Mouse1_static_0100
-     * @tc.desc      Mouse1_static_0100
-     * @tc.level     2
+     * @tc.number   Mouse1_static_0100
+     * @tc.name     Mouse1_static_0100
+     * @tc.desc     Mouse1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('Mouse1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('Mouse1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('Mouse1_static_0100 START');
       let areaObj = CommonFunc.getComponentRectOnScreen('mouse');
@@ -76,11 +77,15 @@ export default function mouseEventTest() {
       let mouseX = Math.round(areaObj.left + areaWidth * 0.5) as Int
       let mouseY = Math.round(areaObj.top + areaHeight * 0.5) as Int
       let driver = Driver.create();
+
+      console.log('test driver is: ' + driver)
       await driver.mouseClick({
         x: mouseX, y: mouseY
       }, MouseButton.MOUSE_BUTTON_LEFT);
-      await CommonFunc.sleep(1000);
+
+      await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('value');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[Mouse1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[Mouse1_static_0100] title: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));

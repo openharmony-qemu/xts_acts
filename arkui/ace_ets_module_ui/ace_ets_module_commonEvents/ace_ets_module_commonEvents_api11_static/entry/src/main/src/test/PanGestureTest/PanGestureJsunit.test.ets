@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,27 +14,26 @@
  */
 import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from '@kit.ArkUI';
+import { sendTouchEvent } from '@ohos.arkui.Test';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function PanGesture3Jsunit() {
@@ -50,19 +49,20 @@ export default function PanGesture3Jsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("PanGesture3Jsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/PanGesture3Jsunit',
+        url: 'MainAbility/pages/PanGesture/PanGesture3',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PanGesture3Jsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/PanGesture/PanGesture3" == pages.name)) {
           console.info("get PanGesture3Jsunit pages.name:" + JSON.stringify(pages.name));
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push PanGesture3Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PanGesture3Jsunit page error:" + err);
@@ -76,46 +76,48 @@ export default function PanGesture3Jsunit() {
       console.info("PanGesture after each called");
     });
 
+    
     /*
-     * @tc.number    testPanGesture_static_01
-     * @tc.name      testPanGesture_static_01
-     * @tc.desc      testPanGesture_static_01
-     * @tc.level     2
+     * @tc.number   testPanGesture_static_01
+     * @tc.name     testPanGesture_static_01
+     * @tc.desc     testPanGesture_static_01
+     * @tc.level    Level.LEVEL0
      */
-    it('testPanGesture_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testPanGesture_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[testPanGesture01] START');
         try {
-          let eventData: events_emitter.EventData = {
+          let eventData: emitter.EventData = {
             data: {
               "touchable": true,
-            } as Record<string, RecordData>
+            } as Record<String, undefined | null | Object>
           }
-          let innerEvent: events_emitter.InnerEvent = {
+          let innerEvent: emitter.InnerEvent = {
             eventId: 23,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
           console.info("[testPanGesture01] start to publish emit:" + JSON.stringify(eventData.data));
-          events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+          emitter.emit(innerEvent, eventData);
+        } catch (err: Error) {
           console.log("[testPanGesture01] change component data error: " + err.message);
         }
         await CommonFunc.sleep(1000);
         console.info('[testPanGesture01] END');
         done();
-      } catch (err) {
+      } catch (err: Error) {
         expect().assertFail();
       }
     });
 
+    
     /*
-     * @tc.number    testPanGesture_static_02
-     * @tc.name      testPanGesture_static_02
-     * @tc.desc      testPanGesture_static_02
-     * @tc.level     2
+     * @tc.number   testPanGesture_static_02
+     * @tc.name     testPanGesture_static_02
+     * @tc.desc     testPanGesture_static_02
+     * @tc.level    Level.LEVEL0
      */
-    it('testPanGesture_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rect = CommonFunc.getComponentRect('PanGesture')
+it('testPanGesture_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let rect = CommonFunc.getComponentRect('PanGesture3')
       console.info("[testPanGesture02] rectInfo is " + JSON.stringify(rect));
       x_value = rect.left + (rect.right - rect.left) / 10
       y_value = rect.top + (rect.bottom - rect.top) / 10
@@ -128,23 +130,23 @@ export default function PanGesture3Jsunit() {
         displayX: 0,
         displayY: 0,
         windowX: 0,
-        windowY: 0
-
-
+        windowY: 0,
+        // screenX: 0,
+        // screenY: 0
       }
-      let callbackTwo = (eventDataOne: events_emitter.EventData) => {
+      let callbackTwo = (eventDataOne: emitter.EventData) => {
         console.info("[testPanGesture02] get event state result is: " + JSON.stringify(eventDataOne));
         expect(((eventDataOne.data) as ESObject).getProperty('ACTION')).assertEqual(true)
         expect(((eventDataOne.data) as ESObject).getProperty('EVENT_TYPE')).assertEqual('Move')
       }
-      let innerEventTwo: events_emitter.InnerEvent = {
+      let innerEventTwo: emitter.InnerEvent = {
         eventId: 24,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(innerEventTwo, callbackTwo)
-      } catch (err) {
-        console.info("[testPanGesture02] on events_emitter err : " + JSON.stringify(err));
+        emitter.on(innerEventTwo, callbackTwo)
+      } catch (err: Error) {
+        console.info("[testPanGesture02] on emitter err : " + JSON.stringify(err));
       }
       console.info('[testPanGesture02] testSendTouchEvent ' + sendTouchEvent(point));
       await CommonFunc.sleep(1000)

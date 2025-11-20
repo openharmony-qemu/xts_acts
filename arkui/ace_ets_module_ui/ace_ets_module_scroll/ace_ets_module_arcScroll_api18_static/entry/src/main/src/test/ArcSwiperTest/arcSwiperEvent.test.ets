@@ -53,15 +53,14 @@ export default function arcSwiperEvent() {
       console.info("arcSwiperEvent beforeEach end");
     });
 
-    /**
-     * @tc.number    arcSwiperEvent_001
-     * @tc.name      arcSwiperEvent_static_0100
-     * @tc.desc      Set the sliding switch function of disabled components.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   arcSwiperEvent_static_0100
+     * @tc.name     arcSwiperEvent_static_0100
+     * @tc.desc     arcSwiperEvent_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('arcSwiperEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('arcSwiperEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[arcSwiperEvent_static_0100] START');
       let driver = Driver.create()
       let swipeTabs = CommonFunc.getComponentRectOnScreen('arcSwiper_eventChange');
@@ -93,15 +92,14 @@ export default function arcSwiperEvent() {
       done();
     });
 
-    /**
-     * @tc.number    arcSwiperEvent_002
-     * @tc.name      arcSwiperEvent_static_0200
-     * @tc.desc      During the sliding process of the page, trigger callback events.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   arcSwiperEvent_static_0200
+     * @tc.name     arcSwiperEvent_static_0200
+     * @tc.desc     arcSwiperEvent_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('arcSwiperEvent_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('arcSwiperEvent_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[arcSwiperEvent_static_0200] START');
       let driver = Driver.create()
       let btn1 = await driver.findComponent(ON.id('arcSwiper_disableSwipe'));

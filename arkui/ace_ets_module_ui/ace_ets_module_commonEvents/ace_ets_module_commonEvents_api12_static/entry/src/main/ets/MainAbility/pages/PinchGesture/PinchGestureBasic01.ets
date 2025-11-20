@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -118,8 +118,8 @@ struct PinchGestureBasic01 {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -131,7 +131,7 @@ struct PinchGestureBasic01 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -172,8 +172,8 @@ struct PinchGestureBasic01 {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -185,7 +185,7 @@ struct PinchGestureBasic01 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -224,8 +224,8 @@ struct PinchGestureBasic01 {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -237,7 +237,7 @@ struct PinchGestureBasic01 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -268,8 +268,8 @@ struct PinchGestureBasic01 {
       Text(`repeat:${this.repeat}`).key('PinchGestureBasic01_repeat')
       Text(`offsetX:${this.offsetX}`).key('PinchGestureBasic01_offsetX')
       Text(`offsetY:${this.offsetY}`).key('PinchGestureBasic01_offsetY')
-      Text(`angle:${this.angle}`).key('PinchGestureBasic01_angle')
-      Text(`scale:${this.scale1}`).key('PinchGestureBasic01_scale')
+      Text(`angle:${Number.parseInt(this.angle)}`).key('PinchGestureBasic01_angle')
+      Text(`scale:${Number.parseInt(this.scale1)}`).key('PinchGestureBasic01_scale')
       Text(`${this.pinchCenterX}`).key('PinchGestureBasic01_pinchCenterX')
       Text(`${this.pinchCenterY}`).key('PinchGestureBasic01_pinchCenterY')
       Text(`speed:${this.speed}`).key('PinchGestureBasic01_speed')

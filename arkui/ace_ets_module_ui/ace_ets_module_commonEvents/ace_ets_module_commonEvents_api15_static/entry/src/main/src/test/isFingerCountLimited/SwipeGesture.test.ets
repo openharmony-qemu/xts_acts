@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,9 @@ export default function swipeGestureTest() {
         if (!('SwipeGesture' == pages.name)) {
           console.info('get SwipeGesture state pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
+          // let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push SwipeGesture page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push SwipeGesture page error:' + err);
@@ -62,17 +62,20 @@ export default function swipeGestureTest() {
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
       console.info('SwipeGesture after each called');
     });
 
 
+    
     /*
-     * @tc.number    SwipeGesture1_static_0100
-     * @tc.name      SwipeGesture1_static_0100
-     * @tc.desc      SwipeGesture1_static_0100
-     * @tc.level     2
+     * @tc.number   SwipeGesture1_static_0100
+     * @tc.name     SwipeGesture1_static_0100
+     * @tc.desc     SwipeGesture1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SwipeGesture1_static_0100 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
@@ -89,9 +92,9 @@ export default function swipeGestureTest() {
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await (driver.swipe(Math.round(areaObj1.left + areaWidth1 / 4) as Int,
-        Math.round(areaObj1.top + areaHeight1 / 4) as Int, Math.round(areaObj1.left + areaWidth1 / 2) as Int,
-        Math.round(areaObj1.top + areaHeight1 / 2) as Int, 800) as Promise<void>)
+      await (driver.swipe(Math.round(areaObj1.left + areaWidth1 / 4) as int,
+        Math.round(areaObj1.top + areaHeight1 / 4) as int, Math.round(areaObj1.left + areaWidth1 / 2) as int,
+        Math.round(areaObj1.top + areaHeight1 / 2) as int, 800) as Promise<void>)
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SwipeGesture');
       let obj = JSON.parseJsonElement(strJson);
@@ -104,13 +107,14 @@ export default function swipeGestureTest() {
     });
 
 
+    
     /*
-     * @tc.number    SwipeGesture1_static_0200
-     * @tc.name      SwipeGesture1_static_0200
-     * @tc.desc      SwipeGesture1_static_0200
-     * @tc.level     2
+     * @tc.number   SwipeGesture1_static_0200
+     * @tc.name     SwipeGesture1_static_0200
+     * @tc.desc     SwipeGesture1_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('SwipeGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwipeGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SwipeGesture1_static_0200 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
@@ -125,12 +129,12 @@ export default function swipeGestureTest() {
       console.log('SwipeGesture1_static_0200 areaObj2 clicked end', Math.round(areaObj2.left + areaWidth2 * 0.8),
         Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2))
       let driver = Driver.create();
-      let speed = (Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000) as Int
+      let speed = (Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000) as int
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 * 0.2) as Int,
-        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2) as Int,
-        Math.round(areaObj2.left + areaWidth2 * 0.8) as Int,
-        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2) as Int, speed)) as Promise<void>)
+      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 * 0.2) as int,
+        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2) as int,
+        Math.round(areaObj2.left + areaWidth2 * 0.8) as int,
+        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2) as int, speed)) as Promise<void>)
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SwipeGesture2');
       let obj = JSON.parseJsonElement(strJson);

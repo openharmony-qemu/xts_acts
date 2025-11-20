@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,7 @@ export default function onkeyEventDispatchTest8() {
         if (!("onkeyEventDispatch08" == pages.name)) {
           console.info("get keyEventDispatchTest08 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push onkeyEventDispatch09 page error: " + err);
@@ -63,31 +61,33 @@ export default function onkeyEventDispatchTest8() {
 
 
     /*
-     * @tc.number    SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_static_0300
-     * @tc.name      SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_static_0300
-     * @tc.desc      SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_static_0300
-     * @tc.level     2
-     */
+    * @tc.number   SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_static_0300
+    * @tc.name     SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_static_0300
+    * @tc.desc     SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_static_0300
+    * @tc.level    Level.LEVEL0
+    */
     it('SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_static_0300', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_STATIC_0300] START');
         let driver = Driver.create();
         await driver.triggerKey(2049);
-        await CommonFunc.sleep(2000);
+        await CommonFunc.sleep(4000);
 
-
+        // the key event not reponse
         let strJson1 = inspector.getInspectorByKey('kkeyx');
+        await CommonFunc.sleep(2000);
         let obj1 = JSON.parseJsonElement(strJson1);
         console.info("[SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_STATIC_0300] obj is: " +
         obj1.getElement('$attrs').getString('content'));
         expect(obj1.getElement('$attrs').getString('content')).assertEqual('');
 
-
+        // dispatch Response
         let strJson2 = inspector.getInspectorByKey('disPatchKeyx');
+        await CommonFunc.sleep(2000);
         let obj2 = JSON.parseJsonElement(strJson2);
         console.info("[SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_STATIC_0300] obj is: " +
         obj1.getElement('$attrs').getString('content'));
-        expect(obj2.getElement('$attrs').getString('content')).assertEqual('disundefined');
+        expect(obj2.getElement('$attrs').getString('content')).assertEqual('disfalse');
 
         console.info('SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_STATIC_0300] END');
         done();

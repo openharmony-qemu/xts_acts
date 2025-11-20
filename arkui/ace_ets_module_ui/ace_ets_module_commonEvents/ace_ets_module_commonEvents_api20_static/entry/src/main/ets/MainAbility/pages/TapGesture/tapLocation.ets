@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,21 +13,25 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   Column,
   ColumnOptions,
-  Component,
-  DragEvent,
-  Entry,
-  GestureEvent,
-  NodeContainer,
-  TapGesture,
   Text,
+  DragEvent,
+  NodeContainer,
+  GestureEvent,
+  TapGesture,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { FrameNode, LengthMetrics, NodeController, typeNode } from '@ohos.arkui.node';
-
 @Entry
 @Component
 struct tapLocationExample {
@@ -37,13 +41,21 @@ struct tapLocationExample {
   @State value4: string = ''
   @State value5: string = ''
   @State value6: string = ''
-
   build() {
     Column({ space: 10 } as ColumnOptions) {
       Text('点击显示tapLocation')
         .id('TapGesture')
-
-
+        .gesture(
+          TapGesture({ fingers: 1})
+            .onAction((event: GestureEvent) => {
+              // this.value1 = event.tapLocation?.x
+              // this.value2 = event.tapLocation?.y
+              // this.value3 = event.tapLocation?.windowX
+              // this.value4 = event.tapLocation?.windowY
+              // this.value5 = event.tapLocation?.displayX
+              // this.value6 = event.tapLocation?.displayY
+            })
+        )
         .height('40%')
         .width('90%')
         .padding(20)

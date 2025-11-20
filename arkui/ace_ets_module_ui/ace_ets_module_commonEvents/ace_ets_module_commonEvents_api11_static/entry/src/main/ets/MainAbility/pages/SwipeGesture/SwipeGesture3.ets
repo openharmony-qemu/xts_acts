@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,7 +58,7 @@ struct SwipeGesture3 {
       .key('SwipeGesture3')
       .height(150)
       .width(200)
-      .backgroundColor(0x008000)
+      .backgroundColor(Color.Green)
       .scale({ x: this.scaleX, y: this.scaleY, z: 1 })
       .gesture(
         SwipeGesture({ direction: SwipeDirection.All })
@@ -72,6 +72,6 @@ struct SwipeGesture3 {
     }
     .height(150)
     .width(200)
-    .backgroundColor(0xffa500)
+    .backgroundColor(Color.Orange)
   }
 }

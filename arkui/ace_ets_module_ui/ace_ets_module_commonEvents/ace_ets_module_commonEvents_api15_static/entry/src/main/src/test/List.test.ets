@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -49,38 +49,38 @@ import DragPreviewOptions from './DragPreviewOptions/DragPreviewOptions.test';
 import EventTarget_id from './EventTarget_id/EventTarget_id.test';
 
 export default function testsuite() {
-  getWithUniqueId();
-  keyEventDispatchTest();
-  keyEventDispatchTest2();
-  keyEventDispatchTest3();
-  keyEventDispatchTest4();
-  keyEventDispatchTest5();
-  keyEventDispatchTest6();
-  onKeyEventDispatchTest();
-  onKeyEventDispatchTest3();
-  onkeyEventDispatchTest4();
-  onkeyEventDispatchTest6();
-  onkeyEventDispatchTest7();
-  onkeyEventDispatchTest8();
-  GetChangedPointerId();
-  componentSnapshot();
-  longpressGestureTest();
-  panGestureTest();
-  pinchGestureTest();
-  rotationGestureTest();
-  swipeGestureTest();
-  tapGestureTest();
-  SnapshotOptions_region();
-  setKeyProcessingModeTest();
-  mouseEventTest();
-  touchEventTest();
-  tapGestureEventTest();
-  swipeGestureEventTest();
-  longPressEventTest();
-  panGestureEventTest();
-  pinchGestureEventTest();
-  rotationGestureEventTest();
-  dataLoadingTest();
-  DragPreviewOptions();
-  EventTarget_id();
+  getWithUniqueId(); // 4 pass 4
+  keyEventDispatchTest(); // 1 pass 1
+  keyEventDispatchTest2(); // 1 pass 1
+  keyEventDispatchTest3(); // 1 pass 1
+  keyEventDispatchTest4(); // 1 pass 1
+  keyEventDispatchTest5(); // 1 pass 1
+  keyEventDispatchTest6(); // 1 pass 1
+  onKeyEventDispatchTest(); // 1 pass 1
+  onKeyEventDispatchTest3(); // 1 pass 1
+  onkeyEventDispatchTest4(); // 1 pass 1
+  onkeyEventDispatchTest6(); // 1 pass 1
+  onkeyEventDispatchTest7(); // 1 pass 1
+  onkeyEventDispatchTest8(); // 1 pass 1 接口返回类型变更 expect disfalse equals disundefined
+  GetChangedPointerId(); // 1 pass 1
+  componentSnapshot(); // 1 pass 1
+  longpressGestureTest(); // 2 pass 2
+  panGestureTest(); // 2 pass 2
+  pinchGestureTest(); // 2 pass 2
+  rotationGestureTest(); // 2 pass 2
+  swipeGestureTest(); // 2 pass 2
+  tapGestureTest(); // 2 pass 2
+  SnapshotOptions_region(); // 4 getComponentSnapshot()
+  setKeyProcessingModeTest(); // 3 pass 1
+  mouseEventTest(); // 1 pass 1
+  touchEventTest(); // 1 pass 1
+  tapGestureEventTest(); // 1 pass 1
+  swipeGestureEventTest(); // 1 pass 1
+  longPressEventTest(); // 1 pass 1
+  panGestureEventTest(); // 1 pass 1
+  pinchGestureEventTest(); // 1 pass 1
+  rotationGestureEventTest(); // 1 pass 1
+  dataLoadingTest(); // 3 pass 1 有注释
+  DragPreviewOptions(); // 1 pass 1
+  EventTarget_id(); // 2 pass 2
 }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -60,11 +60,10 @@ export default function InteractionEventBindingInfoTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get InteractionEventBindingInfoTest state pages: " + JSON.stringify(pages));
-        if (!("InteractionEventBindingInfoTest" == pages.name)) {
+        if (!("InteractionEventBindingInfo" == pages.name)) {
           console.info("get InteractionEventBindingInfoTest state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push InteractionEventBindingInfoTest page error: " + err);
@@ -78,19 +77,21 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0100
-     * @tc.name      InteractionEventBindingInfoTest_static_0100
-     * @tc.desc      InteractionEventBindingInfoTest_static_0100
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0100
+     * @tc.name     InteractionEventBindingInfoTest_static_0100
+     * @tc.desc     InteractionEventBindingInfoTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0100 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('baseTrue'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value1');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0100] title: " +
@@ -101,19 +102,22 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0200
-     * @tc.name      InteractionEventBindingInfoTest_static_0200
-     * @tc.desc      InteractionEventBindingInfoTest_static_0200
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0200
+     * @tc.name     InteractionEventBindingInfoTest_static_0200
+     * @tc.desc     InteractionEventBindingInfoTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0200 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('nodeTrue'));
+      await CommonFunc.sleep(2000);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value2');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0200] title: " +
@@ -124,19 +128,21 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0300
-     * @tc.name      InteractionEventBindingInfoTest_static_0300
-     * @tc.desc      InteractionEventBindingInfoTest_static_0300
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0300
+     * @tc.name     InteractionEventBindingInfoTest_static_0300
+     * @tc.desc     InteractionEventBindingInfoTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0300 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('builtInTrue'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value3');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0300] title: " +
@@ -147,19 +153,21 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0400
-     * @tc.name      InteractionEventBindingInfoTest_static_0400
-     * @tc.desc      InteractionEventBindingInfoTest_static_0400
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0400
+     * @tc.name     InteractionEventBindingInfoTest_static_0400
+     * @tc.desc     InteractionEventBindingInfoTest_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0400 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('baseFalse'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value4');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0400] title: " +
@@ -170,19 +178,21 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0500
-     * @tc.name      InteractionEventBindingInfoTest_static_0500
-     * @tc.desc      InteractionEventBindingInfoTest_static_0500
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0500
+     * @tc.name     InteractionEventBindingInfoTest_static_0500
+     * @tc.desc     InteractionEventBindingInfoTest_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0500 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('nodeFalse'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value5');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0500] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0500] title: " +
@@ -193,19 +203,21 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0600
-     * @tc.name      InteractionEventBindingInfoTest_static_0600
-     * @tc.desc      InteractionEventBindingInfoTest_static_0600
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0600
+     * @tc.name     InteractionEventBindingInfoTest_static_0600
+     * @tc.desc     InteractionEventBindingInfoTest_static_0600
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0600 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('nativeFalse'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value6');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0600] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0600] title: " +
@@ -216,19 +228,21 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0700
-     * @tc.name      InteractionEventBindingInfoTest_static_0700
-     * @tc.desc      InteractionEventBindingInfoTest_static_0700
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0700
+     * @tc.name     InteractionEventBindingInfoTest_static_0700
+     * @tc.desc     InteractionEventBindingInfoTest_static_0700
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0700 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('builtInFalse'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value7');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0700] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0700] title: " +
@@ -239,19 +253,21 @@ export default function InteractionEventBindingInfoTest() {
     });
 
 
+    
     /*
-     * @tc.number    InteractionEventBindingInfoTest_static_0800
-     * @tc.name      InteractionEventBindingInfoTest_static_0800
-     * @tc.desc      InteractionEventBindingInfoTest_static_0800
-     * @tc.level     2
+     * @tc.number   InteractionEventBindingInfoTest_static_0800
+     * @tc.name     InteractionEventBindingInfoTest_static_0800
+     * @tc.desc     InteractionEventBindingInfoTest_static_0800
+     * @tc.level    Level.LEVEL0
      */
-    it('InteractionEventBindingInfoTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('InteractionEventBindingInfoTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('InteractionEventBindingInfoTest_static_0800 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('undefined'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('value8');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[InteractionEventBindingInfoTest_static_0800] component obj is: " + JSON.stringify(obj));
       console.info("[InteractionEventBindingInfoTest_static_0800] title: " +

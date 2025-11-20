@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,34 +13,35 @@
  * limitations under the License.
  */
 import {
-  $rawfile,
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
-  CopyOptions,
+  Column,
+  Row,
+  Flex,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  ItemAlign,
-  Margin,
-  MouseAction,
-  MouseButton,
-  MouseEvent,
-  Padding,
-  Row,
-  Text,
-  TextAlign,
+  Color,
   TextArea,
-  TouchType,
-  Visibility
+  CopyOptions,
+  Visibility,
+  Button,
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
+  $rawfile,
+  ColumnOptions,
+  MouseButton,
+  MouseAction,
+  MouseEvent
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -79,15 +80,19 @@ struct MouseEventExample {
             this.eventAction = 'Hover'
           }
 
-
+          console.log(this.mouseText =
+            'onMouse:\nButton = ' + event.button + '\nAction = ' + event.action + '\nlocalXY=(' + event.x + ',' +
+            event.y + ')' + '\nscreenXY=(' + event.x + ',' + event.y + ')')
+          console.log(this.mouseText =
+            'onMouse:\nButton = ' + this.eventAction + '\nAction = ' + this.eventAction + '\nlocalXY=(' + event.x +
+              ',' + event.y + ')' + '\nscreenXY=(' + event.x + ',' + event.y + ')')
           console.log(this.mouseText =
             'onMouse:\nButton = ' + event.button + '\nAction = ' + event.action + '\nlocalXY=(' + event.x + ',' +
             event.y + ')')
           console.log(this.mouseText =
             'onMouse:\nButton = ' + this.eventAction + '\nAction = ' + this.eventAction + '\nlocalXY=(' + event.x +
               ',' + event.y + ')')
-
-
+          console.info('stopPropagation')
           event.stopPropagation()
         })
       Text(this.mouseText)

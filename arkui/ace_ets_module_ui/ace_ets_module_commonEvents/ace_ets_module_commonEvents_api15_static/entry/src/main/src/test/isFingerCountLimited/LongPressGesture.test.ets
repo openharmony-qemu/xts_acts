@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,7 @@ export default function longpressGestureTest() {
         if (!('LongPressGesture' == pages.name)) {
           console.info('get LongPressGesture state pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error('push LongPressGesture page error:' + err);
@@ -62,25 +60,29 @@ export default function longpressGestureTest() {
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back()
       console.info('LongPressGesture after each called');
     });
 
 
+    
     /*
-     * @tc.number    LongPressGesture1_static_0100
-     * @tc.name      LongPressGesture1_static_0100
-     * @tc.desc      LongPressGesture1_static_0100
-     * @tc.level     2
+     * @tc.number   LongPressGesture1_static_0100
+     * @tc.name     LongPressGesture1_static_0100
+     * @tc.desc     LongPressGesture1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('LongPressGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('LongPressGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('LongPressGesture1_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let Column = await (driver.findComponent(ON.id('LongPressGesture')) as Promise<Component>);
-      await Column.longClick();
+      let Column = await driver.findComponent(ON.id('LongPressGesture'));
+      await (Column?.longClick() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LongPressGesture');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[LongPressGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[LongPressGesture1_static_0100] title: ' +
@@ -91,21 +93,23 @@ export default function longpressGestureTest() {
     });
 
 
+    
     /*
-     * @tc.number    LongPressGesture1_static_0200
-     * @tc.name      LongPressGesture1_static_0200
-     * @tc.desc      LongPressGesture1_static_0200
-     * @tc.level     2
+     * @tc.number   LongPressGesture1_static_0200
+     * @tc.name     LongPressGesture1_static_0200
+     * @tc.desc     LongPressGesture1_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('LongPressGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('LongPressGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('LongPressGesture1_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let Column = await (driver.findComponent(ON.id('LongPressGesture2')) as Promise<Component>);
-      await Column.longClick();
+      let Column = await driver.findComponent(ON.id('LongPressGesture2'));
+      await (Column?.longClick() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LongPressGesture2');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[LongPressGesture1_static_0200] component obj is: ' + JSON.stringify(obj));
       console.info('[LongPressGesture1_static_0200] title: ' +

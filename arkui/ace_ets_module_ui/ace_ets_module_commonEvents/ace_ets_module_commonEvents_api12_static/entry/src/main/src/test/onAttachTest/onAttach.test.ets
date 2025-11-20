@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -56,21 +56,17 @@ export default function onAttachTest() {
       }
       try {
         const router = AppStorage.get<Router>('router') as Router
-        router.clear();
         let pages = router.getState();
         console.info("get onAttachTest state pages:" + JSON.stringify(pages));
-        if (!("onAttach" == pages.name)) {
+        if (!("MainAbility/pages/onAttach/onAttach" == pages.name)) {
           console.info("get onAttachTest pages.name:" + JSON.stringify(pages.name));
-
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push onAttachTest page error:" + err);
       }
       console.info("onAttachTest beforeEach end");
-
     });
 
     afterEach(async () => {
@@ -78,14 +74,19 @@ export default function onAttachTest() {
       console.info("onAttachTest after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>('router') as Router
+      router.back();
+    })
 
+    
     /*
-     * @tc.number    onAttachTest_static_0010
-     * @tc.name      onAttachTest_static_0010
-     * @tc.desc      onAttachTest_static_0010
-     * @tc.level     2
+     * @tc.number   onAttachTest_static_0010
+     * @tc.name     onAttachTest_static_0010
+     * @tc.desc     onAttachTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('onAttachTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onAttachTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('onAttachTest_0010 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -100,20 +101,23 @@ export default function onAttachTest() {
     });
 
 
+    
     /*
-     * @tc.number    onDetachTest_static_0020
-     * @tc.name      onDetachTest_static_0020
-     * @tc.desc      onDetachTest_static_0020
-     * @tc.level     2
+     * @tc.number   onDetachTest_static_0020
+     * @tc.name     onDetachTest_static_0020
+     * @tc.desc     onDetachTest_static_0020
+     * @tc.level    Level.LEVEL0
      */
-    it('onDetachTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onDetachTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('onDetachTest_0020 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('OnAttach_button'));
+      await CommonFunc.sleep(2000);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('OnAttach_text');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('onDetach succ');
       console.info('onDetachTest_0020 END');

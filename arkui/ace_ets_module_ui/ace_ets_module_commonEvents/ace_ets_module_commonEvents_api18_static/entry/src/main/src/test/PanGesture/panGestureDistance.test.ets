@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,18 +13,7 @@
  * limitations under the License.
  */
 
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  Level,
-  Size,
-  TestType
-} from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -36,11 +25,10 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
+import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function panGestureDistanceTest() {
 
@@ -60,12 +48,10 @@ export default function panGestureDistanceTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get panGesture state pages: " + JSON.stringify(pages));
-        if (!("panGesture" == pages.name)) {
+        if (!("panGestureDistance" == pages.name)) {
           console.info("get panGesture state pages.name: " + JSON.stringify(pages.name));
-
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push panGesture page error: " + err);
@@ -78,14 +64,15 @@ export default function panGestureDistanceTest() {
       console.info("panGesture after each called");
     });
 
-
+    
+    
     /*
-     * @tc.number    panGesture_panRecognizer_getDistance_static_0010
-     * @tc.name      panGesture_panRecognizer_getDistance_static_0010
-     * @tc.desc      panGesture_panRecognizer_getDistance_static_0010
-     * @tc.level     2
+     * @tc.number   panGesture_panRecognizer_getDistance_static_0010
+     * @tc.name     panGesture_panRecognizer_getDistance_static_0010
+     * @tc.desc     panGesture_panRecognizer_getDistance_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('panGesture_panRecognizer_getDistance_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('panGesture_panRecognizer_getDistance_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0010 START');
       let gridRect = CommonFunc.getComponentRectOnScreen('getDistance')
       let driver = Driver.create()
@@ -105,14 +92,15 @@ export default function panGestureDistanceTest() {
       done();
     });
 
-
+    
+    
     /*
-     * @tc.number    panGesture_panRecognizer_getDistance_static_0020
-     * @tc.name      panGesture_panRecognizer_getDistance_static_0020
-     * @tc.desc      panGesture_panRecognizer_getDistance_static_0020
-     * @tc.level     2
+     * @tc.number   panGesture_panRecognizer_getDistance_static_0020
+     * @tc.name     panGesture_panRecognizer_getDistance_static_0020
+     * @tc.desc     panGesture_panRecognizer_getDistance_static_0020
+     * @tc.level    Level.LEVEL0
      */
-    it('panGesture_panRecognizer_getDistance_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('panGesture_panRecognizer_getDistance_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0020 START');
       let gridRect = CommonFunc.getComponentRectOnScreen('getDistance')
       let driver = Driver.create()
@@ -133,14 +121,15 @@ export default function panGestureDistanceTest() {
       done();
     });
 
-
+    
+    
     /*
-     * @tc.number    panGesture_panRecognizer_getDistance_static_0030
-     * @tc.name      panGesture_panRecognizer_getDistance_static_0030
-     * @tc.desc      panGesture_panRecognizer_getDistance_static_0030
-     * @tc.level     2
+     * @tc.number   panGesture_panRecognizer_getDistance_static_0030
+     * @tc.name     panGesture_panRecognizer_getDistance_static_0030
+     * @tc.desc     panGesture_panRecognizer_getDistance_static_0030
+     * @tc.level    Level.LEVEL0
      */
-    it('panGesture_panRecognizer_getDistance_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('panGesture_panRecognizer_getDistance_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0030 START');
       let gridRect = CommonFunc.getComponentRectOnScreen('modifierGetDistance')
       let driver = Driver.create()

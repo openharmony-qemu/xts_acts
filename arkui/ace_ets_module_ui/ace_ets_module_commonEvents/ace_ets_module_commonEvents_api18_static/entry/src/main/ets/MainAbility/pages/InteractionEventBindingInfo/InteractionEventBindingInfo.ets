@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,17 +15,20 @@
 import {
   Button,
   ClickEvent,
+  Color,
   Column,
+  ColumnOptions,
   Component,
   Entry,
   List,
+  Margin,
   NodeContainer,
   Radio,
   Row,
   Text,
-  TouchEvent,
+  TouchEvent
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
@@ -37,9 +40,32 @@ class MyNodeControllerBindOnClick extends NodeController {
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext);
-
-
+    this.node!.commonAttribute
+      .width('90%')
+      .height(50)
+      .borderColor(Color.Gray)
+      .borderWidth(1)
+      .focusable(true)
+      .margin({ left: '5%' } as Margin);
+    let col = typeNode.createColumnNode(uiContext);
+    col.initialize({ space: 5 } as ColumnOptions)
+      .width('100%').height('100%').focusable(true);
+    this.node!.appendChild(col);
+    let Column2 = typeNode.createColumnNode(uiContext);
+    Column2.initialize().id("column5").onClick((e: ClickEvent) => {
+    })
+    col.appendChild(Column2);
+    this.addCommonEvent(Column2)
     return this.node;
+  }
+
+  addCommonEvent(frameNode: FrameNode) {
+    frameNode.commonEvent.setOnClick((event: ClickEvent) => {
+      console.log(`Click FrameNode: ${JSON.stringify(event)}`)
+    })
+    frameNode.commonEvent.setOnTouch((event: TouchEvent) => {
+      console.log(`touch FrameNode: ${JSON.stringify(event)}`)
+    })
   }
 }
 
@@ -62,7 +88,7 @@ struct InteractionEventBindingInfoExample {
       Row() {
         Radio({ value: 'Radio1', group: 'radioGroup' })
           .onClick((e: ClickEvent) => {
-
+            console.log()
           })
           .id("radio1")
 
@@ -90,8 +116,8 @@ struct InteractionEventBindingInfoExample {
         Text(this.text8).key('value8')
         Button(this.text8).id('undefined')
           .onClick((e: ClickEvent) => {
-
-
+            // this.text8 =
+            //   String(this.getUIContext().getFrameNodeById("Radio1")?.getInteractionEventBindingInfo(undefined))
           })
       }
 
@@ -99,18 +125,19 @@ struct InteractionEventBindingInfoExample {
       Row() {
         Button(this.text1).id('baseTrue')
           .onClick((e: ClickEvent) => {
-
-
+            console.log('test click start 11')
+            // this.text1 = String(this.getUIContext()
+            // .getFrameNodeById("column1")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.baseEventRegistered)
           })
         Button(this.text2).id("nodeTrue")
           .onClick((e: ClickEvent) => {
-
-
+            // this.text2 = String(this.getUIContext()
+            //   .getFrameNodeById("column5")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.nodeEventRegistered)
           })
         Button(this.text3).id('builtInTrue')
           .onClick((e: ClickEvent) => {
-
-
+            // this.text3 = String(this.getUIContext()
+            //   .getFrameNodeById("radio1")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.builtInEventRegistered)
           })
 
       }
@@ -118,23 +145,23 @@ struct InteractionEventBindingInfoExample {
       Row() {
         Button(this.text4).id('baseFalse')
           .onClick((e: ClickEvent) => {
-
-
+            // this.text4 = String(this.getUIContext()
+            //   .getFrameNodeById("radio2")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.baseEventRegistered)
           })
         Button(this.text5).id('nodeFalse')
           .onClick((e: ClickEvent) => {
-
-
+            // this.text5 = String(this.getUIContext()
+            //   .getFrameNodeById("radio2")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.nodeEventRegistered)
           })
         Button(this.text6).id('nativeFalse')
           .onClick((e: ClickEvent) => {
-
-
+            // this.text6 = String(this.getUIContext()
+            //   .getFrameNodeById("radio2")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.nativeEventRegistered)
           })
         Button(this.text7).id('builtInFalse')
           .onClick((e: ClickEvent) => {
-
-
+            // this.text7 = String(this.getUIContext()
+            //   .getFrameNodeById("column1")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.builtInEventRegistered)
           })
 
       }

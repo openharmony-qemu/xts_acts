@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -59,19 +59,16 @@ export default function GestureRecognizerIsValid() {
         console.info("get GestureRecognizerIsValid state pages:" + JSON.stringify(pages));
         if (!("GestureRecognizerIsValid" == pages.name)) {
           console.info("get  GestureRecognizerIsValid pages.name:" + JSON.stringify(pages.name));
-
-
           router.pushUrl({
             url: "MainAbility/pages/GestureRecognizer/GestureRecognizerIsValid"
           })
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push GestureRecognizerIsValid page error:" + err);
       }
       console.info("GestureRecognizerIsValid foreEach end");
-
+      //done();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -79,20 +76,21 @@ export default function GestureRecognizerIsValid() {
     });
 
 
+    
     /*
-     * @tc.number    GestureRecognizerIsValid_static_001
-     * @tc.name      GestureRecognizerIsValid_static_001
-     * @tc.desc      GestureRecognizerIsValid_static_001
-     * @tc.level     2
+     * @tc.number   GestureRecognizerIsValid_static_001
+     * @tc.name     GestureRecognizerIsValid_static_001
+     * @tc.desc     GestureRecognizerIsValid_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('GestureRecognizerIsValid_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('GestureRecognizerIsValid_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GestureRecognizerIsValid_001] START');
       await CommonFunc.sleep(1000);
       let areaObj1 = CommonFunc.getComponentRectOnScreen('FatherControlChildTest1_inner_0');
       let areaHeight = areaObj1.bottom - areaObj1.top
       let areaWidth = areaObj1.right - areaObj1.left
       console.log('GestureRecognizerIsValid_001 item height and width', areaHeight, areaWidth)
-
+      // child scroll
       let driver = Driver.create();
       await ((driver.swipe(Math.round(areaObj1.left + areaWidth / 2) as Int,
         Math.round(areaObj1.bottom - areaHeight * 0.2) as Int, Math.round(areaObj1.left + areaWidth / 2) as Int,
@@ -105,7 +103,7 @@ export default function GestureRecognizerIsValid() {
       JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('valid');
       await CommonFunc.sleep(1000);
-
+      // child none
       let button1 = await driver.findComponent(ON.id("childScrollVisBtn"));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -114,8 +112,7 @@ export default function GestureRecognizerIsValid() {
       let areaHeight2 = areaObj2.bottom - areaObj2.top
       let areaWidth2 = areaObj2.right - areaObj2.left
       console.log('GestureRecognizerIsValid_001 text height and width', areaHeight2, areaWidth2)
-
-
+      // parent scroll
       await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 / 2) as Int,
         Math.round(areaObj1.bottom - areaHeight2 * 0.1) as Int, Math.round(areaObj2.left + areaWidth2 / 2) as Int,
         Math.round(areaObj1.top - areaHeight2 * 0.3) as Int)) as Promise<void>);

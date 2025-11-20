@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,7 +63,7 @@ export default function PinchRecognizerTest() {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push PinchRecognizer page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push PinchRecognizer page error:' + err);
@@ -76,13 +76,14 @@ export default function PinchRecognizerTest() {
     });
 
 
+    
     /*
-     * @tc.number    PinchRecognizer1_static_0100
-     * @tc.name      PinchRecognizer1_static_0100
-     * @tc.desc      PinchRecognizer1_static_0100
-     * @tc.level     2
+     * @tc.number   PinchRecognizer1_static_0100
+     * @tc.name     PinchRecognizer1_static_0100
+     * @tc.desc     PinchRecognizer1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('PinchRecognizer1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PinchRecognizer1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PinchRecognizer1_static_0100 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number;

@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import UDC from '@ohos.data.unifiedDataChannel';
 import hilog from '@ohos.hilog';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import curves from '@ohos.curves';
@@ -77,9 +77,12 @@ struct APIPreDragStatus {
         .border({ width: 3 })
         .width('80%')
         .height(10)
-        .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
-
-
+        .onDragStart((event: DragEvent, extraParams?: String | undefined): DragItemInfo => {
+          let data: UDC.PlainText = new UDC.PlainText();
+          data.textAbstract = 'this is abstract';
+          data.textContent = 'this is content this is content';
+          (event as DragEvent).setData(new UDC.UnifiedData(data));
+          return {} as DragItemInfo
         })
         .onPreDrag((status: PreDragStatus): void => {
           this.PreDragChange(status);

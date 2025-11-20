@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,48 +13,48 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
+  Column,
+  Row,
+  Flex,
+  Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  TextArea,
+  CopyOptions,
+  Visibility,
+
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
   $rawfile,
-  BaseGestureEvent,
+  RowOptions,
   Button,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CopyOptions,
-  CustomBuilder,
   DragEvent,
-  DragItemInfo,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  GestureControl,
   GestureInfo,
-  GestureJudgeResult,
-  ItemAlign,
-  LongPressGesture,
+  BaseGestureEvent,
   LongPressGestureEvent,
-  Margin,
-  Padding,
-  PanGesture,
+  SwipeGestureEvent,
   PanGestureEvent,
+  TapGesture,
+  LongPressGesture,
+  SwipeGesture,
+  PanGesture,
   PinchGesture,
   RotationGesture,
-  Row,
-  RowOptions,
-  SwipeGesture,
-  SwipeGestureEvent,
-  TapGesture,
-  Text,
-  TextAlign,
-  TextArea,
-  TouchType,
-  Visibility
+  GestureControl,
+  GestureJudgeResult
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct onGesture1 {
@@ -73,9 +73,9 @@ struct onGesture1 {
       LongPressGesture()
         .tag("longPress1")
     )
-    .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent): GestureJudgeResult => {
+    .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent):GestureJudgeResult => {
       if (gestureInfo.type == GestureControl.GestureType.LONG_PRESS_GESTURE) {
-        this.message = 'longPress'
+        this.message='longPress'
       }
       return GestureJudgeResult.CONTINUE;
     })

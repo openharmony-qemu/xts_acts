@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,10 +15,10 @@
 import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -33,7 +33,7 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function dragEventJsunit() {
@@ -47,19 +47,17 @@ export default function dragEventJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("dragEventTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/dragEventTest',
+        url: 'MainAbility/pages/DragController/dragEvent',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get dragEventTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("dragEvent" == pages.name)) {
           console.info("get dragEventTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push dragEventTest page error:" + err);
@@ -73,13 +71,14 @@ export default function dragEventJsunit() {
       console.info("dragEvent after each called");
     });
 
+    
     /*
-     * @tc.number    dragEventTest_static_0100
-     * @tc.name      dragEventTest_static_0100
-     * @tc.desc      dragEventTest_static_0100
-     * @tc.level     2
+     * @tc.number   dragEventTest_static_0100
+     * @tc.name     dragEventTest_static_0100
+     * @tc.desc     dragEventTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('dragEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('dragEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0100 START');
       let rect: RectValue = Utils.getComponentRect('apple')
       console.info("dragEventTest_0100 rectInfo is " + JSON.stringify(rect));
@@ -90,30 +89,34 @@ export default function dragEventJsunit() {
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
       await Utils.drag(downX, downY, upX, upY, 10)
-      let callback = (indexEvent: events_emitter.EventData) => {
-        console.info("dragEventTest_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject).getProperty('ACTION')).assertEqual('onDragStart onAction');
+      let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
+        if (indexEvent != null) {
+          const data = indexEvent.data as Record<String, undefined | null | Object>
+          console.info("dragEventTest_0100 get state result is: " + JSON.stringify(indexEvent));
+          expect(data['ACTION'] as string).assertEqual('onDragStart onAction');
+        }
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 86,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("dragEventTest_0100 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("dragEventTest_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0100 END');
       done();
     });
 
+    
     /*
-     * @tc.number    dragEventTest_static_0200
-     * @tc.name      dragEventTest_static_0200
-     * @tc.desc      dragEventTest_static_0200
-     * @tc.level     2
+     * @tc.number   dragEventTest_static_0200
+     * @tc.name     dragEventTest_static_0200
+     * @tc.desc     dragEventTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('dragEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('dragEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0200 START');
       let rect = Utils.getComponentRect('orange')
       console.info("dragEventTest_0200 rectInfo is " + JSON.stringify(rect));
@@ -124,31 +127,35 @@ export default function dragEventJsunit() {
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
       await Utils.drag(downX, downY, upX, upY, 10)
-      let callback = (indexEvent: events_emitter.EventData) => {
-        console.info("dragEventTest_0200 get state result is: " + JSON.stringify(indexEvent));
-        expect(Number.isNaN(((indexEvent.data) as ESObject).getProperty('pointX').toNumber())).assertFalse();
-        expect(Number.isNaN(((indexEvent.data) as ESObject).getProperty('pointX').toNumber())).assertFalse();
+      let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
+        if (indexEvent != null) {
+          const data = indexEvent.data as Record<String, undefined | null | Object>
+          console.info("dragEventTest_0200 get state result is: " + JSON.stringify(indexEvent));
+          expect(Number.isNaN(data['pointX'] as number)).assertFalse();
+          expect(Number.isNaN(data['pointY'] as number)).assertFalse();
+        }
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 87,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("dragEventTest_0200 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("dragEventTest_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0200 END');
       done();
     });
 
+    
     /*
-     * @tc.number    dragEventTest_static_0300
-     * @tc.name      dragEventTest_static_0300
-     * @tc.desc      dragEventTest_static_0300
-     * @tc.level     2
+     * @tc.number   dragEventTest_static_0300
+     * @tc.name     dragEventTest_static_0300
+     * @tc.desc     dragEventTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('dragEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('dragEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0300 START');
       let rect = Utils.getComponentRect('banana')
       console.info("dragEventTest_0300 rectInfo is " + JSON.stringify(rect));
@@ -159,30 +166,34 @@ export default function dragEventJsunit() {
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
       await Utils.drag(downX, downY, upX, upY, 10)
-      let callback = (indexEvent: events_emitter.EventData) => {
-        console.info("dragEventTest_0300 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject).getProperty('ACTION')).assertEqual("onDragMove onAction");
+      let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
+        if (indexEvent != null) {
+          const data = indexEvent.data as Record<String, undefined | null | Object>
+          console.info("dragEventTest_0300 get state result is: " + JSON.stringify(indexEvent));
+          expect(data['ACTION'] as string).assertEqual("onDragMove onAction");
+        }
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 88,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("dragEventTest_0300 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("dragEventTest_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0300 END');
       done();
     });
 
+    
     /*
-     * @tc.number    dragEventTest_static_0400
-     * @tc.name      dragEventTest_static_0400
-     * @tc.desc      dragEventTest_static_0400
-     * @tc.level     2
+     * @tc.number   dragEventTest_static_0400
+     * @tc.name     dragEventTest_static_0400
+     * @tc.desc     dragEventTest_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('dragEventTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('dragEventTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0400 START');
       let rect = Utils.getComponentRect('mango')
       console.info("dragEventTest_0400 rectInfo is " + JSON.stringify(rect));
@@ -193,30 +204,32 @@ export default function dragEventJsunit() {
       let upX = rectOne.right + (rect.right - rect.left);
       let upY = rectOne.bottom + (rect.bottom - rect.top);
       await Utils.drag(downX, downY, upX, upY, 10)
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
+        const data = indexEvent.data as Record<String, undefined | null | Object>
         console.info("dragEventTest_0400 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject).getProperty('ACTION')).assertEqual("onDragLeave onAction");
+        expect(data['ACTION'] as string).assertEqual("onDragLeave onAction");
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 89,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("dragEventTest_0400 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("dragEventTest_0400 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0400 END');
       done();
     });
 
+    
     /*
-     * @tc.number    dragEventTest_static_0500
-     * @tc.name      dragEventTest_static_0500
-     * @tc.desc      dragEventTest_static_0500
-     * @tc.level     2
+     * @tc.number   dragEventTest_static_0500
+     * @tc.name     dragEventTest_static_0500
+     * @tc.desc     dragEventTest_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('dragEventTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('dragEventTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0500 START');
       let rect = Utils.getComponentRect('strawberry')
       console.info("dragEventTest_0500 rectInfo is " + JSON.stringify(rect));
@@ -227,18 +240,21 @@ export default function dragEventJsunit() {
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
       await Utils.drag(downX, downY, upX, upY, 10)
-      let callback = (indexEvent: events_emitter.EventData) => {
-        console.info("dragEventTest_0500 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject).getProperty('ACTION')).assertEqual("onDrop onAction");
+      let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
+        if (indexEvent != null) {
+          const data = indexEvent.data as Record<String, undefined | null | Object>
+          console.info("dragEventTest_0500 get state result is: " + JSON.stringify(indexEvent));
+          expect(data['ACTION'] as string).assertEqual("onDrop onAction");
+        }
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 90,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("dragEventTest_0500 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("dragEventTest_0500 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0500 END');
       done();

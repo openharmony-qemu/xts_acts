@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -50,28 +50,26 @@ export default function btnMonoTouch() {
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
+
     beforeEach(async (): Promise<void> => {
       console.info("btnMonoTouch beforeEach start");
+      let options: router.RouterOptions = {
+        url: "MainAbility/pages/customGestureTest/btnMonoTouch",
+      }
       try {
-        const router = AppStorage.get<Router>('router') as Router
-        router.clear();
-        let pages = router.getState();
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages = routerInstance.getState();
         console.info("get btnMonoTouch state pages:" + JSON.stringify(pages));
         if (!("btnMonoTouch" == pages.name)) {
-          console.info("get  btnMonoTouch pages.name:" + JSON.stringify(pages.name));
-
-
-          router.pushUrl({
-            url: "MainAbility/pages/customGestureTest/btnMonoTouch"
-          })
+          console.info("get btnMonoTouch pages.name:" + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push btnMonoTouch page error:" + err);
       }
-      console.info("btnMonoTouch foreEach end");
-
+      console.info("btnMonoTouch beforeEach end");
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -79,13 +77,14 @@ export default function btnMonoTouch() {
     });
 
 
+    
     /*
-     * @tc.number    btnMonoTouch_static_001
-     * @tc.name      btnMonoTouch_static_001
-     * @tc.desc      btnMonoTouch_static_001
-     * @tc.level     2
+     * @tc.number   btnMonoTouch_static_001
+     * @tc.name     btnMonoTouch_static_001
+     * @tc.desc     btnMonoTouch_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('btnMonoTouch_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('btnMonoTouch_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[btnMonoTouch_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

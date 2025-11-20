@@ -1,15 +1,15 @@
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import hilog from '@ohos.hilog'
+import  hilog  from '@ohos.hilog'
 
-const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: Int = 0x0000;
-let tag: string = 'testlog';
+let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
-class UtilsTest {
+class UtilsTest{
   static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
 
-  static async msSleep(count: Int): Promise<Int> {
+  static async msSleep(count:Int) : Promise<Int> {
     return new Promise<Int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
@@ -25,38 +25,39 @@ class UtilsTest {
         UtilsTest.isStartedAbility = true;
       }
       return true;
-    } catch (error) {
+    } catch(error) {
       console.error(`UiTestCase, start abilityFailed: ${error}`);
       hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
       return false;
     }
   }
 }
-
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
     await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
     return true;
-  } catch (error) {
+  } catch(error) {
     console.error(`UiTestCase, start abilityFailed: ${error}`);
     hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
     return false;
   }
 }
 
-async function stopApplication(bundleName: string): Promise<boolean> {
+async function stopApplication(bundleName: string): Promise<boolean>{
   try {
     await abilityDelegator.executeShellCommand(`aa force-stop ${bundleName} `);
     console.info(`UiTestCase, stop application finished`);
     return true;
-  } catch (error) {
+  } catch(error) {
     console.error(`UiTestCase,stop application failed: ${JSON.stringify(error)}`);
     return false;
   }
 }
 
 export {
-  UtilsTest, startAbility, stopApplication
+  UtilsTest,
+  startAbility,
+  stopApplication
 }

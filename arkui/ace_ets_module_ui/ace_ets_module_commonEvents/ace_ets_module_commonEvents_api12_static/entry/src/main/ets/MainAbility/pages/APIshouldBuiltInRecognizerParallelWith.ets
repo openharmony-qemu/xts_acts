@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -72,7 +72,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
             Text("Scroll Area")
               .width('90%')
               .height(150)
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor('0xFFFFFF')
               .borderRadius(15)
               .fontSize(16)
               .textAlign(TextAlign.Center)
@@ -82,7 +82,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
                 Text("Scroll Area2")
                   .width('90%')
                   .height(150)
-                  .backgroundColor(0xFFFFFF)
+                  .backgroundColor('0xFFFFFF')
                   .borderRadius(15)
                   .fontSize(16)
                   .textAlign(TextAlign.Center)
@@ -92,12 +92,12 @@ struct APIshouldBuiltInRecognizerParallelWith {
                     Text(item.toString())
                       .width('90%')
                       .height(150)
-                      .backgroundColor(0xFFFFFF)
+                      .backgroundColor('0xFFFFFF')
                       .borderRadius(15)
                       .fontSize(16)
                       .textAlign(TextAlign.Center)
                       .margin({ top: 10 } as Margin)
-                  }, (item: number, index: int): string => String(item))
+                  }, (item: number, index: Int): string => String(item))
                 }.width('100%')
               }
             }
@@ -113,8 +113,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
         .scrollBarColor(Color.Gray)
         .scrollBarWidth(10)
         .edgeEffect(EdgeEffect.None)
-        .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer,
-          others: Array<GestureRecognizer>): GestureRecognizer => {
+        .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
           this.API_getTag = current.getTag()
           this.API_isBuiltIn = current.isBuiltIn()
           this.API_getEventTargetInfo = current.getEventTargetInfo()?.getId()!
@@ -132,7 +131,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
               }
             }
           }
-
+          //return undefined;
         })
         .parallelGesture(
           PanGesture()
@@ -176,7 +175,9 @@ struct APIshouldBuiltInRecognizerParallelWith {
               this.lastOffset = event.offsetY
             })
         )
-      }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+      }.width('100%').height('100%')
+
+      .backgroundColor('0xDCDCDC')
 
     }
   }

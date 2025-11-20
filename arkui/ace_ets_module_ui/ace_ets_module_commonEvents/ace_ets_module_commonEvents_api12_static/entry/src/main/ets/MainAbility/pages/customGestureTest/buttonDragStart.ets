@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,33 +13,33 @@
  * limitations under the License.
  */
 import {
-  BaseGestureEvent,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  FlexAlign,
-  GestureControl,
-  GestureEvent,
-  GestureInfo,
-  GestureJudgeResult,
-  LongPressGesture,
-  Margin,
+  Component,
+  Column,
   Row,
-  Scroll,
-  TapGesture,
   Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  Scroll,
+  GestureEvent,
+  LongPressGesture,
+  TapGesture,
+  ClickEvent,
+  FlexAlign,
+  GestureInfo,
+  BaseGestureEvent,
+  DragEvent,
+  GestureControl,
+  GestureJudgeResult
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -48,7 +48,7 @@ struct gestureDefine2 {
   @State message2: string = ''
 
   build() {
-    Column({ space: 20 } as ColumnOptions) {
+    Column({space:20} as ColumnOptions) {
       Text(this.message1 + '--' + this.message2)
         .fontSize(18)
         .margin(10)
@@ -58,13 +58,14 @@ struct gestureDefine2 {
         .key('bttonDrag_key1')
         .width(100)
         .height(80)
-        .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+        .onDragStart((event:DragEvent, extraParams?:String|undefined):DragItemInfo => {
           this.message1 = '拖拽事件响应成功'
+          return {} as DragItemInfo
         })
-        .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent): GestureJudgeResult => {
+        .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent):GestureJudgeResult => {
           if (gestureInfo.type == GestureControl.GestureType.DRAG) {
             this.message2 = 'GestureControl.GestureType.DRAG is true'
-          } else {
+          }else{
             return GestureJudgeResult.REJECT;
           }
           return GestureJudgeResult.CONTINUE;

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -45,6 +45,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 
+// Basic implementation of IDataSource to handle data listener
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
 
@@ -52,7 +53,7 @@ class BasicDataSource implements IDataSource<string> {
     return 0
   }
 
-  public getData(index: int): string {
+  public getData(index: Int): string {
     return 'undefined'
   }
 
@@ -64,7 +65,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt();
+    const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       console.info('remove listener')
       this.listeners.splice(pos, 1)
@@ -77,25 +78,25 @@ class BasicDataSource implements IDataSource<string> {
     })
   }
 
-  notifyDataAdd(index: int): void {
+  notifyDataAdd(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index)
     })
   }
 
-  notifyDataChange(index: int): void {
+  notifyDataChange(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index)
     })
   }
 
-  notifyDataDelete(index: int): void {
+  notifyDataDelete(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index)
     })
   }
 
-  notifyDataMove(from: int, to: int): void {
+  notifyDataMove(from: Int, to: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to)
     })
@@ -109,8 +110,9 @@ class MyDataSource extends BasicDataSource {
     return this.dataArray.length
   }
 
-  public getData(index: Int): string {
-    return this.dataArray[index]
+  public getData(index: number): string {
+    let RealIndex: Int = index.toInt()
+    return this.dataArray[RealIndex]
   }
 
   public addData(index: int, data: string): void {
@@ -131,8 +133,21 @@ struct MyComponent {
 
   build() {
     List({ space: 3 }) {
-
-
+      LazyForEach(this.data, (item: string) => {
+        ListItem() {
+          Row() {
+            Image(item)
+              .width("30%")
+              .height(50)
+            Text(item)
+              .fontSize(20)
+              .margin({ left: 10 } as Margin)
+          }.margin({ left: 10, right: 10 } as Margin)
+        }
+        .onClick((e: ClickEvent) => {
+          this.data.pushData('/path/image' + this.data.totalCount())
+        })
+      }, (item: string) => item)
     }
   }
 }

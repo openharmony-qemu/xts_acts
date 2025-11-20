@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -61,16 +61,13 @@ export default function APIPreDragStatusTest() {
         console.info("get APIPreDragStatusTest state pages:" + JSON.stringify(pages));
         if (!("APIPreDragStatus" == pages.name)) {
           console.info("get APIPreDragStatusTest pages.name:" + JSON.stringify(pages.name));
-
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push APIPreDragStatusTest page error:" + err);
       }
       console.info("APIPreDragStatusTest beforeEach end");
-
     });
 
     afterEach(async () => {
@@ -78,22 +75,28 @@ export default function APIPreDragStatusTest() {
       console.info("APIPreDragStatusTest after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>('router') as Router
+      // router.back();
+    })
 
+    
     /*
-     * @tc.number    APIPreDragStatusTest_static_0010
-     * @tc.name      APIPreDragStatusTest_static_0010
-     * @tc.desc      APIPreDragStatusTest_static_0010
-     * @tc.level     2
+     * @tc.number   APIPreDragStatusTest_static_0010
+     * @tc.name     APIPreDragStatusTest_static_0010
+     * @tc.desc     APIPreDragStatusTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('APIPreDragStatusTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIPreDragStatusTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIPreDragStatusTest_0010 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let obj1 = await driver.findComponent(ON.id('APIPreDragStatusColumn'));
-      await (obj1?.longClick() as Promise<void>);
       await CommonFunc.sleep(2000);
+      await (obj1?.longClick() as Promise<void>);
       let text2 = inspector.getInspectorByKey('APIPreDragStatusText01');
+      await CommonFunc.sleep(2000);
       let obj2 = JSON.parseJsonElement(text2);
       console.log('APIPreDragStatusTest_0010 obj2', obj2)
       console.log('APIPreDragStatusTest_0010 obj2 $attrs content', obj2.getElement('$attrs').getString('content'))
@@ -103,13 +106,14 @@ export default function APIPreDragStatusTest() {
     });
 
 
+    
     /*
-     * @tc.number    APIPreDragStatusTest_static_0020
-     * @tc.name      APIPreDragStatusTest_static_0020
-     * @tc.desc      APIPreDragStatusTest_static_0020
-     * @tc.level     2
+     * @tc.number   APIPreDragStatusTest_static_0020
+     * @tc.name     APIPreDragStatusTest_static_0020
+     * @tc.desc     APIPreDragStatusTest_static_0020
+     * @tc.level    Level.LEVEL0
      */
-    it('APIPreDragStatusTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIPreDragStatusTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIPreDragStatusTest_0020 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -131,13 +135,14 @@ export default function APIPreDragStatusTest() {
     });
 
 
+    
     /*
-     * @tc.number    APIPreDragStatusTest_static_0030
-     * @tc.name      APIPreDragStatusTest_static_0030
-     * @tc.desc      APIPreDragStatusTest_static_0030
-     * @tc.level     2
+     * @tc.number   APIPreDragStatusTest_static_0030
+     * @tc.name     APIPreDragStatusTest_static_0030
+     * @tc.desc     APIPreDragStatusTest_static_0030
+     * @tc.level    Level.LEVEL0
      */
-    it('APIPreDragStatusTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIPreDragStatusTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIPreDragStatusTest_0030 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -158,13 +163,14 @@ export default function APIPreDragStatusTest() {
       done();
     });
 
+    
     /*
-     * @tc.number    APIPreDragStatusTest_static_0040
-     * @tc.name      APIPreDragStatusTest_static_0040
-     * @tc.desc      APIPreDragStatusTest_static_0040
-     * @tc.level     2
+     * @tc.number   APIPreDragStatusTest_static_0040
+     * @tc.name     APIPreDragStatusTest_static_0040
+     * @tc.desc     APIPreDragStatusTest_static_0040
+     * @tc.level    Level.LEVEL0
      */
-    it('APIPreDragStatusTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIPreDragStatusTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIPreDragStatusTest_0040 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -186,13 +192,14 @@ export default function APIPreDragStatusTest() {
       done();
     });
 
+    
     /*
-     * @tc.number    APIPreDragStatusTest_static_0050
-     * @tc.name      APIPreDragStatusTest_static_0050
-     * @tc.desc      APIPreDragStatusTest_static_0050
-     * @tc.level     2
+     * @tc.number   APIPreDragStatusTest_static_0050
+     * @tc.name     APIPreDragStatusTest_static_0050
+     * @tc.desc     APIPreDragStatusTest_static_0050
+     * @tc.level    Level.LEVEL0
      */
-    it('APIPreDragStatusTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIPreDragStatusTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIPreDragStatusTest_0050 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -214,13 +221,14 @@ export default function APIPreDragStatusTest() {
     });
 
 
+    
     /*
-     * @tc.number    APIPreDragStatusTest_static_0060
-     * @tc.name      APIPreDragStatusTest_static_0060
-     * @tc.desc      APIPreDragStatusTest_static_0060
-     * @tc.level     2
+     * @tc.number   APIPreDragStatusTest_static_0060
+     * @tc.name     APIPreDragStatusTest_static_0060
+     * @tc.desc     APIPreDragStatusTest_static_0060
+     * @tc.level    Level.LEVEL0
      */
-    it('APIPreDragStatusTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIPreDragStatusTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIPreDragStatusTest_0060 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

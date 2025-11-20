@@ -26,7 +26,10 @@ import {
   ClickEvent,
   FlexAlign,
   IDataSource,
-  DataChangeListener
+  DataChangeListener,
+  Circle,
+  LinearGradient,
+  SwiperAnimationEvent
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -37,12 +40,12 @@ class MyDataSource implements IDataSource<Color> {
     this.list = list
   }
 
-  totalCount(): int {
+  totalCount(): Int {
     return this.list.length
   }
 
-  getData(index: int): Color {
-    return this.list[index.toInt()]
+  getData(index: Int): Color {
+    return this.list[index as Int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -87,6 +90,48 @@ struct arcDirectionSwiperTest {
       }.width('100%').justifyContent(FlexAlign.SpaceEvenly)
 
 
+      // ArcSwiper(this.wearableSwiperController) {
+      //   LazyForEach(this.data, (backgroundColor: Color, index: number) => {
+      //     Text(index.toString())
+      //       .width(233)
+      //       .height(233)
+      //       .backgroundColor(backgroundColor)
+      //       .textAlign(TextAlign.Center)
+      //       .fontSize(30)
+      //   })
+      // }.id('arcs_arcDirection')
+      // .clip(new Circle({ width: 233, height: 233 }))
+      // .effectMode(EdgeEffect.None)
+      // .backgroundColor(Color.Transparent)
+      // .index(0)
+      // .duration(400)
+      // .vertical(false)
+      // .indicator(this.arcDotIndicator
+      //   .arcDirection(this.arcDirction) //弧形方向
+      //   .itemColor(this.itemSimpleColor)
+      //   .selectedItemColor(this.selectedItemSimpleColor)
+      //   .backgroundColor(Color.Gray)
+      //   .maskColor(new LinearGradient([{ color: '#FF67F9D4', offset: 0 }, { color: '#FFFF9554', offset: 1 }]))
+      // )
+      // .disableSwipe(false)
+      // .digitalCrownSensitivity(CrownSensitivity.MEDIUM)
+      // .disableTransitionAnimation(false)
+      // .onChange((index: number) => {
+      //   console.info('onChange:' + index.toString())
+      // })
+      // .onAnimationStart((index: number, targetIndex: number, event: SwiperAnimationEvent) => {
+      //   console.info('index: ' + index)
+      //   console.info('targetIndex: ' + targetIndex)
+      //   console.info('current offset: ' + event.currentOffset)
+      //   console.info('target offset: ' + event.targetOffset)
+      //   console.info('velocity: ' + event.velocity)
+      // })
+      // .onAnimationEnd((index: number, event: SwiperAnimationEvent) => {
+      //   console.info('index: ' + index)
+      //   console.info('current offset: ' + event.currentOffset)
+      //   console.info('target offset: ' + event.targetOffset)
+      //   console.info('velocity: ' + event.velocity)
+      // })
     }.height('100%')
   }
 }

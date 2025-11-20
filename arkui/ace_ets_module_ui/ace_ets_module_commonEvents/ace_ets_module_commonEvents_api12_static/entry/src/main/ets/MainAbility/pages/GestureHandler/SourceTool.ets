@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,43 +13,43 @@
  * limitations under the License.
  */
 import {
-  BaseGestureEvent,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  FlexAlign,
-  GestureControl,
+  Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
+  TouchEvent,
+  Margin,
+  Scroll,
   GestureEvent,
-  GestureGroupGestureHandlerOptions,
-  GestureGroupHandler,
+  LongPressGesture,
+  TapGesture,
+  ClickEvent,
+  FlexAlign,
   GestureInfo,
+  BaseGestureEvent,
+  DragEvent,
+  GestureControl,
   GestureJudgeResult,
   GestureModifier,
-  LongPressGesture,
-  Margin,
-  PanDirection,
-  PanGesture,
-  PanGestureHandler,
-  PanGestureOptions,
-  Row,
-  Scroll,
-  SourceTool,
-  TapGesture,
+  GestureGroupGestureHandlerOptions,
+  GestureGroupHandler,
+  UIGestureEvent,
   TapGestureHandler,
-  Text,
-  TouchEvent,
-  TouchType,
-  UIGestureEvent
+  PanGestureHandler,
+  SourceTool,
+  PanGestureOptions,
+  PanGesture,
+  PanDirection
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -59,6 +59,9 @@ struct PanGestureSourceTool {
   @State sourceTool3: SourceTool = SourceTool.JOYSTICK
   @State axisHorizontal: number = 0
   @State axisVertical: number = 0
+  private panOption: PanGestureOptions = new PanGestureOptions({ direction: (PanDirection.Left | PanDirection.Right) as PanDirection})
+
+
 
   build() {
     Column() {
@@ -73,8 +76,23 @@ struct PanGestureSourceTool {
       .padding(20)
       .border({ width: 3 })
       .margin(50)
-
-
+      // 左右拖动触发该手势事件
+      .gesture(
+        PanGesture(this.panOption)
+          .onActionStart((event: GestureEvent) => {
+            console.info('Pan start')
+          })
+          .onActionUpdate((event: GestureEvent) => {
+            if (event) {
+              this.axisHorizontal = event.axisHorizontal as number
+              this.axisVertical = event.axisVertical as number
+              this.sourceTool1 = event.sourceTool as SourceTool
+            }
+          })
+          .onActionEnd((event: GestureEvent) => {
+            console.info('Pan end')
+          })
+      )
       .gesture(
         TapGesture()
           .onAction((event: GestureEvent) => {
@@ -86,11 +104,11 @@ struct PanGestureSourceTool {
       )
 
       Button('change SourceTool2').id("changeSourceTool2_id")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.sourceTool1 = this.sourceTool2
         })
       Button('change SourceTool3').id("changeSourceTool3_id")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.sourceTool1 = this.sourceTool3
         })
     }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -60,12 +60,10 @@ export default function panGestureOnOffTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get panGesture state pages: " + JSON.stringify(pages));
-        if (!("panGesture" == pages.name)) {
+        if (!("panGestureOnOff" == pages.name)) {
           console.info("get panGesture state pages.name: " + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push panGesture page error: " + err);
@@ -79,18 +77,19 @@ export default function panGestureOnOffTest() {
     });
 
 
+    
     /*
-     * @tc.number    panGesture_on_beforePanStart_static_0010
-     * @tc.name      panGesture_on_beforePanStart_static_0010
-     * @tc.desc      panGesture_on_beforePanStart_static_0010
-     * @tc.level     2
+     * @tc.number   panGesture_on_beforePanStart_static_0010
+     * @tc.name     panGesture_on_beforePanStart_static_0010
+     * @tc.desc     panGesture_on_beforePanStart_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('panGesture_on_beforePanStart_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('panGesture_on_beforePanStart_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_on_beforePanStart_static_0010 START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
 
-
+      // 获取滑动组件Scroll
       let swiperTabs = CommonFunc.getComponentRectOnScreen('panGesture_on_beforePanStart_scroll_id');
       let top = swiperTabs.top;
       let right = swiperTabs.right;
@@ -104,7 +103,7 @@ export default function panGestureOnOffTest() {
       await driver.swipe(Math.round(left + width * 0.5) as Int, Math.round(bottom - height * 0.08) as Int,
         Math.round(left + width * 0.5) as Int, Math.round(top + height * 0.08) as Int);
       await CommonFunc.sleep(3000);
-
+      // 验证监听是否按顺序触发回调      
       expect(AppStorage.get('callbackFunc'))
         .assertEqual('callbackFunc_afterPanCallBack_beforeEndCallBack_afterEndCallBack');
       AppStorage.delete('callbackFunc')

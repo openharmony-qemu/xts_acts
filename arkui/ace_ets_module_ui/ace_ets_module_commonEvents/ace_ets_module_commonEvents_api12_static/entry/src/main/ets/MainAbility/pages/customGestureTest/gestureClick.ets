@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,32 +13,32 @@
  * limitations under the License.
  */
 import {
-  BaseGestureEvent,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  FlexAlign,
-  GestureControl,
-  GestureEvent,
-  GestureInfo,
-  GestureJudgeResult,
-  LongPressGesture,
-  Margin,
-  Row,
-  Scroll,
-  TapGesture,
-  Text,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  Scroll,
+  GestureEvent,
+  LongPressGesture,
+  TapGesture,
+  ClickEvent,
+  FlexAlign,
+  GestureInfo,
+  BaseGestureEvent,
+  GestureControl,
+  GestureJudgeResult
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -47,8 +47,8 @@ struct gestureDefine1 {
   @State message2: string = ''
 
   build() {
-    Column({ space: 20 } as ColumnOptions) {
-      Text(this.message1 + '--' + this.message2)
+    Column({space:20} as ColumnOptions) {
+      Text(this.message1+'--'+this.message2)
         .fontSize(18)
         .margin(10)
         .id('gesture_click_text')
@@ -56,15 +56,15 @@ struct gestureDefine1 {
         .id("gesture_click_button")
         .width(100)
         .height(80)
-        .onClick((event: ClickEvent) => {
-          if (event) {
+        .onClick((event:ClickEvent)=>{
+          if(event){
             this.message1 = '点击事件成功响应'
           }
         })
-        .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent): GestureJudgeResult => {
+        .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent):GestureJudgeResult => {
           if (gestureInfo.type == GestureControl.GestureType.CLICK) {
             this.message2 = 'GestureType为CLICK'
-          } else {
+          }else{
             return GestureJudgeResult.REJECT;
           }
           return GestureJudgeResult.CONTINUE;

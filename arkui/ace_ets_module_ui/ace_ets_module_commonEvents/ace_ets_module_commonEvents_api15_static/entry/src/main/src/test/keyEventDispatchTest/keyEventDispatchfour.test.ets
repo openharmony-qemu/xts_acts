@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,9 @@ export default function keyEventDispatchTest4() {
         if (!("keyEventDispatchTest04" == pages.name)) {
           console.info("get keyEventDispatchTest04 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
+          // let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push keyEventDispatchTest04 success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push keyEventDispatchTest04 page error: " + err);
@@ -62,29 +62,32 @@ export default function keyEventDispatchTest4() {
     });
 
 
+    
     /*
-     * @tc.number    keyEventDispatchTest4_static_0100
-     * @tc.name      keyEventDispatchTest4_static_0100
-     * @tc.desc      keyEventDispatchTest4_static_0100
-     * @tc.level     2
+     * @tc.number   keyEventDispatchTest4_static_0100
+     * @tc.name     keyEventDispatchTest4_static_0100
+     * @tc.desc     keyEventDispatchTest4_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('keyEventDispatchTest4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('keyEventDispatchTest4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[keyEventDispatchTest4_static_0100] START');
       let driver = Driver.create();
       await driver.triggerKey(2049);
       await CommonFunc.sleep(2000);
 
-
+      // test the  child component response
       let strJson = inspector.getInspectorByKey('childText4');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[keyEventDispatchTest4_static_0100] obj is: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('childResponse');
 
-
+      // parent component not response
       let strJson1 = inspector.getInspectorByKey('parentText4');
+      await CommonFunc.sleep(2000);
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[keyEventDispatchTest4_010] obj is: " + obj1.getElement('$attrs').getString('content'));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('parentResponse');
 
       console.info('[keyEventDispatchTest4_static_0100] END');
       done();

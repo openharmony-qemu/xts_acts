@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,7 @@ export default function EventTarget_id() {
         if (!('EventTarget_id' == pages.name)) {
           console.info('get EventTarget_id state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error('push EventTarget_id page error: ' + err);
@@ -61,21 +59,26 @@ export default function EventTarget_id() {
       }
     });
 
+    afterEach(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+    })
 
+    
     /*
-     * @tc.number    EventTarget_id_static_0100
-     * @tc.name      EventTarget_id_static_0100
-     * @tc.desc      EventTarget_id_static_0100
-     * @tc.level     2
+     * @tc.number   EventTarget_id_static_0100
+     * @tc.name     EventTarget_id_static_0100
+     * @tc.desc     EventTarget_id_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('EventTarget_id_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EventTarget_id_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EventTarget_id_static_0100] START');
       let driver = Driver.create();
       let button1 = await (driver.findComponent(ON.id('click_id')) as Promise<Component>);
-      await button1.click();
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
-
+      // test the child component response
       let strJson = inspector.getInspectorByKey('text');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[EventTarget_id_static_0100] strJson is: ' + strJson);
@@ -88,20 +91,21 @@ export default function EventTarget_id() {
     });
 
 
+    
     /*
-     * @tc.number    EventTarget_id_0200
-     * @tc.name      EventTarget_id_0200
-     * @tc.desc      EventTarget_id_0200
-     * @tc.level     2
+     * @tc.number   EventTarget_id_0200
+     * @tc.name     EventTarget_id_0200
+     * @tc.desc     EventTarget_id_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('EventTarget_id_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EventTarget_id_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EventTarget_id_0200] START');
       let driver = Driver.create();
       let button2 = await (driver.findComponent(ON.id('click_key')) as Promise<Component>);
-      await button2.click();
+      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
-
+      // test the child component response
       let strJson = inspector.getInspectorByKey('text');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[EventTarget_id_0200] strJson is: ' + strJson);

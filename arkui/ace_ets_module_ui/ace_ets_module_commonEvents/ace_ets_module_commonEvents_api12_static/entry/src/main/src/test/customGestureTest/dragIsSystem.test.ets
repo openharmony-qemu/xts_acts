@@ -4,28 +4,28 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
   Component,
-  DisplayRotation,
   Driver,
-  MatchPattern,
   MouseButton,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
   UiWindow,
-  WindowMode
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -35,22 +35,27 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Driver, ON } from '@ohos.UiTest';
+import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 const uiContext = new UIContext();
 
 
 export default function dragIsSystem() {
   describe('dragIsSystem', () => {
+
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async ():Promise<void> => {
       console.info("dragIsSystem beforeEach start");
       try {
         const router = AppStorage.get<Router>('router') as Router
@@ -59,49 +64,48 @@ export default function dragIsSystem() {
         console.info("get dragIsSystem state pages:" + JSON.stringify(pages));
         if (!("dragIsSystem" == pages.name)) {
           console.info("get  dragIsSystem pages.name:" + JSON.stringify(pages.name));
-
-
           router.pushUrl({
             url: "MainAbility/pages/customGestureTest/dragIsSystem"
           })
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push dragIsSystem page error:" + err);
       }
       console.info("dragIsSystem foreEach end");
-
+      //done();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("dragIsSystem after each called");
     });
 
+    
 
+    
     /*
-     * @tc.number    dragIsSystem_001
-     * @tc.name      dragIsSystem_001
-     * @tc.desc      dragIsSystem_001
-     * @tc.level     2
+     * @tc.number   dragIsSystem_001
+     * @tc.name     dragIsSystem_001
+     * @tc.desc     dragIsSystem_001
+     * @tc.level    Level.LEVEL0
      */
-    it('dragIsSystem_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('dragIsSystem_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[dragIsSystem_001] START');
       let str1 = inspector.getInspectorByKey("dragIsSystemBtn1");
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(str1, Type.of(new String() as Object)) as Record<string, Object>;
-      console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-      let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["getElement('$rect')"]! + ']',
-        Type.of(new String() as Object)) as Array<Array<number>>;
-      console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-
+      await CommonFunc.sleep(2000);
+      let obj = JSON.parseJsonElement(str1)
+      const str = obj.getString("$rect")
+      let parts = str.substring(1, str.length - 1).split("],[");
+      let rectInfo = parts.map((part: string) => {
+        return part.split(",").map((item: string): double => parseFloat(item.trim()));
+      });
       CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
       CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(66.66)) as Int,
-        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(53.33)) as Int, 200, 200, 600);
+      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)) as Int, Math.round(CommonFunc.rect_top + uiContext.vp2px(53.33)) as Int, 200, 200, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("dragIsSystemBtn2");
       await CommonFunc.sleep(200);

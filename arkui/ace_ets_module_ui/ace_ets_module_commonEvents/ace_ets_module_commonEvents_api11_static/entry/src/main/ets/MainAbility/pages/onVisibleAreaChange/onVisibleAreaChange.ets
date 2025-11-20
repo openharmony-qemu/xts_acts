@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -71,7 +71,7 @@ struct ScrollExample {
             .fontSize(20)
             .height(200)
             .margin({ top: 50, bottom: 20 } as Margin)
-            .backgroundColor(Color.Green)
+            .backgroundColor(Color.Green)// 通过设置ratios为[0.0, 1.0]，实现当组件完全显示或完全消失在屏幕中时触发回调
             .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number): void => {
               console.info("Test Text isVisible: " + isVisible + ", currentRatio:" + currentRatio)
               if (isVisible && currentRatio >= 1.0) {
@@ -106,7 +106,7 @@ struct ScrollExample {
             }
           })
 
-          ForEach(this.arr, (item: number, index: int): void => {
+          ForEach(this.arr, (item: number, index: Int): void => {
             Text(String(item))
               .width('90%')
               .height(150)
@@ -124,10 +124,14 @@ struct ScrollExample {
       .scrollBar(BarState.On)
       .scrollBarColor(Color.Gray)
       .scrollBarWidth(30)
-
-
+      .onDidScroll((xOffset: number, yOffset: number) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info('To the edge')
+      })
+      .onScrollStop((): void => {
+        console.info('Scroll Stop')
       })
 
     }.width('100%').height('100%').backgroundColor(0xDCDCDC)

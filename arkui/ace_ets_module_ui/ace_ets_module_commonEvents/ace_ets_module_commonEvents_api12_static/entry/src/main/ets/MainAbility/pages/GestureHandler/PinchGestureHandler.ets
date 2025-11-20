@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,42 +13,42 @@
  * limitations under the License.
  */
 import {
-  BaseGestureEvent,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  FlexAlign,
-  GestureControl,
+  Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
+  TouchEvent,
+  Margin,
+  Scroll,
   GestureEvent,
-  GestureGroupGestureHandlerOptions,
-  GestureGroupHandler,
+  LongPressGesture,
+  TapGesture,
+  ClickEvent,
+  FlexAlign,
   GestureInfo,
+  BaseGestureEvent,
+  DragEvent,
+  GestureControl,
   GestureJudgeResult,
   GestureModifier,
-  LongPressGesture,
-  Margin,
-  PanGestureHandler,
-  PinchGestureHandler,
-  PinchGestureHandlerOptions,
-  Row,
-  Scroll,
-  TapGesture,
+  GestureGroupGestureHandlerOptions,
+  GestureGroupHandler,
+  UIGestureEvent,
   TapGestureHandler,
-  Text,
-  TouchEvent,
-  TouchType,
-  UIGestureEvent
+  PanGestureHandler,
+  PinchGestureHandlerOptions,
+  PinchGestureHandler
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+ 
 class PinchGestureModifier implements GestureModifier {
   supportDoubleTap: boolean = true
   value: string = 'succ'
@@ -59,14 +59,17 @@ class PinchGestureModifier implements GestureModifier {
       event.addGesture(
         new TapGestureHandler({ count: 1, fingers: 1 })
           .tag("aaa")
-
-
+          .onAction((event: GestureEvent) => {
+            console.log("button " +JSON.stringify(event.repeat))
+            // return this.value
+          })
       )
     } else {
       event.addGesture(
         new PinchGestureHandler(this.PinchOptions)
-
-
+          .onActionStart(()=>{
+            // return 'Pinch start'
+          })
       )
     }
   }
@@ -80,7 +83,7 @@ struct PinchGestureHandler1 {
   build() {
     Row() {
       Column() {
-        Button(this.modifier.value).margin({ bottom: 20 } as Margin).id('PinchGestureHandler1')
+        Button(this.modifier.value).margin({bottom:20} as Margin).id('PinchGestureHandler1')
         Column()
           .id('PinchGestureHandlerColumn')
           .gestureModifier(this.modifier)

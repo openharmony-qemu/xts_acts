@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector';
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 import common from '@ohos.app.ability.common';
 
 export default class Utils {

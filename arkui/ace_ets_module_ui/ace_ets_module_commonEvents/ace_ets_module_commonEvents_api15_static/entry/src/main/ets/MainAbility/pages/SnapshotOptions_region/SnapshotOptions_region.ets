@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -49,8 +49,8 @@ import { BusinessError } from '@ohos.base';
 @Component
 struct SnapshotExample {
   scroller: Scroller = new Scroller()
-  @State pixmap: image.PixelMap | undefined = undefined
-  @State pixmap1: image.PixelMap | undefined = undefined
+  @State pixmap: image.PixelMap | '' = ''
+  @State pixmap1: image.PixelMap | '' = ''
   private arr: number[] = new Array<number>(0)
 
   build() {
@@ -106,7 +106,7 @@ struct SnapshotExample {
                   console.log('error:' + JSON.stringify(error))
                   return;
                 }
-                this.pixmap = pixmap
+                this.pixmap = pixmap ?? ''
               }, {
                 scale: 1, waitUntilRenderFinished: true,
                 region: {
@@ -127,7 +127,7 @@ struct SnapshotExample {
                   console.log('error:' + JSON.stringify(error))
                   return;
                 }
-                this.pixmap1 = pixmap1
+                this.pixmap1 = pixmap1 ?? ''
               }, {
                 scale: 1, waitUntilRenderFinished: true,
                 region: {
@@ -149,7 +149,7 @@ struct SnapshotExample {
                   console.log('error:' + JSON.stringify(error))
                   return;
                 }
-                this.pixmap = pixmap
+                this.pixmap = pixmap ?? ''
               }, {
                 scale: 1, waitUntilRenderFinished: true,
                 region: {
@@ -171,7 +171,7 @@ struct SnapshotExample {
                   console.log('error:' + JSON.stringify(error))
                   return;
                 }
-                this.pixmap1 = pixmap1
+                this.pixmap1 = pixmap1 ?? ''
               }, {
                 scale: 1, waitUntilRenderFinished: true,
                 region: {
@@ -187,8 +187,8 @@ struct SnapshotExample {
       Scroll(this.scroller) {
         Column({ space: 5 } as ColumnOptions) {
           ForEach(this.arr, (item: number) => {
-            Image(this.pixmap as image.PixelMap).margin(5).key('image1')
-            Image(this.pixmap1 as image.PixelMap).margin(5).key('image2')
+            Image(this.pixmap).margin(5).key('image1')
+            Image(this.pixmap1).margin(5).key('image2')
           }, (item: number) => String(item))
         }
       }.height('50%')

@@ -4,7 +4,7 @@ Copyright (c) 2025 Huawei Device Co., Ltd.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-http:
+http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,7 @@ import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
+import common from '@ohos.app.ability.common'
 import {
   $r,
   Alignment,
@@ -57,6 +58,7 @@ import {
   Visibility
 } from '@ohos.arkui.component'
 import { BusinessError } from '@ohos.base';
+import application from '@ohos.app.ability.application';
 
 @Entry
 @Component
@@ -67,8 +69,10 @@ struct ImageExample {
   @State AVisible: Visibility = Visibility.Visible
   @State dragSuccess: boolean = false
   destPath: string = '/data/';
+  fileConflictOptions: unifiedDataChannel.FileConflictOptions = unifiedDataChannel.FileConflictOptions.OVERWRITE
   buttonStrArr1: string[] = new Array<string>('OVERWRITE', 'SKIP');
   index1: Int = 0
+  progressIndicator: unifiedDataChannel.ProgressIndicator = unifiedDataChannel.ProgressIndicator.DEFAULT
   buttonStrArr2: string[] = new Array<string>('DEFAULT', 'NONE');
   index2: Int = 0
   buttonStrArr3: string[] = new Array<string>('true', 'false');
@@ -121,20 +125,73 @@ struct ImageExample {
         .id("list")
         .height('90%')
         .width('100%')
-        .onDrop((event?: DragEvent, extraParams?: string): void => {
-          console.log("enter onDrop")
 
-          let context = this.getUIContext();
-
-
-          try {
-
-
-          } catch (e) {
-            e = e as BusinessError;
-            console.info('startDataLoading error:', e);
-          }
-        }, { disableDataPrefetch: this.disableDataPrefetch } as DropOptions)
+        // .onDrop((event?: DragEvent, extraParams?: string): void => {
+        //   console.log("enter onDrop")
+        //   // 准备 options
+        //   let context = common.BaseContext; //Error line
+        //   // let context = application.createModuleContext(this.getUIContext().getHostContext(),
+        //   //   'com.open.harmony.acetestcommenventapi15.static', 'entry');
+        //   let pathDir: string = context.distributedFilesDir;
+        //   let destUri = fileUri.getUriFromPath(pathDir);
+        //   let progressListener: unifiedDataChannel.DataProgressListener =
+        //     (progress: unifiedDataChannel.ProgressInfo, dragData: UnifiedData | null) => {
+        //
+        //       if (dragData != null) {
+        //         let records = dragData.getRecords();
+        //         for (let i = 0; i < records.length; i++) {
+        //           let record = records[i];
+        //           if (record.getType() == 'general.file' ||
+        //             record.getType() == 'general.image' ||
+        //             record.getType() == 'general.video' ||
+        //             record.getType() == 'general.audio' ||
+        //             record.getType() == 'general.folder') {
+        //             let file = record as unifiedDataChannel.File;
+        //             console.info(`zph JS file uri: ${file.uri}`);
+        //           }
+        //         }
+        //         // 元数据data已ready
+        //         let arr: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
+        //         if (arr.length > 0) {
+        //           console.log('30058220uri1:', this.uri);
+        //           if (records[0].getType() === 'uniformTypeDescriptor.UniformDataType.IMAGE') {
+        //             let image = arr[0] as unifiedDataChannel.Image;
+        //             this.uri = image.imageUri;
+        //             this.dragResult1 = 'Drag Success';
+        //             console.log('30058220uri:', this.uri);
+        //             this.BblockArr.splice((JSON.parseJsonElement(extraParams as string).insertIndex) as Int, 0,
+        //               this.uri); //Error line
+        //           }
+        //           console.log('30058220type:', records[0].getType().toString());
+        //           if (records[0].getType() === uniformTypeDescriptor.UniformDataType.VIDEO) { //Error   line
+        //             let video = arr[0] as unifiedDataChannel.Video;
+        //             this.uri = video.videoUri;
+        //             this.BblockArr.splice(JSON.parse(extraParams as string).insertIndex, 0, this.uri); //Error   line
+        //           }
+        //         } else {
+        //           console.log("dragData arr is null")
+        //         }
+        //       } else {
+        //         console.log("dragData is undefined")
+        //       }
+        //       console.log("ondrop udmf data");
+        //       this.dragSuccess = true
+        //       console.info('percentage: ${progress.percentage}');
+        //     };
+        //   let options: unifiedDataChannel.GetDataParams = {
+        //     destUri: destUri,
+        //     fileConflictOptions: this.fileConflictOptions,
+        //     progressIndicator: this.progressIndicator,
+        //     dataProgressListener: progressListener,
+        //   }
+        //   try {
+        //     this.udKey = (event as DragEvent).startDataLoading(options); //Error line
+        //     console.log('udkey:', this.udKey);
+        //     this.res = this.udKey
+        //   } catch (e: BusinessError) {
+        //     console.info('startDataLoading error:', e);
+        //   }
+        // }, { disableDataPrefetch: this.disableDataPrefetch } as DropOptions)
       }
       .height("30%")
       .width("45%")
@@ -144,8 +201,7 @@ struct ImageExample {
         .onClick((e: ClickEvent) => {
           try {
             this.getUIContext().getDragController().cancelDataLoading(this.udKey);
-          } catch (e) {
-            e = e as BusinessError;
+          } catch (e: BusinessError) {
             this.cancelResult = e.code;
             console.info('cancelDataLoading error:', e.code);
           }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,56 +13,56 @@
  * limitations under the License.
  */
 
-import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { NodeController, FrameNode, typeNode } from '@ohos.arkui.node';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Button, ClickEvent, Column, Component, Entry, KeyEvent, KeyType, Row, Text } from '@ohos.arkui.component'
+import { KeyType, KeyEvent, Row, Entry, Column, Text, Button, ClickEvent, Component } from '@ohos.arkui.component'
 
 
 @Entry
 @Component
 struct onKeyEventExample3 {
   @State childText: string = ''
-  @State modifierStatePress: string = ""
 
-  build() {
+  @State modifierStatePress : string = ""
+
+build() {
     Column() {
       Row() {
         Text(this.modifierStatePress).key('modifierStatePress')
       }
-
       Button('KeyEvent')
-        .onKeyEventDispatch((event: KeyEvent): boolean => {
+        .onKeyEventDispatch((event:KeyEvent): boolean=> {
 
           if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl', 'alt', 'shift', 'fn'])) {
-            this.modifierStatePress = 'ctrl & alt & shift & fn is press'
+            this.modifierStatePress =  'ctrl & alt & shift & fn is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl', 'alt', 'shift'])) {
-            this.modifierStatePress = 'ctrl & alt & shift  is press'
-          } else if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl', 'shift', 'fn'])) {
-            this.modifierStatePress = 'ctrl & fn & shift  is press'
-          } else if (event.getModifierKeyState && event.getModifierKeyState?.(['alt', 'shift', 'fn'])) {
-            this.modifierStatePress = 'alt & fn & shift  is press'
+            this.modifierStatePress =  'ctrl & alt & shift  is press'
+          } else if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl',  'shift', 'fn'])) {
+            this.modifierStatePress =  'ctrl & fn & shift  is press'
+          } else if (event.getModifierKeyState && event.getModifierKeyState?.(['alt',  'shift', 'fn'])) {
+            this.modifierStatePress =  'alt & fn & shift  is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl', 'shift'])) {
-            this.modifierStatePress = 'ctrl & shift  is press'
+            this.modifierStatePress =  'ctrl & shift  is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl', 'alt'])) {
-            this.modifierStatePress = 'ctrl & alt  is press'
+            this.modifierStatePress =  'ctrl & alt  is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl', 'fn'])) {
-            this.modifierStatePress = 'ctrl & fn  is press'
+            this.modifierStatePress =  'ctrl & fn  is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['alt', 'shift'])) {
-            this.modifierStatePress = 'alt & shift  is press'
+            this.modifierStatePress =  'alt & shift  is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['alt', 'fn'])) {
-            this.modifierStatePress = 'alt & fn is press'
+            this.modifierStatePress =  'alt & fn is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['shift', 'fn'])) {
-            this.modifierStatePress = 'shift & fn is press'
+            this.modifierStatePress =  'shift & fn is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['ctrl'])) {
-            this.modifierStatePress = 'ctrl is press'
+            this.modifierStatePress =  'ctrl is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['alt'])) {
-            this.modifierStatePress = 'alt is press'
+            this.modifierStatePress =  'alt is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['shift'])) {
-            this.modifierStatePress = 'shift is press'
+            this.modifierStatePress =  'shift is press'
           } else if (event.getModifierKeyState && event.getModifierKeyState?.(['fn'])) {
-            this.modifierStatePress = 'fn is press'
+            this.modifierStatePress =  'fn is press'
           }
           console.info("the child key is " + JSON.stringify(event))
           return false

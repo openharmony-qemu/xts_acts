@@ -39,7 +39,7 @@ struct arcSwiperContentTest {
   @State opacityList: number[] = new Array<Number>()
   @State scaleList: number[] = new Array<Number>()
   @State translateList: number[] = new Array<Number>()
-  @State zIndexList: int[] = new Array<int>()
+  @State zIndexList: number[] = new Array<Number>()
   @State selectedIndex1: number = -1
   @State index1: number = -1
   @State onAnimationStartIndex: number = -1
@@ -61,6 +61,89 @@ struct arcSwiperContentTest {
       Text('onAnimationStartIndex: '+ this.onAnimationStartIndex).id('onAnimationStart_arcs_content')
         .margin({top:10} as Margin)
       Text('index: '+ this.index1).id('index1_arcs_content')
+
+      // ArcSwiper(this.arcSwiperController) {
+      //   ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
+      //     Text(index.toString())
+      //       .width('100%')
+      //       .height('100%')
+      //       .textAlign(TextAlign.Center)
+      //       .fontSize(30)
+      //       .backgroundColor(backgroundColor)
+      //       .opacity(this.opacityList[index])
+      //       .scale({ x: this.scaleList[index], y: this.scaleList[index] })
+      //       .translate({ x: this.translateList[index] })
+      //       .zIndex(this.zIndexList[index])
+      //   })
+      // }.id('arcs_customContent')
+      // .width('60%')
+      // .height('40%')
+      // .effectMode(EdgeEffect.Fade)
+      // .backgroundColor(Color.Transparent)
+      // .index(0)
+      // .duration(400)
+      // .vertical(false)
+      // .indicator(this.arcDotIndicator
+      //   .arcDirection(ArcDirection.SIX_CLOCK_DIRECTION)
+      //   .itemColor(this.itemSimpleColor)
+      //   .selectedItemColor(this.selectedItemSimpleColor)
+      //   .backgroundColor(Color.Gray)
+      //   .maskColor(new LinearGradient([{ color: '#FF67F9D4', offset: 0 }, { color: '#FFFF9554', offset: 1 }]))
+      // )
+      // .disableSwipe(false)
+      // .digitalCrownSensitivity(CrownSensitivity.MEDIUM)
+      // .disableTransitionAnimation(false)
+      // .onChange((index: number) => {
+      //   console.info('onChange:' + index.toString())
+      // })
+      // .onGestureSwipe((index: number, event: TabsAnimationEvent) => {
+      //   console.info('onGestureSwipe index: ' + index)
+      //   console.info('onGestureSwipe current offset: ' + event.currentOffset)
+      //   console.info('onGestureSwipe target offset: ' + event.targetOffset)
+      //   console.info('onGestureSwipe velocity: ' + event.velocity)
+      // })
+      // .onAnimationStart((index: number, targetIndex: number, event: SwiperAnimationEvent) => {
+      //   this.onAnimationStartIndex = index
+      //
+      //   console.info('index: ' + index)
+      //   console.info('targetIndex: ' + targetIndex)
+      //   console.info('current offset: ' + event.currentOffset)
+      //   console.info('target offset: ' + event.targetOffset)
+      //   console.info('velocity: ' + event.velocity)
+      // })
+      // .customContentTransition({
+      //   timeout: 1000,
+      //   transition: (proxy: SwiperContentTransitionProxy) => {
+      //     console.info('transition：index: ' + proxy.index + ',' + 'selectedIndex: ' + proxy.selectedIndex + ',' +
+      //       'position: ' + proxy.position + ','+ 'mainAxisLength: ' + proxy.mainAxisLength)
+      //     this.selectedIndex1 = proxy.selectedIndex
+      //     this.index1 = proxy.index
+      //     if (proxy.position <= proxy.index % this.DISPLAY_COUNT ||
+      //       proxy.position >= this.DISPLAY_COUNT + proxy.index % this.DISPLAY_COUNT) {
+      //       this.opacityList[proxy.index] = 1.0
+      //       this.scaleList[proxy.index] = 1.0
+      //       this.translateList[proxy.index] = 0.0
+      //       this.zIndexList[proxy.index] = 0
+      //       proxy.finishTransition()
+      //     } else {
+      //       if (proxy.index % this.DISPLAY_COUNT === 0) {
+      //         this.opacityList[proxy.index] = 1 - proxy.position / this.DISPLAY_COUNT
+      //         this.scaleList[proxy.index] =
+      //           this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT)
+      //         this.translateList[proxy.index] =
+      //           -proxy.position * proxy.mainAxisLength + (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0
+      //       } else {
+      //         this.opacityList[proxy.index] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT
+      //         this.scaleList[proxy.index] =
+      //           this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - (proxy.position - 1) / this.DISPLAY_COUNT)
+      //         this.translateList[proxy.index] = -(proxy.position - 1) * proxy.mainAxisLength -
+      //           (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0
+      //       }
+      //       this.zIndexList[proxy.index] = -1
+      //       proxy.finishTransition()
+      //     }
+      //   }
+      // })
 
     }.height('100%')
   }

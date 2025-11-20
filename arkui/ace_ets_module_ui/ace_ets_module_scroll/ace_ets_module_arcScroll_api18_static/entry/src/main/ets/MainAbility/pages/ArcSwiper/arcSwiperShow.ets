@@ -73,6 +73,55 @@ struct arcSwiperTestShow {
           .onClick((e: ClickEvent) => {
           })
       }
+      // ArcSwiper(this.arcSwiperController) {
+      //   ForEach(this.arr, (item: string, index: number) => {
+      //     Text(index.toString())
+      //       .width('100%')
+      //       .height('100%')
+      //       .backgroundColor(this.backgroundColors[index%6])
+      //       .textAlign(TextAlign.Center)
+      //       .fontSize(30)
+      //   })
+      // }
+      // .width(233)
+      // .height(233)
+      // .index(this.index)
+      // .duration(400)
+      // .vertical(false)
+      // .effectMode(EdgeEffect.Fade)
+      // .indicator(this.isIndicatorSelected == true ?
+      //   (this.arcDotIndicator
+      //     .arcDirection(this.arcDirection)
+      //     .itemColor(this.itemColor)
+      //     .backgroundColor(this.backplaneColor)
+      //     .maskColor(this.maskColor)
+      //     .selectedItemColor(this.selectedItemColor)) : this.isIndicatorSelected
+      // )
+      // .disableSwipe(false)
+      // .disableTransitionAnimation(false)
+      // .digitalCrownSensitivity(CrownSensitivity.LOW)
+      // .onChange((index: number) => {
+      //   this.onChangeIndex2 = index
+      //   console.info('onChange:' + index.toString())
+      // })
+      // .onAnimationStart((index: number, targetIndex: number, event: SwiperAnimationEvent) => {
+      //   this.onAnimationStartIndex2 = index
+      //
+      //   console.info('index: ' + index)
+      //   console.info('targetIndex: ' + targetIndex)
+      //   console.info('current offset: ' + event.currentOffset)
+      //   console.info('target offset: ' + event.targetOffset)
+      //   console.info('velocity: ' + event.velocity)
+      // })
+      // .onAnimationEnd((index: number, event: SwiperAnimationEvent) => {
+      //   this.onAnimationEndIndex2 = index
+      //   this.arcSwiperController.finishAnimation(()=>{
+      //     console.log('onAnimationEnd finishAnimation')
+      //     this.finishText2 ++
+      //   })
+      //   console.info('index: ' + index)
+      //   console.info('current offset: ' + event.currentOffset)
+      // })
 
     }
     .width('90%')

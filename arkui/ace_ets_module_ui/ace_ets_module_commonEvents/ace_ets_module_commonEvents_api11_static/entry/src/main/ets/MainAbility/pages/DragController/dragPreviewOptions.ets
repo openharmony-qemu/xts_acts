@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,36 +13,37 @@
  * limitations under the License.
  */
 import {
-  $rawfile,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
-  CopyOptions,
+  Column,
+  Row,
+  Flex,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  DragPreviewMode,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  Image,
-  ItemAlign,
-  Margin,
-  Padding,
-  Row,
-  Text,
-  TextAlign,
+  Color,
   TextArea,
-  TouchType,
-  Visibility
-} from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+  CopyOptions,
+  Visibility,
 
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
+  $rawfile,
+  Image,
+  DragPreviewMode
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
-struct dragPreviewOptionsDemo {
+struct dragPreviewOptionsDemo{
+
   build() {
     Row() {
       Column() {

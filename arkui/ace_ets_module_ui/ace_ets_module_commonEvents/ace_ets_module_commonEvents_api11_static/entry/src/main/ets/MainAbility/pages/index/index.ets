@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,42 +16,27 @@ import router from '@ohos.router';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Hypium } from '../../../../../hypium/index'
 import testsuite from '../../../../src/test/List.test'
-import {
-  Badge,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  List,
-  ListItem,
-  Margin,
-  Row,
-  Text
-} from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Entry, Component, Column, Row, Button, List, ListItem, FlexDirection, ButtonType, Margin, ItemAlign, FlexAlign, FontWeight, Badge, Text, Flex, ClickEvent } from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct Index {
-  aboutToAppear() {
+
+  aboutToAppear(){
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
 
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
@@ -64,7 +49,7 @@ struct Index {
         top: 20
       } as Margin)
       .backgroundColor('#0D9FFB')
-      .onClick((e: ClickEvent) => {
+      .onClick((e:ClickEvent) => {
 
       })
     }

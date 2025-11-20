@@ -4,47 +4,49 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import dragController from '@ohos.arkui.dragController'
+import dragController from "@ohos.arkui.dragController"
 import UDMF from '@ohos.data.unifiedDataChannel';
-import { PromptAction, Router, UIContext } from '@ohos.arkui.UIContext';
+import { PromptAction } from '@ohos.arkui.UIContext';
 import {
-  $r,
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CopyOptions,
-  CustomBuilder,
-  DragBehavior,
-  DragEvent,
-  DragItemInfo,
-  DragResult,
   Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  Image,
-  ItemAlign,
-  Margin,
-  Padding,
+  Component,
+  Column,
   Row,
+  Flex,
   Text,
-  TextAlign,
-  TextArea,
-  TouchEvent,
+  ColumnOptions,
   TouchType,
-  Visibility
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  TextArea,
+  CopyOptions,
+  Visibility,
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
+  $r,
+  Image,
+  Button,
+  TouchEvent,
+  DragBehavior,
+  DragResult,
+  DragEvent,
+  Builder
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 
 @Entry
@@ -63,6 +65,16 @@ struct DragEventUI {
   @State useCustomDropAnimation1: string = "useCustomDropAnimation";
   @State imgState: Visibility = Visibility.Visible;
 
+  @Builder
+  DraggingBuilder() {
+    Column() {
+      Text("DraggingBuilder")
+    }
+    .width(100)
+    .height(100)
+    .backgroundColor(Color.Blue)
+  }
+
   build() {
     Row() {
       Column() {
@@ -77,7 +89,7 @@ struct DragEventUI {
           .draggable(true)
           .margin({ left: 15 } as Margin)
           .visibility(this.imgState)
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event:DragEvent, extraParams?:String|undefined): DragItemInfo => {
             event.dragBehavior = DragBehavior.COPY
             event.setResult(DragResult.DRAG_SUCCESSFUL);
           })
@@ -107,8 +119,21 @@ struct DragEventUI {
         Button('touch to execute drag')
           .onTouch((event: TouchEvent) => {
             if (event.type == TouchType.Down) {
-
-
+              let text = new UDMF.Text()
+              let unifiedData = new UDMF.UnifiedData(text)
+              let dragInfo: dragController.DragInfo = {
+                pointerId: 0,
+                data: unifiedData,
+                extraParams: ''
+              }
+              this.getUIContext().getDragController().executeDrag(this.DraggingBuilder, dragInfo, (err,eve) => {
+                let result: DragResult = eve!.event!.getResult()
+                if (result === DragResult.DRAG_SUCCESSFUL) {
+                  // ...
+                } else if (result === DragResult.DRAG_FAILED) {
+                  // ...
+                }
+              })
             }
           })
       }.width('90%')

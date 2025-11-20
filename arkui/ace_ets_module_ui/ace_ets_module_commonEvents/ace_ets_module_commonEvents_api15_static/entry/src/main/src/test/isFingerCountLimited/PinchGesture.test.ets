@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,7 @@ export default function pinchGestureTest() {
         if (!('PinchGesture' == pages.name)) {
           console.info('get PinchGesture state pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error('push PinchGesture page error:' + err);
@@ -62,17 +60,20 @@ export default function pinchGestureTest() {
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
       console.info('PinchGesture after each called');
     });
 
 
+    
     /*
-     * @tc.number    PinchGesture1_static_0100
-     * @tc.name      PinchGesture1_static_0100
-     * @tc.desc      PinchGesture1_static_0100
-     * @tc.level     2
+     * @tc.number   PinchGesture1_static_0100
+     * @tc.name     PinchGesture1_static_0100
+     * @tc.desc     PinchGesture1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('PinchGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PinchGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PinchGesture1_static_0100 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
@@ -95,20 +96,20 @@ export default function pinchGestureTest() {
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.1) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.1) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.3) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.1) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.1) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.3) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
@@ -123,19 +124,20 @@ export default function pinchGestureTest() {
     });
 
 
+    
     /*
-     * @tc.number    PinchGesture1_static_0200
-     * @tc.name      PinchGesture1_static_0200
-     * @tc.desc      PinchGesture1_static_0200
-     * @tc.level     2
+     * @tc.number   PinchGesture1_static_0200
+     * @tc.name     PinchGesture1_static_0200
+     * @tc.desc     PinchGesture1_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('PinchGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PinchGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PinchGesture1_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver1 = Driver.create()
       await CommonFunc.sleep(1000);
-      let Column = await (driver1.findComponent(ON.id('clear')) as Promise<Component>);
-      await Column.click();
+      let Column = await driver1.findComponent(ON.id('clear'));
+      await (Column?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
       let windowOffsetY: number = AppStorage.get<number>("winTop") as number
@@ -161,32 +163,33 @@ export default function pinchGestureTest() {
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(3, 2);
       pointers.setPoint(0, 0, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.1) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.1) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.3) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.1) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.1) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.3) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(2, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.2) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.2) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       pointers.setPoint(2, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.3) as int,
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as int
       });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       let strJson = inspector.getInspectorByKey('PinchGesture');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[PinchGesture1_static_0200] component obj is: ' + JSON.stringify(obj));
       console.info('[PinchGesture1_static_0200] title: ' +

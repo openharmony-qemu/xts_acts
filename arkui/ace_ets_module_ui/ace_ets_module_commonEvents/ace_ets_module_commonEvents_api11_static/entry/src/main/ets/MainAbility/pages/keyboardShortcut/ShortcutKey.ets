@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   $rawfile,
   Button,
@@ -45,7 +45,6 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -69,16 +68,16 @@ struct ShortcutKey {
   ]
 
   sendEvent(message: string, eventId: Long) {
-    let eventData: events_emitter.EventData = {
+    let eventData: emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string, RecordData>
+      } as Record<String, undefined | null | Object>
     }
-    let event: events_emitter.InnerEvent = {
+    let event: emitter.InnerEvent = {
       eventId: eventId,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.emit(event, eventData)
+    emitter.emit(event, eventData)
   }
 
   build() {
@@ -91,11 +90,11 @@ struct ShortcutKey {
           })
           .key('ShortcutKey_Button_0')
 
-        ForEach(this.functionKey, (item: FunctionKey, index: int): void => {
+        ForEach(this.functionKey, (item: FunctionKey, index: Int): void => {
           Button("CTRL + " + item)
             .keyboardShortcut(item, [ModifierKey.CTRL])
             .onClick((e: ClickEvent) => {
-
+              this.sendEvent('Ctrl_' + FunctionKey[item], this.baseEvent2 + index.toLong())
             })
             .width("80%")
             .key('ShortcutKey2_Ctrl_' + item)

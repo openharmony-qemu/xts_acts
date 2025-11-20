@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -60,10 +60,8 @@ export default function PanRecognizerTest() {
         console.info('get PanRecognizer state pages:' + JSON.stringify(pages));
         if (!('PanRecognizer' == pages.name)) {
           console.info('get PanRecognizer state pages.name:' + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error('push PanRecognizer page error:' + err);
@@ -76,19 +74,22 @@ export default function PanRecognizerTest() {
     });
 
 
+    
     /*
-     * @tc.number    PanRecognizer_static_0100
-     * @tc.name      PanRecognizer_static_0100
-     * @tc.desc      PanRecognizer_static_0100
-     * @tc.level     2
+     * @tc.number   PanRecognizer_static_0100
+     * @tc.name     PanRecognizer_static_0100
+     * @tc.desc     PanRecognizer_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('PanRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PanRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PanRecognizer_static_0100 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY: number = AppStorage.get<number>("winTop") as number;
+      await CommonFunc.sleep(1000);
       console.log('PanRecognizer_static_0100 windowOffsetX and windowOffsetY', windowOffsetX, windowOffsetY)
       let areaObj = CommonFunc.getComponentRectOnScreen('PanRecognizer1');
+      await CommonFunc.sleep(1000);
       let areaHeight = areaObj.bottom - areaObj.top
       let areaWidth = areaObj.right - areaObj.left
       console.log('PanRecognizer_static_0100 areaObj start', areaObj.left, areaObj.top, areaObj.right, areaObj.bottom)

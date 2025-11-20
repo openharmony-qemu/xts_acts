@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -42,7 +42,7 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function PanGesture2() {
@@ -56,19 +56,17 @@ export default function PanGesture2() {
     beforeEach(async (): Promise<void> => {
       console.info("PanGesture2 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/PanGesture2',
+        url: "MainAbility/pages/PanGesture/PanGesture2",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PanGesture2 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get PanGesture2 pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push PanGesture2 page error:" + err);
@@ -77,33 +75,36 @@ export default function PanGesture2() {
     });
 
 
+    
     /*
-     * @tc.number    PanGesture2_static_0100
-     * @tc.name      PanGesture2_static_0100
-     * @tc.desc      PanGesture2_static_0100
-     * @tc.level     2
+     * @tc.number   PanGesture2_static_0100
+     * @tc.name     PanGesture2_static_0100
+     * @tc.desc     PanGesture2_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('PanGesture2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PanGesture2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('PanGesture2_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Pan3');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PanGesture2_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[PanGesture2_0100] title: " + JSON.stringify(obj.getString('content')));
-      expect(obj.getString('content')).assertEqual('PanGesture offset:X:10Y:20');
+      console.info("[PanGesture2_0100] title: " + obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('PanGesture offset:X:10Y:20');
       console.info('[PanGesture2_0100] END');
       done();
     });
 
+    
     /*
-     * @tc.number    PanGesture2_static_0200
-     * @tc.name      PanGesture2_static_0200
-     * @tc.desc      PanGesture2_static_0200
-     * @tc.level     2
+     * @tc.number   PanGesture2_static_0200
+     * @tc.name     PanGesture2_static_0200
+     * @tc.desc     PanGesture2_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('PanGesture2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PanGesture2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PanGesture2_0200 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -115,10 +116,11 @@ export default function PanGesture2() {
         Math.round(top + 500) as Int)) as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PanGesture2_1');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PanGesture2_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[PanGesture2_0200] title: " + JSON.stringify(obj.getString('content')));
-      expect((Math.abs(Number(obj.getString('content'))) - 379) < 20).assertEqual(true);
+      console.info("[PanGesture2_0200] title: " + obj.getElement('$attrs').getString('content'));
+      expect((Math.abs(Number(obj.getElement('$attrs').getString('content'))) - 379) < 20).assertEqual(true);
       console.info('[PanGesture2_0200] END');
       done();
     });

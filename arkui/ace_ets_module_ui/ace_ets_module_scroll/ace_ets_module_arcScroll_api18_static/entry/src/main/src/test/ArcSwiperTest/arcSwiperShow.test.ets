@@ -53,15 +53,14 @@ export default function arcSwiperShow() {
       console.info("arcSwiperShow beforeEach end");
     });
 
-    /**
-     * @tc.number    arcSwiperShow_001
-     * @tc.name      arcSwiperShow_0100
-     * @tc.desc      ArcSwiper component page flipping.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   arcSwiperShow_0100
+     * @tc.name     arcSwiperShow_0100
+     * @tc.desc     arcSwiperShow_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('arcSwiperShow_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('arcSwiperShow_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[arcSwiperShow_0100] START');
       let driver = Driver.create()
       let btn1 = await driver.findComponent(ON.id('arcSwiper_showNext'));

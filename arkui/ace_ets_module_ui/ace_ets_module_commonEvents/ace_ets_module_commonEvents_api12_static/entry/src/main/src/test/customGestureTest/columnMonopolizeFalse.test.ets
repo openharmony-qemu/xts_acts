@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,20 +58,16 @@ export default function columnMonopolizeFalse() {
         let pages = router.getState();
         console.log("get columnMonopolizeFalse state pages:" + JSON.stringify(pages));
         if (!("columnMonopolizeFalse" == pages.name)) {
-          console.log("get  columnMonopolizeFalse pages.name:" + JSON.stringify(pages.name));
-
-
+          console.log("get  columnMonopolizeFalse pages.name:" + JSON.stringify(pages.name))
           router.pushUrl({
             url: "MainAbility/pages/customGestureTest/columnMonopolizeFalse"
           })
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push columnMonopolizeFalse page error:" + err);
       }
       console.log("columnMonopolizeFalse foreEach end");
-
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -79,15 +75,16 @@ export default function columnMonopolizeFalse() {
     });
 
 
+    
     /*
-     * @tc.number    columnMonopolizeFalse_static_001
-     * @tc.name      columnMonopolizeFalse_static_001
-     * @tc.desc      columnMonopolizeFalse_static_001
-     * @tc.level     2
+     * @tc.number   columnMonopolizeFalse_static_001
+     * @tc.name     columnMonopolizeFalse_static_001
+     * @tc.desc     columnMonopolizeFalse_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('columnMonopolizeFalse_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('columnMonopolizeFalse_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log('[columnMonopolizeFalse_001] START');
-
+      // get column left and top on screen
       let str1 = inspector.getInspectorByKey("columnLongPress1");
       let obj: Record<string, Object> =
         JSON.parse<Object>(str1, Type.of(new String() as Object)) as Record<string, Object>;
@@ -104,8 +101,8 @@ export default function columnMonopolizeFalse() {
       let column2 = await driver.findComponent(ON.id('columnClick2'));
 
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(33.33)) as Int,
-        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(26.66)) as Int);
+      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)) as Int,
+        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)) as Int);
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -115,12 +112,12 @@ export default function columnMonopolizeFalse() {
         .assertEqual('LongPressGesture onAction success;TapGesture success');
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('buttonFalse1'));
-
+      // change the status of monopolize Attribute
 
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(33.33)) as Int,
-        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(26.66)) as Int);
+      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)) as Int,
+        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)) as Int);
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       let strJson2 = inspector.getInspectorByKey('columnTextFalse');

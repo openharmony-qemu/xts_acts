@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,12 +36,11 @@ struct onKeyEventExample7 {
       Button('分发事件2').margin(5)
 
       Button('响应排派发的事件')
-        .onKeyEvent((event: KeyEvent) => {
-
+        .onKeyEvent(((event: KeyEvent): boolean => {
           console.info("the keyEvent is " + JSON.stringify(event))
           this.keyText = "keyTrigger"
-          return false
-        }).key('keyResponse')
+          return true
+        }) as ((data: KeyEvent) => Boolean)).key('keyResponse')
 
 
     }
@@ -49,13 +48,11 @@ struct onKeyEventExample7 {
     .width('100%')
     .padding(35)
     .onKeyEventDispatch((event: KeyEvent): boolean => {
-
       console.info("the  disPatchHandler is " + JSON.stringify(event))
       this.getUIContext().getFocusController().requestFocus("keyResponse");
       let isConsumed = this.getUIContext().dispatchKeyEvent("keyResponse", event);
       this.disPatchText = "dis" + isConsumed;
       return false;
-
     })
     .key('keyDispatch')
   }

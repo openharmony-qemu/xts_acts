@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,7 +14,7 @@
  */
 
 import APIPreDragStatusTest from './DragController/APIPreDragStatusTest.test';
-import addGestureApplyGesture from './AddGestureApplyGesture.test';
+import addGestureApplyGesture from './AddGestureApplyGestureTest3.test';
 import ShortcutKeyTABTest from './keyboardShortcutTest/ShortcutKeyTABTest.test';
 import ShortcutKeyDPADUPTest from './keyboardShortcutTest/ShortcutKeyDPADUPTest.test';
 import ShortcutKeyDPADDOWNTest from './keyboardShortcutTest/ShortcutKeyDPADDOWNTest.test';
@@ -54,7 +54,7 @@ import LongPressGestureTemplateTest from './LongPressGesture/LongPressGestureTem
 
 import onAttachTest from './onAttachTest/onAttach.test';
 import GestureRecognizerState from './GestureRecognizer/GestureRecognizerState.test';
-import APIshouldBuiltInRecognizerParallelWith from './APIshouldBuiltInRecognizerParallelWith.test';
+import APIshouldBuiltInRecognizerParallelWith from './APIshouldBuiltInRecognizerParallelWithTest3.test';
 import typeNodeGestureTest from './PanGesture/Gesture.test';
 
 import btnMonoLongPress from './customGestureTest/btnMonoLongPress.test'
@@ -65,53 +65,58 @@ import gestureDefine2 from './customGestureTest/buttonDragStart.test'
 import gestureDefine3 from './customGestureTest/dragIsSystem.test'
 import gestureDefine4 from './customGestureTest/clickIsSystem.test'
 
+import gestureDefine10 from './GestureRecognizer/GestureRecognizerIsValid.test'
+
+
 export default function testsuite() {
-  APIPreDragStatusTest();
-  APIshouldBuiltInRecognizerParallelWith();
-  addGestureApplyGesture();
-  ShortcutKeyTABTest();
-  ShortcutKeyDPADUPTest();
-  ShortcutKeyDPADDOWNTest();
-  ShortcutKeyDPADLEFTTest();
-  ShortcutKeyDPADRIGHTTest();
-  TapGestureHandlerTest();
-  PanGestureHandlerTest();
-  PinchGestureHandlerTest();
-  RotationGestureHandlerTest();
-  LongPressGestureHandlerTest();
-  DragInteractionOptionsTest();
-  SourceToolTest();
-  initializeModifierTest();
-  addParallelGestureTest1();
-  clearGestureTest();
+  APIPreDragStatusTest(); // 6 pass 6
+  APIshouldBuiltInRecognizerParallelWith(); // 4 pass 4
+  addGestureApplyGesture(); // 1 pass 1
+  ShortcutKeyTABTest(); // 1 pass 1
+  ShortcutKeyDPADUPTest(); // 1 pass 1
+  ShortcutKeyDPADDOWNTest(); // 1 pass 1
+  ShortcutKeyDPADLEFTTest(); // 1 pass 1
+  ShortcutKeyDPADRIGHTTest(); // 1 pass 1
+  TapGestureHandlerTest(); // 1 pass 1
+  PanGestureHandlerTest(); // 1 pass 1
+  PinchGestureHandlerTest(); // 1 pass 1
+  RotationGestureHandlerTest(); // 1 pass 1
+  LongPressGestureHandlerTest(); // 1 pass 1
+  DragInteractionOptionsTest(); // 2 pass 2
+  SourceToolTest(); // 5 pass 5
+  addParallelGestureTest1(); // 1 pass 1
+  clearGestureTest(); // 1 pass 1
 
-  getModifierKeyStateTest();
-  TapGestureBasicClickTest();
-  TapGestureBasicDoubleClickTest();
-  LongPressGestureLongClickTest();
-  TapGestureBasicClickMouseTest();
-  TapGestureBasicDoubleClickMouseTest();
-  LongPressGestureLongClickMouseTest();
-  PanGestureExample01Test();
-  PanGestureExample02Test();
-  PanGestureExample03Test();
-  RotationGestureBasic01Test();
-  RotationGestureBasic02Test();
-  PinchGestureBasic01Test();
-  PinchGestureBasic02Test();
-  PanGestureExampleTemplateTest();
-  TapGestureTemplateTest();
-  LongPressGestureTemplateTest();
+  getModifierKeyStateTest(); // 2 pass 2
+  TapGestureBasicClickTest(); // 1 pass 1
+  TapGestureBasicDoubleClickTest(); // 1 pass 1
+  LongPressGestureLongClickTest(); // 1 pass 1
+  TapGestureBasicClickMouseTest(); // 1 pass 1
+  TapGestureBasicDoubleClickMouseTest(); // 1 pass 1
+  LongPressGestureLongClickMouseTest(); // 1 pass 1
+  PanGestureExample01Test(); // 1 pass 1
+  PanGestureExample02Test(); // 1 pass 1
+  PanGestureExample03Test(); // 1
+  RotationGestureBasic01Test(); // 1 pass 1
+  RotationGestureBasic02Test(); // 1 pass 1
+  PinchGestureBasic01Test(); // 1  expect true, actualValue is false PanGesture
+  PinchGestureBasic02Test(); // 1 expect true, actualValue is false PanGesture
+  PanGestureExampleTemplateTest(); // 1 pass 1
+  TapGestureTemplateTest(); // 1 expect true, actualValue is false TapGesture
+  LongPressGestureTemplateTest(); // 1 pass 1
 
 
-  onAttachTest();
-  GestureRecognizerState();
-  typeNodeGestureTest();
-  btnMonoLongPress();
-  btnMonoTouch();
-  gestureDefine1();
-  gestureDefine2();
-  gestureDefine3();
-  gestureDefine4();
+  onAttachTest(); // 2 pass 2
+  GestureRecognizerState(); // 1 pass 1
+  typeNodeGestureTest(); // 1 pass 1
+  btnMonoLongPress(); // 1 pass 1
+  btnMonoTouch(); // 1 pass 1
+  gestureDefine1(); //  1 pass 1
+  gestureDefine2(); // 1 pass 1
+  gestureDefine3(); // 1 pass 1
+  gestureDefine4(); // 1 pass 1
+  gestureDefine10(); // 1 pass 1
+
+  initializeModifierTest(); // 2 pass 2
 
 }

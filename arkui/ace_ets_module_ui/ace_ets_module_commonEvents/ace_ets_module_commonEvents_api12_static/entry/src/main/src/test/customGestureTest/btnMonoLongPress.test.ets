@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -59,17 +59,15 @@ export default function btnMonoLongPress() {
         console.info("get btnMonoLongPress state pages:" + JSON.stringify(pages));
         if (!("btnMonoLongPress" == pages.name)) {
           console.info("get  btnMonoLongPress pages.name:" + JSON.stringify(pages.name));
-          router.pushUrl({
+          let result = router.pushUrl({
             url: "MainAbility/pages/customGestureTest/btnMonoLongPress"
           })
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push btnMonoLongPress page error:" + err);
       }
       console.info("btnMonoLongPress foreEach end");
-
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -77,13 +75,14 @@ export default function btnMonoLongPress() {
     });
 
 
+    
     /*
-     * @tc.number    btnMonoLongPress_static_001
-     * @tc.name      btnMonoLongPress_static_001
-     * @tc.desc      btnMonoLongPress_static_001
-     * @tc.level     2
+     * @tc.number   btnMonoLongPress_static_001
+     * @tc.name     btnMonoLongPress_static_001
+     * @tc.desc     btnMonoLongPress_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('btnMonoLongPress_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('btnMonoLongPress_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[btnMonoLongPress_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

@@ -21,10 +21,10 @@ import childrenSizeArcList from './ArcListTest/childrenSizeArcList.test';
 import swipeActionArcList from './ArcListTest/swipeActionArcList.test';
 
 export default function testsuite() {
-  arcDotIndicator()
-  arcSwiperEvent()
-  arcSwiperShow()
-  arcSwiperContent()
-  childrenSizeArcList()
-  swipeActionArcList()
+  arcDotIndicator()  //ArcSwiper未交付 用例失败
+  arcSwiperEvent() //ArcSwiper未交付 用例失败 await driver.findComponent(ON.id('arcSwiper_disableSwipe'));为null
+  arcSwiperShow()  //Component not exist matching: {selfMatcher=[{attrName:visible; value:true; Pattern:0},{attrName:text; value:2; Pattern:0},]}
+  arcSwiperContent()  //ArcSwiper未交付 用例失败
+  childrenSizeArcList()  //断言失败
+  swipeActionArcList() //ArcList未交付 用例失败
 }

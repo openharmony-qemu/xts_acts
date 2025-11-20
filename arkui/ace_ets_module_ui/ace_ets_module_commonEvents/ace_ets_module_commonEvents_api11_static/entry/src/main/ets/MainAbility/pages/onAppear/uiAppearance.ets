@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,8 +14,9 @@
  */
 
 
+import uiAppearance from '@ohos.uiAppearance';
 import Log from '../../common/Log';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import {
   $rawfile,
@@ -47,7 +48,7 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 const TAG = 'ets_apiLack_add';
-
+uiAppearance.DarkMode.ALWAYS_DARK
 
 @Entry
 @Component
@@ -77,8 +78,25 @@ struct UiAppearanceALWAYS_DARK {
         .textOverflow({ overflow: TextOverflow.None })
         .key("ALWAYS_DARKText")
         .onClick((e: ClickEvent) => {
-
-
+          uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_DARK, (err, data) => {
+            console.info(`${err}`);
+          })
+          let darkMode = uiAppearance.getDarkMode();
+          try {
+            let backData: emitter.EventData = {
+              data: {
+                "Mode": darkMode
+              } as Record<String, undefined | null | Object>
+            }
+            let backEvent: emitter.InnerEvent = {
+              eventId: 60308,
+              priority: emitter.EventPriority.LOW
+            }
+            console.info("AlwaysDark start to emit action state")
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
+            console.info("AlwaysDark emit action state err: " + JSON.stringify((err as Error)?.message))
+          }
         })
 
       Text("uiAppearance-ALWAYS_LIGHT")
@@ -95,8 +113,25 @@ struct UiAppearanceALWAYS_DARK {
         .textOverflow({ overflow: TextOverflow.None })
         .key("ALWAYS_LIGHTText")
         .onClick((e: ClickEvent) => {
-
-
+          uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_LIGHT, (err, data) => {
+            console.info(`${err}`);
+          })
+          let darkMode = uiAppearance.getDarkMode();
+          try {
+            let backData: emitter.EventData = {
+              data: {
+                "Mode": darkMode
+              } as Record<String, undefined | null | Object>
+            }
+            let backEvent: emitter.InnerEvent = {
+              eventId: 60309,
+              priority: emitter.EventPriority.LOW
+            }
+            console.info("AlwaysLight start to emit action state")
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
+            console.info("AlwaysLight emit action state err: " + JSON.stringify((err as Error)?.message))
+          }
         })
 
     }.width("100%").height("100%")

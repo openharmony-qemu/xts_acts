@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,44 +13,46 @@
  * limitations under the License.
  */
 import {
-  $rawfile,
-  BorderStyle,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
-  CopyOptions,
+  Column,
+  Row,
+  Flex,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  Flex,
+  Color,
+  TextArea,
+  CopyOptions,
+  Visibility,
+
+  TextAlign,
   FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  GestureControl,
-  GestureEvent,
-  GestureGroup,
-  GestureJudgeResult,
-  GestureMode,
   ItemAlign,
-  LongPressGesture,
-  Margin,
+  FlexDirection,
   Padding,
+  Margin,
+  $rawfile,
+  BorderStyle,
+  GestureMode,
+  GestureGroup,
+  GestureEvent,
+  LongPressGesture,
+  PanGesture,
+  TapGesture,
+  LongPressGesture,
+  SwipeGesture,
   PanGesture,
   PinchGesture,
   RotationGesture,
-  Row,
-  SwipeGesture,
-  TapGesture,
-  Text,
-  TextAlign,
-  TextArea,
-  TouchType,
-  Visibility
+  GestureControl,
+  GestureJudgeResult,
+  FlexOptions
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct GestureGroupExample {
@@ -66,8 +68,7 @@ struct GestureGroupExample {
       alignItems: ItemAlign.Center,
       justifyContent: FlexAlign.SpaceBetween
     }) {
-      Text('sequence gesture\n' + 'LongPress onAction:' + this.count + '\nPanGesture offset:\nX: ' + this.offsetX +
-        '\n' + 'Y: ' + this.offsetY)
+      Text('sequence gesture\n' + 'LongPress onAction:' + this.count + '\nPanGesture offset:\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
     }
     .key('gestureMode')
     .translate({ x: this.offsetX, y: this.offsetY, z: 5 })

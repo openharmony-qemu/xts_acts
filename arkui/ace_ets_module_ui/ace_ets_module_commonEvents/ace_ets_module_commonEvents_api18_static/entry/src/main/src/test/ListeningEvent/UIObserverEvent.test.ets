@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -60,12 +60,10 @@ export default function UIObserverEventTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get UIObserverEventTest state pages: " + JSON.stringify(pages));
-        if (!("UIObserverEventTest" == pages.name)) {
+        if (!("UIObserverEvent" == pages.name)) {
           console.info("get UIObserverEventTest state pages.name: " + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push UIObserverEventTest page error: " + err);
@@ -79,20 +77,23 @@ export default function UIObserverEventTest() {
     });
 
 
+    
     /*
-     * @tc.number    UIObserverEventTest_static_0100
-     * @tc.name      UIObserverEventTest_static_0100
-     * @tc.desc      UIObserverEventTest_static_0100
-     * @tc.level     2
+     * @tc.number   UIObserverEventTest_static_0100
+     * @tc.name     UIObserverEventTest_static_0100
+     * @tc.desc     UIObserverEventTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('UIObserverEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('UIObserverEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('UIObserverEventTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('tap'));
+      await CommonFunc.sleep(2000);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('observerGestureEvent');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('tap');
       await CommonFunc.sleep(1000);
@@ -101,20 +102,23 @@ export default function UIObserverEventTest() {
     });
 
 
+    
     /*
-     * @tc.number    UIObserverEventTest_static_0200
-     * @tc.name      UIObserverEventTest_static_0200
-     * @tc.desc      UIObserverEventTest_static_0200
-     * @tc.level     2
+     * @tc.number   UIObserverEventTest_static_0200
+     * @tc.name     UIObserverEventTest_static_0200
+     * @tc.desc     UIObserverEventTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('UIObserverEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('UIObserverEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('UIObserverEventTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('click'));
+      await CommonFunc.sleep(2000);
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('observerEvent');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('click');
       await CommonFunc.sleep(1000);
@@ -123,20 +127,23 @@ export default function UIObserverEventTest() {
     });
 
 
+    
     /*
-     * @tc.number    UIObserverEventTest_static_0300
-     * @tc.name      UIObserverEventTest_static_0300
-     * @tc.desc      UIObserverEventTest_static_0300
-     * @tc.level     2
+     * @tc.number   UIObserverEventTest_static_0300
+     * @tc.name     UIObserverEventTest_static_0300
+     * @tc.desc     UIObserverEventTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('UIObserverEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('UIObserverEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('UIObserverEventTest_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('cancel'));
+      await CommonFunc.sleep(2000);
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('cancel1');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('cancel');
       await CommonFunc.sleep(1000);

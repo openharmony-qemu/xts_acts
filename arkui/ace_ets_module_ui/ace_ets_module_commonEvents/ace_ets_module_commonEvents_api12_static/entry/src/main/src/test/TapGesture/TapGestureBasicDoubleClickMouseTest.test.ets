@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -45,10 +45,12 @@ const uiContext = new UIContext();
 
 export default function TapGestureBasicDoubleClickMouseTest() {
   describe('TapGestureBasicDoubleClickMouseTest', () => {
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("TapGestureBasicDoubleClickMouseTest beforeEach start");
@@ -62,16 +64,16 @@ export default function TapGestureBasicDoubleClickMouseTest() {
         console.info("get TapGestureBasicDoubleClickMouseTest state pages:" + JSON.stringify(pages));
         if (!("TapGestureBasicDoubleClickMouse" == pages.name)) {
           console.info("get TapGestureBasicDoubleClickMouseTest pages.name:" + JSON.stringify(pages.name));
-
+          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push TapGestureBasicDoubleClickMouseTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TapGestureBasicDoubleClickMouseTest page error:" + err);
       }
       console.info("TapGestureBasicDoubleClickMouseTest beforeEach end");
-
+      // done();
     });
 
     afterEach(async () => {
@@ -80,13 +82,14 @@ export default function TapGestureBasicDoubleClickMouseTest() {
     });
 
 
+    
     /*
-     * @tc.number    TapGestureBasicDoubleClickMouseTest_static_0010
-     * @tc.name      TapGestureBasicDoubleClickMouseTest_static_0010
-     * @tc.desc      TapGestureBasicDoubleClickMouseTest_static_0010
-     * @tc.level     2
+     * @tc.number   TapGestureBasicDoubleClickMouseTest_static_0010
+     * @tc.name     TapGestureBasicDoubleClickMouseTest_static_0010
+     * @tc.desc     TapGestureBasicDoubleClickMouseTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('TapGestureBasicDoubleClickMouseTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TapGestureBasicDoubleClickMouseTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TapGestureBasicDoubleClickMouseTest_0010 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
@@ -181,31 +184,33 @@ export default function TapGestureBasicDoubleClickMouseTest() {
       let obj10 = JSON.parseJsonElement(text10);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj10 $attrs content',
         obj10.getElement('$attrs').getString('content'), Math.round(areaObj.left + areaWidth / 2) - windowOffsetX)
-
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj10.getElement('$attrs').getString('content')))) -
+        (Math.round(areaObj.left + areaWidth / 2) - windowOffsetX))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text11 = inspector.getInspectorByKey('TapGestureBasicDoubleClickMouse_fingerList_globalY');
       let obj11 = JSON.parseJsonElement(text11);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj11 $attrs content',
         obj11.getElement('$attrs').getString('content'), Math.round(areaObj.top + areaHeight / 2) - windowOffsetY)
-
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj11.getElement('$attrs').getString('content')))) -
+        (Math.round(areaObj.top + areaHeight / 2) - windowOffsetY))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text12 = inspector.getInspectorByKey('TapGestureBasicDoubleClickMouse_fingerList_localX');
       let obj12 = JSON.parseJsonElement(text12);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj12 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj12.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj12.getElement('$attrs').getString('content'))),
         Math.round(areaObj.left + areaWidth / 2) - areaObj.left)
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj12.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj12.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj.left + areaWidth / 2) - areaObj.left))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text13 = inspector.getInspectorByKey('TapGestureBasicDoubleClickMouse_fingerList_localY');
       let obj13 = JSON.parseJsonElement(text13);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj13 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj13.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj13.getElement('$attrs').getString('content'))),
         Math.round(areaObj.top + areaHeight / 2) - areaObj.top)
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj13.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj13.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj.top + areaHeight / 2) - areaObj.top))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -213,33 +218,33 @@ export default function TapGestureBasicDoubleClickMouseTest() {
       let obj16 = JSON.parseJsonElement(text16);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj16 $attrs content',
         obj16.getElement('$attrs').getString('content'),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj16.getElement('$attrs').getString('content'))), UIContext.getFocusedUIContext()!.vp2px(240))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Number(obj16.getElement('$attrs').getString('content'))) -
-      UIContext.getFocusedUIContext()!.vp2px(240)) <= 1).assertTrue();
+        uiContext.vp2px(Number(obj16.getElement('$attrs').getString('content'))), uiContext.vp2px(240))
+      expect(Math.abs(uiContext.vp2px(Number(obj16.getElement('$attrs').getString('content'))) -
+      uiContext.vp2px(240)) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text17 = inspector.getInspectorByKey('TapGestureBasicDoubleClickMouse_target_area_height');
       let obj17 = JSON.parseJsonElement(text17);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj17 $attrs content',
         obj17.getElement('$attrs').getString('content'),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj17.getElement('$attrs').getString('content'))), UIContext.getFocusedUIContext()!.vp2px(80))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Number(obj17.getElement('$attrs').getString('content'))) - UIContext.getFocusedUIContext()!.vp2px(80)) <=
+        uiContext.vp2px(Number(obj17.getElement('$attrs').getString('content'))), uiContext.vp2px(80))
+      expect(Math.abs(uiContext.vp2px(Number(obj17.getElement('$attrs').getString('content'))) - uiContext.vp2px(80)) <=
         1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text18 = inspector.getInspectorByKey('TapGestureBasicDoubleClickMouse_target_area_position_x');
       let obj18 = JSON.parseJsonElement(text18);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj18 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj18.getElement('$attrs').getString('content'))), areaObj.left - FatherObj.left)
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj18.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj18.getElement('$attrs').getString('content'))), areaObj.left - FatherObj.left)
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj18.getElement('$attrs').getString('content')))) -
         (areaObj.left - FatherObj.left))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text19 = inspector.getInspectorByKey('TapGestureBasicDoubleClickMouse_target_area_position_y');
       let obj19 = JSON.parseJsonElement(text19);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj19 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj19.getElement('$attrs').getString('content'))), areaObj.top - FatherObj.top)
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj19.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj19.getElement('$attrs').getString('content'))), areaObj.top - FatherObj.top)
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj19.getElement('$attrs').getString('content')))) -
         (areaObj.top - FatherObj.top))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -247,7 +252,7 @@ export default function TapGestureBasicDoubleClickMouseTest() {
       let obj20 = JSON.parseJsonElement(text20);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj20 $attrs content',
         obj20.getElement('$attrs').getString('content'), areaObj.left - windowOffsetX)
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj20.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj20.getElement('$attrs').getString('content')))) -
         (areaObj.left - windowOffsetX))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -255,7 +260,7 @@ export default function TapGestureBasicDoubleClickMouseTest() {
       let obj21 = JSON.parseJsonElement(text21);
       console.log('TapGestureBasicDoubleClickMouseTest_0010 obj21 $attrs content',
         obj21.getElement('$attrs').getString('content'), areaObj.top - windowOffsetY)
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj21.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj21.getElement('$attrs').getString('content')))) -
         (areaObj.top - windowOffsetY))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);

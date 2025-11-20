@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,7 +63,7 @@ export default function TapRecognizerTest() {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push TapRecognizer page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TapRecognizer page error:' + err);
@@ -76,13 +76,14 @@ export default function TapRecognizerTest() {
     });
 
 
+    
     /*
-     * @tc.number    TapRecognizer_static_0100
-     * @tc.name      TapRecognizer_static_0100
-     * @tc.desc      TapRecognizer_static_0100
-     * @tc.level     2
+     * @tc.number   TapRecognizer_static_0100
+     * @tc.name     TapRecognizer_static_0100
+     * @tc.desc     TapRecognizer_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('TapRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TapRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('TapRecognizer_static_0100 START');
       let driver = Driver.create()

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,35 +13,36 @@
  * limitations under the License.
  */
 import {
-  $rawfile,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
-  CopyOptions,
+  Column,
+  Row,
+  Flex,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  GestureEvent,
-  ItemAlign,
-  Margin,
-  Padding,
-  PanDirection,
-  PanGesture,
-  PanGestureOptions,
-  Row,
-  Text,
-  TextAlign,
+  Color,
   TextArea,
-  TouchType,
-  Visibility
+  CopyOptions,
+  Visibility,
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
+  $rawfile,
+  PanGestureOptions,
+  PanGesture,
+  GestureEvent,
+  PanDirection,
+  FlexOptions,
+  PanGestureHandlerOptions
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -61,6 +62,20 @@ struct PanGestureExample {
     .border({ width: 1 })
     .margin(80)
     .translate({ x: this.offsetX, y: this.offsetY, z: 5 })
-
+    .gesture(
+      PanGesture({
+       direction: this.direction1
+      } as PanGestureHandlerOptions)
+        .onActionStart((event: GestureEvent) => {
+          console.info('Pan start')
+        })
+        .onActionUpdate((event: GestureEvent) => {
+          this.offsetX = event.offsetX
+          this.offsetY = event.offsetY
+        })
+        .onActionEnd(() => {
+          console.info('Pan end')
+        })
+    )
   }
 }
