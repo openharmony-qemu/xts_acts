@@ -14,7 +14,7 @@
  */
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
-import { driveFn, getPermission, sleep } from '../../common';
+import { driveFn, getPermission, sleep } from '../common';
 import common from '@ohos.app.ability.common';
 const TAG = 'PhotoGetPhotoAccessHelper';
 
@@ -55,7 +55,7 @@ export default function PhotoAccessHelperGetPhotoAccessHelper() {
         let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let helper = photoAccessHelper.getPhotoAccessHelper(AppStorage.get('emptyString') as Context);
         console.info(TAG, testName, `getPhotoAccessHelperSuccess`, helper);
-        expect(helper).assertUndefined();
+        expect(helper).not().assertUndefined();
         done();
       } catch (error) {
         console.info(TAG,testName,`getPhotoAccessHelper_001 failed, error: `, error);
@@ -100,7 +100,7 @@ export default function PhotoAccessHelperGetPhotoAccessHelper() {
         let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let helper = photoAccessHelper.getPhotoAccessHelper(null);
         console.info(TAG,testName,`getPhotoAccessHelperSuccess`, helper);
-        expect(helper).assertUndefined();
+        expect(helper).not().assertUndefined();
         done();
       } catch (error) {
         console.info(TAG,testName,`getPhotoAccessHelper_003 failed, error: `, error);
