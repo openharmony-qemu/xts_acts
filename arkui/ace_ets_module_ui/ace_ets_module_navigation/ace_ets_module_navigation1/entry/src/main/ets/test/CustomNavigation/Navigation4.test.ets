@@ -22,7 +22,7 @@ export default function Navigation4() {
     beforeEach(async (done: Function) => {
       console.info("appendChildTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RelativeContainer/relativeApi11/Navigation4',
+        url: 'MainAbility/pages/CustomNavigation/Navigation4',
       }
       try {
         router.clear();
