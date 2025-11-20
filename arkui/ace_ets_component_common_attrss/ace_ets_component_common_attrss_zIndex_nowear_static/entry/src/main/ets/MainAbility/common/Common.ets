@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,16 +66,16 @@ export default class CommonFunc {
     }
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // static setScreenOrientation(orientation: screen.Orientation) {
+  //   screen.getAllScreens().then((data: Array<screen.Screen>) => {
+  //       console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
+  //       return data[0] as screen.Screen;
+  //   }).then((screenClass: screen.Screen) => {
+  //       return screenClass.setOrientation(orientation);
+  //   }).then(() => {
+  //       console.log('Succeeded in setting the vertical orientation.');
+  //   }).catch((err: Error) => {
+  //       console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
+  //   });
+  // }
 }

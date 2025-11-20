@@ -15,29 +15,28 @@
 
 import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
-import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
+import { TextCase, TextDecorationType, Resource, AlignRuleOption, SizeOptions } from '@ohos.arkui.component';
 
 export interface Message {
-  value: boolean
+  value: SizeOptions
 }
 
 interface EventMessage {
   src: Message
 }
 
-export type Callback = (message: boolean) => void;
+export type Callback = (message: SizeOptions) => void;
 
 export class AttrsManager {
   callBack?: Callback = undefined;
 
-  static change(caseName: string, setValue: boolean) {
+  static change(caseName: string, setValue: SizeOptions) {
     const message: Message = { value: setValue };
 
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, RecordData>
+      } as Record<string, Object | undefined | null>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
@@ -80,7 +79,7 @@ export class AttrsManager {
           if (message && message?.value) {
             this.callBack!(message!.value!)
           }
-        } catch (e) {
+        } catch (e: Error) {
           console.error("fail :", e);
         }
       }

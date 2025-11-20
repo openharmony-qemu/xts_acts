@@ -56,38 +56,38 @@ export struct WaterFlowView {
   }
 
   build() {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // WaterFlow({ footer: this.itemFoot(), scroller: this.scroller }) {
+    //   ForEach(new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number) => {
+    //     FlowItem() {
+    //       Column() {
+    //         Text('N' + item).fontSize(12).height('16')
+    //       }
+    //     }
+    //     .width(this.itemWidthArray[item])
+    //     .height(this.itemHeightArray[item])
+    //     .backgroundColor(this.colors[item % 5])
+    //   }, (item: number) => String(item))
+    // }
+    // .columnsTemplate('1fr 1fr 1fr 1fr')
+    // .itemConstraintSize({
+    //   minWidth: 0,
+    //   maxWidth: '100%',
+    //   minHeight: 0,
+    //   maxHeight: '100%'
+    // })
+    // .columnsGap(10)
+    // .rowsGap(5)
+    // .onReachStart(() => {
+    //   console.info('onReachStart')
+    // })
+    // .onReachEnd(() => {
+    //   console.info('onReachEnd')
+    // })
+    // .backgroundColor(0xFAEEE0)
+    // .width('100%')
+    // .height('80%')
+    // .layoutDirection(FlexDirection.Column)
+    // .position(this._position)
+    // .key(this.componentKey)
   }
 }

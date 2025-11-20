@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
 export class RectValue {
@@ -45,7 +45,7 @@ export class SetValue {
   width: Length = 0
 }
 export class ExpectValue {
-  width: Length = 0
+  width: number = 0
   widthCompare: string = ''
   ExceedParent?: boolean = false
 }
@@ -65,7 +65,7 @@ export class BasePageConfig {
   testValue: TestValue = new TestValue();
   caseTag: string = '';
   customParams?: Object;
-  viewObj?: Record<string, string | number | boolean>;
+  viewObj?: jsonx.JsonElement;
 }
 
 export class PageConfig {
@@ -83,7 +83,7 @@ export class PageConfig {
   referenceComponentKey: string = '';
   targetView: string = '';
   testValue: TestValue = new TestValue();
-  componentKey?: string = '';
+  componentKey: string = '';
   sharePage?: boolean;
   containerView?: string;
   targetGroupView: string = ''
@@ -131,38 +131,25 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = router.getParams() as RouterParams;
+      let pageParams = router.getParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-        console.info('targetView: ' + obj.targetView);
-        await Utils.back();
-        pages = router.getState();
-      }
 
-      if (!(obj.pageName == pages.name)) {
+      // if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        
-        
-        
-        
-        
-        
-        router.pushUrl({
+        const paramData: RouterParams = {
+          view: obj
+        }
+        const routerParams: router.RouterOptions = {
           url: obj.pageUrl,
-          params: {
-            view: obj
-          } as RouterParams
-        });
-        await Utils.sleep(2000);
-        
-      }
+          params: paramData
+        }
+        router.pushUrl(routerParams)
+        await Utils.sleep(2000)
+      // }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
     }
   }
-
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
     if (!('Index' == router.getState().name)) {
@@ -181,11 +168,14 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -194,24 +184,10 @@ export default class Utils {
     } as RectValue
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  static getComponentByKey(componentKey: string): StrJsonObj {
+  static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    let strObj: StrJsonObj = JSON.parse<Object>(strJson,Type.of(new String() as Object)) as StrJsonObj
-    console.info('[' + componentKey + '] obj is: ' + String(strObj));
-    return strObj;
+    console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
+    return JSON.parseJsonElement(strJson);
   }
 
   static getRectHorizontalCenterX(rect: RectValue) {
@@ -296,7 +272,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -306,7 +282,7 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -319,7 +295,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -359,7 +335,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,
