@@ -13,32 +13,23 @@
  * limitations under the License.
  */
 
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level
-} from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { Driver, ON,Component } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
+
 export default function setXComponentSurfaceRotationJsunit() {
   describe('setXComponentSurfaceRotationJsunit', () => {
     beforeAll(() => {
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -64,19 +55,31 @@ export default function setXComponentSurfaceRotationJsunit() {
       }
     });
 
-    /**
-     * @tc.number setXComponentSurfaceRotationTest_static_0010
-     * @tc.name setXComponentSurfaceRotationTest_static_0010
-     * @tc.desc Xcomponent: get the api of setXComponentSurfaceRotation
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   setXComponentSurfaceRotationTest_static_0010
+     * @tc.name     setXComponentSurfaceRotationTest_static_0010
+     * @tc.desc     setXComponentSurfaceRotationTest_static_0010
+     * @tc.level    Level.LEVEL2
      */
-    it('setXComponentSurfaceRotationTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('setXComponentSurfaceRotationTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('setXComponentSurfaceRotationTest_static_0010 START');
       let strJson = inspector.getInspectorByKey('setXComponentSurfaceRotation_text');
-      console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('{"lock":false}');
+      // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is:00 " +
+      // JSON.parseJsonElement(strJson).$attrs.);
+      // // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).lock))
+      // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: " +
+      // JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).$attrs))
+
+      // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is:11 " +
+      // JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')))
+      //
+      console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: 12  " +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')[0])
+
+      const strJson2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')
+      expect(JSON.parseJsonElement(strJson2).getString('lock'))
+        .assertEqual('{"lock":false}');
       console.info('[setXComponentSurfaceRotationTest_static_0010] END');
       done();
     });

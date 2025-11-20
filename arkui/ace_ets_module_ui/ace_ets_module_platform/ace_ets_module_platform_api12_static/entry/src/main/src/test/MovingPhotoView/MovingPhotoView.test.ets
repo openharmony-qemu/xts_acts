@@ -46,9 +46,9 @@ export default function MovingPhotoView() {
     });
     beforeEach(async (): Promise<void> => {
       console.info("MovingPhotoView beforeEach start");
-      // let options = {
-      //   uri: 'MainAbility/pages/MovingPhotoView/MovingPhotoView',
-      // } as router.RouterOptions
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/MovingPhotoView/MovingPhotoView',
+      }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
@@ -56,7 +56,7 @@ export default function MovingPhotoView() {
         console.info("get MovingPhotoView state pages: " + JSON.stringify(pages));
         if (!("MovingPhotoView" == pages.name)) {
           console.info("get MovingPhotoView state pages.name: " + JSON.stringify(pages.name));
-          // routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -65,16 +65,15 @@ export default function MovingPhotoView() {
       }
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_MovingPhotoView_static_0010
-     * @tc.name       : MovingPhotoView_static_001
-     * @tc.desc       : MovingPhotoView Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
+    
 
-    it('MovingPhotoView_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   MovingPhotoView_static_001
+     * @tc.name     MovingPhotoView_static_001
+     * @tc.desc     MovingPhotoView_static_001
+     * @tc.level    Level.LEVEL3
+     */
+it('MovingPhotoView_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
 
       console.info('[MovingPhotoView_static_001] START');
       await CommonFunc.sleep(1000);
@@ -89,16 +88,15 @@ export default function MovingPhotoView() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_MovingPhotoView_0020
-     * @tc.name       : MovingPhotoView_002
-     * @tc.desc       : MovingPhotoView Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
+    
 
-    it('MovingPhotoView_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   MovingPhotoView_static_002
+     * @tc.name     MovingPhotoView_static_002
+     * @tc.desc     MovingPhotoView_static_002
+     * @tc.level    Level.LEVEL3
+     */
+it('MovingPhotoView_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
 
       console.info('[MovingPhotoView_002] START');
       await CommonFunc.sleep(1000);

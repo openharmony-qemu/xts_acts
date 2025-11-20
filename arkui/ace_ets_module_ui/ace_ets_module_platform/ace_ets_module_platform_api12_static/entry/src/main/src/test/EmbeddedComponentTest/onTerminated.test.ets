@@ -65,17 +65,17 @@ export default function onTerminatedJsunit() {
       }
     });
 
-    /**
-     * @tc.number onTerminatedTest_static_0010
-     * @tc.name onTerminatedTest_static_0010
-     * @tc.desc EmbeddedComponent: get the api of onTerminated
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   onTerminatedTest_static_0010
+     * @tc.name     onTerminatedTest_static_0010
+     * @tc.desc     onTerminatedTest_static_0010
+     * @tc.level    Level.LEVEL2
      */
-    it('onTerminatedTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('onTerminatedTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onTerminatedTest_static_0010 START');
-      let strJson = inspector.getInspectorByKey('onTerminated_text');
+      let strJson = inspector.getInspectorByKey('OnTerminated_text');
+      console.log('strJson=======' + strJson)
       console.info("[onTerminatedTest_static_0010] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onTerminated succ');
       console.info('[onTerminatedTest_static_0010] END');

@@ -65,20 +65,20 @@ export default function onSurfaceCreatedJsunit() {
       }
     });
 
-    /**
-     * @tc.number onSurfaceCreatedTest_static_0010
-     * @tc.name onSurfaceCreatedTest_static_0010
-     * @tc.desc Xcomponent: get the api of onSurfaceCreated
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+
+    
+    /*
+     * @tc.number   onSurfaceCreatedTest_static_0010
+     * @tc.name     onSurfaceCreatedTest_static_0010
+     * @tc.desc     onSurfaceCreatedTest_static_0010
+     * @tc.level    Level.LEVEL2
      */
-    it('onSurfaceCreatedTest_static_0010', Level.LEVEL2,  async (done: () => void): Promise<void> => {
+it('onSurfaceCreatedTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSurfaceCreatedTest_static_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button = await (driver.findComponent(ON.id('onSurfaceCreated_text')) as Promise<Component>);
-      await button.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('onSurfaceCreated_text');
       console.info("[onSurfaceCreatedTest_static_0010] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -87,23 +87,22 @@ export default function onSurfaceCreatedJsunit() {
       done();
     });
 
-    /**
-     * @tc.number onSurfaceChangedTest_static_0020
-     * @tc.name onSurfaceChangedTest_static_0020
-     * @tc.desc Xcomponent: get the api of onSurfaceChanged
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   onSurfaceChangedTest_static_0020
+     * @tc.name     onSurfaceChangedTest_static_0020
+     * @tc.desc     onSurfaceChangedTest_static_0020
+     * @tc.level    Level.LEVEL2
      */
-    it('onSurfaceChangedTest_static_0020', Level.LEVEL2,  async (done: () => void): Promise<void> => {
+it('onSurfaceChangedTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSurfaceChangedTest_static_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button1 = await (driver.findComponent(ON.id('onSurfaceChanged_button')) as Promise<Component>);
-      await button1.click();
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let button2 = await (driver.findComponent(ON.id('onSurfaceChanged_text')) as Promise<Component>);
-      await button2.click();
+      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('onSurfaceChanged_text');
       console.info("[onSurfaceChangedTest_static_0020] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -112,23 +111,22 @@ export default function onSurfaceCreatedJsunit() {
       done();
     });
 
-    /**
-     * @tc.number onSurfaceDestroyedTest_static_0030
-     * @tc.name onSurfaceDestroyedTest_static_0030
-     * @tc.desc Xcomponent: get the api of onSurfaceDestroyed
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   onSurfaceDestroyedTest_static_0030
+     * @tc.name     onSurfaceDestroyedTest_static_0030
+     * @tc.desc     onSurfaceDestroyedTest_static_0030
+     * @tc.level    Level.LEVEL2
      */
-    it('onSurfaceDestroyedTest_static_0030', Level.LEVEL2,  async (done: () => void): Promise<void> => {
+it('onSurfaceDestroyedTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSurfaceDestroyedTest_static_0030 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button1 = await (driver.findComponent(ON.id('onSurfaceDestroyed_button')) as Promise<Component>);
-      await button1.click();
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let button2 = await (driver.findComponent(ON.id('onSurfaceDestroyed_text')) as Promise<Component>);
-      await button2.click();
+      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('onSurfaceDestroyed_text');
       console.info("[onSurfaceDestroyedTest_static_0030] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

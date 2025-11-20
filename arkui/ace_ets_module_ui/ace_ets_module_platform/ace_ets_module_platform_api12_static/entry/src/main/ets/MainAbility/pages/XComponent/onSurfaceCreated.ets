@@ -12,29 +12,57 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Column,Component,Position,Button,FlexAlign,XComponentType,LocalStorage,XComponentParameters,VideoController,XComponent,XComponentController,SurfaceRect,ImageFit,Video,VerticalAlign,ImageAnalyzerType,ColumnOptions,Row,ClickEvent,SeekMode,PlaybackSpeed,Resource,Text,$rawfile,$r } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
+import {
+  $r,
+  $rawfile,
+  Button,
+  ClickEvent,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  FlexAlign,
+  ImageAnalyzerType,
+  ImageFit,
+  PlaybackSpeed,
+  Position,
+  Resource,
+  Row,
+  SeekMode,
+  SurfaceRect,
+  Text,
+  VerticalAlign,
+  Video,
+  VideoController,
+  XComponent,
+  XComponentController,
+  XComponentParameters,
+  XComponentType
+} from '@ohos.arkui.component';
+import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 
-let para: Record<string,string> = {
-  'onSurfaceCreated': 'Init',
-  'onSurfaceChanged': 'Init',
-  'onSurfaceDestroyed': 'Init',
-  } as Record<string,string>;
+// let para: Record<string,string> = {
+//   'onSurfaceCreated': 'Init',
+//   'onSurfaceChanged': 'Init',
+//   'onSurfaceDestroyed': 'Init',
+//   } as Record<string,string>;
 // let storage: LocalStorage = new LocalStorage(para);
+
+
 class CustomXComponentController extends XComponentController {
   onSurfaceCreated(surfaceId: string): void {
     console.log(`onSurfaceCreated surfaceId: ${surfaceId}`)
-    // storage.set('onSurfaceCreated', 'onSurfaceCreated succ');
+    AppStorage.setOrCreate<string>('onSurfaceCreated', 'onSurfaceCreated succ');
   }
 
   onSurfaceChanged(surfaceId: string, rect: SurfaceRect): void {
     console.log(`onSurfaceChanged surfaceId: ${surfaceId}, rect: ${JSON.stringify(rect)}`)
-    // storage.set('onSurfaceChanged', 'onSurfaceChanged succ');
+    AppStorage.setOrCreate<string>('onSurfaceChanged', 'onSurfaceChanged succ');
   }
 
   onSurfaceDestroyed(surfaceId: string): void {
     console.log(`onSurfaceDestroyed surfaceId: ${surfaceId}`)
-    // storage.set('onSurfaceDestroyed', 'onSurfaceDestroyed succ');
+    AppStorage.setOrCreate<string>('onSurfaceDestroyed', 'onSurfaceDestroyed succ');
   }
 }
 
@@ -47,21 +75,27 @@ struct onSurfaceCreated1 {
   @State createText: string = "Init";
   @State changeText: string = "Init";
   @State destroyText: string = "Init";
-  @State flag:boolean = true
+  @State flag: boolean = true
+
+  onPageShow() {
+    AppStorage.setOrCreate('onSurfaceCreated', 'Init');
+    AppStorage.setOrCreate('onSurfaceChanged', 'Init');
+    AppStorage.setOrCreate('onSurfaceDestroyed', 'Init');
+  }
 
   build() {
     Column() {
       Text(this.createText).id('onSurfaceCreated_text')
         .onClick((e: ClickEvent) => {
-          // this.createText = storage.get('onSurfaceCreated') as string
+          this.createText = AppStorage.get<string>('onSurfaceCreated')!
         })
       Text(this.changeText).id('onSurfaceChanged_text')
         .onClick((e: ClickEvent) => {
-          // this.changeText = storage.get('onSurfaceChanged') as string
+          // this.changeText = AppStorage.get<string>('onSurfaceChanged')!
         })
       Text(this.destroyText).id('onSurfaceDestroyed_text')
         .onClick((e: ClickEvent) => {
-          // this.destroyText = storage.get('onSurfaceDestroyed') as string
+          // this.destroyText = AppStorage.get<string>('onSurfaceDestroyed')!
         })
       Button("change size").id('onSurfaceChanged_button')
         .onClick((e: ClickEvent) => {
@@ -72,11 +106,12 @@ struct onSurfaceCreated1 {
         .onClick((e: ClickEvent) => {
           this.flag = false
         })
-      if(this.flag){
+      if (this.flag) {
         XComponent({
           id: 'xcomponent_onSurface',
           type: XComponentType.TEXTURE,
-          nativeXComponentHandler: ((value0: long): void => {}),
+          nativeXComponentHandler: ((value0: long): void => {
+          }),
           controller: this.xComponentController
         } as XComponentParameters)
           .width(this.xcWidth)

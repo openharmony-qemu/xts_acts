@@ -61,15 +61,14 @@ export default function stopImageAnalyzerJsunit() {
       }
     });
 
-    /**
-     * @tc.number startImageAnalyzerTest_static_0010
-     * @tc.name startImageAnalyzerTest_static_0010
-     * @tc.desc Xcomponent: get the api of startImageAnalyzer
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   startImageAnalyzerTest_static_0010
+     * @tc.name     startImageAnalyzerTest_static_0010
+     * @tc.desc     startImageAnalyzerTest_static_0010
+     * @tc.level    Level.LEVEL2
      */
-    it('startImageAnalyzerTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('startImageAnalyzerTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('startImageAnalyzerTest_static_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -83,15 +82,14 @@ export default function stopImageAnalyzerJsunit() {
       done();
     });
 
-    /**
-     * @tc.number stopImageAnalyzerTest_static_0020
-     * @tc.name stopImageAnalyzerTest_static_0020
-     * @tc.desc Xcomponent: get the api of stopImageAnalyzer
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   stopImageAnalyzerTest_static_0020
+     * @tc.name     stopImageAnalyzerTest_static_0020
+     * @tc.desc     stopImageAnalyzerTest_static_0020
+     * @tc.level    Level.LEVEL2
      */
-    it('stopImageAnalyzerTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('stopImageAnalyzerTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('stopImageAnalyzerTest_static_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

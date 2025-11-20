@@ -69,20 +69,21 @@ export default function VideoTest2() {
       console.info("VideoTest2 after each called");
     });
 
-    /**
-     * @tc.number VideoTest2_static_0100
-     * @tc.name VideoTest2_static_0100
-     * @tc.desc Test video onStart
-     * @tc.level Level 2
+    
+    /*
+     * @tc.number   VideoTest2_static_0100
+     * @tc.name     VideoTest2_static_0100
+     * @tc.desc     VideoTest2_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('VideoTest2_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('VideoTest2_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[VideoTest2_static_0100] START');
       await CommonFunc.sleep(5000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn1 = await (driver.findComponent(ON.id('VideoTest2_start')) as Promise<Component>);
-      await btn1.click()
+      let btn1 = await driver.findComponent(ON.id('VideoTest2_start'));
+      await (btn1?.click() as Promise<void>)
       console.info("[VideoTest2_static_0100] btn1");
       await CommonFunc.sleep(3000);
 

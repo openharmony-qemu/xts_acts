@@ -14,20 +14,25 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import {
-  Entry,
-  Component,
   $r,
+  $rawfile,
+  Button,
+  ClickEvent,
+  Color,
   Column,
-  ColumnOptions,ClickEvent,$rawfile,
-  Text,Video,Row,Button,
-  Color,PlaybackSpeed,Resource,VideoController,
+  ColumnOptions,
+  Component,
+  Entry,
+  PlaybackInfo,
+  PlaybackSpeed,
+  Resource,
+  Row,
+  Text,
+  Video,
+  VideoController
 } from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-
+import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { AsyncCallback, Callback } from '@ohos.base';
 
 @Entry
 @Component
@@ -42,6 +47,7 @@ struct videoEnableShortcutKey {
   @State content: string = 'init'
   @State content2: string = '0'
   controller: VideoController = new VideoController()
+
   build() {
     Column() {
       Text(this.content).key('videoEnableShortcutKey_text')
@@ -59,7 +65,7 @@ struct videoEnableShortcutKey {
         .controls(this.showControls)
         .enableShortcutKey(this.enableShortcutKey)
         .focusable(true)
-        .defaultFocus(true) 
+        .defaultFocus(true) // Video聚焦时快捷键才生效
         .key('videoEnableShortcutKey_video')
         .onStart((): void => {
           this.content = 'onStart'
@@ -67,25 +73,28 @@ struct videoEnableShortcutKey {
         .onPause((): void => {
           this.content = 'onPause'
         })
-        .onUpdate((e?: TimeObject): void => {
+        .onUpdate((e: PlaybackInfo): void => {
           if (e != undefined) {
             console.info('onUpdate is ' + e.time)
             this.content2 = e.time.toString()
           }
-        })
+        } as Callback<PlaybackInfo>)
 
       Row() {
         Button('reset').key('videoEnableShortcutKey_reset').onClick((e: ClickEvent) => {
-          this.controller.reset() 
+          console.log('test start reset')
+          this.controller.reset() // 重置
         })
       }
 
       Row() {
         Button('change_1').key('videoEnableShortcutKey_showControls').onClick((e: ClickEvent) => {
+          console.log('test start change_1')
           this.showControls = !this.showControls
           this.content = 'init'
         })
         Button('change_2').key('videoEnableShortcutKey_enableShortcutKey').onClick((e: ClickEvent) => {
+          console.log('test start change_2')
           this.enableShortcutKey = !this.enableShortcutKey
           this.content = 'init'
         })
