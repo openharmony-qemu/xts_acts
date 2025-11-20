@@ -183,6 +183,7 @@ describe('SystemDeviceTest', function () {
 
         expect(apiVersionInfo).assertInstanceOf('Number');
         expect(apiVersionInfo >= 0).assertTrue();
+        done();
 
         console.info('testDeviceApiVersion01 ：end');
     })
@@ -258,6 +259,7 @@ describe('SystemDeviceTest', function () {
 
         expect(windowWidthInfo).assertInstanceOf('Number');
         expect(windowWidthInfo >= 0).assertTrue();
+        done();
 
         console.info('testDeviceWindowWidth01 : end');
     })
@@ -273,6 +275,7 @@ describe('SystemDeviceTest', function () {
 
         expect(windowHeightInfo).assertInstanceOf('Number');
         expect(windowHeightInfo >= 0).assertTrue();
+        done();
 
         console.info('testDeviceWindowHeight01 : end');
     })
@@ -288,6 +291,7 @@ describe('SystemDeviceTest', function () {
 
         expect(screenDensityInfo).assertInstanceOf('Number');
         expect(screenDensityInfo >= 0).assertTrue();
+        done();
 
         console.info('testDeviceScreenDensity01 : end');
     })
