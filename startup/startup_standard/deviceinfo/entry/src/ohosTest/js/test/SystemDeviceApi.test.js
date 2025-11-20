@@ -182,15 +182,8 @@ describe('SystemDeviceTest', function () {
         console.info('the value of the deviceinfo sdkApiVersion is :' + apiVersionInfo);
 
         expect(apiVersionInfo).assertInstanceOf('Number');
-        if (apiVersionInfo >= 0) {
-            console.info('the value of the deviceinfo sdkApiVersion is :' + apiVersionInfo);
-            expect().assertTrue();
-			done();
-        }else {
-            console.info('the return value ApiVersion is not larger than 0.');
-            expect().assertFail();
-			done();
-        }
+        expect(apiVersionInfo >= 0).assertTrue();
+
         console.info('testDeviceApiVersion01 ：end');
     })
 
@@ -264,15 +257,8 @@ describe('SystemDeviceTest', function () {
         console.info('the value of the deviceinfo window width is :' + windowWidthInfo);
 
         expect(windowWidthInfo).assertInstanceOf('Number');
-        if (windowWidthInfo >= 0) {
-            console.info('the value of the deviceinfo window width is :' + windowWidthInfo);
-            expect().assertTrue();
-			done();
-        }else {
-            console.info('the return value WindowWidth is not larger than 0.');
-            expect().assertFail();
-			done();
-        }
+        expect(windowWidthInfo >= 0).assertTrue();
+
         console.info('testDeviceWindowWidth01 : end');
     })
 
@@ -286,15 +272,8 @@ describe('SystemDeviceTest', function () {
         console.info('the value of the deviceinfo window height is :' + windowHeightInfo);
 
         expect(windowHeightInfo).assertInstanceOf('Number');
-        if (windowHeightInfo >= 0) {
-            console.info('the value of the deviceinfo window height is :' + windowHeightInfo);
-            expect().assertTrue();
-			done();
-        }else {
-            console.info('the return value WindowHeight is not larger than 0.');
-            expect().assertFail();
-			done();
-        }
+        expect(windowHeightInfo >= 0).assertTrue();
+
         console.info('testDeviceWindowHeight01 : end');
     })
 
@@ -308,15 +287,8 @@ describe('SystemDeviceTest', function () {
         console.info('the value of the deviceinfo screen density is :' + screenDensityInfo);
 
         expect(screenDensityInfo).assertInstanceOf('Number');
-        if (screenDensityInfo >= 0) {
-            console.info('the value of the deviceinfo screen density is :' + screenDensityInfo);
-            expect().assertTrue();
-			done();
-        }else {
-            console.info('the return value ScreenDensity is not larger than 0.');
-            expect().assertFail();
-			done();
-        }
+        expect(screenDensityInfo >= 0).assertTrue();
+
         console.info('testDeviceScreenDensity01 : end');
     })
 
