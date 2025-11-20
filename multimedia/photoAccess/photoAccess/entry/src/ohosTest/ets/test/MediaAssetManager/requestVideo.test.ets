@@ -60,10 +60,8 @@ export default function requestVideoTest() {
             fs.unlinkSync(`${testContext.filesDir}/${files[i]}`);
           }
         }
-		await sleep(2000);
       } catch (error) {
         console.error(`requestVideoTest listFiles failed; error: ${error.code}  ${error.message}`)
-		await sleep(2000);
       }
     });
 
