@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,28 +14,28 @@
  */
 
 import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  FlexAlign,
+  Color,
+  Button,
+  TouchEvent,
+  Margin,
+  Scroll,
   GestureEvent,
   LongPressGesture,
-  Margin,
-  Row,
-  Scroll,
   TapGesture,
-  Text,
-  TouchEvent,
-  TouchType
+  ClickEvent,
+  FlexAlign
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -43,6 +43,8 @@ struct ColumnGesture1 {
   @State monopolize: boolean = true
   @State logMsg1: string = ''
   @State logMsg2: string = ''
+
+
 
   build() {
     Scroll() {
@@ -93,7 +95,7 @@ struct ColumnGesture1 {
           .width(200)
           .height(80)
           .margin(10)
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             console.info('按钮触发')
             this.monopolize = !this.monopolize
           })
@@ -102,7 +104,7 @@ struct ColumnGesture1 {
           .width(200)
           .height(80)
           .margin(10)
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.logMsg1 = ''
             this.logMsg2 = ''
           })

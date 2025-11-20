@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,28 +13,28 @@
  * limitations under the License.
  */
 import {
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  GestureEvent,
-  HorizontalAlign,
-  Margin,
-  Padding,
-  RotationGesture,
-  Row,
-  SourceTool,
-  Span,
-  Text,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  GestureEvent,
+  RotationGesture,
+  Span,
+  Padding,
+  SourceTool,
+  HorizontalAlign
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -81,6 +81,8 @@ struct RotationGestureUpdate {
   @State angle2: number = 0
   @State rotateValue: number = 0
 
+
+
   build() {
     Column({ space: 10 } as ColumnOptions) {
       Column() {
@@ -105,8 +107,8 @@ struct RotationGestureUpdate {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -118,7 +120,7 @@ struct RotationGestureUpdate {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -157,8 +159,8 @@ struct RotationGestureUpdate {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -170,7 +172,7 @@ struct RotationGestureUpdate {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''

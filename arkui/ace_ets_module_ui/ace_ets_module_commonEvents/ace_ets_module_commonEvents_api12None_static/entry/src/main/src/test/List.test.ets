@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -29,7 +29,8 @@ import SwipeGestureTemplateTest from './SwipeGesture/SwipeGestureTemplateTest.te
 import PanGestureUpdateTest from './PanGesture/PanGestureUpdateTest.test';
 import PinchGestureUpdateTest from './PinchGesture/PinchGestureUpdateTest.test';
 import RotationGestureUpdateTest from './RotationGesture/RotationGestureUpdateTest.test';
-
+import addGestureApplyGesture from './AddGestureApplyGestureTest.test';
+import APIshouldBuiltInRecognizerParallelWith from './APIshouldBuiltInRecognizerParallelWithTest.test';
 
 export default function testsuite() {
   UIContextDragControllerTest();
@@ -45,10 +46,8 @@ export default function testsuite() {
   SwipeGestureExample02Test();
   SwipeGestureExample01Test();
   onKeyPreImeTest();
-  SwipeGestureTemplateTest();
+  SwipeGestureTemplateTest(); // 11.17sdk failed
   PanGestureUpdateTest();
   PinchGestureUpdateTest();
-  RotationGestureUpdateTest();
-
-
+  RotationGestureUpdateTest(); // 11.11sdk failed
 }
