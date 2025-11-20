@@ -118,12 +118,13 @@ export default function UsbApiInterruptTransferTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
-     * @tc.name     : testUsbSubmitTransfer001
-     * @tc.desc     : interrupt transfer error endpoint.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbSubmitTransfer001
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
+     * @tc.desc   interrupt transfer error endpoint.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'interrupt testUsbSubmitTransfer001 enter');
@@ -151,12 +152,13 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0200
-     * @tc.name     : testUsbSubmitTransfer002
-     * @tc.desc     : interrupt transfer. claimInterface no call. IO error.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbSubmitTransfer002
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0200
+     * @tc.desc   interrupt transfer. claimInterface no call. IO error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'interrupt testUsbSubmitTransfer002 enter');
@@ -184,12 +186,13 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
-     * @tc.name     : testUsbSubmitTransfer003
-     * @tc.desc     : interrupt transfer read successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbSubmitTransfer003
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
+     * @tc.desc   interrupt transfer read successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSubmitTransfer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, 'interrupt testUsbSubmitTransfer003 enter');
@@ -222,12 +225,13 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbCancelTransfer_Func_0100
-     * @tc.name     : testUsbCancelTransfer001
-     * @tc.desc     : interrupt transfer cancel successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbCancelTransfer001
+     * @tc.number SUB_USB_Host_JS_usbCancelTransfer_Func_0100
+     * @tc.desc   interrupt transfer cancel successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbCancelTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, 'interrupt testUsbCancelTransfer001 enter');
@@ -256,12 +260,13 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
-     * @tc.name     : testUsbCancelTransfer002
-     * @tc.desc     : interrupt transfer cancel failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbCancelTransfer002
+     * @tc.number SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
+     * @tc.desc   interrupt transfer cancel failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbCancelTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'interrupt testUsbCancelTransfer002 enter');

@@ -72,14 +72,15 @@ export default function inputMethodEngineKeyJSUnit() {
     let driver = Driver.create();
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_Manage_Physical_Buttons_0010
-    * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0010
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level1
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0010
+     * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0010
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Misc_InputMethod_Manage_Physical_Buttons_0010', Level.LEVEL1, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -151,14 +152,15 @@ export default function inputMethodEngineKeyJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_Manage_Physical_Buttons_0020
-    * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0020
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0020
+     * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0020
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_Manage_Physical_Buttons_0020', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -230,14 +232,15 @@ export default function inputMethodEngineKeyJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_Manage_Physical_Buttons_0030
-    * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0030
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0030
+     * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0030
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_Manage_Physical_Buttons_0030', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -309,14 +312,15 @@ export default function inputMethodEngineKeyJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_Manage_Physical_Buttons_0040
-    * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0040
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0040
+     * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0040
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_Manage_Physical_Buttons_0040', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -388,14 +392,15 @@ export default function inputMethodEngineKeyJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_Manage_Physical_Buttons_0050
-    * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0050
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0050
+     * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0050
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_Manage_Physical_Buttons_0050', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -468,14 +473,15 @@ export default function inputMethodEngineKeyJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_Manage_Physical_Buttons_0060
-    * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0060
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0060
+     * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0060
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_Manage_Physical_Buttons_0060', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -547,14 +553,15 @@ export default function inputMethodEngineKeyJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_Manage_Physical_Buttons_0070
-    * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0070
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0070
+     * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0070
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_Manage_Physical_Buttons_0070', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {

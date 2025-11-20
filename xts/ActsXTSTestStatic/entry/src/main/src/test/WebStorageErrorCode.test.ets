@@ -38,14 +38,15 @@ export default function webTwoJsunit() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_CLEARMATCHES_0100
-    * @tc.name       : testClearMatchesError001
-    * @tc.desc       : test ClearMatches error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testClearMatchesError001
+     * @tc.number SUB_WEB_ERRORCODE_CLEARMATCHES_0100
+     * @tc.desc   test ClearMatches error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testClearMatchesError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitClearMatches', 10)
@@ -56,14 +57,15 @@ export default function webTwoJsunit() {
       await Utils.msSleep(4000);
       done()
     })
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_CREATEWEBMESSAGEPORTS_0100
-    * @tc.name       : testCreateWebMessagePortsError001
-    * @tc.desc       : test CreateWebMessagePorts error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testCreateWebMessagePortsError001
+     * @tc.number SUB_WEB_ERRORCODE_CREATEWEBMESSAGEPORTS_0100
+     * @tc.desc   test CreateWebMessagePorts error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testCreateWebMessagePortsError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitCreateWebMessagePort', 10)
       Utils.registerEvent('testCreateWebMessagePortsError001', 17100001, 1021, done);
@@ -72,14 +74,15 @@ export default function webTwoJsunit() {
       await Utils.msSleep(4000);
       done()
     })
-    /*
-    * @tc.number     : SUB_WEB_ERRORECODE_PREPAREFORPAGELOAD_0100
-    * @tc.name       : testPrepareForPageLoadError001
-    * @tc.desc       : test prepareForPageLoad error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testPrepareForPageLoadError001
+     * @tc.number SUB_WEB_ERRORECODE_PREPAREFORPAGELOAD_0100
+     * @tc.desc   test prepareForPageLoad error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPrepareForPageLoadError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testPrepareForPageLoadError001', 10)
       Utils.registerEvent('testPrepareForPageLoadError001', 17100013, 50025, done);
@@ -88,14 +91,15 @@ export default function webTwoJsunit() {
       await Utils.msSleep(4000);
       done()
     })
-    /*
-   * @tc.number     : SUB_WEB_ERRORCODE_CLOSE_0100
-   * @tc.name       : testCloseErrorStatic001
-   * @tc.desc       : test close error
-   * @tc.size       : MEDIUM
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testCloseErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_CLOSE_0100
+     * @tc.desc   test close error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testCloseErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testCloseError001', 10)
@@ -105,14 +109,15 @@ export default function webTwoJsunit() {
         await Utils.msSleep(4000);
         done()
       })
-    /*
-   * @tc.number     : SUB_WEB_ERRORCODE_POSTMESSAGE_0200
-   * @tc.name       : testPostMessageError002
-   * @tc.desc       : test PostMessage error
-   * @tc.size       : MEDIUM
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testWebMessagePortError002
+     * @tc.number SUB_WEB_ERRORCODE_POSTMESSAGE_0200
+     * @tc.desc   test PostMessage error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebMessagePortError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitPostMessage", 10)
       await Utils.msSleep(2000);
@@ -122,14 +127,15 @@ export default function webTwoJsunit() {
       done()
     })
 
-    /*	
-   * @tc.number     : SUB_WEB_ERRORCODE_POSTMESSAGE_0300
-   * @tc.name       : SwitchNextPageStatic
-   * @tc.desc       : test PAGE_REDIRECT
-   * @tc.size       : MEDIUM
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SUB_WEB_ERRORCODE_POSTMESSAGE_0300
+     * @tc.desc   test PAGE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

@@ -61,7 +61,7 @@ let netId = 100;
 
 export default function eapNoPTest() {
   describe('eapNoPTest', () => {
-    
+
     /**
      * @tc.number SUB_Communication_Eap_RegCustomEapHandler_Nop_0100
      * @tc.name  testCommunicationEapRegCustomEapHandlerNop0100
@@ -162,5 +162,35 @@ export default function eapNoPTest() {
       }
     })
 
+    /**
+     * @tc.number SUB_Communication_Eap_ReplyCustomEapData_Nop_0500
+     * @tc.name testCommunicationEapReplyCustomEapDataNop0500
+     * @tc.desc test whether the interface permission takes effect
+     * @tc.level Level 1
+     * @tc.type Function
+     * @tc.size MediumTest
+     */
+    it("testCommunicationEapReplyCustomEapDataNop0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapReplyCustomEapDataNop0500";
+      console.info(`${caseName}---start`);
+      try {
+        let eapData:eap.EapData= {
+          msgId: 1,
+          eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+          bufferLen: 5,
+        };
+        eap.replyCustomEapData(1, eapData );
+        console.info(`${caseName } replyCustomEapData success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 201);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+    
   })
 }

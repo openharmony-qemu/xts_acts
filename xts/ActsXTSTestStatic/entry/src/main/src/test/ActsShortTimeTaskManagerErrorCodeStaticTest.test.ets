@@ -36,13 +36,14 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', 'afterAll called');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001
-     * @tc.desc:Test that the requestSuspendDelay callback function error call and errocode is 9900002
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001
+     * @tc.desc   Test that the requestSuspendDelay callback function error call and errocode is 9900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 begin---');
@@ -109,13 +110,14 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002
-     * @tc.desc:Test that the getRemainingDelayTime promise function error call and errocode is 9900001
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002
+     * @tc.desc   Test that the getRemainingDelayTime promise function error call and errocode is 9900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002 begin---');
@@ -141,13 +143,14 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003
-     * @tc.desc:Test that the getRemainingDelayTime callback function error call and errocode is 9900001
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003
+     * @tc.desc   Test that the getRemainingDelayTime callback function error call and errocode is 9900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003 begin---');
@@ -173,13 +176,14 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004
-     * @tc.desc:Test that the cancelSuspendDelay callback function error call and errocode is 9900001
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004
+     * @tc.desc   Test that the cancelSuspendDelay callback function error call and errocode is 9900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004 begin---');

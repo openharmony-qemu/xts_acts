@@ -35,12 +35,13 @@ export default function UsbDdkTest1() {
       }
     })
     /**
-     * @tc.number   SUB_Driver_Ext_USB_DDK_SUCCESS_0100
-     * @tc.name     testUSB_DDK_SUCCESS_0100
-     * @tc.desc     Test UsbDdkErrCode interface USB_DDK_SUCCESS
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUSB_DDK_SUCCESS_0100
+     * @tc.number SUB_Driver_Ext_USB_DDK_SUCCESS_0100
+     * @tc.desc   Test UsbDdkErrCode interface USB_DDK_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUSB_DDK_SUCCESS_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -56,12 +57,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_USB_DDK_INVALID_PARAMETER_0100
-     * @tc.name     testUSB_DDK_INVALID_PARAMETER_0100
-     * @tc.desc     Test UsbDdkErrCode interface USB_DDK_INVALID_PARAMETER
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUSB_DDK_INVALID_PARAMETER_0100
+     * @tc.number SUB_Driver_Ext_USB_DDK_INVALID_PARAMETER_0100
+     * @tc.desc   Test UsbDdkErrCode interface USB_DDK_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUSB_DDK_INVALID_PARAMETER_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -77,12 +79,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0100
-     * @tc.name     testUsbDeviceDescriptor_0100
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0100
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0100
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -100,12 +103,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0200
-     * @tc.name     testUsbDeviceDescriptor_0200
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0200
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0200
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -123,12 +127,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0300
-     * @tc.name     testUsbDeviceDescriptor_0300
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0300
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0300
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -146,12 +151,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0400
-     * @tc.name     testUsbDeviceDescriptor_0400
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0400
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0400
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -169,12 +175,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0500
-     * @tc.name     testUsbDeviceDescriptor_0500
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0500
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0500
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -192,12 +199,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0600
-     * @tc.name     testUsbDeviceDescriptor_0600
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0600
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0600
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -215,12 +223,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0700
-     * @tc.name     testUsbDeviceDescriptor_0700
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0700
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0700
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -238,12 +247,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0800
-     * @tc.name     testUsbDeviceDescriptor_0800
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0800
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0800
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0800', Level.LEVEL1, async (done: Function) => {
       try {
@@ -261,12 +271,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_0900
-     * @tc.name     testUsbDeviceDescriptor_0900
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_0900
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_0900
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_0900', Level.LEVEL1, async (done: Function) => {
       try {
@@ -284,12 +295,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_1000
-     * @tc.name     testUsbDeviceDescriptor_1000
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_1000
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1000
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_1000', Level.LEVEL1, async (done: Function) => {
       try {
@@ -307,12 +319,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_1100
-     * @tc.name     testUsbDeviceDescriptor_1100
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_1100
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1100
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_1100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -330,12 +343,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_1200
-     * @tc.name     testUsbDeviceDescriptor_1200
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_1200
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1200
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_1200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -353,12 +367,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_1300
-     * @tc.name     testUsbDeviceDescriptor_1300
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_1300
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1300
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_1300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -376,12 +391,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbDeviceDescriptor_1400
-     * @tc.name     testUsbDeviceDescriptor_1400
-     * @tc.desc     Test UsbDeviceDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbDeviceDescriptor_1400
+     * @tc.number SUB_Driver_Ext_UsbDeviceDescriptor_1400
+     * @tc.desc   Test UsbDeviceDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbDeviceDescriptor_1400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -399,12 +415,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbConfigDescriptor_0100
-     * @tc.name     testUsbConfigDescriptor_0100
-     * @tc.desc     Test UsbConfigDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbConfigDescriptor_0100
+     * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0100
+     * @tc.desc   Test UsbConfigDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbConfigDescriptor_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -422,12 +439,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbConfigDescriptor_0200
-     * @tc.name     testUsbConfigDescriptor_0200
-     * @tc.desc     Test UsbConfigDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbConfigDescriptor_0200
+     * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0200
+     * @tc.desc   Test UsbConfigDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbConfigDescriptor_0200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -445,12 +463,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbConfigDescriptor_0300
-     * @tc.name     testUsbConfigDescriptor_0300
-     * @tc.desc     Test UsbConfigDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbConfigDescriptor_0300
+     * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0300
+     * @tc.desc   Test UsbConfigDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbConfigDescriptor_0300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -468,12 +487,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbConfigDescriptor_0400
-     * @tc.name     testUsbConfigDescriptor_0400
-     * @tc.desc     Test UsbConfigDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbConfigDescriptor_0400
+     * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0400
+     * @tc.desc   Test UsbConfigDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbConfigDescriptor_0400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -491,12 +511,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbConfigDescriptor_0500
-     * @tc.name     testUsbConfigDescriptor_0500
-     * @tc.desc     Test UsbConfigDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbConfigDescriptor_0500
+     * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0500
+     * @tc.desc   Test UsbConfigDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbConfigDescriptor_0500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -514,12 +535,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbConfigDescriptor_0600
-     * @tc.name     testUsbConfigDescriptor_0600
-     * @tc.desc     Test UsbConfigDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbConfigDescriptor_0600
+     * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0600
+     * @tc.desc   Test UsbConfigDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbConfigDescriptor_0600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -537,12 +559,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbConfigDescriptor_0700
-     * @tc.name     testUsbConfigDescriptor_0700
-     * @tc.desc     Test UsbConfigDescriptor struct bLength
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbConfigDescriptor_0700
+     * @tc.number SUB_Driver_Ext_UsbConfigDescriptor_0700
+     * @tc.desc   Test UsbConfigDescriptor struct bLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsbConfigDescriptor_0700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -560,12 +583,13 @@ export default function UsbDdkTest1() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_Usb_DeviceArray_0100
-     * @tc.name     testUsb_DeviceArray_0100
-     * @tc.desc     Test Usb_DeviceArray struct num
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsb_DeviceArray_0100
+     * @tc.number SUB_Driver_Ext_Usb_DeviceArray_0100
+     * @tc.desc   Test Usb_DeviceArray struct num
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUsb_DeviceArray_0100', Level.LEVEL1, async (done: Function) => {
       try {

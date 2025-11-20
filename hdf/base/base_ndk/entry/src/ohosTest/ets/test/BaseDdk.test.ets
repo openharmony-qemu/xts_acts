@@ -26,13 +26,13 @@ export default function baseDdkNdkJsTest() {
     const DDK_NULL_PTR: number = 28600004;
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0100
-     * @tc.name       : testDdkCreateAshmem001
-     * @tc.desc       : OH_DDK_CreateAshmem Interface testing
-     * @tc.desc       : Operation success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkCreateAshmem001
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0100
+     * @tc.desc   Operation success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkCreateAshmem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkCreateAshmem001---------------------------');
@@ -49,13 +49,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0200
-     * @tc.name       : testDdkCreateAshmem002
-     * @tc.desc       : OH_DDK_CreateAshmem Interface testing
-     * @tc.desc       : Invalid parameter, bufferLen = 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkCreateAshmem002
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0200
+     * @tc.desc   Invalid parameter, bufferLen = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkCreateAshmem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkCreateAshmem002---------------------------');
@@ -72,13 +72,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0300
-     * @tc.name       : testDdkCreateAshmem003
-     * @tc.desc       : OH_DDK_CreateAshmem Interface testing
-     * @tc.desc       : Invalid parameter, name = nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkCreateAshmem003
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0300
+     * @tc.desc   Invalid parameter, name = nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkCreateAshmem003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkCreateAshmem003---------------------------');
@@ -95,13 +95,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0400
-     * @tc.name       : testDdkMapAshmem001
-     * @tc.desc       : OH_DDK_MapAshmem Interface testing
-     * @tc.desc       : Operation success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkMapAshmem001
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0400
+     * @tc.desc   Operation success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkMapAshmem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkMapAshmem001---------------------------');
@@ -118,13 +118,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0500
-     * @tc.name       : testDdkMapAshmem002
-     * @tc.desc       : OH_DDK_MapAshmem Interface testing
-     * @tc.desc       : Null pointer exception, shared memory not created
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkMapAshmem002
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0500
+     * @tc.desc   Null pointer exception, shared memory not created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkMapAshmem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkMapAshmem002---------------------------');
@@ -141,13 +141,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0600
-     * @tc.name       : testDdkMapAshmem003
-     * @tc.desc       : OH_DDK_MapAshmem Interface testing
-     * @tc.desc       : Operation failed, ashmemFd = 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkMapAshmem003
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0600
+     * @tc.desc   Operation failed, ashmemFd = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkMapAshmem003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkMapAshmem003---------------------------');
@@ -164,13 +164,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0700
-     * @tc.name       : testDdkMapAshmem004
-     * @tc.desc       : OH_DDK_MapAshmem Interface testing
-     * @tc.desc       : Invalid operation, ashmemMapType = 0x80
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkMapAshmem004
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0700
+     * @tc.desc   Invalid operation, ashmemMapType = 0x80
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkMapAshmem004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkMapAshmem004---------------------------');
@@ -187,13 +187,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0800
-     * @tc.name       : testDdkUnmapAshmem001
-     * @tc.desc       : OH_DDK_UnmapAshmem Interface testing
-     * @tc.desc       : Operation success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkUnmapAshmem001
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0800
+     * @tc.desc   Operation success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkUnmapAshmem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkUnmapAshmem001---------------------------');
@@ -210,13 +210,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_0900
-     * @tc.name       : testDdkUnmapAshmem002
-     * @tc.desc       : OH_DDK_UnmapAshmem Interface testing
-     * @tc.desc       : Null pointer exception, shared memory not created and mapped
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkUnmapAshmem002
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_0900
+     * @tc.desc   Null pointer exception, shared memory not created and mapped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkUnmapAshmem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkUnmapAshmem002---------------------------');
@@ -233,13 +233,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_1000
-     * @tc.name       : testDdkDestroyAshmem001
-     * @tc.desc       : OH_DDK_DestoryAshmem Interface testing
-     * @tc.desc       : Operation success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkDestroyAshmem001
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_1000
+     * @tc.desc   Operation success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkDestroyAshmem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkDestroyAshmem001---------------------------');
@@ -256,13 +256,13 @@ export default function baseDdkNdkJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_BaseDdkEtsAPI_1100
-     * @tc.name       : testDdkDestroyAshmem002
-     * @tc.desc       : OH_DDK_DestoryAshmem Interface testing
-     * @tc.desc       : Null pointer exception, shared memory not created and mapped
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDdkDestroyAshmem002
+     * @tc.number SUB_Driver_Ext_BaseDdkEtsAPI_1100
+     * @tc.desc   Null pointer exception, shared memory not created and mapped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDdkDestroyAshmem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testDdkDestroyAshmem002---------------------------');

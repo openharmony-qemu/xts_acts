@@ -1340,6 +1340,7 @@ export default function abilityTest() {
             processFlag: processFlag
           }
         });
+        await sleep(50);
         await testContext.startAbility({
           bundleName: demo2BundleName,
           abilityName: 'IsolationAbility',

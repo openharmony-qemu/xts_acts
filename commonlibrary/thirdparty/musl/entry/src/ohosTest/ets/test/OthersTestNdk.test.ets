@@ -40,6 +40,136 @@ export default function otherstestNdkTest() {
     });
 
     /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0100
+     * @tc.name       : PluginDefaultNsTest001
+     * @tc.desc       : test dlns_add_plugin_default_ld_dictionary
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0200
+     * @tc.name       : PluginDefaultNsTest002
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest2()).assertEqual(-1);
+      done()
+    });
+
+      /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0300
+     * @tc.name       : PluginDefaultNsTest003
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest3()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0400
+     * @tc.name       : PluginDefaultNsTest004
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest4()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0500
+     * @tc.name       : PluginDefaultNsTest005
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest5()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0600
+     * @tc.name       : PluginDefaultNsTest006
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest6()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0700
+     * @tc.name       : PluginDefaultNsTest007
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest7()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0800
+     * @tc.name       : PluginDefaultNsTest008
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest8()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_0900
+     * @tc.name       : PluginDefaultNsTest009
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest9()).assertEqual(-1);
+      done()
+    });
+
+    /**
+     * @tc.number     : SUB_THIRDPARTY_MUSL_PLUGIN_DEFAULT_1000
+     * @tc.name       : PluginDefaultNsTest010
+     * @tc.desc       : test dlns_set_permitted_path
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('PluginDefaultNsTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(otherstestndk.PluginDefaultNsTest10()).assertEqual(-1);
+      done()
+    });
+
+    /**
      * @tc.number     : SUB_THIRDPARTY_MUSL_DLFCN_DLCLOSE_0100
      * @tc.name       : testMuslDlFcnDlClose001
      * @tc.desc       : test dlclose

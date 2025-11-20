@@ -19,6 +19,8 @@ import { window } from '@kit.ArkUI';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+let testNum = 0;
+
 export default class EntryAbility extends UIAbility {
   private onCreateFlag = false;
   private onWindowStageCreateFlag = false;
@@ -93,21 +95,25 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', '%{public}s',
         `onConnect SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100 error:, ${JSON.stringify(error)}`);
     }
-    let want: Want = {
-      deviceId: '', // deviceId为空表示本设备
-      bundleName: 'com.example.actsapplicationstartabilitytest',
-      abilityName: 'EntryAbility5',
-      action: this.TEST_CASE_NAME,
-      parameters: {
-        instanceKey: this.TEST_CASE_NAME
-      }
-    };
-    this.context.startAbility(want).then((data) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', `${this.TEST_CASE_NAME} Succeeded in starting  ${data}`);
-    }).catch((err: BusinessError) => {
-      hilog.info(0x0000, 'testTag', '%{public}s',
-        `${this.TEST_CASE_NAME} Failed to start SpecifiedAbility. err.Code is ${err.code}  err.message is ${err.message}`);
-    })
+    
+    testNum++;
+    if(testNum === 1){
+      let want: Want = {
+        deviceId: '', // deviceId为空表示本设备
+        bundleName: 'com.example.actsapplicationstartabilitytest',
+        abilityName: 'EntryAbility5',
+        action: this.TEST_CASE_NAME,
+        parameters: {
+          instanceKey: this.TEST_CASE_NAME
+        }
+      };
+      this.context.startAbility(want).then((data) => {
+        hilog.info(0x0000, 'testTag', '%{public}s', `${this.TEST_CASE_NAME} Succeeded in starting  ${data}`);
+      }).catch((err: BusinessError) => {
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `${this.TEST_CASE_NAME} Failed to start SpecifiedAbility. err.Code is ${err.code}  err.message is ${err.message}`);
+      })
+    }
   }
 
   onBackground(): void {

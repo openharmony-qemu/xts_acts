@@ -47,7 +47,7 @@ export default function imageExifGetModifyTest() {
 
     const getFd = async (fileName: string) => {
       filePath = AppStorage.get('pathDir') + "/" + fileName;
-      const file = fs.openSync(filePath, fs.OpenMode.READ_WRITE)
+      const file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       fdNumber = file.fd
     }
 
@@ -389,6 +389,136 @@ export default function imageExifGetModifyTest() {
         }
       }
       return checkResult
+    }
+
+    const testPackToFile = async (
+      testTag: string,
+      imageSourceApi: image.ImageSource,
+      fdNumber: number,
+      packingOption: image.PackingOption
+    ) => {
+      let imagePacker: image.ImagePacker | undefined = undefined;
+      let pixelMap: image.PixelMap | undefined = undefined;
+      try {
+        imagePacker = image.createImagePacker();
+        if (imagePacker == undefined) {
+          console.info(testTag + " create image packer failed");
+          expect().assertFail();
+          return;
+        }
+        pixelMap = await imageSourceApi.createPixelMap();
+        await imagePacker.packToFile(pixelMap, fdNumber, packingOption);
+        console.info(testTag + " pack to file completed");
+        await imagePacker.release();
+      } catch (error) {
+        console.info(testTag + " pack to file error: " + error);
+        expect().assertFail();
+        return;
+      }
+    }
+
+    const testCheckPropertie = async (
+      testTag: string,
+      imageSourceApi: image.ImageSource,
+      imageSourceApi2: image.ImageSource,
+      key: image.PropertyKey
+    ) => {
+      try {
+        let result = await imageSourceApi.getImageProperty(key);
+        let result2 = await imageSourceApi2.getImageProperty(key);
+        console.info(testTag + " Properties_jpg: " + result);
+        console.info(testTag + " Properties_webp: " + result2);
+        const isEqual = result === result2;
+        console.info(testTag + " properties comparison result: " + isEqual);
+        return isEqual;
+      } catch (error) {
+        console.info(testTag + " pack to file error: " + error);
+        expect().assertFail();
+        return false;
+      }
+    }
+
+    const testPackToFileAndModify = async (
+      testTag: string,
+      key: image.PropertyKey,
+      modifyData: string,
+      compareData: string,
+      fileName: string,
+      compareFileName: string,
+      packingOption: image.PackingOption
+    ) => {
+      let imageSourceApi: image.ImageSource | undefined = undefined;
+      try {
+        let checkResult = await testModifyPromise(testTag, key, modifyData, compareData, fileName,"fd");
+        expect(checkResult).assertTrue();
+        console.info(testTag + " get image property IMAGE_LENGTH after modify: " + checkResult);
+
+        imageSourceApi = await getImageSource(fileName, "buffer");
+        await getFd(compareFileName);
+        await testPackToFile(testTag, imageSourceApi, fdNumber, packingOption);
+        fs.closeSync(fdNumber);
+        if (imageSourceApi != undefined) {
+          await imageSourceApi.release();
+        }
+
+        let checkGetResult = await testGetPromise(testTag, key, compareData, compareFileName,"fd");
+        console.info(testTag + " get image property IMAGE_LENGTH from packed heic: " + checkGetResult);
+        return checkGetResult;
+      } catch (error) {
+        console.info(testTag + " test failed with error: " + error);
+        return false;
+      }
+    }
+
+    const testMateDataGetImageProperties = async (
+      testTag: string,
+      fileName: string,
+      properties: Record<string, string|null>,
+      metadataType: image.MetadataType,
+      isGetAll: Boolean
+    ) => {
+      let imageSourceApi: image.ImageSource | undefined = undefined;
+      let checkGetResult = false;
+      try {
+        imageSourceApi = await getImageSource(fileName, "buffer");
+        let pixelMap = await imageSourceApi.createPixelMap();
+        let picture: image.Picture = await image.createPicture(pixelMap);
+
+        let metadata = await picture.getMetadata(metadataType);
+        console.info(testTag + " getMetadata success. metadata: " + JSON.stringify(metadata));
+
+        if (isGetAll) {
+          let propertiesKey = Object.keys(properties);
+          let data = await metadata.getProperties(propertiesKey);
+          console.info(testTag + " getProperties() success. data: " + JSON.stringify(data));
+          propertiesKey.forEach(async (key) => {
+            console.info(testTag + "getProperty of key: " + key);
+            console.info(testTag + "properties[key]: " + properties[key]);
+            console.info(testTag + "data[key]: " + data[key]);
+            checkGetResult = properties[key] == data[key];
+            console.info(testTag + "checkGetResult: " + checkGetResult);
+          });
+        } else {
+          let propertiesAllKey = Object.keys(properties);
+          let allData = await metadata.getAllProperties();
+          console.info(testTag + " getAllProperties success. allData:  " + JSON.stringify(allData));
+          propertiesAllKey.forEach(async (key) => {
+            console.info(testTag + "getAllProperties of key: " + key);
+            console.info(testTag + "properties[key]: " + properties[key]);
+            console.info(testTag + "data[key]: " + allData[key]);
+            checkGetResult = properties[key] == allData[key];
+            console.info(testTag + "checkGetResult: " + checkGetResult);
+          });
+        }
+        await imageSourceApi?.release();
+        await pixelMap?.release();
+        await picture?.release();
+
+        return checkGetResult;
+      } catch (error) {
+        console.info(testTag + " test failed with error: " + error);
+        return checkGetResult;
+      }
     }
 
     /**
@@ -23121,8 +23251,393 @@ export default function imageExifGetModifyTest() {
         done();
     }
     })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_0100
+     * @tc.name      : SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_0100
+     * @tc.desc      : getImagePropertySync('ImageLength', property)_promise
+     *                 1.create imageSource
+     *                 2.getImagePropertySync('ImageLength')_promise
+     *                 3.the getImagePropertySync value is the expected value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_0100'
+      const key = image.PropertyKey.IMAGE_LENGTH
+      const compareData: string = `4608`;
+      let checkResult = false;
+      try {
+        const imageSourceApi = await getImageSource("test_exif_getsync_webp.webp", 'fd')
+        if (imageSourceApi == undefined) {
+          console.info(testTag + " create image source failed");
+        } else {
+          const result = await imageSourceApi.getImagePropertySync(key)
+          console.info(testTag + "getImagePropertySync result: " + result);
+          console.info(testTag + "getImagePropertySync compareData: " + compareData);
+          checkResult = compareData == result
+          if(!checkResult){
+            console.info(testTag + " getImagePropertySync failed. key:" + key + ", compareData: " + compareData +
+              ", result: " + result);
+          }
+          imageSourceApi.release();
+        }
+        expect(checkResult).assertTrue()
+        done()
+      } catch (e) {
+        console.info(testTag + "getImagePropertySync error IMAGE_LENGTH : " + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_READ_ONLY_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_READ_ONLY_ERROR_0100
+     * @tc.desc      : Test modifying read-only GIFLoopCount property should return expected error code
+     *                 1.Create ImageSource from WEBP file
+     *                 2.Attempt to modify GIFLoopCount property (read-only)
+     *                 3.Verify expected error code 62980135 is returned
+     *                 4.Confirm original property value remains unchanged
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 3
+     */
+    it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_READ_ONLY_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_READ_ONLY_ERROR_0100';
+      const key = image.PropertyKey.WIND_SNAPSHOT_MODE
+      const modifyData: string = `1`;
+      const compareData: string = "default_exif_value";
+      const expectedModifyErrorCode = 62980146
+      try {
+        let result: boolean = true
+        const checkResult = await testModifyPromiseError(testTag, key,
+            modifyData, compareData, "test_exif_v2.webp", expectedModifyErrorCode, "fd");
+          result = result && checkResult
+        expect(result).assertTrue()
+        done()
+      } catch (e) {
+        hilog.info(0x0000, testTag, `modifyImageProperty promise error BitsPerSample ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIESENHANCED_WEBP_0100
+     * @tc.name        SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIESENHANCED_WEBP_0100
+     * @tc.desc        Test batch modification of multiple EXIF properties using modifyImagePropertiesEnhanced
+     *                 1.Create ImageSource from WEBP file
+     *                 2.Use modifyImagePropertiesEnhanced to batch modify multiple properties
+     *                 3.Verify ImageWidth, ImageLength, and Orientation properties are correctly modified
+     *                 4.Confirm properties persistence after modification
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it("SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIESENHANCED_WEBP_0100", Level.LEVEL0, async (done: ()=> void) => {
+      const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIESENHANCED_WEBP_0100';
+      const imageSourceApi = await getImageSource("test_exif_v2.webp", "fd");
+      try {
+        let modifyRecords: Record<string, string | null> = {
+          "ImageWidth": "1024",
+          "ImageLength": "2048",
+          "Orientation": "Top-left",
+        } as Record<string, string | null>;
+        await imageSourceApi.modifyImagePropertiesEnhanced(modifyRecords);
+        const imageSourceApiGet = await getImageSource("test_exif_v2.webp", "fd");
+        const data = await imageSourceApiGet.getImageProperties([
+          image.PropertyKey.IMAGE_WIDTH,
+          image.PropertyKey.IMAGE_LENGTH,
+          image.PropertyKey.ORIENTATION
+        ])
+        let ret = data[image.PropertyKey.IMAGE_WIDTH]  == '1024' &&
+                  data[image.PropertyKey.IMAGE_LENGTH] == '2048' &&
+                  data[image.PropertyKey.ORIENTATION]  == 'Top-left';
+        hilog.info(0x0000, testTag, `Partial modification result verification: ${ret}`);
+        await imageSourceApi?.release();
+        await imageSourceApiGet?.release();
+        expect(ret).assertTrue();
+        done();
+      } catch (error) {
+        await imageSourceApi?.release();
+        hilog.info(0x0000, testTag, `modifyImagePropertiesEnhanced error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    });
 	
+    /**
+     * @tc.number      SUB_MULTIMEDIA_PACKTOFILE_JPG_TO_WEBP_PROPERTIES_0100
+     * @tc.name        SUB_MULTIMEDIA_PACKTOFILE_JPG_TO_WEBP_PROPERTIES_0100
+     * @tc.desc        packToFile from JPG to WebP with properties preservation test
+     *                 1.create imageSource from jpg file
+     *                 2.pack to webp file with needsPackProperties=true
+     *                 3.create imageSource from packed webp file
+     *                 4.compare IMAGE_LENGTH property between original jpg and packed webp
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_PACKTOFILE_JPG_TO_WEBP_PROPERTIES_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_PACKTOFILE_JPG_TO_WEBP_PROPERTIES_0100'
+      let imageSourceApi: image.ImageSource | undefined = undefined;
+      let imageSourceApi2: image.ImageSource | undefined = undefined;
+      const key = image.PropertyKey.IMAGE_LENGTH
+      let packingOption: image.PackingOption = {
+        format: "image/webp",
+        quality: 99,
+        needsPackProperties: true
+      };
+      try {
+        imageSourceApi = await getImageSource("test_exif_v2.jpg", "buffer");
+        if (imageSourceApi == undefined) {
+          console.info(testTag + " create image source failed");
+          expect().assertFail();
+          return;
+        }
+        await getFd("test_exif_jpg_v2.webp");
+        await testPackToFile(testTag, imageSourceApi, fdNumber, packingOption);
+        imageSourceApi2 = await getImageSource("test_exif_jpg_v2.webp", "buffer");
+        let checkResult = await testCheckPropertie(testTag, imageSourceApi, imageSourceApi2, key);
+        fs.closeSync(fdNumber);
+        await imageSourceApi.release();
+        await imageSourceApi2.release();
+        expect(checkResult).assertTrue();
+      } catch (error) {
+        console.info(testTag + " test failed with error: " + error);
+        expect().assertFail();
+      }
+      done();
+    })
 	
+    /**
+     * @tc.number      SUB_MULTIMEDIA_PACKTOFILE_PNG_TO_WEBP_PROPERTIES_0200
+     * @tc.name        SUB_MULTIMEDIA_PACKTOFILE_PNG_TO_WEBP_PROPERTIES_0200
+     * @tc.desc        packToFile from PNG to WebP with properties preservation test
+     *                 1.create imageSource from PNG file
+     *                 2.pack to webp file with needsPackProperties=true
+     *                 3.create imageSource from packed webp file
+     *                 4.compare IMAGE_LENGTH property between original PNG and packed webp
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_PACKTOFILE_PNG_TO_WEBP_PROPERTIES_0200', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_PACKTOFILE_PNG_TO_WEBP_PROPERTIES_0200'
+      let imageSourceApi: image.ImageSource | undefined = undefined;
+      let imageSourceApi2: image.ImageSource | undefined = undefined;
+      const key = image.PropertyKey.IMAGE_LENGTH
+      let packingOption: image.PackingOption = {
+        format: "image/webp",
+        quality: 99,
+        needsPackProperties: true
+      };
+      try {
+        imageSourceApi = await getImageSource("test_exif_v2.png", "buffer");
+        if (imageSourceApi == undefined) {
+          console.info(testTag + " create image source failed");
+          expect().assertFail();
+          return;
+        }
+        await getFd("test_exif_png_v2.webp");
+        await testPackToFile(testTag, imageSourceApi, fdNumber, packingOption);
+        imageSourceApi2 = await getImageSource("test_exif_png_v2.webp", "buffer");
+        let checkResult = await testCheckPropertie(testTag, imageSourceApi, imageSourceApi2, key);
+        fs.closeSync(fdNumber);
+        await imageSourceApi.release();
+        await imageSourceApi2.release();
+        expect(checkResult).assertTrue();
+      } catch (error) {
+        console.info(testTag + " test failed with error: " + error);
+        expect().assertFail();
+      }
+      done();
+    })
+	
+    /**
+     * @tc.number      SUB_MULTIMEDIA_PACKTOFILE_HEIC_TO_WEBP_PROPERTIES_0300
+     * @tc.name        SUB_MULTIMEDIA_PACKTOFILE_HEIC_TO_WEBP_PROPERTIES_0300
+     * @tc.desc        packToFile from heic to WebP with properties preservation test
+     *                 1.create imageSource from heic file
+     *                 2.pack to webp file with needsPackProperties=true
+     *                 3.create imageSource from packed webp file
+     *                 4.compare IMAGE_LENGTH property between original heic and packed webp
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_PACKTOFILE_HEIC_TO_WEBP_PROPERTIES_0300', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_PACKTOFILE_HEIC_TO_WEBP_PROPERTIES_0300'
+      let imageSourceApi: image.ImageSource | undefined = undefined;
+      let imageSourceApi2: image.ImageSource | undefined = undefined;
+      const key = image.PropertyKey.IMAGE_LENGTH
+      let packingOption: image.PackingOption = {
+        format: "image/webp",
+        quality: 99,
+        needsPackProperties: true
+      };
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(testTag + "device is not support heif encode");
+        done();
+      } else {
+        try {
+          imageSourceApi = await getImageSource("test_exif_v2.heic", "buffer");
+          if (imageSourceApi == undefined) {
+            console.info(testTag + " create image source failed");
+            expect().assertFail();
+            return;
+          }
+          await getFd("test_exif_heic_v2.webp");
+          await testPackToFile(testTag, imageSourceApi, fdNumber, packingOption);
+          imageSourceApi2 = await getImageSource("test_exif_heic_v2.webp", "buffer");
+          let checkResult = await testCheckPropertie(testTag, imageSourceApi, imageSourceApi2, key);
+          fs.closeSync(fdNumber);
+          await imageSourceApi.release();
+          await imageSourceApi2.release();
+          expect(checkResult).assertTrue();
+        } catch (error) {
+          console.info(testTag + " test failed with error: " + error);
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0100
+     * @tc.name        SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0100
+     * @tc.desc        modifyImageProperty and packToFile property persistence test
+     *                 1.create imageSource from webp file
+     *                 2.modify ORIENTATION property value to "Top-left"
+     *                 3.verify the modification is successful
+     *                 4.pack modified imageSource to jpg file with needsPackProperties=true
+     *                 5.verify the modified property value persists in packed jpg file
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0100'
+      const key = image.PropertyKey.ORIENTATION
+      const modifyData: string = `1`;
+      const compareData: string = `Top-left`;
+      let packingOption: image.PackingOption = {
+        format: "image/jpeg",
+        quality: 99,
+        needsPackProperties: true
+      };
+      let checkGetResult = await testPackToFileAndModify(testTag, key, modifyData, compareData, `test_exif_v2.webp`,
+          `test_exif_new_heic_v2.jpeg`, packingOption);
+      expect(checkGetResult).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0200
+     * @tc.name        SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0200
+     * @tc.desc        modifyImageProperty and packToFile property persistence test
+     *                 1.create imageSource from webp file
+     *                 2.modify IMAGE_WIDTH property value to "800"
+     *                 3.verify the modification is successful
+     *                 4.pack modified imageSource to png file with needsPackProperties=true
+     *                 5.verify the modified property value persists in packed png file
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0200', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0200'
+      const key = image.PropertyKey.IMAGE_WIDTH
+      const modifyData: string = `800`;
+      const compareData: string = `800`;
+      let packingOption: image.PackingOption = {
+        format: "image/png",
+        quality: 99,
+        needsPackProperties: true
+      };
+      let checkGetResult = await testPackToFileAndModify(testTag, key, modifyData, compareData, `test_exif_v2.webp`,
+          `test_exif_new_heic_v2.png`, packingOption);
+      expect(checkGetResult).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0300
+     * @tc.name        SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0300
+     * @tc.desc        modifyImageProperty and packToFile property persistence test
+     *                 1.create imageSource from webp file
+     *                 2.modify IMAGE_LENGTH property value to "500"
+     *                 3.verify the modification is successful
+     *                 4.pack modified imageSource to heic file with needsPackProperties=true
+     *                 5.verify the modified property value persists in packed heic file
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0300', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_PACKTOFILE_MODIFYPROPERTY_PERSIST_0300'
+      const key = image.PropertyKey.IMAGE_LENGTH
+      const modifyData: string = `500`;
+      const compareData: string = `500`;
+      let packingOption: image.PackingOption = {
+        format: "image/heic",
+        quality: 99,
+        needsPackProperties: true
+      };
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(testTag + "device is not support heif encode");
+        done();
+      } else {
+        let checkGetResult = await testPackToFileAndModify(testTag, key, modifyData, compareData, `test_exif_v2.webp`,
+          `test_exif_new_heic_v2.heic`, packingOption);
+        expect(checkGetResult).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0100
+     * @tc.desc        Test getting EXIF metadata properties from WEBP image using getProperties() method
+     *                 1.Create ImageSource from WEBP file
+     *                 2.Create Picture object from PixelMap
+     *                 3.Get EXIF metadata and call getProperties()
+     *                 4.Verify ImageWidth and ImageLength properties
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0100'
+      const properties: Record<string, string|null> = {"ImageWidth": "3456", "ImageLength": "4608"};
+      let checkGetResult = await testMateDataGetImageProperties(testTag, `test_exif_matedata_webp.webp`, properties,
+        image.MetadataType.EXIF_METADATA, false);
+      expect(checkGetResult).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0200
+     * @tc.desc        Test getting EXIF metadata properties from WEBP image using getAllProperties() method
+     *                 1.Create ImageSource from WEBP file
+     *                 2.Create Picture object from PixelMap
+     *                 3.Get EXIF metadata and call getAllProperties()
+     *                 4.Verify ImageWidth and ImageLength properties
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0200', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_GETIMAGEPROPERTIES_WEBP_0200'
+      const properties: Record<string, string|null> = {"ImageWidth": "3456", "ImageLength": "4608"};
+      let checkGetResult = await testMateDataGetImageProperties(testTag, `test_exif_matedata_webp.webp`, properties,
+        image.MetadataType.EXIF_METADATA, true);
+      expect(checkGetResult).assertTrue();
+      done();
+    })
 
   })
 }

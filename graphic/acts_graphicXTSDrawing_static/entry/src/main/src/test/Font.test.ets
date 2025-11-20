@@ -207,7 +207,7 @@ export default function fontTest() {
       const msg = 'testFontGetMetricsNormalStatic';
       try {
         const font = new drawing.Font();
-        let metrics = font.getMetrics();
+        let metrics = font.getMetrics() as drawing.FontMetrics;
         console.info(msg + ' getMetrics successed' + JSON.stringify(metrics));
         // expect(metrics.flags !== null).assertTrue();
         expect(metrics.top !== null).assertTrue();
@@ -244,7 +244,7 @@ export default function fontTest() {
         try {
           const font = new drawing.Font();
           font.setSize(10 + i);
-          const result = font.getMetrics();
+          const result = font.getMetrics() as drawing.FontMetrics;
           expect(!!result).assertTrue();
           console.info(`${msg} getMetrics succeeded for font ${i}`);
         } catch (e: BusinessError) {

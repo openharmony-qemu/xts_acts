@@ -81,13 +81,15 @@ export default function geolocationTest_counterr(){
             done();
         })  
     
-        /**
-         * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0100
-         * @tc.name Test getCountryCode
-         * @tc.desc Incorrect input parameter to obtain the country code information.
-         * @tc.type Function
-         * @tc.level Level 2
-         */
+         /**
+          * @generated.time 2025-11-09 20:53:27
+          * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0100
+          * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0100
+          * @tc.desc   Incorrect input parameter to obtain the country code information.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_LocationSystem_CountryCodeErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 geolocationm.getCountryCode("test",(err,data) => {

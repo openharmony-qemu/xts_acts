@@ -37,9 +37,10 @@ struct SwipeGestureTest {
           .height('60%')
           .width('60%')
       }
-      .height('350vp')
-      .width('350vp')
-      .padding(20)
+      .height('35%')
+      .width('90%')
+      .padding('5%')
+      .margin('5%')
       .rotate({ x: 0, y: 0, z: 1, angle: this.X })
       .gesture(
         SwipeGesture({ fingers: 1, direction: SwipeDirection.Vertical })
@@ -49,14 +50,11 @@ struct SwipeGestureTest {
             this.Vue = true;
           })
       )
-
-      Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-        Text("滑动手势速度 ： " + this.Y)
-        Text("滑动手势角度 ： " + this.X)
-      }
-      .height('15%')
-      .width('100%')
-      .padding(20)
+      Text("滑动手势速度 ： " + this.Y).fontColor(Color.Black)
+      Text("滑动手势角度 ： " + this.X).fontColor(Color.Black)
+        .height('15%')
+        .width('100%')
+        .padding(20)
     }
     .width('100%')
     .height('80%')
@@ -75,7 +73,7 @@ struct SwipeGestureTest {
         Y: $Y,
         name: $name,
         Vue: $Vue,
-      }).margin({ bottom: '20vp' })
+      })
     }
     .width('100%')
     .height('100%')
@@ -88,4 +86,3 @@ struct SwipeGestureTest {
     })
   }
 }
-

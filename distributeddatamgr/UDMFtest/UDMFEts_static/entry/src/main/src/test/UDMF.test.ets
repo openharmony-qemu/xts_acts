@@ -26,13 +26,14 @@ let resProgressInfo: unifiedDataChannel.ProgressInfo;
 export default function UDMFApiTest() {
   describe("UDMFApiTest", (): void => {
     /**
-    * @tc.name        SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100
-    * @tc.number      UnifiedDataTest01
-    * @tc.desc        predicates orderByAsc normal test
-    * @tc.size        MediumTest
-    * @tc.type        Function
-    * @tc.level       Level 1
-    */
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100
+     * @tc.number UnifiedDataTest01
+     * @tc.desc   predicates orderByAsc normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100 start');
       let unifiedRecord = new unifiedDataChannel.UnifiedRecord();
@@ -44,12 +45,13 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200
-     * @tc.number      UnifiedDataTest02
-     * @tc.desc        predicates orderByAsc normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200
+     * @tc.number UnifiedDataTest02
+     * @tc.desc   predicates orderByAsc normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200 start');
@@ -60,12 +62,13 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300
-     * @tc.number      UnifiedDataTest03
-     * @tc.desc        predicates orderByAsc normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300
+     * @tc.number UnifiedDataTest03
+     * @tc.desc   predicates orderByAsc normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300 start');
@@ -78,12 +81,13 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @tc.number      UDMFApiTest01
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001
-     * @tc.desc        getUniformDataTypeByFilenameExtension JPEG test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001
+     * @tc.number UDMFApiTest01
+     * @tc.desc   getUniformDataTypeByFilenameExtension JPEG test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001 start');
@@ -109,12 +113,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001 end');
     })
     /**
-     * @tc.number      UDMFApiTest02
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002
-     * @tc.desc        getUniformDataTypeByFilenameExtension HTML test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002
+     * @tc.number UDMFApiTest02
+     * @tc.desc   getUniformDataTypeByFilenameExtension HTML test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002 start');
@@ -136,12 +141,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002 end');
     })
     /**
-     * @tc.number      UDMFApiTest03
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003
-     * @tc.desc        getUniformDataTypeByFilenameExtension PLAIN_TEXT test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003
+     * @tc.number UDMFApiTest03
+     * @tc.desc   getUniformDataTypeByFilenameExtension PLAIN_TEXT test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003 start');
@@ -163,12 +169,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003 end');
     })
     /**
-     * @tc.number      UDMFApiTest04
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004
-     * @tc.desc        getUniformDataTypeByFilenameExtension PNG test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004
+     * @tc.number UDMFApiTest04
+     * @tc.desc   getUniformDataTypeByFilenameExtension PNG test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004 start');
@@ -186,12 +193,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004 end');
     })
     /**
-     * @tc.number      UDMFApiTest05
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005
-     * @tc.desc        getUniformDataTypeByFilenameExtension MPEG4 test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005
+     * @tc.number UDMFApiTest05
+     * @tc.desc   getUniformDataTypeByFilenameExtension MPEG4 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005 start');
@@ -217,12 +225,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005 end');
     })
     /**
-     * @tc.number      UDMFApiTest06
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006
-     * @tc.desc        getUniformDataTypeByFilenameExtension PDF test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006
+     * @tc.number UDMFApiTest06
+     * @tc.desc   getUniformDataTypeByFilenameExtension PDF test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006 start');
@@ -240,12 +249,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006 end');
     })
     /**
-     * @tc.number      UDMFApiTest07
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007
-     * @tc.desc        getUniformDataTypeByFilenameExtension "" test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007
+     * @tc.number UDMFApiTest07
+     * @tc.desc   getUniformDataTypeByFilenameExtension "" test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007 start');
@@ -261,12 +271,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007 end');
     })
     /**
-     * @tc.number      UDMFApiTest08
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008
-     * @tc.desc        getType test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008
+     * @tc.number UDMFApiTest08
+     * @tc.desc   getType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008 start');
@@ -309,12 +320,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008 end');
     })
     /**
-     * @tc.number      UDMFApiTest09
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009
-     * @tc.desc        getRecords test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009
+     * @tc.number UDMFApiTest09
+     * @tc.desc   getRecords test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009 start');
@@ -416,12 +428,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009 end');
     })
     /**
-     * @tc.number      UDMFApiTest10
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010
-     * @tc.desc        getRecords test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010
+     * @tc.number UDMFApiTest10
+     * @tc.desc   getRecords test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010 start');
@@ -498,12 +511,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010 end');
     })
     /**
-     * @tc.number      UDMFApiTest11
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011
-     * @tc.desc        getRecords test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011
+     * @tc.number UDMFApiTest11
+     * @tc.desc   getRecords test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011 start');
@@ -593,12 +607,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011 end');
     })
     /**
-     * @tc.number      UDMFApiTest12
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012
-     * @tc.desc        getRecords test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012
+     * @tc.number UDMFApiTest12
+     * @tc.desc   getRecords test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012 start');
@@ -700,12 +715,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012 end');
     })
     /**
-     * @tc.number      UDMFApiTest13
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013
-     * @tc.desc        insertData queryData callback test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013
+     * @tc.number UDMFApiTest13
+     * @tc.desc   insertData queryData callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013 start');
@@ -748,12 +764,13 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.number      UDMFApiTest14
-     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014
-     * @tc.desc        insertData queryData promise test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014
+     * @tc.number UDMFApiTest14
+     * @tc.desc   insertData queryData promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013 start');
@@ -793,12 +810,13 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014 end');
     })
     /**
-     * @tc.number     UDMFApiTest16
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600
+     * @tc.number UDMFApiTest16
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600 start');
@@ -821,12 +839,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600 end");
     })
     /**
-     * @tc.number     UDMFApiTest17
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700
+     * @tc.number UDMFApiTest17
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700 start');
@@ -849,12 +868,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700 end");
     })
     /**
-     * @tc.number     UDMFApiTest18
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800
+     * @tc.number UDMFApiTest18
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800 start');
@@ -877,12 +897,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800 end");
     })
     /**
-     * @tc.number     UDMFApiTest19
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900
+     * @tc.number UDMFApiTest19
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900 start');
@@ -905,12 +926,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900 end");
     })
     /**
-     * @tc.number     UDMFApiTest20
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2000
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2000
+     * @tc.number UDMFApiTest20
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2000 start');
@@ -934,12 +956,13 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.number     UDMFApiTest21
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100
+     * @tc.number UDMFApiTest21
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100 start');
@@ -962,12 +985,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100 end");
     })
     /**
-     * @tc.number     UDMFApiTest22
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200
+     * @tc.number UDMFApiTest22
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200 start');
@@ -992,13 +1016,14 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200 end");
     })
     /**
-      * @tc.number     UDMFApiTest23
-      * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2300
-      * @tc.desc       Test UDMF creating a unifieddata with a text record.
-      * @tc.size       MEDIUM
-      * @tc.type       Function
-      * @tc.level      Level 3
-      */
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2300
+     * @tc.number UDMFApiTest23
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2300 start');
       const progressInfo: unifiedDataChannel.ProgressInfo = {
@@ -1021,12 +1046,13 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.number     UDMFApiTest24
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400
+     * @tc.number UDMFApiTest24
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400 start');
@@ -1049,12 +1075,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400 end");
     })
     /**
-     * @tc.number     UDMFApiTest25
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500
+     * @tc.number UDMFApiTest25
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500 start');
@@ -1079,12 +1106,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500 end");
     })
     /**
-     * @tc.number     UDMFApiTest26
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600
+     * @tc.number UDMFApiTest26
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600 start');
@@ -1107,12 +1135,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600 end");
     })
     /**
-     * @tc.number     UDMFApiTest27
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700
+     * @tc.number UDMFApiTest27
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700 start');
@@ -1135,12 +1164,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700 end");
     })
     /**
-     * @tc.number     UDMFApiTest28
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2800
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2800
+     * @tc.number UDMFApiTest28
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2800 start');
@@ -1164,12 +1194,13 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.number     UDMFApiTest29
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900
+     * @tc.number UDMFApiTest29
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900 start');
@@ -1192,12 +1223,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900 end");
     })
     /**
-     * @tc.number     UDMFApiTest30
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000
+     * @tc.number UDMFApiTest30
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000 start');
@@ -1220,12 +1252,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000 end");
     })
     /**
-     * @tc.number     UDMFApiTest31
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3100
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3100
+     * @tc.number UDMFApiTest31
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3100 start');
@@ -1249,12 +1282,13 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.number     UDMFApiTest32
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200
+     * @tc.number UDMFApiTest32
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200 start');
@@ -1279,12 +1313,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200 end");
     })
     /**
-     * @tc.number     UDMFApiTest33
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300
+     * @tc.number UDMFApiTest33
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300 start');
@@ -1309,12 +1344,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300 end");
     })
     /**
-     * @tc.number     UDMFApiTest34
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400
+     * @tc.number UDMFApiTest34
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400 start');
@@ -1339,12 +1375,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400 end");
     })
     /**
-     * @tc.number     UDMFApiTest35
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500
+     * @tc.number UDMFApiTest35
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500 start');
@@ -1369,12 +1406,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500 end");
     })
     /**
-     * @tc.number     UDMFApiTest36
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600
+     * @tc.number UDMFApiTest36
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600 start');
@@ -1399,12 +1437,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600 end");
     })
     /**
-     * @tc.number     UDMFApiTest37
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700
+     * @tc.number UDMFApiTest37
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700 start');
@@ -1429,12 +1468,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700 end");
     })
     /**
-     * @tc.number     UDMFApiTest38
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800
+     * @tc.number UDMFApiTest38
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800 start');
@@ -1459,12 +1499,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800 end");
     })
     /**
-     * @tc.number     UDMFApiTest39
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3900
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3900
+     * @tc.number UDMFApiTest39
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3900 start');
@@ -1490,12 +1531,13 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.number     UDMFApiTest40
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000
+     * @tc.number UDMFApiTest40
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000 start');
@@ -1519,12 +1561,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000 end");
     })
     /**
-     * @tc.number     UDMFApiTest41
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100
+     * @tc.number UDMFApiTest41
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100 start');
@@ -1548,12 +1591,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100 end");
     })
     /**
-     * @tc.number     UDMFApiTest42
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200
+     * @tc.number UDMFApiTest42
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200 start');
@@ -1577,12 +1621,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200 end");
     })
     /**
-     * @tc.number     UDMFApiTest43
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300
+     * @tc.number UDMFApiTest43
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300 start');
@@ -1606,12 +1651,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300 end");
     })
     /**
-     * @tc.number     UDMFApiTest44
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400
+     * @tc.number UDMFApiTest44
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400 start');
@@ -1635,12 +1681,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400 end");
     })
     /**
-     * @tc.number     UDMFApiTest45
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500
+     * @tc.number UDMFApiTest45
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500 start');
@@ -1664,12 +1711,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500 end");
     })
     /**
-     * @tc.number     UDMFApiTest46
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600
+     * @tc.number UDMFApiTest46
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600 start');
@@ -1693,12 +1741,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600 end");
     })
     /**
-     * @tc.number     UDMFApiTest47
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4700
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4700
+     * @tc.number UDMFApiTest47
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4700 start');
@@ -1723,13 +1772,14 @@ export default function UDMFApiTest() {
     })
 
     /**
-    * @tc.number     UDMFApiTest48
-    * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800
-    * @tc.desc       Test UDMF creating a unifieddata with a text record.
-    * @tc.size       MEDIUM
-    * @tc.type       Function
-    * @tc.level      Level 3
-    */
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800
+     * @tc.number UDMFApiTest48
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800 start');
       const progressInfo: unifiedDataChannel.ProgressInfo = {
@@ -1755,12 +1805,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800 end");
     })
     /**
-     * @tc.number     UDMFApiTest49
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900
+     * @tc.number UDMFApiTest49
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900 start');
@@ -1787,12 +1838,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900 end");
     })
     /**
-     * @tc.number     UDMFApiTest50
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000
+     * @tc.number UDMFApiTest50
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000 start');
@@ -1819,12 +1871,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000 end");
     })
     /**
-     * @tc.number     UDMFApiTest51
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100
+     * @tc.number UDMFApiTest51
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100 start');
@@ -1851,12 +1904,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100 end");
     })
     /**
-     * @tc.number     UDMFApiTest52
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200
+     * @tc.number UDMFApiTest52
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200 start');
@@ -1883,12 +1937,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200 end");
     })
     /**
-     * @tc.number     UDMFApiTest53
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300
+     * @tc.number UDMFApiTest53
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300 start');
@@ -1915,12 +1970,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300 end");
     })
     /**
-     * @tc.number     UDMFApiTest54
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400
+     * @tc.number UDMFApiTest54
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400 start');
@@ -1947,12 +2003,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400 end");
     })
     /**
-     * @tc.number     UDMFApiTest55
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5500
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5500
+     * @tc.number UDMFApiTest55
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5500 start');
@@ -1981,13 +2038,14 @@ export default function UDMFApiTest() {
 
 
     /**
-    * @tc.number     UDMFApiTest56
-    * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600
-    * @tc.desc       Test UDMF creating a unifieddata with a text record.
-    * @tc.size       MEDIUM
-    * @tc.type       Function
-    * @tc.level      Level 3
-    */
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600
+     * @tc.number UDMFApiTest56
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600 start');
       const progressInfo: unifiedDataChannel.ProgressInfo = {
@@ -2013,12 +2071,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600 end");
     })
     /**
-     * @tc.number     UDMFApiTest57
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700
+     * @tc.number UDMFApiTest57
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700 start');
@@ -2045,12 +2104,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700 end");
     })
     /**
-     * @tc.number     UDMFApiTest58
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800
+     * @tc.number UDMFApiTest58
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800 start');
@@ -2077,12 +2137,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800 end");
     })
     /**
-     * @tc.number     UDMFApiTest59
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900
+     * @tc.number UDMFApiTest59
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900 start');
@@ -2109,12 +2170,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900 end");
     })
     /**
-     * @tc.number     UDMFApiTest60
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000
+     * @tc.number UDMFApiTest60
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000 start');
@@ -2141,12 +2203,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000 end");
     })
     /**
-     * @tc.number     UDMFApiTest61
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100
+     * @tc.number UDMFApiTest61
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100 start');
@@ -2173,12 +2236,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100 end");
     })
     /**
-     * @tc.number     UDMFApiTest62
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200
+     * @tc.number UDMFApiTest62
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200 start');
@@ -2205,12 +2269,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200 end");
     })
     /**
-     * @tc.number     UDMFApiTest63
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300
+     * @tc.number UDMFApiTest63
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300 start');
@@ -2237,12 +2302,13 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300 end");
     })
     /**
-     * @tc.number     UDMFApiTest64
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6400
-     * @tc.desc       Test UDMF creating a unifieddata with a text record.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6400
+     * @tc.number UDMFApiTest64
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6400 start');

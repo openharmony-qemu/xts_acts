@@ -82,9 +82,13 @@ export default function SerialSingleTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostMgr_SerialSingle_read_ErrCode_0100
-     * @tc.name     testRead001
-     * @tc.desc     read timeout.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRead001
+     * @tc.number SUB_USB_HostMgr_SerialSingle_read_ErrCode_0100
+     * @tc.desc   read timeout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testRead001 start');
@@ -108,9 +112,13 @@ export default function SerialSingleTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostMgr_SerialSingle_readSync_ErrCode_0100
-     * @tc.name     testReadSync001
-     * @tc.desc     read timeout.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testReadSync001
+     * @tc.number SUB_USB_HostMgr_SerialSingle_readSync_ErrCode_0100
+     * @tc.desc   read timeout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testReadSync001 start');

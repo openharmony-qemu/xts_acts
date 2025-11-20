@@ -54,9 +54,13 @@ export default function CalendarIni18nTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0100
-     * @tc.name i18n_calendar_test_static_0100
-     * @tc.desc test isWeekend interface
+     * @tc.desc   test isWeekend interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0100 ' + 'start');
@@ -67,9 +71,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0200
-     * @tc.name i18n_calendar_test_static_0200
-     * @tc.desc test getCalendar interface
+     * @tc.desc   test getCalendar interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_0200', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0200 ' + 'start');
@@ -92,9 +100,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0300
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0300
-     * @tc.name i18n_calendar_test_static_0300
-     * @tc.desc test getCalendar interface with zh param
+     * @tc.desc   test getCalendar interface with zh param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_0300', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0300 ' + 'start');
@@ -105,9 +117,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0400
-     * @tc.name i18n_calendar_test_static_0400
-     * @tc.desc test getCalendar interface with zh param
+     * @tc.desc   test getCalendar interface with zh param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_0400', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0400 ' + 'start');
@@ -118,10 +134,14 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0500
-    * @tc.name    i18n_calendar_test_static_0500
-    * @tc.desc    get the getDisplayName value, test getDisplayName interface
-    */
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0500
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0500
+     * @tc.desc   get the getDisplayName value, test getDisplayName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_static_0500', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0500 ' + 'start');
       let calendar = i18n.getCalendar('zh');
@@ -131,9 +151,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0600
-     * @tc.name    i18n_calendar_test_static_0600
-     * @tc.desc    get the getDisplayName value, test getDisplayName interface with en param
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0600
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0600
+     * @tc.desc   get the getDisplayName value, test getDisplayName interface with en param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_0600', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0600 ' + 'start');
@@ -144,9 +168,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0700
-     * @tc.name    i18n_calendar_test_static_0700
-     * @tc.desc    test get interface, get the get value
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0700
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0700
+     * @tc.desc   test get interface, get the get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_0700', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0700 ' + 'start');
@@ -157,9 +185,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0800
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0800
-     * @tc.name i18n_calendar_test_static_0800
-     * @tc.desc test get interface with month param
+     * @tc.desc   test get interface with month param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_0800', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0800 ' + 'start');
@@ -172,9 +204,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0900
-     * @tc.name    i18n_calendar_test_static_0900
-     * @tc.desc    get the get value, test get interface with day_of_year param
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_0900
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0900
+     * @tc.desc   get the get value, test get interface with day_of_year param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_0900', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_0900 ' + 'start');
@@ -185,9 +221,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1000
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1000
-     * @tc.name i18n_calendar_test_static_1000
-     * @tc.desc gtest setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek interface
+     * @tc.desc   gtest setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_1000', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1000 ' + 'start');
@@ -199,9 +239,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1100
-     * @tc.name i18n_calendar_test_static_1100
-     * @tc.desc test setMinimalDaysInFirstWeek with 0 param and getMinimalDaysInFirstWeek interface
+     * @tc.desc   test setMinimalDaysInFirstWeek with 0 param and getMinimalDaysInFirstWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_1100', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1100 ' + 'start');
@@ -213,9 +257,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1200
-     * @tc.name i18n_calendar_test_static_1200
-     * @tc.desc test setMinimalDaysInFirstWeek with 8 param and getMinimalDaysInFirstWeek interface
+     * @tc.desc   test setMinimalDaysInFirstWeek with 8 param and getMinimalDaysInFirstWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_1200', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1200 ' + 'start');
@@ -227,9 +275,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1300
      * @tc.number i18n_calendar_test_static_1300
-     * @tc.name i18n_calendar_test_static_1300
-     * @tc.desc setMinimalDaysInFirstWeek with 7 param and getMinimalDaysInFirstWeek interface
+     * @tc.desc   setMinimalDaysInFirstWeek with 7 param and getMinimalDaysInFirstWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_1300', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1300 ' + 'start');
@@ -241,9 +293,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1400
+     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1400
-     * @tc.desc setFirstDayOfWeek and getFirstDayOfWeek interface
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1400
+     * @tc.desc   setFirstDayOfWeek and getFirstDayOfWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_1400', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1400 ' + 'start');
@@ -255,9 +311,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1500
-     * @tc.name i18n_calendar_test_static_1500
-     * @tc.desc test setFirstDayOfWeek with 0 param and getFirstDayOfWeek interface
+     * @tc.desc   test setFirstDayOfWeek with 0 param and getFirstDayOfWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_1500', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1500 ' + 'start');
@@ -269,9 +329,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1600
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1600
-     * @tc.name i18n_calendar_test_static_1600
-     * @tc.desc test setFirstDayOfWeek with 7 param and getFirstDayOfWeek interface
+     * @tc.desc   test setFirstDayOfWeek with 7 param and getFirstDayOfWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_1600', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1600 ' + 'start');
@@ -283,9 +347,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1700
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1700
-     * @tc.name i18n_calendar_test_static_1700
-     * @tc.desc test setFirstDayOfWeek with 8 param and getFirstDayOfWeek interface
+     * @tc.desc   test setFirstDayOfWeek with 8 param and getFirstDayOfWeek interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_1700', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_1700 ' + 'start');
@@ -297,9 +365,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1800
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1800
-     * @tc.name i18n_calendar_test_static_1800
-     * @tc.desc test setTimeZone and getTimeZone interface
+     * @tc.desc   test setTimeZone and getTimeZone interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_1800', Level.LEVEL0, (): void => {
       hilog.info(domain, tag, '%{public}s', 'i18n_calendar_test_static_1800 start');
@@ -311,9 +383,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_1900
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1900
-     * @tc.name i18n_calendar_test_static_1900
-     * @tc.desc test setTimeZone with AAA param and getTimeZone interface
+     * @tc.desc   test setTimeZone with AAA param and getTimeZone interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_1900', Level.LEVEL2, (): void => {
       hilog.info(domain, tag, '%{public}s', 'i18n_calendar_test_static_1900 start');
@@ -325,9 +401,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_2000
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2000
-     * @tc.name i18n_calendar_test_static_2000
-     * @tc.desc 0test set interface
+     * @tc.desc   0test set interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_2000', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_2000 ' + 'start');
@@ -339,9 +419,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_2100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2100
-     * @tc.name i18n_calendar_test_static_2100
-     * @tc.desc test set interface with hour,minute,second param
+     * @tc.desc   test set interface with hour,minute,second param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_2100', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_2100 ' + 'start');
@@ -353,9 +437,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_2200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2200
-     * @tc.name i18n_calendar_test_static_2200
-     * @tc.desc test set interface with hour,minute param
+     * @tc.desc   test set interface with hour,minute param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_2200', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_2200 ' + 'start');
@@ -367,9 +455,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_2300
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2300
-     * @tc.name i18n_calendar_test_static_2300
-     * @tc.desc test setTime interface with date param
+     * @tc.desc   test setTime interface with date param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_calendar_test_static_2300', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_2300 ' + 'start');
@@ -382,9 +474,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_2400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2400
-     * @tc.name i18n_calendar_test_static_2400
-     * @tc.desc test setTime interface with wrong month param
+     * @tc.desc   test setTime interface with wrong month param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_2400', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_2400 ' + 'start');
@@ -397,9 +493,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_calendar_test_static_2500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2500
-     * @tc.name i18n_calendar_test_static_2500
-     * @tc.desc test setTime interface
+     * @tc.desc   test setTime interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_calendar_test_static_2500', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_calendar_test_static_2500 ' + 'start');
@@ -411,12 +511,13 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     *@tc.number   :SUB_GLOBAL_I18N_SR000IFGNH_static_0010
-     *@tc.name     :SUB_GLOBAL_I18N_SR000IFGNH_static_0010
-     *@tc.desc     :HolidayManager-input.ics file
-     *@tc.size     :MEDIUM
-     *@tc.type     :Function
-     *@tc.level    :Level 0
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_static_0010
+     * @tc.number SUB_GLOBAL_I18N_SR000IFGNH_static_0010
+     * @tc.desc   HolidayManager-input.ics file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_I18N_SR000IFGNH_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{

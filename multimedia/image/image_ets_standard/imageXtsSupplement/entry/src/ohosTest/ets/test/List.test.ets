@@ -76,6 +76,14 @@ import ImageImagePackerPackingSupp from './image/ImagePackerPackingSupp.test';
 import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
+import ImageSourceGetImagePropertyTest from "./image/ImageSourceGetImageProperty.test";
+import ImageSourceCreatePictureGif from './image/ImageSourceCreatePictureGif.test';
+import ImageSourceCreatePictureJpeg from './image/ImageSourceCreatePictureJpeg.test';
+import ImageSourceCreatePictureJpg from './image/ImageSourceCreatePictureJpg.test';
+import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.test';
+import createImageSourceTest from './image/ImageCreateImageSource.test';
+import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
+
 
 
 export default function testsuite() {
@@ -142,4 +150,14 @@ export default function testsuite() {
   ImageCreateImageReceiverCreator();
   PictureGetMetadataFirstParameters();
   CreatePixelMapUsingAllocatorAndSync();
+  modifyImagePropertyTest();
+  modifyImagePropertyTests();
+  ImageImagePackerPackingSupp();
+  ImageSourceGetImagePropertyTest();
+  ImageSourceCreatePictureGif();
+  ImageSourceCreatePictureJpeg();
+  ImageSourceCreatePictureJpg();
+  ImageSourceCreatePictureOrf();
+  createImageSourceTest();
+  sendableCreatePixelMap();
 }

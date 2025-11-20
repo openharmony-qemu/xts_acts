@@ -75,12 +75,13 @@ export default function SystemPasteboardCallbackTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboardCallbackTest_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboardCallbackTest_0100
-     * @tc.name test_SUB_Pasteboard_Local_SDK_SystemPasteboardCallbackTest_0100
-     * @tc.desc Test pasteBoard progress single level path and no fileConflictOption
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboardCallbackTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_SystemPasteboardCallbackTest_0100 start ************')
@@ -131,12 +132,13 @@ export default function SystemPasteboardCallbackTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardMimeTypes_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardMimeTypes_0100
-     * @tc.name test_SUB_Pasteboard_Local_SDK_PasteboardMimeTypes_0100
-     * @tc.desc Test pasteBoard progress single level path and no fileConflictOption
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardMimeTypes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardMimeTypes_0100 start ************')

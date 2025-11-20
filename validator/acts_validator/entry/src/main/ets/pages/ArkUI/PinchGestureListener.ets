@@ -53,7 +53,6 @@ struct PinchGestureExample {
         .width('20vp')
         .height('20vp')
     }
-    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -63,7 +62,7 @@ struct PinchGestureExample {
         params: {
           result: 'true ', title: this.name,
         }
-      })
+      });
       promptAction.showToast({
         message: '通过', duration: 1000
       });
@@ -77,7 +76,6 @@ struct PinchGestureExample {
         .width('20vp')
         .height('20vp')
     }
-    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -116,7 +114,7 @@ struct PinchGestureExample {
             .margin({ left: '20vp' })
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
+        .size({ width: '10%', height: '10%' })
         .onClick(() => {
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
@@ -128,6 +126,7 @@ struct PinchGestureExample {
           .fontColor(Color.White)
           .fontSize('18fp')
           .margin({ left: '-20vp' })
+
         Text('hello')
           .fontColor(Color.White)
           .visibility(Visibility.Hidden)
@@ -140,13 +139,20 @@ struct PinchGestureExample {
       Column() {
         Column() {
           Text('PinchGesture scale:\n' + this.scaleValue)
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
+
           Text('PinchGesture center:\n(' + this.pinchX + ',' + this.pinchY + ')')
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
         }
-        .height(200)
-        .width(300)
-        .padding(20)
+        .height('30%')
+        .width('80%')
+        .padding('5%')
         .border({ width: 3 })
-        .margin({ top: 100 })
+        .margin('5%')
         .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
         .gesture(
           PinchGesture({ fingers: 2, distance: 5, isFingerCountLimited: true })
@@ -164,20 +170,28 @@ struct PinchGestureExample {
             })
         )
 
-        Button('点击添加监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.addGlobalGestureListener(GestureListenerType.PINCH,
-            { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, pinchGesture);
-          console.info('aaa --- 添加监听')
-        })
+        Button('点击添加监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.addGlobalGestureListener(GestureListenerType.PINCH,
+              { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, pinchGesture);
+            console.info('aaa --- 添加监听')
+          })
 
-        Button('点击移除监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.removeGlobalGestureListener(GestureListenerType.PINCH, pinchGesture);
-          console.info('aaa --- 移除监听')
-        })
+        Button('点击移除监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.removeGlobalGestureListener(GestureListenerType.PINCH, pinchGesture);
+            console.info('aaa --- 移除监听')
+          })
       }
-      .height('80%')
+      .height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -188,7 +202,6 @@ struct PinchGestureExample {
             .width('20vp')
             .height('20vp')
         }
-        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

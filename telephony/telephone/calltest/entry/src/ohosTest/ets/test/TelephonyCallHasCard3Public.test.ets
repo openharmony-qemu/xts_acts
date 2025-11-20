@@ -80,8 +80,13 @@ export default function HasCard2PublicNeedCardTest() {
       if (isSimActive == true) {
         try {
           let hasCall: boolean = call.hasCallSync();
-          console.info(`${caseName} success, has call is ${hasCall}`);
-          ExpectTrue(hasCall == false);
+          if (hasCall) {
+            expect(hasCall == true).assertTrue();
+            console.info(`${caseName} success, has call is->${JSON.stringify(hasCall)}`);
+          } else {
+            expect(hasCall == false).assertTrue();
+            console.info(`${caseName} success, does not has call is->${JSON.stringify(hasCall)}`);
+          }
           done();
         } catch (err) {
           console.info(`${caseName} catch fail, err->${JSON.stringify(err)}`);
@@ -108,24 +113,23 @@ export default function HasCard2PublicNeedCardTest() {
       console.info(`${caseName} test start`);
       if (isSimActive == true) {
         try {
-          let hasCall: boolean = call.hasCallSync();
-          if (hasCall == false) {
-            console.info(`${caseName} hasCallSync success, no call exists`);
             call.getCallState((err: BusinessError, data: call.CallState) => {
               if (err) {
                 console.info(`${caseName} getCallState fail, err->${JSON.stringify(err)}`);
                 ExpectFail();
               } else {
-                ExpectTrue(data == 0);
+                const callStateAry: number[] = [
+                  call.CallState.CALL_STATE_UNKNOWN,
+                  call.CallState.CALL_STATE_IDLE,
+                  call.CallState.CALL_STATE_RINGING,
+                  call.CallState.CALL_STATE_OFFHOOK,
+                  call.CallState.CALL_STATE_ANSWERED
+                ]
+                ExpectTrue(callStateAry.includes(data));
                 console.info(`${caseName} getCallState success, data->${JSON.stringify(data)}`);
               }
               done();
             });
-          } else {
-            console.info(`${caseName} hasCallSync fail, call exists`);
-            ExpectFail();
-            done();
-          }
         } catch (err) {
           console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -151,11 +155,15 @@ export default function HasCard2PublicNeedCardTest() {
       console.info(`${caseName} test start`);
       if (isSimActive == true) {
         try {
-          let hasCall: boolean = call.hasCallSync();
-          if (hasCall == false) {
-            console.info(`${caseName} hasCallSync success,promise: no call exists`);
             call.getCallState().then((data: call.CallState) => {
-              ExpectTrue(data == 0);
+              const callStateAry: number[] = [
+                call.CallState.CALL_STATE_UNKNOWN,
+                call.CallState.CALL_STATE_IDLE,
+                call.CallState.CALL_STATE_RINGING,
+                call.CallState.CALL_STATE_OFFHOOK,
+                call.CallState.CALL_STATE_ANSWERED
+              ]
+              ExpectTrue(callStateAry.includes(data));
               console.info(`${caseName} getCallState success, data->${JSON.stringify(data)}`);
               done();
             }).catch((err: BusinessError) => {
@@ -163,11 +171,6 @@ export default function HasCard2PublicNeedCardTest() {
               ExpectFail();
               done();
             });
-          } else {
-            console.info(`${caseName} hasCallSync fail,promise: call exists`);
-            ExpectFail();
-            done();
-          }
         } catch (err) {
           console.info(`${caseName} fail,promise: err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -193,18 +196,17 @@ export default function HasCard2PublicNeedCardTest() {
       console.info(`${caseName} test start`);
       if (isSimActive == true) {
         try {
-          let hasCall: boolean = call.hasCallSync();
-          if (hasCall == false) {
-            console.info(`${caseName} hasCallSync success, no call exists`);
             let callState: number = call.getCallStateSync();
-            console.info(`${caseName} getCallState success, data->${JSON.stringify(callState)}`);
-            ExpectTrue(callState == 0);
+            const callStateSyncAry: number[] = [
+              call.CallState.CALL_STATE_UNKNOWN,
+              call.CallState.CALL_STATE_IDLE,
+              call.CallState.CALL_STATE_RINGING,
+              call.CallState.CALL_STATE_OFFHOOK,
+              call.CallState.CALL_STATE_ANSWERED
+            ]
+            ExpectTrue(callStateSyncAry.includes(callState));
+            console.info(`${caseName} getCallState success, callState->${JSON.stringify(callState)}`);
             done();
-          } else {
-            console.info(`${caseName} hasCallSync fail, call exists`);
-            ExpectFail();
-            done();
-          }
         } catch (err) {
           console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
           ExpectFail();

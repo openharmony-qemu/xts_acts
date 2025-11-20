@@ -656,7 +656,7 @@ export default function cameraSessionZoomRatioTest() {
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200 supportedZoomRatioRange.length: " + supportedZoomRatioRange.length);
           let callbackFlag: boolean = false;
           if (supportedZoomRatioRange.length == defaultSize) {
-            mCameraSession.on('smoothZoomInfoAvailable',
+            mCameraSession.onSmoothZoomInfoAvailable(
               (err: BusinessError | null, smoothZoomInfo: cameraObj.SmoothZoomInfo | undefined): void => {
                 if (!err || err.code == 0) {
                   console.info(TAG +

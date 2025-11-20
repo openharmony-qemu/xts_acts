@@ -23,8 +23,8 @@ const Domain: Int = 0x0000;
 
 export default function bmsZlibChecksumCrc32CombineTest() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
-  let crc1: Double = 0;
-  let crc2: Double = 0;
+  let crc1: long = 0;
+  let crc2: long = 0;
   let buf1: ArrayBuffer = new ArrayBuffer(21);
   let buf2: ArrayBuffer = new ArrayBuffer(19);
   let str1: string = 'hello Crc32Combine1';
@@ -60,7 +60,7 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         try {
           let len2: long = 123;
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 start`);
-          let num: number = await checksum.crc32Combine(crc1, crc2, len2);
+          let num: long = await checksum.crc32Combine(crc1, crc2, len2);
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 Crc32Combine:(${crc1},${crc2},${len2})=>${num}`);
           expect(num).assertEqual(446674705);
           done();

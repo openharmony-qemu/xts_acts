@@ -20,14 +20,15 @@ import { checkSupportOrNot } from './utils/commonFunc';
 export default function userauthTest_API12() {
     describe('userauthTest_API12', function () {
 
-        /*
-            * @tc.number    : SUB_Security_IAM_Func_API12_0100
-            * @tc.name      : getEnrolledState parameter validity check
-            * @tc.desc      : GetEnrolledState parameter validity check
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 1
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   SUB_Security_IAM_Func_API12_0100
+         * @tc.number SUB_Security_IAM_Func_API12_0100
+         * @tc.desc   GetEnrolledState parameter validity check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_Security_IAM_Func_API12_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('testFace SUB_Security_IAM_Func_API12_0100 start');
             let authType = [userAuthNorth.UserAuthType.FACE, userAuthNorth.UserAuthType.FINGERPRINT, userAuthNorth.UserAuthType.PIN]

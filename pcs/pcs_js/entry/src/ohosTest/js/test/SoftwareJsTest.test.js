@@ -31,13 +31,14 @@ class TestClass {
 export default function softwareJsTest() {
     describe('SoftwareJsTest', function () {
       
-        /*
-         * @tc.number: STD-SOFTWARE-0200
-         * @tc.name: testJsAsyncAwait0100
-         * @tc.desc: 【STD-SOFTWARE-0200】为了方便应用的书写，JS 运行时必须支持 ES2017 中的async/await 特性
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+        /**
+         * @generated.time 2025-11-09 20:53:28
+         * @tc.name   testJsAsyncAwait0100
+         * @tc.number STD-SOFTWARE-0200
+         * @tc.desc   【STD-SOFTWARE-0200】为了方便应用的书写，JS 运行时必须支持 ES2017 中的async/await 特性
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testJsAsyncAwait0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let res1 = await asyncTest()
@@ -48,13 +49,14 @@ export default function softwareJsTest() {
             done()
         })
 
-        /*
-         * @tc.number: G-SOFTWARE-0301
-         * @tc.name: testJsES50100
-         * @tc.desc: 【G-SOFTWARE-0301】JS 运行时支持 ES5、ES6 语法规范
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+        /**
+         * @generated.time 2025-11-09 20:53:28
+         * @tc.name   testJsES50100
+         * @tc.number G-SOFTWARE-0301
+         * @tc.desc   【G-SOFTWARE-0301】JS 运行时支持 ES5、ES6 语法规范
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testJsES50100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             // ES5
@@ -105,13 +107,14 @@ export default function softwareJsTest() {
             done()
         })
 
-        /*
-         * @tc.number: G-SOFTWARE-0301
-         * @tc.name: testJsES60100
-         * @tc.desc: 【G-SOFTWARE-0301】JS 运行时支持 ES5、ES6 语法规范
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+        /**
+         * @generated.time 2025-11-09 20:53:28
+         * @tc.name   testJsES60100
+         * @tc.number G-SOFTWARE-0301
+         * @tc.desc   【G-SOFTWARE-0301】JS 运行时支持 ES5、ES6 语法规范
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testJsES60100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const num1 = 1
@@ -148,26 +151,28 @@ export default function softwareJsTest() {
             done()
         })
 
-        /*
-         * @tc.number: G-SOFTWARE-0302
-         * @tc.name: testJsStrictMode0100
-         * @tc.desc: 【G-SOFTWARE-0302】JS 运行时环境必须运行在严格模式
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+        /**
+         * @generated.time 2025-11-09 20:53:28
+         * @tc.name   testJsStrictMode0100
+         * @tc.number G-SOFTWARE-0302
+         * @tc.desc   【G-SOFTWARE-0302】JS 运行时环境必须运行在严格模式
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testJsStrictMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             expect(this).assertUndefined()
             done()
         })
 
-        /*
-         * @tc.number: G-SOFTWARE-0603
-         * @tc.name: testWeblikeAccessPath0100
-         * @tc.desc: 【G-SOFTWARE-0603】类 web 范式限制应用访问的绝对路径应统一用"/"开头、相对路径统一用"./"或"../"开头
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+        /**
+         * @generated.time 2025-11-09 20:53:28
+         * @tc.name   testWeblikeAccessPath0100
+         * @tc.number G-SOFTWARE-0603
+         * @tc.desc   【G-SOFTWARE-0603】类 web 范式限制应用访问的绝对路径应统一用"/"开头、相对路径统一用"./"或"../"开头
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testWeblikeAccessPath0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let driver = Driver.create()
@@ -190,14 +195,14 @@ export default function softwareJsTest() {
             done()
         })
 
-        /*
-         * @tc.number: G-SOFTWARE-0604
-         * @tc.name: testWeblikePrivateDirectoryPath0100
-         * @tc.desc: 【G-SOFTWARE-0604】类 web 范式限制应用私有目录的路径前缀应为 internal://app/，
-         *             仅本应用可见，随应用卸载删除
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+        /**
+         * @generated.time 2025-11-09 20:53:28
+         * @tc.name   testWeblikePrivateDirectoryPath0100
+         * @tc.number G-SOFTWARE-0604
+         * @tc.desc   【G-SOFTWARE-0604】类 web 范式限制应用私有目录的路径前缀应为 internal://app/，
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testWeblikePrivateDirectoryPath0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let driver = Driver.create()

@@ -64,7 +64,7 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
       Column() {
           Row() {
               Button('获取url')
-              .key('webViewJsBridgeLastJsProxyCallingFrameUrl')
+              .key('webViewApiOneButton')
               .onClick(async () => {
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 await waitForExist(() => this.isReceive, this.str, 0);

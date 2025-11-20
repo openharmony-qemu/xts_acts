@@ -21,12 +21,13 @@ export default function systemTimeNoPermissionJsunit() {
     console.info('====>---------------systemTimeNNoPermissionTest start-----------------------');
 
     /**
-     * @tc.number    SUB_Misc_systemTime_NoPermission_setTime_0010
-     * @tc.name      Test systemTime.setTime
-     * @tc.desc      Test systemTime_setTime API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Misc_systemTime_NoPermission_setTime_0010
+     * @tc.number SUB_Misc_systemTime_NoPermission_setTime_0010
+     * @tc.desc   Test systemTime_setTime API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_systemTime_NoPermission_setTime_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Misc_systemTime_NoPermission_setTime_0010 start");
@@ -52,12 +53,13 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @tc.number    SUB_Misc_systemTime_NoPermission_setTime_0020
-     * @tc.name      Test systemTime.setTime Invalid value
-     * @tc.desc      Test systemTime_setTime API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Misc_systemTime_NoPermission_setTime_0020
+     * @tc.number SUB_Misc_systemTime_NoPermission_setTime_0020
+     * @tc.desc   Test systemTime_setTime API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_systemTime_NoPermission_setTime_0020', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Misc_systemTime_NoPermission_setTime_0020 start");
@@ -77,12 +79,13 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @tc.number    SUB_Misc_systemTime_NoPermission_setDate_0010
-     * @tc.name      Test systemTime.setDate Invalid value
-     * @tc.desc      Test systemTime_setDate API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Misc_systemTime_NoPermission_setDate_0010
+     * @tc.number SUB_Misc_systemTime_NoPermission_setDate_0010
+     * @tc.desc   Test systemTime_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_systemTime_NoPermission_setDate_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Misc_systemTime_NoPermission_setDate_0010 start");
@@ -108,12 +111,13 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @tc.number    SUB_Misc_systemTime_NoPermission_setDate_0020
-     * @tc.name      Test systemTime.setDate true value
-     * @tc.desc      Test systemTime_setDate API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Misc_systemTime_NoPermission_setDate_0020
+     * @tc.number SUB_Misc_systemTime_NoPermission_setDate_0020
+     * @tc.desc   Test systemTime_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_systemTime_NoPermission_setDate_0020', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Misc_systemTime_NoPermission_setDate_0020 start");
@@ -133,12 +137,13 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @tc.number    SUB_Misc_systemTime_NoPermission_setTimezone_0010
-     * @tc.name      Test systemTime.setTimezone true value
-     * @tc.desc      Test systemTime_setTimezone API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Misc_systemTime_NoPermission_setTimezone_0010
+     * @tc.number SUB_Misc_systemTime_NoPermission_setTimezone_0010
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_systemTime_NoPermission_setTimezone_0010', Level.LEVEL2, (done: Function) => {
       console.info("====>SUB_Misc_systemTime_NoPermission_setTimezone_0010 start");
@@ -163,12 +168,13 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @tc.number    SUB_Misc_systemTime_NoPermission_setTimezone_0020
-     * @tc.name      Test systemTime.setTimezone true value
-     * @tc.desc      Test systemTime_setTimezone API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Misc_systemTime_NoPermission_setTimezone_0020
+     * @tc.number SUB_Misc_systemTime_NoPermission_setTimezone_0020
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_systemTime_NoPermission_setTimezone_0020', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Misc_systemTime_NoPermission_setTimezone_0020 start");

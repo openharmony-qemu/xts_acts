@@ -138,12 +138,13 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @tc.name put Uint8Array promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutUint8Array0010
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0100
-     * @tc.desc put Uint8Array promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put Uint8Array promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutUint8Array0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let uInt8Array = new util.TextEncoder().encodeInto("!@#$%^&*() _+-~");
@@ -163,12 +164,13 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @tc.name put Uint8Array promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutUint8Array0020
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0200
-     * @tc.desc put Uint8Array promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put Uint8Array promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutUint8Array0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let uInt8Array = new util.TextEncoder().encodeInto("abc123");
@@ -188,12 +190,13 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @tc.name put Uint8Array promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutUint8Array0030
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0300
-     * @tc.desc put Uint8Array promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put Uint8Array promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutUint8Array0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let uInt8Array = new util.TextEncoder().encodeInto("abc@#$%123");
@@ -213,12 +216,13 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @tc.name put Uint8Array promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutUint8Array0040
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0400
-     * @tc.desc put Uint8Array promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put Uint8Array promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutUint8Array0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let uInt8Array = new Uint8Array(16*1024*1024);
@@ -241,12 +245,13 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @tc.name put Uint8Array promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutUint8Array0050
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0500
-     * @tc.desc put Uint8Array promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put Uint8Array promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutUint8Array0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let uInt8Array = new Uint8Array(16*1024*1024+1);
@@ -261,12 +266,13 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @tc.name put Uint8Array promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutUint8Array0060
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0600
-     * @tc.desc put Uint8Array promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put Uint8Array promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutUint8Array0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let genProperties = GetAesGenerateProperties();

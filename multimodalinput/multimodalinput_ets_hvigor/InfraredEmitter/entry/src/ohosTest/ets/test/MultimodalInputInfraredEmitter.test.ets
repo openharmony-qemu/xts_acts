@@ -34,12 +34,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0100";
@@ -60,12 +61,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with 1024 pattern parameters.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with 1024 pattern parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0200";
@@ -89,12 +91,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with 1025 pattern parameters.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with 1025 pattern parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0300";
@@ -116,12 +119,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with error pattern(negative number).
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with error pattern(negative number).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0400";
@@ -140,12 +144,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with error infraredFrequency.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with error infraredFrequency.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0500";
@@ -164,12 +169,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(length is odd number).
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(length is odd number).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0600";
@@ -190,12 +196,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(non-incremental).
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(non-incremental).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0700";
@@ -216,12 +223,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800
-     * @tc.desc: Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(empty).
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800
+     * @tc.desc   Test transmitInfrared interface to generate an infrared signal of a specific frequency and a special level with pattern(empty).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0800";
@@ -242,12 +250,13 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
-     * @tc.name: SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
-     * @tc.desc: Test getInfraredFrequencies interface to query the frequency range of infrared signals supported by the phone.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
+     * @tc.desc   Test getInfraredFrequencies interface to query the frequency range of infrared signals supported by the phone.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100";

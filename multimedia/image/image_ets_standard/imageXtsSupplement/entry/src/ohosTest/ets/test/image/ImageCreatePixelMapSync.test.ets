@@ -26,7 +26,7 @@ async function createPixelMapSyncPromiseTest(done: Function, testName: string, c
     done();
   } catch (error) {
     console.info(TAG, `failed; error:`,JSON.stringify(error),error.code, testName);
-    expect().assertFail();
+    callback(error.code);
     done();
   }
 }
@@ -39,10 +39,25 @@ async function createPixelMapSyncOptsPromiseTest(done: Function, testName: strin
     done();
   } catch (error) {
     console.info(TAG, `failed; error:`,JSON.stringify(error),error.code, testName);
-    expect().assertFail();
+    callback(error.code);
     done();
   }
 }
+
+async function createPixelMapSyncAbnormalPromiseTest(done: Function, testName: string, color: ArrayBuffer,
+  opts: image.InitializationOptions,callback: (err: number) => void) {
+  try {
+    let pixelMap = image.createPixelMapSync(color, opts);
+    expect(pixelMap == undefined).assertTrue();
+    done();
+  } catch (error) {
+    console.info(TAG, `failed; error:`,JSON.stringify(error),error.code, testName);
+    callback(error.code);
+    done();
+  }
+}
+
+
 
 export default function ImageCreatePixelMapSyncTest() {
   describe('ImageCreatePixelMapSyncTest', () => {
@@ -800,6 +815,1260 @@ export default function ImageCreatePixelMapSyncTest() {
       const opts: image.InitializationOptions =
         { editable: false, srcPixelFormat: image.PixelMapFormat.ASTC_4x4,size: { height: 4, width: 6 } };
       await createPixelMapSyncOptsPromiseTest(done, testName, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_039
+     * @tc.name        createPixelMapSync_promise_039
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_039', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_039';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.UNKNOWN
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_040
+     * @tc.name        createPixelMapSync_promise_040
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_040', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_040';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.OPAQUE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_041
+     * @tc.name        createPixelMapSync_promise_041
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_041', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_041';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.UNPREMUL
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_042
+     * @tc.name        createPixelMapSync_promise_042
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_042', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_042';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.CENTER_CROP
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_043
+     * @tc.name        createPixelMapSync_promise_043
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_043', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_043';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_044
+     * @tc.name        createPixelMapSync_promise_044
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_044', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_044';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.UNKNOWN,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_045
+     * @tc.name        createPixelMapSync_promise_045
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_045', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_045';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_046
+     * @tc.name        createPixelMapSync_promise_046
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_046', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_046';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGB_565,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_047
+     * @tc.name        createPixelMapSync_promise_047
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_047', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_047';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_048
+     * @tc.name        createPixelMapSync_promise_048
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_048', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_048';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_049
+     * @tc.name        createPixelMapSync_promise_049
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_049', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_049';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGB_888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_050
+     * @tc.name        createPixelMapSync_promise_050
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_050', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_050';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ALPHA_8,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_051
+     * @tc.name        createPixelMapSync_promise_051
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_051', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_051';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_F16,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_052
+     * @tc.name        createPixelMapSync_promise_052
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_052', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_052';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.NV21,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_053
+     * @tc.name        createPixelMapSync_promise_053
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_053', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_053';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.NV12,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_054
+     * @tc.name        createPixelMapSync_promise_054
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_054', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_054';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_1010102,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_055
+     * @tc.name        createPixelMapSync_promise_055
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_055', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_055';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        //srcPixelFormat: image.PixelMapFormat.YCBCR_P010,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_056
+     * @tc.name        createPixelMapSync_promise_056
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_056', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_056';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.YCRCB_P010,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_057
+     * @tc.name        createPixelMapSync_promise_057
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_057', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_057';
+      const color: ArrayBuffer = '' as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ASTC_4x4,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_058
+     * @tc.name        createPixelMapSync_promise_058
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_058', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_058';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.UNKNOWN
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_059
+     * @tc.name        createPixelMapSync_promise_059
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_059', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_059';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.OPAQUE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_060
+     * @tc.name        createPixelMapSync_promise_060
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_060', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_060';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.UNPREMUL
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_061
+     * @tc.name        createPixelMapSync_promise_061
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_061', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_061';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.CENTER_CROP
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_062
+     * @tc.name        createPixelMapSync_promise_062
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_062', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_062';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_063
+     * @tc.name        createPixelMapSync_promise_063
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_063', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_063';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.UNKNOWN,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_064
+     * @tc.name        createPixelMapSync_promise_064
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_064', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_064';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_065
+     * @tc.name        createPixelMapSync_promise_065
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_065', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_065';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGB_565,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_066
+     * @tc.name        createPixelMapSync_promise_066
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_066', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_066';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_067
+     * @tc.name        createPixelMapSync_promise_067
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_067', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_067';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_068
+     * @tc.name        createPixelMapSync_promise_068
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_068', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_068';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGB_888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_069
+     * @tc.name        createPixelMapSync_promise_069
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_069', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_069';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ALPHA_8,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_070
+     * @tc.name        createPixelMapSync_promise_070
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_070', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_070';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_F16,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_071
+     * @tc.name        createPixelMapSync_promise_071
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_071', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_071';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.NV21,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_072
+     * @tc.name        createPixelMapSync_promise_072
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_072', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_072';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.NV12,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_073
+     * @tc.name        createPixelMapSync_promise_073
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_073', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_073';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_1010102,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_074
+     * @tc.name        createPixelMapSync_promise_074
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_074', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_074';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        //srcPixelFormat: image.PixelMapFormat.YCBCR_P010,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_075
+     * @tc.name        createPixelMapSync_promise_075
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_075', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_075';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.YCRCB_P010,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_076
+     * @tc.name        createPixelMapSync_promise_076
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_076', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_076';
+      const color: ArrayBuffer = null as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ASTC_4x4,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_077
+     * @tc.name        createPixelMapSync_promise_077
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_077', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_077';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.UNKNOWN
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_078
+     * @tc.name        createPixelMapSync_promise_078
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_078', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_078';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.OPAQUE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_079
+     * @tc.name        createPixelMapSync_promise_079
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_079', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_079';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        alphaType: image.AlphaType.UNPREMUL
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_080
+     * @tc.name        createPixelMapSync_promise_080
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_080', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_080';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.CENTER_CROP
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_081
+     * @tc.name        createPixelMapSync_promise_081
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_081', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_081';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_082
+     * @tc.name        createPixelMapSync_promise_082
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_082', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_082';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.UNKNOWN,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_083
+     * @tc.name        createPixelMapSync_promise_083
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_083', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_083';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_084
+     * @tc.name        createPixelMapSync_promise_084
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_084', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_084';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGB_565,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_085
+     * @tc.name        createPixelMapSync_promise_085
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_085', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_085';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_086
+     * @tc.name        createPixelMapSync_promise_086
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_086', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_086';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_087
+     * @tc.name        createPixelMapSync_promise_087
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_087', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_087';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGB_888,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_088
+     * @tc.name        createPixelMapSync_promise_088
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_088', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_088';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ALPHA_8,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_089
+     * @tc.name        createPixelMapSync_promise_089
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_089', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_089';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_F16,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_090
+     * @tc.name        createPixelMapSync_promise_090
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_090', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_090';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.NV21,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_091
+     * @tc.name        createPixelMapSync_promise_091
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_091', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_091';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.NV12,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_092
+     * @tc.name        createPixelMapSync_promise_092
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_092', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_092';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.RGBA_1010102,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_093
+     * @tc.name        createPixelMapSync_promise_093
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_093', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_093';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        //srcPixelFormat: image.PixelMapFormat.YCBCR_P010,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_094
+     * @tc.name        createPixelMapSync_promise_094
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_094', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_094';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.YCRCB_P010,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
+        expect().assertFail();
+      });
+    })
+
+    /**
+     * @tc.number      createPixelMapSync_promise_095
+     * @tc.name        createPixelMapSync_promise_095
+     * @tc.desc        createPixelMapSync
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('createPixelMapSync_promise_095', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createPixelMapSync_promise_095';
+      const color: ArrayBuffer = undefined as ESObject;
+      const opts: image.InitializationOptions = {
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.ASTC_4x4,
+        size: { height: 4, width: 6 },
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+      };
+      await createPixelMapSyncAbnormalPromiseTest(done, testName, color, opts,(errCode) => {
         expect().assertFail();
       });
     })

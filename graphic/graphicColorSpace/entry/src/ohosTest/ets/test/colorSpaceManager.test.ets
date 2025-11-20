@@ -356,7 +356,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('getColorSpaceEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('getColorSpaceEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0100 begin');
       try {
         let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
@@ -405,7 +405,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('getColorSpaceEnum_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('getColorSpaceEnum_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0200 begin');
       try {
         let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ);
@@ -454,7 +454,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('getColorSpaceEnum_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('getColorSpaceEnum_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0300 begin');
       try {
         let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ_LIMIT);
@@ -506,7 +506,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('testGetWhitePoint_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testGetWhitePoint_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0300 begin');
       try {
         let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);

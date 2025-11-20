@@ -29,7 +29,7 @@ import {
   Entry,
   Callback
 } from '@ohos.arkui.component';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import { State } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
@@ -108,8 +108,8 @@ struct XtsFormHost {
     this.registerTestEvents();
   }
 
-  createWantParams(): Record < string, Object > {
-    let wantParams: Record<string, Object> = {
+  createWantParams(): Record < string, RecordData > {
+    let wantParams: Record<string, RecordData> = {
       'ohos.extra.param.key.form_dimension': 2,
       'ohos.extra.param.key.form_name': this.formName,
       'ohos.extra.param.key.module_name': this.moduleName,

@@ -286,5 +286,20 @@ export default function webViewContCreatePdfAndOthersError() {
       Utils.registerEvent("testGetLastHitTestInitErr", "Init error. The WebviewController must be associated with a Web component", 111110, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
+     /*
+    * @tc.number      : SUB_ACE_WEBVIEW_DEINSTITUTIONALIZATION_API_0001
+    * @tc.name        : testSetSiteIsolationModeErr
+    * @tc.desc        : test SetSiteIsolationMode
+    * @tc.size        : MediumTest
+    * @tc.type        : Function
+    * @tc.level       : Level 0
+    */
+    it('testSetSiteIsolationModeErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitSetSiteIsolationModeErr", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetSiteIsolationModeErr", "17100001", 20151203, null);
+      Utils.registerEvent("testSetSiteIsolationModeErr", "InitError 17100001: Site Isolation mode is already set by the developer.", 20151204, done);
+      await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
+    })
+
   })
 }

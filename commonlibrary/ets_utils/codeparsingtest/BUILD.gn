@@ -34,6 +34,7 @@ group("codeparsingtest") {
       "objecttest:ActsObjectTest",
       "arraytest:ActsArrayTest",
       "regexptest:ActsRegExpTest",
+      "dataviewtest:ActsDataViewTest",
     ]
   }
 }

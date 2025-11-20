@@ -193,7 +193,7 @@ export default function abilitystaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on('applicationState', observer);
+          const observerId = appManager.onApplicationStateChange(observer);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
 
           hilog.info(domain, tag, `${itName} start reply ability`);
@@ -237,7 +237,7 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, `${itName} ProcessData assert End`);
 
           hilog.info(domain, tag, `${itName} off applicationState`);
-          await appManager.off('applicationState', observerId);
+          await appManager.offApplicationStateChange(observerId);
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
