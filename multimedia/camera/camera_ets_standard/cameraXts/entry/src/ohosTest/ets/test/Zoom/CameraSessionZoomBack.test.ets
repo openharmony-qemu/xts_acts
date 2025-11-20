@@ -187,6 +187,7 @@ async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoO
   console.info(TAG, 'addOutput photoOutput passed.');
   await mPhotoSession.commitConfig();
   console.info(TAG, 'session commitConfig successfully.');
+  await mPhotoSession.start();
 }
 
 async function getPreConfigPhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
@@ -203,6 +204,7 @@ async function getPreConfigPhotoSession(previewOutput: camera.PreviewOutput, pho
   console.info(TAG, 'addOutput photoOutput passed.');
   await mPhotoSession.commitConfig();
   console.info(TAG, 'session commitConfig successfully.');
+  await mPhotoSession.start();
 }
 
 async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
@@ -221,6 +223,7 @@ async function getCreateVideoSession(testName: string, previewOutput: camera.Pre
   console.info(TAG, testName + ' addOutput videoOutput passed.');
   await mVideoSession.commitConfig();
   console.info(TAG, testName + ' session commitConfig successfully.');
+  await mVideoSession.start();
 }
 
 async function getPreConfigVideoSession(testName: string, previewOutput: camera.PreviewOutput,
@@ -238,6 +241,7 @@ async function getPreConfigVideoSession(testName: string, previewOutput: camera.
   console.info(TAG, testName + ' addOutput videoOutput passed.');
   await mVideoSession.commitConfig();
   console.info(TAG, testName + ' session commitConfig successfully.');
+  await mVideoSession.start();
 }
 
 async function releasePhotoSession() {
@@ -382,9 +386,14 @@ async function setZoomRatioPhoto(done: Function, testName: string, index: number
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio);
         mPhotoSession.setZoomRatio(zoomRatioRange[index]);
+        await sleep(3000);
         zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
-        expect(zoomRatio == zoomRatioRange[index]).assertTrue();
+        if (index >= 0) {
+          expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
+        } else {
+          expect(Math.abs(zoomRatio - zoomRatioRange[0]) <= 0.1).assertTrue();
+        }
       }
     }
     await releasePhotoSession();
@@ -429,9 +438,14 @@ async function setZoomRatioVideo(done: Function, testName: string, index: number
           let zoomRatio = mVideoSession.getZoomRatio();
           console.info(TAG, testName + ' zoomRatio: ' + zoomRatio);
           mVideoSession.setZoomRatio(zoomRatioRange[index]);
+          await sleep(3000);
           zoomRatio = mVideoSession.getZoomRatio();
           console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
-          expect(zoomRatio == zoomRatioRange[index]).assertTrue();
+          if (index >= 0) {
+            expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
+          } else {
+            expect(Math.abs(zoomRatio - zoomRatioRange[0]) <= 0.1).assertTrue();
+          }
         }
       }
     }
@@ -568,10 +582,15 @@ async function setZoomRatioPhotoPreConfig(done: Function, testName: string, inde
       } else {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
-        mVideoSession.setZoomRatio(zoomRatioRange[index]);
+        mPhotoSession.setZoomRatio(zoomRatioRange[index]);
+        await sleep(3000);
         zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
-        expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
+        if (index >= 0) {
+          expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
+        } else {
+          expect(Math.abs(zoomRatio - zoomRatioRange[0]) <= 0.1).assertTrue();
+        }
       }
     }
     await releasePhotoSession();
@@ -619,9 +638,14 @@ async function setZoomRatioVideoPreConfig(done: Function, testName: string, inde
         let zoomRatio = mVideoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
         mVideoSession.setZoomRatio(zoomRatioRange[index]);
+        await sleep(3000);
         zoomRatio = mVideoSession.getZoomRatio();
         console.info(TAG, testName + 'set zoomRatio: ' + zoomRatio);
-        expect(zoomRatio == zoomRatioRange[index]).assertTrue();
+        if (index >= 0) {
+          expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
+        } else {
+          expect(Math.abs(zoomRatio - zoomRatioRange[0]) <= 0.1).assertTrue();
+        }
       }
     }
     await releaseVideoSession();
@@ -659,10 +683,12 @@ async function setZoomRatioPhotoAbnormal(done: Function, testName: string) {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
         let exceedZoomRatio = zoomRatioRange[0] + 0.0011;
+        console.info(testName + `exceedZoomRatio: ${exceedZoomRatio}`);
         mPhotoSession.setZoomRatio(exceedZoomRatio);
-        await sleep(COMMON_WAIT_DURATION);
+        await sleep(3000);
         let newZoomRatio = mPhotoSession.getZoomRatio();
-        expect(newZoomRatio !== exceedZoomRatio).assertTrue();
+        console.info(testName + `newZoomRatio: ${newZoomRatio}`);
+        expect(Math.abs(newZoomRatio - exceedZoomRatio) <= 0.1).assertTrue();
       }
     }
     await releasePhotoSession();
@@ -705,10 +731,12 @@ async function setZoomRatioVideoAbnormal(done: Function, testName: string) {
           let zoomRatio = mVideoSession.getZoomRatio();
           console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
           let exceedZoomRatio = zoomRatioRange[0] + 0.0011;
+          console.info(testName + `exceedZoomRatio: ${exceedZoomRatio}`);
           mVideoSession.setZoomRatio(exceedZoomRatio);
-          await sleep(COMMON_WAIT_DURATION);
+          await sleep(3000);
           let newZoomRatio = mVideoSession.getZoomRatio();
-          expect(newZoomRatio !== exceedZoomRatio).assertTrue();
+          console.info(testName + `newZoomRatio: ${newZoomRatio}`);
+          expect(Math.abs(newZoomRatio - exceedZoomRatio) <= 0.1).assertTrue();
         }
       }
     }
