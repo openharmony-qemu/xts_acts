@@ -22,6 +22,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIP
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import common from '@ohos.enterprise.common';
 
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
@@ -146,6 +147,9 @@ export default function securityManagerTest() {
 
     testSetPermissionManagedState();
     testGetPermissionManagedState();
+
+    testSetExternalSourceExtensionsPolicy();
+    testGetExternalSourceExtensionsPolicy();
   })
 }
 
@@ -520,6 +524,54 @@ function testGetPermissionManagedState() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetExternalSourceExtensionsPolicy() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0100
+   * @tc.name      : test_set_external_source_extensions_policy_0100
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy without permission
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_external_source_extensions_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0100 error.code = ' + error.code);
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetExternalSourceExtensionsPolicy() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0100
+   * @tc.name      : test_get_external_source_extensions_policy_0100
+   * @tc.desc      : test securityManager getExternalSourceExtensionsPolicy without permission
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_external_source_extensions_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_external_source_extensions_policy_0100 error.code = ' + error.code);
+      expect(error.code == 201 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
