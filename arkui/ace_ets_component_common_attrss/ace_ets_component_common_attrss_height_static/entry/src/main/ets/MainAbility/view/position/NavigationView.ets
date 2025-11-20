@@ -12,49 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  FlexDirection,
-  FlowItem,
-  WaterFlow,
-  ColumnOptions,
-  IndexerAlign,
-  FontWeight,
-  AlphabetIndexer,
-  Margin,
-  StickyStyle,
-  Color,
-  TextAlign,
-  Builder,
-  ForEach,
-  ListItem,
-  ListItemGroup,
-  List,
-  Position,
-  Button,
-  Stepper,
-  AlignRuleOption,
-  ItemState,
-  Component,
-  StepperItem,
-  ClickEvent,
-  Column,
-  VerticalAlign,
-  Text
-} from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
-
+import {FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct NavigationView {
   private arr: number[] = new Array<number>(0, 1, 2, 3)
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _position: Position = { x: 0, y: 0 };
-  private componentKey: string = '';
+  @Link _position: Position={x:0,y:0};
+  private componentKey: string='';
 
   build() {
     // Navigation() {
     //   List({ space: 12, initialIndex: 0 }) {
-    //     ForEach(this.arr, (item: number, index: int) => {
+    //     ForEach(this.arr, (item: number, index: number) => {
     //       ListItem() {
     //         NavRouter() {
     //           Row() {

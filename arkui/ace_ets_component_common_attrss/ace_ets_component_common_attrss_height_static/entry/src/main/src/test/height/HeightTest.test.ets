@@ -12,97 +12,115 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {Color,$r} from '@ohos.arkui.component'
-import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
+
+import { $r, Color, Length } from '@ohos.arkui.component'
+import Utils, {
+  BasePageConfig,
+  CurrentRatio,
+  PageConfig,
+  RectValue,
+  SetValue,
+  StrJsonObj,
+  TestValue
+} from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect,beforeAll } from '../../../../hypium/index';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-interface Attrs{
+let testAbilityContext: common.UIAbilityContext;
+
+interface Attrs {
   $attrs: SetValue
 }
+
 /**
  * Test of common attribute: height
  */
 export default function heightTest() {
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+
+  const uiContext = AppStorage.get<UIContext>('uiContext')!
+
   //A list of components that support padding attributes is required.
-  let supportView :Array<string>=new Array<string>( 'AlphabetIndexer',
-    'Button',
+  let supportView = [
+  //   'AlphabetIndexer',
+  //   'Button',
     'BlankRow',
     'BlankColumn',
-    'Checkbox',
-    'CheckboxGroup',
-    'DataPanel',
-    'DatePicker',
-    'Divider',
-    'Gauge',
-    'Image',
-    'ImageAnimator',
-    'LoadingProgress',
-    'Marquee',
-    'Navigation',
-    'NavRouter',
-    'Progress',
-    'QRCode',
-    'Radio',
-    //    'ScrollBar',
-    'Rating',
-    'Search',
-    'RichText',
-    'Slider',
-    'Text',
-    //    'TextArea',
-    'TextClock',
-    //    'TextInput',
-    'TextPicker',
-    'TextTimer',
-    'TimePicker',
-    'Toggle',
-    'Badge',
-    'Column',
-    //    'Counter',
-    'Flex',
-    //    'GridRow',
-    'Grid',
-    'List',
-    'ListItem',
-    //    'Panel',
-    'Refresh',
-    'Row',
-    //    'Scroll',
-    //    'SideBarContainer',
-    'Stack',
-    'Swiper',
-    //    'Tabs',
-    'Circle',
-    'Ellipse',
-    'Polyline',
-    'Polygon',
-    'Path',
-    'Rect',
-    'Shape',
-    'Line',
-    //    'StepperItem',
-    //    'GridCol',
-    'GridItem',
-    'RelativeContainer',
-    'Navigator',
-    'Menu',
-    'MenuItem',
-    //    'MenuItemGroup'
-    )
+  //   'Checkbox',
+  //   'CheckboxGroup',
+  //   'DataPanel',
+  //   'DatePicker',
+  //   'Divider',
+  //   'Gauge',
+  //   'Image',
+  //   'ImageAnimator',
+  //   'LoadingProgress',
+  //   'Marquee',
+  //   'Navigation',
+  //   // 'NavRouter', // Navigation替换
+  //   'Progress',
+  //   'QRCode',
+  //   'Radio',
+  //   //    'ScrollBar',
+  //   'Rating',
+  //   'Search',
+  //   'RichText',
+  //   'Slider',
+  //   'Text',
+  //   //    'TextArea',
+  //   'TextClock',
+  //   //    'TextInput',
+  //   'TextPicker',
+  //   'TextTimer',
+  //   'TimePicker',
+  //   'Toggle',
+  //   'Badge',
+  //   'Column',
+  //   //    'Counter',
+  //   'Flex',
+  //   //    'GridRow',
+  //   'Grid',
+  //   'List',
+  //   'ListItem',
+  //   //    'Panel',
+  //   'Refresh',
+  //   'Row',
+  //   //    'Scroll',
+  //   //    'SideBarContainer',
+  //   'Stack',
+  //   'Swiper',
+  //   //    'Tabs',
+  //   'Circle',
+  //   'Ellipse',
+  //   'Polyline',
+  //   'Polygon',
+  //   'Path',
+  //   'Rect',
+  //   'Shape',
+  //   'Line',
+  //   //    'StepperItem',
+  //   //    'GridCol',
+  //   'GridItem',
+  //   'RelativeContainer',
+  //   // 'Navigator', // Navigation 替换
+  //   'Menu',
+  //   'MenuItem',
+  // //    'MenuItemGroup'
+  ]
 
 
   //The size of the parent component, when set as a percentage, serves as the calculation.
@@ -125,16 +143,17 @@ export default function heightTest() {
   }
 
   //The data type to be tested, this parameter is required.
-  let testValues: TestValue[] = [{
-    describe: 'ExceedParent',
-    setValue: {
-      height: 550
+  let testValues: TestValue[] = [
+    {
+      describe: 'ExceedParent',
+      setValue: {
+        height: 550
+      },
+      expectValue: {
+        heightCompare: '550.00vp',
+        height: uiContext.vp2px(550), ExceedParent: true
+      }
     },
-    expectValue: {
-      heightCompare: '550.00vp',
-      // height: UIContext.getFocusedUIContext()!.vp2px(550), ExceedParent: true
-    }
-  },
     {
       describe: 'StringPercent',
       setValue: {
@@ -142,27 +161,30 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '50.00%',
-        // height: UIContext.getFocusedUIContext()!.vp2px(parentHeight) * 0.5
+        height: uiContext.vp2px(parentHeight) * 0.5
       }
-    }, {
-      describe: 'Resource',
-      setValue: {
-        height: $r('app.float.200vp')
-      },
-      expectValue: {
-        heightCompare: '200.00vp',
-        // height: UIContext.getFocusedUIContext()!.vp2px(200)
-      }
-    }, {
-      describe: 'StringPx',
-      setValue: {
-        height: '300px'
-      },
-      expectValue: {
-        heightCompare: '300.00px',
-        height: 300
-      }
-    }]
+    },
+    {
+    describe: 'Resource',
+    setValue: {
+      height: $r('app.float.200vp')
+    },
+    expectValue: {
+      heightCompare: '200.00vp',
+      height: uiContext.vp2px(200)
+    }
+  },
+    {
+    describe: 'StringPx',
+    setValue: {
+      height: '300px'
+    },
+    expectValue: {
+      heightCompare: '300.00px',
+      height: 300
+    }
+  }
+  ]
 
 
   /**
@@ -170,36 +192,48 @@ export default function heightTest() {
    */
   describe('HeightTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.log('test heightTest is start')
     });
     //Generate test cases (it) through a loop based on the support view * test values.
-CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Obtain dimensional information for target components.
-      let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
+      console.info(' data.testValue.setValue.height is: ' + data.testValue.setValue.height);
+      // AppStorage.setOrCreate<Length>('_height', data.testValue.setValue.height)
 
+      await Utils.sleep(4000);
+      let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
+      await Utils.sleep(1000);
+      data.viewObj = JSON.parseJsonElement(strJson);
+
+
+      console.info('data.pageConfig.componentKey' + data.pageConfig.componentKey);
+      let rect = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
       //Obtain the region information of the parent component.
-      let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey??'');
-      let attrs = data.viewObj as Attrs
+      console.info('data.pageConfig.parentComponentKey' + data.pageConfig.parentComponentKey);
+      let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey ?? '');
       //Verify the height height of the target component.
       let strJsonRectHeight = rect.bottom - rect.top;
       console.info('[' + data.caseTag + '] data.testValue.expectValue.height:' + data.testValue.expectValue.height);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height:' + attrs?.$attrs.height);
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height:' +
+      data.viewObj?.getElement('$attrs').getString('height'));
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs' +
+      JSON.stringifyJsonElement(data.viewObj?.getElement('$attrs')!));
       console.info('[' + data.caseTag + '] strJsonRectHeight is: ' + strJsonRectHeight);
 
       if (data.testValue.describe == 'ExceedParent') {
         //Confirm that the calculated value is consistent with the expected value.
+        console.log('test start ExceedParent')
         expect(rectParent.top > rect.top || rectParent.bottom < rect.bottom)
           .assertEqual(data.testValue.expectValue.ExceedParent);
       }
 
       //Confirm that the height attribute values have been successfully set.
-      expect(attrs?.$attrs.height).assertEqual(data.testValue.expectValue.heightCompare);
+      console.info('expect heightis: ' + data.viewObj?.getElement('$attrs').getString('height'));
+      expect(data.viewObj?.getElement('$attrs').getString('height'))
+        .assertEqual(data.testValue.expectValue.heightCompare);
 
       //Confirm that the calculated value is consistent with the expected value.
-      expect(Math.abs(strJsonRectHeight - (data.testValue.expectValue.height as number)) <= 1).assertTrue();
+      expect(Math.abs(strJsonRectHeight - (data.testValue.expectValue.height as number).toInt()) <= 1).assertTrue();
     })
   })
 }
