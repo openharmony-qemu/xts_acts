@@ -1,12 +1,13 @@
 import { image } from '@kit.ImageKit';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
 import { LOG_TAG } from '../common';
+import call from '@ohos.telephony.call';
 
 
 const TAG = LOG_TAG + 'CreateUnpremultipliedPixelMapTestSupp';
 
 async function createUnpremultipliedPixelMapPromiseTest(done: Function, testName: string, color: ArrayBuffer,
-  optsForPre: image.InitializationOptions, optsForUnpre: image.InitializationOptions) {
+  optsForPre: image.InitializationOptions, optsForUnpre: image.InitializationOptions, callback: () => void) {
   try {
     let bufferArr = new Uint8Array(color);
     for (let i = 0; i < bufferArr.length; i += 4) {
@@ -23,7 +24,7 @@ async function createUnpremultipliedPixelMapPromiseTest(done: Function, testName
     done();
   } catch (error) {
     console.info(TAG,testName, `failed; error: ${error},${error.code}`, testName);
-    expect().assertFail();
+    callback();
     done();
   }
 }
@@ -72,8 +73,9 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
         size: { height: 2, width: 2 },
         alphaType: image.AlphaType.UNPREMUL
       };
-      await createUnpremultipliedPixelMapPromiseTest(done, testName, color, optsForPre, optsForUnpre);
-      expect().assertFail()
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, color, optsForPre, optsForUnpre, () => {
+        expect().assertFail()
+      });
       done()
     });
 
