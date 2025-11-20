@@ -492,15 +492,7 @@ export default function initNdkTest() {
       console.info('the value of the deviceinfo securityPatchTag is :' + securityPatchTagInfo);
       let reFormat = new RegExp("^(\\d{4})/(\\d{2})/(\\d{2})$");
       let re = securityPatchTagInfo.match(reFormat);
-      if (re != null) {
-        console.info('the return formate is yy--mm--dd');
-        expect().assertTrue();
-        done();
-      } else {
-        console.info('the return formate is not yy--mm--dd');
-        expect().assertFail();
-        done();
-      }
+      expect(re != null).assertTrue();
     });
 
     /**
@@ -752,15 +744,7 @@ export default function initNdkTest() {
 
       console.info('the value of the deviceinfo sdkApiVersion is :' + sdkApiVersionInfo);
       expect(sdkApiVersionInfo).assertInstanceOf('Number');
-      if (sdkApiVersionInfo >= 0) {
-        console.info('the return value SdkApiVersion is not negative number.');
-          expect().assertTrue();
-          done();
-      } else {
-          console.info('the return value SdkApiVersion is null or incorrect.');
-          expect().assertFail();
-          done();
-      }
+      expect(sdkApiVersionInfo >= 0).assertTrue();
     });
 
     /**
@@ -797,15 +781,7 @@ export default function initNdkTest() {
 
       console.info('the value of the deviceinfo firstApiVersion is :' + firstApiVersionInfo);
       expect(firstApiVersionInfo).assertInstanceOf('Number');
-      if (firstApiVersionInfo >= 0) {
-        console.info('the return value FirstApiVersion is not negative number.');
-        expect().assertTrue();
-        done();
-      } else {
-        console.info('the return value FirstApiVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect(firstApiVersionInfo >= 0).assertTrue();
     });
 
     /**
@@ -1209,15 +1185,7 @@ export default function initNdkTest() {
 
       console.info('the value of the deviceinfo distributionOSApiVersion is :' + distributionOSApiVersionInfo);
       expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
-      if (distributionOSApiVersionInfo >= 0) {
-        console.info('the return value DistributionOSApiVersion is not negative number.');
-          expect().assertTrue();
-          done();
-      } else {
-          console.info('the return value DistributionOSApiVersion is less than 0.');
-          expect().assertFail();
-          done();
-      }
+      expect(distributionOSApiVersionInfo >= 0).assertTrue();
     });
 
     /**
