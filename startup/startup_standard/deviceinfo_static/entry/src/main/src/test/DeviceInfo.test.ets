@@ -465,6 +465,7 @@ export default function DeviceInfoTest() {
 
       expect(majorVersionInfo).assertInstanceOf('Number');
       expect(majorVersionInfo >= 1 && majorVersionInfo <= 99).assertTrue();
+      done();
 
       console.info('deviceinfo_test_static_1800 : end');
     })
@@ -484,6 +485,7 @@ export default function DeviceInfoTest() {
 
       expect(seniorVersionInfo).assertInstanceOf('Number');
       expect(seniorVersionInfo >= 0 && seniorVersionInfo <= 99).assertTrue();
+      done();
 
       console.info('deviceinfo_test_static_1900 : end');
     })
@@ -503,6 +505,7 @@ export default function DeviceInfoTest() {
 
       expect(featureVersionInfo).assertInstanceOf('Number');
       expect((featureVersionInfo >= 1 && featureVersionInfo <= 99) || featureVersionInfo == 0).assertTrue();
+      done();
 
       console.info('deviceinfo_test_static_2000 : end');
     })
@@ -522,6 +525,7 @@ export default function DeviceInfoTest() {
 
       expect(buildVersionInfo).assertInstanceOf('Number');
       expect(buildVersionInfo == 0 || (buildVersionInfo >= 1 && buildVersionInfo <= 999)).assertTrue();
+      done();
 
       console.info('deviceinfo_test_static_2100 : end');
     })
@@ -541,6 +545,7 @@ export default function DeviceInfoTest() {
 
       expect(sdkApiVersionInfo).assertInstanceOf('Number');
       expect(sdkApiVersionInfo >= 0).assertTrue();
+      done();
 
       console.info('deviceinfo_test_static_2200 : end');
     })
@@ -560,6 +565,7 @@ export default function DeviceInfoTest() {
 
       expect(firstApiVersionInfo).assertInstanceOf('Number');
       expect(firstApiVersionInfo >= 0).assertTrue();
+      done();
 
       console.info('deviceinfo_test_static_2300 : end');
     })
@@ -802,6 +808,7 @@ export default function DeviceInfoTest() {
 
       expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
       expect(distributionOSApiVersionInfo >= 0).assertTrue();
+      done();
 
       console.info('deviceinfo_test_static_3300 : end');
     })
