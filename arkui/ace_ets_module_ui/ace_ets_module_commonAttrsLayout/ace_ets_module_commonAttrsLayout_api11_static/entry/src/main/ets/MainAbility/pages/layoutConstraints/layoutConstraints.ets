@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+import emitter from '@ohos.events.emitter';
 import {
   Alignment,
   Color,
@@ -36,9 +36,10 @@ import {
   Text,
   TextAlign,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
+import { Callback, RecordData } from '@ohos.base';
 
 class ContainerInfo {
   label: string = ''
@@ -81,12 +82,12 @@ struct LayoutConstraints {
       Row({ space: 10 } as RowOptions) {
         ForEach(this.children, (item: string) => {
           Text(item)
-            .backgroundColor(0xbbb2cb)
+            .backgroundColor('0xbbb2cb')
             .fontSize(20)
             .aspectRatio(this.aspectRatioValue)
             .height(60)
           Text(item)
-            .backgroundColor(0xbbb2cb)
+            .backgroundColor('0xbbb2cb')
             .fontSize(20)
             .aspectRatio(this.aspectRatioValue)
             .width(60)
@@ -94,7 +95,7 @@ struct LayoutConstraints {
         }, (item: string) => item)
       }
       .size({ width: "100%", height: 100 })
-      .backgroundColor(0xd2cab3)
+      .backgroundColor('0xd2cab3')
       .clip(true)
 
       Text('using container: grid')
@@ -105,7 +106,7 @@ struct LayoutConstraints {
         ForEach(this.children, (item: string) => {
           GridItem() {
             Text(item)
-              .backgroundColor(0xbbb2cb)
+              .backgroundColor('0xbbb2cb')
               .fontSize(40)
               .aspectRatio(this.aspectRatioValue)
           }
@@ -115,7 +116,7 @@ struct LayoutConstraints {
       .columnsGap(10)
       .rowsGap(10)
       .size({ width: "100%", height: 165 })
-      .backgroundColor(0xd2cab3)
+      .backgroundColor('0xd2cab3')
 
       Text('displayPriority 4')
         .fontSize(20)
@@ -129,7 +130,7 @@ struct LayoutConstraints {
               .height(60)
               .fontSize(18)
               .textAlign(TextAlign.Center)
-              .backgroundColor(0xbbb2cb)
+              .backgroundColor('0xbbb2cb')
               .displayPriority(item.priority)
               .key('displayPriority')
           } else {
@@ -138,13 +139,50 @@ struct LayoutConstraints {
               .height(60)
               .fontSize(18)
               .textAlign(TextAlign.Center)
-              .backgroundColor(0xbbb2cb)
+              .backgroundColor('0xbbb2cb')
               .displayPriority(item.priority)
           }
         }, (item: PriorityChild) => item.text)
       }
       .width(this.container[this.currentIndex].size)
-      .backgroundColor(0xd2cab3)
+      .backgroundColor('0xd2cab3')
     }.padding(10)
   }
+
+  onPageShow() {
+    let aspectRatioChangeEvent: emitter.InnerEvent = {
+      eventId: 20,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(aspectRatioChangeEvent, this.stateChangCallBack);
+
+    let priorityChangeEvent: emitter.InnerEvent = {
+      eventId: 21,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(priorityChangeEvent, this.stateChangCallBack);
+
+    let priorityChangeEvent2: emitter.InnerEvent = {
+      eventId: 1112,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(priorityChangeEvent2, this.stateChangCallBack);
+  }
+
+  stateChangCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
+    console.info("LayoutConstraints page stateChangCallBack" + JSON.stringify(eventData));
+    if (eventData && eventData.data != undefined) {
+      const event: Record<string, undefined | null | Object> =
+        eventData.data as Record<string, undefined | null | Object>
+      if (event['aspectRatio'] != null) {
+        this.aspectRatioValue = event['aspectRatio'] as number;
+      } else if (event['displayPriority'] != null) {
+        let priority: PriorityChild[] =
+          JSON.parseJsonElement(JSON.stringify(this.priorityChildren)).asArray() as Object as Array<PriorityChild>;
+        priority[0].priority = event['displayPriority'] as number;
+        this.priorityChildren = [];
+        this.priorityChildren = priority;
+      }
+    }
+  } as Callback<emitter.EventData>
 }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
@@ -52,8 +52,6 @@ export default function MeasureJsunit() {
         if (!("measureSize" == pages.name)) {
           console.info("get measureJsunit state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push measureJsunit page error: " + err);
@@ -61,14 +59,19 @@ export default function MeasureJsunit() {
       }
     });
 
+    afterEach(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+    })
 
+    
     /*
-     * @tc.number    measureJsunit_static_0100
-     * @tc.name      measureJsunit_static_0100
-     * @tc.desc      measureJsunit_static_0100
-     * @tc.level     2
+     * @tc.number   measureJsunit_static_0100
+     * @tc.name     measureJsunit_static_0100
+     * @tc.desc     measureJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('measureJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('measureJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('measureJsunit_static_0100 START');
       await CommonFunc.sleep(2000);
 
@@ -84,14 +87,14 @@ export default function MeasureJsunit() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    measureJsunit_static_0200
-     * @tc.name      measureJsunit_static_0200
-     * @tc.desc      measureJsunit_static_0200
-     * @tc.level     2
+     * @tc.number   measureJsunit_static_0200
+     * @tc.name     measureJsunit_static_0200
+     * @tc.desc     measureJsunit_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('measureJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('measureJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('measureJsunit_static_0200 START');
       await CommonFunc.sleep(2000);
 
@@ -114,14 +117,14 @@ export default function MeasureJsunit() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    measureJsunit_static_0300
-     * @tc.name      measureJsunit_static_0300
-     * @tc.desc      measureJsunit_static_0300
-     * @tc.level     2
+     * @tc.number   measureJsunit_static_0300
+     * @tc.name     measureJsunit_static_0300
+     * @tc.desc     measureJsunit_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('measureJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('measureJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('measureJsunit_static_0300 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -161,14 +164,14 @@ export default function MeasureJsunit() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    measureJsunit_static_0400
-     * @tc.name      measureJsunit_static_0400
-     * @tc.desc      measureJsunit_static_0400
-     * @tc.level     2
+     * @tc.number   measureJsunit_static_0400
+     * @tc.name     measureJsunit_static_0400
+     * @tc.desc     measureJsunit_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('measureJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('measureJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('measureJsunit_static_0400 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -190,14 +193,14 @@ export default function MeasureJsunit() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    measureJsunit_static_0500
-     * @tc.name      measureJsunit_static_0500
-     * @tc.desc      measureJsunit_static_0500
-     * @tc.level     2
+     * @tc.number   measureJsunit_static_0500
+     * @tc.name     measureJsunit_static_0500
+     * @tc.desc     measureJsunit_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('measureJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('measureJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('measureJsunit_static_0500 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();

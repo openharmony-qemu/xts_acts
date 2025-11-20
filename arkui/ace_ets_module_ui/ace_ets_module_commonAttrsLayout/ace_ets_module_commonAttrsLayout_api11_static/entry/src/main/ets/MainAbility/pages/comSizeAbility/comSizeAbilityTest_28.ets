@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -69,6 +69,7 @@ import {
   RenderingContextSettings,
   ResourceStr,
   RichEditor,
+  RichEditorController,
   RichEditorOptions,
   RichText,
   Row,
@@ -88,25 +89,25 @@ import {
   TextInput,
   TextPicker,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
 let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0])
 
 class MyDataSource1 implements IDataSource<number> {
-  private list: Int[] = []
+  private list: number[] = []
 
-  constructor(list: Int[]) {
+  constructor(list: number[]) {
     this.list = list
   }
 
-  totalCount(): int {
+  totalCount(): Int {
     return this.list.length
   }
 
-  getData(index: int): number {
+  getData(index: Int): number {
     return this.list[index as Int]
   }
 
@@ -127,7 +128,7 @@ struct comSizeAbilityTest_28 {
     let uiContext = this.getUIContext();
     let comSizeAbilityTest_28 = uiContext.getRouter();
     AppStorage.setOrCreate<Router>("comSizeAbilityTest_28", comSizeAbilityTest_28);
-    let list: Int[] = []
+    let list: number[] = []
     for (let i = 1; i <= 10; i++) {
       list.push(i);
     }
@@ -168,7 +169,7 @@ struct comSizeAbilityTest_28 {
         .key("Swiper_Size")
         .cachedCount(2)
         .index(1)
-
+        .autoPlay(true, { stopWhenTouched: true })
         .interval(4000)
         .indicator(true)
         .loop(true)

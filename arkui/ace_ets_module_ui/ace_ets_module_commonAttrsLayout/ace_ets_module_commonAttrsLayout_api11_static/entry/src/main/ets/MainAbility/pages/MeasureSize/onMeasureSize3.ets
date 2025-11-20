@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,7 +43,7 @@ import {
   Text,
   WordBreak,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
@@ -116,15 +116,13 @@ struct CustomLayout {
     let size = 100;
     children.forEach((child, child_index) => {
       if (child_index != 2) {
-        let res: MeasureResult | undefined = child.measure({
+        let result1: MeasureResult = child.measure({
           minHeight: size,
           minWidth: size,
           maxWidth: size,
           maxHeight: size
-        })
-        if (res) {
-          size += res.width / 2;
-        }
+        }) as MeasureResult
+        size += result1.width / 2;
       }
     })
     this.result.width = 100;

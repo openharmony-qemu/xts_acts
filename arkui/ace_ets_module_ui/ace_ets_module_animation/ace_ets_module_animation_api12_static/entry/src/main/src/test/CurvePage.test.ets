@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -62,7 +62,6 @@ export default function CurvePage() {
         console.info("get setExpectedFrameRateRangeTest state pages:" + JSON.stringify(pages));
         if (!("CurvePage" == pages.name)) {
           console.info("get setExpectedFrameRateRangeTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -79,23 +78,27 @@ export default function CurvePage() {
     });
 
 
+    
     /*
-     * @tc.number    CurvePage_Static_0100
-     * @tc.name      CurvePage_Static_0100
-     * @tc.desc      CurvePage_Static_0100
-     * @tc.level     2
+     * @tc.number   CurvePage_Static_0100
+     * @tc.name     CurvePage_Static_0100
+     * @tc.desc     CurvePage_Static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('CurvePage_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('CurvePage_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CurvePage_0100 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
-
+      console.log('before btn1 click')
       let btn1 = await driver.findComponent(ON.id('easeInOutId'));
+      await driver.delayMs(3000);
+      console.log('btn1 is: ' + JSON.stringify(btn1))
       await (btn1?.click() as Promise<void>);
       console.info('[CurvePage_0100] btn1 click');
-      await driver.delayMs(3000);
+      await CommonFunc.sleep(5000);
 
-      let cubeSize = AppStorage.get('cube_size')
+      let cubeSize: Int = AppStorage.get<Int>('cube_size') as Int
+      await CommonFunc.sleep(1000);
       console.log('CurvePage_0100 on cubeSize value : ' + cubeSize)
       expect(cubeSize).assertEqual(30);
       AppStorage.delete('cube_size');
@@ -104,14 +107,14 @@ export default function CurvePage() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    CurvePage_Static_0200
-     * @tc.name      CurvePage_Static_0200
-     * @tc.desc      CurvePage_Static_0200
-     * @tc.level     2
+     * @tc.number   CurvePage_Static_0200
+     * @tc.name     CurvePage_Static_0200
+     * @tc.desc     CurvePage_Static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('CurvePage_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('CurvePage_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CurvePage_0200 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -121,7 +124,7 @@ export default function CurvePage() {
       console.info('[CurvePage_0200] btn2 click');
       await driver.delayMs(3000);
 
-      let cubeSize1 = AppStorage.get('cube_size')
+      let cubeSize1 = AppStorage.get<Int>('cube_size')
       console.log('CurvePage_0200 on cubeSize1 value : ' + cubeSize1)
       expect(cubeSize1).assertEqual(50);
       AppStorage.delete('cube_size');
@@ -130,14 +133,14 @@ export default function CurvePage() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    CurvePage_Static_0300
-     * @tc.name      CurvePage_Static_0300
-     * @tc.desc      CurvePage_Static_0300
-     * @tc.level     2
+     * @tc.number   CurvePage_Static_0300
+     * @tc.name     CurvePage_Static_0300
+     * @tc.desc     CurvePage_Static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('CurvePage_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('CurvePage_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CurvePage_0300 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -147,7 +150,7 @@ export default function CurvePage() {
       console.info('[CurvePage_0300] btn3 click');
       await driver.delayMs(3000);
 
-      let cubeSize2 = AppStorage.get('cube_size')
+      let cubeSize2 = AppStorage.get<Int>('cube_size')
       console.log('CurvePage_0300 on cubeSize2 value : ' + cubeSize2)
       expect(cubeSize2).assertEqual(20);
       AppStorage.delete('cube_size');
@@ -156,14 +159,14 @@ export default function CurvePage() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    CurvePage_Static_0400
-     * @tc.name      CurvePage_Static_0400
-     * @tc.desc      CurvePage_Static_0400
-     * @tc.level     2
+     * @tc.number   CurvePage_Static_0400
+     * @tc.name     CurvePage_Static_0400
+     * @tc.desc     CurvePage_Static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('CurvePage_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('CurvePage_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CurvePage_0400 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -173,7 +176,7 @@ export default function CurvePage() {
       console.info('[CurvePage_0400] btn4 click');
       await driver.delayMs(3000);
 
-      let cubeSize3 = AppStorage.get('cube_size')
+      let cubeSize3 = AppStorage.get<Int>('cube_size')
       console.log('CurvePage_0400 on cubeSize3 value : ' + cubeSize3)
       expect(cubeSize3).assertEqual(60);
       AppStorage.delete('cube_size');

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,49 +13,54 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  Builder,
-  Button,
-  Canvas,
-  CanvasRenderingContext2D,
-  CheckboxGroup,
-  Circle,
-  ClickEvent,
-  Color,
   Column,
   ColumnOptions,
-  Component,
+  Text,
+  Color,
+  Image,
+  List,
+  ListItem,
+  PreDragStatus,
+  Scroller,
+  CanvasRenderingContext2D,
+  Button,
+  RenderingContextSettings,
+  Canvas,
+  ClickEvent,
+  Row,
+  CheckboxGroup,
+  Circle,
   Counter,
   Divider,
   Ellipse,
-  Entry,
-  ForEach,
   Gauge,
-  Grid,
-  GridCol,
-  GridItem,
   GridRow,
-  Image,
-  LineCapStyle,
-  LineJoinStyle,
-  List,
-  ListItem,
+  GridCol,
+  ForEach,
+  GridItem,
+  Grid,
+  Builder,
   ListItemGroup,
-  Menu,
-  MenuItem,
+  ResourceStr,
   MenuItemGroup,
+  MenuItem,
+  Menu,
   Path,
   Polygon,
   Polyline,
-  PreDragStatus,
-  RenderingContextSettings,
-  ResourceStr,
-  Row,
-  Scroller,
-  Text,
+  LineJoinStyle,
+  LineCapStyle,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -65,19 +70,18 @@ let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
 @Component
 struct comSizeAbilityTest_10 {
   scroller: Scroller = new Scroller()
-
   build() {
     Column() {
       Row() {
-        Button('to_1').onClick((e: ClickEvent) => {
+        Button('to_1').onClick((e: ClickEvent)=>{
           this.scroller.scrollToIndex(0)
         }).key('comSizeAbilityTest_10_to_1')
 
-        Button('to_2').onClick((e: ClickEvent) => {
+        Button('to_2').onClick((e: ClickEvent)=>{
           this.scroller.scrollToIndex(1)
         }).key('comSizeAbilityTest_10_to_2')
 
-        Button('to_3').onClick((e: ClickEvent) => {
+        Button('to_3').onClick((e: ClickEvent)=>{
           this.scroller.scrollToIndex(2)
         }).key('comSizeAbilityTest_10_to_3')
       }
@@ -85,7 +89,7 @@ struct comSizeAbilityTest_10 {
       List({ space: 5, initialIndex: 0, scroller: this.scroller }) {
         ListItem() {
           Path()
-            .commands('M0 0 H200 V200 H0 Z')
+            .commands('M0 0 H200 V200 H0 Z')// 单位转化
             .stroke(Color.Green)
             .strokeWidth(3)
             .key("Path_Size")

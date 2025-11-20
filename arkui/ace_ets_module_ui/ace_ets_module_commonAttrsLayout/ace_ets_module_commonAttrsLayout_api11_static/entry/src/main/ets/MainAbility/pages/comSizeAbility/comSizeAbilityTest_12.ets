@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,6 +14,7 @@
  */
 import {
   $r,
+  $$,
   Builder,
   Button,
   Canvas,
@@ -58,8 +59,8 @@ import {
   Scroller,
   Text,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -99,8 +100,31 @@ struct comSizeAbilityTest_12 {
         }.key('Rect_Father')
 
         Column() {
-
-
+          // Refresh({ refreshing: $$(this.isRefreshing), offset: 120, friction: 100 }) {
+          //   Text('下拉刷新: ' + this.counter)
+          //     .fontSize(30)
+          //     .margin(10)
+          // }
+          // .backgroundColor('gray')
+          // .key("Refresh_Size")
+          // .size({ width: 220, height: 140 })
+          // .translate({ x: 1, y: 1, z: 1 })
+          // .scale({
+          //   x: 1,
+          //   y: 1,
+          //   z: 1,
+          //   centerX: 1,
+          //   centerY: 1
+          // })
+          // .rotate({
+          //   x: 1,
+          //   y: 1,
+          //   z: 1,
+          //   angle: 0,
+          //   centerX: 1,
+          //   centerY: 1
+          // })
+          // .transform(matrix)
         }.key('Refresh_Father')
       }.width('100%')
     }.height('100%')

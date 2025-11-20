@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -45,7 +45,7 @@ interface Param {
 @Entry
 @Component
 struct CurvePage {
-  @State cube_size: number = 50
+  @State cube_size: Int = 50
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
@@ -55,15 +55,14 @@ struct CurvePage {
       Button('EaseInOut')
         .id('easeInOutId')
         .height('10%')
-        .onClick((e: ClickEvent) => {
-          let aniParam: Param = {
+        .onClick(() => {
+          this.getUIContext().animateTo({
             curve: curves.initCurve(curves.Curve.EaseInOut),
             onFinish: (): void => {
               this.cube_size = 30
               AppStorage.setOrCreate('cube_size', 30);
             }
-          }
-          this.getUIContext().animateTo(aniParam as AnimateParam, () => {
+          }, () => {
             this.cube_size = 200
           })
         })
@@ -72,28 +71,28 @@ struct CurvePage {
         .id('fastOutSlowIn')
         .height('10%')
         .onClick((e: ClickEvent) => {
-          let aniParam1: Param = {
-            curve: curves.initCurve(curves.Curve.FastOutSlowIn), onFinish: () => {
+          this.getUIContext().animateTo({
+            curve: curves.initCurve(curves.Curve.FastOutSlowIn),
+            onFinish: (): void => {
               this.cube_size = 50
               AppStorage.setOrCreate('cube_size', 50);
             }
-          }
-          this.getUIContext().animateTo(aniParam1 as AnimateParam, () => {
-            this.cube_size = 200
-          })
+          }, () => {
+              this.cube_size = 200
+            })
         })
 
       Button('springMotion')
         .id('springMotionId')
         .height('10%')
         .onClick((e: ClickEvent) => {
-          let aniParam2: Param = {
-            curve: curves.springMotion(0.5, 0.8, 1), onFinish: () => {
+          this.getUIContext().animateTo({
+            curve: curves.springMotion(0.5, 0.8, 1),
+            onFinish: (): void => {
               this.cube_size = 20
               AppStorage.setOrCreate('cube_size', 20);
             }
-          }
-          this.getUIContext().animateTo(aniParam2 as AnimateParam, () => {
+          }, () => {
             this.cube_size = 200
           })
         })
@@ -102,13 +101,13 @@ struct CurvePage {
         .id('responsiveSpringId')
         .height('10%')
         .onClick((e: ClickEvent) => {
-          let aniParam3: Param = {
-            curve: curves.responsiveSpringMotion(0.1, 0.8, 0.2), onFinish: () => {
+          this.getUIContext().animateTo({
+            curve: curves.responsiveSpringMotion(0.1, 0.8, 0.2),
+            onFinish: (): void => {
               this.cube_size = 60
               AppStorage.setOrCreate('cube_size', 60);
             }
-          }
-          this.getUIContext().animateTo(aniParam3 as AnimateParam, () => {
+          }, () => {
             this.cube_size = 200
           })
         })

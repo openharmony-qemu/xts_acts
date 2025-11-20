@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -71,10 +71,9 @@ import {
   TextClock,
   TextInput,
   TextPicker,
-  OnAlphabetIndexerRequestPopupDataCallback
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -100,7 +99,9 @@ struct comSizeAbilityTest_19 {
                   .height('5%')
                   .fontSize(30)
                   .textAlign(TextAlign.Center)
-              } /*.editable(true)*/
+              }
+
+              // .editable(true)
             }, (item: string) => item)
             ForEach(this.arrayB, (item: string) => {
               ListItem() {
@@ -123,7 +124,8 @@ struct comSizeAbilityTest_19 {
           }
           .width('30%')
           .backgroundColor('green')
-          AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
+
+          AlphabetIndexer({ arrayValue: this.value, selected: 0 })
             .size({ width: 80, height: 80 })
             .translate({ x: 1, y: 1, z: 1 })
             .scale({
@@ -144,30 +146,30 @@ struct comSizeAbilityTest_19 {
             .transform(matrix)
             .key("AlphabetIndexer_Size")
             .backgroundColor('red')
-            .selectedColor(0xFFFFFF)
-            .popupColor(0xFFFAF0)
-            .selectedBackgroundColor(0xCCCCCC)
-            .popupBackground(0xD2B48C)
-            .usingPopup(true)
-            .selectedFont({ size: 16, weight: FontWeight.Bolder })
-            .popupFont({ size: 30, weight: FontWeight.Bolder })
-            .itemSize(28)
-            .alignStyle(IndexerAlign.Left)
-            .onSelect((index: int): void => {
-            
+            .selectedColor(0xFFFFFF)// 选中项文本颜色
+            .popupColor(0xFFFAF0)// 弹出框文本颜色
+            .selectedBackgroundColor(0xCCCCCC)// 选中项背景颜色
+            .popupBackground(0xD2B48C)// 弹出框背景颜色
+            .usingPopup(true)// 是否显示弹出框
+            .selectedFont({ size: 16, weight: FontWeight.Bolder })// 选中项字体样式
+            .popupFont({ size: 30, weight: FontWeight.Bolder })// 弹出框内容的字体样式
+            .itemSize(28)// 每一项的尺寸大小
+            .alignStyle(IndexerAlign.Left)// 弹出框在索引条右侧弹出
+            .onSelect((index: Int): void => {
+              console.info(this.value[index as Int] + ' Selected!')
             })
-            .onRequestPopupData(((index: int): Array<String> | undefined => {
-              if (this.value[index as int] == 'A') {
-                return this.arrayA
-              } else if (this.value[index as int] == 'B') {
+            .onRequestPopupData((index: Int): string[] => {
+              if (this.value[index as Int] == 'A') {
+                return this.arrayA // 当选中A时，弹出框里面的提示文本列表显示A对应的列表arrayA，选中B、C、L时也同样
+              } else if (this.value[index as Int] == 'B') {
                 return this.arrayB
-              } else if (this.value[index as int] == 'C') {
+              } else if (this.value[index as Int] == 'C') {
                 return this.arrayC
               } else {
-                return []
+                return [] // 选中其余子母项时，提示文本列表为空
               }
-            }) as OnAlphabetIndexerRequestPopupDataCallback)
-            .onPopupSelect((index: int): void => {
+            })
+            .onPopupSelect((index: Int): void => {
               console.info('onPopupSelected:' + index)
             })
         }

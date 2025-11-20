@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -65,8 +65,8 @@ import {
   TabsController,
   Text,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -96,8 +96,38 @@ struct comSizeAbilityTest_15 {
       Column({ space: 20 } as ColumnOptions) {
         Column() {
           Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-
-
+            TabContent() {
+              Column() {
+                Text('Tab1')
+                  .fontSize(36)
+                  .fontColor('#182431')
+                  .fontWeight(500)
+                  .opacity(0.4)
+                  .margin({ top: 30, bottom: 56.5 } as Margin)
+              }
+            }
+            .key("TabContent_Size")
+            .translate({ x: 1, y: 1, z: 1 })
+            .scale({
+              x: 1,
+              y: 1,
+              z: 1,
+              centerX: 1,
+              centerY: 1
+            })
+            .rotate({
+              x: 1,
+              y: 1,
+              z: 1,
+              angle: 0,
+              centerX: 1,
+              centerY: 1
+            })
+            .transform(matrix)
+            .tabBar(() => {
+              this.TabBuilder(0)
+            })
+            .backgroundColor(0XBDDB69)
           }
           .vertical(false)
           .barHeight(56)

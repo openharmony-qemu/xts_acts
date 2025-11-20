@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,8 +43,8 @@ import {
   Text,
   WordBreak,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -54,15 +54,17 @@ struct Index {
     Column() {
       CustomLayout({
         builder: columnChildren
-      }) /*.constraintSize({
-    minWidth : 20,
-    maxWidth: 50,
-    minHeight : 10,
-    maxHeight: 200})*/
+      })
+      // .constraintSize({
+      //   minWidth: 20,
+      //   maxWidth: 50,
+      //   minHeight: 10,
+      //   maxHeight: 200
+      // })
     }
     .width('100%')
     .height('100%')
-
+    .constraintSize({ minWidth: 20, minHeight: 20 })
   }
 }
 
@@ -73,7 +75,7 @@ function columnChildren() {
       .fontSize(30)
       .width(100)
       .height(100)
-
+      .constraintSize({ minWidth: 100, maxHeight: 200 })
   })
 }
 
@@ -123,8 +125,9 @@ struct CustomLayout {
     constraint.minHeight = 30;
     console.log('llhh333 onMeasureSize ' + constraint.minWidth + '-' + constraint.maxWidth + '-' +
     constraint.minHeight + '-' + constraint.maxHeight);
-
-
+    children.forEach((child, childIndex) => {
+      // child.measure(undefined)
+    })
     this.result.width = 500;
     this.result.height = 600;
     return this.result;

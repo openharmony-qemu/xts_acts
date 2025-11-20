@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,59 +13,64 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  BarState,
-  Builder,
-  Button,
-  Canvas,
-  CanvasRenderingContext2D,
-  CheckboxGroup,
-  Circle,
-  ClickEvent,
-  Color,
   Column,
   ColumnOptions,
-  Component,
+  Text,
+  Color,
+  Image,
+  List,
+  ListItem,
+  PreDragStatus,
+  Scroller,
+  CanvasRenderingContext2D,
+  Button,
+  RenderingContextSettings,
+  Canvas,
+  ClickEvent,
+  Row,
+  CheckboxGroup,
+  Circle,
   Counter,
   Divider,
   Ellipse,
-  Entry,
-  ForEach,
   Gauge,
-  Grid,
-  GridCol,
-  GridItem,
   GridRow,
-  Image,
-  LineJoinStyle,
-  List,
-  ListItem,
+  GridCol,
+  ForEach,
+  GridItem,
+  Grid,
+  Builder,
   ListItemGroup,
-  Margin,
-  Menu,
-  MenuItem,
+  ResourceStr,
   MenuItemGroup,
+  MenuItem,
+  Menu,
   Path,
   Polygon,
   Polyline,
-  PreDragStatus,
+  LineJoinStyle,
   QRCode,
   Radio,
   Rect,
   Refresh,
-  RenderingContextSettings,
-  ResourceStr,
   RichText,
-  Row,
-  Scroll,
-  ScrollDirection,
-  Scroller,
   Search,
-  Text,
+  Scroll,
+  Margin,
   TextAlign,
+  ScrollDirection,
+  BarState,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -77,22 +82,21 @@ struct comSizeAbilityTest_13 {
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>'
   @State ScrollSize: Int[] = [261, 140]
   scroller: Scroller = new Scroller()
+  private arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
   @State space: number = 8
   scroller1: Scroller = new Scroller()
-  private arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-
   build() {
     Column() {
       Row() {
-        Button('to_1').onClick((e: ClickEvent) => {
+        Button('to_1').onClick((e: ClickEvent)=>{
           this.scroller1.scrollToIndex(0)
         }).key('comSizeAbilityTest_13_to_1')
 
-        Button('to_2').onClick((e: ClickEvent) => {
+        Button('to_2').onClick((e: ClickEvent)=>{
           this.scroller1.scrollToIndex(1)
         }).key('comSizeAbilityTest_13_to_2')
 
-        Button('to_3').onClick((e: ClickEvent) => {
+        Button('to_3').onClick((e: ClickEvent)=>{
           this.scroller1.scrollToIndex(2)
         }).key('comSizeAbilityTest_13_to_3')
       }

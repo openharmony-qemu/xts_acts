@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Callback, Message, MessageManager } from '../../../common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   Alignment,
   Button,
@@ -39,8 +39,8 @@ import {
   TextAlign,
   Visibility
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -51,35 +51,41 @@ struct getGridItemRect5 {
   @State columnsGap1: number = 0
   @State rowsGap1: number = 0
   @State layoutDirection1: GridDirection = GridDirection.Row
-  @State index: number = 0
+  @State index: Int = 0
   @State x: number = 0
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
   messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManagerGridDirection: MessageManager<GridDirection> = new MessageManager<GridDirection>()
 
   onPageShow() {
     console.info('getGridItemRect5 onPageShow');
-
-
+    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<GridDirection>>('messageManagerGridDirection',
+      this.messageManagerGridDirection);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.index = message.value;
-      } else if (message.name == 'layoutDirection1') {
-
+        this.index = message.value as Int;
       }
     }
+    let GridDirectionCallback: Callback<GridDirection> = (message: Message<GridDirection>) => {
+      if (message.name == 'layoutDirection1') {
+        this.layoutDirection1 = message.value as GridDirection;
+      }
+    }
+    this.messageManagerGridDirection.registerCallback(GridDirectionCallback)
     this.messageManager.registerCallback(callback);
   }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.scroller.getItemRect(Double.toInt(this.index)).x
-        this.y = this.scroller.getItemRect(Double.toInt(this.index)).y
-        this.width1 = this.scroller.getItemRect(Double.toInt(this.index)).width
-        this.height1 = this.scroller.getItemRect(Double.toInt(this.index)).height
+        this.x = this.scroller.getItemRect(this.index).x
+        this.y = this.scroller.getItemRect(this.index).y
+        this.width1 = this.scroller.getItemRect(this.index).width
+        this.height1 = this.scroller.getItemRect(this.index).height
       }).id('getGridItemRect5_button')
       Text('' + this.x).key('getGridItemRect5_text1')
       Text('' + this.y).key('getGridItemRect5_text2')

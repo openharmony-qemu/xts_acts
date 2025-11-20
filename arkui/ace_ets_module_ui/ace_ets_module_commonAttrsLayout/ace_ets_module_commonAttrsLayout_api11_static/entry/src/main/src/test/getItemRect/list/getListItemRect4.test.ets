@@ -1,23 +1,23 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { Visibility } from '@ohos.arkui.component';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -26,6 +26,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../../Util.test';
 import { BusinessError } from '@ohos.base';
+import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
+import RectValue from '../../../../ets/MainAbility/common/Rect';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -33,11 +35,15 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function getListItemRect4() {
   describe('getListItemRect4', () => {
+
+    console.info("getListItemRect4 beforeAll start");
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
     beforeAll(() => {
-      console.info("getListItemRect4 beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(() => {
       console.info("getListItemRect4 beforeEach start");
@@ -52,8 +58,6 @@ export default function getListItemRect4() {
         if (!("getListItemRect4" == pages.name)) {
           console.info("get getListItemRect4 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push getListItemRect4 page error: " + err);
@@ -62,27 +66,31 @@ export default function getListItemRect4() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      const getListItemRect4 = AppStorage.get<Router>("getListItemRect4") as Router;
-      getListItemRect4.back({ url: 'MainAbility/pages/index/index' })
+
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
-
+    
     /*
-     * @tc.number    getListItemRect4_static_0100
-     * @tc.name      getListItemRect4_static_0100
-     * @tc.desc      getListItemRect4_static_0100
-     * @tc.level     2
+     * @tc.number   getListItemRect4_static_0100
+     * @tc.name     getListItemRect4_static_0100
+     * @tc.desc     getListItemRect4_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0100] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      const message1: MessageManager<Visibility> =
+        AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
+      message.notify({ name: 'index', value: 0.0 })
+      message1.notify({ name: 'visibility1', value: Visibility.Visible })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_0 = CommonFunc.getComponentRect('getListItemRect4_listItem_0');
+      let listItem_0: RectValue = CommonFunc.getComponentRect('getListItemRect4_listItem_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -91,12 +99,6 @@ export default function getListItemRect4() {
       let btn = await driver.findComponent(ON.id('getListItemRect4_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect4_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect4_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect4_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect4_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect4_text1')
@@ -122,29 +124,34 @@ export default function getListItemRect4() {
 
       console.log('assert size')
       console.log('listItem_0.right - listItem_0.left' + (listItem_0.right - listItem_0.left))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
+        .assertTrue();
       console.log('listItem_0.bottom - listItem_0.top' + (listItem_0.bottom - listItem_0.top))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
+        .assertTrue();
 
       done();
     });
 
-
+    
     /*
-     * @tc.number    getListItemRect4_static_0200
-     * @tc.name      getListItemRect4_static_0200
-     * @tc.desc      getListItemRect4_static_0200
-     * @tc.level     2
+     * @tc.number   getListItemRect4_static_0200
+     * @tc.name     getListItemRect4_static_0200
+     * @tc.desc     getListItemRect4_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0200] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      const message1: MessageManager<Visibility> =
+        AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
+      message.notify({ name: 'index', value: 0.0 })
+      message1.notify({ name: 'visibility1', value: Visibility.Hidden })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_0 = CommonFunc.getComponentRect('getListItemRect4_listItem_0');
+      let listItem_0: RectValue = CommonFunc.getComponentRect('getListItemRect4_listItem_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -153,12 +160,6 @@ export default function getListItemRect4() {
       let btn = await driver.findComponent(ON.id('getListItemRect4_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect4_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect4_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect4_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect4_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect4_text1')
@@ -183,29 +184,35 @@ export default function getListItemRect4() {
 
       console.log('assert size')
       console.log('listItem_0.right - listItem_0.left' + (listItem_0.right - listItem_0.left))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
+        .assertTrue();
       console.log('listItem_0.bottom - listItem_0.top' + (listItem_0.bottom - listItem_0.top))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
+        .assertTrue();
 
       done();
     });
 
 
+    
     /*
-     * @tc.number    getListItemRect4_static_0300
-     * @tc.name      getListItemRect4_static_0300
-     * @tc.desc      getListItemRect4_static_0300
-     * @tc.level     2
+     * @tc.number   getListItemRect4_static_0300
+     * @tc.name     getListItemRect4_static_0300
+     * @tc.desc     getListItemRect4_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect4_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect4_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0300] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      const message1: MessageManager<Visibility> =
+        AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
+      message.notify({ name: 'index', value: 0.0 })
+      message1.notify({ name: 'visibility1', value: Visibility.None })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_0 = CommonFunc.getComponentRect('getListItemRect4_listItem_0');
+      let listItem_0: RectValue = CommonFunc.getComponentRect('getListItemRect4_listItem_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -214,12 +221,6 @@ export default function getListItemRect4() {
       let btn = await driver.findComponent(ON.id('getListItemRect4_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect4_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect4_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect4_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect4_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect4_text1')

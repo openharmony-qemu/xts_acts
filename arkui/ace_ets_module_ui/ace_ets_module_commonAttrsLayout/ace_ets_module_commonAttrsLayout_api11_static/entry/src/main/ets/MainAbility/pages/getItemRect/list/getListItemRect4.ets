@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Callback, Message, MessageManager } from '../../../common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   Alignment,
   Axis,
@@ -46,45 +46,50 @@ import {
   TextAlign,
   Visibility,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
 @Component
 struct getListItemRect4 {
   @State visibility1: Visibility = Visibility.Visible
-  @State index: number = 0
+  @State index: Int = 0
   @State x: number = 0
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
   messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManagerVisibility: MessageManager<Visibility> = new MessageManager<Visibility>()
   private arr: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
   private listScroller: ListScroller = new ListScroller()
 
   onPageShow() {
     console.info('getListItemRect4 onPageShow');
-
-
+    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Visibility>>('messageManagerVisibility', this.messageManagerVisibility);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.index = message.value;
-      } else if (message.name == 'visibility1') {
-
+        this.index = message.value as Int;
       }
     }
+    let visibilityCallback: Callback<Visibility> = (message: Message<Visibility>) => {
+      if (message.name == 'visibility1') {
+        this.visibility1 = message.value as Visibility;
+      }
+    }
+    this.messageManagerVisibility.registerCallback(visibilityCallback);
     this.messageManager.registerCallback(callback);
   }
 
   build() {
     Column() {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.listScroller.getItemRect(Double.toInt(this.index)).x
-        this.y = this.listScroller.getItemRect(Double.toInt(this.index)).y
-        this.width1 = this.listScroller.getItemRect(Double.toInt(this.index)).width
-        this.height1 = this.listScroller.getItemRect(Double.toInt(this.index)).height
+        this.x = this.listScroller.getItemRect(this.index).x
+        this.y = this.listScroller.getItemRect(this.index).y
+        this.width1 = this.listScroller.getItemRect(this.index).width
+        this.height1 = this.listScroller.getItemRect(this.index).height
       }).id('getListItemRect4_button')
       Text('' + this.x).key('getListItemRect4_text1')
       Text('' + this.y).key('getListItemRect4_text2')
@@ -119,9 +124,9 @@ struct getListItemRect4 {
 
       }
       .key('getListItemRect4_list1')
-      .listDirection(Axis.Vertical)
+      .listDirection(Axis.Vertical) // 排列方向
       .scrollBar(BarState.Off)
-      .edgeEffect(EdgeEffect.Spring)
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .width(300)
       .height(500)
 
