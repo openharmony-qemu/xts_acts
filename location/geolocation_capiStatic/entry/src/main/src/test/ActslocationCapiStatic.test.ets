@@ -1640,14 +1640,14 @@ export default function actslocationTest() {
       }) 
       
         /*
-         * @tc.number: Sub_Location_getCountryCode_0100
-         * @tc.name: Sub_Location_getCountryCode_0100
+         * @tc.number: Sub_Location_getCountryCode_0300
+         * @tc.name: Sub_Location_getCountryCode_0300
          * @tc.desc:  getCountryCode(callback: AsyncCallback<CountryCode>): void
          * @tc.level: Level 0
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it('Sub_Location_getAddressesFromLocationName_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('Sub_Location_getCountryCode_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             try {
                 geoLocationManager.getCountryCode((err, result) => {
                 if(result){
@@ -1667,14 +1667,14 @@ export default function actslocationTest() {
       })    
       
         /*
-         * @tc.number: Sub_Location_getCountryCode_0100
-         * @tc.name: Sub_Location_getCountryCode_0100
+         * @tc.number: Sub_Location_getCountryCode_0400
+         * @tc.name: Sub_Location_getCountryCode_0400
          * @tc.desc:  getCountryCode(): Promise<CountryCode>
          * @tc.level: Level 0
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it('Sub_Location_getAddressesFromLocationName_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('Sub_Location_getCountryCode_0400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             try {
                 geoLocationManager.getCountryCode().then((result) => {
                     console.info('promise, getCountryCode: result=' + JSON.stringify(result));
