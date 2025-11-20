@@ -22,13 +22,13 @@ export default function ActsDatePickerTest() {
     beforeEach(async (done: Function) => {
       console.info('flex beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/datePickerDialog/datePickerDialog',
+        url: 'MainAbility/pages/datePickerDialog/datePickerDialogEvents',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info('get DatePicker state success ' + JSON.stringify(pages));
-        if (!('DatePicker' == pages.name)) {
+        if (!('datePickerDialogEvents' == pages.name)) {
           console.info('get DatePicker state success ' + JSON.stringify(pages.name));
           let result = await router.push(options);
           console.info('push DatePicker page success ' + JSON.stringify(result));
