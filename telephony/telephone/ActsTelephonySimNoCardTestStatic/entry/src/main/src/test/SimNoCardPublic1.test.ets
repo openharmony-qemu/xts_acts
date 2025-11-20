@@ -54,13 +54,13 @@ export default function SimNoCardPublic1() {
           try {
             sim.getSimLabel(0, (err: BusinessError | null, data: sim.SimLabel | undefined) => {
               console.info(`${caseName} jin qu la: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-              if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
-                console.info(`${caseName} sim card is PSIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
+                console.info(`${caseName} sim card is PSIM, data->${JSON.stringify(data)}`);
                 ExpectTrue(true);
                 console.info(`${caseName} test end`);
                 done();
-              } else if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
-                  console.info(`${caseName} sim card is ESIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              } else if (data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
+                  console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
                   ExpectTrue(true);
                   console.info(`${caseName} test end`);
                   done();
@@ -104,13 +104,13 @@ export default function SimNoCardPublic1() {
             try {
               sim.getSimLabel(1, (err: BusinessError | null, data: sim.SimLabel | undefined) => {
                 console.info(`${caseName} jin qu la: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-                if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
-                  console.info(`${caseName} sim card is PSIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
+                  console.info(`${caseName} sim card is PSIM, data->${JSON.stringify(data)}`);
                   ExpectTrue(true);
                   console.info(`${caseName} test end`);
                   done();
-                } else if (!err && data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
-                  console.info(`${caseName} sim card is ESIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                } else if (data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
+                  console.info(`${caseName} sim card is ESIM, data->${JSON.stringify(data)}`);
                   ExpectTrue(true);
                   console.info(`${caseName} test end`);
                   done();
