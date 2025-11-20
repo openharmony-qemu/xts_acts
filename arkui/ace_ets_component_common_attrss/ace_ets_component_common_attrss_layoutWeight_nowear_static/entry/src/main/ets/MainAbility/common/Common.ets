@@ -16,7 +16,7 @@ import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import { RectValue } from './Utils';
 import inspector from '@ohos.arkui.inspector';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 export default class CommonFunc {

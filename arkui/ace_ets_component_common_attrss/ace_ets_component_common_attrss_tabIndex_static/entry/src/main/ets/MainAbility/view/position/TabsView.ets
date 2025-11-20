@@ -35,7 +35,7 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 export struct TabsView {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: int= 0
   private controller: TabsController = new TabsController()
   @Link _position!: Position;
   private componentKey: string = '';
@@ -77,9 +77,9 @@ export struct TabsView {
     .vertical(false)
     .barMode(BarMode.Fixed)
     .barWidth(360)
-    .barHeight(56)
+    .barHeight(56.0)
     .animationDuration(400)
-    .onChange((index: int): void => {
+    .onChange((index: Int): void => {
       this.currentIndex = index
     })
     .width(360)

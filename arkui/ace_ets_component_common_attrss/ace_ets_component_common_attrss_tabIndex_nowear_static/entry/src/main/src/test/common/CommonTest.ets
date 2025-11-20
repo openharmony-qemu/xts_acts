@@ -13,12 +13,11 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
 export default class CommonTest {
   /**
@@ -29,19 +28,20 @@ export default class CommonTest {
    * @param functions    : [0]:executeTest, [last] checkTestResult
    */
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+    console.log('functionsfunctions' + functions?.length)
     supportView.forEach(targetView => {
 
-      
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
+      //Obtain the last index of cases that need to be executed.
+      let lastIndex: int = 0;
+
+      testValues.forEach((temp: TestValue, index: int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
+      testValues.forEach((testValue: TestValue, index: int) => {
 
-      testValues.forEach((testValue: TestValue, index) => {
-
-        
+        //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
           let currentIndex = index;
           let sharePage = true;
@@ -49,17 +49,17 @@ export default class CommonTest {
             sharePage = pageConfig.sharePage!;
           }
 
-          
-          let caseTag = pageConfig.testName + targetView+'_static_' + testValue.describe;
+          //Create case name.
+          let caseTag = pageConfig.testName + targetView + '_static_' + testValue.describe;
 
-          
+          //If there is a specified container view.
           let containerView = '';
           if (pageConfig.containerView != undefined) {
             containerView = pageConfig.containerView!;
             caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
           }
 
-          /**
+          /*
            * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
            * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
            * @tc.desc Test whether the state of different components
@@ -67,7 +67,7 @@ export default class CommonTest {
            */
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
-            
+            //Push page.
             console.info('[' + caseTag + ']' + ' test start, push page.');
             pageConfig.targetView = targetView;
             pageConfig.componentKey = targetView;
@@ -75,7 +75,7 @@ export default class CommonTest {
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
             try {
-              
+              //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
               }
@@ -87,37 +87,24 @@ export default class CommonTest {
                 }
               }
 
-              
+              //Execute test
               let data: BasePageConfig = {
                 pageConfig: pageConfig,
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              if (funcs.length > 1) {
-                let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
-                
-                if (customParams) {
-                  data.customParams = customParams;
-                }
-              } else {
-                
-                console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
-                await Utils.sleep(1000);
-              }
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              await Utils.sleep(1000);
+              //Check test result
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-              
-              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-              
-              await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
-
-            } catch (err) {
+            } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);
               if (err.name != 'AssertException') {
                 await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-                expect(msg).assertTrue();
+                expect().assertFail();
               }
             }
 
@@ -139,6 +126,7 @@ export default class CommonTest {
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
+        await Utils.back();
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');
@@ -149,7 +137,7 @@ export default class CommonTest {
   static initTestByContainerView(pageConfig: PageConfig, containerView: string[], supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     containerView.forEach(container => {
       pageConfig.containerView = container;
-CommonTest.initTest(pageConfig, supportView, testValues, ...functions);
+      CommonTest.initTest(pageConfig, supportView, testValues, ...functions);
     });
   }
 }

@@ -22,7 +22,7 @@ import {
   HorizontalAlign,
   VerticalAlign,
   AlignRuleOption,
-  
+  // Panel,
   BadgeParam,
   BadgeStyle,
   GridColColumnOption,
@@ -30,14 +30,14 @@ import {
   GridItem,
   GridCol,
   GridRowDirection,
-  
+  // WebController,
   ToggleType,
   TimePicker,
   StepperItem,
   SliderStyle,
   FlexDirection,
   ProgressType,
-  
+  // NavRouter,
   MenuItemOptions,
   MenuItem,
   $r,
@@ -56,7 +56,7 @@ import {
   ExpectedFrameRateRange,
   Scroll,
   Margin,
-
+// Styles,
   AlphabetIndexer,
   Blank,
   Checkbox,
@@ -98,22 +98,21 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct LayoutWeightPage {
-  @StoragePropRef('_layoutWeight') _layoutWeight: double | string = 0;
+  @StoragePropRef('_layoutWeight') _layoutWeight: number | string = 0;
   @State targetView: string = ''
   @State targetGroupView: string =''
   @State componentKey: string = ''
-  @State childWidth: double = 0
-  @State childHeight: double = 0
-  @State parentWidth: double = 0
-  @State parentHeight: double = 0
+  @State childWidth: number = 0
+  @State childHeight: number = 0
+  @State parentWidth: number = 0
+  @State parentHeight: number = 0
 
   onPageShow() {
     console.info('LayoutWeight page show called ')
-    AppStorage.setOrCreate<double | string>('_layoutWeight',0)
+    AppStorage.setOrCreate<number | string>('_layoutWeight',0)
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
-      let routerParamOptionsLayoutWeight = routerParamOptions.view.testValue.setValue.layoutWeight;
-      AppStorage.setOrCreate<double | string>('_layoutWeight', routerParamOptionsLayoutWeight)
+      AppStorage.setOrCreate<number | string>('_layoutWeight',routerParamOptions.view.testValue.setValue.layoutWeight)
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView
       this.componentKey = routerParamOptions.view.componentKey
@@ -121,7 +120,7 @@ struct LayoutWeightPage {
       this.childHeight = routerParamOptions.view.childHeight
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -205,7 +204,7 @@ struct LayoutWeightPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Number.MAX_VALUE.toInt(),
+            loop: Number.MAX_VALUE as Int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           })
@@ -223,16 +222,16 @@ struct LayoutWeightPage {
           .applyStyles(this.commonStyle)
 
         } else if (this.targetView == 'NavRouter') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }
+          //.applyStyles(this.commonStyle)
 
         }
           else if (this.targetView == 'Progress') {
@@ -455,19 +454,19 @@ struct LayoutWeightPage {
           .applyStyles(this.commonStyle)
 
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }
+          //.applyStyles(this.commonStyle)
+          // .backgroundColor(Color.Red)
         }
-          
-          
-          
-          
-          
+          // else if (this.targetView == 'Panel') {
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow)
+          //.applyStyles(this.commonStyle)
 
-        
+        // }
         else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

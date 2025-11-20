@@ -13,16 +13,15 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from  '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AlignRuleOption } from '@ohos.arkui.component';
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
 export default class CommonTest {
-  /**
+  /*
    * init test
    * @param pageConfig   : page config
    * @param supportView  : support view
@@ -33,14 +32,14 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
+      let lastIndex: int = 0;
+      testValues.forEach((temp: TestValue, index: int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index) => {
+      testValues.forEach((testValue: TestValue, index: int) => {
 
         //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
@@ -73,7 +72,7 @@ export default class CommonTest {
             pageConfig.targetView = targetView;
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
-            // pageConfig.testValue = testValue;
+            pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
             try {
               //If there is no call back functions, do nothing.
@@ -95,7 +94,7 @@ export default class CommonTest {
                 testValue: testValue,
               }
               if (funcs.length > 1) {
-                let customParams = await (functions[0] as CallbackWithReturn)(data);
+                let customParams = await (functions[0] as CallbackWithReturn)(data) ?? '';
                 //Set custom params to data, can be used by check test result.
                 if (customParams) {
                   data.customParams = customParams;
@@ -103,16 +102,13 @@ export default class CommonTest {
               } else {
                 //If there is only an assertion function, automatically modify the status value
                 console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue as number );
                 await Utils.sleep(1000);
               }
 
               //Check test result
-              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-              // data.viewObj = JSON.parse(strJson);
-              await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err) {
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
+            } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);
@@ -140,6 +136,7 @@ export default class CommonTest {
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
+        await Utils.back();
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');

@@ -14,14 +14,13 @@
  */
 
 import router from '@ohos.router';
-import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
 export class RectValue {
@@ -37,7 +36,7 @@ export class RouterParams {
 
 export class TestValue {
   describe: string = "";
-  setValue: object|number  = {  };  // 或 AlignRuleOption，根据实际需要
+  setValue: number  = 0;  // 或 AlignRuleOption，根据实际需要
   // expectValue: number = 0;
   exceptView: string = "";
   expectValue: number = 0;
@@ -48,7 +47,7 @@ export class BasePageConfig {
   testValue: TestValue = new TestValue();
   caseTag: string = '';
   customParams?: Object;
-  viewObj?: Record<string, string | number | boolean>;
+  viewObj?: jsonx.JsonElement;
 }
 
 export class PageConfig {
@@ -60,9 +59,10 @@ export class PageConfig {
   referenceTwoComponentKey: string = "";
   sharePage: boolean = false;
   // 添加其他公共属性
-  targetView?: string = "";
-  componentKey?: string = "";
-  containerView?: string = "";
+  targetView: string = "";
+  componentKey: string = "";
+  containerView: string = "";
+  testValue: TestValue = new TestValue();
 
 }
 
@@ -97,7 +97,7 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = router.getParams() as RouterParams;
+      let pageParams: RouterParams = new RouterParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
@@ -109,12 +109,6 @@ export default class Utils {
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        // let result = await router.pushUrl({
-        //   url: obj.pageUrl,
-        //   params: {
-        //     view: obj
-        //   } as RouterParams
-        // });
         router.pushUrl({
           url: obj.pageUrl,
           params: {
@@ -122,7 +116,6 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-        //console.info('push ' + obj.pageName + ' page result:' + JSON.stringify(result));
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -134,7 +127,6 @@ export default class Utils {
     if (!('Index' == router.getState().name)) {
       router.back()
     }
-    AttrsManager.unRegisterDataChange();
     await Utils.sleep(1000);
     router.clear();
   }
@@ -180,12 +172,6 @@ export default class Utils {
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
-
-  // static getComponentByKey(componentKey: string): ESObject {
-  //   let strJson = inspector.getInspectorByKey(componentKey);
-  //   console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parse(strJson)));
-  //   return JSON.parse(strJson);
-  // }
 
   static getRectHorizontalCenterX(rect: RectValue) {
     (rect.right - rect.left) / 2 + rect.left;
@@ -269,17 +255,17 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
-    let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
+  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
+    let down = Utils.performKeyEvent(KeyType.Down, keyCode as Int, keyText)
     if (down) {
-      let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
+      let up = Utils.performKeyEvent(KeyType.Up, keyCode as Int, keyText)
       return up
     }
 
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -292,7 +278,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -332,7 +318,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

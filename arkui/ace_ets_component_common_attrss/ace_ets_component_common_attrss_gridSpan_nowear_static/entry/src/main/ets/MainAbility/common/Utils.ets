@@ -292,7 +292,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -302,20 +302,20 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -355,7 +355,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,
