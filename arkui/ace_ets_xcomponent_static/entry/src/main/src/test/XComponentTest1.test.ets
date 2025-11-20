@@ -36,8 +36,7 @@ export default function XComponentTestJsunit() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   XComponentTest001_static
      * @tc.name     XComponentTest001_static
      * @tc.desc     XComponentTest001_static
@@ -60,8 +59,7 @@ it('XComponentTest001_static', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    
-/*
+    /*
      * @tc.number   XComponentTest002_static
      * @tc.name     XComponentTest002_static
      * @tc.desc     XComponentTest002_static
@@ -94,8 +92,7 @@ it('XComponentTest002_static', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    
-/*
+    /*
      * @tc.number   XComponentTest003_static
      * @tc.name     XComponentTest003_static
      * @tc.desc     XComponentTest003_static
@@ -128,8 +125,7 @@ it('XComponentTest003_static', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    
-/*
+    /*
      * @tc.number   XComponentTest004_static
      * @tc.name     XComponentTest004_static
      * @tc.desc     XComponentTest004_static
@@ -173,8 +169,7 @@ it('XComponentTest004_static', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    
-/*
+    /*
      * @tc.number   XComponentTest005_static
      * @tc.name     XComponentTest005_static
      * @tc.desc     XComponentTest005_static
@@ -219,8 +214,7 @@ it('XComponentTest005_static', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    
-/*
+    /*
      * @tc.number   XComponentTest006_static
      * @tc.name     XComponentTest006_static
      * @tc.desc     XComponentTest006_static
@@ -261,8 +255,7 @@ it('XComponentTest006_static', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    
-/*
+    /*
      * @tc.number   XComponentTest007_static
      * @tc.name     XComponentTest007_static
      * @tc.desc     XComponentTest007_static
@@ -301,8 +294,7 @@ it('XComponentTest007_static', Level.LEVEL0, async (done: () => void): Promise<v
 
     
 
-  
-/*
+  /*
      * @tc.number   XComponentTest008_static
      * @tc.name     XComponentTest008_static
      * @tc.desc     XComponentTest008_static

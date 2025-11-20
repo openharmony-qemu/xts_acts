@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import VideoCallBackJsunit from './VideoCallBackJsunit.test';
+import VideoCallBackJsunit from './VideoCallbackJsunitTest1.test';
+
 export default function testsuite() {
-  VideoCallBackJsunit();
+  VideoCallBackJsunit(); // emitter问题
 }

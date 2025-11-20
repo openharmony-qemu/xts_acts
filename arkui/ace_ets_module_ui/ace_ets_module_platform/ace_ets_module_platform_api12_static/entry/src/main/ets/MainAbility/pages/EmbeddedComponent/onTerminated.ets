@@ -36,6 +36,7 @@ struct OnTerminated1 {
           .width('100%')
           .height('90%')
           .onTerminated((info)=>{
+            console.log('===========onTerminated========')
             this.message = 'Terminarion: code = ' + info.code + ', want = ' + JSON.stringify(info.want);
             this.flag = "onTerminated succ"
           })

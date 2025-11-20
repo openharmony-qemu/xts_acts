@@ -20,11 +20,13 @@ struct getXComponentSurfaceRect1 {
   private surfaceId: string = ''
   private xComponentContext: Record<string, Object> = {} as Record<string, Object>
   xComponentController: XComponentController = new XComponentController()
-  @State rect: SurfaceRect | null = null
+  //@State rect: SurfaceRect | null = null
+  @State rectString: string = ''
+  // public static rectStringStatic: string = ''
 
   build() {
     Column() {
-      Text(JSON.stringify(this.rect)).id("getXComponentSurfaceRect1_text")
+      Text(this.rectString).id("getXComponentSurfaceRect1_text")
         .fontSize(12)
       XComponent({
         id: 'xcomponent',
@@ -36,8 +38,12 @@ struct getXComponentSurfaceRect1 {
           this.surfaceId = this.xComponentController.getXComponentSurfaceId()
           // this.xComponentContext = this.xComponentController.getXComponentContext() as Record<string, Object>
           let surfaceRect: SurfaceRect = { offsetX: 20, offsetY: 20, surfaceWidth: 500, surfaceHeight: 500 }
+          console.log('JSON.stringify(surfaceRect)========' + JSON.stringify(surfaceRect))
           this.xComponentController.setXComponentSurfaceRect(surfaceRect)
-          this.rect = this.xComponentController.getXComponentSurfaceRect()
+          this.rectString = JSON.stringifyJsonElement(JSON.parseJsonElement(JSON.stringify(this.xComponentController.getXComponentSurfaceRect())))
+          console.log('this.rectString=====' + this.rectString)
+          // getXComponentSurfaceRect1.rectStringStatic = this.rectString
+
         })
         .width('640px')
         .height('480px')

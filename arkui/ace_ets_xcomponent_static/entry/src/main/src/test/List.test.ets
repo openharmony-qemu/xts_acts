@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import XComponentTest from './XComponent.test';
+import XComponentTest from './XComponentTest1.test';
 
 export default function testsuite() {
   XComponentTest()

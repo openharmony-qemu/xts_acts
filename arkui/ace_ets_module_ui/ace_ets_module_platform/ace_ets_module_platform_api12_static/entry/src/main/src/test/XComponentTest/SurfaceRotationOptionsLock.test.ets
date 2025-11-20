@@ -61,15 +61,14 @@ export default function SurfaceRotationOptionsLockTest() {
       }
     });
 
-    /**
-     * @tc.number    SurfaceRotationOptionsLockTest_static_0010
-     * @tc.name      SurfaceRotationOptionsLockTest_static_0010
-     * @tc.desc      Xcomponent: get the api of SurfaceRotationOptions.Lock
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   SurfaceRotationOptionsLockTest_static_0010
+     * @tc.name     SurfaceRotationOptionsLockTest_static_0010
+     * @tc.desc     SurfaceRotationOptionsLockTest_static_0010
+     * @tc.level    Level.LEVEL2
      */
-    it('SurfaceRotationOptionsLockTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('SurfaceRotationOptionsLockTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SurfaceRotationOptionsLockTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SurfaceRotationOptionsLock');

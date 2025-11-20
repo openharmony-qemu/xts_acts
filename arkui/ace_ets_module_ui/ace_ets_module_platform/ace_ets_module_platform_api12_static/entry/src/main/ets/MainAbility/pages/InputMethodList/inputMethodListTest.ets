@@ -14,7 +14,7 @@
  */
 import { Entry,Column,Component,Button,EmbeddedType,CustomDialogController,DialogAlignment,EmbeddedComponent,VideoController,ColumnOptions,Row,ClickEvent,SeekMode,PlaybackSpeed,Resource,Text,$rawfile,$r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-// import { InputMethodListDialog, Pattern,PatternOptions } from '@ohos.inputMethodList';
+//import { InputMethodListDialog, Pattern,PatternOptions } from '@ohos.inputMethodList';
 
 @Entry
 @Component

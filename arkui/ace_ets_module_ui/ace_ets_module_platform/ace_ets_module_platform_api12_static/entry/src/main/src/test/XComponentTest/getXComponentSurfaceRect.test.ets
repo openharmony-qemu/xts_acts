@@ -64,20 +64,24 @@ export default function getXComponentSurfaceRectJsunit() {
       }
     });
 
-    /**
-     * @tc.number getXComponentSurfaceRectTest_static_0010
-     * @tc.name getXComponentSurfaceRectTest_static_0010
-     * @tc.desc Xcomponent: get the api of getXComponentSurfaceRect
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   getXComponentSurfaceRectTest_static_0010
+     * @tc.name     getXComponentSurfaceRectTest_static_0010
+     * @tc.desc     getXComponentSurfaceRectTest_static_0010
+     * @tc.level    Level.LEVEL2
      */
-    it('getXComponentSurfaceRectTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('getXComponentSurfaceRectTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('getXComponentSurfaceRectTest_static_0010 START');
       let strJson = inspector.getInspectorByKey('getXComponentSurfaceRect1_text');
       console.info("[getXComponentSurfaceRectTest_static_0010] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('{"offsetX":20,"offsetY":20,"surfaceWidth":500,"surfaceHeight":500}');
+      //因为顺序有问题 拆分单个属性进行比较
+      // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+      //   .assertEqual('{"offsetX":20,"offsetY":20,"surfaceWidth":500,"surfaceHeight":500}');
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).getInteger('offsetX')).assertEqual(20)
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).getInteger('offsetY')).assertEqual(20)
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).getInteger('surfaceWidth')).assertEqual(500)
+      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).getInteger('surfaceHeight')).assertEqual(500)
       console.info('[getXComponentSurfaceRectTest_static_0010] END');
       done();
     });

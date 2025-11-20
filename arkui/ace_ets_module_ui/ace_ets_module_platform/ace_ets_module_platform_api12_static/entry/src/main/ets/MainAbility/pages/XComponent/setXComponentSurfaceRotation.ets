@@ -12,15 +12,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Column,Component,Position,Button,FlexAlign,SurfaceRotationOptions,XComponentParameters,XComponentType,VideoController,XComponent,XComponentController,SurfaceRect,ImageFit,Video,VerticalAlign,ImageAnalyzerType,ColumnOptions,Row,ClickEvent,SeekMode,PlaybackSpeed,Resource,Text,$rawfile,$r } from '@ohos.arkui.component';
+import {
+  $r,
+  $rawfile,
+  Button,
+  ClickEvent,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  FlexAlign,
+  ImageAnalyzerType,
+  ImageFit,
+  PlaybackSpeed,
+  Position,
+  Resource,
+  Row,
+  SeekMode,
+  SurfaceRect,
+  SurfaceRotationOptions,
+  Text,
+  VerticalAlign,
+  Video,
+  VideoController,
+  XComponent,
+  XComponentController,
+  XComponentParameters,
+  XComponentType
+} from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+
 @Entry
 @Component
 struct SetXComponentSurfaceRotation1 {
-  private surfaceId: string = ''
-  private xComponentContext: Record<string, () => void> = {} as Record<string, () => void>
   xComponentController: XComponentController = new XComponentController()
   @State SurfaceRotation: Required<SurfaceRotationOptions> | null = null
+  private surfaceId: string = ''
+  private xComponentContext: Record<string, () => void> = {} as Record<string, () => void>
 
   build() {
     Column() {
@@ -29,13 +57,20 @@ struct SetXComponentSurfaceRotation1 {
       XComponent({
         id: 'xcomponent',
         type: XComponentType.TEXTURE,
-        nativeXComponentHandler: ((value0: long): void => {}),
+        nativeXComponentHandler: ((value0: long): void => {
+        }),
         controller: this.xComponentController
       } as XComponentParameters)
         .onLoad((): void => {
-          let SurfaceRotation: SurfaceRotationOptions = { lock: false }
+          this.SurfaceRotation = { lock: false }
           this.xComponentController.setXComponentSurfaceRotation(this.SurfaceRotation as SurfaceRotationOptions)
           this.SurfaceRotation = this.xComponentController.getXComponentSurfaceRotation()
+
+          let a: Required<SurfaceRotationOptions> = { lock: false }
+          console.log("===================================== " + JSON.stringify(a));
+          console.log("===================================== " + a);
+          console.log("===================================== " + a!.lock);
+
         })
         .width('640px')
         .height('480px')

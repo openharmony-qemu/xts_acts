@@ -13,11 +13,21 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import {
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Text,
+  TextAttribute,
+  TouchObject,
+  TouchType
+} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from "@ohos.arkui.Test";
+import { sendTouchEvent } from '@ohos.arkui.Test';
 
 export default class Utils {
   static rect_left: number = 0;
@@ -28,20 +38,25 @@ export default class Utils {
 
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> =
+      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> =
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     Utils.rect_left = Number(rectInfo[0][0] ?? 0);
     Utils.rect_top = Number(rectInfo[0][1] ?? 0);
     Utils.rect_right = Number(rectInfo[1][0] ?? 0);
     Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return Utils.rect_value = {
-      left: Utils.rect_left, top: Utils.rect_top, right: Utils.rect_right, bottom: Utils.rect_bottom
+      left: Utils.rect_left,
+      top: Utils.rect_top,
+      right: Utils.rect_right,
+      bottom: Utils.rect_bottom
     }
   }
 
-  static async sleep(time: int) : Promise<int>  {
+  static async sleep(time: int): Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
