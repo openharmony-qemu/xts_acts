@@ -2,9 +2,6 @@
     "src": [
         "MainAbility/pages/index/index",
 		"MainAbility/pages/Preset/InputPreset",
-        "MainAbility/pages/common/TextStrokeTest",
-        "MainAbility/pages/common/TextOnChangeOptionsTest",
-        "MainAbility/pages/common/TextOnWillChangeOptionsTest",
         "MainAbility/pages/Search/SearchJsunitInfTest",
         "MainAbility/pages/Search/SearchOnCutTest",
         "MainAbility/pages/SearchApi11/SearchTest",
