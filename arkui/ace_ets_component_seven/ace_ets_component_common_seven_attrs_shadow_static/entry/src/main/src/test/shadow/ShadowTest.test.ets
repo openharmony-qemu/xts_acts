@@ -23,12 +23,12 @@ import { ShadowType } from '@ohos.arkui.component'
  * Test of common attribute: shadow
  */
 export default function shadowTest() {
-  
+  //A list of components that support padding attributes is required.
   let supportView = [
     'Blank',
   ]
 
-  
+  //Page related configuration, this parameter is required.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -50,7 +50,7 @@ export default function shadowTest() {
   }
 
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues:TestValue[]= [{
     describe: 'SetShadow',
     setValue: {
@@ -70,9 +70,9 @@ export default function shadowTest() {
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       console.info('[' + data.caseTag + '] shadowTest');
       console.info('[' + data.caseTag + '] check shadow.' + ` ${data.testValue.setValue.shadow.radius} 
       ${data.testValue.setValue.shadow.offsetX} ${data.testValue.setValue.shadow.color}  ${data.testValue.setValue.shadow.offsetY} `);

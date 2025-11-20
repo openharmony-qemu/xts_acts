@@ -41,8 +41,8 @@ export struct WaterFlowView {
   @State fontSize: number = 24
   @State colors: Int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as Int[]
   scroller: Scroller = new Scroller()
-  private itemWidthArray: Int[] = [] as Int[]
-  private itemHeightArray: Int[] = [] as Int[]
+  private itemWidthArray: number[] = [] as number[]
+  private itemHeightArray: number[] = [] as number[]
 
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
@@ -51,8 +51,8 @@ export struct WaterFlowView {
 
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize().toInt())
-      this.itemHeightArray.push(this.getSize().toInt())
+      this.itemWidthArray.push(this.getSize())
+      this.itemHeightArray.push(this.getSize())
     }
   }
 
@@ -84,7 +84,7 @@ export struct WaterFlowView {
         .width(this.itemWidthArray[item.toInt()])
         .height(this.itemHeightArray[item.toInt()])
         .backgroundColor(this.colors[item.toInt() % 5])
-      }, (item: number,index:Int) => String(item))
+      }, (item: number) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')
     .itemConstraintSize({

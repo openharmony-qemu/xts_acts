@@ -196,10 +196,9 @@ import {
   WebAttribute,
   WebviewController,
   WindowSceneAttribute,
-  XComponentAttribute,
-  AlignRuleOption
+  XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -772,7 +771,53 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+// 	mShadow: ShadowOptions = {
+// 		radius: 35,
+// 		type: ShadowType.COLOR,
+// 		color: '#FF0011FF',
+// 		offsetX: 37,
+// 		offsetY: 41,
+// 		fill: false
+// 	}
+//
+//
+// 	applyNormalAttribute(instance: NavigatorAttribute): void {
+// 		instance.shadow(this.mShadow)
+// 	}
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+// 	mShadow: ShadowOptions = {
+// 		radius: 35,
+// 		type: ShadowType.COLOR,
+// 		color: '#FF0011FF',
+// 		offsetX: 37,
+// 		offsetY: 41,
+// 		fill: false
+// 	}
+//
+//
+// 	applyNormalAttribute(instance: NavRouterAttribute): void {
+// 		instance.shadow(this.mShadow)
+// 	}
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+// 	mShadow: ShadowOptions = {
+// 		radius: 35,
+// 		type: ShadowType.COLOR,
+// 		color: '#FF0011FF',
+// 		offsetX: 37,
+// 		offsetY: 41,
+// 		fill: false
+// 	}
+//
+//
+// 	applyNormalAttribute(instance: PanelAttribute): void {
+// 		instance.shadow(this.mShadow)
+// 	}
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
   mShadow: ShadowOptions = {
@@ -1115,7 +1160,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-	/* shadow not supported */
+    // instance.shadow(this.mShadow)
   }
 }
 
@@ -1848,9 +1893,9 @@ struct ShadowPage {
   @State _shadowMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _shadowNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
   @State _shadowNavigationModifier: NavigationModifier = new NavigationModifier()
-  
-  
-  
+  // @State _shadowNavigatorModifier: NavigatorModifier = new NavigatorModifier()
+  // @State _shadowNavRouterModifier: NavRouterModifier = new NavRouterModifier()
+  // @State _shadowPanelModifier: PanelModifier = new PanelModifier()
   @State _shadowPathModifier: PathModifier = new PathModifier()
   @State _shadowPolygonModifier: PolygonModifier = new PolygonModifier()
   @State _shadowPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1895,13 +1940,13 @@ struct ShadowPage {
   @State _shadowXComponentModifier: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
   @State parentComponentKey: string = '';
   @State parentBackGroundColor: string = ''
-  @StoragePropRef('_shadow') _shadow: SetValue = {
+  @StorageProp('_shadow') _shadow: SetValue = {
     height: 0, shadow: {
       radius: 0,
       color: '',
@@ -1920,8 +1965,8 @@ struct ShadowPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
   }
@@ -1995,7 +2040,7 @@ struct ShadowPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: Infinity as Int,
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -2017,7 +2062,18 @@ struct ShadowPage {
         .attributeModifier(this._shadowMenuModifier)
       }
       if (this.targetView == 'NavRouter') {
-
+        // NavRouter() {
+        // 	Row() {
+        // 		Image($r('app.media.icon'))
+        // 	}
+        //
+        // 	NavDestination() {
+        // 		Text('NavDestination')
+        // 			.fontSize(10)
+        // 	}
+        // }
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._shadowNavRouterModifier)
       }
       if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Eclipse })
@@ -2327,10 +2383,22 @@ struct ShadowPage {
         .height('100%')
       }
       if (this.targetView == 'Navigator') {
-
+        // Navigator() {
+        // 	Text('Go to back page')
+        // 		.width('100%')
+        // 		.height(20)
+        // }
+        // 	.backgroundColor(Color.Red)
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._shadowNavigatorModifier)
       }
       if (this.targetView == 'Panel') {
-
+        // Panel(true) {
+        // 	Text('Text')
+        // }
+        // 	.backgroundColor(Color.Yellow)
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._shadowPanelModifier)
       }
       if (this.targetView == 'Refresh') {
         Refresh({ refreshing: true }) {
@@ -2348,7 +2416,7 @@ struct ShadowPage {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            } as AlignRuleOption)
+            })
             .id('constraintSize')
         }
         .commonStyle(this.componentKey)
