@@ -16,18 +16,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_OHImageNDKSupplement_wLV23PHRhe1cnSe1zKYApYyxM_u7oeWglcLjdkK43_k=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BC9D7E55AD045F9DEF03038944E4B137F4C83853DC2C431AD27EBA0D60E8B9B3AE344CBAC28DF93",
-          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_OHImageNDKSupplement_wLV23PHRhe1cnSe1zKYApYyxM_u7oeWglcLjdkK43_k=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_OHImageNDKSupplement_wLV23PHRhe1cnSe1zKYApYyxM_u7oeWglcLjdkK43_k=.p12",
-          "storePassword": "0000001BCB76A9030F5A67D7B777BF2EF3A031A2648D59734E88AF25EDE0E0F843F5E8FFA3E2004C44C49F"
-        }
-      }
     ],
     "products": [
       {
@@ -36,14 +24,6 @@
         "compileSdkVersion": 23,
         "compatibleSdkVersion": 23,
         "runtimeOS": "OpenHarmony",
-      }
-    ],
-    "buildModeSet": [
-      {
-        "name": "debug",
-      },
-      {
-        "name": "release"
       }
     ]
   },
