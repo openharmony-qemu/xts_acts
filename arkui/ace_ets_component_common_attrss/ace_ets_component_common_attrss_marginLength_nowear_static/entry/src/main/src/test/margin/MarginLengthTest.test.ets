@@ -24,7 +24,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
@@ -33,11 +33,6 @@ let testAbilityContext:common.UIAbilityContext;
 
 
 export default function marginLengthTest() {
-  console.info("marginLengthTest beforeAll start");
-  await UtilsTest.msSleep(4000)
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.marginLength.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-  let context:UIContext = AppStorage.get<UIContext>('uiContext') as UIContext
   let childWidth = 100;
   let childHeight = 50;
   let parentWidth = 400;
@@ -71,11 +66,11 @@ export default function marginLengthTest() {
     },
     expectValue: {
       margin: '50.00vp',
-      
-      top: context.vp2px(50),
-      right: context.vp2px(50),
-      bottom: context.vp2px(50),
-      left: context.vp2px(50)
+      //uicontext.vp2px()接口不通，暂用数字平替
+      top: AppStorage.get<UIContext>('uicontext')!.vp2px(50),
+      right: AppStorage.get<UIContext>('uicontext')!.vp2px(50),
+      bottom: AppStorage.get<UIContext>('uicontext')!.vp2px(50),
+      left: AppStorage.get<UIContext>('uicontext')!.vp2px(50)
     }
   }, {
     describe: 'SetStringPx',
@@ -96,58 +91,61 @@ export default function marginLengthTest() {
     },
     expectValue: {
       margin: '50.00vp',
-      
-      top: context.vp2px(50),
-      right: context.vp2px(50),
-      bottom: context.vp2px(50),
-      left: context.vp2px(50)
+      //uicontext.vp2px()接口不通，暂用数字平替
+      top: AppStorage.get<UIContext>('uicontext')!.vp2px(50),
+      right: AppStorage.get<UIContext>('uicontext')!.vp2px(50),
+      bottom: AppStorage.get<UIContext>('uicontext')!.vp2px(50),
+      left: AppStorage.get<UIContext>('uicontext')!.vp2px(50)
     }
   }]
 
   describe('MarginLengthTest', () => {
     beforeAll(() => {
-
+      console.info("marginLengthTest beforeAll start");
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.marginLength.nowear.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //component
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
-      
+      //parentComponent
       let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey??'');
-      
+      //Component margin
       let top: number = 0;
       let left: number = 0;
       let right: number = 0;
       let bottom: number= 0;
       if ((data.pageConfig.componentKey == 'ListItem')
         || (data.pageConfig.componentKey == 'ListItemGroup')) {
-        
+        //Reference component
         let rectReference = Utils.getComponentRect(data.pageConfig.referenceComponentKey??'');
-        
+        //Component to reference component and parent component margin calculation
         top = rect.top - rectParent.top;
         left = rect.left - rectParent.left;
         right = rectParent.right - rect.right;
         bottom = rectReference.top - rect.bottom;
       } else if (data.pageConfig.componentKey == 'TabContent') {
-        
+        //Reference component
         let referenceRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey??'');
-        
+        //Component to reference component and parent component margin calculation
         top = rect.top - referenceRect.top;
         left = rect.left - rectParent.left;
         right = rectParent.right - rect.right;
         bottom = rectParent.bottom - rect.bottom;
       } else if (data.pageConfig.componentKey == 'StepperItem') {
-        
+        //parentComponent
         let rectParent = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
           .getArray('$children')[0]
           .getArray('$children')[0]);
-        
+        //Component to  parent component margin calculation
         top = rect.top - rectParent.top;
         left = rect.left - rectParent.left;
         right = rectParent.right - rect.right;
         bottom = rectParent.bottom - rect.bottom;
       } else {
-        
+        //Component to  parent component margin calculation
         top = rect.top - rectParent.top;
         left = rect.left - rectParent.left;
         right = rectParent.right - rect.right;
@@ -159,7 +157,7 @@ export default function marginLengthTest() {
       console.info('[' + data.caseTag + ']' + 'right is:' + right);
       console.info('[' + data.caseTag + ']' + 'bottom is:' + bottom);
       console.info('[' + data.caseTag + ']' + 'margin is:' + attrs?.getElement('$attrs').getElement('margin'));
-      
+      //Confirm if the margin is correct
 
       expect(attrs?.getElement('$attrs').getString('margin')).assertEqual(data.testValue.expectValue.margin);
       expect(Math.abs(top - (data.testValue.expectValue.top as number)) <= 1).assertTrue();

@@ -15,7 +15,7 @@
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import common2D from '@ohos.graphics.displaySync'
 
 @Entry
@@ -25,9 +25,11 @@ struct Index {
   aboutToAppear(){
     try {
       let router1 = this.getUIContext().getRouter();
+      let uic=this.getUIContext();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (e) {
-      console.log('e' + e);
+      AppStorage.setOrCreate<UIContext>('uicontext', uic);
+    } catch (error: Error) {
+      console.log('error ' + error);
     }
   }
 

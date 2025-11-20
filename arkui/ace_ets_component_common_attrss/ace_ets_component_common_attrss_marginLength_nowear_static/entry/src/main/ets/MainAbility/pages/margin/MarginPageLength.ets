@@ -18,20 +18,21 @@ import animator, { AnimatorResult, AnimatorOptions, PlayMode } from '@ohos.anima
 import {TabContent,FlowItem,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
   BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,Length,
   ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,CommonMethod,applyStyles,
-  MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,
-
+  MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,MarqueeOptions,
+// Styles,
   WebviewController,AlphabetIndexer,Axis,Blank,ListItemGroup,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,Stepper,
   TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType
 } from '@ohos.arkui.component'
-import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
+import { State, StorageProp } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { RouterParams } from '../../common/Utils'
 
 @Entry
 @Component
 struct MarginPageLength {
-  @StoragePropRef('_margin') _margin: Length = 0
+  @StorageProp('_margin') _margin: Length = 0 as Double
   @State targetView: string = "";
   @State targetGroupView: string = "";
   @State componentKey: string = "";
@@ -58,7 +59,7 @@ struct MarginPageLength {
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
 
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -255,10 +256,10 @@ struct MarginPageLength {
             Marquee({
               start: true,
               step: 50,
-              loop: Number.MAX_VALUE.toInt(),
+              loop: Number.MAX_VALUE as Int,
               fromStart: true,
               src: 'Running Marquee starts rolling'
-            })
+            } as MarqueeOptions)
               .applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Menu') {
@@ -273,7 +274,16 @@ struct MarginPageLength {
             .applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'NavRouter') {
-
+            // NavRouter() {
+            //   Row() {
+            //     Image($r('app.media.icon'))
+            //   }
+            //
+            //   NavDestination() {
+            //     Text('NavDestination').fontSize(10)
+            //   }
+            // }
+            //  .applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Progress') {
             Progress({ value: 10, type: ProgressType.Eclipse })
@@ -454,16 +464,16 @@ struct MarginPageLength {
               .applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Navigator') {
-            
-            
-            
-            
-            
+            // Navigator() {
+            //   Text('Go to back page').width('100%').height(20)
+            // }
+            //  .applyStyles(this.commonStyle)
+            // .backgroundColor(Color.Red)
           } else if (this.targetView == 'Panel') {
-            
-            
-            
-            
+            // Panel(true) {
+            //   Text('Text')
+            // }.backgroundColor(Color.Yellow)
+            //  .applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Refresh') {
             Refresh({ refreshing: false }) {
@@ -480,7 +490,7 @@ struct MarginPageLength {
                 .alignRules({
                   top: { anchor: '__container__', align: VerticalAlign.Top },
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
-                } as AlignRuleOption)
+                })
                 .id('marginLength')
             }
             .applyStyles(this.commonStyle)
