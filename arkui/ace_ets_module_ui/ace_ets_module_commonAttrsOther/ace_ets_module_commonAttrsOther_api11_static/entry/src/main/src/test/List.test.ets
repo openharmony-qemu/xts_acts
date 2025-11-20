@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,8 +20,8 @@ import AttributeModifierDemoAPI03 from './attributeModifierTest/AttributeModifie
 import accessVNTest from './AccessibleTest/accessVNTest.test';
 import dymaticTest from './attributeModifierTest/dymatic.test';
 import outlineTest from './outlineTest/outlineTest.test';
-import noBarrierComponentsTest from './NoBarrierComponents.test';
-import noBarriersGroupTest from './NoBarriersGroup.test';
+import noBarrierComponentsTest from './NoBarrierComponentsTest2.test';
+import noBarriersGroupTest from './NoBarriersGroupTest2.test';
 import HoverJsunit5 from './HoverTest/HoverJsunit5.test';
 import HoverJsunit11 from './HoverTest/HoverJsunit11.test';
 import HoverJsunit17 from './HoverTest/HoverJsunit17.test';
@@ -30,20 +30,20 @@ import HoverJsunit25 from './HoverTest/HoverJsunit25.test';
 import OverlayUIJsunit from './overlayTest/OverlayUIJsunit.test';
 
 export default function testsuite() {
-  noBarrierComponentsTest();
-  noBarriersGroupTest();
-  overLayJsunit();
-  zIndexJsunit();
-  visibilityJsunit();
-  AttributeModifierDemoAPI01();
-  AttributeModifierDemoAPI03();
-  accessVNTest();
-  dymaticTest();
-  outlineTest();
-  HoverJsunit5();
-  HoverJsunit11();
-  HoverJsunit17();
-  HoverJsunit23();
-  HoverJsunit25();
-  OverlayUIJsunit();
+  noBarrierComponentsTest(); // 28 pass 26
+  noBarriersGroupTest(); // 12 pass 12
+  overLayJsunit(); // 8 pass 8
+  zIndexJsunit(); // 4 pass 4
+  visibilityJsunit(); // 5 pass 5
+  AttributeModifierDemoAPI01(); // 1 pass 1
+  AttributeModifierDemoAPI03(); // 1 pass 1
+  accessVNTest(); // 1 pass 1
+  dymaticTest(); // 1 pass 1
+  outlineTest(); // 3 pass 3
+  HoverJsunit5(); // 3 pass 3
+  HoverJsunit11(); // 3 pass 3
+  HoverJsunit17(); // 3 pass 3
+  HoverJsunit23(); // 3 pass 3
+  HoverJsunit25(); // 2 pass 2
+  OverlayUIJsunit(); // 14 pass 14
 }

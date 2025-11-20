@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,7 +14,7 @@
  */
 
 
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   $$,
   $r,
@@ -52,29 +52,27 @@ import {
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 
 @Entry
 @Component
 struct zIndexExample {
-  @State zIndexValue: int = 1;
+  @State zIndexValue: Int = 1;
 
   onPageShow() {
     console.info('[zIndex] page show called ');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 236,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
 
-    let stateChangeEvent2: events_emitter.InnerEvent = {
+    let stateChangeEvent2: emitter.InnerEvent = {
       eventId: 1113,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent2, this.stateChangCallBack);
-
+    emitter.on(stateChangeEvent2, this.stateChangCallBack);
   }
 
   build() {
@@ -82,15 +80,15 @@ struct zIndexExample {
       Stack() {
         Text('first child, zIndex(2)')
           .size({ width: '40%', height: '60%' } as SizeOptions)
-          .backgroundColor(0xbbb2cb)
+          .backgroundColor('0xbbb2cb')
           .zIndex(2)
         Text('second child, default zIndex(0)')
           .size({ width: '90%', height: '80%' } as SizeOptions)
-          .backgroundColor(0xd2cab3)
+          .backgroundColor('0xd2cab3')
           .align(Alignment.TopStart)
         Text('third child, zIndex(1)')
           .size({ width: '70%', height: '50%' } as SizeOptions)
-          .backgroundColor(0xc1cbac)
+          .backgroundColor('0xc1cbac')
           .align(Alignment.TopStart)
           .zIndex(this.zIndexValue)
           .key('zIndex')
@@ -100,12 +98,16 @@ struct zIndexExample {
     .height(200)
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[stateChangCallBack] stateChangCallBack ");
     if (eventData != null) {
-      console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)?.getProperty('zIndex') != null) {
-        this.zIndexValue = ((eventData.data) as ESObject).getProperty('zIndex').toNumber() as int
+      const data: Record<String, undefined | null | Object> =
+        eventData.data as Record<String, undefined | null | Object>
+      console.info("[stateChangCallBack] state change called: " + JSON.stringify(data));
+      if (data['zIndex'] != null) {
+        console.info("11111111 ");
+        this.zIndexValue = (data!['zIndex']!) as Int;
+        console.info("22222222 ::" + this.zIndexValue);
       }
     }
   }

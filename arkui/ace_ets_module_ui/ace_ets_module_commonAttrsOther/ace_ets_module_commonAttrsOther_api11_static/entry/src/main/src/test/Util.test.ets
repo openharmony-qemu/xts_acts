@@ -2,22 +2,22 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import hilog from '@ohos.hilog'
 
 const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let domain: Int = 0x0000;
-let tag: string = 'testlog';
+let domain: int = 0x0000;
+let tag: String = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest {
   static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
 
-  static async msSleep(count: Int): Promise<Int> {
-    return new Promise<Int>((resolve, reject) => {
+  static async msSleep(count: int): Promise<int> {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
       }, count)
     })
   }
 
-  static async startAbility(bundleName: string, abilityName: string): Promise<boolean> {
+  static async startAbility(bundleName: String, abilityName: String): Promise<boolean> {
     try {
       if (!UtilsTest.isStartedAbility) {
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
@@ -33,7 +33,7 @@ class UtilsTest {
   }
 }
 
-async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
+async function startAbility(bundleName: String, abilityName: String): Promise<boolean> {
   try {
     await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`UiTestCase, start abilityFinished`);
@@ -46,7 +46,7 @@ async function startAbility(bundleName: string, abilityName: string): Promise<bo
   }
 }
 
-async function stopApplication(bundleName: string): Promise<boolean> {
+async function stopApplication(bundleName: String): Promise<boolean> {
   try {
     await abilityDelegator.executeShellCommand(`aa force-stop ${bundleName} `);
     console.info(`UiTestCase, stop application finished`);

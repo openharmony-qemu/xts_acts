@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -41,7 +41,7 @@ import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
-let tag: string = 'testTag';
+let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
@@ -64,12 +64,10 @@ export default function AttributeModifierDemoAPI01Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get AttributeModifierDemoAPI01Jsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("AttributeModifierDemoAPI01" == pages.name)) {
           console.info("get AttributeModifierDemoAPI01Jsunit pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push AttributeModifierDemoAPI01Jsunit page error:" + err);
@@ -78,37 +76,40 @@ export default function AttributeModifierDemoAPI01Jsunit() {
     });
 
     /*
-     * @tc.number    AttributeModifierDemoAPI01Jsunit_0100
-     * @tc.name      AttributeModifierDemoAPI01Jsunit_0100
-     * @tc.desc      AttributeModifierDemoAPI01Jsunit_0100
-     * @tc.level     2
+     * @tc.number   AttributeModifierDemoAPI01Jsunit_static_0100
+     * @tc.name     AttributeModifierDemoAPI01Jsunit_static_0100
+     * @tc.desc     AttributeModifierDemoAPI01Jsunit_static_0100
+     * @tc.level    0
      */
-    it('AttributeModifierDemoAPI01Jsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('AttributeModifierDemoAPI01Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
-      console.info('AttributeModifierDemoAPI01Jsunit_0100 START');
+      console.info('AttributeModifierDemoAPI01Jsunit_static_0100 START');
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('AttributeModifierDemoAPI01EnabledButton'));
+      await CommonFunc.sleep(1000);
       await (btn1?.click() as Promise<void>);
-      ;
+      console.log('test start btn1 click after')
+      await CommonFunc.sleep(1000);
 
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.id('AttributeModifierDemoAPI01isDark'));
-      await (btn2?.click() as Promise<void>);
-      ;
       await CommonFunc.sleep(1000);
+      await (btn2?.click() as Promise<void>);
+      console.log('test start btn2 click after')
+      await CommonFunc.sleep(4000);
 
       let strcontent = inspector.getInspectorByKey('AttributeModifierDemoAPI01Button');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('AttributeModifierDemoAPI01Jsunit_0100 component obj is: ' + obj.getElement('$attrs'));
-      console.info('AttributeModifierDemoAPI01Jsunit_0100 component obj.backgroundColor is: ' +
+      console.info('AttributeModifierDemoAPI01Jsunit_static_0100 component obj is: ' + obj.getElement('$attrs'));
+      console.info('AttributeModifierDemoAPI01Jsunit_static_0100 component obj.backgroundColor is: ' +
       obj.getElement('$attrs').getString('backgroundColor'));
-      console.info('AttributeModifierDemoAPI01Jsunit_0100 component obj.width is: ' +
+      console.info('AttributeModifierDemoAPI01Jsunit_static_0100 component obj.width is: ' +
       obj.getElement('$attrs').getString('width'));
       expect(obj.getElement('$attrs').getString('width')).assertEqual('300.00px');
-      console.info('AttributeModifierDemoAPI01Jsunit_0100 END')
+      console.info('AttributeModifierDemoAPI01Jsunit_static_0100 END')
       done();
     });
 

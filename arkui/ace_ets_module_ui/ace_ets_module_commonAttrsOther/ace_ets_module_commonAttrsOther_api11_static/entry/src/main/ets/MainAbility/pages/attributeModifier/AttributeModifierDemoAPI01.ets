@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,6 +17,7 @@ import {
   $$,
   $r,
   Alignment,
+  AttributeModifier,
   BindOptions,
   Button,
   ButtonAttribute,
@@ -42,16 +43,32 @@ import {
   Text,
   TextAlign
 } from '@ohos.arkui.component'
-
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Observed, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 
+@Observed
+class MyButtonModifier1 implements AttributeModifier<ButtonAttribute> {
+  isDark: boolean = false
+
+  // 禁用
+  applyDisabledAttribute(instance: ButtonAttribute): void {
+    if (this.isDark) {
+      instance.backgroundColor("#FF209B08")
+      instance.width('300px')
+    } else {
+      instance.backgroundColor("#ffa42d09")
+      instance.width('800px')
+    }
+
+  }
+}
 
 @Entry
 @Component
 struct AttributeModifierDemoAPI01 {
+  @State modifier: MyButtonModifier1 = new MyButtonModifier1()
   @State enabledFlag: boolean = true
 
   build() {
@@ -62,16 +79,20 @@ struct AttributeModifierDemoAPI01 {
           .width('90%')
           .height(80)
           .focusable(true)
+          .attributeModifier(this.modifier)
           .enabled(this.enabledFlag)
 
         Button('enabled：false').margin(20).key('AttributeModifierDemoAPI01EnabledButton')
           .onClick((e: ClickEvent) => {
+            console.log('test start btn1')
             this.enabledFlag = false
           })
 
         Button('isDark true').margin(20).key('AttributeModifierDemoAPI01isDark')
           .onClick((e: ClickEvent) => {
-
+            console.log('test start btn2')
+            this.modifier.isDark = true
+            console.log('test start data ' + this.modifier.isDark)
           })
       }
       .width('100%')

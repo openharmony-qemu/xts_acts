@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   $$,
   $r,
@@ -49,7 +49,6 @@ import {
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 
@@ -59,23 +58,23 @@ struct VisibilityExample {
   @State visibilityValue: Visibility = Visibility.Visible;
 
   onPageShow() {
-    let hiddenChangeEvent: events_emitter.InnerEvent = {
+    let hiddenChangeEvent: emitter.InnerEvent = {
       eventId: 47,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(hiddenChangeEvent, this.hiddenChangCallBack)
+    emitter.on(hiddenChangeEvent, this.hiddenChangCallBack)
 
-    let noneChangeEvent: events_emitter.InnerEvent = {
+    let noneChangeEvent: emitter.InnerEvent = {
       eventId: 48,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(noneChangeEvent, this.noneChangCallBack)
+    emitter.on(noneChangeEvent, this.noneChangCallBack)
 
-    let stateChangeEvent2: events_emitter.InnerEvent = {
+    let stateChangeEvent2: emitter.InnerEvent = {
       eventId: 1116,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent2, this.hiddenChangCallBack);
+    emitter.on(stateChangeEvent2, this.hiddenChangCallBack);
   }
 
   build() {
@@ -84,24 +83,24 @@ struct VisibilityExample {
         Text('BoxOne')
           .fontSize(9)
           .width('90%')
-          .fontColor(0xCCCCCC)
+          .fontColor('0xCCCCCC')
         Row()
           .visibility(this.visibilityValue)
           .width('90%')
           .height(80)
-          .backgroundColor(0xAFEEEE)
+          .backgroundColor('0xAFEEEE')
           .padding(20)
           .key('box')
 
         Text('BoxTwo')
           .fontSize(9)
           .width('90%')
-          .fontColor(0xCCCCCC)
+          .fontColor('0xCCCCCC')
         Row()
           .visibility(Visibility.Visible)
           .width('90%')
           .height(80)
-          .backgroundColor(0xAFEEEE)
+          .backgroundColor('0xAFEEEE')
           .padding(20)
       }
       .width('90%')
@@ -111,21 +110,27 @@ struct VisibilityExample {
     .margin({ top: 5 } as Margin)
   }
 
-  private hiddenChangCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData) => {
+  private hiddenChangCallBack: (eventData: emitter.EventData) => void =
+    (eventData: emitter.EventData) => {
       console.info("[hiddenChangCallBack] stateChangCallBack");
       if (eventData != null) {
+        const data: Record<String, undefined | null | Object> =
+          eventData.data as Record<String, undefined | null | Object>
         console.info("[hiddenChangCallBack] state change called:" + JSON.stringify(eventData));
-
-
+        if (data['visibility'] != null) {
+          this.visibilityValue = data['visibility'] as Visibility
+        }
       }
     }
-  private noneChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private noneChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[noneChangCallBack] stateChangCallBack");
     if (eventData != null) {
+      const data: Record<String, undefined | null | Object> =
+        eventData.data as Record<String, undefined | null | Object>
       console.info("[noneChangCallBack] state change called:" + JSON.stringify(eventData));
-
-
+      if (data['visibility'] != null) {
+        this.visibilityValue = data['visibility'] as Visibility
+      }
     }
   }
 }

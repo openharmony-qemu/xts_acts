@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,6 +17,7 @@ import {
   $$,
   $r,
   Alignment,
+  AttributeModifier,
   BindOptions,
   Button,
   ButtonAttribute,
@@ -42,21 +43,31 @@ import {
   Text,
   TextAlign
 } from '@ohos.arkui.component'
-
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 
+class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    instance.backgroundColor(Color.Black)
+  }
+
+  applyPressedAttribute(instance: ButtonAttribute): void {
+    instance.backgroundColor("#FFCE4568")
+  }
+}
 
 @Entry
 @Component
 struct attributePressedDemo {
+  @State modifier: MyButtonModifier = new MyButtonModifier()
+
   build() {
     Row() {
       Column() {
         Button("Button")
-
+          .attributeModifier(this.modifier).key("pressedBt")
       }
       .width('100%')
     }

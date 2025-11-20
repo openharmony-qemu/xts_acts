@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -41,12 +41,18 @@ import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
-let tag: string = 'testTag';
+let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
-
 
 export default function HoverJsunit25() {
+
+  console.info("HoverJsunit5 beforeAll start");
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+
+  let uiContext = AppStorage.get<UIContext>('uiContent')!;
+
   describe('HoverJsunit25', () => {
     beforeAll(() => {
       console.info("HoverJsunit25 beforeAll start");
@@ -67,10 +73,8 @@ export default function HoverJsunit25() {
         console.info("get HoverJsunit25 state pages:" + JSON.stringify(pages));
         if (!("Hover25" == pages.name)) {
           console.info("get HoverJsunit25 pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push HoverJsunit25 page error:" + err);
@@ -78,35 +82,35 @@ export default function HoverJsunit25() {
       console.info("HoverJsunit25 beforeEach end");
     });
 
-
     /*
-     * @tc.number    HoverJsunit25_static_0100
-     * @tc.name      HoverJsunit25_static_0100
-     * @tc.desc      HoverJsunit25_static_0100
-     * @tc.level     2
+     * @tc.number   HoverJsunit_static_0104
+     * @tc.name     HoverJsunit_static_0104
+     * @tc.desc     HoverJsunit_static_0104
+     * @tc.level    0
      */
-    it('HoverJsunit25_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('HoverJsunit25_static_0100 START');
+it('HoverJsunit_static_0104', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('HoverJsunit_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('hover25');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[HoverJsunit25_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[HoverJsunit_0100] component obj is: " + JSON.stringify(obj));
       console.info("[HoverJsunit25sun] title: " +
       JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF0000FF');
-      console.info('[HoverJsunit25_static_0100] END');
+      console.info('[HoverJsunit_0100] END');
       done();
     });
 
     /*
-     * @tc.number    HoverJsunit25_static_0200
-     * @tc.name      HoverJsunit25_static_0200
-     * @tc.desc      HoverJsunit25_static_0200
-     * @tc.level     2
+     * @tc.number   HoverJsunit_static_0204
+     * @tc.name     HoverJsunit_static_0204
+     * @tc.desc     HoverJsunit_static_0204
+     * @tc.level    0
      */
-    it('HoverJsunit25_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('HoverJsunit25_static_0200 START');
+it('HoverJsunit_static_0204', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('HoverJsunit_0200 START');
       let driver = Driver.create()
       let buttonCl = await driver.findComponent(ON.id('hover25'));
       await CommonFunc.sleep(500);
@@ -115,12 +119,13 @@ export default function HoverJsunit25() {
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('hover25');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[HoverJsunit25_static_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[HoverJsunit25_static_0200] title: " +
+      console.info("[HoverJsunit_0200] component obj is: " + JSON.stringify(obj));
+      console.info("[HoverJsunit_0200] title: " +
       JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFC0CB');
-      console.info('[HoverJsunit25_static_0200] END');
+      console.info('[HoverJsunit_0200] END');
       done();
     });
 

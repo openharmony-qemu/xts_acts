@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,30 +22,30 @@ export default class Log {
   /**
    * print info level log
    *
-   * @param {string} tag - Page or class tag
-   * @param {string} log - Log needs to be printed
+   * @param {String} tag - Page or class tag
+   * @param {String} log - Log needs to be printed
    */
-  static showInfo(tag: string, log: string) {
+  static showInfo(tag: String, log: String) {
     console.info(`${TAG} tag: ${tag} --> ${log}`);
   }
 
   /**
    * print debug level log
    *
-   * @param {string} tag - Page or class tag
-   * @param {string} log - Log needs to be printed
+   * @param {String} tag - Page or class tag
+   * @param {String} log - Log needs to be printed
    */
-  static showDebug(tag: string, log: string) {
+  static showDebug(tag: String, log: String) {
     console.debug(`${TAG} tag: ${tag} --> ${log}`);
   }
 
   /**
    * print error level log
    *
-   * @param {string} tag - Page or class tag
-   * @param {string} log - Log needs to be printed
+   * @param {String} tag - Page or class tag
+   * @param {String} log - Log needs to be printed
    */
-  static showError(tag: string, log: string) {
+  static showError(tag: String, log: String) {
     console.error(`${TAG} tag: ${tag} --> ${log}`);
   }
 }
