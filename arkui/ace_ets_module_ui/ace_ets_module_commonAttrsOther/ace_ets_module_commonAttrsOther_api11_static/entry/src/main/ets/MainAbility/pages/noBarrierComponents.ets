@@ -4,24 +4,21 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import web_webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+// import webview from '@ohos.web.webview';
 import {
-  $$,
   $r,
   Alignment,
   AlphabetIndexer,
   AlphabetIndexerOptions,
   Axis,
-  BindOptions,
   Blank,
   Button,
   ButtonType,
@@ -29,7 +26,6 @@ import {
   ClickEvent,
   Color,
   Column,
-  ColumnOptions,
   Component,
   DataPanel,
   DataPanelType,
@@ -39,18 +35,17 @@ import {
   Divider,
   EdgeEffect,
   Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
+  ErrorInformation,
   FontWeight,
   ForEach,
+  FormCallbackInfo,
+  FormComponent,
+  FormDimension,
   Gauge,
   Grid,
   GridItem,
   Image,
   IndexerAlign,
-  ItemAlign,
   List,
   ListItem,
   ListOptions,
@@ -70,20 +65,19 @@ import {
   RadioOptions,
   Rating,
   RatingOptions,
+  RemoteWindow,
   RichText,
   Row,
+  RRect,
   Scroll,
   Scroller,
   Search,
   SearchController,
-  SheetOptions,
-  SheetType,
   SizeOptions,
   Slider,
   SliderChangeMode,
   SliderStyle,
   Stack,
-  StyleOptions,
   Text,
   TextAlign,
   TimePicker,
@@ -91,55 +85,68 @@ import {
   Toggle,
   ToggleType,
   Visibility,
+  WindowAnimationTarget,
   XComponent,
   XComponentController,
   XComponentOptions,
-  OnAlphabetIndexerRequestPopupDataCallback
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '../../../../hypium/index';
+  XComponentParameters,
+  XComponentType,
+} from '@ohos.arkui.component';
+import { UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import formError from '@ohos.application.formError'
 
-const uiContext = new UIContext();
+let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
 
 @Entry
 @Component
 struct noBarrierComponents {
   scroller: Scroller = new Scroller();
-  @State numberData: Array<string> = ['0', '1'] as Array<string>;
-  public valueArr: Array<double> = [10.0, 10.0] as Array<double>;
+  @State Number1: Array<String> = ['0', '1'] as Array<String>;
+  public valueArr: Array<number> = [10, 10] as Array<number>;
   @State isLunar: boolean = false;
-  @State formId: number = 0;
+  @State formId: Long | String = '0';
   @State start: boolean = false;
-  @State passwords: Array<int> = [] as Array<int>;
-  @State message: string = 'please input password!';
-  @State rating: double = 3.5;
-  @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
-  @State changeValue: string = '';
-  @State submitValue: string = '';
+  @State passwords: Array<Int> = [] as Array<Int>;
+  @State message: String = 'please input password!';
+  @State rating: number = 3.5;
+  @State target?: WindowAnimationTarget = {
+    bundleName: '',
+    abilityName: '',
+    windowBounds: {
+      left: 0.0,
+      top: 0.0,
+      width: 0.0,
+      height: 0.0,
+      radius: 0.0
+    } as RRect,
+    missionId: 0 as Int
+  } as WindowAnimationTarget;
+  @State data: String = '<h1 style="text-align: center;">h1标题</h1>';
+  @State changeValue: String = '';
+  @State submitValue: String = '';
   controller: SearchController = new SearchController();
-  @State outSetValueOne: double = 40.0;
+  @State outSetValueOne: number = 40;
   @State isMilitaryTime: boolean = false;
-  controller1: web_webview.WebviewController = new web_webview.WebviewController();
+  // controller1: webview.WebviewController = new webview.WebviewController();
   xcomponentController: XComponentController = new XComponentController();
   private arr: Array<number> = [0, 1] as Array<number>;
-  private arrayA: Array<string> = ['安'] as Array<string>;
-  private arrayB: Array<string> = ['卜', '白', '包', '毕', '丙'] as Array<string>;
-  private arrayC: Array<string> = ['曹', '成', '陈', '催'] as Array<string>;
-  private arrayL: Array<string> = ['刘', '李', '楼', '梁', '雷', '吕', '柳', '卢'] as Array<string>;
-  private value: Array<string> =
+  private arrayA: Array<String> = ['安'] as Array<String>;
+  private arrayB: Array<String> = ['卜', '白', '包', '毕', '丙'] as Array<String>;
+  private arrayC: Array<String> = ['曹', '成', '陈', '催'] as Array<String>;
+  private arrayL: Array<String> = ['刘', '李', '楼', '梁', '雷', '吕', '柳', '卢'] as Array<String>;
+  private value: Array<String> =
     ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
-      'W', 'X', 'Y', 'Z'] as Array<string>;
+      'W', 'X', 'Y', 'Z'] as Array<String>;
   private selectedDate: Date = new Date('2021-08-08');
   private fromStart: boolean = true;
   private step: number = 50;
-  private loop: int = Infinity as int;
-  private src: string = "Running Marquee starts rolling";
+  private loop: Int = Infinity as Int;
+  private src: String = "Running Marquee starts rolling";
   private patternLockController: PatternLockController = new PatternLockController();
-  private value1: string = 'hello world';
+  private value1: String = 'hello world';
   private selectedTime: Date = new Date('2022-07-22T08:00:00');
-  private surfaceId: string = '';
+  private surfaceId: String = '';
 
   build() {
     Scroll(this.scroller) {
@@ -147,23 +154,23 @@ struct noBarrierComponents {
         Text('textAlign1')
           .key('textAlign1')
           .fontSize(20)
-          .fontColor(0xCCCCCC)
+          .fontColor('0xCCCCCC')
           .accessibilityText("我是无障碍组件")
 
         Text('textAlign2')
           .key('textAlign2')
           .fontSize(20)
-          .fontColor(0xCCCCCC)
+          .fontColor('0xCCCCCC')
           .accessibilityText("")
 
         Text('textAlign3')
           .key('textAlign3')
           .fontSize(20)
-          .fontColor(0xCCCCCC)
+          .fontColor('0xCCCCCC')
           .accessibilityText("我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件")
 
         List({ space: 20, initialIndex: 0 } as ListOptions) {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: number, index: Int) => {
             ListItem() {
               Text('' + item)
                 .width('100%')
@@ -171,20 +178,20 @@ struct noBarrierComponents {
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
                 .borderRadius(10)
-                .backgroundColor(0xFFFFFF)
+                .backgroundColor('0xFFFFFF')
             }
-          }, (item: number, index: int) => item + '')
+          }, (item: number, index: Int) => item + '')
         }
         .key("list")
         .listDirection(Axis.Vertical)
         .divider({
           strokeWidth: 2,
-          color: 0xFFFFFF,
+          color: '0xFFFFFF',
           startMargin: 20,
           endMargin: 20
         })
         .edgeEffect(EdgeEffect.Spring)
-        .onScrollIndex((firstIndex: int, lastIndex: int): void => {
+        .onScrollIndex((firstIndex: Int, lastIndex: Int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })
@@ -192,18 +199,18 @@ struct noBarrierComponents {
         .width('90%')
 
         Grid() {
-          ForEach(this.numberData, (day: string) => {
-            ForEach(this.numberData, (day: string) => {
+          ForEach(this.Number1, (day: String) => {
+            ForEach(this.Number1, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)
-                  .backgroundColor(0xF9CF93)
+                  .backgroundColor('0xF9CF93')
                   .width('100%')
                   .height('100%')
                   .textAlign(TextAlign.Center)
               }
-            }, (day: string) => day)
-          }, (day: string) => day)
+            }, (day: String) => day)
+          }, (day: String) => day)
         }
         .key("Grid")
         .columnsTemplate('1fr 1fr ')
@@ -211,14 +218,14 @@ struct noBarrierComponents {
         .columnsGap(10)
         .rowsGap(10)
         .width('90%')
-        .backgroundColor(0xFAEEE0)
+        .backgroundColor('0xFAEEE0')
         .accessibilityText("我是无障碍组件")
         .height(300)
 
         Stack({ alignContent: Alignment.Start }) {
           Row() {
             List({ space: 20, initialIndex: 0 }) {
-              ForEach(this.arrayA, (item: string) => {
+              ForEach(this.arrayA, (item: String) => {
                 ListItem() {
                   Text(item)
                     .width('80%')
@@ -226,9 +233,9 @@ struct noBarrierComponents {
                     .fontSize(30)
                     .textAlign(TextAlign.Center)
                 }
-              }, (item: string) => item)
+              }, (item: String) => item)
 
-              ForEach(this.arrayB, (item: string) => {
+              ForEach(this.arrayB, (item: String) => {
                 ListItem() {
                   Text(item)
                     .width('80%')
@@ -236,9 +243,9 @@ struct noBarrierComponents {
                     .fontSize(30)
                     .textAlign(TextAlign.Center)
                 }
-              }, (item: string) => item)
+              }, (item: String) => item)
 
-              ForEach(this.arrayC, (item: string) => {
+              ForEach(this.arrayC, (item: String) => {
                 ListItem() {
                   Text(item)
                     .width('80%')
@@ -246,9 +253,9 @@ struct noBarrierComponents {
                     .fontSize(30)
                     .textAlign(TextAlign.Center)
                 }
-              }, (item: string) => item)
+              }, (item: String) => item)
 
-              ForEach(this.arrayL, (item: string) => {
+              ForEach(this.arrayL, (item: String) => {
                 ListItem() {
                   Text(item)
                     .width('80%')
@@ -256,38 +263,38 @@ struct noBarrierComponents {
                     .fontSize(30)
                     .textAlign(TextAlign.Center)
                 }
-              }, (item: string) => item)
+              }, (item: String) => item)
             }
             .width('50%')
             .height('100%')
 
-            AlphabetIndexer({ arrayValue: this.value, selected: 0 as int } as AlphabetIndexerOptions)
-              .selectedColor(0xFFFFFF)
-              .popupColor(0xFFFAF0)
-              .selectedBackgroundColor(0xCCCCCC)
-              .popupBackground(0xD2B48C)
+            AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
+              .selectedColor('0xFFFFFF')
+              .popupColor('0xFFFAF0')
+              .selectedBackgroundColor('0xCCCCCC')
+              .popupBackground('0xD2B48C')
               .usingPopup(true)
               .selectedFont({ size: 16, weight: FontWeight.Bolder })
               .popupFont({ size: 30, weight: FontWeight.Bolder })
               .itemSize(28)
               .alignStyle(IndexerAlign.Left)
-              .onSelect((index: int): void => {
-
+              .onSelect((index: Int): void => {
+                console.info(this.value[index as Int] + ' Selected!')
               })
-              .onRequestPopupData(((index: int): Array<String> | undefined => {
-                if (this.value[index as int] == 'A') {
+              .onRequestPopupData((index: Int): Array<String> => {
+                if (this.value[index as Int] == 'A') {
                   return this.arrayA
-                } else if (this.value[index as int] == 'B') {
+                } else if (this.value[index as Int] == 'B') {
                   return this.arrayB
-                } else if (this.value[index as int] == 'C') {
+                } else if (this.value[index as Int] == 'C') {
                   return this.arrayC
-                } else if (this.value[index as int] == 'L') {
+                } else if (this.value[index as Int] == 'L') {
                   return this.arrayL
                 } else {
-                  return undefined
+                  return []
                 }
-              }) as OnAlphabetIndexerRequestPopupDataCallback)
-              .onPopupSelect((index: int): void => {
+              })
+              .onPopupSelect((index: Int): void => {
                 console.info('onPopupSelected:' + index)
               })
           }
@@ -308,9 +315,9 @@ struct noBarrierComponents {
                 left: 6,
                 right: 6
               } as Margin)
-          }.width('100%').backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 } as Padding)
+          }.width('100%').backgroundColor('0xFFFFFF').borderRadius(15).padding({ left: 12 } as Padding)
         }
-        .backgroundColor(0xEFEFEF)
+        .backgroundColor('0xEFEFEF')
         .padding(20)
         .key("Blank")
         .accessibilityText("我是无障碍组件")
@@ -318,7 +325,7 @@ struct noBarrierComponents {
 
         Button('OK', { type: ButtonType.Normal, stateEffect: true })
           .borderRadius(8)
-          .backgroundColor(0x317aff)
+          .backgroundColor('0x317aff')
           .width(90)
           .key("Button")
           .accessibilityText("我是无障碍组件")
@@ -328,7 +335,7 @@ struct noBarrierComponents {
 
         Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
           .select(true)
-          .selectedColor(0xed6f21)
+          .selectedColor('0xed6f21')
           .onChange((value: boolean): void => {
             console.info('Checkbox1 change is' + value)
           })
@@ -347,13 +354,36 @@ struct noBarrierComponents {
           selected: this.selectedDate
         } as DatePickerOptions)
           .lunar(this.isLunar)
-
-
+          .onDateChange((value: Date): void => {
+            this.selectedDate.setFullYear(value.getYear() ?? 0, value.getMonth(), value.getDate())
+            console.info('select current date is: ' + JSON.stringify(value))
+          })
           .key("DatePicker")
           .accessibilityText("我是无障碍组件")
 
         Divider().strokeWidth(8).color('#F1F3F5').key("Divider").accessibilityText("我是无障碍组件")
 
+        FormComponent({
+          id: this.formId,
+          name: "Form1",
+          bundle: "com.example.cardexample",
+          ability: "FormAbility",
+          module: "entry",
+          dimension: FormDimension.Dimension_2_2,
+          temporary: false
+        })
+          .allowUpdate(true)
+          .size({ width: 360, height: 360 } as SizeOptions)
+          .visibility(Visibility.Visible)
+          .onAcquired((form: FormCallbackInfo): void => {
+            console.log(`form info : ${JSON.stringify(form)}`);
+            this.formId = form.id;
+          })
+          .onError((err: ErrorInformation): void => {
+            console.log(`fail to add form, err: ${JSON.stringify(err)}`);
+          })
+          .key("FormComponent")
+          .accessibilityText("我是无障碍组件")
 
         Gauge({ value: 75 })
           .width(200)
@@ -407,20 +437,20 @@ struct noBarrierComponents {
           .key("PatternLock")
           .accessibilityText("我是无障碍组件")
           .autoReset(true)
-          .onPatternComplete((input: Array<int>) => {
+          .onPatternComplete((input: Array<Int>) => {
             if (input === null || input === undefined || input.length < 5) {
               this.message = 'The password length needs to be greater than 5, please enter again.'
               return
             }
             if (this.passwords.length > 0) {
               if (this.passwords.toString() === input.toString()) {
-                this.passwords = input
+                this.passwords = input as Array<Int>
                 this.message = 'Set password successfully: ' + this.passwords.toString()
               } else {
                 this.message = 'Inconsistent passwords, please enter again.'
               }
             } else {
-              this.passwords = input
+              this.passwords = input as Array<Int>
               this.message = "Please enter again."
             }
           })
@@ -455,10 +485,22 @@ struct noBarrierComponents {
           .margin({ top: 24 } as Margin)
           .key("Rating")
           .accessibilityText("我是无障碍组件")
-          .onChange((value: double): void => {
+          .onChange((value: number): void => {
             this.rating = value
           })
 
+        // RemoteWindow(this.target as WindowAnimationTarget)
+        //   .translate({ x: 100, y: 200 })
+        //   .scale({ x: 0.5, y: 0.5 })
+        //   .opacity(0.8)
+        //   .position({
+        //     x: uiContext.px2vp(this.target?.windowBounds.left ?? 0),
+        //     y: uiContext.px2vp(this.target?.windowBounds.top ?? 0)
+        //   } as Position)
+        //   .width(uiContext.px2vp(this.target?.windowBounds.width ?? 0))
+        //   .height(uiContext.px2vp(this.target?.windowBounds.height ?? 0))
+        //   .key("RemoteWindow")
+        //   .accessibilityText("我是无障碍组件")
 
         RichText(this.data)
           .onStart(() => {
@@ -469,7 +511,7 @@ struct noBarrierComponents {
           })
           .width(500)
           .height(400)
-          .backgroundColor(0XBDDB69)
+          .backgroundColor('0XBDDB69')
           .key("RichText")
           .accessibilityText("我是无障碍组件")
 
@@ -483,21 +525,21 @@ struct noBarrierComponents {
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .textFont({ size: 14, weight: 400 })
-          .onSubmit((value: string): void => {
+          .onSubmit((value: String): void => {
             this.submitValue = value
           })
-          .onChange((value: string): void => {
+          .onChange((value: String): void => {
             this.changeValue = value
           })
           .margin(20)
         Slider({
           value: this.outSetValueOne,
-          min: 0.0,
-          max: 100.0,
+          min: 0,
+          max: 100,
           style: SliderStyle.OutSet
         })
           .showTips(true)
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.outSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -509,7 +551,7 @@ struct noBarrierComponents {
         })
           .useMilitaryTime(this.isMilitaryTime)
           .onChange((value: TimePickerResult): void => {
-            this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+            this.selectedTime.setHours(value.hour, value.minute)
             console.info('select current date is: ' + JSON.stringify(value))
           })
           .key("TimePicker")
@@ -524,6 +566,21 @@ struct noBarrierComponents {
           .key("Toggle")
           .accessibilityText("我是无障碍组件")
 
+        // XComponent({
+        //   id: 'xcomponent',
+        //   type: XComponentType.SURFACE,
+        //   nativeXComponentHandler: ((value: long): void => {
+        //   }),
+        //   controller: this.xcomponentController
+        // } as XComponentParameters)
+        //   .onLoad((): void => {
+        //     this.xcomponentController.setXComponentSurfaceRect({ surfaceWidth: 1920, surfaceHeight: 1080 });
+        //     this.surfaceId = this.xcomponentController.getXComponentSurfaceId()
+        //   })
+        //   .width('640px')
+        //   .height('480px')
+        //   .key("XComponent")
+        //   .accessibilityText("我是无障碍组件")
 
       }
     }

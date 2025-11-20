@@ -4,16 +4,16 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import emitter from '@ohos.events.emitter';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -32,7 +32,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -42,7 +42,7 @@ import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
-let tag: string = 'testTag';
+let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 
@@ -65,12 +65,10 @@ export default function zIndexJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get zIndexTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("zIndex" == pages.name)) {
           console.info("get zIndexTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push zIndexTest page error:" + err);
@@ -80,114 +78,121 @@ export default function zIndexJsunit() {
 
     afterEach(async () => {
       await CommonFunc.sleep(2000);
+      // const routerInstance = AppStorage.get<Router>("router") as Router
+      // routerInstance.back();
       console.info("zIndex after each called");
     });
 
     /*
-     * @tc.number    testZIndex_static_01
-     * @tc.name      testZIndex_static_01
-     * @tc.desc      testZIndex_static_01
-     * @tc.level     2
+     * @tc.number   testZIndex_static_01
+     * @tc.name     testZIndex_static_01
+     * @tc.desc     testZIndex_static_01
+     * @tc.level    0
      */
-    it('testZIndex_static_01', Level.LEVEL0, async () => {
+it('testZIndex_static_01', Level.LEVEL0, async () => {
       console.info('[testZIndex01] START');
+      await CommonFunc.sleep(4000);
+      let strJson = inspector.getInspectorByKey('zIndex');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('zIndex');
-      console.info("[testZIndex01] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('zIndex')).assertEqual(1);
+      console.info("[testZIndex01] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('zIndex')).assertEqual(1);
       console.info('[testZIndex01] END');
 
     });
 
     /*
-     * @tc.number    testZIndex_static_02
-     * @tc.name      testZIndex_static_02
-     * @tc.desc      testZIndex_static_02
-     * @tc.level     2
+     * @tc.number   testZIndex_static_02
+     * @tc.name     testZIndex_static_02
+     * @tc.desc     testZIndex_static_02
+     * @tc.level    0
      */
-    it('testZIndex_static_02', Level.LEVEL0, async () => {
+it('testZIndex_static_02', Level.LEVEL0, async () => {
       console.info('[testZIndex02] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "zIndex": 4
-          } as Record<string, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 236,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testZIndex02] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[testZIndex02] change component data error: " + err.message);
       }
+      await CommonFunc.sleep(4000);
+      let strJson = inspector.getInspectorByKey('zIndex');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('zIndex');
       console.info("[testZIndex02] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('zIndex')).assertEqual(4);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('zIndex')).assertEqual(4);
       console.info('testZIndex02 END');
 
     });
 
     /*
-     * @tc.number    testZIndex_static_03
-     * @tc.name      testZIndex_static_03
-     * @tc.desc      testZIndex_static_03
-     * @tc.level     2
+     * @tc.number   testZIndex_static_03
+     * @tc.name     testZIndex_static_03
+     * @tc.desc     testZIndex_static_03
+     * @tc.level    0
      */
-    it('testZIndex_static_03', Level.LEVEL0, async () => {
+it('testZIndex_static_03', Level.LEVEL0, async () => {
       console.info('[testZIndex03] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "zIndex": -5
-          } as Record<string, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 236,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testZIndex03] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+
+      } catch (err: Error) {
         console.log("[testZIndex03] change component data error: " + err.message);
       }
+      await CommonFunc.sleep(4000);
+      let strJson = inspector.getInspectorByKey('zIndex');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('zIndex');
       console.info("[testZIndex03] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('zIndex')).assertEqual(-5);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('zIndex')).assertEqual(-5);
       console.info('testZIndex03 END');
 
     });
 
     /*
-     * @tc.number    testZIndex_static_04
-     * @tc.name      testZIndex_static_04
-     * @tc.desc      testZIndex_static_04
-     * @tc.level     2
+     * @tc.number   testZIndex_static_04
+     * @tc.name     testZIndex_static_04
+     * @tc.desc     testZIndex_static_04
+     * @tc.level    0
      */
-    it('testZIndex_static_04', Level.LEVEL0, async () => {
+it('testZIndex_static_04', Level.LEVEL0, async () => {
       console.info('[testZIndex04] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "zIndex": 889900444
-          } as Record<string, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 1113,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testZIndex04] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[testZIndex04] change component data error: " + err.message);
       }
+      await CommonFunc.sleep(4000);
+      let strJson = inspector.getInspectorByKey('zIndex');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('zIndex');
       console.info("[testZIndex04] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('zIndex')).assertEqual(889900444);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('zIndex')).assertEqual(889900444);
       console.info('testZIndex04 END');
     });
   })

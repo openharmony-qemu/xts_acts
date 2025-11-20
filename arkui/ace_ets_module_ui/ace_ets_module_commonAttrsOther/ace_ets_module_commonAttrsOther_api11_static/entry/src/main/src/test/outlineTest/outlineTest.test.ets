@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -41,7 +41,7 @@ import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
-let tag: string = 'testTag';
+let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 
@@ -64,12 +64,10 @@ export default function outlineTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get outlineTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("outline" == pages.name)) {
           console.info("get outlineTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push outlineTest page error:" + err);
@@ -77,71 +75,73 @@ export default function outlineTest() {
       console.info("outlineTest beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    outlineTest_static_0100
-     * @tc.name      outlineTest_static_0100
-     * @tc.desc      outlineTest_static_0100
-     * @tc.level     2
+     * @tc.number   outlineTest_static_0100
+     * @tc.name     outlineTest_static_0100
+     * @tc.desc     outlineTest_static_0100
+     * @tc.level    0
      */
-    it('outlineTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('outlineTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('outlineTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('outline_text');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       console.info("[outlineTest_0100] component obj is: " + JSON.stringify(obj));
       console.info("[outlineTest_0100] component obj.getElement('$attrs') is: " +
       JSON.stringify(obj.getElement('$attrs')));
-      console.info("[outlineTest_0100] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      let obj1: string =
+      let obj1: String =
         JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('left');
       expect(obj1).assertEqual("OutlineStyle.SOLID");
       console.info('[outlineTest_0100] END');
       done();
     });
-
+    
     /*
-     * @tc.number    outlineTest_static_0200
-     * @tc.name      outlineTest_static_0200
-     * @tc.desc      outlineTest_static_0200
-     * @tc.level     2
+     * @tc.number   outlineTest_static_0200
+     * @tc.name     outlineTest_static_0200
+     * @tc.desc     outlineTest_static_0200
+     * @tc.level    0
      */
-    it('outlineTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('outlineTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('outlineTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('outline_text');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       console.info("[outlineTest_0200] component obj is: " + JSON.stringify(obj));
       console.info("[outlineTest_0200] component obj.getElement('$attrs') is: " +
       JSON.stringify(obj.getElement('$attrs')));
-      let obj1: string =
+      let obj1: String =
         JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('right');
       expect(obj1).assertEqual("OutlineStyle.DASHED");
       console.info('[outlineTest_0200] END');
       done();
     });
-
+    
     /*
-     * @tc.number    outlineTest_static_0300
-     * @tc.name      outlineTest_static_0300
-     * @tc.desc      outlineTest_static_0300
-     * @tc.level     2
+     * @tc.number   outlineTest_static_0300
+     * @tc.name     outlineTest_static_0300
+     * @tc.desc     outlineTest_static_0300
+     * @tc.level    0
      */
-    it('outlineTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('outlineTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('outlineTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('outline_text');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       console.info("[outlineTest_0300] component obj is: " + JSON.stringify(obj));
       console.info("[outlineTest_0300] component obj.getElement('$attrs') is: " +
       JSON.stringify(obj.getElement('$attrs')));
-      let obj1: string =
+      let obj1: String =
         JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('top');
       expect(obj1).assertEqual("OutlineStyle.DOTTED");
       console.info('[outlineTest_0300] END');

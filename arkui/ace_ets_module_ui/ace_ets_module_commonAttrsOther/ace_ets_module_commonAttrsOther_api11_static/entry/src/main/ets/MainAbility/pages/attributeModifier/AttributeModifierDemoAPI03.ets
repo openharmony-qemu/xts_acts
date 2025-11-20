@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,14 +14,10 @@
  */
 
 import {
-  $$,
-  $r,
-  Alignment,
-  BindOptions,
+  AttributeModifier,
   Button,
-  ButtonAttribute,
-  ButtonType,
   Checkbox,
+  CheckboxAttribute,
   CheckboxOptions,
   CheckBoxShape,
   ClickEvent,
@@ -29,32 +25,27 @@ import {
   Column,
   ColumnOptions,
   Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
-  Margin,
-  Row,
-  Scroll,
-  SheetOptions,
-  SheetType,
-  Text,
-  TextAlign
-} from '@ohos.arkui.component'
+  Entry
+} from '@ohos.arkui.component';
+import { Observed, State } from '@ohos.arkui.stateManagement';
 
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '../../../../../hypium/index';
+@Observed
+class MyButtonModifier3 implements AttributeModifier<CheckboxAttribute> {
+  isDark: boolean = false
 
+  applySelectedAttribute(instance: CheckboxAttribute): void {
+    if (this.isDark) {
+      instance.selectedColor("#FF209B08")
+    } else {
+      instance.selectedColor("#ffd2c01e")
+    }
+  }
+}
 
 @Entry
 @Component
 struct AttributeModifierDemoAPI03 {
+  @State modifier: MyButtonModifier3 = new MyButtonModifier3()
   @State flag: boolean = false
 
   build() {
@@ -65,11 +56,11 @@ struct AttributeModifierDemoAPI03 {
         .select(this.flag)
         .selectedColor(Color.Pink)
         .shape(CheckBoxShape.ROUNDED_SQUARE)
-
+        .attributeModifier(this.modifier)
 
       Button('isDark true').key('AttributeModifierDemoAPI03isDark')
         .onClick((e: ClickEvent) => {
-
+          this.modifier.isDark = true
         })
 
       Button('选中').key('AttributeModifierDemoAPI03Selected')

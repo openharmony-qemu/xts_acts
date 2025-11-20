@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -41,19 +41,21 @@ import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
-let tag: string = 'testTag';
+let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-const uiContext = new UIContext();
-
-
 export default function HoverJsunit17() {
+
+  console.info("HoverJsunit5 beforeAll start");
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+
+  let uiContext = AppStorage.get<UIContext>('uiContent')!;
+
   describe('HoverJsunit17', () => {
     beforeAll(() => {
-      console.info("HoverJsunit17 beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -68,113 +70,115 @@ export default function HoverJsunit17() {
         console.info("get HoverJsunit17 state pages:" + JSON.stringify(pages));
         if (!("Hover17" == pages.name)) {
           console.info("get HoverJsunit17 pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push HoverJsunit17 page error:" + err);
       }
       console.info("HoverJsunit17 beforeEach end");
     });
-
-
+    
+    
     /*
-     * @tc.number    HoverJsunit17_static_0100
-     * @tc.name      HoverJsunit17_static_0100
-     * @tc.desc      HoverJsunit17_static_0100
-     * @tc.level     2
+     * @tc.number   HoverJsunit_static_0100
+     * @tc.name     HoverJsunit_static_0100
+     * @tc.desc     HoverJsunit_static_0100
+     * @tc.level    0
      */
-    it('HoverJsunit17_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('HoverJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HoverJsunit_0200 START');
       let driver = Driver.create()
-
+      await driver.mouseMoveTo({
+        x: Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100)) as int,
+        y: Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(100)) as int
+      })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA17');
+      await CommonFunc.sleep(1000);
       let objA = JSON.parseJsonElement(strJsonA);
-      console.info("[HoverJsunit17_static_0100] component obj is: " + JSON.stringify(objA));
-      console.info("[HoverJsunit17_static_0100] title: " +
-      JSON.stringify(objA.getElement('$attrs').getString('content')));
+      console.info("[HoverJsunit_0200] component obj is: " + JSON.stringify(objA));
+      console.info("[HoverJsunit_0200] title: " + JSON.stringify(objA.getElement('$attrs').getString('content')));
       expect(objA.getElement('$attrs').getString('content')).assertEqual('Atrue');
 
       let strJsonB = inspector.getInspectorByKey('hoverB17');
+      await CommonFunc.sleep(1000);
       let objB = JSON.parseJsonElement(strJsonB);
-      console.info("[HoverJsunit17_static_0100] component obj is: " + JSON.stringify(objB));
-      console.info("[HoverJsunit17_static_0100] title: " +
-      JSON.stringify(objB.getElement('$attrs').getString('content')));
+      console.info("[HoverJsunit_0200] component obj is: " + JSON.stringify(objB));
+      console.info("[HoverJsunit_0200] title: " + JSON.stringify(objB.getElement('$attrs').getString('content')));
       expect(objB.getElement('$attrs').getString('content')).assertEqual('Bfalse');
-      console.info('[HoverJsunit17_static_0100] END');
+      console.info('[HoverJsunit_0200] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    HoverJsunit17_static_0200
-     * @tc.name      HoverJsunit17_static_0200
-     * @tc.desc      HoverJsunit17_static_0200
-     * @tc.level     2
+     * @tc.number   HoverJsunit_static_0200
+     * @tc.name     HoverJsunit_static_0200
+     * @tc.desc     HoverJsunit_static_0200
+     * @tc.level    0
      */
-    it('HoverJsunit17_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('HoverJsunit17_static_0200 START');
+it('HoverJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('HoverJsunit_0200 START');
       let driver = Driver.create()
       let buttonCl = await driver.findComponent(ON.id('hoverBColumn'));
       await CommonFunc.sleep(500);
       let point = await (buttonCl?.getBoundsCenter() as Promise<Point>);
       await driver.mouseMoveTo({
-        x: Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,
-        y: Math.round(point.y + UIContext.getFocusedUIContext()!.vp2px(100)) as Int
+        x: Math.round(point.x + uiContext.vp2px(100)).toInt(),
+        y: Math.round(point.y + uiContext.vp2px(100)).toInt()
       })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA17');
+      await CommonFunc.sleep(1000);
       let objA = JSON.parseJsonElement(strJsonA);
-      console.info("[HoverJsunit17_static_0200] component obj is: " + JSON.stringify(objA));
-      console.info("[HoverJsunit17_static_0200] title: " +
-      JSON.stringify(objA.getElement('$attrs').getString('content')));
+      console.info("[HoverJsunit_0200] component obj is: " + JSON.stringify(objA));
+      console.info("[HoverJsunit_0200] title: " + JSON.stringify(objA.getElement('$attrs').getString('content')));
       expect(objA.getElement('$attrs').getString('content')).assertEqual('Afalse');
 
       let strJsonB = inspector.getInspectorByKey('hoverB17');
+      await CommonFunc.sleep(1000);
       let objB = JSON.parseJsonElement(strJsonB);
-      console.info("[HoverJsunit17_static_0200] component obj is: " + JSON.stringify(objB));
-      console.info("[HoverJsunit17_static_0200] title: " +
-      JSON.stringify(objB.getElement('$attrs').getString('content')));
+      console.info("[HoverJsunit_0200] component obj is: " + JSON.stringify(objB));
+      console.info("[HoverJsunit_0200] title: " + JSON.stringify(objB.getElement('$attrs').getString('content')));
       expect(objB.getElement('$attrs').getString('content')).assertEqual('Btrue');
-      console.info('[HoverJsunit17_static_0200] END');
+      console.info('[HoverJsunit_0200] END');
       done();
     });
 
 
+    
     /*
-     * @tc.number    HoverJsunit17_static_0300
-     * @tc.name      HoverJsunit17_static_0300
-     * @tc.desc      HoverJsunit17_static_0300
-     * @tc.level     2
+     * @tc.number   HoverJsunit_static_0300
+     * @tc.name     HoverJsunit_static_0300
+     * @tc.desc     HoverJsunit_static_0300
+     * @tc.level    0
      */
-    it('HoverJsunit17_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('HoverJsunit17_static_0300 START');
+it('HoverJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('HoverJsunit_0300 START');
       let driver = Driver.create()
       let buttonCl = await driver.findComponent(ON.id('hoverBColumn'));
       await CommonFunc.sleep(500);
       let point = await (buttonCl?.getBoundsCenter() as Promise<Point>);
       await driver.mouseMoveTo({
-        x: Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,
-        y: Math.round(point.y + UIContext.getFocusedUIContext()!.vp2px(100)) as Int
+        x: Math.round(point.x + uiContext.vp2px(100)) as int,
+        y: Math.round(point.y + uiContext.vp2px(100)) as int
       })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA17');
+      await CommonFunc.sleep(1000);
       let objA = JSON.parseJsonElement(strJsonA);
-      console.info("[HoverJsunit17_static_0300] component obj is: " + JSON.stringify(objA));
-      console.info("[HoverJsunit17_static_0300] title: " +
-      JSON.stringify(objA.getElement('$attrs').getString('content')));
+      console.info("[HoverJsunit_0300] component obj is: " + JSON.stringify(objA));
+      console.info("[HoverJsunit_0300] title: " + JSON.stringify(objA.getElement('$attrs').getString('content')));
       expect(objA.getElement('$attrs').getString('content')).assertEqual('Afalse');
 
       let strJsonB = inspector.getInspectorByKey('hoverB17');
+      await CommonFunc.sleep(1000);
       let objB = JSON.parseJsonElement(strJsonB);
-      console.info("[HoverJsunit17_static_0300] component obj is: " + JSON.stringify(objB));
-      console.info("[HoverJsunit17_static_0300] title: " +
-      JSON.stringify(objB.getElement('$attrs').getString('content')));
+      console.info("[HoverJsunit_0300] component obj is: " + JSON.stringify(objB));
+      console.info("[HoverJsunit_0300] title: " + JSON.stringify(objB.getElement('$attrs').getString('content')));
       expect(objB.getElement('$attrs').getString('content')).assertEqual('Btrue');
-      console.info('[HoverJsunit17_static_0300] END');
+      console.info('[HoverJsunit_0300] END');
       done();
     });
 

@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -41,7 +41,7 @@ import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
-let tag: string = 'testTag';
+let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
@@ -64,12 +64,10 @@ export default function accessVnTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get accessVnTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("accessVN" == pages.name)) {
           console.info("get accessVnTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push accessVnTest page error:" + err);
@@ -78,19 +76,21 @@ export default function accessVnTest() {
     });
 
 
+    
     /*
-     * @tc.number    accessVnTest_0100
-     * @tc.name      accessVnTest_0100
-     * @tc.desc      accessVnTest_0100
-     * @tc.level     2
+     * @tc.number   accessVnTest_static_0100
+     * @tc.name     accessVnTest_static_0100
+     * @tc.desc     accessVnTest_static_0100
+     * @tc.level    0
      */
-    it('accessVnTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('accessVnTest_0100 START');
+it('accessVnTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('accessVnTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('accessVn_1');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Row');
-      console.info('[accessVnTest_0100] END');
+      console.info('[accessVnTest_static_0100] END');
       done();
     });
   })

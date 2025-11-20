@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,13 +16,13 @@ export type Callback = (message: ESObject) => void
 
 export class MessageManager {
   callback?: Callback
-  callbacks: Map<string, Callback> = new Map<string, Callback>()
+  callbacks: Map<String, Callback> = new Map<String, Callback>()
 
   constructor() {
 
   }
 
-  registerCallback(callback: Callback, type?: string) {
+  registerCallback(callback: Callback, type?: String) {
     if (type == undefined) {
       console.error('registerCallback callback set')
       this.callback = callback
@@ -31,7 +31,7 @@ export class MessageManager {
     this.callbacks.set(type, callback)
   }
 
-  notify(message: ESObject, type?: string) {
+  notify(message: ESObject, type?: String) {
     if (type == undefined) {
       this.callback?.(message)
       return

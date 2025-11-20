@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   $$,
   $r,
@@ -53,24 +53,24 @@ import { Hypium } from '../../../../../hypium/index';
 @Entry
 @Component
 struct OverlayExample {
-  @State title: string = 'old title'
+  @State title: String = 'old title'
   @State x: number = 0
   @State y: number = -15
   @State alignment: Alignment = Alignment.Bottom
 
   onPageShow() {
     console.info('[overlay] page show called ');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 143,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
 
-    let stateChangeEvent2: events_emitter.InnerEvent = {
+    let stateChangeEvent2: emitter.InnerEvent = {
       eventId: 1110,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent2, this.stateChangCallBack);
+    emitter.on(stateChangeEvent2, this.stateChangCallBack);
   }
 
   build() {
@@ -78,7 +78,7 @@ struct OverlayExample {
       Column() {
         Text('floating layer')
           .fontSize(12)
-          .fontColor(0xCCCCCC)
+          .fontColor('0xCCCCCC')
           .maxLines(1)
         Column() {
           Image('/images/img.jpeg')
@@ -91,11 +91,32 @@ struct OverlayExample {
     }.padding({ top: 20 } as Padding)
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[stateChangCallBack] stateChangCallBack ");
     if (eventData != null) {
+      const data: Record<String, undefined | null | Object> =
+        eventData.data as Record<String, undefined | null | Object>
       console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
-
+      if (data['align'] != null) {
+        console.log('test getData Alignment is: 1 ' + data['align'])
+        this.alignment = (data['align']) as Alignment
+        console.log('test getData Alignment is: 2 ' + this.alignment)
+      }
+      if (data['title'] != null) {
+        console.log('test getData title is: 1 ' + data['title'])
+        this.title = (data['title']) as String
+        console.log('test getData title is: 2 ' + this.title)
+      }
+      if (data['x'] != null) {
+        console.log('test getData x is: 1 ' + data['x'])
+        this.x = (data['x']) as Double
+        console.log('test getData x is: 2 ' + this.x)
+      }
+      if (data['y'] != null) {
+        console.log('test getData y is: 1 ' + data['y'])
+        this.y = (data['y']) as Double
+        console.log('test getData y is: 2 ' + this.y)
+      }
 
     }
   }

@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   $$,
   $r,
@@ -53,31 +53,31 @@ import { Hypium } from '../../../../../hypium/index';
 @Entry
 @Component
 struct OverlayExample {
-  @State title: string = 'old title'
+  @State title: String = 'old title'
   @State x: number = 0
   @State y: number = -15
   @State alignment: Alignment = Alignment.Bottom
 
   onPageShow() {
     console.info('[overlay] page show called ');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 143,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
 
-    let stateChangeEvent2: events_emitter.InnerEvent = {
+    let stateChangeEvent2: emitter.InnerEvent = {
       eventId: 1110,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent2, this.stateChangCallBack);
+    emitter.on(stateChangeEvent2, this.stateChangCallBack);
   }
 
   build() {
     Column() {
       Column() {
         Text('floating layer')
-          .fontSize(12).fontColor(0xCCCCCC).maxLines(1)
+          .fontSize(12).fontColor('0xCCCCCC').maxLines(1)
         Column() {
           Image('/images/img.jpeg')
             .width(340).height(240)
@@ -89,11 +89,24 @@ struct OverlayExample {
     }.padding({ top: 20 } as Padding)
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[stateChangCallBack] stateChangCallBack ");
     if (eventData != null) {
+      const data: Record<String, undefined | null | Object> =
+        eventData.data as Record<String, undefined | null | Object>
       console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
-
+      if (data['align'] != null) {
+        this.alignment = data['align'] as Alignment
+      }
+      if (data['title'] != null) {
+        this.title = data['title'] as String
+      }
+      if (data['x'] != null) {
+        this.x = data['x'] as Double
+      }
+      if (data['y'] != null) {
+        this.y = data['y'] as Double
+      }
 
     }
   }

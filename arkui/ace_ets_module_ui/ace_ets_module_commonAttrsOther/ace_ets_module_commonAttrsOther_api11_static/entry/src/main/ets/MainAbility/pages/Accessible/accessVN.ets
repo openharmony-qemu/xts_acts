@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,6 +18,7 @@ import {
   $r,
   Alignment,
   BindOptions,
+  Builder,
   Button,
   ButtonType,
   ClickEvent,
@@ -49,6 +50,18 @@ import { Hypium } from '../../../../../hypium/index';
 @Entry
 @Component
 struct accessVn1 {
+  @Builder
+  customAccessibilityNode() {
+    Column() {
+      Text(`virtual node`)
+        .fontSize(10)
+        .backgroundColor(Color.Red)
+        .width(10)
+        .height(10)
+        .align(Alignment.Center)
+    }
+  }
+
   build() {
     Row() {
       Column() {
@@ -64,7 +77,7 @@ struct accessVn1 {
       .accessibilityLevel("yes")
       .accessibilityText("分组")
       .accessibilityDescription("Column组件可以被选中，播报的内容是“分组”")
-
+      .accessibilityVirtualNode(this.customAccessibilityNode)
     }
     .key('accessVn_1')
     .height('100%')
