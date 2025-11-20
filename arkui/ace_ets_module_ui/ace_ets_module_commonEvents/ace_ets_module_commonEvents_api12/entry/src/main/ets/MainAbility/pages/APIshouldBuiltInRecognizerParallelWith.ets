@@ -37,7 +37,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
           Column() {
             Text("Scroll Area")
               .width('90%')
-              .height(150)
+              .height('10%')
               .backgroundColor(0xFFFFFF)
               .borderRadius(15)
               .fontSize(16)
@@ -47,7 +47,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
               Column() {
                 Text("Scroll Area2")
                   .width('90%')
-                  .height(150)
+                  .height('10%')
                   .backgroundColor(0xFFFFFF)
                   .borderRadius(15)
                   .fontSize(16)
@@ -57,7 +57,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
                   ForEach(this.arr, (item: number) => {
                     Text(item.toString())
                       .width('90%')
-                      .height(150)
+                      .height('10%')
                       .backgroundColor(0xFFFFFF)
                       .borderRadius(15)
                       .fontSize(16)
@@ -70,7 +70,8 @@ struct APIshouldBuiltInRecognizerParallelWith {
             .id("inner")
             .width('100%')
             .height('60%')
-          }.width('100%')
+            .margin({ right: '15%' })
+          }.width('100%').margin({ right: '25%' })
         }
         .id("outer")
         .height('60%')
