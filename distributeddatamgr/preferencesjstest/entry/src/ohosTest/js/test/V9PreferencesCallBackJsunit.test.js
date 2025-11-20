@@ -35,14 +35,9 @@ export default function preferencesV9CallbackTest(){
         })
 
         beforeEach(async function () {
-            console.info('beforeEach')
-            mPreference = await data_preferences.getPreferences(context, NAME)
-            mPreference.put(KEY_TEST_STRING_ELEMENT, 'abc', function (err, ret) {
-                if (err) {
-                  console.log("put err =" + err + ", code =" + err.code + ", message =" + err.message)
-                  expect(false).assertTrue()
-                }
-              })
+            console.info('beforeEach');
+            mPreference = await data_preferences.getPreferences(context, NAME);
+            mPreference.putSync(KEY_TEST_STRING_ELEMENT, 'abc');
         })
 
         afterEach(async function () {
