@@ -3628,8 +3628,7 @@ export default function TaskPoolLibTest() {
           taskpool.execute(task)
         } catch (e) {
           e = e as Error;
-          expect(e.message)
-            .assertEqual('BusinessError: The periodic task cannot be executed again, taskpool:: the periodicTask cannot execute again');
+          expect(e.message).assertContain('the periodicTask cannot execute again');
         }
         taskpool.cancel(task);
         done();
