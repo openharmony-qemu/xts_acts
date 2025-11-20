@@ -80,7 +80,7 @@ export default function ActsAceWebViewSetScrollbarMode() {
       tcName = 'testSetScrollbarMode001'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 0, 20251208, () => { isReturn = true });
+      Utils.registerEvent(tcName, 1, 20251208, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewSetScrollbarModeButton", tcName);
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
@@ -99,7 +99,7 @@ export default function ActsAceWebViewSetScrollbarMode() {
       tcName = 'testSetScrollbarMode002'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 1, 20251209, () => { isReturn = true });
+      Utils.registerEvent(tcName, 0, 20251209, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewSetScrollbarModeButton", tcName);
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
