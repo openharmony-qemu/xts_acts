@@ -58,7 +58,7 @@ export default function TimePickerDialogOptionsTest() {
       await button.click();
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('TimePickerDialog');
+      let strJson = getInspectorByKey('TimePickerDialogOptions');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[TimePickerDialogOptionsTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("TimePickerDialog");

@@ -20,7 +20,7 @@ struct TimePickerDialogOptionsPage {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Button('TimePickerDialogOptions')
+      Button('TimePickerDialog')
         .margin(20)
         .onClick(() => {
           TimePickerDialog.show({
