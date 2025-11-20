@@ -13,9 +13,34 @@
  * limitations under the License.
  */
 import PresetTest from './Preset.test';
+import search_center from './SearchApi11Test/search_center.test'
+import search_gesture from './SearchApi11Test/search_gesture.test';
+import SearchJsunit from './SearchApi11Test/SearchJsunit.test';
+import searchTest from './SearchApi12Test/searchTest.test'
+
+import textArea_center from './TextAreaApi11Test/textArea_center.test'
+import textAreaBC1Jsunit from './TextAreaApi11Test/textAreaBC1Jsunit.test';
+import textAreaUIJsunit from './TextAreaApi11Test/textAreaUIJsunit.test';
+import setTextSelection from './TextAreaApi12Test/setTextSelection.test'
+import TextDeleteDirectionTest from "./TextAreaApi12Test/TextDeleteDirectionTest.test";
+
+import textinputSec from './TextInputApi11Test/textinputSec'
+import TextInputPageJsunit from './TextInputApi11Test/TextInputPageJsunit.test';
 
 
 export default function testsuite() {
   PresetTest();
+  search_center()      // Api11
+  search_gesture()
+  SearchJsunit()
+  searchTest()         // Api12
 
+  textArea_center()    // Api11
+  textAreaBC1Jsunit()
+  textAreaUIJsunit()
+  setTextSelection()   // Api12
+  TextDeleteDirectionTest()
+
+  textinputSec()       // Api11
+  TextInputPageJsunit()
 }
