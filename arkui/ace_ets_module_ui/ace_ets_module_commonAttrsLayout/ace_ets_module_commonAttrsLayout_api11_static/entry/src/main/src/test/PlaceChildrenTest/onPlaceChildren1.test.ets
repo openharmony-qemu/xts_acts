@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
@@ -52,8 +52,6 @@ export default function onPlaceChildren1() {
         if (!("onPlaceChildren1" == pages.name)) {
           console.info("get onPlaceChildren1 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push onPlaceChildren1 page error: " + err);
@@ -61,14 +59,14 @@ export default function onPlaceChildren1() {
       }
     });
 
-
+    
     /*
-     * @tc.number    onPlaceChildren1_static_001
-     * @tc.name      onPlaceChildren1_static_001
-     * @tc.desc      onPlaceChildren1_static_001
-     * @tc.level     2
+     * @tc.number   onPlaceChildren1_static_001
+     * @tc.name     onPlaceChildren1_static_001
+     * @tc.desc     onPlaceChildren1_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('onPlaceChildren1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onPlaceChildren1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onPlaceChildren1_static_001] START');
       await CommonFunc.sleep(500);
       let MaxHeightText1: string = JSON.parseJsonElement(inspector.getInspectorByKey('constraint_maxHeight1'))

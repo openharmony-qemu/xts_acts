@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,33 +13,22 @@
  * limitations under the License.
  */
 import { Callback, Message, MessageManager } from '../../../common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
 import {
-  Alignment,
   Button,
   ClickEvent,
-  Color,
   Column,
   ColumnOptions,
   Component,
   Entry,
   Grid,
   GridItem,
-  Image,
-  ImageSize,
   Margin,
-  Padding,
-  Position,
-  Row,
   Scroller,
-  SizeOptions,
   Text,
   TextAlign,
-  Visibility,
+  Visibility
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import inspector from '@ohos.arkui.inspector';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -50,39 +39,44 @@ struct getGridItemRect6 {
   @State padding1: number = 0
   @State margin1: number = 0
   @State visibility1: Visibility = Visibility.Visible
-  @State index: number = 0
+  @State index: Int = 0
   @State x: number = 0
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
   messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManagerVisibility: MessageManager<Visibility> = new MessageManager<Visibility>()
 
   onPageShow() {
-    console.info('getGridItemRect6 onPageShow');
-
-
+    console.info('getGridItemRect1 onPageShow');
+    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Visibility>>('messageManagerVisibility', this.messageManagerVisibility);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.index = message.value;
+        this.index = message.value as Int;
       } else if (message.name == 'padding1') {
-        this.padding1 = message.value;
+        this.padding1 = message.value as number;
       } else if (message.name == 'margin1') {
-        this.margin1 = message.value;
-      } else if (message.name == 'visibility1') {
-
+        this.margin1 = message.value as number;
       }
     }
+    let visibilityCallback: Callback<Visibility> = (message: Message<Visibility>) => {
+      if (message.name == 'visibility1') {
+        this.visibility1 = message.value as Visibility;
+      }
+    }
+    this.messageManagerVisibility.registerCallback(visibilityCallback)
     this.messageManager.registerCallback(callback);
   }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.scroller.getItemRect(Double.toInt(this.index)).x
-        this.y = this.scroller.getItemRect(Double.toInt(this.index)).y
-        this.width1 = this.scroller.getItemRect(Double.toInt(this.index)).width
-        this.height1 = this.scroller.getItemRect(Double.toInt(this.index)).height
+        this.x = this.scroller.getItemRect(this.index).x
+        this.y = this.scroller.getItemRect(this.index).y
+        this.width1 = this.scroller.getItemRect(this.index).width
+        this.height1 = this.scroller.getItemRect(this.index).height
       }).id('getGridItemRect6_button')
       Text('' + this.x).key('getGridItemRect6_text1')
       Text('' + this.y).key('getGridItemRect6_text2')

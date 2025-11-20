@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Callback, Message, MessageManager } from '../../../common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   Alignment,
   Axis,
@@ -46,8 +46,8 @@ import {
   TextAlign,
   Visibility,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -56,41 +56,54 @@ struct getListItemRect5 {
   @State width2: string = '100%'
   @State height2: string = '100'
   @State listDirection1: Axis = Axis.Vertical
-  @State index: number = 0
+  @State index: Int = 0
   @State x: number = 0
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
   messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManagerAxis: MessageManager<Axis> = new MessageManager<Axis>()
+  messageManagerString: MessageManager<string> = new MessageManager<string>()
   private arr: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
   private listScroller: ListScroller = new ListScroller()
 
   onPageShow() {
     console.info('getListItemRect5 onPageShow');
-
-
+    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Axis>>('messageManagerAxis', this.messageManagerAxis);
+    AppStorage.setOrCreate<MessageManager<string>>('messageManagerString', this.messageManagerString);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.index = message.value;
-      } else if (message.name == 'width2') {
-
-      } else if (message.name == 'height2') {
-
-      } else if (message.name == 'listDirection1') {
-
+        this.index = message.value as Int;
       }
     }
+    let stringCallback: Callback<string> = (message: Message<string>) => {
+      console.error('message = ' + message.name + "--" + message.value);
+      if (message.name == 'width2') {
+        this.width2 = message.value as String;
+      } else if (message.name == 'height2') {
+        this.height2 = message.value as String;
+      }
+    }
+    let AxisCallback: Callback<Axis> = (message: Message<Axis>) => {
+      console.error('message = ' + message.name + "--" + message.value);
+      if (message.name == 'listDirection1') {
+        this.listDirection1 = message.value as Axis;
+      }
+    }
+    this.messageManagerString.registerCallback(stringCallback);
+    this.messageManagerAxis.registerCallback(AxisCallback);
     this.messageManager.registerCallback(callback);
   }
 
   build() {
     Column() {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.listScroller.getItemRect(Double.toInt(this.index)).x
-        this.y = this.listScroller.getItemRect(Double.toInt(this.index)).y
-        this.width1 = this.listScroller.getItemRect(Double.toInt(this.index)).width
-        this.height1 = this.listScroller.getItemRect(Double.toInt(this.index)).height
+        this.x = this.listScroller.getItemRect(this.index).x
+        this.y = this.listScroller.getItemRect(this.index).y
+        this.width1 = this.listScroller.getItemRect(this.index).width
+        this.height1 = this.listScroller.getItemRect(this.index).height
       }).id('getListItemRect5_button')
       Text('' + this.x).key('getListItemRect5_text1')
       Text('' + this.y).key('getListItemRect5_text2')
@@ -125,9 +138,9 @@ struct getListItemRect5 {
 
       }
       .key('getListItemRect5_list1')
-      .listDirection(this.listDirection1)
+      .listDirection(this.listDirection1) // 排列方向
       .scrollBar(BarState.Off)
-      .edgeEffect(EdgeEffect.Spring)
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .width(300)
       .height(500)
 

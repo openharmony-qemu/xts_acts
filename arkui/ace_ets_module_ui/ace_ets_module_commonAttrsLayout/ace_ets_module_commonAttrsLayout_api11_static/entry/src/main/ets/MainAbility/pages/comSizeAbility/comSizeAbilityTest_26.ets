@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -88,8 +88,8 @@ import {
   TextInput,
   TextPicker,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -104,8 +104,8 @@ struct comSizeAbilityTest_26 {
   @State message: string = "[-1, -1]"
   @State content: string = ""
   @State span: string = "文本组件"
-  private start: int = -1;
-  private end: int = -1;
+  private start: Int = -1;
+  private end: Int = -1;
 
   build() {
     Scroll() {
@@ -151,7 +151,7 @@ struct comSizeAbilityTest_26 {
                   style:
                   {
                     fontColor: Color.Orange,
-                    fontSize: 12.0
+                    fontSize: 12
                   }
                 })
             })

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -44,9 +44,9 @@ import common from '@ohos.app.ability.common';
 @Component
 struct SimpleAnimatorOptionsPage {
   @State cube_size: number = 50
-  @State animator_duration: int = 3000;
-  @State animator_delay: int = 0;
-  @State animator_iterations: int = 1;
+  @State animator_duration: Int = 3000;
+  @State animator_delay: number = 0;
+  @State animator_iterations: Int = 1;
   @State animator_ease: string = 'ease';
   @State animator_direction: PlayMode = PlayMode.Normal;
   @State animator_fill: FillMode = FillMode.Backwards;
@@ -60,10 +60,11 @@ struct SimpleAnimatorOptionsPage {
       this.backAnimator!.finish();
     }
 
+    console.log('test start create')
     this.backAnimator = animator.create(
       new SimpleAnimatorOptions(100, 200)
         .duration(this.animator_duration)
-        .delay(this.animator_delay)
+        .delay(this.animator_delay.toInt())
         .fill(this.animator_fill)
         .easing('ease')
         .iterations(this.animator_iterations)
@@ -75,10 +76,12 @@ struct SimpleAnimatorOptionsPage {
     }
 
     this.backAnimator!.onFrame = (value: number) => {
+      console.log('test start onFrame')
       this.cube_size = value / 2
     }
 
     this.backAnimator!.onFinish = () => {
+      console.log('test start onFinish')
       this.endTime = new Date().getTime();
       this.testTime = this.endTime - this.startTime;
       AppStorage.setOrCreate('testTime', this.testTime);
@@ -93,6 +96,7 @@ struct SimpleAnimatorOptionsPage {
       }.width(this.cube_size).height(this.cube_size).backgroundColor(Color.Black)
 
       Button('Play').onClick((e: ClickEvent) => {
+        console.log('test isClick')
         this.create()
         this.backAnimator?.play()
         this.startTime = new Date().getTime();
@@ -115,7 +119,7 @@ struct SimpleAnimatorOptionsPage {
       }).id('changeFillMode').height('5%')
 
       Button('changeDelay').onClick((e: ClickEvent) => {
-        this.animator_delay = 1000;
+        this.animator_delay = 1000.5;
       }).id('changeDelayId').height('5%')
 
       Button('changeIterations').onClick((e: ClickEvent) => {

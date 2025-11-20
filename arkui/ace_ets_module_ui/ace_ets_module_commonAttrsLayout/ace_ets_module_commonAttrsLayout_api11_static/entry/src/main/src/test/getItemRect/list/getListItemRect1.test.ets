@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -26,6 +26,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../../Util.test';
 import { BusinessError } from '@ohos.base';
+import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
+import RectValue from '../../../../ets/MainAbility/common/Rect';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -33,11 +35,15 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function getListItemRect1() {
   describe('getListItemRect1', () => {
+
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("getListItemRect1 beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(() => {
       console.info("getListItemRect1 beforeEach start");
@@ -52,8 +58,6 @@ export default function getListItemRect1() {
         if (!("getListItemRect1" == pages.name)) {
           console.info("get getListItemRect1 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push getListItemRect1 page error: " + err);
@@ -65,27 +69,30 @@ export default function getListItemRect1() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let btn3 = await driver.findComponent(ON.id('getListItemRect1_button3'));
+      await CommonFunc.sleep(2000);
       await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(3000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
-
+    
     /*
-     * @tc.number    getListItemRect1_static_0100
-     * @tc.name      getListItemRect1_static_0100
-     * @tc.desc      getListItemRect1_static_0100
-     * @tc.level     2
+     * @tc.number   getListItemRect1_static_0100
+     * @tc.name     getListItemRect1_static_0100
+     * @tc.desc     getListItemRect1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0100] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      message.notify({ name: 'index', value: 0.0 })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_1 = CommonFunc.getComponentRect('getListItemRect1_listItem_1');
+      let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -94,12 +101,6 @@ export default function getListItemRect1() {
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -124,42 +125,39 @@ export default function getListItemRect1() {
 
       console.log('assert size')
       console.log('listItem_1.right - listItem_1.left' + (listItem_1.right - listItem_1.left))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1)
+        .assertTrue();
       console.log('listItem_1.bottom - listItem_1.top' + (listItem_1.bottom - listItem_1.top))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1)
+        .assertTrue();
 
       done();
     });
 
-
+    
     /*
-     * @tc.number    getListItemRect1_static_0200
-     * @tc.name      getListItemRect1_static_0200
-     * @tc.desc      getListItemRect1_static_0200
-     * @tc.level     2
+     * @tc.number   getListItemRect1_static_0200
+     * @tc.name     getListItemRect1_static_0200
+     * @tc.desc     getListItemRect1_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0200] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      message.notify({ name: 'index', value: 1.0 })
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let listItem_2 = CommonFunc.getComponentRect('getListItemRect1_listItem_2');
+      let listItem_2: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_2') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
+      await CommonFunc.sleep(2000);
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -185,25 +183,27 @@ export default function getListItemRect1() {
 
       console.log('assert size')
       console.log('listItem_2.right - listItem_2.left' + (listItem_2.right - listItem_2.left))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_2.right - listItem_2.left)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_2.right - listItem_2.left)) <= 1)
+        .assertTrue();
       console.log('listItem_2.bottom - listItem_2.top' + (listItem_2.bottom - listItem_2.top))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_2.bottom - listItem_2.top)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_2.bottom - listItem_2.top)) <= 1)
+        .assertTrue();
 
       done();
     });
 
-
+    
     /*
-     * @tc.number    getListItemRect1_static_0300
-     * @tc.name      getListItemRect1_static_0300
-     * @tc.desc      getListItemRect1_static_0300
-     * @tc.level     2
+     * @tc.number   getListItemRect1_static_0300
+     * @tc.name     getListItemRect1_static_0300
+     * @tc.desc     getListItemRect1_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0300] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      message.notify({ name: 'index', value: -1.0 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -213,12 +213,6 @@ export default function getListItemRect1() {
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -249,18 +243,18 @@ export default function getListItemRect1() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    getListItemRect1_static_0400
-     * @tc.name      getListItemRect1_static_0400
-     * @tc.desc      getListItemRect1_static_0400
-     * @tc.level     2
+     * @tc.number   getListItemRect1_static_0400
+     * @tc.name     getListItemRect1_static_0400
+     * @tc.desc     getListItemRect1_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0400] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      message.notify({ name: 'index', value: 0.0 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -276,12 +270,6 @@ export default function getListItemRect1() {
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect1_text4');
-
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
       let x = Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
@@ -310,18 +298,18 @@ export default function getListItemRect1() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    getListItemRect1_static_0500
-     * @tc.name      getListItemRect1_static_0500
-     * @tc.desc      getListItemRect1_static_0500
-     * @tc.level     2
+     * @tc.number   getListItemRect1_static_0500
+     * @tc.name     getListItemRect1_static_0500
+     * @tc.desc     getListItemRect1_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0500] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      message.notify({ name: 'index', value: 100.0 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -332,12 +320,6 @@ export default function getListItemRect1() {
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect1_text4');
-
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
       let x = Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
@@ -367,20 +349,22 @@ export default function getListItemRect1() {
     });
 
 
+    
     /*
-     * @tc.number    getListItemRect1_static_0600
-     * @tc.name      getListItemRect1_static_0600
-     * @tc.desc      getListItemRect1_static_0600
-     * @tc.level     2
+     * @tc.number   getListItemRect1_static_0600
+     * @tc.name     getListItemRect1_static_0600
+     * @tc.desc     getListItemRect1_static_0600
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getListItemRect1_static_0600] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'padding1', value: 20.0 })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_1 = CommonFunc.getComponentRect('getListItemRect1_listItem_1');
+      let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -389,12 +373,6 @@ export default function getListItemRect1() {
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -419,28 +397,30 @@ export default function getListItemRect1() {
 
       console.log('assert size')
       console.log('listItem_1.right - listItem_1.left' + (listItem_1.right - listItem_1.left))
-      expect(Math.floor(Math.abs(UIContext.getFocusedUIContext()!.vp2px(width) - (listItem_1.right - listItem_1.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.vp2px(width) - (listItem_1.right - listItem_1.left))) <= 1).assertTrue();
       console.log('listItem_1.bottom - listItem_1.top' + (listItem_1.bottom - listItem_1.top))
-      expect(Math.floor(Math.abs(UIContext.getFocusedUIContext()!.vp2px(height) - (listItem_1.bottom - listItem_1.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.vp2px(height) - (listItem_1.bottom - listItem_1.top))) <= 1).assertTrue();
 
       done();
     });
 
 
+    
     /*
-     * @tc.number    getListItemRect1_static_0700
-     * @tc.name      getListItemRect1_static_0700
-     * @tc.desc      getListItemRect1_static_0700
-     * @tc.level     2
+     * @tc.number   getListItemRect1_static_0700
+     * @tc.name     getListItemRect1_static_0700
+     * @tc.desc     getListItemRect1_static_0700
+     * @tc.level    Level.LEVEL0
      */
-    it('getListItemRect1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getListItemRect1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getListItemRect1_static_0700] START');
-
-
+      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
+      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'margin1', value: 20.0 })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_1 = CommonFunc.getComponentRect('getListItemRect1_listItem_1');
+      let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -449,12 +429,6 @@ export default function getListItemRect1() {
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getListItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getListItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getListItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getListItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -478,8 +452,10 @@ export default function getListItemRect1() {
       expect(Math.abs(Math.round(y) - Math.round(20)) <= 1).assertTrue();
 
       console.log('assert size')
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1).assertTrue();
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1).assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1)
+        .assertTrue();
+      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1)
+        .assertTrue();
 
       done();
     });

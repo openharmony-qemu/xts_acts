@@ -15,6 +15,5 @@
 import setCursorTest from './cursorControlTest/setCursorTest.test';
 
 export default function testsuite() {
-  console.log('test ==== list start')
   setCursorTest(); // pointer8.27sdk暂未交付
 }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,31 +13,36 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  Button,
-  Canvas,
-  CanvasRenderingContext2D,
-  CheckboxGroup,
-  Circle,
-  ClickEvent,
-  Color,
   Column,
   ColumnOptions,
-  Component,
-  Counter,
-  Divider,
-  Entry,
+  Text,
+  Color,
   Image,
   List,
   ListItem,
   PreDragStatus,
-  RenderingContextSettings,
-  Row,
   Scroller,
-  Text,
+  CanvasRenderingContext2D,
+  Button,
+  RenderingContextSettings,
+  Canvas,
+  ClickEvent,
+  Row,
+  CheckboxGroup,
+  Circle,
+  Counter,
+  Divider,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -47,23 +52,22 @@ let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
 @Component
 struct comSizeAbilityTest_03 {
   scroller: Scroller = new Scroller()
-
   build() {
     Column() {
       Row() {
-        Button('to_1').onClick((e: ClickEvent) => {
+        Button('to_1').onClick((e: ClickEvent)=>{
           this.scroller.scrollToIndex(0)
         }).key('comSizeAbilityTest_03_to_1').width('25%')
 
-        Button('to_2').onClick((e: ClickEvent) => {
+        Button('to_2').onClick((e: ClickEvent)=>{
           this.scroller.scrollToIndex(1)
         }).key('comSizeAbilityTest_03_to_2').width('25%')
 
-        Button('to_3').onClick((e: ClickEvent) => {
+        Button('to_3').onClick((e: ClickEvent)=>{
           this.scroller.scrollToIndex(2)
         }).key('comSizeAbilityTest_03_to_3').width('25%')
 
-        Button('to_4').onClick((e: ClickEvent) => {
+        Button('to_4').onClick((e: ClickEvent)=>{
           this.scroller.scrollToIndex(3)
         }).key('comSizeAbilityTest_03_to_4').width('25%')
       }

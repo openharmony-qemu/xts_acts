@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,7 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -25,6 +25,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../../Util.test';
 import { BusinessError } from '@ohos.base';
+import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
+import { Visibility } from '@ohos.arkui.component';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -52,8 +54,6 @@ export default function getGridItemRect6() {
         if (!("getGridItemRect6" == pages.name)) {
           console.info("get getGridItemRect6 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push getGridItemRect6 page error: " + err);
@@ -62,7 +62,7 @@ export default function getGridItemRect6() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      const getGridItemRect6 = AppStorage.get<Router>("getGridItemRect6") as Router;
+      const getGridItemRect6 = AppStorage.get<Router>("router") as Router
       getGridItemRect6.back({
         url: 'MainAbility/pages/index/index'
       })
@@ -70,20 +70,20 @@ export default function getGridItemRect6() {
     });
 
 
+    
     /*
-     * @tc.number    getGridItemRect6_static_0100
-     * @tc.name      getGridItemRect6_static_0100
-     * @tc.desc      getGridItemRect6_static_0100
-     * @tc.level     2
+     * @tc.number   getGridItemRect6_static_0100
+     * @tc.name     getGridItemRect6_static_0100
+     * @tc.desc     getGridItemRect6_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('getGridItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getGridItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getGridItemRect6_static_0100] START');
-
-
+      const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
+      message.notify({ name: 'index', value: 0.0 })
       await CommonFunc.sleep(500);
-
-
+      message.notify({ name: 'margin1', value: 20.0 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -93,12 +93,6 @@ export default function getGridItemRect6() {
       let btn = await driver.findComponent(ON.id('getGridItemRect6_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getGridItemRect6_text1');
-      let text2 = CommonFunc.getComponentRect('getGridItemRect6_text2');
-      let text3 = CommonFunc.getComponentRect('getGridItemRect6_text3');
-      let text4 = CommonFunc.getComponentRect('getGridItemRect6_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getGridItemRect6_text1')
@@ -127,24 +121,24 @@ export default function getGridItemRect6() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    getGridItemRect6_static_0200
-     * @tc.name      getGridItemRect6_static_0200
-     * @tc.desc      getGridItemRect6_static_0200
-     * @tc.level     2
+     * @tc.number   getGridItemRect6_static_0200
+     * @tc.name     getGridItemRect6_static_0200
+     * @tc.desc     getGridItemRect6_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('getGridItemRect6_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getGridItemRect6_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getGridItemRect6_static_0200] START');
-
-
+      const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
+      const message1: MessageManager<Visibility> =
+        AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
+      message.notify({ name: 'index', value: 0.0 })
       await CommonFunc.sleep(500);
-
-
+      message.notify({ name: 'margin1', value: 0.0 })
       await CommonFunc.sleep(500);
-
-
+      message1.notify({ name: 'visibility1', value: Visibility.Visible })
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -154,12 +148,6 @@ export default function getGridItemRect6() {
       let btn = await driver.findComponent(ON.id('getGridItemRect6_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getGridItemRect6_text1');
-      let text2 = CommonFunc.getComponentRect('getGridItemRect6_text2');
-      let text3 = CommonFunc.getComponentRect('getGridItemRect6_text3');
-      let text4 = CommonFunc.getComponentRect('getGridItemRect6_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getGridItemRect6_text1')
@@ -188,21 +176,22 @@ export default function getGridItemRect6() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    getGridItemRect6_static_0300
-     * @tc.name      getGridItemRect6_static_0300
-     * @tc.desc      getGridItemRect6_static_0300
-     * @tc.level     2
+     * @tc.number   getGridItemRect6_static_0300
+     * @tc.name     getGridItemRect6_static_0300
+     * @tc.desc     getGridItemRect6_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('getGridItemRect6_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getGridItemRect6_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getGridItemRect6_static_0300] START');
-
-
+      const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
+      const message1: MessageManager<Visibility> =
+        AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
+      message.notify({ name: 'index', value: 0.0 })
       await CommonFunc.sleep(500);
-
-
+      message1.notify({ name: 'visibility1', value: Visibility.Hidden })
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -212,12 +201,6 @@ export default function getGridItemRect6() {
       let btn = await driver.findComponent(ON.id('getGridItemRect6_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getGridItemRect6_text1');
-      let text2 = CommonFunc.getComponentRect('getGridItemRect6_text2');
-      let text3 = CommonFunc.getComponentRect('getGridItemRect6_text3');
-      let text4 = CommonFunc.getComponentRect('getGridItemRect6_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getGridItemRect6_text1')
@@ -246,21 +229,22 @@ export default function getGridItemRect6() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    getGridItemRect6_static_0400
-     * @tc.name      getGridItemRect6_static_0400
-     * @tc.desc      getGridItemRect6_static_0400
-     * @tc.level     2
+     * @tc.number   getGridItemRect6_static_0400
+     * @tc.name     getGridItemRect6_static_0400
+     * @tc.desc     getGridItemRect6_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('getGridItemRect6_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getGridItemRect6_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getGridItemRect6_static_0400] START');
-
-
+      const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
+      const message1: MessageManager<Visibility> =
+        AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
+      message.notify({ name: 'index', value: 0.0 })
       await CommonFunc.sleep(500);
-
-
+      message1.notify({ name: 'visibility1', value: Visibility.None })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -270,12 +254,6 @@ export default function getGridItemRect6() {
       let btn = await driver.findComponent(ON.id('getGridItemRect6_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getGridItemRect6_text1');
-      let text2 = CommonFunc.getComponentRect('getGridItemRect6_text2');
-      let text3 = CommonFunc.getComponentRect('getGridItemRect6_text3');
-      let text4 = CommonFunc.getComponentRect('getGridItemRect6_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getGridItemRect6_text1')

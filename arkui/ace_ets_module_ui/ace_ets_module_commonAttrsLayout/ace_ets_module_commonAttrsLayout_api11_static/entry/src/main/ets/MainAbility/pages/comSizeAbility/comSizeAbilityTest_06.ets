@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,43 +13,21 @@
  * limitations under the License.
  */
 import {
-  $r,
   Builder,
   Button,
-  Canvas,
-  CanvasRenderingContext2D,
-  CheckboxGroup,
-  Circle,
   ClickEvent,
-  Color,
   Column,
-  ColumnOptions,
   Component,
-  Counter,
-  Divider,
-  Ellipse,
   Entry,
   ForEach,
-  Gauge,
-  Grid,
-  GridCol,
-  GridItem,
-  GridRow,
-  Image,
   List,
   ListItem,
-  ListItemGroup,
-  PreDragStatus,
-  RenderingContextSettings,
   Row,
   Scroller,
   Text,
-  TextAlign,
+  TextAlign,ListItemGroup,Color
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import inspector from '@ohos.arkui.inspector';
-import matrix4 from '@ohos.matrix4'
+import matrix4 from '@ohos.matrix4';
 
 let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0])
 
@@ -112,10 +90,41 @@ struct comSizeAbilityTest_06 {
       List({ space: 5, initialIndex: 0, scroller: this.scroller }) {
         ListItem() {
           List({ space: 20 }) {
-            ForEach(this.timetable, (item: TimeTable) => {
-
-
-            })
+            // ForEach(this.timetable, (item: TimeTable) => {
+            //   ListItemGroup({ header: this.itemHead(item.title), footer: this.itemFoot(item.projects.length) }) {
+            //     ForEach(item.projects, (project: string) => {
+            //       ListItem() {
+            //         Text(project)
+            //           .width("100%")
+            //           .height(100)
+            //           .fontSize(20)
+            //           .textAlign(TextAlign.Center)
+            //           .backgroundColor(0xFFFFFF)
+            //       }
+            //     }, (item: string) => item)
+            //   }
+            //   .key("ListItemGroup_Size")
+            //   .backgroundColor(0xDCDC59) // 浅蓝色的List
+            //   .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+            //   .size({ width: 160, height: 100 })
+            //   .translate({ x: 1, y: 1, z: 1 })
+            //   .scale({
+            //     x: 1,
+            //     y: 1,
+            //     z: 1,
+            //     centerX: 1,
+            //     centerY: 1
+            //   })
+            //   .rotate({
+            //     x: 1,
+            //     y: 1,
+            //     z: 1,
+            //     angle: 0,
+            //     centerX: 1,
+            //     centerY: 1
+            //   })
+            //   .transform(matrix)
+            // })
           }.backgroundColor('red').height(200)
         }
 

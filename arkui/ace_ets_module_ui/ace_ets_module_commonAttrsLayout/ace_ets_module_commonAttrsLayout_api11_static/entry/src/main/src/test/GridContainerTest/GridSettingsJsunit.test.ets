@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,16 +17,17 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import events_emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import Utils, { UtilsTest } from '../Util.test';
+import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -50,14 +51,11 @@ export default function gridSettingsJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get gridSettings state pages:" + JSON.stringify(pages));
-        if (!("textStyle" == pages.name)) {
+        if (!("gridSettings" == pages.name)) {
           console.info("get gridSettings state pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.error("push gridSettings page error:" + err);
       }
     });
@@ -66,14 +64,14 @@ export default function gridSettingsJsunit() {
       await Utils.sleep(1000);
       console.info("gridSettings after each called");
     });
-
+    
     /*
-     * @tc.number    testGridSettings000_static
-     * @tc.name      testGridSettings000_static
-     * @tc.desc      testGridSettings000_static
-     * @tc.level     2
+     * @tc.number   testGridSettings000_static
+     * @tc.name     testGridSettings000_static
+     * @tc.desc     testGridSettings000_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings000_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings000_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings000] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('gridContainer');
@@ -81,14 +79,14 @@ export default function gridSettingsJsunit() {
       expect(true).assertEqual(true);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings001_static
-     * @tc.name      testGridSettings001_static
-     * @tc.desc      testGridSettings001_static
-     * @tc.level     2
+     * @tc.number   testGridSettings001_static
+     * @tc.name     testGridSettings001_static
+     * @tc.desc     testGridSettings001_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings001_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings001_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings001] START');
       await Utils.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('gridRow');
@@ -108,30 +106,29 @@ export default function gridSettingsJsunit() {
         .getInteger('offset')).assertEqual(1);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings002_static
-     * @tc.name      testGridSettings002_static
-     * @tc.desc      testGridSettings002_static
-     * @tc.level     2
+     * @tc.number   testGridSettings002_static
+     * @tc.name     testGridSettings002_static
+     * @tc.desc     testGridSettings002_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings002_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings002_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings002] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "span": 1,
             "offset": 2
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 9,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings002] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings002] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -153,30 +150,29 @@ export default function gridSettingsJsunit() {
         .getInteger('offset')).assertEqual(2);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings003_static
-     * @tc.name      testGridSettings003_static
-     * @tc.desc      testGridSettings003_static
-     * @tc.level     2
+     * @tc.number   testGridSettings003_static
+     * @tc.name     testGridSettings003_static
+     * @tc.desc     testGridSettings003_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings003_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings003_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings003] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "span": 0x80000000,
             "offset": 0x80000000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 9,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings003] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings003] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -197,30 +193,29 @@ export default function gridSettingsJsunit() {
         .getInteger('offset')).assertEqual(-2147483648);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings004_static
-     * @tc.name      testGridSettings004_static
-     * @tc.desc      testGridSettings004_static
-     * @tc.level     2
+     * @tc.number   testGridSettings004_static
+     * @tc.name     testGridSettings004_static
+     * @tc.desc     testGridSettings004_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings004_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings004_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings004] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "span": 0x7FFFFFFF,
             "offset": 0x7FFFFFFF
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 9,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings004] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings004] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -241,30 +236,29 @@ export default function gridSettingsJsunit() {
         .getInteger('offset')).assertEqual(0x7FFFFFFF);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings005_static
-     * @tc.name      testGridSettings005_static
-     * @tc.desc      testGridSettings005_static
-     * @tc.level     2
+     * @tc.number   testGridSettings005_static
+     * @tc.name     testGridSettings005_static
+     * @tc.desc     testGridSettings005_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings005_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings005_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings005] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "span": 'error',
             "offset": 'error'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 9,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings005] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings005] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -285,14 +279,14 @@ export default function gridSettingsJsunit() {
         .getInteger('offset')).assertEqual(0);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings006_static
-     * @tc.name      testGridSettings006_static
-     * @tc.desc      testGridSettings006_static
-     * @tc.level     2
+     * @tc.number   testGridSettings006_static
+     * @tc.name     testGridSettings006_static
+     * @tc.desc     testGridSettings006_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings006_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings006_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings006] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('gridOffset');
@@ -303,29 +297,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridOffset')).assertEqual(0);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings007_static
-     * @tc.name      testGridSettings007_static
-     * @tc.desc      testGridSettings007_static
-     * @tc.level     2
+     * @tc.number   testGridSettings007_static
+     * @tc.name     testGridSettings007_static
+     * @tc.desc     testGridSettings007_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings007_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings007_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings007] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridOffset": 1
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 10,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings007] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings007] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -337,29 +330,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridOffset')).assertEqual(1);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings008_static
-     * @tc.name      testGridSettings008_static
-     * @tc.desc      testGridSettings008_static
-     * @tc.level     2
+     * @tc.number   testGridSettings008_static
+     * @tc.name     testGridSettings008_static
+     * @tc.desc     testGridSettings008_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings008_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings008_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings008] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridOffset": 0x80000000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 10,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings008] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings008] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -371,29 +363,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridOffset')).assertEqual(-2147483648);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings009_static
-     * @tc.name      testGridSettings009_static
-     * @tc.desc      testGridSettings009_static
-     * @tc.level     2
+     * @tc.number   testGridSettings009_static
+     * @tc.name     testGridSettings009_static
+     * @tc.desc     testGridSettings009_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings009_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings009_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings009] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridOffset": 0x7FFFFFFF
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 10,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings009] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings009] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -405,29 +396,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridOffset')).assertEqual(0x7FFFFFFF);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings010_static
-     * @tc.name      testGridSettings010_static
-     * @tc.desc      testGridSettings010_static
-     * @tc.level     2
+     * @tc.number   testGridSettings010_static
+     * @tc.name     testGridSettings010_static
+     * @tc.desc     testGridSettings010_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings010_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings010_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings010] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridOffset": 'error'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 10,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings010] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings010] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -438,14 +428,14 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridOffset')).assertEqual(0);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings011_static
-     * @tc.name      testGridSettings011_static
-     * @tc.desc      testGridSettings011_static
-     * @tc.level     2
+     * @tc.number   testGridSettings011_static
+     * @tc.name     testGridSettings011_static
+     * @tc.desc     testGridSettings011_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings011_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings011_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings011] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('gridSpan');
@@ -455,29 +445,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridSpan')).assertEqual(1);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings012_static
-     * @tc.name      testGridSettings012_static
-     * @tc.desc      testGridSettings012_static
-     * @tc.level     2
+     * @tc.number   testGridSettings012_static
+     * @tc.name     testGridSettings012_static
+     * @tc.desc     testGridSettings012_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings012_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings012_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings012] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridSpan": 2
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 11,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings012] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings012] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -488,29 +477,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridSpan')).assertEqual(2);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings013_static
-     * @tc.name      testGridSettings013_static
-     * @tc.desc      testGridSettings013_static
-     * @tc.level     2
+     * @tc.number   testGridSettings013_static
+     * @tc.name     testGridSettings013_static
+     * @tc.desc     testGridSettings013_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings013_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings013_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings013] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridSpan": 0x80000000
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 11,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings013] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings013] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -521,29 +509,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridSpan')).assertEqual(2);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings014_static
-     * @tc.name      testGridSettings014_static
-     * @tc.desc      testGridSettings014_static
-     * @tc.level     2
+     * @tc.number   testGridSettings014_static
+     * @tc.name     testGridSettings014_static
+     * @tc.desc     testGridSettings014_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings014_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings014_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings014] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridSpan": 0x7FFFFFFF
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 11,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings014] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(indexEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testGridSettings014] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -554,28 +541,28 @@ export default function gridSettingsJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('gridSpan')).assertEqual(0x7FFFFFFF);
       done()
     });
-
+    
     /*
-     * @tc.number    testGridSettings015_static
-     * @tc.name      testGridSettings015_static
-     * @tc.desc      testGridSettings015_static
-     * @tc.level     2
+     * @tc.number   testGridSettings015_static
+     * @tc.name     testGridSettings015_static
+     * @tc.desc     testGridSettings015_static
+     * @tc.level    Level.LEVEL0
      */
-    it('testGridSettings015_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGridSettings015_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings015] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "gridSpan": 'error'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 11,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testGridSettings015] start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        emitter.emit(indexEvent, eventData);
+      } catch (err: Error) {
         console.log("[testGridSettings015] change component data error: " + err.message);
       }
       await Utils.sleep(4000);

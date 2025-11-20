@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Callback, Message, MessageManager } from '../../../common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   Alignment,
   BarState,
@@ -47,8 +47,8 @@ import {
   TextAlign,
   Visibility
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -58,25 +58,24 @@ struct getScrollItemRect1 {
   @State arr: string[] = ['0', '1', '2', '3', '4', '5']
   @State padding1: number = 0
   @State margin1: number = 0
-  @State index: number = 0
+  @State index: Int = 0
   @State x: number = 0
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<Object> = new MessageManager<Object>()
 
   onPageShow() {
     console.info('getScrollItemRect1 onPageShow');
-
-
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<Object>>('messageManager', this.messageManager);
+    let callback: Callback<Object> = (message: Message<Object>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.index = message.value;
+        this.index = message.value as Int;
       } else if (message.name == 'padding1') {
-        this.padding1 = message.value;
+        this.padding1 = message.value as number;
       } else if (message.name == 'margin1') {
-        this.margin1 = message.value;
+        this.margin1 = message.value as number;
       }
     }
     this.messageManager.registerCallback(callback);
@@ -85,10 +84,10 @@ struct getScrollItemRect1 {
   build() {
     Column() {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.scroller.getItemRect(Double.toInt(this.index)).x
-        this.y = this.scroller.getItemRect(Double.toInt(this.index)).y
-        this.width1 = this.scroller.getItemRect(Double.toInt(this.index)).width
-        this.height1 = this.scroller.getItemRect(Double.toInt(this.index)).height
+        this.x = this.scroller.getItemRect(this.index).x
+        this.y = this.scroller.getItemRect(this.index).y
+        this.width1 = this.scroller.getItemRect(this.index).width
+        this.height1 = this.scroller.getItemRect(this.index).height
       }).id('getScrollItemRect1_button')
       Text('' + this.x).key('getScrollItemRect1_text1')
       Text('' + this.y).key('getScrollItemRect1_text2')

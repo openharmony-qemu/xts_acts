@@ -1,18 +1,18 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   Alignment,
   Color,
@@ -21,15 +21,16 @@ import {
   Component,
   Entry,
   Image,
+  ImageRepeat,
   ImageSize,
   Padding,
   Position,
   Row,
   SizeOptions,
-  Text,
+  Text
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -44,11 +45,11 @@ struct Background3Example {
   @State backgroundImagePositionValue: Position | Alignment = Alignment.Center;
   @State srcValue: string = '';
 
-  stateChangCallBack(eventData: events_emitter.EventData) {
+  stateChangCallBack(eventData: emitter.EventData) {
     if (eventData != null) {
       console.info("gauge page state change called:" + JSON.stringify(eventData));
       if (((eventData.data) as ESObject)?.getProperty('colorValues') != null) {
-
+        this.colorValues = ((eventData.data) as ESObject)?.getProperty('colorValues').toStaticObject() as Array<Int[]>;
       }
       if (((eventData.data) as ESObject)?.getProperty('width') != null) {
         this.widthValue = ((eventData.data) as ESObject).getProperty('width').toString();
@@ -62,7 +63,7 @@ struct Background3Example {
     }
   }
 
-  stateChangCallBackTwo(eventData: events_emitter.EventData) {
+  stateChangCallBackTwo(eventData: emitter.EventData) {
     if (eventData != null) {
       console.info("Background page state change called:" + JSON.stringify(eventData));
       if (((eventData.data) as ESObject)?.getProperty('backgroundColor') != null) {
@@ -72,27 +73,29 @@ struct Background3Example {
         this.backgroundImageValue = ((eventData.data) as ESObject).getProperty('backgroundImage').toString();
       }
       if (((eventData.data) as ESObject)?.getProperty('backgroundImageSize') != null) {
-
+        this.backgroundImageSizeValue =
+          ((eventData.data) as ESObject).getProperty('backgroundImageSize').toStaticObject() as ImageSize;
       }
       if (((eventData.data) as ESObject)?.getProperty('backgroundImagePosition') != null) {
-
+        this.backgroundImagePositionValue =
+          ((eventData.data) as ESObject).getProperty('backgroundImagePosition').toStaticObject() as Position;
       }
     }
   }
 
   onPageShow() {
     console.info('background page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 1,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
 
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
+    let stateChangeEventTwo: emitter.InnerEvent = {
       eventId: 2,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBackTwo);
+    emitter.on(stateChangeEventTwo, this.stateChangCallBackTwo);
   }
 
   build() {
@@ -106,14 +109,14 @@ struct Background3Example {
         .border({ width: 1 })
       Text('background image repeat along X').fontSize(9).width('90%').fontColor(0xCCCCCC)
       Row()
-
+        .backgroundImage('/images/bg.jpg', ImageRepeat.X)
         .backgroundImageSize({ width: '250px', height: '140px' } as SizeOptions)
         .width('90%')
         .height(70)
         .border({ width: 1 })
       Text('background image repeat along Y').fontSize(9).width('90%').fontColor(0xFF0000)
       Row()
-
+        .backgroundImage('/images/bg.jpg', ImageRepeat.Y)
         .backgroundImageSize({ width: '500px', height: '120px' } as SizeOptions)
         .width('90%')
         .height(100)
@@ -122,28 +125,28 @@ struct Background3Example {
       Row()
         .width('90%')
         .height(150)
-
+        .backgroundImage('/images/bg.jpg', ImageRepeat.NoRepeat)
         .backgroundImageSize({ width: 1000, height: 500 } as SizeOptions)
         .border({ width: 1 })
       Text('background fill the box(Cover)').fontSize(9).width('90%').fontColor(0xFF0000)
       Row()
         .width(200)
         .height(50)
-
+        .backgroundImage('/images/bg.jpg', ImageRepeat.NoRepeat)
         .backgroundImageSize(ImageSize.Cover)
         .border({ width: 1 })
       Text('background fill the box(Contain)').fontSize(9).width('90%').fontColor(0xFF0000)
       Row()
         .width(200)
         .height(50)
-
+        .backgroundImage('/images/bg.jpg', ImageRepeat.NoRepeat)
         .backgroundImageSize(ImageSize.Contain)
         .border({ width: 1 })
       Text('background image position').fontSize(9).width('90%').fontColor(0xFF0000)
       Row()
         .width(100)
         .height(50)
-
+        .backgroundImage('/images/bg.jpg', ImageRepeat.NoRepeat)
         .backgroundImageSize({ width: 1000, height: 560 } as SizeOptions)
         .backgroundImagePosition({ x: -500, y: -300 } as Position)
         .border({ width: 1 })

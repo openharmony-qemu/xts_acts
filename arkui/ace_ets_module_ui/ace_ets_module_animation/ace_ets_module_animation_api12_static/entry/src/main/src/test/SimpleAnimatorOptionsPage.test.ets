@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,7 +63,6 @@ export default function SimpleAnimatorOptionsPage() {
         console.info("get setExpectedFrameRateRangeTest state pages:" + JSON.stringify(pages));
         if (!("SimpleAnimatorOptionsPage" == pages.name)) {
           console.info("get setExpectedFrameRateRangeTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -80,18 +79,21 @@ export default function SimpleAnimatorOptionsPage() {
     });
 
 
+    
     /*
-     * @tc.number    SimpleAnimatorOptionsPage_static_0100
-     * @tc.name      SimpleAnimatorOptionsPage_static_0100
-     * @tc.desc      SimpleAnimatorOptionsPage_static_0100
-     * @tc.level     2
+     * @tc.number   SimpleAnimatorOptionsPage_static_0100
+     * @tc.name     SimpleAnimatorOptionsPage_static_0100
+     * @tc.desc     SimpleAnimatorOptionsPage_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SimpleAnimatorOptionsPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SimpleAnimatorOptionsPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SimpleAnimatorOptionsPage_0100 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
-
+      console.log('btn1 start  ')
       let btn1 = await driver.findComponent(ON.id('playId'));
+      await CommonFunc.sleep(2000);
+      console.log('btn1 start  ' + JSON.stringify(btn1))
       await (btn1?.click() as Promise<void>);
       console.info('[SimpleAnimatorOptionsPage_0100] btn1 click');
       await driver.delayMs(5000);
@@ -102,12 +104,13 @@ export default function SimpleAnimatorOptionsPage() {
       AppStorage.delete('cube_size');
 
       let changeFillModeBtn = await driver.findComponent(ON.id('changeFillMode'));
+      await driver.delayMs(2000);
       await (changeFillModeBtn?.click() as Promise<void>);
       console.info('[SimpleAnimatorOptionsPage_0100] changeFillModeBtn click');
       await driver.delayMs(1000);
 
-
       let btn2 = await driver.findComponent(ON.id('playId'));
+      await driver.delayMs(2000);
       await (btn2?.click() as Promise<void>);
       console.info('[SimpleAnimatorOptionsPage_0100] btn2 click');
       await driver.delayMs(5000);
@@ -118,6 +121,7 @@ export default function SimpleAnimatorOptionsPage() {
       AppStorage.delete('cube_size');
 
       let recoverBtn = await driver.findComponent(ON.id('recoverId'));
+      await driver.delayMs(2000);
       await (recoverBtn?.click() as Promise<void>);
       console.info('[SimpleAnimatorOptionsPage_0100] recoverBtn click');
       await driver.delayMs(1000);
@@ -126,14 +130,14 @@ export default function SimpleAnimatorOptionsPage() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    SimpleAnimatorOptionsPage_static_0200
-     * @tc.name      SimpleAnimatorOptionsPage_static_0200
-     * @tc.desc      SimpleAnimatorOptionsPage_static_0200
-     * @tc.level     2
+     * @tc.number   SimpleAnimatorOptionsPage_static_0200
+     * @tc.name     SimpleAnimatorOptionsPage_static_0200
+     * @tc.desc     SimpleAnimatorOptionsPage_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('SimpleAnimatorOptionsPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SimpleAnimatorOptionsPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SimpleAnimatorOptionsPage_0200 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -162,14 +166,14 @@ export default function SimpleAnimatorOptionsPage() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    SimpleAnimatorOptionsPage_static_0300
-     * @tc.name      SimpleAnimatorOptionsPage_static_0300
-     * @tc.desc      SimpleAnimatorOptionsPage_static_0300
-     * @tc.level     2
+     * @tc.number   SimpleAnimatorOptionsPage_static_0300
+     * @tc.name     SimpleAnimatorOptionsPage_static_0300
+     * @tc.desc     SimpleAnimatorOptionsPage_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('SimpleAnimatorOptionsPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SimpleAnimatorOptionsPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SimpleAnimatorOptionsPage_0300 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -198,14 +202,14 @@ export default function SimpleAnimatorOptionsPage() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    SimpleAnimatorOptionsPage_static_0400
-     * @tc.name      SimpleAnimatorOptionsPage_static_0400
-     * @tc.desc      SimpleAnimatorOptionsPage_static_0400
-     * @tc.level     2
+     * @tc.number   SimpleAnimatorOptionsPage_static_0400
+     * @tc.name     SimpleAnimatorOptionsPage_static_0400
+     * @tc.desc     SimpleAnimatorOptionsPage_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('SimpleAnimatorOptionsPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SimpleAnimatorOptionsPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SimpleAnimatorOptionsPage_0400 START');
       let driver = Driver.create();
       await driver.delayMs(1000);

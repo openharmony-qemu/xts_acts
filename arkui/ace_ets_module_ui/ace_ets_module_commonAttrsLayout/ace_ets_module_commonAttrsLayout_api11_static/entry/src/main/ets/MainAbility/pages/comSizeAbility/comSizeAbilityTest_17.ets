@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,65 +13,23 @@
  * limitations under the License.
  */
 import {
-  $r,
-  Builder,
   Button,
-  Callback,
-  Canvas,
-  CanvasRenderingContext2D,
-  CheckboxGroup,
-  Circle,
   ClickEvent,
-  Color,
   Column,
-  ColumnOptions,
   Component,
-  Counter,
-  Divider,
-  Ellipse,
   Entry,
-  ForEach,
-  Gauge,
-  Grid,
-  GridCol,
-  GridItem,
-  GridRow,
-  Image,
-  LineJoinStyle,
   List,
   ListItem,
-  ListItemGroup,
-  Menu,
-  MenuItem,
-  MenuItemGroup,
-  Path,
-  Polygon,
-  Polyline,
-  PreDragStatus,
-  QRCode,
-  Radio,
-  Rect,
-  Refresh,
-  RenderingContextSettings,
-  ResourceStr,
-  RichText,
+  Margin,
+  OnTextPickerChangeCallback,
   Row,
   Scroller,
-  Search,
-  TabContent,
-  Tabs,
-  TabsController,
   Text,
   TextAlign,
-  TextArea,
-  TextClock,
   TextInput,
-  TextPicker,
+  TextPicker
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import inspector from '@ohos.arkui.inspector';
-import matrix4 from '@ohos.matrix4'
+import matrix4 from '@ohos.matrix4';
 
 let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0])
 
@@ -84,9 +42,9 @@ let bott: bottom = new bottom()
 @Entry
 @Component
 struct comSizeAbilityTest_17 {
-  scroller: Scroller = new Scroller();
-  private select: int = 1;
-  private apfruits: string[] = ['选项1', '选项2', '选项3', '选项4'];
+  scroller: Scroller = new Scroller()
+  private select: Int = 1
+  private apfruits: string[] = ['选项1', '选项2', '选项3', '选项4']
 
   build() {
     Column() {
@@ -107,9 +65,11 @@ struct comSizeAbilityTest_17 {
       List({ space: 5, initialIndex: 0, scroller: this.scroller }) {
         ListItem() {
           TextPicker({ range: this.apfruits, selected: this.select })
-
-
-            .backgroundColor(0XBDDB69)
+            .onChange((value: string | string[], index: Int | Int[]) => {
+              console.info('Picker item changed, value: ' + value + ', index: ' + index)
+            } as OnTextPickerChangeCallback)
+            .margin(bott as Margin)
+            .backgroundColor('0XBDDB69')
             .key("TextPicker_Size")
             .size({ width: 130, height: 110 })
             .translate({ x: 1, y: 1, z: 1 })
@@ -135,7 +95,7 @@ struct comSizeAbilityTest_17 {
           Text('显示文本组件')
             .key("Text_Size")
             .textAlign(TextAlign.Center)
-            .backgroundColor(0XBDDB69)
+            .backgroundColor('0XBDDB69')
             .size({ width: 155, height: 100 })
             .translate({ x: 1, y: 1, z: 1 })
             .scale({
@@ -158,7 +118,7 @@ struct comSizeAbilityTest_17 {
 
         ListItem() {
           TextInput({ text: '文本内容' })
-            .backgroundColor(0XBDDB69)
+            .backgroundColor('0XBDDB69')
             .key("TextInput_Size")
             .size({ width: 135, height: 110 })
             .translate({ x: 1, y: 1, z: 1 })
