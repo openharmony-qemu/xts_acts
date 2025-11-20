@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { router } from '@kit.ArkUI';
 import CommonFunc from '../../MainAbility/common/Common';
+import { Driver, ON, Component} from '@ohos.UiTest';
 
 export default function TimePickerDialogApiEnableCascadeTest() {
   describe('TimePickerDialogApiEnableCascade', () => {
@@ -52,7 +53,9 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_001';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog1', 10, "")
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('TimePickerDialog1'));
+      await btn.click();
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -60,10 +63,11 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       console.info('[TimePickerDialog_EnableCascade_001] obj1 is: ' + timePicker);
       console.info('[TimePickerDialog_EnableCascade_001] obj1 is: ' +
       JSON.stringify(JSON.parse(timePicker).$attrs.enableCascade));
-      sendEventByKey('TimePickerDialog1', 10, "")
       expect(JSON.parse(timePicker).$attrs.enableCascade).assertEqual(true);
+      let btn1: Component = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
+      await CommonFunc.sleep(1000);
       console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
       done();
     });
 
@@ -79,7 +83,9 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_002';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog2', 10, "")
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('TimePickerDialog2'));
+      await btn.click();
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -87,10 +93,11 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       console.info('[TimePickerDialog_EnableCascade_002] obj1 is: ' + timePicker);
       console.info('[TimePickerDialog_EnableCascade_002] obj1 is: ' +
       JSON.stringify(JSON.parse(timePicker).$attrs.enableCascade));
-      sendEventByKey('TimePickerDialog2', 10, '')
       expect(JSON.parse(timePicker).$attrs.enableCascade).assertEqual(false);
+      let btn1: Component = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
+      await CommonFunc.sleep(1000);
       console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
       done();
     });
 
@@ -106,7 +113,9 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_003';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog3', 10, "")
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('TimePickerDialog3'));
+      await btn.click();
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -114,10 +123,11 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       console.info('[TimePickerDialog_EnableCascade_003] obj1 is: ' + timePicker);
       console.info('[TimePickerDialog_EnableCascade_003] obj1 is: ' +
       JSON.stringify(JSON.parse(timePicker).$attrs.enableCascade));
-      sendEventByKey('TimePickerDialog3', 10, "")
       expect(JSON.parse(timePicker).$attrs.enableCascade).assertEqual(false);
+      let btn1: Component = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
+      await CommonFunc.sleep(1000);
       console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
       done();
     });
 
@@ -132,7 +142,9 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_004';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog4', 10, "")
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('TimePickerDialog4'));
+      await btn.click();
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -140,10 +152,11 @@ export default function TimePickerDialogApiEnableCascadeTest() {
       console.info('[TimePickerDialog_EnableCascade_004] obj1 is: ' + timePicker);
       console.info('[TimePickerDialog_EnableCascade_004] obj1 is: ' +
       JSON.stringify(JSON.parse(timePicker).$attrs.enableCascade));
-      sendEventByKey('TimePickerDialog4', 10, "")
       expect(JSON.parse(timePicker).$attrs.enableCascade).assertEqual(false);
+      let btn1: Component = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
+      await CommonFunc.sleep(1000);
       console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
       done();
     });
   })

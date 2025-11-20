@@ -18,6 +18,18 @@ import timePickerDialogEnableHapticFeedbackTest from './timePickerDialogTest/tim
 import timePickerDialogSelectedAreaTest from './timePickerDialogTest/timePickerDialogSelectedArea.test';
 import timePickerDialogShadowTest from './timePickerDialogTest/timePickerDialogShadow.test';
 import addEnableCascadeApiTest from './timePickerDialogTest/addEnableCascadeApi.test';
+import showTimePickerDialogBackgroundEffectTest from './timePickerDialogTest/showTimePickerDialogBackgroundEffect.test';
+import showTimePickerDialogBlurStyleOptionsTest from './timePickerDialogTest/showTimePickerDialogBlurStyleOptions.test';
+import timePickerDialogBackgroundEffectTest from './timePickerDialogTest/timePickerDialogBackgroundEffect.test';
+import timePickerDialogBlurStyleOptionsTest from './timePickerDialogTest/timePickerDialogBlurStyleOptions.test';
+import timePickerDialogOptionsTest from './timePickerDialogTest/timePickerDialogOptions.test';
+import timePickerDialogUITest from './timePickerDialogTest/timePickerDialogUI.test';
+import timePickerDialogWindowPropertiesTest from './timePickerDialogTest/timePickerDialogWindowProperties.test';
+import DateTimeOptionsTest from './timePickerDialogTest/DateTimeOptions.test';
+import TimePickerDialogAppearTextTest from './timePickerDialogTest/TimePickerDialogAppearText.test';
+import TimePickerDialogCallbackTest from './timePickerDialogTest/TimePickerDialogCallback.test';
+import timePickerDialogAcceptButtonStyleTest from './timePickerDialogTest/timePickerDialogAcceptButtonStyle.test';
+import timePickerDialogCancelButtonStyleTest from './timePickerDialogTest/timePickerDialogCancelButtonStyle.test';
 
 export default function testsuite() {
   timePickerDialogBGBlurStyleTest();
@@ -26,4 +38,16 @@ export default function testsuite() {
   timePickerDialogSelectedAreaTest();
   timePickerDialogShadowTest();
   addEnableCascadeApiTest();
+  showTimePickerDialogBackgroundEffectTest();
+  showTimePickerDialogBlurStyleOptionsTest();
+  timePickerDialogBackgroundEffectTest();
+  timePickerDialogBlurStyleOptionsTest();
+  timePickerDialogOptionsTest();
+  timePickerDialogUITest();
+  timePickerDialogWindowPropertiesTest();
+  DateTimeOptionsTest();
+  TimePickerDialogAppearTextTest();
+  TimePickerDialogCallbackTest();
+  timePickerDialogAcceptButtonStyleTest();
+  timePickerDialogCancelButtonStyleTest();
 }

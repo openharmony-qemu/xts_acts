@@ -16,6 +16,7 @@
         "MainAbility/pages/textPicker/textPickerOnScrollStopTest",
         "MainAbility/pages/textPicker/textPickerSec",
         "MainAbility/pages/textPicker/textPickerSelectedArea",
-        "MainAbility/pages/textPicker/textPickerTextStyleThree"
+        "MainAbility/pages/textPicker/textPickerTextStyleThree",
+        "MainAbility/pages/textPicker/textPickerValue"
     ]
 }

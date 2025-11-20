@@ -294,6 +294,9 @@ int32_t VEncAPI11Sample::ConfigureVideoEncoder_Temporal(int32_t temporal_gop_siz
 
 int32_t VEncAPI11Sample::ConfigureVideoEncoder_fuzz(int32_t data)
 {
+    if (data < 0) {
+        return AV_ERR_UNKNOWN;
+    }
     OH_AVFormat *format = OH_AVFormat_Create();
     if (format == nullptr) {
         cout << "Fatal: Failed to create format" << endl;
@@ -432,6 +435,9 @@ int32_t VEncAPI11Sample::CreateSurface()
 void VEncAPI11Sample::GetStride()
 {
     OH_AVFormat *format = OH_VideoEncoder_GetInputDescription(venc_);
+    if (format == nullptr) {
+        return;
+    }
     int32_t inputStride = 0;
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_STRIDE, &inputStride);
     stride_ = inputStride;
