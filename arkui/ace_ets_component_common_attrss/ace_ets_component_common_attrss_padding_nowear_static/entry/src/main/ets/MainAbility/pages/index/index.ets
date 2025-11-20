@@ -34,7 +34,6 @@ import {
   ClickEvent,
   FontWeight
 } from '@ohos.arkui.component'
-import { Hypium } from '../../../../../hypium/hypium'
 import testsuite from '../../../../src/test/List.test'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -45,7 +44,7 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

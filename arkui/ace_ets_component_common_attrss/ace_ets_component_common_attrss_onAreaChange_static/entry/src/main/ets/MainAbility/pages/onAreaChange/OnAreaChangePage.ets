@@ -13,86 +13,97 @@
  * limitations under the License.
  */
 
-import AttrsManager from '../../common/AttrsManager';
 import router from '@ohos.router'
-import { State } from '@ohos.arkui.stateManagement';
+import { State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
-import { Entry, Component, ItemAlign, Position, Builder, AlphabetIndexer, Button, Checkbox,
+import { Entry, Component, ItemAlign, Position, Builder, AlphabetIndexer, Button, Checkbox,CommonMethod,applyStyles,
   CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee, Menu,
   Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Scroller, Stepper, Search, Select, Slider,
   Text, TextArea, TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Badge, Column, Counter, Flex,
   GridRow, Grid, List, RelativeContainer, Row, Refresh, Scroll, SideBarContainer, Stack, Swiper,
   Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, ColumnSplit, RowSplit, Blank,
   DataPanelType, Color, $r, MenuItem, ProgressType, BarState, StepperItem, SliderStyle, Axis, ToggleType,
-  GridRowDirection, GridCol, GridItem, ListItem, SideBarContainerType, FlexDirection, BadgeStyle,
-  BadgeParamWithString, TextAlign, FlexAlign, TabContent, FlowItem, ColumnOptions, PolylineOptions,
-  RectOptions, GridColColumnOption, FlexWrap, GutterOption, NavPathStack, BreakPoints, ForEach,
+  GridRowDirection, GridCol, GridItem, ListItem, SideBarContainerType, FlexDirection, BadgeStyle,LinearGradient,
+  BadgeParamWithString, TextAlign, FlexAlign, TabContent, FlowItem, ColumnOptions, PolylineOptions,Area,
+  RectOptions, GridColColumnOption, FlexWrap, GutterOption, NavPathStack, BreakPoints, ForEach,NavDestination,AlignRuleOption,
   ImageFit, BreakpointsReference, TextTimerController, MenuItemOptions, MenuItemGroup, ListItemGroup, PatternLock,
-  RichText, VerticalAlign, HorizontalAlign, AlignRuleOption } from '@ohos.arkui.component'
-
+  RichText, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct OnAreaChangePage {
-  @State _width: number = 30;
-  @State _height: number = 30;
-  @State _compareButtonWidth: number = 30;
-  @State _compareButtonHeight: number = 30;
-  @State sizeOldValue: string = '';
-  @State sizeNewValue: string = '';
-  @State _offset: Position = { x: 0, y: 0 } as Position;
-  @State parentMargin: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentMargin
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
-  @State parentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentKey ?? ''
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? ''
-  @State targetGroupView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetGroupView ?? ''
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? ''
-  @State compareButtonKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareButtonKey ?? ''
-  @State compareOldTextKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareOldTextKey ?? ''
-  @State compareNewTextKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareNewTextKey ?? ''
+  @StoragePropRef('_width') _width: number|undefined = 30;
+  @StoragePropRef('_height') _height: number|undefined = 30;
+  @StoragePropRef('_compareButtonWidth') _compareButtonWidth: number|undefined = 30;
+  @StoragePropRef('_compareButtonHeight') _compareButtonHeight: number|undefined = 30;
+  @StoragePropRef('sizeOldValue') sizeOldValue: string = '';
+  @StoragePropRef('sizeNewValue') sizeNewValue: string = '';
+  @StoragePropRef('_offset') _offset: Position|undefined = { x: 0, y: 0 } as Position;
+  @State parentMargin: number = 0
+  @State parentWidth: number =  0
+  @State parentHeight: number =  0
+  @State parentKey: string = ''
+  @State targetView: string = ''
+  @State targetGroupView: string = ''
+  @State componentKey: string = ''
+  @State compareButtonKey: string = ''
+  @State compareOldTextKey: string = ''
+  @State compareNewTextKey: string = ''
   textTimerController: TextTimerController = new TextTimerController() //Use by TextTimer
   private scroller: Scroller = new Scroller()
   private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; //Use by AlphabetIndexer TextPicker
   private src: string = 'Running Marquee starts rolling A B C D E F G H I J'; //Use by Marquee QRCode
-
+  @State isShow: boolean = false
+  @Builder
+  myBuilder() {
+    Column() {
+      Text("bindSheet")
+        .fontSize(20)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(Color.Pink)
+  }
   onPageShow() {
     console.info('OnAreaChangePage show called')
-    AttrsManager.registerDataChange((value: SetValue) => {
-      if (value.width) {
-        this._width = value.width!
-      }
-      if (value.height) {
-        this._height = value.height!
-      }
-      if (value.compareButtonWidth) {
-        this._compareButtonWidth = value.compareButtonWidth!
-      }
-      if (value.compareButtonHeight) {
-        this._compareButtonHeight = value.compareButtonHeight!
-      }
-      if (value.offset) {
-        this._offset = value.offset!
-      }
-      this.sizeOldValue = ''
-      this.sizeNewValue = ''
-    })
+    AppStorage.setOrCreate<number|undefined>('_width', 30)
+    AppStorage.setOrCreate<number|undefined>('_height', 30)
+    AppStorage.setOrCreate<number|undefined>('_compareButtonWidth', 30)
+    AppStorage.setOrCreate<number|undefined>('_compareButtonHeight', 30)
+    AppStorage.setOrCreate<Position|undefined>('_offset', { x: 0, y: 0 })
+    AppStorage.setOrCreate<string>('sizeOldValue', '')
+    AppStorage.setOrCreate<string>('sizeNewValue', '')
+    try {
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      console.log('routerParamOptions',JSON.stringify(routerParamOptions))
+      this.parentMargin = routerParamOptions.view.parentMargin
+      this.parentWidth = routerParamOptions.view.parentWidth
+      this.parentHeight = routerParamOptions.view.parentHeight
+      this.parentKey = routerParamOptions.view.parentKey
+      this.targetView = routerParamOptions.view.targetView
+      this.targetGroupView = routerParamOptions.view.targetGroupView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.compareButtonKey = routerParamOptions.view.compareButtonKey
+      this.compareOldTextKey = routerParamOptions.view.compareOldTextKey
+      this.compareNewTextKey = routerParamOptions.view.compareNewTextKey
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
   /*
    * Set common style.
    */
-  // @Styles
-  // commonStyle(){
-  //   .width(this._width)
-  //   .height(this._height)
-  //   .offset(this._offset)
-  //   .key(this.componentKey)
-  //   .onAreaChange((oldValue: Area, newValue: Area) => {
-  //     this.sizeOldValue = JSON.stringify(oldValue)
-  //     this.sizeNewValue = JSON.stringify(newValue)
-  //   })
-  // }
-
+  commonStyle(instance: CommonMethod) {
+    instance.width(this._width)
+    instance.height(this._height)
+    instance.offset(this._offset)
+    instance.key(this.componentKey)
+    instance.onAreaChange((oldValue: Area, newValue: Area) => {
+      this.sizeOldValue = JSON.stringify(oldValue)
+      this.sizeNewValue = JSON.stringify(newValue)
+    })
+  }
   //Draw screen
   build() {
     Column() {
@@ -102,7 +113,7 @@ struct OnAreaChangePage {
             .width(this._compareButtonWidth)
             .height(this._compareButtonHeight)
             .key(this.compareButtonKey)
-          MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).backgroundColor(Color.Pink)//.commonStyle()
+          MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).backgroundColor(Color.Pink).applyStyles(this.commonStyle)
         }
         .width(this.parentWidth)
         .height(this.parentHeight)
@@ -119,7 +130,7 @@ struct OnAreaChangePage {
 
           MenuItemGroup() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-          }//.commonStyle().backgroundColor(Color.Pink)
+          }.applyStyles(this.commonStyle).backgroundColor(Color.Pink)
         }
         .width(this.parentWidth)
         .height(this.parentHeight)
@@ -128,18 +139,22 @@ struct OnAreaChangePage {
         .padding(0)
         .key(this.parentKey)
       } else if (this.targetView == 'NavDestination') {
-        // NavRouter() {
-        //   Button('Button')
-        //     .width(this._compareButtonWidth)
-        //     .height(this._compareButtonHeight)
-        //     .key(this.compareButtonKey)
-        //   NavDestination().backgroundColor(Color.Pink)//.commonStyle()
-        // }
-        // .width(this.parentWidth)
-        // .height(this.parentHeight)
-        // .backgroundColor(Color.Green)
-        // .margin(this.parentMargin)
-        // .key(this.parentKey)
+        NavDestination(){
+            Button('Button')
+              .width(this._compareButtonWidth)
+              .height(this._compareButtonHeight)
+              .key(this.compareButtonKey)
+
+        }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
+        .width(this.parentWidth)
+        .height(this.parentHeight)
+        .backgroundColor(Color.Green)
+        .margin(this.parentMargin)
+        .key(this.parentKey)
+      } else if (this.targetView == 'Navigator') {
+        Navigation({}).applyStyles(this.commonStyle)
+      } else if (this.targetView == 'NavRouter') {
+        Navigation({}).applyStyles(this.commonStyle)
       } else if (this.targetView == 'StepperItem') {
         Button('Button')
           .width(this._compareButtonWidth)
@@ -148,7 +163,7 @@ struct OnAreaChangePage {
         Stepper() {
           StepperItem()
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         }
         .width(this._width)
         .height(this._height)
@@ -163,7 +178,7 @@ struct OnAreaChangePage {
         WaterFlow() {
           FlowItem()
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         }
         .width(this.parentWidth)
         .height(this.parentHeight)
@@ -180,7 +195,7 @@ struct OnAreaChangePage {
             Text('GridCol')
           }
           .backgroundColor(Color.Pink)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         }
         .width(this.parentWidth)
         .height(this.parentHeight)
@@ -195,7 +210,7 @@ struct OnAreaChangePage {
             .key(this.compareButtonKey)
           GridItem()
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         }
         .width(this.parentWidth)
         .height(this.parentHeight)
@@ -215,7 +230,7 @@ struct OnAreaChangePage {
             Button('ListItem')
           }
           .backgroundColor(Color.Pink)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         }
         .width(this.parentWidth)
         .height(this.parentHeight)
@@ -237,7 +252,7 @@ struct OnAreaChangePage {
             }
           }
           .backgroundColor(Color.Pink)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         }
         .listDirection(Axis.Horizontal)
         .width(this.parentWidth)
@@ -255,7 +270,7 @@ struct OnAreaChangePage {
             Text('TabContent Test')
           }
           .backgroundColor(Color.Pink)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         }
         .width(this._width)
         .height(this._height)
@@ -271,50 +286,49 @@ struct OnAreaChangePage {
           if (this.targetView == 'AlphabetIndexer') {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Blank') {
             Blank()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Button') {
-            Button('button')//.commonStyle()
+            Button('button').applyStyles(this.commonStyle)
           } else if (this.targetView == 'Checkbox') {
             Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'CheckboxGroup') {
             CheckboxGroup({ group: 'checkboxGroup' })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'DataPanel') {
             DataPanel({ values: [25] })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'DatePicker') {
             DatePicker()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Divider') {
             Divider()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Gauge') {
             Gauge({ value: 75 })
-              .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Image') {
             Image($r('app.media.icon'))
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'ImageAnimator') {
             ImageAnimator()
               .images([{ src: $r('app.media.icon') }])
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'LoadingProgress') {
             LoadingProgress()
               .color(Color.Blue)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Marquee') {
             Marquee({
               start: true,
@@ -322,123 +336,120 @@ struct OnAreaChangePage {
             })
               .fontSize(15)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Menu') {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-            }.backgroundColor(Color.Pink)//.commonStyle()
+            }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Navigation') {
             Navigation(new NavPathStack())
               .backgroundColor(Color.Pink)
-              //.commonStyle()
-          } else if (this.targetView == 'NavRouter') {
-            // NavRouter().backgroundColor(Color.Pink)//.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'PatternLock') {
             PatternLock()
               .sideLength(this._width)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Progress') {
             Progress({ value: 20 })
               .border({ width: 2 })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'QRCode') {
             QRCode(this.src)
               .border({ width: 2 })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Radio') {
             Radio({ value: 'Radio1', group: 'radioGroup' })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Rating') {
             Rating()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'RichText') {
-            RichText('RichText').backgroundColor(Color.Pink)//.commonStyle()
+            RichText('RichText').backgroundColor(Color.Pink).applyStyles(this.commonStyle)
           } else if (this.targetView == 'ScrollBar') {
             ScrollBar({ scroller: this.scroller, state: BarState.On }) {
               Text('text')
             }
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Search') {
             Search()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Select') {
             Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }])
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Slider') {
             Slider()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Stepper') {
             Stepper() {
               StepperItem()
-            }.backgroundColor(Color.Pink)//.commonStyle()
+            }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Text') {
             Text('text')
               .fontSize(15)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextArea') {
             TextArea()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextClock') {
             TextClock()
               .fontSize(15)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextInput') {
             TextInput()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextPicker') {
             TextPicker({ range: this.value })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextTimer') {
             TextTimer({ controller: this.textTimerController })
               .fontSize(15)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'TimePicker') {
             TimePicker()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Toggle') {
             Toggle({ type: ToggleType.Switch })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Badge') {
             Badge({
-              // count: 50,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
               value: 'undefined'
             } as BadgeParamWithString) {
               Button('message').backgroundColor(0x317aff)
             }
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Column') {
             Column()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'ColumnSplit') {
             ColumnSplit() {
               Text('1').backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
               Text('2').backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
             }
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Flex') {
             Flex()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'GridRow') {
             GridRow() {
               GridCol() {
@@ -446,7 +457,7 @@ struct OnAreaChangePage {
               }
             }
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Grid') {
             Grid() {
               GridItem() {
@@ -454,21 +465,27 @@ struct OnAreaChangePage {
               }
             }
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'List') {
             List()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
-          } else if (this.targetView == 'Navigator') {
-            // Navigator({ target: '' }).backgroundColor(Color.Pink)//.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Panel') {
-            // Panel(true)
-            //   .backgroundMask(Color.Pink)
-            //   //.commonStyle()
+            Column(){
+
+            }
+            .width('50%')
+            .height('100%')
+            .applyStyles(this.commonStyle)
+            .bindSheet(this.isShow = true,this.myBuilder,{
+              height: 300,
+              backgroundColor: Color.Green,
+            })
+
           } else if (this.targetView == 'Refresh') {
             Refresh({ refreshing: false })
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'RelativeContainer') {
             RelativeContainer() {
               Row()
@@ -482,15 +499,15 @@ struct OnAreaChangePage {
                 .id('OnAreaChange')
             }
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Row') {
             Row()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'RowSplit') {
             RowSplit() {
               Text('Text')
-            }//.commonStyle()
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Scroll') {
             Scroll() {
               Column() {
@@ -502,7 +519,7 @@ struct OnAreaChangePage {
                     .textAlign(TextAlign.Center)
                 }, (item: number, index: int) => String(item))
               }.width('100%')
-            }.scrollBar(BarState.On)//.commonStyle()
+            }.scrollBar(BarState.On).applyStyles(this.commonStyle)
           } else if (this.targetView == 'SideBarContainer') {
             SideBarContainer(SideBarContainerType.Embed) {
               Column() {
@@ -523,11 +540,11 @@ struct OnAreaChangePage {
                 Text('SideBarContainer content')
                   .fontSize(25)
               }.backgroundColor(Color.Orange)
-            }//.commonStyle()
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Stack') {
             Stack()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Swiper') {
             Swiper() {
               ForEach(new Array<number>(1, 2, 3), (item: number, index: int) => {
@@ -536,29 +553,29 @@ struct OnAreaChangePage {
             }
             .indicator(true)
             .backgroundColor(Color.Pink)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Tabs') {
             Tabs()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'WaterFlow') {
             WaterFlow()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Circle') {
             Circle()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Ellipse') {
             Ellipse()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Line') {
             Line()
               .backgroundColor(Color.Pink)
               .startPoint([0, 0])
               .endPoint([50, 100])
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Polyline') {
             Polyline()
               .points([[0, 0], [20, 60], [100, 100]])
@@ -566,7 +583,7 @@ struct OnAreaChangePage {
               .stroke(Color.Blue)
               .strokeWidth(3)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Polygon') {
             Polygon()
               .points([[50, 0], [0, 50], [20, 100], [80, 100], [100, 50]])
@@ -574,7 +591,7 @@ struct OnAreaChangePage {
               .strokeWidth(5)
               .stroke(Color.Blue)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Path') {
             Path()
               .commands('M100 0 L200 240 L0 240 Z')
@@ -582,22 +599,22 @@ struct OnAreaChangePage {
               .stroke(Color.Black)
               .strokeWidth(3)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Rect') {
             Rect()
               .fillOpacity(0)
               .stroke(Color.Red)
               .strokeWidth(3)
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Shape') {
             Shape()
               .backgroundColor(Color.Pink)
-            //   //.commonStyle()
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Counter') {
             Counter()
               .backgroundColor(Color.Pink)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           }
         }
         .width(this.parentWidth)

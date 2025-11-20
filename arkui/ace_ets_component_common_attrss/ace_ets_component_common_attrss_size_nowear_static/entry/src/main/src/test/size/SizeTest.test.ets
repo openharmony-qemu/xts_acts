@@ -15,7 +15,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
-import { describe, beforeAll, expect } from "../../../../hypium/index"
+import { describe, beforeAll, expect } from "../../../../hypium"
 import { focusControl, $r } from '@ohos.arkui.component'
 import { Color } from '@ohos.arkui.component';
 import { UIContext } from "@ohos.arkui.UIContext";
@@ -37,7 +37,7 @@ const uiContext = new UIContext();
  * Test of common attribute: size
  */
 export default function sizeTest() {
-  
+  //A list of components that support size attributes is required.
   let supportView: Array<string> = new Array<string>(
     'ColumnSplit',
     'RowSplit',
@@ -47,14 +47,14 @@ export default function sizeTest() {
     'FlowItem',
   )
 
-  
+  //The size of the parent component, when set as a percentage, serves as the calculation.
   let parentWidth = 300;
   let parentHeight = 300;
-  
+  //Called from the parent class when setting the background color.
   let parentBackGroundColor = Color.Red;
   let BackGroundColor = Color.Orange;
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testSize',
     pageName: 'SizePage',
@@ -65,7 +65,7 @@ export default function sizeTest() {
     BackGroundColor: BackGroundColor
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [
     {
     describe: 'StringNumber',
@@ -142,7 +142,7 @@ export default function sizeTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.size.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
         console.log('expectValueexpectValue',AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth),Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth)) * 0.5)
@@ -200,13 +200,13 @@ export default function sizeTest() {
           }
         }
 
-        
+        //Obtain dimensional information for reference components.
       let rect: RectValue = Utils.getComponentRect(testData.pageConfig.componentKey);
 
-      
+      //Verify the width size of the target component.
       let strJsonRectWidth = rect.right - rect.left;
 
-      
+      //Verify the height size of the target component.
       let strJsonRectHeight = rect.bottom - rect.top;
 
       console.info('[' + testData.caseTag + '] strJsonRectWidth is: ' + strJsonRectWidth);
@@ -217,23 +217,23 @@ export default function sizeTest() {
       console.info('[' + testData.caseTag + '] testData.viewObj!.$attrs.size.height:' + testData.viewObj!.getElement('$attrs').getElement('size').getString('height'));
 
       if (testData.testValue.describe == 'SetStringWidth') {
-        
-        
+        //When the use case is SetStringWidth.
+        //Assertion width is consistent with expected value.
         expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('width')).assertEqual(testData.testValue.expectValue?.widthCompare);
         expect(Math.abs(Math.round(strJsonRectWidth) - Math.round(testData.testValue.expectValue!.width ?? 0)) <= 2).assertTrue();
       } else if (testData.testValue.describe == 'SetStringHeight') {
-        
-        
+        //When the use case is SetStringHeight.
+        //Assertion height is consistent with expected value.
         expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('height')).assertEqual(testData.testValue.expectValue?.heightCompare);
         expect(Math.abs(Math.round(strJsonRectHeight) - Math.round(testData.testValue.expectValue!.height ?? 0)) <= 2).assertTrue();
       } else {
         console.log('testData.testValue.expectValue?.widthCompare',testData.testValue.expectValue?.widthCompare)
         console.log('testData.testValue.expectValue?.widthCompare222',testData.viewObj!.getElement('$attrs').getElement('size').getString('width'))
-        
+        //Confirm that the size attribute values have been successfully set.
         expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('width')).assertEqual(testData.testValue.expectValue?.widthCompare);
         expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('height')).assertEqual(testData.testValue.expectValue?.heightCompare);
         console.log('testData.testValue.expectValue!.width',testData.testValue.expectValue!.width)
-        
+        //Confirm that the calculated value is consistent with the expected value.
         expect(Math.abs(Math.round(strJsonRectWidth) - Math.round(testData.testValue.expectValue!.width ?? 0)) <= 2).assertTrue()
         expect(Math.abs(Math.round(strJsonRectHeight) - Math.round(testData.testValue.expectValue!.height ?? 0)) <= 2).assertTrue()
       }

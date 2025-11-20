@@ -3,7 +3,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import  hilog  from '@ohos.hilog'
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let domain: int= 0x0000; 
+let domain: int= 0x0000;
 let tag: string = 'UtilTestTag';
 
 class UtilsTest{

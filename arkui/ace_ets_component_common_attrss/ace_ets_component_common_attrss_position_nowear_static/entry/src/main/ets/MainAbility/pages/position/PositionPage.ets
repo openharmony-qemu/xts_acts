@@ -36,9 +36,9 @@ import {
   RectOptions,CommonMethod,applyStyles,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { SetValue , TestValue} from '../../common/Utils';
+import { SetValue } from '../../common/Utils';
 interface ViewOption {
 targetView: string
 componentKey: string
@@ -56,7 +56,7 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct PositionPage {
-  @StoragePropRef('_position') _position: Position = { x: 0, y: 0 } as Position;
+  @State _position: SetValue = { x: 0, y: 0 } as SetValue;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 0
@@ -76,35 +76,35 @@ struct PositionPage {
   onPageShow() {
     console.info('[PositionPage] page show called ')
 
+    //Register data change call back.
+    attrsManager.registerDataChange((value: SetValue) => {
+      this._position = value
+    })
+  }
+aboutToAppear(){
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-
-      AppStorage.setOrCreate<Position>('_position', (routerParamOptions.view.testValue as TestValue).setValue as Position)
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
-
-      console.info('wj============= '+routerParamOptions.view.componentKey)
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
-
   /**
    * Set common style.
    */
   commonStyle(instance: CommonMethod) {
-      instance.position(this._position)
+      instance.position(this._position as Position)
       instance.key(this.componentKey)
   }
-
   build() {
     Row() {
       Column() {
-  
+        //Create view by config.
         if (this.targetView == 'MenuItem') {
           Row() {
             Menu() {
@@ -316,7 +316,7 @@ struct PositionPage {
           })
         } else {
           Row() {
-     
+            //Set view by page config.
             if (this.targetView == 'AlphabetIndexer') {
               AlphabetIndexerView({ _position: this._position as Position, componentKey: this.componentKey })
             } else if (this.targetView == 'Blank') {
@@ -396,7 +396,6 @@ struct PositionPage {
               .backgroundColor('#ededed')
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Stepper') {
-              console.info('wj=============22 '+ this.componentKey)
               StepperView({ _position: this._position as Position, componentKey: this.componentKey });
             } else if (this.targetView == 'Search') {
               Search({ placeholder: 'Type to search...' })
@@ -482,8 +481,8 @@ struct PositionPage {
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Grid') {
               Grid() {
-                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day:string, index:int):void => {
-                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item:string, index:int):void => {
+                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day:string, index:Int):void => {
+                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item:string, index:Int):void => {
                     GridItem() {
                       Text(day)
                         .backgroundColor(Color.White)
@@ -499,14 +498,14 @@ struct PositionPage {
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'List') {
               List({ space: 20, initialIndex: 0 }) {
-                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item:number, index:int):void => {
+                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item:number, index:Int):void => {
                   ListItem() {
                     Text('' + item)
                       .width('100%')
                       .textAlign(TextAlign.Center)
                       .backgroundColor(Color.White)
                   }
-                }, (item: number, index:int):string => String(item))
+                }, (item: number, index:Int):string => String(item))
               }
               .width('100%')
               .height('100%')
@@ -521,7 +520,7 @@ struct PositionPage {
                   .alignRules({
                     top: { anchor: '__container__', align: VerticalAlign.Top },
                     left: { anchor: '__container__', align: HorizontalAlign.Start }
-                  } as AlignRuleOption)
+                  })
                   .id('PositionPageRow')
               }
               .height('50%')
@@ -549,13 +548,13 @@ struct PositionPage {
             } else if (this.targetView == 'Scroll') {
               Scroll() {
                 Column() {
-                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:int):void => {
+                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:Int):void => {
                     Text('Scroll' + item.toString())
                       .width('90%')
                       .height(150)
                       .backgroundColor(Color.White)
                       .textAlign(TextAlign.Center)
-                  }, (item: number, index:int):string => String(item))
+                  }, (item: number, index:Int):string => String(item))
                 }.width('100%')
               }
               .scrollBar(BarState.On)
@@ -563,7 +562,7 @@ struct PositionPage {
             } else if (this.targetView == 'SideBarContainer') {
               SideBarContainer(SideBarContainerType.Embed) {
                 Column() {
-                  ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
+                  ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
                     Column({ space: 5 } as ColumnOptions) {
                       Image($r('app.media.icon'))
                         .width(64)
@@ -591,11 +590,11 @@ struct PositionPage {
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Swiper') {
               Swiper() {
-                ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
+                ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
                   Text('Swiper' + item)
                     .width('90%')
                     .height(160)
-                }, (item: number, index:int):string => String(item))
+                }, (item: number, index:Int):string => String(item))
               }
               .indicator(true)
               .backgroundColor(Color.White)

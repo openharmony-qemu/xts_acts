@@ -28,7 +28,7 @@ import {
   Blank,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StorageProp } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -37,10 +37,10 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct Index {
-  private scroller: Scroller = new Scroller() 
-  private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) 
-  @State show: boolean = false 
-  @StoragePropRef("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
+  private scroller: Scroller = new Scroller() //For Scroll and ScrollBar
+  private arr: Array<Int> = new Array<Int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
+  @State show: boolean = false //For Panel
+  @StorageProp("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 100
@@ -60,7 +60,7 @@ struct Index {
       this.parentHeight = routerParamOptions.view.parentHeight
       this.subassemblyWidth = routerParamOptions.view.subassemblyWidth
       this.subassemblyHeight = routerParamOptions.view.subassemblyHeight
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -85,7 +85,7 @@ struct Index {
   }
   build() {
     Row() {
-      
+      //Set view by page config.
       if (this.targetView == 'Button') {
         Button('button1')
           .width(this.subassemblyWidth)
@@ -287,7 +287,7 @@ struct Index {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+            ForEach(new Array<Int>(1, 2, 3), (item: Int, index:Int):void => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(64).height(64)
                 Text('Index0' + item).fontSize(25)
@@ -390,15 +390,15 @@ struct Index {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            } as AlignRuleOption)
+            })
             .id('markAnchor')
         }
         .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+          ForEach(new Array<Int>(1, 2, 3), (item: Int, index:Int):void => {
             Text('Swiper' + item).width('90%').height(160)
-          }, (item: number, index:Int):string => String(item))
+          }, (item: Int, index:Int):string => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.White)
@@ -408,7 +408,7 @@ struct Index {
       } else if (this.targetView == 'Scroll') {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
-            ForEach(this.arr, (item: number, index:Int):void => {
+            ForEach(this.arr, (item: Int, index:Int):void => {
               Row() {
                 Text(String(item))
                   .width(80)
@@ -419,7 +419,7 @@ struct Index {
                   .textAlign(TextAlign.Center)
                   .margin({ top: 5 } as Margin)
               }
-            }, (item: number, index:Int):string => String(item))
+            }, (item: Int, index:Int):string => String(item))
           }.margin({ right: 15 } as Margin)
         }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextTimer') {

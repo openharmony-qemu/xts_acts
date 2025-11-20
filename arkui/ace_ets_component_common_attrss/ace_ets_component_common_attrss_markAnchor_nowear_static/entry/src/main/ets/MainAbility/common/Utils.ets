@@ -15,7 +15,18 @@
 
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, Position } from '@ohos.arkui.component';
+import {
+  TouchType,
+  KeyType,
+  MouseButton,
+  MouseAction,
+  AlignRuleOption,
+  focusControl,
+  KeySource,
+  SourceTool,
+  SourceType,
+  Position
+} from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
@@ -44,12 +55,14 @@ export interface ExpectValue {
 
 export class TestValue {
   describe: string = '';
-  setValue: Position = {x: 0, y: 0};
+  setValue: Position = { x: 0, y: 0 };
   exceptView: string = '';
-  expectValue:ExpectValue = {x: '',
-  y: '',
-  left: 0,
-  top: 0};
+  expectValue: ExpectValue = {
+    x: '',
+    y: '',
+    left: 0,
+    top: 0
+  };
 }
 
 
@@ -82,7 +95,7 @@ export class PageConfig {
 export default class Utils {
   public static instance: Utils = new Utils();
 
-  static async sleep(time: int) : Promise<int>  {
+  static async sleep(time: int): Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
@@ -115,9 +128,9 @@ export default class Utils {
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-       const paramData: RouterParams = {
-        view: obj
-       }
+        const paramData: RouterParams = {
+          view: obj
+        }
         const routerParams: router.RouterOptions = {
           url: obj.pageUrl,
           params: paramData
@@ -151,7 +164,7 @@ export default class Utils {
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
     let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+      return part.split(",").map((item: string): double => parseFloat(item.trim()));
     });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
@@ -165,14 +178,15 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
+    let rectInfo: Array<Array<number>> =
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
-      left:Number(rectInfo[0][0] ?? 0),
-      top:Number(rectInfo[0][1] ?? 0),
-      right:Number(rectInfo[1][0] ?? 0),
-      bottom:Number(rectInfo[1][1] ?? 0),
+      left: Number(rectInfo[0][0] ?? 0),
+      top: Number(rectInfo[0][1] ?? 0),
+      right: Number(rectInfo[1][0] ?? 0),
+      bottom: Number(rectInfo[1][1] ?? 0),
     };
     console.info(JSON.stringify(rect_value));
     return rect_value;
@@ -266,7 +280,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -276,7 +290,7 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -289,10 +303,10 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
-      getModifierKeyState:(keys: Array<string>):boolean => {
+      getModifierKeyState: (keys: Array<string>): boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
@@ -329,7 +343,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,
@@ -349,7 +363,7 @@ export default class Utils {
       pressure: 0,
       stopPropagation: () => {
       },
-      getModifierKeyState:(keys: Array<string>):boolean => {
+      getModifierKeyState: (keys: Array<string>): boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }

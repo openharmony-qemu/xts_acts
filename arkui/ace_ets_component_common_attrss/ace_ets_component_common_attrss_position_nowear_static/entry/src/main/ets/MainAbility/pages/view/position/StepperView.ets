@@ -50,16 +50,14 @@ function itemTextStyle(this: TextAttribute): this {
 }
 @Component
 export struct StepperView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: Int= 0
+  @State currentIndex: Int= 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
-  private _position: Position = { x: 0, y: 0 } as Position; 
+  @Link _position!: Position;
   private componentKey: string = '';
-  onPageShow() {
-    console.info('[StepperView] page show called ' + this.componentKey)
-  }
+
   build() {
     Stepper({
       index: this.currentIndex

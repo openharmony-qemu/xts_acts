@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025 Hunan OpenValley Digital Industry Development Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -14,7 +14,7 @@
 */
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-
+// 构造单例对象
 export class GlobalContext {
   private constructor() {
   }
@@ -28,11 +28,11 @@ export class GlobalContext {
     return GlobalContext.instance;
   }
 
-  getObject(value: string, tType: Type): Object | undefined {
+  getObject(value: string): Object | undefined {
     return AppStorage.get(value);
   }
 
-  setObject(key: string, objectClass: Object, tType: Type): void {
+  setObject(key: string, objectClass: Object): void {
     AppStorage.setOrCreate(key, objectClass);
   }
 }

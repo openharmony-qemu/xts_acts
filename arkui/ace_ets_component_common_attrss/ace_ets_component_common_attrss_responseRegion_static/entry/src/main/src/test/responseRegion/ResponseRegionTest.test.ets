@@ -15,7 +15,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
-import { describe, beforeAll, expect } from '../../../../hypium/index';
+import { describe, beforeAll, expect } from '../../../../hypium';
 import { UIContext } from "@ohos.arkui.UIContext";
 import { $r } from '@ohos.arkui.component'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
@@ -153,10 +153,10 @@ export default function responseRegionTest() {
   }, {
     describe: 'SetResource',
     setValue: [{
-      x: $r('app.float.50vp').toString(),
-      y: $r('app.float.50vp').toString(),
-      width: $r('app.float.200vp').toString(),
-      height: $r('app.float.200vp').toString(),
+      x: String($r('app.float.50vp')),
+      y: String($r('app.float.50vp')),
+      width: String($r('app.float.200vp')),
+      height: String($r('app.float.200vp')),
       numberX: 50,
       numberY: 50,
       numberWidth: 200,
@@ -253,24 +253,24 @@ export default function responseRegionTest() {
         expect(viewObj.getElement('$attrs').getElement('responseRegion')[0])
           .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion));
       }
-      let offsetX:number = 0;
-      let offsetY:number = 0;
-      let offsetHeight:number = 0;
-      let offsetWidth:number = 0;
-      let firstOffsetX:number = 0;
-      let firstOffsetY:number = 0;
+      let offsetX:number | undefined = 0;
+      let offsetY:number | undefined = 0;
+      let offsetHeight:number | undefined = 0;
+      let offsetWidth:number | undefined= 0;
+      let firstOffsetX:number | undefined = 0;
+      let firstOffsetY:number | undefined= 0;
       let firstOffsetWidth:number = 0;
       let firstOffsetHeight:number = 0;
-      let secondOffsetX:number = 0;
-      let secondOffsetY:number = 0;
+      let secondOffsetX:number | undefined = 0;
+      let secondOffsetY:number | undefined = 0;
       let secondOffsetWidth:number = 0;
       let secondOffsetHeight:number = 0;
       //Calculate offset and hot zone width and height
       if ('SetNumber' == data.testValue.describe) {
-        offsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].x as number);
-        offsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].y as number);
-        offsetWidth = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].width as number);
-        offsetHeight = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].height as number);
+        offsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].x) as number);
+        offsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].y) as number);
+        offsetWidth = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].width) as number);
+        offsetHeight = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].height) as number);
       } else if ('SetStringPx' == data.testValue.describe) {
         offsetX = (data.testValue.setValue[0].numberPxX as number);
         offsetY = (data.testValue.setValue[0].numberPxY as number);
@@ -282,23 +282,23 @@ export default function responseRegionTest() {
         offsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
         offsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
       } else if ('SetResource' == data.testValue.describe) {
-        offsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberX as number);
-        offsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberY as number);
-        offsetWidth = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberWidth as number);
-        offsetHeight = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberHeight as number);
+        offsetX = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberX));
+        offsetY = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberY));
+        offsetWidth = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberWidth));
+        offsetHeight = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberHeight));
       } else if (('SetIntraArea' == data.testValue.describe) ||
         ('SetOutsideArea' == data.testValue.describe)) {
-        offsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].x as number);
-        offsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].y as number);
+        offsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].x) as number);
+        offsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].y) as number);
         offsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
         offsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
       } else if ('SetMultiArea' == data.testValue.describe) {
-        firstOffsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].x as number);
-        firstOffsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].y as number);
+        firstOffsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].x) as number);
+        firstOffsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].y) as number);
         firstOffsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
         firstOffsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
-        secondOffsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[1].x as number);
-        secondOffsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[1].y as number);
+        secondOffsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[1].x) as number);
+        secondOffsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[1].y) as number);
         secondOffsetWidth = rectWidth * (data.testValue.setValue[1].ratioWidth as number);
         secondOffsetHeight = rectHeight * (data.testValue.setValue[1].ratioHeight as number);
       } else {
@@ -306,24 +306,24 @@ export default function responseRegionTest() {
       }
       if ('SetMultiArea' == data.testValue.describe) {
         //Click on the center point of multiple hot areas
-        let xPoint = Number(Number(rect.left + firstOffsetX + firstOffsetWidth / 2).toFixed(0));
-        let yPoint = Number(Number(rect.top + firstOffsetY + firstOffsetHeight / 2).toFixed(0));
+        let xPoint = Number(Number(rect.left + (firstOffsetX as number) + (firstOffsetWidth as number) / 2).toFixed(0));
+        let yPoint = Number(Number(rect.top + (firstOffsetY as number) + (firstOffsetHeight as number) / 2).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
         await clickPoint(data, xPoint, yPoint);
 
-        xPoint = Number(Number(rect.left + secondOffsetX + secondOffsetWidth / 2).toFixed(0));
-        yPoint = Number(Number(rect.top + secondOffsetY + secondOffsetHeight / 2).toFixed(0));
+        xPoint = Number(Number(rect.left + (secondOffsetX as number) + (secondOffsetWidth as number) / 2).toFixed(0));
+        yPoint = Number(Number(rect.top + (secondOffsetY as number) + (secondOffsetHeight as number) / 2).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
         await clickPoint(data, xPoint, yPoint);
         //Click on the outer points of multiple hotspot areas
-        if ((rect.left + firstOffsetX + firstOffsetWidth) >= (rect.left + secondOffsetX + secondOffsetY)) {
-          xPoint = Number(Number(rect.left + firstOffsetX + firstOffsetWidth + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
-          yPoint = Number(Number(rect.top + firstOffsetY + firstOffsetHeight + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
+        if ((rect.left + (firstOffsetX as number) + (firstOffsetWidth as number)) >= (rect.left + (secondOffsetX as number) + (secondOffsetY as number))) {
+          xPoint = Number(Number(rect.left + (firstOffsetX as number) + (firstOffsetWidth as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
+          yPoint = Number(Number(rect.top + (firstOffsetY as number) + (firstOffsetHeight as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
         } else {
-          xPoint = Number(Number(rect.left + secondOffsetX + secondOffsetWidth + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
-          yPoint = Number(Number(rect.top + secondOffsetY + secondOffsetHeight + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
+          xPoint = Number(Number(rect.left + (secondOffsetX as number) + (secondOffsetWidth as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
+          yPoint = Number(Number(rect.top + (secondOffsetY as number) + (secondOffsetHeight as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
         }
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
@@ -331,20 +331,20 @@ export default function responseRegionTest() {
         await eventResult(data, notClick);
       } else {
         //Click on the center point of the hotspot area
-        let xPoint:number = Number(Number(rect.left + offsetX + offsetWidth / 2).toFixed(0));
+        let xPoint:number = Number(Number(rect.left + (offsetX as number) + (offsetWidth as number) / 2).toFixed(0));
         let yPoint:number = 0;
         if ('Panel' == data.pageConfig.componentKey) {
-             // dragbar has height and do not reponse click event when click the dragbar  drgabar height = UIContext.getFocusedUIContext()!.vp2px(24)
-             yPoint = Number(Number(rect.top + offsetY + 20 ).toFixed(0));
+          // dragbar has height and do not reponse click event when click the dragbar  drgabar height = uiContext.vp2px(24)
+          yPoint = Number(Number(rect.top + (offsetY as number) + 20 ).toFixed(0));
         } else {
-             yPoint = Number(Number(rect.top + offsetY + offsetHeight / 2).toFixed(0));
+          yPoint = Number(Number(rect.top + (offsetY as number) + (offsetHeight as number) / 2).toFixed(0));
         }
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
         await clickPoint(data, xPoint, yPoint);
         //Click on the outer point of the hotspot area
-        xPoint = Number(Number(rect.left + offsetX + offsetWidth + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
-        yPoint = Number(Number(rect.top + offsetY + offsetHeight + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
+        xPoint = Number(Number(rect.left + (offsetX as number) + (offsetWidth as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
+        yPoint = Number(Number(rect.top + (offsetY as number) + (offsetHeight as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
         await Utils.performClickPoint(xPoint, yPoint);

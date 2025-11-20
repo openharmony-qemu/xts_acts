@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,133 +13,38 @@
  * limitations under the License.
  */
 
+import { attrsManager  }  from '../../common/AttrsManager';
+import { RouterParams , SetValue } from '../../common/Utils';
+import router from '@ohos.router'
 import {
   Entry,
-  Component,
-  $r,
-  AlignRuleOption,
-  Row,
-  Button,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  SwiperController,
-  Column,
-  ColumnOptions,
-  ClickEvent,
-  RowOptions,
-  LazyForEach,
-  Text,
-  FlexAlign,
-  TextCase,
-  TextDecorationType,
-  Resource,
-  VerticalAlign,
-  HorizontalAlign,
-  RelativeContainer,
-  Color,
-  Scroller,
-  Menu,
-  ScrollBar,
-  TextTimer,
-// Navigator,
-  ColumnSplit,
-  RowSplit,
-  Refresh,
-// Panel,
-  Shape,
-  Rect,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Ellipse,
-  Circle,
-  WaterFlow,
-  Tabs,
-  Swiper,
-  Stack,
-  SideBarContainer,
-  Scroll,
-  List,
-  GridRow,
-  Grid,
-  Flex,
-  Counter,
-  Badge,
-  Toggle,
-  TimePicker,
-  TextPicker,
-  TextInput,
-  TextClock,
-  TextArea,
-  Slider,
-  Search,
-  Rating,
-  QRCode,
-  Progress,
-  AlphabetIndexer,
-  ImageAnimator,
-  Image,
-Navigation,
-  Marquee,
-  LoadingProgress,
-  Gauge,
-  Divider,
-  DatePicker,
-  DataPanel,
-  CheckboxGroup,
-  Checkbox,
-  Select,
-  Radio,
-  MenuItem,
-  ProgressType,
-  ToggleType,
-  ForEach,
-  GridRowDirection,
-  BarState,
-  SideBarContainerType,
-  TextAlign,
-  GridItem,
-  BadgeStyle,
-  BadgeParamWithString,
-  GutterOption,
-  BreakPoints,
-  BreakpointsReference,
-  GridCol,
-  GridColOptions,
-  GridColColumnOption,
-  ColumnOptions,
-  // Point,
-  MenuItemOptions,
-  MenuItemGroupOptions,
-  Padding,
-  Blank,
-  RichText,
-  Stepper,
-  StepperItem,
-  MenuItemGroup,
-// NavPathStack
-} from '@ohos.arkui.component';
+  Component,Navigation,
+  Text,CommonMethod,applyStyles,
+  AlphabetIndexer,Checkbox,CheckboxGroup,DataPanel,DatePicker,Divider,Gauge,ImageAnimator,LoadingProgress,Marquee,Menu,
+  Progress,QRCode,Radio,Rating,ScrollBar,Stepper,Select,Slider,TextArea,TextClock,TextInput,TextPicker,TextTimer,TimePicker,Toggle,Badge,
+  Counter,GridRow,Grid,List,RelativeContainer,Row,Refresh,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,
+  Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,ColumnSplit,RowSplit,Blank
+,Builder,Button,DataPanelType,Color,Image,MenuItem,ProgressType,BarState,StepperItem,Search,SliderStyle,Axis,ToggleType,Column,Flex,GridRowDirection,GridCol
+,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
+  AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection
+,Padding,Web,WebviewController,RichText,MenuItemGroup,GridRowOptions,GutterOption,RefreshOptions,ForEach,BreakpointsReference,BreakPoints,ListOptions,
+  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions
+} from '@ohos.arkui.component'
 import {
   State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { attrsManager, EN } from '../../common/AttrsManager';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+  AppStorage
+} from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-import inspector from '@ohos.arkui.inspector';
-
-class View {
-  targetView: string = '';
-  componentKey: string = '';
-  parentBackGroundColor: string = '';
-  parentComponentKey: string = '';
+import { Color } from '@ohos.arkui.component'
+interface ViewOption {
+  targetView: string
+  componentKey: string
+  parentBackGroundColor: Color
+  parentComponentKey: string
 }
-
-class RouterParams {
-  view: View = new View()
+interface RouterParamOptions {
+  view: ViewOption
 }
 @Entry
 @Component
@@ -151,64 +56,72 @@ struct PaddingPage_Length {
   //Use for AlphabetIndexer,TextPicker.
   private value: string[] = ['#', 'A', 'B'];
   //Use for Scroll,Grid,DataPanel.
-  public valueArr: Array<number> = new Array<number>(5, 10, 10, 7, 9, 10, 10, 10, 10);
-  @State _padding: number | string | Resource = 0.0;
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
-  @State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
+  public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>;
+  @State _padding: number | string | Padding = 0 as number;
+  @State targetView: string = ''
+  @State componentKey: string = ''
+  @State parentBackGroundColor: Color = Color.Pink
+  @State parentComponentKey: string = ''
 
   onPageShow() {
     console.info('padding page show called ')
-    attrsManager.registerDataChange((value: EN) => {
-      this._padding = value.padding
+    attrsManager.registerDataChange((value: SetValue) => {
+      this._padding = value.padding as Padding
     })
+
+    try {
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
+      this.parentComponentKey = routerParamOptions.view.parentComponentKey
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
-
-  // @Styles
-  // commonStyle(){
-  //   .padding(this._padding)
-  //   .key(this.componentKey)
-  // }
-
+ 
+  commonStyle(instance: CommonMethod) {
+    instance.padding(this._padding)
+    instance.key(this.componentKey)
+  }
   build() {
     Row() {
       if (this.targetView == 'AlphabetIndexer') {
-        AlphabetIndexer({ arrayValue: this.value, selected: 0 })/* .commonStyle() */
+        AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Text') {
-        Text('1')/* .commonStyle() */
+        Text('1').applyStyles(this.commonStyle)
       } else if (this.targetView == 'Button') {
-        Button('1')/* .commonStyle() */
+        Button('1').applyStyles(this.commonStyle)
       } else if (this.targetView == 'BlankRow') {
-        Blank().color(Color.Red)/* .commonStyle() */
+        Blank().color(Color.Red).applyStyles(this.commonStyle)
       } else if (this.targetView == 'BlankColumn') {
         Column() {
-          Blank().color(Color.Orange)/* .commonStyle() */
+          Blank().color(Color.Orange).applyStyles(this.commonStyle)
         }
       } else if (this.targetView == 'Checkbox') {
         Checkbox().backgroundColor(Color.Orange)
-        /* .commonStyle() */
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'CheckboxGroup') {
         CheckboxGroup({ group: 'checkboxGroup' })
-          /* .commonStyle() */
+          .applyStyles(this.commonStyle)
           .backgroundColor(Color.Orange)
           .margin(0)
       } else if (this.targetView == 'DataPanel') {
-        DataPanel({ values: this.valueArr })/* .commonStyle() */
+        DataPanel({ values: this.valueArr }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'DatePicker') {
         DatePicker({
           start: new Date('1970-1-1'),
           end: new Date('2100-1-1'),
-        })/* .commonStyle() */
+        }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Divider') {
-        Divider().strokeWidth(8).color(Color.Red)/* .commonStyle() */
+        Divider().strokeWidth(8).color(Color.Red).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Gauge') {
         Gauge({ value: 105 })
-          /* .commonStyle() */
+          .applyStyles(this.commonStyle)
           .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
       } else if (this.targetView == 'Image') {
         Image($r('app.media.icon'))
-          /* .commonStyle() */
+          .applyStyles(this.commonStyle)
           .height(110)
           .backgroundColor(Color.Red)
       } else if (this.targetView == 'ImageAnimator') {
@@ -217,112 +130,115 @@ struct PaddingPage_Length {
             {
               src: $r('app.media.icon')
             }
-          ])/* .commonStyle() */
+          ]).applyStyles(this.commonStyle)
       } else if (this.targetView == 'LoadingProgress') {
-        LoadingProgress().backgroundColor(Color.Red)/* .commonStyle() */
+        LoadingProgress().backgroundColor(Color.Red).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Marquee') {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as int,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: this.src
-        })/* .commonStyle() */
+        }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Navigation') {
-        Navigation({})/* .commonStyle() */
-      } else if (this.targetView == 'NavRouter') {
-        // NavRouter()/* .commonStyle() */
+        Navigation({}).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Stepper') {
         Stepper() {
           StepperItem()
-        }/* .commonStyle() */
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'StepperItem') {
         Stepper() {
-          StepperItem()/* .commonStyle() */
+          StepperItem().applyStyles(this.commonStyle)
         }
       } else if (this.targetView == 'Progress') {
-        Progress({ value: 10, type: ProgressType.Eclipse })/* .commonStyle() */
+        Progress({ value: 10, type: ProgressType.Eclipse }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'QRCode') {
-        QRCode(this.src)/* .commonStyle() */
+        QRCode(this.src).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Radio') {
         Radio({ value: 'Radio1', group: 'radioGroup' }).checked(true)
-          /* .commonStyle() */
+          .applyStyles(this.commonStyle)
           .backgroundColor(Color.Red)
       } else if (this.targetView == 'Rating') {
         Rating({ rating: 3.5 })
-        /* .commonStyle() */
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'RichText') {
         RichText('RichText')
-        /* .commonStyle() */
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'ScrollBar') {
         ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
           Text()
             .width(10)
             .height(50)
             .backgroundColor('#C0C0C0')
-        }/* .commonStyle() */
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Search') {
         Search()
-        /* .commonStyle() */
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Select') {
         Select([{ value: 'aaa' },
           { value: 'bbb' }])
-        /* .commonStyle() */
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Slider') {
         Slider({
           value: 50,
-        }).showTips(true)/* .commonStyle() */
+        }).showTips(true).applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextArea') {
         TextArea({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-        }).placeholderFont({ size: 16, weight: 400 })/* .commonStyle() */
+        }).placeholderFont({ size: 16, weight: 400 }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextClock') {
-        TextClock({ timeZoneOffset: -8 }).format('hms')/* .commonStyle() */
+        TextClock({ timeZoneOffset: -8 }).format('hms').applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextInput') {
-        TextInput({ placeholder: 'input your word...' })/* .commonStyle() */.height(40)
+        TextInput({ placeholder: 'input your word...' }).applyStyles(this.commonStyle)
+          .height(40)
       } else if (this.targetView == 'TextPicker') {
-        TextPicker({ range: this.value })/* .commonStyle() */
+        TextPicker({ range: this.value }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextTimer') {
-        TextTimer({ isCountDown: true, count: 30000 }).format('mm:ss.SS')/* .commonStyle() */
+        TextTimer({ isCountDown: true, count: 30000 }).format('mm:ss.SS').applyStyles(this.commonStyle)
       } else if (this.targetView == 'TimePicker') {
         TimePicker({
           selected: this.selectedTime,
-        }).useMilitaryTime(true)/* .commonStyle() */
+        }).useMilitaryTime(true).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Toggle') {
-        Toggle({ type: ToggleType.Switch, isOn: false })/* .commonStyle() */
+        Toggle({ type: ToggleType.Switch, isOn: false }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Web') {
-        // Web({ src: 'www.example.com', controller: new WebController() })/* .commonStyle() */
+        Web({ src: 'www.example.com', controller: new WebviewController() }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Circle') {
-        Circle()/* .commonStyle() */
+        Circle().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Ellipse') {
-        Ellipse()/* .commonStyle() */
+        Ellipse().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Line') {
         Line()
           .startPoint([0, 0])
           .endPoint([50, 100])
-        /* .commonStyle() */
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Polyline') {
         Polyline()
-          /* .commonStyle() */
-          .points([[0, 0], [20, 60], [100, 100]])
+          .applyStyles(this.commonStyle)
+          .points([
+            [20, 0], [0, 100], [100, 90]
+          ])
       } else if (this.targetView == 'Polygon') {
         Polygon()
-          /* .commonStyle() */
+          .applyStyles(this.commonStyle)
           .height(100)
-          .points([[50, 0], [0, 50], [20, 100], [80, 100], [100, 50]])
+          .points([
+            [0, 0], [0, 100], [100, 100], [100, 0]
+          ])
       } else if (this.targetView == 'Path') {
-        Path()/* .commonStyle() */
+        Path().applyStyles(this.commonStyle)
       } else if (this.targetView == 'Rect') {
         Rect()
-        /* .commonStyle() */
+          .applyStyles(this.commonStyle)
       } else if (this.targetView == 'Shape') {
         Shape() {
           Rect().width(100).height(50)
-        }/* .commonStyle() */
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-        }.backgroundColor(Color.Yellow)/* .commonStyle() */
+        }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
       } else if (this.targetView == 'MenuItem') {
         Row() {
           Menu() {

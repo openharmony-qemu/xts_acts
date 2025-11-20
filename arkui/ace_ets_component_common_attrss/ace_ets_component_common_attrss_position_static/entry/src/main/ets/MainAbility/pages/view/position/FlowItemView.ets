@@ -25,17 +25,15 @@ import {
   Position
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
-import { SetValue } from "../../../common/Utils"
 
 @Component
 export struct FlowItemView {
-  @Link _position!: SetValue;
+  @Link _position!: Position;
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;
   private parentComponentKey: string = '';
   private referenceComponentKey: string = '';
-
 
   build() {
     Column({ space: 2 } as ColumnOptions) {
@@ -47,7 +45,7 @@ export struct FlowItemView {
         }
         .width('100%')
         .height('100%')
-        .position({x:this._position.x, y:this._position.y} as Position)
+        .position(this._position)
         .backgroundColor(Color.White)
         .key(this.componentKey)
 

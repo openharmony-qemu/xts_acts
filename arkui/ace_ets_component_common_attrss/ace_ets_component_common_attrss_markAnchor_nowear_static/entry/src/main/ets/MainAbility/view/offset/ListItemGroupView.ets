@@ -92,7 +92,7 @@ export struct ListItemGroupView {
       .borderRadius(20)
       .offset(this._offset)
       .key(this.componentKey)
-      .divider({ strokeWidth: 1, color: Color.Blue }) 
+      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
 
       ListItemGroup({
         header: ()=>{this.itemHead('Tuesday')},
@@ -106,7 +106,7 @@ export struct ListItemGroupView {
       }
       .borderRadius(20)
       .key(this.referenceComponentKey)
-      .divider({ strokeWidth: 1, color: Color.Blue }) 
+      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
     }
     .width(this.parentWidth)
     .height(this.parentHeight)

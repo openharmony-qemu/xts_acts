@@ -20,7 +20,7 @@ import {
   TimePicker,TextPicker,StepperItem,Stepper,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,
   FlexAlign,ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,
   GridColColumnOption,TextTimerController,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,PatternLock,Progress,QRCode,RichText,ScrollBar,TextClock,TextTimer,Badge,
-  WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,applyStyles,Line,Polyline,Polygon,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,HorizontalAlign,AlignRuleOption
+  WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,applyStyles,Line,Polyline,Polygon,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,HorizontalAlign
 } from '@ohos.arkui.component'
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
@@ -38,10 +38,10 @@ struct OnAppearPage {
   @State compareTextKey: string = ''
   @State targetWidth: number = 200
   @State targetHeight: number = 200
-  textTimerController: TextTimerController = new TextTimerController() 
+  textTimerController: TextTimerController = new TextTimerController() //Use by TextTimer
   private scroller: Scroller = new Scroller()
-  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; 
-  private src: string = 'Running Marquee starts rolling A B C D E F G H I J'; 
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; //Use by AlphabetIndexer TextPicker
+  private src: string = 'Running Marquee starts rolling A B C D E F G H I J'; //Use by Marquee QRCode
 
   onPageShow() {
     console.info('OnAppearPage show called ')
@@ -54,8 +54,8 @@ struct OnAppearPage {
       this.compareTextKey = routerParamOptions.view.compareTextKey
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
-    } catch (e) {
-      console.log(' routerParamOptions error ' + e);
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
     }
   }
 
@@ -73,7 +73,7 @@ struct OnAppearPage {
       console.info('this.changeAppear:' + this.changeAppear);
     })
   }
-  
+  //Draw screen
   build() {
     Row() {
       Text(this.changeAppear).key(this.compareTextKey)
@@ -318,7 +318,7 @@ struct OnAppearPage {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            } as AlignRuleOption)
+            })
             .id('OnAppear')
         }
         .backgroundColor(Color.Pink)

@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { expect, it, Level, Size, TestType } from '../../../../hypium';
 import inspector from '@ohos.arkui.inspector';
-
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+import { SizeOptions } from '@ohos.arkui.component'
+import {AppStorage } from '@ohos.arkui.stateManagement'
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
   /**
@@ -32,14 +32,14 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
+      let lastIndex: int = 0;
+      testValues.forEach((temp: TestValue, index: int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index) => {
+      testValues.forEach((testValue: TestValue, index: int) => {
 
         //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
@@ -50,7 +50,7 @@ export default class CommonTest {
           }
 
           //Create case name.
-          let caseTag = pageConfig.testName + targetView + testValue.describe;
+          let caseTag = pageConfig.testName + targetView + '_static_' + testValue.describe;
 
           //If there is a specified container view.
           let containerView = '';
@@ -74,6 +74,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
+            console.log('test start, push page success')
             try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
@@ -93,25 +94,18 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              if (funcs.length > 1) {
-                let customParams = await (functions[0] as CallbackWithReturn)(data);
-                //Set custom params to data, can be used by check test result.
-                if (customParams) {
-                  data.customParams = customParams;
-                }
-              } else {
-                //If there is only an assertion function, automatically modify the status value
-                console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
-                await Utils.sleep(1000);
-              }
-
+              console.info('setValue : ' + JSON.stringify(data.testValue.setValue));
+              console.info('setValue : ' + JSON.stringify(data.testValue.expectValue));
+              AppStorage.setOrCreate<SizeOptions>('_size', data.testValue.setValue);
+              await Utils.sleep(1000);
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-              // data.viewObj = JSON.parse(strJson);
-              await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
+              await Utils.sleep(1000);
+              console.log('strJsonstrJsonstrJsonstrJson',strJson)
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err) {
+            } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);

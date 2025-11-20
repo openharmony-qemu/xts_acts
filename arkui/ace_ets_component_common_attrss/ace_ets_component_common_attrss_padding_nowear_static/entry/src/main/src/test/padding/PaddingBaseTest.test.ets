@@ -15,7 +15,7 @@
 import Utils , { BasePageConfig, PageConfig, TestValue, RectValue,RectValueExpect }  from '../../../ets/MainAbility/common/Utils';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect, beforeAll } from '../../../../hypium'
 import { $r } from '@ohos.arkui.component'
 import {
   Color
@@ -34,35 +34,18 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default function paddingTest() {
-  
+  //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',
     'StepperItem',
     'Web')
 
-  
+  //Called from the parent class when setting the background color.
   let parentBackGroundColor = Color.Yellow
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testPaddingBase',
     pageName: 'PaddingBasePage',
@@ -71,7 +54,7 @@ export default function paddingTest() {
     parentComponentKey: 'parentComponentKey'
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [
     {
       describe: 'SetPadding',
@@ -147,9 +130,9 @@ export default function paddingTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       AttrsManager.change(data.caseTag, {
         padding: {
           left: 0, right: 0, top: 0, bottom: 0
@@ -157,37 +140,37 @@ export default function paddingTest() {
       });
       await Utils.sleep(1000);
 
-      
+      //Modify the target component properties.
       AttrsManager.change(data.caseTag, data.testValue.setValue);
       await Utils.sleep(1000);
 
-      
+      //Obtain dimensional information for target components.
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[' + data.caseTag + '] viewObj.getElement($attrs).getElement(padding):' + viewObj.getElement('$attrs').getElement('padding'));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.padding:' + data.testValue.expectValue.padding);
 
       if (data.testValue.describe == 'SetPaddingTop') {
-        
+        //Verify the method of setting top separately.
         console.info('[' + data.caseTag + '] JSON.parseJsonElement(viewObj.getElement($attrs).getElement(padding)).top:'
           + viewObj.getElement('$attrs').getElement('padding').getString('top'));
         expect(viewObj.getElement('$attrs').getElement('padding').getString('top')).assertEqual((data.testValue.expectValue.padding as RectValueExpect).top);
       } else if (data.testValue.describe == 'SetPaddingRight') {
-        
+        //Verify the method of setting right separately.
         console.info('[' + data.caseTag + '] JSON.parseJsonElement(viewObj.getElement($attrs).getElement(padding)).right:'
           + viewObj.getElement('$attrs').getElement('padding').getString('right'));
         expect(viewObj.getElement('$attrs').getElement('padding').getString('right')).assertEqual((data.testValue.expectValue.padding as RectValueExpect).right);
       } else if (data.testValue.describe == 'SetPaddingBottom') {
-        
+        //Verify the method of setting bottom separately.
         console.info('[' + data.caseTag + '] JSON.parseJsonElement(viewObj.getElement($attrs).getElement(padding)).bottom:'
           + viewObj.getElement('$attrs').getElement('padding').getString('bottom'));
         expect(viewObj.getElement('$attrs').getElement('padding').getString('bottom')).assertEqual((data.testValue.expectValue.padding as RectValueExpect).bottom);
       } else if (data.testValue.describe == 'SetPaddingLeft') {
-        
+        //Verify the method of setting left separately.
         console.info('[' + data.caseTag + '] JSON.parseJsonElement(viewObj.getElement($attrs).getElement(padding)).left:'
           + viewObj.getElement('$attrs').getElement('padding').getString('left'));
         expect(viewObj.getElement('$attrs').getElement('padding').getString('left')).assertEqual((data.testValue.expectValue.padding as RectValueExpect).left);
       } else if (data.testValue.describe == 'SetPadding') {
-        
+        //Method for verifying the setting of padding.
         console.info('[' + data.caseTag + '] viewObj.getElement($attrs).getElement(padding):' + viewObj.getElement('$attrs').getElement('padding'));
         expect(viewObj.getElement('$attrs').getElement('padding')).assertEqual(JSON.stringify(data.testValue.expectValue.padding));
       }

@@ -22,17 +22,15 @@ import {
   FontWeight
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
-import { SetValue } from "../../../common/Utils"
 
 @Component
 export struct AlphabetIndexerView {
-  @Link _position!: SetValue;
+  @Link _position!: Position;
   private componentKey: string = '';
   private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
     'H', 'I', 'J', 'K', 'L', 'M', 'N',
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z']
-
 
   build() {
     AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
@@ -45,7 +43,7 @@ export struct AlphabetIndexerView {
       .popupFont({ size: 30, weight: FontWeight.Bolder })
       .itemSize(28)
       .alignStyle(IndexerAlign.Left)
-      .position({x:this._position.x, y:this._position.y} as Position)
+      .position(this._position)
       .key(this.componentKey)
   }
 }

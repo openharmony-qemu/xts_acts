@@ -35,7 +35,7 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 export struct TabsView {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @Link _position!: Position;
   private componentKey: string = '';

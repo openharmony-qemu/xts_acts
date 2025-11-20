@@ -53,11 +53,11 @@ function itemTextStyle(this: TextAttribute): this {
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: Int= 0
+  @State currentIndex: Int= 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
-  private _position: Position = { x: 0, y: 0 } as Position;
+  @Link _position!: Position;
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;

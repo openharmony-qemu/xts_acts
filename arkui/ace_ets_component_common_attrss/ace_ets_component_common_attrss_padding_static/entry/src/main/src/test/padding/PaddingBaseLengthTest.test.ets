@@ -12,11 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect, beforeAll } from '../../../../hypium';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, Color, $r } from '@ohos.arkui.component';
 import { jsonx } from "std/core";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -29,19 +28,6 @@ import {UtilsTest} from '../Util.test'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   parentBackGroundColor: Color = Color.White;
-//   parentComponentKey: string = '';
-// }
-//
-// class TestValues {
-//   describe: string = '';
-//   setValue: jsonx.JsonElement;
-//   expectValue: jsonx.JsonElement;
-// }
 
 /**
  * Test of common attribute: padding
@@ -53,8 +39,6 @@ export default function paddingTest() {
     'Button',
     'BlankRow',
     'BlankColumn',
-    //    'Checkbox',
-    //    'CheckboxGroup',
     'DataPanel',
     'DatePicker',
     'Divider',
@@ -67,7 +51,6 @@ export default function paddingTest() {
     'NavRouter',
     'Progress',
     'QRCode',
-    //    'Radio',
     'ScrollBar',
     'Rating',
     'Search',
@@ -79,7 +62,6 @@ export default function paddingTest() {
     'TextPicker',
     'TextTimer',
     'TimePicker',
-    //    'Toggle',
     'Circle',
     'Ellipse',
     'Polyline',

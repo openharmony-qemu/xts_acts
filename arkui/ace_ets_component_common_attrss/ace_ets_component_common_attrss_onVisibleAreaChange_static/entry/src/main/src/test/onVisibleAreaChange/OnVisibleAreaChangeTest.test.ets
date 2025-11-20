@@ -26,7 +26,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, expect,beforeAll } from '../../../../hypium/index';
+import { describe, expect,beforeAll } from '../../../../hypium';
 import {UtilsTest} from '../Util.test'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -52,8 +52,6 @@ export default function onVisibleAreaChangeTest() {
     'MenuItem',
     'MenuItemGroup',
     'Navigation',
-    'NavRouter',
-
     'PatternLock',
     'Progress',
     'QRCode',
@@ -97,22 +95,6 @@ export default function onVisibleAreaChangeTest() {
 
   //Test content and expected results
   let testValues: TestValue[] = [
-  //    {
-  //    describe: 'Normal',
-  //    setValue: {
-  //      leave: {
-  //        yOffSetValueLeave: 200,
-  //        ratiosLeft: 0.2,
-  //        ratiosRight: 0.8
-  //      },
-  //      enter: {
-  //        yOffSetValueEnter: 0
-  //      }
-  //    },
-  //    expectValue: {
-  //      yOffSetMoveLength: 200
-  //    }
-  //  },
     {
       describe: 'Abnormal',
       setValue: {
@@ -132,7 +114,7 @@ export default function onVisibleAreaChangeTest() {
 
   describe('OnVisibleAreaChangeTest', () => {
     beforeAll(() => {
-      
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -168,8 +150,9 @@ CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageCo
       console.info('[' + data.caseTag + '] targetRectBefore.bottom: ' + targetRectBefore.bottom);
       console.info('[' + data.caseTag + '] targetRectLeave.bottom: ' + targetRectLeave.bottom);
       console.info('[' + data.caseTag + '] targetRectEnter.bottom: ' + targetRectEnter.bottom);
-      expect(Math.abs((targetRectBefore.bottom - targetRectLeave.bottom) - UIContext.getFocusedUIContext()!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
-      expect(Math.abs(((targetRectEnter.bottom - targetRectLeave.bottom)) - UIContext.getFocusedUIContext()!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
+      let context:UIContext = AppStorage.get<UIContext>('uiContent') as UIContext
+      expect(Math.abs((targetRectBefore.bottom - targetRectLeave.bottom) - context.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
+      expect(Math.abs(((targetRectEnter.bottom - targetRectLeave.bottom)) - context.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
       let ratiosRightNum: number = data.testValue.setValue.leave.ratiosRight as number;
       let ratiosLeftNum: number = data.testValue.setValue.leave.ratiosLeft as number;
 
@@ -218,21 +201,21 @@ CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageCo
 
 async function checkNormalLeaveResults(data: BasePageConfig, compareTextObj: string[], ratiosRightNum: number) {
   console.info('[' + data.caseTag + '] checkNormalLeaveResults');
-  for (let num = 0; num <= compareTextObj.length; num++) {
+  for (let num: int = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
-      let compareText: CurrentRatio = JSON.parse<Object>(compareTextObj[num],Type.of(new String() as Object)) as CurrentRatio
+      let compareText = JSON.parseJsonElement(compareTextObj[num])
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).currentRatio:' +
-      compareText.currentRatio);
+      compareText.getDouble('currentRatio'));
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).isVisible:' +
-      compareText.isVisible);
-      if (compareText.currentRatio > ratiosRightNum) {
-        expect(compareText.isVisible).assertEqual('true');
-      } else if (compareText.currentRatio < ratiosRightNum) {
-        expect(compareText.isVisible).assertEqual('false');
+      compareText.getString('isVisible'));
+      if (compareText.getDouble('currentRatio') > ratiosRightNum) {
+        expect(compareText.getString('isVisible')).assertEqual('true');
+      } else if (compareText.getDouble('currentRatio') < ratiosRightNum) {
+        expect(compareText.getString('isVisible')).assertEqual('false');
       } else {
         console.info('[' + data.caseTag + '] Leave currentRatio is error:' +
-        compareText.currentRatio);
+        compareText.getDouble('currentRatio'));
       }
     }
   }
@@ -240,21 +223,21 @@ async function checkNormalLeaveResults(data: BasePageConfig, compareTextObj: str
 
 async function checkNormalEnterResults(data: BasePageConfig, compareTextObj: string[], ratiosLeftNum: number) {
   console.info('[' + data.caseTag + '] checkNormalEnterResults');
-  for (let num = 0; num <= compareTextObj.length; num++) {
+  for (let num: int = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
-      let compareText: CurrentRatio = JSON.parse<Object>(compareTextObj[num],Type.of(new String() as Object)) as CurrentRatio
+      let compareText = JSON.parseJsonElement(compareTextObj[num])
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).currentRatio:' +
-      compareText.currentRatio);
+      compareText.getDouble('currentRatio'));
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).isVisible:' +
-      compareText.isVisible);
-      if (compareText.currentRatio > ratiosLeftNum) {
-        expect(compareText.isVisible).assertEqual('true');
-      } else if (compareText.currentRatio < ratiosLeftNum) {
-        expect(compareText.isVisible).assertEqual('false');
+      compareText.getString('isVisible'));
+      if (compareText.getDouble('currentRatio') > ratiosLeftNum) {
+        expect(compareText.getString('isVisible')).assertEqual('true');
+      } else if (compareText.getDouble('currentRatio') < ratiosLeftNum) {
+        expect(compareText.getString('isVisible')).assertEqual('false');
       } else {
         console.info('[' + data.caseTag + '] Enter currentRatio is error:' +
-        compareText.currentRatio);
+        compareText.getDouble('currentRatio'));
       }
     }
   }
@@ -262,13 +245,12 @@ async function checkNormalEnterResults(data: BasePageConfig, compareTextObj: str
 
 async function checkAbnormalResults(data: BasePageConfig, compareTextObj: string[]) {
   console.info('[' + data.caseTag + '] checkAbnormalResults');
-  for (let num = 0; num <= compareTextObj.length; num++) {
+  for (let num: int = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
-      let compareText: CurrentRatio = JSON.parse<Object>(compareTextObj[num],Type.of(new String() as Object)) as CurrentRatio
-      console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
+      let compareText = JSON.parseJsonElement(compareTextObj[num])
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).currentRatio:' +
-      compareText.currentRatio);
-      expect((compareText.currentRatio >= 0) && (compareText.currentRatio <= 1)).assertEqual(true);
+      compareText.getDouble('currentRatio'));
+      expect((compareText.getDouble('currentRatio') >= 0) && (compareText.getDouble('currentRatio') <= 1)).assertEqual(true);
     }
   }
 }

@@ -15,9 +15,9 @@
 
 import {
   Component,
-  Text,
+  Text,Flex,
   Row,
-  ClickEvent,
+  ClickEvent,FlexDirection,
   Column,
   List,
   ListItem,
@@ -35,49 +35,45 @@ import {
   NavPathStack
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
-import { SetValue } from "../../../common/Utils"
-
 
 @Component
 export struct NavigationView {
   private arr: number[] = [0, 1, 2, 3] as number[]
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _position!: SetValue;
+  @Link _position!: Position;
   private componentKey: string = '';
 
   build() {
     Navigation(new NavPathStack()) {
       List({ space: 12, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: int) => {
+        ForEach(this.arr, (item: number, index: Int) => {
           ListItem() {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            Column() {
+              Row() {
+                Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
+                Text(`NavRouter${item + 1}`)
+                  .fontSize(22)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+              }
+              .width(180)
+              .height(72)
+              .backgroundColor(this.dex === index ? '#ccc' : '#fff')
+              .borderRadius(24)
+
+              NavDestination() {
+                Text(`NavDestination${item + 1}`).fontSize(50)
+                Flex({ direction: FlexDirection.Row }) {
+                  Row() {
+                    Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+                    Text('NavDestination content').fontSize(30)
+                  }.padding({ left: 15 } as Padding)
+                }
+              }.backgroundColor('#ccc')
+              .title(`NavDestination${item + 1}`)
+            }.position(this._position)
+            .key(this.componentKey)
           }
         }, (item: number) => String(item))
       }
@@ -88,7 +84,7 @@ export struct NavigationView {
     .mode(NavigationMode.Split)
     .hideTitleBar(true)
     .hideToolBar(true)
-    .position({x:this._position.x, y:this._position.y} as Position)
+    .position(this._position)
     .key(this.componentKey)
   }
 }

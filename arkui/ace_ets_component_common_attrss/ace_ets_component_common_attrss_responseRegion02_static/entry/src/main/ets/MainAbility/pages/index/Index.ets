@@ -45,11 +45,13 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct Index {
-  aboutToAppear() {
+  aboutToAppear(){
     try {
       let router1 = this.getUIContext().getRouter();
+      let uiContext = this.getUIContext()
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

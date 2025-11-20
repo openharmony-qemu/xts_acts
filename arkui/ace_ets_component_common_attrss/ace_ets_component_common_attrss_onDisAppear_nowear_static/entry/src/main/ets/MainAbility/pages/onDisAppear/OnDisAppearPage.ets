@@ -21,12 +21,12 @@ import {
   Row,GridRow,Flex,Color,FlexAlign,ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,
   Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,TextTimerController,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,PatternLock,Progress,QRCode,RichText,ScrollBar,
   TextClock,TextTimer,Badge,WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,Line,Polyline,Polygon,CommonMethod,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,
-  HorizontalAlign,applyStyles,NavDestination,Builder,AlignRuleOption
+  HorizontalAlign,applyStyles,NavDestination,Builder
 } from '@ohos.arkui.component'
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 interface ViewOption {
   targetView: string
@@ -44,17 +44,17 @@ interface RouterParamOptions {
 @Component
 struct OnDisAppearPage {
   @State changeDisAppear: string = '';
-  @StoragePropRef("_isShow") _isShow: boolean = true;
+  @State _isShow: boolean = true;
   @State targetView: string = ''
   @State targetGroupView: string = ''
   @State componentKey: string = ''
   @State compareTextKey: string = ''
   @State targetWidth: number = 0
   @State targetHeight: number = 0
-  textTimerController: TextTimerController = new TextTimerController() 
+  textTimerController: TextTimerController = new TextTimerController() //Use by TextTimer
   private scroller: Scroller = new Scroller()
-  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; 
-  private src: string = 'Running Marquee starts rolling A B C D E F G H I J'; 
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; //Use by AlphabetIndexer TextPicker
+  private src: string = 'Running Marquee starts rolling A B C D E F G H I J'; //Use by Marquee QRCode
 
   @Builder
   myBuilder() {
@@ -68,11 +68,12 @@ struct OnDisAppearPage {
   }
   onPageShow() {
     console.info('OnDisAppearPage show called ')
-
-    AppStorage.setOrCreate<boolean>('_isShow', true)
+    attrsManager.registerDataChange((value: SetValue) => {
+      this._isShow = value.isShow
+    })
 
     try {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
     this.targetView = routerParamOptions.view.targetView
     this.targetGroupView = routerParamOptions.view.targetGroupView
     this.componentKey = routerParamOptions.view.componentKey
@@ -80,7 +81,7 @@ struct OnDisAppearPage {
     this.targetWidth = routerParamOptions.view.targetWidth
     this.targetHeight = routerParamOptions.view.targetHeight
 
-  } catch (error) {
+  } catch (error: Error) {
     console.log(' routerParamOptions error ' + error);
   }
   }
@@ -96,7 +97,7 @@ struct OnDisAppearPage {
       this.changeDisAppear = 'changeDisAppear'
     })
   }
-
+  //Draw screen
   build() {
     Row() {
       Text(this.changeDisAppear).key(this.compareTextKey)
@@ -348,7 +349,7 @@ struct OnDisAppearPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption)
+              })
               .id('OnDisAppear')
           }
           .backgroundColor(Color.Pink)
@@ -364,19 +365,19 @@ struct OnDisAppearPage {
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:int):void => {
+              ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:Int):void => {
                 Text('Scroll' + item.toString())
                   .width('90%')
                   .height(150)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: number, index:int):string => String(item))
+              }, (item: number, index:Int):string => String(item))
             }.width('100%')
           }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
-              ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
+              ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
                 Column({ space: 5 } as ColumnOptions) {
                   Image($r('app.media.icon'))
                     .width(50)
@@ -400,9 +401,9 @@ struct OnDisAppearPage {
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
-            ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
+            ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
               Text('Swiper' + item)
-            }, (item: number, index:int):string => String(item))
+            }, (item: number, index:Int):string => String(item))
           }
           .indicator(true)
           .backgroundColor(Color.Pink)

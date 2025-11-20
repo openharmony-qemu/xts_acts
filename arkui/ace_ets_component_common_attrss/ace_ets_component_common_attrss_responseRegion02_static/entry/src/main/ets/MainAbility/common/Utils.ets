@@ -16,12 +16,12 @@
 import router from '@ohos.router';
 import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, Rectangle } from '@ohos.arkui.component';
+import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
 export class RectValue {
@@ -51,18 +51,18 @@ export class SetValue{
   y: number | string = 0;
   width: number | string = 0;
   height: number | string = 0;
-  numberX: number | string = 0;
-  numberY: number | string = 0;
-  numberPxX:number | string = 0;
-  numberPxY:number | string = 0;
-  ratioX:number | string = 0;
-  ratioY:number | string = 0;
-  numberWidth: number | string = 0;
-  numberHeight: number | string = 0;
-  ratioWidth: number | string = 0;
-  ratioHeight: number | string = 0;
-  numberPxWidth: number | string = 0;
-  numberPxHeight: number | string = 0;
+  numberX: number = 0;
+  numberY: number = 0;
+  numberPxX:number = 0;
+  numberPxY:number = 0;
+  ratioX:number = 0;
+  ratioY:number = 0;
+  numberWidth: number = 0;
+  numberHeight: number = 0;
+  ratioWidth: number = 0;
+  ratioHeight: number = 0;
+  numberPxWidth: number = 0;
+  numberPxHeight: number = 0;
 }
 
 export class BasePageConfig {
@@ -133,12 +133,12 @@ export default class Utils {
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        
-        
-        
-        
-        
-        
+        // let result = await router.pushUrl({
+        //   url: obj.pageUrl,
+        //   params: {
+        //     view: obj
+        //   } as RouterParams
+        // });
         router.pushUrl({
           url: obj.pageUrl,
           params: {
@@ -146,7 +146,7 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-        
+        //console.info('push ' + obj.pageName + ' page result:' + JSON.stringify(result));
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -171,11 +171,14 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -186,7 +189,7 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
+    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
     let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
@@ -287,7 +290,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -297,7 +300,7 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -310,7 +313,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -350,7 +353,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

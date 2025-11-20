@@ -15,7 +15,7 @@
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { expect, it, Level, Size, TestType } from '../../../../hypium';
 import inspector from '@ohos.arkui.inspector';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
@@ -31,17 +31,17 @@ export default class CommonTest {
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     supportView.forEach(targetView => {
 
-      
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
+      //Obtain the last index of cases that need to be executed.
+      let lastIndex: Int = 0;
+      testValues.forEach((temp: TestValue, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index) => {
+      testValues.forEach((testValue: TestValue, index: Int) => {
 
-        
+        //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
           let currentIndex = index;
           let sharePage = true;
@@ -49,10 +49,10 @@ export default class CommonTest {
             sharePage = pageConfig.sharePage!;
           }
 
-          
+          //Create case name.
           let caseTag = pageConfig.testName + targetView + testValue.describe;
 
-          
+          //If there is a specified container view.
           let containerView = '';
           if (pageConfig.containerView != undefined) {
             containerView = pageConfig.containerView!;
@@ -67,7 +67,7 @@ export default class CommonTest {
            */
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
-            
+            //Push page.
             console.info('[' + caseTag + ']' + ' test start, push page.');
             pageConfig.targetView = targetView;
             pageConfig.componentKey = targetView;
@@ -75,7 +75,7 @@ export default class CommonTest {
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
             try {
-              
+              //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
               }
@@ -87,30 +87,30 @@ export default class CommonTest {
                 }
               }
 
-              
+              //Execute test
               let data: BasePageConfig = {
                 pageConfig: pageConfig,
                 caseTag: caseTag,
                 testValue: testValue,
               }
               if (funcs.length > 1) {
-                let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
-                
+                let customParams = await (functions[0] as CallbackWithReturn)(data);
+                //Set custom params to data, can be used by check test result.
                 if (customParams) {
                   data.customParams = customParams;
                 }
               } else {
-                
+                //If there is only an assertion function, automatically modify the status value
                 console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
                 AttrsManager.change(data.caseTag, data.testValue.setValue);
                 await Utils.sleep(1000);
               }
 
-              
+              //Check test result
               data.viewObj = Utils.getComponentByKey(pageConfig.componentKey ?? '');
               await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err) {
+            } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);

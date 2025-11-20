@@ -14,43 +14,32 @@
  */
 
 import router from '@ohos.router';
-import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, Position } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import { jsonx } from "std/core"
-import { jsonx } from "std/core";
 export class RectValue {
   left: number = 0;
   top: number = 0;
   right: number = 0;
   bottom: number = 0;
 }
-export class Attrs {
-  $attrs: AttrsContent = {}
-}
-export class AttrsContent {
-  offset?: Position;
-  content?: string;
-}
+
 export class RouterParams {
   view: PageConfig = new PageConfig()
 }
-export interface Obj {
-  $type: Array<number>
-  $rect: Array<number>
-}
+
 export class BasePageConfig {
   pageConfig: PageConfig = new PageConfig();
   testValue: TestValue = new TestValue();
   caseTag: string = '';
   customParams?: Object;
-  viewObj?: Attrs;
+  viewObj?: jsonx.JsonElement;
 }
 
 export class SetValue {
@@ -69,7 +58,7 @@ export class TestValue {
   describe: string = '';
   setValue: SetValue = {} as SetValue;
   expectValue: SetValue = {};
-  exceptView?: Array<string>;
+  exceptView: Array<string> = new Array<string>();
 }
 
 export class PageConfig {
@@ -147,7 +136,6 @@ export default class Utils {
     if (!router.getState().name.endsWith("/Index")) {
       router.back()
     }
-    AttrsManager.unRegisterDataChange();
     await Utils.sleep(1000);
     router.clear();
   }
@@ -160,11 +148,16 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
+    Utils.sleep(2000)
+    console.log('strJsonstrJsonstrJson',strJson)
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -173,24 +166,27 @@ export default class Utils {
     } as RectValue
   }
 
-  static getComponentRectByObj(obj: Obj): RectValue {
-    console.info('[getInspectorByKey] current component is: ' + obj.$type);
-    let rectInfo = JSON.parseJsonElement(JSON.stringify([obj.$rect]));
-    let rect_value: RectValue = {
-      left: rectInfo.asArray()[0].asArray()[0].asInteger() ?? 0,
-      top: rectInfo.asArray()[0].asArray()[1].asInteger() ?? 0,
-      right: rectInfo.asArray()[1].asArray()[0].asInteger() ?? 0,
-      bottom: rectInfo.asArray()[1].asArray()[1].asInteger() ?? 0,
-    };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
+  static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
+    const str = obj.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
-  static getComponentByKey(componentKey: string): Attrs {
+  static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    let obj: Attrs = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Attrs;
-    console.info('[' + componentKey + '] obj is: ' + JSON.stringify(obj));
-    return obj;
+    Utils.sleep(2000)
+    console.info('[' + componentKey + '] obj is: ' + strJson);
+    return JSON.parseJsonElement(strJson);
   }
 
   static getRectHorizontalCenterX(rect: RectValue) {
@@ -298,7 +294,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -338,7 +334,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

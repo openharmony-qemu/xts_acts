@@ -12,125 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { attrsManager as AttrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import { StepperView } from '../../view/alignRules/StepperView';
 import {
-  MenuItemGroup,
-  MenuItemGroupOptions,
-  ImageFit,
-  FlowItem,
-  TabContent,
-  ListItemGroup,
-  ListItem,
-  StepperItem,
-  SliderStyle,
-  BadgeParamWithNumber,
-  Blank,
-  Entry,
-  Component,
-  $r,
-  AlignRuleOption,
-  Row,
-  Button,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  SwiperController,
-  Column,
-  ColumnOptions,
-  ClickEvent,
-  RowOptions,
-  LazyForEach,
-  Text,
-  FlexAlign,
-  TextCase,
-  TextDecorationType,
-  Resource,
-  VerticalAlign,
-  HorizontalAlign,
-  RelativeContainer,
-  Color,
-  Scroller,
-  Menu,
-  ScrollBar,
-  TextTimer,
-// Navigator,
-  ColumnSplit,
-  RowSplit,
-  Refresh,
-// Panel,
-  Shape,
-  Rect,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Ellipse,
-  Circle,
-  WaterFlow,
-  Tabs,
-  Swiper,
-  Stack,
-  SideBarContainer,
-  Scroll,
-  List,
-  GridRow,
-  Grid,
-  Flex,
-  Counter,
-  Badge,
-  Toggle,
-  TimePicker,
-  TextPicker,
-  TextInput,
-  TextClock,
-  TextArea,
-  Slider,
-  Search,
-  Rating,
-  QRCode,
-  Progress,
-  AlphabetIndexer,
-  ImageAnimator,
-  Image,
-  Navigation,
-  Marquee,
-  LoadingProgress,
-  Gauge,
-  Divider,
-  DatePicker,
-  DataPanel,
-  CheckboxGroup,
-  Checkbox,
-  Select,
-  Radio,
-  MenuItem,
-  ProgressType,
-  ToggleType,
-  ForEach,
-  GridRowDirection,
-  BarState,
-  SideBarContainerType,
-  TextAlign,
-  GridItem,
-  BadgeStyle,
-  BadgeParamWithString,
-  GutterOption,
-  BreakPoints,
-  BreakpointsReference,
-  GridCol,
-  GridColOptions,
-  GridColColumnOption,
-  ColumnOptions,
-  // Point,
-  MenuItemOptions,
-  CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,
-  Stepper
+  MenuItemGroup,MenuItemGroupOptions,ImageFit,FlowItem,TabContent,ListItemGroup,ListItem,StepperItem,SliderStyle,BadgeParamWithNumber,Blank,Entry,Component,$r,
+  AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,RowOptions,LazyForEach,
+  Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,CommonMethod,applyStyles,Builder,
+  Color,Scroller,Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,
+  Circle,WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,GridRow,Grid,Flex,Counter,Badge,Toggle,TimePicker,TextPicker,TextInput,TextClock,TextArea,Slider,
+  Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,
+  Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,
+  GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,NavPathStack,
+  MenuItemOptions,CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,Stepper
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -139,114 +36,121 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct StateStylesPage {
-  @State _isEnable: boolean = true
-  @State targetView: string =(this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey??''
+  @StoragePropRef("_isEnable") _isEnable: boolean = true
+  @State targetView: string = ''
+  @State componentKey: string = ''
+  @Builder
+  myBuilder() {
+    Column() {
+      Text("bindSheet")
+        .fontSize(20)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(Color.Pink)
+  }
 
   onPageShow() {
     console.info('StateStylesPage show called ')
-    AttrsManager.registerDataChange((value: boolean) => {
-      this._isEnable = value
-    })
-    console.info('this._isEnable:' + this._isEnable)
+    AppStorage.setOrCreate<boolean>('_isEnable', true)
+    try {
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
-  // @Styles
-  // disabledStyles() {
-  //   .zIndex(2)
-  // }
-  //
-  // @Styles
-  // normalStyles() {
-  //   .zIndex(1)
-  // }
-  //
-  // @Styles
-  // commonStyle(){
-  //   .enabled(this._isEnable)
-  //   .key(this.componentKey)
-  //   .stateStyles({
-  //     normal: this.normalStyles,
-  //     disabled: this.disabledStyles
-  //   })
-  // }
+  disabledStyles(instance: CommonMethod) {
+    instance.zIndex(2)
+  }
+  normalStyles(instance: CommonMethod) {
+    instance.zIndex(1)
+  }
+
+  commonStyle(instance: CommonMethod){
+    instance.enabled(this._isEnable)
+    instance.key(this.componentKey)
+    instance.stateStyles({
+      normal: this.normalStyles,
+      disabled: this.disabledStyles
+    })
+  }
 
   build() {
     Row() {
       Stack() {
         if (this.targetView == 'Button') {
-          Button('button1')//.commonStyle()
+          Button('button1').applyStyles(this.commonStyle)
         } else if (this.targetView == 'Text') {
-          Text('text1')//.commonStyle()
-        } else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })//.commonStyle()
-        } else if (this.targetView == 'Blank') {
+          Text('text1').applyStyles(this.commonStyle)
+        }
+        else if (this.targetView == 'AlphabetIndexer') {
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }).applyStyles(this.commonStyle)
+        }
+        else if (this.targetView == 'Blank') {
           Row() {
-            Blank().backgroundColor(Color.Yellow)//.commonStyle()
+            Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           }.width('100%').height('100%')
         } else if (this.targetView == 'Checkbox') {
-          Checkbox()//.commonStyle()
+          Checkbox().applyStyles(this.commonStyle)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' } as CheckboxGroupOptions)//.commonStyle()
+          CheckboxGroup({ group: 'checkboxGroup' } as CheckboxGroupOptions).applyStyles(this.commonStyle)
         } else if (this.targetView == 'DataPanel') {
           DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] } as DataPanelOptions)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'DatePicker') {
           DatePicker({
             start: new Date('1970-1-1'),
             end: new Date('2100-1-1'),
-          } as DatePickerOptions)//.commonStyle()
+          } as DatePickerOptions).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Divider') {
-          Divider()//.commonStyle()
+          Divider().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
             .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon'))//.commonStyle()
+          Image($r('app.media.icon')).applyStyles(this.commonStyle)
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .images([
               {
                 src: $r('app.media.icon')
               }
-            ])//.commonStyle()
-        } else if (this.targetView == 'LoadingProgress') {
-          LoadingProgress()//.commonStyle()
+            ]).applyStyles(this.commonStyle)
+        }
+        else if (this.targetView == 'LoadingProgress') {
+          LoadingProgress().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Marquee') {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: 10,
             fromStart: true,
             src: 'Running Marquee starts rolling'
-          })//.commonStyle()
-        // } else if (this.targetView == 'Navigation') {
-        //   Navigation() {
-        //     Text('Navigation')
-        //   }//.commonStyle()
-        //   .backgroundColor(Color.Blue)
-        // } else if (this.targetView == 'Menu') {
+          }).applyStyles(this.commonStyle)
+        } else if (this.targetView == 'Navigation') {
+          Navigation({}) {
+            Text('Navigation')
+          }.applyStyles(this.commonStyle)
+          .backgroundColor(Color.Blue)
+        }else if (this.targetView == 'Navigator') {
+          Navigation({}).applyStyles(this.commonStyle)
+        } else if (this.targetView == 'NavRouter') {
+          Navigation(new NavPathStack()).applyStyles(this.commonStyle)
+        } else if (this.targetView == 'Menu') {
           Menu() {
-          }.backgroundColor(Color.Yellow)//.commonStyle()
-        // } else if (this.targetView == 'NavRouter') {
-        //   NavRouter() {
-        //     Row() {
-        //       Image($r('app.media.icon'))
-        //     }
-        //
-        //     NavDestination() {
-        //       Text('NavDestination').fontSize(10)
-        //     }
-        //   }//.commonStyle()
-        // } else if (this.targetView == 'Progress') {
-          Progress({ value: 10, type: ProgressType.Eclipse } as ProgressOptions)//.commonStyle()
+          }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
+        }  else if (this.targetView == 'Progress') {
+          Progress({ value: 10, type: ProgressType.Eclipse } as ProgressOptions).applyStyles(this.commonStyle)
         } else if (this.targetView == 'QRCode') {
-          QRCode('Running Marquee starts rolling')//.commonStyle()
+          QRCode('Running Marquee starts rolling').applyStyles(this.commonStyle)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' } as RadioOptions)//.commonStyle()
+          Radio({ value: 'Radio1', group: 'radioGroup' } as RadioOptions).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Rating') {
-          Rating({ rating: 3.5, indicator: false })//.commonStyle()
+          Rating({ rating: 3.5, indicator: false }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'ScrollBar') {
           ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
             Text()
@@ -254,16 +158,16 @@ struct StateStylesPage {
               .height(100)
               .borderRadius(10)
               .backgroundColor('#C0C0C0')
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Search') {
           Search({ placeholder: 'Type to search...' })
             .backgroundColor(Color.White)
             .searchButton('SEARCH')
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
             { value: 'bbb', icon: '/common/public_icon.svg' }])
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Slider') {
           Slider({
             value: 50,
@@ -272,7 +176,7 @@ struct StateStylesPage {
             style: SliderStyle.OutSet
           } )
             .showTips(true)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -280,52 +184,52 @@ struct StateStylesPage {
                 Text('Page One')
               }
             }
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-          })//.commonStyle()
+          }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextClock') {
           TextClock({ timeZoneOffset: -8 })
             .format('hms')
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextInput') {
-          TextInput({ placeholder: 'input your word...' })//.commonStyle()
+          TextInput({ placeholder: 'input your word...' }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextPicker') {
-          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })//.commonStyle()
+          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextTimer') {
           TextTimer({ isCountDown: true, count: 30000 })
             .format('mm:ss.SS')
             .fontColor(Color.Black)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'TimePicker') {
           TimePicker({
             selected: new Date('2022-07-22T08:00:00'),
-          })//.commonStyle()
+          }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Toggle') {
-          Toggle({ type: ToggleType.Switch, isOn: false })//.commonStyle()
+          Toggle({ type: ToggleType.Switch, isOn: false }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Circle') {
-          Circle()//.commonStyle()
+          Circle().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Ellipse') {
-          Ellipse()//.commonStyle()
+          Ellipse().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Line') {
           Line()
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
             .startPoint([0, 0])
             .endPoint([50, 100])
             .backgroundColor(Color.Black)
         } else if (this.targetView == 'Polyline') {
-          Polyline()//.commonStyle()
+          Polyline().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Polygon') {
-          Polygon()//.commonStyle()
+          Polygon().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Path') {
-          Path()//.commonStyle()
+          Path().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Rect') {
-          Rect()//.commonStyle()
+          Rect().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Shape') {
-          // Shape() {
-          //   Rect().width(100).height(50)
-          // }//.commonStyle()
+          Shape() {
+            Rect().width(100).height(50)
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
@@ -335,14 +239,14 @@ struct StateStylesPage {
               .width(100)
               .height(50)
               .backgroundColor(0x317aff)
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Column') {
           Column() {
             Column()
               .width('100%')
               .height(30)
               .backgroundColor(0xAFEEEE)
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1')
@@ -350,17 +254,17 @@ struct StateStylesPage {
               .height(50)
               .backgroundColor(0xF5DEB3)
               .textAlign(TextAlign.Center)
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Counter') {
           Counter() {
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Flex') {
           Flex() {
             Text('1')
               .width('20%')
               .height(50)
               .backgroundColor(0xF5DEB3)
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'GridRow') {
           GridRow({
             columns: 1,
@@ -376,7 +280,7 @@ struct StateStylesPage {
               .borderColor(color)
               .borderWidth(2)
             })
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Grid') {
           Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -393,7 +297,7 @@ struct StateStylesPage {
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
           .backgroundColor(0xFAEEE0)
         } else if (this.targetView == 'GridItem') {
           Grid() {
@@ -406,13 +310,13 @@ struct StateStylesPage {
             }
             .rowStart(1)
             .rowEnd(4)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           }
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'List') {
           List() {
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'ListItem') {
           List({ space: 0, initialIndex: 0 }) {
             ListItem() {
@@ -420,7 +324,7 @@ struct StateStylesPage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }//.commonStyle()
+            }.applyStyles(this.commonStyle)
           }
           .width('100%')
           .height('100%')
@@ -428,24 +332,21 @@ struct StateStylesPage {
           List({ space: 0, initialIndex: 0 }) {
             ListItemGroup()
               .backgroundColor(Color.Yellow)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           }.backgroundColor(Color.Pink)
           .width('100%')
           .height('100%')
-        // } else if (this.targetView == 'Navigator') {
-        //   Navigator({ target: '' }) {
-        //     Text('Go to back page')
-        //       .width('100%')
-        //       .height(20)
-        //   }//.commonStyle().backgroundColor(Color.Red)
-        // } else if (this.targetView == 'Panel') {
-        //   Panel(true) {
-        //     Text('Text')
-        //   }.backgroundColor(Color.Yellow)//.commonStyle()
-        // } else if (this.targetView == 'Refresh') {
+        }  else if (this.targetView == 'Panel') {
+          Column(){
+            Text('Text')
+          }
+          .backgroundColor(Color.Yellow)
+          .applyStyles(this.commonStyle)
+          .bindSheet(true,this.myBuilder)
+        } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'RelativeContainer') {
           RelativeContainer() {
             Row()
@@ -457,27 +358,27 @@ struct StateStylesPage {
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
               } as AlignRuleOption)
               .id('responseRegion')
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Row') {
           Row() {
             Text('Text')
-          }.backgroundColor(Color.Orange)//.commonStyle()
+          }.backgroundColor(Color.Orange).applyStyles(this.commonStyle)
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('Text')
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:int) => {
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int) => {
                 Text('Scroll' + item+'')
                   .width('90%')
                   .height(50)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: Int,index:int) => item+'')
+              }, (item: Int) => item+'')
             }.width('100%')
-          }.scrollBar(BarState.On)//.commonStyle()
+          }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -494,13 +395,13 @@ struct StateStylesPage {
               Text('SideBarContainer content')
                 .fontSize(25)
             }.backgroundColor(Color.Orange)
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Stack') {
           Stack() {
             Text('Stack')
           }
           .backgroundColor(Color.White)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             Text('Swiper')
@@ -508,7 +409,7 @@ struct StateStylesPage {
               .height('100%')
           }.indicator(true)
           .backgroundColor(Color.White)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
@@ -517,7 +418,7 @@ struct StateStylesPage {
                 .height('100%')
                 .backgroundColor('#00CB87')
             }
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
@@ -527,7 +428,7 @@ struct StateStylesPage {
                 .backgroundColor(Color.White)
             }
             .tabBar('Tabs1')
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Yellow)
           }.backgroundColor(Color.Red)
           .width('100%')
@@ -545,7 +446,7 @@ struct StateStylesPage {
                   .objectFit(ImageFit.Fill)
               }
             }
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -554,7 +455,7 @@ struct StateStylesPage {
               }
             }
             .backgroundColor(Color.Red)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
           }
           .backgroundColor(Color.Yellow)
           .width('100%')
@@ -569,7 +470,7 @@ struct StateStylesPage {
                 .width('100%')
                 .height('20vp')
             }
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Red)
@@ -588,7 +489,7 @@ struct StateStylesPage {
                   .objectFit(ImageFit.Fill)
               }
             }
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Red)
@@ -597,14 +498,14 @@ struct StateStylesPage {
         } else if (this.targetView == 'MenuItem') {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              //.commonStyle()
+              .applyStyles(this.commonStyle)
           }.backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'MenuItemGroup') {
           Menu() {
             MenuItemGroup({ header: 'MenuItemGroup' } as MenuItemGroupOptions) {
-            }//.commonStyle()
+            }.applyStyles(this.commonStyle)
           }.backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')
