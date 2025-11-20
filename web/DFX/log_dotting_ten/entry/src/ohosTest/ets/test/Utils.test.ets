@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,9 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
-import { Driver, ON,  Component } from '@ohos.UiTest';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default class Utils {
   static sleep(time: number) {
@@ -27,15 +30,19 @@ export default class Utils {
     })
   }
 
-  static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
-                           done: Function, expectFunction: Function) {
-    console.info(`[${testCaseName}] START`);
+  static getSandboxFileDir() {
+    let sandboxFileDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir + "/"
+    console.log(`[getSandboxFileDir] return ${sandboxFileDir}`);
+    return sandboxFileDir;
+  }
+
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
         try {
           console.info(`${testCaseName} get result is:` + JSON.stringify(backData));
-          expectFunction(backData, expected);
+          expect(backData?.data?.ACTION).assertEqual(expectedValue);
           console.info(`[${testCaseName}] END`);
         } catch (err) {
           console.info(`[${testCaseName}] err:` + JSON.stringify(err));
@@ -46,31 +53,13 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-      expect(backData?.data?.ACTION).assertEqual(expected);
-    });
-  }
-
-  static registerContainEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-      expect(backData?.data?.ACTION).assertContain(expected);
-    });
-  }
-
-  static async clickComponent(id: string) {
-    let driver = Driver.create();
-    let component = await driver.findComponent(ON.id(id));
-    await component.click();
-  }
-
-  static emitEvent(actualValue: boolean | string | number | object, eventId: number) {
+  static emitEvent(actualValue: boolean | string | number, eventId: number) {
     try {
       let backData: events_emitter.EventData = {
         data: {
@@ -85,6 +74,77 @@ export default class Utils {
       events_emitter.emit(backEvent, backData);
     } catch (err) {
       console.info("webFlag emit action state err: " + JSON.stringify(err));
+    }
+  }
+
+  static async waitForExist<T> (
+    stateGetter: () => T,
+    testsuite: string,
+    expectValue: string | number | boolean | null = null,
+    interval=3000,
+    tryTime=20
+  ):Promise<T>{
+    let nums = 0;
+    let isSuccess = false;
+    while (nums < tryTime) {
+      const currentValue = await new Promise<T>((done) => {
+        setTimeout(()=>done(stateGetter()), 0);
+      })
+
+      if (expectValue == null) {
+        if (currentValue != null) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      } else {
+        if (currentValue == expectValue) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      }
+      await Utils.sleep(interval);
+      nums++;
+      console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+        + ', expectValue ' + expectValue);
+    }
+    if (!isSuccess) {
+      console.log(testsuite + ' debug wait for failed')
+    }
+    const currentValue = await new Promise<T>((result) => {
+      setTimeout(() => result(stateGetter()), 0);
+    });
+    console.log(testsuite + ' debug wait for failed exist ' + currentValue);
+    return currentValue;
+  }
+
+  static async waitAndClickComponent(driver: Driver, componentId: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+          continue;
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+        }
+      }
     }
   }
 }

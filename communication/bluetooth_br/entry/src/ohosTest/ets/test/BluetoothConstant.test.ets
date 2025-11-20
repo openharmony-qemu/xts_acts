@@ -33,12 +33,13 @@ describe('btConstantTest', () =>  {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0100
-     * @tc.name testProfileConnectionState
-     * @tc.desc Test constant api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test constant api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let STATE_DISCONNECTED = bluetooth.ProfileConnectionState.STATE_DISCONNECTED;
@@ -58,12 +59,13 @@ describe('btConstantTest', () =>  {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0200
-     * @tc.name testProfileId
-     * @tc.desc Test constant api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test constant api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let PROFILE_A2DP_SOURCE = bluetooth.ProfileId.PROFILE_A2DP_SOURCE;
@@ -83,12 +85,13 @@ describe('btConstantTest', () =>  {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0300
-     * @tc.name testMajorClass
-     * @tc.desc Test constant api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test constant api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let MAJOR_MISC = bluetooth.MajorClass.MAJOR_MISC;
@@ -128,12 +131,13 @@ describe('btConstantTest', () =>  {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0800
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0400
-     * @tc.name testMajorMinorClass
-     * @tc.desc Test constant api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test constant api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let COMPUTER_UNCATEGORIZED = bluetooth.MajorMinorClass.COMPUTER_UNCATEGORIZED;
@@ -438,12 +442,13 @@ describe('btConstantTest', () =>  {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0500
-     * @tc.name testProfileUuids
-     * @tc.desc Test constant api12
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test constant api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONSTANT_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let hfpAg = bluetooth.ProfileUuids.PROFILE_UUID_HFP_AG;

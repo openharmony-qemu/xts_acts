@@ -25,13 +25,13 @@
           }
         ],
         "icon": "$media:icon",
-        "name": "com.example.myapplication.MainAbility",
+        "name": ".MainAbility",
         "description": "$string:mainability_description",
         "label": "$string:app_name",
         "type": "page",
         "launchType": "standard",
         "orientation": "followRecent",
-        "srcPath": "default",
+        "srcPath": "MainAbility",
         "srcLanguage": "js"
       }
     ],
@@ -50,7 +50,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.myapplication.MainAbility",
+        "name": ".MainAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": true

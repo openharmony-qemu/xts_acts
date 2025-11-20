@@ -167,14 +167,15 @@ export default function geolocationTest_geo7() {
 
 
 
-    /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0600
-     * @tc.name      : testIsLocationEnabled06
-     * @tc.desc      : Enabling the Location Service Function for a Third-Party App - Callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:53:27
+      * @tc.name   testIsLocationEnabled06
+      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0600
+      * @tc.desc   Enabling the Location Service Function for a Third-Party App - Callback
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testIsLocationEnabled06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         try {
             let state = geolocationm.isLocationEnabled();
@@ -191,12 +192,13 @@ export default function geolocationTest_geo7() {
     });
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
-     * @tc.name      : testLocationEnabledChange07
-     * @tc.desc      : Subscribe to the location service status change.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationEnabledChange07
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
+     * @tc.desc   Subscribe to the location service status change.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationEnabledChange07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log('[lbs_js] just for overwriting,locationServiceState test need system api ');
@@ -228,12 +230,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0800
-     * @tc.name      : testLocationEnabledChange08
-     * @tc.desc      : Subscribe to the location service status change.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationEnabledChange08
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0800
+     * @tc.desc   Subscribe to the location service status change.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationEnabledChange08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log('[lbs_js] just for overwriting,locationServiceState test need system api ');
@@ -267,12 +270,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1500
-     * @tc.name      : testGetCurrentLocation15
-     * @tc.desc      : Initiate a single location request in a specified scenario and set the navigation scenario.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation1500
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1500
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": request_priority_UNSET, "scenario": request_scenario_NAVIGATION, "timeoutMs": 1000, "maxAccuracy": 10 };
@@ -297,12 +301,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1600
-     * @tc.name      : testGetCurrentLocation16
-     * @tc.desc      : Initiate a single location request in a specified scenario and set the navigation scenario.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation1600
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1600
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": request_priority_FIRST_FIX, "scenario": request_scenario_NAVIGATION, "timeoutMs": 1000, "maxAccuracy": 10 };
@@ -321,14 +326,15 @@ export default function geolocationTest_geo7() {
         done();
     })
 
-    /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1700
-     * @tc.name      : testGetCurrentLocation17
-     * @tc.desc      : Initiate a single location request in a specified scenario and set the track tracing scenario.
-     * @tc.size      : MediumTestTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:53:27
+      * @tc.name   testGetCurrentLocation1700
+      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1700
+      * @tc.desc   Initiate a single location request in a specified scenario and set the track tracing scenario.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testGetCurrentLocation1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": request_priority_UNSET, "scenario": request_scenario_TRAJECTORY_TRACKING, "timeoutMs": 1000, "maxAccuracy": 10 };
         try {
@@ -348,12 +354,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1800
-     * @tc.name      : testGetCurrentLocation18
-     * @tc.desc      : Initiate a single location request in a specified scenario and set a car-sharing scenario.
-     * @tc.size      : MediumTestTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation18
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1800
+     * @tc.desc   Initiate a single location request in a specified scenario and set a car-sharing scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": request_priority_UNSET, "scenario": request_scenario_CAR_HAILING, "timeoutMs": 1000, "maxAccuracy": 10 };
@@ -373,12 +380,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1900
-     * @tc.name      : testGetCurrentLocation19
-     * @tc.desc      : Initiate a single location request in a specified scenario and set the life service scenario..
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation19
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1900
+     * @tc.desc   Initiate a single location request in a specified scenario and set the life service scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": request_priority_UNSET, "scenario": request_scenario_DAILY_LIFE_SERVICE, "timeoutMs": 1000, "maxAccuracy": 0 };
@@ -398,13 +406,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2000
-     * @tc.name      : testGetCurrentLocation20
-     * @tc.desc      : Initiate a single location request in a specified scenario
-     *                 and set the scenario with no power consumption.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation20
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2000
+     * @tc.desc   Initiate a single location request in a specified scenario
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest1 = { "priority": request_priority_UNSET, "scenario": request_scenario_NO_POWER, "timeoutMs": 1000, "maxAccuracy": 10 };
@@ -437,12 +445,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2100
-     * @tc.name      : testGetCurrentLocation21
-     * @tc.desc      : Initiate a single location request with the parameter set to high-precision priority location request.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation21
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2100
+     * @tc.desc   Initiate a single location request with the parameter set to high-precision priority location request.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": 0x0201, "scenario": 0x0300, "timeoutMs": 1000, "maxAccuracy": 10 };
@@ -462,12 +471,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2200
-     * @tc.name      : testGetCurrentLocation22
-     * @tc.desc      : Initiate a single location request with parameters set to fast location and priority location request.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation22
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2200
+     * @tc.desc   Initiate a single location request with parameters set to fast location and priority location request.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": 0x0203, "scenario": 0x0300, "timeoutMs": 1000, "maxAccuracy": 10 };
@@ -487,12 +497,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2300
-     * @tc.name      : testGetCurrentLocation23
-     * @tc.desc      : Initiate a single location request with parameters set to low power consumption.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation23
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2300
+     * @tc.desc   Initiate a single location request with parameters set to low power consumption.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": 0x0202, "scenario": 0x0300, "timeoutMs": 1000, "maxAccuracy": 0 };
@@ -512,12 +523,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2400
-     * @tc.name      : testGetCurrentLocation24
-     * @tc.desc      : Initiate a single location request and set the location reporting precision.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation24
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2400
+     * @tc.desc   Initiate a single location request and set the location reporting precision.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": 0x0200, "scenario": 0x0300, "timeoutMs": 1000, "maxAccuracy": 5 };
@@ -550,13 +562,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2500
-     * @tc.name      : testGetCurrentLocation25
-     * @tc.desc      : Initiate a single location request for specific configuration
-     *                 and set the reporting precision of abnormal location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation25
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2500
+     * @tc.desc   Initiate a single location request for specific configuration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": 0x0201, "scenario": 0x0300, "timeoutMs": 1000, "maxAccuracy": 0 };
@@ -589,13 +601,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2600
-    * @tc.name      : testGetCurrentLocation26
-    * @tc.desc      : Initiate a single location request and set the location timeout interval.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation26
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2600
+     * @tc.desc   Initiate a single location request and set the location timeout interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetCurrentLocation26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": 0x0201, "scenario": 0x0301, "timeoutMs": 1000, "maxAccuracy": 0 };
         let currentLocationRequest1 = { "priority": 0x0201, "scenario": 0x0301, "timeoutMs": 1000, "maxAccuracy": 0 };
@@ -627,13 +640,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2700
-    * @tc.name      : testGetCurrentLocation27
-    * @tc.desc      : Initiate a specified single location request and set the exception location timeout interval.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation27
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2700
+     * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetCurrentLocation27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": 0x0201, "scenario": 0x0302, "timeoutMs": 0, "maxAccuracy": 0 };
         let currentLocationRequest1 = { "priority": 0x0201, "scenario": 0x0302, "timeoutMs": -1000, "maxAccuracy": 0 };
@@ -665,12 +679,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_SendCommand_0300
-     * @tc.name      : testSendCommand03
-     * @tc.desc      : Test sendCommand api .
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testSendCommand03
+     * @tc.number SUB_HSS_SendCommand_0300
+     * @tc.desc   Test sendCommand api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendCommand03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -701,12 +716,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_SendCommand_0400
-     * @tc.name      : testSendCommand04
-     * @tc.desc      : Test sendCommand1 api .
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testSendCommand04
+     * @tc.number SUB_HSS_SendCommand_0400
+     * @tc.desc   Test sendCommand1 api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendCommand04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -737,12 +753,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1600
-     * @tc.name      : testLocationChange16
-     * @tc.desc      : Initiate a request for continuous positioning in a specified scenario and set the navigation scenario.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange16
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1600
+     * @tc.desc   Initiate a request for continuous positioning in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -810,12 +827,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1700
-     * @tc.name      : testLocationChange17
-     * @tc.desc      : Initiate a request for continuous positioning in a specified scenario and set a track tracing scenario.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange17
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1700
+     * @tc.desc   Initiate a request for continuous positioning in a specified scenario and set a track tracing scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -842,12 +860,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1800
-     * @tc.name      : testLocationChange18
-     * @tc.desc      : Initiate a continuous location request in a specified scenario and set a car-sharing scenario.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange18
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1800
+     * @tc.desc   Initiate a continuous location request in a specified scenario and set a car-sharing scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -874,12 +893,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1900
-     * @tc.name      : testLocationChange19
-     * @tc.desc      : Initiate a continuous location request in a specified scenario and set a life service scenario.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange19
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1900
+     * @tc.desc   Initiate a continuous location request in a specified scenario and set a life service scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -906,13 +926,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2000
-     * @tc.name      : testLocationChange20
-     * @tc.desc      : Initiate a continuous location request in a specified scenario
-     *          and set the scenario with no power consumption.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange20
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2000
+     * @tc.desc   Initiate a continuous location request in a specified scenario
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -955,13 +975,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2100
-     * @tc.name      : testLocationChange21
-     * @tc.desc      : Initiate a specified continuous positioning request and
-     *          set the parameter to high-precision priority positioning request.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange21
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2100
+     * @tc.desc   Initiate a specified continuous positioning request and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -988,13 +1008,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2200
-     * @tc.name      : testLocationChange22
-     * @tc.desc      : Initiate a specified continuous positioning request with the parameter
-     *          set to fast positioning and priority positioning request.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange22
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2200
+     * @tc.desc   Initiate a specified continuous positioning request with the parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -1021,13 +1041,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2300
-     * @tc.name      : testLocationChange23
-     * @tc.desc      : Initiate a specified continuous positioning request with the parameter
-     *          set to low power consumption type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange23
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2300
+     * @tc.desc   Initiate a specified continuous positioning request with the parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -1054,12 +1074,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2400
-     * @tc.name      : testLocationChange24
-     * @tc.desc      : Initiate a specified continuous location request and set the reporting interval.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange24
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2400
+     * @tc.desc   Initiate a specified continuous location request and set the reporting interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -1086,12 +1107,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2500
-     * @tc.name      : testLocationChange25
-     * @tc.desc      : Initiate a specified continuous location request and set the location reporting interval.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange25
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2500
+     * @tc.desc   Initiate a specified continuous location request and set the location reporting interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
@@ -1118,13 +1140,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2600
-    * @tc.name      : testLocationChange26
-    * @tc.desc      : Initiate a specified continuous location request and set the interval for reporting exceptions.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange26
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2600
+     * @tc.desc   Initiate a specified continuous location request and set the interval for reporting exceptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo = {"priority":request_priority_UNSET, "scenario":request_scenario_NAVIGATION, "timeInterval":0,
@@ -1150,13 +1173,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2700
-    * @tc.name      : testLocationChange27
-    * @tc.desc      : Initiate a specified continuous location request and set the interval for reporting abnormal locations.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange27
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2700
+     * @tc.desc   Initiate a specified continuous location request and set the interval for reporting abnormal locations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {"priority":request_priority_UNSET, "scenario":request_scenario_NAVIGATION, "timeInterval":0,
@@ -1201,13 +1225,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2800
-    * @tc.name      : testLocationChange28
-    * @tc.desc      : Initiate a specified continuous positioning request and set the positioning reporting precision.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange28
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2800
+     * @tc.desc   Initiate a specified continuous positioning request and set the positioning reporting precision.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {"priority":request_priority_UNSET, "scenario":request_scenario_NAVIGATION, "timeInterval":0,
@@ -1252,13 +1277,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2900
-    * @tc.name      : testLocationChange29
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange29
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2900
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {"priority":request_priority_UNSET, "scenario":request_scenario_NAVIGATION, "timeInterval":0,
@@ -1303,13 +1329,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3000
-    * @tc.name      : testLocationChange30
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange30
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3000
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {'interval': 1, 'locationScenario': 0x401};
@@ -1334,13 +1361,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3100
-    * @tc.name      : testLocationChange31
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange31
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3100
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {'interval': 1, 'locationScenario': 0x402};
@@ -1365,13 +1393,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3200
-    * @tc.name      : testLocationChange32
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange32
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3200
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {'interval': 1, 'locationScenario': 0x403};
@@ -1396,13 +1425,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3300
-    * @tc.name      : testLocationChange33
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange33
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3300
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {'interval': 1, 'locationScenario': 0x403};
@@ -1427,13 +1457,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3400
-    * @tc.name      : testLocationChange34
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange34
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3400
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {'interval': 1, 'locationScenario': 0x601};
@@ -1458,13 +1489,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3500
-    * @tc.name      : testLocationChange35
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange35
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3500
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {'interval': 1, 'locationScenario': 0x602};
@@ -1489,13 +1521,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3600
-    * @tc.name      : testLocationChange36
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange36
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3600
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationChange36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         let requestInfo1 = {'interval': 1, 'locationScenario': 0x603, 'sportsType': geolocationm.SportsType.RUNNING, 'needPoi': false};
@@ -1520,13 +1553,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
-    * @tc.name      : testLocationError01
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationError01
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationError01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         var locationError1 = (errcode) => {
@@ -1558,13 +1592,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0200
-    * @tc.name      : testLocationError02
-    * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationError02
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0200
+     * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLocationError02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         enableLocationSwitch();
         var locationError1 = (errcode) => {
@@ -1598,12 +1633,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LASTLOC_0300
-     * @tc.name      : testLocationChange03
-     * @tc.desc      : Obtain the last location after a single location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationChange03
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_LASTLOC_0300
+     * @tc.desc   Obtain the last location after a single location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocationChange03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         enableLocationSwitch();
@@ -1649,12 +1685,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GNSS_0300
-     * @tc.name      : testSatelliteStatusChange03
-     * @tc.desc      : Monitoring Satellite Information Reporting
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testSatelliteStatusChange03
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0300
+     * @tc.desc   Monitoring Satellite Information Reporting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSatelliteStatusChange03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1732,12 +1769,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GNSS_0400
-     * @tc.name      : testNmeaMessage04
-     * @tc.desc      : Monitoring NMEA Information Reporting
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testNmeaMessage04
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0400
+     * @tc.desc   Monitoring NMEA Information Reporting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNmeaMessage04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1803,12 +1841,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GNSS_0500
-     * @tc.name      : SUB_HSS_LOCATIONSYSTEM_GNSS_0500
-     * @tc.desc      : off all location listeners
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_HSS_LOCATIONSYSTEM_GNSS_0500
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0500
+     * @tc.desc   off all location listeners
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LOCATIONSYSTEM_GNSS_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1854,12 +1893,13 @@ export default function geolocationTest_geo7() {
    })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GNSS_0600
-     * @tc.name      : SUB_HSS_LOCATIONSYSTEM_GNSS_0600
-     * @tc.desc      : Monitoring Satellite Information Reporting
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_HSS_LOCATIONSYSTEM_GNSS_0600
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0600
+     * @tc.desc   Monitoring Satellite Information Reporting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LOCATIONSYSTEM_GNSS_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1923,12 +1963,13 @@ export default function geolocationTest_geo7() {
 
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GNSS_0700
-     * @tc.name      : SUB_HSS_LOCATIONSYSTEM_GNSS_0700
-     * @tc.desc      : Monitoring NMEA Information Reporting
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_HSS_LOCATIONSYSTEM_GNSS_0700
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0700
+     * @tc.desc   Monitoring NMEA Information Reporting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LOCATIONSYSTEM_GNSS_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1969,12 +2010,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BATCHING_0700
-     * @tc.name      : testCachedGnssLocationsChange07
-     * @tc.desc      : Setting the Gnss Batching Reporting Interval
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testCachedGnssLocationsChange07
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_0700
+     * @tc.desc   Setting the Gnss Batching Reporting Interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCachedGnssLocationsChange07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -2044,12 +2086,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BATCHING_0800
-     * @tc.name      : testCachedGnssLocationsChange08
-     * @tc.desc      : Setting the Gnss Batching Cache Queue to Be Reported When the Gnss Batching Cache Queue Is Full
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testCachedGnssLocationsChange08
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_0800
+     * @tc.desc   Setting the Gnss Batching Cache Queue to Be Reported When the Gnss Batching Cache Queue Is Full
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCachedGnssLocationsChange08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -2084,12 +2127,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BATCHING_0900
-     * @tc.name      : testCachedGnssLocationsChange09
-     * @tc.desc      : Obtains the number of GNSS data records in the batching process.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testCachedGnssLocationsChange09
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_0900
+     * @tc.desc   Obtains the number of GNSS data records in the batching process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCachedGnssLocationsChange09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -2141,12 +2185,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BATCHING_1000
-     * @tc.name      : testCachedGnssLocationsChange01
-     * @tc.desc      : Obtains the number of GNSS data records in the batching process.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testCachedGnssLocationsChange01
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1000
+     * @tc.desc   Obtains the number of GNSS data records in the batching process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCachedGnssLocationsChange01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -2195,12 +2240,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BATCHING_1100
-     * @tc.name      : testCachedGnssLocationsChange11
-     * @tc.desc      : Obtains the GNSS data of the current batching.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testCachedGnssLocationsChange11
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1100
+     * @tc.desc   Obtains the GNSS data of the current batching.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCachedGnssLocationsChange11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -2256,12 +2302,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BATCHING_1200
-     * @tc.name      : testCachedGnssLocationsChange12
-     * @tc.desc      : Obtain the GNSS data of the current batching.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testCachedGnssLocationsChange12
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1200
+     * @tc.desc   Obtain the GNSS data of the current batching.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCachedGnssLocationsChange12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -2315,12 +2362,13 @@ export default function geolocationTest_geo7() {
 
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BATCHING_1300
-     * @tc.name      : testCachedGnssLocationsChange13
-     * @tc.desc      : Obtain the GNSS data of the current batching.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testCachedGnssLocationsChange13
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1300
+     * @tc.desc   Obtain the GNSS data of the current batching.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCachedGnssLocationsChange13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -2366,13 +2414,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0200
-    * @tc.name      : testGnssFenceStatusChange02
-    * @tc.desc      : Gnss fence function test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGnssFenceStatusChange02
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0200
+     * @tc.desc   Gnss fence function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGnssFenceStatusChange02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
         console.info("testGnssFenceStatusChange02 : " + isAcessToken);
@@ -2424,12 +2473,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0300
-     * @tc.name      : testGnssFenceStatusChange03
-     * @tc.desc      : Test the function of locating the validity period of the fence.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGnssFenceStatusChange03
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0300
+     * @tc.desc   Test the function of locating the validity period of the fence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGnssFenceStatusChange03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
@@ -2476,12 +2526,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0400
-     * @tc.name      : testAddGnssGeofence04
-     * @tc.desc      : Test the function of locating the validity period of the fence.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testAddGnssGeofence04
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0400
+     * @tc.desc   Test the function of locating the validity period of the fence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAddGnssGeofence04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
@@ -2553,12 +2604,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0700
-     * @tc.name      : testGetGeofenceSupportedCoordTypes07
-     * @tc.desc      : Test the function of locating the validity period of the fence.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetGeofenceSupportedCoordTypes07
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0700
+     * @tc.desc   Test the function of locating the validity period of the fence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetGeofenceSupportedCoordTypes07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
@@ -2586,12 +2638,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3500
-     * @tc.name      : testGetCurrentLocation35
-     * @tc.desc      : Initiate a single location request in a specified scenario and set the navigation scenario..
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation35
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3500
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = { "priority": request_priority_UNSET, "scenario": request_scenario_NAVIGATION, "timeoutMs": 1000, "maxAccuracy": 0 };
@@ -2619,12 +2672,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3600
-     * @tc.name      : testGetCurrentLocation36
-     * @tc.desc      : Initiate a single location request in a specified scenario and set the navigation scenario..
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation36
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3600
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let singleLocationRequest = { 'locatingTimeoutMs': 1000, 'locatingPriority': 0x501, 'needPoi': false };
@@ -2652,12 +2706,13 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3700
-     * @tc.name      : testGetCurrentLocation37
-     * @tc.desc      : Initiate a single location request in a specified scenario and set the navigation scenario..
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation37
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3700
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCurrentLocation37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let singleLocationRequest = { 'locatingTimeoutMs': 1000, 'locatingPriority': 0x502 };
@@ -2684,14 +2739,15 @@ export default function geolocationTest_geo7() {
         done();
     })
 
-   /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3800
-    * @tc.name      : testGetCurrentLocation38
-    * @tc.desc      : Initiate a specified single location request and set the exception location timeout interval.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation38
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3800
+     * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetCurrentLocation38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let singleLocationRequest = { 'locatingTimeoutMs': 1000, 'locatingPriority': 0x501 };
         try {
@@ -2713,14 +2769,15 @@ export default function geolocationTest_geo7() {
         done();
     })
 
-   /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3900
-    * @tc.name      : testGetCurrentLocation39
-    * @tc.desc      : Initiate a specified single location request and set the exception location timeout interval.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation39
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3900
+     * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetCurrentLocation39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let singleLocationRequest = { 'locatingTimeoutMs': 1000, 'locatingPriority': 0x502 };
         try {
@@ -2743,13 +2800,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_4000
-    * @tc.name      : testGetCurrentLocation40
-    * @tc.desc      : Initiate a specified single location request and set the exception location timeout interval.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testGetCurrentLocation40
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_4000
+     * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetCurrentLocation40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let singleLocationRequest = { 'locatingTimeoutMs': 1000, 'locatingPriority': 0x502 };
         try {
@@ -2776,13 +2834,14 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-    * @tc.number    : SUB_HSS_LOCATIONSYSTEM_FENCE_EXTENSION_ABILITY_0001
-    * @tc.name      : testFenceExtensionAbility01
-    * @tc.desc      : Test Report Fence Transition.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testFenceExtensionAbility01
+     * @tc.number SUB_HSS_LOCATIONSYSTEM_FENCE_EXTENSION_ABILITY_0001
+     * @tc.desc   Test Report Fence Transition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testFenceExtensionAbility01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
         console.info("testFenceExtensionAbility01 : " + isAcessToken);

@@ -39,12 +39,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0010
-     * @tc.name testRunningLockTest_0100
-     * @tc.desc createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RunningLockTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'RunningLockTest_0100'
@@ -69,12 +70,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0020
-     * @tc.name testRunningLockTest_0200
-     * @tc.desc createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RunningLockTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'RunningLockTest_0200'
@@ -98,12 +100,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0030
-     * @tc.name testRunningLockTest_0300
-     * @tc.desc createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RunningLockTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'RunningLockTest_0300'
@@ -132,12 +135,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0040
-     * @tc.name testRunningLockTest_0400
-     * @tc.desc createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_0400'
@@ -162,12 +166,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0050
-     * @tc.name testRunningLockTest_0500
-     * @tc.desc createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_0500'
@@ -196,12 +201,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0060
-     * @tc.name testRunningLockTest_0600
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_0600';
@@ -218,12 +224,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0070
-     * @tc.name testRunningLockTest_0700
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_0700';
@@ -240,12 +247,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0080
-     * @tc.name testRunningLockTest_0800
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_0800';
@@ -262,12 +270,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_0900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0090
-     * @tc.name testRunningLockTest_0900
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_0900';
@@ -284,12 +293,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0100
-     * @tc.name testRunningLockTest_1000
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1000';
@@ -306,12 +316,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0110
-     * @tc.name testRunningLockTest_1100
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1100';
@@ -328,12 +339,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0120
-     * @tc.name testRunningLockTest_1200
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1200';
@@ -352,12 +364,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0130
-     * @tc.name testRunningLockTest_1300
-     * @tc.desc isSupported(type: RunningLockType): boolean;
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isSupported(type: RunningLockType): boolean;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1300';
@@ -374,12 +387,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0140
-     * @tc.name testRunningLockTest_1400
-     * @tc.desc create(name: string, type: RunningLockType): Promise<RunningLock>
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1400'
@@ -404,12 +418,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0150
-     * @tc.name testRunningLockTest_1500
-     * @tc.desc create(name: string, type: RunningLockType): Promise<RunningLock>
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1500'
@@ -438,12 +453,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0160
-     * @tc.name testRunningLockTest_1600
-     * @tc.desc create(name: string, type: RunningLockType): Promise<RunningLock>
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1600'
@@ -468,12 +484,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0170
-     * @tc.name testRunningLockTest_1700
-     * @tc.desc create(name: string, type: RunningLockType): Promise<RunningLock>
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1700'
@@ -502,12 +519,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0180
-     * @tc.name testRunningLockTest_1800
-     * @tc.desc create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1800'
@@ -532,12 +550,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_1900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0190
-     * @tc.name testRunningLockTest_1900
-     * @tc.desc create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_1900'
@@ -566,12 +585,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0200
-     * @tc.name testRunningLockTest_2000
-     * @tc.desc create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2000'
@@ -596,12 +616,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0210
-     * @tc.name testRunningLockTest_2100
-     * @tc.desc create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2100'
@@ -630,12 +651,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0220
-     * @tc.name testRunningLockTest_2200
-     * @tc.desc hold lock, is holding
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   hold lock, is holding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2200';
@@ -663,12 +685,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0230
-     * @tc.name testRunningLockTest_2300
-     * @tc.desc hold(timeout: number): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   hold(timeout: number): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2300';
@@ -699,12 +722,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0240
-     * @tc.name testRunningLockTest_2400
-     * @tc.desc hold(timeout: number): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   hold(timeout: number): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2400';
@@ -732,12 +756,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0250
-     * @tc.name testRunningLockTest_2500
-     * @tc.desc hold(timeout: number): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   hold(timeout: number): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2500';
@@ -771,12 +796,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0260
-     * @tc.name testRunningLockTest_2600
-     * @tc.desc hold(timeout: number): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   hold(timeout: number): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2600';
@@ -810,12 +836,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0270
-     * @tc.name testRunningLockTest_2700
-     * @tc.desc hold(timeout: number): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   hold(timeout: number): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2700';
@@ -845,12 +872,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0280
-     * @tc.name testRunningLockTest_2800
-     * @tc.desc hold(timeout: number): void
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   hold(timeout: number): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2800';
@@ -884,12 +912,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_2900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0290
-     * @tc.name testRunningLockTest_2900
-     * @tc.desc Create lock input invalid value
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Create lock input invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_2900';
@@ -911,12 +940,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0300
-     * @tc.name testRunningLockTest_3000
-     * @tc.desc Create lock input invalid value
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Create lock input invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3000';
@@ -950,12 +980,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0310
-     * @tc.name testRunningLockTest_3100
-     * @tc.desc The lock type is BACKGROUND
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   The lock type is BACKGROUND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3100';
@@ -972,12 +1003,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0320
-     * @tc.name testRunningLockTest_3200
-     * @tc.desc The lock type is BACKGROUND
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   The lock type is BACKGROUND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3200';
@@ -994,12 +1026,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0330
-     * @tc.name testRunningLockTest_3300
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3300';
@@ -1017,12 +1050,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0340
-     * @tc.name testRunningLockTest_3400
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3400';
@@ -1040,12 +1074,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0350
-     * @tc.name testRunningLockTest_3500
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3500';
@@ -1063,12 +1098,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0360
-     * @tc.name testRunningLockTest_3600
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3600';
@@ -1087,12 +1123,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0370
-     * @tc.name testRunningLockTest_3700
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3700';
@@ -1111,12 +1148,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0380
-     * @tc.name testRunningLockTest_3800
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3800';
@@ -1135,12 +1173,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_3900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0390
-     * @tc.name testRunningLockTest_3900
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_3900';
@@ -1158,12 +1197,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0400
-     * @tc.name testRunningLockTest_4000
-     * @tc.desc Checks whether the specified RunningLockType is supported (deprecated since 9)
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4000';
@@ -1181,12 +1221,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0410
-     * @tc.name testRunningLockTest_4100
-     * @tc.desc Checks whether the specified RunningLockType is supported.
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4100';
@@ -1203,12 +1244,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0420
-     * @tc.name testRunningLockTest_4200
-     * @tc.desc Checks whether the specified RunningLockType is supported.
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4200';
@@ -1225,12 +1267,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0430
-     * @tc.name testRunningLockTest_4300
-     * @tc.desc Checks whether the specified RunningLockType is supported.
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4300';
@@ -1247,12 +1290,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0440
-     * @tc.name testRunningLockTest_4400
-     * @tc.desc Checks whether the specified RunningLockType is supported.
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4400';
@@ -1269,12 +1313,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0450
-     * @tc.name testRunningLockTest_4500
-     * @tc.desc Checks whether the specified RunningLockType is supported.
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4500';
@@ -1291,12 +1336,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0460
-     * @tc.name testRunningLockTest_4600
-     * @tc.desc Checks whether the specified RunningLockType is supported.
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4600';
@@ -1313,12 +1359,13 @@ export default function RunningLockTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   RunningLockTest_4700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0470
-     * @tc.name testRunningLockTest_4700
-     * @tc.desc Checks whether the specified RunningLockType is supported.
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the specified RunningLockType is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockTest_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'RunningLockTest_4700';

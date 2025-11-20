@@ -40,12 +40,13 @@ export default function MultimodalKeyEventTest() {
     }
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KeyEvent_Action_0100
      * @tc.number SUB_MMI_Input_Api_KeyEvent_Action_0100
-     * @tc.name SUB_MMI_Input_Api_KeyEvent_Action_0100
-     * @tc.desc Test KeyEvent Action
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test KeyEvent Action
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KeyEvent_Action_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -65,12 +66,13 @@ export default function MultimodalKeyEventTest() {
       });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KeyEvent_Key_0100
      * @tc.number SUB_MMI_Input_Api_KeyEvent_Key_0100
-     * @tc.name SUB_MMI_Input_Api_KeyEvent_Key_0100
-     * @tc.desc Test KeyEvent Key
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test KeyEvent Key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KeyEvent_Key_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -95,12 +97,13 @@ export default function MultimodalKeyEventTest() {
       });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KeyEvent_Key_0200
      * @tc.number SUB_MMI_Input_Api_KeyEvent_Key_0200
-     * @tc.name SUB_MMI_Input_Api_KeyEvent_Key_0200
-     * @tc.desc Test KeyEvent
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test KeyEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KeyEvent_Key_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -61,9 +61,13 @@ export default function PermissionTest(){
     })
 
     /**
-     * @tc.number  SUB_Driver_Ext_DeviceManagerAPIFunc_0100
-     * @tc.name    Permission_bindDriverWithDeviceId_001
-     * @tc.desc    verify permission of bindDriverWithDeviceId
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   Permission_bindDriverWithDeviceId_001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0100
+     * @tc.desc   verify permission of bindDriverWithDeviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Permission_bindDriverWithDeviceId_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
@@ -89,9 +93,13 @@ export default function PermissionTest(){
       })
 
     /**
-     * @tc.number  SUB_Driver_Ext_DeviceManagerAPIFunc_0200
-     * @tc.name    Permission_unbindDriverWithDeviceId_001
-     * @tc.desc    verify permission of unbindDriverWithDeviceId
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   Permission_unbindDriverWithDeviceId_001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0200
+     * @tc.desc   verify permission of unbindDriverWithDeviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Permission_unbindDriverWithDeviceId_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done:()=>void) : Promise<void> => {
@@ -113,9 +121,13 @@ export default function PermissionTest(){
     })
 
     /**
-     * @tc.number  SUB_Driver_Ext_DeviceManagerAPIFunc_0300
-     * @tc.name    Permission_queryDevices_001
-     * @tc.desc    verify permission of queryDevices
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   Permission_queryDevices_001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0300
+     * @tc.desc   verify permission of queryDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Permission_queryDevices_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     async (done:()=>void) : Promise<void> => {

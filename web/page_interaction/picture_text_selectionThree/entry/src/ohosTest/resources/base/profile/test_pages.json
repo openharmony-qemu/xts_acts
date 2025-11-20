@@ -1,8 +1,10 @@
 {
   "src": [
-    "testability/pages/WebViewContextMenuMediaType",
+    "testability/pages/WebViewIsCapture",
     "testability/pages/WebViewGetMimeTypes",
-    "testability/pages/WebViewIsCapture"
+    "testability/pages/WebViewGetAcceptType",
+    "testability/pages/WebViewGetMode",
+    "testability/pages/WebViewContextMenuMediaType"
   ]
 }
 

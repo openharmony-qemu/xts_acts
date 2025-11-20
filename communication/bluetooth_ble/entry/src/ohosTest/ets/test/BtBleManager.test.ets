@@ -409,11 +409,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0100
-           * @tc.name testStartAdvertising
-           * @tc.desc Test StartAdvertising api10.
-           * @tc.type Function
-           * @tc.level Level 0
+           * @tc.desc   Test StartAdvertising api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let manufactureValueBuffer = new Uint8Array(4);
@@ -479,11 +481,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0200
-           * @tc.name testStartAdvertising
-           * @tc.desc Test StartAdvertising api10.
-           * @tc.type Function
-           * @tc.level Level 0
+           * @tc.desc   Test StartAdvertising api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -498,11 +502,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0100
-           * @tc.name testGattConnect
-           * @tc.desc Test api10.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -520,11 +526,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECT_0100
-           * @tc.name testGattDisconnect
-           * @tc.desc Test api10.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -542,11 +550,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0200
-           * @tc.name testGetConnectedBLEDevices
-           * @tc.desc Test api10.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -567,11 +577,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0300
-           * test Client BLEconnectStateChange
-           * @tc.desc Test on and off api10
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test on and off api10
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -590,11 +602,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0400
-           * test Client BLEconnectStateChange
-           * @tc.desc Test on and off api10
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test on and off api10
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             gattC.on('BLEConnectionStateChange', ConnectStateChanged);
@@ -613,11 +627,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0100
-           * @tc.name testgetRssiValue
-           * @tc.desc Test getRssiValue api10 by promise.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test getRssiValue api10 by promise.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -648,11 +664,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0200
-           * @tc.name testgetRssiValue
-           * @tc.desc Test testGetDeviceName api10 by callback.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test testGetDeviceName api10 by callback.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -678,11 +696,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0100
-           * @tc.name testGetDeviceName
-           * @tc.desc Test GetDeviceName api10 by promise.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test GetDeviceName api10 by promise.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -708,11 +728,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0200
-           * @tc.name testGetDeviceName
-           * @tc.desc Test testGetDeviceName api10 by callback.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test testGetDeviceName api10 by callback.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -738,11 +760,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0100
-           * @tc.name testGetServices
-           * @tc.desc Test GetServices api10 by promise.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test GetServices api10 by promise.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -767,11 +791,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0200
-           * @tc.name testGetServices
-           * @tc.desc Test GetServices api10 by callback.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test GetServices api10 by callback.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -797,11 +823,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0100
-           * @tc.name testSetBLEMtuSize
-           * @tc.desc Test SetBLEMtuSize api10.
-           * @tc.type Function
-           * @tc.level Level 1
+           * @tc.desc   Test SetBLEMtuSize api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) =>  {
             try {
@@ -820,11 +848,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0200
-           * @tc.name testSetBLEMtuSize
-           * @tc.desc Test SetBLEMtuSize api10.
-           * @tc.type Function
-           * @tc.level Level 1
+           * @tc.desc   Test SetBLEMtuSize api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) =>  {
             try {
@@ -839,11 +869,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
-           * @tc.name testReadDescriptorValue
-           * @tc.desc Test ReadDescriptorValue api10 by promise.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test ReadDescriptorValue api10 by promise.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let descriptors :  Array<bluetoothBle.BLEDescriptor> = [];
@@ -887,11 +919,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2000
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2000
-           * @tc.name testReadDescriptorValue
-           * @tc.desc Test ReadDescriptorValue api10 by callback.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test ReadDescriptorValue api10 by callback.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             let descriptors :  Array<bluetoothBle.BLEDescriptor> = [];
@@ -925,11 +959,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2100
-           * @tc.name test characteristicReadOn
-           * @tc.desc Test On and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test On and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -949,11 +985,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2200
-           * @tc.name test characteristicReadOff
-           * @tc.desc Test On and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test On and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             gattS.on("characteristicRead", ReadCharacteristicReq);
@@ -974,11 +1012,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1300
-           * @tc.name testReadDescriptorValue
-           * @tc.desc Test ReadDescriptorValue api10 by promise.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test ReadDescriptorValue api10 by promise.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let bufferDesc = new ArrayBuffer(8);
@@ -1007,11 +1047,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1400
-           * @tc.name testReadDescriptorValue
-           * @tc.desc Test ReadDescriptorValue api10 by callback.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test ReadDescriptorValue api10 by callback.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let bufferDesc = new ArrayBuffer(8);
@@ -1040,11 +1082,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1500
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1500
-           * @tc.name test ReadDescriptorOn
-           * @tc.desc Test On and Off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test On and Off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -1063,11 +1107,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1600
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1600
-           * @tc.name test ReadDescriptorOff
-           * @tc.desc Test On and Off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test On and Off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             gattS.on("descriptorRead", ReadDescriptorReq);
@@ -1086,11 +1132,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1800
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1800
-           * @tc.name testWriteCharacteristicValue callback
-           * @tc.desc Test Client WriteCharacteristicValue api10.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test Client WriteCharacteristicValue api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let descriptors :  Array<bluetoothBle.BLEDescriptor> = [];
@@ -1131,11 +1179,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1900
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1900
-           * @tc.name testWriteCharacteristicValue promise
-           * @tc.desc Test Client WriteCharacteristicValue api10.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test Client WriteCharacteristicValue api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -1174,11 +1224,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2000
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2000
-           * @tc.name test characteristicWriteOn
-           * @tc.desc Test on and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test on and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -1198,11 +1250,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2100
-           * @tc.name test characteristicWriteOff
-           * @tc.desc Test on and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test on and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             gattS.on("characteristicWrite", WriteCharacteristicReq);
@@ -1222,11 +1276,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1000
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1000
-           * @tc.name testWriteDescriptorValue
-           * @tc.desc Test Client WriteDescriptorValue promsie api10.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test Client WriteDescriptorValue promsie api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let bufferDesc = new ArrayBuffer(8);
@@ -1260,11 +1316,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1100
-           * @tc.name testWriteDescriptorValue
-           * @tc.desc Test Client WriteDescriptorValue callback api10.
-           * @tc.type Function
-           * @tc.level Level 2
+           * @tc.desc   Test Client WriteDescriptorValue callback api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let bufferDesc = new ArrayBuffer(8);
@@ -1300,11 +1358,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1200
-           * @tc.name test WriteDescriptorOn
-           * @tc.desc Test on and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test on and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             try {
@@ -1324,11 +1384,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1300
-           * @tc.name test WriteDescriptorOn
-           * @tc.desc Test on and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test on and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             gattS.on("descriptorWrite", WriteDescriptorReq);
@@ -1348,11 +1410,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1400
-           * @tc.name testBLECharacteristicChangeON
-           * @tc.desc Test On and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test On and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
@@ -1372,11 +1436,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1500
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1500
-           * @tc.name testBLECharacteristicChangeOFF
-           * @tc.desc Test On and off api10.
-           * @tc.type Function
-           * @tc.level Level 3
+           * @tc.desc   Test On and off api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             gattC.on('BLECharacteristicChange', CharacteristicChange);
@@ -1396,11 +1462,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0100
-           * @tc.name test setCharacteristicChangeNotification callback
-           * @tc.desc Test setCharacteristicChangeNotification api10
-           * @tc.type Function
-           * @tc.level Level 0
+           * @tc.desc   Test setCharacteristicChangeNotification api10
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             let descriptors :  Array<bluetoothBle.BLEDescriptor> = [];
@@ -1438,11 +1506,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0200
-           * @tc.name test setCharacteristicChangeNotification promise
-           * @tc.desc Test setCharacteristicChangeNotification api10
-           * @tc.type Function
-           * @tc.level Level 0
+           * @tc.desc   Test setCharacteristicChangeNotification api10
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let descriptors :  Array<bluetoothBle.BLEDescriptor> = [];
@@ -1475,11 +1545,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0300
-           * @tc.name test setCharacteristicChangeIndication callback
-           * @tc.desc Test setCharacteristicChangeIndication api10
-           * @tc.type Function
-           * @tc.level Level 0
+           * @tc.desc   Test setCharacteristicChangeIndication api10
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             let descriptors :  Array<bluetoothBle.BLEDescriptor> = [];
@@ -1516,11 +1588,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0400
-           * @tc.name test setCharacteristicChangeIndication promise
-           * @tc.desc Test setCharacteristicChangeIndication api10
-           * @tc.type Function
-           * @tc.level Level 0
+           * @tc.desc   Test setCharacteristicChangeIndication api10
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             let descriptors : Array<bluetoothBle.BLEDescriptor> = [];
@@ -1554,11 +1628,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0100
-           * @tc.name test GattClientDevice on blemtuchange
-           * @tc.desc test GattClientDevice on blemtuchange api10.
-           * @tc.type Function
-           * @tc.level Level 1
+           * @tc.desc   test GattClientDevice on blemtuchange api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             try {
@@ -1582,11 +1658,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0200
-           * @tc.name test GattClientDevice off blemtuchange
-           * @tc.desc test GattClientDevice off blemtuchange api10
-           * @tc.type Function
-           * @tc.level Level 1
+           * @tc.desc   test GattClientDevice off blemtuchange api10
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
            */
           it('SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             gattC.on('BLEMtuChange', (mtu: number) => {
@@ -1609,11 +1687,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_CREATECLIENT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_CREATECLIENT_0100
-           * @tc.name testCreateGattClientDevice
-           * @tc.desc testCreateGattClientDevice
-           * @tc.type Function
-           * @tc.level Level 0
+           * @tc.desc   testCreateGattClientDevice
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL0
            */
           it('SUB_COMMUNICATION_BLUETOOTH_BLE_CREATECLIENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
             try {
@@ -1631,12 +1711,14 @@ function wrDescriptorVal() {
           })
 
           /**
-          * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATTCLIENT_CLOSE_0100
-          * @tc.name testClose
-          * @tc.desc test gattClient close
-          * @tc.type Function
-          * @tc.level Level 2
-          */
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATTCLIENT_CLOSE_0100
+           * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATTCLIENT_CLOSE_0100
+           * @tc.desc   test gattClient close
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BLUETOOTH_GATTCLIENT_CLOSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
               let gattClients = bluetoothBle.createGattClientDevice("99:99:99:99:99:99");
@@ -1654,12 +1736,13 @@ function wrDescriptorVal() {
           })
 
           /**
+           * @generated.time 2025-11-09 20:49:45
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLECONSTANT_GATTDISCONNECTREASON_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLECONSTANT_GATTDISCONNECTREASON_0100
-           * @tc.name SUB_COMMUNICATION_BLUETOOTH_BLECONSTANT_GATTDISCONNECTREASON_0100
-           * @tc.desc Test BLE Constant Api20 GattDisconnectReason
-           * @tc.type Function
-           * @tc.size MediumTest
-           * @tc.level Level 0
+           * @tc.desc   Test BLE Constant Api20 GattDisconnectReason
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL0
            */
           it('SUB_COMMUNICATION_BLUETOOTH_BLECONSTANT_GATTDISCONNECTREASON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {

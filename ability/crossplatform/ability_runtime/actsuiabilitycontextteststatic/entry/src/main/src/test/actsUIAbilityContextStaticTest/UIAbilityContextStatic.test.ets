@@ -21,7 +21,7 @@ import Utils from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import contextConstant from '@ohos.app.ability.contextConstant';
 import AtomicServiceOptions from '@ohos.app.ability.AtomicServiceOptions'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
 import wantConstant from '@ohos.app.ability.wantConstant';
@@ -78,8 +78,8 @@ export default function UIAbilityContextStatic() {
           expect(abilityInfo.icon == "$media:layered_image").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.iconId: ` + abilityInfo.iconId);
           expect(typeof (abilityInfo.iconId) == 'number').assertTrue();
-          hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.applicationInfo: ` + abilityInfo?.applicationInfo?.name);
-          expect(abilityInfo?.applicationInfo?.name == "com.example.uiabilitycontexttest.static").assertTrue();
+          hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.applicationInfo: ` + abilityInfo.applicationInfo!.name);
+          expect(abilityInfo.applicationInfo!.name == "com.example.uiabilitycontexttest.static").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.metadata: ` + abilityInfo.metadata.length);
           expect(abilityInfo.metadata.length >= 0).assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 success`);
@@ -233,7 +233,7 @@ export default function UIAbilityContextStatic() {
           flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
           parameters: {
             "demo.result": 123456
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         };
         context.openAtomicService('', options)
           .then((result: common.AbilityResult) => {

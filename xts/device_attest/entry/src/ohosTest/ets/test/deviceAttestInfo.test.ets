@@ -36,9 +36,13 @@ export default function deviceAttestInfoTest(context: Context, windowStage:windo
     })
 
     /**
-     * @tc.number     SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001
-     * @tc.name       Test function getAttestStatus() : Promise<AttestResultInfo>
-     * @tc.desc       202 - Not System App. Interface caller is not a system app.
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001
+     * @tc.number SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001
+     * @tc.desc   202 - Not System App. Interface caller is not a system app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('test the enum value of attestResultInfo begin');
@@ -63,9 +67,13 @@ export default function deviceAttestInfoTest(context: Context, windowStage:windo
     })
 
     /**
-     * @tc.number     SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_002
-     * @tc.name       Test function getAttestStatus(callback: AsyncCallback<AttestResultInfo>) : void
-     * @tc.desc       202 - Not System App. Interface caller is not a system app.
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_002
+     * @tc.number SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_002
+     * @tc.desc   202 - Not System App. Interface caller is not a system app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('test the enum value of attestResultInfo begin');
@@ -91,9 +99,13 @@ export default function deviceAttestInfoTest(context: Context, windowStage:windo
     })
 
     /**
-     * @tc.number     SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_003
-     * @tc.name       Test function getAttestStatusSync() : AttestResultInfo;
-     * @tc.desc       202 - Not System App. Interface caller is not a system app.
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_003
+     * @tc.number SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_003
+     * @tc.desc   202 - Not System App. Interface caller is not a system app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('test the enum value of attestResultInfo begin');

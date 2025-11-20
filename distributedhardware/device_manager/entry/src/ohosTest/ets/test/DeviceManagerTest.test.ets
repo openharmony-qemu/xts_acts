@@ -21,13 +21,14 @@ const KEY_CODE_EVENT_ERROR = 1
 
 export default function DeviceManagerTest() {
   describe('DeviceManagerTest', () => {
-    /*
-     * @tc.number     : SUB_DistributedServiceKit_Get_Local_Device_Name_0100
-     * @tc.name       : testDistributedServiceKitGetLocalDeviceName0100
-     * @tc.desc       : testing ERR_OK interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   testDistributedServiceKitGetLocalDeviceName0100
+     * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_0100
+     * @tc.desc   testing ERR_OK interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDistributedServiceKitGetLocalDeviceName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

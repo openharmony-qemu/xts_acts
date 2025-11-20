@@ -95,8 +95,14 @@ export default function HasCard1PublicTest() {
           console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
           ExpectFail();
         } else {
-          console.info(`${caseName} success, data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
+          if (data) {
+            expect(data == true).assertTrue();
+            console.info(`${caseName} success, has call->${JSON.stringify(data)}`);
+          } else {
+            expect(data == false).assertTrue();
+            console.info(`${caseName} success, does not has call->${JSON.stringify(data)}`);
+          }
+          done();
         }
         console.info(`${caseName} test end `);
         done();

@@ -72,13 +72,13 @@ export default function arkTSUtilsLockTest() {
       await sleep(20);
     })
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1200
-     * @tc.name      : testTaskLocksQueryAll_static_0001
-     * @tc.desc      : The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
-     *                 resulting in no information with length=0.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQueryAll_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1200
+     * @tc.desc   The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQueryAll_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -95,13 +95,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1300
-     * @tc.name      : testTaskLocksQueryAll_static_0002
-     * @tc.desc      : The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
-     *                 returning information on existing asynchronous locks and validating each item in the AsyncLockState results.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQueryAll_static_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1300
+     * @tc.desc   The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQueryAll_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -118,13 +118,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1400
-     * @tc.name      : testTaskLocksQueryAll_static_0003
-     * @tc.desc      : The queryAll operation of AsyncLock creates multiple asynchronous locks,
-     *                 performs a query, and validates each item in the AsyncLockState results.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQueryAll_static_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1400
+     * @tc.desc   The queryAll operation of AsyncLock creates multiple asynchronous locks,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQueryAll_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,13 +145,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0100
-     * @tc.name      : testTaskLocksConstructor_static_0001
-     * @tc.desc      : The request operation of AsyncLock, which had not been created before,
-     *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksConstructor_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0100
+     * @tc.desc   The request operation of AsyncLock, which had not been created before,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksConstructor_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -168,12 +168,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0700
-     * @tc.name      : testTaskLocksQuery_static_0001
-     * @tc.desc      : The request operation of AsyncLock has not been created before, resulting in an error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQuery_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0700
+     * @tc.desc   The request operation of AsyncLock has not been created before, resulting in an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -190,12 +191,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1100
-     * @tc.name      : testTaskLocksQuery_static_0005
-     * @tc.desc      : The query operation of AsyncLock has not been created before, error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQuery_static_0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1100
+     * @tc.desc   The query operation of AsyncLock has not been created before, error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -212,13 +214,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0200
-     * @tc.name      : testTaskLocksRequest_static_0001
-     * @tc.desc      : The request operation of AsyncLock, which had not been created before,
-     *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksRequest_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0200
+     * @tc.desc   The request operation of AsyncLock, which had not been created before,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -236,13 +238,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0300
-     * @tc.name      : testTaskLocksRequest_static_0002
-     * @tc.desc      : The request operation of AsyncLock has already been created earlier.
-     *                 Here, it is a lookup operation that returns an already existing asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksRequest_static_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0300
+     * @tc.desc   The request operation of AsyncLock has already been created earlier.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -261,13 +263,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0400
-     * @tc.name      : testTaskLocksRequest_static_0003
-     * @tc.desc      : The request operation of AsyncLock has not been created before.
-     *                 Here, it is a creation operation that returns a newly created asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksRequest_static_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0400
+     * @tc.desc   The request operation of AsyncLock has not been created before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -285,13 +287,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0500
-     * @tc.name      : testTaskLocksRequest_static_0004
-     * @tc.desc      : The request operation of AsyncLock has already been created before.
-     *                 Here, it is a lookup operation that returns an existing asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksRequest_static_0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0500
+     * @tc.desc   The request operation of AsyncLock has already been created before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -310,14 +312,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0600
-     * @tc.name      : testTaskLocksRequest_static_0005
-     * @tc.desc      : The request operation of AsyncLock had already been created.
-     *                 When performing a lookup with a case-insensitive mismatch,
-     *                 it actually returns a newly created async lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksRequest_static_0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0600
+     * @tc.desc   The request operation of AsyncLock had already been created.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -337,13 +338,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0800
-     * @tc.name      : testTaskLocksQuery_static_0002
-     * @tc.desc      : The request operation of AsyncLock has already been created.
-     *                 It returns an existing async lock and verifies each piece of information in the AsyncLockState result.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQuery_static_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0800
+     * @tc.desc   The request operation of AsyncLock has already been created.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -365,13 +366,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0900
-     * @tc.name      : testTaskLocksQuery_static_0003
-     * @tc.desc      : The query operation of AsyncLock was previously created with the specified name.
-     *                 It returns an existing async lock and verifies each piece of information in the AsyncLockState result.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQuery_static_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0900
+     * @tc.desc   The query operation of AsyncLock was previously created with the specified name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -393,13 +394,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1_static_000
-     * @tc.name      : testTaskLocksQuery_static_0004
-     * @tc.desc      : The query operation of AsyncLock was previously created with the specified name.
-     *                 When performing a lookup with a case-insensitive mismatch, it results in an error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testTaskLocksQuery_static_0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1_static_000
+     * @tc.desc   The query operation of AsyncLock was previously created with the specified name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -418,12 +419,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1500
-     * @tc.name       : testLockAsync_static_0001
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1500
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -442,12 +444,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1600
-     * @tc.name       : testLockAsync_static_0006
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1600
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -489,12 +492,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1700
-     * @tc.name       : testLockAsync_static_0007
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1700
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -520,12 +524,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1800
-     * @tc.name       : testLockAsync_static_0008
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1800
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -558,12 +563,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1900
-     * @tc.name       : testLockAsync_static_0009
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0009
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1900
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -604,12 +610,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2_static_000
-     * @tc.name       : testLockAsync_static_0010
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0010
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2_static_000
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -637,12 +644,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2100
-     * @tc.name       : testLockAsync_static_0011
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0011
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2100
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -672,12 +680,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2200
-     * @tc.name       : testLockAsync_static_0012
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0012
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2200
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -714,13 +723,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2300
-     * @tc.name      : testLockAsync_static_0013
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0013
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2300
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -762,13 +771,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2400
-     * @tc.name      : testLockAsync_static_0014
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0014
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2400
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -808,13 +817,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2500
-     * @tc.name      : testLockAsync_static_0015
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0015
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2500
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -852,13 +861,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2600
-     * @tc.name      : testLockAsync_static_0016
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0016
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2600
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -896,12 +905,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2700
-     * @tc.name       : testLockAsync_static_0017
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0017
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2700
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -957,12 +967,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2800
-     * @tc.name       : testLockAsync_static_0018
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0018
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2800
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1001,12 +1012,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2900
-     * @tc.name       : testLockAsync_static_0019
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0019
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2900
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1045,12 +1057,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3_static_000
-     * @tc.name       : testLockAsync_static_0020
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0020
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3_static_000
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1083,12 +1096,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3100
-     * @tc.name       : testLockAsync_static_0021
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0021
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3100
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1150,12 +1164,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3200
-     * @tc.name       : testLockAsync_static_0022
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0022
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3200
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1181,12 +1196,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3300
-     * @tc.name       : testLockAsync_static_0023
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0023
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3300
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1220,12 +1236,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3400
-     * @tc.name       : testLockAsync_static_0024
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testLockAsync_static_0024
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3400
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync_static_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1259,12 +1276,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3500
-     * @tc.name       : testAsyncLockMode_static_0001
-     * @tc.desc       : Test the function of the interface LockAsyncMode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockMode_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3500
+     * @tc.desc   Test the function of the interface LockAsyncMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockMode_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1298,12 +1316,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3600
-     * @tc.name       : testAsyncLockMode_static_0002
-     * @tc.desc       : Test the function of the interface LockAsyncMode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockMode_static_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3600
+     * @tc.desc   Test the function of the interface LockAsyncMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockMode_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1340,12 +1359,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3700
-     * @tc.name       : testAsyncLockOptions_static_0001
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3700
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1365,12 +1385,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3800
-     * @tc.name       : testAsyncLockOptions_static_0002
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3800
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1404,12 +1425,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3900
-     * @tc.name       : testAsyncLockOptions_static_0003
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3900
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1433,12 +1455,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4_static_000
-     * @tc.name       : testAsyncLockOptions_static_0004
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4_static_000
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1462,12 +1485,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4100
-     * @tc.name       : testAsyncLockOptions_static_0005
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4100
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1494,12 +1518,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4200
-     * @tc.name       : testAsyncLockOptions_static_0006
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4200
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1526,12 +1551,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4300
-     * @tc.name       : testAsyncLockOptions_static_0007
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4300
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1555,12 +1581,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4400
-     * @tc.name       : testAsyncLockOptions_static_0008
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockOptions_static_0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4400
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1584,12 +1611,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4500
-     * @tc.name       : testAsyncLockState_static_0001
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4500
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1617,12 +1645,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4600
-     * @tc.name       : testAsyncLockState_static_0002
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4600
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1650,12 +1679,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4700
-     * @tc.name       : testAsyncLockState_static_0003
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4700
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1683,12 +1713,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4800
-     * @tc.name       : testAsyncLockState_static_0004
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4800
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1716,12 +1747,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4900
-     * @tc.name       : testAsyncLockState_static_0005
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4900
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1751,12 +1783,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5_static_000
-     * @tc.name       : testAsyncLockState_static_0006
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5_static_000
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1786,12 +1819,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5100
-     * @tc.name       : testAsyncLockState_static_0007
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5100
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1821,12 +1855,13 @@ export default function arkTSUtilsLockTest() {
       })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5200
-     * @tc.name       : testAsyncLockState_static_0008
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testAsyncLockState_static_0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5200
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

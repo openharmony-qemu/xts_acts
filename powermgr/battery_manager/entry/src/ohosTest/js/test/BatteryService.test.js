@@ -40,12 +40,13 @@ export default function BatteryServiceTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   BatteryServiceTest_0100
      * @tc.number SUB_PowerSystem_BatteryService_JSTest_0010
-     * @tc.name testBatteryServiceTest_0100
-     * @tc.desc BatteryService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryServiceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryServiceTest_0100';
@@ -60,12 +61,13 @@ export default function BatteryServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   BatteryServiceTest_0200
      * @tc.number SUB_PowerSystem_BatteryService_JSTest_0020
-     * @tc.name testBatteryServiceTest_0200
-     * @tc.desc BatteryService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryServiceTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryServiceTest_0200';
@@ -80,12 +82,13 @@ export default function BatteryServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   BatteryServiceTest_0300
      * @tc.number SUB_PowerSystem_BatteryService_JSTest_0030
-     * @tc.name testBatteryServiceTest_0300
-     * @tc.desc BatteryService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryServiceTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryServiceTest_0300';

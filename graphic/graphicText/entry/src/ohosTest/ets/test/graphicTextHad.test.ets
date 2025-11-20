@@ -45,7 +45,7 @@ export default function graphicTextHadTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testParagraphStylePropertyFour', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testParagraphStylePropertyFour', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testParagraphStylePropertyFour===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
@@ -150,7 +150,7 @@ export default function graphicTextHadTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testTextRunGetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextRunGetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = '====testTextRunGetGlyphs====';
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -190,7 +190,7 @@ export default function graphicTextHadTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testTextRunGetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextRunGetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = '====testTextRunGetPositions====';
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -228,7 +228,7 @@ export default function graphicTextHadTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testGetSystemFontFullNamesByType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "====testGetSystemFontFullNamesByType===="
       console.info(msg + ' begin ');

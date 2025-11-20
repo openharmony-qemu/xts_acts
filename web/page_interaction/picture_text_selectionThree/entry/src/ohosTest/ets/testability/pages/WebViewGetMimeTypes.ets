@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -117,7 +117,6 @@ struct webViewController {
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitWebViewGetMimeTypes01": {
-              if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
@@ -130,14 +129,10 @@ struct webViewController {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              } else {
-                Utils.emitEvent(true, 20251111)
-              }
-              break;
+                break;
             }
 
             case "emitWebViewGetMimeTypes02": {
-              if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector02.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
@@ -150,9 +145,6 @@ struct webViewController {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              } else {
-                Utils.emitEvent(true, 20251112)
-              }
               break;
 
             }

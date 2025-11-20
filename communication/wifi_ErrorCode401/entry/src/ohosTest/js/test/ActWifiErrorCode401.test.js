@@ -67,12 +67,14 @@ export default function actsWifiErrorCode401Test() {
         afterEach(function () {
         })
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0005
-        * @tc.name testRemoveCandidateConfig
-        * @tc.desc Test RemoveCandidateConfig API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0005
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0005
+         * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try{
                 await wifiMg.addCandidateConfig(null)
@@ -90,12 +92,14 @@ export default function actsWifiErrorCode401Test() {
             done();
 	    })
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0006
-        * @tc.name testRemoveCandidateConfig
-        * @tc.desc Test RemoveCandidateConfig API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0006
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0006
+         * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try{
                 let wifiDeviceConfig2  = {
@@ -128,12 +132,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0007
-        * @tc.name testRemoveCandidateConfig
-        * @tc.desc Test RemoveCandidateConfig API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0007
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0007
+         * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 let result = await wifiMg.removeCandidateConfig(null);
@@ -147,12 +153,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0008
-        * @tc.name testRemoveCandidateConfig
-        * @tc.desc Test RemoveCandidateConfig API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0008
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0008
+         * @tc.desc   Test RemoveCandidateConfig API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 wifiMg.removeCandidateConfig(null,
@@ -173,12 +181,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0009
-        * @tc.name testConnectToCandidateConfig
-        * @tc.desc Test ConnectToCandidateConfig API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0009
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0009
+         * @tc.desc   Test ConnectToCandidateConfig API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 wifiMg.connectToCandidateConfig("null");
@@ -192,12 +202,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0014
-        * @tc.name testGetSignalLevel
-        * @tc.desc Test GetSignalLevel API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0014
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0014
+         * @tc.desc   Test GetSignalLevel API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 console.info("[wifi_test] getSignalLevel " + wifiMg.getSignalLevel('abc','bcd'));
@@ -210,12 +222,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0017
-        * @tc.name testIsFeatureSupported
-        * @tc.desc Test isFeatureSupported API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0017
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0017
+         * @tc.desc   Test isFeatureSupported API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 let isSupport1 = wifiMg.isFeatureSupported('123');
@@ -229,12 +243,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0026
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0026
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0026
+         * @tc.desc   Test createGroup API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let createGroup = wifiMg.createP2pGroup(null);
@@ -247,12 +263,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0020
-        * @tc.name testP2pConnect
-        * @tc.desc Test p2pConnect API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0020
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0020
+         * @tc.desc   Test p2pConnect API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 let p2pConnectResult = wifiMg.p2pConnect(null);
@@ -265,12 +283,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0027
-        * @tc.name testWifiStateChange
-        * @tc.desc Test wifiStateChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0027
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0027
+         * @tc.desc   Test wifiStateChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "wifiStateChange";
             let wifiStateChangeCallback = result => {
@@ -294,12 +314,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0028
-        * @tc.name testWifiConnectionChange
-        * @tc.desc Test wifiConnectionChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0028
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0028
+         * @tc.desc   Test wifiConnectionChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "wifiConnectionChange";
             let wifiStateChangeCallback = result => {
@@ -323,12 +345,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0029
-        * @tc.name testWifiScanStateChange
-        * @tc.desc Test wifiScanStateChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0029
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0029
+         * @tc.desc   Test wifiScanStateChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "wifiScanStateChange";
             let wifiStateChangeCallback = result => {
@@ -352,12 +376,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0030
-        * @tc.name testWifiRssiChange
-        * @tc.desc Test wifiRssiChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0030
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0030
+         * @tc.desc   Test wifiRssiChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "wifiRssiChange";
             let wifiStateChangeCallback = result => {
@@ -381,12 +407,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0031
-        * @tc.name testHotspotStateChange
-        * @tc.desc Test hotspotStateChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0031
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0031
+         * @tc.desc   Test hotspotStateChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "hotspotStateChange";
             let wifiStateChangeCallback = result => {
@@ -410,12 +438,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0032
-        * @tc.name testP2pStateChange
-        * @tc.desc Test p2pStateChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0032
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0032
+         * @tc.desc   Test p2pStateChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "p2pStateChange";
             let wifiStateChangeCallback = result => {
@@ -439,12 +469,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0033
-        * @tc.name testP2pConnectionChange
-        * @tc.desc Test p2pConnectionChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0033
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0033
+         * @tc.desc   Test p2pConnectionChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "p2pConnectionChange";
             let wifiStateChangeCallback = result => {
@@ -468,12 +500,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0034
-        * @tc.name testP2pDeviceChange
-        * @tc.desc Test p2pDeviceChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0034
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0034
+         * @tc.desc   Test p2pDeviceChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "p2pDeviceChange";
             let wifiStateChangeCallback = result => {
@@ -497,12 +531,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0035
-        * @tc.name testP2pPeerDeviceChange
-        * @tc.desc Test p2pPeerDeviceChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0035
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0035
+         * @tc.desc   Test p2pPeerDeviceChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "p2pPeerDeviceChange";
             let wifiStateChangeCallback = result => {
@@ -526,12 +562,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0036
-        * @tc.name testP2pPersistentGroupChange
-        * @tc.desc Test p2pPersistentGroupChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0036
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0036
+         * @tc.desc   Test p2pPersistentGroupChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "p2pPersistentGroupChange";
             let wifiStateChangeCallback = result => {
@@ -555,12 +593,14 @@ export default function actsWifiErrorCode401Test() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0037
-        * @tc.name testP2pDiscoveryChange
-        * @tc.desc Test p2pDiscoveryChange API ErrorCode 401.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0037
+         * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0037
+         * @tc.desc   Test p2pDiscoveryChange API ErrorCode 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_ErrorCode_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiState = "p2pDiscoveryChange";
             let wifiStateChangeCallback = result => {

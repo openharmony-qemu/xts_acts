@@ -15,6 +15,7 @@ import drawingTsCanvasPart2Test from "./CanvasPart2.test";
 import drawingTsCanvasPart3Test from "./CanvasPart3.test";
 import drawingTsCanvasPart4Test from "./CanvasPart4.test";
 import drawingTsCanvasPart5Test from "./CanvasPart5.test";
+import drawingTsCanvasPart8Test from "./CanvasPart8.test";
 import drawingTsMatrixTest from "./Matrix.test";
 import drawingTsMatrixPart2Test from "./MatrixPart2.test";
 import roundRectTest from "./RoundRect.test";
@@ -38,6 +39,7 @@ export default function testsuite() {
   drawingTsCanvasPart3Test();
   drawingTsCanvasPart4Test();
   drawingTsCanvasPart5Test();
+  drawingTsCanvasPart8Test();
   drawingTsMatrixTest();
   drawingTsMatrixPart2Test();
   roundRectTest();

@@ -21,7 +21,34 @@ import window from '@ohos.window';
 import settings from '@ohos.settings';
 import { image } from '@kit.ImageKit';
 import { Driver, ON } from '@kit.TestKit';
+import { abilityAccessCtrl, StartOptions ,PermissionRequestResult, Permissions} from '@kit.AbilityKit';
+import { display, screenshot } from '@kit.ArkUI';
 
+async function getPermision(){
+  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+  let permissions: Array<Permissions> =
+    ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+  atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError,data:PermissionRequestResult)=>{
+    if(err){
+      console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }else {
+      console.error('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
+    }
+  })
+}
+
+async function clickButtonDriver(){
+  console.error(`come in permissionClick`);
+  let driver: Driver = Driver.create();
+  console.error(`come in Driver create`);
+  let buttonOne = await driver.findComponent(ON.text('允许'));
+  console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
+  if(buttonOne){
+    await buttonOne.click();
+  }
+
+}
 async function getPixelMap(context:common.UIAbilityContext,resource:Resource,size:number = vp2px(40)) {
   try{
 
@@ -47,7 +74,7 @@ export default function abilityTest() {
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
     let windowStage:window.WindowStage;
-    beforeAll(() => {
+    beforeAll(async () => {
       isFloatingBallEnabled = floatingBall.isFloatingBallEnabled();
       console.info('beforeAll Floating ball enabled is: ' + isFloatingBallEnabled);
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
@@ -63,6 +90,9 @@ export default function abilityTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      await getPermision();
+      await sleep(300);
+      await clickButtonDriver();
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -2475,18 +2505,30 @@ export default function abilityTest() {
       };
       try {
         let floatingBallController = await floatingBall.create(config);
+        let onStateChange = async (state: floatingBall.FloatingBallState) => {
+          console.info(CaseName+ ' Floating ball stateChange: ' + state);
+          if(state == floatingBall.FloatingBallState.STARTED){
+            floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
+              console.info(CaseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data.windowId));
+              floatingBallController.off('stateChange',onStateChange);
+              floatingBallController.stopFloatingBall();
+              expect(data.windowId).assertLarger(0);
+              expect(data!=null).assertTrue();
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(CaseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.message!=null).assertTrue();
+              expect(false).assertTrue();
+              done();
+            });
+          }else{
+            await sleep(300);
+          }
+
+        };
+        floatingBallController.on('stateChange',onStateChange);
         await floatingBallController.startFloatingBall(startParams);
-        floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
-          console.info(CaseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data.windowId));
-          floatingBallController.stopFloatingBall();
-          expect(data!=null).assertTrue();
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(CaseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
-          expect(err.message!=null).assertTrue();
-          expect(false).assertTrue();
-          done();
-        });
+        await sleep(1000);
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
@@ -2699,6 +2741,83 @@ export default function abilityTest() {
           expect(false).assertTrue();
           done();
         }
+      }
+    })
+    /**
+     * @tc.number : SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0100
+     * @tc.name   : testCaptureWithBlacklistFloatBall
+     * @tc.desc   : 截屏过滤窗口为闪控球
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 0
+     */
+    it('testCaptureWithBlacklistFloatBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testCaptureWithBlacklistFloatBall';
+      let floatingBallController: floatingBall.FloatingBallController;
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.EMPHATIC,
+        title: 'title',
+        content: 'content'
+      };
+
+      try {
+        floatingBall.create(config).then(async (data: floatingBall.FloatingBallController) => {
+           floatingBallController = data;
+          console.info(caseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+          let onStateChange = async (state: floatingBall.FloatingBallState) => {
+            console.info(caseName+ ' Floating ball stateChange: ' + state);
+            if(state == floatingBall.FloatingBallState.STARTED){
+              floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
+                console.info(caseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
+                let captureOption: screenshot.CaptureOption = {
+                  "displayId": display.getDefaultDisplaySync().id,
+                  "blackWindowIds":[data.windowId]
+                };
+                let promise = screenshot.capture(captureOption);
+                promise.then(async (pixelMap: image.PixelMap) => {
+                  console.info(caseName+' Succeeded in saving screenshot. Pixel bytes number: ' + pixelMap.getPixelBytesNumber());
+                  expect(pixelMap.getPixelBytesNumber()).assertLarger(0);
+                  pixelMap.release(); // PixelMap使用完后及时释放内存
+                  floatingBallController.off('stateChange');
+                  await floatingBallController.stopFloatingBall();
+                  done();
+                }).catch(async (err: BusinessError) => {
+                  console.error(caseName+` Failed to save screenshot. Code: ${err.code}, message: ${err.message}`);
+                  await floatingBallController.stopFloatingBall();
+                  expect(false).assertTrue();
+                  done();
+                });
+              }).catch(async (err: BusinessError) => {
+                console.error(caseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
+                await floatingBallController.stopFloatingBall();
+                expect(false).assertTrue();
+                done();
+              });
+            }else{
+              await sleep(300);
+            }
+
+          };
+          floatingBallController.on('stateChange',onStateChange);
+          await floatingBallController.startFloatingBall(startParams);
+          await sleep(1000);
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+          if(err.code == 801){
+            done();
+          }else{
+            expect(false).assertTrue();
+            done();
+          }
+
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
       }
     })
     /**
