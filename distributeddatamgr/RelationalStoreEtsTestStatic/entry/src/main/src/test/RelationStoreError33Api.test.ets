@@ -992,7 +992,7 @@ import {
        */
       it('testRdbStoreTrans001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans001 start *************");
-        await rdbStore.createTransaction().then((transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then((transaction: relationalStore.Transaction) => {
           const valueBucket1: relationalStore.ValuesBucket = {
             "id": "abc",
             "name": "Jim",
@@ -1011,7 +1011,8 @@ import {
             console.error(TAG + `Insert is failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual(14800033);
           };
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
@@ -1029,7 +1030,7 @@ import {
        */
       it('testRdbStoreTrans002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans002 start *************");
-        await rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
           const valueBucket1: relationalStore.ValuesBucket = {
             "id": "abc",
             "name": "Jim",
@@ -1048,7 +1049,8 @@ import {
             console.error(TAG + `Insert is failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual(14800033);
           };
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
@@ -1066,7 +1068,7 @@ import {
        */
       it('testRdbStoreTrans003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans003 start *************");
-        await rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
           const valueBucket1: relationalStore.ValuesBucket = {
             "id": "abc",
             "name": "Jim",
@@ -1085,7 +1087,8 @@ import {
             console.error(TAG + `batchInsert is failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual(14800033);
           };
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
@@ -1103,7 +1106,7 @@ import {
        */
       it('testRdbStoreTrans004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans004 start *************");
-        await rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
           const valueBucket1: relationalStore.ValuesBucket = {
             "id": "abc",
             "name": "Jim",
@@ -1122,7 +1125,8 @@ import {
             console.error(TAG + `batchInsertSync is failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual(14800033);
           };
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
@@ -1140,7 +1144,7 @@ import {
        */
       it('testRdbStoreTrans005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans005 start *************");
-        await rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
           const valueBucket1: relationalStore.ValuesBucket = {
             "id": "abc",
             "name": "Jim",
@@ -1161,7 +1165,8 @@ import {
             console.error(TAG + `updateSync is failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual(14800033);
           };
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
@@ -1179,7 +1184,7 @@ import {
        */
       it('testRdbStoreTrans006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans006 start *************");
-        await rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
           const valueBucket1: relationalStore.ValuesBucket = {
             "id": "abc",
             "name": "Jim",
@@ -1201,7 +1206,8 @@ import {
             expect(e.code).assertEqual(14800033);
           }
           ;
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
@@ -1219,7 +1225,7 @@ import {
        */
       it('testRdbStoreTrans007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans007 start *************");
-        await rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
           let predicates = new relationalStore.RdbPredicates("employee");
           predicates.equalTo("name", "Jim");
           try {
@@ -1232,7 +1238,8 @@ import {
             console.error(TAG + `delete is failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual(14800033);
           };
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
@@ -1250,7 +1257,7 @@ import {
        */
       it('testRdbStoreTrans008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
         console.log(TAG + "************* testRdbStoreTrans008 start *************");
-        await rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
+        rdbStore.createTransaction().then(async (transaction: relationalStore.Transaction) => {
           let predicates = new relationalStore.RdbPredicates("employee");
           predicates.equalTo("name", "Jim");
           try {
@@ -1263,7 +1270,8 @@ import {
             console.error(TAG + `deleteSync is failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual(14800033);
           };
-        }).catch((err) => {
+        }).catch((e: Error): void => {
+          let err = e as BusinessError;
           console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           expect().assertFail();
         });
