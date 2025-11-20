@@ -493,6 +493,7 @@ export default function initNdkTest() {
       let reFormat = new RegExp("^(\\d{4})/(\\d{2})/(\\d{2})$");
       let re = securityPatchTagInfo.match(reFormat);
       expect(re != null).assertTrue();
+      done();
     });
 
     /**
@@ -745,6 +746,7 @@ export default function initNdkTest() {
       console.info('the value of the deviceinfo sdkApiVersion is :' + sdkApiVersionInfo);
       expect(sdkApiVersionInfo).assertInstanceOf('Number');
       expect(sdkApiVersionInfo >= 0).assertTrue();
+      done();      
     });
 
     /**
@@ -782,6 +784,7 @@ export default function initNdkTest() {
       console.info('the value of the deviceinfo firstApiVersion is :' + firstApiVersionInfo);
       expect(firstApiVersionInfo).assertInstanceOf('Number');
       expect(firstApiVersionInfo >= 0).assertTrue();
+      done();
     });
 
     /**
@@ -1186,6 +1189,7 @@ export default function initNdkTest() {
       console.info('the value of the deviceinfo distributionOSApiVersion is :' + distributionOSApiVersionInfo);
       expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
       expect(distributionOSApiVersionInfo >= 0).assertTrue();
+      done();
     });
 
     /**
