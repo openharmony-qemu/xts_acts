@@ -50,40 +50,40 @@ export default class MoveAbilityToBackground extends EmbeddableUIAbility {
   onForeground(): void {
     hilog.info(0x0000, 'testTAG', '%{public}s', 'Ability onForeground in embeddableUIAbility');
     let key:number=0;
-    this.context.moveAbilityToBackground().then(() => {
-      console.log(`moveAbilityToBackground success.`);
-      key++;
-      console.log(`moveAbilityToBackground success.`+key);
-      let options: commonEventManager.CommonEventPublishData = {
-        code: 2,
-        data: JSON.stringify(key),
-      };
-      console.log('this moveAbilityToBackground' +options.data)
-      commonEventManager.publish('moveAbilityToBackground', options, async (err: BusinessError) => {
-        if (err) {
-          hilog.error(DOMAIN_NUMBER, TAG, 'PublishCallBack err = ' + JSON.stringify(err));
-        } else {
-          hilog.info(DOMAIN_NUMBER, TAG, 'this push data success moveAbilityToBackground');
-        }
-      });
-    }).catch((err: BusinessError) => {
-      console.log(`moveAbilityToBackground error: ${JSON.stringify(err)}.`);
-      let options: commonEventManager.CommonEventPublishData = {
-        code: err?.code,
-        data: JSON.stringify(key),
-      };
-      commonEventManager.publish('moveAbilityToBackground', options, async (err: BusinessError) => {
-        if (err) {
-          hilog.error(DOMAIN_NUMBER, TAG, 'PublishCallBack err = ' + JSON.stringify(err));
-        } else {
-          hilog.info(DOMAIN_NUMBER, TAG, 'this push data success moveAbilityToBackground');
-        }
-      });
-    });
     setTimeout(() => {
-      this.context.terminateSelf(()=>{
+      this.context.moveAbilityToBackground().then(() => {
+        console.log(`moveAbilityToBackground success.`);
+        key++;
+        console.log(`moveAbilityToBackground success.`+key);
+        let options: commonEventManager.CommonEventPublishData = {
+          code: 2,
+          data: JSON.stringify(key),
+        };
+        console.log('this moveAbilityToBackground' +options.data)
+        commonEventManager.publish('moveAbilityToBackground', options, async (err: BusinessError) => {
+          if (err) {
+            hilog.error(DOMAIN_NUMBER, TAG, 'PublishCallBack err = ' + JSON.stringify(err));
+          } else {
+            hilog.info(DOMAIN_NUMBER, TAG, 'this push data success moveAbilityToBackground');
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.log(`moveAbilityToBackground error: ${JSON.stringify(err)}.`);
+        let options: commonEventManager.CommonEventPublishData = {
+          code: err?.code,
+          data: JSON.stringify(key),
+        };
+        commonEventManager.publish('moveAbilityToBackground', options, async (err: BusinessError) => {
+          if (err) {
+            hilog.error(DOMAIN_NUMBER, TAG, 'PublishCallBack err = ' + JSON.stringify(err));
+          } else {
+            hilog.info(DOMAIN_NUMBER, TAG, 'this push data success moveAbilityToBackground');
+          }
+        });
       });
-    }, 2000);
+
+      this.context.terminateSelf();
+    }, 500);
     console.info(`moveabilitytobackground state is ${key}`);
 
 
