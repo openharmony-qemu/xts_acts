@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,39 +13,38 @@
  * limitations under the License.
  */
 import {
-  BaseGestureEvent,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  FlexAlign,
-  GestureControl,
-  GestureEvent,
-  GestureInfo,
-  GestureJudgeResult,
-  HorizontalAlign,
-  LongPressGesture,
-  Margin,
-  Padding,
-  PanDirection,
+  Component,
+  Column,
   Row,
-  Scroll,
-  SourceTool,
-  Span,
-  TapGesture,
   Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  Scroll,
+  GestureEvent,
+  LongPressGesture,
+  TapGesture,
+  ClickEvent,
+  FlexAlign,
+  GestureInfo,
+  BaseGestureEvent,
+  DragEvent,
+  GestureControl,
+  GestureJudgeResult,
+  PanDirection,
+  Span,
+  HorizontalAlign,
+  Padding,
+  SourceTool
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct TapGestureBasicClick {
@@ -81,16 +80,10 @@ struct TapGestureBasicClick {
   @State time: number = 0
   @State timestamp: number = 0
 
+
   build() {
-    Column({ space: 10 } as ColumnOptions) {
-      Text('Click')
-        .fontSize(20)
-        .width(240)
-        .height(80)
-        .margin({ left: 0, top: 0 } as Margin)
-        .padding({ left: 0, top: 0 } as Padding)
-        .backgroundColor(Color.Yellow)
-        .key('TapGestureBasicClick_Click')
+    Column({space:10} as ColumnOptions) {
+      Text('Click').fontSize(20).width(240).height(80).margin({left:0,top:0} as Margin).padding({left:0,top:0} as Padding).backgroundColor(Color.Yellow).key('TapGestureBasicClick_Click')
         .gesture(
           TapGesture({ count: 1 })
             .onAction((event: GestureEvent) => {
@@ -139,7 +132,7 @@ struct TapGestureBasicClick {
       Text(`pinchCenterY:${this.pinchCenterY}`).key('TapGestureBasicClick_pinchCenterY')
       Text(`speed:${this.speed}`).key('TapGestureBasicClick_speed')
 
-      Text() {
+      Text(){
         Span(`fingerList_id:${this.fingerList_id}`).fontColor(Color.Blue).key('TapGestureBasicClick_fingerList_id')
         Span(`${this.fingerList_globalX}`).fontColor(Color.Red).key('TapGestureBasicClick_fingerList_globalX')
         Span(`${this.fingerList_globalY}`).fontColor(Color.Green).key('TapGestureBasicClick_fingerList_globalY')
@@ -149,22 +142,17 @@ struct TapGestureBasicClick {
         Span(`${this.fingerList_displayY}`).fontColor(Color.Red).key('TapGestureBasicClick_fingerList_displayY')
       }
 
-      Text() {
+      Text(){
         Span(`${this.timestamp}`).fontColor(Color.Blue).key('TapGestureBasicClick_timestamp')
         Span(`${this.time}`).fontColor(Color.Red).key('TapGestureBasicClick_time')
       }
-
-      Text() {
+      Text(){
         Span(`${this.target_area_width}`).fontColor(Color.Green).key('TapGestureBasicClick_target_area_width')
         Span(`${this.target_area_height}`).fontColor(Color.Red).key('TapGestureBasicClick_target_area_height')
         Span(`${this.target_area_position_x}`).fontColor(Color.Green).key('TapGestureBasicClick_target_area_position_x')
         Span(`${this.target_area_position_y}`).fontColor(Color.Red).key('TapGestureBasicClick_target_area_position_y')
-        Span(`${this.target_area_globalPosition_x}`)
-          .fontColor(Color.Green)
-          .key('TapGestureBasicClick_target_area_globalPosition_x')
-        Span(`${this.target_area_globalPosition_y}`)
-          .fontColor(Color.Red)
-          .key('TapGestureBasicClick_target_area_globalPosition_y')
+        Span(`${this.target_area_globalPosition_x}`).fontColor(Color.Green).key('TapGestureBasicClick_target_area_globalPosition_x')
+        Span(`${this.target_area_globalPosition_y}`).fontColor(Color.Red).key('TapGestureBasicClick_target_area_globalPosition_y')
       }
 
       Text(`source:${this.source}`).key('TapGestureBasicClick_source')
@@ -176,11 +164,6 @@ struct TapGestureBasicClick {
       Text(`velocityY:${this.velocityY}`).key('TapGestureBasicClick_velocityY')
       Text(`velocity:${this.velocity}`).key('TapGestureBasicClick_velocity')
 
-    }
-    .alignItems(HorizontalAlign.Start)
-    .width('100%')
-    .height('100%')
-    .backgroundColor('#ffbebaba')
-    .key('TapGestureBasicClick_Father')
+    }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('TapGestureBasicClick_Father')
   }
 }

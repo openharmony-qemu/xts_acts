@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,7 @@ export default function swipeGestureEventTest() {
         if (!('SwipeGesture' == pages.name)) {
           console.info('get swipeGestureEvent state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error('push swipeGestureEvent page error: ' + err);
@@ -62,24 +60,33 @@ export default function swipeGestureEventTest() {
     });
 
 
+    
     /*
-     * @tc.number    SwipeGesture1_static_0100
-     * @tc.name      SwipeGesture1_static_0100
-     * @tc.desc      SwipeGesture1_static_0100
-     * @tc.level     2
+     * @tc.number   SwipeGesture1_static_0100
+     * @tc.name     SwipeGesture1_static_0100
+     * @tc.desc     SwipeGesture1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SwipeGesture1_static_0100 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let colum = CommonFunc.getComponentRectOnScreen('SwipeGesture1');
+      await CommonFunc.sleep(1000);
       let top = colum.top
       let left = colum.left
-      await driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100) as Int,
-        Math.round(top + 100) as Int,
-        Math.round(AppStorage.get<number>("winLeft") as number + 500) as Int, Math.round(top + 500) as Int, 600)
-      await CommonFunc.sleep(1000);
+      console.log('test start get data is:' + colum.top + '[]' + colum.left)
+      console.log('test start get data is:' + Math.round(AppStorage.get<number>("winLeft")! + 100) +
+        '[]' + Math.round(top + 100) + '[]' +
+      Math.round(AppStorage.get<number>("winLeft")! + 500) + '[]' + Math.round(top + 500) + '[]' + 600)
+
+      await driver.swipe(Math.round(AppStorage.get<number>("winLeft")! + 100).toInt(),
+        Math.round(top + 100).toInt(),
+        Math.round(AppStorage.get<number>("winLeft")! + 500).toInt(), Math.round(top + 500).toInt(), 600 as Int)
+
+      await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('value');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SwipeGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[SwipeGesture1_static_0100] title: ' +

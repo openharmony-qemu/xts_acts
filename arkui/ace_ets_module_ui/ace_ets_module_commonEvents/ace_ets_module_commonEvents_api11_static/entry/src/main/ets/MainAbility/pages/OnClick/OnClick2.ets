@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,32 +13,32 @@
  * limitations under the License.
  */
 import {
-  $rawfile,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
-  CopyOptions,
+  Column,
+  Row,
+  Flex,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  ItemAlign,
-  Margin,
-  Padding,
-  Row,
-  Text,
-  TextAlign,
+  Color,
   TextArea,
-  TouchType,
-  Visibility
-} from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+  CopyOptions,
+  Visibility,
 
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
+  $rawfile,
+  ClickEvent
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct OnClick2 {
@@ -55,16 +55,16 @@ struct OnClick2 {
       .key('OnClick2')
       .height(150)
       .width(200)
-      .backgroundColor(0x008000)
-      .translate({ x: this.offsetX, y: this.offsetY })
+      .backgroundColor('0x008000')
+      .translate({x: this.offsetX, y: this.offsetY})
       .onClick((event?: ClickEvent) => {
-        if (event) {
+        if(event){
           this.text = String(Math.round(event.x))
         }
       })
     }
     .height(150)
     .width(200)
-    .backgroundColor(0xffa500)
+    .backgroundColor('0xffa500')
   }
 }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,7 +58,7 @@ struct ListGesture {
         .fontColor(Color.Blue)
         .margin(10)
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: int): void => {
+        ForEach(this.arr, (item: number, index: Int): void => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -66,12 +66,12 @@ struct ListGesture {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor('0xFFFFFF')
           }
-        }, (item: number, index: int): string => String(item))
+        }, (item: number, index: Int): string => String(item))
       }
       .padding({ top: 5 } as Padding)
-      .listDirection(Axis.Vertical)
+      .listDirection(Axis.Vertical) // 排列方向
       .scrollBar(BarState.Off)
       .friction(0.6)
       .backgroundColor(Color.Pink)
@@ -79,11 +79,15 @@ struct ListGesture {
       .height(300)
       .divider({
         strokeWidth: 2,
-        color: 0xFFFFFF,
+        color: '0xFFFFFF',
         startMargin: 20,
         endMargin: 20
+      }) // 每行之间的分界线
+      .onDidScroll((event) => {
+        if (event) {
+          this.logMsg1 = 'OnScroll start'
+        }
       })
-
 
       Column() {
       }

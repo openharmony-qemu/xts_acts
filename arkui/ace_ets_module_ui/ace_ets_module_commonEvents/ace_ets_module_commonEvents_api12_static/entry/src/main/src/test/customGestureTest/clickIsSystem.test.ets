@@ -4,28 +4,28 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
   Component,
-  DisplayRotation,
   Driver,
-  MatchPattern,
   MouseButton,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
   UiWindow,
-  WindowMode
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -35,11 +35,13 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Driver, ON } from '@ohos.UiTest';
+import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 const uiContext = new UIContext();
 
 
@@ -50,7 +52,7 @@ export default function clickIsSystem() {
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async ():Promise<void> => {
       console.info("clickIsSystem beforeEach start");
       try {
         const router = AppStorage.get<Router>('router') as Router
@@ -59,33 +61,31 @@ export default function clickIsSystem() {
         console.info("get clickIsSystem state pages:" + JSON.stringify(pages));
         if (!("clickIsSystem" == pages.name)) {
           console.info("get  clickIsSystem pages.name:" + JSON.stringify(pages.name));
-
-
           router.pushUrl({
             url: "MainAbility/pages/customGestureTest/clickIsSystem"
           })
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push clickIsSystem page error:" + err);
       }
       console.info("clickIsSystem foreEach end");
-
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("clickIsSystem after each called");
     });
 
+    
 
+    
     /*
-     * @tc.number    clickIsSystem_static_001
-     * @tc.name      clickIsSystem_static_001
-     * @tc.desc      clickIsSystem_static_001
-     * @tc.level     2
+     * @tc.number   clickIsSystem_static_001
+     * @tc.name     clickIsSystem_static_001
+     * @tc.desc     clickIsSystem_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('clickIsSystem_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('clickIsSystem_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[clickIsSystem_001] START');
       await CommonFunc.sleep(200);
       let driver = Driver.create();

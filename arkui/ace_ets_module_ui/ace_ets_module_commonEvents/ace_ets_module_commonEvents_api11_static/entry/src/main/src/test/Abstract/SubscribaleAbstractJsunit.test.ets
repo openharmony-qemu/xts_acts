@@ -4,85 +4,85 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { UtilsTest } from '../Util.test'
-
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import {UtilsTest} from '../Util.test'
 export default function SubscribaleAbstractJsunit() {
 
-  describe('SubscribaleAbstract', () => {
+  describe('SubscribaleAbstract', () =>{
     beforeAll(() => {
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-
+    
+    
     /*
-     * @tc.number    stateManagement_SubscribaleAbstract_addOwningProperty_static_0100
-     * @tc.name      stateManagement_SubscribaleAbstract_addOwningProperty_static_0100
-     * @tc.desc      stateManagement_SubscribaleAbstract_addOwningProperty_static_0100
-     * @tc.level     2
+     * @tc.number   stateManagement_SubscribaleAbstract_addOwningProperty_static_0100
+     * @tc.name     stateManagement_SubscribaleAbstract_addOwningProperty_static_0100
+     * @tc.desc     stateManagement_SubscribaleAbstract_addOwningProperty_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('stateManagement_SubscribaleAbstract_addOwningProperty_static_0100', Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        done();
-
-        /*
-        console.info('[stateManagement_SubscribaleAbstract_addOwningProperty_0100] START');
-        let subscriber = new IPropertySubscriber();
-        let abstract = new SubscribaleAbstract();
-        abstract.addOwningProperty(subscriber);
-        let numbers = abstract.owningProperties_;
-        abstract.removeOwningProperty(subscriber)
-        abstract.removeOwningPropertyById(1);
-        abstract.notifyPropertyHasChanged("key1", "value1");
-        expect(true).assertTrue();
-        console.info('[stateManagement_SubscribaleAbstract_addOwningProperty_0100] END');
-        done();
-        */
-      });
-
-
-    /*
-     * @tc.number    stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100
-     * @tc.name      stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100
-     * @tc.desc      stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100
-     * @tc.level     2
-     */
-    it('stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100', Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        done();
-
-        /*
-        console.info('[stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100] START');
-        let subscriber = new ISinglePropertyChangeSubscriber<string>(
-          (data) => {
-            console.info('[stateManagement_SubscribaleAbstract_addOwningProperty_0100] data = ' + data);
-          }
-        );
-        expect(true).assertTrue();
-        console.info('[stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100] END');
-        done();
-        */
-      });
-
-
-    /*
-     * @tc.number    stateManagement_PersistentStorage_static_0100
-     * @tc.name      stateManagement_PersistentStorage_static_0100
-     * @tc.desc      stateManagement_PersistentStorage_static_0100
-     * @tc.level     2
-     */
-    it('stateManagement_PersistentStorage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('stateManagement_SubscribaleAbstract_addOwningProperty_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       done();
+      //return;
+      /*
+      console.info('[stateManagement_SubscribaleAbstract_addOwningProperty_0100] START');
+      let subscriber = new IPropertySubscriber();
+      let abstract = new SubscribaleAbstract();
+      abstract.addOwningProperty(subscriber);
+      let numbers = abstract.owningProperties_;
+      abstract.removeOwningProperty(subscriber)
+      abstract.removeOwningPropertyById(1);
+      abstract.notifyPropertyHasChanged("key1", "value1");
+      expect(true).assertTrue();
+      console.info('[stateManagement_SubscribaleAbstract_addOwningProperty_0100] END');
+      done();
+      */
+    });
 
+    
+    
+    /*
+     * @tc.number   stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100
+     * @tc.name     stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100
+     * @tc.desc     stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100
+     * @tc.level    Level.LEVEL0
+     */
+it('stateManagement_ISinglePropertyChangeSubscriber_hasChanged_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      done();
+      //return;
+      /*
+      console.info('[stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100] START');
+      let subscriber = new ISinglePropertyChangeSubscriber<string>(
+        (data) => {
+          console.info('[stateManagement_SubscribaleAbstract_addOwningProperty_0100] data = ' + data);
+        }
+      );
+      expect(true).assertTrue();
+      console.info('[stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100] END');
+      done();
+      */
+    });
+
+    
+    
+    /*
+     * @tc.number   stateManagement_PersistentStorage_static_0100
+     * @tc.name     stateManagement_PersistentStorage_static_0100
+     * @tc.desc     stateManagement_PersistentStorage_static_0100
+     * @tc.level    Level.LEVEL0
+     */
+it('stateManagement_PersistentStorage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      done();
+      //return;
       /*
       console.info('[stateManagement_PersistentStorage_0100] Start');
       let persistentStorage = new PersistentStorage(AppStorage, new Storage());
@@ -102,16 +102,17 @@ export default function SubscribaleAbstractJsunit() {
       */
     });
 
-
+    
+    
     /*
-     * @tc.number    stateManagement_IPropertySubscriber_static_0100
-     * @tc.name      stateManagement_IPropertySubscriber_static_0100
-     * @tc.desc      stateManagement_IPropertySubscriber_static_0100
-     * @tc.level     2
+     * @tc.number   stateManagement_IPropertySubscriber_static_0100
+     * @tc.name     stateManagement_IPropertySubscriber_static_0100
+     * @tc.desc     stateManagement_IPropertySubscriber_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('stateManagement_IPropertySubscriber_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('stateManagement_IPropertySubscriber_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       done();
-
+      //return;
       /*
       console.info('[stateManagement_IPropertySubscriber_0100] Start');
       let iPropertySubscriber =new IPropertySubscriber();
@@ -122,17 +123,18 @@ export default function SubscribaleAbstractJsunit() {
       done();
       */
     });
-
-
+    
+    
+    
     /*
-     * @tc.number    stateManagement_SyncedPropertyOneWay_static_0100
-     * @tc.name      stateManagement_SyncedPropertyOneWay_static_0100
-     * @tc.desc      stateManagement_SyncedPropertyOneWay_static_0100
-     * @tc.level     2
+     * @tc.number   stateManagement_SyncedPropertyOneWay_static_0100
+     * @tc.name     stateManagement_SyncedPropertyOneWay_static_0100
+     * @tc.desc     stateManagement_SyncedPropertyOneWay_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('stateManagement_SyncedPropertyOneWay_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('stateManagement_SyncedPropertyOneWay_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       done();
-
+      //return;
       /*
       console.info('[stateManagement_SyncedPropertyOneWay_0100] Start');
       let oneWay = new SyncedPropertyOneWay(new SubscribedAbstractProperty<string>());
@@ -148,16 +150,17 @@ export default function SubscribaleAbstractJsunit() {
       */
     });
 
-
+    
+    
     /*
-     * @tc.number    stateManagement_SyncedPropertyTwoWay_static_0100
-     * @tc.name      stateManagement_SyncedPropertyTwoWay_static_0100
-     * @tc.desc      stateManagement_SyncedPropertyTwoWay_static_0100
-     * @tc.level     2
+     * @tc.number   stateManagement_SyncedPropertyTwoWay_static_0100
+     * @tc.name     stateManagement_SyncedPropertyTwoWay_static_0100
+     * @tc.desc     stateManagement_SyncedPropertyTwoWay_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('stateManagement_SyncedPropertyTwoWay_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('stateManagement_SyncedPropertyTwoWay_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       done();
-
+      // return;
       /*
       console.info('[stateManagement_SyncedPropertyTwoWay_0100] Start');
       let twoWay = new SyncedPropertyTwoWay(new SubscribedAbstractProperty<string>());

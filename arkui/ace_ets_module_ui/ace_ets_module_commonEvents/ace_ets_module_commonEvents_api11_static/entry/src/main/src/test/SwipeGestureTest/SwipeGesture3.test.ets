@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -42,7 +42,7 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function SwipeGesture3() {
@@ -56,19 +56,21 @@ export default function SwipeGesture3() {
     beforeEach(async (): Promise<void> => {
       console.info("SwipeGesture3 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/SwipeGesture3',
+        url: 'MainAbility/pages/SwipeGesture/SwipeGesture3',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+
         let pages = routerInstance.getState();
         console.info("get SwipeGesture3 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/SwipeGesture/SwipeGesture3" == pages.name)) {
+          routerInstance.clear();
           console.info("get SwipeGesture3 pages.name:" + JSON.stringify(pages.name));
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push SwipeGesture3 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SwipeGesture3 page error:" + err);
@@ -77,13 +79,14 @@ export default function SwipeGesture3() {
     });
 
 
+    
     /*
-     * @tc.number    SwipeGesture3_static_0100
-     * @tc.name      SwipeGesture3_static_0100
-     * @tc.desc      SwipeGesture3_static_0100
-     * @tc.level     2
+     * @tc.number   SwipeGesture3_static_0100
+     * @tc.name     SwipeGesture3_static_0100
+     * @tc.desc     SwipeGesture3_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SwipeGesture3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwipeGesture3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('SwipeGesture3_0100 START');
       let driver = Driver.create()
@@ -91,19 +94,20 @@ export default function SwipeGesture3() {
       let strJson = inspector.getInspectorByKey('Swipe5');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SwipeGesture3_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[SwipeGesture3_0100] title: " + JSON.stringify(obj.getString('content')));
-      expect(obj.getString('content')).assertEqual('PinchGesture center:(0.5,0.5)');
+      console.info("[SwipeGesture3_0100] title: " + obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('PinchGesture center:(0.5,0.5)');
       console.info('[SwipeGesture3_0100] END');
       done();
     });
 
+    
     /*
-     * @tc.number    SwipeGesture3_static_0200
-     * @tc.name      SwipeGesture3_static_0200
-     * @tc.desc      SwipeGesture3_static_0200
-     * @tc.level     2
+     * @tc.number   SwipeGesture3_static_0200
+     * @tc.name     SwipeGesture3_static_0200
+     * @tc.desc     SwipeGesture3_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('SwipeGesture3_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwipeGesture3_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SwipeGesture3_0200 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -117,8 +121,8 @@ export default function SwipeGesture3() {
       let strJson = inspector.getInspectorByKey('Swipe6');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SwipeGesture3_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[SwipeGesture3_0200] title: " + JSON.stringify(obj.getString('content')));
-      expect((Math.abs(Number(obj.getString('content'))) - 93) < 10).assertEqual(true);
+      console.info("[SwipeGesture3_0200] title: " + obj.getElement('$attrs').getString('content'));
+      expect((Math.abs(Number(obj.getElement('$attrs').getString('content'))) - 93) < 10).assertEqual(true);
       console.info('[SwipeGesture3_0200] END');
       done();
     });

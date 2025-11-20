@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
 import {
   $rawfile,
@@ -51,7 +51,6 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
 
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
@@ -72,7 +71,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt();
+    const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       console.info('remove listener')
       this.listeners.splice(pos, 1)
@@ -117,11 +116,12 @@ class MyDataSource extends BasicDataSource {
     return this.dataArray.length
   }
 
-  public getData(index: Int): string {
-    return this.dataArray[index]
+  public getData(index: int): string {
+    let RealIndex: Int = index.toInt()
+    return this.dataArray[RealIndex]
   }
 
-  public addData(index: int, data: string): void {
+  public addData(index: Int, data: string): void {
     this.dataArray.splice(index, 0, data)
     let datatest = this.dataArray.length
     console.info('lenghth = ' + datatest)
@@ -142,29 +142,31 @@ class MyDataSource extends BasicDataSource {
     }
   }
 
-  public moveData(index1: Int, index2: Int): void {
-    if (index1 < index2) {
-      let temp = this.dataArray[index1]
-      for (let i = index1; i < index2; i++) {
+  public moveData(index1: number, index2: number): void {
+    let RealIndex1: Int = index1.toInt()
+    let RealIndex2: Int = index2.toInt()
+    if (RealIndex1 < RealIndex2) {
+      let temp = this.dataArray[RealIndex1]
+      for (let i = RealIndex1; i < RealIndex2; i++) {
         this.dataArray[i] = this.dataArray[i+1]
       }
-      this.dataArray[index2] = temp
+      this.dataArray[RealIndex2] = temp
 
       for (let j = 0; j < this.dataArray.length; j++) {
         console.info('after moving :' + this.dataArray[j])
       }
-    } else if (index1 > index2) {
-      let temp = this.dataArray[index1]
-      for (let i = index1; i > index2; i--) {
+    } else if (RealIndex1 > RealIndex2) {
+      let temp = this.dataArray[RealIndex1]
+      for (let i = RealIndex1; i > RealIndex2; i--) {
         this.dataArray[i] = this.dataArray[i-1]
       }
-      this.dataArray[index2] = temp
+      this.dataArray[RealIndex2] = temp
 
       for (let j = 0; j < this.dataArray.length; j++) {
         console.info('after moving :' + this.dataArray[j])
       }
     }
-    this.notifyDataMove(index1, index2)
+    this.notifyDataMove(index1.toInt(), index2.toInt())
   }
 
   public popData(): void {
@@ -177,7 +179,7 @@ class MyDataSource extends BasicDataSource {
     }
   }
 
-  public changeData(index: Int): void {
+  public changeData(index: int): void {
     this.dataArray[index] = 'apple'
     let datatest = this.dataArray.length
     console.info('lenghth = ' + datatest)
@@ -234,8 +236,42 @@ struct LazyForEachOnDataAdd {
               .key("onDataAddText")
 
             List({ space: 3 }) {
+              LazyForEach(this.data, (item: string) => {
+                ListItem() {
+                  Row() {
+                    Image(item).width("30%").height(50)
+                    Text(item).fontSize(20).margin({ left: 10 } as Margin)
+                  }.margin({ left: 10, right: 10 } as Margin)
+                }
+                .key("listItemOne")
+                .onClick((e: ClickEvent) => {
+                  try {
+                    this.data.pushData('/path/image' + this.data.totalCount())
+                    console.info("this.data.totalCount() is :" + this.data.totalCount())
+                  } catch (err: Error) {
+                    this.result_101 = false
+                    console.info("LazyForEachOnDataAdd_101 onClick emit action err: " +
+                    JSON.stringify((err as Error)?.message))
+                  }
 
-
+                  try {
+                    let backData1: emitter.EventData = {
+                      data: {
+                        "result1": this.result_101,
+                      } as Record<String, undefined | null | Object>
+                    }
+                    let backEvent1: emitter.InnerEvent = {
+                      eventId: 60212,
+                      priority: emitter.EventPriority.LOW
+                    }
+                    console.info("LazyForEachOnDataAdd_101 onClick start to emit action")
+                    emitter.emit(backEvent1, backData1)
+                  } catch (err: Error) {
+                    console.info("LazyForEachOnDataAdd_101 onClick emit action err: " +
+                    JSON.stringify((err as Error)?.message))
+                  }
+                })
+              }, (item: string) => item)
             }
 
             Text("lazyForEach-OnDataMove")
@@ -264,25 +300,25 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.moveData(3, 1)
-                  } catch (err) {
+                  } catch (err: Error) {
                     this.result_102 = false
                     console.info("LazyForEachOnDataAdd_102 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
 
                   try {
-                    let backData2: events_emitter.EventData = {
+                    let backData2: emitter.EventData = {
                       data: {
                         "result2": this.result_102,
-                      } as Record<string, RecordData>
+                      } as Record<String, undefined | null | Object>
                     }
-                    let backEvent2: events_emitter.InnerEvent = {
+                    let backEvent2: emitter.InnerEvent = {
                       eventId: 60213,
-                      priority: events_emitter.EventPriority.LOW
+                      priority: emitter.EventPriority.LOW
                     }
                     console.info("LazyForEachOnDataAdd_102 onClick start to emit action")
-                    events_emitter.emit(backEvent2, backData2)
-                  } catch (err) {
+                    emitter.emit(backEvent2, backData2)
+                  } catch (err: Error) {
                     console.info("LazyForEachOnDataAdd_102 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -316,25 +352,25 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.popData()
-                  } catch (err) {
+                  } catch (err: Error) {
                     this.result_103 = false
                     console.info("LazyForEachOnDataAdd_103 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
 
                   try {
-                    let backData3: events_emitter.EventData = {
+                    let backData3: emitter.EventData = {
                       data: {
                         "result3": this.result_103,
-                      } as Record<string, RecordData>
+                      } as Record<String, undefined | null | Object>
                     }
-                    let backEvent3: events_emitter.InnerEvent = {
+                    let backEvent3: emitter.InnerEvent = {
                       eventId: 60214,
-                      priority: events_emitter.EventPriority.LOW
+                      priority: emitter.EventPriority.LOW
                     }
                     console.info("LazyForEachOnDataAdd_103 onClick start to emit action")
-                    events_emitter.emit(backEvent3, backData3)
-                  } catch (err) {
+                    emitter.emit(backEvent3, backData3)
+                  } catch (err: Error) {
                     console.info("LazyForEachOnDataAdd_103 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -369,25 +405,25 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.changeData(2)
-                  } catch (err) {
+                  } catch (err: Error) {
                     this.result_104 = false
                     console.info("LazyForEachOnDataAdd_104 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
 
                   try {
-                    let backData4: events_emitter.EventData = {
+                    let backData4: emitter.EventData = {
                       data: {
                         "result4": this.result_104,
-                      } as Record<string, RecordData>
+                      } as Record<String, undefined | null | Object>
                     }
-                    let backEvent4: events_emitter.InnerEvent = {
+                    let backEvent4: emitter.InnerEvent = {
                       eventId: 60215,
-                      priority: events_emitter.EventPriority.LOW
+                      priority: emitter.EventPriority.LOW
                     }
                     console.info("LazyForEachOnDataAdd_104 onClick start to emit action")
-                    events_emitter.emit(backEvent4, backData4)
-                  } catch (err) {
+                    emitter.emit(backEvent4, backData4)
+                  } catch (err: Error) {
                     console.info("LazyForEachOnDataAdd_104 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }

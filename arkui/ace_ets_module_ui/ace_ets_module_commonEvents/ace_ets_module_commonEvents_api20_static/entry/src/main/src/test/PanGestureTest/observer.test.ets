@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -25,14 +25,13 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
+import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function PanGestureTest() {
-  describe('PanGestureTest', () => {
+  describe('PanGestureTest', () =>{
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.msSleep(4000)
@@ -50,10 +49,10 @@ export default function PanGestureTest() {
         console.info('get PanGestureTest state pages: ' + JSON.stringify(pages));
         if (!('observer' == pages.name)) {
           console.info('get PanGestureTest state pages.name: ' + JSON.stringify(pages.name));
-
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push PanGestureTest success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push PanGestureTest page error: ' + err);
@@ -66,40 +65,39 @@ export default function PanGestureTest() {
       console.info('observer after each called');
     });
 
-
+    
     /*
      * @tc.number   observerTest_static_0010
      * @tc.name     observerTest_static_0010
      * @tc.desc     observerTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-    it('observerTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('observerTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('observerTest_static_0010 START');
       let driver = Driver.create();
 
       let text = await driver.findComponent(ON.id('panGesture'));
       let button = await driver.findComponent(ON.id('button'));
-      text?.dragTo(button!);
-
+      await (text?.dragTo(button!) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('onContent');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
 
-      console.info('[observerTest_static_0010] observer: ' +
-      JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[observerTest_static_0010] observer: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).not().assertEqual('');
       console.info('[observerTest_static_0010] END');
       done();
     });
 
-
+    
     /*
      * @tc.number   observerTest_static_0020
      * @tc.name     observerTest_static_0020
      * @tc.desc     observerTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-    it('observerTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('observerTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('observerTest_static_0020 START');
       let driver = Driver.create();
 
@@ -109,10 +107,10 @@ export default function PanGestureTest() {
 
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('offContent');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
 
-      console.info('[observerTest_static_0020] observer: ' +
-      JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[observerTest_static_0020] observer: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('off');
       console.info('[observerTest_static_0020] END');
       done();

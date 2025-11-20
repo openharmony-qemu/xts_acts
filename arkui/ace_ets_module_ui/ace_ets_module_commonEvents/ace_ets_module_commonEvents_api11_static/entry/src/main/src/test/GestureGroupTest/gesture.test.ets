@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common'
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function gestureParallelJsunit() {
@@ -45,7 +45,7 @@ export default function gestureParallelJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("gestureParallelTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/gestureParallelTest',
+        url: 'MainAbility/pages/GestureGroup/gesture',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -54,10 +54,11 @@ export default function gestureParallelJsunit() {
         console.info("get gestureParallelTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get gestureParallelTest pages.name:" + JSON.stringify(pages.name));
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push gestureParallelTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gestureParallelTest page error:" + err);
@@ -72,20 +73,23 @@ export default function gestureParallelJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    testgestureParallel_static_0001
-     * @tc.name      testgestureParallel_static_0001
-     * @tc.desc      testgestureParallel_static_0001
-     * @tc.level     2
+     * @tc.number   testgestureParallel_static_0001
+     * @tc.name     testgestureParallel_static_0001
+     * @tc.desc     testgestureParallel_static_0001
+     * @tc.level    Level.LEVEL0
      */
-    it('testgestureParallel_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testgestureParallel_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gestureParallel testgestureParallel0001 START');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('ParallelText');
+      let strJson = inspector.getInspectorByKey('ParallelText');
+      await CommonFunc.sleep(2000);
       console.info("[testgestureParallel0001] component width strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getString('width')).assertEqual("320.00vp");
-      console.info("[testgestureParallel0001] width value :" + JSON.parseJsonElement(strJson).getString('width'));
+      expect(JSON.parseJsonElement(strJson).getElement("$attrs").getString('width')).assertEqual("320.00vp");
+      console.info("[testgestureParallel0001] width value :" +
+      JSON.parseJsonElement(strJson).getElement("$attrs").getString('width'));
       done();
     });
   })

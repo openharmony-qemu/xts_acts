@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,38 +13,74 @@
  * limitations under the License.
  */
 import {
-  $rawfile,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CopyOptions,
-  CustomBuilder,
-  Divider,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  Image,
-  ItemAlign,
-  Margin,
-  Padding,
-  ResponseType,
+  Component,
+  Column,
   Row,
+  Flex,
   Text,
-  TextAlign,
-  TextArea,
+  ColumnOptions,
   TouchType,
-  Visibility
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  TextArea,
+  CopyOptions,
+  Visibility,
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
+  $rawfile,
+  Divider,
+  Image,
+  ResponseType,
+  DragEvent,
+  Builder
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
-struct DragPreviewDemo {
+struct DragPreviewDemo{
+  @Builder dragPreviewBuilder() {
+    Column() {
+      Text("dragPreview")
+        .width(150)
+        .height(50)
+        .fontSize(20)
+        .borderRadius(10)
+        .textAlign(TextAlign.Center)
+        .fontColor(Color.Black)
+        .backgroundColor(Color.Pink)
+    }
+  }
+
+  @Builder MenuBuilder() {
+    Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
+      Text("menu item 1")
+        .fontSize(15)
+        .key('dragPreview_value')
+        .width(100)
+        .height(40)
+        .textAlign(TextAlign.Center)
+        .fontColor(Color.Black)
+        .backgroundColor(Color.Pink)
+      Divider()
+        .height(5)
+      Text("menu item 2")
+        .fontSize(15)
+        .width(100)
+        .height(40)
+        .textAlign(TextAlign.Center)
+        .fontColor(Color.Black)
+        .backgroundColor(Color.Pink)
+    }
+    .width(100)
+  }
+
   build() {
     Row() {
       Column() {
@@ -53,11 +89,12 @@ struct DragPreviewDemo {
           .width("30%")
           .height("100")
           .draggable(true)
-
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .bindContextMenu(this.MenuBuilder, ResponseType.LongPress)
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):DragItemInfo => {
             console.log("Image onDragStart")
+            return {} as DragItemInfo
           })
-
+          .dragPreview(this.dragPreviewBuilder)
       }
       .width("100%")
     }

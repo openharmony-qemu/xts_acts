@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -50,10 +50,8 @@ export default function notifyDragStartRequestTest() {
         console.info('get notifyDragStartRequestTest state pages: ' + JSON.stringify(pages));
         if (!('NormalEts' == pages.name)) {
           console.info('get notifyDragStartRequestTest state pages.name: ' + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error('push notifyDragStartRequestTest page error: ' + err);
@@ -67,13 +65,14 @@ export default function notifyDragStartRequestTest() {
     });
 
 
+    
     /*
-     * @tc.number    notifyDragStartRequestTest_static_0010
-     * @tc.name      notifyDragStartRequestTest_static_0010
-     * @tc.desc      notifyDragStartRequestTest_static_0010
-     * @tc.level     2
+     * @tc.number   notifyDragStartRequestTest_static_0010
+     * @tc.name     notifyDragStartRequestTest_static_0010
+     * @tc.desc     notifyDragStartRequestTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('notifyDragStartRequestTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('notifyDragStartRequestTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('notifyDragStartRequestTest_static_0010 START');
       let driver = Driver.create();
       let image1 = await driver.findComponent(ON.id('image1'));
@@ -81,10 +80,14 @@ export default function notifyDragStartRequestTest() {
       await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('button'));
       image1?.dragTo(button!);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(4000);
       let strJson1 = inspector.getInspectorByKey('button');
+      await CommonFunc.sleep(2000);
+      // console.info('[notifyDragStartRequestTest_static_0010] PreDrag: ' + JSON.stringify(strJson1));
       let obj1 = JSON.parseJsonElement(strJson1);
-      console.info('[notifyDragStartRequestTest_static_0010] PreDrag: ' + JSON.stringify(obj1.getElement('$attrs')));
+      // console.info('[notifyDragStartRequestTest_static_0010] PreDrag: ' + JSON.stringify(obj1.getElement('$attrs')));
+      console.info('[notifyDragStartRequestTest_static_0010] PreDrag: ' +
+      JSON.stringify(obj1.getElement('$attrs').getString('label')));
       expect(obj1.getElement('$attrs').getString('label')).assertEqual('success');
       console.info('[notifyDragStartRequestTest_static_0010] END');
       done();

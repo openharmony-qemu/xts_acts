@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -42,7 +42,7 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function GestureContiune() {
@@ -56,19 +56,20 @@ export default function GestureContiune() {
     beforeEach(async (): Promise<void> => {
       console.info("GestureContiune beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/GestureContiune',
+        url: "MainAbility/pages/onGestureJudgeBegin/GestureContiune",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get GestureContiune state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get GestureContiune pages.name:" + JSON.stringify(pages.name));
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push GestureContiune page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push GestureContiune page error:" + err);
@@ -77,13 +78,14 @@ export default function GestureContiune() {
     });
 
 
+    
     /*
-     * @tc.number    GestureContiune_static_0100
-     * @tc.name      GestureContiune_static_0100
-     * @tc.desc      GestureContiune_static_0100
-     * @tc.level     2
+     * @tc.number   GestureContiune_static_0100
+     * @tc.name     GestureContiune_static_0100
+     * @tc.desc     GestureContiune_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('GestureContiune_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('GestureContiune_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GestureContiune_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -93,8 +95,8 @@ export default function GestureContiune() {
       let strJson = inspector.getInspectorByKey('GestureContiune');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GestureContiune_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[GestureContiune_0100] title: " + JSON.stringify(obj.getString('label')));
-      expect(obj.getString('label')).assertEqual('Gesture is CONTINUE');
+      console.info("[GestureContiune_0100] title: " + obj.getElement('$attrs').getString('label'));
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('Gesture is CONTINUE');
       console.info('[GestureContiune_0100] END');
       done();
     });

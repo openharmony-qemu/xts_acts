@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -40,15 +40,18 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 
 export default function btnDragStart() {
   describe('btnDragStart', () => {
+
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
+
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("btnDragStart beforeEach start");
@@ -59,19 +62,15 @@ export default function btnDragStart() {
         console.info("get btnDragStart state pages:" + JSON.stringify(pages));
         if (!("buttonDragStart" == pages.name)) {
           console.info("get  btnDragStart pages.name:" + JSON.stringify(pages.name));
-
-
           router.pushUrl({
             url: "MainAbility/pages/customGestureTest/buttonDragStart"
           })
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push btnDragStart page error:" + err);
       }
       console.info("btnDragStart foreEach end");
-
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -79,28 +78,30 @@ export default function btnDragStart() {
     });
 
 
+    
     /*
-     * @tc.number    btnDragStart_static_001
-     * @tc.name      btnDragStart_static_001
-     * @tc.desc      btnDragStart_static_001
-     * @tc.level     2
+     * @tc.number   btnDragStart_static_001
+     * @tc.name     btnDragStart_static_001
+     * @tc.desc     btnDragStart_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('btnDragStart_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('btnDragStart_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[btnDragStart_001] START');
       let str1 = inspector.getInspectorByKey("bttonDrag_key1");
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(str1, Type.of(new String() as Object)) as Record<string, Object>;
-      console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-      let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["getElement('$rect')"]! + ']',
-        Type.of(new String() as Object)) as Array<Array<number>>;
-      console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-
+      await CommonFunc.sleep(2000);
+      let obj = JSON.parseJsonElement(str1)
+      const str = obj.getString("$rect")
+      let parts = str.substring(1, str.length - 1).split("],[");
+      let rectInfo = parts.map((part: string) => {
+        return part.split(",").map((item: string): double => parseFloat(item.trim()));
+      });
       CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
       CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(33.33)) as Int,
-        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(26.66)) as Int, 200, 200, 600);
+      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)) as Int,
+        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)) as Int, 200, 200, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("buttonDrag_2");
       await CommonFunc.sleep(200);

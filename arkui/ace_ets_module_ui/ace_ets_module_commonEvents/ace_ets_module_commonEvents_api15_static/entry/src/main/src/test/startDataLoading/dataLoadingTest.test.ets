@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -49,12 +49,10 @@ export default function cancelDataLoadingTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get cancelDataLoading state pages: " + JSON.stringify(pages));
-        if (!("cancelDataLoading" == pages.name)) {
+        if (!("dataLoading" == pages.name)) {
           console.info("get cancelDataLoading state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
-
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push cancelDataLoading page error: " + err);
@@ -68,18 +66,19 @@ export default function cancelDataLoadingTest() {
     });
 
 
+    
     /*
-     * @tc.number    cancelDataLoading_static_0010
-     * @tc.name      cancelDataLoading_static_0010
-     * @tc.desc      cancelDataLoading_static_0010
-     * @tc.level     2
+     * @tc.number   cancelDataLoading_static_0010
+     * @tc.name     cancelDataLoading_static_0010
+     * @tc.desc     cancelDataLoading_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('cancelDataLoading_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('cancelDataLoading_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('cancelDataLoading_static_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await (driver.findComponent(ON.id('cancel')) as Promise<Component>);
-      await button.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('cancelResult');
       let obj = JSON.parseJsonElement(strJson);
@@ -89,13 +88,14 @@ export default function cancelDataLoadingTest() {
     });
 
 
+    
     /*
-     * @tc.number    startDataLoading_static_0010
-     * @tc.name      startDataLoading_static_0010
-     * @tc.desc      startDataLoading_static_0010
-     * @tc.level     2
+     * @tc.number   startDataLoading_static_0010
+     * @tc.name     startDataLoading_static_0010
+     * @tc.desc     startDataLoading_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('startDataLoading_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('startDataLoading_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('startDataLoading_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -111,13 +111,14 @@ export default function cancelDataLoadingTest() {
     });
 
 
+    
     /*
-     * @tc.number    disableDataPrefetch_static_0010
-     * @tc.name      disableDataPrefetch_static_0010
-     * @tc.desc      disableDataPrefetch_static_0010
-     * @tc.level     2
+     * @tc.number   disableDataPrefetch_static_0010
+     * @tc.name     disableDataPrefetch_static_0010
+     * @tc.desc     disableDataPrefetch_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('disableDataPrefetch_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('disableDataPrefetch_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('disableDataPrefetch_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

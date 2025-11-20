@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,36 +13,35 @@
  * limitations under the License.
  */
 import {
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CopyOptions,
-  CustomBuilder,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  ForEach,
-  ItemAlign,
-  List,
-  ListItem,
-  Margin,
-  Padding,
+  Component,
+  Column,
   Row,
+  Flex,
   Text,
-  TextAlign,
-  TextArea,
+  ColumnOptions,
   TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  TextArea,
+  CopyOptions,
   Visibility,
-  ListOptions
+  DragEvent,
+  TextAlign,
+  FlexAlign,
+  ItemAlign,
+  FlexDirection,
+  Padding,
+  Margin,
+  List,
+  ForEach,
+  ListItem,
+  FlexOptions,
+  Builder
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct Drag2Example {
@@ -56,6 +55,20 @@ struct Drag2Example {
   @State select: number = 0;
   @State currentIndex: number = 0;
   @State id1: Int = 1;
+
+  @Builder
+  pixelMapBuilder() {
+    Column() {
+      Text(this.text)
+        .width('50%')
+        .height(60)
+        .fontSize(16)
+        .borderRadius(10)
+        .textAlign(TextAlign.Center)
+        .backgroundColor(Color.Yellow)
+    }
+  }
+
 
   build() {
     Column() {
@@ -74,12 +87,12 @@ struct Drag2Example {
           .textAlign(TextAlign.Center)
           .backgroundColor(0xAFEEEE)
           .visibility(this.appleVisible)
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):CustomBuilder => {
             console.log('Ting--onDragStart--apple')
             this.bool = true
             this.text = 'apple'
             this.appleVisible = Visibility.Hidden
-
+            return this.pixelMapBuilder
           })
         Text('orange')
           .width('25%')
@@ -88,12 +101,12 @@ struct Drag2Example {
           .textAlign(TextAlign.Center)
           .backgroundColor(0xAFEEEE)
           .visibility(this.orangeVisible)
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):CustomBuilder => {
             console.log('Ting--onDragStart--orange')
             this.bool = true
             this.text = 'orange'
             this.orangeVisible = Visibility.Hidden
-
+            return this.pixelMapBuilder
           })
         Text('banana')
           .width('25%')
@@ -102,12 +115,12 @@ struct Drag2Example {
           .textAlign(TextAlign.Center)
           .backgroundColor(0xAFEEEE)
           .visibility(this.bananaVisible)
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):CustomBuilder => {
             console.log('Ting--onDragStart--banana')
             this.bool = true
             this.text = 'banana'
             this.bananaVisible = Visibility.Hidden
-
+            return this.pixelMapBuilder;
           })
       }
       .border({ width: 1 })
@@ -122,7 +135,7 @@ struct Drag2Example {
         .textAlign(TextAlign.Start)
         .margin(15)
 
-      List({ space: 20, initialIndex: 0 } as ListOptions) {
+      List({ space: 20, initialIndex: 0 }) {
         ForEach(this.numbers, (item: string) => {
           ListItem() {
             Text('' + item)
@@ -133,29 +146,25 @@ struct Drag2Example {
               .textAlign(TextAlign.Center)
               .backgroundColor(0xAFEEEE)
           }.key('listItem')
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):CustomBuilder => {
             console.log('Ting--onDragStart--ListItem');
             console.log('ListItem onDragStarts, ' + extraParams);
             this.bool1 = true;
             this.text = this.numbers[JSON.parseJsonElement(extraParams!).getInteger("selectedIndex")];
             this.select = JSON.parseJsonElement(extraParams!).getInteger("selectedIndex");
-
+            return this.pixelMapBuilder;
           })
         }, (item: string) => item)
       }
+      // .editMode(true) //Error line
       .restoreId(this.id1)
       .height('50%')
       .width('90%')
       .border({ width: 1 })
-      .divider({
-        strokeWidth: 2,
-        color: 0xFFFFFF,
-        startMargin: 20,
-        endMargin: 20
-      })
-      .onDragEnter((event: DragEvent, extraParams?: string): void => {
+      .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 })
+      .onDragEnter((event: DragEvent, extraParams?: string):void => {
         console.log('Ting--onDragEnter')
-
+        console.log('List onDragEnter, ' + extraParams + ',' + event.getWindowX() + ',' + event.getWindowY())
       })
       .onDragMove((event: DragEvent, extraParams?: string) => {
         console.log('Ting--onDragMove')

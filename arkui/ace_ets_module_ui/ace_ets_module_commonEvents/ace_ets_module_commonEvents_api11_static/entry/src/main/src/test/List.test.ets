@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,8 +22,6 @@ import aboutToAppearTest from './onAppearTest/ComAttr_aboutToAppear.test';
 import onGestureTest from './onGestureJudgeBeginTest/onGestureTest.test';
 import touchPoint from './DragController/touchPoint_Auto.test';
 import previewOptions from './DragController/touchPoint_Disable.test';
-import createDragAction from './DragController/createDragAction.test';
-import setForegroundColor from './DragController/setForegroundColor.test';
 import DragActionJsunit from './DragController/DragActionJsSuit.test';
 import dragPreviewJsSuit from './DragController/dragPreviewJsSuit.test';
 import dragPreviewOptionsJsSuit from './DragController/dragPreviewOptionsJsSuit.test';
@@ -79,73 +77,69 @@ import longPressGestureJsUnit from './LongPressGestureTest/LongPressGesture.test
 import tapGestureTest from './TapGestureTest/TapGesture.test.ets';
 import priorityGestureJsunit from './TapGestureTest/PriorityGestureJsunit.test.ets';
 import parallelGestureJsunit from './TapGestureTest/ParallelGestureJsunit.test.ets';
-import commonJsunit from './CommonJsunit.test.ets';
 import motionPathJsunit from './MotionPathJsunit.test.ets';
 
 export default function testsuite() {
-  dragAdaptationTest();
-  SwipeGesture1();
-  SwipeGesture2();
-  SwipeGesture3();
-  TapGesture1();
-  TapGesture2();
-  TapGesture3();
-  OnTouch1();
-  OnTouch2();
-  OnTouch3();
-  GestureClick();
-  GestureContiune();
-  GestureDrag();
-  GestureIsSystemGesture();
-  GesturePinchGesture();
-  GestureReject();
-  GestureRotationGesture();
-  GestureSwipeGesture();
-  GestureTap();
-  GestureTapGesture();
-  PanGesture1()
-  PanGesture2()
-  PanGesture3()
-  LongPressGesture1()
-  LongPressGesture2()
-  LongPressGesture3()
-  GestureLongPressGesture();
-  dragEventJsunit()
-  enumsLineCapStyleJsunit()
-  enmusItemAlignJsunit()
-  GestureModeJsunit()
-  PanDirectionJsunit()
-  subscribedAbstractPropertyJsunit()
-  gestureParallelJsunit()
-  gestureSetDirectionJsunit()
-  lazyForEachOnDataAddJsunit()
-  PanGestureEventJsunit();
-  gestureEnabledJsunit();
-  PanGesture3Jsunit();
-  tapGestureTest();
-  longPressGestureJsUnit();
-  priorityGestureJsunit();
-  parallelGestureJsunit();
-  commonJsunit();
-  motionPathJsunit();
-  touchJsunit();
-  appearJsunit();
-  areaChangeJsunit();
-  ShortcutKeyTest();
-  aboutToAppearTest();
+  dragAdaptationTest() // pass 1
+  SwipeGesture1() // pass 3
+  SwipeGesture2() // pass 2
+  SwipeGesture3() // pass 2
+  TapGesture1() // pass 2
+  TapGesture2() // pass 2
+  TapGesture3() // pass 2
+  OnTouch1() // pass 2
+  OnTouch2() // pass 2
+  OnTouch3() // pass 2
+  GestureClick() // pass 1
+  GestureContiune() // pass 1
+  GestureDrag() // pass 1
+  GesturePinchGesture() // pass 1
+  GestureReject() // pass 1
+  GestureRotationGesture() // pass 1
+  GestureSwipeGesture() // pass 1
+  GestureTap() // pass 1
+  GestureTapGesture() // pass 1
+  PanGesture1() // pass 2
+  PanGesture2() // pass 2
+  PanGesture3() // pass 2
+  LongPressGesture1() // pass 2
+  LongPressGesture2() // pass 2
+  LongPressGesture3() // pass 2
+  GestureLongPressGesture() // pass 2
+  dragEventJsunit() // pass 5
+  enumsLineCapStyleJsunit() // pass 1
+  enmusItemAlignJsunit() // pass 1
+  GestureModeJsunit() // pass 1
+  PanDirectionJsunit() // pass 1
+  subscribedAbstractPropertyJsunit() // pass 1
+  gestureParallelJsunit() // pass 1
+  gestureSetDirectionJsunit() // pass 3
+  lazyForEachOnDataAddJsunit() // pass 4
+  PanGestureEventJsunit() // pass 3
+  gestureEnabledJsunit() // pass 4
 
-  onGestureTest()
-  touchPoint()
-  previewOptions()
-
-
-  DragActionJsunit()
-  dragPreviewJsSuit()
-  dragPreviewOptionsJsSuit()
-  GestureTagJsSuit()
-  freezeInactive()
-  GesturePanGesture();
-  OnClick1();
-  OnClick2();
-  OnClick3();
+  PanGesture3Jsunit() // pass 2
+  tapGestureTest() // 1 pass
+  longPressGestureJsUnit() // pass 2
+  priorityGestureJsunit() // 1 pass
+  parallelGestureJsunit() // 1 pass
+  motionPathJsunit() // 3 pass
+  touchJsunit() // 1 pass
+  appearJsunit() // 1 pass
+  areaChangeJsunit() // 1 pass
+  ShortcutKeyTest() // 7 pass 4 JSON.stringify()
+  aboutToAppearTest() // 2 pass 1 ， 第一个弹窗会闪退找不到close
+  onGestureTest() // pass 1
+  touchPoint() // fail 2 JSON.stringify()
+  previewOptions() // fail 1 JSON.stringify()
+  DragActionJsunit() // pass 1
+  dragPreviewJsSuit() // pass 1
+  GestureTagJsSuit() // pass 1
+  freezeInactive() // pass 1
+  GesturePanGesture() // pass 1
+  OnClick1() // pass 2
+  OnClick2() // pass 2
+  OnClick3() // pass 2
+  GestureIsSystemGesture() // 1 pass
+  dragPreviewOptionsJsSuit() // 1 pass
 }

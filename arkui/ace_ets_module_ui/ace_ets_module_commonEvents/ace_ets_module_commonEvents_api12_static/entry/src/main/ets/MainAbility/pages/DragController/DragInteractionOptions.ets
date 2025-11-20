@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,45 +14,46 @@
  */
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import hilog from '@ohos.hilog';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { UIContext } from '@ohos.arkui.UIContext';
 import curves from '@ohos.curves';
 import dragController from '@ohos.arkui.dragController';
 import image from '@ohos.multimedia.image';
 import { BusinessError } from '@ohos.base';
 import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragEvent,
-  DragInteractionOptions,
-  DragItemInfo,
-  DragPreviewMode,
-  DragPreviewOptions,
-  DragResult,
   Entry,
-  ForEach,
-  Grid,
-  GridItem,
-  List,
-  ListItem,
-  Margin,
-  ResourceColor,
+  Component,
+  Column,
   Row,
   Text,
-  TextAlign,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  ResourceColor,
+  ForEach,
+  List,
+  ListItem,
+  DragResult,
+  TextAlign,
+  DragPreviewOptions,
+  DragPreviewMode,
+  Grid,
+  GridItem,
+  DragInteractionOptions,
+  ClickEvent,
+  DragEvent
 } from '@ohos.arkui.component'
-import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, LocalStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct DragInteractionOptions1 {
-  @State numbers: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8)
+  @State numbers: Array<number> = new Array<number>(0, 1, 2, 3, 4 , 5, 6, 7, 8)
   @State flag: string = "Init"
   @State dragPreviewOptions1: DragPreviewOptions = {
     mode: DragPreviewMode.ENABLE_DEFAULT_SHADOW,
@@ -66,10 +67,11 @@ struct DragInteractionOptions1 {
     defaultAnimationBeforeLifting: true
   } as DragInteractionOptions
 
+
   build() {
-    Column({ space: 5 } as ColumnOptions) {
+    Column({ space: 5} as ColumnOptions) {
       Button(this.flag).id("dragPreviewOptions_button")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent)=>{
           this.dragPreviewOptions1 = this.dragPreviewOptions2
         })
       Grid() {
@@ -86,10 +88,11 @@ struct DragInteractionOptions1 {
           .selectable(true)
           .selected(true)
           .dragPreviewOptions(this.dragPreviewOptions1, this.DragInteractionOptions1)
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):DragItemInfo => {
             this.flag = "drag succ"
+            return {} as DragItemInfo
           })
-        }, (item: number, index: int): string => String(item))
+    }, (item: number, index: Int):string => String(item))
       }
       .columnsTemplate('1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr')

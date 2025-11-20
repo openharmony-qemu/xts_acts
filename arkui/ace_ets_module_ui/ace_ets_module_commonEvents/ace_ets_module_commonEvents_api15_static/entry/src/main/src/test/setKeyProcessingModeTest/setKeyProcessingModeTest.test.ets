@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, MouseButton, ON, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -48,12 +48,10 @@ export default function setKeyProcessingModeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get setKeyProcessingModeTest state pages:" + JSON.stringify(pages));
-        routerInstance.pushUrl(options);
-
         if (!("setKeyProcessingModeTest" == pages.name)) {
           console.info("get setKeyProcessingModeTest pages.name:" + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push setKeyProcessingModeTest page error:" + err);
@@ -66,27 +64,29 @@ export default function setKeyProcessingModeTest() {
       console.info("setKeyProcessingModeTest after each called");
     });
 
-
+    
     /*
-     * @tc.number    setKeyProcessingModeTest_static_0100
-     * @tc.name      setKeyProcessingModeTest_static_0100
-     * @tc.desc      setKeyProcessingModeTest_static_0100
-     * @tc.level     2
+     * @tc.number   setKeyProcessingModeTest_static_0100
+     * @tc.name     setKeyProcessingModeTest_static_0100
+     * @tc.desc     setKeyProcessingModeTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('setKeyProcessingModeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('setKeyProcessingModeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setKeyProcessingModeTest_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await (driver.findComponent(ON.id('FOCUS_NAVIGATION')) as Promise<Component>);
-      await btn.click()
+      await CommonFunc.sleep(2000);
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let obj = inspector.getInspectorByKey('focus');
+      await CommonFunc.sleep(2000);
       let focus: string = JSON.parseJsonElement(obj).getElement('$attrs').getString('content');
       console.log('setKeyProcessingModeTest_static_0100---' + focus)
       expect(focus).assertEqual('Button3');
@@ -95,26 +95,29 @@ export default function setKeyProcessingModeTest() {
     });
 
 
+    
     /*
-     * @tc.number    setKeyProcessingModeTest_static_0200
-     * @tc.name      setKeyProcessingModeTest_static_0200
-     * @tc.desc      setKeyProcessingModeTest_static_0200
-     * @tc.level     2
+     * @tc.number   setKeyProcessingModeTest_static_0200
+     * @tc.name     setKeyProcessingModeTest_static_0200
+     * @tc.desc     setKeyProcessingModeTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('setKeyProcessingModeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('setKeyProcessingModeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setKeyProcessingModeTest_0200 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await (driver.findComponent(ON.id('ANCESTOR_EVENT')) as Promise<Component>);
-      await btn.click()
+      await CommonFunc.sleep(2000);
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let obj = inspector.getInspectorByKey('focus');
+      await CommonFunc.sleep(2000);
       let focus: string = JSON.parseJsonElement(obj).getElement('$attrs').getString('content');
       console.log('setKeyProcessingModeTest_0200---' + focus)
       expect(focus).assertEqual('Button1');
@@ -123,29 +126,33 @@ export default function setKeyProcessingModeTest() {
     });
 
 
+    
     /*
-     * @tc.number    setKeyProcessingModeTest_static_0300
-     * @tc.name      setKeyProcessingModeTest_static_0300
-     * @tc.desc      setKeyProcessingModeTest_static_0300
-     * @tc.level     2
+     * @tc.number   setKeyProcessingModeTest_static_0300
+     * @tc.name     setKeyProcessingModeTest_static_0300
+     * @tc.desc     setKeyProcessingModeTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('setKeyProcessingModeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('setKeyProcessingModeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setKeyProcessingModeTest_0300 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn1 = await (driver.findComponent(ON.id('ANCESTOR_EVENT')) as Promise<Component>);
-      await btn1.click()
+      await CommonFunc.sleep(2000);
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await (driver.findComponent(ON.id('undefined')) as Promise<Component>);
-      await btn2.click()
+      await CommonFunc.sleep(2000);
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let obj = inspector.getInspectorByKey('focus');
+      await CommonFunc.sleep(2000);
       let focus: string = JSON.parseJsonElement(obj).getElement('$attrs').getString('content');
       console.log('setKeyProcessingModeTest_0300---' + focus)
       expect(focus).assertEqual('Button1');

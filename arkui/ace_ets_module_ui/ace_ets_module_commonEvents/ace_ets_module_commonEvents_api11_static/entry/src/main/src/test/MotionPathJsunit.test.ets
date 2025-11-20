@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,8 +16,8 @@
 import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import events_emitter from '@ohos.events.emitter';
-
+import emitter from '@ohos.events.emitter';
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -32,7 +32,7 @@ import { UtilsTest } from './Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function motionPathJsunit() {
@@ -46,19 +46,17 @@ export default function motionPathJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("motionPathTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/motionPathTest',
+        url: 'MainAbility/pages/motionPath',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get motionPathTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("motionPath" == pages.name)) {
           console.info("get motionPathTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push motionPathTest page error:" + err);
@@ -72,15 +70,17 @@ export default function motionPathJsunit() {
       console.info("motionPath after each called");
     });
 
+    
     /*
-     * @tc.number    motionPathTest_static_0100
-     * @tc.name      motionPathTest_static_0100
-     * @tc.desc      motionPathTest_static_0100
-     * @tc.level     2
+     * @tc.number   motionPathTest_static_0100
+     * @tc.name     motionPathTest_static_0100
+     * @tc.desc     motionPathTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('motionPathTest_0100 START');
       let strJson = inspector.getInspectorByKey('motionPath');
+      await CommonFunc.sleep(1000);
       console.info("motionPathTest_0100 component strJson:" + strJson);
       console.info("motionPathTest_0100 component obj is: " +
       JSON.stringify(String(JSON.parseJsonElement(strJson).getElement("$attrs"))))
@@ -88,28 +88,31 @@ export default function motionPathJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number    motionPathTest_static_0200
-     * @tc.name      motionPathTest_static_0200
-     * @tc.desc      motionPathTest_static_0200
-     * @tc.level     2
+     * @tc.number   motionPathTest_static_0200
+     * @tc.name     motionPathTest_static_0200
+     * @tc.desc     motionPathTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('motionPathTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('motionPathTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('motionPathTest_0200 START');
-      let callback = (indexEventOne: events_emitter.EventData) => {
+      let callback = (indexEventOne: emitter.EventData) => {
+        const data: Record<String, undefined | null | Object> =
+          indexEventOne.data as Record<String, undefined | null | Object>
         console.info("motionPathTest_0200 get state result is: " + JSON.stringify(indexEventOne));
-        expect(((indexEventOne.data) as ESObject).getProperty('fromX')).assertEqual(0);
-        expect(((indexEventOne.data) as ESObject).getProperty('toY')).assertEqual(1);
+        expect(data['fromX']).assertEqual(0);
+        expect(data['toY']).assertEqual(1);
         done();
       }
-      let indexEventOne: events_emitter.InnerEvent = {
+      let indexEventOne: emitter.InnerEvent = {
         eventId: 133,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEventOne, callback);
-      } catch (err) {
-        console.info("motionPathTest_0200 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEventOne, callback);
+      } catch (err: Error) {
+        console.info("motionPathTest_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("motionPathTest_0200 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
@@ -118,28 +121,31 @@ export default function motionPathJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number    motionPathTest_static_0300
-     * @tc.name      motionPathTest_static_0300
-     * @tc.desc      motionPathTest_static_0300
-     * @tc.level     2
+     * @tc.number   motionPathTest_static_0300
+     * @tc.name     motionPathTest_static_0300
+     * @tc.desc     motionPathTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('motionPathTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('motionPathTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('motionPathTest_0300 START');
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
+        const data: Record<String, undefined | null | Object> =
+          indexEvent.data as Record<String, undefined | null | Object>
         console.info("motionPathTest_0300 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject).getProperty('ACTION')).assertEqual(true);
+        expect(data['ACTION']).assertEqual(true);
         done();
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 132,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("motionPathTest_0300 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("motionPathTest_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("motionPathTest_0300 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button', 10, "")));

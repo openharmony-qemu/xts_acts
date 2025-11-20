@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -61,17 +61,16 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
         let pages = router.getState();
         console.info("get APIshouldBuiltInRecognizerParallelWith state pages: " + JSON.stringify(pages));
         if (!("APIshouldBuiltInRecognizerParallelWith" == pages.name)) {
-          console.info("get APIshouldBuiltInRecognizerParallelWith state pages.name: " + JSON.stringify(pages.name));
-
+          // console.info("get APIshouldBuiltInRecognizerParallelWith state pages.name: " + JSON.stringify(pages.name));
+          console.info("get APIshouldBuiltInRecognizerParallelWith start ");
           router.pushUrl(options);
+          console.info("get APIshouldBuiltInRecognizerParallelWith end ");
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push APIshouldBuiltInRecognizerParallelWith page error: " + err);
         expect().assertFail();
       }
-
     });
 
     afterEach(async () => {
@@ -80,13 +79,14 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
     });
 
 
+    
     /*
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_static_0100
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_static_0100
-     * @tc.desc      APIshouldBuiltInRecognizerParallelWith_static_0100
-     * @tc.level     2
+     * @tc.number   APIshouldBuiltInRecognizerParallelWith_static_0100
+     * @tc.name     APIshouldBuiltInRecognizerParallelWith_static_0100
+     * @tc.desc     APIshouldBuiltInRecognizerParallelWith_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('APIshouldBuiltInRecognizerParallelWith_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIshouldBuiltInRecognizerParallelWith_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text01');
@@ -99,13 +99,14 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
 
+    
     /*
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_static_0200
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_static_0200
-     * @tc.desc      APIshouldBuiltInRecognizerParallelWith_static_0200
-     * @tc.level     2
+     * @tc.number   APIshouldBuiltInRecognizerParallelWith_static_0200
+     * @tc.name     APIshouldBuiltInRecognizerParallelWith_static_0200
+     * @tc.desc     APIshouldBuiltInRecognizerParallelWith_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('APIshouldBuiltInRecognizerParallelWith_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIshouldBuiltInRecognizerParallelWith_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text02');
@@ -118,13 +119,14 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
 
+    
     /*
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_static_0300
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_static_0300
-     * @tc.desc      APIshouldBuiltInRecognizerParallelWith_static_0300
-     * @tc.level     2
+     * @tc.number   APIshouldBuiltInRecognizerParallelWith_static_0300
+     * @tc.name     APIshouldBuiltInRecognizerParallelWith_static_0300
+     * @tc.desc     APIshouldBuiltInRecognizerParallelWith_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('APIshouldBuiltInRecognizerParallelWith_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIshouldBuiltInRecognizerParallelWith_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0300 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text03');
@@ -137,13 +139,14 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
 
+    
     /*
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_static_0400
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_static_0400
-     * @tc.desc      APIshouldBuiltInRecognizerParallelWith_static_0400
-     * @tc.level     2
+     * @tc.number   APIshouldBuiltInRecognizerParallelWith_static_0400
+     * @tc.name     APIshouldBuiltInRecognizerParallelWith_static_0400
+     * @tc.desc     APIshouldBuiltInRecognizerParallelWith_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('APIshouldBuiltInRecognizerParallelWith_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIshouldBuiltInRecognizerParallelWith_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0400 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text04');

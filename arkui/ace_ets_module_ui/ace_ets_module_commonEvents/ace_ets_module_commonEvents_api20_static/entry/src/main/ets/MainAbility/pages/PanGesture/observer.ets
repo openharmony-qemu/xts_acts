@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,52 +13,54 @@
  * limitations under the License.
  */
 import {
-  Button,
+  Entry,
+  Component,
   Column,
   ColumnOptions,
-  Component,
-  DragEvent,
-  Entry,
-  GestureEvent,
-  NodeContainer,
-  PanDirection,
-  PanGesture,
-  PanGestureOptions,
   Text,
+  DragEvent,
+  NodeContainer,
+  GestureEvent,
+  PanGestureOptions,
+  PanGesture,
+  Button,
+  PanDirection,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { FrameNode, LengthMetrics, NodeController, typeNode } from '@ohos.arkui.node';
-
 @Entry
 @Component
-struct observer {
+struct observer{
   @State isOnContent: string = ''
   @State isOffContent: string = 'off'
   @State offsetX: number = 0
   @State offsetY: number = 0
   @State positionX: number = 0
   @State positionY: number = 0
-  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.All })
-
+  private panOption: PanGestureOptions = new PanGestureOptions({direction: PanDirection.All })
   aboutToAppear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.on('beforePanStart', (event: GestureEvent) => {
+    observer.on('beforePanStart', (event: GestureEvent) =>{
       this.isOnContent = String(event.offsetX);
     });
   }
-
   aboutToDisappear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.off('beforePanStart', (event: GestureEvent) => {
+    observer.off('beforePanStart', (event: GestureEvent) =>{
       this.isOffContent = String(event.offsetX);
     })
   }
 
   build() {
-    Column() {
-      Column() {
+    Column(){
+      Column(){
         Text('PanGesture :\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
           .id('panGesture')
           .gesture(
@@ -87,7 +89,6 @@ struct observer {
       .border({ width: 3 })
       .margin(50)
       .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
-
       Text(this.isOnContent)
         .id('onContent')
       Text(this.isOffContent)

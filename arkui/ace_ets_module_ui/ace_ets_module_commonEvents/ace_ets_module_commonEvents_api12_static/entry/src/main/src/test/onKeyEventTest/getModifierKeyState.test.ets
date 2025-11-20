@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -39,7 +39,6 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 
 export default function getModifierKeyStateTest() {
@@ -56,31 +55,33 @@ export default function getModifierKeyStateTest() {
       }
       try {
         const router = AppStorage.get<Router>('router') as Router
-        router.clear();
+
         let pages = router.getState();
         console.info("get getModifierKeyStateTest state pages: " + JSON.stringify(pages));
         if (!("getModifierKeyState" == pages.name)) {
           console.info("get getModifierKeyStateTest state pages.name: " + JSON.stringify(pages.name));
-
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push getModifierKeyStateTest page error: " + err);
         expect().assertFail();
       }
-
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>('router') as Router
+      router.back();
+    })
 
+    
     /*
-     * @tc.number    getModifierKeyStateTest_static_0010
-     * @tc.name      getModifierKeyStateTest_static_0010
-     * @tc.desc      getModifierKeyStateTest_static_0010
-     * @tc.level     2
+     * @tc.number   getModifierKeyStateTest_static_0010
+     * @tc.name     getModifierKeyStateTest_static_0010
+     * @tc.desc     getModifierKeyStateTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('getModifierKeyStateTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getModifierKeyStateTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getModifierKeyStateTest_0010 START');
       let strJson = inspector.getInspectorByKey('getModifierKeyState_BaseEvent');
       let obj = JSON.parseJsonElement(strJson);
@@ -91,13 +92,14 @@ export default function getModifierKeyStateTest() {
     });
 
 
+    
     /*
-     * @tc.number    getModifierKeyStateTest_static_0020
-     * @tc.name      getModifierKeyStateTest_static_0020
-     * @tc.desc      getModifierKeyStateTest_static_0020
-     * @tc.level     2
+     * @tc.number   getModifierKeyStateTest_static_0020
+     * @tc.name     getModifierKeyStateTest_static_0020
+     * @tc.desc     getModifierKeyStateTest_static_0020
+     * @tc.level    Level.LEVEL0
      */
-    it('getModifierKeyStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getModifierKeyStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getModifierKeyStateTest_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

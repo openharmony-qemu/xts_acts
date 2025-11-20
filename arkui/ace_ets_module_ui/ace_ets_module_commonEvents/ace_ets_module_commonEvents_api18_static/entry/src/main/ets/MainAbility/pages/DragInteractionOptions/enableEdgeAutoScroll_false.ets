@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,43 +13,47 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  Checkbox,
-  Color,
   Column,
   ColumnOptions,
-  Component,
-  DragEvent,
-  DragItemInfo,
-  Entry,
-  Flex,
-  ForEach,
-  Grid,
-  HorizontalAlign,
-  Image,
-  Line,
-  List,
-  ListItem,
-  Margin,
-  PreDragStatus,
-  Row,
-  Scroll,
-  Scroller,
-  Swiper,
   Text,
+  HorizontalAlign,
+  Color,
+  Line,
+  Swiper,
+  Scroll,
+  List,
+  Grid,
+  Flex,
+  Image,
+  Checkbox,
+  ForEach,
+  PreDragStatus,
+  DragEvent,
+  Margin,
+  Image,
+  ListItem,
+  Scroller,
+  Row,
   TextAlign,
+  DragItemInfo,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct EnableEdgeAutoScroll_falseExample {
   scroller: Scroller = new Scroller()
-  @State text: string = ''
   private arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
-
+  @State text: string = ''
   build() {
     Column() {
       Row() {
@@ -57,9 +61,10 @@ struct EnableEdgeAutoScroll_falseExample {
           .draggable(true)
           .width('15%')
           .height('10%')
-
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):DragItemInfo=>{
+            return {} as DragItemInfo
+          })
       }
-
       Column() {
         List({ space: 20, initialIndex: 0 }) {
           ForEach(this.arr, (item: string) => {
@@ -73,13 +78,14 @@ struct EnableEdgeAutoScroll_falseExample {
           }, (item: string) => item)
         }
         .backgroundColor(Color.Pink)
-
-
+        .onDidScroll(() => {
+          this.text = 'enableEdgeAutoScroll:false'
+        })
         .width('20%')
         .height('45%')
         .dragPreviewOptions({}, { isMultiSelectionEnabled: false, enableEdgeAutoScroll: false })
 
-        Column().key('Text')
+       Column().key('Text')
 
         Column() {
           Text(this.text).key('text_false')

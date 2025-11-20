@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,40 +13,39 @@
  * limitations under the License.
  */
 import {
-  BaseGestureEvent,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  FlexAlign,
-  GestureControl,
-  GestureEvent,
-  GestureInfo,
-  GestureJudgeResult,
-  HorizontalAlign,
-  LongPressGesture,
-  Margin,
-  Padding,
-  PanDirection,
-  PinchGesture,
+  Component,
+  Column,
   Row,
-  Scroll,
-  SourceTool,
-  Span,
-  TapGesture,
   Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  Scroll,
+  GestureEvent,
+  LongPressGesture,
+  TapGesture,
+  ClickEvent,
+  FlexAlign,
+  GestureInfo,
+  BaseGestureEvent,
+  DragEvent,
+  GestureControl,
+  GestureJudgeResult,
+  PanDirection,
+  Span,
+  HorizontalAlign,
+  Padding,
+  PinchGesture,
+  SourceTool
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct PinchGestureBasic02 {
@@ -89,21 +88,22 @@ struct PinchGestureBasic02 {
   @State velocity: string = 'init'
   @State time: number = 0
   @State timestamp: number = 0
+
   @State scaleValue: number = 1
   @State pinchValue: number = 1
   @State pinchX: number = 0
   @State pinchY: number = 0
 
+
+
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({space:10} as ColumnOptions) {
       Column() {
         Text('PinchGesture').fontSize(20)
       }
       .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
-      .width(240)
-      .height(160)
-      .backgroundColor(Color.Yellow)
-      .key('PinchGestureBasic02_Click')
+      .width(240).height(160)
+      .backgroundColor(Color.Yellow).key('PinchGestureBasic02_Click')
       .gesture(
         PinchGesture({ fingers: 2 })
           .onActionStart((event: GestureEvent) => {
@@ -118,8 +118,8 @@ struct PinchGestureBasic02 {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -131,7 +131,7 @@ struct PinchGestureBasic02 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -172,8 +172,8 @@ struct PinchGestureBasic02 {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -185,7 +185,7 @@ struct PinchGestureBasic02 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -224,8 +224,8 @@ struct PinchGestureBasic02 {
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -237,7 +237,7 @@ struct PinchGestureBasic02 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -268,13 +268,13 @@ struct PinchGestureBasic02 {
       Text(`repeat:${this.repeat}`).key('PinchGestureBasic02_repeat')
       Text(`offsetX:${this.offsetX}`).key('PinchGestureBasic02_offsetX')
       Text(`offsetY:${this.offsetY}`).key('PinchGestureBasic02_offsetY')
-      Text(`angle:${this.angle}`).key('PinchGestureBasic02_angle')
-      Text(`scale:${this.scale1}`).key('PinchGestureBasic02_scale')
+      Text(`angle:${Number.parseInt(this.angle)}`).key('PinchGestureBasic02_angle')
+      Text(`scale:${Number.parseInt(this.scale1)}`).key('PinchGestureBasic02_scale')
       Text(`${this.pinchCenterX}`).key('PinchGestureBasic02_pinchCenterX')
       Text(`${this.pinchCenterY}`).key('PinchGestureBasic02_pinchCenterY')
       Text(`speed:${this.speed}`).key('PinchGestureBasic02_speed')
 
-      Text() {
+      Text(){
         Span(`fingerList_id:${this.fingerList_id}`).fontColor(Color.Blue).key('PinchGestureBasic02_fingerList_id')
         Span(`${this.fingerList_globalX}`).fontColor(Color.Red).key('PinchGestureBasic02_fingerList_globalX')
         Span(`${this.fingerList_globalY}`).fontColor(Color.Green).key('PinchGestureBasic02_fingerList_globalY')
@@ -283,9 +283,8 @@ struct PinchGestureBasic02 {
         Span(`${this.fingerList_displayX}`).fontColor(Color.Pink).key('PinchGestureBasic02_fingerList_displayX')
         Span(`${this.fingerList_displayY}`).fontColor(Color.Red).key('PinchGestureBasic02_fingerList_displayY')
       }
-
       Text(`length:${this.fingerListLength}`).fontColor(Color.Blue).key('PinchGestureBasic02_fingerList_length')
-      Text() {
+      Text(){
         Span(`fingerList1_id:${this.fingerList1_id}`).fontColor(Color.Blue).key('PinchGestureBasic02_fingerList1_id')
         Span(`${this.fingerList1_globalX}`).fontColor(Color.Red).key('PinchGestureBasic02_fingerList1_globalX')
         Span(`${this.fingerList1_globalY}`).fontColor(Color.Green).key('PinchGestureBasic02_fingerList1_globalY')
@@ -294,23 +293,17 @@ struct PinchGestureBasic02 {
         Span(`${this.fingerList1_displayX}`).fontColor(Color.Pink).key('PinchGestureBasic02_fingerList1_displayX')
         Span(`${this.fingerList1_displayY}`).fontColor(Color.Red).key('PinchGestureBasic02_fingerList1_displayY')
       }
-
-      Text() {
+      Text(){
         Span(`${this.timestamp}`).fontColor(Color.Blue).key('PinchGestureBasic02_timestamp')
         Span(`${this.time}`).fontColor(Color.Red).key('PinchGestureBasic02_time')
       }
-
-      Text() {
+      Text(){
         Span(`${this.target_area_width}`).fontColor(Color.Green).key('PinchGestureBasic02_target_area_width')
         Span(`${this.target_area_height}`).fontColor(Color.Red).key('PinchGestureBasic02_target_area_height')
         Span(`${this.target_area_position_x}`).fontColor(Color.Green).key('PinchGestureBasic02_target_area_position_x')
         Span(`${this.target_area_position_y}`).fontColor(Color.Red).key('PinchGestureBasic02_target_area_position_y')
-        Span(`${this.target_area_globalPosition_x}`)
-          .fontColor(Color.Green)
-          .key('PinchGestureBasic02_target_area_globalPosition_x')
-        Span(`${this.target_area_globalPosition_y}`)
-          .fontColor(Color.Red)
-          .key('PinchGestureBasic02_target_area_globalPosition_y')
+        Span(`${this.target_area_globalPosition_x}`).fontColor(Color.Green).key('PinchGestureBasic02_target_area_globalPosition_x')
+        Span(`${this.target_area_globalPosition_y}`).fontColor(Color.Red).key('PinchGestureBasic02_target_area_globalPosition_y')
       }
 
       Text(`source:${this.source}`).key('PinchGestureBasic02_source')
@@ -319,18 +312,12 @@ struct PinchGestureBasic02 {
       Text(`tiltY:${this.tiltY}`).key('PinchGestureBasic02_tiltY')
       Text(`sourceTool:${this.sourceTool}`).key('PinchGestureBasic02_sourceTool')
 
-      Text() {
+      Text(){
         Span(`velocityX:${this.velocityX}`).key('PinchGestureBasic02_velocityX')
         Span(`velocityY:${this.velocityY}`).key('PinchGestureBasic02_velocityY')
         Span(`velocity:${this.velocity}`).key('PinchGestureBasic02_velocity')
       }
 
-    }
-    .padding({ top: 10, left: 40 } as Padding)
-    .alignItems(HorizontalAlign.Start)
-    .width('100%')
-    .height('100%')
-    .backgroundColor('#ffbebaba')
-    .key('PinchGestureBasic02_Father')
+    }.padding({top: 10, left:40 } as Padding).alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('PinchGestureBasic02_Father')
   }
 }

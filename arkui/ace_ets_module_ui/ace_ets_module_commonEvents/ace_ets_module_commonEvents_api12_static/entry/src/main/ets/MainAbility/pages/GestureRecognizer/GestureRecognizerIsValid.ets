@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -84,25 +84,25 @@ struct FatherControlChildTest1 {
           }
         }).width(200)
         .height('10%')
-      Scroll(this.scroller) {
+      Scroll(this.scroller) { // 外部滚动容器
         Column() {
           Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
             Text("Scroll Area")
               .id('FatherControlChildTest1_text')
               .width('90%')
               .height('15%')
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor('0xFFFFFF')
               .borderRadius(15)
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .margin({ top: 10 } as Margin)
 
-            Scroll(this.scroller2) {
+            Scroll(this.scroller2) { // 内部滚动容器
               Column() {
                 Text("Scroll Area2")
                   .width('90%')
                   .height('15%')
-                  .backgroundColor(0xFFFFFF)
+                  .backgroundColor('0xFFFFFF')
                   .borderRadius(15)
                   .fontSize(16)
                   .textAlign(TextAlign.Center)
@@ -113,12 +113,12 @@ struct FatherControlChildTest1 {
                       .id(`FatherControlChildTest1_inner_${item}`)
                       .width('90%')
                       .height('15%')
-                      .backgroundColor(0xFFFFFF)
+                      .backgroundColor('0xFFFFFF')
                       .borderRadius(15)
                       .fontSize(16)
                       .textAlign(TextAlign.Center)
                       .margin({ top: 10 } as Margin)
-                  }, (item: number, index: int): string => String(item))
+                  }, (item: number, index: Int): string => String(item))
                 }.width('100%')
               }
             }.visibility(this.vis)
@@ -130,13 +130,14 @@ struct FatherControlChildTest1 {
       }
       .id("outer")
       .height('80%')
-      .scrollable(ScrollDirection.Vertical)
-      .scrollBar(BarState.On)
-      .scrollBarColor(Color.Gray)
-      .scrollBarWidth(10)
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .edgeEffect(EdgeEffect.None)
-
-
+      .onDidScroll((xOffset: number, yOffset: number) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info('To the edge')
       })
@@ -164,8 +165,9 @@ struct FatherControlChildTest1 {
             }
           }
         }
-
+        return this.currentRecognizer;
       })
+
       .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
         others: Array<GestureRecognizer>): GestureJudgeResult => {
         if (current) {
@@ -213,6 +215,7 @@ struct FatherControlChildTest1 {
         }
         return GestureJudgeResult.CONTINUE;
       })
+
       .parallelGesture(
         PanGesture()
           .onActionUpdate((event: GestureEvent) => {
@@ -225,6 +228,8 @@ struct FatherControlChildTest1 {
             }
           })
       )
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+    }.width('100%').height('100%')
+
+    .backgroundColor('0xDCDCDC')
   }
 }

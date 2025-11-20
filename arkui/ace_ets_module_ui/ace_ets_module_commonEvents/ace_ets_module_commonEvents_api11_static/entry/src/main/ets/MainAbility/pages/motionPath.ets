@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -39,12 +39,10 @@ import {
   TextArea,
   TouchType,
   Visibility
-} from '@ohos.arkui.component'
-
+} from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import events_emitter from '@ohos.events.emitter'
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter'
 
 @Entry
 @Component
@@ -71,42 +69,42 @@ struct MotionPathExample {
           this.rotatable = true;
           console.info('button rotate current action state is:' + this.rotatable);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.rotatable,
-              } as Record<string, RecordData>
+              } as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 132,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
           animateTo({ duration: 4000, curve: Curve.Linear }, () => {
             this.toggle = !this.toggle;
           })
         })
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
       Button('next')
         .key('button1')
         .onClick((e: ClickEvent) => {
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "fromX": this.fromX,
                 "toY": this.toY
-              } as Record<string, RecordData>
+              } as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 133,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button1 position start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("button1 position emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -117,20 +115,24 @@ struct MotionPathExample {
 
   onPageShow() {
     console.info('motionPath page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 134,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangeCallBack)
+    emitter.on(stateChangeEvent, this.stateChangeCallBack)
   }
 
-  private stateChangeCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData) => {
-      if (eventData != null) {
-        console.info('motionPath page state change called:' + JSON.stringify(eventData));
-
-
+  private stateChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    if (eventData != null) {
+      const data: Record<String, undefined | null | Object> = eventData.data as Record<String, undefined | null | Object>
+      console.info('motionPath page state change called:' + JSON.stringify(eventData));
+      if (data['fromX'] != null) {
+        this.fromX == data['fromX'] as number;
+      }
+      if (data['toY'] != null) {
+        this.toY == data['toY'] as number;
       }
     }
+  }
 }
 

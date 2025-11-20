@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,16 +51,13 @@ export default function initializeModifierTest() {
         console.info("get initializeModifier state pages: " + JSON.stringify(pages));
         if (!("initializeModifier" == pages.name)) {
           console.info("get initializeModifier state pages.name: " + JSON.stringify(pages.name));
-
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push initializeModifier page error: " + err);
         expect().assertFail();
       }
-
     });
 
     afterEach(async () => {
@@ -69,13 +66,14 @@ export default function initializeModifierTest() {
     });
 
 
+    
     /*
-     * @tc.number    initializeModifier_static_0010
-     * @tc.name      initializeModifier_static_0010
-     * @tc.desc      initializeModifier_static_0010
-     * @tc.level     2
+     * @tc.number   initializeModifier_static_0010
+     * @tc.name     initializeModifier_static_0010
+     * @tc.desc     initializeModifier_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('initializeModifier_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('initializeModifier_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('initializeModifier_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -83,6 +81,7 @@ export default function initializeModifierTest() {
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('initializeModifier_id');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('label')).assertEqual('initializeModifier succ');
       console.info('[initializeModifier_0010] END');
@@ -90,13 +89,14 @@ export default function initializeModifierTest() {
     });
 
 
+    
     /*
-     * @tc.number    attribute_static_0020
-     * @tc.name      attribute_static_0020
-     * @tc.desc      attribute_static_0020
-     * @tc.level     2
+     * @tc.number   attribute_static_0020
+     * @tc.name     attribute_static_0020
+     * @tc.desc     attribute_static_0020
+     * @tc.level    Level.LEVEL0
      */
-    it('attribute_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('attribute_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('attribute_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -104,6 +104,7 @@ export default function initializeModifierTest() {
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('initializeModifier_id');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('height')).assertEqual("50.00vp");
       console.info('[attribute_0020] END');

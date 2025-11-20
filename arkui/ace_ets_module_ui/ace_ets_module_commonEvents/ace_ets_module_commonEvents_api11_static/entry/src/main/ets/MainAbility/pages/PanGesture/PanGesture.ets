@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,10 +27,13 @@ import {
   FlexDirection,
   FlexOptions,
   GestureEvent,
+  HitTestMode,
   ItemAlign,
   Margin,
   Padding,
+  PanDirection,
   PanGesture,
+  PanGestureHandlerOptions,
   PanGestureOptions,
   Row,
   Text,
@@ -42,8 +45,7 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
@@ -55,11 +57,11 @@ struct PanGestureExample {
   @State eventType: string = '';
 
   onPageShow() {
-    let ChangeEvent: events_emitter.InnerEvent = {
+    let ChangeEvent: emitter.InnerEvent = {
       eventId: 23,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(ChangeEvent, this.ChangCallBack)
+    emitter.on(ChangeEvent, this.ChangCallBack)
   }
 
   build() {
@@ -73,8 +75,28 @@ struct PanGestureExample {
     .margin(80)
     .key('PanGesture')
     .translate({ x: this.offsetX, y: this.offsetY, z: 5 })
-
-
+    .hitTestBehavior(HitTestMode.Default)
+    .gesture(
+      PanGesture({ fingers: 1, direction: PanDirection.All, distance: 1 } as PanGestureHandlerOptions)
+        .onActionStart((event: GestureEvent) => {
+          console.info('Pan start')
+          console.log('PanGesture globalX ' + event.fingerList[0]?.globalX);
+          console.log('PanGesture globalY ' + event.fingerList[0]?.globalY);
+          console.log('PanGesture localX ' + event.fingerList[0]?.localX);
+          console.log('PanGesture localY ' + event.fingerList[0]?.localY);
+          console.log('PanGesture fingerList ' + JSON.stringify(event.fingerList));
+          console.log('PanGesture speed ' + event.speed);
+          console.log('PanGesture pinchCenterX ' + event.pinchCenterX);
+          console.log('PanGesture pinchCenterY ' + event.pinchCenterY);
+        })
+        .onActionUpdate((event: GestureEvent) => {
+          this.offsetX = event.offsetX
+          this.offsetY = event.offsetY
+        })
+        .onActionEnd(() => {
+          console.info('Pan end')
+        })
+    )
     .onTouch((event: TouchEvent) => {
       console.log('[PanGesture] TouchType start');
       this.isTouched = true
@@ -89,30 +111,32 @@ struct PanGestureExample {
       }
       console.info('[PanGesture] TouchType:' + this.eventType)
       try {
-        let backData: events_emitter.EventData = {
+        let backData: emitter.EventData = {
           data: {
             "ACTION": this.isTouched,
             "EVENT_TYPE": this.eventType
-          } as Record<string, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let backEvent: events_emitter.InnerEvent = {
+        let backEvent: emitter.InnerEvent = {
           eventId: 24,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[PanGesture] start to emit action state")
-        events_emitter.emit(backEvent, backData)
-      } catch (err) {
+        emitter.emit(backEvent, backData)
+      } catch (err: Error) {
         console.info("[PanGesture] emit action state err: " + JSON.stringify((err as Error)?.message))
       }
     })
   }
 
-  private ChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private ChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[PanGesture] ChangCallBack stateChangCallBack");
     if (eventData != null) {
+      const data = eventData.data as Record<String, undefined | null | Object>
       console.info("[PanGesture] ChangCallBack state change called:" + JSON.stringify(eventData));
-
-
+      if (data['touchable'] != null) {
+        this.touchableValue = data['touchable'] as boolean;
+      }
     }
   }
 }

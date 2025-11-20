@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   $rawfile,
   Color,
@@ -40,7 +40,6 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -64,18 +63,18 @@ struct LongPressGestureExample {
           this.eventString = 'onAction';
           console.info('onAction current action state is: ' + this.eventString);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.eventString,
-              } as Record<string, RecordData>
+              } as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 125,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("start to emit action state");
-            events_emitter.emit(backEvent, backData);
-          } catch (err) {
+            emitter.emit(backEvent, backData);
+          } catch (err: Error) {
             console.info("emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
@@ -84,18 +83,18 @@ struct LongPressGestureExample {
           this.eventString = 'onActionEnd';
           console.info('onActionEnd current action state is: ' + this.eventString);
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.eventString,
-              } as Record<string, RecordData>
+              } as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 126,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("start to emit action state");
-            events_emitter.emit(backEvent, backData);
-          } catch (err) {
+            emitter.emit(backEvent, backData);
+          } catch (err: Error) {
             console.info("emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })

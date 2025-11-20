@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter'
-
+import emitter from '@ohos.events.emitter'
+//import prompt from '@system.prompt'
 import { PromptAction, Router, UIContext } from '@ohos.arkui.UIContext';
 import {
   $rawfile,
@@ -42,9 +42,9 @@ import {
   Visibility
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { RecordData } from '@ohos.base';
 
 @Entry
+  //@Preview
 @Component
 struct AppearExample {
   @State isShow: boolean = true
@@ -55,11 +55,11 @@ struct AppearExample {
 
   onPageShow() {
     console.info('[appear] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 58,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {
@@ -69,44 +69,45 @@ struct AppearExample {
         .onClick((e: ClickEvent) => {
           this.isShow = !this.isShow
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.isShow,
-              } as Record<string, RecordData>
+              } as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 58,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("appearFlag start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("appearFlag emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
         .margin(3)
-        .backgroundColor(0x2788D9)
+        .backgroundColor('0x2788D9')
       if (this.isShow) {
         Text(this.myText)
           .onAppear(() => {
             this.appearFlag = "appearStatusOn"
             this.changeAppear = 'Show Text'
             console.info('appearFlag current action state is: ' + this.appearFlag);
-            const prompt = new PromptAction()
+            let uiContext: UIContext = this.getUIContext()
+            const prompt: PromptAction = uiContext.getPromptAction()
             prompt.showToast({ message: 'The text is shown', duration: 2000 })
             try {
-              let backData2: events_emitter.EventData = {
+              let backData2: emitter.EventData = {
                 data: {
                   "APPEAR": this.appearFlag,
-                } as Record<string, RecordData>
+                } as Record<String, undefined | null | Object>
               }
-              let backEvent2: events_emitter.InnerEvent = {
+              let backEvent2: emitter.InnerEvent = {
                 eventId: 59,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("appearFlag start to emit action state")
-              events_emitter.emit(backEvent2, backData2)
-            } catch (err) {
+              emitter.emit(backEvent2, backData2)
+            } catch (err: Error) {
               console.info("appearFlag emit action state err: " + JSON.stringify((err as Error)?.message))
             }
           })
@@ -114,21 +115,22 @@ struct AppearExample {
             this.disAppearFlag = true
             this.changeAppear = 'Hide Text'
             console.info('disAppearFlag current action state is: ' + this.disAppearFlag);
-            const prompt = new PromptAction()
+            let uiContext: UIContext = this.getUIContext()
+            const prompt: PromptAction = uiContext.getPromptAction()
             prompt.showToast({ message: 'The text is hidden', duration: 2000 })
             try {
-              let backData1: events_emitter.EventData = {
+              let backData1: emitter.EventData = {
                 data: {
                   "ACTION": this.disAppearFlag,
-                } as Record<string, RecordData>
+                } as Record<String, undefined | null | Object>
               }
-              let backEvent1: events_emitter.InnerEvent = {
+              let backEvent1: emitter.InnerEvent = {
                 eventId: 60,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("disAppearFlag start to emit action state")
-              events_emitter.emit(backEvent1, backData1)
-            } catch (err) {
+              emitter.emit(backEvent1, backData1)
+            } catch (err: Error) {
               console.info("disAppearFlag emit action state err: " + JSON.stringify((err as Error)?.message))
             }
           })
@@ -138,12 +140,14 @@ struct AppearExample {
     .width('100%')
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[appear] page stateChangCallBack");
     if (eventData != null) {
+      const data = eventData.data as Record<String, undefined | null | Object>
       console.info("[appear] page state change called:" + JSON.stringify(eventData));
-
-
+      if (data['isShow'] != null) {
+        this.isShow = data['isShow'] as boolean;
+      }
     }
   }
 }

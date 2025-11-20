@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,9 +51,9 @@ export default function rotationGestureTest() {
         if (!('RotationGesture' == pages.name)) {
           console.info('get RotationGesture state pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
+          // let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push RotationGesture page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push RotationGesture page error:' + err);
@@ -62,17 +62,20 @@ export default function rotationGestureTest() {
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
       console.info('RotationGesture after each called');
     });
 
 
+    
     /*
-     * @tc.number    RotationGesture1_static_0100
-     * @tc.name      RotationGesture1_static_0100
-     * @tc.desc      RotationGesture1_static_0100
-     * @tc.level     2
+     * @tc.number   RotationGesture1_static_0100
+     * @tc.name     RotationGesture1_static_0100
+     * @tc.desc     RotationGesture1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('RotationGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RotationGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RotationGesture1_static_0100 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
@@ -95,18 +98,18 @@ export default function rotationGestureTest() {
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj1.left + areaWidth1 / 4) as Int, y: Math.round(areaObj1.top + areaHeight1 / 4) as Int });
+        { x: Math.round(areaObj1.left + areaWidth1 / 4) as int, y: Math.round(areaObj1.top + areaHeight1 / 4) as int });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 / 4) as Int
+        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
+        y: Math.round(areaObj1.top + areaHeight1 / 4) as int
       });
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as Int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as Int
+        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
       });
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 / 4) as Int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as Int
+        x: Math.round(areaObj1.left + areaWidth1 / 4) as int,
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
       });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(2000);
@@ -121,19 +124,20 @@ export default function rotationGestureTest() {
     });
 
 
+    
     /*
-     * @tc.number    RotationGesture1_static_0200
-     * @tc.name      RotationGesture1_static_0200
-     * @tc.desc      RotationGesture1_static_0200
-     * @tc.level     2
+     * @tc.number   RotationGesture1_static_0200
+     * @tc.name     RotationGesture1_static_0200
+     * @tc.desc     RotationGesture1_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('RotationGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RotationGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RotationGesture1_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver1 = Driver.create()
       await CommonFunc.sleep(1000);
-      let Column = await (driver1.findComponent(ON.id('clear')) as Promise<Component>);
-      await Column.click();
+      let Column = await driver1.findComponent(ON.id('clear'));
+      await (Column?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
       let windowOffsetY: number = AppStorage.get<number>("winTop") as number
@@ -159,24 +163,24 @@ export default function rotationGestureTest() {
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(3, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj1.left + areaWidth1 / 4) as Int, y: Math.round(areaObj1.top + areaHeight1 / 4) as Int });
+        { x: Math.round(areaObj1.left + areaWidth1 / 4) as int, y: Math.round(areaObj1.top + areaHeight1 / 4) as int });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 / 4) as Int
+        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
+        y: Math.round(areaObj1.top + areaHeight1 / 4) as int
       });
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as Int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as Int
+        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
       });
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 / 4) as Int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as Int
+        x: Math.round(areaObj1.left + areaWidth1 / 4) as int,
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
       });
       pointers.setPoint(2, 0,
-        { x: Math.round(areaObj1.left + areaWidth1 / 3) as Int, y: Math.round(areaObj1.top + areaHeight1 / 4) as Int });
+        { x: Math.round(areaObj1.left + areaWidth1 / 3) as int, y: Math.round(areaObj1.top + areaHeight1 / 4) as int });
       pointers.setPoint(2, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 / 4) as Int
+        x: Math.round(areaObj1.right - areaWidth1 / 3) as int,
+        y: Math.round(areaObj1.top + areaHeight1 / 4) as int
       });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(2000);

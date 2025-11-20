@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,8 +27,9 @@ import {
   Margin,
   PreDragStatus,
   Text,
+  UnifiedData
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import image from '@ohos.multimedia.image';
@@ -57,6 +58,10 @@ struct NormalEts {
           }
         })
 
+      let data: unifiedDataChannel.Image = new unifiedDataChannel.Image();
+      data.imageUri = "app.media.startIcon";
+      let unifiedData = new unifiedDataChannel.UnifiedData(data);
+      this.unifiedData1 = unifiedData
 
       this.getUIContext().getDragController().notifyDragStartRequest(dragController.DragStartRequestStatus.READY)
     }, 4000);
@@ -78,8 +83,20 @@ struct NormalEts {
             clearTimeout(this.timeout1);
           }
         })
-
-
+        .onDragStart((event: DragEvent, extraParams?: String | undefined): DragItemInfo => {
+          if (this.finished == false) {
+            this.getUIContext()
+              .getDragController()
+              .notifyDragStartRequest(dragController.DragStartRequestStatus.WAITING)
+            this.msg = 'success'
+          } else {
+            event.setData(this.unifiedData1 as UnifiedData);
+          }
+          return {} as DragItemInfo
+        })
+        .onDragEnd(() => {
+          this.finished = false
+        })
       Button(this.msg)
         .margin({ top: '15%' } as Margin)
         .id('button')

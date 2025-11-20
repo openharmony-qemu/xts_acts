@@ -54,15 +54,14 @@ export default function arcDotIndicator() {
       console.info("arcDotIndicator beforeEach end");
     });
 
-    /**
-     * @tc.number    arcDotIndicator_001
-     * @tc.name      arcDotIndicator_static_0100
-     * @tc.desc      The direction of the arc-shaped indicator is the 6 o'clock direction.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   arcDotIndicator_static_0100
+     * @tc.name     arcDotIndicator_static_0100
+     * @tc.desc     arcDotIndicator_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('arcDotIndicator_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('arcDotIndicator_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[arcDotIndicator_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('arcs_arcDirection');
@@ -80,15 +79,14 @@ export default function arcDotIndicator() {
       done();
     });
 
-    /**
-     * @tc.number    arcDotIndicator_002
-     * @tc.name      arcDotIndicator_static_0200
-     * @tc.desc      The direction of the arc-shaped indicator is the 3 o'clock direction.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   arcDotIndicator_static_0200
+     * @tc.name     arcDotIndicator_static_0200
+     * @tc.desc     arcDotIndicator_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('arcDotIndicator_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('arcDotIndicator_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[arcDotIndicator_static_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -110,15 +108,14 @@ export default function arcDotIndicator() {
       done();
     });
 
-    /**
-     * @tc.number    arcDotIndicator_003
-     * @tc.name      arcDotIndicator_static_0300
-     * @tc.desc      The direction of the arc-shaped indicator is the 3 o'clock direction.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   arcDotIndicator_static_0300
+     * @tc.name     arcDotIndicator_static_0300
+     * @tc.desc     arcDotIndicator_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('arcDotIndicator_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('arcDotIndicator_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[arcDotIndicator_static_0300] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

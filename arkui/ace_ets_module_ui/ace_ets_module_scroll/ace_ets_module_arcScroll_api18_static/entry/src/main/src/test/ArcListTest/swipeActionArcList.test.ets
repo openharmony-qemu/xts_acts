@@ -54,15 +54,14 @@ export default function swipeActionArcList() {
       console.info("swipeActionArcList beforeEach end");
     });
 
-    /**
-     * @tc.number    swipeActionArcList_001
-     * @tc.name      swipeActionArcList_static_0100
-     * @tc.desc      The swipeAction attribute 'end' of the ArcList component,
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   swipeActionArcList_static_0100
+     * @tc.name     swipeActionArcList_static_0100
+     * @tc.desc     swipeActionArcList_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('swipeActionArcList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('swipeActionArcList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[swipeActionArcList_static_0100] START');
       let swipeList = CommonFunc.getComponentRectOnScreen('arcListItem_0');
       let top = swipeList.top;
@@ -91,15 +90,14 @@ export default function swipeActionArcList() {
       done();
     });
 
-    /**
-     * @tc.number    swipeActionArcList_002
-     * @tc.name      swipeActionArcList_static_0200
-     * @tc.desc      The swipeAction attribute 'start' of the ArcList component,
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   swipeActionArcList_static_0200
+     * @tc.name     swipeActionArcList_static_0200
+     * @tc.desc     swipeActionArcList_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('swipeActionArcList_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('swipeActionArcList_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[swipeActionArcList_static_0200] START');
       let swipeList = CommonFunc.getComponentRectOnScreen('arcListItem_0');
       let top = swipeList.top;

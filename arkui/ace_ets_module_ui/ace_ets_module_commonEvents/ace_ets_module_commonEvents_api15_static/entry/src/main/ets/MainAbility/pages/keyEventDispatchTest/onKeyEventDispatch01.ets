@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { NodeController, FrameNode, typeNode } from '@ohos.arkui.node';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Button, ClickEvent, Column, Component, Entry, KeyEvent, KeyType, Row, Text } from '@ohos.arkui.component'
+import { KeyType, KeyEvent, Row, Entry, Column, Text, Button, ClickEvent, Component } from '@ohos.arkui.component'
 
 
 @Entry
@@ -33,31 +33,28 @@ struct onKeyEventExample {
   @State text7: string = ''
   @State text8: string = ''
   @State eventType: string = ''
-
-  build() {
+build() {
     Column() {
       Row() {
-        Text(this.text).key('keyEvent0')
-        Text(this.text1).key('keyEvent1')
-        Text(this.text2).key('keyEvent2')
-        Text(this.text3).key('keyEvent3')
-        Text(this.text4).key('keyEvent4')
+          Text(this.text).key('keyEvent0')
+          Text(this.text1).key('keyEvent1')
+          Text(this.text2).key('keyEvent2')
+          Text(this.text3).key('keyEvent3')
+          Text(this.text4).key('keyEvent4')
       }
-
       Row() {
         Text(this.text5).key('keyEvent5')
         Text(this.text6).key('keyEvent6')
         Text(this.text7).key('keyEvent7')
         Text(this.text8).key('keyEvent8')
       }
-
       Button('KeyEvent')
         .onKeyEventDispatch((keyEvent: KeyEvent): boolean => {
           console.info("the key is " + JSON.stringify(keyEvent))
-          if (keyEvent.type == KeyType.Down) {
+          if(keyEvent.type == KeyType.Down) {
             this.text = keyEvent.type + "";
           }
-          if (keyEvent.type == KeyType.Up) {
+          if(keyEvent.type == KeyType.Up) {
             this.text1 = keyEvent.type + "";
           }
           this.text2 = keyEvent.keyCode + "";

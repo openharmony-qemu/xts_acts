@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,60 +13,57 @@
  * limitations under the License.
  */
 
-import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { NodeController, FrameNode, typeNode } from '@ohos.arkui.node';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Button, ClickEvent, Column, Component, Entry, KeyEvent, KeyType, Row, Text } from '@ohos.arkui.component'
+import { KeyType, KeyEvent, Row, Entry, Column, Text, Button, ClickEvent, Component } from '@ohos.arkui.component'
 
 @Entry
 @Component
 struct onKeyEventExample4 {
   @State childText: string = ''
-  @State parentText: string = ""
 
-  build() {
+  @State parentText : string = ""
+
+build() {
     Column() {
       Row() {
         Text(this.parentText).key('tabParent')
         Text(this.childText).key('tabChild')
       }
-
       Button('KeyEvent')
-        .onKeyEventDispatch((event: KeyEvent): boolean => {
+        .onKeyEventDispatch((event:KeyEvent): boolean=> {
 
           this.childText = 'childTab'
           console.info("the child key is " + JSON.stringify(event))
           return false
         })
       Button('KeyEvent1')
-        .onKeyEventDispatch((event: KeyEvent): boolean => {
+        .onKeyEventDispatch((event:KeyEvent): boolean=> {
 
           this.childText = 'childTab'
           console.info("the child key is " + JSON.stringify(event))
           return false
         })
       Button('KeyEvent2')
-        .onKeyEventDispatch((event: KeyEvent): boolean => {
+        .onKeyEventDispatch((event:KeyEvent): boolean=> {
 
           this.childText = 'childTab'
           console.info("the child key is " + JSON.stringify(event))
           return false
         })
 
-    }
-    .height('100%')
-    .width('100%')
-    .padding(35)
-    .onKeyEventDispatch((event: KeyEvent): boolean => {
+    }.height('100%').width('100%').padding(35)
+    .onKeyEventDispatch((event:KeyEvent): boolean=> {
       this.parentText = "parentTab"
       console.info("the parent key is " + JSON.stringify(event))
       return true
     })
-    .onKeyEvent((event: KeyEvent) => {
+    .onKeyEvent(((event:KeyEvent):boolean=> {
 
       console.info("the keyEvent is " + JSON.stringify(event))
       return false
-    })
+    }) as ((data: KeyEvent) => Boolean))
   }
 }

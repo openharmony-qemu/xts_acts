@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,11 +16,9 @@
 import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import { Component, Driver, ON } from '@ohos.UiTest'
 import router from '@ohos.router'
-import events_emitter from '@ohos.events.emitter';
-
+import emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -31,11 +29,11 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test'
+import { KeyCode } from '@ohos.multimodalInput.keyCode'
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 
@@ -59,7 +57,21 @@ export default function ShortcutKeyTest() {
     FunctionKey.F11,
     FunctionKey.F12,
   ]
-
+  const arr_keyCode = [
+    KeyCode.KEYCODE_ESCAPE
+    , KeyCode.KEYCODE_F1
+    , KeyCode.KEYCODE_F2
+    , KeyCode.KEYCODE_F3
+    , KeyCode.KEYCODE_F4
+    , KeyCode.KEYCODE_F5
+    , KeyCode.KEYCODE_F6
+    , KeyCode.KEYCODE_F7
+    , KeyCode.KEYCODE_F8
+    , KeyCode.KEYCODE_F9
+    , KeyCode.KEYCODE_F10
+    , KeyCode.KEYCODE_F11
+    , KeyCode.KEYCODE_F12
+  ]
 
   const baseEvent = 62000
   const baseEvent2 = 73000
@@ -74,7 +86,7 @@ export default function ShortcutKeyTest() {
     beforeEach(async (): Promise<void> => {
       console.info("ShortcutKeyTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/ShortcutKeyTest',
+        url: 'MainAbility/pages/keyboardShortcut/ShortcutKey',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -83,10 +95,8 @@ export default function ShortcutKeyTest() {
         console.info("get ShortcutKeyTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ShortcutKeyTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push ShortcutKeyTest page error:" + err);
@@ -99,90 +109,95 @@ export default function ShortcutKeyTest() {
       await CommonFunc.sleep(2000)
     });
 
+    
     /*
-     * @tc.number    ArkUI_Shortcut_Key_static_0100
-     * @tc.name      ArkUI_Shortcut_Key_static_0100
-     * @tc.desc      ArkUI_Shortcut_Key_static_0100
-     * @tc.level     2
+     * @tc.number   ArkUI_Shortcut_Key_static_0100
+     * @tc.name     ArkUI_Shortcut_Key_static_0100
+     * @tc.desc     ArkUI_Shortcut_Key_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Shortcut_Key_static_0100', Level.LEVEL0, async () => {
+it('ArkUI_Shortcut_Key_static_0100', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0100'
       console.info(`${SUITE} ${CASE} START`);
 
-      let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as ESObject).getProperty('msg')).assertEqual('Ctrl_B');
-        console.info(`${SUITE} ${CASE} event.data?.msg:` + ((event.data) as ESObject).getProperty('msg'));
+      let callback = (event: emitter.EventData) => {
+        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        expect(data['msg']).assertEqual('Ctrl_B');
+        console.info(`${SUITE} ${CASE} data.msg:` + data['msg']);
       }
-      let event: events_emitter.InnerEvent = {
+      let event: emitter.InnerEvent = {
         eventId: baseEvent,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
-      events_emitter.on(event, callback);
+      emitter.on(event, callback);
       let driver = Driver.create()
-
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B)
 
       console.info(`${SUITE} ${CASE} END`);
     });
 
-
+    
     /*
-     * @tc.number    ArkUI_Shortcut_Key_static_0200
-     * @tc.name      ArkUI_Shortcut_Key_static_0200
-     * @tc.desc      ArkUI_Shortcut_Key_static_0200
-     * @tc.level     2
+     * @tc.number   ArkUI_Shortcut_Key_static_0200
+     * @tc.name     ArkUI_Shortcut_Key_static_0200
+     * @tc.desc     ArkUI_Shortcut_Key_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Shortcut_Key_static_0200', Level.LEVEL0, async () => {
+it('ArkUI_Shortcut_Key_static_0200', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0200'
       console.info(`${SUITE} ${CASE} START`);
 
-      let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as ESObject).getProperty('msg')).assertEqual('Shift_1');
-        console.info(`${SUITE} ${CASE} event.data?.msg:` + ((event.data) as ESObject).getProperty('msg'));
+      let callback = (event: emitter.EventData) => {
+        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        expect(data['msg']).assertEqual('Shift_1');
+        console.info(`${SUITE} ${CASE} data.msg:` + data['msg']);
       }
-      let event: events_emitter.InnerEvent = {
+      let event: emitter.InnerEvent = {
         eventId: 72002,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
-      events_emitter.on(event, callback);
+      emitter.on(event, callback);
       let driver = Driver.create()
-
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_1);
 
       console.info(`${SUITE} ${CASE} END`);
     });
 
-
+    
     /*
-     * @tc.number    ArkUI_Shortcut_Key_static_0300
-     * @tc.name      ArkUI_Shortcut_Key_static_0300
-     * @tc.desc      ArkUI_Shortcut_Key_static_0300
-     * @tc.level     2
+     * @tc.number   ArkUI_Shortcut_Key_static_0300
+     * @tc.name     ArkUI_Shortcut_Key_static_0300
+     * @tc.desc     ArkUI_Shortcut_Key_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Shortcut_Key_static_0300', Level.LEVEL0, async () => {
+it('ArkUI_Shortcut_Key_static_0300', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0300'
       console.info(`${SUITE} ${CASE} START`);
 
-      let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as ESObject).getProperty('msg')).assertEqual('Alt_Q');
-        console.info(`${SUITE} ${CASE} event.data?.msg:` + ((event.data) as ESObject).getProperty('msg'));
+      let callback = (event: emitter.EventData) => {
+        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        expect(data['msg']).assertEqual('Alt_Q');
+        console.info(`${SUITE} ${CASE} data.msg:` + data['msg']);
       }
-      let event: events_emitter.InnerEvent = {
+      let event: emitter.InnerEvent = {
         eventId: 72003,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
-      events_emitter.on(event, callback);
+      emitter.on(event, callback);
       let driver = Driver.create()
-
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_Q);
 
       console.info(`${SUITE} ${CASE} END`);
     });
 
+    
     /*
-     * @tc.number    ArkUI_Shortcut_Key_static_0400
-     * @tc.name      ArkUI_Shortcut_Key_static_0400
-     * @tc.desc      ArkUI_Shortcut_Key_static_0400
-     * @tc.level     2
+     * @tc.number   ArkUI_Shortcut_Key_static_0400
+     * @tc.name     ArkUI_Shortcut_Key_static_0400
+     * @tc.desc     ArkUI_Shortcut_Key_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Shortcut_Key_static_0400', Level.LEVEL0, async () => {
+it('ArkUI_Shortcut_Key_static_0400', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0400'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -192,18 +207,20 @@ export default function ShortcutKeyTest() {
       for (let i = start; i < end; i++) {
         let item = functionKey[i]
 
-        let callback = (event: events_emitter.EventData) => {
-          expect(((event.data) as ESObject).getProperty('msg')).assertEqual('Alt_Q');
-          console.info(`${SUITE} ${CASE} event.data?.msg:` + ((event.data) as ESObject).getProperty('msg'));
+        let callback = (event: emitter.EventData) => {
+          const data: Record<String, undefined | null | Object> =
+            event.data as Record<String, undefined | null | Object>
+          expect(data['msg']).assertEqual('Ctrl_' + FunctionKey[item]);
+          console.info(`${SUITE} ${CASE} data.msg:` + i + ',' + data['msg']);
           if (i == end - 1) {
           }
         }
-        let event: events_emitter.InnerEvent = {
+        let event: emitter.InnerEvent = {
           eventId: baseEvent2 + i,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        events_emitter.on(event, callback);
-
+        emitter.on(event, callback);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, arr_keyCode[i])
       }
 
       console.info(`${SUITE} ${CASE} END`);

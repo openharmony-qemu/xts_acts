@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -37,12 +37,12 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 struct TapGestureExample {
   @State value: string = ''
   @State count: number = 2;
-  @State fingers: int = 1
+  @State fingers: Int = 1
   @State distanceThreshold: number = 100;
 
   build() {
     Column() {
-
+      // 单指双击文本触发手势事件
       Column() {
         Text('Click twice ').fontSize(28)
       }

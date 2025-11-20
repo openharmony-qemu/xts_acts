@@ -4,7 +4,7 @@
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
- http:
+ http://www.apache.org/licenses/LICENSE-2.0
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -57,7 +57,8 @@ struct SwipeGesture1 {
       .key('SwipeGesture1')
       .height(150)
       .width(200)
-      .backgroundColor(0x008000)
+      // .backgroundColor(0x008000)
+      .backgroundColor(Color.Green)
       .rotate({ angle: this.angle })
       .gesture(
         SwipeGesture({ direction: SwipeDirection.All })
@@ -74,7 +75,7 @@ struct SwipeGesture1 {
       .key('SwipeGesture4')
       .height(150)
       .width(200)
-      .backgroundColor(0x008000)
+      .backgroundColor(Color.Green)
       .rotate({ angle: this.angle })
       .gesture(
         SwipeGesture({ direction: SwipeDirection.None })
@@ -87,6 +88,7 @@ struct SwipeGesture1 {
     }
     .height(150)
     .width(200)
-    .backgroundColor(0xffa500)
+
+    .backgroundColor(Color.Orange)
   }
 }

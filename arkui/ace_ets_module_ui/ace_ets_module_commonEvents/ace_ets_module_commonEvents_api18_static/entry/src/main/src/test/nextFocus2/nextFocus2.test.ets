@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,7 +63,7 @@ export default function nextFocus2() {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push Button success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push Button page error: ' + err);
@@ -72,13 +72,14 @@ export default function nextFocus2() {
     });
 
 
+    
     /*
-     * @tc.number    Button_static_0101
-     * @tc.name      Button_static_0101
-     * @tc.desc      Button_static_0101
-     * @tc.level     2
+     * @tc.number   Button_static_0101
+     * @tc.name     Button_static_0101
+     * @tc.desc     Button_static_0101
+     * @tc.level    Level.LEVEL0
      */
-    it('Button_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('Button_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Button_static_0101] START');
       let driver: Driver = Driver.create();
       await driver.triggerKey(2049);
@@ -96,7 +97,7 @@ export default function nextFocus2() {
       await driver.triggerCombineKeys(2047, 2049);
       await CommonFunc.sleep(2000);
 
-
+      // test the child component response
       let strJson = inspector.getInspectorByKey('a7');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[Button_static_0101] obj is: ' + obj.getElement('$attrs').getString('label'));

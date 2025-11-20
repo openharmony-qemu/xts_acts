@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,7 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '.
 import router from '@ohos.router'
 import { Component, Driver, ON } from '@ohos.UiTest'
 import events_emitter from '@ohos.events.emitter';
-
+//import input from '@ohos.multimodalInput.keyCode';
 import { BusinessError } from '@ohos.base';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
@@ -27,7 +27,8 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test'
+import { UtilsTest } from '../Util.test';
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -46,14 +47,10 @@ export default function ShortcutKeyTABTest() {
         url: "MainAbility/pages/keyboardShortcut/ShortcutKeyTAB",
       }
       try {
-        const routerInstance = AppStorage.get<Router>("router")
-        routerInstance?.clear();
-        let pages = routerInstance?.getState();
-        console.info("get ShortcutKeyTABTest state pages:" + JSON.stringify(pages));
+        const router = AppStorage.get<Router>('router') as Router
+        let pages = router.getState();
         if (pages == null || !("ShortcutKeyTAB" == pages.name)) {
-          console.info("get ShortcutKeyTABTest pages.name:" + JSON.stringify(pages?.name));
-          routerInstance?.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          router.pushUrl(options)
         }
       } catch (err) {
         console.error(`ShortcutKeyTABTest beforeEach error:` + JSON.stringify(err));
@@ -65,18 +62,20 @@ export default function ShortcutKeyTABTest() {
     });
 
 
+    
     /*
-     * @tc.number    ShortcutKeyTABTest_static_0100
-     * @tc.name      ShortcutKeyTABTest_static_0100
-     * @tc.desc      ShortcutKeyTABTest_static_0100
-     * @tc.level     2
+     * @tc.number   ShortcutKeyTABTest_static_0100
+     * @tc.name     ShortcutKeyTABTest_static_0100
+     * @tc.desc     ShortcutKeyTABTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ShortcutKeyTABTest_static_0100', Level.LEVEL0, async () => {
+it('ShortcutKeyTABTest_static_0100', Level.LEVEL0, async () => {
       let CASE = 'ShortcutKeyTABTest_0100'
       console.info(`ShortcutKeyTABTest_0100 START`);
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as ESObject).getProperty('msg')).assertEqual('CTRL+TAB');
-        console.info(`ShortcutKeyTABTest_0100 event.data?.msg:` + ((event.data) as ESObject).getProperty('msg'));
+        const data: Record<string, undefined | null | Object> = event.data as Record<string, undefined | null | Object>
+        expect(data['msg']).assertEqual('CTRL+TAB');
+        console.info(`ShortcutKeyTABTest_0100 event.data?.msg:` + data['msg']);
       }
       let event: events_emitter.InnerEvent = {
         eventId: 75000,
@@ -84,7 +83,7 @@ export default function ShortcutKeyTABTest() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_TAB)
       console.info(`ShortcutKeyTABTest_0100 END`);
     });
   })

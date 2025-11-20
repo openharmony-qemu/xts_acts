@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,16 +51,13 @@ export default function SourceToolTest() {
         console.info("get SourceTool state pages: " + JSON.stringify(pages));
         if (!("SourceTool" == pages.name)) {
           console.info("get SourceTool state pages.name: " + JSON.stringify(pages.name));
-
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push SourceTool page error: " + err);
         expect().assertFail();
       }
-
     });
 
     afterEach(async () => {
@@ -69,24 +66,26 @@ export default function SourceToolTest() {
     });
 
 
+    
     /*
-     * @tc.number    SourceTool_static_0010
-     * @tc.name      SourceTool_static_0010
-     * @tc.desc      SourceTool_static_0010
-     * @tc.level     2
+     * @tc.number   SourceTool_static_0010
+     * @tc.name     SourceTool_static_0010
+     * @tc.desc     SourceTool_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('SourceTool_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SourceTool_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SourceTool_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
 
-      let button: Component | null = await driver.findComponent(ON.id('PanGestureSourceToolColumn'));
+      let button = await driver.findComponent(ON.id('PanGestureSourceToolColumn'));
 
       let point = await (button?.getBoundsCenter() as Promise<Point>);
 
       await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('sourceTool1_id');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('label')).assertEqual('7');
       console.info('[SourceTool_0010] END');
@@ -94,17 +93,19 @@ export default function SourceToolTest() {
     });
 
 
+    
     /*
-     * @tc.number    SourceTool_static_0020
-     * @tc.name      SourceTool_static_0020
-     * @tc.desc      SourceTool_static_0020
-     * @tc.level     2
+     * @tc.number   SourceTool_static_0020
+     * @tc.name     SourceTool_static_0020
+     * @tc.desc     SourceTool_static_0020
+     * @tc.level    Level.LEVEL0
      */
-    it('SourceTool_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SourceTool_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SourceTool_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let colum = CommonFunc.getComponentRectOnScreen('PanGestureSourceToolColumn');
+      await CommonFunc.sleep(2000);
       let top = colum.top
       let bottom = colum.bottom
       let left = colum.left
@@ -113,6 +114,7 @@ export default function SourceToolTest() {
         Math.round(right - 20) as Int, Math.round((top + bottom) / 2) as Int)) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('sourceTool1_id');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('label')).assertEqual('1');
       console.info('[SourceTool_0020] END');
@@ -120,20 +122,23 @@ export default function SourceToolTest() {
     });
 
 
+    
     /*
-     * @tc.number    SourceTool_static_0030
-     * @tc.name      SourceTool_static_0030
-     * @tc.desc      SourceTool_static_0030
-     * @tc.level     2
+     * @tc.number   SourceTool_static_0030
+     * @tc.name     SourceTool_static_0030
+     * @tc.desc     SourceTool_static_0030
+     * @tc.level    Level.LEVEL0
      */
-    it('SourceTool_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SourceTool_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SourceTool_0030 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button1 = await driver.findComponent(ON.id('changeSourceTool3_id'));
+      await CommonFunc.sleep(2000);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('sourceTool1_id');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('label')).assertEqual('10');
       console.info('[SourceTool_0030] END');
@@ -141,13 +146,14 @@ export default function SourceToolTest() {
     });
 
 
+    
     /*
-     * @tc.number    axisHorizontal_static_0040
-     * @tc.name      axisHorizontal_static_0040
-     * @tc.desc      axisHorizontal_static_0040
-     * @tc.level     2
+     * @tc.number   axisHorizontal_static_0040
+     * @tc.name     axisHorizontal_static_0040
+     * @tc.desc     axisHorizontal_static_0040
+     * @tc.level    Level.LEVEL0
      */
-    it('axisHorizontal_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('axisHorizontal_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('axisHorizontal_0040 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -167,13 +173,14 @@ export default function SourceToolTest() {
     });
 
 
+    
     /*
-     * @tc.number    axisVertical_static_0050
-     * @tc.name      axisVertical_static_0050
-     * @tc.desc      axisVertical_static_0050
-     * @tc.level     2
+     * @tc.number   axisVertical_static_0050
+     * @tc.name     axisVertical_static_0050
+     * @tc.desc     axisVertical_static_0050
+     * @tc.level    Level.LEVEL0
      */
-    it('axisVertical_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('axisVertical_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('axisVertical_0050 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

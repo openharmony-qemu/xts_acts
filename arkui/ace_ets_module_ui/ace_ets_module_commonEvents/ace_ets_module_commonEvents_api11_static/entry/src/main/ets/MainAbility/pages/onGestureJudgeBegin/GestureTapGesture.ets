@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -70,8 +70,9 @@ struct GestureTapGesture {
           .fontSize(40)
           .id("GestureTapGesture")
           .borderWidth(2)
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event: DragEvent, extraParams?: String | undefined): DragItemInfo => {
             console.log("Drag start.")
+            return {} as DragItemInfo
           })
           .gesture(
             TapGesture({ count: 1 })
@@ -123,7 +124,9 @@ struct GestureTapGesture {
             if (gestureInfo.type == GestureControl.GestureType.TAP_GESTURE) {
 
               this.message = 'TAP_GESTURE'
+              console.log("TAP_GESTURE " + this.message)
               return GestureJudgeResult.CONTINUE;
+
             }
             return GestureJudgeResult.CONTINUE;
           })

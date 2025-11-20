@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -112,12 +112,12 @@ struct RotationGestureBasic01 {
               this.offsetX = event.offsetX + ''
               this.offsetY = event.offsetY + ''
               this.angle = event.angle + ''
-              this.scale1 = event.scale + ''
+              this.scale1 = Math.round(event.scale) + ''
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -129,7 +129,7 @@ struct RotationGestureBasic01 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -164,12 +164,12 @@ struct RotationGestureBasic01 {
               this.offsetX = event.offsetX + ''
               this.offsetY = event.offsetY + ''
               this.angle = event.angle + ''
-              this.scale1 = event.scale + ''
+              this.scale1 = Math.round(event.scale) + ''
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -181,7 +181,7 @@ struct RotationGestureBasic01 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -216,12 +216,12 @@ struct RotationGestureBasic01 {
               this.offsetX = event.offsetX + ''
               this.offsetY = event.offsetY + ''
               this.angle = event.angle + ''
-              this.scale1 = event.scale + ''
+              this.scale1 = Math.round(event.scale) + ''
               this.pinchCenterX = event.pinchCenterX + ''
               this.pinchCenterY = event.pinchCenterY + ''
               this.speed = event.speed + ''
-
-
+              // 测试fingerList
+              // 第一根手指的
               if (event.fingerList[0] && event.fingerList[0] !== undefined) {
                 this.fingerList_id = event.fingerList[0].id + ''
                 this.fingerList_globalX = event.fingerList[0].globalX + ''
@@ -233,7 +233,7 @@ struct RotationGestureBasic01 {
               }
               this.fingerListLength = event.fingerList.length
               if (event.fingerList[1] && event.fingerList[1] !== undefined) {
-
+                // 第二根手指的
                 this.fingerList1_id = event.fingerList[1].id + ''
                 this.fingerList1_globalX = event.fingerList[1].globalX + ''
                 this.fingerList1_globalY = event.fingerList[1].globalY + ''
@@ -264,7 +264,7 @@ struct RotationGestureBasic01 {
       Text(`repeat:${this.repeat}`).key('RotationGestureBasic01_repeat')
       Text(`offsetX:${this.offsetX}`).key('RotationGestureBasic01_offsetX')
       Text(`offsetY:${this.offsetY}`).key('RotationGestureBasic01_offsetY')
-      Text(`angle:${this.angle}`).key('RotationGestureBasic01_angle')
+      Text(`angle:${Number.parseInt(this.angle)}`).key('RotationGestureBasic01_angle')
       Text(`scale:${this.scale1}`).key('RotationGestureBasic01_scale')
       Text(`pinchCenterX:${this.pinchCenterX}`).key('RotationGestureBasic01_pinchCenterX')
       Text(`pinchCenterY:${this.pinchCenterY}`).key('RotationGestureBasic01_pinchCenterY')

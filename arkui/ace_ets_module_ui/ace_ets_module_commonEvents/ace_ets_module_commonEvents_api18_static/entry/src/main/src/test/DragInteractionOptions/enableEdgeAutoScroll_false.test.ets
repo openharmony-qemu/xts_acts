@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -64,7 +64,7 @@ export default function enableEdgeAutoScroll() {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info('push enableEdgeAutoScroll success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push enableEdgeAutoScroll page error: ' + err);
@@ -79,11 +79,11 @@ export default function enableEdgeAutoScroll() {
 
 
     /*
-     * @tc.number    DenableEdgeAutoScroll_false_static_0010
-     * @tc.name      DenableEdgeAutoScroll_false_static_0010
-     * @tc.desc      DenableEdgeAutoScroll_false_static_0010
-     * @tc.level     2
-     */
+    * @tc.number   DenableEdgeAutoScroll_false_static_0010
+    * @tc.name     DenableEdgeAutoScroll_false_static_0010
+    * @tc.desc     DenableEdgeAutoScroll_false_static_0010
+    * @tc.level    Level.LEVEL0
+    */
     it('DenableEdgeAutoScroll_false_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.info('DenableEdgeAutoScroll_false_static_0010 START');

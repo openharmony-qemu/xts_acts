@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,32 +51,31 @@ export default function SnapshotOptions_region() {
         if (!('SnapshotOptions_region' == pages.name)) {
           console.info('get SnapshotOptions_region state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error('push SnapshotOptions_region page error: ' + err);
         expect().assertFail();
       }
     });
-
-
+    
     /*
-     * @tc.number    SnapshotOptions_region_static_0100
-     * @tc.name      SnapshotOptions_region_static_0100
-     * @tc.desc      SnapshotOptions_region_static_0100
-     * @tc.level     2
+     * @tc.number   SnapshotOptions_region_static_0100
+     * @tc.name     SnapshotOptions_region_static_0100
+     * @tc.desc     SnapshotOptions_region_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SnapshotOptions_region_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SnapshotOptions_region_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SnapshotOptions_region_static_0100] START');
       let driver = Driver.create();
-      let button1 = await (driver.findComponent(ON.id('SnapshotRegion')) as Promise<Component>);
-      await button1.click();
+      let button1 = await driver.findComponent(ON.id('SnapshotRegion'));
+      await CommonFunc.sleep(2000);
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-
+      // test the child component response
       let strJson = inspector.getInspectorByKey('image1');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SnapshotOptions_region_static_0100] strJson is: ' + strJson);
       console.info('[SnapshotOptions_region_static_0100] SnapshotOptions_region obj is: ' +
@@ -92,21 +91,24 @@ export default function SnapshotOptions_region() {
     });
 
 
+    
     /*
-     * @tc.number    SnapshotOptions_region_static_0200
-     * @tc.name      SnapshotOptions_region_static_0200
-     * @tc.desc      SnapshotOptions_region_static_0200
-     * @tc.level     2
+     * @tc.number   SnapshotOptions_region_static_0200
+     * @tc.name     SnapshotOptions_region_static_0200
+     * @tc.desc     SnapshotOptions_region_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('SnapshotOptions_region_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SnapshotOptions_region_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SnapshotOptions_region_0200] START');
       let driver = Driver.create();
-      let button2 = await (driver.findComponent(ON.id('LocalizedSnapshotRegion')) as Promise<Component>);
-      await button2.click();
+      let button2 = await driver.findComponent(ON.id('LocalizedSnapshotRegion'));
+      await CommonFunc.sleep(2000);
+      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-
+      // test the child component response
       let strJson = inspector.getInspectorByKey('image1');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SnapshotOptions_region_0200] strJson is: ' + strJson);
       console.info('[SnapshotOptions_region_0200] SnapshotOptions_region obj is: ' +
@@ -123,21 +125,24 @@ export default function SnapshotOptions_region() {
     });
 
 
+    
     /*
-     * @tc.number    SnapshotOptions_region_static_0300
-     * @tc.name      SnapshotOptions_region_static_0300
-     * @tc.desc      SnapshotOptions_region_static_0300
-     * @tc.level     2
+     * @tc.number   SnapshotOptions_region_static_0300
+     * @tc.name     SnapshotOptions_region_static_0300
+     * @tc.desc     SnapshotOptions_region_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('SnapshotOptions_region_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SnapshotOptions_region_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SnapshotOptions_region_0300] START');
       let driver = Driver.create();
-      let button1 = await (driver.findComponent(ON.id('SnapshotRegion1')) as Promise<Component>);
-      await button1.click();
+      let button1 = await driver.findComponent(ON.id('SnapshotRegion1'));
+      await CommonFunc.sleep(2000);
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-
+      // test the child component response
       let strJson = inspector.getInspectorByKey('image2');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SnapshotOptions_region_0300] strJson is: ' + strJson);
       console.info('[SnapshotOptions_region_0300] SnapshotOptions_region obj is: ' +
@@ -153,21 +158,24 @@ export default function SnapshotOptions_region() {
     });
 
 
+    
     /*
-     * @tc.number    SnapshotOptions_region_static_0400
-     * @tc.name      SnapshotOptions_region_static_0400
-     * @tc.desc      SnapshotOptions_region_static_0400
-     * @tc.level     2
+     * @tc.number   SnapshotOptions_region_static_0400
+     * @tc.name     SnapshotOptions_region_static_0400
+     * @tc.desc     SnapshotOptions_region_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('SnapshotOptions_region_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SnapshotOptions_region_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SnapshotOptions_region_0400] START');
       let driver = Driver.create();
-      let button2 = await (driver.findComponent(ON.id('LocalizedSnapshotRegion1')) as Promise<Component>);
-      await button2.click();
+      let button2 = await driver.findComponent(ON.id('LocalizedSnapshotRegion1'));
+      await CommonFunc.sleep(2000);
+      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-
+      // test the child component response
       let strJson = inspector.getInspectorByKey('image2');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SnapshotOptions_region_0400] strJson is: ' + strJson);
       console.info('[SnapshotOptions_region_0400] SnapshotOptions_region obj is: ' +

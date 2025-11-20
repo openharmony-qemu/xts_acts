@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -45,10 +45,12 @@ const uiContext = new UIContext();
 
 export default function RotationGestureBasic02Test() {
   describe('RotationGestureBasic02Test', () => {
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("RotationGestureBasic02Test beforeEach start");
@@ -62,16 +64,13 @@ export default function RotationGestureBasic02Test() {
         console.info("get RotationGestureBasic02Test state pages:" + JSON.stringify(pages));
         if (!("RotationGestureBasic02" == pages.name)) {
           console.info("get RotationGestureBasic02Test pages.name:" + JSON.stringify(pages.name));
-
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push RotationGestureBasic02Test page error:" + err);
       }
       console.info("RotationGestureBasic02Test beforeEach end");
-
     });
 
     afterEach(async () => {
@@ -80,13 +79,14 @@ export default function RotationGestureBasic02Test() {
     });
 
 
+    
     /*
-     * @tc.number    RotationGestureBasic02Test_static_0010
-     * @tc.name      RotationGestureBasic02Test_static_0010
-     * @tc.desc      RotationGestureBasic02Test_static_0010
-     * @tc.level     2
+     * @tc.number   RotationGestureBasic02Test_static_0010
+     * @tc.name     RotationGestureBasic02Test_static_0010
+     * @tc.desc     RotationGestureBasic02Test_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('RotationGestureBasic02Test_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RotationGestureBasic02Test_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RotationGestureBasic02Test_0010 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number
@@ -114,7 +114,7 @@ export default function RotationGestureBasic02Test() {
       pointers.setPoint(1, 1, { x: Math.round(areaObj1.right) as Int, y: Math.round(areaObj1.bottom) as Int } as Point);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-
+      // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('RotationGestureBasic02_Father');
       let FatherObjHeight = FatherObj.bottom - FatherObj.top
       let FatherObjWidth = FatherObj.right - FatherObj.left
@@ -174,7 +174,7 @@ export default function RotationGestureBasic02Test() {
         obj7)
       expect(obj7.getElement('$attrs').getString('content')).assertEqual('pinchCenterY:0');
 
-
+      // fingerList[0]
       await CommonFunc.sleep(200);
       let text9 = inspector.getInspectorByKey('RotationGestureBasic02_fingerList_id');
       let obj9 = JSON.parseJsonElement(text9);
@@ -182,43 +182,59 @@ export default function RotationGestureBasic02Test() {
         obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('fingerList_id:0');
 
-
+      // fingerList[0]
       await CommonFunc.sleep(200);
       let text10 = inspector.getInspectorByKey('RotationGestureBasic02_fingerList_globalX');
       let obj10 = JSON.parseJsonElement(text10);
+      console.log('RotatioroundnGestureBasicTest_0010 obj10 $attrs content',
+        uiContext.vp2px(Number(obj10.getElement('$attrs').getString('content'))),
+        Math.round(areaObj1.left) - windowOffsetX)
+      console.log('RotationGestureBasic02Test_0010 obj10 $attrs fingerList_globalX',
+        obj10.getElement('$attrs').getString('content'), Number(obj10.getElement('$attrs').getString('content')),
+        uiContext.vp2px(Number(obj10.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj10.getElement('$attrs').getString('content')))) -
+        (Math.round(areaObj1.left) - windowOffsetX))) <= 1).assertTrue();
 
-
+      // fingerList[0]
       await CommonFunc.sleep(200);
       let text11 = inspector.getInspectorByKey('RotationGestureBasic02_fingerList_globalY');
       let obj11 = JSON.parseJsonElement(text11);
+      console.log('RotationGestureBasic02Test_0010 obj11 $attrs content',
+        uiContext.vp2px(Number(obj11.getElement('$attrs').getString('content'))),
+        Math.round(areaObj1.top) - windowOffsetY)
+      console.log('RotationGestureBasic02Test_0010 obj11 $attrs fingerList_globalY',
+        obj11.getElement('$attrs').getString('content'), Number(obj11.getElement('$attrs').getString('content')),
+        uiContext.vp2px(Number(obj11.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj11.getElement('$attrs').getString('content')))) -
+        (Math.round(areaObj1.top) - windowOffsetY))) <= 1).assertTrue();
 
-
+      // fingerList[0]
       await CommonFunc.sleep(200);
       let text12 = inspector.getInspectorByKey('RotationGestureBasic02_fingerList_localX');
       let obj12 = JSON.parseJsonElement(text12);
       console.log('RotationGestureBasic02Test_0010 obj12 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj12.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj12.getElement('$attrs').getString('content'))),
         Math.round(areaObj1.left) - areaObj1.left)
       console.log('RotationGestureBasic02Test_0010 obj12 $attrs localX',
         obj12.getElement('$attrs').getString('content'), Number(obj12.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj12.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj12.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj12.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj12.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj1.left) - areaObj1.left))) <= 1).assertTrue();
 
-
+      // fingerList[0]
       await CommonFunc.sleep(200);
       let text13 = inspector.getInspectorByKey('RotationGestureBasic02_fingerList_localY');
       let obj13 = JSON.parseJsonElement(text13);
       console.log('RotationGestureBasic02Test_0010 obj13 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj13.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj13.getElement('$attrs').getString('content'))),
         Math.round(areaObj1.top) - areaObj1.top)
       console.log('RotationGestureBasic02Test_0010 obj13 $attrs localY',
         obj13.getElement('$attrs').getString('content'), Number(obj13.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj13.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj13.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj13.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj13.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj1.top) - areaObj1.top))) <= 1).assertTrue();
 
-
+      // fingerList[1]
       await CommonFunc.sleep(200);
       let text9f = inspector.getInspectorByKey('RotationGestureBasic02_fingerList1_id');
       let obj9f = JSON.parseJsonElement(text9f);
@@ -226,56 +242,56 @@ export default function RotationGestureBasic02Test() {
         obj9f.getElement('$attrs').getString('content'), obj9f)
       expect(obj9f.getElement('$attrs').getString('content')).assertEqual('fingerList1_id:1');
 
-
+      // fingerList[1]
       await CommonFunc.sleep(200);
       let text10f = inspector.getInspectorByKey('RotationGestureBasic02_fingerList1_globalX');
       let obj10f = JSON.parseJsonElement(text10f);
       console.log('RotationGestureBasic02Test_0010 obj10f $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj10f.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj10f.getElement('$attrs').getString('content'))),
         Math.round(areaObj1.right) - windowOffsetX)
       console.log('RotationGestureBasic02Test_0010 obj10f $attrs fingerList1_globalX',
         obj10f.getElement('$attrs').getString('content'), Number(obj10f.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj10f.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj10f.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj10f.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj10f.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj1.right) - windowOffsetX))) <= 1).assertTrue();
 
-
+      // fingerList[1]
       await CommonFunc.sleep(200);
       let text11f = inspector.getInspectorByKey('RotationGestureBasic02_fingerList1_globalY');
       let obj11f = JSON.parseJsonElement(text11f);
       console.log('RotationGestureBasic02Test_0010 obj11f $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj11f.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj11f.getElement('$attrs').getString('content'))),
         Math.round(areaObj1.bottom) - windowOffsetY)
       console.log('RotationGestureBasic02Test_0010 obj11f $attrs fingerList1_globalY',
         obj11f.getElement('$attrs').getString('content'), Number(obj11f.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj11f.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj11f.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj11f.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj11f.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj1.bottom) - windowOffsetY))) <= 1).assertTrue();
 
-
+      // fingerList[1]
       await CommonFunc.sleep(200);
       let text12f = inspector.getInspectorByKey('RotationGestureBasic02_fingerList1_localX');
       let obj12f = JSON.parseJsonElement(text12f);
       console.log('RotationGestureBasic02Test_0010 obj12f $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj12f.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj12f.getElement('$attrs').getString('content'))),
         Math.round(areaObj1.right) - areaObj1.left)
       console.log('RotationGestureBasic02Test_0010 obj12f $attrs localX',
         obj12f.getElement('$attrs').getString('content'), Number(obj12f.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj12f.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj12f.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj12f.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj12f.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj1.right) - areaObj1.left))) <= 1).assertTrue();
 
-
+      // fingerList[1]
       await CommonFunc.sleep(200);
       let text13f = inspector.getInspectorByKey('RotationGestureBasic02_fingerList1_localY');
       let obj13f = JSON.parseJsonElement(text13f);
       console.log('RotationGestureBasic02Test_0010 obj13f $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj13f.getElement('$attrs').getString('content'))),
+        uiContext.vp2px(Number(obj13f.getElement('$attrs').getString('content'))),
         Math.round(areaObj1.bottom) - areaObj1.top)
       console.log('RotationGestureBasic02Test_0010 obj13f $attrs localY',
         obj13f.getElement('$attrs').getString('content'), Number(obj13f.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj13f.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj13f.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj13f.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj13f.getElement('$attrs').getString('content')))) -
         (Math.round(areaObj1.bottom) - areaObj1.top))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -283,61 +299,61 @@ export default function RotationGestureBasic02Test() {
       let obj16 = JSON.parseJsonElement(text16);
       console.log('RotationGestureBasic02Test_0010 obj16 $attrs content',
         obj16.getElement('$attrs').getString('content'),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj16.getElement('$attrs').getString('content'))), UIContext.getFocusedUIContext()!.vp2px(160))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Number(obj16.getElement('$attrs').getString('content'))) -
-      UIContext.getFocusedUIContext()!.vp2px(160)) <= 1).assertTrue();
+        uiContext.vp2px(Number(obj16.getElement('$attrs').getString('content'))), uiContext.vp2px(160))
+      expect(Math.abs(uiContext.vp2px(Number(obj16.getElement('$attrs').getString('content'))) -
+      uiContext.vp2px(160)) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text17 = inspector.getInspectorByKey('RotationGestureBasic02_target_area_height');
       let obj17 = JSON.parseJsonElement(text17);
       console.log('RotationGestureBasic02Test_0010 obj17 $attrs content',
         obj17.getElement('$attrs').getString('content'),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj17.getElement('$attrs').getString('content'))), UIContext.getFocusedUIContext()!.vp2px(160))
-      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Number(obj17.getElement('$attrs').getString('content'))) -
-      UIContext.getFocusedUIContext()!.vp2px(160)) <= 1).assertTrue();
+        uiContext.vp2px(Number(obj17.getElement('$attrs').getString('content'))), uiContext.vp2px(160))
+      expect(Math.abs(uiContext.vp2px(Number(obj17.getElement('$attrs').getString('content'))) -
+      uiContext.vp2px(160)) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text18 = inspector.getInspectorByKey('RotationGestureBasic02_target_area_position_x');
       let obj18 = JSON.parseJsonElement(text18);
       console.log('RotationGestureBasic02Test_0010 obj18 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj18.getElement('$attrs').getString('content'))), areaObj1.left - FatherObj.left)
+        uiContext.vp2px(Number(obj18.getElement('$attrs').getString('content'))), areaObj1.left - FatherObj.left)
       console.log('RotationGestureBasic02Test_0010 obj18 $attrs position_x',
         obj18.getElement('$attrs').getString('content'), Number(obj18.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj18.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj18.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj18.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj18.getElement('$attrs').getString('content')))) -
         (areaObj1.left - FatherObj.left))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text19 = inspector.getInspectorByKey('RotationGestureBasic02_target_area_position_y');
       let obj19 = JSON.parseJsonElement(text19);
       console.log('RotationGestureBasic02Test_0010 obj19 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj19.getElement('$attrs').getString('content'))), areaObj1.top - FatherObj.top)
+        uiContext.vp2px(Number(obj19.getElement('$attrs').getString('content'))), areaObj1.top - FatherObj.top)
       console.log('RotationGestureBasic02Test_0010 obj19 $attrs position_y',
         obj19.getElement('$attrs').getString('content'), Number(obj19.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj19.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj19.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj19.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj19.getElement('$attrs').getString('content')))) -
         (areaObj1.top - FatherObj.top))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text20 = inspector.getInspectorByKey('RotationGestureBasic02_target_area_globalPosition_x');
       let obj20 = JSON.parseJsonElement(text20);
       console.log('RotationGestureBasic02Test_0010 obj20 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj20.getElement('$attrs').getString('content'))), areaObj1.left - windowOffsetX)
+        uiContext.vp2px(Number(obj20.getElement('$attrs').getString('content'))), areaObj1.left - windowOffsetX)
       console.log('RotationGestureBasic02Test_0010 obj20 $attrs area_globalPosition_x',
         obj20.getElement('$attrs').getString('content'), Number(obj20.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj20.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj20.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj20.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj20.getElement('$attrs').getString('content')))) -
         (areaObj1.left - windowOffsetX))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
       let text21 = inspector.getInspectorByKey('RotationGestureBasic02_target_area_globalPosition_y');
       let obj21 = JSON.parseJsonElement(text21);
       console.log('RotationGestureBasic02Test_0010 obj21 $attrs content',
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj21.getElement('$attrs').getString('content'))), areaObj1.top - windowOffsetY)
+        uiContext.vp2px(Number(obj21.getElement('$attrs').getString('content'))), areaObj1.top - windowOffsetY)
       console.log('RotationGestureBasic02Test_0010 obj21 $attrs area_globalPosition_y',
         obj21.getElement('$attrs').getString('content'), Number(obj21.getElement('$attrs').getString('content')),
-        UIContext.getFocusedUIContext()!.vp2px(Number(obj21.getElement('$attrs').getString('content'))))
-      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj21.getElement('$attrs').getString('content')))) -
+        uiContext.vp2px(Number(obj21.getElement('$attrs').getString('content'))))
+      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj21.getElement('$attrs').getString('content')))) -
         (areaObj1.top - windowOffsetY))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -373,8 +389,7 @@ export default function RotationGestureBasic02Test() {
       let obj26 = JSON.parseJsonElement(text26);
       console.log('RotationGestureBasic02Test_0010 obj26 $attrs content',
         obj26.getElement('$attrs').getString('content'), obj26)
-      expect(obj26.getElement('$attrs').getString('content')).assertEqual('sourceTool:FINGER');
-
+      expect(obj26.getElement('$attrs').getString('content')).assertEqual('sourceTool:Finger');
       console.info('RotationGestureBasic02Test_0010 END');
       done();
     });

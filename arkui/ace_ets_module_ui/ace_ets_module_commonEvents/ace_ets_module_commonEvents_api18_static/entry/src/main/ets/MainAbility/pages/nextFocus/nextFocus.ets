@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,44 +14,44 @@
  */
 
 import {
-  BarState,
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Edge,
   Entry,
+  Component,
+  Column,
+  Text,
+  ForEach,
+  Scroller,
+  ScrollDirection,
+  Color,
+  Scroll,
+  Margin,
+  Edge,
+  Row,
+  TextAlign,
+  BarState,
+  ColumnOptions,
   Flex,
   FlexSpaceOptions,
   FlexWrap,
-  ForEach,
+  Button,
   LengthMetrics,
-  Margin,
-  Row,
-  Scroll,
-  ScrollDirection,
-  Scroller,
-  Text,
-  TextAlign,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct FlexExample2 {
   @State value: string = 'a2'
-
   build() {
     Column() {
       Column({ space: 5 } as ColumnOptions) {
         Text('Wrap').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({
-          wrap: FlexWrap.Wrap,
-          space: { main: LengthMetrics.px(50), cross: LengthMetrics.px(50) } as FlexSpaceOptions
-        }) {
+        Flex({ wrap: FlexWrap.Wrap, space: { main: LengthMetrics.px(50), cross: LengthMetrics.px(50) } as FlexSpaceOptions }) {
           Button('a1')
             .id('a1')
             .nextFocus({ up: 'a2' });

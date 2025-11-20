@@ -53,15 +53,14 @@ export default function childrenSizeArcList() {
       console.info("childrenSizeArcList beforeEach end");
     });
 
-    /**
-     * @tc.number    childrenSizeArcList_001
-     * @tc.name      childrenSizeArcList_static_0100
-     * @tc.desc      The childenMainSize property of the ArcList component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   childrenSizeArcList_static_0100
+     * @tc.name     childrenSizeArcList_static_0100
+     * @tc.desc     childrenSizeArcList_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('childrenSizeArcList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('childrenSizeArcList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[childrenSizeArcList_static_0100] START');
       let driver = Driver.create()
       let btn1 = await driver.findComponent(ON.id('arcList_splice'));

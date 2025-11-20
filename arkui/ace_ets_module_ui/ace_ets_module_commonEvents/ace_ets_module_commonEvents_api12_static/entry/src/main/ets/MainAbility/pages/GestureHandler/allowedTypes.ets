@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,41 +13,41 @@
  * limitations under the License.
  */
 import {
-  BaseGestureEvent,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragEvent,
-  DragItemInfo,
   Entry,
-  FlexAlign,
-  GestureControl,
+  Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
+  TouchEvent,
+  Margin,
+  Scroll,
   GestureEvent,
+  LongPressGesture,
+  TapGesture,
+  ClickEvent,
+  FlexAlign,
   GestureInfo,
+  BaseGestureEvent,
+  DragEvent,
+  GestureControl,
   GestureJudgeResult,
   GestureModifier,
-  LongPressGesture,
-  Margin,
-  PanGestureHandler,
-  Row,
-  Scroll,
-  SourceTool,
-  TapGesture,
-  TapGestureHandler,
   TapGestureHandlerOptions,
-  Text,
-  TouchEvent,
-  TouchType,
-  UIGestureEvent
+  UIGestureEvent,
+  TapGestureHandler,
+  PanGestureHandler,
+  SourceTool
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
-
+ 
 class AllowedTypesModifier implements GestureModifier {
   supportDoubleTap: boolean = true
   value: string = 'allowedTypes succ'
@@ -58,14 +58,18 @@ class AllowedTypesModifier implements GestureModifier {
       event.addGesture(
         new TapGestureHandler(this.tapOptions)
           .allowedTypes([SourceTool.MOUSE, SourceTool.Finger, SourceTool.Pen])
-
-
+          .onAction((event: GestureEvent) => {
+            console.log("button tap " +JSON.stringify(event.repeat))
+            // return this.value
+          })
       )
     } else {
       event.addGesture(
         new PanGestureHandler()
-
-
+          .onActionStart(()=>{
+            console.log("Pan start");
+            // return 'Pan start'
+          })
       )
     }
   }
@@ -79,7 +83,7 @@ struct AllowedTypes1 {
   build() {
     Row() {
       Column() {
-        Button(this.modifier.value).margin({ bottom: 20 } as Margin).id('allowedTypes_button')
+        Button(this.modifier.value).margin({bottom:20} as Margin).id('allowedTypes_button')
         Column()
           .id('allowedTypes_column')
           .gestureModifier(this.modifier)

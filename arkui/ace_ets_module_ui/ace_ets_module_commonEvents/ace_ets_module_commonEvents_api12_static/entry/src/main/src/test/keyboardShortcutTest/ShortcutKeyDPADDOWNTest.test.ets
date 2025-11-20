@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
 import router from '@ohos.router'
-import { Component, Driver, ON } from '@ohos.UiTest'
+import { Driver, Component, ON } from '@ohos.UiTest'
 import events_emitter from '@ohos.events.emitter';
-
+import { Driver, ON } from '@ohos.UiTest';
+////import input from '@ohos.multimodalInput.keyCode';
 import { BusinessError } from '@ohos.base';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
@@ -27,12 +28,14 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test'
-
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest} from '../Util.test'
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
+let testAbilityContext:common.UIAbilityContext;
 
 export default function ShortcutKeyDPADDOWNTest() {
   describe('ShortcutKeyDPADDOWNTest', () => {
@@ -46,16 +49,10 @@ export default function ShortcutKeyDPADDOWNTest() {
         url: "MainAbility/pages/keyboardShortcut/ShortcutKeyDPADDOWN",
       }
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info("get ShortcutKeyDPADDOWNTest state pages:" + JSON.stringify(pages));
+        const router = AppStorage.get<Router>('router') as Router
+        let pages = router.getState();
         if (pages == null || !("ShortcutKeyDPADDOWN" == pages.name)) {
-          console.info("get ShortcutKeyDPADDOWNTest pages.name:" + JSON.stringify(pages.name));
-
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-
+          router.pushUrl(options)
         }
       } catch (err) {
         console.error(`ShortcutKeyDPADDOWNTest beforeEach error:` + JSON.stringify(err));
@@ -66,24 +63,20 @@ export default function ShortcutKeyDPADDOWNTest() {
       await CommonFunc.sleep(2000);
     });
 
+    
     /*
-     *tc.number api
-     *tc.name   ShortcutKeyDPADDOWNTest_0100
-     *tc.desc   Custom keyboard shortcuts TAB
-    */
-    /*
-     * @tc.number    ShortcutKeyDPADDOWNTest_static_0100
-     * @tc.name      ShortcutKeyDPADDOWNTest_static_0100
-     * @tc.desc      ShortcutKeyDPADDOWNTest_static_0100
-     * @tc.level     2
+     * @tc.number   ShortcutKeyDPADDOWNTest_static_0100
+     * @tc.name     ShortcutKeyDPADDOWNTest_static_0100
+     * @tc.desc     ShortcutKeyDPADDOWNTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ShortcutKeyDPADDOWNTest_static_0100', Level.LEVEL0, async () => {
+it('ShortcutKeyDPADDOWNTest_static_0100', Level.LEVEL0, async () => {
       let CASE = 'ShortcutKeyDPADDOWNTest_0100'
       console.info(`ShortcutKeyDPADDOWNTest_0100 START`);
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as ESObject).getProperty('msg')).assertEqual('CTRL+DPAD_DOWN');
-        console.info(`ShortcutKeyDPADDOWNTest_0100 event.data?.msg:` +
-        ((event.data) as ESObject).getProperty('msg'));
+        const data: Record<string, undefined | null | Object> = event.data as Record<string, undefined | null | Object>
+        expect(data['msg']).assertEqual('CTRL+DPAD_DOWN');
+        // console.info(`ShortcutKeyDPADDOWNTest_0100 event.data?.msg:` + event.data?.['msg']);
       }
       let event: events_emitter.InnerEvent = {
         eventId: 75002,
@@ -91,7 +84,7 @@ export default function ShortcutKeyDPADDOWNTest() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN)
       console.info(`ShortcutKeyDPADDOWNTest_0100 END`);
     });
   })

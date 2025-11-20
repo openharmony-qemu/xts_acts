@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -42,7 +42,7 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function PanGestureEventJsunit() {
@@ -56,19 +56,20 @@ export default function PanGestureEventJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("PanGestureEventJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/PanGestureEventJsunit',
+        url: 'MainAbility/pages/PanGesture/PanGestureEvent',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PanGestureEventJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/PanGesture/PanGestureEvent" == pages.name)) {
           console.info("get PanGestureEventJsunit pages.name:" + JSON.stringify(pages.name));
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push PanGestureEventJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PanGestureEventJsunit page error:" + err);
@@ -77,14 +78,15 @@ export default function PanGestureEventJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    PanGestureEventJsunit_static_0100
-     * @tc.name      PanGestureEventJsunit_static_0100
-     * @tc.desc      PanGestureEventJsunit_static_0100
-     * @tc.level     2
+     * @tc.number   PanGestureEventJsunit_static_0100
+     * @tc.name     PanGestureEventJsunit_static_0100
+     * @tc.desc     PanGestureEventJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('PanGestureEventJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+it('PanGestureEventJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the GestureEvent
       console.info('[PanGestureEventJsunit_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -104,14 +106,15 @@ export default function PanGestureEventJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number    PanGestureEventJsunit_static_0200
-     * @tc.name      PanGestureEventJsunit_static_0200
-     * @tc.desc      PanGestureEventJsunit_static_0200
-     * @tc.level     2
+     * @tc.number   PanGestureEventJsunit_static_0200
+     * @tc.name     PanGestureEventJsunit_static_0200
+     * @tc.desc     PanGestureEventJsunit_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('PanGestureEventJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+it('PanGestureEventJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the GestureEvent
       console.info('[PanGestureEventJsunit_0200] START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -131,14 +134,15 @@ export default function PanGestureEventJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number    PanGestureEventJsunit_static_0300
-     * @tc.name      PanGestureEventJsunit_static_0300
-     * @tc.desc      PanGestureEventJsunit_static_0300
-     * @tc.level     2
+     * @tc.number   PanGestureEventJsunit_static_0300
+     * @tc.name     PanGestureEventJsunit_static_0300
+     * @tc.desc     PanGestureEventJsunit_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('PanGestureEventJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+it('PanGestureEventJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the GestureEvent
       console.info('[PanGestureEventJsunit_0300] START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

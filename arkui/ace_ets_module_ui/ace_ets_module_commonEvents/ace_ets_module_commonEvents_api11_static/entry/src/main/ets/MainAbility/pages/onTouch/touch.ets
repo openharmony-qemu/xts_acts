@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -40,10 +40,10 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import events_emitter from '@ohos.events.emitter'
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter'
 
 @Entry
+  //@Preview
 @Component
 struct TouchExample {
   @State text: string = ''
@@ -52,17 +52,17 @@ struct TouchExample {
 
   onPageShow() {
     console.info('[touch] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 42,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
       Button('Touch')
-        .backgroundColor(0x2788D9)
+        // .backgroundColor('0x2788D9')
         .height(40)
         .width(80)
         .key('touch')
@@ -82,8 +82,7 @@ struct TouchExample {
             console.info("[touch] eventType is Move")
             this.touchFlag = true
           }
-
-
+          console.info('stopPropagation')
           event.stopPropagation()
           console.info('onTouch successful, touchFlag is : ' + this.eventType + ', ' + this.touchFlag)
           console.info(this.text = 'TouchType:' + this.eventType
@@ -94,20 +93,20 @@ struct TouchExample {
           console.log('fang--->A')
           try {
             console.log('fang--->B')
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.touchFlag,
-              } as Record<string, RecordData>
+              } as Record<String, undefined | null | Object>
             }
             console.log('fang--->C')
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 43,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.log('fang--->D')
             console.info("touchFlag start to emit action state")
-            events_emitter.emit(backEvent, backData)
-          } catch (err) {
+            emitter.emit(backEvent, backData)
+          } catch (err: Error) {
             console.info("touchFlag emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -117,12 +116,20 @@ struct TouchExample {
     .width(350)
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[touch] page stateChangCallBack");
     if (eventData != null) {
+      const data = eventData.data as Record<String, undefined | null | Object>
       console.info("[touch] page state change called:" + JSON.stringify(eventData));
-
-
+      if (data['text'] != null) {
+        this.text = data['text'] as string;
+      }
+      if (data['eventType'] != null) {
+        this.eventType = data['eventType'] as string;
+      }
+      if (data['touchFlag'] != null) {
+        this.touchFlag = data['touchFlag'] as boolean;
+      }
     }
   }
 }

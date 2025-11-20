@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,6 @@ import router from '@ohos.router';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -32,12 +31,12 @@ import { UtilsTest } from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function dragAdaptationTest() {
   describe('dragAdaptationTest', () => {
     beforeAll(() => {
+      console.log('test beforeAll start')
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -46,19 +45,17 @@ export default function dragAdaptationTest() {
     beforeEach(async (): Promise<void> => {
       console.info("dragAdaptationTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/dragAdaptationTest',
+        url: 'MainAbility/pages/DragController/dragAdaptation',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get dragAdaptationTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get dragAdaptationTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push dragAdaptationTest page error:" + err);
@@ -71,13 +68,14 @@ export default function dragAdaptationTest() {
     });
 
 
+    
     /*
-     * @tc.number    dragAdaptationTest_static_001
-     * @tc.name      dragAdaptationTest_static_001
-     * @tc.desc      dragAdaptationTest_static_001
-     * @tc.level     2
+     * @tc.number   dragAdaptationTest_static_001
+     * @tc.name     dragAdaptationTest_static_001
+     * @tc.desc     dragAdaptationTest_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('dragAdaptationTest_static_001', Level.LEVEL0, async () => {
+it('dragAdaptationTest_static_001', Level.LEVEL0, async () => {
       if (AppStorage.get<number>("winLeft") as number == 0) {
         let driver = Driver.create();
         console.info('dragAdaptationTest dragAdaptationTest_001 START');
@@ -92,14 +90,14 @@ export default function dragAdaptationTest() {
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
-        await (button1?.click() as Promise<void>);
+        button1 ? await (button1?.click() as Promise<void>) : null;
         await CommonFunc.sleep(500);
 
         await (textArea1?.longClick() as Promise<void>);
         await CommonFunc.sleep(500);
         let button3 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
-        await (button3?.click() as Promise<void>);
+        button3 ? await (button3?.click() as Promise<void>) : null;
         console.info('dragAdaptationTest_001 全选 success');
         await CommonFunc.sleep(500);
 
@@ -108,27 +106,27 @@ export default function dragAdaptationTest() {
         console.info('dragAdaptationTest_001 dragTo success');
         let button4 = await driver.findComponent(ON.text('取消'));
         await CommonFunc.sleep(500);
-        await (button4?.click() as Promise<void>);
-        await CommonFunc.sleep(500);
+        button4 ? await (button4?.click() as Promise<void>) : null;
+        await CommonFunc.sleep(2000);
         console.info('dragAdaptationTest_001 取消 success');
 
         await (textArea1?.longClick() as Promise<void>);
         await CommonFunc.sleep(500);
         let button5 = await driver.findComponent(ON.text('全选'));
-        await CommonFunc.sleep(500);
-        await (button5?.click() as Promise<void>);
+        await CommonFunc.sleep(500)
+        button5 ? await (button5?.click() as Promise<void>) : null;
         await CommonFunc.sleep(500);
         console.info('dragAdaptationTest_001 2 全选 success');
         let button6 = await driver.findComponent(ON.text('复制'));
         await CommonFunc.sleep(500);
-        await (button6?.click() as Promise<void>);
+        button6 ? await (button6?.click() as Promise<void>) : null;
         await CommonFunc.sleep(500);
         console.info('dragAdaptationTest_001 2 复制 success');
         await (textArea1?.dragTo(textArea2!) as Promise<void>);
         await CommonFunc.sleep(500);
         let button7 = await driver.findComponent(ON.type('Button'));
         await CommonFunc.sleep(500);
-        await (button7?.click() as Promise<void>);
+        button7 ? await (button7?.click() as Promise<void>) : null;
         await CommonFunc.sleep(500);
         console.info('dragAdaptationTest_001 2 Button success');
       }
