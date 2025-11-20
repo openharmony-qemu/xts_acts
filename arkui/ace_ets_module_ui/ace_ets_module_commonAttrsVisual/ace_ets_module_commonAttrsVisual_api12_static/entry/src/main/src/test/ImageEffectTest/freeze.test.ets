@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -53,8 +53,7 @@ export default function freezeTest() {
         if (!("freeze" == pages.name)) {
           console.info("get freezeTest state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push freezeTest page error: " + err);
@@ -68,15 +67,20 @@ export default function freezeTest() {
     });
 
 
+    
     /*
-     * @tc.number    freezeTest_static_0100
-     * @tc.name      freezeTest_static_0100
-     * @tc.desc      freezeTest_static_0100
-     * @tc.level     2
+     * @tc.number   freezeTest_static_0100
+     * @tc.name     freezeTest_static_0100
+     * @tc.desc     freezeTest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('freezeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('freezeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('freezeTest_static_0100 START');
       let strJson = inspector.getInspectorByKey('OffscreenCanvasFreeze_id');
+      await CommonFunc.sleep(4000);
+      console.log('JSON.parseJsonElement(strJson) ' + strJson)
+      // console.info('freezeTest_static_0100 width' +
+      // JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('width'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("300.00vp");
       console.info('[freezeTest_static_0100] END');
       done();

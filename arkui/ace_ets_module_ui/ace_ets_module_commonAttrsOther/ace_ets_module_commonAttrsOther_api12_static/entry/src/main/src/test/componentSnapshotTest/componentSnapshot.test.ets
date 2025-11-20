@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -65,12 +65,10 @@ export default function componentSnapshotTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get componentSnapshotTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("componentSnapshot" == pages.name)) {
           console.info("get componentSnapshotTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push componentSnapshotTest page error:" + err);
@@ -79,20 +77,23 @@ export default function componentSnapshotTest() {
     });
 
 
+    
     /*
-     * @tc.number    componentSnapshotTest_static_0010
-     * @tc.name      componentSnapshotTest_static_0010
-     * @tc.desc      componentSnapshotTest_static_0010
-     * @tc.level     2
+     * @tc.number   componentSnapshotTest_static_0010
+     * @tc.name     componentSnapshotTest_static_0010
+     * @tc.desc     componentSnapshotTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('componentSnapshotTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('componentSnapshotTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('componentSnapshotTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button = await (driver?.findComponent(ON.id('ComponentSnapshot_id')) as Promise<Component | null>);
-      await ((button?.click()) as Promise<void>)
       await CommonFunc.sleep(1000);
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ComponentSnapshot_id');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[componentSnapshotTest_0010] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('label')).assertEqual('true');

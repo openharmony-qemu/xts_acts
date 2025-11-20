@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -26,10 +26,9 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function systemBarEffectTest() {
 
@@ -53,8 +52,6 @@ export default function systemBarEffectTest() {
         if (!("systemBarEffect" == pages.name)) {
           console.info("get systemBarEffectTest state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push systemBarEffectTest page error: " + err);
@@ -67,14 +64,15 @@ export default function systemBarEffectTest() {
       console.info("systemBarEffectTest after each called");
     });
 
-
+    
+    
     /*
-     * @tc.number    systemBarEffectTest_static_0100
-     * @tc.name      systemBarEffectTest_static_0100
-     * @tc.desc      systemBarEffectTest_static_0100
-     * @tc.level     2
+     * @tc.number   systemBarEffectTest_static_0100
+     * @tc.name     systemBarEffectTest_static_0100
+     * @tc.desc     systemBarEffectTest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('systemBarEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('systemBarEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('systemBarEffectTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -82,8 +80,7 @@ export default function systemBarEffectTest() {
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SystemBarEffect_text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('systemBarEffect succ');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('systemBarEffect succ');
       console.info('[systemBarEffectTest_static_0100] END');
       done();
     });

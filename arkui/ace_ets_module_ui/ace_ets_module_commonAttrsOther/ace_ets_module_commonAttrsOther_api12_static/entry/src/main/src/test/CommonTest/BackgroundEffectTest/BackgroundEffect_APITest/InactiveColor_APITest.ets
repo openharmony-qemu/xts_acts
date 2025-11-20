@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,19 +58,17 @@ export default function Bgde_InactiveColor_APITest() {
     beforeEach(async (): Promise<void> => {
       console.info("Bgde_InactiveColor_APITest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Common/BackgroundEffect/BackgroundEffectOptions/inactiveColor",
+        url: "MainAbility/pages/Common/backgroundBlurStyle/backgroundBlurStyleOptions/inactiveColor",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Bgde_InactiveColor_APITest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("inactiveColor" == pages.name)) {
           console.info("get Bgde_InactiveColor_APITest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push Bgde_InactiveColor_APITest page error:" + err);
@@ -79,21 +77,23 @@ export default function Bgde_InactiveColor_APITest() {
     });
 
 
+    
     /*
-     * @tc.number    Bgde_InactiveColor_APITest_static_0100
-     * @tc.name      Bgde_InactiveColor_APITest_static_0100
-     * @tc.desc      Bgde_InactiveColor_APITest_static_0100
-     * @tc.level     2
+     * @tc.number   Bgde_InactiveColor_APITest_static_0100
+     * @tc.name     Bgde_InactiveColor_APITest_static_0100
+     * @tc.desc     Bgde_InactiveColor_APITest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('Bgde_InactiveColor_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('Bgde_InactiveColor_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Bgde_InactiveColor_APITest_0100 START');
       await CommonFunc.sleep(1000);
-      let bgde_inactiveColor = inspector.getInspectorByKey('bgde_inactiveColor');
+      let bgde_inactiveColor = inspector.getInspectorByKey('inactiveColor');
+      await CommonFunc.sleep(2000);
       console.info("[Bgde_InactiveColor_APITest_0100] Tabs bgde_inactiveColor attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(bgde_inactiveColor).getString('$attrs')));
+      JSON.stringify(JSON.parseJsonElement(bgde_inactiveColor).getElement('$attrs')));
       expect(JSON.parseJsonElement(bgde_inactiveColor)
         .getElement('$attrs')
-        .getElement('backgroundEffect')
+        .getElement('backgroundBlurStyle')
         .getElement('options')
         .getString('inactiveColor')).assertEqual('#FF21A1DD');
       console.info('[Bgde_InactiveColor_APITest_0100] END');

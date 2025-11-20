@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
 import {
   Button,
   ButtonAttribute,
@@ -27,10 +24,11 @@ import {
   TextAttribute,
   TouchObject,
   TouchType,
-} from '@ohos.arkui.component'
+} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector';
-import { sendTouchEvent } from '@kit.ArkUI';
+import { sendTouchEvent } from '@ohos.arkui.Test';
 import common from '@ohos.app.ability.common';
+import {AppStorage} from "@ohos.arkui.stateManagement"
 
 export default class Utils {
   static rect_left: number = 0;
@@ -39,24 +37,26 @@ export default class Utils {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string) {
-    let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    Utils.rect_left = Number(rectInfo[0][0] ?? 0);
-    Utils.rect_top = Number(rectInfo[0][1] ?? 0);
-    Utils.rect_right = Number(rectInfo[1][0] ?? 0);
-    Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
-    return Utils.rect_value = {
-      left: Utils.rect_left,
-      top: Utils.rect_top,
-      right: Utils.rect_right,
-      bottom: Utils.rect_bottom
-    }
+  static getComponentRect(key: string): RectValue {
+    console.log('test getData ')
+    let strJson = inspector.getInspectorByKey(key);
+    await Utils.sleep(2000);
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    console.info("test: getComponentRect: " + str);
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string): double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
+    console.info("test: rectInfo: " + rectInfo.toString());
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
   static sleep(time: Int) {

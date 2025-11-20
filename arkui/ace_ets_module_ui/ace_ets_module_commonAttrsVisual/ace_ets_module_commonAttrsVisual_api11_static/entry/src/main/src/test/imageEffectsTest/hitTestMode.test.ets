@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,35 +13,26 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
+import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function hitTestModeJsunit() {
   describe('hitTestModeJsunit', () => {
@@ -55,19 +46,20 @@ export default function hitTestModeJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("hitTestModeJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/imageEffects/hitTestMode',
+        url:'MainAbility/pages/imageEffects/hitTestMode',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get hitTestModeJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("hitTestMode" == pages.name)) {
           console.info("get hitTestModeJsunit pages.name:" + JSON.stringify(pages.name));
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push hitTestModeJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push hitTestModeJsunit page error:" + err);
@@ -81,21 +73,21 @@ export default function hitTestModeJsunit() {
       console.info("hitTestModeTest after each called");
     });
 
-
+    
+    
     /*
-     * @tc.number    testhitTestMode_static_0002
-     * @tc.name      testhitTestMode_static_0002
-     * @tc.desc      testhitTestMode_static_0002
-     * @tc.level     2
+     * @tc.number   testhitTestMode_static_0002
+     * @tc.name     testhitTestMode_static_0002
+     * @tc.desc     testhitTestMode_static_0002
+     * @tc.level    Level.LEVEL2
      */
-    it('testhitTestMode_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testhitTestMode_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('hitTestMode testhitTestMode0002 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Block');
       console.info("[testhitTestMode0002] component width strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
-      console.info("[testhitTestMode0002] hitTestBehavior value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('hitTestBehavior'));
+      console.info("[testhitTestMode0002] hitTestBehavior value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('hitTestBehavior'));
       done();
     });
   })

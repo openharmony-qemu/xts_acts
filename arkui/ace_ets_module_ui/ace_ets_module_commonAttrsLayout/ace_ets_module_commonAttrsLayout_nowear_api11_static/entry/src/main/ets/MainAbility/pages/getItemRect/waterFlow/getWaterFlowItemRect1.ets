@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -50,8 +50,8 @@ import {
   VideoController,
   WaterFlow,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -60,47 +60,59 @@ struct getWaterFlowItemRect1 {
   @State minSize: number = 80
   @State maxSize: number = 180
   @State fontSize: number = 24
-  @State colors: Int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
+  @State colors: String[] = ['0xFFC0CB', '0xDA70D6', '0x6B8E23', '0x6A5ACD', '0x00FFFF', '0x00FF7F']
   scroller: Scroller = new Scroller()
   datasource: WaterFlowDataSource = new WaterFlowDataSource()
   @State padding1: number = 0
   @State margin1: number = 0
-  @State index: number = 0
+  @State index: Int = 0
   @State x: number = 0
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<Double> = new MessageManager<Double>()
+  messageManagerInt: MessageManager<Int> = new MessageManager<Int>()
   private itemWidthArray: number[] = [] as number[]
   private itemHeightArray: number[] = [] as number[]
 
   onPageShow() {
     console.info('getWaterFlowItemRect1 onPageShow');
-
-
-    let callback: Callback<number> = (message: Message<number>) => {
+    console.info('[getWaterFlowItemRect1_static_0100] START0');
+    AppStorage.setOrCreate<MessageManager<Double>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManagerInt', this.messageManagerInt);
+    let callback: Callback<Double> = (message: Message<Double>) => {
       console.error('message = ' + message.name + "--" + message.value);
-      if (message.name == 'index') {
-        this.index = message.value;
-      } else if (message.name == 'padding1') {
-        this.padding1 = message.value;
+      if (message.name == 'padding1') {
+        this.padding1 = message.value as Double;
       } else if (message.name == 'margin1') {
-        this.margin1 = message.value;
+        this.margin1 = message.value as Double;
       }
     }
+    let callbackInt: Callback<Int> = (message: Message<Int>) => {
+      if (message.name == 'index') {
+        this.index = message.value as Int;
+      }
+    }
+    this.messageManagerInt.registerCallback(callbackInt);
     this.messageManager.registerCallback(callback);
   }
 
+  // 计算flow item宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
+  // 保存flow item宽/高
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize())
       this.itemHeightArray.push(this.getSize())
     }
+  }
+
+  aboutToAppear() {
+    this.getItemSizeArray()
   }
 
   @Builder
@@ -119,10 +131,10 @@ struct getWaterFlowItemRect1 {
   build() {
     Column({ space: 2 } as ColumnOptions) {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.scroller.getItemRect(Double.toInt(this.index)).x
-        this.y = this.scroller.getItemRect(Double.toInt(this.index)).y
-        this.width1 = this.scroller.getItemRect(Double.toInt(this.index)).width
-        this.height1 = this.scroller.getItemRect(Double.toInt(this.index)).height
+        this.x = this.scroller.getItemRect(this.index).x
+        this.y = this.scroller.getItemRect(this.index).y
+        this.width1 = this.scroller.getItemRect(this.index).width
+        this.height1 = this.scroller.getItemRect(this.index).height
       }).id('getWaterFlowItemRect1_button')
       Text('' + this.x).key('getWaterFlowItemRect1_text1')
       Text('' + this.y).key('getWaterFlowItemRect1_text2')
@@ -256,7 +268,7 @@ struct getWaterFlowItemRect1 {
       .columnsTemplate("1fr 1fr")
       .columnsGap(10)
       .rowsGap(5)
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor('0xFAEEE0')
       .width('100%')
       .height('50%')
       .padding(this.padding1)

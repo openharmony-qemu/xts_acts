@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -50,8 +50,8 @@ import {
   Visibility,
   WaterFlow,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -60,39 +60,46 @@ struct getWaterFlowItemRect4 {
   @State minSize: number = 80
   @State maxSize: number = 180
   @State fontSize: number = 24
-  @State colors: Int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
+  @State colors: String[] = ['0xFFC0CB', '0xDA70D6', '0x6B8E23', '0x6A5ACD', '0x00FFFF', '0x00FF7F']
   scroller: Scroller = new Scroller()
   datasource: WaterFlowDataSource = new WaterFlowDataSource()
   @State visibility1: Visibility = Visibility.Visible
-  @State index: number = 0
+  @State index: Int = 0
   @State x: number = 0
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<Int> = new MessageManager<Int>()
+  messageManagerVisibility: MessageManager<Visibility> = new MessageManager<Visibility>()
   private itemWidthArray: number[] = [] as number[]
   private itemHeightArray: number[] = [] as number[]
 
   onPageShow() {
     console.info('getWaterFlowItemRect4 onPageShow');
-
-
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Visibility>>('messageManagerVisibility', this.messageManagerVisibility);
+    let callback: Callback<Int> = (message: Message<Int>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.index = message.value;
-      } else if (message.name == 'visibility1') {
-
+        this.index = message.value as Int;
       }
     }
+    let visibilityCallback: Callback<Visibility> = (message: Message<Visibility>) => {
+      if (message.name == 'visibility1') {
+        this.visibility1 = message.value as Visibility;
+      }
+    }
+    this.messageManagerVisibility.registerCallback(visibilityCallback);
     this.messageManager.registerCallback(callback);
   }
 
+  // 计算flow item宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
+  // 保存flow item宽/高
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize())
@@ -116,10 +123,10 @@ struct getWaterFlowItemRect4 {
   build() {
     Column({ space: 2 } as ColumnOptions) {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.scroller.getItemRect(Double.toInt(this.index)).x
-        this.y = this.scroller.getItemRect(Double.toInt(this.index)).y
-        this.width1 = this.scroller.getItemRect(Double.toInt(this.index)).width
-        this.height1 = this.scroller.getItemRect(Double.toInt(this.index)).height
+        this.x = this.scroller.getItemRect(this.index).x
+        this.y = this.scroller.getItemRect(this.index).y
+        this.width1 = this.scroller.getItemRect(this.index).width
+        this.height1 = this.scroller.getItemRect(this.index).height
       }).id('getWaterFlowItemRect4_button')
       Text('' + this.x).key('getWaterFlowItemRect4_text1')
       Text('' + this.y).key('getWaterFlowItemRect4_text2')
@@ -149,7 +156,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[1 % 100])
+        // .height(this.itemHeightArray[1 % 100])
         .backgroundColor(this.colors[1 % 5])
 
 
@@ -159,7 +166,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[2 % 100])
+        // .height(this.itemHeightArray[2 % 100])
         .backgroundColor(this.colors[2 % 5])
 
 
@@ -169,7 +176,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[3 % 100])
+        // .height(this.itemHeightArray[3 % 100])
         .backgroundColor(this.colors[3 % 5])
 
 
@@ -179,7 +186,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[4 % 100])
+        // .height(this.itemHeightArray[4 % 100])
         .backgroundColor(this.colors[4 % 5])
 
 
@@ -189,7 +196,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[5 % 100])
+        // .height(this.itemHeightArray[5 % 100])
         .backgroundColor(this.colors[5 % 5])
 
 
@@ -199,7 +206,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[6 % 100])
+        // .height(this.itemHeightArray[6 % 100])
         .backgroundColor(this.colors[6 % 5])
 
 
@@ -209,7 +216,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[7 % 100])
+        // .height(this.itemHeightArray[7 % 100])
         .backgroundColor(this.colors[7 % 5])
 
 
@@ -219,7 +226,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[8 % 100])
+        // .height(this.itemHeightArray[8 % 100])
         .backgroundColor(this.colors[8 % 5])
 
 
@@ -229,7 +236,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[9 % 100])
+        // .height(this.itemHeightArray[9 % 100])
         .backgroundColor(this.colors[9 % 5])
 
 
@@ -239,7 +246,7 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[10 % 100])
+        // .height(this.itemHeightArray[10 % 100])
         .backgroundColor(this.colors[10 % 5])
 
 
@@ -249,14 +256,14 @@ struct getWaterFlowItemRect4 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[11 % 100])
+        // .height(this.itemHeightArray[11 % 100])
         .backgroundColor(this.colors[11 % 5])
 
       }
       .columnsTemplate("1fr 1fr")
       .columnsGap(10)
       .rowsGap(5)
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor('0xFAEEE0')
       .width('100%')
       .height('60%')
 

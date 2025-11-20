@@ -1,18 +1,6 @@
 {
   "string": [
     {
-      "name": "module_desc",
-      "value": "module description"
-    },
-    {
-      "name": "EntryAbility_desc",
-      "value": "description"
-    },
-    {
-      "name": "EntryAbility_label",
-      "value": "label"
-    },
-    {
       "name": "entry_MainAbility",
       "value": "entry_MainAbility"
     },
@@ -71,6 +59,18 @@
     {
       "name": "swiper_margin",
       "value": "12"
+    },
+    {
+      "name": "module_desc",
+      "value": "desc"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "desc"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "desc"
     }
   ]
 }

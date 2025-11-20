@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -44,8 +44,6 @@ export default function foregroundEffect() {
         if (!("foregroundEffect" == pages.name)) {
           console.info("get foregroundEffect state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push foregroundEffect page error: " + err);
@@ -59,13 +57,14 @@ export default function foregroundEffect() {
     });
 
 
+    
     /*
-     * @tc.number    foregroundEffect_0100
-     * @tc.name      foregroundEffect_0100
-     * @tc.desc      foregroundEffect_0100
-     * @tc.level     2
+     * @tc.number   foregroundEffect_0100
+     * @tc.name     foregroundEffect_0100
+     * @tc.desc     foregroundEffect_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('foregroundEffect_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('foregroundEffect_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('foregroundEffect_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

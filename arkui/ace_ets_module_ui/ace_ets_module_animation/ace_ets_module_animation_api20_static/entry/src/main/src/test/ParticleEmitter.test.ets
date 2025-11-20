@@ -35,6 +35,7 @@ export default function ParticleEmitter() {
   describe('ParticleEmitter', () => {
     beforeAll(() => {
       console.info("ParticleEmitter beforeAll start");
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.animation20.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -64,20 +65,23 @@ export default function ParticleEmitter() {
       console.info('ParticleEmitter after each called');
     });
 
-
+    
     /*
      * @tc.number   ParticleEmitter_static_001
      * @tc.name     ParticleEmitter_static_001
      * @tc.desc     ParticleEmitter_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleEmitter_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ParticleEmitter_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ParticleEmitter_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await driver.delayMs(1000);
-      let getInspectorBtn: Component = await driver.findComponent(ON.id('getInspectorId')) as Component;
-      getInspectorBtn?.click();
+      console.log('test 1156')
+      let getInspectorBtn = await driver.findComponent(ON.id('getInspectorId'));
+      await CommonFunc.sleep(1000);
+      console.log('test 1156  ' + getInspectorBtn)
+      await (getInspectorBtn?.click() as Promise<void>);
       console.info('[ParticleEmitter_001] getInspectorBtn click');
       await driver.delayMs(1000);
 

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,6 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function AttributeModifierDemoAPI02Jsunit() {
   describe('AttributeModifierDemoAPI02Jsunit', () => {
@@ -52,34 +53,34 @@ export default function AttributeModifierDemoAPI02Jsunit() {
         console.info("get AttributeModifierDemoAPI02Jsunit state pages:" + JSON.stringify(pages));
         if (!("AttributeModifierDemoAPI02" == pages.name)) {
           console.info("get AttributeModifierDemoAPI02Jsunit state pages.name:" + JSON.stringify(pages.name));
-
+          console.log('test router is oK')
           routerInstance.pushUrl(options);
-
+          console.log('test router is oK')
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push AttributeModifierDemoAPI02Jsunit page error:" + err);
         expect().assertFail();
       }
-
     });
+    
     /*
-     * @tc.number    AttributeModifierDemoAPI02Jsunit_static_0100
-     * @tc.name      AttributeModifierDemoAPI02Jsunit_static_0100
-     * @tc.desc      AttributeModifierDemoAPI02Jsunit_static_0100
-     * @tc.level     2
+     * @tc.number   AttributeModifierDemoAPI02Jsunit_static_0100
+     * @tc.name     AttributeModifierDemoAPI02Jsunit_static_0100
+     * @tc.desc     AttributeModifierDemoAPI02Jsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('AttributeModifierDemoAPI02Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('AttributeModifierDemoAPI02Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('AttributeModifierDemoAPI02Jsunit_static_0100 START');
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049)
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
 
       let strcontent = inspector.getInspectorByKey('AttributeModifierDemoAPI02ButtonFocus');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
       console.info('AttributeModifierDemoAPI02Jsunit_static_0100 component obj.backgroundColor is: ' +
       obj.getElement('$attrs').getString('backgroundColor'));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FF209B08");

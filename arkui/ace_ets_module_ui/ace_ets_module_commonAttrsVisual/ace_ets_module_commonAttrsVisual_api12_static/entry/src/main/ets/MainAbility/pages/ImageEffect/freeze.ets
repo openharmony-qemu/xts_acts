@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,10 +38,9 @@ import {
   Row,
   SizeOptions,
   Text,
-  ThemeColorMode,
-  ImageBitmap
+  ThemeColorMode,ImageBitmap
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
@@ -56,7 +55,7 @@ struct OffscreenCanvasFreeze {
     Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Start, justifyContent: FlexAlign.Start }) {
       Column() {
         Canvas(this.context)
-          .id('OffscreenCanvasFreeze_id')
+          .key('OffscreenCanvasFreeze_id')
           .freeze(true)
           .width(300)
           .height('100%')
@@ -64,6 +63,7 @@ struct OffscreenCanvasFreeze {
           .borderColor('#057D02')
           .backgroundColor('#FFFFFF')
           .onReady((): void => {
+            console.log('test onReady isOk')
             let offContext = this.offCanvas.getContext("2d", this.settings)
             offContext.fillStyle = '#CDCDCD'
             offContext.fillRect(0, 0, this.offCanvas.width, 150)

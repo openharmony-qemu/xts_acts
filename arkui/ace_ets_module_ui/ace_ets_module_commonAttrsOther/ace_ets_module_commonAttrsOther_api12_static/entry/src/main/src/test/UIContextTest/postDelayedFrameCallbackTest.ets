@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,10 +67,8 @@ export default function postDelayedFrameCallbackTest() {
         console.info("get postDelayedFrameCallbackTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get postDelayedFrameCallbackTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push postDelayedFrameCallbackTest page error:" + err);
@@ -78,14 +76,19 @@ export default function postDelayedFrameCallbackTest() {
       console.info("postDelayedFrameCallbackTest beforeEach end");
     });
 
+    afterEach(async (): Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+    })
 
+    
     /*
-     * @tc.number    postDelayedFrameCallbackTest_static_0100
-     * @tc.name      postDelayedFrameCallbackTest_static_0100
-     * @tc.desc      postDelayedFrameCallbackTest_static_0100
-     * @tc.level     2
+     * @tc.number   postDelayedFrameCallbackTest_static_0100
+     * @tc.name     postDelayedFrameCallbackTest_static_0100
+     * @tc.desc     postDelayedFrameCallbackTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('postDelayedFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('postDelayedFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('postDelayedFrameCallbackTest_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -94,7 +97,6 @@ export default function postDelayedFrameCallbackTest() {
         await (driver?.findComponent(ON.id('postDelayedFrameCallback')) as Promise<Component | null>);
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
-
       await CommonFunc.sleep(1000);
       let content = await (postDelayedFrameCallback?.getText() as Promise<string>)
       console.info("[postDelayedFrameCallbackTest_0100] getText is: " + JSON.stringify(content));
@@ -103,37 +105,38 @@ export default function postDelayedFrameCallbackTest() {
       done();
     });
 
+    
     /*
-     * @tc.number    postDelayedFrameCallbackTest_0200
-     * @tc.name      postDelayedFrameCallbackTest_0200
-     * @tc.desc      postDelayedFrameCallbackTest_0200
-     * @tc.level     2
+     * @tc.number   postDelayedFrameCallbackTest_0200
+     * @tc.name     postDelayedFrameCallbackTest_0200
+     * @tc.desc     postDelayedFrameCallbackTest_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('postDelayedFrameCallbackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('postDelayedFrameCallbackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('postDelayedFrameCallbackTest_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn: Component | null = await (driver?.findComponent(ON.id('btn2')) as Promise<Component | null>);
       let horizontalSplitRatio: Component | null =
         await (driver?.findComponent(ON.id('horizontalSplitRatio')) as Promise<Component | null>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       await (btn?.click() as Promise<void>);
-
       await CommonFunc.sleep(1000);
       let content = await (horizontalSplitRatio?.getText() as Promise<string>)
-
+      console.info("[postDelayedFrameCallbackTest_0200] getText is: " + JSON.stringify(content));
       expect(content).assertEqual('horizontalSplitRatio');
       console.info('[postDelayedFrameCallbackTest_0200] END');
       done();
     });
 
+    
     /*
-     * @tc.number    postDelayedFrameCallbackTest_0300
-     * @tc.name      postDelayedFrameCallbackTest_0300
-     * @tc.desc      postDelayedFrameCallbackTest_0300
-     * @tc.level     2
+     * @tc.number   postDelayedFrameCallbackTest_0300
+     * @tc.name     postDelayedFrameCallbackTest_0300
+     * @tc.desc     postDelayedFrameCallbackTest_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('postDelayedFrameCallbackTest_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('postDelayedFrameCallbackTest_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('postDelayedFrameCallbackTest_0300 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -142,7 +145,6 @@ export default function postDelayedFrameCallbackTest() {
         await (driver?.findComponent(ON.id('verticalSplitRatio')) as Promise<Component | null>);
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
-
       await CommonFunc.sleep(1000);
       let content = await (verticalSplitRatio?.getText() as Promise<string>)
       console.info("[postDelayedFrameCallbackTest_0300] getText is: " + JSON.stringify(content));

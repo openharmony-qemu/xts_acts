@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import {
   $$,
@@ -66,24 +66,24 @@ struct ClickEffectTest {
     Column() {
       Row() {
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_1')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.MIDDLE })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_2')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.HEAVY })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
@@ -93,24 +93,24 @@ struct ClickEffectTest {
 
       Row() {
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_4')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 1 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_5')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0.5 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
@@ -120,24 +120,24 @@ struct ClickEffectTest {
 
       Row() {
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0.8 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_7')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
-          .clickEffect({ level: ClickEffectLevel.LIGHT, scale: -1 })
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
+          .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0.9 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_8')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0.1 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
@@ -147,16 +147,16 @@ struct ClickEffectTest {
 
       Row() {
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_10')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.MIDDLE, scale: 0.2 })
           .clickEffect({ level: ClickEffectLevel.HEAVY, scale: 0.1 })
           .onChange((isOn: boolean) => {
@@ -164,8 +164,8 @@ struct ClickEffectTest {
           })
           .key('clickEffect_11')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.MIDDLE })
           .clickEffect({ level: ClickEffectLevel.LIGHT })
           .onChange((isOn: boolean) => {
@@ -176,8 +176,8 @@ struct ClickEffectTest {
 
       Row() {
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
           .clickEffect({ level: ClickEffectLevel.LIGHT })
           .clickEffect({ level: ClickEffectLevel.MIDDLE })
           .onChange((isOn: boolean) => {
@@ -185,17 +185,17 @@ struct ClickEffectTest {
           })
           .key('clickEffect_13')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
-          .clickEffect({ level: ClickEffectLevel.HEAVY, scale: 0 })
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
+          .clickEffect({ level: ClickEffectLevel.HEAVY, scale: 0.95 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
           .key('clickEffect_14')
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
-          .clickEffect({ level: ClickEffectLevel.MIDDLE, scale: 0 })
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
+          .clickEffect({ level: ClickEffectLevel.MIDDLE, scale: 0.95 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })
@@ -204,9 +204,9 @@ struct ClickEffectTest {
 
       Row() {
         Toggle({ type: ToggleType.Switch, isOn: false })
-          .selectedColor(0xed6f21)
-          .switchPointColor(0xe5ffffff)
-          .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0 })
+          .selectedColor('0xed6f21')
+          .switchPointColor('0xe5ffffff')
+          .clickEffect({ level: ClickEffectLevel.LIGHT, scale: 0.9 })
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn)
           })

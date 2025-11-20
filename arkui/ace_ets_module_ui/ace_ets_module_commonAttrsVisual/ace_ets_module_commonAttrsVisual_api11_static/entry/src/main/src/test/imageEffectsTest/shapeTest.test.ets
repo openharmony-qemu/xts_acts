@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -61,12 +61,10 @@ export default function shapeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get shapeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("shapePage" == pages.name)) {
           console.info("get shapeTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push shapeTest page error:" + err);
@@ -78,17 +76,19 @@ export default function shapeTest() {
     });
 
 
+    
     /*
-     * @tc.number    shapeTest_static_0100
-     * @tc.name      shapeTest_static_0100
-     * @tc.desc      shapeTest_static_0100
-     * @tc.level     2
+     * @tc.number   shapeTest_static_0100
+     * @tc.name     shapeTest_static_0100
+     * @tc.desc     shapeTest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('shapeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('shapeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('shapeTest_0100 START');
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('shapePage_image');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[shapeTest_0100] strJson:" + obj.getString('$type'));
       expect(obj.getString('$type')).assertEqual('Image');

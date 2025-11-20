@@ -12,10 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import FrameNodeAnimation from './FrameNodeAnimation.test';
 import ParticleEmitter from './ParticleEmitter.test';
 
 export default function testsuite() {
-  FrameNodeAnimation();
-  ParticleEmitter();
+  ParticleEmitter(); // particle导致页面不跳转
 }

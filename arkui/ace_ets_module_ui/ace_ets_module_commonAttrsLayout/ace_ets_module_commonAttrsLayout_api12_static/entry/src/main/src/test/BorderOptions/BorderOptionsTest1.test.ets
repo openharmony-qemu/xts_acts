@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -52,8 +52,6 @@ export default function BorderOptionsTest1() {
         if (!("BorderOptionsTest1" == pages.name)) {
           console.info("get BorderOptionsTest1 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push BorderOptionsTest1 page error:" + err);
@@ -67,23 +65,25 @@ export default function BorderOptionsTest1() {
     });
 
 
+    
     /*
-     * @tc.number    BorderOptionsTest1_static_0100
-     * @tc.name      BorderOptionsTest1_static_0100
-     * @tc.desc      BorderOptionsTest1_static_0100
-     * @tc.level     2
+     * @tc.number   BorderOptionsTest1_static_0100
+     * @tc.name     BorderOptionsTest1_static_0100
+     * @tc.desc     BorderOptionsTest1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('BorderOptionsTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('BorderOptionsTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('BorderOptionsTest1_static_0100 START');
       await CommonFunc.sleep(1000);
 
       let strJson: string = inspector.getInspectorByKey('BorderOptionsTest1_text');
+      await CommonFunc.sleep(1000);
       console.info("[BorderOptionsTest1_static_0100] component border is: " +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('border'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('border').getString('dashGap'))
-        .assertEqual('5.00vp');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('border').getString('dashWidth'))
-        .assertEqual('10.00vp');
+      JSON.parseJsonElement(strJson).getElement('$attrs').getString('border'));
+
+      const borderObj = JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('border'))
+      expect(borderObj.getString('dashGap')).assertEqual('5.00vp');
+      expect(borderObj.getString('dashWidth')).assertEqual('10.00vp');
 
       console.info('BorderOptionsTest1_static_0100 END');
       done();

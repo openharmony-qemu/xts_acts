@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,54 +13,58 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  AdaptiveColor,
-  Alignment,
-  BlurStyle,
-  ClickEvent,
-  Color,
   Column,
   ColumnOptions,
-  Component,
-  Entry,
+  Text,
+  Color,
+  Image,
+  SizeOptions,
+  ImageSize,
+  Position,
+  Alignment,
+  Row,
+  Padding,
+  ThemeColorMode,
+  BlurStyle,
+  ImageSize,
+  AdaptiveColor,
+  Resource,
   Flex,
   FlexDirection,
-  Image,
-  ImageSize,
   ItemAlign,
-  Margin,
-  Padding,
-  Position,
-  Resource,
-  Row,
-  SizeOptions,
   Stack,
-  Text,
-  ThemeColorMode,
+  Image,
+  ClickEvent,
+  Margin,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
 @Component
 struct SystemBarEffect1 {
   @State message: string = 'start'
-
   build() {
     Column() {
-      Stack() {
+      Stack(){
         Text(this.message).id('SystemBarEffect_text')
         Image($r('app.media.icon'))
           .width(300).height(300)
-        Column()
-          .width(150)
-          .height(10)
+        Column().width(150).height(10)          
           .systemBarEffect()
           .id('SystemBarEffect_id')
-          .border({ radius: 5 })
-          .margin({ bottom: 80 } as Margin)
-          .onClick((e: ClickEvent) => {
+          .border({radius:5})
+          .margin({bottom:80} as Margin)
+          .onClick((e: ClickEvent)=>{
             this.message = 'systemBarEffect succ'
           })
       }.alignContent(Alignment.Center)

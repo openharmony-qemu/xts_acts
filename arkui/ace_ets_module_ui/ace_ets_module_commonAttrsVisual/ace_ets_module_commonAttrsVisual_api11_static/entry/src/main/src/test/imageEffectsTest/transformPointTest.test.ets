@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -61,12 +61,10 @@ export default function transformPointTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get transformPointTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("transformPointPage" == pages.name)) {
           console.info("get transformPointTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push transformPointTest page error:" + err);
@@ -75,27 +73,25 @@ export default function transformPointTest() {
     });
 
 
-    afterEach(async () => {
-    });
-
-
+    
     /*
-     * @tc.number    transformPointTest_static_0100
-     * @tc.name      transformPointTest_static_0100
-     * @tc.desc      transformPointTest_static_0100
-     * @tc.level     2
+     * @tc.number   transformPointTest_static_0100
+     * @tc.name     transformPointTest_static_0100
+     * @tc.desc     transformPointTest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('transformPointTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('transformPointTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('transformPointTest_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
       let button1 = await driver.findComponent(ON.id("transformPointPage_btn"));
-      await ((button1?.click()) as Promise<void>)
+      await CommonFunc.sleep(2000);
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get('transformPointPage_transformPoint0')).assertEqual(200);
-      expect(AppStorage.get('transformPointPage_transformPoint1')).assertEqual(0);
+      expect(AppStorage.get<Double>('transformPointPage_transformPoint0')!).assertEqual(200);
+      expect(AppStorage.get<Double>('transformPointPage_transformPoint1')!).assertEqual(0);
       AppStorage.delete('transformPointPage_transformPoint0')
       AppStorage.delete('transformPointPage_transformPoint1')
 

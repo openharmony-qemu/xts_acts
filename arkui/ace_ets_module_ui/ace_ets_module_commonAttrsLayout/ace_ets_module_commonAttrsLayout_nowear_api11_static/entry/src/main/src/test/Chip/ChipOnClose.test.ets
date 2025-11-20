@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,11 +16,10 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, MouseButton, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -33,11 +32,16 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ChipOnClose() {
   describe('ChipOnClose', () => {
+
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
+
     beforeAll(() => {
       console.info("ChipOnClose beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(() => {
       console.info("ChipOnClose beforeEach start");
@@ -52,8 +56,6 @@ export default function ChipOnClose() {
         if (!("ChipOnClose" == pages.name)) {
           console.info("get ChipOnClose state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push ChipOnClose page error: " + err);
@@ -61,25 +63,25 @@ export default function ChipOnClose() {
       }
     });
 
-
+    
     /*
-     * @tc.number    ChipOnClose_static_001
-     * @tc.name      ChipOnClose_static_001
-     * @tc.desc      ChipOnClose_static_001
-     * @tc.level     2
+     * @tc.number   ChipOnClose_static_001
+     * @tc.name     ChipOnClose_static_001
+     * @tc.desc     ChipOnClose_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('ChipOnClose_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ChipOnClose_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('ChipOnClose_static_001 START');
       let ChipActionCol = CommonFunc.getComponentRect('ChipOnCloseCol');
       await CommonFunc.sleep(200);
-      let right: number = ChipActionCol.right - UIContext.getFocusedUIContext()!.vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
-      let top: number = ChipActionCol.top + UIContext.getFocusedUIContext()!.vp2px(18) + Number(AppStorage.get<number>("winTop") ?? 0);
+      let right: number = ChipActionCol.right - uiContext.vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
+      let top: number = ChipActionCol.top + uiContext.vp2px(18) + Number(AppStorage.get<number>("winTop") ?? 0);
       await CommonFunc.sleep(200);
       console.info('ChipOnClose_static_001 right：' + right + 'top:' + top);
       let driver = Driver.create();
       await driver.mouseClick({
-        x: Math.round(right) as Int, y: Math.round(top) as Int
+        x: Math.round(right) as int, y: Math.round(top) as int
       }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('ChipOnClose_static_001 click success');

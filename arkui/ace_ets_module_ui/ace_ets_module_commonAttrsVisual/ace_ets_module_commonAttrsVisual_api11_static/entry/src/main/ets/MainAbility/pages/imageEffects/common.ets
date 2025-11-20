@@ -4,22 +4,24 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import {
   $$,
   $r,
   Alignment,
+  AlignRuleOption,
   BindOptions,
   BlurStyle,
+  Builder,
   Button,
   ButtonType,
   ClickEvent,
@@ -27,8 +29,8 @@ import {
   Column,
   ColumnOptions,
   Component,
-  Configuration,
   ConstraintSizeOptions,
+  CustomPopupOptions,
   Entry,
   Flex,
   FlexAlign,
@@ -43,9 +45,11 @@ import {
   KeyEvent,
   KeyType,
   Margin,
+  PopupOptions,
   Position,
   RepeatMode,
   Row,
+  RowOptions,
   Scroll,
   SheetOptions,
   SheetType,
@@ -54,8 +58,7 @@ import {
   TextAlign,
   TextOverflow,
   TouchEvent,
-  VerticalAlign,
-  AlignRuleOption
+  VerticalAlign
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -68,16 +71,74 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct CommonColorMode {
-  configuration: Configuration = {
+  // add
+  // configuration: Configuration = {
+  //   colorMode: "$000",
+  //   fontScale: 23
+  // } as Configuration
 
-    colorMode: "$000",
-
-    fontScale: 23
-  } as Configuration
+  // popup构造器定义弹框内容
+  @Builder
+  popupBuilder() {
+    Row({ space: 2 } as RowOptions) {
+      Text('Custom Popup')
+        .fontSize(10)
+    }
+    .width(100)
+    .height(50)
+    .padding(5)
+  }
 
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear CommonColorMode start`)
   }
+
+  // onLayout(children: Array<LayoutChild>, constraint: ConstraintSizeOptions) {
+  //   Log.showInfo(TAG, `onLayout start` + JSON.stringify(children));
+  //   if (children.length != 0) {
+  //     children[0].borderInfo = {
+  //       borderWidth: {
+  //         top: 20,
+  //         right: 20,
+  //         bottom: 20,
+  //         left: 20
+  //       },
+  //       margin: {
+  //         top: 30,
+  //         right: 30,
+  //         bottom: 30,
+  //         left: 30
+  //       },
+  //       padding: {
+  //         top: 20,
+  //         right: 20,
+  //         bottom: 20,
+  //         left: 20
+  //       }
+  //     }
+  //     children[0].constraint = {
+  //       maxWidth: 200
+  //     }
+  //     children[0].layout({
+  //       position: {
+  //         x: 20,
+  //         y: 20
+  //       } as Position,
+  //       constraint: {
+  //         maxWidth: 200
+  //       }
+  //     })
+  //   }
+  // }
+
+  // onMeasure(children: Array<LayoutChild>, constraint: ConstraintSizeOptions) {
+  //   Log.showInfo(TAG, `onMeasurestart`)
+  // }
+
+  // @Styles
+  // normalStyles() {
+  //   .backgroundColor("#0A59F7")
+  // }
 
   aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear CommonColorMode end`)
@@ -96,14 +157,17 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("fontScaleText")
-
+        .bindPopup(true, {
+          message: "23",
+          showInSubWindow: true
+        } as PopupOptions)
 
       Text("common-OnFinish")
         .width(320)
@@ -111,14 +175,22 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("onFinishText")
-
+        .animation({
+          onFinish: () => {
+            Log.showInfo(TAG, 'animation onFinish success')
+          }
+        })
+        .bindPopup(true, {
+          builder: this.popupBuilder,
+          showInSubWindow: true
+        } as CustomPopupOptions)
 
       Text("common-MotionPath")
         .width(320)
@@ -126,7 +198,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -145,7 +217,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -162,7 +234,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -171,17 +243,21 @@ struct CommonColorMode {
         .key("areaText")
         .onClick((event: ClickEvent) => {
           Log.showInfo(TAG, 'JSON.stringify area : ' + JSON.stringify(event.target.area))
-
-
+          const area = JSON.stringify(event.target.area)
+          console.info("area value1 is: " + area)
+          console.info("area value3 is: " + JSON.parseJsonElement(JSON.stringify(event.target.area))["width"])
           try {
-
-
-            let backEvent: events_emitter.InnerEvent = {
+            let backData: emitter.EventData = {
+              data: {
+                "STATUS": JSON.parseJsonElement(JSON.stringify(event.target.area)).getDouble('width')
+              } as Record<String, undefined | null | Object>
+            }
+            let backEvent: emitter.InnerEvent = {
               eventId: 60312,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("areaValue start to emit action state")
-
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("areaValue emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -192,7 +268,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -203,7 +279,7 @@ struct CommonColorMode {
           source: {
             angle: 90,
             direction: GradientDirection.Left,
-            colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]]
+            colors: [['0xAEE1E1', 0.0], ['0xD3E0DC', 0.3], ['0xFCD1D1', 1.0]]
           },
           slice: {
             top: 10,
@@ -227,7 +303,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -238,7 +314,7 @@ struct CommonColorMode {
           source: {
             angle: 90,
             direction: GradientDirection.Left,
-            colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]]
+            colors: [['0xAEE1E1', 0.0], ['0xD3E0DC', 0.3], ['0xFCD1D1', 1.0]]
           },
           slice: {
             top: 10,
@@ -262,7 +338,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -277,7 +353,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -292,7 +368,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -303,7 +379,7 @@ struct CommonColorMode {
           source: {
             angle: 90,
             direction: GradientDirection.Left,
-            colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]]
+            colors: [['0xAEE1E1', 0.0], ['0xD3E0DC', 0.3], ['0xFCD1D1', 1.0]]
           },
           slice: {
             top: 10,
@@ -327,7 +403,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -338,7 +414,7 @@ struct CommonColorMode {
           source: {
             angle: 90,
             direction: GradientDirection.Left,
-            colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]]
+            colors: [['0xAEE1E1', 0.0], ['0xD3E0DC', 0.3], ['0xFCD1D1', 1.0]]
           },
           slice: {
             top: 10,
@@ -364,7 +440,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -375,15 +451,19 @@ struct CommonColorMode {
           Log.showInfo(TAG, 'touches: ' + JSON.stringify(event.touches))
           const touchesValue = JSON.stringify(event.touches)
           console.info("touches value1 is: " + touchesValue)
-
+          console.info("touches value3 is: " + JSON.stringify(event.touches[0].type))
           try {
-            let backData1: events_emitter.EventData = {}
-            let backEvent1: events_emitter.InnerEvent = {
+            let backData1: emitter.EventData = {
+              data: {
+                "STATUS": JSON.stringify(event.touches[0].type)
+              } as Record<String, undefined | null | Object>
+            }
+            let backEvent1: emitter.InnerEvent = {
               eventId: 60313,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("touchesValue start to emit action state")
-            events_emitter.emit(backEvent1, backData1)
+            emitter.emit(backEvent1, backData1)
           } catch (err) {
             console.info("touchesValue emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -395,7 +475,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -406,17 +486,19 @@ struct CommonColorMode {
           Log.showInfo(TAG, 'changedTouches: ' + JSON.stringify(event.changedTouches))
           const changedTouchesValue = JSON.stringify(event.changedTouches)
           console.info("changedTouchesValue value1 is: " + changedTouchesValue)
-
+          console.info("changedTouchesValue value3 is: " + JSON.stringify(event.touches[0].type))
           try {
-            let backData2: events_emitter.EventData = {
-              data: {}
+            let backData2: emitter.EventData = {
+              data: {
+                "STATUS": changedTouchesValue
+              } as Record<String, undefined | null | Object>
             }
-            let backEvent2: events_emitter.InnerEvent = {
+            let backEvent2: emitter.InnerEvent = {
               eventId: 60314,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("touchesValue start to emit action state")
-            events_emitter.emit(backEvent2, backData2)
+            emitter.emit(backEvent2, backData2)
           } catch (err) {
             console.info("touchesValue emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -428,7 +510,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -437,7 +519,7 @@ struct CommonColorMode {
         .key("keyCodeText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'keyCode: ' + event.keyCode)
-          return false
+          return false;
         })
 
       Text("common-KeyText")
@@ -446,7 +528,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -455,7 +537,7 @@ struct CommonColorMode {
         .key("keyTextText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'keyText: ' + event.keyText)
-          return false
+          return false;
         })
 
       Text("common-KeySource")
@@ -464,7 +546,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -473,7 +555,7 @@ struct CommonColorMode {
         .key("keySourceText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'keySource: ' + event.keySource)
-          return false
+          return false;
         })
 
       Text("common-DeviceId")
@@ -482,7 +564,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -491,7 +573,7 @@ struct CommonColorMode {
         .key("deviceIdText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'deviceId: ' + event.deviceId)
-          return false
+          return false;
         })
 
       Text("common-MetaKey")
@@ -500,7 +582,7 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -509,7 +591,7 @@ struct CommonColorMode {
         .key("metaKeyText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'metaKey: ' + event.metaKey)
-          return false
+          return false;
         })
 
       Text("common-Normal")
@@ -518,14 +600,14 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("normalText")
-
+      // .stateStyles({ normal: this.normalStyles })
 
       Text("common-Pressed")
         .width(320)
@@ -533,14 +615,14 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("pressedText")
-
+      // .stateStyles({ pressed: this.normalStyles })
 
       Text("common-Focused")
         .width(320)
@@ -548,14 +630,14 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("focusedText")
-
+      // .stateStyles({ focused: this.normalStyles })
 
       Text("common-Clicked")
         .width(320)
@@ -563,20 +645,22 @@ struct CommonColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("clickedText")
-
+      // .stateStyles({ clicked: this.normalStyles })
 
     }.width("100%").height("100%")
   }
 }
 
-
+// @Preview({
+//   locale: 'locale'
+// })
 @Component
 struct PreviewParamsLocale {
   build() {
@@ -587,7 +671,7 @@ struct PreviewParamsLocale {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -598,7 +682,9 @@ struct PreviewParamsLocale {
   }
 }
 
-
+// @Preview({
+//   colorMode: 'red',
+// })
 @Component
 struct PreviewParamsColorMode {
   build() {
@@ -609,7 +695,7 @@ struct PreviewParamsColorMode {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -620,7 +706,9 @@ struct PreviewParamsColorMode {
   }
 }
 
-
+// @Preview({
+//   deviceType: 'phone'
+// })
 @Component
 struct PreviewParamsDeviceType {
   build() {
@@ -631,7 +719,7 @@ struct PreviewParamsDeviceType {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -642,7 +730,9 @@ struct PreviewParamsDeviceType {
   }
 }
 
-
+// @Preview({
+//   dpi: 160
+// })
 @Component
 struct PreviewParamsDpi {
   build() {
@@ -653,7 +743,7 @@ struct PreviewParamsDpi {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -664,7 +754,9 @@ struct PreviewParamsDpi {
   }
 }
 
-
+// @Preview({
+//   orientation: ''
+// })
 @Component
 struct PreviewParamsOrientation {
   build() {
@@ -675,7 +767,7 @@ struct PreviewParamsOrientation {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -686,7 +778,9 @@ struct PreviewParamsOrientation {
   }
 }
 
-
+// @Preview({
+//   roundScreen: true
+// })
 @Component
 struct PreviewParamsRoundScreen {
   build() {
@@ -697,7 +791,7 @@ struct PreviewParamsRoundScreen {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)

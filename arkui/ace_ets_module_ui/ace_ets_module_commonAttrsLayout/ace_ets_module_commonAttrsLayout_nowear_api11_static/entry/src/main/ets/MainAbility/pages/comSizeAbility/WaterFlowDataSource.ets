@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,8 +24,8 @@ export class WaterFlowDataSource implements IDataSource<number> {
     }
   }
 
-  public getData(index: int): number {
-    return this.dataArray[index.toInt()]
+  public getData(index: Int): number {
+    return this.dataArray[index as Int]
   }
 
   notifyDataReload(): void {
@@ -34,7 +34,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
     })
   }
 
-  notifyDataAdd(index: int): void {
+  notifyDataAdd(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index)
     })
@@ -46,19 +46,19 @@ export class WaterFlowDataSource implements IDataSource<number> {
     })
   }
 
-  notifyDataDelete(index: int): void {
+  notifyDataDelete(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index)
     })
   }
 
-  notifyDataMove(from: int, to: int): void {
+  notifyDataMove(from: Int, to: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to)
     })
   }
 
-  public totalCount(): int {
+  public totalCount(): Int {
     return this.dataArray.length
   }
 
@@ -69,45 +69,45 @@ export class WaterFlowDataSource implements IDataSource<number> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt()
+    const pos = this.listeners.indexOf(listener)
     if (pos >= 0) {
       this.listeners.splice(pos, 1)
     }
   }
 
   public Add1stItem(): void {
-
+    this.dataArray.splice(0, 0, this.dataArray.length)
     this.notifyDataAdd(0)
   }
 
   public AddLastItem(): void {
-
+    this.dataArray.splice(this.dataArray.length, 0, this.dataArray.length)
     this.notifyDataAdd(this.dataArray.length - 1)
   }
 
-  public AddItem(index: int): void {
-
+  public AddItem(index: Int): void {
+    this.dataArray.splice(index, 0, this.dataArray.length)
     this.notifyDataAdd(index)
   }
 
   public Delete1stItem(): void {
-
+    this.dataArray.splice(0, 1)
     this.notifyDataDelete(0)
   }
 
   public Delete2ndItem(): void {
-
+    this.dataArray.splice(1, 1)
     this.notifyDataDelete(1)
   }
 
   public DeleteLastItem(): void {
-
+    this.dataArray.splice(-1, 1)
     this.notifyDataDelete(this.dataArray.length)
   }
 
   public Reload(): void {
-
-
+    this.dataArray.splice(1, 1)
+    this.dataArray.splice(3, 2)
     this.notifyDataReload()
   }
 }

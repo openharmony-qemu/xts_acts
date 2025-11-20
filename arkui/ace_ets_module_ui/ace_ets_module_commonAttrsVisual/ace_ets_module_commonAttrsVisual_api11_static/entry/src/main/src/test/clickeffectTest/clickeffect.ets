@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -49,12 +49,10 @@ export default function clickeffectTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ActsClickEffectTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("clickeffect" == pages.name)) {
           console.info("get ActsClickEffectTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push ActsClickEffectTest page error:" + err);
@@ -63,13 +61,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0100
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0100
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0100
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0100
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0100
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0100 start");
       setTimeout(() => {
         try {
@@ -81,7 +80,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0100 ERR ' + JSON.stringify(err));
           done();
@@ -90,13 +89,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0200
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0200
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0200
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0200
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0200
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0200 start");
       setTimeout(() => {
         try {
@@ -108,7 +108,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0200 ERR ' + JSON.stringify(err));
           done();
@@ -117,13 +117,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0300
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0300
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0300
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0300
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0300
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0300 start");
       setTimeout(() => {
         try {
@@ -135,7 +136,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0300 ERR ' + JSON.stringify(err));
           done();
@@ -144,13 +145,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0400
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0400
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0400
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0400
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0400
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0400 start");
       setTimeout(() => {
         try {
@@ -162,7 +164,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.000000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0400 ERR ' + JSON.stringify(err));
           done();
@@ -171,13 +173,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0500
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0500
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0500
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0500
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0500
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0500 start");
       setTimeout(() => {
         try {
@@ -189,7 +192,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('1.000000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0500 ERR ' + JSON.stringify(err));
           done();
@@ -198,13 +201,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0600
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0600
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0600
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0600
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0600
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0600
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Options_0600 start");
       setTimeout(() => {
         try {
@@ -216,7 +220,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.500000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0600 ERR ' + JSON.stringify(err));
           done();
@@ -225,13 +229,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0700
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0700
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0700
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0700
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0700
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0700
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0700 start");
       setTimeout(() => {
         try {
@@ -243,7 +248,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.800000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0700 ERR ' + JSON.stringify(err));
           done();
@@ -252,13 +257,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0800
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0800
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0800
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0800
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0800
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0800
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0800 start");
       setTimeout(() => {
         try {
@@ -270,7 +276,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0800 ERR ' + JSON.stringify(err));
           done();
@@ -279,13 +285,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_0900
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_0900
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_0900
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_0900
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_0900
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_0900
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_0900 start");
       setTimeout(() => {
         try {
@@ -297,7 +304,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.100000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0900 ERR ' + JSON.stringify(err));
           done();
@@ -306,13 +313,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_1000
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_1000
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_1000
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_1000
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_1000
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_1000
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_1000 start");
       setTimeout(() => {
         try {
@@ -324,7 +332,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.000000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1000 ERR ' + JSON.stringify(err));
           done();
@@ -333,13 +341,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_1100
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_1100
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_1100
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_1100
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_1100
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_1100
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Options_01000 start");
       setTimeout(() => {
         try {
@@ -351,7 +360,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.100000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1100 ERR ' + JSON.stringify(err));
           done();
@@ -360,13 +369,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_1200
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_1200
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_1200
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_1200
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_1200
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_1200
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_1200 start");
       setTimeout(() => {
         try {
@@ -378,7 +388,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1200 ERR ' + JSON.stringify(err));
           done();
@@ -386,13 +396,14 @@ export default function clickeffectTest() {
       }, 500)
     });
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_1300
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_1300
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_1300
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_1300
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_1300
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_1300
+     * @tc.level    Level.LEVEL2
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_1300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_1300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_1300 start");
       setTimeout(() => {
         try {
@@ -404,7 +415,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1300 ERR ' + JSON.stringify(err));
           done();
@@ -413,13 +424,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_1400
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_1400
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_1400
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_1400
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_1400
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_1400
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_1400 start");
       setTimeout(() => {
         try {
@@ -431,7 +443,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1400 ERR ' + JSON.stringify(err));
           done();
@@ -440,13 +452,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_1500
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_1500
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_1500
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_1500
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_1500
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_1500
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_1500 start");
       setTimeout(() => {
         try {
@@ -458,7 +471,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1500 ERR ' + JSON.stringify(err));
           done();
@@ -467,13 +480,14 @@ export default function clickeffectTest() {
     });
 
 
+    
     /*
-     * @tc.number    ArkUXII_Stage_ClickEffect_Toggle_static_1600
-     * @tc.name      ArkUXII_Stage_ClickEffect_Toggle_static_1600
-     * @tc.desc      ArkUXII_Stage_ClickEffect_Toggle_static_1600
-     * @tc.level     2
+     * @tc.number   ArkUXII_Stage_ClickEffect_Toggle_static_1600
+     * @tc.name     ArkUXII_Stage_ClickEffect_Toggle_static_1600
+     * @tc.desc     ArkUXII_Stage_ClickEffect_Toggle_static_1600
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUXII_Stage_ClickEffect_Toggle_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_ClickEffect_Toggle_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_ClickEffect_Toggle_1600 start");
       setTimeout(() => {
         try {
@@ -485,7 +499,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1600 ERR ' + JSON.stringify(err));
           done();

@@ -1,32 +1,34 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import accessibility from '@ohos.accessibility';
+import componentUtils from '@ohos.arkui.componentUtils';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, MouseButton, ON, Rect } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Driver, ON, Rect } from '@ohos.UiTest';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import componentUtils from '@ohos.arkui.componentUtils';
 
-import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 import { BusinessError } from '@ohos.base';
+
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -34,11 +36,16 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function comSizeAbilityTest_14() {
   describe('comSizeAbilityTest_14', () => {
+
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
+
     beforeAll(() => {
       console.info("comSizeAbilityTest_14 beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_14 beforeEach start")
@@ -53,100 +60,147 @@ export default function comSizeAbilityTest_14() {
         if (!("comSizeAbilityTest" == pages.name)) {
           console.info("get comSizeAbilityTest_14 state pages.name: " + JSON.stringify(pages.name))
           routerInstance.pushUrl(options)
-
-
         }
       } catch (err) {
         console.error("push comSizeAbilityTest_14 page error: " + err)
         expect().assertFail()
       }
     })
-
+    
     /*
-     * @tc.number    comSizeAbilityTestJsunit_static_37
-     * @tc.name      comSizeAbilityTestJsunit_static_37
-     * @tc.desc      comSizeAbilityTestJsunit_static_37
-     * @tc.level     2
+     * @tc.number   comSizeAbilityTestJsunit_static_37
+     * @tc.name     comSizeAbilityTestJsunit_static_37
+     * @tc.desc     comSizeAbilityTestJsunit_static_37
+     * @tc.level    Level.LEVEL0
      */
-    it('comSizeAbilityTestJsunit_static_37', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('comSizeAbilityTestJsunit_static_37 START')
-        await CommonFunc.sleep(1000);
-
-
-        let driver = Driver.create();
-        let button = await driver.findComponent(ON.id('SideBarContainer_Size'));
-        let rect = await (button?.getBounds() as Promise<Rect>);
-        console.info("[comSizeAbilityTestJsunit_static_37] component rect is: " + JSON.stringify(rect))
-
-
-        await CommonFunc.sleep(1000);
-
-
-        console.info('[comSizeAbilityTestJsunit_static_37] END')
-        await CommonFunc.sleep(1000);
-        done()
-      } catch (err) {
-        expect().assertFail();
-      }
+it('comSizeAbilityTestJsunit_static_37', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('comSizeAbilityTestJsunit_static_37 START')
+      await CommonFunc.sleep(1000);
+      let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("SideBarContainer_Size");
+      let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("SideBarContainer_Father");
+      console.log('modePosition is: ' + modePosition + 'modePosition1 ins: ' + modePosition1)
+      let Size = modePosition.size
+      let SizeWidth = Size.width
+      let SizeHeight = Size.height
+      let LocalOffset = modePosition1.localOffset
+      let WindowOffset = modePosition.windowOffset
+      let ScreenOffset = modePosition.screenOffset
+      let Translate = modePosition.translate
+      let Transform = modePosition.transform
+      let Scale = modePosition.scale
+      let Rotate = modePosition.rotate
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('SideBarContainer_Size'));
+      let rect = await (button?.getBounds() as Promise<Rect>);
+      console.info("[comSizeAbilityTestJsunit_static_37] component rect is: " + JSON.stringify(rect))
+      console.info("[comSizeAbilityTestJsunit_static_37] component Size is: " + JSON.stringify(Size))
+      console.info("[comSizeAbilityTestJsunit_static_37] component LocalOffset is: " + JSON.stringify(LocalOffset))
+      console.info("[comSizeAbilityTestJsunit_static_37] component WindowOffset is: " + JSON.stringify(WindowOffset))
+      console.info("[comSizeAbilityTestJsunit_static_37] component ScreenOffset is: " + JSON.stringify(ScreenOffset))
+      console.info("[comSizeAbilityTestJsunit_static_37] component Translate is: " + JSON.stringify(Translate))
+      console.info("[comSizeAbilityTestJsunit_static_37] component Transform is: " + JSON.stringify(Transform))
+      console.info("[comSizeAbilityTestJsunit_static_37] component Scale is: " + JSON.stringify(Scale))
+      console.info("[comSizeAbilityTestJsunit_static_37] component Rotate is: " + JSON.stringify(Rotate))
+      await CommonFunc.sleep(1000);
+      expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(260))) <= 1).assertTrue();
+      expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(130))) <= 1).assertTrue();
+      expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+      expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+      console.info('[comSizeAbilityTestJsunit_static_37] END')
+      await CommonFunc.sleep(1000);
+      done()
     })
-
+    
     /*
-     * @tc.number    comSizeAbilityTestJsunit_static_38
-     * @tc.name      comSizeAbilityTestJsunit_static_38
-     * @tc.desc      comSizeAbilityTestJsunit_static_38
-     * @tc.level     2
+     * @tc.number   comSizeAbilityTestJsunit_static_38
+     * @tc.name     comSizeAbilityTestJsunit_static_38
+     * @tc.desc     comSizeAbilityTestJsunit_static_38
+     * @tc.level    Level.LEVEL0
      */
-    it('comSizeAbilityTestJsunit_static_38', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('comSizeAbilityTestJsunit_static_38 START')
-        await CommonFunc.sleep(1000);
-
-
-        let driver = Driver.create();
-        let button = await driver.findComponent(ON.id('Slider_Size'));
-        let rect = await (button?.getBounds() as Promise<Rect>);
-        console.info("[comSizeAbilityTestJsunit_static_38] component rect is: " + JSON.stringify(rect))
-
-
-        await CommonFunc.sleep(1000);
-
-
-        console.info('[comSizeAbilityTestJsunit_static_38] END')
-        await CommonFunc.sleep(1000);
-        done()
-      } catch (err) {
-        expect().assertFail();
-      }
+it('comSizeAbilityTestJsunit_static_38', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('comSizeAbilityTestJsunit_static_38 START')
+      await CommonFunc.sleep(1000);
+      let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Slider_Size");
+      let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Slider_Father");
+      let Size = modePosition.size
+      let SizeWidth = Size.width
+      let SizeHeight = Size.height
+      let LocalOffset = modePosition1.localOffset
+      let WindowOffset = modePosition.windowOffset
+      let ScreenOffset = modePosition.screenOffset
+      let Translate = modePosition.translate
+      let Transform = modePosition.transform
+      let Scale = modePosition.scale
+      let Rotate = modePosition.rotate
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('Slider_Size'));
+      let rect = await (button?.getBounds() as Promise<Rect>);
+      console.info("[comSizeAbilityTestJsunit_static_38] component rect is: " + JSON.stringify(rect))
+      console.info("[comSizeAbilityTestJsunit_static_38] component Size is: " + JSON.stringify(Size))
+      console.info("[comSizeAbilityTestJsunit_static_38] component LocalOffset is: " + JSON.stringify(LocalOffset))
+      console.info("[comSizeAbilityTestJsunit_static_38] component WindowOffset is: " + JSON.stringify(WindowOffset))
+      console.info("[comSizeAbilityTestJsunit_static_38] component ScreenOffset is: " + JSON.stringify(ScreenOffset))
+      console.info("[comSizeAbilityTestJsunit_static_38] component Translate is: " + JSON.stringify(Translate))
+      console.info("[comSizeAbilityTestJsunit_static_38] component Transform is: " + JSON.stringify(Transform))
+      console.info("[comSizeAbilityTestJsunit_static_38] component Scale is: " + JSON.stringify(Scale))
+      console.info("[comSizeAbilityTestJsunit_static_38] component Rotate is: " + JSON.stringify(Rotate))
+      await CommonFunc.sleep(1000);
+      expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(160))) <= 1).assertTrue();
+      expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(120))) <= 1).assertTrue();
+      expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+      expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+      console.info('[comSizeAbilityTestJsunit_static_38] END')
+      await CommonFunc.sleep(1000);
+      done()
     })
-
+    
     /*
-     * @tc.number    comSizeAbilityTestJsunit_static_39
-     * @tc.name      comSizeAbilityTestJsunit_static_39
-     * @tc.desc      comSizeAbilityTestJsunit_static_39
-     * @tc.level     2
+     * @tc.number   comSizeAbilityTestJsunit_static_39
+     * @tc.name     comSizeAbilityTestJsunit_static_39
+     * @tc.desc     comSizeAbilityTestJsunit_static_39
+     * @tc.level    Level.LEVEL0
      */
-    it('comSizeAbilityTestJsunit_static_39', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('comSizeAbilityTestJsunit_static_39 START')
-        await CommonFunc.sleep(1000);
-
-
-        let driver = Driver.create();
-        let button = await driver.findComponent(ON.id('Stack_Size'));
-        let rect = await (button?.getBounds() as Promise<Rect>);
-        console.info("[comSizeAbilityTestJsunit_static_39] component rect is: " + JSON.stringify(rect))
-
-
-        await CommonFunc.sleep(1000);
-
-
-        console.info('[comSizeAbilityTestJsunit_static_39] END')
-        await CommonFunc.sleep(1000);
-        done()
-      } catch (err) {
-        expect().assertFail();
-      }
+it('comSizeAbilityTestJsunit_static_39', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('comSizeAbilityTestJsunit_static_39 START')
+      await CommonFunc.sleep(1000);
+      let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Stack_Size");
+      let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Stack_Father");
+      let Size = modePosition.size
+      let SizeWidth = Size.width
+      let SizeHeight = Size.height
+      let LocalOffset = modePosition1.localOffset
+      let WindowOffset = modePosition.windowOffset
+      let ScreenOffset = modePosition.screenOffset
+      let Translate = modePosition.translate
+      let Transform = modePosition.transform
+      let Scale = modePosition.scale
+      let Rotate = modePosition.rotate
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('Stack_Size'));
+      let rect = await (button?.getBounds() as Promise<Rect>);
+      console.info("[comSizeAbilityTestJsunit_static_39] component rect is: " + JSON.stringify(rect))
+      console.info("[comSizeAbilityTestJsunit_static_39] component Size is: " + JSON.stringify(Size))
+      console.info("[comSizeAbilityTestJsunit_static_39] component LocalOffset is: " + JSON.stringify(LocalOffset))
+      console.info("[comSizeAbilityTestJsunit_static_39] component WindowOffset is: " + JSON.stringify(WindowOffset))
+      console.info("[comSizeAbilityTestJsunit_static_39] component ScreenOffset is: " + JSON.stringify(ScreenOffset))
+      console.info("[comSizeAbilityTestJsunit_static_39] component Translate is: " + JSON.stringify(Translate))
+      console.info("[comSizeAbilityTestJsunit_static_39] component Transform is: " + JSON.stringify(Transform))
+      console.info("[comSizeAbilityTestJsunit_static_39] component Scale is: " + JSON.stringify(Scale))
+      console.info("[comSizeAbilityTestJsunit_static_39] component Rotate is: " + JSON.stringify(Rotate))
+      await CommonFunc.sleep(1000);
+      expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(120))) <= 1).assertTrue();
+      expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
+      expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+      expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+      console.info('[comSizeAbilityTestJsunit_static_39] END')
+      await CommonFunc.sleep(1000);
+      done()
     })
   })
 }

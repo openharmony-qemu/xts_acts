@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -65,12 +65,10 @@ export default function getContextMenuController() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get getContextMenuController state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("getContextMenuController" == pages.name)) {
           console.info("get getContextMenuController pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push getContextMenuController page error:" + err);
@@ -84,25 +82,27 @@ export default function getContextMenuController() {
     });
 
 
+    
     /*
-     * @tc.number    getContextMenuController_static_001
-     * @tc.name      getContextMenuController_static_001
-     * @tc.desc      getContextMenuController_static_001
-     * @tc.level     2
+     * @tc.number   getContextMenuController_static_001
+     * @tc.name     getContextMenuController_static_001
+     * @tc.desc     getContextMenuController_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('getContextMenuController_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getContextMenuController_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getContextMenuController_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let add = await (driver?.findComponent(ON.id('getContextClick')) as Promise<Component | null>);
-      add?.longClick();
       await CommonFunc.sleep(1000);
+      await (add?.longClick() as Promise<void>);
 
       let remove = await (driver?.findComponent(ON.id('getContextClose')) as Promise<Component | null>);
-      remove?.click();
-      await CommonFunc.sleep(1000);
-
+      await CommonFunc.sleep(2000);
+      await (remove?.click() as Promise<void>);
+      await CommonFunc.sleep(5000);
       let Column = inspector.getInspectorByKey('getContext');
+      await CommonFunc.sleep(2000);
       console.info('getContextMenuController_001 content: ' +
       JSON.parseJsonElement(Column).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(Column).getElement('$attrs').getString('content'))

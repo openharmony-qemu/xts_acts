@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,7 +43,13 @@ import {
   TextAlign
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, SwiperDynamicSyncScene, SwiperDynamicSyncSceneType, UIContext } from '@ohos.arkui.UIContext';
+import {
+  DynamicSyncScene,
+  Router,
+  SwiperDynamicSyncScene,
+  SwiperDynamicSyncSceneType,
+  UIContext
+} from '@ohos.arkui.UIContext';
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 
@@ -56,7 +62,7 @@ struct setGetFrameRateRange {
   @State setFlag: string = 'init'
   @State getFlag: string = 'init'
   @State requireFlag: string = 'init'
-  private scenes: Array<SwiperDynamicSyncScene> = [] as Array<SwiperDynamicSyncScene>
+  private scenes: Array<DynamicSyncScene> = [] as Array<DynamicSyncScene>
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
@@ -74,7 +80,7 @@ struct setGetFrameRateRange {
         .backgroundColor(Color.Blue)
         .autoPlay(true, { stopWhenTouched: true })
         .onAppear(() => {
-
+          this.scenes = this.getUIContext().requireDynamicSyncScene("dynamicSwiper_id") as Array<DynamicSyncScene>
           if (this.scenes) {
             this.requireFlag = 'requireDynamicSyncScene succ'
           }
@@ -85,23 +91,23 @@ struct setGetFrameRateRange {
       Button(this.setFlag).id('setGetFrameRateRange_id')
       Button(this.getFlag).id('getGetFrameRateRange_id')
         .onClick((e: ClickEvent) => {
-          this.scenes.forEach((scenes: SwiperDynamicSyncScene) => {
-            if (scenes.type == undefined) {
-              scenes.setFrameRateRange(this.ANIMATION)
-              this.setFlag = 'setFrameRateRange succ'
-              this.getFlag = '' + JSON.stringify(scenes.getFrameRateRange())
-            }
-            if (scenes.type == SwiperDynamicSyncSceneType.ANIMATION) {
-              scenes.setFrameRateRange(this.ANIMATION)
-              this.setFlag = 'setFrameRateRange succ'
-              this.getFlag = '' + JSON.stringify(scenes.getFrameRateRange())
-            }
-            if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {
-              scenes.setFrameRateRange(this.GESTURE)
-              this.setFlag = 'setFrameRateRange succ'
-              this.getFlag = '' + JSON.stringify(scenes.getFrameRateRange())
-            }
-          });
+          // this.scenes.forEach((scenes: DynamicSyncScene) => {
+          //   if (scenes.type == undefined) {
+          //     scenes.setFrameRateRange(this.ANIMATION)
+          //     this.setFlag = 'setFrameRateRange succ'
+          //     this.getFlag = '' + JSON.stringify(scenes.getFrameRateRange())
+          //   }
+          //   if (scenes.type == SwiperDynamicSyncSceneType.ANIMATION) {
+          //     scenes.setFrameRateRange(this.ANIMATION)
+          //     this.setFlag = 'setFrameRateRange succ'
+          //     this.getFlag = '' + JSON.stringify(scenes.getFrameRateRange())
+          //   }
+          //   if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {
+          //     scenes.setFrameRateRange(this.GESTURE)
+          //     this.setFlag = 'setFrameRateRange succ'
+          //     this.getFlag = '' + JSON.stringify(scenes.getFrameRateRange())
+          //   }
+          // });
         })
     }
   }

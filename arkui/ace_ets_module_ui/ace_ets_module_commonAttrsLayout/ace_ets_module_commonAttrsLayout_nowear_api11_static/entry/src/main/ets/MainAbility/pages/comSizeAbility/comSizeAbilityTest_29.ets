@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -45,7 +45,7 @@ import {
   VideoController,
   WaterFlow,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
@@ -55,7 +55,7 @@ let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
 @Component
 struct comSizeAbilityTest_29 {
   @State text1: string = "Select下拉框"
-  @State index: int = 2
+  @State index: Int = 2
 
   build() {
     Scroll() {
@@ -110,13 +110,13 @@ struct comSizeAbilityTest_29 {
             })
             .transform(matrix)
             .key("Select_Size")
-            .backgroundColor(0XBDDB69)
+            .backgroundColor('0XBDDB69')
             .selected(this.index)
             .value(this.text1)
             .font({ size: 16, weight: 500 })
             .selectedOptionFont({ size: 16, weight: 400 })
             .optionFont({ size: 16, weight: 400 })
-            .onSelect((index: int, text?: string | undefined): void => {
+            .onSelect((index: Int, text?: string | undefined): void => {
               console.info('Select:' + index)
               this.index = index;
               if (text) {

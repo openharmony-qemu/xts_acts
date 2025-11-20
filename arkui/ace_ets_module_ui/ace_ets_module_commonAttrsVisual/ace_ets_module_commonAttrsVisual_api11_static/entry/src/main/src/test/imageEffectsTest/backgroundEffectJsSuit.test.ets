@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -30,7 +30,7 @@ import { Callback, MessageManager } from '../../../ets/MainAbility/common/Messag
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -61,12 +61,10 @@ export default function backgroundEffectJsSuit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get backgroundEffectJsSuit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("backgroundEffect1" == pages.name)) {
           console.info("get backgroundEffectJsSuit pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push backgroundEffectJsSuit page error:" + err);
@@ -80,20 +78,22 @@ export default function backgroundEffectJsSuit() {
     });
 
 
+    
     /*
-     * @tc.number    backgroundEffectJsSuit_static_0100
-     * @tc.name      backgroundEffectJsSuit_static_0100
-     * @tc.desc      backgroundEffectJsSuit_static_0100
-     * @tc.level     2
+     * @tc.number   backgroundEffectJsSuit_static_0100
+     * @tc.name     backgroundEffectJsSuit_static_0100
+     * @tc.desc     backgroundEffectJsSuit_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('backgroundEffectJsSuit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('backgroundEffectJsSuit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[backgroundEffectJsSuit_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button_Bottom = await driver.findComponent(ON.id('texteffrct'));
-      button_Bottom?.click();
+      await (button_Bottom?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("texteffrct");
+      await CommonFunc.sleep(1000);
       console.info("[backgroundEffectJsSuit_0100] obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content') == 'content').assertTrue();

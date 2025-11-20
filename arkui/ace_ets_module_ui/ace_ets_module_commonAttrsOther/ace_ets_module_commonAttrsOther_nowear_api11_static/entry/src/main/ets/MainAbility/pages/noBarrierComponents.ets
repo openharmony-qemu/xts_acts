@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import web_webview from '@ohos.web.webview'
+// import web_webview from '@ohos.web.webview'
 import { BusinessError } from '@ohos.base';
 import {
   $rawfile,
@@ -50,22 +50,22 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 @Component
 struct noBarrierComponents {
   scroller: Scroller = new Scroller();
-  @State numberData: Array<String> = new Array<String>('0', '1');
+  @State Number1: Array<String> = new Array<String>('0', '1');
   public valueArr: Array<number> = new Array<number>(10, 10);
   @State isLunar: boolean = false;
   @State formId: number = 0;
   @State start: boolean = false;
   @State passwords: Array<number> = new Array<number>();
   @State message: string = 'please input password!';
-  @State rating: double = 3.5;
+  @State rating: number = 3.5;
   @State target?: WindowAnimationTarget = undefined;
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
   @State changeValue: string = '';
   @State submitValue: string = '';
   controller: SearchController = new SearchController();
-  @State outSetValueOne: double = 40.0;
+  @State outSetValueOne: number = 40;
   @State isMilitaryTime: boolean = false;
-  controller1: web_webview.WebviewController = new web_webview.WebviewController();
+  // controller1: web_webview.WebviewController = new web_webview.WebviewController();
   xcomponentController: XComponentController = new XComponentController();
   private arr: Array<number> = new Array<number>(0, 1);
   private arrayA: Array<string> = new Array<string>('安')
@@ -85,6 +85,10 @@ struct noBarrierComponents {
   private selectedTime: Date = new Date('2022-07-22T08:00:00');
   private surfaceId: string = '';
 
+  aboutToAppear() {
+    console.log('test start page')
+  }
+
   build() {
     Scroll(this.scroller) {
       Column() {
@@ -100,14 +104,14 @@ struct noBarrierComponents {
           .optionFont({ size: 16, weight: 400 })
           .key("Select")
           .accessibilityText("我是无障碍组件")
-          .onSelect((index: int): void => {
+          .onSelect((index: Int): void => {
             console.info('Select:' + index)
           })
 
 
-        Web({ src: $rawfile("index.html"), controller: this.controller1 })
-          .key("Web")
-          .accessibilityText("我是无障碍组件")
+        // Web({ src: $rawfile("index.html"), controller: this.controller1 })
+        //   .key("Web")
+        //   .accessibilityText("我是无障碍组件")
       }
     }
   }
