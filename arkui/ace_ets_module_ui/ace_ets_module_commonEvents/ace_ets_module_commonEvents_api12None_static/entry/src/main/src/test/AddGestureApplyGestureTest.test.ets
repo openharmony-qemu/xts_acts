@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,25 +13,15 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
+import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import { Callback, MessageManager } from '../../ets/MainAbility/common/MessageManager';
+import {MessageManager,Callback} from '../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from './Util.test'
+import {UtilsTest} from './Util.test'
 
 export default function addGestureApplyGesture() {
 
@@ -41,7 +31,7 @@ export default function addGestureApplyGesture() {
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async ():Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/addGestureApplyGesture',
       }
@@ -54,13 +44,13 @@ export default function addGestureApplyGesture() {
           console.info("get addGestureApplyGesture state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push addGestureApplyGesture success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push addGestureApplyGesture page error: " + err);
         expect().assertFail();
       }
-
+      //done();
     });
 
     afterEach(async (): Promise<void> => {
@@ -68,15 +58,18 @@ export default function addGestureApplyGesture() {
       console.info("addGestureApplyGesture after each called");
     });
 
+    
 
-    /*
-     * @tc.number   addGestureApplyGesture_0100
-     * @tc.name     addGestureApplyGesture_0100
-     * @tc.desc     addGestureApplyGesture_0100
+
+    
+/*
+     * @tc.number   addGestureApplyGesture_static_0100
+     * @tc.name     addGestureApplyGesture_static_0100
+     * @tc.desc     addGestureApplyGesture_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('addGestureApplyGesture_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('addGestureApplyGesture_0100 START');
+it('addGestureApplyGesture_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('addGestureApplyGesture_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('gestureColumn'));
@@ -84,11 +77,14 @@ export default function addGestureApplyGesture() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('gestureText1');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('label')).assertEqual('666');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('666');
       await CommonFunc.sleep(1000);
-      console.info('[addGestureApplyGesture_0100] END');
+      console.info('[addGestureApplyGesture_static_0100] END');
       done();
     });
+
+
+
 
 
   })

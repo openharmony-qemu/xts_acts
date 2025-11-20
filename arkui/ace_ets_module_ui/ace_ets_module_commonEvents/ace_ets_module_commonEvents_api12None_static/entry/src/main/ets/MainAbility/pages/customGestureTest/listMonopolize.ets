@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,33 +14,33 @@
  */
 
 import {
-  Axis,
-  BarState,
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  Entry,
-  FlexAlign,
-  ForEach,
+  Color,
+  Button,
+  TouchEvent,
+  Margin,
+  Scroll,
   GestureEvent,
   List,
+  ForEach,
   ListItem,
-  Margin,
-  Padding,
-  Row,
-  Scroll,
   TapGesture,
-  Text,
+  FlexAlign,
+  Padding,
   TextAlign,
-  TouchEvent,
-  TouchType
+  Axis,
+  BarState
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -59,7 +59,7 @@ struct ListGesture {
           .fontColor(Color.Blue)
           .margin(10)
         List({ space: 20, initialIndex: 0 }) {
-          ForEach(this.arr, (item: number, index: int): void => {
+          ForEach(this.arr, (item: number, index:int):void => {
             ListItem() {
               Text('' + item)
                 .width('100%')
@@ -69,10 +69,10 @@ struct ListGesture {
                 .borderRadius(10)
                 .backgroundColor(0xFFFFFF)
             }
-          }, (item: number, index: int): string => String(item))
+          }, (item: number, index: int):string => String(item))
         }
         .padding({ top: 5 } as Padding)
-        .listDirection(Axis.Vertical)
+        .listDirection(Axis.Vertical) // 排列方向
         .scrollBar(BarState.Off)
         .friction(0.6)
         .backgroundColor(Color.Pink)
@@ -83,8 +83,12 @@ struct ListGesture {
           color: 0xFFFFFF,
           startMargin: 20,
           endMargin: 20
+        }) // 每行之间的分界线
+        .onDidScroll((event) => {
+          if (event) {
+            this.logMsg1 = 'OnScroll start'
+          }
         })
-
 
         Column() {
         }

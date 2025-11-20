@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,52 +13,54 @@
  * limitations under the License.
  */
 import {
-  Alignment,
-  BarState,
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
+  Entry,
   Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
   CustomBuilder,
   DragItemInfo,
-  EdgeEffect,
-  Entry,
-  ForEach,
-  GestureControl,
-  GestureEvent,
-  GestureRecognizer,
-  GestureRecognizerState,
-  Margin,
-  PanGesture,
-  PanRecognizer,
-  Row,
-  Scroll,
-  ScrollableTargetInfo,
-  ScrollDirection,
-  Scroller,
-  Stack,
-  Text,
-  TextAlign,
+  Color,
+  Button,
   TouchEvent,
-  TouchType
+  Margin,
+  Scroller,
+  GestureRecognizer,
+  PanRecognizer,
+  GestureEvent,
+  ScrollableTargetInfo,
+  Stack,
+  Alignment,
+  Scroll,
+  TextAlign,
+  ForEach,
+  ScrollDirection,
+  BarState,
+  EdgeEffect,
+  GestureControl,
+  PanGesture,
+  GestureRecognizerState
 } from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct APIshouldBuiltInRecognizerParallelWith {
   scroller: Scroller = new Scroller()
   scroller2: Scroller = new Scroller()
-  @State API_getTag: string = 'API_getTag'
-  @State API_isBuiltIn: boolean = false
-  @State API_getEventTargetInfo: string = 'API_getEventTargetInfo'
-  @State API_getPanGestureOptions: string = 'API_getPanGestureOptions'
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
   private childRecognizer: GestureRecognizer = new GestureRecognizer()
   private currentRecognizer: GestureRecognizer = new GestureRecognizer()
   private lastOffset: number = 0
+  @State API_getTag: string = 'API_getTag'
+  @State API_isBuiltIn: boolean = false
+  @State API_getEventTargetInfo: string = 'API_getEventTargetInfo'
+  @State API_getPanGestureOptions: string = 'API_getPanGestureOptions'
+
+
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
@@ -97,7 +99,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
                       .fontSize(16)
                       .textAlign(TextAlign.Center)
                       .margin({ top: 10 } as Margin)
-                  }, (item: number, index: int): string => String(item))
+                  }, (item: number, index: int):string => String(item))
                 }.width('100%')
               }
             }
@@ -113,8 +115,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
         .scrollBarColor(Color.Gray)
         .scrollBarWidth(10)
         .edgeEffect(EdgeEffect.None)
-        .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer,
-          others: Array<GestureRecognizer>): GestureRecognizer => {
+        .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
           this.API_getTag = current.getTag()
           this.API_isBuiltIn = current.isBuiltIn()
           this.API_getEventTargetInfo = current.getEventTargetInfo()?.getId()!
@@ -132,7 +133,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
               }
             }
           }
-
+          //return undefined;
         })
         .parallelGesture(
           PanGesture()
