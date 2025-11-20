@@ -73,6 +73,8 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
         alphaType: image.AlphaType.UNPREMUL
       };
       await createUnpremultipliedPixelMapPromiseTest(done, testName, color, optsForPre, optsForUnpre);
+      expect().assertFail()
+      done()
     });
 
     /**
