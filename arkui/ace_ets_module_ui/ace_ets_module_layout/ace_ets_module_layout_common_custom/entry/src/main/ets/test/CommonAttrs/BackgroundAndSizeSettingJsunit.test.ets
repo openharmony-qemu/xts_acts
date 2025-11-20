@@ -22,7 +22,7 @@ export default function backgroundAndSizeSettingJsunit() {
     beforeEach(async (done: Function) => {
       console.info("backgroundAndSizeSetting beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/backgroundAndSizeSetting',
+        url: 'MainAbility/pages/CommonAttrs/backgroundAndSizeSetting',
       }
       try {
         router.clear();

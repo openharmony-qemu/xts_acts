@@ -19,8 +19,8 @@ import ChainWeight from './CommonCustom/ChainWeight.test'
 import CustomLayoutUniqueidTest from './CommonCustom/CustomLayoutUniqueidTest.test'
 import ButtonAlignTest from './CommonCustom/ButtonAlignTest.ets'
 import mediaQueryOffJsunit from './CommonCustom/mediaQuery.test.ets';
-import backgroundAndSizeSettingJsunit from './textTest/BackgroundAndSizeSettingJsunit.test';
-import borderJsunit from './textTest/BorderJsunit.test';
+import backgroundAndSizeSettingJsunit from './CommonAttrs/BackgroundAndSizeSettingJsunit.test';
+import borderJsunit from './CommonAttrs/BorderJsunit.test';
 
 export default function testsuite() {
   Calc01();

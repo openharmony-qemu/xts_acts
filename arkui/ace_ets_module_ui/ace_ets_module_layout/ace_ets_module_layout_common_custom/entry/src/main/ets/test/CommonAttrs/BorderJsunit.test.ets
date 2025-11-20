@@ -22,7 +22,7 @@ export default function borderJsunit() {
     beforeEach(async (done: Function) => {
       console.info("border beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/border',
+        url: 'MainAbility/pages/CommonAttrs/border',
       }
       try {
         router.clear();

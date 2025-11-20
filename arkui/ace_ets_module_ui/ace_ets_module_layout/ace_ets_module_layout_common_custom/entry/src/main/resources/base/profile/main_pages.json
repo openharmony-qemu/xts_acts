@@ -7,7 +7,7 @@
         "MainAbility/pages/CommonCustom/CustomLayoutUniqueidPage",
         "MainAbility/pages/CommonCustom/ButtonAlign",
         "MainAbility/pages/CommonCustom/mediaQuery",
-        "MainAbility/pages/text/backgroundAndSizeSetting",
-        "MainAbility/pages/text/border"
+        "MainAbility/pages/CommonAttrs/backgroundAndSizeSetting",
+        "MainAbility/pages/CommonAttrs/border"
     ]
 }
