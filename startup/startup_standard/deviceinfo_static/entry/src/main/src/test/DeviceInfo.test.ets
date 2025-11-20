@@ -893,9 +893,16 @@ export default function DeviceInfoTest() {
       console.info('the value of the diskSN is :' + diskSNInfo);
       let deviceTypeInfo = deviceinfo.deviceType;
       expect(diskSNInfo).assertInstanceOf('String');
-      if(deviceTypeInfo == '2in1'){
-        expect(diskSNInfo != "" && diskSNInfo != null && diskSNInfo != undefined).assertTrue();
-        done();      
+      if(deviceTypeInfo == '2in1'){ 
+        if (diskSNInfo != "" && diskSNInfo != null && diskSNInfo != undefined) {
+          console.info('the value of the deviceinfo diskSN is :' + diskSNInfo);
+          expect(diskSNInfo).assertInstanceOf('String');
+          done();
+        } else {
+          console.info('the return value diskSN is null or incorrect.');
+          expect().assertFail();
+          done();
+        }     
       }else{
         expect(diskSNInfo == "").assertTrue();
         done();
