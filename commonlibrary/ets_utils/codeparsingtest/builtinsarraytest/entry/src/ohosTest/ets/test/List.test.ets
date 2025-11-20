@@ -94,6 +94,7 @@ import builtinsRegExpMatchArrayGroupsTest from "./RegExpArray/RegExpMatchArrayGr
 import builtinsRegExpMatchArrayIndexTest from "./RegExpArray/RegExpMatchArrayIndex.test";
 import builtinsRegExpMatchArrayInputTest from "./RegExpArray/RegExpMatchArrayInput.test";
 import builtinsRegExpMatchArrayStringTest from "./RegExpArray/RegExpMatchArrayString.test";
+import RegExpCombination1Test from "./RegExpArray/RegExpCombination1Test.test";
 import typeArrayBigInt64ArrayTest from './TypeArray/TypeArrayBigInt64Array.test';
 import typeArrayBigUint64ArrayTest from './TypeArray/TypeArrayBigUint64Array.test';
 import typeArrayFloat32ArrayTest from './TypeArray/TypeArrayFloat32Array.test';
@@ -204,6 +205,7 @@ export default function testsuite() {
   builtinsRegExpMatchArrayIndexTest();
   builtinsRegExpMatchArrayInputTest();
   builtinsRegExpMatchArrayStringTest();
+  RegExpCombination1Test();
   
 
   
