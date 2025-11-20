@@ -70,6 +70,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+            done();
           }).catch((error : BusinessError) => {
             console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -103,6 +104,7 @@ export default function ImageCreateIncrementalSourceSupp() {
            let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
            let imageInfo = pixelMap.getImageInfoSync();
            console.info('Succeeded in creating pixelMap',imageInfo);
+           done();
          }).catch((error : BusinessError) => {
            console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
            expect().assertFail();
@@ -137,6 +139,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info('Succeeded in creating pixelMap',imageInfo);
+            done();
           }).catch((error : BusinessError) => {
             console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -174,6 +177,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+            done();
           }).catch((error : BusinessError) => {
             console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -209,6 +213,7 @@ export default function ImageCreateIncrementalSourceSupp() {
            let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
            let imageInfo = pixelMap.getImageInfoSync();
            console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+           done();
          }).catch((error : BusinessError) => {
            console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
            expect().assertFail();
@@ -243,6 +248,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+            done();
           }).catch((error : BusinessError) => {
             console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -276,6 +282,7 @@ export default function ImageCreateIncrementalSourceSupp() {
            let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
            let imageInfo = pixelMap.getImageInfoSync();
            console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+           done();
          }).catch((error : BusinessError) => {
            console.error(TAG,testName,`Failed to updateData imageArray()[0] error code is ${error.code}, message is ${error.message}`);
            expect().assertFail();
@@ -310,6 +317,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info(TAG, testName, 'Succeeded in creating pixelMap', imageInfo);
+            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -344,6 +352,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+            done();
           }).catch((error : BusinessError) => {
             console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -378,6 +387,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+            done();
           }).catch((error : BusinessError) => {
             console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -411,6 +421,7 @@ export default function ImageCreateIncrementalSourceSupp() {
               let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
               let imageInfo = pixelMap.getImageInfoSync();
               console.info(TAG, testName, 'Succeeded in creating pixelMap', imageInfo);
+              done();
             }).catch((error: BusinessError) => {
               console.error(TAG, testName, `Failed to updateData error code is ${error.code}, message is ${error.message}`);
               expect().assertFail();
@@ -444,6 +455,7 @@ export default function ImageCreateIncrementalSourceSupp() {
            let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
            let imageInfo = pixelMap.getImageInfoSync();
            console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+           done();
          }).catch((error : BusinessError) => {
            console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
            expect().assertFail();
@@ -477,6 +489,7 @@ export default function ImageCreateIncrementalSourceSupp() {
            let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
            let imageInfo = pixelMap.getImageInfoSync();
            console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+           done();
          }).catch((error : BusinessError) => {
            console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
            expect().assertFail();
@@ -510,6 +523,7 @@ export default function ImageCreateIncrementalSourceSupp() {
            let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
            let imageInfo = pixelMap.getImageInfoSync();
            console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+           done();
          }).catch((error : BusinessError) => {
            console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
            expect().assertFail();
@@ -544,6 +558,7 @@ export default function ImageCreateIncrementalSourceSupp() {
             let pixelMap = imageSourceIncrementalSApi.createPixelMapSync();
             let imageInfo = pixelMap.getImageInfoSync();
             console.info(TAG,testName,'Succeeded in creating pixelMap',imageInfo);
+            done();
           }).catch((error : BusinessError) => {
             console.error(TAG,testName,`Failed to updateData error code is ${error.code}, message is ${error.message}`);
             expect().assertFail();

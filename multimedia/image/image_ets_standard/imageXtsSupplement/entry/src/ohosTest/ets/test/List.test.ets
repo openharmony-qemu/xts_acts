@@ -73,6 +73,9 @@ import ImagePropertyKeySyncEnumStripOffsets from './image/ImagePropertyKeySyncEn
 import modifyImagePropertyTest from './image/ModifyImageProperty.test';
 import modifyImagePropertyTests from './image/ModifyImagePropertyKey.test';
 import ImageImagePackerPackingSupp from './image/ImagePackerPackingSupp.test';
+import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
+import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
+import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 
 
 export default function testsuite() {
@@ -136,4 +139,7 @@ export default function testsuite() {
   modifyImagePropertyTest();
   modifyImagePropertyTests();
   ImageImagePackerPackingSupp();
+  ImageCreateImageReceiverCreator();
+  PictureGetMetadataFirstParameters();
+  CreatePixelMapUsingAllocatorAndSync();
 }
