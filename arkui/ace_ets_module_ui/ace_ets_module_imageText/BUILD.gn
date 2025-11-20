@@ -54,6 +54,7 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api21:ActsAceEtsModuleImageTextApi21Test",
       "ace_ets_module_imageText_api22:ActsAceEtsModuleImageTextApi22Test",
       "ace_ets_module_imageText_common:ActsAceEtsModuleImageTextCommonTest",
+      "ace_ets_module_imageText_common_nowear:ActsAceEtsModuleImageTextCommonNowearTest",
       "ace_ets_module_imageText_display:ActsAceEtsModuleImageTextDisplayTest",
       "ace_ets_module_imageText_edit:ActsAceEtsModuleImageTextEditTest",
       "ace_ets_module_imageText_edit_nowear:ActsAceEtsModuleImageTextEditNowearTest",

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
 import router from '@ohos.router';
 import { Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -40,6 +40,14 @@ export default function SetMenuOptionsTest() {
         expect().assertFail();
       }
       done();
+    });
+
+    afterEach(async (done: Function) => {
+      console.info("SetMenuOptionsTest afterEach start");
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      console.info("SetMenuOptionsTest afterEach end");
     });
 
     /**

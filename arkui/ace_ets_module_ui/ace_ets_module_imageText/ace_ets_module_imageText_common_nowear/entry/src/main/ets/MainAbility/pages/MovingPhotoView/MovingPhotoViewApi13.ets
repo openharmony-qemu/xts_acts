@@ -56,7 +56,7 @@ async function example111() {
 struct MovingPhotoViewApi13 {
   controller: MovingPhotoViewController = new MovingPhotoViewController()
   @State src: photoAccessHelper.MovingPhoto | undefined = undefined;
-  @State ImageFit: ImageFit | undefined | null = ImageFit.Contain;
+  @State imageFit: ImageFit | undefined | null = ImageFit.Contain;
   @State start: string = 'Init';
   @State stop: string = 'Init';
   @State pause: string = 'Init';
@@ -87,7 +87,7 @@ struct MovingPhotoViewApi13 {
             .width(200)
             .height('20%')
             .muted(this.flag)
-            .objectFit(this.ImageFit)
+            .objectFit(this.imageFit)
             .onStart(() => {
               this.start = 'onStart succ'
             })
