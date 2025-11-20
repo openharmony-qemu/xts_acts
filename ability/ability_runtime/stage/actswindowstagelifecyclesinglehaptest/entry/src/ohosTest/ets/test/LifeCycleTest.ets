@@ -18,6 +18,7 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import ability from '@ohos.ability.ability';
 import base from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
+import { Driver, ON, Component} from '@kit.TestKit';
 
 let TAG = "";
 let tempCallbackId;
@@ -64,9 +65,21 @@ function sleep(time: number): Promise<void> {
 }
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
+let driver = Driver.create();
 
 export default function lifecycleTest() {
   describe('LifeCycleTest', () => {
+    beforeAll(async () => {
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
+    })
 
     beforeEach(async (done: Function) => {
       console.info('LifeCycleTest before each called');

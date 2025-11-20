@@ -18,14 +18,27 @@ import commonEvent from "@ohos.commonEventManager"
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from "@ohos.base";
+import { Driver, ON, Component} from '@kit.TestKit';
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let subscriberInfo_MainAbility: commonEvent.CommonEventSubscribeInfo = {
   events: ["GetCurrentTopAbility"],
 };
+let driver = Driver.create();
 
 export default function abilityTest() {
   describe('ActsGetAbilityStateStageTest', () => {
+    beforeAll(async () => {
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
+    })
 
     /*
      * @tc.number  : ACTS_GetAbilityState_0200
