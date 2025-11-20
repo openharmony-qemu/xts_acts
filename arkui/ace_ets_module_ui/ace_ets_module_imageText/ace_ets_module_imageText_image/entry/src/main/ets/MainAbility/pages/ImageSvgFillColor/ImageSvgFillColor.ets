@@ -11,7 +11,8 @@ class FillColorCategory {
   colorDesc: string[]
   colorIndex: number
 
-  constructor(image: string, colors: (ResourceColor | ColorContent | null | undefined)[], colorDesc: string[], colorIndex: number) {
+  constructor(image: string, colors: (ResourceColor | ColorContent | null | undefined)[],
+              colorDesc: string[], colorIndex: number) {
     idIndex += 1
     this.imageKey = 'svgFillColorImageKey' + idIndex
     this.buttonID = 'svgFillColorButton' + idIndex
