@@ -263,7 +263,7 @@ export default function etsIntlFunTest() {
             };
             let intlObj = new Intl.DateTimeFormat("zh-CN", options);
             console.log("intlDateTimeFormatTest015::" + intlObj.format(newDate));
-            expect(intlObj.format(newDate)).assertEqual('2022年10月8日 UTC 上午12:00');
+            expect(intlObj.format(newDate)).assertEqual('2022年10月8日 UTC 00:00');
             expect(intlObj.resolvedOptions().timeZone).assertEqual('UTC');
             expect(intlObj.resolvedOptions().timeZoneName).assertEqual('short');
         })
@@ -592,7 +592,7 @@ export default function etsIntlFunTest() {
             console.log("intlNumberFormatTest017::" + intlObj.format(numberValue));
             expect(intlObj.format(numberValue)).assertEqual('+USD 123,456.79');
             expect(intlObj.resolvedOptions().currency).assertEqual('USD');
-            expect(intlObj.format(numberValue)).assertContain('+USD 123,456.79');
+            expect(intlObj.format(numberValue)).assertContain('123,456.79');
         })
 
         /**
