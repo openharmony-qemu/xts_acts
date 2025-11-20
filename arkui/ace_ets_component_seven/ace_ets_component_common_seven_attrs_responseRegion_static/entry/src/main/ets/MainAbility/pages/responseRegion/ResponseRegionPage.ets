@@ -14,8 +14,8 @@
  */
 
 import {
-  AlignRuleOption,
   $r,
+  AlignRuleOption,
   AlphabetIndexer,
   AlphabetIndexerAttribute,
   AttributeModifier,
@@ -196,7 +196,7 @@ import {
   WindowSceneAttribute,
   XComponentAttribute
 } from '@ohos.arkui.component';
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -1010,10 +1010,9 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
     width: '19%',
     height: '23%'
   }]
-
-  applyNormalAttribute(instance: SpanAttribute): void {
-    // instance.responseRegion(this.mResponseRegion)
-  }
+  // applyNormalAttribute(instance: SpanAttribute): void {
+  // instance.responseRegion(this.mResponseRegion)
+  // }
 }
 
 class StackModifier implements AttributeModifier<StackAttribute> {
@@ -1761,7 +1760,7 @@ struct ResponseRegionPage {
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
   @State parentBackGroundColor: string = '';
-  @StorageProp('_responseRegion') _responseRegion: Array<Rectangle> = [{
+  @StoragePropRef('_responseRegion') _responseRegion: Array<Rectangle> = [{
     x: 0,
     y: 0,
     width: 0,
@@ -1795,8 +1794,8 @@ struct ResponseRegionPage {
       }
       if (this.targetView == 'Button') {
         Button('button1')
-          .commonStyleButton(this.componentKey, this._responseRegion)
           .attributeModifier(this._responseRegionButtonModifier)
+          .commonStyleButton(this.componentKey, this._responseRegion)
       }
       if (this.targetView == 'Blank') {
         Blank()
@@ -1855,7 +1854,7 @@ struct ResponseRegionPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Int.MAX_VALUE,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -2252,13 +2251,13 @@ struct ResponseRegionPage {
       if (this.targetView == 'Scroll') {
         Scroll() {
           Column() {
-            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: Int) => {
               Text('Scroll' + item.toString())
                 .width('90%')
                 .height(50)
                 .backgroundColor(Color.White)
                 .textAlign(TextAlign.Center)
-            }, (item: int) => item.toString())
+            }, (item: int, index: Int) => item.toString())
           }
           .width('100%')
         }
@@ -2269,7 +2268,7 @@ struct ResponseRegionPage {
       if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3], (item: int, index: int) => {
+            ForEach([1, 2, 3], (item: int, index: Int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(50)
@@ -2300,11 +2299,11 @@ struct ResponseRegionPage {
       }
       if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3], (item: int, index: int) => {
+          ForEach([1, 2, 3], (item: int, index: Int) => {
             Text('Swiper' + item)
               .width('90%')
               .height(50)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int, index: Int) => item.toString())
         }
         .indicator(true)
         .backgroundColor(Color.White)
@@ -2340,7 +2339,7 @@ struct ResponseRegionPage {
       }
       if (this.targetView == 'WaterFlow') {
         WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: Int) => {
             FlowItem() {
               Column() {
                 Text('WaterFlow' + item)
@@ -2352,7 +2351,7 @@ struct ResponseRegionPage {
                   .objectFit(ImageFit.Fill)
               }
             }
-          }, (item: int, index: int) => item.toString())
+          }, (item: int, index: Int) => item.toString())
         }
         .commonStyle(this.componentKey)
         .attributeModifier(this._responseRegionWaterFlowModifier)
@@ -2393,7 +2392,7 @@ struct ResponseRegionPage {
       }
       if (this.targetView == 'FlowItem') {
         WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: Int) => {
             FlowItem() {
               Column() {
                 Text('WaterFlow' + item)
@@ -2408,7 +2407,7 @@ struct ResponseRegionPage {
             .backgroundColor(Color.Yellow)
             .commonStyle(this.componentKey)
             .attributeModifier(this._responseRegionFlowItemModifier)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int, index: Int) => item.toString())
         }
         .backgroundColor(Color.Pink)
         .width('100%')

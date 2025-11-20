@@ -195,10 +195,9 @@ import {
 	WebAttribute,
 	WebviewController,
 	WindowSceneAttribute,
-	XComponentAttribute,
-  AlignRuleOption
+	XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -695,44 +694,44 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+// 	mRadialGradient: RadialGradientOptions = {
+// 			center: [50, 50],
+// 			radius: 60,
+// 			repeating: true,
+// 			colors: [['FFFF0000', 0.0], ['FF0000FF', 0.3], ['FFFFFF00', 0.5]]
+// 		}
+//
+// 	applyNormalAttribute(instance: NavigatorAttribute): void {
+// 		instance.radialGradient(this.mRadialGradient)
+// 	}
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+// 	mRadialGradient: RadialGradientOptions = {
+// 			center: [50, 50],
+// 			radius: 60,
+// 			repeating: true,
+// 			colors: [['FFFF0000', 0.0], ['FF0000FF', 0.3], ['FFFFFF00', 0.5]]
+// 		}
+//
+// 	applyNormalAttribute(instance: NavRouterAttribute): void {
+// 		instance.radialGradient(this.mRadialGradient)
+// 	}
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+// 	mRadialGradient: RadialGradientOptions = {
+// 			center: [50, 50],
+// 			radius: 60,
+// 			repeating: true,
+// 			colors: [['FFFF0000', 0.0], ['FF0000FF', 0.3], ['FFFFFF00', 0.5]]
+// 		}
+//
+// 	applyNormalAttribute(instance: PanelAttribute): void {
+// 		instance.radialGradient(this.mRadialGradient)
+// 	}
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
   mRadialGradient: RadialGradientOptions = {
@@ -1029,7 +1028,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-	/* radialGradient not supported */
+
   }
 }
 
@@ -1724,9 +1723,9 @@ struct RadialGradientPage {
   @State _radialGradientMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _radialGradientNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
   @State _radialGradientNavigationModifier: NavigationModifier = new NavigationModifier()
-  
-  
-  
+  // @State _radialGradientNavigatorModifier: NavigatorModifier = new NavigatorModifier()
+  // @State _radialGradientNavRouterModifier: NavRouterModifier = new NavRouterModifier()
+  // @State _radialGradientPanelModifier: PanelModifier = new PanelModifier()
   @State _radialGradientPathModifier: PathModifier = new PathModifier()
   @State _radialGradientPolygonModifier: PolygonModifier = new PolygonModifier()
   @State _radialGradientPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1771,13 +1770,13 @@ struct RadialGradientPage {
   @State _radialGradientXComponentModifier: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
   @State parentComponentKey: string = '';
   @State parentBackGroundColor: string = '';
-  @StoragePropRef('_radialGradient') _radialGradient: SetValue = {
+  @StorageProp('_radialGradient') _radialGradient: SetValue = {
     height: 0,
     radialGradient:{
       center: [0, 0],
@@ -1795,8 +1794,8 @@ struct RadialGradientPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
   }
@@ -1870,7 +1869,7 @@ struct RadialGradientPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: Infinity as Int,
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -1892,18 +1891,18 @@ struct RadialGradientPage {
         .attributeModifier(this._radialGradientMenuModifier)
       }
       if (this.targetView == 'NavRouter') {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // NavRouter() {
+        // 	Row() {
+        // 		Image($r('app.media.icon'))
+        // 	}
+        //
+        // 	NavDestination() {
+        // 		Text('NavDestination')
+        // 			.fontSize(10)
+        // 	}
+        // }
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._radialGradientNavRouterModifier)
       }
       if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Eclipse })
@@ -2213,22 +2212,22 @@ struct RadialGradientPage {
         .height('100%')
       }
       if (this.targetView == 'Navigator') {
-        
-        
-        
-        
-        
-        
-        
-        
+        // Navigator() {
+        // 	Text('Go to back page')
+        // 		.width('100%')
+        // 		.height(20)
+        // }
+        // 	.backgroundColor(Color.Red)
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._radialGradientNavigatorModifier)
       }
       if (this.targetView == 'Panel') {
-        
-        
-        
-        
-        
-        
+        // Panel(true) {
+        // 	Text('Text')
+        // }
+        // 	.backgroundColor(Color.Yellow)
+        // 	.commonStyle(this.componentKey)
+        // 	.attributeModifier(this._radialGradientPanelModifier)
       }
       if (this.targetView == 'Refresh') {
         Refresh({ refreshing: true }) {
@@ -2246,7 +2245,7 @@ struct RadialGradientPage {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            } as AlignRuleOption)
+            })
             .id('constraintSize')
         }
         .commonStyle(this.componentKey)

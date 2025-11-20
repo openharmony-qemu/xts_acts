@@ -22,12 +22,12 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
  * Test of common attribute: restoreId
  */
 export default function restoreIdTest() {
-  
+  //A list of components that support padding attributes is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Page related configuration, this parameter is required.
   let targetComponentWrestoreIdth = 200;
   let targetComponentHeight = 200;
   let parentWrestoreIdth = 320;
@@ -48,7 +48,7 @@ export default function restoreIdTest() {
     columns: columns
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues:TestValue[]= [{
     describe: 'SetRestoreId',
     setValue: {

@@ -25,7 +25,7 @@ export default function radialGradientTest() {
     'Button'
   ]
 
-  
+  //Page related configuration, this parameter is required.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -46,7 +46,7 @@ export default function radialGradientTest() {
     columns: columns
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [{
     describe: 'SetRadialGradient',
     setValue: {
