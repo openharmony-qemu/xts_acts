@@ -627,6 +627,7 @@ export default function DeviceInfoTest() {
 
             expect(sdkApiVersionInfo).assertInstanceOf('Number');
             expect(sdkApiVersionInfo >= 0).assertTrue();
+            done();
 
             let str = /[\w-\.\(\)]/g;
             let arr = sdkApiVersionInfo.toString().match(str);
@@ -653,6 +654,7 @@ export default function DeviceInfoTest() {
 
             expect(firstApiVersionInfo).assertInstanceOf('Number');
             expect(firstApiVersionInfo >= 0).assertTrue();
+            done();
 
             let str = /[\w-\.\(\)]/g;
             let arr = firstApiVersionInfo.toString().match(str);
@@ -1411,6 +1413,7 @@ export default function DeviceInfoTest() {
             let reFormat = /^(\d{4})\/(\d{2})\/(\d{2})$/;
             let re = securityPatchTagInfo.match(reFormat);
             expect(re != null).assertTrue();
+            done();
 
             console.info('testGetSecurityPatchTag02 : end');
         })
@@ -1509,6 +1512,7 @@ export default function DeviceInfoTest() {
 
             expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
             expect(distributionOSApiVersionInfo >= 0).assertTrue();
+            done();
 
             let str = /[\w-\.\(\)]/g;
             let arr = distributionOSApiVersionInfo.toString().match(str);
@@ -1615,8 +1619,8 @@ export default function DeviceInfoTest() {
             if (distributionOSApiName != "" && distributionOSApiName != null && distributionOSApiName != undefined) {	
                 console.info('the value of the deviceinfo distributionOSApiName is :' + distributionOSApiName);	
                 expect(distributionOSApiName).assertInstanceOf('String');	
-                done();
             }
+            done();
             
             console.info('device_info_test_072 : end');
         })
@@ -1817,6 +1821,7 @@ export default function DeviceInfoTest() {
             console.info('the value of the deviceinfo bootCount is :' + bootCount);
             expect(bootCount).assertInstanceOf('Number');
             expect(bootCount > -1).assertTrue();
+            done();
 
             console.info('device_info_test_081 end');
         })
