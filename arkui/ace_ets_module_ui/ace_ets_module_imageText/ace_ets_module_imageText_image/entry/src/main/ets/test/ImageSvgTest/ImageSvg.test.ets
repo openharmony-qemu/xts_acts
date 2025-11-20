@@ -31,12 +31,12 @@ export default function ImageSupportSvg2Test() {
         if (!('ImageSupportSvg2' == pages.name)) {
           console.info('get ImageSupportSvg2Test state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options)
+          await CommonFunc.sleep(2000);
           console.info('push ImageSupportSvg2Test page success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push ImageSupportSvg2Test page error ' + JSON.stringify(err));
       }
-      await CommonFunc.sleep(2000);
       console.info('ImageSupportSvg2Test beforeEach start');
       done();
     })

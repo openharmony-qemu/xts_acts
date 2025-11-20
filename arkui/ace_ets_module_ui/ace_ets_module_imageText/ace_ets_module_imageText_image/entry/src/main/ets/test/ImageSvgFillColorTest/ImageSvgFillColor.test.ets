@@ -32,12 +32,12 @@ export default function ImageSvgFillColorTest() {
         if (!('ImageSvgFillColor' == pages.name)) {
           console.info('get ImageSvgFillColorTest state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options)
+          await CommonFunc.sleep(2000);
           console.info('push ImageSvgFillColorTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push ImageSvgFillColorTest page error ' + JSON.stringify(err));
       }
-      await CommonFunc.sleep(2000);
       console.info('ImageSvgFillColorTest beforeEach start');
       done();
     })

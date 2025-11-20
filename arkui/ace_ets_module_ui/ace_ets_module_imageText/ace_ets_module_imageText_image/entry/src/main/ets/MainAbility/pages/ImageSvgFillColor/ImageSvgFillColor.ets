@@ -10,12 +10,8 @@ class FillColorCategory {
   colors: (ResourceColor | ColorContent | null | undefined)[]
   colorDesc: string[]
   colorIndex: number
-  alt?: string
 
-  constructor(image: string,
-              colors: (ResourceColor | ColorContent | null | undefined)[],
-              colorDesc: string[],
-              colorIndex: number, alt?: string) {
+  constructor(image: string, colors: (ResourceColor | ColorContent | null | undefined)[], colorDesc: string[], colorIndex: number) {
     idIndex += 1
     this.imageKey = 'svgFillColorImageKey' + idIndex
     this.buttonID = 'svgFillColorButton' + idIndex
@@ -23,7 +19,6 @@ class FillColorCategory {
     this.colors = colors
     this.colorDesc = colorDesc
     this.colorIndex = colorIndex
-    this.alt = alt
   }
 }
 
@@ -39,7 +34,6 @@ struct Child {
         .width(20)
         .height(20)
         .fillColor(this.item.colors[this.item.colorIndex])
-        .alt($r(this.item.alt))
         .key(this.item.imageKey)
       Button('change')
         .id(this.item.buttonID)
@@ -57,51 +51,81 @@ struct Child {
 
 export let allCategories: FillColorCategory[] = [
   new FillColorCategory(
-    'app.media.comment_area_like', [
-  Color.Red,
-  Color.Green,
-  ColorContent.ORIGIN,],
+    'app.media.comment_area_like',
+    [
+      Color.Red,
+      Color.Green,
+      ColorContent.ORIGIN,
+    ],
     ['#FFFF0000', '#FF008000', '#FF000000'],
-    0),
-  new FillColorCategory('app.media.comment_area_like', [
-    0xffffff,
-    0xffff0000,
-  ColorContent.ORIGIN],
+    0
+  ),
+  new FillColorCategory(
+    'app.media.comment_area_like',
+    [
+      0xffffff,
+      0xffff0000,
+      ColorContent.ORIGIN,
+    ],
     ['#FFFFFFFF', '#FFFF0000', '#FF000000'],
-    0),
-  new FillColorCategory('app.media.comment_area_like', [
-    '#ffffff',
-    '#ff000000',
-    'rgba(255, 100, 255, 0.5)',
-  ColorContent.ORIGIN,],
+    0
+  ),
+  new FillColorCategory(
+    'app.media.comment_area_like',
+    [
+      '#ffffff',
+      '#ff000000',
+      'rgba(255, 100, 255, 0.5)',
+      ColorContent.ORIGIN,
+    ],
     ['#FFFFFFFF', '#FF000000', '#80FF64FF', '#FF000000'],
-    0),
-  new FillColorCategory('app.media.comment_area_like', [
-    null,
-    undefined,
-  ColorContent.ORIGIN,],
+    0
+  ),
+  new FillColorCategory(
+    'app.media.comment_area_like',
+    [
+      null,
+      undefined,
+      ColorContent.ORIGIN,
+    ],
     ['#FF000000', '#FF000000', '#FF000000'],
-    0),
-  new FillColorCategory('app.media.comment_area_like', [
-    'xxxx',
-  ColorContent.ORIGIN],
+    0
+  ),
+  new FillColorCategory(
+    'app.media.comment_area_like',
+    [
+      'xxxx',
+      ColorContent.ORIGIN],
     ['#FF000000', '#FF000000'],
-    0),
-  new FillColorCategory('app.media.feOffset_2', [
-    0xffffff,
-  ColorContent.ORIGIN,],
+    0
+  ),
+  new FillColorCategory(
+    'app.media.feOffset_2',
+    [
+      0xffffff,
+      ColorContent.ORIGIN,
+    ],
     ['#FFFFFFFF', '#FF000000'],
-    0),
-  new FillColorCategory('app.media.linearGradient_2', [
-    '#ffffff',
-  ColorContent.ORIGIN,],
+    0
+  ),
+  new FillColorCategory(
+    'app.media.linearGradient_2',
+    [
+      '#ffffff',
+      ColorContent.ORIGIN,
+    ],
     ['#FFFFFFFF', '#FF000000'],
-    0),
-  new FillColorCategory('', [
-    '#ffffff',
-  ColorContent.ORIGIN,],
+    0
+  ),
+  new FillColorCategory(
+    '',
+    [
+      '#ffffff',
+      ColorContent.ORIGIN,
+    ],
     ['#FFFFFFFF', '#FF000000'],
-    0, 'app.media.logo'),
+    0
+  ),
 ]
 
 class MyImageSVGModifier implements AttributeModifier<ImageAttribute> {
@@ -120,7 +144,7 @@ class MyImageSVGModifier implements AttributeModifier<ImageAttribute> {
 
 @Entry
 @Component
-struct ImageSVGFillColor {
+struct ImageSVGFillColorPage {
   @State categories: FillColorCategory[] = allCategories
   @State modifier: MyImageSVGModifier = new MyImageSVGModifier()
 
