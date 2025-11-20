@@ -4,6 +4,7 @@
     "testability/pages/webViewSrollByJsunit",
     "testability/pages/WebNestedScrollOptionsScrollForwardHorizontalTest",
     "testability/pages/WebNestedScrollOptionsScrollBackwardHorizontalTest",
-    "testability/pages/scrollBar"
+    "testability/pages/scrollBar",
+    "testability/pages/WebViewSetScrollbarMode"
   ]
 }
