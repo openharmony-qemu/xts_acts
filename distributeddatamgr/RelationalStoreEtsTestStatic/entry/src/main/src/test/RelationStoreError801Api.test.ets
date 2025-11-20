@@ -108,10 +108,11 @@ import {
       it('ReadonlyErrCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
         async (done: () => void): Promise<void> => {
           console.info(TAG + "************* ReadonlyErrCode001 start *************");
-          await rdbStore.insert("test", valueBucket).then((rowId: long) => {
+          rdbStore.insert("test", valueBucket).then((rowId: long) => {
             console.info(`ReadonlyErrCode001 Insert2 is successful, rowId = ${rowId}`);
             expect().assertFail();
-          }).catch((err) => {
+          }).catch((e: Error): void => {
+            let err = e as BusinessError;
             console.error(TAG + `ReadonlyErrCode001 Insert2 is failed, code is ${err.code},message is ${err.message}`);
             expect(err.code == 801).assertTrue();
           });
@@ -147,11 +148,12 @@ import {
           }
   
           let valueBuckets = new Array<relationalStore.ValuesBucket>(valueBucket, valueBucket1);
-          await rdbStore.batchInsert("test", valueBuckets).then((insertNum: long) => {
+          rdbStore.batchInsert("test", valueBuckets).then((insertNum: long) => {
             console.info(TAG +
               `ReadonlyErrCode001 batchInsert2 is successful, the number of values that were inserted = ${insertNum}`);
             expect().assertFail();
-          }).catch((err) => {
+          }).catch((e: Error): void => {
+            let err = e as BusinessError;
             console.error(TAG +
               `ReadonlyErrCode001 batchInsert2 is failed, code is ${err.code},message is ${err.message}`);
             expect(err.code == 801).assertTrue();
