@@ -66,7 +66,7 @@ import {
   
   export default function RelationStoreError801Test() {
     describe('RelationStoreError801Test', (): void => {
-      beforeAll(async () => {
+      beforeAll(async () : Promise<void> => {
         console.log(TAG + 'beforeAll');
         await Utils.msSleep(2000)
         abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
@@ -89,7 +89,7 @@ import {
         console.info(TAG + 'afterEach')
       })
   
-      afterAll(async () => {
+      afterAll(async () : Promise<void> => {
         console.info(TAG + 'afterAll');
         await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
       })
