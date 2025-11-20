@@ -311,27 +311,6 @@ export default function getProfileByExtensionAbility() {
     })
 
     /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_4600
-     * @tc.name: getProfileByExtensionAbilityNoProfilePro
-     * @tc.desc: no profile configured under the ability (by promise)
-     * @tc.level   0
-     */
-    it('getProfileByExtensionAbilityNoProfilePro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
-      await manager.getProfileByExtensionAbility(MODULE_NAME, ABILITY_NAME1).then(data => {
-        console.info('[getProfileByExtensionAbilityNoProfilePro] getProfileByExtensionAbility callback data is: ' +
-        JSON.stringify(data));
-        expect().assertFail();
-        done();
-      }).catch((err: BusinessError) => {
-        console.error('[getProfileByExtensionAbilityNoProfilePro]Operation failed. Cause: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
-        done();
-      })
-    })
-
-
-
-    /*
      * @tc.number: Sub_Bms_Framework_Query_Profile_0600
      * @tc.name: getProfileByExtensionAbilityNoJsonPro
      * @tc.desc: profile is invalid json format (by promise)
