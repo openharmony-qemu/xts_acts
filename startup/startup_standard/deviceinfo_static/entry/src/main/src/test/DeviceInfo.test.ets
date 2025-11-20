@@ -464,16 +464,8 @@ export default function DeviceInfoTest() {
       console.info('the value of the majorVersion is :' + majorVersionInfo);
 
       expect(majorVersionInfo).assertInstanceOf('Number');
-      if (majorVersionInfo >= 1 && majorVersionInfo <= 99) {
-        console.info('the value of the majorVersion is :' + majorVersionInfo);
-        expect().assertTrue();
-        done();
-      }
-      else {
-        console.info('the return value majorVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect(majorVersionInfo >= 1 && majorVersionInfo <= 99).assertTrue();
+
       console.info('deviceinfo_test_static_1800 : end');
     })
 
@@ -491,16 +483,8 @@ export default function DeviceInfoTest() {
       console.info('the value of the seniorVersion is :' + seniorVersionInfo);
 
       expect(seniorVersionInfo).assertInstanceOf('Number');
-      if (seniorVersionInfo >= 0 && seniorVersionInfo <= 99) {
-        console.info('the value of the seniorVersion is :' + seniorVersionInfo);
-        expect().assertTrue();
-        done();
-      }
-      else {
-        console.info('the return value seniorVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect(seniorVersionInfo >= 0 && seniorVersionInfo <= 99).assertTrue();
+
       console.info('deviceinfo_test_static_1900 : end');
     })
 
@@ -518,16 +502,8 @@ export default function DeviceInfoTest() {
       console.info('the value of the featureVersion is :' + featureVersionInfo);
 
       expect(featureVersionInfo).assertInstanceOf('Number');
-      if ((featureVersionInfo >= 1 && featureVersionInfo <= 99) || featureVersionInfo == 0) {
-        console.info('the value of the featureVersion is :' + featureVersionInfo);
-        expect().assertTrue();
-        done();
-      }
-      else {
-        console.info('the return value featureVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect((featureVersionInfo >= 1 && featureVersionInfo <= 99) || featureVersionInfo == 0).assertTrue();
+
       console.info('deviceinfo_test_static_2000 : end');
     })
 
@@ -545,16 +521,8 @@ export default function DeviceInfoTest() {
       console.info('the value of the buildVersion is :' + buildVersionInfo);
 
       expect(buildVersionInfo).assertInstanceOf('Number');
-      if (buildVersionInfo == 0 || (buildVersionInfo >= 1 && buildVersionInfo <= 999)) {
-        console.info('the value of the buildVersion is :' + buildVersionInfo);
-        expect().assertTrue();
-        done();
-      }
-      else {
-        console.info('the return value buildVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect(buildVersionInfo == 0 || (buildVersionInfo >= 1 && buildVersionInfo <= 999)).assertTrue();
+
       console.info('deviceinfo_test_static_2100 : end');
     })
 
@@ -572,16 +540,8 @@ export default function DeviceInfoTest() {
       console.info('the value of the sdkApiVersion is :' + sdkApiVersionInfo);
 
       expect(sdkApiVersionInfo).assertInstanceOf('Number');
-      if (sdkApiVersionInfo >= 0) {
-        console.info('the value of the sdkApiVersion is :' + sdkApiVersionInfo);
-        expect().assertTrue();
-        done();
-      }
-      else {
-        console.info('the return value sdkApiVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect(sdkApiVersionInfo >= 0).assertTrue();
+
       console.info('deviceinfo_test_static_2200 : end');
     })
 
@@ -599,16 +559,8 @@ export default function DeviceInfoTest() {
       console.info('the value of the firstApiVersion is :' + firstApiVersionInfo);
 
       expect(firstApiVersionInfo).assertInstanceOf('Number');
-      if (firstApiVersionInfo >= 0) {
-        console.info('the value of the firstApiVersion is :' + firstApiVersionInfo);
-        expect().assertTrue();
-        done();
-      }
-      else {
-        console.info('the return value firstApiVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect(firstApiVersionInfo >= 0).assertTrue();
+
       console.info('deviceinfo_test_static_2300 : end');
     })
 
@@ -849,16 +801,8 @@ export default function DeviceInfoTest() {
       console.info('the value of the distributionOSApiVersion is :' + distributionOSApiVersionInfo);
 
       expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
-      if (distributionOSApiVersionInfo >= 0) {
-        console.info('the value of the distributionOSApiVersion is :' + distributionOSApiVersionInfo);
-        expect().assertTrue();
-        done();
-      }
-      else {
-        console.info('the return value distributionOSApiVersion is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      expect(distributionOSApiVersionInfo >= 0).assertTrue();
+
       console.info('deviceinfo_test_static_3300 : end');
     })
 
@@ -950,25 +894,11 @@ export default function DeviceInfoTest() {
       let deviceTypeInfo = deviceinfo.deviceType;
       expect(diskSNInfo).assertInstanceOf('String');
       if(deviceTypeInfo == '2in1'){
-        if (diskSNInfo != "" && diskSNInfo != null && diskSNInfo != undefined) {
-          console.info('the value of the diskSN is :' + diskSNInfo);
-          expect().assertTrue();
-          done();
-        } else {
-          console.info('the return value diskSN is null or incorrect.');
-          expect().assertFail();
-          done();
-        }
+        expect(diskSNInfo != "" && diskSNInfo != null && diskSNInfo != undefined).assertTrue();
+        done();      
       }else{
-        if (diskSNInfo == "") {
-          console.info('the value of the diskSN is :' + diskSNInfo);
-          expect().assertTrue();
-          done();
-        } else {
-          console.info('the return value diskSN is not null or incorrect.');
-          expect().assertFail();
-          done();
-        }
+        expect(diskSNInfo == "").assertTrue();
+        done();
       }
       console.info('deviceinfo_test_static_3700 : end');
     })
