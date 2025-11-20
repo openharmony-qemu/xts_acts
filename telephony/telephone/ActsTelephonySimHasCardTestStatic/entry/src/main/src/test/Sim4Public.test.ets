@@ -446,14 +446,13 @@ export default function Sim4Public() {
       }
       try{
         let data: sim.SimLabel = sim.getSimLabelSync(-1);
-        console.info(`${caseName} sim card is 001122,  data->${JSON.stringify(data)}`);
-        if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
-          console.info(`${caseName} sim card is PSIM,  data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else if (data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
-          console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
+        console.info(`${caseName} failed`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        if (err === “Error: Invalid parameter value.”){
+          console.info(`${caseName} successfully: err ->` + err);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
           done();
@@ -463,11 +462,6 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         }
-      } catch (err) {
-        console.info(`${caseName} failed, err->` + err);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
       }
     });
 
@@ -586,14 +580,13 @@ export default function Sim4Public() {
       }
       try{
         let data: sim.SimLabel = sim.getSimLabelSync(2);
-        console.info(`${caseName} sim card is 0400004, data->${JSON.stringify(data)}`);
-        if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
-          console.info(`${caseName} sim card is PSIM, data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else if (data?.index as int <= 2 && data?.simType == sim.SimType.ESIM) {
-          console.info(`${caseName} sim card is ESIM, data->${JSON.stringify(data)}`);
+        console.info(`${caseName} failed`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        if (err === “Error: Invalid parameter value.”){
+          console.info(`${caseName} successfully: err ->` + err);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
           done();
@@ -603,11 +596,6 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         }
-      } catch (err) {
-          console.info(`${caseName} failed, err->` + err);
-          ExpectFail();
-          console.info(`${caseName} test end`);
-          done();
       }
     });
   });
