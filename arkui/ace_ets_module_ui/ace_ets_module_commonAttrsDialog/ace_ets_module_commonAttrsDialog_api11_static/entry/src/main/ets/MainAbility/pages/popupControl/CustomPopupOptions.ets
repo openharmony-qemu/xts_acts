@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,52 +15,71 @@
 
 import events_emitter from '@ohos.events.emitter';
 import {
-  $r,
-  $rawfile,
-  ArrowPointPosition,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Dimension,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  Padding,
-  Placement,
-  Position,
-  ResourceStr,
-  Row,
-  RowOptions,
-  Text,
-  TextAlign
+  FlexOptions,
+  ClickEvent,
+  ColumnOptions,
+  TextAlign,
+  $rawfile,Image,Color,Position,Row,Placement,$r,ResourceStr,ArrowPointPosition,RowOptions,Padding,Dimension,Builder,CustomPopupOptions,PopupStateChangeParam
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage,State } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
+// import testsuite from '../../../../src/test/List.test'
 
 @Entry
 @Component
 struct CustomPopupOptionsExample {
   @State customPopup: boolean = false;
 
+  @Builder
+  popupBuilder() {
+    Row({ space: 2 } as RowOptions) {
+      Image($r("app.media.icon"))
+        .width(24)
+        .height(24)
+        .margin({ left: -5 } as Margin)
+      Text('Custom Popup')
+        .fontSize(10)
+    }
+    .width(100)
+    .height(50)
+    .padding(5)
+  }
+
   build() {
     Flex({ direction: FlexDirection.Column } as FlexOptions) {
       Button('CustomPopupOptions')
         .id("CustomPopupOptions")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.customPopup = !this.customPopup
         })
+        .bindPopup(this.customPopup, {
+          builder: this.popupBuilder,
+          placement: Placement.Top,
+          mask: { color: '#33000000' },
+          popupColor: Color.Yellow,
+          enableArrow: true,
+          onStateChange: (e:PopupStateChangeParam) => {
+            if (!e.isVisible) {
+              this.customPopup = false
+            }
+          }
+        } as CustomPopupOptions)
     }
     .height('100%')
     .width('100%')

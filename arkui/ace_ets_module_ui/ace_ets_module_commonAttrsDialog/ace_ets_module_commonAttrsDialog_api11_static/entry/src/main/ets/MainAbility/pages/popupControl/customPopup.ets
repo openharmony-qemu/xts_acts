@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,46 +14,35 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import {
-  $r,
-  $rawfile,
-  ArrowPointPosition,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Dimension,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  Padding,
-  Placement,
-  Position,
-  ResourceStr,
-  Row,
-  RowOptions,
-  Text,
-  TextAlign
+  FlexOptions,
+  ClickEvent,
+  ColumnOptions,
+  TextAlign,
+  $rawfile,Image,Color,Position,Row,Placement,$r,ResourceStr,ArrowPointPosition,RowOptions,Padding,Dimension,Builder,CustomPopupOptions,PopupStateChangeParam
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage,State } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
-import { RecordData } from '@ohos.base'
 
 interface CustomEventData {
-  enableArrow?: boolean;
+  enableArrow?: boolean; // 可选属性，类型为布尔值
 
 }
-
 @Entry
 @Component
 struct customPopupExample12 {
@@ -66,18 +55,25 @@ struct customPopupExample12 {
   @State arrowHeight: Dimension = '20px';
   @State arrowPointPosition: ArrowPointPosition = ArrowPointPosition.START;
 
+  @Builder
+  popupBuilder() {
+    Row({ space: 2 } as RowOptions) {
+      Text('Custom Popup').fontSize(12).key('Custom_popup')
+    }.width(100).height(50).backgroundColor(Color.White)
+  }
+
   build() {
     Flex({ direction: FlexDirection.Column } as FlexOptions) {
       Button('custom popup')
         .key('custom1')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.customPopup = !this.customPopup
           try {
             let backData: events_emitter.EventData = {
               data: {
                 "enableArrow": this.enableArrow,
                 "arrowPointPosition": this.arrowPointPosition,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 67,
@@ -89,20 +85,32 @@ struct customPopupExample12 {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
+        .bindPopup(this.customPopup, {
+          builder: this.popupBuilder,
+          placement: Placement.Bottom,
+          arrowPointPosition: this.arrowPointPosition,
+          popupColor: Color.White,
+          enableArrow: this.enableArrow,
+          onStateChange: (e:PopupStateChangeParam) => {
+            if (!e.isVisible) {
+              this.customPopup = false
+            }
+          }
+        } as CustomPopupOptions)
         .position({ x: 100, y: 150 } as Position)
     }.width('100%').padding({ top: 5 } as Padding)
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack:(eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info("customPopupOption page state change called:" + JSON.stringify(eventData));
 
-
+      // 类型断言：明确 eventData.data 的类型为 CustomEventData
       const customData = eventData.data as CustomEventData;
 
-
+      // 检查 enableArrow 是否存在且为布尔类型
       if (typeof customData.enableArrow === 'boolean') {
-        this.enableArrow = customData.enableArrow as boolean;
+        this.enableArrow = customData.enableArrow as boolean; // 类型安全的赋值
       }
     }
   }

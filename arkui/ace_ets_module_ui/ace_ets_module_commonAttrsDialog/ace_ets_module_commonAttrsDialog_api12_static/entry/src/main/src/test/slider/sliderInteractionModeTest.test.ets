@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -60,12 +60,10 @@ export default function sliderInteractionModeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get sliderInteractionModeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("sliderInteractionModeTest" == pages.name)) {
           console.info("get sliderInteractionModeTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push sliderInteractionModeTest page error:" + err);
@@ -73,19 +71,19 @@ export default function sliderInteractionModeTest() {
       console.info("sliderInteractionModeTest beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    sliderInteractionModeTest_static_0100
-     * @tc.name      sliderInteractionModeTest_static_0100
-     * @tc.desc      sliderInteractionModeTest_static_0100
-     * @tc.level     2
+     * @tc.number   sliderInteractionModeTest_static_0100
+     * @tc.name     sliderInteractionModeTest_static_0100
+     * @tc.desc     sliderInteractionModeTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('sliderInteractionModeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('slider1'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click()
       await CommonFunc.sleep(1000);
       let slider = inspector.getInspectorByKey('slider1');
       console.info("[sliderInteractionModeTest_0100] sliderInteractionModeTest_0100 JSON.parseJsonElement(slider) is: " +
@@ -101,19 +99,19 @@ export default function sliderInteractionModeTest() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    sliderInteractionModeTest_static_0200
-     * @tc.name      sliderInteractionModeTest_static_0200
-     * @tc.desc      sliderInteractionModeTest_static_0200
-     * @tc.level     2
+     * @tc.number   sliderInteractionModeTest_static_0200
+     * @tc.name     sliderInteractionModeTest_static_0200
+     * @tc.desc     sliderInteractionModeTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('sliderInteractionModeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('slider2'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click()
       await CommonFunc.sleep(1000);
       let slider = inspector.getInspectorByKey('slider2');
       console.info("[sliderInteractionModeTest_0200] sliderInteractionModeTest_0200 JSON.parseJsonElement(slider) is: " +
@@ -129,19 +127,19 @@ export default function sliderInteractionModeTest() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    sliderInteractionModeTest_static_0300
-     * @tc.name      sliderInteractionModeTest_static_0300
-     * @tc.desc      sliderInteractionModeTest_static_0300
-     * @tc.level     2
+     * @tc.number   sliderInteractionModeTest_static_0300
+     * @tc.name     sliderInteractionModeTest_static_0300
+     * @tc.desc     sliderInteractionModeTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
     it('sliderInteractionModeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('slider3'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click()
       await CommonFunc.sleep(1000);
       let slider = inspector.getInspectorByKey('slider3');
       console.info("[sliderInteractionModeTest_0300] sliderInteractionModeTest_0300 JSON.parseJsonElement(slider) is: " +

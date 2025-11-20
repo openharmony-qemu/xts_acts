@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -61,12 +61,10 @@ export default function SheetTransition() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get SheetTransition state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SheetTransition" == pages.name)) {
           console.info("get SheetTransition pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push SheetTransition page error:" + err);
@@ -74,22 +72,23 @@ export default function SheetTransition() {
       console.info("SheetTransition beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    SheetTransition_static_0100
-     * @tc.name      SheetTransition_static_0100
-     * @tc.desc      SheetTransition_static_0100
-     * @tc.level     2
+     * @tc.number   SheetTransition_static_0100
+     * @tc.name     SheetTransition_static_0100
+     * @tc.desc     SheetTransition_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SheetTransition_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('SheetTransition'));
-      await ((button?.click()) as Promise<void>)
+      button?.click();
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey('SheetTypeValue');
+      await CommonFunc.sleep(2000);
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SheetTransition_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SheetTransition_0100] title: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));

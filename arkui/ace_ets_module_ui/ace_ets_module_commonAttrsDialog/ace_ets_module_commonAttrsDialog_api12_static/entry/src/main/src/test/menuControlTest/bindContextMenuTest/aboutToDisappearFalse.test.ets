@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,31 +58,30 @@ export default function aboutToDisappearFalse() {
           console.info("get aboutToDisappearFalse state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push aboutToDisappearFalse page error: " + err);
         expect().assertFail();
       }
-
     });
-
+    
     /*
-     * @tc.number    aboutToDisappearFalse_static_0100
-     * @tc.name      aboutToDisappearFalse_static_0100
-     * @tc.desc      aboutToDisappearFalse_static_0100
-     * @tc.level     2
+     * @tc.number   aboutToDisappearFalse_static_0100
+     * @tc.name     aboutToDisappearFalse_static_0100
+     * @tc.desc     aboutToDisappearFalse_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('aboutToDisappearFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('aboutToDisappearFalse_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('aboutToDisappearFalse'));
-      await ((button?.click()) as Promise<void>)
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       await driver.click(200, 200);
       await CommonFunc.sleep(1000);
+
       let strJson = inspector.getInspectorByKey('aboutToDisappearFalseText');
       console.info("[aboutToDisappearFalse_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[aboutToDisappearFalse_0100] title: " +

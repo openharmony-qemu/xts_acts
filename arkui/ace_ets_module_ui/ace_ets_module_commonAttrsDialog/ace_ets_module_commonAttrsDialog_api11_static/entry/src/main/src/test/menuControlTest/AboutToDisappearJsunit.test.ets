@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach,  it, expect,beforeAll, Level } from "../../../../hypium/index";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
-import Utils from './Utils';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import events_emitter from '@ohos.events.emitter';
+import Utils from './Utils.test';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
@@ -25,11 +26,12 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
 export default function aboutToDisappearJsunit() {
   describe('aboutToDisappearTest', () => {
@@ -42,16 +44,15 @@ export default function aboutToDisappearJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("aboutToDisappearTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/menuControl/aboutToDisappear',
+        url:'MainAbility/pages/menuControl/aboutToDisappear',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get aboutToDisappearTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("aboutToDisappear" == pages.name)) {
           console.info("get aboutToDisappearTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -61,17 +62,16 @@ export default function aboutToDisappearJsunit() {
       console.info("aboutToDisappearTest beforeEach end");
     });
 
-    afterEach(async () => {
+       afterEach(async () => {
       await Utils.sleep(1000);
       console.info("aboutToDisappear after each called");
     });
 
-
     /*
-     * @tc.number    aboutToDisappearTest_static_0100
-     * @tc.name      aboutToDisappearTest_static_0100
-     * @tc.desc      aboutToDisappearTest_static_0100
-     * @tc.level     2
+     * @tc.number   aboutToDisappearTest_static_0100
+     * @tc.name     aboutToDisappearTest_static_0100
+     * @tc.desc     aboutToDisappearTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('aboutToDisappearTest_static_0100 START');
@@ -88,11 +88,10 @@ export default function aboutToDisappearJsunit() {
       } as events_emitter.InnerEvent
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("aboutToDisappearTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("aboutToDisappearTest_static_0100 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
+      console.info("aboutToDisappearTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
       await Utils.sleep(1000);
       console.info('aboutToDisappearTest_static_0100 END');
     });

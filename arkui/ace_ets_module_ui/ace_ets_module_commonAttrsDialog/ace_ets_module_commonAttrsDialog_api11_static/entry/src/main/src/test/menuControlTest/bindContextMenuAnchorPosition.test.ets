@@ -4,34 +4,34 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {
-  Component,
-  DisplayRotation,
   Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
+  Component,
   UiWindow,
-  WindowMode
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { UtilsTest, startAbility} from '../Util.test';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function bindContextMenuAnchorPosition() {
@@ -54,7 +54,6 @@ export default function bindContextMenuAnchorPosition() {
         console.info("get bindContextMenuAnchorPosition state pages:" + JSON.stringify(pages));
         if (!("bindContextMenuAnchorPosition" == pages.name)) {
           console.info("get bindContextMenuAnchorPosition pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -64,12 +63,12 @@ export default function bindContextMenuAnchorPosition() {
       console.info("bindContextMenuAnchorPosition beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    bindContextMenuAnchorPosition_static_0100
-     * @tc.name      bindContextMenuAnchorPosition_static_0100
-     * @tc.desc      bindContextMenuAnchorPosition_static_0100
-     * @tc.level     2
+     * @tc.number   bindContextMenuAnchorPosition_static_0100
+     * @tc.name     bindContextMenuAnchorPosition_static_0100
+     * @tc.desc     bindContextMenuAnchorPosition_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindContextMenuAnchorPosition_static_0100 START');
@@ -102,12 +101,12 @@ export default function bindContextMenuAnchorPosition() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    bindContextMenuAnchorPosition_static_0200
-     * @tc.name      bindContextMenuAnchorPosition_static_0200
-     * @tc.desc      bindContextMenuAnchorPosition_static_0200
-     * @tc.level     2
+     * @tc.number   bindContextMenuAnchorPosition_static_0200
+     * @tc.name     bindContextMenuAnchorPosition_static_0200
+     * @tc.desc     bindContextMenuAnchorPosition_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindContextMenuAnchorPosition_static_0200 START');
@@ -140,12 +139,12 @@ export default function bindContextMenuAnchorPosition() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    bindContextMenuAnchorPosition_static_0300
-     * @tc.name      bindContextMenuAnchorPosition_static_0300
-     * @tc.desc      bindContextMenuAnchorPosition_static_0300
-     * @tc.level     2
+     * @tc.number   bindContextMenuAnchorPosition_static_0300
+     * @tc.name     bindContextMenuAnchorPosition_static_0300
+     * @tc.desc     bindContextMenuAnchorPosition_static_0300
+     * @tc.level    Level.LEVEL0
      */
     it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindContextMenuAnchorPosition_static_0300 START');

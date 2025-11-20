@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,41 +15,29 @@
 
 import events_emitter from '@ohos.events.emitter';
 import {
-  $r,
-  $rawfile,
-  ArrowPointPosition,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Dimension,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontStyle,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  Padding,
-  Placement,
-  PopupOptions,
-  PopupStateChangeParam,
-  Position,
-  ResourceStr,
-  Row,
-  RowOptions,
-  Text,
-  TextAlign
+  FlexOptions,
+  ClickEvent,
+  ColumnOptions,
+  TextAlign,
+  $rawfile,Image,Color,Position,Row,Placement,$r,ResourceStr,ArrowPointPosition,RowOptions,Padding,Dimension,PopupOptions,PopupStateChangeParam
+,FontStyle
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage,State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 import hilog from '@ohos.hilog';
 
@@ -64,7 +52,7 @@ struct PopupOptionsTrueExample {
       Button('PopupOptionsTrue')
         .id("PopupOptionsTrue")
         .margin(100)
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.handlePopup = !this.handlePopup
         })
         .bindPopup(this.handlePopup, {
@@ -81,7 +69,7 @@ struct PopupOptionsTrueExample {
           placement: Placement.Bottom,
           enableArrow: false,
           targetSpace: '15vp',
-          onStateChange: (e: PopupStateChangeParam) => {
+          onStateChange: (e:PopupStateChangeParam) => {
             console.info(JSON.stringify(e.isVisible))
             if (!e.isVisible) {
               this.handlePopup = false
@@ -89,7 +77,7 @@ struct PopupOptionsTrueExample {
           }
         } as PopupOptions)
     }
-    .width('100%')
+    .width('100%') 
     .height('100%')
     .margin(20)
   }

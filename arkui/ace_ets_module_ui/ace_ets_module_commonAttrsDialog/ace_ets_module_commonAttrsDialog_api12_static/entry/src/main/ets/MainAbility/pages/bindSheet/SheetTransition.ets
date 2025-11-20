@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,33 +15,39 @@
 
 import events_emitter from '@ohos.events.emitter';
 import {
-  Builder,
+  Entry,Builder,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
+  FlexOptions,
+  ColumnOptions,
+  TextAlign,
   Scroll,
-  SheetType,
-  Text,
-  TextAlign
+  Image,
+  Color,
+  $$,
+  SheetSize,
+// $rawfile,
+  SheetType
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
 import testsuite from '../../../../src/test/List.test'
+import {
+  State
+} from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -60,7 +66,7 @@ struct SheetTransitionExample {
       Button("Close Model Sheet")
         .margin(10)
         .fontSize(20)
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.isShow = false;
         })
     }
@@ -73,13 +79,36 @@ struct SheetTransitionExample {
     Column() {
       Button("Open Model Sheet")
         .id("SheetTransition")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.isShow = true
         })
         .fontSize(20)
         .margin(10)
-
-
+        .bindSheet($$(this.isShow), this.myBuilder, {
+          height: SheetSize.MEDIUM,
+          backgroundColor: Color.Green,
+          preferType: SheetType.BOTTOM,
+          onTypeDidChange: (value: SheetType) => {
+            this.SheetTypeValue = (`value SheetType:${this.SheetType = value}`)
+            console.info(`value SheetType:${this.SheetType = value}`)
+          },
+          onWidthDidChange: (value: Int) => {
+            this.WidthValue = (`value Width:${value}`)
+            console.info(`value Width:${value}`)
+          },
+          onWillAppear: () => {
+            console.log("BindSheet onWillAppear.")
+          },
+          onAppear: () => {
+            console.log("BindSheet onAppear.")
+          },
+          onWillDisappear: () => {
+            console.log("BindSheet onWillDisappear.")
+          },
+          onDisappear: () => {
+            console.log("BindSheet onDisappear.")
+          }
+        })
     }
     .justifyContent(FlexAlign.Center)
     .width('100%')

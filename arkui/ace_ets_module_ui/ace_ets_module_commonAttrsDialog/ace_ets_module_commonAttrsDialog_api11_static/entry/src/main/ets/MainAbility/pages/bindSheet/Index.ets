@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -21,6 +21,7 @@ import {
   Color,
   Column,
   Component,
+  CustomBuilder,
   Entry,
   Flex,
   FlexAlign,
@@ -28,10 +29,13 @@ import {
   FlexOptions,
   FontWeight,
   ItemAlign,
+  Length,
   Margin,
+  SheetDismiss,
   SheetSize,
   SheetType,
-  Text
+  Text,
+  TripleLengthDetents
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -40,7 +44,6 @@ import { Hypium } from '../../../../../hypium/index';
 import testsuite from '../../../../src/test/List.test';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base'
 
 interface TheTitle {
   title: string
@@ -153,7 +156,7 @@ struct Index {
                 "preferType": this.preferType1,
                 "shouldDismiss": this.shouldDismiss,
                 "enableOutsideInteractive": this.enableOutsideInteractive,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10150,
@@ -165,6 +168,18 @@ struct Index {
             console.info("ArkUX_Model_Visual_0150 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [SheetSize.MEDIUM, SheetSize.LARGE, 100] as TripleLengthDetents,
+        blurStyle: BlurStyle.Thick,
+        showClose: true,
+        title: { title: "title", subtitle: "subtitle" },
+        preferType: SheetType.CENTER,
+        enableOutsideInteractive: false,
+        shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+          sheetDismiss.dismiss();
+          console.log("bind sheet shouldDismiss");
+        })
+      })
 
 
       Button('ArkUX_Model_Visual_0160')
@@ -182,7 +197,7 @@ struct Index {
                 "preferType": this.preferType2,
                 "shouldDismiss": this.shouldDismiss,
                 "enableOutsideInteractive": this.enableOutsideInteractive1,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10160,
@@ -194,6 +209,18 @@ struct Index {
             console.info("ArkUX_Model_Visual_0160 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [SheetSize.LARGE, SheetSize.MEDIUM, SheetSize.MEDIUM] as TripleLengthDetents,
+        blurStyle: BlurStyle.Thin,
+        showClose: false,
+        title: { title: "323", subtitle: "156" },
+        preferType: SheetType.POPUP,
+        enableOutsideInteractive: true,
+        shouldDismiss: ((sheetDismiss:SheetDismiss) => {
+          sheetDismiss.dismiss();
+          console.log("bind sheet shouldDismiss")
+        })
+      })
 
       Button('ArkUX_Model_Visual_0170')
         .width(200)
@@ -210,7 +237,7 @@ struct Index {
                 "preferType": this.preferType3,
                 "shouldDismiss": this.shouldDismiss,
                 "enableOutsideInteractive": this.enableOutsideInteractive,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10170,
@@ -222,6 +249,19 @@ struct Index {
             console.info("ArkUX_Model_Visual_0170 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [100, 100, SheetSize.LARGE] as TripleLengthDetents,
+        blurStyle: BlurStyle.Regular,
+        showClose: false,
+        maskColor: Color.Green,
+        title: { title: "asdasd", subtitle: "1232561" },
+        preferType: SheetType.POPUP,
+        enableOutsideInteractive: undefined,
+        shouldDismiss: ((sheetDismiss:SheetDismiss) => {
+          sheetDismiss.dismiss();
+          console.log("bind sheet shouldDismiss")
+        })
+      })
 
       Button('ArkUX_Model_Visual_0180')
         .width(200)
@@ -237,7 +277,7 @@ struct Index {
                 "title": this.title4,
                 "preferType": this.preferType4,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10180,
@@ -249,6 +289,18 @@ struct Index {
             console.info("ArkUX_Model_Visual_0180 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [0, 0, 0] as TripleLengthDetents,
+        blurStyle: BlurStyle.BACKGROUND_REGULAR,
+        showClose: true,
+        maskColor: Color.Green,
+        title: { title: " ", subtitle: " " },
+        preferType: SheetType.CENTER,
+        shouldDismiss: ((sheetDismiss:SheetDismiss) => {
+          sheetDismiss.dismiss();
+          console.log("bind sheet shouldDismiss")
+        })
+      })
 
       Button('ArkUX_Model_Visual_0190')
         .width(200)
@@ -264,7 +316,7 @@ struct Index {
                 "title": this.title5,
                 "preferType": this.preferType5,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10190,
@@ -276,6 +328,17 @@ struct Index {
             console.info("ArkUX_Model_Visual_0190 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [0, 0, 0] as TripleLengthDetents,   //null
+        blurStyle: undefined,
+        showClose: undefined,
+        maskColor: Color.Green,
+        title: { title: 'undefined', subtitle: 'undefined' },
+        preferType: undefined,
+        shouldDismiss: ((sheetDismiss:SheetDismiss) => {
+
+        })
+      })
 
       Button('ArkUX_Model_Visual_0200')
         .width(200)
@@ -291,7 +354,7 @@ struct Index {
                 "title": this.title6,
                 "preferType": this.preferType6,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10200,
@@ -303,6 +366,18 @@ struct Index {
             console.info("ArkUX_Model_Visual_0200 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [SheetSize.LARGE, 10000, SheetSize.MEDIUM] as TripleLengthDetents,
+        blurStyle: BlurStyle.BACKGROUND_THIN,
+        showClose: false,
+        maskColor: Color.Green,
+        title: { title: "标题", subtitle: "文字" },
+        preferType: SheetType.POPUP,
+        shouldDismiss: ((sheetDismiss:SheetDismiss) => {
+          sheetDismiss.dismiss();
+          console.log("bind sheet shouldDismiss");
+        })
+      })
 
       Button('ArkUX_Model_Visual_0210')
         .width(200)
@@ -318,7 +393,7 @@ struct Index {
                 "title": this.title7,
                 "preferType": this.preferType7,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10210,
@@ -330,6 +405,18 @@ struct Index {
             console.info("ArkUX_Model_Visual_0210 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [0, 100, 12345] as TripleLengthDetents,
+        blurStyle: BlurStyle.BACKGROUND_ULTRA_THICK,
+        showClose: false,
+        maskColor: Color.Green,
+        title: { title: "@@@", subtitle: "+++" },
+        preferType: SheetType.POPUP,
+        shouldDismiss: ((sheetDismiss:SheetDismiss) => {
+          sheetDismiss.dismiss();
+          console.log("bind sheet shouldDismiss");
+        })
+      });
 
       Button('ArkUX_Model_Visual_0220')
         .width(200)
@@ -345,7 +432,7 @@ struct Index {
                 "title": this.title8,
                 "preferType": this.preferType8,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<string, RecordData>
+              } as Record<string, Object | undefined | null>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10220,
@@ -357,6 +444,18 @@ struct Index {
             console.info("ArkUX_Model_Visual_0220 emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
+      .bindSheet(true, this.myBuilder, {
+        detents: [54321, 11111, 123456] as TripleLengthDetents,
+        blurStyle: BlurStyle.NONE,
+        showClose: true,
+        maskColor: Color.Green,
+        title: { title: "。。。", subtitle: "，，，" },
+        preferType: SheetType.CENTER,
+        shouldDismiss: ((sheetDismiss:SheetDismiss) => {
+          sheetDismiss.dismiss();
+          console.log("bind sheet shouldDismiss");
+        })
+      })
     }
     .justifyContent(FlexAlign.Center)
     .width('100%')

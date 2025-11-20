@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,7 +58,6 @@ export default function CloseMenu() {
           console.info("get CloseMenu state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push CloseMenu page error: " + err);
@@ -67,29 +66,28 @@ export default function CloseMenu() {
 
     });
 
-
+    
     /*
-     * @tc.number    CloseMenu_static_0100
-     * @tc.name      CloseMenu_static_0100
-     * @tc.desc      CloseMenu_static_0100
-     * @tc.level     2
+     * @tc.number   CloseMenu_static_0100
+     * @tc.name     CloseMenu_static_0100
+     * @tc.desc     CloseMenu_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('CloseMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CloseMenu_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       let Button = await driver.findComponent(ON.id('CloseMenu'));
-      await ((Button?.click()) as Promise<void>)
+      Button?.click();
       await CommonFunc.sleep(1000);
 
       let Menu = await driver.findComponent(ON.id('CloseMenuClose'));
       Menu?.click();
       await CommonFunc.sleep(1000);
+
       let strJson = inspector.getInspectorByKey('CloseMenuText');
-      console.info("[CloseMenu_0100] component JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[CloseMenu_0100] title: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      console.info("[CloseMenu_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[CloseMenu_0100] title: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("true");
       await CommonFunc.sleep(1000);
       console.info('[CloseMenu_0100] END');

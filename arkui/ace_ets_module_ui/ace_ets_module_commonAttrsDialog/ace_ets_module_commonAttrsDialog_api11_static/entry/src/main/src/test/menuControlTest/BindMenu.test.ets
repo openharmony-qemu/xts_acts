@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,6 @@ import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import router from '@ohos.router';
-import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
 import inspector from '@ohos.arkui.inspector'
 import common from '@ohos.app.ability.common';
@@ -51,9 +50,8 @@ export default function BindMenuTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get BindMenuTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (pages == null || !("BindMenu" == pages.name)) {
           console.info("get BindMenuTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -64,10 +62,10 @@ export default function BindMenuTest() {
     });
 
     /*
-     * @tc.number    ArkUI_Menu_static_0100
-     * @tc.name      ArkUI_Menu_static_0100
-     * @tc.desc      ArkUI_Menu_static_0100
-     * @tc.level     2
+     * @tc.number   ArkUI_Menu_static_0100
+     * @tc.name     ArkUI_Menu_static_0100
+     * @tc.desc     ArkUI_Menu_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Menu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Menu_0100'
@@ -86,17 +84,18 @@ export default function BindMenuTest() {
 
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text('Menu1'));
-      await ((button?.click()) as Promise<void>)
+      button?.click();
       await CommonFunc.sleep(1000);
       console.info(`${SUITE} ${CASE} END`);
       done()
     });
 
+
     /*
-     * @tc.number    ArkUI_Menu_static_0200
-     * @tc.name      ArkUI_Menu_static_0200
-     * @tc.desc      ArkUI_Menu_static_0200
-     * @tc.level     2
+     * @tc.number   ArkUI_Menu_static_0200
+     * @tc.name     ArkUI_Menu_static_0200
+     * @tc.desc     ArkUI_Menu_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Menu_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Menu_0200'
@@ -115,7 +114,7 @@ export default function BindMenuTest() {
 
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text('Menu1'));
-      await ((button?.click()) as Promise<void>)
+      button?.click();
       await CommonFunc.sleep(1000);
 
       console.info(`${SUITE} ${CASE} END`);

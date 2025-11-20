@@ -68,7 +68,7 @@ export default function SegmentButtonBorderTest() {
      * @tc.desc     SegmentButtonBorderTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('SegmentButtonBorderTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonBorderTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonBorderTest_static_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -114,7 +114,7 @@ it('SegmentButtonBorderTest_static_001', Level.LEVEL0, async (done: () => void):
      * @tc.desc     SegmentButtonBorderTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('SegmentButtonBorderTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonBorderTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonBorderTest_static_002] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

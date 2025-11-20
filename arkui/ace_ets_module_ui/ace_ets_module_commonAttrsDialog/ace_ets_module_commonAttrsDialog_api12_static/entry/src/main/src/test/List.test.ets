@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -26,8 +26,8 @@ import springBack from './bindSheetTest/springBack.test'
 import DetentsChange from './bindSheetTest/DetentsChange.test'
 import SheetTransition from './bindSheetTest/SheetTransition.test'
 import symbolIcon from './menuControlTest/symbolIcon.test'
-import HoverScale_APITest from './CommonTest/MenuTest/Menu_APITest/HoverScale_APITest';
-import ScrollSizeMode_APITest from './CommonTest/BindSheetTest/BindSheet_APITest/ScrollSizeMode_APITest';
+import HoverScale_APITest from './CommonTest/MenuTest/Menu_APITest/HoverScaleAPITest';
+import ScrollSizeMode_APITest from './CommonTest/BindSheetTest/BindSheet_APITest/ScrollSizeModeAPITest';
 import sliderInteractionModeTest from './slider/sliderInteractionModeTest.test'
 
 export default function testsuite() {
@@ -39,13 +39,13 @@ export default function testsuite() {
   CloseMask();
   CloseMenu();
   IsShowFalse();
-  preview();
+  preview();  //pass:1
   SheetMode()
   springBack()
   DetentsChange()
   SheetTransition()
   symbolIcon();
-  HoverScale_APITest();
-  ScrollSizeMode_APITest();
-  sliderInteractionModeTest()
+  HoverScale_APITest();   //10.13：pass 1
+  ScrollSizeMode_APITest(); //pass:2
+  sliderInteractionModeTest() //pass:3
 }
