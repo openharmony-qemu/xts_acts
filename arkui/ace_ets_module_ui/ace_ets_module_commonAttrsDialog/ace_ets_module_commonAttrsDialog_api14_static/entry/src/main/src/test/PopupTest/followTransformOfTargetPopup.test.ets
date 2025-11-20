@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,12 +63,11 @@ export default function followTransformOfTargetPopup() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get followTransformOfTargetPopup state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("followTransformOfTargetPopup" == pages.name)) {
           console.info("get followTransformOfTargetPopup pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push followTransformOfTargetPopup page error:" + err);
@@ -77,65 +76,66 @@ export default function followTransformOfTargetPopup() {
     });
 
 
+    
     /*
-     * @tc.number    followTransformOfTargetPopup_static_0010
-     * @tc.name      followTransformOfTargetPopup_static_0010
-     * @tc.desc      followTransformOfTargetPopup_static_0010
-     * @tc.level     2
+     * @tc.number   followTransformOfTargetPopup_static_0010
+     * @tc.name     followTransformOfTargetPopup_static_0010
+     * @tc.desc     followTransformOfTargetPopup_static_0010
+     * @tc.level    Level.LEVEL0
      */
     it('followTransformOfTargetPopup_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('followTransformOfTargetPopup_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('popup'));
-      await (button?.click() as Promise<void>);
+      button?.click()
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('animationBtn'));
-      await (button2?.click() as Promise<void>);
+      button2?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('followTransformOfTarget');
       console.info("[followTransformOfTargetPopup_0010] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[followTransformOfTargetPopup_0010] content is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[followTransformOfTargetPopup_0010] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('followTransformOfTarget: false');
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>);
+      button?.click()
       await CommonFunc.sleep(1000);
       console.info('[followTransformOfTargetPopup_0010] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    followTransformOfTargetPopup_static_0020
-     * @tc.name      followTransformOfTargetPopup_static_0020
-     * @tc.desc      followTransformOfTargetPopup_static_0020
-     * @tc.level     2
+     * @tc.number   followTransformOfTargetPopup_static_0020
+     * @tc.name     followTransformOfTargetPopup_static_0020
+     * @tc.desc     followTransformOfTargetPopup_static_0020
+     * @tc.level    Level.LEVEL0
      */
     it('followTransformOfTargetPopup_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('followTransformOfTargetPopup_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button0 = await driver.findComponent(ON.id('followId'));
-      await (button0?.click() as Promise<void>);
+      button0?.click();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('popup'));
-      await (button?.click() as Promise<void>);
+      button?.click()
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('animationBtn'));
-      await (button2?.click() as Promise<void>);
+      button2?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('followTransformOfTarget');
       console.info("[followTransformOfTargetPopup_0020] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[followTransformOfTargetPopup_0020] content is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[followTransformOfTargetPopup_0020] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('followTransformOfTarget: true');
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>);
+      button?.click()
       await CommonFunc.sleep(1000);
       console.info('[followTransformOfTargetPopup_0020] END');
       done();

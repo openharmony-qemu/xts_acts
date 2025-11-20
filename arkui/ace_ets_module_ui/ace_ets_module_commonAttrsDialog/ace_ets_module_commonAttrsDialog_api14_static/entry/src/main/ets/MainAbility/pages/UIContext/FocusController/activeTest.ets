@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,47 +13,49 @@
  * limitations under the License.
  */
 
-import promptAction from '@ohos.promptAction'
-
+import  promptAction  from '@ohos.promptAction'
 import {
-  $r,
-  $rawfile,
-  Builder,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomPopupOptions,
-  DismissDialogAction,
-  DismissReason,
-  DragEvent,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  HoverModeAreaType,
-  Image,
-  ItemAlign,
   Margin,
-  Offset,
-  PopupOptions,
-  ResourceStr,
-  Scroll,
-  Text,
+  FlexOptions,
+  ColumnOptions,
   TextAlign,
+  Scroll,
+  Image,
+  Color,
+  $rawfile,
+  DragEvent,
+  $r,
+  ResourceStr,
+  HoverModeAreaType,
+  DismissDialogAction,
   TextInput,
   TextInputOptions,
+  DismissReason,
+  Offset,
+  Builder,
+  PopupOptions,
+  ClickEvent,
+  CustomPopupOptions,
 } from '@ohos.arkui.component';
-import { BusinessError } from '@ohos.base';
+import { BusinessError } from "@ohos.base";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../../hypium/index';
+import { State } from '@ohos.arkui.stateManagement'
 
 
 @Entry
@@ -81,26 +83,26 @@ struct activeTest {
         Text(this.active + ' ' + this.autoInactive).id('text')
         Button('change active: ' + this.active).height('8%')
           .id('active1')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.active = !this.active
             this.getUIContext().getFocusController().activate(this.active, this.autoInactive)
           })
         Button('change autoInactive: ' + this.autoInactive).height('8%')
           .id('active2')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.autoInactive = !this.autoInactive
             this.getUIContext().getFocusController().activate(this.active, this.autoInactive)
           })
 
         Button('no autoInactive: ' + this.active).height('8%')
           .id('active3')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.active = !this.active
             this.getUIContext().getFocusController().activate(this.active)
           })
         Button('init').height('8%')
           .id('init')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.active = false
             this.autoInactive = false
           })

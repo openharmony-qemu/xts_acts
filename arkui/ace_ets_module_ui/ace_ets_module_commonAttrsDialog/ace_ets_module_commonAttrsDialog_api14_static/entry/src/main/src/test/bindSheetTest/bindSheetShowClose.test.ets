@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,12 +63,11 @@ export default function bindSheetShowClose() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get bindSheetShowClose state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("bindSheetShowClose" == pages.name)) {
           console.info("get bindSheetShowClose pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push bindSheetShowClose page error:" + err);
@@ -77,18 +76,19 @@ export default function bindSheetShowClose() {
     });
 
 
+    
     /*
-     * @tc.number    bindSheetShowClose_static_0100
-     * @tc.name      bindSheetShowClose_static_0100
-     * @tc.desc      bindSheetShowClose_static_0100
-     * @tc.level     2
+     * @tc.number   bindSheetShowClose_static_0100
+     * @tc.name     bindSheetShowClose_static_0100
+     * @tc.desc     bindSheetShowClose_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('bindSheetShowClose_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindSheetShowClose_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('btn'));
-      await ((button?.click()) as Promise<void>)
+      button?.click()
       console.info('[bindSheetShowClose_0100] click btn');
       await CommonFunc.sleep(1000);
       let title = await driver.findComponent(ON.id('row'));
@@ -97,7 +97,7 @@ export default function bindSheetShowClose() {
       let titleWidth = rect.right - rect.left
       console.info('[bindSheetShowClose_0100] titleWidth' + titleWidth);
       let button1 = await driver.findComponent(ON.id('showClose'));
-      await ((button1?.click()) as Promise<void>)
+      button1?.click()
       console.info('[bindSheetShowClose_0100] showClose');
       await CommonFunc.sleep(1000);
       let title2 = await driver.findComponent(ON.id('row'));
@@ -107,7 +107,7 @@ export default function bindSheetShowClose() {
       console.info('[bindSheetShowClose_0100] titleWidth2 ' + titleWidth2);
       expect(titleWidth2 - titleWidth > 0).assertTrue()
       let button2 = await driver.findComponent(ON.id('close'));
-      await ((button2?.click()) as Promise<void>)
+      button2?.click()
       await CommonFunc.sleep(1000);
       console.info('[bindSheetShowClose_0100] END');
       done();

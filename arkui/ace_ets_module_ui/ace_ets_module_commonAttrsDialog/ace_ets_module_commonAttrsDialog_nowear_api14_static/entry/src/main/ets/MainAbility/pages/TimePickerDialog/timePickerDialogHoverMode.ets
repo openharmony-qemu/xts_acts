@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,7 @@ import {
   Button,
   ButtonType,
   ClickEvent,
+  Color,
   Column,
   ColumnOptions,
   Component,
@@ -37,7 +38,9 @@ import {
   SheetOptions,
   SheetType,
   Text,
-  TextAlign
+  TextAlign,
+  TimePickerDialogOptions,
+  TimePickerResult
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -67,8 +70,38 @@ struct timePickerDialogHoverMode {
         .id('timePickerDialog')
         .margin(20)
         .onClick((e: ClickEvent) => {
-
-
+          this.getUIContext().showTimePickerDialog({
+            selected: this.selectTime,
+            disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
+            textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
+            selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
+            onAccept: (value: TimePickerResult) => {
+              if (value.hour != undefined && value.minute != undefined) {
+                this.selectTime.setHours(value.hour, value.minute);
+                console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
+              }
+            },
+            onCancel: () => {
+              console.info('TimePickerDialog:onCancel()');
+            },
+            onChange: (value: TimePickerResult) => {
+              console.info('TimePickerDialog:onChange()' + JSON.stringify(value));
+            },
+            onDidAppear: () => {
+              console.info('TimePickerDialog:onDidAppear()');
+            },
+            onDidDisappear: () => {
+              console.info('TimePickerDialog:onDidDisappear()');
+            },
+            onWillAppear: () => {
+              console.info('TimePickerDialog:onWillAppear()');
+            },
+            onWillDisappear: () => {
+              console.info('TimePickerDialog:onWillDisappear()');
+            },
+            enableHoverMode: this.enableHoverMode,
+            hoverModeArea: this.hoverModeArea
+          } as TimePickerDialogOptions)
         })
     }
     .id('col')

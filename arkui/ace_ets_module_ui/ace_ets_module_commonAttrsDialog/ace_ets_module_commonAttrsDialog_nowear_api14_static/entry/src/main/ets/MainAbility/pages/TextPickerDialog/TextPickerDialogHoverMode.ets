@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,7 @@ import {
   Button,
   ButtonType,
   ClickEvent,
+  Color,
   Column,
   ColumnOptions,
   Component,
@@ -38,7 +39,8 @@ import {
   SheetType,
   Text,
   TextAlign,
-  TextPickerDialogOptions
+  TextPickerDialogOptions,
+  TextPickerResult
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -51,7 +53,7 @@ struct TextPickerDialogHoverMode {
   @State v: string = '';
   @State enableHoverMode: boolean = false
   @State hoverModeArea: HoverModeAreaType = HoverModeAreaType.TOP_SCREEN
-  private select: number | number[] = 0 as number;
+  private select: int | int[] = 0 as int;
   private fruits: Array<string> = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as Array<string>;
 
   build() {
@@ -70,8 +72,42 @@ struct TextPickerDialogHoverMode {
         .id('textPickerDialog')
         .margin(20)
         .onClick((e: ClickEvent) => {
-
-
+          this.getUIContext().showTextPickerDialog({
+            range: this.fruits,
+            selected: this.select,
+            disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
+            textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
+            selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
+            onAccept: (value: TextPickerResult) => {
+              this.select = value.index;
+              console.log(this.select + '');
+              this.v = value.value as string;
+              console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
+            },
+            onCancel: () => {
+              console.info('TextPickerDialog:onCancel()');
+            },
+            onChange: (value: TextPickerResult) => {
+              console.info('TextPickerDialog:onChange()' + JSON.stringify(value));
+            },
+            onScrollStop: (value: TextPickerResult) => {
+              console.info('TextPickerDialog:onScrollStop()' + JSON.stringify(value));
+            },
+            onDidAppear: () => {
+              console.info('TextPickerDialog:onDidAppear()');
+            },
+            onDidDisappear: () => {
+              console.info('TextPickerDialog:onDidDisappear()');
+            },
+            onWillAppear: () => {
+              console.info('TextPickerDialog:onWillAppear()');
+            },
+            onWillDisappear: () => {
+              console.info('TextPickerDialog:onWillDisappear()');
+            },
+            enableHoverMode: this.enableHoverMode,
+            hoverModeArea: this.hoverModeArea
+          } as TextPickerDialogOptions)
         })
     }
     .id('col')

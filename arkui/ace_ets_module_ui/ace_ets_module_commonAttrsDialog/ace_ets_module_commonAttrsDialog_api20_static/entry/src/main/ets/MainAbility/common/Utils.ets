@@ -14,9 +14,6 @@
  */
 import RectValue from './Rect';
 import {
-  State,
-} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
-import {
   Button,
   ButtonAttribute,
   ClickEvent,

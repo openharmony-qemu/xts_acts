@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import {
   $r,
   $rawfile,
+  AlertDialogParamWithConfirm,
   Button,
   ButtonType,
   ClickEvent,
@@ -24,7 +25,9 @@ import {
   Column,
   ColumnOptions,
   Component,
+  DialogAlignment,
   DismissDialogAction,
+  DismissReason,
   DragEvent,
   Entry,
   Flex,
@@ -39,7 +42,7 @@ import {
   ResourceStr,
   Scroll,
   Text,
-  TextAlign,
+  TextAlign
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -67,8 +70,38 @@ struct alertDialogHoverMode {
         })
       Button('one button dialog')
         .id('alertDialog')
-
-
+        .onClick((e: ClickEvent) => {
+          this.getUIContext().showAlertDialog(
+            {
+              title: 'title',
+              message: 'text',
+              autoCancel: true,
+              alignment: DialogAlignment.Bottom,
+              gridCount: 3,
+              confirm: {
+                value: 'button',
+                action: () => {
+                  console.info('Button-clicking callback')
+                }
+              },
+              cancel: () => {
+                console.info('Closed callbacks')
+              },
+              onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+                console.info('reason=' + JSON.stringify(dismissDialogAction.reason));
+                console.log('dialog onWillDismiss');
+                if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+                  dismissDialogAction.dismiss();
+                }
+                if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+                  dismissDialogAction.dismiss();
+                }
+              },
+              enableHoverMode: this.enableHoverMode,
+              hoverModeArea: this.hoverModeArea
+            } as AlertDialogParamWithConfirm
+          )
+        })
     }
     .id('col')
     .width('100%')
