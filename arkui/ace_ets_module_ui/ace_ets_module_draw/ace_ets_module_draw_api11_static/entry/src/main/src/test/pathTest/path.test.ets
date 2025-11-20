@@ -62,10 +62,10 @@ export default function pathNewTest() {
         console.info("get path state success " + JSON.stringify(pages));
         if (!("path2" == pages.name)) {
           console.info("get path state success " + JSON.stringify(pages.name));
-          
+          // let result = await path.pushUrl(options);
           path.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push path page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push path page error: " + err);
@@ -78,13 +78,14 @@ export default function pathNewTest() {
     });
 
 
+    
     /*
      * @tc.number   testpathNe_static_0001
      * @tc.name     testpathNe_static_0001
      * @tc.desc     testpathNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testpathNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testpathNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('pathNe testpathNe_static_0001_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');
@@ -98,13 +99,14 @@ export default function pathNewTest() {
     });
 
 
+    
     /*
      * @tc.number   testpathNe_static_0002
      * @tc.name     testpathNe_static_0002
      * @tc.desc     testpathNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('testpathNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testpathNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('pathNe testpathNe_static_0002_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');
@@ -118,13 +120,14 @@ export default function pathNewTest() {
     });
 
 
+    
     /*
      * @tc.number   testpathNe_static_0003
      * @tc.name     testpathNe_static_0003
      * @tc.desc     testpathNe_static_0003
      * @tc.level    Level.LEVEL0
      */
-    it('testpathNe_static_0003', Level.LEVEL0, async (): Promise<void> => {
+it('testpathNe_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('pathNe testpathNe_static_0003_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');

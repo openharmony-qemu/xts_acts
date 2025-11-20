@@ -25,8 +25,7 @@ import {
   CanvasRenderingContext2D,
   OffscreenCanvasRenderingContext2D,
   Scroll,
-  Canvas,
-  ImageBitmap
+  Canvas,ImageBitmap
 } from '@ohos.arkui.component';
 
 @Entry

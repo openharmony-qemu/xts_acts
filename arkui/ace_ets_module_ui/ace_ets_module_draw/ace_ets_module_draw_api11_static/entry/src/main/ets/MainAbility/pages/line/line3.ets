@@ -12,73 +12,88 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
-  Entry,
-  Component,
   $r,
+  $rawfile,
+  Alignment,
+  Circle,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  Color,
-  $rawfile,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Circle,
-  TextOverflow,
-  Image,
-  Alignment,
-  TextAlign,
+  Component,
   Ellipse,
-  Line,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  Image,
+  ItemAlign,
   Length,
+  Line,
   Margin,
+  ShapePoint,
+  Text,
+  TextAlign,
+  TextOverflow
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, Prop, State } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct LineExample {
-  @State startPoint: Array<Length> = [0, 0] as Array<Length>
-  @State endPoint: Array<Length> = [50, 100] as Array<Length>
+  @State startPoint: ShapePoint = [0, 0] as ShapePoint
+  @State endPoint: ShapePoint = [50, 100] as ShapePoint
 
   build() {
     Column() {
-      
-      
+      Line({ width: 50, height: 100 })
+        .startPoint(this.startPoint as ShapePoint)
+        .endPoint(this.endPoint as ShapePoint)
+        .key('line')
     }.margin({ top: 5 } as Margin)
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData): void => {
-      if (eventData != null) {
-        console.info("line page state change called:" + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, RecordData>)?.['startPoint'] != null) {
-          this.startPoint[0] = ((eventData.data) as Record<string, RecordData>)?.['startPoint'] as string;
-        }
-        if (((eventData.data) as Record<string, RecordData>)?.['startPointOne'] != null) {
-          this.startPoint[1] = ((eventData.data) as Record<string, RecordData>)?.['startPointOne'] as string;
-        }
-        if (((eventData.data) as Record<string, RecordData>)?.['endPointOne'] != null) {
-          this.endPoint[1] = ((eventData.data) as Record<string, RecordData>)?.['endPointOne'] as string;
-        }
-        if (((eventData.data) as Record<string, RecordData>)?.['endPoint'] != null) {
-          this.endPoint[0] = ((eventData.data) as Record<string, RecordData>)?.['endPoint'] as string;
-        }
-      }
-    }
-
   onPageShow() {
     console.info('line page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 131,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
+
+  private stateChangCallBack: (eventData: emitter.EventData) => void =
+    (eventData: emitter.EventData): void => {
+      if (eventData != null) {
+        const data: Record<String, undefined | null | Object> =
+          eventData.data as Record<String, undefined | null | Object>
+        console.info("line page state change called:" + JSON.stringify(eventData));
+        if (data['startPoint'] != null && data['startPointOne'] != null) {
+          console.log('test start startPoint is: ' + data['startPoint'])
+          this.startPoint = [data['startPoint'] as Length, data['startPointOne'] as Length];
+          console.log('test start startPoint1 is: ' + this.startPoint[0])
+        }
+
+        // if (data['startPointOne'] != null) {
+        //   console.log('test start startPointOne is: ' + data['startPointOne'])
+        //   this.startPoint[1] = data['startPointOne'] as Length;
+        //   console.log('test start startPointOne1 is: ' + this.startPoint[1])
+        // }
+
+        if (data['endPointOne'] != null && data['endPoint'] != null) {
+          console.log('test start endPointOne is: ' + data['endPointOne'])
+          this.endPoint = [data['endPoint'] as Length, data['endPointOne'] as Length];
+          console.log('test start endPointOne1 is: ' + this.endPoint[1])
+        }
+
+        // if (data['endPoint'] != null) {
+        //   console.log('test start endPoint is: ' + data['endPoint'])
+        //   this.endPoint[0] = data['endPoint'] as Length;
+        //   console.log('test start endPoint1 is: ' + this.endPoint[0])
+        // }
+      }
+    }
 }

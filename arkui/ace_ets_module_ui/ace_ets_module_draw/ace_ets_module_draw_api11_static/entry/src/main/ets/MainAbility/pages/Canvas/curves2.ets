@@ -71,12 +71,12 @@ struct CurvesEaseOut {
         .height(this.heightSize)
         .backgroundColor(0x317aff)
         .animation({
-          duration: 1000, 
-          curve: Curve.EaseOut, 
-          delay: 100, 
-          iterations: 1, 
-          playMode: PlayMode.Normal 
-        }) 
+          duration: 1000, // 动画时长
+          curve: Curve.EaseOut, // 动画曲线:以低速结束
+          delay: 100, // 动画延迟
+          iterations: 1, // 播放次数
+          playMode: PlayMode.Normal // 动画模式
+        }) // 对Button组件的宽高属性进行动画配置
 
       Button('click me')
         .align(Alignment.Center)
@@ -96,7 +96,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.EaseInOut, 
+          curve: Curve.EaseInOut, //以低速开始和结束
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -120,7 +120,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.FastOutSlowIn, 
+          curve: Curve.FastOutSlowIn, //标准曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -144,7 +144,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.LinearOutSlowIn, 
+          curve: Curve.LinearOutSlowIn, //减速曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -168,7 +168,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.FastOutLinearIn, 
+          curve: Curve.FastOutLinearIn, //加速曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -192,7 +192,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.ExtremeDeceleration, 
+          curve: Curve.ExtremeDeceleration, //急缓曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -216,7 +216,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.Sharp, 
+          curve: Curve.Sharp, //锐利曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -240,7 +240,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.Rhythm, 
+          curve: Curve.Rhythm, //节奏曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -264,7 +264,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.Smooth, 
+          curve: Curve.Smooth, //平滑曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal
@@ -288,7 +288,7 @@ struct CurvesEaseOut {
         .backgroundColor(0x317aff)
         .animation({
           duration: 1000,
-          curve: Curve.Friction, 
+          curve: Curve.Friction, //阻尼曲线
           delay: 100,
           iterations: 1,
           playMode: PlayMode.Normal

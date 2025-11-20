@@ -15,7 +15,7 @@
 import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index'
 import router from '@ohos.router'
 import { Driver, Component, ON } from '@ohos.UiTest'
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -56,15 +56,15 @@ export default function CanvasAPICanvasRenderTest() {
         console.info("get CanvasAPICanvasRenderTest state pages:" + JSON.stringify(pages));
         if (!("CanvasAPICanvasRender" == pages.name)) {
           console.info("get CanvasAPICanvasRenderTest pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CanvasAPICanvasRenderTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
-      
+      // done()
     });
 
     /*
@@ -72,13 +72,14 @@ export default function CanvasAPICanvasRenderTest() {
      *tc.name   CanvasRenderer fillText and strokeText add parameter 'maxWidth'
      *tc.desc   CanvasRenderer fillText and strokeText add parameter 'maxWidth'
      */
+    
     /*
      * @tc.number   ArkUI_Canvas_API_CanvasRender_static_0100
      * @tc.name     ArkUI_Canvas_API_CanvasRender_static_0100
      * @tc.desc     ArkUI_Canvas_API_CanvasRender_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Canvas_API_CanvasRender_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Canvas_API_CanvasRender_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Canvas_API_CanvasRender_static_0100'
       console.info(`${SUITE} ${CASE} START`)
       let strJson: string = inspector.getInspectorByKey('CanvasAPICanvasRender_Canvas1')

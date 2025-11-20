@@ -34,7 +34,7 @@ import {
   FlexAlign,
   Canvas,
   ScrollDirection,
-  BarState
+  BarState,ImageBitmap
 } from '@ohos.arkui.component';
 
 @Entry

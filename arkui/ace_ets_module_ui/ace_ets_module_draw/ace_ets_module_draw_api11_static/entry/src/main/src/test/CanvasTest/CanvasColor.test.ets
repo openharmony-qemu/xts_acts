@@ -15,7 +15,7 @@
 import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index'
 import router from '@ohos.router'
 import { Driver, Component, ON } from '@ohos.UiTest'
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -53,29 +53,22 @@ export default function CanvasColorTest() {
         console.info("get CanvasColorTest state pages:" + JSON.stringify(pages));
         if (!("CanvasColor" == pages.name)) {
           console.info("get CanvasColorTest pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
-      
     });
 
-    /*
-     *tc.number ArkUI_Canvas_Color_static_0100
-     *tc.name   CanvasRenderingContext2D.fillStyle and strokeStyle support number
-     *tc.desc   CanvasRenderingContext2D.fillStyle and strokeStyle support number
-     */
+    
     /*
      * @tc.number   ArkUI_Canvas_Color_static_0100
      * @tc.name     ArkUI_Canvas_Color_static_0100
      * @tc.desc     ArkUI_Canvas_Color_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Canvas_Color_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Canvas_Color_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Canvas_Color_static_0100'
       console.info(`${SUITE} ${CASE} START`)
       let strJson: string = inspector.getInspectorByKey('CanvasColor_Canvas1')

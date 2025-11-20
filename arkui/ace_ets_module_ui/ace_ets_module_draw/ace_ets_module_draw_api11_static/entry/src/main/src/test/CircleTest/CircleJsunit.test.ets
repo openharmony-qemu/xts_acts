@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -62,13 +62,10 @@ export default function circleJsunit() {
         console.info("get circle state pages:" + JSON.stringify(pages));
         if (!("circle3" == pages.name)) {
           console.info("get circle state pages.name:" + JSON.stringify(pages.name));
-          
           circle.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.error("push circle page error:" + JSON.stringify(err));
       }
     });
@@ -78,13 +75,14 @@ export default function circleJsunit() {
       console.info("circle after each called");
     });
 
+    
     /*
      * @tc.number   circleTest_static_0100
      * @tc.name     circleTest_static_0100
      * @tc.desc     circleTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('circleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('circleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('circleTest_static_0100 START');
       let strJson = inspector.getInspectorByKey('circle');
       console.info("circleTest_static_0100 component strJson:" + strJson);
@@ -96,30 +94,30 @@ export default function circleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   circleTest_static_0200
      * @tc.name     circleTest_static_0200
      * @tc.desc     circleTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[circleTest_static_0200] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "width": '500px',
             "height": '500px',
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
         console.info('[circleTest_static_0200] START');
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 77,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[circleTest_static_0200] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[circleTest_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -131,30 +129,30 @@ export default function circleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   circleTest_static_0300
      * @tc.name     circleTest_static_0300
      * @tc.desc     circleTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-    it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[circleTest_static_0300] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "width": '-a',
             "height": '-b',
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
         console.info('[circleTest_static_0300] START');
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 77,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[circleTest_030] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[circleTest_030] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

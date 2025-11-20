@@ -36,7 +36,7 @@ import {
   Margin,
   Polygon,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -44,8 +44,8 @@ struct PolygonExample {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        
-        
+        Polygon({ width: 100, height: 100 })
+          .points([[0, 0], [50, 100], [100, 0]]).key('polygon')
         Polygon()
           .width(100)
           .height(100)

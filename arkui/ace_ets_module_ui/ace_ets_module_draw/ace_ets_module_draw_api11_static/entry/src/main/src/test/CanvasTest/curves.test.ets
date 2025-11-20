@@ -13,19 +13,19 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { BusinessError } from '@ohos.base';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
@@ -47,7 +47,7 @@ export default function curvesStepsJsunit() {
     beforeEach(async () => {
       console.info('[curvesStepsTest] before each called')
 
-      
+      // let result = '';
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Canvas/curves'
       }
@@ -58,12 +58,12 @@ export default function curvesStepsJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get curvesStepsTest state pages:" + JSON.stringify(pages));
-        if (!("curvesSteps" == pages.name)) {
+        if (!("curves" == pages.name)) {
           console.info("get curvesStepsTest pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push curvesStepsTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push curves page error " + JSON.stringify(err));
@@ -80,35 +80,38 @@ export default function curvesStepsJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testcurvesSteps_static_0001
      * @tc.name     testcurvesSteps_static_0001
      * @tc.desc     testcurvesSteps_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testcurvesSteps_static_0001', Level.LEVEL0, async () => {
+it('testcurvesSteps_static_0001', Level.LEVEL0, async () => {
       console.info('curvesSteps testcurvesSteps_static_0001 START');
-      let innerEvent: events_emitter.InnerEvent = {
+      let innerEvent: emitter.InnerEvent = {
         eventId: 60229,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
-      let callback = (eventData: events_emitter.EventData) => {
+      let callback = (eventData: emitter.EventData) => {
+        const data: Record<String, undefined | null | Object> =
+          eventData.data as Record<String, undefined | null | Object>
         try {
           console.info("callback success");
-          console.info("curveApi ((eventData.data) as  Record<string, RecordData>)?.curveApi result is: " +
-            ((eventData.data) as Record<string, RecordData>)?.['curveApi']);
-          expect(((eventData.data) as Record<string, RecordData>)?.['curveApi']).assertEqual("callBackSuccess");
+          console.info("curveApi ((eventData.data) as  Record<string, Object>)?.curveApi result is: " +
+          data['curveApi']);
+          expect(data['curveApi']).assertEqual("callBackSuccess");
           console.info("curveApi end");
         } catch (err) {
-          console.info("curveApi on events_emitter err : " + JSON.stringify(err));
+          console.info("curveApi on emitter err : " + JSON.stringify(err));
         }
 
       }
       try {
         console.info("curveApi click result is: " + JSON.stringify(inspector.sendEventByKey('stepsText', 10, "")));
-        events_emitter.on(innerEvent, callback);
+        emitter.on(innerEvent, callback);
       } catch (err) {
-        console.info("curveApi on events_emitter err : " + JSON.stringify(err));
+        console.info("curveApi on emitter err : " + JSON.stringify(err));
       }
     });
   })

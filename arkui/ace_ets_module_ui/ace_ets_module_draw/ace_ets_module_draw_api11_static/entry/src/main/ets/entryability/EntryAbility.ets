@@ -28,33 +28,31 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void>|undefined {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    return undefined;
+    return undefined
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    
+    // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
     AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);
-    windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError | null, data) => {
+    windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError|null, data) => {
       if (err?.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError | null, data) => {
-        let errCode: number = err!.code as number;
-        if (errCode) {
+        if (err?.code) {
           console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
           return;
         }
         windowClass = data;
         hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
         try {
-          let properties: window.WindowProperties | undefined =
-            windowClass?.getWindowProperties() as window.WindowProperties;
+          let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
           let wRect: window.Rect | undefined = properties?.windowRect;
           AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
           AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
@@ -62,7 +60,7 @@ export default class EntryAbility extends UIAbility {
         } catch (exception) {
           hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
         }
-        
+        // Obtain a UIContext instance.
         if (windowClass !== null) {
           AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
         }
@@ -72,17 +70,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    
+    // Main window is destroyed, release UI related resources
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    
+    // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    
+    // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

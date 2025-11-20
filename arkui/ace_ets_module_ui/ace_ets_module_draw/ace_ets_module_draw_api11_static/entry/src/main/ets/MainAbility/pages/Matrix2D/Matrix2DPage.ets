@@ -41,7 +41,7 @@ struct Matrix2DMultiplyRotate {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      
+      // Multiply
       Canvas(this.context)
         .width('200vp')
         .height('100vp')
@@ -73,7 +73,7 @@ struct Matrix2DMultiplyRotate {
         })
         .id('Matrix2DMultiplyCanvas')
 
-      
+      // Rotate
       Canvas(this.context2)
         .width('200vp')
         .height('100vp')

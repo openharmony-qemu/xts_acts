@@ -32,37 +32,36 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct Index2 {
-  
+  // private resManager = this.getUIContext()!.getHostContext()!.resourceManager
 
   build() {
     Column() {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // Image(((this.resManager.getDrawableDescriptor($r('app.media.icon').id))))
+      // Image((((this.resManager.getDrawableDescriptor($r('app.media.app_icon').id)) as LayeredDrawableDescriptor).getForeground()!.getPixelMap()))
+      // Image($r('app.media.icon'))
+      //   .width('200px').height('200px')
+      //   // .clip(new Path({ commands: LayeredDrawableDescriptor.getMaskClipPath() }))
+      //
+      // Button("getBackground()").margin({ top: 20 } as Margin)
+      //   .onClick((e: ClickEvent) => {
+      //     let drawable = ((this.resManager.getDrawableDescriptor($r('app.media.icon')
+      //       .id)) as LayeredDrawableDescriptor).getBackground();
+      //   })
+      // Button("getMask()").margin({ top: 20 } as Margin)
+      //   .onClick((e: ClickEvent) => {
+      //     let drawable = ((this.resManager.getDrawableDescriptor($r('app.media.icon')
+      //       .id)) as LayeredDrawableDescriptor).getMask();
+      //   })
+      // Button("getMashClipPath").margin({ top: 20 } as Margin)
+      //   .onClick((e: ClickEvent) => {
+      //     let drawable = ((this.resManager.getDrawableDescriptor($r('app.media.icon')
+      //       .id)) as LayeredDrawableDescriptor).getMask();
+      //   })
+
+      Button("interpolatingSpring").margin({ top: 20 } as Margin).key('drawleAdd')
+        .onClick((e: ClickEvent) => {
+          Curves.interpolatingSpring(100, 1, 228, 30) // 创建一个时长由弹簧参数决定的弹簧插值曲线
+        })
 
 
     }.height('100%')

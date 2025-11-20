@@ -60,12 +60,12 @@ export default function polyLineNeJsunit() {
         polyLine.clear();
         let pages = polyLine.getState();
         console.info("get polyLine state success " + JSON.stringify(pages));
-        if (!("polyLine" == pages.name)) {
+        if (!("polyLine3" == pages.name)) {
           console.info("get polyLine state success " + JSON.stringify(pages.name));
-          
+          // let result = await polyLine.pushUrl(options);
           polyLine.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push polyLine page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push polyLine page error: " + err);
@@ -78,13 +78,14 @@ export default function polyLineNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testpolyLineNe_static_0001
      * @tc.name     testpolyLineNe_static_0001
      * @tc.desc     testpolyLineNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testpolyLineNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testpolyLineNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('polyLineNe testpolyLineNe_static_0001_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polyline');
@@ -98,13 +99,14 @@ export default function polyLineNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testpolyLineNe_static_0002
      * @tc.name     testpolyLineNe_static_0002
      * @tc.desc     testpolyLineNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('testpolyLineNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testpolyLineNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('polyLineNe testpolyLineNe_static_0002_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polyline');

@@ -62,10 +62,10 @@ export default function rectNeJsunit() {
         console.info("get rect state success " + JSON.stringify(pages));
         if (!("rect" == pages.name)) {
           console.info("get rect state success " + JSON.stringify(pages.name));
-          
+          // let result = await rect.pushUrl(options);
           rect.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push rect page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push rect page error: " + err);
@@ -78,13 +78,14 @@ export default function rectNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testrectNe_static_0001
      * @tc.name     testrectNe_static_0001
      * @tc.desc     testrectNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testrectNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testrectNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('rectNe testrectNe_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Rect');
@@ -98,13 +99,14 @@ export default function rectNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testrectNe_static_0002
      * @tc.name     testrectNe_static_0002
      * @tc.desc     testrectNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('testrectNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testrectNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('rectNe testrectNe_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Rect');

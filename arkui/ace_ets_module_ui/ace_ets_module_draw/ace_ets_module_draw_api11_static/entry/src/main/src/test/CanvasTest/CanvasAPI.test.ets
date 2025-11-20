@@ -54,15 +54,15 @@ export default function CanvasAPITest() {
         console.info("get CanvasAPITest state pages:" + JSON.stringify(pages));
         if (!("CanvasAPI" == pages.name)) {
           console.info("get CanvasAPITest pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CanvasAPITest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
-      
+      // done()
     });
 
     /*
@@ -70,13 +70,14 @@ export default function CanvasAPITest() {
      *tc.name   Path2D.addPath and CanvasPattern.setTransform support Matrix2D
      *tc.desc   Path2D.addPath and CanvasPattern.setTransform support Matrix2D
      */
+    
     /*
      * @tc.number   ArkUI_Canvas_API_static_0100
      * @tc.name     ArkUI_Canvas_API_static_0100
      * @tc.desc     ArkUI_Canvas_API_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Canvas_API_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Canvas_API_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Canvas_API_static_0100'
       console.info(`${SUITE} ${CASE} START`)
       let strJson: string = inspector.getInspectorByKey('CanvasAPI_Canvas1')

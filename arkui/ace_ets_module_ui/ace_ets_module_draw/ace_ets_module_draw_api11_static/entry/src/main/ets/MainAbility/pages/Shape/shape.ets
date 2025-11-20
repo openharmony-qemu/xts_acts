@@ -43,7 +43,7 @@ import {
   Shape,
   Rect,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 
 import Log from '../../common/Log';
 
@@ -75,7 +75,7 @@ struct ShapeNe {
         .key("neText")
 
       Shape() {
-        
+        Path().width(300).height(10).commands('M0 0 L900 0')
       }
       .viewPort({
         x: 0,
@@ -89,7 +89,7 @@ struct ShapeNe {
       .strokeDashOffset(10)
 
       Shape() {
-        
+        Path().width(300).height(10).commands('M0 0 L900 0')
       }
       .viewPort({
         x: 0,

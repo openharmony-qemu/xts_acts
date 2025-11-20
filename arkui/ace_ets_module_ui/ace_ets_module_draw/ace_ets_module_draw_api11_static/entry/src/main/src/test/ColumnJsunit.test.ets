@@ -12,20 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import Utils from '../../ets/MainAbility/common/Utils';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { BusinessError } from '@ohos.base';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { MessageManager, Callback } from '../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "./Util.test"
+import { Callback, MessageManager } from '../../ets/MainAbility/common/MessageManager';
+import { startAbility, stopApplication, UtilsTest } from './Util.test'
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { HorizontalAlign } from '@ohos.arkui.component';
 
@@ -53,15 +53,15 @@ export default function columnJsunit() {
         console.info("get column state pages:" + JSON.stringify(pages));
         if (!("column" == pages.name)) {
           console.info("get column pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push column page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push column page error:" + err);
       }
-      
+      // done()
     });
 
     afterEach(async () => {
@@ -69,13 +69,15 @@ export default function columnJsunit() {
       console.info("column after each called");
     });
 
+
+
     /*
      * @tc.number   testColumn_static_01
      * @tc.name     testColumn_static_01
      * @tc.desc     testColumn_static_01
      * @tc.level    Level.LEVEL0
      */
-    it('testColumn_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testColumn_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColumn_static_01] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('alignItemsColumn');
@@ -86,27 +88,28 @@ export default function columnJsunit() {
       done()
     });
 
+    
     /*
      * @tc.number   testColumn_static_02
      * @tc.name     testColumn_static_02
      * @tc.desc     testColumn_static_02
      * @tc.level    Level.LEVEL0
      */
-    it('testColumn_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testColumn_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColumn_static_02] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "alignItems": HorizontalAlign.Center
-          } as Record<string, RecordData>
+          } as Record<String, undefined | null | Object>
         }
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 192,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[testColumn_static_02] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log("[testColumn_static_02] change component data error: " + err.message);
       }
       await Utils.sleep(1000);

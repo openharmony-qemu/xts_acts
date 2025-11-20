@@ -38,7 +38,7 @@ import {
   Polygon,
   PolygonAttribute,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -46,8 +46,8 @@ struct PolylineExample {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        
-        
+        Polyline({ width: 100, height: 100 })
+          .points([[0, 0], [20, 60], [100, 100]]).key('polyline')
         Polyline()
           .width(100)
           .height(100)

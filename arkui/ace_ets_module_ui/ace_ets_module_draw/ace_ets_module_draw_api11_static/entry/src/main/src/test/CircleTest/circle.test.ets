@@ -13,25 +13,24 @@
  * limitations under the License.
  */
 
-
+// import ohosrouter from '@ohos.router';
 import { $r } from '@ohos.arkui.component';
 import resourceManager from '@ohos.resourceManager';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -73,10 +72,10 @@ export default function circleNewJsunit() {
         console.info("get circle state success " + JSON.stringify(pages));
         if (!("circle" == pages.name)) {
           console.info("get circle state success " + JSON.stringify(pages.name));
-          
+          // let result = await circle.pushUrl(options);
           circle.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push circle page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push circle page error: " + err);
@@ -89,13 +88,15 @@ export default function circleNewJsunit() {
     });
 
 
+
+
     /*
      * @tc.number   testcircleNew_static_001
      * @tc.name     testcircleNew_static_001
      * @tc.desc     testcircleNew_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('testcircleNew_static_001', Level.LEVEL0, async (): Promise<void> => {
+it('testcircleNew_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew_static_001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('circle');
@@ -115,7 +116,7 @@ export default function circleNewJsunit() {
      * @tc.desc     testcircleNew_static_002
      * @tc.level    Level.LEVEL0
      */
-    it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
+it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew_static_002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('circle');
@@ -171,11 +172,11 @@ export default function circleNewJsunit() {
     });
 
     /*
-              * @tc.number   ACE_pushUrl_callback_static_0100
-              * @tc.name     ACE_pushUrl_callback_static_0100
-              * @tc.desc     ACE_pushUrl_callback_static_0100
-              * @tc.level    Level.LEVEL0
-              */
+            * @tc.number   ACE_pushUrl_callback_static_0100
+            * @tc.name     ACE_pushUrl_callback_static_0100
+            * @tc.desc     ACE_pushUrl_callback_static_0100
+            * @tc.level    Level.LEVEL0
+            */
     it("ACE_pushUrl_callback_static_0100", Level.LEVEL0, async (): Promise<void> => {
       console.info("-----------------------ACE_pushUrl_callback_0100 start-----------------------");
       const ohosrouter = AppStorage.get<Router>("router") as Router
@@ -187,7 +188,7 @@ export default function circleNewJsunit() {
             data3: [123, 456, 789]
           }
         } as MyParams
-      }, (err) => {
+      } as router.RouterOptions, (err) => {
         if (err) {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
@@ -199,6 +200,7 @@ export default function circleNewJsunit() {
       console.info("-----------------------ACE_pushUrl_callback_0100 end-----------------------");
 
     });
+
 
     /*
                   * @tc.number   ACE_pushUrl_callback_static_0200
@@ -242,8 +244,7 @@ export default function circleNewJsunit() {
           message: 'Message Info'
         });
         expect(true).assertTrue();
-      } catch (error) {
-        error = error as BusinessError;
+      } catch (error: BusinessError) {
         console.error(`ACE_showAlertBeforeBackPage_static_0100 failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -264,8 +265,7 @@ export default function circleNewJsunit() {
           message: 'undefined'
         });
         expect(true).assertTrue();
-      } catch (error) {
-        error = error as BusinessError;
+      } catch (error: BusinessError) {
         console.error(`ACE_showAlertBeforeBackPage_static_0200, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
       }
@@ -284,8 +284,7 @@ export default function circleNewJsunit() {
       try {
         ohosrouter.hideAlertBeforeBackPage();
         expect(true).assertTrue();
-      } catch (error) {
-        error = error as BusinessError;
+      } catch (error: BusinessError) {
         console.error(`ACE_hideAlertBeforeBackPage_static_0100, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -293,13 +292,14 @@ export default function circleNewJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testGlobal_attribute_static_0100
      * @tc.name     testGlobal_attribute_static_0100
      * @tc.desc     testGlobal_attribute_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('testGlobal_attribute_static_0100', Level.LEVEL0, async (): Promise<void> => {
+it('testGlobal_attribute_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info('testGlobal_attribute_static_0100 START');
       await CommonFunc.sleep(1000);
       let resource: resourceManager.Resource = {
@@ -309,17 +309,17 @@ export default function circleNewJsunit() {
         params: undefined,
         type: 0
       };
-      try {
-        
-        
-        
-        
-        
-        
-        
-        
-      } catch (error) {
-        error = error as BusinessError;
+      try { // resource.id as long 原本为 resource
+        AppStorage.get<common.UIAbilityContext>('abilityContext')?.resourceManager.getStringValue(resource.id as long,
+          (error: BusinessError | null, value: string | undefined) => {
+            if (error != null) {
+              console.log("error is " + error);
+              expect().assertFail();
+            } else {
+              expect(value).assertEqual('ohosProject');
+            }
+          });
+      } catch (error: BusinessError) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);

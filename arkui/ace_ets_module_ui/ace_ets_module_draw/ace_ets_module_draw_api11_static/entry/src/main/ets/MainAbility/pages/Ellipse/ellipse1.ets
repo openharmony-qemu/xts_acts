@@ -32,7 +32,7 @@ import {
   TextAlign,
   Ellipse
 } from '@ohos.arkui.component';
-import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop } from '@ohos.arkui.stateManagement';
 
 import Log from '../../common/Log';
 
@@ -65,9 +65,9 @@ struct EllipseNe {
         .textOverflow({ overflow: TextOverflow.None })
         .key("neText")
 
-      
-      
-      
+      Image($rawfile('test.png'))
+        // .mask(new Ellipse({ width: '150px', height: '150px' }).fill(Color.Gray))
+        // .width('500px').height('280px')
 
       Ellipse().width(`${this.w}`).height(`${this.h}`).key('ellipse')
     }.width('100%').height('100%')

@@ -60,12 +60,12 @@ export default function polygonNewJsunit() {
         polygon.clear();
         let pages = polygon.getState();
         console.info("get polygon state success " + JSON.stringify(pages));
-        if (!("polygon" == pages.name)) {
+        if (!("polygon2" == pages.name)) {
           console.info("get polygon state success " + JSON.stringify(pages.name));
-          
+          // let result = await polygon.pushUrl(options);
           polygon.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push polygon page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push polygon page error: " + err);
@@ -78,13 +78,14 @@ export default function polygonNewJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testpolygonNe_static_0001
      * @tc.name     testpolygonNe_static_0001
      * @tc.desc     testpolygonNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testpolygonNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testpolygonNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('polygonNe testpolygonNe_static_0001_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polygon');
@@ -98,13 +99,14 @@ export default function polygonNewJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testpolygonNe_static_0002
      * @tc.name     testpolygonNe_static_0002
      * @tc.desc     testpolygonNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('testpolygonNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testpolygonNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('polygonNe testpolygonNe_static_0002_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polygon');

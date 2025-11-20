@@ -62,10 +62,10 @@ export default function RectRadiusTest() {
         console.info("get RectPage state success " + JSON.stringify(pages));
         if (!("RectPage" == pages.name)) {
           console.info("get RectPage state success " + JSON.stringify(pages.name));
-          
+          // let result = await rectPage.pushUrl(options);
           rectPage.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push RectPage page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RectPage page error: " + err);
@@ -78,13 +78,14 @@ export default function RectRadiusTest() {
     });
 
 
+    
     /*
      * @tc.number   testRectRadiusTest_static_0010
      * @tc.name     testRectRadiusTest_static_0010
      * @tc.desc     testRectRadiusTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('testRectRadiusTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testRectRadiusTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRectRadiusTest_static_0010] START');
       await CommonFunc.sleep(1000);
 
@@ -103,13 +104,14 @@ export default function RectRadiusTest() {
     });
 
 
+    
     /*
      * @tc.number   testRectRadiusTest_static_0020
      * @tc.name     testRectRadiusTest_static_0020
      * @tc.desc     testRectRadiusTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('testRectRadiusTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testRectRadiusTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRectRadiusTest_static_0020] START');
       await CommonFunc.sleep(1000);
 

@@ -12,29 +12,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
-  Entry,
-  Component,
   $r,
+  $rawfile,
+  Alignment,
+  Circle,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  Color,
-  $rawfile,
+  Component,
+  Entry,
   Flex,
-  FlexDirection,
-  ItemAlign,
   FlexAlign,
-  Circle,
-  TextOverflow,
+  FlexDirection,
   Image,
-  Alignment,
-  TextAlign,
+  ItemAlign,
   Margin,
+  Text,
+  TextAlign,
+  TextOverflow,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { RecordData } from '@ohos.base';
+import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -44,35 +43,37 @@ struct CircleExample {
 
   onPageShow() {
     console.info('[circle] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 77,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
     console.info('[circle] page show calledA');
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData): void => {
-      console.info("[circle] page stateChangCallBack");
-      if (eventData != null) {
-        console.info("[circle] page state change called:" + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, RecordData>)?.['height'] != null) {
-          this.theHeight = ((eventData.data) as Record<string, RecordData>)?.['height'] as string;
-        }
-        if (((eventData.data) as Record<string, RecordData>)?.['width'] != null) {
-          this.theWidth = ((eventData.data) as Record<string, RecordData>)?.['width'] as string;
-        }
-      }
-    }
 
   build() {
     Flex({ justifyContent: FlexAlign.SpaceAround }) {
-      
+      Circle({ width: 150, height: 150 })
       Circle()
         .width(`${this.theWidth}`)
         .height(`${this.theHeight}`)
         .key('circle')
     }.width('100%').height('100%').margin({ top: 5 } as Margin)
   }
+
+  private stateChangCallBack: (eventData: emitter.EventData) => void =
+    (eventData: emitter.EventData): void => {
+      console.info("[circle] page stateChangCallBack");
+      const data: Record<String, undefined | null | Object> =
+        eventData.data as Record<String, undefined | null | Object>
+      if (eventData != null) {
+        console.info("[circle] page state change called:" + JSON.stringify(eventData));
+        if (data['height'] != null) {
+          this.theHeight = data['height'] as string;
+        }
+        if (data['width'] != null) {
+          this.theWidth = data['width'] as string;
+        }
+      }
+    }
 }

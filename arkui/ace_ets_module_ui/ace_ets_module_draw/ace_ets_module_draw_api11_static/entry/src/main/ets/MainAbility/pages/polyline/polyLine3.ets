@@ -39,7 +39,7 @@ import {
   Polygon,
   PolygonAttribute,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 
 import Log from '../../common/Log';
 
@@ -48,10 +48,6 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct PolyLineNe {
-  
-  
-  
-  
 
   aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear PolyLineNe end`)
