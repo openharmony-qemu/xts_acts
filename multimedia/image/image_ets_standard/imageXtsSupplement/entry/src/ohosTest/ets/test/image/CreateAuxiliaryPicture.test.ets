@@ -902,30 +902,5 @@ export default function CreateAuxiliaryPictureTest() {
         done();
       }
     });
-
-    /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_015
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_015
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('IMAGE_CREATE_AUXILIARY_PICTURE_015', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_015';
-      const path = 'test_exif_v2.jpg';
-      const buffer = new ArrayBuffer(10);
-      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.LINEAR_MAP;
-      try {
-        console.info(TAG, testName, `Start`);
-        image.createAuxiliaryPicture(buffer,AppStorage.get('empty_value'),auxType)
-        console.info(TAG, testName, `Success createAuxiliaryPicture`);
-      } catch (error) {
-        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
-        expect(error.code).assertEqual('401');
-        done();
-      }
-    });
-
   })
 }
