@@ -63,15 +63,15 @@ export default function SegmentButtonV2Test() {
       console.info('SegmentButtonV2Test after each called');
     });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0100
      * @tc.name     SegmentButtonV2Test_static_0100
      * @tc.desc     SegmentButtonV2Test_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0100", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -93,15 +93,15 @@ it('SegmentButtonV2Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0200
      * @tc.name     SegmentButtonV2Test_static_0200
      * @tc.desc     SegmentButtonV2Test_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0200", "START");
         let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -128,8 +128,7 @@ it('SegmentButtonV2Test_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Leve
      * @tc.desc     SegmentButtonV2Test_static_0300
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-
-it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0300", "START");
         let imageSegment = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -150,15 +149,15 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0400
      * @tc.name     SegmentButtonV2Test_static_0400
      * @tc.desc     SegmentButtonV2Test_static_0400
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0400", "START");
         let imageUnselected = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -176,15 +175,15 @@ it('SegmentButtonV2Test_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0500
      * @tc.name     SegmentButtonV2Test_static_0500
      * @tc.desc     SegmentButtonV2Test_static_0500
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0500", "START");
         let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -203,15 +202,15 @@ it('SegmentButtonV2Test_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0600
      * @tc.name     SegmentButtonV2Test_static_0600
      * @tc.desc     SegmentButtonV2Test_static_0600
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0600", "START");
         let itemMinHeight = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -228,15 +227,15 @@ it('SegmentButtonV2Test_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0700
      * @tc.name     SegmentButtonV2Test_static_0700
      * @tc.desc     SegmentButtonV2Test_static_0700
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0700", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -257,15 +256,15 @@ it('SegmentButtonV2Test_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0800
      * @tc.name     SegmentButtonV2Test_static_0800
      * @tc.desc     SegmentButtonV2Test_static_0800
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0800", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -280,15 +279,15 @@ it('SegmentButtonV2Test_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0900
      * @tc.name     SegmentButtonV2Test_static_0900
      * @tc.desc     SegmentButtonV2Test_static_0900
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0700", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -308,15 +307,15 @@ it('SegmentButtonV2Test_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-    
-    
+
     /*
      * @tc.number   SegmentButtonV2Test_static_0110
      * @tc.name     SegmentButtonV2Test_static_0110
      * @tc.desc     SegmentButtonV2Test_static_0110
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('SegmentButtonV2Test_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SegmentButtonV2Test_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0110", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,46 +15,47 @@
 
 import events_emitter from '@ohos.events.emitter';
 import {
-  $r,
-  $rawfile,
-  Builder,
+  Entry,Builder,Menu,MenuItem,MenuItemOptions,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  DragEvent,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  Menu,
-  MenuItem,
-  MenuItemOptions,
-  ResourceStr,
+  FlexOptions,
+  ColumnOptions,
+  TextAlign,
   Scroll,
-  Text,
-  TextAlign
+  Image,
+  Color,
+  $rawfile,
+  DragEvent,
+  $r,
+  ResourceStr
+// ContextMenu
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../../hypium/index';
 import testsuite from '../../../../../src/test/List.test'
+import {
+  State
+} from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct preview {
+  private iconStr: ResourceStr = $r("app.media.icon")
   @State isShown: boolean = false
   @State text: string = "false"
-  private iconStr: ResourceStr = $r("app.media.icon")
 
   @Builder
   MyMenu() {
@@ -70,7 +71,7 @@ struct preview {
     Column() {
       Image($r('app.media.icon'))
         .id("MyPreview")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.text = "true";
         })
         .width("200px")
@@ -82,11 +83,17 @@ struct preview {
     Column({ space: 10 } as ColumnOptions) {
       Text('preview-builder')
         .textAlign(TextAlign.Center)
-
-
+        .bindContextMenu(this.isShown, this.MyMenu,
+          {
+            preview: this.MyPreview,
+            onDisappear: () => {
+              this.isShown = false;
+            },
+            previewAnimationOptions: { scale: [0.8, 1.0] },
+          })
       Button(this.text)
         .id("preview")
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.isShown = true;
         })
 

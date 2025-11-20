@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,7 +58,6 @@ export default function CloseEsc() {
           console.info("get CloseEsc state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push CloseEsc page error: " + err);
@@ -66,12 +65,12 @@ export default function CloseEsc() {
       }
 
     });
-
+    
     /*
-     * @tc.number    CloseEsc_static_0100
-     * @tc.name      CloseEsc_static_0100
-     * @tc.desc      CloseEsc_static_0100
-     * @tc.level     2
+     * @tc.number   CloseEsc_static_0100
+     * @tc.name     CloseEsc_static_0100
+     * @tc.desc     CloseEsc_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('CloseEsc_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CloseEsc_0100 START');
@@ -79,11 +78,12 @@ export default function CloseEsc() {
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let Button = await driver.findComponent(ON.id('CloseEsc'));
-      await ((Button?.click()) as Promise<void>)
+      Button?.click();
       await CommonFunc.sleep(1000);
 
       await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
+
       let strJson = inspector.getInspectorByKey('CloseEscText');
       console.info("[CloseEsc_0100] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,48 +15,53 @@
 
 import events_emitter from '@ohos.events.emitter';
 import {
-  $r,
-  $rawfile,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Divider,
-  DragEvent,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  ResourceStr,
+  FlexOptions,
+  ColumnOptions,
+  TextAlign,
   Scroll,
-  Slider,
-  SliderChangeMode,
-  SliderInteraction,
+  Image,
+  Color,
+  $rawfile,
+  DragEvent,
+  $r,
+  ResourceStr,
   SliderOptions,
+  Slider,
+  Divider,
   SliderStyle,
-  Text,
-  TextAlign
+  SliderInteraction,
+  SliderChangeMode
+// ContextMenu
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
 import testsuite from '../../../../src/test/List.test'
+import {
+  State
+} from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct sliderInterractionModeTest {
-  @State inSetValue: double = 10
-  @State inSetValue1: double = 10
-  @State inSetValue2: double = 10
+  @State inSetValue: number = 10
+  @State inSetValue1: number = 10
+  @State inSetValue2: number = 10
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
@@ -72,7 +77,7 @@ struct sliderInterractionModeTest {
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
         .showTips(true)
-        .onChange((value: double, mode: SliderChangeMode) => {
+        .onChange((value:number,mode: SliderChangeMode)=>{
           this.inSetValue = value
         })
       Divider()
@@ -81,14 +86,14 @@ struct sliderInterractionModeTest {
         min: 0,
         max: 100,
         value: this.inSetValue1
-      } as SliderOptions)
+      }  as SliderOptions)
         .id('slider2')
         .sliderInteractionMode(SliderInteraction.SLIDE_ONLY)
         .blockColor('#191970')
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
         .showTips(true)
-        .onChange((value: double, mode: SliderChangeMode) => {
+        .onChange((value:number,mode: SliderChangeMode)=>{
           this.inSetValue1 = value
         })
       Divider()
@@ -97,14 +102,14 @@ struct sliderInterractionModeTest {
         min: 0,
         max: 100,
         value: this.inSetValue2
-      } as SliderOptions)
+      }  as SliderOptions)
         .id('slider3')
         .sliderInteractionMode(SliderInteraction.SLIDE_AND_CLICK_UP)
         .blockColor('#191970')
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
         .showTips(true)
-        .onChange((value: double, mode: SliderChangeMode) => {
+        .onChange((value:number,mode: SliderChangeMode)=>{
           this.inSetValue2 = value
         })
     }

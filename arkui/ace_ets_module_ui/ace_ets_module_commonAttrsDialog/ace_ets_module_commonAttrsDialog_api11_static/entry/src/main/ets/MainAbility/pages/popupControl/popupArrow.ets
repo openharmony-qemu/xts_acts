@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,41 +15,30 @@
 
 import events_emitter from '@ohos.events.emitter';
 import {
-  $r,
-  $rawfile,
-  ArrowPointPosition,
-  BlurStyle,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Dimension,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  Padding,
-  Placement,
-  PopupOptions,
-  Position,
-  ResourceStr,
-  Row,
-  RowOptions,
-  ShadowStyle,
-  Text,
-  TextAlign
+  FlexOptions,
+  ClickEvent,
+  ColumnOptions,
+  TextAlign,
+  $rawfile,Image,Color,Position,Row,Placement,$r,ResourceStr,ArrowPointPosition,RowOptions,Padding,Dimension,PopupOptions
+  ,ShadowStyle,BlurStyle
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage,State } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
 
 
@@ -62,7 +51,7 @@ struct PopupArrowExample {
     Column() {
       Button("customPopup").key('popup_arrow')
         .margin(10)
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.customPopup = !this.customPopup
         })
         .bindPopup(this.customPopup, {

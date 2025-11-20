@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,7 +58,6 @@ export default function preview() {
           console.info("get preview state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push preview page error: " + err);
@@ -66,27 +65,29 @@ export default function preview() {
       }
 
     });
-
+    
     /*
-     * @tc.number    preview_static_0100
-     * @tc.name      preview_static_0100
-     * @tc.desc      preview_static_0100
-     * @tc.level     2
+     * @tc.number   preview_static_0100
+     * @tc.name     preview_static_0100
+     * @tc.desc     preview_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('preview_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('preview_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let Column = await driver.findComponent(ON.id('preview'));
-      await ((Column?.click()) as Promise<void>);
+      Column?.click();
       await CommonFunc.sleep(1000);
 
       let Column1 = await driver.findComponent(ON.id('MyPreview'));
-      await ((Column1?.click()) as Promise<void>);
+      await CommonFunc.sleep(1000);
+      await (Column1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
+
       let strJson = inspector.getInspectorByKey('preview');
       console.info("[preview_0100] preview JSON.parseJsonElement(strJson) is: " + JSON.stringify(strJson));
       console.info("[preview_0100] component JSON.parseJsonElement(strJson) is: " +

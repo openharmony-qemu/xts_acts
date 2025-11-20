@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,6 +15,7 @@
 
 import {
   BlurStyle,
+  Builder,
   Button,
   ButtonType,
   ClickEvent,
@@ -33,7 +34,10 @@ import {
   SheetSize,
   SheetType,
   Text,
-  TextAlign
+  TextAlign,
+  $$,
+  SheetDismiss,
+  Color
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -49,6 +53,20 @@ struct SheetTransitionExample {
   @State isShow4: boolean = false;
   @State isShow5: boolean = false;
 
+  @Builder
+  myBuilder() {
+    Column() {
+      Button("content1")
+        .margin(10)
+        .fontSize(20)
+
+      Button("content2")
+        .margin(10)
+        .fontSize(20)
+    }
+    .width('100%')
+  }
+
   build() {
     Scroll() {
       Column() {
@@ -60,6 +78,17 @@ struct SheetTransitionExample {
           })
           .fontSize(20)
           .margin(10)
+        .bindSheet($$(this.isShow1), this.myBuilder, {
+          height: 300,
+          backgroundColor: Color.Gray,
+          blurStyle: BlurStyle.COMPONENT_ULTRA_THIN,
+          showClose: true,
+          title: { title: "title", subtitle: "subtitle" },
+          shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+            console.log("bind sheet shouldDismiss")
+            sheetDismiss.dismiss()
+          })
+        })
 
         Button("BlurStyle 2")
           .key("blurStyle_2")
@@ -68,6 +97,17 @@ struct SheetTransitionExample {
           })
           .fontSize(20)
           .margin(10)
+        .bindSheet($$(this.isShow2), this.myBuilder, {
+          height: 300,
+          backgroundColor: Color.Gray,
+          blurStyle: BlurStyle.COMPONENT_THIN,
+          showClose: true,
+          title: { title: "title", subtitle: "subtitle" },
+          shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+            console.log("bind sheet shouldDismiss")
+            sheetDismiss.dismiss()
+          })
+        })
 
         Button("BlurStyle 3")
           .key("blurStyle_3")
@@ -76,6 +116,17 @@ struct SheetTransitionExample {
           })
           .fontSize(20)
           .margin(10)
+        .bindSheet($$(this.isShow3), this.myBuilder, {
+          height: 300,
+          backgroundColor: Color.Gray,
+          blurStyle: BlurStyle.COMPONENT_REGULAR,
+          showClose: true,
+          title: { title: "title", subtitle: "subtitle" },
+          shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+            console.log("bind sheet shouldDismiss")
+            sheetDismiss.dismiss()
+          })
+        })
 
         Button("BlurStyle 4")
           .key("blurStyle_4")
@@ -84,6 +135,17 @@ struct SheetTransitionExample {
           })
           .fontSize(20)
           .margin(10)
+        .bindSheet($$(this.isShow4), this.myBuilder, {
+          height: 300,
+          backgroundColor: Color.Gray,
+          blurStyle: BlurStyle.COMPONENT_THICK,
+          showClose: true,
+          title: { title: "title", subtitle: "subtitle" },
+          shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+            console.log("bind sheet shouldDismiss")
+            sheetDismiss.dismiss()
+          })
+        })
 
         Button("BlurStyle 5")
           .key("blurStyle_5")
@@ -92,6 +154,17 @@ struct SheetTransitionExample {
           })
           .fontSize(20)
           .margin(10)
+        .bindSheet($$(this.isShow5), this.myBuilder, {
+          height: 300,
+          backgroundColor: Color.Gray,
+          blurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
+          showClose: true,
+          title: { title: "title", subtitle: "subtitle" },
+          shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+            console.log("bind sheet shouldDismiss")
+            sheetDismiss.dismiss()
+          })
+        })
       }.justifyContent(FlexAlign.Center)
     }
     .width('100%')

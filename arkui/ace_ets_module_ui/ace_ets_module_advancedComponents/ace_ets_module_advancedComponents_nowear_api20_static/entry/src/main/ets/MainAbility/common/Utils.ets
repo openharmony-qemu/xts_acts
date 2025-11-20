@@ -295,10 +295,10 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
-    let down = Utils.performKeyEvent(KeyType.Down, keyCode as Int, keyText)
+  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
+    let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
-      let up = Utils.performKeyEvent(KeyType.Up, keyCode as Int, keyText)
+      let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
       return up
     }
 

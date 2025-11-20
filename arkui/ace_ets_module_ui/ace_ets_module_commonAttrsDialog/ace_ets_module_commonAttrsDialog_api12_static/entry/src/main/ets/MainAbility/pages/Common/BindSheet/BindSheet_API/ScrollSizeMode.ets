@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,13 +35,15 @@ import {
   Scroll,
   ScrollSizeMode,
   Text,
-  TextAlign
+  TextAlign,
+  $$
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../../../hypium/index';
-import testsuite from '../../../../../../src/test/List.test'
+import testsuite from '../../../../../../src/test/List.test';
+import common from '@ohos.app.ability.common';
 
 @Entry
 @Component
@@ -52,6 +54,11 @@ struct ScrollSizeModeExample {
   @State scrollSizeModeStatus: ScrollSizeMode = ScrollSizeMode.FOLLOW_DETENT;
   @State mScrollSizeMode1: string = '';
   @State mScrollSizeMode2: string = '';
+
+  onPageShow() {
+    console.info('Blank page show called');
+    AppStorage.setOrCreate<common.BaseContext>('abilityContext', this.getUIContext().getHostContext()!)
+  }
 
   @Builder
   myBuilder() {
@@ -101,8 +108,11 @@ struct ScrollSizeModeExample {
         .id('btn')
         .fontSize(20)
         .margin(10)
-
-
+      .bindSheet($$(this.isShow), this.myBuilder, {
+        height: this.sheetHeight,
+        backgroundColor: Color.Green,
+        scrollSizeMode: this.scrollSizeModeStatus
+      })
     }
     .justifyContent(FlexAlign.Center)
     .width('100%')

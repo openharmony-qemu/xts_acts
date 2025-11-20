@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -54,7 +54,6 @@ export default function bindMenuAnchorPosition() {
         console.info("get bindMenuAnchorPosition state pages:" + JSON.stringify(pages));
         if (!("bindMenuAnchorPosition" == pages.name)) {
           console.info("get bindMenuAnchorPosition pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -64,12 +63,12 @@ export default function bindMenuAnchorPosition() {
       console.info("bindMenuAnchorPosition beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    bindMenuAnchorPosition_static_0100
-     * @tc.name      bindMenuAnchorPosition_static_0100
-     * @tc.desc      bindMenuAnchorPosition_static_0100
-     * @tc.level     2
+     * @tc.number   bindMenuAnchorPosition_static_0100
+     * @tc.name     bindMenuAnchorPosition_static_0100
+     * @tc.desc     bindMenuAnchorPosition_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('bindMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindMenuAnchorPosition_static_0100 START');
@@ -102,12 +101,12 @@ export default function bindMenuAnchorPosition() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    bindMenuAnchorPosition_static_0200
-     * @tc.name      bindMenuAnchorPosition_static_0200
-     * @tc.desc      bindMenuAnchorPosition_static_0200
-     * @tc.level     2
+     * @tc.number   bindMenuAnchorPosition_static_0200
+     * @tc.name     bindMenuAnchorPosition_static_0200
+     * @tc.desc     bindMenuAnchorPosition_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('bindMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindMenuAnchorPosition_static_0200 START');
@@ -140,12 +139,12 @@ export default function bindMenuAnchorPosition() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    bindMenuAnchorPosition_static_0300
-     * @tc.name      bindMenuAnchorPosition_static_0300
-     * @tc.desc      bindMenuAnchorPosition_static_0300
-     * @tc.level     2
+     * @tc.number   bindMenuAnchorPosition_static_0300
+     * @tc.name     bindMenuAnchorPosition_static_0300
+     * @tc.desc     bindMenuAnchorPosition_static_0300
+     * @tc.level    Level.LEVEL0
      */
     it('bindMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindMenuAnchorPosition_static_0300 START');
