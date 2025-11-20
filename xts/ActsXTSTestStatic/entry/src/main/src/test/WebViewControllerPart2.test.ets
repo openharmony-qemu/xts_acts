@@ -56,14 +56,15 @@ export default function webTwoJsunit() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0200
-    * @tc.name       : testBackOrForward002
-    * @tc.desc       : test backOrForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testBackOrForward_static_002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0200
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBackOrForward_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testBackOrForward002", 10)
@@ -73,14 +74,15 @@ export default function webTwoJsunit() {
       await Utils.msSleep(10000);
       done()
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0300
-    * @tc.name       : testBackOrForward003
-    * @tc.desc       : test backOrForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testBackOrForward_static_003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0300
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBackOrForward_static_003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testBackOrForward003", 10)
@@ -91,14 +93,15 @@ export default function webTwoJsunit() {
       done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0400
-    * @tc.name       : testBackOrForward004
-    * @tc.desc       : test backOrForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testBackOrForward_static_004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0400
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBackOrForward_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
 	  await Utils.msSleep(2000);
       Utils.emitEvent("testBackOrForward004", 10)

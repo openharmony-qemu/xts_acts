@@ -85,14 +85,15 @@ export default function inputMethodWindManageAbility() {
       return str
     }
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_createPanelCallback_0010
-    * @tc.name   Sub_Misc_inputMethod_Panel_createPanelCallback_0010
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_createPanelCallback_0010
+     * @tc.number Sub_Misc_inputMethod_Panel_createPanelCallback_0010
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Misc_inputMethod_Panel_createPanelCallback_0010', Level.LEVEL0, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -155,14 +156,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_createPanelPromise_0020
-    * @tc.name   Sub_Misc_inputMethod_Panel_createPanelPromise_0020
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_createPanelPromise_0020
+     * @tc.number Sub_Misc_inputMethod_Panel_createPanelPromise_0020
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Misc_inputMethod_Panel_createPanelPromise_0020', Level.LEVEL0, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -225,14 +227,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_destroyPanelCallback_0030
-    * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelCallback_0030
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelCallback_0030
+     * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelCallback_0030
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_destroyPanelCallback_0030', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -295,14 +298,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_destroyPanelPromise_0040
-    * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelPromise_0040
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelPromise_0040
+     * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelPromise_0040
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_destroyPanelPromise_0040', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -365,14 +369,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentCallback_0050
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0050
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0050
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0050
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentCallback_0050', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -435,14 +440,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentPromise_0060
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0060
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0060
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0060
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentPromise_0060', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -505,14 +511,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentCallback_0070
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0070
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0070
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0070
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentCallback_0070', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -575,14 +582,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentPromise_0080
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0080
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0080
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0080
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentPromise_0080', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -645,14 +653,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_resizeCallback_0090
-    * @tc.name   Sub_Misc_inputMethod_Panel_resizeCallback_0090
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_resizeCallback_0090
+     * @tc.number Sub_Misc_inputMethod_Panel_resizeCallback_0090
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_resizeCallback_0090', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -715,14 +724,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_resizePromise_0100
-    * @tc.name   Sub_Misc_inputMethod_Panel_resizePromise_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_resizePromise_0100
+     * @tc.number Sub_Misc_inputMethod_Panel_resizePromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_resizePromise_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -785,14 +795,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_moveToCallback_0110
-    * @tc.name   Sub_Misc_inputMethod_Panel_moveToCallback_0110
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_moveToCallback_0110
+     * @tc.number Sub_Misc_inputMethod_Panel_moveToCallback_0110
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_moveToCallback_0110', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -855,14 +866,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_moveToPromise_0120
-    * @tc.name   Sub_Misc_inputMethod_Panel_moveToPromise_0120
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_moveToPromise_0120
+     * @tc.number Sub_Misc_inputMethod_Panel_moveToPromise_0120
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_moveToPromise_0120', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -925,14 +937,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_showCallback_0130
-    * @tc.name   Sub_Misc_inputMethod_Panel_showCallback_0130
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_showCallback_0130
+     * @tc.number Sub_Misc_inputMethod_Panel_showCallback_0130
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_showCallback_0130', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -995,14 +1008,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_hideCallback_0150
-    * @tc.name   Sub_Misc_inputMethod_Panel_hideCallback_0150
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_hideCallback_0150
+     * @tc.number Sub_Misc_inputMethod_Panel_hideCallback_0150
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_hideCallback_0150', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1065,14 +1079,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_showPromise_0140
-    * @tc.name   Sub_Misc_inputMethod_Panel_showPromise_0140
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_showPromise_0140
+     * @tc.number Sub_Misc_inputMethod_Panel_showPromise_0140
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_showPromise_0140', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1141,14 +1156,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_hidePromise_0160
-    * @tc.name   Sub_Misc_inputMethod_Panel_hidePromise_0160
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_hidePromise_0160
+     * @tc.number Sub_Misc_inputMethod_Panel_hidePromise_0160
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_hidePromise_0160', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1211,14 +1227,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_onShow_0170
-    * @tc.name  Sub_Misc_inputMethod_Panel_onShow_0170
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_onShow_0170
+     * @tc.number Sub_Misc_inputMethod_Panel_onShow_0170
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_onShow_0170', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1287,14 +1304,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_onHide_0180
-    * @tc.name  Sub_Misc_inputMethod_Panel_onHide_0180
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_onHide_0180
+     * @tc.number Sub_Misc_inputMethod_Panel_onHide_0180
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_onHide_0180', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1363,14 +1381,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_offShow_0190
-    * @tc.name  Sub_Misc_inputMethod_Panel_offShow_0190
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_offShow_0190
+     * @tc.number Sub_Misc_inputMethod_Panel_offShow_0190
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_offShow_0190', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1439,14 +1458,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_offHide_0200
-    * @tc.name  Sub_Misc_inputMethod_Panel_offHide_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_offHide_0200
+     * @tc.number Sub_Misc_inputMethod_Panel_offHide_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_offHide_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1515,14 +1535,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_inputWindowInfo_0201
-    * @tc.name  Sub_Misc_inputMethod_inputWindowInfo_0201
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_inputWindowInfo_0201
+     * @tc.number Sub_Misc_inputMethod_inputWindowInfo_0201
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_inputWindowInfo_0201', Level.LEVEL2, async (done: Function) => {
       let inputWindowInfo: inputMethod.InputWindowInfo = {
         name: 'inputWindowInfo_0201/99',
@@ -1545,14 +1566,15 @@ export default function inputMethodWindManageAbility() {
       }
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_changeFlag_0210
-    * @tc.name  Sub_Misc_inputMethod_Panel_changeFlag_0210
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_changeFlag_0210
+     * @tc.number Sub_Misc_inputMethod_Panel_changeFlag_0210
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_changeFlag_0210', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1615,14 +1637,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_changeFlag_0211
-    * @tc.name  Sub_Misc_inputMethod_Panel_changeFlag_0211
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_changeFlag_0211
+     * @tc.number Sub_Misc_inputMethod_Panel_changeFlag_0211
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_changeFlag_0211', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1685,14 +1708,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  SUB_InputMethod_IMF_panelInfo_0400
-    * @tc.name  SUB_InputMethod_IMF_panelInfo_0400
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IMF_panelInfo_0400
+     * @tc.number SUB_InputMethod_IMF_panelInfo_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_InputMethod_IMF_panelInfo_0400', Level.LEVEL2, async (done: Function) => {
       console.info('====>SUB_InputMethod_IMF_panelInfo_0400 start');
       let panel: PanelInfo;
@@ -1722,12 +1746,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_SecurityKeyboard_0600
      * @tc.number Sub_InputMethod_IMF_SecurityKeyboard_0600
-     * @tc.name Sub_InputMethod_IMF_SecurityKeyboard_0600
-     * @tc.desc setPrivacyMode(),parameter is true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   setPrivacyMode(),parameter is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_InputMethod_IMF_SecurityKeyboard_0600', Level.LEVEL1, async (done: Function) => {
 
@@ -1792,12 +1817,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_SecurityKeyboard_0700
      * @tc.number Sub_InputMethod_IMF_SecurityKeyboard_0700
-     * @tc.name Sub_InputMethod_IMF_SecurityKeyboard_0700
-     * @tc.desc setPrivacyMode(),parameter is false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   setPrivacyMode(),parameter is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_InputMethod_IMF_SecurityKeyboard_0700', Level.LEVEL1, async (done: Function) => {
 
@@ -1862,12 +1888,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_SecurityKeyboard_0800
      * @tc.number Sub_InputMethod_IMF_SecurityKeyboard_0800
-     * @tc.name Sub_InputMethod_IMF_SecurityKeyboard_0800
-     * @tc.desc setPrivacyMode(),parameter is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   setPrivacyMode(),parameter is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IMF_SecurityKeyboard_0800', Level.LEVEL2, async (done: Function) => {
 
@@ -1932,12 +1959,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_getSecurityMode_0100
      * @tc.number Sub_InputMethod_IMF_getSecurityMode_0100
-     * @tc.name Sub_InputMethod_IMF_getSecurityMode_0100
-     * @tc.desc getSecurityMode()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   getSecurityMode()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IMF_getSecurityMode_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -2002,12 +2030,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IME_SplitScreen_0100
      * @tc.number SUB_InputMethod_IME_SplitScreen_0100
-     * @tc.name SUB_InputMethod_IME_SplitScreen_0100
-     * @tc.desc getSecurityMode()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   getSecurityMode()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_IME_SplitScreen_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -2073,12 +2102,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_ScreenRotation_0100
-     * @tc.name    Sub_InputMethod_IME_ScreenRotation_0100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_ScreenRotation_0100
+     * @tc.number Sub_InputMethod_IME_ScreenRotation_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_ScreenRotation_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -2144,12 +2174,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_ScreenRotation_0200
-     * @tc.name    Sub_InputMethod_IME_ScreenRotation_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_ScreenRotation_0200
+     * @tc.number Sub_InputMethod_IME_ScreenRotation_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_ScreenRotation_0200', Level.LEVEL2, async (done: Function) => {
 
@@ -2215,12 +2246,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_Misc_inputMethod_Panel_onSizeChange_0100
-     * @tc.name    Sub_Misc_inputMethod_Panel_onSizeChange_0100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_onSizeChange_0100
+     * @tc.number Sub_Misc_inputMethod_Panel_onSizeChange_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Misc_inputMethod_Panel_onSizeChange_0100', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2285,12 +2317,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_Misc_inputMethod_Panel_onSizeChange_0200
-     * @tc.name    Sub_Misc_inputMethod_Panel_onSizeChange_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_onSizeChange_0200
+     * @tc.number Sub_Misc_inputMethod_Panel_onSizeChange_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Misc_inputMethod_Panel_onSizeChange_0200', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2355,12 +2388,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_InputMethodState_0900
-     * @tc.name    Sub_InputMethod_IME_InputMethodState_0900
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_InputMethodState_0900
+     * @tc.number Sub_InputMethod_IME_InputMethodState_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_InputMethodState_0900', Level.LEVEL2, async (done: Function) => {
       try{
@@ -2378,12 +2412,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Dragging_1100
-     * @tc.name    Sub_InputMethod_IME_Dragging_1100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Dragging_1100
+     * @tc.number Sub_InputMethod_IME_Dragging_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Dragging_1100', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2448,12 +2483,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Dragging_0800
-     * @tc.name    Sub_InputMethod_IME_Dragging_0800
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Dragging_0800
+     * @tc.number Sub_InputMethod_IME_Dragging_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Dragging_0800', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2518,12 +2554,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Dragging_0900
-     * @tc.name    Sub_InputMethod_IME_Dragging_0900
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Dragging_0900
+     * @tc.number Sub_InputMethod_IME_Dragging_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Dragging_0900', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2589,12 +2626,13 @@ export default function inputMethodWindManageAbility() {
 
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0700
-     * @tc.name    Sub_InputMethod_IME_Custom_0700
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0700
+     * @tc.number Sub_InputMethod_IME_Custom_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0700', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -2621,12 +2659,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0500
-     * @tc.name    Sub_InputMethod_IME_Custom_0500
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0500
+     * @tc.number Sub_InputMethod_IME_Custom_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0500', Level.LEVEL2, async (done: Function) => {
       let str: string = 'a';
@@ -2646,12 +2685,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0600
-     * @tc.name    Sub_InputMethod_IME_Custom_0600
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0600
+     * @tc.number Sub_InputMethod_IME_Custom_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0600', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -2678,12 +2718,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0900
-     * @tc.name    Sub_InputMethod_IME_Custom_0900
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0900
+     * @tc.number Sub_InputMethod_IME_Custom_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0900', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -2777,12 +2818,13 @@ export default function inputMethodWindManageAbility() {
 
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0200
-     * @tc.name    Sub_InputMethod_IME_Custom_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0200
+     * @tc.number Sub_InputMethod_IME_Custom_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -2879,12 +2921,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0800
-     * @tc.name    Sub_InputMethod_IME_Custom_0800
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0800
+     * @tc.number Sub_InputMethod_IME_Custom_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0800', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -2979,12 +3022,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0400
-     * @tc.name    Sub_InputMethod_IME_Custom_0400
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0400
+     * @tc.number Sub_InputMethod_IME_Custom_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0400', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -3076,12 +3120,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0300
-     * @tc.name    Sub_InputMethod_IME_Custom_0300
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0300
+     * @tc.number Sub_InputMethod_IME_Custom_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -3173,12 +3218,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_1100
-     * @tc.name    Sub_InputMethod_IME_Custom_1100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_1100
+     * @tc.number Sub_InputMethod_IME_Custom_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_1100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -3273,12 +3319,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Attach_0100
-     * @tc.name    Sub_InputMethod_IME_Attach_0100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Attach_0100
+     * @tc.number Sub_InputMethod_IME_Attach_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Attach_0100', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3347,12 +3394,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Attach_0200
-     * @tc.name    Sub_InputMethod_IME_Attach_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Attach_0200
+     * @tc.number Sub_InputMethod_IME_Attach_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Attach_0200', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3421,12 +3469,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Attach_0300
-     * @tc.name    Sub_InputMethod_IME_Attach_0300
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Attach_0300
+     * @tc.number Sub_InputMethod_IME_Attach_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Attach_0300', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3495,12 +3544,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Attach_0400
-     * @tc.name    Sub_InputMethod_IME_Attach_0400
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Attach_0400
+     * @tc.number Sub_InputMethod_IME_Attach_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Attach_0400', Level.LEVEL2, async (done: Function) => {
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3578,12 +3628,13 @@ export default function inputMethodWindManageAbility() {
     };
 
     /**
-     * @tc.number  Sub_InputMethod_IME_ShowTextInput_0100
-     * @tc.name    Sub_InputMethod_IME_ShowTextInput_0100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_ShowTextInput_0100
+     * @tc.number Sub_InputMethod_IME_ShowTextInput_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_ShowTextInput_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -3653,12 +3704,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_ShowTextInput_0200
-     * @tc.name    Sub_InputMethod_IME_ShowTextInput_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_ShowTextInput_0200
+     * @tc.number Sub_InputMethod_IME_ShowTextInput_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_ShowTextInput_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -3728,12 +3780,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_ShowTextInput_0300
-     * @tc.name    Sub_InputMethod_IME_ShowTextInput_0300
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_ShowTextInput_0300
+     * @tc.number Sub_InputMethod_IME_ShowTextInput_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_ShowTextInput_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -3803,12 +3856,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_ShowTextInput_0400
-     * @tc.name    Sub_InputMethod_IME_ShowTextInput_0400
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_ShowTextInput_0400
+     * @tc.number Sub_InputMethod_IME_ShowTextInput_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_ShowTextInput_0400', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -3878,12 +3932,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0100
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0100
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal ,Rect is null
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0100
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0100
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal ,Rect is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -3950,12 +4005,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0200
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0200
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is false ,Rect is null
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0200
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0200
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,Rect is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0200', Level.LEVEL2, async (done: Function) => {
 
@@ -4021,12 +4077,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0500
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0500
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is false ,Rect oversize
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0500
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0500
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,Rect oversize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0500', Level.LEVEL2, async (done: Function) => {
 
@@ -4092,12 +4149,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0400
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0400
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is true ,inputRegion.length=5
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0400
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0400
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,inputRegion.length=5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0400', Level.LEVEL2, async (done: Function) => {
 
@@ -4163,12 +4221,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0300
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0300
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is true ,inputRegion;[]
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0300
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0300
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,inputRegion;[]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0300', Level.LEVEL2, async (done: Function) => {
 
@@ -4234,12 +4293,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_1200
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_1200
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:CANDIDATE(2)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_1200
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_1200
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:CANDIDATE(2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_1200', Level.LEVEL2, async (done: Function) => {
 
@@ -4305,12 +4365,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0700
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0700
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is false ,flag:0,AvoidY>70%
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0700
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0700
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,flag:0,AvoidY>70%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0700', Level.LEVEL2, async (done: Function) => {
 
@@ -4376,12 +4437,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0600
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0600
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:0,AvoidY>70%
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0600
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0600
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:0,AvoidY>70%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0600', Level.LEVEL2, async (done: Function) => {
 
@@ -4447,12 +4509,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0800
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0800
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:1,AvoidY>100%
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0800
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0800
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is true ,flag:1,AvoidY>100%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0800', Level.LEVEL2, async (done: Function) => {
 
@@ -4518,12 +4581,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_0900
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_0900
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is false ,flag:1,AvoidY>100%
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_0900
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_0900
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is false ,flag:1,AvoidY>100%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_0900', Level.LEVEL2, async (done: Function) => {
 
@@ -4589,12 +4653,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_1000
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_1000
-     * @tc.desc    adjustPanelRect(),parameter FullScreenAbnormal is FALSR,AvoidY>panel.height
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_1000
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_1000
+     * @tc.desc   adjustPanelRect(),parameter FullScreenAbnormal is FALSR,AvoidY>panel.height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_1000', Level.LEVEL2, async (done: Function) => {
 
@@ -4660,12 +4725,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenUR_0200
-     * @tc.name    Sub_InputMethod_IME_FullScreenUR_0200
-     * @tc.desc    updateRegion(),parameter PanelFlag:CANDIDATE(2)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenUR_0200
+     * @tc.number Sub_InputMethod_IME_FullScreenUR_0200
+     * @tc.desc   updateRegion(),parameter PanelFlag:CANDIDATE(2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenUR_0200', Level.LEVEL2, async (done: Function) => {
 
@@ -4731,12 +4797,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenUR_0300
-     * @tc.name    Sub_InputMethod_IME_FullScreenUR_0300
-     * @tc.desc    updateRegion(),parameter is []
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenUR_0300
+     * @tc.number Sub_InputMethod_IME_FullScreenUR_0300
+     * @tc.desc   updateRegion(),parameter is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenUR_0300', Level.LEVEL2, async (done: Function) => {
 
@@ -4802,12 +4869,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenUR_0400
-     * @tc.name    Sub_InputMethod_IME_FullScreenUR_0400
-     * @tc.desc    updateRegion(),parameter Region.length=5
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenUR_0400
+     * @tc.number Sub_InputMethod_IME_FullScreenUR_0400
+     * @tc.desc   updateRegion(),parameter Region.length=5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenUR_0400', Level.LEVEL2, async (done: Function) => {
 
@@ -4874,12 +4942,13 @@ export default function inputMethodWindManageAbility() {
 
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenAbnormal_1100
-     * @tc.name    Sub_InputMethod_IME_FullScreenAbnormal_1100
-     * @tc.desc    adjustPanelRect(),parameter PanelType is STATUS_BAR
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenAbnormal_1100
+     * @tc.number Sub_InputMethod_IME_FullScreenAbnormal_1100
+     * @tc.desc   adjustPanelRect(),parameter PanelType is STATUS_BAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenAbnormal_1100', Level.LEVEL2, async (done: Function) => {
 
@@ -4945,12 +5014,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenUR_0100
-     * @tc.name    Sub_InputMethod_IME_FullScreenUR_0100
-     * @tc.desc    updateRegion(),parameter PanelType is STATUS_BAR
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenUR_0100
+     * @tc.number Sub_InputMethod_IME_FullScreenUR_0100
+     * @tc.desc   updateRegion(),parameter PanelType is STATUS_BAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenUR_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -5016,12 +5086,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_FullScreenUR_0700
-     * @tc.name    Sub_InputMethod_IME_FullScreenUR_0700
-     * @tc.desc    updateRegion(),parameter oversize
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_FullScreenUR_0700
+     * @tc.number Sub_InputMethod_IME_FullScreenUR_0700
+     * @tc.desc   updateRegion(),parameter oversize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_FullScreenUR_0700', Level.LEVEL2, async (done: Function) => {
 
@@ -5087,12 +5158,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Immersive_1200
-     * @tc.name    Sub_InputMethod_IME_Immersive_1200
-     * @tc.desc    getImmersiveMode()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Immersive_1200
+     * @tc.number Sub_InputMethod_IME_Immersive_1200
+     * @tc.desc   getImmersiveMode()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Immersive_1200', Level.LEVEL2, async (done: Function) => {
 
@@ -5159,12 +5231,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Immersive_0900
-     * @tc.name    Sub_InputMethod_IME_Immersive_0900
-     * @tc.desc    setImmersiveMode(0)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Immersive_0900
+     * @tc.number Sub_InputMethod_IME_Immersive_0900
+     * @tc.desc   setImmersiveMode(0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Immersive_0900', Level.LEVEL2, async (done: Function) => {
 
@@ -5230,12 +5303,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Immersive_1000
-     * @tc.name    Sub_InputMethod_IME_Immersive_1000
-     * @tc.desc    setImmersiveMode(2)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Immersive_1000
+     * @tc.number Sub_InputMethod_IME_Immersive_1000
+     * @tc.desc   setImmersiveMode(2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Immersive_1000', Level.LEVEL2, async (done: Function) => {
 
@@ -5301,12 +5375,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Immersive_1100
-     * @tc.name    Sub_InputMethod_IME_Immersive_1100
-     * @tc.desc    setImmersiveMode(3)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Immersive_1100
+     * @tc.number Sub_InputMethod_IME_Immersive_1100
+     * @tc.desc   setImmersiveMode(3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Immersive_1100', Level.LEVEL2, async (done: Function) => {
 
@@ -5372,12 +5447,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Immersive_0500
-     * @tc.name    Sub_InputMethod_IME_Immersive_0500
-     * @tc.desc    setImmersiveMode(1)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Immersive_0500
+     * @tc.number Sub_InputMethod_IME_Immersive_0500
+     * @tc.desc   setImmersiveMode(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Immersive_0500', Level.LEVEL2, async (done: Function) => {
 
@@ -5442,14 +5518,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_createPanelCallback_0011
-    * @tc.name    Sub_Misc_inputMethod_Panel_createPanelCallback_0011
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_createPanelCallback_0011
+     * @tc.number Sub_Misc_inputMethod_Panel_createPanelCallback_0011
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_createPanelCallback_0011', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -5512,14 +5589,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_createPanelPromise_0021
-    * @tc.name    Sub_Misc_inputMethod_Panel_createPanelPromise_0021
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_createPanelPromise_0021
+     * @tc.number Sub_Misc_inputMethod_Panel_createPanelPromise_0021
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_createPanelPromise_0021', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -5582,14 +5660,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_destroyPanelCallback_0031
-    * @tc.name    Sub_Misc_inputMethod_Panel_destroyPanelCallback_0031
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelCallback_0031
+     * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelCallback_0031
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_destroyPanelCallback_0031', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -5652,14 +5731,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_destroyPanelPromise_0041
-    * @tc.name    Sub_Misc_inputMethod_Panel_destroyPanelPromise_0041
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_destroyPanelPromise_0041
+     * @tc.number Sub_Misc_inputMethod_Panel_destroyPanelPromise_0041
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_destroyPanelPromise_0041', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -5722,14 +5802,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentCallback_0051
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0051
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0051
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0051
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentCallback_0051', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -5792,14 +5873,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentPromise_0061
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0061
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0061
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0061
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentPromise_0061', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -5862,14 +5944,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentCallback_0071
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0071
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentCallback_0071
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentCallback_0071
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentCallback_0071', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -5932,14 +6015,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_setUiContentPromise_0081
-    * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0081
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_setUiContentPromise_0081
+     * @tc.number Sub_Misc_inputMethod_Panel_setUiContentPromise_0081
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_setUiContentPromise_0081', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -6002,14 +6086,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_resizeCallback_0091
-    * @tc.name   Sub_Misc_inputMethod_Panel_resizeCallback_0091
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_resizeCallback_0091
+     * @tc.number Sub_Misc_inputMethod_Panel_resizeCallback_0091
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_resizeCallback_0091', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -6072,14 +6157,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_resizePromise_0101
-    * @tc.name   Sub_Misc_inputMethod_Panel_resizePromise_0101
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_resizePromise_0101
+     * @tc.number Sub_Misc_inputMethod_Panel_resizePromise_0101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_resizePromise_0101', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -6142,14 +6228,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_moveToCallback_0111
-    * @tc.name   Sub_Misc_inputMethod_Panel_moveToCallback_0111
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_moveToCallback_0111
+     * @tc.number Sub_Misc_inputMethod_Panel_moveToCallback_0111
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_moveToCallback_0111', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -6212,14 +6299,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_moveToPromise_0121
-    * @tc.name   Sub_Misc_inputMethod_Panel_moveToPromise_0121
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_moveToPromise_0121
+     * @tc.number Sub_Misc_inputMethod_Panel_moveToPromise_0121
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_moveToPromise_0121', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -6282,14 +6370,15 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Panel_changeFlag_0212
-    * @tc.name  Sub_Misc_inputMethod_Panel_changeFlag_0212
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_inputMethod_Panel_changeFlag_0212
+     * @tc.number Sub_Misc_inputMethod_Panel_changeFlag_0212
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Panel_changeFlag_0212', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -6353,12 +6442,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_ScreenRotation_0101
-     * @tc.name    Sub_InputMethod_IME_ScreenRotation_0101
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_ScreenRotation_0101
+     * @tc.number Sub_InputMethod_IME_ScreenRotation_0101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_ScreenRotation_0101', Level.LEVEL2, async (done: Function) => {
 
@@ -6424,12 +6514,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  SUB_InputMethod_IsTextPreviewSupport_0101
-     * @tc.name    SUB_InputMethod_IsTextPreviewSupport_0101
-     * @tc.desc    12800011
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0101
+     * @tc.number SUB_InputMethod_IsTextPreviewSupport_0101
+     * @tc.desc   12800011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_IsTextPreviewSupport_0101', Level.LEVEL2, async (done: Function) => {
 
@@ -6496,12 +6587,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  SUB_InputMethod_IsTextPreviewSupport_0201
-     * @tc.name    SUB_InputMethod_IsTextPreviewSupport_0201
-     * @tc.desc    12800011
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0201
+     * @tc.number SUB_InputMethod_IsTextPreviewSupport_0201
+     * @tc.desc   12800011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_IsTextPreviewSupport_0201', Level.LEVEL2, async (done: Function) => {
 
@@ -6567,12 +6659,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  SUB_InputMethod_IsTextPreviewSupport_0301
-     * @tc.name    SUB_InputMethod_IsTextPreviewSupport_0301
-     * @tc.desc    12800011
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0301
+     * @tc.number SUB_InputMethod_IsTextPreviewSupport_0301
+     * @tc.desc   12800011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_IsTextPreviewSupport_0301', Level.LEVEL2, async (done: Function) => {
 
@@ -6638,12 +6731,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  SUB_InputMethod_IsTextPreviewSupport_0401
-     * @tc.name    SUB_InputMethod_IsTextPreviewSupport_0401
-     * @tc.desc    12800011
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0401
+     * @tc.number SUB_InputMethod_IsTextPreviewSupport_0401
+     * @tc.desc   12800011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_IsTextPreviewSupport_0401', Level.LEVEL2, async (done: Function) => {
 
@@ -6709,12 +6803,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  SUB_InputMethod_IME_SplitScreen_0101
-     * @tc.name    SUB_InputMethod_IME_SplitScreen_0101
-     * @tc.desc    12800012
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IME_SplitScreen_0101
+     * @tc.number SUB_InputMethod_IME_SplitScreen_0101
+     * @tc.desc   12800012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_IME_SplitScreen_0101', Level.LEVEL2, async (done: Function) => {
 
@@ -6781,12 +6876,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100
-     * @tc.name    Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100
-     * @tc.desc    on callingDisplayDidChange
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100
+     * @tc.number Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100
+     * @tc.desc   on callingDisplayDidChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -6853,12 +6949,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200
-     * @tc.name    Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200
-     * @tc.desc    off callingDisplayDidChange()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200
+     * @tc.number Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200
+     * @tc.desc   off callingDisplayDidChange()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200', Level.LEVEL2, async (done: Function) => {
 
@@ -6924,12 +7021,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_setImmersiveEffect_0100
-     * @tc.name    Sub_InputMethod_IME_setImmersiveEffect_0100
-     * @tc.desc    setImmersiveEffect(0,0,0)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0100
+     * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0100
+     * @tc.desc   setImmersiveEffect(0,0,0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_setImmersiveEffect_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -6995,12 +7093,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_setImmersiveEffect_0200
-     * @tc.name    Sub_InputMethod_IME_setImmersiveEffect_0200
-     * @tc.desc    setImmersiveEffect(1,0,0)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0200
+     * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0200
+     * @tc.desc   setImmersiveEffect(1,0,0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_setImmersiveEffect_0200', Level.LEVEL2, async (done: Function) => {
 
@@ -7066,12 +7165,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_setImmersiveEffect_0300
-     * @tc.name    Sub_InputMethod_IME_setImmersiveEffect_0300
-     * @tc.desc    setImmersiveEffect(0,1,0)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0300
+     * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0300
+     * @tc.desc   setImmersiveEffect(0,1,0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_setImmersiveEffect_0300', Level.LEVEL2, async (done: Function) => {
 
@@ -7137,12 +7237,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_setImmersiveEffect_0400
-     * @tc.name    Sub_InputMethod_IME_setImmersiveEffect_0400
-     * @tc.desc    setImmersiveEffect(0,1,1)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0400
+     * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0400
+     * @tc.desc   setImmersiveEffect(0,1,1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_setImmersiveEffect_0400', Level.LEVEL2, async (done: Function) => {
 
@@ -7208,12 +7309,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_setImmersiveEffect_0500
-     * @tc.name    Sub_InputMethod_IME_setImmersiveEffect_0500
-     * @tc.desc    setImmersiveEffect(1,1,0)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_setImmersiveEffect_0500
+     * @tc.number Sub_InputMethod_IME_setImmersiveEffect_0500
+     * @tc.desc   setImmersiveEffect(1,1,0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_setImmersiveEffect_0500', Level.LEVEL2, async (done: Function) => {
 
@@ -7279,12 +7381,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100
-     * @tc.name    Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100
-     * @tc.desc    AttachOptions.isSimpleKeyboardEnabled
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100
+     * @tc.number Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100
+     * @tc.desc   AttachOptions.isSimpleKeyboardEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -7350,12 +7453,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_setKeepScreenOn_0100
-     * @tc.name    Sub_InputMethod_IME_setKeepScreenOn_0100
-     * @tc.desc    setKeepScreenOn(true)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_setKeepScreenOn_0100
+     * @tc.number Sub_InputMethod_IME_setKeepScreenOn_0100
+     * @tc.desc   setKeepScreenOn(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_setKeepScreenOn_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -7421,12 +7525,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_setKeepScreenOn_0200
-     * @tc.name    Sub_InputMethod_IME_setKeepScreenOn_0200
-     * @tc.desc    setKeepScreenOn(false)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_setKeepScreenOn_0200
+     * @tc.number Sub_InputMethod_IME_setKeepScreenOn_0200
+     * @tc.desc   setKeepScreenOn(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_setKeepScreenOn_0200', Level.LEVEL2, async (done: Function) => {
 
@@ -7492,12 +7597,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0901
-     * @tc.name    Sub_InputMethod_IME_Custom_0901
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0901
+     * @tc.number Sub_InputMethod_IME_Custom_0901
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0901', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -7577,12 +7683,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Custom_0902
-     * @tc.name    Sub_InputMethod_IME_Custom_0902
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Custom_0902
+     * @tc.number Sub_InputMethod_IME_Custom_0902
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Custom_0902', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -7649,12 +7756,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_Immersive_0600
-     * @tc.name    Sub_InputMethod_IME_Immersive_0600
-     * @tc.desc    off callingDisplayDidChange()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_Immersive_0600
+     * @tc.number Sub_InputMethod_IME_Immersive_0600
+     * @tc.desc   off callingDisplayDidChange()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_Immersive_0600', Level.LEVEL2, async (done: Function) => {
 
@@ -7720,12 +7828,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_OffsetArea_0100
-     * @tc.name    Sub_InputMethod_IME_OffsetArea_0100
-     * @tc.desc    getSystemPanelCurrentInsets()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_OffsetArea_0100
+     * @tc.number Sub_InputMethod_IME_OffsetArea_0100
+     * @tc.desc   getSystemPanelCurrentInsets()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_OffsetArea_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -7791,12 +7900,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_OffsetArea_1200
-     * @tc.name    Sub_InputMethod_IME_OffsetArea_1200
-     * @tc.desc    getSystemPanelCurrentInsets()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_OffsetArea_1200
+     * @tc.number Sub_InputMethod_IME_OffsetArea_1200
+     * @tc.desc   getSystemPanelCurrentInsets()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_OffsetArea_1200', Level.LEVEL2, async (done: Function) => {
 
@@ -7862,12 +7972,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_OffsetArea_1000
-     * @tc.name    Sub_InputMethod_IME_OffsetArea_1000
-     * @tc.desc    getSystemPanelCurrentInsets()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_OffsetArea_1000
+     * @tc.number Sub_InputMethod_IME_OffsetArea_1000
+     * @tc.desc   getSystemPanelCurrentInsets()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_OffsetArea_1000', Level.LEVEL2, async (done: Function) => {
 
@@ -7933,12 +8044,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_OffsetArea_1100
-     * @tc.name    Sub_InputMethod_IME_OffsetArea_1100
-     * @tc.desc    getSystemPanelCurrentInsets()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_OffsetArea_1100
+     * @tc.number Sub_InputMethod_IME_OffsetArea_1100
+     * @tc.desc   getSystemPanelCurrentInsets()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_OffsetArea_1100', Level.LEVEL2, async (done: Function) => {
 
@@ -8004,12 +8116,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_InputMethodState_0901
-     * @tc.name    Sub_InputMethod_IME_InputMethodState_0901
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level3
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_InputMethodState_0901
+     * @tc.number Sub_InputMethod_IME_InputMethodState_0901
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_InputMethodState_0901', Level.LEVEL3, async (done: Function) => {
       try{
@@ -8031,12 +8144,13 @@ export default function inputMethodWindManageAbility() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_InputMethodState_0902
-     * @tc.name    Sub_InputMethod_IME_InputMethodState_0902
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level3
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_InputMethodState_0902
+     * @tc.number Sub_InputMethod_IME_InputMethodState_0902
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_InputMethodState_0902', Level.LEVEL3, async (done: Function) => {
       try{

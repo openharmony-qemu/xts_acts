@@ -35,12 +35,13 @@ export default function MultimodalGestureEventTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_gestureEvent_Pinch_0100
-     * @tc.name: SUB_MMI_Input_Api_gestureEvent_Pinch_0100
-     * @tc.desc: Test Pinch.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_gestureEvent_Pinch_0100
+     * @tc.number SUB_MMI_Input_Api_gestureEvent_Pinch_0100
+     * @tc.desc   Test Pinch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_gestureEvent_Pinch_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_gestureEvent_Pinch_0100";
@@ -60,12 +61,13 @@ export default function MultimodalGestureEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_gestureEvent_Rotate_0100
-     * @tc.name: SUB_MMI_Input_Api_gestureEvent_Rotate_0100
-     * @tc.desc: Test Rotate.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_gestureEvent_Rotate_0100
+     * @tc.number SUB_MMI_Input_Api_gestureEvent_Rotate_0100
+     * @tc.desc   Test Rotate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_gestureEvent_Rotate_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_gestureEvent_Rotate_0100";
@@ -85,12 +87,13 @@ export default function MultimodalGestureEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_gestureEvent_ThreeFingersSwipe_0100
-     * @tc.name: SUB_MMI_Input_Api_gestureEvent_ThreeFingersSwipe_0100
-     * @tc.desc: Test ThreeFingersSwipe.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_gestureEvent_ThreeFingersSwipe_0100
+     * @tc.number SUB_MMI_Input_Api_gestureEvent_ThreeFingersSwipe_0100
+     * @tc.desc   Test ThreeFingersSwipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_gestureEvent_ThreeFingersSwipe_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_gestureEvent_ThreeFingersSwipe_0100";
@@ -111,12 +114,13 @@ export default function MultimodalGestureEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_gestureEvent_FourFingersSwipe_0100
-     * @tc.name: SUB_MMI_Input_Api_gestureEvent_FourFingersSwipe_0100
-     * @tc.desc: Test FourFingersSwipe.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_gestureEvent_FourFingersSwipe_0100
+     * @tc.number SUB_MMI_Input_Api_gestureEvent_FourFingersSwipe_0100
+     * @tc.desc   Test FourFingersSwipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_gestureEvent_FourFingersSwipe_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_gestureEvent_FourFingersSwipe_0100";
@@ -137,12 +141,13 @@ export default function MultimodalGestureEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_gestureEvent_ThreeFingersTap_0100
-     * @tc.name: SUB_MMI_Input_Api_gestureEvent_ThreeFingersTap_0100
-     * @tc.desc: Test ThreeFingersTap.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_gestureEvent_ThreeFingersTap_0100
+     * @tc.number SUB_MMI_Input_Api_gestureEvent_ThreeFingersTap_0100
+     * @tc.desc   Test ThreeFingersTap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_gestureEvent_ThreeFingersTap_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_gestureEvent_ThreeFingersTap_0100";

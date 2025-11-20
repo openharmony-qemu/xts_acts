@@ -15,11 +15,29 @@
 import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertLess', function () {
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertLessSuccess
+     * @tc.number assertLessSuccess
+     * @tc.desc   assertLessSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertLessSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = 12;
         let b = 15;
         expect(a).assertLess(b)
     })
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertLessFail
+     * @tc.number assertLessFail
+     * @tc.desc   assertLessFail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertLessFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = 12;
         let b = 10;

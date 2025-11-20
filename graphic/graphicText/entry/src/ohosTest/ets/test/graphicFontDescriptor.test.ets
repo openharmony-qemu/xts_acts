@@ -34,7 +34,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testMatchingFontDescriptors001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let msg = "testMatchingFontDescriptors001"
       console.info(msg + ' begin');
@@ -63,7 +63,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testMatchingFontDescriptors002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let msg = "testMatchingFontDescriptors002"
       console.info(msg + ' begin');
@@ -93,7 +93,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testMatchingFontDescriptors003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors003"
       console.info(msg + ' begin');
       try {
@@ -122,7 +122,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testMatchingFontDescriptors004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors004"
       console.info(msg + ' begin');
       try {
@@ -151,7 +151,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testMatchingFontDescriptors005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors005"
       console.info(msg + ' begin');
       try {
@@ -178,7 +178,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testMatchingFontDescriptors006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors006"
       console.info(msg + ' begin');
       try {
@@ -205,7 +205,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testMatchingFontDescriptors007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors007"
       console.info(msg + ' begin');
       try {
@@ -236,7 +236,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testMatchingFontDescriptors008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testMatchingFontDescriptors008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testMatchingFontDescriptors008"
       console.info(msg + ' begin');
       try {
@@ -269,7 +269,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetSystemFontFullNamesByType001"
       console.info(msg + ' begin');
@@ -298,7 +298,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let msg = "testGetSystemFontFullNamesByType002"
       console.info(msg + ' begin');
@@ -332,7 +332,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetSystemFontFullNamesByType003"
       console.info(msg + ' begin');
@@ -365,7 +365,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetSystemFontFullNamesByType004"
       console.info(msg + ' begin');
@@ -394,7 +394,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetSystemFontFullNamesByType005"
       console.info(msg + ' begin');
@@ -428,7 +428,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetSystemFontFullNamesByType006"
       console.info(msg + ' begin');
@@ -457,7 +457,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetSystemFontFullNamesByType007"
       console.info(msg + ' begin');
@@ -485,7 +485,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetSystemFontFullNamesByType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetSystemFontFullNamesByType008"
       console.info(msg + ' begin');
@@ -513,7 +513,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetFontDescriptorByFullName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetFontDescriptorByFullName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetFontDescriptorByFullName001"
       console.info(msg + ' begin');
@@ -543,7 +543,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetFontDescriptorByFullName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetFontDescriptorByFullName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetFontDescriptorByFullName002"
       console.info(msg + ' begin');
@@ -572,7 +572,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetFontDescriptorByFullName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetFontDescriptorByFullName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetFontDescriptorByFullName003"
       console.info(msg + ' begin');
@@ -600,7 +600,7 @@ export default function graphicFontDescriptorTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testGetFontDescriptorByFullName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetFontDescriptorByFullName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
       let msg = "testGetFontDescriptorByFullName004"
       console.info(msg + ' begin');

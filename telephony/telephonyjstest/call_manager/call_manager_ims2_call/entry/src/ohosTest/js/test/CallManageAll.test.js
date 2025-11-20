@@ -162,13 +162,18 @@ export default function CallManageImsCall() {
         it('Telephony_CallManager_hasCall_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 var data = await call.hasCall();
-                console.log(`Telephony_CallManager_hasCall_Promise_0400 finish data = ${data}`);
+                if (data) {
+                    expect(data == true).assertTrue();
+                    console.info(`Telephony_CallManager_hasCall_Promise_0400 success, has call->${JSON.stringify(data)}`);
+                } else {
+                    expect(data == false).assertTrue();
+                    console.info(`Telephony_CallManager_hasCall_Promise_0400 success, does not has call->${JSON.stringify(data)}`);
+                }
                 done();
             } catch (err) {
                 console.log('Telephony_CallManager_hasCall_Promise_0400 fail');
                 expect().assertFail();
                 done();
-
             }
         });
 

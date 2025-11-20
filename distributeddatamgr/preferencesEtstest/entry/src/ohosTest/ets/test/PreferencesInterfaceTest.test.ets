@@ -62,15 +62,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3200
-     * @tc.name testPreferencesStorageType0100
-     * @tc.desc test StorageType
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0100
+     * @tc.number testPreferencesStorageType0100
+     * @tc.desc   testPreferencesStorageType0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPreferencesStorageType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
         console.info(TAG + "enum value of xml: ${data_preferences.StorageType.XML}");
@@ -97,15 +98,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3300
-     * @tc.name testPreferencesStorageType0200
-     * @tc.desc test StorageType invalid storage type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0200
+     * @tc.number testPreferencesStorageType0200
+     * @tc.desc   testPreferencesStorageType0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testPreferencesStorageType0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
         let boolVar = data_preferences.isStorageTypeSupported(-1);
@@ -120,15 +122,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3400
-     * @tc.name testPreferencesStorageType0300
-     * @tc.desc test StorageType invalid storage type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0300
+     * @tc.number testPreferencesStorageType0300
+     * @tc.desc   testPreferencesStorageType0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testPreferencesStorageType0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
         let boolVar = data_preferences.isStorageTypeSupported(2);
@@ -143,15 +146,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3500
-     * @tc.name testPreferencesStorageType0400
-     * @tc.desc test StorageType xml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0400
+     * @tc.number testPreferencesStorageType0400
+     * @tc.desc   testPreferencesStorageType0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPreferencesStorageType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:Function) => {
       let OptionArray: data_preferences.Options[] = [
         { name: "default_storage_0400_1" },
@@ -185,15 +189,16 @@ export default function PreferencesInterfaceTest() {
       }
     })
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3600
-     * @tc.name testPreferencesStorageType0500
-     * @tc.desc test StorageType null,firstly create xml,when xml exists, open again, it should be ok and be xml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0500
+     * @tc.number testPreferencesStorageType0500
+     * @tc.desc   testPreferencesStorageType0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPreferencesStorageType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let mPreference1 = await data_preferences.getPreferences(context, {name: "storage_0500_1", storageType: null});
       expect(mPreference1 != null).assertTrue();
@@ -213,15 +218,16 @@ export default function PreferencesInterfaceTest() {
       }
     })
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3700
-     * @tc.name testPreferencesStorageType0600
-     * @tc.desc test StorageType null,firstly create xml,when xml exists, open again, it should be ok and be xml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0600
+     * @tc.number testPreferencesStorageType0600
+     * @tc.desc   testPreferencesStorageType0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPreferencesStorageType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) => {
       let isEnhance = data_preferences.isStorageTypeSupported(data_preferences.StorageType.GSKV);
       if (isEnhance) {
@@ -257,15 +263,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3800
-     * @tc.name testPreferencesStorageType0700
-     * @tc.desc test StorageType open with clkv type but xml exists
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0700
+     * @tc.number testPreferencesStorageType0700
+     * @tc.desc   testPreferencesStorageType0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPreferencesStorageType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       const Options : data_preferences.Options = {
         name: "storage_006"
@@ -292,15 +299,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3900
-     * @tc.name testPreferencesStorageType0800
-     * @tc.desc test StorageType open with GSKV type and open again
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0800
+     * @tc.number testPreferencesStorageType0800
+     * @tc.desc   testPreferencesStorageType0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPreferencesStorageType0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) => {
       let isEnhance = data_preferences.isStorageTypeSupported(data_preferences.StorageType.GSKV);
       console.info(TAG + '0800 isStorageTypeSupported success' + isEnhance);
@@ -330,15 +338,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_4000
-     * @tc.name testPreferencesStorageType0900
-     * @tc.desc test StorageType
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType0900
+     * @tc.number testPreferencesStorageType0900
+     * @tc.desc   testPreferencesStorageType0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPreferencesStorageType0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
         console.info(TAG + "enum value of xml: ${data_preferences.StorageType.XML}");
@@ -363,15 +372,16 @@ export default function PreferencesInterfaceTest() {
     })
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_4100
-     * @tc.name testPreferencesStorageType1000
-     * @tc.desc test StorageType
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPreferencesStorageType1000
+     * @tc.number testPreferencesStorageType1000
+     * @tc.desc   testPreferencesStorageType1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPreferencesStorageType1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
         console.info(TAG + "enum value of GSkv: ${data_preferences.StorageType.GSKV}");

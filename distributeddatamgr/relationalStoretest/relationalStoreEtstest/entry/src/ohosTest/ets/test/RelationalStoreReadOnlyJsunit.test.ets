@@ -103,13 +103,13 @@ export default function RdbStoreReadOnlyTest() {
     console.info(TAG + "*************JS Test Begin*************");
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0100
-     * @tc.name testReadOnly0100
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0100 start *************");
@@ -127,13 +127,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0200
-     * @tc.name testReadOnly0200
-     * @tc.desc 1. set isReadOnly as true
-     *          2. delete read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0200 start *************");
@@ -159,13 +159,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0300
-     * @tc.name testReadOnly0300
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database  if the database is not exist
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0300 start *************");
@@ -182,12 +182,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0400
-     * @tc.name testReadOnly0400
-     * @tc.desc insert data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   insert data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0400 start *************");
@@ -214,12 +215,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0500
-     * @tc.name testReadOnly0500
-     * @tc.desc insertSync data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   insertSync data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0500 start *************");
@@ -247,12 +249,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0600
-     * @tc.name testReadOnly0600
-     * @tc.desc batchInsert data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   batchInsert data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0600 start *************");
@@ -285,12 +288,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0700
-     * @tc.name testReadOnly0700
-     * @tc.desc batchInsertSync data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   batchInsertSync data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0700 start *************");
@@ -323,12 +327,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0800
-     * @tc.name testReadOnly0800
-     * @tc.desc update data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   update data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0800 start *************");
@@ -349,12 +354,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0900
-     * @tc.name testReadOnly0900
-     * @tc.desc updateSync data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   updateSync data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly0900 start *************");
@@ -375,12 +381,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1000
-     * @tc.name testReadOnly1000
-     * @tc.desc delete data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1000 start *************");
@@ -401,12 +408,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1100
-     * @tc.name testReadOnly1100
-     * @tc.desc deleteSync data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   deleteSync data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1100 start *************");
@@ -428,12 +436,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1200
-     * @tc.name testReadOnly1200
-     * @tc.desc begin transaction
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   begin transaction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1200 start *************");
@@ -453,12 +462,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1300
-     * @tc.name testReadOnly1300
-     * @tc.desc query
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1300 start *************");
@@ -478,12 +488,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1400
-     * @tc.name testReadOnly1400
-     * @tc.desc querySql data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   querySql data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1400 start *************");
@@ -504,12 +515,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1500
-     * @tc.name testReadOnly1500
-     * @tc.desc querySqlSync data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   querySqlSync data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1500 start *************");
@@ -530,12 +542,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1600
-     * @tc.name testReadOnly1600
-     * @tc.desc  execute
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   execute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1600 start *************");
@@ -555,12 +568,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1700
-     * @tc.name testReadOnly1700
-     * @tc.desc  executeSql
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   executeSql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1700 start *************");
@@ -580,12 +594,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1800
-     * @tc.name testReadOnly1800
-     * @tc.desc  executeSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   executeSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1800 start *************");
@@ -605,12 +620,13 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1900
-     * @tc.name testReadOnly1900
-     * @tc.desc set user_version by store
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   set user_version by store
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testReadOnly1900 start *************");
@@ -629,13 +645,13 @@ export default function RdbStoreReadOnlyTest() {
       console.info(TAG + "************* testReadOnly1900 end *************");
     })
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testReadOnly2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_2000
-     * @tc.name testReadOnly2000
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database  if the database is not exist
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReadOnly2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* testReadOnly2000 start *************");

@@ -74,12 +74,13 @@ export default function LinkEnhanceNoPermission() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100
-     * @tc.name       : SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100
-     * @tc.desc       : linkEnhance.createConnection接口权限校验
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100
+     * @tc.desc   linkEnhance.createConnection接口权限校验
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -105,12 +106,13 @@ export default function LinkEnhanceNoPermission() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_noPermission_createConnection_0100----------------");
     });
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100
-     * @tc.name       : SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100
-     * @tc.desc       : linkEnhance.createServer接口权限校验
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100
+     * @tc.desc   linkEnhance.createServer接口权限校验
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_noPermission_createServer_0100----------------");

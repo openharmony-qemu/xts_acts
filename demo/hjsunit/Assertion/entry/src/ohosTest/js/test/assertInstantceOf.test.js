@@ -15,10 +15,28 @@
 import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertInstanceOf', function () {
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertInstanceOfSuccessOnNumber
+     * @tc.number assertInstanceOfSuccessOnNumber
+     * @tc.desc   assertInstanceOfSuccessOnNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertInstanceOfSuccessOnNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = 12;
         expect(a).assertInstanceOf('Number')
     })
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertInstanceOfFailOnNumber
+     * @tc.number assertInstanceOfFailOnNumber
+     * @tc.desc   assertInstanceOfFailOnNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertInstanceOfFailOnNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = "abc";
         expect(a).assertInstanceOf('String');

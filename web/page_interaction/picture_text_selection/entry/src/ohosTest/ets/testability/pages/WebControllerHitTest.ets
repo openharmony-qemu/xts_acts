@@ -150,7 +150,7 @@ struct WebControllerHitTest {
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
-                  Utils.emitEvent(this.hitType, 176060)
+                  Utils.emitEvent(this.hitType, 20251210)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }

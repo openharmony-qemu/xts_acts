@@ -26,12 +26,13 @@ export default function BatteryStatisticsTest() {
   describe("BatteryStatisticsTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'BatteryStatisticsTest start');
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0100
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0010
-     * @tc.name testBatteryStatisticsTest_static_0100
-     * @tc.desc Test the third-party application call getBatteryStats will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getBatteryStats will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -57,12 +58,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0200
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0020
-     * @tc.name testBatteryStatisticsTest_static_0200
-     * @tc.desc Test the third-party application call getBatteryStats will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getBatteryStats will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -89,12 +91,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0300
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0030
-     * @tc.name testBatteryStatisticsTest_static_0300
-     * @tc.desc Test the third-party application call getAppPowerValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getAppPowerValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -111,12 +114,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0400
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0040
-     * @tc.name testBatteryStatisticsTest_static_0400
-     * @tc.desc Test the third-party application call getAppPowerPercent will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getAppPowerPercent will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -133,12 +137,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0500
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0050
-     * @tc.name testBatteryStatisticsTest_static_0500
-     * @tc.desc Test the third-party application call getHardwareUnitPowerValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getHardwareUnitPowerValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -156,12 +161,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0600
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0060
-     * @tc.name testBatteryStatisticsTest_static_0600
-     * @tc.desc Test the third-party application call getHardwareUnitPowerPercent will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getHardwareUnitPowerPercent will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -179,12 +185,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0700
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0070
-     * @tc.name testBatteryStatisticsTest_static_0700
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_INVALID
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -203,12 +210,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0800
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0080
-     * @tc.name testBatteryStatisticsTest_static_0800
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_APP
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_APP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -227,12 +235,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_0900
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0090
-     * @tc.name testBatteryStatisticsTest_static_0900
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_BLUETOOTH
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_BLUETOOTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -251,12 +260,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_1000
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0100
-     * @tc.name testBatteryStatisticsTest_static_1000
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_IDLE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -275,12 +285,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_1100
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0110
-     * @tc.name testBatteryStatisticsTest_static_1100
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_PHONE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_PHONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -299,12 +310,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_1200
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0120
-     * @tc.name testBatteryStatisticsTest_static_1200
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_RADIO
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_RADIO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -323,12 +335,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_1300
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0130
-     * @tc.name testBatteryStatisticsTest_static_1300
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_SCREEN
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_SCREEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -347,12 +360,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_1400
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0140
-     * @tc.name testBatteryStatisticsTest_static_1400
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_USER
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_USER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -371,12 +385,13 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryStatisticsTest_static_1500
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0150
-     * @tc.name testBatteryStatisticsTest_static_1500
-     * @tc.desc batteryStats ConsumptionType type CONSUMPTION_TYPE_WIFI
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_WIFI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryStatisticsTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

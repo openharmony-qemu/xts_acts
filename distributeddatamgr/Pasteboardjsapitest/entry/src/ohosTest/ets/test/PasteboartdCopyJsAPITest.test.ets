@@ -85,12 +85,13 @@ export default function PasteboartdCopyJsAPITest() {
       done();
     })
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0100
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0100
-     * @tc.desc      : Verify the properties of the Text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0100
+     * @tc.desc   Verify the properties of the Text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let textData = new unifiedDataChannel.UnifiedData();
@@ -128,12 +129,13 @@ export default function PasteboartdCopyJsAPITest() {
 
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0200
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0200
-     * @tc.desc      : Verify the properties of the PlainText type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0200
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0200
+     * @tc.desc   Verify the properties of the PlainText type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -174,12 +176,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0300
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0300
-     * @tc.desc      : Verify the properties of the Hyperlink type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0300
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0300
+     * @tc.desc   Verify the properties of the Hyperlink type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let hyperLinkData = new unifiedDataChannel.UnifiedData();
@@ -220,12 +223,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0400
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0400
-     * @tc.desc      : Verify the properties of the HTML type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0400
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0400
+     * @tc.desc   Verify the properties of the HTML type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let htmlData = new unifiedDataChannel.UnifiedData();
@@ -266,12 +270,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0500
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0500
-     * @tc.desc      : Verify the properties of the File type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0500
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0500
+     * @tc.desc   Verify the properties of the File type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let fileData = new unifiedDataChannel.UnifiedData();
@@ -310,12 +315,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0600
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0600
-     * @tc.desc      : Verify the properties of the Folder type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0600
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0600
+     * @tc.desc   Verify the properties of the Folder type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let folderData = new unifiedDataChannel.UnifiedData();
@@ -356,12 +362,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0700
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0700
-     * @tc.desc      : Verify the properties of the Image type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0700
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0700
+     * @tc.desc   Verify the properties of the Image type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let imageData = new unifiedDataChannel.UnifiedData();
@@ -402,12 +409,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0800
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0800
-     * @tc.desc      : Verify the properties of the Video type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0800
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0800
+     * @tc.desc   Verify the properties of the Video type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let videData = new unifiedDataChannel.UnifiedData();
@@ -446,12 +454,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_0900
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0900
-     * @tc.desc      : Verify the properties of the Audio type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0900
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0900
+     * @tc.desc   Verify the properties of the Audio type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let audioData = new unifiedDataChannel.UnifiedData();
@@ -490,12 +499,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1000
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1000
-     * @tc.desc      : Verify the properties of the SystemDefinedRecord type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1000
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1000
+     * @tc.desc   Verify the properties of the SystemDefinedRecord type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let sdrData = new unifiedDataChannel.UnifiedData();
@@ -535,12 +545,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1100
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1100
-     * @tc.desc      : Verify the properties of the SystemDefinedForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1100
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1100
+     * @tc.desc   Verify the properties of the SystemDefinedForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let sdfData = new unifiedDataChannel.UnifiedData();
@@ -590,12 +601,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1200
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1200
-     * @tc.desc      : Verify the properties of the SystemDefinedAppItem type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1200
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1200
+     * @tc.desc   Verify the properties of the SystemDefinedAppItem type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let appItemData = new unifiedDataChannel.UnifiedData();
@@ -647,12 +659,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1300
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1300
-     * @tc.desc      : Verify the properties of the ApplicationDefinedRecord type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1300
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1300
+     * @tc.desc   Verify the properties of the ApplicationDefinedRecord type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let recordData = new unifiedDataChannel.UnifiedData();
@@ -686,12 +699,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1400
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1400
-     * @tc.desc      : Verify the properties of the OPENHARMONY_PIXEL_MAP type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1400
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1400
+     * @tc.desc   Verify the properties of the OPENHARMONY_PIXEL_MAP type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const color = new ArrayBuffer(96); // 创建pixelmap对象
@@ -736,12 +750,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1500
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1500
-     * @tc.desc      : Verify the properties of the OPENHARMONY_WANT type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1500
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1500
+     * @tc.desc   Verify the properties of the OPENHARMONY_WANT type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let wantData = new unifiedDataChannel.UnifiedData();
@@ -776,12 +791,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1600
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1600
-     * @tc.desc      : setUnifiedDataSync and getUnifiedData
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1600
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1600
+     * @tc.desc   setUnifiedDataSync and getUnifiedData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async  (done:Function) => {
       let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -825,12 +841,13 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1700
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1700
-     * @tc.desc      : setUnifiedData and getUnifiedDataSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1700
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1700
+     * @tc.desc   setUnifiedData and getUnifiedDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -873,12 +890,13 @@ export default function PasteboartdCopyJsAPITest() {
 
 
     /**
-     * @tc.name      : testSUB_Pasteboard_Local_SDK_Copy_JsApiTest_1800
-     * @tc.number    : SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1800
-     * @tc.desc      : setUnifiedDataSync and getUnifiedDataSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1800
+     * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1800
+     * @tc.desc   setUnifiedDataSync and getUnifiedDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async  () => {
       let plainTextData = new unifiedDataChannel.UnifiedData();

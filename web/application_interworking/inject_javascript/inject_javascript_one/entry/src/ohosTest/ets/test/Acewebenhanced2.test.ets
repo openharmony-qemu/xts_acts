@@ -24,6 +24,7 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 
 export default function AceWeb() {
@@ -46,7 +47,7 @@ export default function AceWeb() {
       } catch (err) {
         console.error('push IndexOthers page error: ' + err);
       }
-      await waitForComponent("registerJavaScriptProxyAsyncMethodListButton");
+      await driver.waitForComponent(ON.id("registerJavaScriptProxyAsyncMethodListButton"), 10000);
       done()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
@@ -88,7 +89,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
@@ -105,7 +106,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
@@ -122,7 +123,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
   })

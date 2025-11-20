@@ -85,12 +85,13 @@ export default function nfcIsoDepErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0100
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0100
-         * @tc.name Test isExtendedApduSupported IsoDep
-         * @tc.desc Check whether extended APDUs are supported Promise. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Check whether extended APDUs are supported Promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0100', Level.LEVEL1, async function (done) {
             if (IsoDepTag != null && IsoDepTag != undefined) {
@@ -115,12 +116,13 @@ export default function nfcIsoDepErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0200
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0200
-         * @tc.name Test isExtendedApduSupported IsoDep
-         * @tc.desc Check whether extended APDUs are supported callback. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Check whether extended APDUs are supported callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0200', Level.LEVEL1, async function (done) {
             if (IsoDepTag != null && IsoDepTag != undefined) {
@@ -146,12 +148,13 @@ export default function nfcIsoDepErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0300
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0300
-         * @tc.name Test getIsoDep IsoDep
-         * @tc.desc Obtains an object based on the tag information The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains an object based on the tag information The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0300', Level.LEVEL1, function ()  {
             if (IsoDepTag != null && IsoDepTag != undefined) {

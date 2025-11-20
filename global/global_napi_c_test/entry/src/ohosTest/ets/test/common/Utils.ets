@@ -408,6 +408,15 @@ export default class Utils {
   }
 
   static async keydo(name: string, type: number, key: number, ndkfunction: Function) {
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   name
+     * @tc.number name
+     * @tc.desc   name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
+     */
     it(name,type,async (done: Function) => {
       try {
         console.info(`====>${name} start<====`);

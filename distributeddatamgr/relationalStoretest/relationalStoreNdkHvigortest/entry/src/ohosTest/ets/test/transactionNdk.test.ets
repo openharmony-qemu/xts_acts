@@ -50,12 +50,13 @@ export default function transactionNdktest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_Transaction0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_Rdb_Transaction0100
-     * @tc.name OH_Rdb_Transaction0100
-     * @tc.desc OH_Rdb_Transaction0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_Transaction0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_Transaction0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Rdb_Transaction0100();
@@ -65,12 +66,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_CreateTransaction0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_Rdb_CreateTransaction0100
-     * @tc.name OH_Rdb_CreateTransaction0100
-     * @tc.desc OH_Rdb_CreateTransaction0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_CreateTransaction0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_CreateTransaction0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Rdb_CreateTransaction0100();
@@ -80,12 +82,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_RdbTrans_Rollback0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Rollback0100
-     * @tc.name OH_RdbTrans_Rollback0100
-     * @tc.desc OH_RdbTrans_Rollback0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_RdbTrans_Rollback0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_RdbTrans_Rollback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RdbTrans_Rollback0100();
@@ -95,12 +98,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_RdbTrans_Query0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Query0100
-     * @tc.name OH_RdbTrans_Query0100
-     * @tc.desc OH_RdbTrans_Query0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_RdbTrans_Query0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_RdbTrans_Query0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RdbTrans_Query0100();
@@ -110,12 +114,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_VBuckets_Create0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBuckets_Create0100
-     * @tc.name OH_VBuckets_Create0100
-     * @tc.desc OH_VBuckets_Create0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_VBuckets_Create0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_VBuckets_Create0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_VBuckets_Create0100();
@@ -125,12 +130,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_VBuckets_Destroy0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBuckets_Destroy0100
-     * @tc.name OH_VBuckets_Destroy0100
-     * @tc.desc OH_VBuckets_Destroy0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_VBuckets_Destroy0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_VBuckets_Destroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_VBuckets_Destroy0100();
@@ -140,12 +146,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_RdbTrans_Update0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Update0100
-     * @tc.name OH_RdbTrans_Update0100
-     * @tc.desc OH_RdbTrans_Update0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_RdbTrans_Update0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_RdbTrans_Update0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RdbTrans_Update0100();
@@ -155,12 +162,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_RdbTrans_Delete0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Delete0100
-     * @tc.name OH_RdbTrans_Delete0100
-     * @tc.desc OH_RdbTrans_Delete0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_RdbTrans_Delete0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_RdbTrans_Delete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RdbTrans_Delete0100();
@@ -170,12 +178,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_RdbTrans_QuerySql0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_QuerySql0100
-     * @tc.name OH_RdbTrans_QuerySql0100
-     * @tc.desc OH_RdbTrans_QuerySql0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_RdbTrans_QuerySql0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_RdbTrans_QuerySql0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RdbTrans_QuerySql0100();
@@ -185,12 +194,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_VBucket_PutFloatVector0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBucket_PutFloatVector0100
-     * @tc.name OH_VBucket_PutFloatVector0100
-     * @tc.desc OH_VBucket_PutFloatVector0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_VBucket_PutFloatVector0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_VBucket_PutFloatVector0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_VBucket_PutFloatVector0100();
@@ -200,12 +210,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_VBucket_PutUnlimitedInt0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBucket_PutUnlimitedInt0100
-     * @tc.name OH_VBucket_PutUnlimitedInt0100
-     * @tc.desc OH_VBucket_PutUnlimitedInt0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_VBucket_PutUnlimitedInt0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_VBucket_PutUnlimitedInt0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_VBucket_PutUnlimitedInt0100();
@@ -216,12 +227,13 @@ export default function transactionNdktest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_SetTokenizer0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetTokenizer_0100
-     * @tc.name OH_Rdb_SetTokenizer0100
-     * @tc.desc OH_Rdb_SetTokenizer0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_SetTokenizer0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_SetTokenizer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Rdb_SetTokenizer0100();
@@ -232,12 +244,13 @@ export default function transactionNdktest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_IsTokenizerSupported0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_IsTokenizerSupported0100
-     * @tc.name OH_Rdb_IsTokenizerSupported0100
-     * @tc.desc OH_Rdb_IsTokenizerSupported0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_IsTokenizerSupported0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_IsTokenizerSupported0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Rdb_IsTokenizerSupported0100();
@@ -248,12 +261,13 @@ export default function transactionNdktest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_RdbTrans_Commit0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RdbTrans_Commit0100
-     * @tc.name OH_RdbTrans_Commit0100
-     * @tc.desc OH_RdbTrans_Commit0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_RdbTrans_Commit0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_RdbTrans_Commit0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RdbTrans_Commit0100();
@@ -264,12 +278,13 @@ export default function transactionNdktest() {
 
     
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_RdbTrans_InsertWithConflictResolution0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RdbTrans_InsertWithConflictResolution0100
-     * @tc.name OH_RdbTrans_InsertWithConflictResolution0100
-     * @tc.desc OH_RdbTrans_InsertWithConflictResolution0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_RdbTrans_InsertWithConflictResolution0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_RdbTrans_InsertWithConflictResolution0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RdbTrans_InsertWithConflictResolution0100();
@@ -280,12 +295,13 @@ export default function transactionNdktest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_SetCustomDir0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetCustomDir0100
-     * @tc.name OH_Rdb_SetCustomDir0100
-     * @tc.desc OH_Rdb_SetCustomDir0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_SetCustomDir0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_SetCustomDir0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Rdb_SetCustomDir0100();
@@ -296,12 +312,13 @@ export default function transactionNdktest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_SetReadOnly0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetReadOnly0100
-     * @tc.name OH_Rdb_SetReadOnly0100
-     * @tc.desc OH_Rdb_SetReadOnly0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_SetReadOnly0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_SetReadOnly0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Rdb_SetReadOnly0100();
@@ -312,12 +329,13 @@ export default function transactionNdktest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_SetPlugins0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetPlugins0100
-     * @tc.name OH_Rdb_SetPlugins0100
-     * @tc.desc OH_Rdb_SetPlugins0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_SetPlugins0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_SetPlugins0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Rdb_SetPlugins0100();
@@ -327,12 +345,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_SetSemanticIndex_Param_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0100
-     * @tc.name OH_Rdb_SetSemanticIndex_Param_0100
-     * @tc.desc OH_Rdb_SetSemanticIndex_Param_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_SetSemanticIndex_Param_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_SetSemanticIndex_Param_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       if (!isValidDeviceType) {
@@ -345,12 +364,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_SetSemanticIndex_Param_0200
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0200
-     * @tc.name OH_Rdb_SetSemanticIndex_Param_0200
-     * @tc.desc OH_Rdb_SetSemanticIndex_Param_0200
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_SetSemanticIndex_Param_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_SetSemanticIndex_Param_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       if (!isValidDeviceType) {
@@ -363,12 +383,13 @@ export default function transactionNdktest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_SetSemanticIndex_Param_0300
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0300
-     * @tc.name OH_Rdb_SetSemanticIndex_Param_0300
-     * @tc.desc OH_Rdb_SetSemanticIndex_Param_0300
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_SetSemanticIndex_Param_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_SetSemanticIndex_Param_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       if (!isValidDeviceType) {

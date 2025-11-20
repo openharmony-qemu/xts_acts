@@ -47,12 +47,13 @@ export default function timeNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Time_TimeManagement_Obtaining_5700
      * @tc.number SUB_Time_TimeManagement_Obtaining_5700.
-     * @tc.name Test testNapi getTimezone error.
-     * @tc.desc get zone result.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get zone result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Time_TimeManagement_Obtaining_5700', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Time_TimeManagement_Obtaining_5700 start");
@@ -63,12 +64,13 @@ export default function timeNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Time_TimeManagement_Obtaining_5500
      * @tc.number SUB_Time_TimeManagement_Obtaining_5500.
-     * @tc.name Test testNapi getTimezone error.
-     * @tc.desc get zone result.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get zone result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Time_TimeManagement_Obtaining_5500', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Time_TimeManagement_Obtaining_5500 start");
@@ -79,12 +81,13 @@ export default function timeNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Time_TimeManagement_Obtaining_5800
      * @tc.number SUB_Time_TimeManagement_Obtaining_5800.
-     * @tc.name Test testNapi getTimezone.
-     * @tc.desc get zone result.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get zone result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Time_TimeManagement_Obtaining_5800', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_Time_TimeManagement_Obtaining_5800 start");
@@ -95,12 +98,13 @@ export default function timeNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_Time_TimeManagement_Obtaining_5600
      * @tc.number SUB_Time_TimeManagement_Obtaining_5600.
-     * @tc.name Test testNapi getTimezone.
-     * @tc.desc get zone result.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   get zone result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Time_TimeManagement_Obtaining_5600', Level.LEVEL0, async (done: Function) => {
       console.info("====>SUB_Time_TimeManagement_Obtaining_5600 start");

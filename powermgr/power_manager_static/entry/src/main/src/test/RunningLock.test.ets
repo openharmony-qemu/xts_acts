@@ -27,12 +27,13 @@ export default function RunningLockTest() {
   describe("RunningLockTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0100
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0010
-     * @tc.name testRunningLockTest_static_0100
-     * @tc.desc Create lock promise
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Create lock promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRunningLockTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -60,12 +61,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0200
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0020
-     * @tc.name testRunningLockTest_static_0200
-     * @tc.desc Create lock promise
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Create lock promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -104,12 +106,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0300
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0030
-     * @tc.name testRunningLockTest_static_0300
-     * @tc.desc Create lock callback
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Create lock callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -138,12 +141,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0400
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0040
-     * @tc.name testRunningLockTest_static_0400
-     * @tc.desc Create lock callback
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Create lock callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -183,12 +187,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0500
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0050
-     * @tc.name testRunningLockTest_static_0500
-     * @tc.desc The lock type is PROXIMITY_SCREEN_CONTROL
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   The lock type is PROXIMITY_SCREEN_CONTROL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -211,12 +216,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0600
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0060
-     * @tc.name testRunningLockTest_static_0600
-     * @tc.desc RunningLock isSupported
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRunningLockTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -237,12 +243,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0700
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0070
-     * @tc.name testRunningLockTest_static_0700
-     * @tc.desc RunningLock isSupported
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -262,12 +269,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0800
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0080
-     * @tc.name testRunningLockTest_static_0800
-     * @tc.desc RunningLock isSupported
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -288,12 +296,13 @@ export default function RunningLockTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockTest_static_0900
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0090
-     * @tc.name testRunningLockTest_static_0900
-     * @tc.desc RunningLock isSupported
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

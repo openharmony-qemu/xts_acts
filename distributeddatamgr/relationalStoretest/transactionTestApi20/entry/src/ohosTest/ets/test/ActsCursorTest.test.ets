@@ -19,12 +19,13 @@ import testNapi from 'libentry.so'
 export default function ActsCursorTest() {
   describe('ActsCursorTest', () => {
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0100
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0100
-     * @tc.desc    : Fault scenario for testing illegal parameters of OH_Cursor_GetFloatVectorCount interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0100
+     * @tc.desc   Fault scenario for testing illegal parameters of OH_Cursor_GetFloatVectorCount interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -44,12 +45,13 @@ export default function ActsCursorTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0200
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0200
-     * @tc.desc    : Test the fault scenario of the common abnormal error code of the OH_Cursor_GetFloatVectorCount interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0200
+     * @tc.desc   Test the fault scenario of the common abnormal error code of the OH_Cursor_GetFloatVectorCount interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -69,12 +71,13 @@ export default function ActsCursorTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0300
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0300
-     * @tc.desc    : Fault scenario for testing illegal parameters of OH_Cursor_GetFloatVector interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0300
+     * @tc.desc   Fault scenario for testing illegal parameters of OH_Cursor_GetFloatVector interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -92,12 +95,13 @@ export default function ActsCursorTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0400
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0400
-     * @tc.desc    : Test the fault scenario of the common abnormal error code of the OH_Cursor_GetFloatVector interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0400
+     * @tc.desc   Test the fault scenario of the common abnormal error code of the OH_Cursor_GetFloatVector interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

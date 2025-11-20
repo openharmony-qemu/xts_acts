@@ -56,11 +56,15 @@ describe('TimezoneInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0100
-    * @tc.name    test getTimeZone method
-    * @tc.desc    get the getTimeZone value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0100
+     * @tc.desc   get the getTimeZone value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_0100', Level.LEVEL0, function () {
         console.log('timezone_test_0100 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -69,11 +73,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0200
-    * @tc.name    test getDisplayName method
-    * @tc.desc    get the getDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0200
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0200
+     * @tc.desc   get the getDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0200', Level.LEVEL2, function () {
         console.log('timezone_test_0200 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -82,11 +90,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0300
-    * @tc.name    test getDisplayName method with zh-CN param
-    * @tc.desc    get the getDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0300
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0300
+     * @tc.desc   get the getDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0300', Level.LEVEL2, function () {
         console.log('timezone_test_0300 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -95,11 +107,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0400
-    * @tc.name    test getDisplayName method with true param
-    * @tc.desc    get the getDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0400
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0400
+     * @tc.desc   get the getDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0400', Level.LEVEL2, function () {
         console.log('timezone_test_0400 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -108,11 +124,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0500
-    * @tc.name    test getDisplayName method with false param
-    * @tc.desc    get the getDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0500
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0500
+     * @tc.desc   get the getDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0500', Level.LEVEL2, function () {
         console.log('timezone_test_0500 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -121,11 +141,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0600
-    * @tc.name    test getRawOffset method
-    * @tc.desc    get the getRawOffset value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0600
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0600
+     * @tc.desc   get the getRawOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0600', Level.LEVEL2, function () {
         console.log('timezone_test_0600 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -134,11 +158,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value >= 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0700
-    * @tc.name    test getOffset method
-    * @tc.desc    get the getOffset value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0700
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0700
+     * @tc.desc   get the getOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0700', Level.LEVEL2, function () {
         console.log('timezone_test_0700 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -147,11 +175,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value >= 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0800
-    * @tc.name    test getOffset method with date param
-    * @tc.desc    get the getOffset value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0800
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0800
+     * @tc.desc   get the getOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0800', Level.LEVEL2, function () {
         console.log('timezone_test_0800 ' + 'start');
         let timezone = I18n.getTimeZone();
@@ -160,11 +192,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value >= 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_0900
-    * @tc.name    test getID
-    * @tc.desc    get the getID value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_0900
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0900
+     * @tc.desc   get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_0900', Level.LEVEL2, function () {
         console.log('timezone_test_0900 ' + 'start');
         let timezone = I18n.getTimeZone('ACT');
@@ -173,11 +209,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('ACT');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1000
-    * @tc.name    test getDisplayName with timezone id
-    * @tc.desc    get the getID value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1000
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1000
+     * @tc.desc   get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1000', Level.LEVEL2, function () {
         console.log('timezone_test_1000 ' + 'start');
         let timezone = I18n.getTimeZone('ACT');
@@ -186,11 +226,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('澳大利亚中部标准时间');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1100
-    * @tc.name    test getDisplayName with locale
-    * @tc.desc    get the getID value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1100
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1100
+     * @tc.desc   get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1100', Level.LEVEL2, function () {
         console.log('timezone_test_1100 ' + 'start');
         let timezone = I18n.getTimeZone('Asia/Shanghai');
@@ -199,11 +243,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('中国标准时间');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1200
-    * @tc.name    test getDisplayName with locale
-    * @tc.desc    get the getID value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1200
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1200
+     * @tc.desc   get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1200', Level.LEVEL2, function () {
         console.log('timezone_test_1200 ' + 'start');
         let timezone = I18n.getTimeZone('Asia/Shanghai');
@@ -212,11 +260,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('中国标准时间');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1300
-    * @tc.name    test getDisplayName with en-US and true param
-    * @tc.desc    get the getID value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1300
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1300
+     * @tc.desc   get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1300', Level.LEVEL2, function () {
         console.log('timezone_test_1300 ' + 'start');
         let timezone = I18n.getTimeZone('Asia/Shanghai');
@@ -225,11 +277,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('China Standard Time');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1400
-    * @tc.name    test getDisplayName with zh-CN and false param
-    * @tc.desc    get the getID value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1400
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1400
+     * @tc.desc   get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1400', Level.LEVEL2, function () {
         console.log('timezone_test_1400 ' + 'start');
         let timezone = I18n.getTimeZone('Asia/Shanghai');
@@ -238,11 +294,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('中国标准时间');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1500
-    * @tc.name    test getRawOffset method with timezone id
-    * @tc.desc    get the getRawOffset value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1500
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1500
+     * @tc.desc   get the getRawOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1500', Level.LEVEL2, function () {
         console.log('timezone_test_1500 ' + 'start');
         let timezone = I18n.getTimeZone('ACT');
@@ -251,11 +311,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value > 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1600
-    * @tc.name    test getOffset method with timezone id
-    * @tc.desc    get the getOffset value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1600
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1600
+     * @tc.desc   get the getOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1600', Level.LEVEL2, function () {
         console.log('timezone_test_1600 ' + 'start');
         let timezone = I18n.getTimeZone('ACT');
@@ -264,11 +328,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value > 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1700
-    * @tc.name    test getOffset method with date and timezone id param
-    * @tc.desc    get the getOffset value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1700
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1700
+     * @tc.desc   get the getOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_1700', Level.LEVEL2, function () {
         console.log('timezone_test_1700 ' + 'start');
         let timezone = I18n.getTimeZone('ACT');
@@ -277,11 +345,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value > 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1800
-    * @tc.name test getAvailableIDs method
-    * @tc.desc get the getAvailableIDs value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1800
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1800
+     * @tc.desc   get the getAvailableIDs value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_1800', Level.LEVEL0, function () {
         console.log('timezone_test_1800 ' + 'start');
         let value = I18n.TimeZone.getAvailableIDs();
@@ -289,11 +361,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value.length > 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1900
-    * @tc.name test getAvailableZoneCityIDs method
-    * @tc.desc get the getAvailableZoneCityIDs value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_1900
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1900
+     * @tc.desc   get the getAvailableZoneCityIDs value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_1900', Level.LEVEL0, function () {
         console.log('timezone_test_1900 ' + 'start');
         let value = I18n.TimeZone.getAvailableZoneCityIDs();
@@ -301,11 +377,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value.length > 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2000
-    * @tc.name test getCityDisplayName method with zh locale
-    * @tc.desc get the getCityDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2000
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2000
+     * @tc.desc   get the getCityDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_2000', Level.LEVEL0, function () {
         console.log('timezone_test_2000 ' + 'start');
         let value = I18n.TimeZone.getCityDisplayName('Auckland', 'zh');
@@ -313,11 +393,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('奥克兰 (新西兰)');
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2020
-    * @tc.name test getCityDisplayName method with en loacle
-    * @tc.desc get the getCityDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2020
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2020
+     * @tc.desc   get the getCityDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2020', Level.LEVEL2, function () {
         console.log('timezone_test_2020 ' + 'start');
         let value = I18n.TimeZone.getCityDisplayName('Auckland', 'en');
@@ -325,11 +409,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('Auckland (New Zealand)');
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2040
-    * @tc.name test getCityDisplayName method with not exist cityid
-    * @tc.desc get the getCityDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2040
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2040
+     * @tc.desc   get the getCityDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2040', Level.LEVEL2, function () {
         console.log('timezone_test_2040 ' + 'start');
         let value = I18n.TimeZone.getCityDisplayName('abcd', 'en');
@@ -337,11 +425,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('');
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2060
-    * @tc.name test getCityDisplayName method with not exist locale
-    * @tc.desc get the getCityDisplayName value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2060
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2060
+     * @tc.desc   get the getCityDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2060', Level.LEVEL2, function () {
         console.log('timezone_test_2060 ' + 'start');
         let value = I18n.TimeZone.getCityDisplayName('Auckland', 'abc');
@@ -349,11 +441,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value).assertEqual('Auckland (New Zealand)');
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2100
-    * @tc.name test getTimezoneFromCity method
-    * @tc.desc get the getTimezoneFromCity value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2100
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2100
+     * @tc.desc   get the getTimezoneFromCity value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_2100', Level.LEVEL0, function () {
         console.log('timezone_test_2100 ' + 'start');
         let value = I18n.TimeZone.getTimezoneFromCity('Auckland');
@@ -361,11 +457,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value != null).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2120
-    * @tc.name test getTimezoneFromCity method with not exist cityid
-    * @tc.desc get the getTimezoneFromCity value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2120
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2120
+     * @tc.desc   get the getTimezoneFromCity value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2120', Level.LEVEL2, function () {
         console.log('timezone_test_2120 ' + 'start');
         let value = I18n.TimeZone.getTimezoneFromCity('abc');
@@ -373,11 +473,15 @@ describe('TimezoneInI18nTest', function () {
         expect(value != null).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2200
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2200
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2200
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_2200', Level.LEVEL0, function () {
         console.log('timezone_test_2200 ' + 'start');
         try{
@@ -392,11 +496,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2300
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2300
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2300
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2300', Level.LEVEL2, function () {
         console.log('timezone_test_2300 ' + 'start');
         try{
@@ -413,11 +521,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2400
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2400
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2400
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2400', Level.LEVEL2, function () {
         console.log('timezone_test_2400 ' + 'start');
         try{
@@ -432,11 +544,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2500
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2500
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2500
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2500', Level.LEVEL2, function () {
         console.log('timezone_test_2500 ' + 'start');
         try{
@@ -451,11 +567,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2600
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2600
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2600
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2600', Level.LEVEL2, function () {
         console.log('timezone_test_2600 ' + 'start');
         try{
@@ -470,11 +590,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2700
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2700
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2700
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2700', Level.LEVEL2, function () {
         console.log('timezone_test_2700 ' + 'start');
         try{
@@ -489,11 +613,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2800
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2800
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2800
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2800', Level.LEVEL2, function () {
         console.log('timezone_test_2800 ' + 'start');
         try{
@@ -508,11 +636,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2900
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_2900
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2900
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_2900', Level.LEVEL2, function () {
         console.log('timezone_test_2900 ' + 'start');
         try{
@@ -527,11 +659,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3000
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_3000
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3000
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_3000', Level.LEVEL2, function () {
         console.log('timezone_test_3000 ' + 'start');
         try{
@@ -546,11 +682,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3100
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_3100
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3100
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_3100', Level.LEVEL2, function () {
         console.log('timezone_test_3100 ' + 'start');
         try{
@@ -565,11 +705,15 @@ describe('TimezoneInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3200
-    * @tc.name test getTimezonesByLocation method
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   timezone_test_3200
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3200
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_3200', Level.LEVEL2, function () {
         console.log('timezone_test_3200 ' + 'start');
         try{

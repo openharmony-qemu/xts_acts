@@ -739,6 +739,7 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
             return retValue;
         }
     }
+    OH_WindowManager_ReleaseAllMainWindowInfo(infoList);
     napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
@@ -763,6 +764,7 @@ void OnWindowSnapshotCallback(const OH_PixelmapNative** snapshotPixelMapList, si
     } else {
         g_snapshotPixelMapList = nullptr;
     }
+    OH_WindowManager_ReleaseMainWindowSnapshot(*g_snapshotPixelMapList);
 }
 
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_callback_info info)

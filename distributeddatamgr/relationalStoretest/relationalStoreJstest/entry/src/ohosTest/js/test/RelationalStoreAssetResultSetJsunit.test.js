@@ -154,12 +154,13 @@ export default function relationalStoreAssetResultSetTest() {
         }
     
         /**
-         * @tc.name testGetAsset0001
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAsset0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0100
-         * @tc.desc resultSet getAsset normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAsset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await createTest();
@@ -198,12 +199,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testGetAsset0002
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAsset0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0200
-         * @tc.desc resultSet getAsset insert test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAsset0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await createTest();
@@ -233,12 +235,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testGetAsset0003
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAsset0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0300
-         * @tc.desc resultSet getAsset normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAsset0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await createTest();
@@ -265,12 +268,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
 
         /**
-         * @tc.name testGetAsset0004
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAsset0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0400
-         * @tc.desc resultSet getAsset delete test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset delete test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAsset0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testGetAsset0004 start *************");
@@ -300,14 +304,15 @@ export default function relationalStoreAssetResultSetTest() {
             }
         })
         
-        /**
-         * @tc.name testGetAsset0005
-         * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0500
-         * @tc.desc resultSet getAsset ABNORMAL test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:50
+          * @tc.name   testGetAsset0005
+          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0500
+          * @tc.desc   resultSet getAsset ABNORMAL test
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('testGetAsset0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testGetAsset0005 start *************");
             let assets6 = [asset6];
@@ -336,14 +341,15 @@ export default function relationalStoreAssetResultSetTest() {
             }
         })
                 
-        /**
-         * @tc.name testGetAsset0006
-         * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0600
-         * @tc.desc resultSet getAsset DOWNLOADING test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:50
+          * @tc.name   testGetAsset0006
+          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0600
+          * @tc.desc   resultSet getAsset DOWNLOADING test
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('testGetAsset0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testGetAsset0006 start *************");
             let assets7 = [asset7];
@@ -373,12 +379,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testAssetNoStatus0010
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testAssetNoStatus0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0700
-         * @tc.desc resultSet getAsset normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testAssetNoStatus0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testAssetNoStatus0010 start *************");
@@ -408,12 +415,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testAssetStatusUndefined0010
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testAssetStatusUndefined0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0800
-         * @tc.desc resultSet getAsset normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testAssetStatusUndefined0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testAssetStatusUndefined0010 start *************");
@@ -456,12 +464,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testAssetStatusNull0010
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testAssetStatusNull0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_0900
-         * @tc.desc resultSet getAsset normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testAssetStatusNull0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testAssetStatusNull0010 start *************");
@@ -504,12 +513,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testGetAssetUndefined
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAssetUndefined
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_1000
-         * @tc.desc resultSet getAsset normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAssetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testGetAssetUndefined start *************");
@@ -537,12 +547,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testGetAssetNull
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAssetNull
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_1100
-         * @tc.desc resultSet getAsset normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAsset normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAssetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testGetAssetNull start *************");
@@ -570,12 +581,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testGetAssets0001
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAssets0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_1200
-         * @tc.desc resultSet getAssets normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAssets normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAssets0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await createTest();
@@ -607,12 +619,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testGetAssets0002
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAssets0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_1300
-         * @tc.desc resultSet getAssets normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAssets normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAssets0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await createTest();
@@ -661,12 +674,13 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @tc.name testGetAssets0003
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   testGetAssets0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertJsAPITest_1400
-         * @tc.desc resultSet getAssets normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet getAssets normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetAssets0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await createTest();

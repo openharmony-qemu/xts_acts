@@ -127,7 +127,7 @@ export default function displaySoloistTest() {
      * @tc.type       : Function
      * @tc.level      : Level 0
      */
-    it('testOHDisplaySoloistStop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL00, async (done: Function) => {
+    it('testOHDisplaySoloistStop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDisplaySoloistNdk.oHDisplaySoloistStop002();
       expect(result).assertEqual(0);
       done();

@@ -1692,13 +1692,13 @@ export default function AVSession() {
                 console.info(`TestLog: Get LaunchAbility error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
-            let agentBundleName = agent.getBundleName();
-            let wantagentBundleName = wantagent.getBundleName();
+            let agentBundleName = await WantAgent.getBundleName(agent);
+            let wantagentBundleName = await WantAgent.getBundleName(wantagent);
             if (agentBundleName == wantagentBundleName) {
-                console.info('AVSessionTest : Set LaunchAbility successfully');
+                console.info('TestLog: AVSessionTest : Set LaunchAbility successfully');
                 expect(true).assertTrue();
             } else {
-                console.info('AVSessionTest : Set LaunchAbility failed');
+                console.info('TestLog: AVSessionTest : Set LaunchAbility failed');
                 expect(false).assertTrue();
             }
             done();
