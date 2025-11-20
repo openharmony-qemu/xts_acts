@@ -159,7 +159,6 @@ export default function Sim4Public() {
           }
         });
       } catch (err)  {
-        let err = err as BusinessError;
         console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
         ExpectFail();
         console.info(`${caseName} test end`);
@@ -205,7 +204,6 @@ export default function Sim4Public() {
             }
           })
         } catch (err) {
-          let err = err as BusinessError;
           console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
           ExpectFail();
           console.info(`${caseName} test end`);
@@ -465,7 +463,6 @@ export default function Sim4Public() {
           done();
         }
       } catch (err) {
-        let err = err as BusinessError;
         console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
         ExpectFail();
         console.info(`${caseName} test end`);
@@ -509,7 +506,6 @@ export default function Sim4Public() {
           done();
         }
       } catch (err) {
-        let err = err as BusinessError;
         console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
         ExpectFail();
         console.info(`${caseName} test end`);
@@ -554,7 +550,6 @@ export default function Sim4Public() {
             done();
           }
         } catch (err) {
-          let err = err as BusinessError;
           if (err?.code == 801) {
             console.info(`${caseName} successfully: Parameter error and return 801`);
             ExpectTrue(true);
@@ -607,7 +602,6 @@ export default function Sim4Public() {
           done();
         }
       } catch (err) {
-          let err = err as BusinessError;
           console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
           ExpectFail();
           console.info(`${caseName} test end`);
