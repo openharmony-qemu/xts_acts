@@ -23,21 +23,21 @@ import {
   Polyline,Polygon,Path,Rect,Shape,Badge,Refresh,ProgressType,BarState,BadgeParamWithNumber,RelativeContainer,WaterFlow,FlowItem,HorizontalAlign,VerticalAlign
 } from '@ohos.arkui.component'
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
+import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
 struct sizePage {
-  
+  //Use for TimePicker.
   private selectedTime: Date = new Date('2022-07-22T08:00:00')
-  
+  //Use for QRCode,Marquee.
   private src: string = 'Running Marquee starts rolling'
-  
+  //Use for AlphabetIndexer,TextPicker.
   private value: string[] = ['#', 'A', 'B']
-  
+  //Use for Scroll,Grid,DataPanel.
   public valueArr: Array<number> = new Array<number>(5, 10, 10, 7, 9, 10, 10, 10, 10)
-  @StoragePropRef('_size') _size: SizeOptions = { width: 0, height: 0 } as SizeOptions;
+  @StorageProp('_size') _size: SizeOptions = { width: 0, height: 0 } as SizeOptions;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 0
@@ -57,7 +57,7 @@ struct sizePage {
       this.parentHeight = routerParamOptions.view.parentHeight
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.BackGroundColor = routerParamOptions.view.BackGroundColor
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -136,7 +136,7 @@ struct sizePage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: 1,
           fromStart: true,
           src: this.src
         }).applyStyles(this.commonStyle)

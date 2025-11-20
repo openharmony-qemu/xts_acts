@@ -58,28 +58,28 @@ export struct TabsView {
 
   build() {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#00CB87')
+      // }.tabBar(this.TabBuilder(0, 'green'))
+      //
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#007DFF')
+      // }.tabBar(this.TabBuilder(1, 'blue'))
+      //
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#FFBF00')
+      // }.tabBar(this.TabBuilder(2, 'yellow'))
+      //
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#E67C92')
+      // }.tabBar(this.TabBuilder(3, 'pink'))
     }
     .vertical(false)
     .barMode(BarMode.Fixed)
     .barWidth(360)
     .barHeight(56)
     .animationDuration(400)
-    .onChange((index: int): void => {
+    .onChange((index: Int): void => {
       this.currentIndex = index
     })
     .width(360)

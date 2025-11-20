@@ -16,7 +16,7 @@
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue, SetValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect } from '../../../../hypium/index';
+import { describe, beforeAll, expect } from '../../../../hypium';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,  Position, $r } from '@ohos.arkui.component';
 import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector'
@@ -33,17 +33,13 @@ import {UtilsTest} from '../Util.test'
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext();
-
-
 /**
  * Test of common attribute: position
  */
 export default function positionTest() {
-  
+  //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
-    
     'Button',
     'Checkbox',
     'CheckboxGroup',
@@ -77,12 +73,10 @@ export default function positionTest() {
     'Slider',
     'Text',
     'TextArea',
-    
     'TextInput',
     'TextPicker',
     'TimePicker',
     'Toggle',
-    
     'Column',
     'Counter',
     'GridRow',
@@ -105,11 +99,11 @@ export default function positionTest() {
     'Rect',
     'Shape')
 
-  
+  //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 300;
   let parentHeight = 400;
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testPosition',
     pageName: 'PositionPage',
@@ -120,7 +114,7 @@ export default function positionTest() {
     referenceComponentKey: 'referenceComponentKey'
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [{
     describe: 'SetNumber',
     setValue: {
@@ -128,8 +122,8 @@ export default function positionTest() {
     } as SetValue,
     expectValue: {
       x: '200.00vp', y: '100.00vp',
-      left: UIContext.getFocusedUIContext()!.vp2px(200),
-      top: UIContext.getFocusedUIContext()!.vp2px(100)
+      left:  Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)),
+      top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))
     }
   }, {
     describe: 'SetStringPx',
@@ -146,8 +140,8 @@ export default function positionTest() {
     } as SetValue,
     expectValue: {
       x: '20.00%', y: '10.00%',
-      left: UIContext.getFocusedUIContext()!.vp2px(parentWidth) * 0.2,
-      top: UIContext.getFocusedUIContext()!.vp2px(parentHeight) * 0.1
+      left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth)) * 0.2,
+      top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentHeight)) * 0.1
     }
   }, {
     describe: 'SetResource',
@@ -156,8 +150,8 @@ export default function positionTest() {
     } as SetValue,
     expectValue: {
       x: '200.00vp', y: '100.00vp',
-      left: UIContext.getFocusedUIContext()!.vp2px(200),
-      top: UIContext.getFocusedUIContext()!.vp2px(100)
+      left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)),
+      top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))
     }
   }]
 
@@ -171,35 +165,35 @@ export default function positionTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
-      
+      //Obtain the region information of the reference component.
       console.info('[' + data.caseTag + '] get referenceComponent rect before position changed.');
       let referenceRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
 
-      
+      //Obtain the region information of the parent component.
       console.info('[' + data.caseTag + '] get parentComponent rect before position changed.');
       let parentRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.parentComponentKey);
 
-      
+      //Modify the target component properties.
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
       AttrsManager.change(data.caseTag, data.testValue.setValue);
       await Utils.sleep(1000);
 
-      
+      //Obtain the region information of the reference component.
       console.info('[' + data.caseTag + '] get referenceComponent rect after position changed.');
       let referenceRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
 
-      
+      //Obtain the region information of the parent component.
       console.info('[' + data.caseTag + '] get parentComponent rect after position changed.');
       let parentRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.parentComponentKey);
 
-      
+      //Obtain the region information of the target component.
       console.info('[' + data.caseTag + '] check actual position.');
       let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
 
-      
-      
+      //When the target component is TabContent or StepperItem,
+      //the parent component is the Swiper on the outer layer of Tabs or Stepper.
       let rectParent = parentRectAfter;
       let benchmarkChanged = false;
       if ('TabContent' == data.pageConfig.targetView || 'StepperItem' == data.pageConfig.targetView) {
@@ -215,19 +209,19 @@ export default function positionTest() {
         });
       }
 
-      
+      //Base when setting percentage.
       let percentBaseX = rectParent.right - rectParent.left;
       let percentBaseY = rectParent.bottom - rectParent.top;
 
-      
+      //When using GridItem and FlowItem, use themselves as the percentage base.
       if ('GridItem' == data.pageConfig.targetView || 'FlowItem' == data.pageConfig.targetView) {
         percentBaseX = rect.right - rect.left;
         percentBaseY = rect.bottom - rect.top;
         benchmarkChanged = true;
       }
 
-      
-      
+      //Using the upper left corner of the parent container as the reference point,
+      //verify the actual offset of the target component.
       if ('SetStringPercent' == data.testValue.describe && benchmarkChanged) {
         console.info('[' + data.caseTag + '] benchmark changed after component rendered.');
         console.info('[' + data.caseTag + '] check actual offset x.');
@@ -244,7 +238,7 @@ export default function positionTest() {
         expect(Math.abs(Number(rect.top - rectParent.top) - Number(data.testValue.expectValue.top)) <= 1).assertTrue();
       }
 
-      
+      //Confirm that the position attribute value has been set successfully.
       console.info('[' + data.caseTag + '] check position attr value.');
       let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey ?? "");
       console.info('[' + data.caseTag + '] check position x.');
@@ -252,14 +246,14 @@ export default function positionTest() {
       console.info('[' + data.caseTag + '] check position y.');
       expect(viewObj.getElement('$attrs').getElement('position').getString('y')).assertEqual(data.testValue.expectValue.y);
 
-      
+      //Confirm that the region information of the reference component has not changed.
       console.info('[' + data.caseTag + '] check referenceComponent layout not changed.');
       expect(Math.abs(referenceRectBefore.left - referenceRectAfter.left) <= 1).assertTrue()
       expect(Math.abs(referenceRectBefore.right - referenceRectAfter.right) <= 1).assertTrue()
       expect(Math.abs(referenceRectBefore.top - referenceRectAfter.top) <= 1).assertTrue()
       expect(Math.abs(referenceRectBefore.bottom - referenceRectAfter.bottom) <= 1).assertTrue()
 
-      
+      //Confirm that the region information of the parent component has not changed.
       console.info('[' + data.caseTag + '] check parentComponent layout not changed.');
       expect(Math.abs(parentRectBefore.left - parentRectAfter.left) <= 1).assertTrue()
       expect(Math.abs(parentRectBefore.right - parentRectAfter.right) <= 1).assertTrue()

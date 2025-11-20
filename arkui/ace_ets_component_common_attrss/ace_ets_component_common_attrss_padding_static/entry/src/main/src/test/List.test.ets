@@ -16,4 +16,5 @@ import PaddingBaseLengthTest from './padding/PaddingBaseLengthTest.test';
 import PaddingContainerLengthTest from './padding/PaddingContainerLengthTest.test';
 export default function testsuite() {
   PaddingContainerLengthTest();
+  PaddingBaseLengthTest();
 }

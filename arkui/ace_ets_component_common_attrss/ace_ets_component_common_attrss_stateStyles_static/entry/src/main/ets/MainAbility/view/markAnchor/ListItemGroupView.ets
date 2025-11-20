@@ -30,11 +30,11 @@ import {
   Color,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { Link } from '@ohos.arkui.stateManagement';
+import { StoragePropRef } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct ListItemGroupView {
-  @Link _markAnchor!: Position;
+  @StoragePropRef("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
   private parentWidth: number;
   private parentHeight: number;
@@ -72,30 +72,37 @@ export struct ListItemGroupView {
 
   build() {
     List({ space: 20 }) {
-      //未交付
-      // ListItemGroup({ header: this.itemHead('Monday'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
-      //   ForEach(this.projects, (project: string) => {
-      //     ListItem() {
-      //       this.content(project)
-      //     }
-      //   }, (item: string) => item)
-      // }
-      // .width(this.subassemblyWidth)
-      // .height(this.subassemblyHeight)
-      // .borderRadius(20)
-      // .markAnchor(this._markAnchor)
-      // .key(this.componentKey)
-      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
-      //
-      // ListItemGroup({ header: this.itemHead('Tuesday'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
-      //   ForEach(this.projects, (project: string) => {
-      //     ListItem() {
-      //       this.content(project)
-      //     }
-      //   }, (item: string) => item)
-      // }
-      // .borderRadius(20)
-      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+      ListItemGroup({ header: ()=>{
+        this.itemHead('Monday')
+      }, footer: ()=>{
+        this.itemFoot(this.projects.length)
+      } } as ListItemGroupOptions) {
+        ForEach(this.projects, (project: string) => {
+          ListItem() {
+            this.content(project)
+          }
+        }, (item: string) => item)
+      }
+      .width(this.subassemblyWidth)
+      .height(this.subassemblyHeight)
+      .borderRadius(20)
+      .markAnchor(this._markAnchor)
+      .key(this.componentKey)
+      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+
+      ListItemGroup({ header: ()=>{
+        this.itemHead('Tuesday')
+      }, footer: ()=>{
+        this.itemFoot(this.projects.length)
+      } } as ListItemGroupOptions) {
+        ForEach(this.projects, (project: string) => {
+          ListItem() {
+            this.content(project)
+          }
+        }, (item: string) => item)
+      }
+      .borderRadius(20)
+      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
     }
     .width(this.parentWidth)
     .height(this.parentHeight)

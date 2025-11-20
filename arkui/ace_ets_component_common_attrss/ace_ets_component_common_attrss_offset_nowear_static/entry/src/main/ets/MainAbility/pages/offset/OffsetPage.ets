@@ -28,7 +28,7 @@ import {
   ListItem,FlowItem,FlexDirection,MenuItemGroup,Blank,applyStyles,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StorageProp } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -38,10 +38,10 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct Offset {
-  private scroller: Scroller = new Scroller() 
-  private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) 
-  @State show: boolean = false 
-  @StoragePropRef("_offset") _offset: Position = { x: 0, y: 0 } as Position;
+  private scroller: Scroller = new Scroller() //For Scroll and ScrollBar
+  private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
+  @State show: boolean = false //For Panel
+  @StorageProp("_offset") _offset: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 200
@@ -73,7 +73,7 @@ struct Offset {
       this.subassemblyHeight= routerParamOptions.view.subassemblyHeight
       this.parentComponentKey= routerParamOptions.view.parentComponentKey
       this.referenceComponentKey= routerParamOptions.view.referenceComponentKey
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -88,7 +88,7 @@ struct Offset {
   build() {
     Row() {
       Column() {
-        
+        //Create view by config.
         if (this.targetView == 'ListItem') {
           List({ space: 20, initialIndex: 0 }) {
             ListItem() {
@@ -220,7 +220,7 @@ struct Offset {
           }.width('100%').height('100%').backgroundColor(Color.Green)
         } else {
           Row() {
-            
+            //Set view by page config.
             if (this.targetView == 'Button') {
               Button('button1').width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Radio') {
@@ -486,7 +486,7 @@ struct Offset {
                   .alignRules({
                     top: { anchor: '__container__', align: VerticalAlign.Top },
                     left: { anchor: '__container__', align: HorizontalAlign.Start }
-                  } as AlignRuleOption)
+                  })
                   .id('offset')
               }
               .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)

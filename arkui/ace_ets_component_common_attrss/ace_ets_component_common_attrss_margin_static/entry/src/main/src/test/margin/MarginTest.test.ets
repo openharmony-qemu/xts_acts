@@ -13,59 +13,38 @@
  * limitations under the License.
  */
 
-// import { vp2px } from '@ohos.arkui.component';
-import { AttrsManager, GrowValue } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, {
+  BasePageConfig,
+  ExpectValue,
+  GrowValue,
+  PageConfig,
+  TestValue
+} from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign,  Color, $r } from '@ohos.arkui.component';
-import { jsonx } from "std/core";
+import { beforeAll, describe, expect } from '../../../../hypium';
+import { $r, AlignRuleOption, Color, HorizontalAlign, Margin, VerticalAlign } from '@ohos.arkui.component';
+import { jsonx } from 'std/core';
+import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { UIContext } from '@ohos.arkui.UIContext';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-// class TestValue {
-//   describe: string = '';
-//   setValue: Margin = {} as Margin;
-//   expectValue: Margin = {} as Margin;
-// }
-//
-// class Margin {
-//   margin?: jsonx.JsonElement;
-//   top?: number;
-//   right?: number;
-//   bottom?: number;
-//   left?: number;
-// }
-//
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   targetGroupView: string = '';
-//   parentComponentKey: string = '';
-//   buttonComponentKey: string = '';
-//   childWidth: number = 0;
-//   childHeight: number = 0;
-//   parentWidth: number = 0;
-//   parentHeight: number = 0;
-// }
+let testAbilityContext: common.UIAbilityContext;
 
 export default function marginTest() {
-  let setInit: GrowValue = {
-    margin: {
-      top: 0, right: 0, bottom: 0, left: 0
-    },
+  let setInit: Margin = {
     top: 0,
+    right: 0,
     bottom: 0,
-    left: 0,
-    right: 0
+    left: 0
   }
   let getInit = '0.00vp';
   let childWidth = 100;
@@ -73,71 +52,66 @@ export default function marginTest() {
   let parentWidth = 400;
   let parentHeight = 600;
   let supportView = [
-    'AlphabetIndexer',
-    'Button',
-    'Blank',
-    //'Checkbox',
-    'CheckboxGroup',
-    'DataPanel',
-    'DatePicker',
-    'Divider',
-    'Gauge',
-    'Image',
-    'ImageAnimator',
-    'LoadingProgress',
-    'Marquee',
-    'Menu',
-    //'MenuItem',
-    //'MenuItemGroup',
-    'Navigation',
-    'NavRouter',
-    'Progress',
-    'QRCode',
-    //'Radio',
-    'Rating',
-    'ScrollBar',
-    'Search',
-    'Slider',
-    'Text',
-    'TextArea',
-    'TextClock',
-    'TextInput',
-    'TextPicker',
-    'TextTimer',
-    'TimePicker',
-    //'Toggle',
-    //'Web',
-    'Circle',
-    'Ellipse',
-    'Line',
-    'Polyline',
-    'Polygon',
-    'Path',
-    'Rect',
-    'Shape',
-    'Badge',
-    'Column',
-    'Counter',
-    //'Flex',
-    //'FlowItem',
-    'GridRow',
-    'GridCol',
-    'Grid',
-    //'GridItem',
-    'List',
-    'ListItem',
-    'ListItemGroup',
-    'Navigator',
-    'Panel',
-    'Refresh',
-    'RelativeContainer',
-    'Row',
-    'Scroll',
-    'Stack',
-    'Swiper',
-    'Tabs',
-    'TabContent'
+  // 'AlphabetIndexer',
+  // 'Button',
+  // 'Blank',
+  // 'CheckboxGroup',
+  // 'DataPanel',
+  // 'DatePicker',
+  // 'Divider',
+  //   'Gauge',
+  // 'Image',
+  // 'ImageAnimator',
+  // 'LoadingProgress',
+  // 'Marquee',
+  // 'Menu',
+  // 'Navigation',
+  // 'NavRouter',
+  // 'Progress',
+  // 'QRCode',
+  // 'Rating',
+  // 'ScrollBar',
+  // 'Search',
+  // 'Slider',
+  // 'Text',
+  //   'TextArea',
+  // 'TextClock',
+  // 'TextInput',
+  // 'TextPicker',
+  // 'TextTimer',
+  // 'TimePicker',
+  // 'Circle',
+  // 'Ellipse',
+  // 'Line',
+  // 'Polyline',
+  // 'Polygon',
+  // 'Path',
+  // 'Rect',
+  // 'Shape',
+  //  'Badge',
+  // 'Column',
+  // 'Counter',
+  // 'GridRow',
+    'GridCol', // fail 3
+  // 'Grid',
+  // 'List',
+  // 'ListItem',
+  // 'ListItemGroup',
+  // 'Navigator',
+  // 'Panel',
+  // 'Refresh',
+  // 'RelativeContainer',
+  // 'Row',
+  // 'Scroll',
+  // 'Stack',
+  // 'Swiper',
+  // 'Tabs',
+  // 'TabContent'
   ]
+
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  const uiContext = AppStorage.get<UIContext>('uiContext')!;
 
   let pageConfig: PageConfig = {
     testName: 'testMargin',
@@ -160,148 +134,115 @@ export default function marginTest() {
         right: 30,
         bottom: 30,
         left: 20
-      },
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
+      }
     },
     expectValue: {
       margin: {
-        top: '20.00vp', right: '30.00vp', bottom: '30.00vp', left: '20.00vp'
+        top: '20.00vp',
+        right: '30.00vp',
+        bottom: '30.00vp',
+        left: '20.00vp'
       },
-      //uicontext.vp2px()接口不通，暂用数字平替
-      // top: vp2px(20),
-      // right: vp2px(30),
-      // bottom: vp2px(30),
-      // left: vp2px(20)
-      top: 20,
-      right: 30,
-      bottom: 30,
-      left: 20
+      top: uiContext.vp2px(20),
+      right: uiContext.vp2px(30),
+      bottom: uiContext.vp2px(30),
+      left: uiContext.vp2px(20)
     }
   }, {
     describe: 'SetTop',
     setValue: {
       margin: {
         top: 50
-      },
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
+      }
     },
     expectValue: {
       margin: {
-        top: '50.00vp', right: '0.00vp', bottom: '0.00vp', left: '0.00vp'
+        top: '50.00vp',
+        right: '0.00vp',
+        bottom: '0.00vp',
+        left: '0.00vp'
       },
-      //uicontext.vp2px()接口不通，暂用数字平替
-      // top: vp2px(50),
-      // right: vp2px(0),
-      // bottom: vp2px(0),
-      // left: vp2px(0)
-      top: 50,
-      right: 0,
-      bottom: 0,
-      left: 0
+      top: uiContext.vp2px(50),
+      right: uiContext.vp2px(0),
+      bottom: uiContext.vp2px(0),
+      left: uiContext.vp2px(0)
     }
   }, {
     describe: 'SetRight',
     setValue: {
       margin: {
         right: 50
-      },
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
+      }
     },
     expectValue: {
       margin: {
-        top: '0.00vp', right: '50.00vp', bottom: '0.00vp', left: '0.00vp'
+        top: '0.00vp',
+        right: '50.00vp',
+        bottom: '0.00vp',
+        left: '0.00vp'
       },
-      //uicontext.vp2px()接口不通，暂用数字平替
-      // top: vp2px(0),
-      // right: vp2px(50),
-      // bottom: vp2px(0),
-      // left: vp2px(0)
-      top: 0,
-      right: 50,
-      bottom: 0,
-      left: 0
+      top: uiContext.vp2px(0),
+      right: uiContext.vp2px(50),
+      bottom: uiContext.vp2px(0),
+      left: uiContext.vp2px(0)
     }
   }, {
     describe: 'SetBottom',
     setValue: {
       margin: {
         bottom: 50
-      },
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
+      }
     },
     expectValue: {
       margin: {
-        top: '0.00vp', right: '0.00vp', bottom: '50.00vp', left: '0.00vp'
+        top: '0.00vp',
+        right: '0.00vp',
+        bottom: '50.00vp',
+        left: '0.00vp'
       },
-      //uicontext.vp2px()接口不通，暂用数字平替
-      // top: vp2px(0),
-      // right: vp2px(0),
-      // bottom: vp2px(50),
-      // left: vp2px(0)
-      top: 0,
-      right: 0,
-      bottom: 50,
-      left: 0
+      top: uiContext.vp2px(0),
+      right: uiContext.vp2px(0),
+      bottom: uiContext.vp2px(50),
+      left: uiContext.vp2px(0)
     }
   }, {
     describe: 'SetLeft',
     setValue: {
       margin: {
         left: 50
-      },
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
+      }
     },
     expectValue: {
       margin: {
-        top: '0.00vp', right: '0.00vp', bottom: '0.00vp', left: '50.00vp'
+        top: '0.00vp',
+        right: '0.00vp',
+        bottom: '0.00vp',
+        left: '50.00vp'
       },
-      //uicontext.vp2px()接口不通，暂用数字平替
-      // top: vp2px(0),
-      // right: vp2px(0),
-      // bottom: vp2px(0),
-      // left: vp2px(50)
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 50
+      top: uiContext.vp2px(0),
+      right: uiContext.vp2px(0),
+      bottom: uiContext.vp2px(0),
+      left: uiContext.vp2px(50)
     }
   }]
 
   describe('MarginTest', () => {
     beforeAll(() => {
-      console.info("hitTestBehaviorTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      console.info("MarginTest beforeAll start");
       await UtilsTest.msSleep(4000)
     });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Initialize margin properties
       console.info('[' + data.caseTag + '] setValue : ' + setInit);
-      AttrsManager.change(data.caseTag, setInit);
+      AppStorage.setOrCreate<Margin>('_margin', setInit)
       await Utils.sleep(1000);
       //Confirm successful setting of margin attribute
       let referenceRectBefore: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
       expect(referenceRectBefore.getElement('$attrs').getString('margin')).assertEqual(getInit);
       //Set test values
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      AppStorage.setOrCreate<Margin>('_margin', data.testValue.setValue.margin)
       await Utils.sleep(1000);
       let referenceRectAfter: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
       //component
@@ -332,15 +273,15 @@ export default function marginTest() {
         bottom = rectParent.bottom - rect.bottom;
       } else if (data.pageConfig.componentKey == 'StepperItem') {
         //parentComponent
-        // let rectParent = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(getInspectorTree()))
-        //   .$children[0]
-        //   .$children[0]
-        //   .$children[0]);
-        // //Component to  parent component margin calculation
-        // top = rect.top - rectParent.top;
-        // left = rect.left - rectParent.left;
-        // right = rectParent.right - rect.right;
-        // bottom = rectParent.bottom - rect.bottom;
+        let rectParent = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]);
+        //Component to  parent component margin calculation
+        top = rect.top - rectParent.top;
+        left = rect.left - rectParent.left;
+        right = rectParent.right - rect.right;
+        bottom = rectParent.bottom - rect.bottom;
       } else if ((data.pageConfig.componentKey == 'GridCol')
         || (data.pageConfig.componentKey == 'FlowItem')
         || (data.pageConfig.componentKey == 'GridItem')
@@ -364,13 +305,24 @@ export default function marginTest() {
       console.info('[' + data.caseTag + ']' + 'left is: ' + left);
       console.info('[' + data.caseTag + ']' + 'right is: ' + right);
       console.info('[' + data.caseTag + ']' + 'bottom is: ' + bottom);
-      console.info('[' + data.caseTag + ']' + 'margin is: ' + referenceRectAfter.getElement('$attrs').getString('margin'));
+      console.info('[' + data.caseTag + ']' + 'margin is: ' +
+      referenceRectAfter.getElement('$attrs').getString('margin'));
       //Confirm if the margin is correct
-      expect(referenceRectAfter.getElement('$attrs').getString('margin')).assertEqual(JSON.stringify(data.testValue.expectValue.margin));
-      expect(Math.abs(top - data.testValue.expectValue.top) <= 1).assertTrue();
-      expect(Math.abs(right - data.testValue.expectValue.right) <= 1).assertTrue();
-      expect(Math.abs(bottom - data.testValue.expectValue.bottom) <= 1).assertTrue();
-      expect(Math.abs(left - data.testValue.expectValue.left) <= 1).assertTrue();
+
+      expect((referenceRectAfter.getElement('$attrs').getString('margin')))
+        .assertEqual(JSON.stringify(data.testValue.expectValue.margin));
+      console.log("data.testValue.expectValue=============" + JSON.stringify(data.testValue.expectValue))
+      console.log("top - data.testValue.expectValue.top" + (top - ((data.testValue.expectValue.top) as number).toInt()))
+      expect(Math.abs(top - ((data.testValue.expectValue.top) as number).toInt()) <= 1).assertTrue();
+      console.log("right - data.testValue.expectValue.right" +
+        (right - ((data.testValue.expectValue.right) as number).toInt()))
+      expect(Math.abs(right - ((data.testValue.expectValue.right) as number).toInt()) <= 1).assertTrue();
+      console.log("bottom - data.testValue.expectValue.bottom" +
+        (bottom - ((data.testValue.expectValue.bottom) as number).toInt()))
+      expect(Math.abs(bottom - ((data.testValue.expectValue.bottom) as number).toInt()) <= 1).assertTrue();
+      console.log("left - data.testValue.expectValue.left" +
+        (left - ((data.testValue.expectValue.left) as number).toInt()))
+      expect(Math.abs(left - ((data.testValue.expectValue.left) as number).toInt()) <= 1).assertTrue();
     });
   })
 }

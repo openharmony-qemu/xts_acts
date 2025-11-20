@@ -16,7 +16,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
-import { describe, beforeAll, expect } from '../../../../hypium/index';
+import { describe, beforeAll, expect } from '../../../../hypium';
 import { UIContext } from "@ohos.arkui.UIContext";
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import hilog from '@ohos.hilog'
@@ -28,7 +28,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {UtilsTest} from '../Util.test'
-import inspector from '@ohos.arkui.inspector';
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -46,7 +45,7 @@ export default function onDisAppearTest() {
     'WaterFlow'
   )
 
-
+  //Custom params.
   let compareTextKey = 'compareTextKey'
   let targetWidth = 60;
   let targetHeight = 60;
@@ -59,10 +58,10 @@ export default function onDisAppearTest() {
     targetGroupView: 'targetGroupView',
     compareTextKey: compareTextKey,
     targetWidth: targetWidth,
-    targetHeight: targetHeight,
+    targetHeight: targetHeight
   }
 
-
+  //Test content and expected results
   let testValues: TestValue[] = [{
     describe: '',
     setValue: {
@@ -81,12 +80,11 @@ export default function onDisAppearTest() {
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig): Promise<void> => {
-
-      AppStorage.setOrCreate<boolean>('_isShow', data.testValue.setValue.isShow)
+      //Set value
+      AttrsManager.change(data.caseTag, data.testValue.setValue);
       await Utils.sleep(2000);
-
+      //Get text content,check content is changeDisAppear
       let compareTextObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.compareTextKey);
-
       console.info('compareTextObj.getElement($attrs).getString(content): ' + compareTextObj.getElement('$attrs').getString('content'));
       expect(compareTextObj.getElement('$attrs').getString('content')).assertEqual(data.testValue.expectValue?.changeDisAppear);
     });

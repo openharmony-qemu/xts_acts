@@ -50,8 +50,8 @@ function itemTextStyle(this: TextAttribute): this {
 }
 @Component
 export struct StepperView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: Int= 0
+  @State currentIndex: Int= 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal

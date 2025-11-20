@@ -30,17 +30,17 @@ import {
   $r,
   Padding
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { Link, State,StorageProp } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _offset!: Position;
+  @StorageProp("_offset") _offset: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
 
   build() {
-    
+    // NavRouter() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)
@@ -63,10 +63,10 @@ export struct NavRouterView {
         }
       }.backgroundColor('#ccc')
       .title(`NavDestination`)
-    
-    
-    
-    
-    
+    // }.onStateChange((isActivated: boolean) => {
+    //   console.info('isActivated = ' + isActivated);
+    // })
+    // .offset(this._offset)
+    // .key(this.componentKey)
   }
 }

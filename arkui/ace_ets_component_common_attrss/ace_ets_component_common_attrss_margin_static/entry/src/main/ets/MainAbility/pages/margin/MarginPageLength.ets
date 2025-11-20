@@ -12,131 +12,119 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { RouterParams } from '../../common/Utils';
 import {
-  Entry,
-  Component,
   $r,
   AlignRuleOption,
-  Row,
+  AlphabetIndexer,
+  applyStyles,
+  Axis,
+  BadgeParamWithString,
+  BadgeStyle,
+  BarState,
+  Blank,
+  BreakPoints,
+  BreakpointsReference,
+  Builder,
   Button,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  SwiperController,
+  Checkbox,
+  CheckboxGroup,
+  Circle,
+  ClickEvent,
+  Color,
   Column,
   ColumnOptions,
-  ClickEvent,
-  RowOptions,
-  LazyForEach,
-  Text,
-  FlexAlign,
-  TextCase,
-  TextDecorationType,
-  Resource,
-  // AlignRuleParam,
-  VerticalAlign,
-  HorizontalAlign,
-  RelativeContainer,
-  Color,
-  Scroller,
-  Menu,
-  ScrollBar,
-  TextTimer,
-// Navigator,
   ColumnSplit,
-  RowSplit,
-  Refresh,
-// Panel,
-//   Shape,
-  Rect,
+  CommonMethod,
+  Component,
+  Counter,
+  DataChangeListener,
+  DataPanel,
+  DatePicker,
+  Divider,
+  Ellipse,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlowItem,
+  ForEach,
+  Gauge,
+  Grid,
+  GridCol,
+  GridColColumnOption,
+  GridColOptions,
+  GridItem,
+  GridRow,
+  GridRowDirection,
+  GutterOption,
+  HorizontalAlign,
+  IDataSource,
+  Image,
+  ImageAnimator,
+  ImageFit,
+  LazyForEach,
+  Line,
+  List,
+  ListItem,
+  ListItemGroup,
+  LoadingProgress,
+  Margin,
+  Marquee,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemGroupOptions,
+  MenuItemOptions,
+  Padding,
   Path,
   Polygon,
   Polyline,
-  Line,
-  Ellipse,
-  Circle,
-  WaterFlow,
-  Tabs,
-  Swiper,
-  Stack,
-  SideBarContainer,
-  Scroll,
-  List,
-  GridRow,
-  Grid,
-  Flex,
-  Counter,
-// Badge,
-  Toggle,
-  TimePicker,
-  TextPicker,
-  TextInput,
-  TextClock,
-  TextArea,
-  Slider,
-  Search,
-  Rating,
-  QRCode,
   Progress,
-  AlphabetIndexer,
-  ImageAnimator,
-  Image,
-// Navigation,
-  Marquee,
-  LoadingProgress,
-  Gauge,
-  Divider,
-  DatePicker,
-  DataPanel,
-  CheckboxGroup,
-  Checkbox,
-  Select,
-  Radio,
-  MenuItem,
-  MenuItemGroupOptions,
   ProgressType,
-  ToggleType,
-  ForEach,
-  GridRowDirection,
-  BarState,
-  SideBarContainerType,
-  TextAlign,
-  GridItem,
-  BadgeStyle,
-  BadgeParamWithString,
-  GutterOption,
-  BreakPoints,
-  BreakpointsReference,
-  GridCol,
-  GridColOptions,
-  GridColColumnOption,
-  ColumnOptions,
-  // Point,
-  MenuItemOptions,
-  MenuItemGroupOptions,
-  Padding,
-  Blank,
+  QRCode,
+  Radio,
+  Rating,
+  Rect,
+  Refresh,
+  RelativeContainer,
+  Resource,
   RichText,
+  Row,
+  RowOptions,
+  RowSplit,
+  Scroll,
+  ScrollBar,
+  Scroller,
+  Search,
+  Select,
+  SideBarContainer,
+  SideBarContainerType,
+  Slider,
+  SliderStyle,
+  Stack,
   Stepper,
   StepperItem,
-  MenuItemGroup,
-  ListItem,
-  Axis,
-  ListItemGroup,
+  Swiper,
+  SwiperController,
   TabContent,
-  FlowItem,
-  SliderStyle,
-  ImageFit,
-// NavPathStack
+  Tabs,
+  Text,
+  TextAlign,
+  TextArea,
+  TextCase,
+  TextClock,
+  TextDecorationType,
+  TextInput,
+  TextPicker,
+  TextTimer,
+  TimePicker,
+  Toggle,
+  ToggleType,
+  VerticalAlign,
+  WaterFlow
 } from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { attrsManager, GrowValue } from '../../common/AttrsManager';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
 
 class View {
@@ -151,37 +139,58 @@ class View {
   parentHeight: number = 0;
 }
 
-class RouterParams {
-  view: View = new View()
-}
 @Entry
 @Component
 struct MarginPageLength {
-  @State _margin: number | string | Margin = 0.0
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State targetGroupView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetGroupView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
-  @State referenceComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey
-  @State childWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.childWidth
-  @State childHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.childHeight
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
+  @StorageProp('_margin') _margin: number | string | Margin = 0.0
+  @State targetView: string = ''
+  @State targetGroupView: string = ''
+  @State componentKey: string = ''
+  @State parentComponentKey: string = ''
+  @State referenceComponentKey: string = ''
+  @State childWidth: number = 0
+  @State childHeight: number = 0
+  @State parentWidth: number = 0
+  @State parentHeight: number = 0
 
   onPageShow() {
     console.info('Margin page show called ')
-    attrsManager.registerDataChange((value: GrowValue) => {
-      this._margin = value.margin
-    })
+    AppStorage.setOrCreate<number | string | Margin>('_margin', 0.0)
+    this.getUIContext().getRouter().getParams() as RouterParams
+    try {
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      console.log('routerParamOptions==========================' + JSON.stringify(routerParamOptions))
+      this.targetView = routerParamOptions.view.targetView
+      this.targetGroupView = routerParamOptions.view.targetGroupView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.parentComponentKey = routerParamOptions.view.parentComponentKey
+      this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+      this.childWidth = routerParamOptions.view.childWidth
+      this.childHeight = routerParamOptions.view.childHeight
+      this.parentWidth = routerParamOptions.view.parentWidth
+      this.parentHeight = routerParamOptions.view.parentHeight
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
-  // @Styles
-  // commonStyle(){
-  //   .margin(this._margin)
-  //   .width(this.childWidth)
-  //   .height(this.childHeight)
-  //   .key(this.componentKey)
-  // }
+  commonStyle(instance: CommonMethod) {
+    instance.margin(this._margin)
+    instance.width(this.childWidth)
+    instance.height(this.childHeight)
+    instance.key(this.componentKey)
+  }
+
+  @Builder
+  myBuilder() {
+    Column() {
+      Text("bindSheet")
+        .fontSize(20)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(Color.Pink)
+  }
 
   build() {
     Row() {
@@ -305,53 +314,54 @@ struct MarginPageLength {
       } else {
         Column() {
           if (this.targetView == 'Button') {
-            Button('button1')/* .commonStyle() */
+            Button('button1').applyStyles(this.commonStyle)
           } else if (this.targetView == 'Text') {
-            Text('text1')/* .commonStyle() */
+            Text('text1').applyStyles(this.commonStyle)
           } else if (this.targetView == 'AlphabetIndexer') {
-            AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })/* .commonStyle() */
+            AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
+              .applyStyles(this.commonStyle)
           } else if (this.targetView == 'Blank') {
-            Blank().backgroundColor(Color.Yellow)/* .commonStyle() */
+            Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Checkbox') {
-            Checkbox()/* .commonStyle() */
+            Checkbox().applyStyles(this.commonStyle)
           } else if (this.targetView == 'CheckboxGroup') {
-            CheckboxGroup({ group: 'checkboxGroup' })/* .commonStyle() */
+            CheckboxGroup({ group: 'checkboxGroup' }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'DataPanel') {
-            DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })/* .commonStyle() */
+            DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'DatePicker') {
             DatePicker({
               start: new Date('1970-1-1'),
               end: new Date('2100-1-1'),
-            })/* .commonStyle() */
+            }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Divider') {
-            Divider()/* .commonStyle() */
+            Divider().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Gauge') {
             Gauge({ value: 105 })
-              /* .commonStyle() */
+              .applyStyles(this.commonStyle)
               .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
           } else if (this.targetView == 'Image') {
-            Image($r('app.media.icon'))/* .commonStyle() */
+            Image($r('app.media.icon')).applyStyles(this.commonStyle)
           } else if (this.targetView == 'ImageAnimator') {
             ImageAnimator()
               .images([{ src: $r('app.media.icon') }
-              ])/* .commonStyle() */
+              ]).applyStyles(this.commonStyle)
           } else if (this.targetView == 'LoadingProgress') {
-            LoadingProgress()/* .commonStyle() */
+            LoadingProgress().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Marquee') {
             Marquee({
               start: true,
               step: 50,
-              loop: Number.MAX_VALUE as int,
+              loop: Number.MAX_VALUE.toInt(),
               fromStart: true,
               src: 'Running Marquee starts rolling'
-            })/* .commonStyle() */
+            }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Menu') {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-            }.backgroundColor(Color.Yellow)/* .commonStyle() */
+            }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Navigation') {
             // Navigation() {
-            // }/* .commonStyle() */
+            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'NavRouter') {
             // NavRouter() {
             //   Row() {
@@ -361,31 +371,31 @@ struct MarginPageLength {
             //   NavDestination() {
             //     Text('NavDestination').fontSize(10)
             //   }
-            // }/* .commonStyle() */
+            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Progress') {
-            Progress({ value: 10, type: ProgressType.Eclipse })/* .commonStyle() */
+            Progress({ value: 10, type: ProgressType.Eclipse }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'QRCode') {
-            QRCode('Running Marquee starts rolling')/* .commonStyle() */
+            QRCode('Running Marquee starts rolling').applyStyles(this.commonStyle)
           } else if (this.targetView == 'Radio') {
-            Radio({ value: 'Radio1', group: 'radioGroup' })/* .commonStyle() */
+            Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Rating') {
-            Rating({ rating: 3.5, indicator: false })/* .commonStyle() */
+            Rating({ rating: 3.5, indicator: false }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'ScrollBar') {
             ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
               Text().width(20).height(100).borderRadius(10).backgroundColor('#C0C0C0')
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Search') {
-            Search()/* .commonStyle() */
+            Search().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Select') {
             Select([{ value: 'aaa' },
-              { value: 'bbb' }])/* .commonStyle() */
+              { value: 'bbb' }]).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Slider') {
             Slider({
               value: 50,
               min: 0,
               max: 100,
               style: SliderStyle.OutSet
-            }).showTips(true)/* .commonStyle() */
+            }).showTips(true).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Stepper') {
             Stepper() {
               StepperItem() {
@@ -393,47 +403,47 @@ struct MarginPageLength {
                   Text('Page One')
                 }
               }
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextArea') {
             TextArea({
               placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-            })/* .commonStyle() */
+            }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextClock') {
             TextClock({ timeZoneOffset: -8 })
-              .format('hms')/* .commonStyle() */
+              .format('hms').applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextInput') {
-            TextInput({ placeholder: 'input your word...' })/* .commonStyle() */
+            TextInput({ placeholder: 'input your word...' }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextPicker') {
-            TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })/* .commonStyle() */
+            TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextTimer') {
             TextTimer({ isCountDown: true, count: 30000 })
-              .format('mm:ss.SS').fontColor(Color.Black)/* .commonStyle() */
+              .format('mm:ss.SS').fontColor(Color.Black).applyStyles(this.commonStyle)
           } else if (this.targetView == 'TimePicker') {
             TimePicker({
               selected: new Date('2022-07-22T08:00:00')
-            })/* .commonStyle() */
+            }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Toggle') {
-            Toggle({ type: ToggleType.Switch, isOn: false })/* .commonStyle() */
+            Toggle({ type: ToggleType.Switch, isOn: false }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Web') {
-            // Web({ src: 'www.example.com', controller: new WebController() })/* .commonStyle() */
+            // Web({ src: 'www.example.com', controller: new WebController() }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Circle') {
-            Circle()/* .commonStyle() */
+            Circle().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Ellipse') {
-            Ellipse()/* .commonStyle() */
+            Ellipse().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Line') {
-            Line()/* .commonStyle() */.startPoint([0, 0]).endPoint([50, 100]).backgroundColor(Color.Black)
+            Line().applyStyles(this.commonStyle).startPoint([0, 0]).endPoint([50, 100]).backgroundColor(Color.Black)
           } else if (this.targetView == 'Polyline') {
-            Polyline()/* .commonStyle() */
+            Polyline().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Polygon') {
-            Polygon()/* .commonStyle() */
+            Polygon().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Path') {
-            Path()/* .commonStyle() */
+            Path().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Rect') {
-            Rect()/* .commonStyle() */
+            Rect().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Shape') {
             // Shape() {
             //   Rect().width(100).height(50)
-            // }/* .commonStyle() */
+            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Badge') {
             // Badge({
             //   count: 50,
@@ -441,24 +451,24 @@ struct MarginPageLength {
             // }) {
             //   Button('message')
             //     .width(100).height(50).backgroundColor(0x317aff)
-            // }/* .commonStyle() */
+            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Column') {
             Column() {
               Column().width('100%').height(30).backgroundColor(0xAFEEEE)
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'ColumnSplit') {
             ColumnSplit() {
               Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Counter') {
             Counter() {
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Flex') {
             Flex() {
               Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'GridRow') {
-            GridRow()/* .commonStyle() */
+            GridRow().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Grid') {
             Grid() {
               ForEach(new Array<string>('0', '1', '2', '3', '4'), (i: string) => {
@@ -471,21 +481,26 @@ struct MarginPageLength {
               })
             }
             .columnsTemplate('1fr 1fr 1fr 1fr 1fr').rowsTemplate('1fr 1fr 1fr 1fr 1fr').backgroundColor(0xFAEEE0)
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
           } else if (this.targetView == 'List') {
-            List()/* .commonStyle() */
+            List().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Navigator') {
             // Navigator() {
             //   Text('Go to back page').width('100%').height(20)
-            // }/* .commonStyle() */.backgroundColor(Color.Red)
+            // }.applyStyles(this.commonStyle).backgroundColor(Color.Red)
           } else if (this.targetView == 'Panel') {
-            // Panel(true) {
-            //   Text('Text')
-            // }.backgroundColor(Color.Yellow)/* .commonStyle() */
+            Column() {
+
+            }
+            .applyStyles(this.commonStyle)
+            .bindSheet(true, this.myBuilder, {
+              height: 300,
+              backgroundColor: Color.Yellow
+            })
           } else if (this.targetView == 'Refresh') {
             Refresh({ refreshing: false }) {
               Text('123')
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'RelativeContainer') {
             RelativeContainer() {
               Row()
@@ -497,13 +512,13 @@ struct MarginPageLength {
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
                 } as AlignRuleOption)
                 .id('marginLength')
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Row') {
-            Row()/* .commonStyle() */
+            Row().applyStyles(this.commonStyle)
           } else if (this.targetView == 'RowSplit') {
             RowSplit() {
               Text('Text')
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Scroll') {
             Scroll() {
               Column() {
@@ -515,7 +530,7 @@ struct MarginPageLength {
                     .textAlign(TextAlign.Center)
                 }, (item: string) => item)
               }.width('100%')
-            }.scrollBar(BarState.On)/* .commonStyle() */
+            }.scrollBar(BarState.On).applyStyles(this.commonStyle)
           } else if (this.targetView == 'SideBarContainer') {
             SideBarContainer(SideBarContainerType.Embed) {
               Column() {
@@ -530,22 +545,22 @@ struct MarginPageLength {
               Column() {
                 Text('SideBarContainer content').fontSize(25)
               }.backgroundColor(Color.Orange)
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Stack') {
             Stack() {
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Swiper') {
             Swiper() {
               ForEach(['1', '2', '3'], (item: string) => {
                 Text('Swiper' + item).width('90%').height(50)
               }, (item: string) => item)
-            }.indicator(true).backgroundColor(Color.White)/* .commonStyle() */
+            }.indicator(true).backgroundColor(Color.White).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Tabs') {
             Tabs() {
               TabContent() {
                 Column().width('100%').height('100%').backgroundColor('#00CB87')
               }
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'WaterFlow') {
             WaterFlow() {
               ForEach(['1', '2', '3', '4', '5', '6', '7', '8', '9'], (item: string) => {
@@ -556,7 +571,7 @@ struct MarginPageLength {
                   }
                 }
               }, (item: string) => item)
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           }
         }
         .key(this.parentComponentKey)

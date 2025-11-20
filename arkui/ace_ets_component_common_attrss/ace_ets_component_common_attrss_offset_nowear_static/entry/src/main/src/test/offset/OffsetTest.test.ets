@@ -15,7 +15,7 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect } from '../../../../hypium/index';
+import { describe, beforeAll, expect } from '../../../../hypium';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,  Position, $r } from '@ohos.arkui.component';
 import { UIContext } from "@ohos.arkui.UIContext";
 import { jsonx } from "std/core"
@@ -34,19 +34,19 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function OffsetTest() {
-  
+  //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
 	'Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'Stepper', 'FlowItem',
     'StepperItem'
   )
 
-  
+  //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 200;
   let parentHeight = 200;
   let subassemblyWidth = 100;
   let subassemblyHeight = 100;
 
-  
+  //Page config, this param is required.
   let pageConfig: PageConfig = {
     testName: 'testOffset',
     pageName: 'OffsetPage',
@@ -59,7 +59,7 @@ export default function OffsetTest() {
     referenceComponentKey: 'referenceComponentKey'
   }
 
-  
+  //Test values, looped to create cases, this param is required.
   let testValues: TestValue[] = [
     {
     describe: 'Number',
@@ -112,9 +112,9 @@ export default function OffsetTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.offset.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Restore the target component to its original position
 
       AppStorage.setOrCreate<Position>('_offset', { x: 0, y: 0 } as Position);
       await Utils.sleep(1000);
@@ -153,15 +153,15 @@ export default function OffsetTest() {
           viewObj: data.viewObj
         }
       }
-      
+      //Obtain the region information of the target component.
       console.info('[' + testData.caseTag + '] get target Component rect before position changed.');
       let initialPosition = Utils.getComponentRect(testData.pageConfig.componentKey ?? '');
 
-      
+      //Obtain the region information of the reference component.
       console.info('[' + testData.caseTag + '] get Reference Component rect before position changed.');
       let ReferenceRectBefore = Utils.getComponentRect(testData.pageConfig.referenceComponentKey ?? '');
 
-      
+      //Obtain the region information of the parent component.
       console.info('[' + testData.caseTag + '] get Parent Component rect before position changed.');
       let parentRectBefore = Utils.getComponentRect(testData.pageConfig.parentComponentKey ?? '');
 
@@ -169,22 +169,22 @@ export default function OffsetTest() {
       AppStorage.setOrCreate<Position>('_offset', testData.testValue.setValue);
       await Utils.sleep(1000);
 
-      
+      //Obtain the region information of the target component.
       console.info('[' + testData.caseTag + '] get targetComponent rect after position changed.');
       let targetRectAfter = Utils.getComponentRect(testData.pageConfig.componentKey ?? '');
 
-      
+      //Obtain the region information of the reference component.
       console.info('[' + testData.caseTag + '] get referenceComponent rect after position changed.');
       let ReferenceRectAfter = Utils.getComponentRect(testData.pageConfig.referenceComponentKey);
       console.info('[' + testData.caseTag + '] get parentComponent rect after position changed.');
 
-      
+      //Obtain the region information of the parent component.
       let parentRectAfter = Utils.getComponentRect(testData.pageConfig.parentComponentKey);
       let rectParent = Utils.getComponentRect(testData.pageConfig.parentComponentKey);
       console.info('[' + testData.caseTag + '] check offset value.');
 
-      
-      
+      //Obtain the attribute information of the target component.
+      //Confirm that the position attribute value has been set successfully.
       let strJsonComponentKey = inspector.getInspectorByKey(testData.pageConfig.componentKey);
       await Utils.sleep(1000);
       let viewObj = JSON.parseJsonElement(strJsonComponentKey);
@@ -195,8 +195,8 @@ export default function OffsetTest() {
 
       if ('TabContent' == testData.pageConfig.targetView || 'StepperItem' == testData.pageConfig.targetView) {
         console.log('testData.pageConfig.targetView',testData.pageConfig.targetView)
-        
-        
+        //When the target component is TabContent or StepperItem,
+        //the parent component is the Swiper on the outer layer of Tabs or Stepper.
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
           .getArray('$children')[0]
@@ -209,34 +209,34 @@ export default function OffsetTest() {
       }
 
       console.info('[' + testData.caseTag + '] check actual position.');
-      
-      
+      //Calculate shifting using pre and post setting positions
+      //verify the actual shifting of the target component.
       if ('StringPercent' == testData.testValue.describe) {
         if ('GridItem' == testData.pageConfig.targetView) {
-          
+          //The width of the target component
           let targetWight = targetRectAfter.right - targetRectAfter.left;
-          
+          //The height of the target component
           let targetHeight = targetRectAfter.bottom - targetRectAfter.top;
           expect(Math.abs(Number(targetRectAfter.left - initialPosition.left) - Number((targetWight) * 0.5)) <= 1)
             .assertTrue()
           expect(Math.abs(Number(targetRectAfter.top - initialPosition.top) - Number((targetHeight) * 0.5)) <= 1)
             .assertTrue()
         } else {
-          
+          //When setting the type to percentage, use the width/height of the parent container as the base.
           expect(Math.abs(Number(Number((targetRectAfter.left - initialPosition.left)).toFixed(2)) - Number(Number(((rectParent.right - rectParent.left) * 0.5)).toFixed(2))) <= 1)
             .assertTrue()
           expect(Math.abs(Number(Number((targetRectAfter.top - initialPosition.top)).toFixed(2)) - Number(Number(((rectParent.bottom - rectParent.top) * 0.5)).toFixed(2))) <= 1)
             .assertTrue()
         }
       } else {
-        
+        // When set to the basic type, verify the calculated shifting
         expect(Math.abs(Number(Number((targetRectAfter.left - initialPosition.left)).toFixed(2)) - Number(Number(testData.testValue.expectValue.left).toFixed(2))) <= 1)
           .assertTrue();
         expect(Math.abs(Number(Number((targetRectAfter.top - initialPosition.top)).toFixed(2)) - Number(Number(testData.testValue.expectValue.top).toFixed(2))) <= 1)
           .assertTrue();
       }
 
-      
+      //Confirm that the region information of the parent component has not changed.
       console.info('[' + testData.caseTag + '] check parentComponent layout not changed.');
       console.log('parentRectBefore.left',parentRectBefore.left)
       console.log('parentRectAfter.left',parentRectAfter.left)
@@ -245,7 +245,7 @@ export default function OffsetTest() {
       expect(parentRectBefore.right).assertEqual(parentRectAfter.right);
       expect(parentRectBefore.bottom).assertEqual(parentRectAfter.bottom);
 
-      
+      //Confirm that the region information of the reference component has not changed.
       console.info('[' + testData.caseTag + '] check referenceComponent layout not changed.');
       expect(ReferenceRectAfter.left).assertEqual(ReferenceRectBefore.left);
       expect(ReferenceRectAfter.top).assertEqual(ReferenceRectBefore.top);

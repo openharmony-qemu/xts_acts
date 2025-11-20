@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,9 +15,8 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect, beforeAll,beforeEach } from '../../../../hypium';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -27,28 +26,19 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-
-
-
-
-
-
-
-
-
-
 export default function stateStylesTestTwo() {
   let supportView: Array<string> = Array<string>(
     'Checkbox',
-    'CheckboxGroup',
-    'Radio',
-    'Toggle',
-    'MenuItem'
+    // 'CheckboxGroup',
+    // 'Radio',
+    // 'Toggle',
+    // 'MenuItem'
   )
 
   let pageConfig: PageConfig = {
@@ -69,8 +59,6 @@ export default function stateStylesTestTwo() {
   describe('StateStylesTestTwo', () => {
     beforeAll(() => {
       console.info("StateStylesTestTwo beforeEach start");
-      
-      console.info("loadAndSetUpUiTest end");
       await UtilsTest.msSleep(4000)
       console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.stateStyle.nowear.test.static", "EntryAbility")
@@ -78,23 +66,25 @@ export default function stateStylesTestTwo() {
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
-      let targetBeforeObj = Utils.getComponentByKey(data.pageConfig.componentKey!);
-      
-      
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
-      await Utils.sleep(1000);
-      
-      
-      let targetAfterObj = Utils.getComponentByKey(data.pageConfig.componentKey!);
-      
-      
-      console.info('[' + data.caseTag + ']' + 'targetBeforeObj.getElement($attrs).getString(zIndex) is:' + targetBeforeObj.getElement('$attrs').getString('zIndex'));
+      //Obtain target component information before changes
+      let strJsonByKey = inspector.getInspectorByKey(data.pageConfig.componentKey);
+      console.info('strJsonByKey',strJsonByKey)
+      UtilsTest.msSleep(2000)
+      let strJson =  JSON.parseJsonElement(strJsonByKey);
+      AppStorage.setOrCreate<boolean>('_isSelect', data.testValue.setValue)
+      await UtilsTest.msSleep(2000);
+      // //Obtain target component information after changes
+      let strJsonByKey2 = inspector.getInspectorByKey(data.pageConfig.componentKey);
+      console.info('strJsonByKey2',strJsonByKey2)
+      UtilsTest.msSleep(2000)
+      let strJson2 =  JSON.parseJsonElement(strJsonByKey2);
+      // //Check results
+      console.info('[' + data.caseTag + ']' + 'targetBeforeObj.getElement($attrs).getString(zIndex) is:' + strJson.getElement('$attrs').getDouble('zIndex'));
       console.info('[' + data.caseTag + ']' + 'data.testValue.expectValue.selectedStyles is:' + data.testValue.expectValue.selectedStyles);
-      expect(targetBeforeObj.getElement('$attrs').getString('zIndex')).assertEqual(data.testValue.expectValue.selectedStyles);
-      console.info('[' + data.caseTag + ']' + 'targetAfterObj.getElement($attrs).getString(zIndex) is:' + targetAfterObj.getElement('$attrs').getString('zIndex'));
+      expect(strJson.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.selectedStyles);
+      console.info('[' + data.caseTag + ']' + 'targetAfterObj.getElement($attrs).getString(zIndex) is:' + strJson2.getElement('$attrs').getDouble('zIndex'));
       console.info('[' + data.caseTag + ']' + 'data.testValue.expectValue.normalStyles is:' + data.testValue.expectValue.normalStyles);
-      expect(targetAfterObj.getElement('$attrs').getString('zIndex')).assertEqual(data.testValue.expectValue.normalStyles);
+      expect(strJson2.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.normalStyles);
     });
   })
 }

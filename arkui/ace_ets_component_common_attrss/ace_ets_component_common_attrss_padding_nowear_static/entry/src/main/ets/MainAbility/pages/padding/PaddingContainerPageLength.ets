@@ -19,7 +19,7 @@ import { StepperView } from '../../view/alignRules/StepperView';
 import {
   Entry,
   Component,
-  Text,
+  Text,CommonMethod,applyStyles,
   AlphabetIndexer,Checkbox,CheckboxGroup,DataPanel,DatePicker,Divider,Gauge,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,
   Progress,QRCode,Radio,Rating,ScrollBar,Stepper,Select,Slider,TextArea,TextClock,TextInput,TextPicker,TextTimer,TimePicker,Toggle,Badge,
   Counter,GridRow,Grid,List,RelativeContainer,Row,Refresh,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,
@@ -32,20 +32,28 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  
   AppStorage
-
 } from '@ohos.arkui.stateManagement'
-
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Color } from '@ohos.arkui.component'
 
-
+interface ViewOption {
+  targetView: string
+  componentKey: string
+  parentBackGroundColor: Color
+  parentComponentKey: string
+  parentWidth: number
+  parentHeight: number
+  referenceComponentKey: string
+}
+interface RouterParamOptions {
+  view: ViewOption
+}
 @Entry
 @Component
 struct PaddingPage_Length {
-  
+  //Use for Grid.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>
   @State _padding: number | string = 0 as number;
   @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
@@ -61,15 +69,36 @@ struct PaddingPage_Length {
     attrsManager.registerDataChange((value: SetValue) => {
       this._padding = value.padding as string
     })
+
+    try {
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
+      this.parentComponentKey = routerParamOptions.view.parentComponentKey
+      this.parentWidth = routerParamOptions.view.parentWidth
+      this.parentHeight = routerParamOptions.view.parentHeight
+      this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
 
-  
-  
-  
-  
-  
-
+  commonStyle(instance: CommonMethod) {
+    instance.padding(this._padding)
+    instance.key(this.componentKey)
+  }
+  @Builder
+  myBuilder() {
+    Column() {
+      Text("bindSheet")
+        .fontSize(20)
+    }
+    .applyStyles(this.commonStyle)
+    .height('50%')
+    .width('50%')
+  }
   build() {
     Row() {
       if (this.targetView == 'Badge') {
@@ -79,15 +108,15 @@ struct PaddingPage_Length {
         } as BadgeParamWithNumber) {
           Button('message')
             .backgroundColor(0x317aff)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Column') {
         Column() {
           Button('message')
             .backgroundColor(0x317aff)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Counter') {
         Counter() {
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'GridRow') {
         GridRow({
           columns: 5,
@@ -103,7 +132,7 @@ struct PaddingPage_Length {
           .width('100%')
           .height('100%')
           .key(this.referenceComponentKey)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Grid') {
         Grid() {
           GridItem() {
@@ -111,7 +140,7 @@ struct PaddingPage_Length {
               .backgroundColor(0xF9CF93)
               .textAlign(TextAlign.Center)
           }
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'List') {
         List() {
           ListItem() {
@@ -124,44 +153,38 @@ struct PaddingPage_Length {
           .height('100%')
           .key(this.referenceComponentKey)
         }
-        
+        .applyStyles(this.commonStyle)
         .width('50%')
         .height('50%')
       } else if (this.targetView == 'Panel') {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        Column(){
+              Row()
+                .width('100%')
+                .height('100%')
+                .backgroundColor('#FF3333')
+        }
+          .width('100%')
+          .height('100%')
+          .key(this.referenceComponentKey)
+        .bindSheet(true,this.myBuilder)
       } else if (this.targetView == 'Refresh') {
         Refresh({ refreshing: false }) {
           Text('123')
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Row') {
         Row() {
           Button('message')
             .backgroundColor(0x317aff)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Scroll') {
         Scroll() {
           Button('message')
             .backgroundColor(0x317aff)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<number>(1, 2, 3), (item: number,index:int) => {
+            ForEach(new Array<number>(1, 2, 3), (item: number,index:Int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(64)
@@ -182,19 +205,19 @@ struct PaddingPage_Length {
           .backgroundColor(Color.Orange)
           .key(this.referenceComponentKey)
         }
-        
+        .applyStyles(this.commonStyle)
         .width('50%')
         .height('50%')
       } else if (this.targetView == 'Stack') {
         Stack() {
           Button('message')
             .backgroundColor(0x317aff)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
           Button('message')
             .backgroundColor(0x317aff)
-        }
+        }.applyStyles(this.commonStyle)
       } else if (this.targetView == 'Tabs') {
         Tabs() {
           TabContent() {
@@ -206,7 +229,7 @@ struct PaddingPage_Length {
           .height('100%')
           .width('100%')
           .key(this.referenceComponentKey)
-        }
+        }.applyStyles(this.commonStyle)
         .height('50%')
         .width('50%')
       } else if (this.targetView == 'TabContent') {
@@ -218,7 +241,7 @@ struct PaddingPage_Length {
               .backgroundColor('#FF3333')
               .key(this.referenceComponentKey)
           }
-          
+          .applyStyles(this.commonStyle)
           .height('50%')
           .width('50%')
         }.key(this.parentComponentKey)
@@ -229,7 +252,7 @@ struct PaddingPage_Length {
           FlowItem() {
             Text('1').height('100%').width('100%')
           }.key(this.referenceComponentKey)
-        }.height('50%').width('50%')
+        }.height('50%').width('50%').applyStyles(this.commonStyle)
       } else if (this.targetView == 'ColumnSplit') {
         ColumnSplit() {
           Text('1')
@@ -238,7 +261,7 @@ struct PaddingPage_Length {
             .backgroundColor(0xF5DEB3)
             .key(this.referenceComponentKey)
         }
-        
+        .applyStyles(this.commonStyle)
         .width('50%')
         .height('50%')
       } else if (this.targetView == 'Flex') {
@@ -249,7 +272,7 @@ struct PaddingPage_Length {
             .backgroundColor('#FF3333')
             .key(this.referenceComponentKey)
         }
-        
+        .applyStyles(this.commonStyle)
         .width('50%')
         .height('50%')
       } else if (this.targetView == 'FlowItem') {
@@ -260,7 +283,7 @@ struct PaddingPage_Length {
               .height('100%')
               .backgroundColor('#FF3333')
               .key(this.referenceComponentKey)
-          }
+          }.applyStyles(this.commonStyle)
           .width('50%')
           .height('50%')
         }.key(this.parentComponentKey).width(this.parentWidth).height(this.parentHeight)
@@ -277,13 +300,13 @@ struct PaddingPage_Length {
               .height('100%')
               .backgroundColor('#FF3333')
               .key(this.referenceComponentKey)
-          }
+          }.applyStyles(this.commonStyle)
         }.width(this.parentWidth)
         .height(this.parentHeight)
         .key(this.parentComponentKey)
       } else if (this.targetView == 'GridItem') {
         Grid() {
-          GridItem()
+          GridItem().applyStyles(this.commonStyle)
         }.key(this.parentComponentKey)
         .width(this.parentWidth)
         .height(this.parentHeight)
@@ -299,12 +322,10 @@ struct PaddingPage_Length {
             .width('100%')
             .height('100%')
             .key(this.referenceComponentKey)
-          }
+          }.applyStyles(this.commonStyle)
         }.key(this.parentComponentKey)
         .width(this.parentWidth)
         .height(this.parentHeight)
-      } else if (this.targetView == 'Navigator') {
-        
       } else if (this.targetView == 'RelativeContainer') {
         RelativeContainer() {
           Row()
@@ -316,7 +337,7 @@ struct PaddingPage_Length {
         .height('50%')
         .width('50%')
         .backgroundColor(Color.Green)
-        
+        .applyStyles(this.commonStyle)
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('1')
@@ -325,7 +346,7 @@ struct PaddingPage_Length {
             .backgroundColor(0xF5DEB3)
             .key(this.referenceComponentKey)
         }
-        
+        .applyStyles(this.commonStyle)
         .width('50%')
         .height('50%')
       } else if (this.targetView == 'ListItem') {
@@ -337,7 +358,7 @@ struct PaddingPage_Length {
               .backgroundColor('#FF3333')
               .key(this.referenceComponentKey)
           }
-          
+          .applyStyles(this.commonStyle)
           .height('50%')
           .width('50%')
           .backgroundColor(Color.Green)

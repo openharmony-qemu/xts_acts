@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
 import Utils , { BasePageConfig, PageConfig, TestValue, RectValue }  from '../../../ets/MainAbility/common/Utils';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect, beforeAll } from '../../../../hypium'
 import { $r } from '@ohos.arkui.component'
 import {
   Color
@@ -33,34 +33,21 @@ let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Test of common attribute: padding
  */
 export default function paddingTest() {
-  
+  //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',
     'StepperItem',
     'Web')
 
-  
+  //Called from the parent class when setting the background color.
   let parentBackGroundColor = Color.Yellow
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testPaddingBaseLength',
     pageName: 'PaddingBasePageLength',
@@ -69,7 +56,7 @@ export default function paddingTest() {
     parentComponentKey: 'parentComponentKey'
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [{
     describe: 'SetNumber',
     setValue: {
@@ -113,18 +100,18 @@ export default function paddingTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the reference component properties.
       AttrsManager.change(data.caseTag, data.testValue.setValue);
       await Utils.sleep(1000);
 
-      
+      //Confirm that the padding attribute values have been successfully set.
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[' + data.caseTag + '] viewObj.$attrs.padding:' + viewObj.getElement('$attrs').getElement('padding'));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.padding:' + data.testValue.expectValue.padding);
 
-      
+      //Confirm that the size attribute values have been successfully set.
       expect(viewObj.getElement('$attrs').getElement('padding')).assertEqual(data.testValue.expectValue.padding);
     })
   })

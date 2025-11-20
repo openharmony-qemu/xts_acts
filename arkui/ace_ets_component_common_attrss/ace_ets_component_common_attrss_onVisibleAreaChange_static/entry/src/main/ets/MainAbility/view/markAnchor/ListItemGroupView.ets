@@ -12,17 +12,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
-import { State ,Link} from '@ohos.arkui.stateManagement'
+
+import {
+  Component,
+  Text,
+  Button,
+  ClickEvent,
+  Column,
+  List,
+  ListItemGroup,
+  ForEach,
+  Builder,
+  ListItem,
+  StickyStyle,
+  Position,
+  TextAlign,
+  Color,
+  ListItemGroupOptions
+} from '@ohos.arkui.component';
+import { Link } from '@ohos.arkui.stateManagement';
+
 @Component
 export struct ListItemGroupView {
-  @Link _markAnchor: Position =  {x: 10, y:10};
+  @Link _markAnchor!: Position;
   private componentKey: string = '';
-  private parentWidth: number = 0;
-  private parentHeight: number = 0;
-  private subassemblyWidth: number = 0;
-  private subassemblyHeight: number = 0;
-  private projects: string[] = new Array<string>('Chinese', 'mathematics', 'English')
+  private parentWidth: number;
+  private parentHeight: number;
+  private subassemblyWidth: number;
+  private subassemblyHeight: number;
+  private projects: string[] = ['Chinese', 'mathematics', 'English']
 
   @Builder
   itemHead(text: string) {
@@ -53,33 +71,41 @@ export struct ListItemGroupView {
   }
 
   build() {
-  //   List({ space: 20 }) {
-  //     ListItemGroup({ header: this.itemHead('Monday'), footer: this.itemFoot(this.projects.length) }) {
-  //       ForEach(this.projects, (project: string) => {
-  //         ListItem() {
-  //           this.content(project)
-  //         }
-  //       }, (item: string) => item)
-  //     }
-  //     .width(this.subassemblyWidth)
-  //     .height(this.subassemblyHeight)
-  //     .borderRadius(20)
-  //     .markAnchor(this._markAnchor)
-  //     .key(this.componentKey)
-  //     .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
-  //
-  //     ListItemGroup({ header: this.itemHead('Tuesday'), footer: this.itemFoot(this.projects.length) }) {
-  //       ForEach(this.projects, (project: string) => {
-  //         ListItem() {
-  //           this.content(project)
-  //         }
-  //       }, (item: string) => item)
-  //     }
-  //     .borderRadius(20)
-  //     .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
-  //   }
-  //   .width(this.parentWidth)
-  //   .height(this.parentHeight)
-  //   .sticky((StickyStyle.Header as StickyStyle) | (StickyStyle.Footer as StickyStyle))
+    List({ space: 20 }) {
+      ListItemGroup({ header: ()=>{
+        this.itemHead('Monday')
+      }, footer: ()=>{
+        this.itemFoot(this.projects.length)
+      } } as ListItemGroupOptions) {
+        ForEach(this.projects, (project: string) => {
+          ListItem() {
+            this.content(project)
+          }
+        }, (item: string) => item)
+      }
+      .width(this.subassemblyWidth)
+      .height(this.subassemblyHeight)
+      .borderRadius(20)
+      .markAnchor(this._markAnchor)
+      .key(this.componentKey)
+      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+
+      ListItemGroup({ header: ()=>{
+        this.itemHead('Tuesday')
+      }, footer: ()=>{
+        this.itemFoot(this.projects.length)
+      } } as ListItemGroupOptions) {
+        ForEach(this.projects, (project: string) => {
+          ListItem() {
+            this.content(project)
+          }
+        }, (item: string) => item)
+      }
+      .borderRadius(20)
+      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+    }
+    .width(this.parentWidth)
+    .height(this.parentHeight)
+    .sticky(StickyStyle.Header)
   }
 }

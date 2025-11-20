@@ -42,19 +42,22 @@ export interface ExpectValue {
   top?: number;
 }
 
-
-
-export class SetValue {
-  x:string | number = 0;
-  y:string | number = 0;
-  xp?:number = 0;
-  yp?:number = 0;
+export interface SetValue {
+  x:string | number;
+  y:string | number;
+  xp?:number;
+  yp?:number;
 
 }
 
 export class TestValue {
   describe: string = '';
-  setValue: Position = { x:0, y:0 };
+  setValue: SetValue = {
+    x:0,
+    y:0,
+    xp:0,
+    yp:0,
+  };
   exceptView: string = '';
   expectValue:ExpectValue = {x: '',
   y: '',
@@ -86,11 +89,9 @@ export class PageConfig {
   referenceComponentKey: string = '';
   targetView: string = '';
   testValue: TestValue = new TestValue();
-  componentKey: string = '';
+  componentKey?: string = '';
   sharePage?: boolean;
   containerView?: string;
-
-
 }
 
 export default class Utils {
@@ -120,38 +121,33 @@ export default class Utils {
     })
   }
 
-static async pushPage(obj: PageConfig) {
-  try {
-    const router = AppStorage.get<Router>("router") as Router
-    let pages = router.getState();
-    let pageParams: RouterParams = new RouterParams();
-    console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-    if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-      console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-      console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-      console.info('targetView: ' + obj.targetView);
-      await Utils.back();
-      pages = router.getState();
-    }
+  static async pushPage(obj: PageConfig) {
+    try {
+      const router = AppStorage.get<Router>("router") as Router
+      let pages = router.getState();
+      let pageParams = router.getParams();
+      console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
 
-    if (!(obj.pageName == pages.name)) {
-      console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-      router.pushUrl({
-        url: obj.pageUrl,
-        params: {
-          view: obj
-        } as RouterParams
-      });
-      await Utils.sleep(1000);
+      if (!(obj.pageName == pages.name)) {
+        console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
+       const paramData: RouterParams = {
+        view: obj
+       }
+        const routerParams: router.RouterOptions = {
+          url: obj.pageUrl,
+          params: paramData
+        }
+        router.pushUrl(routerParams)
+        await Utils.sleep(2000)
+      }
+    } catch (err) {
+      console.error('push ' + obj.pageName + ' page error:' + err);
     }
-  } catch (err) {
-    console.error('push ' + obj.pageName + ' page error:' + err);
   }
-}
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!('Index' == router.getState().name)) {
+    if (!router.getState().name.endsWith("/Index")) {
       router.back()
     }
     AttrsManager.unRegisterDataChange();
@@ -167,7 +163,6 @@ static async pushPage(obj: PageConfig) {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    await Utils.sleep(1000);
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -186,24 +181,21 @@ static async pushPage(obj: PageConfig) {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    const str = obj.getString("$rect")
-    let parts = str.substring(1, str.length - 1).split("],[");
-    let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string):double => parseFloat(item.trim()));
-    });
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-      "windowRect Top: " + AppStorage.get<number>("winTop"));
-    return {
-      "left": Number(rectInfo[0][0] ?? 0),
-      "top": Number(rectInfo[0][1] ?? 0),
-      "right": Number(rectInfo[1][0] ?? 0),
-      "bottom": Number(rectInfo[1][1] ?? 0)
-    } as RectValue
+    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+    let rect_value: RectValue = {
+      left:Number(rectInfo[0][0] ?? 0),
+      top:Number(rectInfo[0][1] ?? 0),
+      right:Number(rectInfo[1][0] ?? 0),
+      bottom:Number(rectInfo[1][1] ?? 0),
+    };
+    console.info(JSON.stringify(rect_value));
+    return rect_value;
   }
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(1000);
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -290,7 +282,7 @@ static async pushPage(obj: PageConfig) {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -300,7 +292,7 @@ static async pushPage(obj: PageConfig) {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -313,7 +305,7 @@ static async pushPage(obj: PageConfig) {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -353,7 +345,7 @@ static async pushPage(obj: PageConfig) {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

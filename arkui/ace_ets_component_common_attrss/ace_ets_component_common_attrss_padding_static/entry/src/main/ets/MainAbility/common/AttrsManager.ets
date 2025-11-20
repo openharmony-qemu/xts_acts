@@ -15,41 +15,28 @@
 
 import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
-import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
-
-export interface GrowValue {
-  flexGrow: number;
-  parentWidth: number;
-  parentHeight: number;
-  compareFlexGrow: number;
-  flexShrink: number;
-  compareFlexShrink: number;
-  standardFlexShrink: number;
-}
-
+import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
+import { SetValue } from './Utils'
 export interface Message {
-  value: EN
+  value: SetValue
 }
 
 interface EventMessage {
-  src: EN
+  src: Message
 }
-export interface EN {
-  padding: number | string | Resource;
-}
-export type Callback = (message: EN) => void;
+
+export type Callback = (message: SetValue) => void;
 
 export class AttrsManager {
   callBack?: Callback = undefined;
 
-  static change(caseName: string, setValue: EN) {
+  static change(caseName: string, setValue: SetValue) {
     const message: Message = { value: setValue };
 
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, RecordData>
+      } as Record<String,undefined|null|Object>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
@@ -92,7 +79,7 @@ export class AttrsManager {
           if (message && message?.value) {
             this.callBack!(message!.value!)
           }
-        } catch (e) {
+        } catch (e: Error) {
           console.error("fail :", e);
         }
       }

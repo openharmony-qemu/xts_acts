@@ -16,7 +16,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
-import { describe, beforeAll, expect } from '../../../../hypium/index';
+import { describe, beforeAll, expect } from '../../../../hypium';
 import { UIContext } from "@ohos.arkui.UIContext";
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import hilog from '@ohos.hilog'
@@ -86,7 +86,7 @@ export default function onDisAppearTest() {
     'Counter'
   )
 
-  
+  //Custom params.
   let compareTextKey = 'compareTextKey'
   let targetWidth = 60;
   let targetHeight = 60;
@@ -102,7 +102,7 @@ export default function onDisAppearTest() {
     targetHeight: targetHeight
   }
 
-  
+  //Test content and expected results
   let testValues: TestValue[] = [{
     describe: '',
     setValue: {
@@ -121,10 +121,10 @@ export default function onDisAppearTest() {
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig): Promise<void> => {
-      
+      //Set value
       AttrsManager.change(data.caseTag, data.testValue.setValue);
       await Utils.sleep(2000);
-      
+      //Get text content,check content is changeDisAppear
       let compareTextObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.compareTextKey);
       console.info('compareTextObj.getElement($attrs).getString(content): ' + compareTextObj.getElement('$attrs').getString('content'));
       expect(compareTextObj.getElement('$attrs').getString('content')).assertEqual(data.testValue.expectValue?.changeDisAppear);
