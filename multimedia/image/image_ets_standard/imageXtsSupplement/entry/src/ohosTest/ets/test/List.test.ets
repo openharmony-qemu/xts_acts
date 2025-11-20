@@ -79,7 +79,17 @@ import ImageSourceCreatePictureJpg from './image/ImageSourceCreatePictureJpg.tes
 import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.test';
 import createImageSourceTest from './image/ImageCreateImageSource.test';
 import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
-import sendableCreatePixelMapSyncTest from './sendableImage/SendAbleCreatePixelMapSync.test';
+import CreateAuxiliaryPictureTest from './image/CreateAuxiliaryPicture.test';
+import ImageAuxiliaryPictureGetMetadataTest from './image/ImageAuxiliaryPictureGetMetadata.Test.test';
+import ImageAuxiliaryPictureWritePixelIsFromBufferTest
+  from './image/ImageAuxiliaryPictureWritePixeIsFromBuffer.Test.test';
+import ImageCreatePictureTest from './image/ImageCreatePicture.test';
+import ImageCreatePictureFromParcelTest from './image/ImageCreatePictureFromParcel.Test.test';
+import ImageCreateUnpremultipliedPixelMapTest from './image/ImageCreateUnpremultipliedPixelMap.Test.test';
+import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPixelFormat.Test.test';
+import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
+import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
+import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
 
 
 export default function testsuite() {
@@ -149,5 +159,15 @@ export default function testsuite() {
   ImageSourceCreatePictureOrf();
   createImageSourceTest();
   sendableCreatePixelMap();
-  sendableCreatePixelMapSyncTest();
+  CreateAuxiliaryPictureTest();
+  ImageAuxiliaryPictureGetMetadataTest();
+  ImageAuxiliaryPictureWritePixelIsFromBufferTest();
+  ImageCreatePictureTest();
+  ImageCreatePictureFromParcelTest();
+  ImageCreateUnpremultipliedPixelMapTest();
+  ImagePixelMapConvertPixelFormatTest();
+  ImagePixelMapCropSyncTest();
+  ImagePixelMapMarshallingTest();
+  ImagePixelMapUnmarshallingTest();
+
 }
