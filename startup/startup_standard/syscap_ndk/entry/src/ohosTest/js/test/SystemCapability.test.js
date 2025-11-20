@@ -34,13 +34,12 @@ describe('SystemCapabilityTest', function () {
         try {
             var isAccessToken = canIUse("SystemCapability.Security.AccessToken");
             console.info("testSysCaps01 test.syscap.param.001 : " + isAccessToken);
-            if (isAccessToken) {
-                expect().assertTrue();
-            }            
+            expect(isAccessToken == true).assertTrue();            
             done();
         } catch (e) {
             expect().assertFail();
             console.info("testSysCaps01 canIUse isAccessToken error: " + e);
+            done();
         }
         console.info('testSysCaps01 end');
     })
