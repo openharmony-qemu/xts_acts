@@ -23,7 +23,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 let domain: int = 0x0000;
@@ -35,7 +35,8 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function GroupDefaultFocusTest() {
     //A list of components that support the position attribute, which is required.
-    let supportView:Array<string> = new Array<string>("Button",
+    let supportView:Array<string> = new Array<string>(
+        "Button",
         "TextArea",
         "Search",
         "Text",
@@ -59,7 +60,8 @@ export default function GroupDefaultFocusTest() {
         "Scroll",
         "Stack",
         "Swiper",
-        "Tabs")
+        "Tabs"
+    )
 
     //Page config, this param is required.
     let pageConfig: PageConfig = {
@@ -90,12 +92,11 @@ export default function GroupDefaultFocusTest() {
     describe("GroupDefaultFocusTest", () => {
         beforeAll(() => {
             console.info("GroupDefaultFocusTest beforeEach start");
-
             await UtilsTest.msSleep(4000)
-            await UtilsTest.startAbility("工程bundleName", "EntryAbility")
+            await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
             await UtilsTest.msSleep(4000)
-
         });
+
         //Generate test cases (it) through a loop based on the support view * test values.
         CommonTest.initTest(
             pageConfig,
@@ -144,9 +145,9 @@ export default function GroupDefaultFocusTest() {
                         "[" +
                         data.caseTag +
                             "] groupDefaultFocus is " +
-                        viewObj.getElement('$attrs').getString('groupDefaultFocus')
+                        viewObj.getElement('$attrs').getBoolean('groupDefaultFocus')
                     )
-                    expect(viewObj.getElement('$attrs').getString('groupDefaultFocus')).assertEqual(true)
+                    expect(viewObj.getElement('$attrs').getBoolean('groupDefaultFocus')).assertEqual(true)
 
                     //Focus the reference component
                     let secondFocus = focusControl.requestFocus(
@@ -194,9 +195,9 @@ export default function GroupDefaultFocusTest() {
                         "[" +
                         data.caseTag +
                             "] viewObj.getElement('$attrs').getString('groupDefaultFocus'):" +
-                        viewObj.getElement('$attrs').getString('groupDefaultFocus')
+                        viewObj.getElement('$attrs').getBoolean('groupDefaultFocus')
                     )
-                    expect(viewObj.getElement('$attrs').getString('groupDefaultFocus')).assertEqual(false)
+                    expect(viewObj.getElement('$attrs').getBoolean('groupDefaultFocus')).assertEqual(false)
                 }
             }
         )

@@ -16,7 +16,6 @@
 import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
 
 export class RectValue {
   left: number | string = 0;
@@ -58,7 +57,7 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, RecordData>
+      } as Record<String,undefined|null|Object>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
@@ -101,7 +100,7 @@ export class AttrsManager {
           if (message && message?.value) {
             this.callBack!(message!.value!)
           }
-        } catch (e) {
+        } catch (e: Error) {
           console.error("fail :", e);
         }
       }

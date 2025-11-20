@@ -43,12 +43,12 @@ import {
   Menu,
   ScrollBar,
   TextTimer,
-
+// Navigator,
   ColumnSplit,
   RowSplit,
   Refresh,
-
-
+// Panel,
+//   Shape,
   Rect,
   Path,
   Polygon,
@@ -67,7 +67,7 @@ import {
   Grid,
   Flex,
   Counter,
-  
+  // Badge,
   Toggle,
   TimePicker,
   TextPicker,
@@ -82,7 +82,7 @@ import {
   AlphabetIndexer,
   ImageAnimator,
   Image,
-
+// Navigation,
   Marquee,
   LoadingProgress,
   Gauge,
@@ -112,7 +112,7 @@ import {
   GridColOptions,
   GridColColumnOption,
   ColumnOptions,
-  
+  // Point,
   MenuItemOptions,
   MenuItemGroupOptions,
   Padding,
@@ -129,20 +129,21 @@ import {
   SliderStyle,
   ImageFit,
   CommonMethod,applyStyles,
-
+// NavPathStack
 } from '@ohos.arkui.component';
 import {
   State,
-  Link
+  Link,
+  Prop,
 } from '@ohos.arkui.stateManagement';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
 @Component
 struct MarginPage {
-  @StoragePropRef('_margin') _margin: Margin = { top: 0, right: 0, bottom: 0, left: 0 } as Margin;
+  @StorageProp('_margin') _margin: Margin = { top: 0, right: 0, bottom: 0, left: 0 } as Margin;
   @State targetView: string = ''
   @State targetGroupView: string =''
   @State componentKey: string = ''
@@ -168,7 +169,7 @@ struct MarginPage {
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.buttonComponentKey = routerParamOptions.view.buttonComponentKey
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
 
@@ -341,7 +342,7 @@ struct MarginPage {
             Marquee({
               start: true,
               step: 50,
-              loop: Number.MAX_VALUE.toInt(),
+              loop: Number.MAX_VALUE as int,
               fromStart: true,
               src: 'Running Marquee starts rolling'
             }).applyStyles(this.commonStyle)
@@ -350,17 +351,17 @@ struct MarginPage {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
             }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Navigation') {
-            
+            // Navigation().expandSafeArea([], []).applyStyles(this.commonStyle)
           } else if (this.targetView == 'NavRouter') {
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // NavRouter() {
+            //   Row() {
+            //     Image($r('app.media.icon'))
+            //   }
+            //
+            //   NavDestination() {
+            //     Text('NavDestination').fontSize(10)
+            //   }
+            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Progress') {
             Progress({ value: 10, type: ProgressType.Eclipse }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'QRCode') {
@@ -415,7 +416,7 @@ struct MarginPage {
           } else if (this.targetView == 'Toggle') {
             Toggle({ type: ToggleType.Switch, isOn: false }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Web') {
-            
+            // Web({ src: 'www.example.com', controller: new WebController() }).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Circle') {
             Circle().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Ellipse') {
@@ -431,17 +432,17 @@ struct MarginPage {
           } else if (this.targetView == 'Rect') {
             Rect().applyStyles(this.commonStyle)
           } else if (this.targetView == 'Shape') {
-            
-            
-            
+            // Shape() {
+            //   Rect().width(100).height(50)
+            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Badge') {
-            
-            
-            
-            
-            
-            
-            
+            // Badge({
+            //   count: 50,
+            //   style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            // }) {
+            //   Button('message')
+            //     .width(100).height(50).backgroundColor(0x317aff)
+            // }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Column') {
             Column() {
               Column().width('100%').height(30).backgroundColor(0xAFEEEE)
@@ -487,13 +488,13 @@ struct MarginPage {
             List() {
             }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Navigator') {
-            
-            
-            
+            // Navigator() {
+            //   Text('Go to back page').width('100%').height(20)
+            // }.applyStyles(this.commonStyle).backgroundColor(Color.Red)
           } else if (this.targetView == 'Panel') {
-            
-            
-            
+            // Panel(true) {
+            //   Text('Text')
+            // }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Refresh') {
             Refresh({ refreshing: false }) {
               Text('123')
