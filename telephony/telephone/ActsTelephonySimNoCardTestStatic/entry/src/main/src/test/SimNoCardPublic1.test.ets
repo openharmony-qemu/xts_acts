@@ -72,7 +72,6 @@ export default function SimNoCardPublic1() {
               }
             });
           } catch(err) {
-            let err = err as BusinessError;
             console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName} test end`);
@@ -123,7 +122,6 @@ export default function SimNoCardPublic1() {
                 }
               });
             } catch (err) {
-              let err = err as BusinessError;
               console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
               ExpectFail();
               console.info(`${caseName} test end`);
@@ -176,7 +174,6 @@ export default function SimNoCardPublic1() {
               done();
             }
           }).catch((err: Error) => {
-            let err = err as BusinessError;
             console.info(`${caseName} failed, err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
@@ -224,7 +221,6 @@ export default function SimNoCardPublic1() {
                 done();
               }
             }).catch((err: Error) => {
-              let err = err as BusinessError;
               console.info(`${caseName} failed, err->` + err);
               ExpectFail();
               console.info(`${caseName} test end`);
@@ -278,7 +274,6 @@ export default function SimNoCardPublic1() {
               done();
             }
           } catch (err) {
-            let err = err as BusinessError;
             console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName} test end`);
@@ -327,7 +322,6 @@ export default function SimNoCardPublic1() {
                 done();
               }
             } catch (err) {
-              let err = err as BusinessError;
               console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
               ExpectFail();
               console.info(`${caseName} test end`);
