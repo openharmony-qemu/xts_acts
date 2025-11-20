@@ -64,7 +64,7 @@ export default function SegBtnItemTest0010() {
      * @tc.desc     SegBtnItemTest0010_static_001
      * @tc.level    Level.LEVEL1
      */
-it('SegBtnItemTest0010_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SegBtnItemTest0010_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SegBtnItemTest0010_static_001] START');
       await CommonFunc.sleep(1000);
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -116,7 +116,7 @@ it('SegBtnItemTest0010_static_001', Level.LEVEL1, async (done: () => void): Prom
      * @tc.desc     SegBtnItemTest0010_static_002
      * @tc.level    Level.LEVEL1
      */
-it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SegBtnItemTest0010_static_002] START');
       await CommonFunc.sleep(1000);
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))

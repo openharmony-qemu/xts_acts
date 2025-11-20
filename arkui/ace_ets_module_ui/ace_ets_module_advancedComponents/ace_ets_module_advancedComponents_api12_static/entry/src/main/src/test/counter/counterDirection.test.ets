@@ -67,7 +67,7 @@ export default function counterDirectionTest() {
      * @tc.desc     testCounterDirection_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('testCounterDirection_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testCounterDirection_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[testCounterDirection_static_0100] START");
       const driver = Driver.create();
       let buttonAuto = await driver.findComponent(ON.id("Auto"));

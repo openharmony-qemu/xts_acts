@@ -70,7 +70,7 @@ export default function progressButtonV2PageTest() {
      * @tc.desc     progressButtonV2PageTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('progressButtonV2PageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('progressButtonV2PageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[progressButtonV2PageTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
