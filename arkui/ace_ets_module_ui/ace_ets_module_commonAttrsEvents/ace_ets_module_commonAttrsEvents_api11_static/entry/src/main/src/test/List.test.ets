@@ -16,14 +16,14 @@ import enableJsunit from './enabledTest/EnableJsunit.test';
 import touchAbleJsunit from './touchableTest/TouchAbleJsunit.test';
 import onChildTouchTest from './onChildTouchTest/onChildTouchTest.test';
 import monopolizeTest from './monopolizeEventsTest/monopolizeTest.test';
-import assemblyCallbackTest from './AssemblyCallback.test';
+import assemblyCallbackTest from './AssemblyCallbackTest.test';
 import sourceTypeJsunit from './SourceTypeJsunit.test';
 
 export default function testsuite() {
   assemblyCallbackTest();
-  enableJsunit();
-  touchAbleJsunit();
+  enableJsunit(); //pass：4
+  touchAbleJsunit(); //pass:2
   onChildTouchTest();
   monopolizeTest();
-  sourceTypeJsunit();
+  sourceTypeJsunit(); //pass:1
 }

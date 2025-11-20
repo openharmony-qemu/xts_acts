@@ -12,19 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index'
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -60,9 +50,10 @@ export default function DatePickerDialogJsunit() {
         expect().assertFail();
       }
     });
-
-
-    /*
+    
+    
+    
+/*
      * @tc.number   DatePickerDialogJsunit_static_0100
      * @tc.name     DatePickerDialogJsunit_static_0100
      * @tc.desc     DatePickerDialogJsunit_static_0100
@@ -71,9 +62,9 @@ export default function DatePickerDialogJsunit() {
     it('DatePickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       console.info('DatePickerDialogJsunit_0100 START');
-      let driver = Driver.create()
+	    let driver = Driver.create()
       let button = await driver.findComponent(ON.id('DatePickerDialog'));
-      button!.click();
+      button?.click();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('DatePickerDialog');
@@ -81,7 +72,7 @@ export default function DatePickerDialogJsunit() {
       console.info("[DatePickerDialogJsunit_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('label')).assertEqual("DatePickerDialog");
       console.info('[DatePickerDialogJsunit_0100] END');
-      await driver.pressBack();
+	    await driver.pressBack();
       await CommonFunc.sleep(1500);
       done();
     });

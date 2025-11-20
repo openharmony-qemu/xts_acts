@@ -53,13 +53,11 @@ export default function textCaretColor() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textCaretColor state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textCaretColor" == pages.name)) {
           console.info("get textCaretColor pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textCaretColor page error:" + err);
@@ -73,13 +71,14 @@ export default function textCaretColor() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   textCaretColor_static_0001
      * @tc.name     textCaretColor_static_0001
      * @tc.desc     textCaretColor_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('textCaretColor_static_0001', Level.LEVEL1, async () => {
+    it('textCaretColor_static_0001', Level.LEVEL1, async () => {
       console.info('textCaretColor0001 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('text');

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -50,12 +50,11 @@ export default function monopolizeTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get monopolizeTest state pages:" + JSON.stringify(pages));
-
-
-        routerInstance.pushUrl(options);
-        await CommonFunc.sleep(2000);
-
+        if (!("monopolize" == pages.name)) {
+          console.info("get monopolizeTest state pages:" + JSON.stringify(pages));
+          routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
       } catch (err) {
         console.error("push monopolizeTest page error:" + err);
       }
@@ -63,24 +62,23 @@ export default function monopolizeTest() {
     });
 
 
+    
     /*
-     * @tc.number    monopolizeTest_0100
-     * @tc.name      monopolizeTest_0100
-     * @tc.desc      monopolizeTest_0100
-     * @tc.level     2
+     * @tc.number   monopolizeTest_static_0100
+     * @tc.name     monopolizeTest_static_0100
+     * @tc.desc     monopolizeTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('monopolizeTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('monopolizeTest_0100 START');
+    it('monopolizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('monopolizeTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('monopolize_column');
-      console.info("[monopolizeTest_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[monopolizeTest_0100] component obj.getElement('$attrs') is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[monopolizeTest_0100] text: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('monopolizeEvents')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('monopolizeEvents')).assertEqual(false);
-      console.info('[monopolizeTest_0100] END');
+      console.info("[monopolizeTest_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[monopolizeTest_static_0100] component obj.getElement('$attrs') is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[monopolizeTest_static_0100] text: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('monopolizeEvents')));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('monopolizeEvents')).assertEqual(false);
+      console.info('[monopolizeTest_static_0100] END');
       done();
     });
   })

@@ -52,10 +52,8 @@ export default function StyledString() {
         console.info("get StyledString state pages: " + JSON.stringify(pages));
         if (!("StyledString" == pages.name)) {
           console.info("get StyledString state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push StyledString page error: " + err);
@@ -64,23 +62,24 @@ export default function StyledString() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   StyledString_static_0100
      * @tc.name     StyledString_static_0100
      * @tc.desc     StyledString_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('StyledString_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('but1'));
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('but2'));
       await CommonFunc.sleep(1000);
-      await (button2?.click() as Promise<void>)
+      button2?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       let obj = JSON.parseJsonElement(strJson);
@@ -92,19 +91,20 @@ it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/*
      * @tc.number   StyledString_static_0200
      * @tc.name     StyledString_static_0200
      * @tc.desc     StyledString_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('StyledString_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('StyledString_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('StyledString_static_0200 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('but3'));
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       let obj = JSON.parseJsonElement(strJson);

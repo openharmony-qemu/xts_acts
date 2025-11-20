@@ -13,63 +13,27 @@
  * limitations under the License.
  */
 import {
-  $$,
-  $r,
-  ActionSheetOptions,
-  AdaptiveColor,
-  AlertDialogParamWithButtons,
-  BackgroundBlurStyleOptions,
-  BlurStyle,
-  BlurStyleActivePolicy,
-  Builder,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  ControlSize,
-  CustomDialogController,
-  CustomDialogControllerOptions,
-  DialogAlignment,
-  Divider,
   Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  ForEach,
-  ItemAlign,
-  ListItem,
-  LocalizedBorderRadiuses,
-  Margin,
-  Menu,
-  MenuElement,
-  MenuItem,
-  MenuItemOptions,
-  Rectangle,
-  ResourceStr,
-  Row,
-  RowOptions,
-  Scroll,
-  Scroller,
-  SheetOptions,
-  Text,
-  TextAlign,
-  TextInput,
-  TextInputController,
-  TextPickerResult,
-  ThemeColorMode,
-  TimePickerResult
+  Column,
+  Component,
+  Button,
+  ClickEvent,TimePickerResult,
+  Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
+  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
+  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,TextPickerResult
 } from '@ohos.arkui.component'
-import { Link, ObjectLink, Observed, PropRef, State, } from '@ohos.arkui.stateManagement'
-
+import {
+  State,
+  Link,
+  Prop,
+  Observed,
+  ObjectLink,
+} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerDialog22Example {
-  @State select: int | int[] = 1;
+  @State select: Int | Int[] = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'] as string[];
 
   build() {
@@ -77,7 +41,7 @@ struct TextPickerDialog22Example {
       direction: FlexDirection.Column, alignItems: ItemAlign.Center,
       justifyContent: FlexAlign.Center
     }) {
-      Button("TextPickerDialog").key('textPickerDialog').onClick((): void => {
+      Button("TextPickerDialog").key('textPickerDialog').onClick(() : void => {
         this.getUIContext().showTextPickerDialog({
           range: this.fruits,
           selected: this.select,

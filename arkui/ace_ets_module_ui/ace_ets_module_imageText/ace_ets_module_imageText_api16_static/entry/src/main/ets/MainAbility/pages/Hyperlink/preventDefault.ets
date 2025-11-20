@@ -22,7 +22,6 @@ import {
   TextController,
   SearchController,
   Color,
-  SymbolGlyphModifier,
   TextStyle,
   StyledString,
   MutableStyledString,
@@ -31,11 +30,10 @@ import {
   CancelButtonStyle,
   ColumnOptions,
   Hyperlink,
-  TouchEvent
+  TouchEvent,
+  StyledStringKey,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { SymbolGlyphModifier } from '@kit.ArkUI';
-
 
 @Entry
 @Component
@@ -51,19 +49,19 @@ struct Index {
   @State text2: string = ''
   controller1: TextController = new TextController();
   styledString2: StyledString = new StyledString('运动45分钟');
-  
-  
-  
-  
-  
-  
+  mutableStyledString2: MutableStyledString = new MutableStyledString('test hello world', [{
+    start: 0,
+    length: 5,
+    styledKey: StyledStringKey.FONT,
+    styledValue: new TextStyle({ fontColor: Color.Blue })
+  }]);
 
   searchController: SearchController = new SearchController()
   @State changeValue: string = ''
   @State submitValue: string = ''
 
   onPageShow() {
-    
+    this.controller1.setStyledString(this.mutableStyledString2)
   }
 
   build() {
@@ -72,14 +70,14 @@ struct Index {
         Text('禁掉onclick')
         Hyperlink('www.baidu.com')
           .id('hyperlink1')
-          .color(this.color)
+          .color(this.color)// .color(Color.Pink)
           .onClick((event:ClickEvent) => {
             console.log('Hyperlink1 Click')
             try {
               console.log('Hyperlink1 Click Begin')
               event.preventDefault();
               console.log('Hyperlink1 Click After')
-            } catch (e) {
+            } catch (e:Error) {
               console.log('Hyperlink1 Click ErrorCode:' + JSON.stringify(e))
               console.log('Hyperlink1 Click ErrorMessage:' + e.message)
             }
@@ -87,7 +85,7 @@ struct Index {
         Text('不禁掉onclick')
         Hyperlink('www.baidu.com')
           .id('hyperlink2')
-          .color(this.color)
+          .color(this.color)// .color(Color.Pink)
 
         Text('禁掉onTouch')
         Hyperlink('www.baidu.com')
@@ -98,7 +96,7 @@ struct Index {
               console.log('Hyperlink1 Touch Begin')
               event.preventDefault();
               console.log('Hyperlink1 Touch After')
-            } catch (e) {
+            } catch (e:Error) {
               console.log('Hyperlink1 Touch ErrorCode:' + JSON.stringify(e))
               console.log('Hyperlink1 Touch ErrorMessage:' + e.message)
             }

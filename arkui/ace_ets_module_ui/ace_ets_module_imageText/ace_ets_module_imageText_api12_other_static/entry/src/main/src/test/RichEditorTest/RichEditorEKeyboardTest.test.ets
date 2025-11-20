@@ -53,11 +53,9 @@ export default function RichEditorEKeyboardTest() {
         console.info("get RichEditorEKeyboardTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get RichEditorEKeyboardTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorEKeyboardTest page error:" + err);
@@ -71,6 +69,7 @@ export default function RichEditorEKeyboardTest() {
     });
 
 
+    
     /*
      * @tc.number   RichEditorEKeyboardTest_static_0001
      * @tc.name     RichEditorEKeyboardTest_static_0001
@@ -83,12 +82,13 @@ export default function RichEditorEKeyboardTest() {
       let strJson = inspector.getInspectorByKey('RichEditor');
       let obj = JSON.parseJsonElement(strJson);
       console.log('RichEditorEKeyboardTest-----' +
-      obj.getElement('getElement("$attrs")').getString('enableKeyboardOnFocus'));
+      obj.getElement('$attrs').getString('enableKeyboardOnFocus'));
       expect(obj.getElement('$attrs').getString('enableKeyboardOnFocus') + '').assertEqual('true');
       console.info("[RichEditorEKeyboardTest0001] end");
       done();
     });
 
+    
     /*
      * @tc.number   RichEditorEKeyboardTest_static_0002
      * @tc.name     RichEditorEKeyboardTest_static_0002
@@ -101,12 +101,13 @@ export default function RichEditorEKeyboardTest() {
       let strJson = inspector.getInspectorByKey('RichEditor1');
       let obj = JSON.parseJsonElement(strJson);
       console.log('RichEditorEKeyboardTest-----' +
-      obj.getElement('$attrs').getElement('content').getString('enableKeyboardOnFocus'));
+      obj.getElement('$attrs').getString('enableKeyboardOnFocus'));
       expect(obj.getElement('$attrs').getString('enableKeyboardOnFocus') + '').assertEqual('true');
       console.info("[RichEditorEKeyboardTest0002] end");
       done();
     });
 
+    
     /*
      * @tc.number   RichEditorEKeyboardTest_static_0003
      * @tc.name     RichEditorEKeyboardTest_static_0003
@@ -119,12 +120,13 @@ export default function RichEditorEKeyboardTest() {
       let strJson = inspector.getInspectorByKey('RichEditor2');
       let obj = JSON.parseJsonElement(strJson);
       console.log('RichEditorEKeyboardTest-----' +
-      obj.getElement('$attrs').getElement('content').getString('enableKeyboardOnFocus'));
+      obj.getElement('$attrs').getString('enableKeyboardOnFocus'));
       expect(obj.getElement('$attrs').getString('enableKeyboardOnFocus') + '').assertEqual('false');
       console.info("[RichEditorEKeyboardTest0003] end");
       done();
     });
 
+    
     /*
      * @tc.number   RichEditorEKeyboardTest_static_0004
      * @tc.name     RichEditorEKeyboardTest_static_0004

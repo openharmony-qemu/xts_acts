@@ -13,46 +13,31 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  AlertDialogParamWithButtons,
-  AlertDialogParamWithConfirm,
-  ArrowPosition,
-  Axis,
-  BlurStyle,
-  Builder,
-  Button,
-  CalendarAlign,
-  CalendarPicker,
-  ClickEvent,
-  Color,
   Column,
   ColumnOptions,
-  Component,
-  Date,
-  DialogAlignment,
-  DialogButtonStyle,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  MenuAlignType,
-  PickerTextStyle,
-  
-  Row,
-  RowOptions,
-  Select,
   Text,
-  TextHeightAdaptivePolicy,
-  TextInputController,
-  TextOverflow,
-  TransitionEdge,
-  TransitionEffect,
-  Week
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  Week,
+  FontWeight,RowOptions,
+  Axis,AlertDialogParamWithButtons,DialogAlignment,DialogButtonStyle,DialogAlignment,
+  Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
+  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
+  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController
 } from '@ohos.arkui.component';
-import { Link, PropRef, State } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop
+} from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -64,36 +49,31 @@ struct DatePickerDialogOptions0 {
     Column() {
       Button("DatePickerDialog")
         .margin(20)
-        .onClick((): void => {
+        .onClick(() : void => {
           this.getUIContext().showDatePickerDialog({
             alignment: DialogAlignment.TopStart,
             offset: { dx: 10, dy: 100 },
-            maskRect: {
-              x: 0,
-              y: 90,
-              width: 1000,
-              height: 250
-            },
+            maskRect: { x: 0, y: 90, width: 1000, height: 250  },
             start: new Date("2000-1-1"),
             end: new Date("2100-12-31"),
             selected: this.selectedDate,
-            lunarSwitch: true,
+            lunarSwitch:true,
             lunar: this.isLunar,
-            showTime: true,
-            useMilitaryTime: false,
-            onDateAccept: (value: Date) => {
+            showTime:true,
+            useMilitaryTime:false,
+            onDateAccept: (value: Date)=> {
               this.selectedDate = value
               console.info("DatePickerDialog:onDateAccept()" + value.toString())
             },
-            onCancel: () => {
+            onCancel:()=> {
               console.info("DatePickerDialog: onCancel()")
             },
-            onDateChange: (value: Date) => {
+            onDateChange: (value: Date)=> {
               console.info("DatePickerDialog: onChange()" + value.toString())
             }
           })
         }).key('DatePickerDialog')
-
+		
     }.width('100%')
   }
 }

@@ -48,13 +48,11 @@ export default function RichEditorOnWillChangeTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get RichEditorOnWillChangeTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("onWillChange" == pages.name)) {
           console.info("get RichEditorOnWillChangeTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorOnWillChangeTest page error:" + err);
@@ -64,18 +62,19 @@ export default function RichEditorOnWillChangeTest() {
 
 
      
-    /*
+    
+/*
      * @tc.number   SUB_ACE_RichEditorOnWillChange_static_0010
      * @tc.name     SUB_ACE_RichEditorOnWillChange_static_0010
      * @tc.desc     SUB_ACE_RichEditorOnWillChange_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('SUB_ACE_RichEditorOnWillChange_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_RichEditorOnWillChange_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_RichEditorOnWillChange_0010 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('setCaretOffset'));
-      let point:Point = await (button?.getBoundsCenter() as Promise<Point>)
+      let point:Point = await button!.getBoundsCenter()
       await CommonFunc.sleep(500);
       await driver.click(point.x, point.y);
       await CommonFunc.sleep(1000);

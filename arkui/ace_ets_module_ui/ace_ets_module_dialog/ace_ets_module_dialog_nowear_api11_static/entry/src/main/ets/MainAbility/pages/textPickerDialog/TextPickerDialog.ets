@@ -12,27 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  Entry,
-  FontWeight,
-  Margin,
-  Padding,
-  Row,
-  TextPickerResult
-} from '@ohos.arkui.component';
+import { Entry, Component, Row, Column, Margin, Color, FontWeight, Button, ClickEvent, Padding, TextPickerResult } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct TextPickerDialogExample {
-  @State v: string = '';
-  private select: int | int[] = 0;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[];
+  private select: Int | Int[] = 0
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[]
+  @State v:string = '';
 
   build() {
     Row() {
@@ -44,9 +32,9 @@ struct TextPickerDialogExample {
             this.getUIContext().showTextPickerDialog({
               range: this.fruits,
               selected: this.select,
-              disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
-              textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
-              selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
+              disappearTextStyle: {color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}},
+              textStyle: {color: Color.Black, font: {size: 20, weight: FontWeight.Normal}},
+              selectedTextStyle: {color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}},
               onAccept: (value: TextPickerResult) => {
                 this.select = value.index
                 console.log(this.select + '')

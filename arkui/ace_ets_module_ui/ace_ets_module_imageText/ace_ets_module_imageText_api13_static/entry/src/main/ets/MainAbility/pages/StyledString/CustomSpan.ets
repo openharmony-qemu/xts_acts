@@ -14,7 +14,7 @@
  */
 
 
-
+// import { drawing } from '@kit.ArkGraphics2D'
 import drawing from '@ohos.graphics.drawing'
 import { LengthMetrics } from '@kit.ArkUI'
 import { Entry, Component, Column, Row, Button, ClickEvent, TextStyle, StyledString,  Text, CustomSpan, CustomSpanMeasureInfo, CustomSpanMetrics, DrawContext, CustomSpanDrawInfo, MutableStyledString,
@@ -45,31 +45,31 @@ class MyCustomSpan extends CustomSpan {
     let canvas = context.canvas;
 
     const brush = new drawing.Brush();
-    
-    
-    
-    
-    
-    
+    // brush.setColor({
+    //   alpha: 255,
+    //   red: 0,
+    //   green: 74,
+    //   blue: 175
+    // });
     const font = new drawing.Font();
     font.setSize(25);
-    
+    // const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.attachBrush(brush);
     canvas.drawRect({
       left: options.x + 10,
-      right: options.x + UIContext.getFocusedUIContext()!.vp2px(this.width) - 10,
+      right: options.x + gUIContext.vp2px(this.width) - 10,
       top: options.lineTop + 10,
       bottom: options.lineBottom - 10
     });
 
-    
-    
-    
-    
-    
-    
+    // brush.setColor({
+    //   alpha: 255,
+    //   red: 23,
+    //   green: 169,
+    //   blue: 141
+    // });
     canvas.attachBrush(brush);
-    
+    // canvas.drawTextBlob(textBlob, options.x + 20, options.lineBottom - 15);
     canvas.detachBrush();
   }
 
@@ -100,76 +100,76 @@ struct styled_string_CustomSpan {
     gUIContext = this.getUIContext();
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // async onPageShow() {
+  //   if (!this.isPageShow) {
+  //     return
+  //   }
+  //   this.isPageShow = false;
+  //
+  //   this.style.appendStyledString(new MutableStyledString('文本绘制 示例代码 CustomSpan', [
+  //     {
+  //       start: 0,
+  //       length: 5,
+  //       styledKey: StyledStringKey.FONT,
+  //       styledValue: new TextStyle({ fontColor: Color.Pink })
+  //     }, {
+  //     start: 5,
+  //     length: 5,
+  //     styledKey: StyledStringKey.FONT,
+  //     styledValue: new TextStyle({ fontColor: Color.Orange, fontStyle: FontStyle.Italic })
+  //   }, {
+  //     start: 10,
+  //     length: 500,
+  //     styledKey: StyledStringKey.FONT,
+  //     styledValue: new TextStyle({ fontColor: Color.Green, fontWeight: FontWeight.Bold })
+  //   }
+  //   ]))
+  //   this.style.appendStyledString(new StyledString(this.customSpan2))
+  //   this.style.appendStyledString(new StyledString('自定义绘制', [{
+  //     start: 0,
+  //     length: 5,
+  //     styledKey: StyledStringKey.FONT,
+  //     styledValue: new TextStyle({ fontColor: Color.Green, fontSize: LengthMetrics.px(50) })
+  //   }]))
+  //   this.textController.setStyledString(this.style)
+  // }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // 尝试方案 开发提供修改方案尝试失败，希望帮提供一个变更语法的demo
+  // async onPageShow() {
+  //   (async () => {
+  //     if (!this.isPageShow) {
+  //       return
+  //     }
+  //     this.isPageShow = false;
+  //
+  //     this.style.appendStyledString(new MutableStyledString('文本绘制 示例代码 CustomSpan', [
+  //       {
+  //         start: 0,
+  //         length: 5,
+  //         styledKey: StyledStringKey.FONT,
+  //         styledValue: new TextStyle({ fontColor: Color.Pink })
+  //       }, {
+  //       start: 5,
+  //       length: 5,
+  //       styledKey: StyledStringKey.FONT,
+  //       styledValue: new TextStyle({ fontColor: Color.Orange, fontStyle: FontStyle.Italic })
+  //     }, {
+  //       start: 10,
+  //       length: 500,
+  //       styledKey: StyledStringKey.FONT,
+  //       styledValue: new TextStyle({ fontColor: Color.Green, fontWeight: FontWeight.Bold })
+  //     }
+  //     ]))
+  //     this.style.appendStyledString(new StyledString(this.customSpan2))
+  //     this.style.appendStyledString(new StyledString('自定义绘制', [{
+  //       start: 0,
+  //       length: 5,
+  //       styledKey: StyledStringKey.FONT,
+  //       styledValue: new TextStyle({ fontColor: Color.Green, fontSize: LengthMetrics.px(50) })
+  //     }]))
+  //     this.textController.setStyledString(this.style)
+  //   })()
+  // }
 
   build() {
     Row() {

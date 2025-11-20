@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index.ets"
-
+// import { vp2px } from '@ohos.arkui.component';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -51,13 +51,13 @@ export default function marqueeOptionsTest1() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get marqueeOptionsTest1 state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("marqueeOptions1" == pages.name)) {
           console.info("get marqueeOptionsTest1 pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push marqueeOptionsTest1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push marqueeOptionsTest1 page error:" + err);
@@ -69,26 +69,26 @@ export default function marqueeOptionsTest1() {
       await CommonFunc.sleep(1000);
       console.info("marqueeOptionsTest1 after each called");
     });
-	
     
-    /*
+    
+/*
      * @tc.number   marqueeOptionsTest1_static_001
      * @tc.name     marqueeOptionsTest1_static_001
      * @tc.desc     marqueeOptionsTest1_static_001
      * @tc.level    Level.LEVEL3
      */
-it('marqueeOptionsTest1_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('marqueeOptionsTest1_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[marqueeOptionsTest1_static_001] START');
       await CommonFunc.sleep(1000);
       let marqueeOptions = inspector.getInspectorByKey('MarqueeOptions');
-      let marq = JSON.parseJsonElement(marqueeOptions).getElement('$attrs').getElement('marqueeOptions');
-      console.info('marqueeOptionsTest1_static_001 -----' + JSON.stringifyJsonElement(marq));
+      let marq = JSON.parseJsonElement((JSON.parseJsonElement(marqueeOptions).getElement('$attrs').getString('marqueeOptions')));
+      // console.info('marqueeOptionsTest1_static_001 -----' + JSON.stringifyJsonElement(marq));
       await CommonFunc.sleep(2000);
-      console.info('marqueeOptionsTest1_static_001 -----22' + marq.getElement('start'));
+      console.info('marqueeOptionsTest1_static_001 -----22',JSON.parseJsonElement(marqueeOptions).getElement('$attrs'));
       expect(marq.getBoolean('start')).assertTrue();
-      expect(Math.abs(marq.getInteger('step') - UIContext.getFocusedUIContext()!.vp2px(6)) <= 1).assertTrue();
-      expect(marq.getInteger('loop') == -1).assertTrue();
-      expect(marq.getInteger('delay') == 0).assertTrue();
+      expect(Math.abs(Number(marq.getString('step')) - UIContext.getFocusedUIContext()!.vp2px(6)) <= 1).assertTrue();
+      expect(Number(marq.getString('loop')) == -1).assertTrue();
+      expect(Number(marq.getString('delay')) == 0).assertTrue();
       expect(marq.getBoolean('fadeout')).assertFalse();
       expect(marq.getString('startPolicy')).assertEqual('MarqueeStartPolicy.DEFAULT');
       expect(marq.getString('direction')).assertEqual('MarqueeDirection.DEFAULT');
@@ -97,13 +97,14 @@ it('marqueeOptionsTest1_static_001', Level.LEVEL3, async (done: () => void): Pro
     });
 
     
-    /*
+    
+/*
      * @tc.number   onMarqueeStateChangeTest_static_001
      * @tc.name     onMarqueeStateChangeTest_static_001
      * @tc.desc     onMarqueeStateChangeTest_static_001
      * @tc.level    Level.LEVEL3
      */
-it('onMarqueeStateChangeTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('onMarqueeStateChangeTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[onMarqueeStateChangeTest_static_001] START');
       await CommonFunc.sleep(1000);
       let MarqueeState = inspector.getInspectorByKey('MarqueeState');

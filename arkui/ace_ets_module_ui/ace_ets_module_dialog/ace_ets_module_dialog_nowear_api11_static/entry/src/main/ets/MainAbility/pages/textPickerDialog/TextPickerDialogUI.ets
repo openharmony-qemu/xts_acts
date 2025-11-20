@@ -12,23 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  Margin,
-  Row,
-  TextPickerResult
-} from '@ohos.arkui.component';
+import { Entry, Component, Row, Button, Margin, ClickEvent, Column, TextPickerResult } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct TextPickerDialogExampleA {
-  private select: int | int[] = 2;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[];
+  private select: Int | Int[] = 2
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[]
 
   build() {
     Row() {

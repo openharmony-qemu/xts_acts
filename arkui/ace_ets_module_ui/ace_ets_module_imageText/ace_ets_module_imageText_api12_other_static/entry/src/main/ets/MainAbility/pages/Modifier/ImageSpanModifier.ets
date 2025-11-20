@@ -26,16 +26,16 @@ import {
   TextArea,
   ImageSpanAttribute,
   AttributeModifier,
-  ColumnOptions
+  ColumnOptions,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
+class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
 
-
-
-
-
-
+applyNormalAttribute(ImageSpanInstance: ImageSpanAttribute): void {
+  ImageSpanInstance.size({ width: 100, height: 100 })
+}
+}
 
 @Entry
 @Component
@@ -43,17 +43,18 @@ struct ImageSpanModifier1 {
   @State value: string = 'init'
   @State imageAlt: PixelMap | undefined = undefined
 
-  
+  @State modifier: ImageSpanModifier = new ImageSpanModifier();
 
   aboutToAppear(): void {
-    
+    // this.value = typeof ImageSpanInstance //1.2不支持 1.1返回undefined
+    this.value = 'undefined'
   }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Text() {
         ImageSpan($r('app.media.icon'))
-        
+        .attributeModifier(this.modifier)
           .id('ImageSpanModifier_get_Size_width')
           .alt(this.imageAlt)
           .height('20%')

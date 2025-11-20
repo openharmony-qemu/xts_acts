@@ -12,23 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  Level,
-  Size,
-  TestType
-} from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 
@@ -61,8 +51,9 @@ export default function detentSelection() {
       }
     });
 
-
-    /*
+    
+    
+/*
      * @tc.number   detentSelection_static_0100
      * @tc.name     detentSelection_static_0100
      * @tc.desc     detentSelection_static_0100
@@ -93,8 +84,9 @@ export default function detentSelection() {
       done();
     });
 
-
-    /*
+    
+    
+/*
      * @tc.number   detentSelection_static_0200
      * @tc.name     detentSelection_static_0200
      * @tc.desc     detentSelection_static_0200
@@ -116,8 +108,8 @@ export default function detentSelection() {
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('text');
       let dent2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')
-      console.info('[detentSelection_static_0200] dent1' + dent1 + 'dent2' + dent2);
-      expect(Number(dent1) - Number(dent2) != 0).assertTrue();
+      console.info('[detentSelection_static_0200] dent1 '+ dent1 +'dent2 '+ dent2);
+      expect( Number(dent1) -  Number(dent2)!=0  ).assertTrue();
       let btn2: Component = await driver.findComponent(ON.id('close')) as Component;
       btn2!.click();
       console.info('[detentSelection_static_0200] END');

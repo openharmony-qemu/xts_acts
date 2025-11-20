@@ -13,23 +13,34 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  Component,
+  DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
+  ResizeDirection,
+  UiWindow,
+  WindowMode
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+import { startAbility, stopApplication, UtilsTest } from '../Util.test'
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function textInputHalfLeadingTest() {
   describe('textInputHalfLeadingTest', () => {
@@ -52,10 +63,10 @@ export default function textInputHalfLeadingTest() {
         console.info("get textInputHalfLeadingTest state success " + JSON.stringify(pages));
         if (!("textInputHalfLeadingTest" == pages.name)) {
           console.info("get textInputHalfLeadingTest state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push textInputHalfLeadingTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textInputHalfLeadingTest page error: " + err);
@@ -67,6 +78,7 @@ export default function textInputHalfLeadingTest() {
       console.info("textInputHalfLeadingTest after each called");
     });
 
+
     
     /*
      * @tc.number   textInputHalfLeadingTest_static_0001
@@ -74,70 +86,73 @@ export default function textInputHalfLeadingTest() {
      * @tc.desc     textInputHalfLeadingTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('textInputHalfLeadingTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let driver = Driver.create();
-        console.info('textInputHalfLeadingTest textInputHalfLeadingTest0001 START');
-        await CommonFunc.sleep(1000);
-        let input1 = inspector.getInspectorByKey('input1');
-        let obj = JSON.parseJsonElement(input1);
-        console.log('textInputHalfLeadingTest0001---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(true);
-        console.info("[textInputHalfLeadingTest0001] end");
+    it('textInputHalfLeadingTest_static_0001', Level.LEVEL0, async () => {
+      let driver = Driver.create();
+      console.info('textInputHalfLeadingTest textInputHalfLeadingTest0001 START');
+      await CommonFunc.sleep(1000);
+      let input1 = inspector.getInspectorByKey('input1');
+      let obj = JSON.parseJsonElement(input1);
+      console.log('textInputHalfLeadingTest0001---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+      expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(true);
+      console.info("[textInputHalfLeadingTest0001] end");
     });
-	
-	
+
+
+    
     /*
      * @tc.number   textInputHalfLeadingTest_static_0002
      * @tc.name     textInputHalfLeadingTest_static_0002
      * @tc.desc     textInputHalfLeadingTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('textInputHalfLeadingTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let driver = Driver.create();
-        console.info('textInputHalfLeadingTest textInputHalfLeadingTest0002 START');
-        await CommonFunc.sleep(1000);
-        let input2 = inspector.getInspectorByKey('input2');
-        let obj = JSON.parseJsonElement(input2);
-        console.log('textInputHalfLeadingTest0002---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(false);
-        console.info("[textInputHalfLeadingTest0002] end");
+    it('textInputHalfLeadingTest_static_0002', Level.LEVEL0, async () => {
+      let driver = Driver.create();
+      console.info('textInputHalfLeadingTest textInputHalfLeadingTest0002 START');
+      await CommonFunc.sleep(1000);
+      let input2 = inspector.getInspectorByKey('input2');
+      let obj = JSON.parseJsonElement(input2);
+      console.log('textInputHalfLeadingTest0002---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+      expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(false);
+      console.info("[textInputHalfLeadingTest0002] end");
     });
-	
-	
+
+
+    
     /*
      * @tc.number   textInputHalfLeadingTest_static_0003
      * @tc.name     textInputHalfLeadingTest_static_0003
      * @tc.desc     textInputHalfLeadingTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('textInputHalfLeadingTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let driver = Driver.create();
-        console.info('textInputHalfLeadingTest textInputHalfLeadingTest0003 START');
-        await CommonFunc.sleep(1000);
-        let input3 = inspector.getInspectorByKey('input3');
-        let obj = JSON.parseJsonElement(input3);
-        console.log('textInputHalfLeadingTest0003---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(false);
-        console.info("[textInputHalfLeadingTest0003] end");
+    it('textInputHalfLeadingTest_static_0003', Level.LEVEL0, async () => {
+      let driver = Driver.create();
+      console.info('textInputHalfLeadingTest textInputHalfLeadingTest0003 START');
+      await CommonFunc.sleep(1000);
+      let input3 = inspector.getInspectorByKey('input3');
+      let obj = JSON.parseJsonElement(input3);
+      console.log('textInputHalfLeadingTest0003---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+      expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(false);
+      console.info("[textInputHalfLeadingTest0003] end");
     });
-	
-	
+
+
+    
     /*
      * @tc.number   textInputHalfLeadingTest_static_0004
      * @tc.name     textInputHalfLeadingTest_static_0004
      * @tc.desc     textInputHalfLeadingTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('textInputHalfLeadingTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let driver = Driver.create();
-        console.info('textInputHalfLeadingTest textInputHalfLeadingTest0004 START');
-        await CommonFunc.sleep(1000);
-        let input4 = inspector.getInspectorByKey('input4');
-        let obj = JSON.parseJsonElement(input4);
-        console.log('textInputHalfLeadingTest0004---' + obj.getElement('$attrs').getString('halfLeading'))
-        expect(obj.getElement('$attrs').getString('halfLeading')).assertEqual(false);
-        console.info("[textInputHalfLeadingTest0004] end");
+    it('textInputHalfLeadingTest_static_0004', Level.LEVEL0, async () => {
+      let driver = Driver.create();
+      console.info('textInputHalfLeadingTest textInputHalfLeadingTest0004 START');
+      await CommonFunc.sleep(1000);
+      let input4 = inspector.getInspectorByKey('input4');
+      let obj = JSON.parseJsonElement(input4);
+      console.log('textInputHalfLeadingTest0004---' + obj.getElement('$attrs').getBoolean('halfLeading'))
+      expect(obj.getElement('$attrs').getBoolean('halfLeading')).assertEqual(false);
+      console.info("[textInputHalfLeadingTest0004] end");
     });
-	
+
   })
 }

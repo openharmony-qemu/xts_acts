@@ -15,10 +15,10 @@
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export class GlobalContext {
-  private static instance: GlobalContext = new GlobalContext();
-
   private constructor() {
   }
+
+  private static instance: GlobalContext = new GlobalContext();
 
   public static getContext(): GlobalContext {
     if (!GlobalContext.instance) {
@@ -27,11 +27,11 @@ export class GlobalContext {
     return GlobalContext.instance;
   }
 
-  getObject(value: string, tType: Type): Object | undefined {
+  getObject(value: string, tType:Type): Object | undefined {
     return AppStorage.get(value);
   }
 
-  setObject(key: string, objectClass: Object, tType: Type): void {
+  setObject(key: string, objectClass: Object, tType:Type): void {
     AppStorage.setOrCreate(key, objectClass);
   }
 }

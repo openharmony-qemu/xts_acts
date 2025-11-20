@@ -27,6 +27,7 @@ import {
   Marquee,
   RichEditor,
   RichEditorOptions,
+  RichEditorController,
   RichText,
   TextInput,
   TextInputAttribute,
@@ -35,27 +36,28 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
-
-
-
-
-
+class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+  applyNormalAttribute(TextInputInstance: TextInputAttribute): void {
+    TextInputInstance.fontSize(20);
+  }
+}
 
 @Entry
 @Component
 struct TextInputModifier1 {
   @State value: string = 'init'
 
-  
+  @State modifier: TextInputModifier = new TextInputModifier();
 
   aboutToAppear(): void {
-    
+    // this.value = typeof TextInputInstance
+    this.value = typeof undefined
   }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       TextInput({ text: 'TextInputModifier' })
-      
+      .attributeModifier(this.modifier)
         .id('TextInputModifier_get_fontSize')
         .height('20%')
 

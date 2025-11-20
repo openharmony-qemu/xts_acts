@@ -53,10 +53,10 @@ export default function searchFontScaleTest() {
         console.info("get searchFontScaleTest state success " + JSON.stringify(pages));
         if (!("searchFontScaleTest" == pages.name)) {
           console.info("get searchFontScaleTest state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push searchFontScaleTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push searchFontScaleTest page error: " + err);
@@ -69,13 +69,14 @@ export default function searchFontScaleTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   searchFontScaleTest_static_0001
      * @tc.name     searchFontScaleTest_static_0001
      * @tc.desc     searchFontScaleTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0001', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0001 START');
         await CommonFunc.sleep(1000);
@@ -87,15 +88,16 @@ it('searchFontScaleTest_static_0001', Level.LEVEL0, async (done: () => void): Pr
 		expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.000000");
         console.info("[searchFontScaleTest0001] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0002
      * @tc.name     searchFontScaleTest_static_0002
      * @tc.desc     searchFontScaleTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0002', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0002 START');
         await CommonFunc.sleep(1000);
@@ -107,15 +109,16 @@ it('searchFontScaleTest_static_0002', Level.LEVEL0, async (done: () => void): Pr
 		expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.500000");
         console.info("[searchFontScaleTest0002] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0003
      * @tc.name     searchFontScaleTest_static_0003
      * @tc.desc     searchFontScaleTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0003', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0003 START');
         await CommonFunc.sleep(1000);
@@ -127,15 +130,16 @@ it('searchFontScaleTest_static_0003', Level.LEVEL0, async (done: () => void): Pr
 		expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.500000");
         console.info("[searchFontScaleTest0003] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0004
      * @tc.name     searchFontScaleTest_static_0004
      * @tc.desc     searchFontScaleTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0004', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0004 START');
         await CommonFunc.sleep(1000);
@@ -149,13 +153,14 @@ it('searchFontScaleTest_static_0004', Level.LEVEL0, async (done: () => void): Pr
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   searchFontScaleTest_static_0005
      * @tc.name     searchFontScaleTest_static_0005
      * @tc.desc     searchFontScaleTest_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0005', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0005 START');
         await CommonFunc.sleep(1000);
@@ -169,13 +174,14 @@ it('searchFontScaleTest_static_0005', Level.LEVEL0, async (done: () => void): Pr
     });
 
 	
-    /*
+    
+/*
      * @tc.number   searchFontScaleTest_static_0006
      * @tc.name     searchFontScaleTest_static_0006
      * @tc.desc     searchFontScaleTest_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0006', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0006 START');
         await CommonFunc.sleep(1000);
@@ -187,15 +193,16 @@ it('searchFontScaleTest_static_0006', Level.LEVEL0, async (done: () => void): Pr
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.000000");
         console.info("[searchFontScaleTest0006] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0007
      * @tc.name     searchFontScaleTest_static_0007
      * @tc.desc     searchFontScaleTest_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0007', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0007 START');
         await CommonFunc.sleep(1000);
@@ -207,15 +214,16 @@ it('searchFontScaleTest_static_0007', Level.LEVEL0, async (done: () => void): Pr
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.000000");
         console.info("[searchFontScaleTest0007] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0008
      * @tc.name     searchFontScaleTest_static_0008
      * @tc.desc     searchFontScaleTest_static_0008
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0008', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0008 START');
         await CommonFunc.sleep(1000);
@@ -227,15 +235,16 @@ it('searchFontScaleTest_static_0008', Level.LEVEL0, async (done: () => void): Pr
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.600000");
         console.info("[searchFontScaleTest0008] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0009
      * @tc.name     searchFontScaleTest_static_0009
      * @tc.desc     searchFontScaleTest_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0009', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0009 START');
         await CommonFunc.sleep(1000);
@@ -247,16 +256,17 @@ it('searchFontScaleTest_static_0009', Level.LEVEL0, async (done: () => void): Pr
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("1.000000");
         console.info("[searchFontScaleTest0009] end");
     });
-	
-	
-	
-    /*
+
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0010
      * @tc.name     searchFontScaleTest_static_0010
      * @tc.desc     searchFontScaleTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0010', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0010 START');
         await CommonFunc.sleep(1000);
@@ -268,15 +278,16 @@ it('searchFontScaleTest_static_0010', Level.LEVEL0, async (done: () => void): Pr
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.000000");
         console.info("[searchFontScaleTest0010] end");
     });
-	
-	
-    /*
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0011
      * @tc.name     searchFontScaleTest_static_0011
      * @tc.desc     searchFontScaleTest_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0011', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0011 START');
         await CommonFunc.sleep(1000);
@@ -288,16 +299,17 @@ it('searchFontScaleTest_static_0011', Level.LEVEL0, async (done: () => void): Pr
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.000000");
         console.info("[searchFontScaleTest0011] end");
     });
-	
-	
-	
-    /*
+
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0012
      * @tc.name     searchFontScaleTest_static_0012
      * @tc.desc     searchFontScaleTest_static_0012
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0012', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0012 START');
         await CommonFunc.sleep(1000);
@@ -309,16 +321,17 @@ it('searchFontScaleTest_static_0012', Level.LEVEL0, async (done: () => void): Pr
 		    expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.000000");
         console.info("[searchFontScaleTest0012] end");
     });
-	
-	
-	
-    /*
+
+
+
+    
+/*
      * @tc.number   searchFontScaleTest_static_0013
      * @tc.name     searchFontScaleTest_static_0013
      * @tc.desc     searchFontScaleTest_static_0013
      * @tc.level    Level.LEVEL0
      */
-it('searchFontScaleTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('searchFontScaleTest_static_0013', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0013 START');
         await CommonFunc.sleep(1000);

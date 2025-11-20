@@ -47,28 +47,25 @@ export default function ImageSpanModifierTest() {
         url: 'MainAbility/pages/Modifier/ImageSpanModifier',
       }
       try {
-
-
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get ImageSpanModifierTest state pages:" + JSON.stringify(pages));
         if (!("ImageSpanModifier" == pages.name)) {
           console.info("get ImageSpanModifierTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ImageSpanModifierTest page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
      * @tc.number   ImageSpanModifierTest_static_0010
      * @tc.name     ImageSpanModifierTest_static_0010
@@ -88,6 +85,7 @@ export default function ImageSpanModifierTest() {
     });
 
 
+    
     /*
      * @tc.number   ImageSpanModifierTest_static_0020
      * @tc.name     ImageSpanModifierTest_static_0020

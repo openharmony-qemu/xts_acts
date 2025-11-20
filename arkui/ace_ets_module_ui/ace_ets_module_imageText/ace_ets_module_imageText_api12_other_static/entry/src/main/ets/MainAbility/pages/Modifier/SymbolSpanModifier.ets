@@ -27,6 +27,7 @@ import {
   Marquee,
   RichEditor,
   RichEditorOptions,
+  RichEditorController,
   RichText,
   SymbolSpanAttribute,
   AttributeModifier,
@@ -35,29 +36,31 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
-
-
-
-
-
+class SymbolSpanModifier implements AttributeModifier<SymbolSpanAttribute> {
+  applyNormalAttribute(SymbolSpanInstance: SymbolSpanAttribute): void {
+    SymbolSpanInstance.fontSize(100);
+  }
+}
 
 @Entry
 @Component
 struct SymbolSpanModifier1 {
   @State value: string = 'init'
 
-  
+  @State modifier: SymbolSpanModifier = new SymbolSpanModifier();
 
   aboutToAppear(): void {
-    
+    // this.value = (typeof SymbolSpanInstance).toString()
+    this.value = (typeof undefined).toString()
+
   }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Text() {
-        
-        
-        
+        SymbolSpan($r('sys.symbol.ohos_wifi')).attributeModifier(this.modifier)
+          .id('SymbolSpanModifier_get_fontSize')
+          // .height('20%')
       }
 
       TextArea({ text: this.value })

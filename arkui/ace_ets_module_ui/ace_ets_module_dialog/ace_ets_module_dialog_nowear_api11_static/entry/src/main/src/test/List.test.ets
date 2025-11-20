@@ -23,13 +23,13 @@ import TextPickerDialogJsunit from './textPickerDialogTest/TextPickerDialogJsuni
 import TimePickerDialogJsunit from './timePickerDialogTest/TimePickerDialogJsunit.test';
 
 export default function testsuite() {
-  CalendarPickerDialog();
-  calendarJsunit()
-  DatePickerDialog();
-  TextPickerDialog();
-  TimePickerDialog();
-  textPickerJsunit()
-  DatePickerDialogJsunit();
-  TextPickerDialogJsunit();
-  TimePickerDialogJsunit();
+    CalendarPickerDialog();
+    calendarJsunit()
+    DatePickerDialog();
+    TextPickerDialog();
+    TimePickerDialog();
+    textPickerJsunit();
+    DatePickerDialogJsunit();
+    TextPickerDialogJsunit();
+    TimePickerDialogJsunit();
 }

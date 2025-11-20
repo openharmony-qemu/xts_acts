@@ -84,7 +84,7 @@ struct ImageExample2 {
     Column({ space: 10 } as ColumnOptions) {
       Row({ space: 50 } as RowOptions) {
         Text() {
-          ImageSpan($rawfile('bm.jpg'))
+          ImageSpan($rawfile('bm.jpg')).colorFilter(new ColorFilter([2, 4, 5]))
             .key("imageSpan1")
         }
       }

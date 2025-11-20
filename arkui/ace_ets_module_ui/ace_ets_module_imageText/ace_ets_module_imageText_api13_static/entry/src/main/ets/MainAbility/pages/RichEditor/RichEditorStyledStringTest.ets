@@ -30,7 +30,7 @@ import {
 @Entry
 @Component
 struct RichEditorStyledStringTest {
-  
+  fontStyleAttr1: TextStyle = { fontColor: Color.Blue } as TextStyle;
   clickGestureAttr: GestureStyle = new GestureStyle({
     onClick: () => {
       const promptAction = new PromptAction()
@@ -38,46 +38,46 @@ struct RichEditorStyledStringTest {
       this.backgroundColor1 = Color.Yellow
     }
   })
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  mutableStyledString2: MutableStyledString = new MutableStyledString('test hello world',
+    [{
+      start: 0,
+      length: 5,
+      styledKey: StyledStringKey.GESTURE,
+      styledValue: this.clickGestureAttr
+    } as StyleOptions, {
+      start: 0,
+      length: 5,
+      styledKey: StyledStringKey.DECORATION,
+      styledValue: new DecorationStyle({ type: TextDecorationType.LineThrough, color: Color.Blue })
+    } as StyleOptions, {
+      start: 0,
+      length: 5,
+      styledKey: StyledStringKey.TEXT_SHADOW,
+      styledValue: new TextShadowStyle({
+        radius: 5,
+        type: ShadowType.COLOR,
+        color: Color.Yellow,
+        offsetX: 10,
+        offsetY: -10
+      } as ShadowOptions)
+    } as StyleOptions, {
+      start: 6,
+      length: 5,
+      styledKey: StyledStringKey.BASELINE_OFFSET,
+      styledValue: new BaselineOffsetStyle(LengthMetrics.fp(10))
+    } as StyleOptions, {
+      start: 0,
+      length: 5,
+      styledKey: StyledStringKey.LETTER_SPACING,
+      styledValue: new LetterSpacingStyle(new LengthMetrics(10, LengthUnit.VP))
+    } as StyleOptions,
+      {
+        start: 0,
+        length: 5,
+        styledKey: StyledStringKey.URL,
+        styledValue: new UrlStyle('www.spincast.org')
+      } as StyleOptions
+    ]);
   @State fontColor1: ResourceColor = Color.Red;
   controller: RichEditorStyledStringController = new RichEditorStyledStringController();
   options: RichEditorStyledStringOptions = {controller: this.controller} as RichEditorStyledStringOptions;
@@ -91,7 +91,7 @@ struct RichEditorStyledStringTest {
   @State styledKey6: StyledStringKey = StyledStringKey.DECORATION
 
   onPageShow():void{
-    
+    this.controller2.setStyledString(this.mutableStyledString2)
   }
 
   build(){
@@ -104,7 +104,7 @@ struct RichEditorStyledStringTest {
         Text(this.styledKey5 + '').fontSize(12).id('letterSpacingId')
         Text(this.styledKey6 + '').fontSize(12).id('urlId')
         RichEditor(this.options).onReady(():void => {
-          
+          this.controller.setStyledString(this.mutableStyledString2);
         }).padding(0)
           .height('20%')
           .width('100%')
@@ -112,13 +112,13 @@ struct RichEditorStyledStringTest {
           .borderColor(Color.Black)
         Button('SearchOtherTextStyles').id('searchStyle')
           .onClick((e:ClickEvent):void=> {
-            
-            
-            
-            
-            
-            
-            
+            let styles = this.mutableStyledString2.getStyles(0, this.mutableStyledString2.length)!
+            this.styledKey1 = styles[0].styledKey
+            this.styledKey2 = styles[1].styledKey
+            this.styledKey3 = styles[2].styledKey
+            this.styledKey4 = styles[3].styledKey
+            this.styledKey5 = styles[4].styledKey
+            this.styledKey6 = styles[5].styledKey
           })
           .margin({ top: 10 } as Margin)
       }.width('100%')

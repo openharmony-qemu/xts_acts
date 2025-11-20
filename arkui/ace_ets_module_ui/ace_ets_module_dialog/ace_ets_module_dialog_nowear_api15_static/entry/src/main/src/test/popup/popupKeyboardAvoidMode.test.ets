@@ -13,25 +13,25 @@
  * limitations under the License.
  */
 import {
-  afterEach,
-  beforeAll,
-  beforeEach,
   describe,
-  expect,
+  beforeEach,
   it,
+  expect,
   Level,
+  beforeAll,
   Size,
-  TestType
+  TestType,
+  afterEach
 } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import deviceInfo from '@ohos.deviceInfo'
+import deviceInfo from "@ohos.deviceInfo"
 
 export default function popupKeyboardAvoidMode() {
   describe("popupKeyboardAvoidMode", () => {
@@ -75,18 +75,19 @@ export default function popupKeyboardAvoidMode() {
     })
 
     /*
-    * @tc.number   popupKeyboardAvoidMode_static_0100
-    * @tc.name     popupKeyboardAvoidMode_static_0100
-    * @tc.desc     popupKeyboardAvoidMode_static_0100
-    * @tc.level    Level.LEVEL1
-    */
+     * @tc.number   popupKeyboardAvoidMode_static_0100
+     * @tc.name     popupKeyboardAvoidMode_static_0100
+     * @tc.desc     popupKeyboardAvoidMode_static_0100
+     * @tc.level    Level.LEVEL1
+     */
     it("popupKeyboardAvoidMode_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0100 START")
       if (!currentDeviceIsPC) {
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
-        let btn: Component = await driver.findComponent(ON.id("popup")) as Component
-        btn!.click()
+        let btn = await driver.findComponent(ON.id("popup"))
+        await CommonFunc.sleep(1000)
+        await (btn?.click() as Promise<void>)
         console.info("[popupKeyboardAvoidMode_static_0100] popup click")
         await CommonFunc.sleep(1000)
         let confirm = await driver.findComponent(ON.text("confirm"))
@@ -95,15 +96,17 @@ export default function popupKeyboardAvoidMode() {
         let height = rect.top
         console.info("[popupKeyboardAvoidMode_static_0100] height " + height)
 
-        let btn0: Component = await driver.findComponent(ON.id("ipt")) as Component
-        btn0!.click()
+        let btn0 = await driver.findComponent(ON.id("ipt"))
+        await CommonFunc.sleep(1000)
+        await (btn0?.click() as Promise<void>)
         await CommonFunc.sleep(1000)
 
         let rect1 = await confirm!.getBounds()
         let height1 = rect1.top
         console.info("[popupKeyboardAvoidMode_static_0100] height1 " + height1)
         expect(height - height1 > 0).assertTrue()
-        confirm!.click()
+        await CommonFunc.sleep(1000)
+        await (confirm?.click() as Promise<void>)
         await driver.triggerKey(2070)
       }
       console.info("[popupKeyboardAvoidMode_static_0100] END")
@@ -111,27 +114,31 @@ export default function popupKeyboardAvoidMode() {
     })
 
     /*
-    * @tc.number   popupKeyboardAvoidMode_static_0200
-    * @tc.name     popupKeyboardAvoidMode_static_0200
-    * @tc.desc     popupKeyboardAvoidMode_static_0200
-    * @tc.level    Level.LEVEL1
-    */
+         * @tc.number   popupKeyboardAvoidMode_static_0200
+         * @tc.name     popupKeyboardAvoidMode_static_0200
+         * @tc.desc     popupKeyboardAvoidMode_static_0200
+         * @tc.level    Level.LEVEL1
+         */
     it("popupKeyboardAvoidMode_static_0200", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0200 START")
       if (!currentDeviceIsPC) {
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
-        let btn: Component = await driver.findComponent(ON.id("none")) as Component
-        btn!.click()
-        console.info("[popupKeyboardAvoidMode_static_0200] none click")
+        let btn = await driver.findComponent(ON.id("none"))
+        await CommonFunc.sleep(1000)
+        await (btn?.click() as Promise<void>)
+        console.info("[popupKeyboardAvoidMode_0200] none click")
+        await CommonFunc.sleep(1000)
 
-        let btn1: Component = await driver.findComponent(ON.id("popup")) as Component
-        btn1!.click()
+        let btn1 = await driver.findComponent(ON.id("popup"))
+        await CommonFunc.sleep(1000)
+        await (btn1?.click() as Promise<void>)
         console.info("[popupKeyboardAvoidMode_static_0200] popup click")
         await CommonFunc.sleep(1000)
 
-        let btn0: Component = await driver.findComponent(ON.id("ipt")) as Component
-        btn0!.click()
+        let btn0 = await driver.findComponent(ON.id("ipt"))
+        await CommonFunc.sleep(1000)
+        await (btn0?.click() as Promise<void>)
         await CommonFunc.sleep(1000)
 
         let confirm = await driver.findComponent(ON.text("confirm"))
@@ -144,26 +151,28 @@ export default function popupKeyboardAvoidMode() {
     })
 
     /*
-    * @tc.number   popupKeyboardAvoidMode_static_0300
-    * @tc.name     popupKeyboardAvoidMode_static_0300
-    * @tc.desc     popupKeyboardAvoidMode_static_0300
-    * @tc.level    Level.LEVEL1
-    */
+     * @tc.number   popupKeyboardAvoidMode_static_0300
+     * @tc.name     popupKeyboardAvoidMode_static_0300
+     * @tc.desc     popupKeyboardAvoidMode_static_0300
+     * @tc.level    Level.LEVEL1
+     */
     it("popupKeyboardAvoidMode_static_0300", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0300 START")
       if (!currentDeviceIsPC) {
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
-        let btn: Component = await driver.findComponent(
+        let btn = await driver.findComponent(
           ON.id("default")
-        ) as Component
-        btn!.click()
+        )
+        await CommonFunc.sleep(1000)
+        await (btn?.click() as Promise<void>)
         console.info("[popupKeyboardAvoidMode_static_0300] default click")
         await CommonFunc.sleep(1000)
-        let btn1: Component = await driver.findComponent(
+        let btn1 = await driver.findComponent(
           ON.id("CustomPopup")
-        ) as Component
-        btn1!.click()
+        )
+        await CommonFunc.sleep(1000)
+        await (btn1?.click() as Promise<void>)
         console.info("[popupKeyboardAvoidMode_static_0300] CustomPopup click")
         await CommonFunc.sleep(1000)
         let text = await driver.findComponent(ON.id("text"))
@@ -171,8 +180,9 @@ export default function popupKeyboardAvoidMode() {
         let height = rect.top
         console.info("[popupKeyboardAvoidMode_static_0300] height " + height)
 
-        let btn0: Component = await driver.findComponent(ON.id("ipt")) as Component
-        btn0!.click()
+        let btn0 = await driver.findComponent(ON.id("ipt"))
+        await CommonFunc.sleep(1000)
+        await (btn0?.click() as Promise<void>)
         await CommonFunc.sleep(1000)
 
         let text1 = await driver.findComponent(ON.id("text"))
@@ -188,29 +198,33 @@ export default function popupKeyboardAvoidMode() {
     })
 
     /*
-    * @tc.number   popupKeyboardAvoidMode_static_0400
-    * @tc.name     popupKeyboardAvoidMode_static_0400
-    * @tc.desc     popupKeyboardAvoidMode_static_0400
-    * @tc.level    Level.LEVEL1
-    */
+         * @tc.number   popupKeyboardAvoidMode_static_0400
+         * @tc.name     popupKeyboardAvoidMode_static_0400
+         * @tc.desc     popupKeyboardAvoidMode_static_0400
+         * @tc.level    Level.LEVEL1
+         */
     it("popupKeyboardAvoidMode_static_0400", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0400 START")
       if (!currentDeviceIsPC) {
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
-        let btn: Component = await driver.findComponent(ON.id("none")) as Component
-        btn!.click()
+        let btn = await driver.findComponent(ON.id("none"))
+        await CommonFunc.sleep(1000)
+        await (btn?.click() as Promise<void>)
         console.info("[popupKeyboardAvoidMode_static_0400] none click")
+        await CommonFunc.sleep(1000)
 
-        let btn1: Component = await driver.findComponent(
+        let btn1 = await driver.findComponent(
           ON.id("CustomPopup")
-        ) as Component
-        btn1!.click()
+        )
+        await CommonFunc.sleep(1000)
+        await (btn1?.click() as Promise<void>)
         console.info("[popupKeyboardAvoidMode_static_0400] CustomPopup click")
         await CommonFunc.sleep(1000)
 
-        let btn0: Component = await driver.findComponent(ON.id("ipt")) as Component
-        btn0!.click()
+        let btn0 = await driver.findComponent(ON.id("ipt"))
+        await CommonFunc.sleep(1000)
+        await (btn0?.click() as Promise<void>)
         await CommonFunc.sleep(1000)
 
         let confirm = await driver.findComponent(ON.id("text"))

@@ -52,11 +52,9 @@ export default function textShadowTest() {
         console.info("get textShadowTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textShadowTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textShadowTest page error:" + err);
@@ -71,6 +69,7 @@ export default function textShadowTest() {
     });
 
 
+    
     /*
      * @tc.number   textShadowTest_static_0001
      * @tc.name     textShadowTest_static_0001
@@ -83,20 +82,20 @@ export default function textShadowTest() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('updateSpanStyle1'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('getSpans'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      get!.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('shadowRadius0')).assertEqual(5);
-      expect(AppStorage.get('shadowRadius1')).assertEqual(0);
-      expect(AppStorage.get('shadowColor0')).assertEqual('#FF000000');
-      expect(AppStorage.get('shadowColor1')).assertEqual('#FF000000');
-      expect(AppStorage.get('shadowOffsetX0')).assertEqual(-1);
-      expect(AppStorage.get('shadowOffsetX1')).assertEqual(0);
-      expect(AppStorage.get('shadowOffsetY0')).assertEqual(-1);
-      expect(AppStorage.get('shadowOffsetY1')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(5);
+      expect(AppStorage.get<number>('shadowRadius1')).assertEqual(0);
+      expect(AppStorage.get<string>('shadowColor0')).assertEqual('#FF000000');
+      expect(AppStorage.get<string>('shadowColor1')).assertEqual('#FF000000');
+      expect(AppStorage.get<number>('shadowOffsetX0')).assertEqual(-1);
+      expect(AppStorage.get<number>('shadowOffsetX1')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowOffsetY0')).assertEqual(-1);
+      expect(AppStorage.get<number>('shadowOffsetY1')).assertEqual(0);
       AppStorage.delete('shadowRadius0')
       AppStorage.delete('shadowRadius1')
       AppStorage.delete('shadowColor0')
@@ -110,6 +109,7 @@ export default function textShadowTest() {
     });
 
 
+    
     /*
      * @tc.number   textShadowTest_static_0002
      * @tc.name     textShadowTest_static_0002
@@ -122,16 +122,16 @@ export default function textShadowTest() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('updateSpanStyle2'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('getSpans'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      get!.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('shadowRadius0')).assertEqual(5);
-      expect(AppStorage.get('shadowColor0')).assertEqual('#FF000000');
-      expect(AppStorage.get('shadowOffsetX0')).assertEqual(2);
-      expect(AppStorage.get('shadowOffsetY0')).assertEqual(2);
+      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(5);
+      expect(AppStorage.get<string>('shadowColor0')).assertEqual('#FF000000');
+      expect(AppStorage.get<number>('shadowOffsetX0')).assertEqual(2);
+      expect(AppStorage.get<number>('shadowOffsetY0')).assertEqual(2);
       AppStorage.delete('shadowRadius0')
       AppStorage.delete('shadowColor0')
       AppStorage.delete('shadowOffsetX0')
@@ -141,6 +141,7 @@ export default function textShadowTest() {
     });
 
 
+    
     /*
      * @tc.number   textShadowTest_static_0003
      * @tc.name     textShadowTest_static_0003
@@ -153,16 +154,16 @@ export default function textShadowTest() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('updateSpanStyle3'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('getSpans'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      get!.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('shadowRadius0')).assertEqual(0);
-      expect(AppStorage.get('shadowColor0')).assertEqual('#FF000000');
-      expect(AppStorage.get('shadowOffsetX0')).assertEqual(0);
-      expect(AppStorage.get('shadowOffsetY0')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(0);
+      expect(AppStorage.get<string>('shadowColor0')).assertEqual('#FF000000');
+      expect(AppStorage.get<number>('shadowOffsetX0')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowOffsetY0')).assertEqual(0);
       AppStorage.delete('shadowRadius0')
       AppStorage.delete('shadowColor0')
       AppStorage.delete('shadowOffsetX0')
@@ -172,6 +173,7 @@ export default function textShadowTest() {
     });
 
 
+    
     /*
      * @tc.number   textShadowTest_static_0004
      * @tc.name     textShadowTest_static_0004
@@ -184,16 +186,16 @@ export default function textShadowTest() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('updateSpanStyle4'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('getSpans'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      get!.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('shadowRadius0')).assertEqual(5);
-      expect(AppStorage.get('shadowColor0')).assertEqual('#FFFF0000');
-      expect(AppStorage.get('shadowOffsetX0')).assertEqual(0);
-      expect(AppStorage.get('shadowOffsetY0')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(5);
+      expect(AppStorage.get<string>('shadowColor0')).assertEqual('#FFFF0000');
+      expect(AppStorage.get<number>('shadowOffsetX0')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowOffsetY0')).assertEqual(0);
       AppStorage.delete('shadowRadius0')
       AppStorage.delete('shadowColor0')
       AppStorage.delete('shadowOffsetX0')
@@ -203,6 +205,7 @@ export default function textShadowTest() {
     });
 
 
+    
     /*
      * @tc.number   textShadowTest_static_0005
      * @tc.name     textShadowTest_static_0005
@@ -215,16 +218,16 @@ export default function textShadowTest() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('updateSpanStyle5'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('getSpans'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      get!.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('shadowRadius0')).assertEqual(0);
-      expect(AppStorage.get('shadowColor0')).assertEqual('#FFFF0000');
-      expect(AppStorage.get('shadowOffsetX0')).assertEqual(2);
-      expect(AppStorage.get('shadowOffsetY0')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(0);
+      expect(AppStorage.get<string>('shadowColor0')).assertEqual('#FFFF0000');
+      expect(AppStorage.get<number>('shadowOffsetX0')).assertEqual(2);
+      expect(AppStorage.get<number>('shadowOffsetY0')).assertEqual(0);
       AppStorage.delete('shadowRadius0')
       AppStorage.delete('shadowColor0')
       AppStorage.delete('shadowOffsetX0')
@@ -234,6 +237,7 @@ export default function textShadowTest() {
     });
 
 
+    
     /*
      * @tc.number   textShadowTest_static_0006
      * @tc.name     textShadowTest_static_0006
@@ -246,16 +250,16 @@ export default function textShadowTest() {
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('updateSpanStyle6'))
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      set!.click();
       await CommonFunc.sleep(1000);
       let get = await driver.findComponent(ON.id('getSpans'))
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      get!.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('shadowRadius0')).assertEqual(5);
-      expect(AppStorage.get('shadowColor0')).assertEqual('#FF000000');
-      expect(AppStorage.get('shadowOffsetX0')).assertEqual(-1);
-      expect(AppStorage.get('shadowOffsetY0')).assertEqual(-1);
+      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(5);
+      expect(AppStorage.get<string>('shadowColor0')).assertEqual('#FF000000');
+      expect(AppStorage.get<number>('shadowOffsetX0')).assertEqual(-1);
+      expect(AppStorage.get<number>('shadowOffsetY0')).assertEqual(-1);
       AppStorage.delete('shadowRadius0')
       AppStorage.delete('shadowColor0')
       AppStorage.delete('shadowOffsetX0')

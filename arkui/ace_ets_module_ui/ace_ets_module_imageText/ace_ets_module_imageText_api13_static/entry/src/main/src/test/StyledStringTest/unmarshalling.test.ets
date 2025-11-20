@@ -52,10 +52,10 @@ export default function UnmarshallingErrorCodeTest() {
         console.info("get UnmarshallingErrorCodeTest state pages: " + JSON.stringify(pages));
         if (!("unmarshalling" == pages.name)) {
           console.info("get UnmarshallingErrorCodeTest state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.replaceUrl(options);
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push UnmarshallingErrorCodeTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push UnmarshallingErrorCodeTest page error: " + err);
@@ -64,20 +64,21 @@ export default function UnmarshallingErrorCodeTest() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   UnmarshallingErrorCodeTest_static_0010
      * @tc.name     UnmarshallingErrorCodeTest_static_0010
      * @tc.desc     UnmarshallingErrorCodeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('UnmarshallingErrorCodeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('UnmarshallingErrorCodeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[UnmarshallingErrorCodeTest_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('Unmarshalling_button'));
-      await (Button?.click() as Promise<void>)
+      Button?.click()
       await CommonFunc.sleep(500);
-      await (Button?.click() as Promise<void>)
+      Button?.click()
       await CommonFunc.sleep(500);
       console.info('[UnmarshallingErrorCodeTest_0010] click succ');
       let strJson = inspector.getInspectorByKey('Unmarshalling_GetCode401');

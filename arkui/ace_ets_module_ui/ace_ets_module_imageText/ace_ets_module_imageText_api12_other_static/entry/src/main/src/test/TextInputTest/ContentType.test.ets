@@ -60,11 +60,9 @@ export default function ContentTypeTest() {
         console.info("get ContentTypeTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ContentTypeTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ContentTypeTest page error:" + err);
@@ -73,6 +71,7 @@ export default function ContentTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   ContentTypeTest_static_0010
      * @tc.name     ContentTypeTest_static_0010
@@ -92,6 +91,7 @@ export default function ContentTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   ContentTypeTest_static_0020
      * @tc.name     ContentTypeTest_static_0020

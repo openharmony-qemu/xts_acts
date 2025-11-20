@@ -61,11 +61,9 @@ export default function TextDecorationStyleTest() {
         console.info("get TextDecorationStyleTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextDecorationStyleTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextDecorationStyleTest page error:" + err);
@@ -74,6 +72,7 @@ export default function TextDecorationStyleTest() {
     });
 
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0001
      * @tc.name     TextDecorationStyleTest_static_0001
@@ -84,16 +83,17 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0001 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextDOTTED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DOTTED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DOTTED');
       console.info("[TextDecorationStyleTest0001] end");
       done();
     });
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0002
      * @tc.name     TextDecorationStyleTest_static_0002
@@ -104,17 +104,18 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0002 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextDASHED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DASHED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DASHED');
       console.info("[TextDecorationStyleTest0002] end");
       done();
     });
 
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0003
      * @tc.name     TextDecorationStyleTest_static_0003
@@ -125,17 +126,18 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0003 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleSearchDOTTED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DOTTED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DOTTED');
       console.info("[TextDecorationStyleTest0003] end");
       done();
     });
 
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0004
      * @tc.name     TextDecorationStyleTest_static_0004
@@ -146,17 +148,18 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0004 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleSearchDASHED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DASHED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DASHED');
       console.info("[TextDecorationStyleTest0004] end");
       done();
     });
 
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0005
      * @tc.name     TextDecorationStyleTest_static_0005
@@ -167,17 +170,18 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0005 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextAreaDOTTED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DOTTED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DOTTED');
       console.info("[TextDecorationStyleTest0005] end");
       done();
     });
 
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0006
      * @tc.name     TextDecorationStyleTest_static_0006
@@ -188,17 +192,18 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0006 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextAreaDASHED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DASHED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DASHED');
       console.info("[TextDecorationStyleTest0006] end");
       done();
     });
 
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0007
      * @tc.name     TextDecorationStyleTest_static_0007
@@ -209,17 +214,18 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0007 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextInputDOTTED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DOTTED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DOTTED');
       console.info("[TextDecorationStyleTest0007] end");
       done();
     });
 
 
+    
     /*
      * @tc.number   TextDecorationStyleTest_static_0008
      * @tc.name     TextDecorationStyleTest_static_0008
@@ -230,12 +236,12 @@ export default function TextDecorationStyleTest() {
       console.info('TextDecorationStyleTest0008 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextInputDASHED');
-      let decoration: TextDecorationOptions = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
+      let decoration = JSON.parseJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('decoration')) as TextDecorationOptions;
+        .getString('decoration'));
       console.log('TextDecorationStyle-----' + JSON.stringify(decoration));
-      console.log('TextDecorationStyle-----' + decoration.style);
-      expect('' + decoration.style).assertEqual('TextDecorationStyle.DASHED');
+      console.log('TextDecorationStyle-----' + decoration.getString('style'));
+      expect('' + decoration.getString('style')).assertEqual('TextDecorationStyle.DASHED');
       console.info("[TextDecorationStyleTest0008] end");
       done();
     });

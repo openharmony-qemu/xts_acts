@@ -53,10 +53,10 @@ export default function textInputEllipsisModeTest() {
         console.info("get textInputEllipsisModeTest state success " + JSON.stringify(pages));
         if (!("textInputEllipsisModeTest" == pages.name)) {
           console.info("get textInputEllipsisModeTest state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push textInputEllipsisModeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textInputEllipsisModeTest page error: " + err);
@@ -69,13 +69,14 @@ export default function textInputEllipsisModeTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   textInputEllipsisModeTest_static_0001
      * @tc.name     textInputEllipsisModeTest_static_0001
      * @tc.desc     textInputEllipsisModeTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('textInputEllipsisModeTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEllipsisModeTest_static_0001', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('textInputEllipsisModeTest textInputEllipsisModeTest0001 START');
         await CommonFunc.sleep(1000);
@@ -87,13 +88,14 @@ it('textInputEllipsisModeTest_static_0001', Level.LEVEL0, async (done: () => voi
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputEllipsisModeTest_static_0002
      * @tc.name     textInputEllipsisModeTest_static_0002
      * @tc.desc     textInputEllipsisModeTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('textInputEllipsisModeTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEllipsisModeTest_static_0002', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('textInputEllipsisModeTest textInputEllipsisModeTest0002 START');
         await CommonFunc.sleep(1000);
@@ -105,13 +107,14 @@ it('textInputEllipsisModeTest_static_0002', Level.LEVEL0, async (done: () => voi
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputEllipsisModeTest_static_0003
      * @tc.name     textInputEllipsisModeTest_static_0003
      * @tc.desc     textInputEllipsisModeTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('textInputEllipsisModeTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEllipsisModeTest_static_0003', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('textInputEllipsisModeTest textInputEllipsisModeTest0003 START');
         await CommonFunc.sleep(1000);
@@ -123,13 +126,14 @@ it('textInputEllipsisModeTest_static_0003', Level.LEVEL0, async (done: () => voi
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputEllipsisModeTest_static_0004
      * @tc.name     textInputEllipsisModeTest_static_0004
      * @tc.desc     textInputEllipsisModeTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('textInputEllipsisModeTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEllipsisModeTest_static_0004', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('textInputEllipsisModeTest textInputEllipsisModeTest0004 START');
         await CommonFunc.sleep(1000);
@@ -141,13 +145,14 @@ it('textInputEllipsisModeTest_static_0004', Level.LEVEL0, async (done: () => voi
     });
 	
 	
-    /*
+    
+/*
      * @tc.number   textInputEllipsisModeTest_static_0005
      * @tc.name     textInputEllipsisModeTest_static_0005
      * @tc.desc     textInputEllipsisModeTest_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('textInputEllipsisModeTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEllipsisModeTest_static_0005', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('textInputEllipsisModeTest textInputEllipsisModeTest0005 START');
         await CommonFunc.sleep(1000);

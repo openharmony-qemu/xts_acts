@@ -12,31 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index'
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import common from '@ohos.app.ability.common';
-import deviceInfo from '@ohos.deviceInfo'
+import deviceInfo from "@ohos.deviceInfo"
 import window from '@ohos.window';
 import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Axis } from '@ohos.arkui.component'
-import { RecordData } from '@ohos.base';
 
 export default function calendarJsunit() {
   describe('appInfoTest_four_1', () => {
@@ -47,7 +36,7 @@ export default function calendarJsunit() {
       await UtilsTest.msSleep(4000)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("calendar beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/calendarPickerDialog/calendar',
@@ -62,7 +51,7 @@ export default function calendarJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push calendar page error: " + err);
       }
     });
@@ -72,7 +61,8 @@ export default function calendarJsunit() {
       console.info("calendar after each called");
     })
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_colSpace
      * @tc.name     ACE_calendar_CurrentDayStyle_colSpace
      * @tc.desc     ACE_calendar_CurrentDayStyle_colSpace
@@ -86,7 +76,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "colSpace": 10,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -94,16 +84,17 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_colSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CurrentDayStyle_colSpace] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_dailyFiveRowSpace
      * @tc.name     ACE_calendar_CurrentDayStyle_dailyFiveRowSpace
      * @tc.desc     ACE_calendar_CurrentDayStyle_dailyFiveRowSpace
@@ -117,7 +108,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "dailyFiveRowSpace": 11,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -125,17 +116,18 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_dailyFiveRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CurrentDayStyle_dailyFiveRowSpace] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_dailySixRowSpace
      * @tc.name     ACE_calendar_CurrentDayStyle_dailySixRowSpace
      * @tc.desc     ACE_calendar_CurrentDayStyle_dailySixRowSpace
@@ -149,7 +141,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "dailySixRowSpace": 12,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -157,17 +149,18 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_dailySixRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CurrentDayStyle_dailySixRowSpace] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_lunarHeight
      * @tc.name     ACE_calendar_CurrentDayStyle_lunarHeight
      * @tc.desc     ACE_calendar_CurrentDayStyle_lunarHeight
@@ -181,7 +174,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "lunarHeight": 13,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -189,17 +182,18 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_lunarHeight] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CurrentDayStyle_lunarHeight] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_underscoreWidth
      * @tc.name     ACE_calendar_CurrentDayStyle_underscoreWidth
      * @tc.desc     ACE_calendar_CurrentDayStyle_underscoreWidth
@@ -213,7 +207,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "underscoreWidth": 14,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -221,17 +215,18 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_underscoreWidth] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CurrentDayStyle_underscoreWidth] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_underscoreLength
      * @tc.name     ACE_calendar_CurrentDayStyle_underscoreLength
      * @tc.desc     ACE_calendar_CurrentDayStyle_underscoreLength
@@ -245,7 +240,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "underscoreLength": 15,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -253,17 +248,18 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_underscoreLength] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CurrentDayStyle_underscoreLength] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_scheduleMarkerRadius
      * @tc.name     ACE_calendar_CurrentDayStyle_scheduleMarkerRadius
      * @tc.desc     ACE_calendar_CurrentDayStyle_scheduleMarkerRadius
@@ -277,7 +273,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "scheduleMarkerRadius": 16,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -285,18 +281,18 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
-          console.log("[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] change component data error: " +
-          err.message);
+        } catch (err: Error) {
+          console.log("[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CurrentDayStyle_boundaryRowOffset
      * @tc.name     ACE_calendar_CurrentDayStyle_boundaryRowOffset
      * @tc.desc     ACE_calendar_CurrentDayStyle_boundaryRowOffset
@@ -310,7 +306,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "boundaryRowOffset": 17,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -318,16 +314,17 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CurrentDayStyle_boundaryRowOffset] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CurrentDayStyle_boundaryRowOffset] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_WeekStyle_weekAndDayRowSpace
      * @tc.name     ACE_calendar_WeekStyle_weekAndDayRowSpace
      * @tc.desc     ACE_calendar_WeekStyle_weekAndDayRowSpace
@@ -341,7 +338,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "weekAndDayRowSpace": 18,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -349,17 +346,18 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_WeekStyle_weekAndDayRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_WeekStyle_weekAndDayRowSpace] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
 
-    /*
+    
+/*
      * @tc.number   ACE_calendar_CalendarAttribute_direction
      * @tc.name     ACE_calendar_CalendarAttribute_direction
      * @tc.desc     ACE_calendar_CalendarAttribute_direction
@@ -373,7 +371,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "direction": Axis.Vertical,
-            } as Record<String, RecordData>
+            } as Record<string, Object | undefined | null>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -381,11 +379,11 @@ export default function calendarJsunit() {
           }
           console.info("[ACE_calendar_CalendarAttribute_direction] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+        } catch (err: Error) {
           console.log("[ACE_calendar_CalendarAttribute_direction] change component data error: " + err.message);
         }
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });

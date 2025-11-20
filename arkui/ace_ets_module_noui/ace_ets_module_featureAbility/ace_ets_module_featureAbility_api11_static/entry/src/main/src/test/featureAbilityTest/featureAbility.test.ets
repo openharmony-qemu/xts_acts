@@ -63,13 +63,14 @@ export default function featureAbilityStartAbilityJsunit() {
     
 
 
-    /*
+    
+/*
      * @tc.number   testfeatureAbilityStartAbility_static_0001
      * @tc.name     testfeatureAbilityStartAbility_static_0001
      * @tc.desc     testfeatureAbilityStartAbility_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testfeatureAbilityStartAbility_static_0001', Level.LEVEL0, async  () => {
+    it('testfeatureAbilityStartAbility_static_0001', Level.LEVEL0, async  () => {
       console.info('featureAbilityStartAbility testfeatureAbilityStartAbility0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('startAbilityText');

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -23,10 +23,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { Button, Component, Entry, Flex, FlexAlign, Padding } from '@ohos.arkui.component'
 
-interface Da {
-  enabled: boolean
-  text: string
-}
+
 
 @Entry
 @Component
@@ -67,15 +64,16 @@ struct EnabledExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void =
     (eventData: events_emitter.EventData): void => {
-      console.info("[stateChangCallBack] stateChangCallBack ");
-      if (eventData !== null) {
-        console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
-        let da = eventData.data as Da
-        if (da?.enabled !== null) {
-          this.enabledd = da?.enabled as boolean
+      console.info("[testEnable02] stateChangCallBack ",eventData);
+      if (eventData !== null && eventData.data !== null) {
+        const data = eventData.data as Record<string, Object | undefined | null>
+        console.info('[stateChangCallBackTwo] state change called:' + JSON.stringify(eventData));
+        if (data['enabled'] !== null) {
+          this.enabledd = data['enabled'] as boolean
+          console.info("[testEnable02] state change called: " + eventData.data);
         }
-        if (da?.text !== null) {
-          this.text = da?.text as string
+        if (data['text'] !== null) {
+          this.text = data['text'] as string
         }
       }
     }

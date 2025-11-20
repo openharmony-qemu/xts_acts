@@ -69,11 +69,11 @@ class LeadingMarginCreator {
 @Entry
 @Component
 struct Index {
-  
-  
-  
-  
-  
+  private leadingMarkCreatorInstance :LeadingMarginCreator= LeadingMarginCreator.instance
+  leadingMarginPlaceholder1: LeadingMarginPlaceholder = {
+    pixelMap: this.leadingMarkCreatorInstance.genSquareMark(24),
+    size:[15, 15]
+  } as LeadingMarginPlaceholder
   paragraphStyleAttr7: ParagraphStyle = new ParagraphStyle({
     textAlign: undefined,
     maxLines: -5,
@@ -82,9 +82,9 @@ struct Index {
   });
   paragraphStyleAttr8: ParagraphStyle =
     new ParagraphStyle({ textAlign: TextAlign.Start, leadingMargin: LengthMetrics.vp(30) });
-  
+  //行高样式对象
   lineHeightStyle1: LineHeightStyle = new LineHeightStyle(new LengthMetrics(24));
-  
+  //创建含段落样式的对象paragraphStyledString1
 
   paragraphStyledString5: StyledString = new StyledString('正文第三段落ABCDEFGHIJKLMNOPQRSTUVWXYZ。', [
     {
@@ -105,10 +105,10 @@ struct Index {
   controller5: TextController = new TextController();
   controller6: TextController = new TextController();
 
-  
-  
-  
-  
+  onPageShow() {
+    this.controller5.setStyledString(this.paragraphStyledString5)
+    this.controller6.setStyledString(this.paragraphStyledString6)
+  }
 
   build() {
     Row() {
@@ -125,66 +125,58 @@ struct Index {
           .copyOption(CopyOptions.InApp)
           .draggable(true)
 
-        
+        //查询段落样式
         Text('点击')
           .id('text')
           .onClick((e: ClickEvent) => {
-            let styles5 = this.paragraphStyledString5.getStyles(0, this.paragraphStyledString5.length)
-            if (styles5) {
-              if (styles5.length !== 0) {
-                for (let i = 0; i < styles5.length; i++) {
-                  console.info('paragraphStyledString5 style object start:' + styles5[i].start)
-                  console.info('paragraphStyledString5 style object length:' + styles5[i].length)
-                  console.info('paragraphStyledString5 style object key:' + styles5[i].styledKey)
-                  if (styles5[i].styledKey === 200) {
-                    let paraAttr = styles5[i].styledValue as ParagraphStyle;
-                    console.info(i + '  paragraphStyledString5 textAlign:' + paraAttr.textAlign)
-                    AppStorage.setOrCreate<undefined | TextAlign>('StyledString5_textAlign', paraAttr.textAlign);
-                    console.info(i + '  paragraphStyledString5 textIndent:' + paraAttr.textIndent)
-                    AppStorage.setOrCreate<undefined | Double>('StyledString5_textIndent', paraAttr.textIndent);
-                    console.info(i + '  paragraphStyledString5 maxLines:' + paraAttr.maxLines)
-                    AppStorage.setOrCreate<undefined | int>('StyledString5_maxLines', paraAttr.maxLines);
-                    console.info(i + '  paragraphStyledString5 wordBreak:' + paraAttr.wordBreak)
-                    AppStorage.setOrCreate<undefined | WordBreak>('StyledString5_wordBreak', paraAttr.wordBreak);
-                    console.info(i + '  paragraphStyledString5 leadingMargin:' + paraAttr.leadingMargin)
-                    AppStorage.setOrCreate<undefined | Double | LeadingMarginPlaceholder>('StyledString5_leadingMargin',
-                      paraAttr.leadingMargin);
-                    console.info(i + '  paragraphStyledString5 overflow:' + paraAttr.overflow)
-                    AppStorage.setOrCreate<undefined | TextOverflow>('StyledString5_overflow', paraAttr.overflow);
-                  }
+            let styles5 = this.paragraphStyledString5.getStyles(0, this.paragraphStyledString5.length)!
+            if (styles5.length !== 0) {
+              for (let i = 0; i < styles5.length; i++) {
+                console.info('paragraphStyledString5 style object start:' + styles5[i].start)
+                console.info('paragraphStyledString5 style object length:' + styles5[i].length)
+                console.info('paragraphStyledString5 style object key:' + styles5[i].styledKey)
+                if (styles5[i].styledKey === 200) {
+                  let paraAttr = styles5[i].styledValue as ParagraphStyle;
+                  console.info(i + '  paragraphStyledString5 textAlign:' + paraAttr.textAlign)
+                  AppStorage.setOrCreate<undefined | TextAlign>('StyledString5_textAlign', paraAttr.textAlign);
+                  console.info(i + '  paragraphStyledString5 textIndent:' + paraAttr.textIndent)
+                  AppStorage.setOrCreate<undefined | Double>('StyledString5_textIndent', paraAttr.textIndent);
+                  console.info(i + '  paragraphStyledString5 maxLines:' + paraAttr.maxLines)
+                  AppStorage.setOrCreate<undefined | int>('StyledString5_maxLines', paraAttr.maxLines);
+                  console.info(i + '  paragraphStyledString5 wordBreak:' + paraAttr.wordBreak)
+                  AppStorage.setOrCreate<undefined | WordBreak>('StyledString5_wordBreak', paraAttr.wordBreak);
+                  console.info(i + '  paragraphStyledString5 leadingMargin:' + paraAttr.leadingMargin)
+                  AppStorage.setOrCreate<undefined | Double | LeadingMarginPlaceholder>('StyledString5_leadingMargin',
+                    paraAttr.leadingMargin);
+                  console.info(i + '  paragraphStyledString5 overflow:' + paraAttr.overflow)
+                  AppStorage.setOrCreate<undefined | TextOverflow>('StyledString5_overflow', paraAttr.overflow);
                 }
               }
-            } else {
-              console.info('paragraphStyledString5 style undefined')
             }
 
-            let styles6 = this.paragraphStyledString6.getStyles(0, this.paragraphStyledString6.length)
-            if (styles6) {
-              if (styles6.length !== 0) {
-                for (let i = 0; i < styles6.length; i++) {
-                  console.info('paragraphStyledString6 style object start:' + styles6[i].start)
-                  console.info('paragraphStyledString6 style object length:' + styles6[i].length)
-                  console.info('paragraphStyledString6 style object key:' + styles6[i].styledKey)
-                  if (styles6[i].styledKey === 200) {
-                    let paraAttr = styles6[i].styledValue as ParagraphStyle;
-                    console.info(i + '  paragraphStyledString6 textAlign:' + paraAttr.textAlign)
-                    AppStorage.setOrCreate<undefined | TextAlign>('StyledString6_textAlign', paraAttr.textAlign);
-                    console.info(i + '  paragraphStyledString6 textIndent:' + paraAttr.textIndent)
-                    AppStorage.setOrCreate<undefined | Double>('StyledString6_textIndent', paraAttr.textIndent);
-                    console.info(i + '  paragraphStyledString6 maxLines:' + paraAttr.maxLines)
-                    AppStorage.setOrCreate<undefined | int>('StyledString6_maxLines', paraAttr.maxLines);
-                    console.info(i + '  paragraphStyledString6 wordBreak:' + paraAttr.wordBreak)
-                    AppStorage.setOrCreate<undefined | WordBreak>('StyledString6_wordBreak', paraAttr.wordBreak);
-                    console.info(i + '  paragraphStyledString6 leadingMargin:' + paraAttr.leadingMargin,)
-                    AppStorage.setOrCreate<undefined | Double | LeadingMarginPlaceholder>('StyledString6_leadingMargin',
-                      paraAttr.leadingMargin);
-                    console.info(i + '  paragraphStyledString6 overflow:' + paraAttr.overflow)
-                    AppStorage.setOrCreate<undefined | TextOverflow>('StyledString6_overflow', paraAttr.overflow);
-                  }
+            let styles6 = this.paragraphStyledString6.getStyles(0, this.paragraphStyledString6.length)!
+            if (styles6.length !== 0) {
+              for (let i = 0; i < styles6.length; i++) {
+                console.info('paragraphStyledString6 style object start:' + styles6[i].start)
+                console.info('paragraphStyledString6 style object length:' + styles6[i].length)
+                console.info('paragraphStyledString6 style object key:' + styles6[i].styledKey)
+                if (styles6[i].styledKey === 200) {
+                  let paraAttr = styles6[i].styledValue as ParagraphStyle;
+                  console.info(i + '  paragraphStyledString6 textAlign:' + paraAttr.textAlign)
+                  AppStorage.setOrCreate<undefined | TextAlign>('StyledString6_textAlign', paraAttr.textAlign);
+                  console.info(i + '  paragraphStyledString6 textIndent:' + paraAttr.textIndent)
+                  AppStorage.setOrCreate<undefined | Double>('StyledString6_textIndent', paraAttr.textIndent);
+                  console.info(i + '  paragraphStyledString6 maxLines:' + paraAttr.maxLines)
+                  AppStorage.setOrCreate<undefined | int>('StyledString6_maxLines', paraAttr.maxLines);
+                  console.info(i + '  paragraphStyledString6 wordBreak:' + paraAttr.wordBreak)
+                  AppStorage.setOrCreate<undefined | WordBreak>('StyledString6_wordBreak', paraAttr.wordBreak);
+                  console.info(i + '  paragraphStyledString6 leadingMargin:' + paraAttr.leadingMargin,)
+                  AppStorage.setOrCreate<undefined | Double | LeadingMarginPlaceholder>('StyledString6_leadingMargin',
+                    paraAttr.leadingMargin);
+                  console.info(i + '  paragraphStyledString6 overflow:' + paraAttr.overflow)
+                  AppStorage.setOrCreate<undefined | TextOverflow>('StyledString6_overflow', paraAttr.overflow);
                 }
               }
-            } else {
-              console.info('paragraphStyledString6 style undefined')
             }
           })
           .margin({ top: 10 } as Margin)

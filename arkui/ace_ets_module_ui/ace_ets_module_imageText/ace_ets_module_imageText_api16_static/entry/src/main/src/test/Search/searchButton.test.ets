@@ -27,9 +27,10 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function searchButton() {
   describe('searchButton', (): void => {
@@ -51,13 +52,13 @@ export default function searchButton() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get searchButton state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("searchButton" == pages.name)) {
           console.info("get searchButton pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push searchButton page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push searchButton page error:" + err);
@@ -72,36 +73,35 @@ export default function searchButton() {
 
 
     /*
-     * @tc.number   searchButton_static_0001
-     * @tc.name     searchButton_static_0001
-     * @tc.desc     searchButton_static_0001
-     * @tc.level    Level.LEVEL1
-     */
-it('searchButton_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let driver = Driver.create();
-        console.info('searchButton searchButton_static_0001 START');
-        await CommonFunc.sleep(500);
+         * @tc.number   searchButton_static_0001
+         * @tc.name     searchButton_static_0001
+         * @tc.desc     searchButton_static_0001
+         * @tc.level    Level.LEVEL1
+         */
+    it('searchButton_static_0001', Level.LEVEL1, async () => {
+      let driver = Driver.create();
+      console.info('searchButton searchButton_static_0001 START');
+      await CommonFunc.sleep(500);
 
-        let strJson:string = inspector.getInspectorByKey('search1');
-        let obj = JSON.parseJsonElement(strJson);
-        console.log('searchButton_static_0001---obj.$attrs.searchButtonOption.autoDisable---' +
-         obj.getElement('$attrs').getElement('searchButtonOption').getString('autoDisable'));
-        expect(obj.getElement('$attrs').getElement('searchButtonOption').getString('autoDisable')).assertEqual("true");
-        
-        let strJson2:string = inspector.getInspectorByKey('search2');
-        let obj2  = JSON.parseJsonElement(strJson2);
-        console.log('searchButton_static_0001---obj2.$attrs.searchButtonOption.autoDisable---' +
-         obj2.getElement('$attrs').getElement('searchButtonOption').getString('autoDisable'));
-        expect(obj2.getElement('$attrs').getElement('searchButtonOption').getString('autoDisable')).assertEqual("false");
-        
-        let strJson3:string = inspector.getInspectorByKey('search3');
-        let obj3 = JSON.parseJsonElement(strJson3);
-        console.log('searchButton_static_0001---obj3.$attrs.searchButtonOption.autoDisable---' +
-         obj3.getElement('$attrs').getElement('searchButtonOption').getString('autoDisable'));
-        expect(obj3.getElement('$attrs').getElement('searchButtonOption').getString('autoDisable')).assertEqual("false");
-        
-        console.info("[searchButton_static_0001] end");
-        done();
+      let strJson: string = inspector.getInspectorByKey('search1');
+      let obj = JSON.parseJsonElement(strJson);
+      console.log('searchButton_static_0001---obj.$attrs.searchButtonOption.autoDisable---' +
+      obj.getElement('$attrs').getElement('searchButtonOption').getBoolean('autoDisable'));
+      expect(obj.getElement('$attrs').getElement('searchButtonOption').getBoolean('autoDisable')).assertEqual(true);
+      //true
+      let strJson2: string = inspector.getInspectorByKey('search2');
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.log('searchButton_static_0001---obj2.$attrs.searchButtonOption.autoDisable---' +
+      obj2.getElement('$attrs').getElement('searchButtonOption').getBoolean('autoDisable'));
+      expect(obj2.getElement('$attrs').getElement('searchButtonOption').getBoolean('autoDisable')).assertEqual(false);
+      //false
+      let strJson3: string = inspector.getInspectorByKey('search3');
+      let obj3 = JSON.parseJsonElement(strJson3);
+      console.log('searchButton_static_0001---obj3.$attrs.searchButtonOption.autoDisable---' +
+      obj3.getElement('$attrs').getElement('searchButtonOption').getBoolean('autoDisable'));
+      expect(obj3.getElement('$attrs').getElement('searchButtonOption').getBoolean('autoDisable')).assertEqual(false);
+      //false
+      console.info("[searchButton_static_0001] end");
     });
   })
 }

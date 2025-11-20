@@ -12,19 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  Entry,
-  FontWeight,
-  Margin,
-  Padding,
-  Row,
-  TimePickerResult
-} from '@ohos.arkui.component';
+import { Entry, Component, Row, Column, Margin, Color, FontWeight, Button, ClickEvent, Padding, TimePickerResult } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -45,7 +33,7 @@ struct TimePickerDialogExample {
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TimePickerResult) => {
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectTime.setHours(value.hour, value.minute)
                 console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
               }
             },

@@ -12,27 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ClickEvent,
-  Component,
-  DialogAlignment,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  ItemAlign,
-  Margin,
-  Row,
-  TextPickerResult
-} from '@ohos.arkui.component';
+import { Entry, Component, Row, Button, Margin, ClickEvent, Flex, FlexDirection, ItemAlign, FlexAlign, DialogAlignment, TextPickerResult } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct TextPickerDialogOptions111 {
-  private select: int | int[] = 2;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[];
+  private select: Int | Int[] = 2
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[]
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -44,20 +31,15 @@ struct TextPickerDialogOptions111 {
             selected: this.select,
             alignment: DialogAlignment.TopStart,
             offset: { dx: 10, dy: 100 },
-            maskRect: {
-              x: 0,
-              y: 90,
-              width: 1000,
-              height: 250
-            },
-            onAccept: (value: TextPickerResult) => {
+            maskRect: { x: 0, y: 90, width: 1000, height: 250  },
+            onAccept: (value: TextPickerResult)=> {
               this.select = value.index
               console.info("TextPickerDialog: onAccept()" + JSON.stringify(value))
             },
-            onCancel: () => {
+            onCancel:()=> {
               console.info("TextPickerDialog: onCancel()")
             },
-            onChange: (value: TextPickerResult) => {
+            onChange: (value: TextPickerResult)=> {
               console.info("TextPickerDialog: onChange()" + JSON.stringify(value))
             }
           })

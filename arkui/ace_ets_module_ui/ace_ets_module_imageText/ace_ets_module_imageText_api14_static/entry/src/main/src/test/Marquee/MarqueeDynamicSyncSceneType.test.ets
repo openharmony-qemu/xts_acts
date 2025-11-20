@@ -51,13 +51,11 @@ export default function MarqueeDynamicSyncSceneTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get MarqueeDynamicSyncSceneTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MarqueeDynamicSyncSceneType" == pages.name)) {
           console.info("get MarqueeDynamicSyncSceneTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push MarqueeDynamicSyncSceneTest page error:" + err);
@@ -66,19 +64,20 @@ export default function MarqueeDynamicSyncSceneTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   MarqueeDynamicSyncSceneTest_static_0010
      * @tc.name     MarqueeDynamicSyncSceneTest_static_0010
      * @tc.desc     MarqueeDynamicSyncSceneTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('MarqueeDynamicSyncSceneTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MarqueeDynamicSyncSceneTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MarqueeDynamicSyncSceneTest_0010 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.type('Button'));
       if (Button != null) {
-        Button.click();
+        Button?.click();
         await CommonFunc.sleep(1000);
         console.info("[MarqueeDynamicSyncSceneTest_0010] MarqueeDynamicSyncSceneType:"
           + String(AppStorage.get('MarqueeDynamicSyncSceneType')));

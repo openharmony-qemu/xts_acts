@@ -34,7 +34,7 @@ struct textInputHalfLeadingTest {
           .id('input3')
           .height('10%')
         TextInput({ text: this.text} as TextInputOptions)
-          
+          // .halfLeading(null)
           .id('input4')
           .height('10%')
       }

@@ -24,10 +24,10 @@ import CustomSpan from './StyledStringTest/CustomSpan.test';
 import UnmarshallingErrorCodeTest from './StyledStringTest/unmarshalling.test'
 
 export default function testsuite() {
-  RichEditorMenuType();
-  RichEditorStyledStringTest();
-  BarStateTest();
-  EnableHapticFeedbackTest();
+  RichEditorMenuType();//11.17SDK  pass:2
+  RichEditorStyledStringTest();//11.17SDK  pass:1
+  BarStateTest();//11.17SDK  pass:5
+  EnableHapticFeedbackTest();//11.17SDK  pass:20
   StyledStringUrl();
   textAreaInputTest();
   TextMenuType();

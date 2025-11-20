@@ -55,13 +55,11 @@ export default function imageSpanJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get imageSpanJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("imageTwo" == pages.name)) {
           console.info("get imageSpanJsunit pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push imageSpanJsunit page error:" + err);
@@ -70,16 +68,17 @@ export default function imageSpanJsunit() {
     });
 
        
-    /*
+    
+/*
      * @tc.number   imageSpanJsunit_static_0100
      * @tc.name     imageSpanJsunit_static_0100
      * @tc.desc     imageSpanJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('imageSpanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanJsunit_0100 START');
       await CommonFunc.sleep(1000);
-      
+      // get the image component and test attribute
       let strJson = inspector.getInspectorByKey('imageSpan1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageSpanJsunit_0100 component obj is: ' + obj.getElement('$attrs').getString('colorFilter'));

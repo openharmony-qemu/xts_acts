@@ -26,7 +26,7 @@ struct TextCaretColorExample3 {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-      
+      // 超出maxLines截断内容展示
       Text('这是一段测试文本')
         .textOverflow({ overflow: TextOverflow.Clip })
         .maxLines(1)

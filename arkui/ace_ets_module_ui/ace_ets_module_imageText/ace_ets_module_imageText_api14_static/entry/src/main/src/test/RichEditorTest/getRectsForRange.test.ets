@@ -50,13 +50,11 @@ export default function getRectsForRangeTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get getRectsForRangeTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("getRectsForRange" == pages.name)) {
           console.info("get getRectsForRangeTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push getRectsForRangeTest page error:" + err);
@@ -66,19 +64,20 @@ export default function getRectsForRangeTest() {
 
 
     
-    /*
+    
+/*
      * @tc.number   getRectsForRangeTest_static_0010
      * @tc.name     getRectsForRangeTest_static_0010
      * @tc.desc     getRectsForRangeTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('getRectsForRangeTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('getRectsForRangeTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('getRectsForRangeTest_0010 START');
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('getRectsForRange_Key'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('getRectsForRange_Key');

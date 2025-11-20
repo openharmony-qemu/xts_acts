@@ -14,14 +14,14 @@
  */
 import { typeNode, FrameNode, NodeController } from '@ohos.arkui.node';
 import { WaterFlowDataSource } from './WaterFlowDataSource'
-import { Entry, Component, Column, $r, Color, Margin, NodeContainer, Scroller, Padding, WaterFlowLayoutMode } from '@ohos.arkui.component'
+import { Entry, Component, Column, $r, Color, Margin, NodeContainer, Scroller, Padding, WaterFlowLayoutMode, TextAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 
 class MyNodeController extends NodeController {
   minSize: number = 80
   maxSize: number = 180
-  colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
+  colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
   scroller: Scroller = new Scroller()
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   dataCount: number = this.dataSource.totalCount()
@@ -57,17 +57,49 @@ class MyNodeController extends NodeController {
       .borderWidth(1)
     node.appendChild(col)
 
+    let title = typeNode.createTextNode(uiContext)
+    title.initialize('typeNode WaterFlow')
+      .width(100).height(30)
+      .fontSize(20).textAlign(TextAlign.Center)
+    col.appendChild(title)
+
+    // let scrollButton = typeNode.createNode(uiContext, 'Button')
+    // scrollButton.initialize('scroller')
+    //   .width(100)
+    //   .height(30)
+    //   .backgroundColor('#FFFF0000')
+    //   .onClick(() => { // 点击后滑到下边缘，速度值是700vp/s
+    //     this.scroller.scrollEdge(Edge.Bottom, { velocity: 700 })
+    //   })
+    // col.appendChild(scrollButton)
+
+    let waterFlow = typeNode.createWaterFlowNode(uiContext)
+    waterFlow.initialize({ scroller: this.scroller, layoutMode: WaterFlowLayoutMode.ALWAYS_TOP_DOWN })
+      .id('waterFlow_node')
+      .columnsTemplate('1fr 1fr')
+      .columnsGap(10)
+      .rowsGap(5)
+      // .backgroundColor(0xFAEEE0)
+      .width('100%')
+      .height('70%')
+      .layoutWeight(1)
 
     for (let i = 0; i < this.dataSource.totalCount(); i++) {
+      let text = typeNode.createTextNode(uiContext)
+      text.initialize('N'+this.dataSource.getData(i))
+        .height(16).fontSize(13)
 
       let flowItem = typeNode.createFlowItemNode(uiContext)
       flowItem.initialize().id('flowItem_node')
         .width('100%')
-        .height(this.itemHeightArray[i.toInt() % 100])
-        .backgroundColor(this.colors[i.toInt() % 5])
+        .height(this.itemHeightArray[i % 100])
+        // .backgroundColor(this.colors[i % 5] as Int)
 
+      flowItem.appendChild(text)
+      waterFlow.appendChild(flowItem)
     }
 
+    col.appendChild(waterFlow)
     return node;
   }
 }
@@ -83,7 +115,7 @@ struct nodeWaterFlow {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    // .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

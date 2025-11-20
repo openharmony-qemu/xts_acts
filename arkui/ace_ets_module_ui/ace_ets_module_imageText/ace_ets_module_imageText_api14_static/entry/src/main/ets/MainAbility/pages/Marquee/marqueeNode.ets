@@ -14,9 +14,11 @@
  */
 
 import {
-
+typeNode,
   NodeController, FrameNode } from '@ohos.arkui.node';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, ColumnOptions, HorizontalAlign } from '@ohos.arkui.component'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, ColumnOptions, HorizontalAlign, Color, NodeContainer, MarqueeOptions
+,MarqueeUpdateStrategy,Margin
+} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext } from "@ohos.arkui.UIContext";
 
@@ -40,23 +42,23 @@ let data: Info = {
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    let col = typeNode.createColumnNode(uiContext)
+    col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
+    let marquee = typeNode.createMarqueeNode(uiContext)
+    // marquee.initialize(undefined)
+    marquee.initialize(data as MarqueeOptions)
+      .width(300)
+      .height(80)
+      .fontColor('#FFFFFF')
+      .fontSize(48)
+      .fontWeight(700)
+      .marqueeUpdateStrategy(MarqueeUpdateStrategy.DEFAULT)
+      .backgroundColor('#182431')
+      .key('key_marquee_Node_001')
+      .margin({ bottom: 40 } as Margin)
+    col.appendChild(marquee)
+    node.appendChild(col)
+    console.log('marqueeNode0100: page' + new Date().getTime())
     return node
   }
 }
@@ -73,7 +75,7 @@ struct qrcode {
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
-      
+      NodeContainer(this.myNodeController)
     }.width('100%')
     .alignItems(HorizontalAlign.Center)
   }

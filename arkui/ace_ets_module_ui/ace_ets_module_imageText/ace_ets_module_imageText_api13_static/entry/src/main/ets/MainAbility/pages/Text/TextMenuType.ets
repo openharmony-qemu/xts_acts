@@ -24,7 +24,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,State} from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { ResourceColor, Entry, Component,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
+import { ResourceColor, Entry, Component,RichEditorController,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
   Search,Text,TextStyle,MutableStyledString,TextController,TextController,UrlStyle,TextController,StyledStringKey,Color,TextOptions,ColumnOptions,CopyOptions,
   FontStyle,Margin,StyleOptions,Span,ImageSpan,TextSpanType,TextResponseType,MenuType,HorizontalAlign,Menu,Builder,MenuItemGroup,ImageFit,ImageSpanAlignment,$r,MenuItem,
   MenuItemOptions
@@ -103,7 +103,7 @@ struct TextMenuType1 {
           MenuItem({ startIcon: $r('app.media.app_icon'), content: "Right Click Menu 3", labelInfo: "" } as MenuItemOptions)
         }
       }
-      
+      // .MenuStyles()
     }
   }
 
@@ -120,7 +120,7 @@ struct TextMenuType1 {
           MenuItem({ startIcon: $r('app.media.app_icon'), content: "Long Press Image Menu 3", labelInfo: "" } as MenuItemOptions)
         }
       }
-      
+      // .MenuStyles()
     }
   }
 
@@ -137,13 +137,14 @@ struct TextMenuType1 {
           MenuItem({ startIcon: $r('app.media.app_icon'), content: "Select Mixed Menu 3", labelInfo: "" } as MenuItemOptions)
         }
       }
-      
+      // .MenuStyles()
     }
   }
 }
 
-
-
-
-
-
+// @Extend(Menu)
+// function MenuStyles() {
+//   .radius($r('sys.float.ohos_id_corner_radius_card'))
+//   .clip(true)
+//   .backgroundColor('#F0F0F0')
+// }

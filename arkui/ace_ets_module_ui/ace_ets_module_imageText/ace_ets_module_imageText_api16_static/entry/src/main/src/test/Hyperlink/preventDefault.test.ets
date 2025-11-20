@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index.ets"
-import { Driver, ON} from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,9 +26,10 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function preventDefault() {
   describe('preventDefault', () => {
@@ -50,13 +51,13 @@ export default function preventDefault() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get preventDefault state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("preventDefault" == pages.name)) {
           console.info("get preventDefault pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push preventDefault page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push preventDefault page error:" + err);
@@ -69,33 +70,32 @@ export default function preventDefault() {
       console.info("preventDefault after each called");
     });
 
-    
-    /*
-     * @tc.number   preventDefault_static_0001
-     * @tc.name     preventDefault_static_0001
-     * @tc.desc     preventDefault_static_0001
-     * @tc.level    Level.LEVEL0
-     */
-it('preventDefault_static_0001', Level.LEVEL0, async () => {
 
-        try {
-          let driver = Driver.create();
+    /*
+         * @tc.number   preventDefault_static_0001
+         * @tc.name     preventDefault_static_0001
+         * @tc.desc     preventDefault_static_0001
+         * @tc.level    Level.LEVEL0
+         */
+    it('preventDefault_static_0001', Level.LEVEL0, async () => {
+      try {
+        let driver = Driver.create();
           console.info('preventDefault preventDefault0001 START');
           await CommonFunc.sleep(1000);
           let hyperlink1 = await driver.findComponent(ON.id('hyperlink1'));
           await CommonFunc.sleep(500);
-          await (hyperlink1?.click() as Promise<void>)
+          hyperlink1?.click()
           await CommonFunc.sleep(500);
 
           let hyperlink3 = await driver.findComponent(ON.id('hyperlink3'));
           await CommonFunc.sleep(500);
-          await (hyperlink3?.click() as Promise<void>)
+          hyperlink3?.click()
           await CommonFunc.sleep(500);
-          await driver.assertComponentExist(ON.text('禁掉onclick'));
-        }catch(error) {
-          expect().assertFail();
-        }
-        console.info("[preventDefault0001] end");
+          driver.assertComponentExist(ON.text('禁掉onclick'));
+          console.info("[preventDefault0001] end");
+      } catch (error) {
+        expect().assertFail();
+      }
     });
   })
 }

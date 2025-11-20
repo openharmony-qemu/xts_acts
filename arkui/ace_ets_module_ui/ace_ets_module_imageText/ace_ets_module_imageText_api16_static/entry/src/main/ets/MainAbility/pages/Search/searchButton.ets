@@ -23,14 +23,16 @@ import {
   TextController,
   SearchController,
   Color,
-  SymbolGlyphModifier,
   TextStyle,
   StyledString,
   MutableStyledString,
   CancelButtonOptions,
   ClickEvent,
-  CancelButtonStyle
+  CancelButtonStyle,
+  StyledStringKey,
+  $r,
 } from '@ohos.arkui.component'
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State } from '@ohos.arkui.stateManagement'
 import router from '@ohos.router';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -50,28 +52,18 @@ struct searchButtonDemo {
   @State text2: string = ''
   controller1: TextController = new TextController();
   styledString2: StyledString = new StyledString('运动45分钟');
-  
-  
-  
-  
-  
-  
+  mutableStyledString2: MutableStyledString = new MutableStyledString('test hello world', [{
+    start: 0,
+    length: 5,
+    styledKey: StyledStringKey.FONT,
+    styledValue: new TextStyle({ fontColor: Color.Blue })
+  }]);
   searchController: SearchController = new SearchController()
   @State changeValue: string = ''
   @State submitValue: string = ''
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
   onPageShow() {
-    
+    this.controller1.setStyledString(this.mutableStyledString2)
   }
 
   build() {
@@ -79,10 +71,10 @@ struct searchButtonDemo {
       Column() {
         Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.searchController })
           .id('search1')
-          
+          .searchIcon(new SymbolGlyphModifier($r('sys.symbol.magnifyingglass')).fontColor([Color.Red]))
           .cancelButton({
             style: CancelButtonStyle.CONSTANT,
-            
+            // icon: new SymbolGlyphModifier($r('sys.symbol.xmark')).fontColor([Color.Green])
           } as CancelButtonOptions)
           .searchButton('SEARCH', {
             fontSize: '16fp',
@@ -102,10 +94,10 @@ struct searchButtonDemo {
 
         Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.searchController })
           .id('search2')
-          
+          .searchIcon(new SymbolGlyphModifier($r('sys.symbol.magnifyingglass')).fontColor([Color.Red]))
           .cancelButton({
               style: CancelButtonStyle.CONSTANT,
-              
+              //icon: new SymbolGlyphModifier($r('sys.symbol.xmark')).fontColor([Color.Green])
             } as CancelButtonOptions)
           .searchButton('SEARCH', {
             fontSize: '16fp',
@@ -125,10 +117,10 @@ struct searchButtonDemo {
 
         Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.searchController })
           .id('search3')
-          
+          .searchIcon(new SymbolGlyphModifier($r('sys.symbol.magnifyingglass')).fontColor([Color.Red]))
           .cancelButton({
               style: CancelButtonStyle.CONSTANT,
-              
+              // icon: new SymbolGlyphModifier($r('sys.symbol.xmark')).fontColor([Color.Green])
             } as CancelButtonOptions)
           .searchButton('SEARCH', {
             fontSize: '16fp',

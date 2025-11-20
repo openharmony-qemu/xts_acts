@@ -15,9 +15,9 @@
 
 import drawing from '@ohos.graphics.drawing'
 import {CustomSpan,DrawContext,CustomSpanDrawInfo,CustomSpanMeasureInfo,CustomSpanMetrics} from '@ohos.arkui.component'
-import common2D from '@ohos.graphics.displaySync'
 import { UIContext } from '@ohos.arkui.UIContext';
-
+import common2D from '@ohos.graphics.displaySync'
+const uiContext = new UIContext();
 export class MyCustomSpan extends CustomSpan {
   constructor(word: string, width: number, height?: number) {
     super();
@@ -33,22 +33,22 @@ export class MyCustomSpan extends CustomSpan {
   onDraw(context: DrawContext, options: CustomSpanDrawInfo) {
     let canvas = context.canvas;
 
-    
-    
+    // const brush = new drawing.Brush();
+    // brush.setColor({ alpha: 255, red: 0, green: 74, blue: 175 } as common2D.Color);
     const font = new drawing.Font();
     font.setSize(25);
-    
-    
+    // const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+    // canvas.attachBrush(brush);
     canvas.drawRect({
       left: options.x + 10,
-      right: options.x + UIContext.getFocusedUIContext()!.vp2px(this.width) - 10,
+      right: options.x + uiContext.vp2px(this.width) - 10,
       top: options.lineTop + 10,
       bottom: options.lineBottom - 10
     });
 
-    
-    
-    
+    // brush.setColor({ alpha: 255, red: 23, green: 169, blue: 141 });
+    // canvas.attachBrush(brush);
+    // canvas.drawTextBlob(textBlob, options.x + 20, options.lineBottom - 15);
     canvas.detachBrush();
   }
 

@@ -37,16 +37,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct marqueeOptions1 {
   @State mes: string = '';
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
   build() {
     Row() {
       Column({ space: 8 } as ColumnOptions) {

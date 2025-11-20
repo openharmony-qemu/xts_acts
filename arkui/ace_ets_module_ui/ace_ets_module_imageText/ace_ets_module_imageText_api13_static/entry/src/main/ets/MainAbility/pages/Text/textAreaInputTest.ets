@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,State} from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { ResourceColor, Entry, Component,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
+import { ResourceColor, Entry, Component,RichEditorController,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
   Search,Text,TextStyle,MutableStyledString,TextController,TextController,UrlStyle,TextController,StyledStringKey,Color,TextOptions,ColumnOptions,CopyOptions,
   FontStyle,Margin,StyleOptions,DragEvent,DragItemInfo,Builder,CustomBuilder,DragEvent
 } from '@ohos.arkui.component';
@@ -42,8 +42,9 @@ struct TextAreaInputTestExample {
           .width('90%')
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-          .onDragStart((event: DragEvent, extraParams?: string):(() => void) => {
+          .onDragStart((event: DragEvent, extraParams?: string) => {
             this.text = 'Text--onDragStart'
+            return {} as DragItemInfo
           })
 
           .onDragEnd((event: DragEvent, extraParams?: string):void =>{

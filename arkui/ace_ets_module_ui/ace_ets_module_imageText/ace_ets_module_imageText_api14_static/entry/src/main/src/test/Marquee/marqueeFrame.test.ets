@@ -61,13 +61,11 @@ export default function SetFrameRateRangeTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get SetFrameRateRangeTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("setFrameRateRange" == pages.name)) {
           console.info("get SetFrameRateRangeTest pages.name:" + "");
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SetFrameRateRangeTest page error:" + err);
@@ -76,19 +74,21 @@ export default function SetFrameRateRangeTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   MarqueerequireDynamicSyncSceneTest_static_0010
      * @tc.name     MarqueerequireDynamicSyncSceneTest_static_0010
      * @tc.desc     MarqueerequireDynamicSyncSceneTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('MarqueerequireDynamicSyncSceneTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MarqueerequireDynamicSyncSceneTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('MarqueerequireDynamicSyncSceneTest_0010 START');
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('MarqueegetGetFrameRateRange_id')) as Component;
-      await button.click();
+      let button = await driver.findComponent(ON.id('MarqueegetGetFrameRateRange_id'));
+      await CommonFunc.sleep(500);
+      button?.click();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('MarqueerequireDynamicSyncScene_id');

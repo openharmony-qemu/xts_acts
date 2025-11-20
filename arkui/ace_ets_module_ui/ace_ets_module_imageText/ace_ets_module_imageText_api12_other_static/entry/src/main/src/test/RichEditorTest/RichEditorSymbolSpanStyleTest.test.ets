@@ -43,21 +43,15 @@ export default function RichEditorSymbolSpanStyleTest() {
     beforeEach(async (): Promise<void> => {
       console.info("RichEditorSymbolSpanStyleTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/RichEditorSymbolSpanStyleTest",
+        url: "MainAbility/pages/RichEditor/RichEditorSymbolSpanStyleTest",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get RichEditorSymbolSpanStyleTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
-          console.info("get RichEditorSymbolSpanStyleTest pages.name:" + JSON.stringify(pages.name));
-          
-          
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
-        }
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("push RichEditorSymbolSpanStyleTest page error:" + err);
       }
@@ -71,6 +65,7 @@ export default function RichEditorSymbolSpanStyleTest() {
     });
 
 
+    
     /*
      * @tc.number   RichEditorSymbolSpanStyleTest_static_0001
      * @tc.name     RichEditorSymbolSpanStyleTest_static_0001
@@ -89,11 +84,11 @@ export default function RichEditorSymbolSpanStyleTest() {
       await CommonFunc.sleep(500);
       await (getSymbolSpanStyle?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      expect('' + AppStorage.get('symbolSpanStyleFontColor')).assertEqual('#FFFF0000');
-      expect('' + AppStorage.get('symbolSpanStyleFontSize')).assertEqual('30');
-      expect('' + AppStorage.get('symbolSpanStyleFontWeight')).assertEqual('1');
-      expect('' + AppStorage.get('symbolSpanStyleEffectStrategy')).assertEqual('0');
-      expect('' + AppStorage.get('symbolSpanStyleSpanIndex')).assertEqual('0');
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontColor')).assertEqual('#FFFF0000');
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontSize')).assertEqual('30');
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontWeight')).assertEqual('1');
+      expect('' + AppStorage.get<string>('symbolSpanStyleEffectStrategy')).assertEqual('0');
+      expect('' + AppStorage.get<string>('symbolSpanStyleSpanIndex')).assertEqual('0');
       AppStorage.delete('symbolSpanStyleFontColor')
       AppStorage.delete('symbolSpanStyleFontSize')
       AppStorage.delete('symbolSpanStyleFontWeight')
@@ -104,6 +99,7 @@ export default function RichEditorSymbolSpanStyleTest() {
     });
 
 
+    
     /*
      * @tc.number   RichEditorSymbolSpanStyleTest_static_0002
      * @tc.name     RichEditorSymbolSpanStyleTest_static_0002
@@ -122,12 +118,12 @@ export default function RichEditorSymbolSpanStyleTest() {
       await CommonFunc.sleep(500);
       await (getSymbolSpanStyle?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      expect('' + AppStorage.get('symbolSpanStyleFontColor'))
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontColor'))
         .assertEqual('#FFFF0000,#FF0000FF,#FFFFC0CB');
-      expect('' + AppStorage.get('symbolSpanStyleFontSize')).assertEqual('40');
-      expect('' + AppStorage.get('symbolSpanStyleFontWeight')).assertEqual('10');
-      expect('' + AppStorage.get('symbolSpanStyleEffectStrategy')).assertEqual('0');
-      expect('' + AppStorage.get('symbolSpanStyleSpanIndex')).assertEqual('0');
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontSize')).assertEqual('40');
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontWeight')).assertEqual('10');
+      expect('' + AppStorage.get<string>('symbolSpanStyleEffectStrategy')).assertEqual('0');
+      expect('' + AppStorage.get<string>('symbolSpanStyleSpanIndex')).assertEqual('0');
       AppStorage.delete('symbolSpanStyleFontColor')
       AppStorage.delete('symbolSpanStyleFontSize')
       AppStorage.delete('symbolSpanStyleFontWeight')
@@ -138,6 +134,7 @@ export default function RichEditorSymbolSpanStyleTest() {
     });
 
 
+    
     /*
      * @tc.number   RichEditorSymbolSpanStyleTest_static_0003
      * @tc.name     RichEditorSymbolSpanStyleTest_static_0003
@@ -156,12 +153,12 @@ export default function RichEditorSymbolSpanStyleTest() {
       await CommonFunc.sleep(500);
       await (getSymbolSpanStyle?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      expect('' + AppStorage.get('symbolSpanStyleFontColor'))
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontColor'))
         .assertEqual('#FFF04B3D,#FF0000FF,#FFFFC0CB');
-      expect('' + AppStorage.get('symbolSpanStyleFontSize')).assertEqual('50');
-      expect('' + AppStorage.get('symbolSpanStyleFontWeight')).assertEqual('8');
-      expect('' + AppStorage.get('symbolSpanStyleEffectStrategy')).assertEqual('0');
-      expect('' + AppStorage.get('symbolSpanStyleSpanIndex')).assertEqual('0');
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontSize')).assertEqual('50');
+      expect('' + AppStorage.get<string>('symbolSpanStyleFontWeight')).assertEqual('8');
+      expect('' + AppStorage.get<string>('symbolSpanStyleEffectStrategy')).assertEqual('0');
+      expect('' + AppStorage.get<string>('symbolSpanStyleSpanIndex')).assertEqual('0');
       AppStorage.delete('symbolSpanStyleFontColor')
       AppStorage.delete('symbolSpanStyleFontSize')
       AppStorage.delete('symbolSpanStyleFontWeight')

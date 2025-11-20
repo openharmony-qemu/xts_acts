@@ -15,7 +15,7 @@
 import { image } from '@kit.ImageKit'
 import { LengthMetrics } from '@kit.ArkUI'
 import { Entry, Component, TextController, TextStyle, MutableStyledString, StyledString, StyledStringKey, Row, $r, Resource, Text, TextAlign,
-  Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea, BackgroundColorStyle, ImageAttachment, ArrayBuffer, SpanStyle} from '@ohos.arkui.component'
+  Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea, BackgroundColorStyle, ImageAttachment, ArrayBuffer} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
@@ -31,28 +31,28 @@ struct StyledStringDemo {
   mutableStyledString1: MutableStyledString = new MutableStyledString('这是一段测试文字', [{start:0, length:8, styledKey:StyledStringKey.BACKGROUND_COLOR, styledValue: new BackgroundColorStyle({color:Color.Blue, radius: 0}) }]);
 
 
-  
-  
-  
-  
+  aboutToAppear() {
+    console.info('aboutToAppear initial imagePixelMap')
+    // this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'))
+  }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // private async getPixmapFromMedia(resource: Resource) {
+  //   let unit8Array = await getContext(this)?.resourceManager?.getMediaContent({
+  //     bundleName: resource.bundleName,
+  //     moduleName: resource.moduleName,
+  //     id: resource.id
+  //   })
+  //   let imageSource = image.createImageSource((unit8Array.buffer.slice(0, unit8Array.buffer.byteLength) as ArrayBuffer))
+  //   let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
+  //     desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+  //   })
+  //   await imageSource.release()
+  //   return createPixelMap
+  // }
 
-  
-  
-  
+  onPageShow() {
+    this.controller3.setStyledString(this.mutableStyledString1)
+  }
 
   build() {
     Column(){
@@ -67,11 +67,11 @@ struct StyledStringDemo {
             styledValue: new TextStyle({ fontColor: Color.Green, fontSize: LengthMetrics.vp(50) })
           }]);
           if (this.imagePixelMap !== undefined) {
-            
-            
-            
-            
-            
+            // let mutableStyledString2 = new MutableStyledString(new ImageAttachment({
+            //   value: this.imagePixelMap,
+            //   size: { width: 50, height: 50 },
+            // }))
+            // mutableStyledString1.appendStyledString(mutableStyledString2)
           }
           this.styledString = mutableStyledString1
           this.controller1.setStyledString(mutableStyledString1)
@@ -84,8 +84,8 @@ struct StyledStringDemo {
         Button('getStyles')
           .width('40%')
           .onClick((e: ClickEvent) => {
-            let style = this.mutableStyledString1?.getStyles(0, 8,StyledStringKey.BACKGROUND_COLOR) as Array<SpanStyle>
-            this.text = JSON.stringify(style[0].styledKey)
+            this.text = JSON.stringify(this.mutableStyledString1
+              .getStyles(0, 8,StyledStringKey.BACKGROUND_COLOR)![0].styledKey)
           }).margin(5).id('but3')
       }.height('15%')
       Text(undefined, { controller: this.controller2 }).height('10%')

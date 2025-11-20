@@ -27,16 +27,16 @@ import {
   Marquee,
   MarqueeAttribute,
   AttributeModifier,
-  ColumnOptions
+  ColumnOptions,
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
+class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 
-
-
-
-
-
+  applyNormalAttribute(MarqueeInstance: MarqueeAttribute): void {
+    MarqueeInstance.fontSize(20);
+  }
+}
 
 @Entry
 @Component
@@ -44,11 +44,12 @@ struct MarqueeModifier1 {
   @State start: boolean = false;
   @State value: string = 'init';
 
-  
+  @State modifier: MarqueeModifier = new MarqueeModifier();
 
   aboutToAppear(): void {
     this.start = true
-    
+    // this.value = typeof MarqueeInstance;
+    this.value = typeof undefined;
   }
 
   build() {
@@ -56,11 +57,11 @@ struct MarqueeModifier1 {
       Marquee({
         start: this.start,
         step: 10,
-        loop: Number.POSITIVE_INFINITY as int,
+        loop: Number.parseInt(Number.POSITIVE_INFINITY.toString()).toInt(),
         fromStart: true,
         src: 'MarqueeModifier MarqueeInstance'
       })
-      
+      .attributeModifier(this.modifier)
         .id('MarqueeModifier_get_fontSize')
         .width('20%')
         .height('20%')

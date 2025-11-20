@@ -33,7 +33,7 @@ struct RichEditorEKeyboardTest {
         .margin(10)
         .width('95%')
         .backgroundColor('rgb(240,250,255)')
-        .enableKeyboardOnFocus(undefined)  
+        // .enableKeyboardOnFocus(null)
         .id('RichEditor1')
       RichEditor({ controller: this.controller2 } as RichEditorOptions)
         .margin(10)

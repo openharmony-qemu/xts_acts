@@ -12,19 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index'
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -41,7 +31,7 @@ export default function textPickerJsunit() {
       await UtilsTest.msSleep(4000)
     })
 
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       console.info("button beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/textPickerDialog/textPickerDialog2',
@@ -66,7 +56,8 @@ export default function textPickerJsunit() {
       console.info("textPickerDialog after each called");
     })
 
-    /*
+    
+/*
      * @tc.number   testTextPickerDialog_static_0100
      * @tc.name     testTextPickerDialog_static_0100
      * @tc.desc     testTextPickerDialog_static_0100
@@ -78,17 +69,16 @@ export default function textPickerJsunit() {
         await Utils.sleep(1000);
         let strJson: string = inspector.getInspectorByKey('textPickerDialog');
         console.info("[testTextPickerDialog0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-        console.info("[testTextPickerDialog0100] expect(obj.getString('$type')) is: " +
-          (JSON.parseJsonElement(strJson).getString('$type')));
-        console.info("[testTextPickerDialog0100] obj.getElement('$attrs').getString('type') is: " +
-          (JSON.parseJsonElement(strJson).getElement('$attrs').getString('type')));
+        console.info("[testTextPickerDialog0100] expect(obj.getString('$type')) is: " + (JSON.parseJsonElement(strJson).getString('$type')));
+        console.info("[testTextPickerDialog0100] obj.getElement('$attrs').getString('type') is: " + (JSON.parseJsonElement(strJson).getElement('$attrs').getString('type')));
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });
 
-    /*
+    
+/*
      * @tc.number   testTextPickerDialog_static_0200
      * @tc.name     testTextPickerDialog_static_0200
      * @tc.desc     testTextPickerDialog_static_0200
@@ -101,9 +91,18 @@ export default function textPickerJsunit() {
         let strJson: string = inspector.getInspectorByKey('textPickerDialog');
         if (true) {
           done();
+          // return;
         }
+        /*
+        const textPickerDialogOption = new textPickerDialogOption();
+        textPickerDialogOption.defaultPickerItemHeight = 20;
+        const textPickerAttribute = new TextPickerAttribute();
+        textPickerAttribute.defaultPickerItemHeight = 20;
+        const textPickerOption = new TextPickerOption();
+        textPickerOption.value = "textPickerOptionTest";
+        */
         done();
-      } catch (err) {
+      } catch(err) {
         expect().assertFail();
       }
     });

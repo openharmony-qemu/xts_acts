@@ -26,10 +26,11 @@ import {
   Text,
   TextAttribute,
   TouchObject,
-  TouchType,
+  TouchType
 } from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
-import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from '@kit.ArkUI';
+import inspector from '@ohos.arkui.inspector';
+import { sendTouchEvent } from '@ohos.arkui.Test';
+import common from '@ohos.app.ability.common';
 
 export default class Utils {
   static rect_left: number = 0;
@@ -39,27 +40,29 @@ export default class Utils {
   static rect_value: RectValue = new RectValue();
 
   static getComponentRect(key: string) {
-    let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    // let strJson: string = inspector.getInspectorByKey(key);
+    // let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    // console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
+    // let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let strJson = inspector.getInspectorByKey(key);
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     Utils.rect_left = Number(rectInfo[0][0] ?? 0);
     Utils.rect_top = Number(rectInfo[0][1] ?? 0);
     Utils.rect_right = Number(rectInfo[1][0] ?? 0);
     Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return Utils.rect_value = {
-      left: Utils.rect_left,
-      top: Utils.rect_top,
-      right: Utils.rect_right,
-      bottom: Utils.rect_bottom
+      left: Utils.rect_left, top: Utils.rect_top, right: Utils.rect_right, bottom: Utils.rect_bottom
     }
   }
 
-  static async sleep(time: Int): Promise<Int> {
-    return new Promise<Int>((resolve, reject) => {
+  static async sleep(time: int) : Promise<int>  {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
       }, time)

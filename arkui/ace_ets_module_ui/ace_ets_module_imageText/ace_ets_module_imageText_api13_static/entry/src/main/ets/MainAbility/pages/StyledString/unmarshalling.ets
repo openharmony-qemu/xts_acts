@@ -35,7 +35,7 @@ struct UnmarshallingErrorCode401 {
     fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
   })
-  
+  // 创建属性字符串对象
   styledString: StyledString = new StyledString('Hello world',
     [{ start: 0, length: 11, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle }]);
 
@@ -52,38 +52,37 @@ struct UnmarshallingErrorCode401 {
       Button(this.serializeStr)
         .id('Unmarshalling_button')
         .width('90%').height('5%').margin(1)
-        
+        // .onClick(async (e: ClickEvent): void =>{
         .onClick((e: ClickEvent): void =>{
           this.flag = !this.flag
           if (!this.flag) {
             console.info('Debug: 反序列化')
             try{
-              
-              
-              
-              
-              
+              // let styles: StyledString = await StyledString.unmarshalling(undefined)
+              // if (styles == undefined) {
+              //   console.error('Debug: styledString 获取失败！！！')
+              //   return
+              // }
               this.textTitle = '调取decodeTlv接口后，反序列化的结果显示：'
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
+              // this.textResult =  styles.getString()
+              // console.info('Debug: this.textResult = ' + this.textResult)
+              // let stylesArr = styles.getStyles(0, this.textResult.length, StyledStringKey.FONT)
+              // console.info('Debug: stylesArr.length = ' + stylesArr.length)
+              // for (let i = 0; i < stylesArr.length; ++i) {
+              //   console.info('Debug: style.start = ' + stylesArr[i].start)
+              //   console.info('Debug: style.length = ' + stylesArr[i].length)
+              //   console.info('Debug: style.styledKey = ' + stylesArr[i].styledKey)
+              //   let font = stylesArr[i].styledValue as TextStyle
+              //   console.info('Debug: style.fontColor = ' + font.fontColor)
+              //   console.info('Debug: style.fontSize = ' + font.fontSize)
+              //   console.info('Debug: style.fontFamily = ' + font.fontFamily)
+              //   console.info('Debug: style.fontStyle = ' + font.fontStyle)
+              // }
+              // let subStr = styles.subStyledString(0, 2)
+              // console.info('Debug: subStr = ' + subStr.getString())
               this.serializeStr = '序列化'
               console.info('Succeeded unmarshalling.');
-            } catch(err) {
-              err = err as BusinessError;
+            } catch(err: BusinessError) {
               this.textResult = err.code.toString()
               console.info('Get error code: %{public}s', JSON.stringify(err.code));
             }

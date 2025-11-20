@@ -40,16 +40,6 @@ struct marqueeOptions2 {
   @State text1: string = '';
   @State text2: string = '';
 
-  aboutToAppear() {
-    
-    
-    
-    
-    
-    
-    
-  }
-
   build() {
     Column({ space: 8 } as ColumnOptions) {
       Text('This is the text with the text overflow set marquee')

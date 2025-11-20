@@ -43,16 +43,14 @@ export default function TextMenuType() {
         url: 'MainAbility/pages/Text/TextMenuType',
       }
       try {
-        const router = AppStorage.get<Router>("router") as Router
-        router.clear();
-        let pages = router.getState();
-        
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info("get TextMenuType state pages: " + JSON.stringify(pages));
         if (!("TextMenuType" == pages.name)) {
-          
-          
-          router.pushUrl(options)
+          console.info("get TextMenuType state pages.name: " + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextMenuType page error: " + err);
@@ -61,37 +59,39 @@ export default function TextMenuType() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   TextMenuType_static_0100
      * @tc.name     TextMenuType_static_0100
      * @tc.desc     TextMenuType_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('TextMenuType_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextMenuType_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TextMenuType_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textMenuType1');
       let obj= JSON.parseJsonElement(strJson);
-      
-      expect(obj.getElement('$type')).assertEqual('Text');
+      console.info("[TextMenuType_static_0100] component obj is: " + JSON.stringify(obj));
+      expect(obj.getString('$type')).assertEqual('Text');
       console.info('[TextMenuType_static_0100] END');
       done();
     });
 
 
-    /*
+    
+/*
      * @tc.number   TextMenuType_static_0200
      * @tc.name     TextMenuType_static_0200
      * @tc.desc     TextMenuType_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('TextMenuType_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextMenuType_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TextMenuType_static_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textMenuType2');
       let obj= JSON.parseJsonElement(strJson);
       console.info("[TextMenuType_static_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$type')).assertEqual('Text');
+      expect(obj.getString('$type')).assertEqual('Text');
       console.info('[TextMenuType_static_0200] END');
       done();
     });

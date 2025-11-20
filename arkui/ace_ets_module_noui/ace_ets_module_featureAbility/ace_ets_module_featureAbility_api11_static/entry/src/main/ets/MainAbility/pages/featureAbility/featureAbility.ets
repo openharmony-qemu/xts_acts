@@ -89,7 +89,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("finishWithResultText")
         .onClick((e: ClickEvent) => {
-          
+          // FeatureAbility.finishWithResult({ code: 200, result: null })
         })
 
       Text("featureAbility-GetDeviceList")
@@ -106,7 +106,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("getDeviceListText")
         .onClick((e: ClickEvent) => {
-          
+          // FeatureAbility.getDeviceList(1)
         })
 
       Text("featureAbility-CallAbility")
@@ -123,12 +123,12 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("callAbilityText")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.callAbility({
+          //   bundleName: "com.example.testapp",
+          //   abilityName: "com.example.testApp.MainAbility",
+          //   messageCode: 200,
+          //   abilityType: 1
+          // })
         })
 
       Text("featureAbility-ContinueAbility")
@@ -145,7 +145,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("continueAbilityText")
         .onClick((e: ClickEvent) => {
-          
+          // FeatureAbility.continueAbility()
         })
 
       Text("featureAbility-SubscribeAbilityEvent")
@@ -162,13 +162,13 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("subscribeAbilityEventText")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.subscribeAbilityEvent({
+          //   bundleName: "com.example.testapp",
+          //   abilityName: "com.example.testApp.MainAbility",
+          //   messageCode: 200,
+          //   abilityType: 1
+          // }, () => {
+          // })
         })
 
       Text("featureAbility-UnsubscribeAbilityEvent")
@@ -185,12 +185,12 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("unsubscribeAbilityEventText")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.unsubscribeAbilityEvent({
+          //   bundleName: "com.example.testapp",
+          //   abilityName: "com.example.testApp.MainAbility",
+          //   messageCode: 200,
+          //   abilityType: 1
+          // })
         })
 
       Text("featureAbility-SendMsg")
@@ -207,21 +207,21 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("sendMsgText")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.sendMsg({
+          //   deviceId: '1001',
+          //   bundleName: "com.example.testapp",
+          //   abilityName: "com.example.testApp.MainAbility",
+          //   message: 'success',
+          //   success: () => {
+          //     Log.showInfo(TAG, `FeatureAbility.sendMsg success`)
+          //   },
+          //   fail: (data, code) => {
+          //     Log.showInfo(TAG, `FeatureAbility.sendMsg fail: data: ${data},code: ${code}`)
+          //   },
+          //   complete: () => {
+          //     Log.showInfo(TAG, `FeatureAbility.sendMsg complete`)
+          //   }
+          // })
         })
 
       Text("featureAbility-SubscribeMsg")
@@ -238,14 +238,14 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("subscribeMsgText")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.subscribeMsg({
+          //   success: (data) => {
+          //     Log.showInfo(TAG, `FeatureAbility.subscribeMsg success: data: ${JSON.stringify(data)}`)
+          //   },
+          //   fail: (data, code) => {
+          //     Log.showInfo(TAG, `FeatureAbility.subscribeMsg fail: data: ${data},code: ${code}`)
+          //   }
+          // })
         })
 
       Text("featureAbility-UnsubscribeMsg")
@@ -262,7 +262,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("unsubscribeMsgText")
         .onClick((e: ClickEvent) => {
-          
+          // FeatureAbility.unsubscribeMsg()
         })
 
       Text("featureAbility-StartAbility")
@@ -279,17 +279,17 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-StartAbility")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.startAbility(
+          //   {
+          //
+          //     bundleName: "com.example.myapplication",
+          //     abilityName: "com.example.entry.secondAbility",
+          //     entities: ['a', 'b'],
+          //     url: ""
+          //   }
+          // ).then((data) => {
+          //   console.info("==========================>startAbility=======================>");
+          // });
         })
 
       Text("featureAbility-startAbilityForResult")
@@ -306,16 +306,16 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-startAbilityForResult")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.startAbilityForResult(
+          //   {
+          //     bundleName: "com.example.myapplication",
+          //     abilityName: "com.example.entry.secondAbility",
+          //     entities: ['a', 'b'],
+          //     url: ""
+          //   },
+          // ).then((data) => {
+          //   console.info("==========================>startAbilityForResult=======================>");
+          // });
         })
 
       Text("featureAbility-finishWithResult")
@@ -332,12 +332,12 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-finishWithResult")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.finishWithResult({
+          //   code: 20002,
+          //   result: {}
+          // }).then((data) => {
+          //   console.info("==========================>startAbilityForResult=======================>");
+          // });
         })
 
       Text("featureAbility-getDeviceList")
@@ -354,9 +354,9 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-finishWithResult")
         .onClick((e: ClickEvent) => {
-          
-          
-          
+          // FeatureAbility.getDeviceList(23).then((data) => {
+          //   console.info("==========================>startAbilityForResult=======================>");
+          // });
         })
 
       Text("featureAbility-getDeviceList")
@@ -373,9 +373,9 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-finishWithResult")
         .onClick((e: ClickEvent) => {
-          
-          
-          
+          // FeatureAbility.getDeviceList(23).then((data) => {
+          //   console.info("==========================>startAbilityForResult=======================>");
+          // });
         })
 
       Text("featureAbility-callAbility")
@@ -392,14 +392,14 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-callAbility")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.callAbility({
+          //   bundleName: "com.example.myapplication",
+          //   abilityName: "com.example.entry.secondAbility",
+          //   messageCode: 50,
+          //   abilityType: 12
+          // }).then((data) => {
+          //   console.info("==========================>startAbilityForResult=======================>");
+          // });
         })
 
       Text("featureAbility-continueAbility")
@@ -416,9 +416,9 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-continueAbility")
         .onClick((e: ClickEvent) => {
-          
-          
-          
+          // FeatureAbility.continueAbility().then((data) => {
+          //   console.info("==========================>startAbilityForResult=======================>");
+          // });
         })
       Text("featureAbility-subscribeAbilityEvent")
         .width(320)
@@ -434,17 +434,17 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-subscribeAbilityEvent")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // FeatureAbility.subscribeAbilityEvent({
+          //   bundleName: "ss",
+          //   abilityName: "d",
+          //   messageCode: 50,
+          //   abilityType: 60,
+          //   syncOption: 20
+          // }, () => {
+          //   console.info("hello subscribeAbilityEvent")
+          // }).then((data) => {
+          //   console.info("==========================>startAbilityForResult=======================>");
+          // });
         })
       Text("featureAbility-unsubscribeAbilityEvent")
         .width(320)
@@ -460,15 +460,15 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-unsubscribeAbilityEvent")
         .onClick((e: ClickEvent) => {
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        //   FeatureAbility.unsubscribeAbilityEvent({
+        //     bundleName: "d",
+        //     abilityName: "s",
+        //     messageCode: 20,
+        //     abilityType: 30,
+        //     syncOption: 40
+        //   }).then((data) => {
+        //     console.info("==========================>startAbilityForResult=======================>");
+        //   });
         })
 
     }

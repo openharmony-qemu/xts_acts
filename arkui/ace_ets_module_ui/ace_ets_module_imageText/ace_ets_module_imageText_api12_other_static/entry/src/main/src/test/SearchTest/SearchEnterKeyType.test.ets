@@ -22,7 +22,7 @@ import router from '@ohos.router'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -54,11 +54,9 @@ export default function searchEnterKeyTypeTest() {
         console.info("get searchEnterKeyTypeTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get searchEnterKeyTypeTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push searchEnterKeyTypeTest page error:" + err);
@@ -72,6 +70,7 @@ export default function searchEnterKeyTypeTest() {
     })
 
 
+    
     /*
      * @tc.number   searchEnterKeyType_static_0100
      * @tc.name     searchEnterKeyType_static_0100
@@ -87,7 +86,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Go
-          } as Record<String, RecordData>
+          } as Record<string, Object | undefined | null>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,
@@ -95,7 +94,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -111,6 +110,7 @@ export default function searchEnterKeyTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   searchEnterKeyType_static_0200
      * @tc.name     searchEnterKeyType_static_0200
@@ -126,7 +126,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Search
-          } as Record<String, RecordData>
+          } as Record<string, Object | undefined | null>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 811,
@@ -134,7 +134,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -150,6 +150,7 @@ export default function searchEnterKeyTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   searchEnterKeyType_static_0300
      * @tc.name     searchEnterKeyType_static_0300
@@ -165,7 +166,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Send
-          } as Record<String, RecordData>
+          } as Record<string, Object | undefined | null>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 812,
@@ -173,7 +174,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -189,6 +190,7 @@ export default function searchEnterKeyTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   searchEnterKeyType_static_0400
      * @tc.name     searchEnterKeyType_static_0400
@@ -204,7 +206,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Next
-          } as Record<String, RecordData>
+          } as Record<string, Object | undefined | null>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 813,
@@ -212,7 +214,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -228,6 +230,7 @@ export default function searchEnterKeyTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   searchEnterKeyType_static_0500
      * @tc.name     searchEnterKeyType_static_0500
@@ -243,7 +246,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Done
-          } as Record<String, RecordData>
+          } as Record<string, Object | undefined | null>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 814,
@@ -251,7 +254,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -267,6 +270,7 @@ export default function searchEnterKeyTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   searchEnterKeyType_static_0600
      * @tc.name     searchEnterKeyType_static_0600
@@ -282,7 +286,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.PREVIOUS
-          } as Record<String, RecordData>
+          } as Record<string, Object | undefined | null>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 815,
@@ -290,7 +294,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -305,6 +309,7 @@ export default function searchEnterKeyTypeTest() {
     });
 
 
+    
     /*
      * @tc.number   searchEnterKeyType_static_0700
      * @tc.name     searchEnterKeyType_static_0700
@@ -320,7 +325,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.NEW_LINE
-          } as Record<String, RecordData>
+          } as Record<string, Object | undefined | null>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 816,
@@ -328,7 +333,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -342,50 +347,52 @@ export default function searchEnterKeyTypeTest() {
     });
 
 
+    
     /*
-    * @tc.number   searchEnterKeyType_static_0800
-    * @tc.name     searchEnterKeyType_static_0800
-    * @tc.desc     searchEnterKeyType_static_0800
-    * @tc.level    Level.LEVEL1
-    */
+     * @tc.number   searchEnterKeyType_static_0800
+     * @tc.name     searchEnterKeyType_static_0800
+     * @tc.desc     searchEnterKeyType_static_0800
+     * @tc.level    Level.LEVEL1
+     */
     it('searchEnterKeyType_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+        let tagName = 'searchEnterKeyType0800';
+        console.info('[' + tagName + '] START============================');
+        CommonFunc.sleep(1000)
+
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "enterKeyType":  undefined
+            } as Record<string, Object | undefined | null>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 817,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info('[' + tagName + '] start to publish emit');
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err:Error) {
+          console.log('[' + tagName + '] change component data error: ' + err.message);
+        }
+        CommonFunc.sleep(2000);
+
+        let strJsonNew:string = inspector.getInspectorByKey('key_search_enterkeytype');
+        let obj = JSON.parseJsonElement(strJsonNew);
+        console.info('[' + tagName + '] Text EnterKeyType is: ' + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
+        expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Search');
+        console.info('[' + tagName + '] END ===========================');
+        done();
+      });
 
 
+      
       /*
-       * @tc.number   searchEnterKeyType_static_0900
-       * @tc.name     searchEnterKeyType_static_0900
-       * @tc.desc     searchEnterKeyType_static_0900
-       * @tc.level    Level.LEVEL1
-       */
-      it('searchEnterKeyType_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+     * @tc.number   searchEnterKeyType_static_0900
+     * @tc.name     searchEnterKeyType_static_0900
+     * @tc.desc     searchEnterKeyType_static_0900
+     * @tc.level    Level.LEVEL1
+     */
+    it('searchEnterKeyType_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
         let tagName = 'searchEnterKeyType0900';
         console.info('[' + tagName + '] START============================');
         let strJsonNew: string = inspector.getInspectorByKey('key_search_enterkeytype_default');
@@ -395,6 +402,5 @@ export default function searchEnterKeyTypeTest() {
         console.info('[' + tagName + '] END ===========================');
         done();
       });
-    })
   })
 }

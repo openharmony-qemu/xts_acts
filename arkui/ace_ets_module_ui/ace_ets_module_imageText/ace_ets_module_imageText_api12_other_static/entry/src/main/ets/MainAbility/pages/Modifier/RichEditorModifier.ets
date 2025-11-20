@@ -34,29 +34,30 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
+class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 
-
-
-
-
-
+  applyNormalAttribute(RichEditorInstance: RichEditorAttribute): void {
+    RichEditorInstance.width(200);
+  }
+}
 
 @Entry
 @Component
 struct RichEditorModifier1 {
   @State value: string = 'init';
-  
+  @State modifier: RichEditorModifier = new RichEditorModifier();
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
 
   aboutToAppear(): void {
-    
+    // this.value = typeof RichEditorInstance;
+    this.value = typeof undefined;
   }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       RichEditor(this.options)
-      
+      .attributeModifier(this.modifier)
         .id('RichEditorModifier_get_width')
         .height('20%')
         .onReady(() => {
@@ -65,7 +66,7 @@ struct RichEditorModifier1 {
               style:
               {
                 fontColor: Color.Green,
-                fontSize: 20.0
+                fontSize: 20
               }
             })
         })
