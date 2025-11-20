@@ -54,6 +54,10 @@
         "MainAbility/pages/BasicSheet01",
         "MainAbility/pages/BasicSheet02",
         "MainAbility/pages/PathStackPage",
-        "MainAbility/pages/NavDestinationStateActive"
+        "MainAbility/pages/NavDestinationStateActive",
+        "MainAbility/pages/CustomNavigation/Navigation1",
+        "MainAbility/pages/CustomNavigation/Navigation2",
+        "MainAbility/pages/CustomNavigation/Navigation3",
+        "MainAbility/pages/CustomNavigation/Navigation4"
     ]
 }

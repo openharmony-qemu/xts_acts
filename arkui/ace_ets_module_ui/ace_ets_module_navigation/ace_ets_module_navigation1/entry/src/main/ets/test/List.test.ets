@@ -59,6 +59,11 @@ import OnActivePage from './OnActivePage.test'
 import PathStackPage from './PathStackPage.test'
 import NavDestinationStateActive from './NavDestinationStateActive.test'
 
+import Navigation1 from './CustomNavigation/Navigation1.test'
+import Navigation2 from './CustomNavigation/Navigation2.test'
+import Navigation3 from './CustomNavigation/Navigation3.test'
+import Navigation4 from './CustomNavigation/Navigation4.test'
+
 export default function testsuite() {
   PathStackPage();
 
@@ -105,4 +110,8 @@ export default function testsuite() {
 
   OnActivePage();
   NavDestinationStateActive();
+  Navigation1()
+  Navigation2()
+  Navigation3()
+  Navigation4()
 } 
