@@ -80,6 +80,7 @@ import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.tes
 import createImageSourceTest from './image/ImageCreateImageSource.test';
 import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
 import sendableCreatePixelMapSyncTest from './sendableImage/SendAbleCreatePixelMapSync.test';
+import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
 
 
 export default function testsuite() {
@@ -150,4 +151,5 @@ export default function testsuite() {
   createImageSourceTest();
   sendableCreatePixelMap();
   sendableCreatePixelMapSyncTest();
+  modifyImagePropertyValueTest()
 }
