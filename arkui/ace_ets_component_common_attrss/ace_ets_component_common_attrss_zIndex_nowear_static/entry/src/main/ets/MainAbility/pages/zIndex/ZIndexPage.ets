@@ -77,7 +77,7 @@ import {
   Polygon,
   Path,
   Rect,
-
+  // Shape,
   ColumnSplit,
   RowSplit,
   Blank,
@@ -106,7 +106,7 @@ import {
   MenuItemOptions,
   VerticalAlign,
   AlignRuleOption,
-
+  // Point,
   GridColColumnOption,
   GridColOptions,
   ColumnOptions,
@@ -119,26 +119,24 @@ import {
   ListItemGroup,
   BreakpointsReference,
   ResourceColor,
-  EdgeColors,
-  BadgeParamWithString,
-  BadgeStyle,
-  AlignRuleOption,
-  CommonMethod,
-  applyStyles,
-  Shape,
-  Badge,
+  EdgeColors,BadgeParamWithString,BadgeStyle,
+  AlignRuleOption,CommonMethod,applyStyles,Shape,Badge,Navigation
 } from '@ohos.arkui.component';
-import { State, Link, StoragePropRef } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,StorageProp
+} from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
-import { RouterParams } from '../../common/Utils'
+import {RouterParams} from '../../common/Utils'
 
 @Entry
 @Component
 struct ZIndexPage {
-  @StoragePropRef("_zIndex") _zIndex: int = 0
+  @StorageProp("_zIndex") _zIndex: number = 0
   @State targetView: string = ''
   @State componentKey: string = ''
   @State targetComponentWidth: number = 0
@@ -157,13 +155,13 @@ struct ZIndexPage {
       this.targetComponentHeight = routerParamOptions.view.targetComponentHeight
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
 
-  commonStyle(instance: CommonMethod) {
-    instance.zIndex(this._zIndex)
+  commonStyle(instance: CommonMethod){
+    instance.zIndex(this._zIndex as Int)
     instance.width(this.targetComponentWidth)
     instance.height(this.targetComponentHeight)
     instance.key(this.componentKey)
@@ -177,8 +175,7 @@ struct ZIndexPage {
         } else if (this.targetView == 'Text') {
           Text('text1').applyStyles(this.commonStyle)
         } else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-            .applyStyles(this.commonStyle)
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Blank') {
           Row() {
             Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
@@ -215,28 +212,28 @@ struct ZIndexPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as Int,
+            loop: Number.parseInt(Infinity.toString()).toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Navigation') {
-          
-          
-          
-          
+          Navigation() {
+            Text('Navigation')
+          }.applyStyles(this.commonStyle)
+          .backgroundColor(Color.Blue)
         } else if (this.targetView == 'Menu') {
           Menu() {
           }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
         } else if (this.targetView == 'NavRouter') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'QRCode') {
@@ -324,14 +321,9 @@ struct ZIndexPage {
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Badge') {
           Badge({
-            
+            // count: 50,
             value: '',
-            style: {
-              color: 0xFFFFFF,
-              fontSize: 16,
-              badgeSize: 20,
-              badgeColor: Color.Red
-            } as BadgeStyle
+            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle
           } as BadgeParamWithString) {
             Button('message')
               .width(100)
@@ -370,14 +362,7 @@ struct ZIndexPage {
           }) {
             ForEach([Color.Red, Color.Orange, Color.Yellow, Color.Green,
               Color.Pink, Color.Grey, Color.Blue, Color.Brown], (color: ResourceColor | EdgeColors) => {
-              GridCol({
-                span: {
-                  xs: 1,
-                  sm: 2,
-                  md: 3,
-                  lg: 4
-                } as GridColColumnOption
-              } as GridColOptions) {
+              GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } as GridColOptions) {
                 Row()
                   .width('100%')
                   .height('20vp')
@@ -439,19 +424,19 @@ struct ZIndexPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
-          
-          
-          
-          
+          // Navigator({ target: '' }) {
+          //   Text('Go to back page')
+          //     .width('100%')
+          //     .height(20)
+          // }
+          // .applyStyles(this.commonStyle)
+          // .backgroundColor(Color.Red)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }
+          // .backgroundColor(Color.Yellow)
+          // .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')

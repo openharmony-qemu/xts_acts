@@ -15,10 +15,10 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
+import { describe, expect, beforeAll,beforeEach } from '../../../../hypium/index';
+import { AlignRuleOption, VerticalAlign, HorizontalAlign, HitTestMode } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -31,23 +31,11 @@ let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Test of common attribute: touchable
  */
 export default function touchableTest() {
-  
+  //A list of components that support the touchable attribute, which is required.
   let supportView = [
     'AlphabetIndexer',
     'Button',
@@ -98,8 +86,8 @@ export default function touchableTest() {
     'GridItem',
     'List',
     'ListItem',
-    'ListItemGroup',
-    'Navigator',
+    'ListItemGroup',  //pass
+    'Navigator',//pass
     'Panel',
     'Refresh',
     'RelativeContainer',
@@ -121,23 +109,31 @@ export default function touchableTest() {
     'WaterFlow'
   ]
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testTouchable',
     pageName: 'TouchablePage',
     pageUrl: 'MainAbility/pages/touchable/TouchablePage',
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [{
-    describe: 'SetTrue',
-    setValue: true,
-    expectValue: true
-  }, {
-    describe: 'SetFalse',
-    setValue: false,
-    expectValue: false
-  }]
+    describe: 'SetDefault',
+    setValue: HitTestMode.Default,
+    expectValue: 'HitTestMode.Default'
+  },{
+    describe: 'SetBlock',
+    setValue: HitTestMode.Block,
+    expectValue: 'HitTestMode.Block'
+  }/*,{
+    describe: 'SetTransparent',
+    setValue: HitTestMode.Transparent,
+    expectValue: 'HitTestMode.Transparent'
+  },{
+    describe: 'SetNone',
+    setValue: HitTestMode.None,
+    expectValue: 'HitTestMode.None'
+  }*/]
 
   /**
    * Create test suite.
@@ -150,10 +146,16 @@ export default function touchableTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    beforeEach(() => {
+      AppStorage.setOrCreate<HitTestMode>('_hitTestBehavior', HitTestMode.Default)
+    })
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
-      console.info('[' + data.caseTag + ']' + 'touchable is:' + data.viewObj!.touchable);
-      expect(data.viewObj!.touchable)
+      let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
+      await CommonFunc.sleep(2000);
+      data.viewObj = JSON.parseJsonElement(strJson);
+      console.info('[' + data.caseTag + ']' + 'touchable is:' + data.viewObj?.getElement("$attrs").getString('hitTestBehavior'));
+      expect(data.viewObj?.getElement("$attrs").getString('hitTestBehavior'))
         .assertEqual(data.testValue.expectValue);
     })
   })

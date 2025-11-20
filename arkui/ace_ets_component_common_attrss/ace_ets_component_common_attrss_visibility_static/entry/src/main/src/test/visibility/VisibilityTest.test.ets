@@ -18,7 +18,6 @@ import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, expect, beforeAll } from '../../../../hypium/index';
 import { Visibility } from '@ohos.arkui.component';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -31,23 +30,6 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
-
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   targetComponentHeight: number = 0;
-//   targetComponentWidth: number = 0;
-//   referenceComponentKey: string = '';
-//   parentComponentKey: string = '';
-// }
-//
-// class TestValues {
-//   describe: string = '';
-//   setValue?: Visibility;
-//   expectValue;
-// }
 
 export default function visibilityTest() {
   let supportView = [
@@ -67,7 +49,7 @@ export default function visibilityTest() {
     'Menu',
     'MenuItem',
     'MenuItemGroup',
-    //'Navigation',
+    'Navigation',
     'NavRouter',
     'Progress',
     'QRCode',
@@ -135,7 +117,8 @@ export default function visibilityTest() {
   }
 
 
-  let testValues: TestValue[] = [{
+  let testValues: TestValue[] = [
+    // {
     //    describe: 'SetNone',
     //    setValue: Visibility.None,
     //    expectValue: {
@@ -143,13 +126,15 @@ export default function visibilityTest() {
     //      width: 0,
     //      height: 0
     //    }
-    //  }, {
+    //  },
+   {
     describe: 'SetHidden',
     setValue: Visibility.Hidden,
     expectValue: {
       visibility: 'Visibility.Hidden'
     }
-  }, {
+  },
+    {
     describe: 'SetVisible',
     setValue: Visibility.Visible,
     expectValue: {
@@ -166,11 +151,10 @@ export default function visibilityTest() {
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {
-      AttrsManager.change(data.caseTag, Visibility.Visible);
       await Utils.sleep(1000);
 
       //Reference component area information before getting case execution
-      console.info('[' + data.caseTag + '] get referenceComponent rect before position changed.');
+      console.info('[' + data.caseTag + '] get referenceComponent rect before position changed.' + data.pageConfig.referenceComponentKey);
       let referenceRectBefore = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
 
       //Reference Component Previous Size
@@ -186,7 +170,6 @@ export default function visibilityTest() {
       let rectBeforeWidth = rectBefore.right - rectBefore.left;
 
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
       await Utils.sleep(1000);
 
       //Get reference component and target component area information

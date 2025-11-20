@@ -14,23 +14,23 @@
  */
 import {FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
 import { State ,Link } from '@ohos.arkui.stateManagement'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// @Styles
+// function itemStyle() {
+//   .width(336)
+//   .height(621)
+//   .margin({ top: 48, left: 12 })
+//   .borderRadius(24)
+//   .backgroundColor('#FFFFFF')
+// }
+//
+// @Extend(Text)
+// function itemTextStyle() {
+//   .fontColor('#182431')
+//   .fontSize(36)
+//   .fontWeight(500)
+//   .opacity(0.4)
+//   .margin({ top: 82, bottom: 40 })
+// }
 
 
 @Component
@@ -54,7 +54,7 @@ export struct StepperItemView {
         Column() {
           Text('Page One')
             
-
+//.itemTextStyle()
 
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
@@ -62,7 +62,7 @@ export struct StepperItemView {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
         }
-
+//.itemStyle()
 
       }
       .nextLabel('Next')
@@ -74,7 +74,7 @@ export struct StepperItemView {
         Column() {
           Text('Page Two')
             
-
+//.itemTextStyle()
 
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
@@ -82,7 +82,7 @@ export struct StepperItemView {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
         }
-
+//.itemStyle()
 
       }
       .nextLabel('Next')

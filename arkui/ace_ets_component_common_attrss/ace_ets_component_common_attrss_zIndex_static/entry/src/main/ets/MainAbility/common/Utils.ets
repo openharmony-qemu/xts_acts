@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import { jsonx } from "std/core";
 
@@ -46,7 +46,7 @@ export class PageConfig {
   targetView: string = '';
   sharePage?: boolean;
   containerView?: string;
-  componentKey?: string = '';
+  componentKey: string = '';
   testValue: TestValues = new TestValues();
 }
 export class TestValues {
@@ -66,7 +66,7 @@ export class BasePageConfig {
   testValue: TestValues = new TestValues();
   caseTag: string = '';
   customParams?: Object;
-  viewObj: ViewOBJ = { $attrs: { zIndex: 0 } as ZIndex };
+  viewObj?: jsonx.JsonElement;
 }
 export default class Utils {
   public static instance: Utils = new Utils();
@@ -98,18 +98,18 @@ export default class Utils {
   static async pushPage(obj: PageConfig) {
     try {
       const router = AppStorage.get<Router>("router") as Router
-      let pages:router.RouterState = router.getState();
-      let pageParams: RouterParams = router.getParams() as RouterParams;
+      let pages = router.getState();
+      let pageParams: RouterParams = new RouterParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-        
+        console.info('targetView: ' + obj.targetView);
         await Utils.back();
         pages = router.getState();
       }
 
-      if (!(obj.pageName == pages.name)) {
+      // if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
@@ -118,7 +118,7 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-      }
+      // }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
     }
@@ -129,7 +129,6 @@ export default class Utils {
     if (!('Index' == router.getState().name)) {
       router.back()
     }
-    AttrsManager.unRegisterDataChange();
     await Utils.sleep(1000);
     router.clear();
   }
@@ -157,7 +156,7 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
+    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
     let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
@@ -258,17 +257,17 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
-    let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
+  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
+    let down = Utils.performKeyEvent(KeyType.Down, keyCode as Int, keyText)
     if (down) {
-      let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
+      let up = Utils.performKeyEvent(KeyType.Up, keyCode as Int, keyText)
       return up
     }
 
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -281,7 +280,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -321,7 +320,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

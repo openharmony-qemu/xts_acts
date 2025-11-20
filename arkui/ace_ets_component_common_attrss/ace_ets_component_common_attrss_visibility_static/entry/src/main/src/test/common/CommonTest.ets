@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Visibility } from '@ohos.arkui.component';
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
   /**
@@ -28,18 +29,19 @@ export default class CommonTest {
    * @param testValues   : test values
    * @param functions    : [0]:executeTest, [last] checkTestResult
    */
-  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[],
+    ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
+      let lastIndex: int = 0;
+      testValues.forEach((temp: TestValue, index: int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index) => {
+      testValues.forEach((testValue: TestValue, index: int) => {
 
         //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
@@ -94,24 +96,24 @@ export default class CommonTest {
                 testValue: testValue,
               }
               if (funcs.length > 1) {
-                let customParams = await (functions[0] as CallbackWithReturn)(data);
+                let customParams = await (functions[0] as CallbackWithReturn)(data) ?? '';
                 //Set custom params to data, can be used by check test result.
                 if (customParams) {
                   data.customParams = customParams;
                 }
               } else {
                 //If there is only an assertion function, automatically modify the status value
+                AppStorage.setOrCreate<Visibility>('_visibility', data.testValue.setValue) // 页面不更新
                 console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
                 await Utils.sleep(1000);
               }
-
               //Check test result
-              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-              // data.viewObj = JSON.parse(strJson);
-              await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
+              let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
+              console.info('[' + caseTag + '] ================== strJson: ' + strJson);
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err) {
+            } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);
@@ -139,6 +141,7 @@ export default class CommonTest {
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
+        await Utils.back();
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');
@@ -146,7 +149,8 @@ export default class CommonTest {
     }
   }
 
-  static initTestByContainerView(pageConfig: PageConfig, containerView: string[], supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+  static initTestByContainerView(pageConfig: PageConfig, containerView: string[], supportView: string[],
+    testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     containerView.forEach(container => {
       pageConfig.containerView = container;
       CommonTest.initTest(pageConfig, supportView, testValues, ...functions);

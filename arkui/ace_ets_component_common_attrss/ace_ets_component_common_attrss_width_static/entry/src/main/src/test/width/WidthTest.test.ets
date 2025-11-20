@@ -12,12 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {Color,$r} from '@ohos.arkui.component'
+import {Color,$r,Length} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, expect,beforeAll } from '../../../../hypium/index';
+import { describe, expect,beforeAll,afterEach } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -37,7 +36,11 @@ interface Attrs{
  * Test of common attribute: width
  */
 export default function widthTest() {
-  
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  const uiContext = AppStorage.get<UIContext>('uiContext')!
+  //A list of components that support width attributes is required.
   let supportView = new Array<string>(
     'AlphabetIndexer',
     'Button',
@@ -58,35 +61,35 @@ export default function widthTest() {
     'Progress',
     'QRCode',
     'Radio',
-    
+    //    'ScrollBar',
     'Rating',
-    
+    //    'Search',
     'RichText',
     'Slider',
     'Text',
-    
+    //    'TextArea',
     'TextClock',
-    
+    //    'TextInput',
     'TextPicker',
     'TextTimer',
     'TimePicker',
     'Toggle',
     'Badge',
     'Column',
-    
+    //    'Counter',
     'Flex',
     'GridRow',
     'Grid',
     'List',
     'ListItem',
-    
+    //    'Panel',
     'Refresh',
     'Row',
-    
-    
+    //    'Scroll',
+    //    'SideBarContainer',
     'Stack',
     'Swiper',
-    
+    //    'Tabs',
     'Circle',
     'Ellipse',
     'Polyline',
@@ -95,20 +98,20 @@ export default function widthTest() {
     'Rect',
     'Shape',
     'Line',
-    
-    
+    //    'StepperItem',
+    //    'GridCol',
     'GridItem',
     'RelativeContainer',
     'Navigator',
   )
-  
+  //The size of the parent component, when set as a percentage, serves as the calculation.
   let parentWidth = 300;
   let parentHeight = 300;
-  
+  //Called from the parent class when setting the background color.
   let parentBackGroundColor = Color.Red
   let BackGroundColor = Color.Orange
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testWidth',
     pageName: 'WidthPage',
@@ -120,7 +123,7 @@ export default function widthTest() {
     parentComponentKey: 'parentComponentKey'
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [{
     describe: 'ExceedParent',
     setValue: {
@@ -128,7 +131,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '400.00vp',
-      width: UIContext.getFocusedUIContext()!.vp2px(400), ExceedParent: true
+      width: uiContext.vp2px(400), ExceedParent: true
     }
   }, {
     describe: 'StringPercent',
@@ -137,7 +140,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '50.00%',
-      width: UIContext.getFocusedUIContext()!.vp2px(parentWidth) * 0.5
+      width: uiContext.vp2px(parentWidth) * 0.5
     }
   }, {
     describe: 'Resource',
@@ -146,7 +149,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '200.00vp',
-      width: UIContext.getFocusedUIContext()!.vp2px(200)
+      width: uiContext.vp2px(200)
     }
   }, {
     describe: 'StringPx',
@@ -166,37 +169,44 @@ export default function widthTest() {
     beforeAll(() => {
       console.info("UseSizeTypeTest beforeEach start");
       
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-    
-    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
-      
+    });
+    afterEach(() => {
+      AppStorage.setOrCreate<Length>('_width', 400)
+    })
+    //Generate test cases (it) through a loop based on the support view * test values.
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      // AppStorage.setOrCreate<Length>('_width', data.testValue.setValue.width)
+      //Obtain dimensional information for reference components.
       let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');
 
-      
+      //Obtain the region information of the parent component.
       let rectParent: RectValue = Utils.getComponentRect(data.pageConfig.parentComponentKey??'');
-      let attrs = data.viewObj as Attrs
+      let attrs = data.viewObj as jsonx.JsonElement
       console.info('[' + data.caseTag + '] data.testValue.expectValue.width:' + data.testValue.expectValue.width);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.width:' + attrs?.$attrs.width);
+      console.info('[' + data.caseTag + '] data.viewObj.rectParent.left:' + rectParent.left);
+      console.info('[' + data.caseTag + '] data.viewObj.rectParent.right:' + rectParent.right);
+      console.info('[' + data.caseTag + '] data.viewObj.rect.right:' + rect.right + "rect.left:" + rect.left);
+      console.info('[' + data.caseTag + '] data.viewObj.rect.right:' + (rectParent.left > rect.left || rectParent.right < rect.right));
 
-      
+      //Verify the width width of the target component.
       let strJsonRectWidth = rect.right - rect.left;
       console.info('[' + data.caseTag + '] strJsonRectWidth is:' + strJsonRectWidth);
 
       if (data.testValue.describe == 'ExceedParent') {
-        
+        //Confirm that the calculated value is consistent with the expected value.
         expect((rectParent.left > rect.left || rectParent.right < rect.right))
           .assertEqual(data.testValue.expectValue.ExceedParent);
       }
 
-      
-      expect(attrs?.$attrs.width).assertEqual(data.testValue.expectValue.widthCompare);
+      //Confirm that the width attribute values have been successfully set.
+      expect(attrs?.getElement("$attrs").getString('width')).assertEqual(data.testValue.expectValue.widthCompare);
 
-      
-      expect(Math.abs(strJsonRectWidth - (data.testValue.expectValue.width as number)) <= 1).assertTrue();
+      // console.info('[' + data.caseTag + '] strJsonRectWidth strJsonRectWidth:' + data.testValue.expectValue.width + '; strJsonRectWidth:' + strJsonRectWidth);
+      // console.info('[' + data.caseTag + '] strJsonRectWidth strJsonRectWidth:' + Math.abs(Number(strJsonRectWidth) - Number(data.testValue.expectValue.width)));
+      // console.info('[' + data.caseTag + '] strJsonRectWidth strJsonRectWidth:' + (Math.abs(Number(strJsonRectWidth) - Number(data.testValue.expectValue.width)) <= 1));
+      //Confirm that the calculated value is consistent with the expected value.
+      expect(Math.abs(strJsonRectWidth - data.testValue.expectValue.width) <= 1).assertTrue();
     })
   })
 }
