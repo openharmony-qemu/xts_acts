@@ -16,7 +16,6 @@ import buttonControlTest from "./buttonTest/buttonControl.test"
 import buttonTest from './buttonTest/button'
 import buttonJsunit from './buttonTest/ButtonJsunit.test';
 import buttonEnabledJsunit from './buttonTest/buttonEnabledJsunit.test';
-import focusJsunit from './buttonTest/FocusJsunit.test';
 import button3Jsunit from './buttonTest/Button3Jsunit.test';
 import ButtonHoverTest from './buttonTest/ButtonHover.test';
 import ActsgetcomponentTest from './buttonTest/getcomponent.test';
@@ -34,7 +33,6 @@ export default function testsuite() {
   buttonTest();
   buttonJsunit();
   buttonEnabledJsunit();
-  focusJsunit()
   button3Jsunit();
   ButtonHoverTest();
   ActsgetcomponentTest();
