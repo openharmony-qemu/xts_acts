@@ -18,40 +18,40 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-export default function editMeunOptionsTest() {
-  describe('editMeunOptionsTest', () => {
+export default function editMenuOptionsApi12Test() {
+  describe('editMenuOptionsApi12Test', () => {
     beforeEach(async (done: Function) => {
-      console.info("editMeunOptionsTest beforeEach start");
+      console.info("editMenuOptionsApi12Test beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Text/editMeunOptionsApi12',
+        url: 'MainAbility/pages/Text/editMenuOptionsApi12',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get editMeunOptionsTest state pages:" + JSON.stringify(pages));
-        if (!("editMeunOptionsApi12" == pages.name)) {
-          console.info("get editMeunOptionsTest pages.name:" + JSON.stringify(pages.name));
+        console.info("get editMenuOptionsApi12Test state pages:" + JSON.stringify(pages));
+        if (!("editMenuOptionsApi12" == pages.name)) {
+          console.info("get editMenuOptionsApi12Test pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push editMeunOptionsTest page result:" + JSON.stringify(result));
+          console.info("push editMenuOptionsApi12Test page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push editMeunOptionsTest page error:" + err);
+        console.error("push editMenuOptionsApi12Test page error:" + err);
       }
-      console.info("editMeunOptionsTest beforeEach end");
+      console.info("editMenuOptionsApi12Test beforeEach end");
       done();
     });
 
     /**
-     * @tc.number    editMeunOptionsTest_0100
-     * @tc.name      editMeunOptionsTest_0100
-     * @tc.desc      Text: editMeunOptions
+     * @tc.number    editMenuOptionsApi12Test_0100
+     * @tc.name      editMenuOptionsApi12Test_0100
+     * @tc.desc      Text: editMenuOptionsApi12
      * @tc.level:    Level 2
      * @tc.type :
      * @tc.size :
      */
-    it('editMeunOptionsTest_0100', Level.LEVEL2, async (done: Function) => {
-      console.info('editMeunOptionsTest_0100 START');
+    it('editMenuOptionsApi12Test_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('editMenuOptionsApi12Test_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('TextEditMenuOptions'));
@@ -61,23 +61,23 @@ export default function editMeunOptionsTest() {
       let strJson1 = getInspectorByKey('TextEditMenuOptions');
       await CommonFunc.sleep(200);
       let obj1: ESObject = JSON.parse(strJson1);
-      console.info("[editMeunOptionsTest_0100] obj1 is: " + JSON.stringify(obj1));
+      console.info("[editMenuOptionsApi12Test_0100] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(500);
       expect(obj1.$type).assertEqual('Text');
-      console.info('editMeunOptionsTest_0100 END');
+      console.info('editMenuOptionsApi12Test_0100 END');
       done();
     });
 
     /**
-     * @tc.number    editMeunOptionsTest_0300
-     * @tc.name      editMeunOptionsTest_0300
-     * @tc.desc      TextInput: editMeunOptions
+     * @tc.number    editMenuOptionsApi12Test_0300
+     * @tc.name      editMenuOptionsApi12Test_0300
+     * @tc.desc      TextInput: editMenuOptionsApi12
      * @tc.level:    Level 2
      * @tc.type :
      * @tc.size :
      */
-    it('editMeunOptionsTest_0300', Level.LEVEL2, async (done: Function) => {
-      console.info('editMeunOptionsTest_0300 START');
+    it('editMenuOptionsApi12Test_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('editMenuOptionsApi12Test_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('TextInputEditMenuOptions'));
@@ -87,23 +87,23 @@ export default function editMeunOptionsTest() {
       let strJson1 = getInspectorByKey('TextInputEditMenuOptions');
       await CommonFunc.sleep(200);
       let obj1: ESObject = JSON.parse(strJson1);
-      console.info("[editMeunOptionsTest_0300] obj1 is: " + JSON.stringify(obj1));
+      console.info("[editMenuOptionsApi12Test_0300] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(500);
       expect(obj1.$type).assertEqual('TextInput');
-      console.info('editMeunOptionsTest_0300 END');
+      console.info('editMenuOptionsApi12Test_0300 END');
       done();
     });
 
     /**
-     * @tc.number    editMeunOptionsTest_0200
-     * @tc.name      editMeunOptionsTest_0200
-     * @tc.desc      TextArea: editMeunOptions
+     * @tc.number    editMenuOptionsApi12Test_0200
+     * @tc.name      editMenuOptionsApi12Test_0200
+     * @tc.desc      TextArea: editMenuOptionsApi12
      * @tc.level:    Level 2
      * @tc.type :
      * @tc.size :
      */
-    it('editMeunOptionsTest_0200', Level.LEVEL2, async (done: Function) => {
-      console.info('editMeunOptionsTest_0200 START');
+    it('editMenuOptionsApi12Test_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('editMenuOptionsApi12Test_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('TextAreaEditMenuOptions'));
@@ -116,7 +116,7 @@ export default function editMeunOptionsTest() {
       console.info("[editMenuIdAIWriterTest_0200] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(500);
       expect(obj1.$type).assertEqual('TextArea');
-      console.info('editMeunOptionsTest_0200 END');
+      console.info('editMenuOptionsApi12Test_0200 END');
       done();
     });
   })
