@@ -50,6 +50,14 @@ export default function button3Jsunit() {
       console.info("button after each called");
     })
 
+    /**
+     * @tc.number testButton01
+     * @tc.name   testButton01
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton01', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton01] START');
       await CommonFunc.sleep(1000);
@@ -60,6 +68,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton02
+     * @tc.name   testButton02
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton02', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton02] START');
       await CommonFunc.sleep(1000);
@@ -70,6 +86,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton03
+     * @tc.name   testButton03
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton03', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton03] START');
       await CommonFunc.sleep(1000);
@@ -79,6 +103,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton04
+     * @tc.name   testButton04
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton04', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton04] START');
       await CommonFunc.sleep(1000);
@@ -88,6 +120,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton05
+     * @tc.name   testButton05
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton05', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton05] START');
       await CommonFunc.sleep(1000);
@@ -114,6 +154,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton06
+     * @tc.name   testButton06
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton06', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton06] START');
       await CommonFunc.sleep(1000);
@@ -140,6 +188,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton07
+     * @tc.name   testButton07
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton07', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton07] START');
       await CommonFunc.sleep(1000);
@@ -168,6 +224,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton08
+     * @tc.name   testButton08
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton08', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton08] START');
       await CommonFunc.sleep(1000);
@@ -194,6 +258,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton09
+     * @tc.name   testButton09
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton09', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton09] START');
       await CommonFunc.sleep(1000);
@@ -220,6 +292,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton10
+     * @tc.name   testButton10
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton10', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton10] START');
       try {
@@ -252,11 +332,19 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton10 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton10 click result is: " + JSON.stringify(sendEventByKey('button3', 10, "")));
+      console.info("testButton10 click result is: " + JSON.stringify(sendEventByKey('button3Jsunit_button3', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('[testButton10] END');
     });
 
+    /**
+     * @tc.number testButton11
+     * @tc.name   testButton11
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton11', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton11] START');
       try {
@@ -289,16 +377,24 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton11 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton11 click result is: " + JSON.stringify(sendEventByKey('button2', 10, "")));
+      console.info("testButton11 click result is: " + JSON.stringify(sendEventByKey('button3Jsunit_button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('[testButton11] END');
     });
 
+    /**
+     * @tc.number testButton12
+     * @tc.name   testButton12
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton12', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
 
       await CommonFunc.sleep(500);
-      let buttonCl = await driver.findComponent(ON.id('buttonClick'));
+      let buttonCl = await driver.findComponent(ON.id('button3Jsunit_buttonClick'));
       await CommonFunc.sleep(500);
       let point = await buttonCl.getBoundsCenter();
 
@@ -337,11 +433,19 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("[testButton12] on events_emitter err : " + JSON.stringify(err));
       }
-      console.info('[testButton12] sendEventByKey ' + JSON.stringify(sendEventByKey('buttonClick', 10, "")));
+      console.info('[testButton12] sendEventByKey ' + JSON.stringify(sendEventByKey('button3Jsunit_buttonClick', 10, "")));
       await CommonFunc.sleep(1000)
       console.info('[testButton12] testSendTouchEvent END');
     });
 
+    /**
+     * @tc.number testButton13
+     * @tc.name   testButton13
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton13', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton13] START');
       await CommonFunc.sleep(1000);
@@ -370,6 +474,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton14
+     * @tc.name   testButton14
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton14', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton14] START');
       await CommonFunc.sleep(1000);
@@ -398,6 +510,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.number testButton15
+     * @tc.name   testButton15
+     * @tc.desc   test Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('testButton15', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton15] START');
       try {
@@ -432,7 +552,7 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton15 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton15 click result is: " + JSON.stringify(sendEventByKey('button4', 10, "")));
+      console.info("testButton15 click result is: " + JSON.stringify(sendEventByKey('button3Jsunit_button4', 10, "")));
     });
   })
 }

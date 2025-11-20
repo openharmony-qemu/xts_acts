@@ -42,6 +42,14 @@ export default function buttonJsunit() {
       done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0100
+     * @tc.name   buttonJsunit_0100
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('buttonJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('buttonJsunitUITest_0100 START');
       await CommonFunc.sleep(1000);
@@ -60,6 +68,14 @@ export default function buttonJsunit() {
       done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0200
+     * @tc.name   buttonJsunit_0200
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('buttonJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('buttonJsunitUITest_0200 START');
       await CommonFunc.sleep(1000);
@@ -72,6 +88,14 @@ export default function buttonJsunit() {
       done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0300
+     * @tc.name   buttonJsunit_0300
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('buttonJsunit_0300', Level.LEVEL1, async (done: Function) => {
        console.info('buttonJsunitUITest_0300 START');
        await CommonFunc.sleep(1000);
@@ -85,6 +109,14 @@ export default function buttonJsunit() {
        done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0400
+     * @tc.name   buttonJsunit_0400
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('buttonJsunit_0400', Level.LEVEL1, async (done: Function) => {
        console.info('buttonJsunitUITest_0400 START');
        // check the button is click
@@ -97,6 +129,14 @@ export default function buttonJsunit() {
        done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0500
+     * @tc.name   buttonJsunit_0500
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
      it('buttonJsunit_0500', Level.LEVEL1, async (done: Function) => {
        console.info('buttonJsunitUITest_0500 START');
        // 判断按钮的点击事件,通过按钮的文本可以判断
@@ -112,6 +152,14 @@ export default function buttonJsunit() {
        done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0600
+     * @tc.name   buttonJsunit_0600
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('buttonJsunit_0600', Level.LEVEL1, async (done: Function) => {
       // buton 通用字体属性判断
        console.info('buttonJsunitUITest_0600 START');
@@ -137,6 +185,14 @@ export default function buttonJsunit() {
        done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0700
+     * @tc.name   buttonJsunit_0700
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('buttonJsunit_0700', Level.LEVEL1, async (done: Function) => {
       // buton 通用字体非法属性判断
        console.info('buttonJsunitUITest_0700 START');
@@ -164,6 +220,14 @@ export default function buttonJsunit() {
        done();
     });
 
+    /**
+     * @tc.number buttonJsunit_0800
+     * @tc.name   buttonJsunit_0800
+     * @tc.desc   test button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('buttonJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('buttonJsunitUITest_0800 START');
       await CommonFunc.sleep(1000);

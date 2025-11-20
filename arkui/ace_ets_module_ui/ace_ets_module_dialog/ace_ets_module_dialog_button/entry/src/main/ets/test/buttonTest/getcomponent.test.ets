@@ -53,6 +53,14 @@ export default function ActsgetcomponentTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.number ArkUX_Get_component_0010
+     * @tc.name   ArkUX_Get_component_0010
+     * @tc.desc   test
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL1
+     */
     it('ArkUX_Get_component_0010', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Get_component_0010 START');
       let strJson = getInspectorByKey('ArkUX_Get_component_0010');

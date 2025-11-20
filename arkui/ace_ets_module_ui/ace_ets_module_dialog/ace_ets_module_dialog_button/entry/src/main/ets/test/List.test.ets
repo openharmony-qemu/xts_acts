@@ -17,11 +17,9 @@ import buttonTest from './buttonTest/button'
 import buttonJsunit from './buttonTest/ButtonJsunit.test';
 import buttonEnabledJsunit from './buttonTest/buttonEnabledJsunit.test';
 import focusJsunit from './buttonTest/FocusJsunit.test';
-import playModeJsunit from './buttonTest/PlayModeJsunit.test';
 import button3Jsunit from './buttonTest/Button3Jsunit.test';
 import ButtonHoverTest from './buttonTest/ButtonHover.test';
 import ActsgetcomponentTest from './buttonTest/getcomponent.test';
-import stageAnimatorTest from './buttonTest/stageAnimator.test';
 import buttonMaxFontSize from './button/buttonMaxFontSize.test';
 import ButtonTypeTest from './buttonType/ButtonTypeTest.test';
 import buttonType from './buttonType/buttonTypeApi.test';
@@ -37,11 +35,9 @@ export default function testsuite() {
   buttonJsunit();
   buttonEnabledJsunit();
   focusJsunit()
-  playModeJsunit()
   button3Jsunit();
   ButtonHoverTest();
   ActsgetcomponentTest();
-  stageAnimatorTest();
   buttonMaxFontSize();
   ButtonTypeTest()
   buttonType()

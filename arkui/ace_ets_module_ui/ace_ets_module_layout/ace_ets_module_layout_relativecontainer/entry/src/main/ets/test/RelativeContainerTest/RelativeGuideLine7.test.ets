@@ -65,7 +65,7 @@ export default function RelativeGuideLine7() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0260
+     * @tc.number    RelativeGuideLine7_002
      * @tc.desc      direction and position test
      * @tc.level     Level 3
      * @tc.type
