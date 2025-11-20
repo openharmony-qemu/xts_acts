@@ -30,6 +30,7 @@ import cameraSetFocusPointSuppTest from './camera/CameraSetFocusPointSuppTest.te
 import cameraSetFrameRateTest from './camera/CameraSetFrameRateTest.test';
 import cameraCanPreconfigTest from "./camera/CameraPreconfigFIR.test";
 import cameraCanPreconfigSecTest from "./camera/CameraPreconfigSec.test";
+import cameraEnumTestSupp from './camera/CameraEnum.test';
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -57,11 +58,11 @@ export default function testsuite() {
   CameraDeviceTest();
   CameraSessionInputOutputTest();
   CameraCaptureSessionInputOutputTest();
-
   cameraCaptureSessionIsExposureModeAndIsFocusModeAb();
   CameraSetMeterPointSuppTest();
   cameraSetFocusPointSuppTest();
   cameraSetFrameRateTest();
   cameraCanPreconfigTest();
   cameraCanPreconfigSecTest();
+  cameraEnumTestSupp();
 }
