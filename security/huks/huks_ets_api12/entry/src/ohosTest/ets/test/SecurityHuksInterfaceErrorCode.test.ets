@@ -2059,14 +2059,14 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API22_Interface_0100
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API22_Interface_0100
-     * @tc.desc   : test registerProvider, error code 201
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0100
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0100
+     * @tc.desc   test registerProvider when no permission, error code 201
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
      */
-    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0100";
       try {
         const providerName = "testHap";
@@ -2079,25 +2079,22 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksExternalCrypto.registerProvider(providerName, extProperties);
         expect(null).assertFail();
       } catch (err) {
-        if (err.code == 801){
-          done();
-        }else {
+        if (err.code != 801){
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(201);
-          done();
         }
       }
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API22_Interface_0200
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API22_Interface_0200
-     * @tc.desc   : test unregisterProvider, error code 201
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0200
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0200
+     * @tc.desc   test unregisterProvider when no permission, error code 201
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
      */
-    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0200";
       try {
         const providerName = "testHap";
@@ -2110,25 +2107,22 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksExternalCrypto.unregisterProvider(providerName, extProperties);
         expect(null).assertFail();
       } catch (err) {
-        if (err.code == 801){
-          done();
-        }else {
+        if (err.code != 801){
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(201);
-          done();
         }
       }
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API22_Interface_0400
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API22_Interface_0400
-     * @tc.desc   : test authUkeyPin, error code 12000012
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0400
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0400
+     * @tc.desc   test abnormal authUkeyPin , error code 12000012
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
      */
-    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0400";
       try {
         const resourceId = "SUB_Security_HUKS_ErrorCode_API22_Interface_0400";
@@ -2141,25 +2135,22 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksExternalCrypto.authUkeyPin(resourceId, extProperties);
         expect(null).assertFail();
       } catch (err) {
-        if (err.code == 801){
-          done();
-        }else {
+        if (err.code != 801){
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000012);
-          done();
         }
       }
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_ErrorCode_API22_Interface_0500
-     * @tc.name   : SUB_Security_HUKS_ErrorCode_API22_Interface_0500
-     * @tc.desc   : test getUkeyPinAuthState, error code 12000012
-     * @tc.type   : Safety
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0500
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0500
+     * @tc.desc   test abnormal getUkeyPinAuthState, error code 12000012
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
      */
-    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0500";
       try {
         const resourceId = "SUB_Security_HUKS_ErrorCode_API22_Interface_0500";
@@ -2172,12 +2163,9 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksExternalCrypto.getUkeyPinAuthState(resourceId, extProperties);
         expect(null).assertFail();
       } catch (err) {
-        if (err.code == 801){
-          done();
-        }else {
+        if (err.code != 801){
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000012);
-          done();
         }
       }
     })
