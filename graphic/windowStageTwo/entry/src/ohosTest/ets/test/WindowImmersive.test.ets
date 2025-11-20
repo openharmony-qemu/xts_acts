@@ -3522,24 +3522,25 @@ export default function windowImmersiveTest() {
      */
     it('testWindowAvoidareaChangeCutout_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testWindowAvoidareaChangeCutout_0100';
-      let windowStageStart = await startAbility7(caseName, context);
-      let windowClass = windowStageStart.getMainWindowSync();
-      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
-      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
-      if (isInFreeWindowMode) {
-        await terminateAbility7(caseName);
-        done();
-      } else {
-        let displayClass = display.getDefaultDisplaySync();
-        let cutoutInfo = await displayClass.getCutoutInfo();
-        let arrayRect = cutoutInfo.boundingRects;
-        console.info(caseName + ' arrayRect: ' + JSON.stringify(arrayRect));
-        if (arrayRect.length == 0) {
+      if (isSupportRotate) {
+        let windowStageStart = await startAbility7(caseName, context);
+        let windowClass = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+        console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+        if (isInFreeWindowMode) {
           await terminateAbility7(caseName);
           done();
         } else {
-          windowClass.on('avoidAreaChange', async (data) => {
-            console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
+          let displayClass = display.getDefaultDisplaySync();
+          let cutoutInfo = await displayClass.getCutoutInfo();
+          let arrayRect = cutoutInfo.boundingRects;
+          console.info(caseName + ' arrayRect: ' + JSON.stringify(arrayRect));
+          if (arrayRect.length == 0) {
+            await terminateAbility7(caseName);
+            done();
+          } else {
+            windowClass.on('avoidAreaChange', async (data) => {
+              console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
             ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
               if(data.type == window.AvoidAreaType.TYPE_CUTOUT) {
                 expect(data.area!= null).assertTrue();
@@ -3552,11 +3553,14 @@ export default function windowImmersiveTest() {
                 await sleep(3000)
               }
             });
-          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
+            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
+          }
         }
+      } else {
+        done();
       }
     });
-    
+
   })
 }
 

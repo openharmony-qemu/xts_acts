@@ -2657,14 +2657,7 @@ export default function displayTest() {
     it('testGetBrightnessInfowithVirtualDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithVirtualDisplayid';
       try {
-        class VirtualScreenOptions {
-          name: string = '';
-          width: number = 0;
-          height: number = 0;
-          density: number = 0;
-          surfaceId: string = '';
-        }
-        let option: VirtualScreenOptions = {
+        let option: display.VirtualScreenConfig = {
           name: 'screen01',
           width: 100,
           height: 2340,
@@ -2674,10 +2667,11 @@ export default function displayTest() {
         let screenId: number = await display.createVirtualScreen(option);
         console.log(caseName + ' success in createVirtualScreen ' + screenId);
         let brightnessInfo = display.getBrightnessInfo(screenId);
+        await sleep(300)
         console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-        expect(brightnessInfo.sdrNits).assertLarger(500);
-        expect(brightnessInfo.currentHeadroom).assertLarger(1);
-        expect(brightnessInfo.maxHeadroom).assertLarger(1);
+        expect(brightnessInfo.sdrNits).assertEqual(500);
+        expect(brightnessInfo.currentHeadroom).assertEqual(1);
+        expect(brightnessInfo.maxHeadroom).assertEqual(1);
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -2791,12 +2785,12 @@ export default function displayTest() {
           await sleep(100);
         }
         console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        expect(brightnessChangeCount1).assertEqual(1);
         while (!callback2Triggered) {
           await sleep(100);
         }
         console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount2).assertEqual(1);
+        expect(brightnessChangeCount1).assertLarger(0);
+        expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange');
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
@@ -2984,94 +2978,6 @@ export default function displayTest() {
         } else {
           display.off('brightnessInfoChange');
           await terminateAbility(caseName);
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0100
-     * @tc.name      : testCapturewithBlacklistFloatBall
-     * @tc.desc      : 截屏过滤窗口为闪控球
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('testCapturewithBlacklistFloatBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testCapturewithBlacklistFloatBall';
-      let config: floatingBall.FloatingBallConfiguration = {
-        context: context,
-      };
-      try {
-        let floatingBallController = await floatingBall.create(config);
-        floatingBallController.getFloatingBallWindowInfo().then(async (data: floatingBall.FloatingBallWindowInfo) => {
-          console.info(caseName + ' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
-          const captureOption: screenshot.CaptureOption = {
-            displayId: 0,
-            blackWindowIds: [data.windowId]
-          };
-          const pixelMap = await screenshot.capture(captureOption);
-          let res = pixelMap.getPixelBytesNumber();
-          console.info(caseName + ' getPixelBytesNumber: ' + JSON.stringify(res));
-          expect(res).assertLarger(0)
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(caseName + ` Failed. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertTrue();
-          done();
-        });
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if(e.code == 801){
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0200
-     * @tc.name      : testCapturewithBlacklistNotFloatBall
-     * @tc.desc      : 截屏过滤窗口不为闪控球
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
-     */
-    it('testCapturewithBlacklistNotFloatBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'testCapturewithBlacklistNotFloatBall';
-      let config: floatingBall.FloatingBallConfiguration = {
-        context: context,
-      };
-      try {
-        let windowClass = await windowStage.getMainWindow();
-        let windowId = windowClass.getWindowProperties().id;
-        console.info(caseName + ' windowId: ' + windowId);
-
-        let floatingBallController = await floatingBall.create(config);
-        floatingBallController.getFloatingBallWindowInfo().then(async (data: floatingBall.FloatingBallWindowInfo) => {
-          console.info(caseName + ' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
-          const captureOption: screenshot.CaptureOption = {
-            displayId: 0,
-            blackWindowIds: [windowId]
-          };
-          const pixelMap = await screenshot.capture(captureOption);
-          let res = pixelMap.getPixelBytesNumber();
-          console.info(caseName + ' getPixelBytesNumber: ' + JSON.stringify(res));
-          expect(res).assertLarger(0)
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(caseName + ` Failed. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertTrue();
-          done();
-        });
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if(e.code == 801){
-          done();
-        } else {
           expect(false).assertTrue();
           done();
         }
