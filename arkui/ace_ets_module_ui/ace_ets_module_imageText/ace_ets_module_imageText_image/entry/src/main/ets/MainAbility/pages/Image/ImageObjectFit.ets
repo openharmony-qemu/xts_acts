@@ -14,31 +14,6 @@
  */
 import { FrameNode, NodeController } from '@ohos.arkui.node'
 
-class MyNodeController11 extends NodeController {
-  public rootNode: FrameNode | null = null;
-  makeNode(uiContext: UIContext): FrameNode | null {
-    this.rootNode = new FrameNode(uiContext);
-    this.rootNode.commonAttribute.width(100)
-      .height(100)
-      .backgroundColor(Color.Pink);
-    return this.rootNode;
-  }
-  addCommonEvent(frameNode: FrameNode) {
-    frameNode.commonEvent.setOnVisibleAreaApproximateChange(
-        { ratios: [0.0, 1.0],expectedUpdateInterval: 1000 },undefined)
-  }
-}
- class StyledStringTest {
-      private testStr: string = ''
-      constructor(str: string) {
-        this.testStr = str
-      }
-
-      static convertHtmlToStyledString(input: string): Promise<StyledString> {
-        return StyledString.fromHtml(input)
-      }
-      
-}
 @Entry
 @Component
 struct ImageObjectFitPage {
