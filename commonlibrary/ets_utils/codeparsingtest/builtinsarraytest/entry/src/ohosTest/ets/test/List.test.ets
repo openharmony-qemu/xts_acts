@@ -52,6 +52,9 @@ import builtinsArrayLastIndexOfTest from './array/BuildinsArrayLastIndexOfTest.t
 import BuiltinsArrayIndexOfTest from './array/BuiltinsArrayIndexOfTest.test';
 import BuiltinsArraySliceTest from './array/BuiltinsArraySliceTest.test';
 import BuiltinsArraySomeTest from './array/BuiltinsArraySomeTest.test';
+import ArrayConstructor1Test from './array/ArrayCombination1Test.test';
+import ArrayConstructor2Test from './array/ArrayCombination2Test.test';
+import ArrayConstructorTestErr from './array/ArrayCombinationTestErr.test';
 
 import builtinsArrayBufferByteLengthTest from "./ArrayBuffer/BuildinsArrayBufferByteLengthTest.test";
 import builtinsArrayBufferConstructorTest from "./ArrayBuffer/BuildinsArrayBufferConstructorTest.test";
@@ -102,6 +105,8 @@ import typeArrayUint16ArrayTest from './TypeArray/TypeArrayUint16Array.test';
 import typeArrayUint32ArrayTest from './TypeArray/TypeArrayUint32Array.test';
 import typeArrayUint8ArrayTest from './TypeArray/TypeArrayUint8Array.test';
 import typeArrayUint8ClampedArrayTest from './TypeArray/TypeArrayUint8ClampedArray.test';
+
+
 
 
 export default function testsuite() {
@@ -155,6 +160,9 @@ export default function testsuite() {
   BuiltinsArrayIndexOfTest();
   BuiltinsArraySliceTest();
   BuiltinsArraySomeTest();
+  ArrayConstructor1Test();
+  ArrayConstructor2Test();
+  ArrayConstructorTestErr();
   
   builtinsArrayBufferByteLengthTest();
   builtinsArrayBufferConstructorTest();
@@ -196,4 +204,8 @@ export default function testsuite() {
   builtinsRegExpMatchArrayIndexTest();
   builtinsRegExpMatchArrayInputTest();
   builtinsRegExpMatchArrayStringTest();
+  
+
+  
+  
 }
