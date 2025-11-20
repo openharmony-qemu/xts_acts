@@ -23,12 +23,12 @@ let matrix3 = matrix4.identity()
  * Test of common attribute: transform
  */
 export default function transformTest() {
-  
+  //A list of components that support padding attributes is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Custom params.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -49,7 +49,7 @@ export default function transformTest() {
     columns: columns
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues:TestValue[]= [{
     describe: 'SetTransform',
     setValue: {

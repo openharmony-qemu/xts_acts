@@ -200,10 +200,9 @@ import {
   WebAttribute,
   WebviewController,
   WindowSceneAttribute,
-  XComponentAttribute,
-  AlignRuleOption
+  XComponentAttribute
 } from '@ohos.arkui.component'
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -539,7 +538,20 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   mSphericalEffect: number = 1
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
+//    instance.sphericalEffect(this.mSphericalEffect)
+//   }
+// }
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   mSphericalEffect: number = 1
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
+//    instance.sphericalEffect(this.mSphericalEffect)
+//   }
+// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mSphericalEffect: number = 1
 
@@ -1203,6 +1215,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1396,9 +1409,9 @@ struct sphericalEffectPage {
   @State _sphericalEffectMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _sphericalEffectMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _sphericalEffectNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  
+  // @State _sphericalEffectNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _sphericalEffectNavigationMod: NavigationModifier = new NavigationModifier()
-  
+  // @State _sphericalEffectNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _sphericalEffectPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _sphericalEffectPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _sphericalEffectQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -1437,12 +1450,12 @@ struct sphericalEffectPage {
   @State _sphericalEffectXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: double = 0;
-  @State parentHeight: double = 0;
-  @State columns: int = 0;
-  @State gutter: int = 0;
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
   @State parentComponentKey: string = '';
-  @StoragePropRef('_sphericalEffect') _sphericalEffect: SetValue = {
+  @StorageProp('_sphericalEffect') _sphericalEffect: SetValue = {
     height: 0, sphericalEffect: 0.0
   }
 
@@ -1454,13 +1467,13 @@ struct sphericalEffectPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = (viewElement.getDouble("columns")).toInt()
-    this.gutter = (viewElement.getDouble("gutter")).toInt()
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
 
   build() {
-    GridRow({ columns: this.columns, gutter: this.gutter }) {
+    GridRow({ columns: this.columns as Int, gutter: this.gutter }) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').commonStyleButton(this.componentKey, this._sphericalEffect.sphericalEffect)
@@ -1510,7 +1523,7 @@ struct sphericalEffectPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: Infinity as Int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey).attributeModifier(this._sphericalEffectMarqueeMod)
@@ -1522,7 +1535,15 @@ struct sphericalEffectPage {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._sphericalEffectMenuMod)
         } else if (this.targetView == 'NavRouter') {
-
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.commonStyle(this.componentKey).attributeModifier(this._sphericalEffectNavRouterMod)
         } else if (this.targetView == 'Progress') {
           Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
@@ -1700,13 +1721,13 @@ struct sphericalEffectPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._sphericalEffectNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
@@ -1720,7 +1741,7 @@ struct sphericalEffectPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              } as AlignRuleOption)
+              })
               .id('constraintSize')
           }.commonStyle(this.componentKey).attributeModifier(this._sphericalEffectRelativeContainerMod)
         } else if (this.targetView == 'Row') {

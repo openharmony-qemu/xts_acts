@@ -20,12 +20,12 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { BorderStyle } from '@ohos.arkui.component'
 
 export default function TranslateTest() {
-  
+  //A list of components that support the position attribute, which is required.
   let supportView = [
     'DataPanel',
   ]
 
-  
+  //Custom params.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -74,9 +74,9 @@ export default function TranslateTest() {
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       console.error('[' + data.caseTag + '] translateTest');
       console.error('[' + data.caseTag + '] check translate.' + ` ${data.testValue.setValue.translate.x} 
       ${data.testValue.setValue.translate.y} ${data.testValue.setValue.translate.z}`);

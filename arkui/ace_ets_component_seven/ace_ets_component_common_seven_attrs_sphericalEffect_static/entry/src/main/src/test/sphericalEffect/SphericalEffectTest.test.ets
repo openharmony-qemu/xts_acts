@@ -19,12 +19,12 @@ import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../..
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 
 export default function SphericalEffectTest() {
-  
+  //A list of components that support the position attribute, which is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Custom params.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -64,9 +64,9 @@ export default function SphericalEffectTest() {
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       console.error('[' + data.caseTag + '] sphericalEffectTest');
       console.error('[' + data.caseTag + '] check sphericalEffect.' + ` ${data.testValue.setValue.sphericalEffect}`);
       console.error('[' + data.testValue.expectValue.sphericalEffect + '] expectValue');
