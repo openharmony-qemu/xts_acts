@@ -30,17 +30,17 @@ export default class CommonTest {
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     supportView.forEach(targetView => {
 
-      
+      //Obtain the last index of cases that need to be executed.
       let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index: Int) => {
+      testValues.forEach((temp: TestValue, index: int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index: Int) => {
+      testValues.forEach((testValue: TestValue, index: int) => {
 
-        
+        //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
           let currentIndex = index;
           let sharePage = true;
@@ -48,10 +48,10 @@ export default class CommonTest {
             sharePage = pageConfig.sharePage!;
           }
 
-          
+          //Create case name.
           let caseTag = pageConfig.testName + targetView+'_static_' + testValue.describe;
 
-          
+          //If there is a specified container view.
           let containerView = '';
           if (pageConfig.containerView != undefined) {
             containerView = pageConfig.containerView!;
@@ -66,15 +66,15 @@ export default class CommonTest {
            */
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
-            
+            //Push page.
             console.info('[' + caseTag + ']' + ' test start, push page.');
             pageConfig.targetView = targetView;
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            
-              
+            //try {
+              //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
               }
@@ -86,7 +86,7 @@ export default class CommonTest {
                 }
               }
 
-              
+              //Execute test
               let data: BasePageConfig = {
                 pageConfig: pageConfig,
                 caseTag: caseTag,
@@ -95,21 +95,21 @@ export default class CommonTest {
 
               console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
               await Utils.sleep(1000);
-              
+              //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
               console.info('[' + caseTag + '] ================== strJson: ' + strJson);
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // } catch (err: Error) {
+            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+            //   console.error(msg);
+            //   console.error(err.stack);
+            //   if (err.name != 'AssertException') {
+            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            //     expect(msg).assertTrue();
+            //   }
+            // }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

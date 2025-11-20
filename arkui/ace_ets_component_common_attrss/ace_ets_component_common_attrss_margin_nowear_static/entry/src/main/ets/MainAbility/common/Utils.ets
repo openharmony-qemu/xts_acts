@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import {Color,Length, TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, Margin } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -334,7 +334,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -374,7 +374,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

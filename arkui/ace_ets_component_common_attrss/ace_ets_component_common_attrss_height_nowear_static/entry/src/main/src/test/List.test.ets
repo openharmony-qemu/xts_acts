@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import heightTest from './height/HeightTest.test';
-
 export default function testsuite() {
   heightTest();
 }

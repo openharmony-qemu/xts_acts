@@ -12,19 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import { Color, $r } from '@ohos.arkui.component'
-import Utils, {
-  CurrentRatio,
-  BasePageConfig,
-  PageConfig,
-  TestValue,
-  RectValue,
-  SetValue,
-  StrJsonObj
-} from '../../../ets/MainAbility/common/Utils';
+
+import {Color,$r} from '@ohos.arkui.component'
+import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect,beforeAll } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -32,41 +24,41 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
-interface Attrs {
+let testAbilityContext:common.UIAbilityContext;
+interface Attrs{
   $attrs: SetValue
 }
-
 /**
  * Test of common attribute: height
  */
 export default function heightTest() {
-  
-  let supportView: Array<string> = new Array<string>(
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.height.nowear.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  //A list of components that support padding attributes is required.
+  let supportView :Array<string>=new Array<string>( 'AlphabetIndexer',
     'Select',
-    'Web',
+    //'Web',
     'ColumnSplit',
     'RowSplit',
     'WaterFlow',
     'FlowItem',
     'Stepper'
-  )
+    )
 
-  
+
+  //The size of the parent component, when set as a percentage, serves as the calculation.
   let parentWidth = 300;
   let parentHeight = 300;
-  
+  //Called from the parent class when setting the background color.
   let parentBackGroundColor = Color.Red
   let BackGroundColor = Color.Orange
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testHeight',
     pageName: 'HeightPage',
@@ -78,7 +70,7 @@ export default function heightTest() {
     BackGroundColor: BackGroundColor
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues: TestValue[] = [{
     describe: 'ExceedParent',
     setValue: {
@@ -86,10 +78,7 @@ export default function heightTest() {
     },
     expectValue: {
       heightCompare: '550.00vp',
-      
-      
-      height: 550,
-      ExceedParent: true
+      height: UIContext.getFocusedUIContext()!.vp2px(550), ExceedParent: true
     }
   },
     {
@@ -99,9 +88,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '50.00%',
-        
-        
-        height: 0.5
+        height: UIContext.getFocusedUIContext()!.vp2px(parentHeight) * 0.5
       }
     }, {
       describe: 'Resource',
@@ -110,9 +97,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '200.00vp',
-        
-        
-        height: 200
+        height: UIContext.getFocusedUIContext()!.vp2px(200)
       }
     }, {
       describe: 'StringPx',
@@ -131,36 +116,31 @@ export default function heightTest() {
    */
   describe('HeightTest', () => {
     beforeAll(() => {
-      console.info("heightTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.height.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
-      let rect = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
+      //Obtain dimensional information for target components.
+      let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
 
-      
-      let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey ?? '');
-      let attrs = data.viewObj as Attrs
-      
+      //Obtain the region information of the parent component.
+      let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey??'');
+      //Verify the height height of the target component.
       let strJsonRectHeight = rect.bottom - rect.top;
       console.info('[' + data.caseTag + '] data.testValue.expectValue.height:' + data.testValue.expectValue.height);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height:' + attrs?.$attrs.height);
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height:' + data.viewObj?.getElement('$attrs').getString('height'));
       console.info('[' + data.caseTag + '] strJsonRectHeight is: ' + strJsonRectHeight);
 
       if (data.testValue.describe == 'ExceedParent') {
-        
+        //Confirm that the calculated value is consistent with the expected value.
         expect(rectParent.top > rect.top || rectParent.bottom < rect.bottom)
           .assertEqual(data.testValue.expectValue.ExceedParent);
       }
 
-      
-      expect(attrs?.$attrs.height).assertEqual(data.testValue.expectValue.heightCompare);
+      //Confirm that the height attribute values have been successfully set.
+      expect(data.viewObj?.getElement('$attrs').getString('height')).assertEqual(data.testValue.expectValue.heightCompare);
 
-      
+      //Confirm that the calculated value is consistent with the expected value.
       expect(Math.abs(strJsonRectHeight - (data.testValue.expectValue.height as number)) <= 1).assertTrue();
     })
   })

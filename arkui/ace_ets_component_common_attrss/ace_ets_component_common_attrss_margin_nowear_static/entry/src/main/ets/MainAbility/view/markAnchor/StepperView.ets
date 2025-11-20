@@ -33,29 +33,29 @@ import {
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
+// @Styles
+// function itemStyle() {
+//   .width(336)
+//   .height(621)
+//   .margin({ top: 48, left: 12 } as Margin)
+//   .borderRadius(24)
+//   .backgroundColor('#FFFFFF')
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// @Extend(Text)
+// function itemTextStyle() {
+//   .fontColor('#182431')
+//   .fontSize(36)
+//   .fontWeight(500)
+//   .opacity(0.4)
+//   .margin({ top: 82, bottom: 40 } as Margin)
+// }
 
 
 @Component
 export struct StepperView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: number = 0
+  @State currentIndex: int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
@@ -64,18 +64,18 @@ export struct StepperView {
 
   build() {
     Stepper({
-      index: this.currentIndex
+      index: this.currentIndex as Int
     }) {
       StepperItem() {
         Column() {
           Text('Page One')
-            
+            //.itemTextStyle()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
+        }//.itemStyle()
       }
       .nextLabel('Next')
       .status(this.firstState)
@@ -83,13 +83,13 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Two')
-            
+            //.itemTextStyle()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
+        }//.itemStyle()
       }
       .nextLabel('Next')
       .prevLabel('Previous')
@@ -98,21 +98,21 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Three')
-            
+            //.itemTextStyle()
           Button('change status:' + this.thirdState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.thirdState = this.thirdState === ItemState.Waiting ? ItemState.Normal : ItemState.Waiting
             })
-        }
+        }//.itemStyle()
       }
       .status(this.thirdState)
 
       StepperItem() {
         Column() {
           Text('Page Four')
-            
-        }
+            //.itemTextStyle()
+        }//.itemStyle()
       }
     }
     .backgroundColor('#F1F3F5')
@@ -122,7 +122,7 @@ export struct StepperView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: Int, index: Int) => {
+    .onChange((prevIndex: int, index: int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

@@ -82,7 +82,9 @@ import {
   GridRowOptions,
   GutterOption,
   BreakpointsReference,
-  GridColColumnOption
+  GridColColumnOption,
+  applyStyles,
+  CommonMethod
 } from '@ohos.arkui.component'
 import { RouterParams } from '../../common/Utils';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
@@ -102,40 +104,40 @@ struct GroupDefaultFocusPage {
   @State callback: string = '';
   @State referenceOneCallback: string = '';
   @State referenceTwoCallback: string = '';
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
-  @State textComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.textComponentKey
-  @State referenceOneComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceOneComponentKey
-  @State referenceTwoComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceOneComponentKey
+  @State targetView: string = ""
+  @State componentKey: string = ""
+  @State textComponentKey: string = ""
+  @State referenceOneComponentKey: string = ""
+  @State referenceTwoComponentKey: string = ""
 
 
 
   onPageShow() {
     console.info('[GroupDefaultFocusPage] page show called ');
-
-    //Register data change call back.
-    attrsManager.registerDataChange((value: Boolean):void => {
-      this._groupDefaultFocus = Boolean(value);
-    })
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    this._groupDefaultFocus = routerParamOptions.view.testValue.setValue
+    this.targetView = routerParamOptions.view.targetView
+    this.componentKey = routerParamOptions.view.componentKey ?? ""
+    this.textComponentKey = routerParamOptions.view.textComponentKey
+    this.referenceOneComponentKey = routerParamOptions.view.referenceOneComponentKey
+    this.referenceTwoComponentKey = routerParamOptions.view.referenceTwoComponentKey
   }
+  
 
-  /**
-   * Set common style.
-   */
-  // @Styles
-  ////.commonStyle(){
-  //   .groupDefaultFocus(this._groupDefaultFocus)
-  //   .key(this.componentKey)
-  //   .onFocus(() => {
-  //     this.callback = 'onFocus'
-  //     console.info('[GroupDefaultFocusPage] targetComponent onFocus called');
-  //   })
-  //   .onBlur(() => {
-  //     this.callback = 'onBlur'
-  //     console.info('[GroupDefaultFocusPage] targetComponent onBlur called');
-  //   })
-  //   .focusable(true)
-  // }
+  commonStyle(instance: CommonMethod){
+    instance.groupDefaultFocus(this._groupDefaultFocus)
+    instance.key(this.componentKey)
+    instance.focusable(true)
+    instance.onFocus(() => {
+          this.callback = 'onFocus'
+          console.info('[GroupDefaultFocusPage] targetComponent onFocus called');
+    })
+    instance.onBlur(() => {
+          this.callback = 'onBlur'
+          console.info('[GroupDefaultFocusPage] targetComponent onBlur called');
+    })
+
+  }
 
   build() {
     Column() {
@@ -144,7 +146,7 @@ struct GroupDefaultFocusPage {
         .height('20%')
         .fontSize(30)
         .fontColor(Color.Blue)
-        //.key(this.textComponentKey)
+        .key(this.textComponentKey)
 
 
       Button(this.referenceOneCallback)
@@ -172,19 +174,19 @@ struct GroupDefaultFocusPage {
             this.referenceTwoCallback = 'onBlur'
             console.info('[GroupDefaultFocusPage] targetComponent onBlur called');
           })
-          // .key(this.referenceTwoComponentKey)
+          .key(this.referenceTwoComponentKey)
         if (this.targetView == 'Button') {
-          Button('Button').width(200).height(100)//.commonStyle()
+          Button('Button').width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextInput') {
-          TextInput().width(200).height(100)//.commonStyle()
+          TextInput().width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
-          TextArea().width(200).height(100)//.commonStyle()
+          TextArea().width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Search') {
-          Search().width(200).height(100)//.commonStyle()
+          Search().width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Text') {
-          Text('Text').width(200).height(100)//.commonStyle()
+          Text('Text').width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon')).width(200).height(100)//.commonStyle()
+          Image($r('app.media.icon')).width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'List') {
           List() {
             ListItem() {
@@ -194,7 +196,7 @@ struct GroupDefaultFocusPage {
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
             }
-          }.width(200).height(100).backgroundColor(Color.Blue)//.commonStyle()
+          }.width(200).height(100).backgroundColor(Color.Blue).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Grid') {
           Grid() {
             GridItem() {
@@ -206,54 +208,54 @@ struct GroupDefaultFocusPage {
                 .textAlign(TextAlign.Center)
             }
           }
-          .width(200).height(100)//.commonStyle()
+          .width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Checkbox') {
-          Checkbox({ name: 'checkbox1' }).width(200).height(100)//.commonStyle()
+          Checkbox({ name: 'checkbox1' }).width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup().width(200).height(100)//.commonStyle()
+          CheckboxGroup().width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'DatePicker') {
-          DatePicker({}).width(200).height(100)//.commonStyle()
+          DatePicker({}).width(200).height(100).applyStyles(this.commonStyle)
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .backgroundColor(Color.Blue).width(200).height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Menu') {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
           }.backgroundColor(Color.Yellow).width(200)
-          .height(300)//.commonStyle()
+          .height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'MenuItem') {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              .width(200).height(300)//.commonStyle()
+              .width(200).height(300).applyStyles(this.commonStyle)
           }.backgroundColor(Color.Yellow).width(200).height(300)
         } else if (this.targetView == 'MenuItemGroup') {
           Menu() {
             MenuItemGroup({ header: 'MenuItemGroup' }) {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-            }.width(200).height(300)//.commonStyle()
+            }.width(200).height(300).applyStyles(this.commonStyle)
           }.backgroundColor(Color.Yellow).width(200).height(300)
         } else if (this.targetView == 'Radio') {
           Radio({ value: 'Radio1', group: 'radioGroup' })
             .width(200)
             .height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Rating') {
           Rating({ rating: 3.5 })
             .width(200)
             .height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
             { value: 'bbb', icon: '/common/public_icon.svg' }])
             .width(200)
             .height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Slider') {
           Slider()
             .width(200)
             .height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -261,7 +263,7 @@ struct GroupDefaultFocusPage {
                 Text('Page One').focusable(true)
               }
             }
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -269,7 +271,7 @@ struct GroupDefaultFocusPage {
                 Text('Page One').focusable(true)
               }
             }
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Red)
             .width('100%')
             .height('100%')
@@ -278,26 +280,26 @@ struct GroupDefaultFocusPage {
           TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
             .width(200)
             .height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'TimePicker') {
-          TimePicker().width(200).height(300)//.commonStyle()
+          TimePicker().width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Toggle') {
           Toggle({ type: ToggleType.Switch }).width(200).height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Web') {
-          //Web({ src: '', controller: new WebController() })//.commonStyle()
+          //Web({ src: '', controller: new WebController() }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['A', 'B', 'C', 'D'], selected: 0 })
             .width(200)
             .height(300)
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Column') {
           Column() {
             Button('Button')
           }
           .width(200)
           .height(300)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1')
@@ -312,21 +314,21 @@ struct GroupDefaultFocusPage {
               .backgroundColor(0xD2B48C)
               .textAlign(TextAlign.Center)
               .focusable(true)
-          }.width(200).height(300)//.commonStyle()
+          }.width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Counter') {
           Counter() {
             Button('Button')
           }
           .width(200)
           .height(300)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Flex') {
           Flex() {
             Button('Button')
           }
           .width(200)
           .height(300)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,
@@ -337,7 +339,7 @@ struct GroupDefaultFocusPage {
                 Button('Button')
               }.width('100%').height('20vp')
             }
-            //.commonStyle()
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')
@@ -357,7 +359,7 @@ struct GroupDefaultFocusPage {
                   }.width('100%').height('20vp')
                 }.borderColor(color).borderWidth(2)
               })
-          }//.commonStyle()
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'GridItem') {
           Grid() {
             GridItem() {
@@ -367,7 +369,7 @@ struct GroupDefaultFocusPage {
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
-            }.width(200).height(300)//.commonStyle()
+            }.width(200).height(300).applyStyles(this.commonStyle)
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
@@ -382,7 +384,7 @@ struct GroupDefaultFocusPage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }//.commonStyle()
+            }.applyStyles(this.commonStyle)
           }.width(200).height(300).listDirection(Axis.Vertical)
         } else if (this.targetView == 'ListItemGroup') {
           List({ space: 0, initialIndex: 0 }) {
@@ -394,7 +396,7 @@ struct GroupDefaultFocusPage {
                   .textAlign(TextAlign.Center)
                   .backgroundColor(Color.White)
               }
-            }.backgroundColor(Color.Yellow)//.commonStyle()
+            }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           }
           .backgroundColor(Color.Pink)
           .width(300)
@@ -404,7 +406,7 @@ struct GroupDefaultFocusPage {
           Row() {
             Button('Button')
           }
-          .backgroundColor(Color.Blue).width(200).height(300)//.commonStyle()
+          .backgroundColor(Color.Blue).width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('1')
@@ -419,7 +421,7 @@ struct GroupDefaultFocusPage {
               .backgroundColor(0xD2B48C)
               .textAlign(TextAlign.Center)
               .focusable(true)
-          }.width(200).height(300)//.commonStyle()
+          }.width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Scroll') {
           Scroll(this.scroller) {
             Flex({ direction: FlexDirection.Column }) {
@@ -437,7 +439,7 @@ struct GroupDefaultFocusPage {
                 }
               }, (item: number) => String(item))
             }.margin({ right: 15 } as Margin)
-          }.width(200).height(300)//.commonStyle()
+          }.width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -454,12 +456,12 @@ struct GroupDefaultFocusPage {
             Column() {
               Text('SideBarContainer content').fontSize(25)
             }.backgroundColor(Color.Orange)
-          }.width(200).height(300)//.commonStyle()
+          }.width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Stack') {
           Stack() {
             Button('Button')
           }
-          .backgroundColor(Color.Blue).width(200).height(300)//.commonStyle()
+          .backgroundColor(Color.Blue).width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             ForEach([1, 2, 3], (item: Int, index:int) => {
@@ -470,18 +472,18 @@ struct GroupDefaultFocusPage {
           .backgroundColor(Color.White)
           .width(200)
           .height(300)
-          //.commonStyle()
+          .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
             }.tabBar('Tabs1')
-          }.backgroundColor(Color.Blue).width(200).height(300)//.commonStyle()
+          }.backgroundColor(Color.Blue).width(200).height(300).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
-            }.tabBar('Tabs1')//.commonStyle()
+            }.tabBar('Tabs1').applyStyles(this.commonStyle)
           }.width(200).height(300)
         }
       }.width('100%').height('40%').tabIndex(1)

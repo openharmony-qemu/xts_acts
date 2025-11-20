@@ -25,11 +25,11 @@ export default class CommonFunc {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static sleep(time: number) {
+  static sleep(time: int) {
     return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
         resolve("ok")
-      }, time.toInt())
+      }, time)
     }).then(() => {
       console.info(`sleep ${time} over...`)
     })

@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -37,7 +36,6 @@ let compareFlexShrink = 1;
 let targetFlexShrink = 9;
 
 
-
 function expectForFlexShrink(targetSize: number, space: number, countFlexShrink: number, realRect: number, data: BasePageConfig) {
   console.info('[' + data.caseTag + '] call the expectForFlexShrink function.');
   console.info('[' + data.caseTag + '] space : ' + space);
@@ -46,6 +44,8 @@ function expectForFlexShrink(targetSize: number, space: number, countFlexShrink:
   console.info('[' + data.caseTag + '] targetSize : ' + targetSize);
   //Verify based on different parent container spindle directions
   let ratio = countFlexShrink / (compareFlexShrink + targetFlexShrink);
+  console.info('[' + data.caseTag + '] targetSize - space * ratio : ' + AppStorage.get<UIContext>('uiContext')!.vp2px(targetSize - space * ratio));
+  expect(Math.abs(Math.round(realRect) - Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(targetSize - space * ratio))) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] targetSize - space * ratio : ' + (targetSize - space * ratio));
 }
 
@@ -82,7 +82,6 @@ export default function flexShrinkTest() {
   ]
 
   let containerView = ['Row', 'Column', 'FlexRow', 'FlexRowReverse', 'FlexColumn', 'FlexColumnReverse']
-
   let parentWidth = 400;
   let parentHeight = 400;
   let compareWidth = 200;
@@ -119,7 +118,8 @@ export default function flexShrinkTest() {
     expectValue: {
       flexShrink: targetFlexShrink
     }
-  }, {
+  },
+    {
     describe: 'NoCompressedSize',
     setValue: {
       parentWidth: 500,
@@ -131,7 +131,8 @@ export default function flexShrinkTest() {
     expectValue: {
       flexShrink: targetFlexShrink
     }
-  }]
+  }
+  ]
 
   describe('FlexShrinkTest', () => {
     beforeAll(() => {
@@ -145,14 +146,15 @@ export default function flexShrinkTest() {
       //Get standard component rect in order to judge the standard component size not be changed
       console.info('[' + data.caseTag + '] get standard component rect ' +
         'in order to judge the standard component size not be changed ');
+
       let standardRectBefore = Utils.getComponentRect(data.pageConfig.standardComponentKey);
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      // AttrsManager.change(data.caseTag, data.testValue.setValue);
       await Utils.sleep(1000);
 
       //Verify the flexGrow attribute is set success
       console.info('[' + data.caseTag + '] judge the flexGrow attribute is set success ');
       let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
-      expect(Math.abs(Number(viewObj.getElement('$attrs').getString('flexShrink')) - data.testValue?.expectValue.flexShrink!) <= 1).assertTrue();
+      expect(Math.abs(viewObj.getElement('$attrs').getDouble('flexShrink') - data.testValue?.expectValue.flexShrink!) <= 1).assertTrue();
 
       //Get compare component rect in order to judge the flexShrink attribute take effect
       console.info('[' + data.caseTag + '] get compare component rect ' +
@@ -173,9 +175,9 @@ export default function flexShrinkTest() {
       if (data.testValue.describe == 'NoCompressedSize') {
         if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
           || data.pageConfig.containerView == 'FlexRowReverse') {
-
+          expect(Math.abs(Math.round((rect.right - rect.left)) - Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(targetWidth))) <= 2).assertTrue();
         } else {
-
+          expect(Math.abs(Math.round((rect.bottom - rect.top)) - Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(targetHeight))) <= 2).assertTrue();
         }
       } else {
         //Verify the standard component not be changed

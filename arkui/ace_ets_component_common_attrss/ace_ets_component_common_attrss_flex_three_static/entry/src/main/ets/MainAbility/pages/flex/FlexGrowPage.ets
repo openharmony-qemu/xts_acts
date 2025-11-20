@@ -106,128 +106,144 @@ import {
   MenuItemOptions,
   VerticalAlign,
   AlignRuleOption,
+  // Point,
   GridColColumnOption,
   GridColOptions,
   ColumnOptions,
   RectOptions,
+  CommonMethod,
+  applyStyles,
+  Navigation,
+  Badge,
+  BadgeParamWithString,
+  LineJoinStyle,
+  NavPathStack
 } from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,
+  Prop,
+  StorageProp
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
+import { RouterParams } from '../../common/Utils';
 
-class View {
-  targetView: string = '';
-  componentKey: string = '';
-  containerView: string = '';
-  compareWidth: number = 0;
-  compareHeight: number = 0;
-  standardWidth: number = 0;
-  standardHeight: number = 0;
-  compareComponentKey: string = '';
-  standardComponentKey: string = '';
-  targetWidth: number = 0;
-  targetHeight: number = 0;
-}
-
-class RouterParams {
-  view: View = new View()
-}
 @Entry
 @Component
 struct FlexGrowPage {
-  @State _flexGrow: number = 2
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
-  @State containerView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.containerView
-  @State _parentWidth: number = 500
-  @State _parentHeight: number = 500
-  @State compareWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareWidth
-  @State compareHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareHeight
-  @State standardWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.standardWidth
-  @State standardHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.standardHeight
-  @State compareComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareComponentKey
-  @State standardComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.standardComponentKey
-  @State targetWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetWidth
-  @State targetHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetHeight
-  @State _compareFlexGrow: number = 1
+  @StorageProp("_flexGrow") _flexGrow: number = 2
+  @State targetView: string = ""
+  @State componentKey: string = ""
+  @State containerView: string = ""
+  @StorageProp("_parentWidth") _parentWidth: number = 500
+  @StorageProp("_parentHeight") _parentHeight: number = 500
+  @State compareWidth: number = 0
+  @State compareHeight: number = 0
+  @State standardWidth: number = 0
+  @State standardHeight: number = 0
+  @State compareComponentKey: string = ""
+  @State standardComponentKey: string = ""
+  @State targetWidth: number = 0
+  @State targetHeight: number = 0
+  @StorageProp("_compareFlexGrow") _compareFlexGrow: number = 1
+  @Builder
+  myBuilder() {
+    Column() {
+      Text("bindSheet")
+        .fontSize(20)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(Color.Pink)
+  }
 
   onPageShow() {
     console.info('[FlexGrow] page show called')
-    attrsManager.registerDataChange((value: GrowValue) => {
-      if (value.flexGrow) {
-        this._flexGrow = value.flexGrow!
-      }
-      if (value.parentWidth) {
-        this._parentWidth = value.parentWidth
-      }
-      if (value.parentHeight) {
-        this._parentHeight = value.parentHeight
-      }
-      if (value.compareFlexGrow) {
-        this._compareFlexGrow = value.compareFlexGrow!
-      }
-    })
+    AppStorage.setOrCreate<number>('_flexGrow',  2)
+    AppStorage.setOrCreate<number>('_parentWidth',  500)
+    AppStorage.setOrCreate<number>('_parentHeight',  500)
+    AppStorage.setOrCreate<number>('_compareFlexGrow',  1)
+
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    this.targetView = routerParamOptions.view.targetView
+    this.componentKey = routerParamOptions.view.componentKey ?? ""
+    this.containerView = routerParamOptions.view.containerView ?? ""
+    this.compareWidth = routerParamOptions.view.compareWidth
+    this.compareHeight = routerParamOptions.view.compareHeight
+    this.standardWidth = routerParamOptions.view.standardWidth
+    this.standardHeight = routerParamOptions.view.standardHeight
+    this.compareComponentKey = routerParamOptions.view.compareComponentKey
+    this.standardComponentKey = routerParamOptions.view.standardComponentKey
+    this.targetWidth = routerParamOptions.view.targetHeight
+    this.targetHeight = routerParamOptions.view.targetHeight
+  }
+  
+
+  commonStyle(instance: CommonMethod){
+    instance.margin(0)
+    instance.flexGrow(this._flexGrow)
+    instance.width(this.targetWidth)
+    instance.height(this.targetHeight)
+    instance.backgroundColor(Color.White)
+    instance.key(this.componentKey)
   }
 
 
   @Builder
   buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
+      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Button') {
-      Button('button1')
+      Button('button1').applyStyles(this.commonStyle)
     } else if (this.targetView == 'Checkbox') {
-      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
+      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'CheckboxGroup') {
-      CheckboxGroup({ group: 'checkboxGroup' })
+      CheckboxGroup({ group: 'checkboxGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'DataPanel') {
-      DataPanel({ values: [25], max: 100, type: DataPanelType.Circle })
+      DataPanel({ values: [25], max: 100, type: DataPanelType.Circle }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'DatePicker') {
       DatePicker({
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: new Date()
-      })
+      }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Divider') {
-      Divider().strokeWidth(8).vertical(true)
+      Divider().strokeWidth(8).vertical(true).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Gauge') {
-      Gauge({ value: 75 }).colors([[Color.White, 1], [Color.Black, 1]])
+      Gauge({ value: 75 }).colors([[Color.White, 1], [Color.Black, 1]]).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Image') {
-      Image($r('app.media.icon'))
+      Image($r('app.media.icon')).applyStyles(this.commonStyle)
     } else if (this.targetView == 'ImageAnimator') {
-      ImageAnimator().images([{ src: $r('app.media.icon') }])
+      ImageAnimator().images([{ src: $r('app.media.icon') }]).applyStyles(this.commonStyle)
     } else if (this.targetView == 'LoadingProgress') {
-      LoadingProgress().color(Color.Blue)
+      LoadingProgress().color(Color.Blue).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Marquee') {
       Marquee({ start: true, step: 50, src: 'Running Marquee starts rolling' })
-        .fontWeight(700).fontColor(Color.White).fontSize(48)
+        .fontWeight(700).fontColor(Color.White).fontSize(48).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Menu') {
       Menu() {
         MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigation') {
-  
+      Navigation().applyStyles(this.commonStyle)
     } else if (this.targetView == 'NavRouter') {
-
+      Navigation(new NavPathStack()).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Progress') {
-      Progress({ value: 50, type: ProgressType.Linear })
+      Progress({ value: 50, type: ProgressType.Linear }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'QRCode') {
-      QRCode('QRCode').color(0xF7CE00)
+      QRCode('QRCode').color(0xF7CE00).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Radio') {
-      Radio({ value: 'Radio1', group: 'radioGroup' })
+      Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Rating') {
-      Rating({ rating: 4 }).stars(5)
+      Rating({ rating: 4 }).stars(5).applyStyles(this.commonStyle)
     } else if (this.targetView == 'ScrollBar') {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
-      }.width(20)
+      }.width(20).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Stepper') {
       Stepper() {
         StepperItem() {
@@ -235,46 +251,51 @@ struct FlexGrowPage {
             Text('Page One')
           }
         }
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')
-        
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Select') {
       Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
-        { value: 'bbb', icon: '/common/public_icon.svg' }])
+        { value: 'bbb', icon: '/common/public_icon.svg' }]).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Slider') {
       Slider({ value: 50, style: SliderStyle.OutSet, direction: Axis.Vertical })
         .blockColor('#191970')
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
-        
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Text') {
-      Text('text').fontColor(Color.White).fontSize(30)
+      Text('text').fontColor(Color.White).fontSize(30).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextArea') {
-      TextArea({ placeholder: 'TextArea', })
+      TextArea({ placeholder: 'TextArea', }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextClock') {
-      TextClock({ timeZoneOffset: -8 }).format('hms')
+      TextClock({ timeZoneOffset: -8 }).format('hms').applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextInput') {
-      TextInput({ placeholder: 'TextInput' })
+      TextInput({ placeholder: 'TextInput' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextPicker') {
-      TextPicker({ range: ['apple1', 'orange2', 'peach3'], selected: 1 })
+      TextPicker({ range: ['apple1', 'orange2', 'peach3'], selected: 1 }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextTimer') {
-      TextTimer({ count: 30000 })
+      TextTimer({ count: 30000 }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'TimePicker') {
-      TimePicker()
+      TimePicker().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Toggle') {
-      Toggle({ type: ToggleType.Switch })
+      Toggle({ type: ToggleType.Switch }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Badge') {
-
+      Badge({
+        value: '',
+        style: { badgeSize: 6, badgeColor: Color.Red }
+      } as BadgeParamWithString) {
+        Button('BadgeContent')
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Column') {
-      Column()
+      Column().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Counter') {
       Counter() {
         Text('1')
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Flex') {
-      Flex()
+      Flex().applyStyles(this.commonStyle)
     } else if (this.targetView == 'GridRow') {
       GridRow({
         columns: 5,
@@ -284,7 +305,7 @@ struct FlexGrowPage {
         GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } as GridColOptions) {
           Row().width('100%').height('20vp')
         }
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Grid') {
       Grid() {
         GridItem() {
@@ -294,7 +315,7 @@ struct FlexGrowPage {
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-      
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'List') {
       List({ space: 20, initialIndex: 0 }) {
         ListItem() {
@@ -304,9 +325,13 @@ struct FlexGrowPage {
         }
       }
       .listDirection(Axis.Vertical)
-      
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigator') {
-
+      // Navigator({ target: 'MainAbility/pages/index/Index' }) {
+      //   Text('Navigator Go to index page')
+      //     .width('100%').textAlign(TextAlign.Center)
+      // }.applyStyles(this.commonStyle)
+      Navigation({}).applyStyles(this.commonStyle)
     } else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
         Row()
@@ -315,17 +340,22 @@ struct FlexGrowPage {
           .alignRules({
             top: { anchor: '__container__', align: VerticalAlign.Top },
             left: { anchor: '__container__', align: HorizontalAlign.Start }
-          } as AlignRuleOption)
-      }
+          })
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Row') {
-      Row()
+      Row().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Panel') {
-
+      Column(){
+        Text('Panel')
+      }
+      .backgroundColor(Color.Yellow)
+      .applyStyles(this.commonStyle)
+      .bindSheet(true,this.myBuilder)
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {
         Text('Refresh').fontSize(30)
       }
-      
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Scroll') {
       Scroll() {
         Column() {
@@ -336,7 +366,7 @@ struct FlexGrowPage {
         }.width('100%')
       }
       .scrollBar(BarState.On)
-      
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'SideBarContainer') {
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
@@ -350,21 +380,21 @@ struct FlexGrowPage {
         Column() {
           Text('SideBarContainer content').fontSize(25)
         }
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Stack') {
       Stack() {
         Text('Stack').fontColor(Color.White)
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Swiper') {
       Swiper() {
         Text('Swiper').width('90%').height(160)
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Tabs') {
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'WaterFlow') {
       WaterFlow() {
         FlowItem() {
@@ -373,58 +403,67 @@ struct FlexGrowPage {
             Image($r('app.media.icon')).width(50).height(50).objectFit(ImageFit.Fill)
           }
         }
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Circle') {
-      Circle({ width: 150, height: 150 })
+      Circle({ width: 150, height: 150 }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Ellipse') {
-      Ellipse({ width: 150, height: 80 })
+      Ellipse({ width: 150, height: 80 }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Line') {
       Line()
         .startPoint([0, 0])
         .endPoint([50, 100])
         .stroke(Color.Black)
-        
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Polyline') {
       Polyline({ width: 100, height: 100 })
         .points([[0, 0], [20, 60], [100, 100]])
         .fillOpacity(0)
         .stroke(Color.Blue)
         .strokeWidth(3)
-        
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Polygon') {
       Polygon()
         .points([[50, 0], [0, 50], [20, 100], [80, 100], [100, 50]])
         .fill(Color.Red)
         .fillOpacity(0.6)
-        
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Path') {
       Path()
         .commands('M0 100 A30 20 20 0 0 200 100 Z')
         .fillOpacity(0)
         .stroke(Color.Black)
         .strokeWidth(3)
-        
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Rect') {
       Rect({ width: '90%', height: 80 } as RectOptions)
         .radius(20)
         .fill(Color.Pink)
         .stroke(Color.Transparent)
-        
+        .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Shape') {
-
+      Shape() {
+        Path().width(20).height(20).commands('M0 0 L400 0 L400 150 Z')
+      }
+      .viewPort({ x: -20, y: -5, width: 310, height: 90 })
+      .fill(0x317AF7)
+      .stroke(0xEE8443)
+      .strokeWidth(10)
+      .strokeLineJoin(LineJoinStyle.Miter)
+      .strokeMiterLimit(5)
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'ColumnSplit') {
       ColumnSplit() {
         Text('1').width('100%').height(20).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
-      
+      .applyStyles(this.commonStyle)
       .borderWidth(1)
     } else if (this.targetView == 'RowSplit') {
       RowSplit() {
         Text('1').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
         Text('2').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
-      }
+      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Blank') {
-      Blank()
+      Blank().applyStyles(this.commonStyle)
     }
   }
 
@@ -443,7 +482,7 @@ struct FlexGrowPage {
 
           GridCol({ span: 1 }) {
             Row().width('100%').height('20vp')
-          }
+          }.applyStyles(this.commonStyle)
         }
         .width(this._parentWidth)
         .height(this._parentHeight)

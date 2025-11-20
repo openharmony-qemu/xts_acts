@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -27,12 +26,13 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 let flexGrow = 3;
 let compareFlexGrow = 1;
-
 
 
 function expectForFlexGrow(space: number, countFlexGrow: number, realRect: number, targetSize: number, data: BasePageConfig) {
@@ -44,6 +44,7 @@ function expectForFlexGrow(space: number, countFlexGrow: number, realRect: numbe
   //Verify based on different parent container spindle directions
   let ratio = countFlexGrow / (flexGrow + compareFlexGrow);
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
+  expect(Math.abs(Math.round(realRect) - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px((space * ratio) + targetSize))) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
 }
 
@@ -137,7 +138,26 @@ export default function flexGrowTest() {
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get standard component rect in order to judge the standard component size not be changed
       let standardRectBefore = Utils.getComponentRect(data.pageConfig.standardComponentKey);
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      // AttrsManager.change(data.caseTag, data.testValue.setValue);
+      if( data.testValue.setValue.flexShrink){
+        AppStorage.setOrCreate<number>('_flexShrink',  data.testValue.setValue.flexShrink!)
+      }
+      AppStorage.setOrCreate<number>('_parentWidth',  data.testValue.setValue.parentWidth!)
+      AppStorage.setOrCreate<number>('_parentHeight', data.testValue.setValue.parentHeight!)
+      if(data.testValue.setValue.compareFlexShrink){
+        AppStorage.setOrCreate<number>('_compareFlexShrink', data.testValue.setValue.compareFlexShrink!)
+      }
+      if(data.testValue.setValue.standardFlexShrink){
+        AppStorage.setOrCreate<number>('_standardFlexShrink',  data.testValue.setValue.standardFlexShrink!)
+      }
+      if(data.testValue.setValue.flexGrow){
+        AppStorage.setOrCreate<number>('_flexGrow',  data.testValue.setValue.flexGrow!)
+      }
+      AppStorage.setOrCreate<number>('_parentWidth',  data.testValue.setValue.parentWidth!)
+      AppStorage.setOrCreate<number>('_parentHeight',  data.testValue.setValue.parentHeight!)
+      if(data.testValue.setValue.flexGrow){
+        AppStorage.setOrCreate<number>('_compareFlexGrow', data.testValue.setValue.compareFlexGrow!)
+      }
       await Utils.sleep(1000);
 
       //Get standard component rect in order to judge the standard component size not be changed
@@ -151,17 +171,19 @@ export default function flexGrowTest() {
 
       //Verify the flexGrow attribute is set success
       let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
-      expect(Math.abs(Number(viewObj.getElement('$attrs').getString('flexGrow')) - data.testValue.expectValue.flexGrow) <= 1).assertTrue();
+      expect(Math.abs(viewObj.getElement('$attrs').getDouble('flexGrow') - data.testValue.expectValue.flexGrow) <= 1).assertTrue();
 
       //Abnormal case
       if (data.testValue.describe == 'SpaceNotEnough') {
         if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
           || data.pageConfig.containerView == 'FlexRowReverse') {
           console.info('[SpaceNotEnough1] rect.right - rect.left : ' + Math.round(rect.right - rect.left));
-         
+          console.info('[SpaceNotEnough1] vp2px(targetWidth) : ' + Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(targetWidth)));
+          expect(Math.abs(Math.round(rect.right - rect.left) - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(targetWidth))) <= 3).assertTrue();
         } else {
           console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + Math.round(rect.bottom - rect.top));
-         
+          console.info('[SpaceNotEnough2] vp2px(targetHeight) : ' + Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(targetHeight)));
+          expect(Math.abs(Math.round(rect.bottom - rect.top) - Math.round(AppStorage.get<UIContext>("uiContext")!.vp2px(targetHeight))) <= 3).assertTrue();
         }
       } else {
         //Verify the standard component not be changed
