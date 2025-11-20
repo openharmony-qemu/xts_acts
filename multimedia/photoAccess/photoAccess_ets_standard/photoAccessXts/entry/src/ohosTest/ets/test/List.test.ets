@@ -81,7 +81,6 @@ import releaseTest from './photoAccessHelper/photoAccessHelper/release.test';
 import MediaAssetChangeRequestConstructorTest from './photoAccessHelper/MediaAssetChangeRequest/constructor.test';
 import provisionResourcesTest from './provisionResources.test';
 
-
 export default function testsuite() {
   provisionResourcesTest();
   // MediaAlbumChangeRequestSetAlbumNameTest();
@@ -157,5 +156,4 @@ export default function testsuite() {
   MovingPhotoGetUriTest();
   MovingPhotoRequestContentTest();
   MediaAssetChangeRequestDeleteAssetsTest();
-
 }
