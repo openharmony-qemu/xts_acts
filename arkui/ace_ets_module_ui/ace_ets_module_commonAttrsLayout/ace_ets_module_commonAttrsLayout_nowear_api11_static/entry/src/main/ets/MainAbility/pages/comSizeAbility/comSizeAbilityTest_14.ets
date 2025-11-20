@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,30 +14,25 @@
  */
 import matrix4 from '@ohos.matrix4'
 import {
+  Entry,
+  Component,
   $r,
-  Alignment,
-  Button,
   Column,
   ColumnOptions,
-  Component,
+  Text,
   DragEvent,
-  Entry,
-  FlexAlign,
-  ForEach,
   Image,
-  Margin,
-  Resource,
-  Scroll,
-  SideBarContainer,
-  SideBarContainerType,
-  Slider,
-  Stack,
-  Text
+  Button,Resource,FlexAlign,Slider,Stack,Scroll,
+  SideBarContainer,Alignment,SideBarContainerType,ForEach,Margin
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0])
 
 @Entry
@@ -47,7 +42,6 @@ struct comSizeAbilityTest_14 {
   selectedIcon: Resource = $r("app.media.icon")
   @State arr: string[] = ['1', '2', '3']
   @State current: number = 1
-
   build() {
     Scroll() {
       Column({ space: 20 } as ColumnOptions) {
@@ -73,10 +67,10 @@ struct comSizeAbilityTest_14 {
             .margin({ top: 50, left: 20, right: 30 } as Margin)
           }
           .key("SideBarContainer_Size")
-          .sideBarWidth(100.0)
+          .sideBarWidth(100)
           .minSideBarWidth(50)
           .maxSideBarWidth(300)
-          .backgroundColor(0XBDDB69)
+          .backgroundColor('0XBDDB69')
           .size({ width: 260, height: 130 })
           .translate({ x: 1, y: 1, z: 1 })
           .scale({
@@ -99,7 +93,7 @@ struct comSizeAbilityTest_14 {
 
         Column() {
           Slider()
-            .backgroundColor(0XBDDB69)
+            .backgroundColor('0XBDDB69')
             .key("Slider_Size")
             .size({ width: 160, height: 120 })
             .translate({ x: 1, y: 1, z: 1 })
@@ -126,13 +120,13 @@ struct comSizeAbilityTest_14 {
             Text('容器1,底部展示')
               .width('90%')
               .height('100%')
-              .backgroundColor(0xd2cab3)
+              .backgroundColor('0xd2cab3')
               .align(Alignment.Top)
               .fontSize(12)
             Text('容器2,底部展示')
               .width('70%')
               .height('60%')
-              .backgroundColor(0xc1cb)
+              .backgroundColor('0xc1cb')
               .align(Alignment.Top)
               .fontSize(12)
           }

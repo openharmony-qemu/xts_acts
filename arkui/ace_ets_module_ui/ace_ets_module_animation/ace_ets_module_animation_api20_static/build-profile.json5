@@ -12,16 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+
+    ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "20",
-        "compileSdkVersion": "22",
         "arkTSVersion": "1.2",
+        "compatibleSdkVersion": "22",
+        "compileSdkVersion": "22",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
           "strictMode": {
@@ -33,7 +36,7 @@
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"

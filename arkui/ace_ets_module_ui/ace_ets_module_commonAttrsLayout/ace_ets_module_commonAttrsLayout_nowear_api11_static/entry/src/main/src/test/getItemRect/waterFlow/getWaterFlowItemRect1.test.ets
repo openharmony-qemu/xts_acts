@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,21 +16,30 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, MouseButton, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-
 import { BusinessError } from '@ohos.base';
 
-import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../../Util.test';
+import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 
+// import ohosrouter from '@ohos.router';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+
+interface ParamsData {
+  data3: number[];
+}
+
+interface MyParams {
+  data1: string;
+  data2: ParamsData;
+}
 
 export default function getWaterFlowItemRect1() {
   describe('getWaterFlowItemRect1', () => {
@@ -53,8 +62,6 @@ export default function getWaterFlowItemRect1() {
         if (!("getWaterFlowItemRect1" == pages.name)) {
           console.info("get getWaterFlowItemRect1 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push getWaterFlowItemRect1 page error: " + err);
@@ -63,25 +70,22 @@ export default function getWaterFlowItemRect1() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back({
-        url: 'MainAbility/pages/index/index'
-      })
       console.info("BadgeFocus after each called");
     });
 
-
+    
     /*
-     * @tc.number    getWaterFlowItemRect1_static_0100
-     * @tc.name      getWaterFlowItemRect1_static_0100
-     * @tc.desc      getWaterFlowItemRect1_static_0100
-     * @tc.level     2
+     * @tc.number   getWaterFlowItemRect1_static_0100
+     * @tc.name     getWaterFlowItemRect1_static_0100
+     * @tc.desc     getWaterFlowItemRect1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('getWaterFlowItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getWaterFlowItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('[getWaterFlowItemRect1_static_0100] START');
-
-
+      console.info('[getWaterFlowItemRect1_static_0100] START1');
+      const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
+      message.notify({ name: 'index', value: 0 })
+      console.info('[getWaterFlowItemRect1_static_0100] after');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -91,12 +95,6 @@ export default function getWaterFlowItemRect1() {
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect1_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect1_text1')
@@ -126,18 +124,18 @@ export default function getWaterFlowItemRect1() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    getWaterFlowItemRect1_static_0200
-     * @tc.name      getWaterFlowItemRect1_static_0200
-     * @tc.desc      getWaterFlowItemRect1_static_0200
-     * @tc.level     2
+     * @tc.number   getWaterFlowItemRect1_static_0200
+     * @tc.name     getWaterFlowItemRect1_static_0200
+     * @tc.desc     getWaterFlowItemRect1_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('getWaterFlowItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getWaterFlowItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getWaterFlowItemRect1_static_0200] START');
-
-
+      const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
+      message.notify({ name: 'index', value: -1 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -147,12 +145,6 @@ export default function getWaterFlowItemRect1() {
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect1_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect1_text1')
@@ -182,27 +174,47 @@ export default function getWaterFlowItemRect1() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    getWaterFlowItemRect1_static_0300
-     * @tc.name      getWaterFlowItemRect1_static_0300
-     * @tc.desc      getWaterFlowItemRect1_static_0300
-     * @tc.level     2
+     * @tc.number   getWaterFlowItemRect1_static_0300
+     * @tc.name     getWaterFlowItemRect1_static_0300
+     * @tc.desc     getWaterFlowItemRect1_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('getWaterFlowItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getWaterFlowItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getWaterFlowItemRect1_static_0300] START');
-
+      const ohosrouter = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
       try {
-
-
+        ohosrouter.back({
+          url: 'MainAbility/pages/index/index'
+        });
+        await CommonFunc.sleep(500);
+        ohosrouter.clear();
+        await CommonFunc.sleep(500);
+        let pages = ohosrouter.getState();
+        console.info("getWaterFlowItemRect1 " + JSON.stringify(pages));
+        ohosrouter.pushUrl({
+          url: 'MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect1',
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as MyParams
+        }).then(() => {
+          // success
+        })
+          .catch((err: Error) => {
+            console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
+          })
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("push getScrollItemRect5 page error: " + err);
       }
-
-
+      const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
+      message.notify({ name: 'index', value: 0 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -218,12 +230,6 @@ export default function getWaterFlowItemRect1() {
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text4');
-
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect1_text1')
       let x = Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
@@ -253,17 +259,18 @@ export default function getWaterFlowItemRect1() {
     });
 
 
+    
     /*
-     * @tc.number    getWaterFlowItemRect1_static_0400
-     * @tc.name      getWaterFlowItemRect1_static_0400
-     * @tc.desc      getWaterFlowItemRect1_static_0400
-     * @tc.level     2
+     * @tc.number   getWaterFlowItemRect1_static_0400
+     * @tc.name     getWaterFlowItemRect1_static_0400
+     * @tc.desc     getWaterFlowItemRect1_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('getWaterFlowItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getWaterFlowItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getWaterFlowItemRect1_static_0400] START');
-
-
+      const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
+      message.notify({ name: 'index', value: 100 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -273,12 +280,6 @@ export default function getWaterFlowItemRect1() {
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect1_button'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-
-      console.log('get text value')
-      let text1 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text1');
-      let text2 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text2');
-      let text3 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text3');
-      let text4 = CommonFunc.getComponentRect('getWaterFlowItemRect1_text4');
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect1_text1')

@@ -4,50 +4,51 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import {
-  $$,
-  $r,
-  Alignment,
-  BindOptions,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  Row,
-  Scroll,
-  SheetOptions,
-  SheetType,
-  Stack,
-  Text,
+  FlexOptions,
+  ColumnOptions,
   TextAlign,
+  Scroll,
+  Image,
+  $r,
+  $$,
+  SheetType,
+  BindOptions,
+  SheetOptions,
+  Alignment,
+  Color,
+  Row,
+  Stack,
   TouchEvent
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
+import { State } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 import Log from '../../common/Log';
 
@@ -66,13 +67,13 @@ interface AttrContent {
 struct HitTestMode {
   build() {
     Column() {
-
+      // outer stack 1
       Stack() {
         Button('outer button')
           .onTouch((event: TouchEvent) => {
             console.info('HitTestMode outer button touched type: ' + event.type)
           })
-
+        // inner stack
         Stack() {
           Button('inner button')
             .key("innnerButton")
@@ -83,13 +84,13 @@ struct HitTestMode {
         .key("Block")
         .width("100%")
         .height("100%")
-
+        //        .hitTestBehavior(HitTestMode.Block)
         .onTouch((event: TouchEvent) => {
           console.info('HitTestMode inner stack touched type: ' + event.type)
         })
 
         Text('Transparent')
-          .key("Transparent")
+          .key("Transparent")//          .hitTestBehavior(HitTestMode.Transparent)
           .width("100%")
           .height("50%")
           .onTouch((event: TouchEvent) => {

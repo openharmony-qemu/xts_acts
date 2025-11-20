@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,10 +67,11 @@ export default function OverlayManagerTest_003() {
         console.info("get OverlayManagerTest_003 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get OverlayManagerTest_003 pages.name:" + JSON.stringify(pages.name));
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push OverlayManagerTest_003 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push OverlayManagerTest_003 page error:" + err);
@@ -84,25 +85,26 @@ export default function OverlayManagerTest_003() {
     });
 
 
+    
     /*
-     * @tc.number    showComponentContent_static_003
-     * @tc.name      showComponentContent_static_003
-     * @tc.desc      showComponentContent_static_003
-     * @tc.level     2
+     * @tc.number   showComponentContent_static_003
+     * @tc.name     showComponentContent_static_003
+     * @tc.desc     showComponentContent_static_003
+     * @tc.level    Level.LEVEL0
      */
-    it('showComponentContent_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('showComponentContent_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[showComponentContent_003] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let add = await (driver?.findComponent(ON.id('addComponentContent')) as Promise<Component | null>);
-      add?.click();
+      await (add?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let hide = await (driver?.findComponent(ON.id('hideComponentContent')) as Promise<Component | null>);
-      hide?.click();
+      await (hide?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let show = await (driver?.findComponent(ON.id('showComponentContent')) as Promise<Component | null>);
-      show?.click();
+      await (show?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let Column = inspector.getInspectorByKey('Column');
       console.info('Column: ' + JSON.parseJsonElement(Column).getElement('$attrs').getString('visibility'));
@@ -112,7 +114,7 @@ export default function OverlayManagerTest_003() {
       console.info('[showComponentContent_003] END');
       await CommonFunc.sleep(1000);
       let remove = await (driver?.findComponent(ON.id('removeComponentContent')) as Promise<Component | null>);
-      remove?.click();
+      await (remove?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
     });

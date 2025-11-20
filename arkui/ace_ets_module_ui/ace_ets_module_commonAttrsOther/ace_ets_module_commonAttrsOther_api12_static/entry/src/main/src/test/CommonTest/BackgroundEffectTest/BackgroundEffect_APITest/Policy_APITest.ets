@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,42 +58,40 @@ export default function Bgde_Policy_APITest() {
     beforeEach(async (): Promise<void> => {
       console.info("Bgde_Policy_APITest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Common/BackgroundEffect/BackgroundEffectOptions/Policy",
+        url: "MainAbility/pages/Common/backgroundBlurStyle/backgroundBlurStyleOptions/Policy",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Bgde_Policy_APITest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("Policy" == pages.name)) {
           console.info("get Bgde_Policy_APITest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push Bgde_Policy_APITest page error:" + err);
       }
       console.info("Bgde_Policy_APITest beforeEach end");
     });
-
-
+    
     /*
-     * @tc.number    Bgde_Policy_APITest_static_0100
-     * @tc.name      Bgde_Policy_APITest_static_0100
-     * @tc.desc      Bgde_Policy_APITest_static_0100
-     * @tc.level     2
+     * @tc.number   Bgde_Policy_APITest_static_0100
+     * @tc.name     Bgde_Policy_APITest_static_0100
+     * @tc.desc     Bgde_Policy_APITest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('Bgde_Policy_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('Bgde_Policy_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Bgde_Policy_APITest_0100 START');
       await CommonFunc.sleep(1000);
-      let bgde_policy = inspector.getInspectorByKey('bgde_policy');
+      let bgde_policy = inspector.getInspectorByKey('policy');
+      await CommonFunc.sleep(2000);
       console.info("[Bgde_Policy_APITest_0100] Tabs animationMode attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(bgde_policy).getString('$attrs')));
+      JSON.stringify(JSON.parseJsonElement(bgde_policy).getElement('$attrs')));
       expect(JSON.parseJsonElement(bgde_policy)
         .getElement('$attrs')
-        .getElement('backgroundEffect')
+        .getElement('backgroundBlurStyle')
         .getElement('options')
         .getString('policy')).assertEqual('BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE');
       console.info('[Bgde_Policy_APITest_0100] END');

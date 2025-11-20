@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,7 +14,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import {
   Component,
@@ -63,12 +63,10 @@ export default function commonColorModeJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get commonColorModeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("common" == pages.name)) {
           console.info("get commonColorModeTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push commonColorModeTest page error:" + err);
@@ -81,83 +79,95 @@ export default function commonColorModeJsunit() {
       console.info("commonColorMode after each called");
     });
 
+    afterAll(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+    })
 
+    
     /*
-     * @tc.number    testCommonColorMode_static_0011
-     * @tc.name      testCommonColorMode_static_0011
-     * @tc.desc      testCommonColorMode_static_0011
-     * @tc.level     2
+     * @tc.number   testCommonColorMode_static_0011
+     * @tc.name     testCommonColorMode_static_0011
+     * @tc.desc     testCommonColorMode_static_0011
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonColorMode_static_0011', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonColorMode_static_0011', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonColorMode testCommonColorMode0011 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('ThinText');
-      console.info("[testCommonColorMode0011] component textAlign strJson:" + strJson);
+      let strJson = inspector.getInspectorByKey('ThinText');
+      await Utils.sleep(2000);
+      console.info("[testCommonColorMode0011] component textAlign strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       console.info("[testCommonColorMode0011] backgroundBlurStyle value :" + JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('backgroundBlurStyle'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundBlurStyle') instanceof Object)
+        .getElement('backgroundBlurStyle'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundBlurStyle') instanceof Object)
         .assertTrue();
       done();
     });
 
 
+    
     /*
-     * @tc.number    testCommonColorMode_static_0012
-     * @tc.name      testCommonColorMode_static_0012
-     * @tc.desc      testCommonColorMode_static_0012
-     * @tc.level     2
+     * @tc.number   testCommonColorMode_static_0012
+     * @tc.name     testCommonColorMode_static_0012
+     * @tc.desc     testCommonColorMode_static_0012
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonColorMode_static_0012', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonColorMode_static_0012', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonColorMode testCommonColorMode0012 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('ThickText');
+      let strJson = inspector.getInspectorByKey('ThickText');
+      await Utils.sleep(2000);
       console.info("[testCommonColorMode0012] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       console.info("[testCommonColorMode0012] backgroundBlurStyle value :" + JSON.parseJsonElement(strJson)
         .getElement('$attrs')
-        .getString('backgroundBlurStyle'));
+        .getElement('backgroundBlurStyle'));
 
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundBlurStyle') instanceof Object)
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundBlurStyle') instanceof Object)
         .assertTrue();
       done();
     });
 
 
+    
     /*
-     * @tc.number    testCommonMiddle_static_0001
-     * @tc.name      testCommonMiddle_static_0001
-     * @tc.desc      testCommonMiddle_static_0001
-     * @tc.level     2
+     * @tc.number   testCommonMiddle_static_0013
+     * @tc.name     testCommonMiddle_static_0013
+     * @tc.desc     testCommonMiddle_static_0013
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonMiddle_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonMiddle_static_0013', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonMiddle testCommonMiddle0001 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('middleText');
+      let strJson = inspector.getInspectorByKey('middleText');
+      await Utils.sleep(2000);
       console.info("[testCommonMiddle0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
-      console.info("[testCommonMiddle0001] alignRules value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignRules'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignRules')).assertEqual(undefined);
-      console.info("[testCommonMiddle0001] alignRules value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignRules'));
+      // console.info("[testCommonMiddle0001] alignRules value :" +
+      // JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignRules'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('alignRules')).assertEqual(undefined);
+      // console.info("[testCommonMiddle0001] alignRules value :" +
+      // JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignRules'));
       done();
     });
 
 
+    
     /*
-     * @tc.number    testCommonOutset_static_0001
-     * @tc.name      testCommonOutset_static_0001
-     * @tc.desc      testCommonOutset_static_0001
-     * @tc.level     2
+     * @tc.number   testCommonOutset_static_0014
+     * @tc.name     testCommonOutset_static_0014
+     * @tc.desc     testCommonOutset_static_0014
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonOutset_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonOutset_static_0014', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonOutset testCommonOutset0001 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('outsetText');
+      let strJson = inspector.getInspectorByKey('outsetText');
+      await Utils.sleep(2000);
       console.info("[testCommonOutset0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -169,16 +179,18 @@ export default function commonColorModeJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    testCommonRepeat_static_0001
-     * @tc.name      testCommonRepeat_static_0001
-     * @tc.desc      testCommonRepeat_static_0001
-     * @tc.level     2
+     * @tc.number   testCommonRepeat_static_0015
+     * @tc.name     testCommonRepeat_static_0015
+     * @tc.desc     testCommonRepeat_static_0015
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonRepeat_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonRepeat_static_0015', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonRepeat testCommonRepeat0001 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('RepeatText');
+      let strJson = inspector.getInspectorByKey('RepeatText');
+      await Utils.sleep(2000);
       console.info("[testCommonRepeat0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -190,16 +202,18 @@ export default function commonColorModeJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    testCommonSpace_static_0001
-     * @tc.name      testCommonSpace_static_0001
-     * @tc.desc      testCommonSpace_static_0001
-     * @tc.level     2
+     * @tc.number   testCommonSpace_static_0016
+     * @tc.name     testCommonSpace_static_0016
+     * @tc.desc     testCommonSpace_static_0016
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonSpace_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonSpace_static_0016', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSpace testCommonSpace0001 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('SpaceText');
+      let strJson = inspector.getInspectorByKey('SpaceText');
+      await Utils.sleep(2000);
       console.info("[testCommonSpace0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -211,16 +225,18 @@ export default function commonColorModeJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    testCommonSlice_static_0001
-     * @tc.name      testCommonSlice_static_0001
-     * @tc.desc      testCommonSlice_static_0001
-     * @tc.level     2
+     * @tc.number   testCommonSlice_static_0017
+     * @tc.name     testCommonSlice_static_0017
+     * @tc.desc     testCommonSlice_static_0017
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonSlice_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonSlice_static_0017', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSlice testCommonSlice0001 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('sliceText');
+      let strJson = inspector.getInspectorByKey('sliceText');
+      await Utils.sleep(2000);
       console.info("[testCommonSlice0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -232,88 +248,97 @@ export default function commonColorModeJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    testCommonSlice_static_0002
-     * @tc.name      testCommonSlice_static_0002
-     * @tc.desc      testCommonSlice_static_0002
-     * @tc.level     2
+     * @tc.number   testCommonSlice_static_0018
+     * @tc.name     testCommonSlice_static_0018
+     * @tc.desc     testCommonSlice_static_0018
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonSlice_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonSlice_static_0018', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSlice testCommonArea0001 START');
       await Utils.sleep(500);
       try {
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 60312,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback = (eventData: emitter.EventData) => {
           console.info("testCommonArea0001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as ESObject)?.getProperty('STATUS')).assertEqual(320);
+          const data: Record<String, undefined | null | Object> =
+            eventData.data as Record<String, undefined | null | Object>
+          expect(data['STATUS']).assertEqual(320);
         }
-        events_emitter.on(innerEvent, callback);
+        emitter.on(innerEvent, callback);
         console.info("testCommonArea0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('areaText', 10, "")));
         await Utils.sleep(2000);
-      } catch (err) {
+      } catch (err: Error) {
         console.info("testCommonArea0001 on click err : " + JSON.stringify(err));
       }
       done();
     });
 
 
+    
     /*
-     * @tc.number    testCommonTouches_static_0001
-     * @tc.name      testCommonTouches_static_0001
-     * @tc.desc      testCommonTouches_static_0001
-     * @tc.level     2
+     * @tc.number   testCommonTouches_static_0019
+     * @tc.name     testCommonTouches_static_0019
+     * @tc.desc     testCommonTouches_static_0019
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonTouches_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonTouches_static_0019', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSlice testCommonTouches0001 START');
       await Utils.sleep(500);
       try {
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 60313,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback = (eventData: emitter.EventData) => {
           console.info("testCommonTouches0001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as ESObject)?.getProperty('STATUS')).assertEqual(undefined);
+          const data: Record<String, undefined | null | Object> =
+            eventData.data as Record<String, undefined | null | Object>
+          expect(data['STATUS']).assertEqual(undefined);
 
         }
-        events_emitter.on(innerEvent, callback);
+        emitter.on(innerEvent, callback);
         console.info("testCommonTouches0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('touchesText', 10, "")));
         await Utils.sleep(2000);
-      } catch (err) {
+      } catch (err: Error) {
         console.info("testCommonTouches0001 on click err : " + JSON.stringify(err));
       }
       done();
     });
 
 
+    
     /*
-     * @tc.number    testCommonChangedTouches_static_0001
-     * @tc.name      testCommonChangedTouches_static_0001
-     * @tc.desc      testCommonChangedTouches_static_0001
-     * @tc.level     2
+     * @tc.number   testCommonChangedTouches_static_0020
+     * @tc.name     testCommonChangedTouches_static_0020
+     * @tc.desc     testCommonChangedTouches_static_0020
+     * @tc.level    Level.LEVEL2
      */
-    it('testCommonChangedTouches_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testCommonChangedTouches_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSlice testCommonChangedTouches0001 START');
       await Utils.sleep(500);
       try {
-        let innerEvent: events_emitter.InnerEvent = {
+        let innerEvent: emitter.InnerEvent = {
           eventId: 60314,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback = (eventData: emitter.EventData) => {
           console.info("testCommonChangedTouches0001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as ESObject)?.getProperty('STATUS')).assertEqual(undefined);
+          const data: Record<String, undefined | null | Object> =
+            eventData.data as Record<String, undefined | null | Object>
+          expect(data['STATUS']).assertEqual(undefined);
         }
-        events_emitter.on(innerEvent, callback);
+        emitter.on(innerEvent, callback);
         console.info("changedTouches0001 click is: " +
         JSON.stringify(inspector.sendEventByKey('changedTouchesText', 10, "")));
         await Utils.sleep(2000);
-      } catch (err) {
+      } catch (err: Error) {
         console.info("testCommonChangedTouches0001 on click err : " + JSON.stringify(err));
       }
       done();

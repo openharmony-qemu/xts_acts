@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,10 +67,8 @@ export default function callbackTest() {
         console.info("get callbackTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get callbackTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push callbackTest page error:" + err);
@@ -78,22 +76,28 @@ export default function callbackTest() {
       console.info("callbackTest beforeEach end");
     });
 
+    afterEach(async (): Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+    })
 
+    
     /*
-     * @tc.number    callbackTest_static_0100
-     * @tc.name      callbackTest_static_0100
-     * @tc.desc      callbackTest_static_0100
-     * @tc.level     2
+     * @tc.number   callbackTest_static_0100
+     * @tc.name     callbackTest_static_0100
+     * @tc.desc     callbackTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('callbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('callbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('callbackTest_0100 START');
 
       let driver = Driver.create()
       let button = await (driver?.findComponent(ON.id('callback_get')) as Promise<Component | null>);
-      await ((button?.click()) as Promise<void>)
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('callback_age');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[callbackTest_0100] component obj is: " + JSON.stringify(obj));
       console.info("[callbackTest_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));

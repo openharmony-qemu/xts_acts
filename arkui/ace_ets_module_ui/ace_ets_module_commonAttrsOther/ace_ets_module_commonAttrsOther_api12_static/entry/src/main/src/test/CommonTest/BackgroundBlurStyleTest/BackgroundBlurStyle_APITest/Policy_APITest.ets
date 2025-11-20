@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,10 +67,8 @@ export default function Policy_APITest() {
         console.info("get Policy_APITest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get Policy_APITest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push Policy_APITest page error:" + err);
@@ -78,19 +76,20 @@ export default function Policy_APITest() {
       console.info("Policy_APITest beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    Policy_APITest_static_0100
-     * @tc.name      Policy_APITest_static_0100
-     * @tc.desc      Policy_APITest_static_0100
-     * @tc.level     2
+     * @tc.number   Policy_APITest_static_0100
+     * @tc.name     Policy_APITest_static_0100
+     * @tc.desc     Policy_APITest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('Policy_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('Policy_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Policy_APITest_0100 START');
       await CommonFunc.sleep(1000);
       let Policy = inspector.getInspectorByKey('policy');
+      await CommonFunc.sleep(1000);
       console.info("[Policy_APITest_0100] Tabs animationMode attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(Policy).getString('$attrs')));
+      JSON.stringify(JSON.parseJsonElement(Policy).getElement('$attrs')));
       expect(JSON.parseJsonElement(Policy)
         .getElement('$attrs')
         .getElement('backgroundBlurStyle')

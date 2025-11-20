@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,10 +67,9 @@ export default function OverlayManagerTest_001() {
         console.info("get OverlayManagerTest_001 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get OverlayManagerTest_001 pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
+          console.info("get OverlayManagerTest_001 pages.name ==");
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push OverlayManagerTest_001 page error:" + err);
@@ -84,29 +83,31 @@ export default function OverlayManagerTest_001() {
     });
 
 
+    
     /*
-     * @tc.number    addComponentContent_static_001
-     * @tc.name      addComponentContent_static_001
-     * @tc.desc      addComponentContent_static_001
-     * @tc.level     2
+     * @tc.number   addComponentContent_static_001
+     * @tc.name     addComponentContent_static_001
+     * @tc.desc     addComponentContent_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('addComponentContent_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('addComponentContent_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[addComponentContent_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let add = await (driver?.findComponent(ON.id('addComponentContent')) as Promise<Component | null>);
-      add?.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      await (add?.click() as Promise<void>);
+      await CommonFunc.sleep(2000);
       let ParamsText = inspector.getInspectorByKey('ParamsText');
+      await CommonFunc.sleep(2000);
       console.info('ParamsText: ' + JSON.parseJsonElement(ParamsText).getElement('$attrs').getString('content'));
-      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(ParamsText).getElement('$attrs').getString('content'))
         .assertEqual('ComponentContent0');
       console.info('[addComponentContent_001] END');
-      await CommonFunc.sleep(1000);
       let remove = await (driver?.findComponent(ON.id('removeComponentContent')) as Promise<Component | null>);
-      remove?.click();
+      await CommonFunc.sleep(2000);
+      await (remove?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
     });

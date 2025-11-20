@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
@@ -64,42 +64,46 @@ export default function ExpectedFrameRateRange() {
       await CommonFunc.sleep(1000);
       console.info('ExpectedFrameRateRange after each called');
     });
-
+    
     /*
      * @tc.number   ExpectedFrameRateRange_static_001
      * @tc.name     ExpectedFrameRateRange_static_001
      * @tc.desc     ExpectedFrameRateRange_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('ExpectedFrameRateRange_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.info('[ExpectedFrameRateRange_001] START');
-      let indexEvent: events_emitter.InnerEvent = {
+it('ExpectedFrameRateRange_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('[ExpectedFrameRateRange_static_001] START');
+      let indexEvent:emitter.InnerEvent = {
         eventId: 51,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
-      let callback = (indexEvent: events_emitter.EventData) => {
-        console.info('ExpectedFrameRateRange_001 get state result is: ' + JSON.stringify(indexEvent))
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info('ExpectedFrameRateRange_static_001 get state result is: ' + JSON.stringify(indexEvent))
+        const event: Record<string,undefined|null|Object> = indexEvent.data as Record<string,undefined|null|Object>
         try {
-          expect(((indexEvent.data) as ESObject).getProperty('min')).assertEqual(60);
-          expect(((indexEvent.data) as ESObject).getProperty('max')).assertEqual(120);
-          expect(((indexEvent.data) as ESObject).getProperty('expected')).assertEqual(90);
+          expect(event['min']).assertEqual(60);
+          expect(event['max']).assertEqual(120);
+          expect(event['expected']).assertEqual(90);
         } catch (err) {
-          console.info('ExpectedFrameRateRange_001 get state result is err: ' + JSON.stringify(err));
+          console.info('ExpectedFrameRateRange_static_001 get state result is err: ' + JSON.stringify(err));
         }
-        console.info('[ExpectedFrameRateRange_001] END');
+        console.info('[ExpectedFrameRateRange_static_001] END');
         done();
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        console.log('emitter  === start')
+        emitter.on(indexEvent, callback);
+        console.log('emitter  === end')
       } catch (err) {
-        console.info('ExpectedFrameRateRange_001 on events_emitter err : ' + JSON.stringify(err));
+        console.info('ExpectedFrameRateRange_static_001 on emitter err : ' + JSON.stringify(err));
       }
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let play = await driver.findComponent(ON.id('circleId')) as Component;
-      play?.click();
-      console.log('[ExpectedFrameRateRange_001] play btn clicked')
+      let play = await driver.findComponent(ON.id('circleId'));
+      console.info('[ExpectedFrameRateRange_static_001] ' + JSON.stringify(play));
+      await (play?.click() as Promise<void>);
+      console.log('[ExpectedFrameRateRange_static_001] play btn clicked')
     });
   })
 }

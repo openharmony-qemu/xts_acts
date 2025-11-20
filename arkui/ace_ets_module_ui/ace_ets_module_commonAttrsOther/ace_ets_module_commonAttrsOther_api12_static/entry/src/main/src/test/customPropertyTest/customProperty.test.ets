@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,10 +67,8 @@ export default function customPropertyTest() {
         console.info("get customPropertyTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get customPropertyTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push customPropertyTest page error:" + err);
@@ -78,23 +76,27 @@ export default function customPropertyTest() {
       console.info("customPropertyTest beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    customPropertyTest_static_0010
-     * @tc.name      customPropertyTest_static_0010
-     * @tc.desc      customPropertyTest_static_0010
-     * @tc.level     2
+     * @tc.number   customPropertyTest_static_0010
+     * @tc.name     customPropertyTest_static_0010
+     * @tc.desc     customPropertyTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('customPropertyTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('customPropertyTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('customPropertyTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button = await (driver?.findComponent(ON.id('CustomProperty1_button')) as Promise<Component | null>);
-      await ((button?.click()) as Promise<void>)
       await CommonFunc.sleep(1000);
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(4000);
+      console.log('test 1112')
       let strJson = inspector.getInspectorByKey('CustomProperty1_button');
+      console.log('test 1113')
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[customPropertyTest_0010] component obj is: " + JSON.stringify(obj));
+      console.info("[customPropertyTest_0010] component obj is: " + JSON.stringify(obj.getElement('$attrs')));
       expect(obj.getElement('$attrs').getString('label'))
         .assertEqual('{"number":10,"string":"this is a string","bool":true,"object":{"name":"name","value":100}}');
       console.info('[customPropertyTest_0010] END');

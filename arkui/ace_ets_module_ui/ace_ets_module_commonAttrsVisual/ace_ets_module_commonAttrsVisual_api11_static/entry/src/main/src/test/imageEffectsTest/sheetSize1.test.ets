@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,12 +67,10 @@ export default function sheetSize1Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get sheetSize1Jsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("sheetSize" == pages.name)) {
           console.info("get sheetSize1Jsunit pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push sheetSize1Jsunit page error:" + err);
@@ -80,15 +78,15 @@ export default function sheetSize1Jsunit() {
       console.info("sheetSize1Jsunit beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    sheetSize1Jsunit_static_0100
-     * @tc.name      sheetSize1Jsunit_static_0100
-     * @tc.desc      sheetSize1Jsunit_static_0100
-     * @tc.level     2
+     * @tc.number   sheetSize1Jsunit_static_0100
+     * @tc.name     sheetSize1Jsunit_static_0100
+     * @tc.desc     sheetSize1Jsunit_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('sheetSize1Jsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+it('sheetSize1Jsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Get the sheetSize of the bindSheet
       await CommonFunc.sleep(1000);
       console.info('[sheetSize1Jsunit_0100] START');
       let strJson = inspector.getInspectorByKey('detents');
@@ -97,31 +95,31 @@ export default function sheetSize1Jsunit() {
       console.info("[sheetSize1Jsunit_0100] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual("MEDIUM,LARGE,FIT_CONTENT");
+        .assertEqual("0,1,2");
       console.info('[sheetSize1Jsunit_0100] END');
       done();
     });
-
-
+    
+    
     /*
-     * @tc.number    sheetSize1Jsunit_static_0200
-     * @tc.name      sheetSize1Jsunit_static_0200
-     * @tc.desc      sheetSize1Jsunit_static_0200
-     * @tc.level     2
+     * @tc.number   sheetSize1Jsunit_static_0200
+     * @tc.name     sheetSize1Jsunit_static_0200
+     * @tc.desc     sheetSize1Jsunit_static_0200
+     * @tc.level    Level.LEVEL2
      */
-    it('sheetSize1Jsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+it('sheetSize1Jsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Get the sheetSize of the bindSheet
       console.info('[sheetSize1Jsunit_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let button: Component = (await driver.findComponent(ON.id('bindSheet_SheetSize1'))) as Component;
-      await (button?.click() as Promise<void>);
+      let button = (await driver.findComponent(ON.id('bindSheet_SheetSize1')));
       await CommonFunc.sleep(1000);
-
-      await (driver.click(Math.round(AppStorage.get<number>("winLeft") ?? 0 + 50) as Int,
-        Math.round(AppStorage.get<number>("winTop") ?? 0 + 50) as Int) as Promise<void>)
+      await (button?.click() as Promise<void>);
+      await (driver.click(Math.round(AppStorage.get<number>("winLeft") ?? 0 + 50) as int,
+        Math.round(AppStorage.get<number>("winTop") ?? 0 + 50) as int) as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('bindSheet_dismiss1');
+      await CommonFunc.sleep(1000);
       console.info("[sheetSize1Jsunit_0200] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("dismiss succ");
       console.info('[sheetSize1Jsunit_0200] END');

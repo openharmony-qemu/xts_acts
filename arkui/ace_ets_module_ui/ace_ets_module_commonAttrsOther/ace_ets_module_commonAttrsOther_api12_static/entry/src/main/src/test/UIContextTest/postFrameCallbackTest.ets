@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,10 +67,8 @@ export default function postFrameCallbackTest() {
         console.info("get postFrameCallbackTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get postFrameCallbackTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push postFrameCallbackTest page error:" + err);
@@ -78,14 +76,19 @@ export default function postFrameCallbackTest() {
       console.info("postFrameCallbackTest beforeEach end");
     });
 
+    afterEach(async (): Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.back();
+    })
 
+    
     /*
-     * @tc.number    postFrameCallbackTest_static_0100
-     * @tc.name      postFrameCallbackTest_static_0100
-     * @tc.desc      postFrameCallbackTest_static_0100
-     * @tc.level     2
+     * @tc.number   postFrameCallbackTest_static_0100
+     * @tc.name     postFrameCallbackTest_static_0100
+     * @tc.desc     postFrameCallbackTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('postFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('postFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('postFrameCallbackTest_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -94,7 +97,6 @@ export default function postFrameCallbackTest() {
         await (driver?.findComponent(ON.id('postFrameCallback')) as Promise<Component | null>);
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
-
       await CommonFunc.sleep(1000);
       let content = await (postFrameCallback?.getText() as Promise<string>)
       console.info("[postFrameCallbackTest_0100] getText is: " + JSON.stringify(content));
@@ -103,22 +105,22 @@ export default function postFrameCallbackTest() {
       done();
     });
 
+    
     /*
-     * @tc.number    postFrameCallbackTest_0200
-     * @tc.name      postFrameCallbackTest_0200
-     * @tc.desc      postFrameCallbackTest_0200
-     * @tc.level     2
+     * @tc.number   postFrameCallbackTest_0200
+     * @tc.name     postFrameCallbackTest_0200
+     * @tc.desc     postFrameCallbackTest_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('postFrameCallbackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('postFrameCallbackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('postFrameCallbackTest_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn: Component | null = await (driver?.findComponent(ON.id('btn1')) as Promise<Component | null>);
       let isExtraRegionPerpendicular: Component | null =
         await (driver?.findComponent(ON.id('isExtraRegionPerpendicular')) as Promise<Component | null>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       await (btn?.click() as Promise<void>);
-
       await CommonFunc.sleep(1000);
       let content = await (isExtraRegionPerpendicular?.getText() as Promise<string>)
       console.info("[postFrameCallbackTest_0200] getText is: " + JSON.stringify(content));

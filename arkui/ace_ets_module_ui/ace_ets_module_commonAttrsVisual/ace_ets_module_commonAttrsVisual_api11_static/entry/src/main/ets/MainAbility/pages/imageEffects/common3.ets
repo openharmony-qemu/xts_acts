@@ -4,20 +4,21 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import {
   $$,
   $r,
   Alignment,
+  AlignRuleOption,
   BindOptions,
   BlurStyle,
   Button,
@@ -50,15 +51,15 @@ import {
   Text,
   TextAlign,
   TextOverflow,
-  VerticalAlign,
-  AlignRuleOption
-} from '@ohos.arkui.component'
+  VerticalAlign
+} from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 import Log from '../../common/Log';
 
+// import inputEventClient from '@ohos.multimodalInput.inputEventClient';
 
 const TAG = 'ets_apiLack_add';
 
@@ -84,14 +85,46 @@ struct CommonBackgroundBlurStyle {
     return true
   }
 
+  // @Styles
+  // pressedStyles() {
+  //   .backgroundColor('red')
+  //   .opacity(1)
+  // }
+
   buttonTab() {
-
-
+    // let keyEventDown: inputEventClient.KeyEvent = {
+    //   isPressed: true,
+    //   keyCode: 2049,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res1 = inputEventClient.injectEvent({ KeyEvent: keyEventDown });
+    //
+    // let keyEventUp: inputEventClient.KeyEvent = {
+    //   isPressed: false,
+    //   keyCode: 2049,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res2 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
   }
 
   buttonOnKey() {
-
-
+    // let keyEventDown: inputEventClient.KeyEvent = {
+    //   isPressed: true,
+    //   keyCode: 2054,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res3 = inputEventClient.injectEvent({ KeyEvent: keyEventDown });
+    //
+    // let keyEventUp: inputEventClient.KeyEvent = {
+    //   isPressed: false,
+    //   keyCode: 2054,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res4 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
   }
 
   build() {
@@ -107,7 +140,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -122,7 +155,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -133,7 +166,7 @@ struct CommonBackgroundBlurStyle {
           source: {
             angle: 90,
             direction: GradientDirection.Left,
-            colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]]
+            colors: [['0xAEE1E1', 0.0], ['0xD3E0DC', 0.3], ['0xFCD1D1', 1.0]]
           },
           slice: {
             top: 10,
@@ -157,7 +190,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -172,7 +205,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -187,7 +220,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -212,7 +245,7 @@ struct CommonBackgroundBlurStyle {
             Log.showInfo(TAG, `Up`)
           }
           Log.showInfo(TAG, 'KeyType:' + event.type + ';keyCode:' + event.keyCode + ';keyText:' + event.keyText)
-          return false
+          return false;
         })
 
       Text("common-TabIndex")
@@ -221,7 +254,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -236,7 +269,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(12)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(15)
         .border({ width: 1 })
         .padding(10)
@@ -244,7 +277,7 @@ struct CommonBackgroundBlurStyle {
         .textOverflow({ overflow: TextOverflow.None })
         .key("parallelGestureText")
         .parallelGesture(TapGesture().onAction(() => {
-
+          // 并行手势
           this.value = 'gesture onAction'
         }))
 
@@ -254,7 +287,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -273,7 +306,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -291,14 +324,16 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("stateStylesText")
-
+      // .stateStyles({
+      //   pressed: this.pressedStyles
+      // })
 
       Text("common-OnVisibleAreaChange")
         .width(320)
@@ -306,7 +341,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -320,7 +355,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -334,7 +369,7 @@ struct CommonBackgroundBlurStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor('0xCCCCCC')
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)

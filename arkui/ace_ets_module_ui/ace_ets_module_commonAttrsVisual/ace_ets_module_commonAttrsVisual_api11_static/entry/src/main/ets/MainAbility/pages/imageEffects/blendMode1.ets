@@ -4,48 +4,50 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import {
-  $$,
-  $r,
-  Alignment,
-  BindOptions,
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
   Button,
+  FontWeight,
   ButtonType,
   ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FlexOptions,
-  FontWeight,
-  Image,
-  ItemAlign,
   Margin,
-  Row,
+  FlexOptions,
+  ColumnOptions,
+  TextAlign,
   Scroll,
-  SheetOptions,
+  Image,
+  BlendMode,
+  $r,
+  $$,
   SheetType,
-  Text,
-  TextAlign
+  BindOptions,
+  SheetOptions,
+  Alignment,
+  Color,
+  Row
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -59,7 +61,7 @@ struct blendMode11 {
           .fontColor('#ffff0101')
       }
       .id('blendMode11_DESTINATION_IN')
-
+      .blendMode(BlendMode.DST_IN)
       .height('100%')
       .width('100%')
       .backgroundColor('#ff08ff00')
@@ -71,7 +73,7 @@ struct blendMode11 {
           .fontColor('#ffff0101')
       }
       .id('blendMode11_SOURCE_IN')
-
+      .blendMode(BlendMode.SRC_IN)
       .height('100%')
       .width('100%')
       .backgroundColor('#ff08ff00')
@@ -83,7 +85,7 @@ struct blendMode11 {
           .fontColor('#ffff0101')
       }
       .id('blendMode11_NORMAL')
-
+      // .blendMode(BlendMode.NORMAL)
       .height('100%')
       .width('100%')
       .backgroundColor('#ff08ff00')

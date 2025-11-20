@@ -1,6 +1,6 @@
 {
-  "src": [
-    "MainAbility/pages/index/index",
-    "MainAbility/pages/AnimatorResult/ExpectedFrameRateRange"
-  ]
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/AnimatorResult/ExpectedFrameRateRange"
+    ]
 }

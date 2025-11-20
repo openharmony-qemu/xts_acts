@@ -59,6 +59,18 @@
     {
       "name": "swiper_margin",
       "value": "12"
+    },
+    {
+      "name": "module_desc",
+      "value": "desc"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "desc"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "desc"
     }
   ]
 }

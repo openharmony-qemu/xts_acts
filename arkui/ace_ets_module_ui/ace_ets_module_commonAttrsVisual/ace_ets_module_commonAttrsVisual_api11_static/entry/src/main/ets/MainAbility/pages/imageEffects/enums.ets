@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import {
   $$,
@@ -20,6 +20,7 @@ import {
   Alignment,
   AnimationStatus,
   BindOptions,
+  Builder,
   Button,
   ButtonType,
   ClickEvent,
@@ -28,6 +29,7 @@ import {
   ColumnOptions,
   Component,
   CopyOptions,
+  Divider,
   Entry,
   Flex,
   FlexAlign,
@@ -82,6 +84,11 @@ struct EnumsCancel {
   @State mainonly: TitleHeight = TitleHeight.MainOnly;
   @State MainWithSub: TitleHeight = TitleHeight.MainWithSub;
   @State Block: HitTestMode = HitTestMode.Block;
+  // @Styles
+  // pressedStyles() {
+  //   .backgroundColor('red')
+  //   .opacity(1)
+  // }
   @State responseTypeClick: ResponseType = ResponseType.RightClick;
   @State responseTypePress: ResponseType = ResponseType.LongPress;
 
@@ -91,6 +98,22 @@ struct EnumsCancel {
 
   aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear EnumsCancel end`)
+  }
+
+  @Builder
+  ContextMenuBuilder() {
+    Flex({
+      direction: FlexDirection.Column,
+      justifyContent: FlexAlign.Center,
+      alignItems: ItemAlign.Center
+    } as FlexOptions) {
+      Text('text3')
+        .fontSize(20)
+        .width(100)
+        .height(50)
+        .textAlign(TextAlign.Center)
+      Divider().height(10)
+    }
   }
 
   build() {
@@ -106,8 +129,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -121,8 +145,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -136,8 +161,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -151,8 +177,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -166,8 +193,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -181,8 +209,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -196,8 +225,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -211,8 +241,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -226,8 +257,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -241,8 +273,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -256,8 +289,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -271,8 +305,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -286,8 +321,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -301,8 +337,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -316,8 +353,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -331,8 +369,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -346,8 +385,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -361,8 +401,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -376,8 +417,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -391,8 +433,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -406,8 +449,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -421,8 +465,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -436,8 +481,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -451,8 +497,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -466,8 +513,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -481,8 +529,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -496,14 +545,17 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("RightClickText")
-
+        .bindContextMenu(() => {
+          this.ContextMenuBuilder()
+        }, this.responseTypeClick)
         .visibility(Visibility.None)
 
       Text("enums-LongPress")
@@ -512,14 +564,17 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("LongPressText")
-
+        .bindContextMenu(() => {
+          this.ContextMenuBuilder()
+        }, this.responseTypePress)
         .visibility(Visibility.None)
 
       Text("enums-Scale")
@@ -528,8 +583,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -544,8 +600,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -560,8 +617,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -576,8 +634,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
@@ -591,13 +650,14 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("CrossDeviceText")
+        .key("CrossDeviceText")//        .copyOption(CopyOptions.CrossDevice)
         .visibility(Visibility.None)
 
       Button('Touch').backgroundColor(0x2788D9).height(40).width(80)
@@ -643,8 +703,9 @@ struct EnumsCancel {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
-        .lineHeight(25)
+        .fontColor('0xCCCCCC')
+      .
+      lineHeight(25)
         .border({ width: 1 })
         .padding(10)
         .textAlign(TextAlign.Center)

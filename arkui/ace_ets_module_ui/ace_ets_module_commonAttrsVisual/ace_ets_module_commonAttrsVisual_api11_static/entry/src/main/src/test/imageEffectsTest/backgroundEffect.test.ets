@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -61,12 +61,10 @@ export default function backgroundEffectJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get backgroundEffectJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("backgroundEffect" == pages.name)) {
           console.info("get backgroundEffectJsunit pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push backgroundEffectJsunit page error:" + err);
@@ -75,16 +73,18 @@ export default function backgroundEffectJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    backgroundEffectJsunit_static_0100
-     * @tc.name      backgroundEffectJsunit_static_0100
-     * @tc.desc      backgroundEffectJsunit_static_0100
-     * @tc.level     2
+     * @tc.number   backgroundEffectJsunit_static_0100
+     * @tc.name     backgroundEffectJsunit_static_0100
+     * @tc.desc     backgroundEffectJsunit_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('backgroundEffectJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+it('backgroundEffectJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0100] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id1');
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[backgroundEffectJsunit_0100] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -92,22 +92,24 @@ export default function backgroundEffectJsunit() {
         .getElement('$attrs')
         .getElement('backgroundEffect')
         .getElement('options')
-        .getString('saturation')).assertEqual(10);
+        .getDouble('saturation')).assertEqual(10);
       console.info('[backgroundEffectJsunit_0100] END');
       done();
     });
 
 
+    
     /*
-     * @tc.number    backgroundEffectJsunit_static_0200
-     * @tc.name      backgroundEffectJsunit_static_0200
-     * @tc.desc      backgroundEffectJsunit_static_0200
-     * @tc.level     2
+     * @tc.number   backgroundEffectJsunit_static_0200
+     * @tc.name     backgroundEffectJsunit_static_0200
+     * @tc.desc     backgroundEffectJsunit_static_0200
+     * @tc.level    Level.LEVEL2
      */
-    it('backgroundEffectJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+it('backgroundEffectJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0200] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id1');
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0200] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson)
@@ -120,61 +122,68 @@ export default function backgroundEffectJsunit() {
     });
 
 
+    
     /*
-     * @tc.number    backgroundEffectJsunit_static_0300
-     * @tc.name      backgroundEffectJsunit_static_0300
-     * @tc.desc      backgroundEffectJsunit_static_0300
-     * @tc.level     2
+     * @tc.number   backgroundEffectJsunit_static_0300
+     * @tc.name     backgroundEffectJsunit_static_0300
+     * @tc.desc     backgroundEffectJsunit_static_0300
+     * @tc.level    Level.LEVEL2
      */
-    it('backgroundEffectJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+it('backgroundEffectJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0300] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id1');
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0300] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('backgroundEffect')
         .getElement('options')
-        .getElement('blur')
-        .getString('Option')).assertEqual("[1.000000,1.000000]");
+        .getElement('blurOptions')
+        // .getString('blurOptions')
+      ).assertEqual("[1.000000,1.000000]");
       console.info('[backgroundEffectJsunit_0300] END');
       done();
     });
 
 
+    
     /*
-     * @tc.number    backgroundEffectJsunit_static_0400
-     * @tc.name      backgroundEffectJsunit_static_0400
-     * @tc.desc      backgroundEffectJsunit_static_0400
-     * @tc.level     2
+     * @tc.number   backgroundEffectJsunit_static_0400
+     * @tc.name     backgroundEffectJsunit_static_0400
+     * @tc.desc     backgroundEffectJsunit_static_0400
+     * @tc.level    Level.LEVEL2
      */
-    it('backgroundEffectJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+it('backgroundEffectJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0400] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id1');
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0400] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('backgroundEffect')
         .getElement('options')
-        .getString('radius')).assertEqual(10);
+        .getDouble('radius')).assertEqual(10);
       console.info('[backgroundEffectJsunit_0400] END');
       done();
     });
 
 
+    
     /*
-     * @tc.number    backgroundEffectJsunit_static_0500
-     * @tc.name      backgroundEffectJsunit_static_0500
-     * @tc.desc      backgroundEffectJsunit_static_0500
-     * @tc.level     2
+     * @tc.number   backgroundEffectJsunit_static_0500
+     * @tc.name     backgroundEffectJsunit_static_0500
+     * @tc.desc     backgroundEffectJsunit_static_0500
+     * @tc.level    Level.LEVEL2
      */
-    it('backgroundEffectJsunit_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+it('backgroundEffectJsunit_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0500] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id2');
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0500] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson)

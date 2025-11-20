@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,8 +51,6 @@ export default function motionBlurTest() {
         if (!("motionBlur" == pages.name)) {
           console.info("get motionBlurTest state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push motionBlurTest page error: " + err);
@@ -61,20 +59,21 @@ export default function motionBlurTest() {
     });
 
 
+    
     /*
-     * @tc.number    motionBlurTest_static_0100
-     * @tc.name      motionBlurTest_static_0100
-     * @tc.desc      motionBlurTest_static_0100
-     * @tc.level     2
+     * @tc.number   motionBlurTest_static_0100
+     * @tc.name     motionBlurTest_static_0100
+     * @tc.desc     motionBlurTest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('motionBlurTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('motionBlurTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('motionBlurTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('motionBlur_id');
       console.log('motionBlurTest_static_0100', JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')))
       console.log('motionBlurTest_static_0100',
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('motionBlur')))
-      expect(JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('motionBlur')))
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur')))
+      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur')))
         .assertEqual('{"radius":0,"anchor":{"x":0,"y":0}}');
       console.info('motionBlurTest_static_0100 END');
       done();

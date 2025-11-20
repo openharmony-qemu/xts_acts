@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -49,11 +49,9 @@ export default function backgroundEffectTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get backgroundEffectTest state pages: " + JSON.stringify(pages));
-        if (!("blank3" == pages.name)) {
+        if (!("backgroundEffect" == pages.name)) {
           console.info("get backgroundEffectTest state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push backgroundEffectTest page error: " + err);
@@ -61,21 +59,27 @@ export default function backgroundEffectTest() {
     });
 
 
+    
     /*
      * @tc.number   backgroundEffectTest_static_0100
      * @tc.name     backgroundEffectTest_static_0100
      * @tc.desc     backgroundEffectTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('backgroundEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('backgroundEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('backgroundEffectTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('backgroundEffectValue');
+      await CommonFunc.sleep(1000);
       console.log('backgroundEffectTest_static_0100',
         JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')))
       await CommonFunc.sleep(1000);
-
-
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundEffect').getDouble('radius'))
+        .assertEqual(10);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundEffect').getDouble('saturation'))
+        .assertEqual(50);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundEffect').getDouble('brightness'))
+        .assertEqual(2);
       expect(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('backgroundEffect')

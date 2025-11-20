@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,9 +35,9 @@ export default function testsuite() {
   comSizeAbilityTest_18();
   comSizeAbilityTest_27();
   comSizeAbilityTest_29();
-  getWaterFlowItemRect1();
-  getWaterFlowItemRect2();
-  getWaterFlowItemRect3();
-  getWaterFlowItemRect4();
-  getWaterFlowItemRect5();
+  getWaterFlowItemRect1(); // 4 pass 4
+  getWaterFlowItemRect2(); // 2 pass 2
+  getWaterFlowItemRect3(); // 2 pass 2
+  getWaterFlowItemRect4(); // 3 pass 3
+  getWaterFlowItemRect5(); // 2 pass 2
 }

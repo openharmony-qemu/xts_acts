@@ -6,6 +6,8 @@
     "MainAbility/pages/ImageEffect/fractionStops",
     "MainAbility/pages/ImageEffect/systemBarEffect",
     "MainAbility/pages/visualEffect/motionBlur",
-    "MainAbility/pages/visualEffect/visualEffect"
+    "MainAbility/pages/visualEffect/visualEffect",
+    "MainAbility/pages/ImageEffect/freeze",
+    "MainAbility/pages/foregroundEffect"
   ]
 }

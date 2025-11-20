@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
 import {
   Button,
   ButtonAttribute,
@@ -26,10 +23,10 @@ import {
   Text,
   TextAttribute,
   TouchObject,
-  TouchType,
-} from '@ohos.arkui.component'
+  TouchType
+} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector';
-import { sendTouchEvent } from '@kit.ArkUI';
+import { sendTouchEvent } from '@ohos.arkui.Test';
 import common from '@ohos.app.ability.common';
 
 export default class Utils {

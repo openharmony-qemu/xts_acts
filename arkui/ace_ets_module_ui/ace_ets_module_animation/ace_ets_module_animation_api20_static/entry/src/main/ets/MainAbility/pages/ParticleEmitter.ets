@@ -13,9 +13,8 @@
  * limitations under the License.
  */
 
-import { LengthMetrics } from '@ohos.arkui.node'
+import { LengthMetrics } from '@ohos.arkui.node';
 import {
-  $r,
   Alignment,
   Button,
   ClickEvent,
@@ -27,13 +26,15 @@ import {
   Entry,
   Particle,
   ParticleEmitterShape,
+  ParticlePropertyAnimation,
   ParticleType,
   ParticleUpdater,
   Stack,
-  Text,
+  Text,Particles,ParticleAttribute
 } from '@ohos.arkui.component';
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import CommonFunc from '../common/Common'
 
 @Entry
 @Component
@@ -44,21 +45,22 @@ struct ParticleEmitter {
   @State flag: boolean = true;
   @State message: string = 'Hello World';
   @State myLifTime: number = 2000
-  @State emitterProperties: Array<EmitterProperty> = [
-    {
-      index: 0,
-      emitRate: 500,
-      position: { x: 0, y: 0 },
-      size: { width: 300, height: 300 },
-      annulusRegion: {
-        center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
-        outerRadius: LengthMetrics.px(150),
-        innerRadius: LengthMetrics.px(100),
-        startAngle: 0,
-        endAngle: 360
-      }
-    }
-  ] as Array<EmitterProperty>
+
+  // @State emitterProperties: Array<EmitterProperty> = [
+  //   {
+  //     index: 0,
+  //     emitRate: 500,
+  //     position: { x: 0, y: 0 },
+  //     size: { width: 300, height: 300 },
+  //     annulusRegion: {
+  //       center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
+  //       outerRadius: LengthMetrics.px(150),
+  //       innerRadius: LengthMetrics.px(100),
+  //       startAngle: 0,
+  //       endAngle: 360
+  //     }
+  //   }
+  // ] as Array<EmitterProperty>
 
   build() {
     Column() {
@@ -75,7 +77,7 @@ struct ParticleEmitter {
                     radius: 3
                   },
                   count: 50000,
-                  lifetime: this.myLifTime.toInt(),
+                  lifetime: this.myLifTime as Int,
                   lifetimeRange: 100
                 },
                 emitRate: 500,
@@ -113,26 +115,28 @@ struct ParticleEmitter {
               },
               scale: {
                 range: [0.0, 0.0],
-                // updater: {
-                //   type: ParticleUpdater.CURVE,
-                //   config: [
-                //     {
-                //       from: 0.0,
-                //       to: 0.5,
-                //       startMillis: 0,
-                //       endMillis: 3000,
-                //       curve: Curve.EaseIn
-                //     }
-                //   ]
-                // }
+                updater: {
+                  type: ParticleUpdater.CURVE,
+                  config: [
+                    {
+                      from: 0.0,
+                      to: 0.5,
+                      startMillis: 0,
+                      endMillis: 3000,
+                      curve: Curve.EaseIn
+                    } as ParticlePropertyAnimation<Double>
+                  ]
+                }
               },
             }
           ]
-        }).width(300).height(300).key('particle').emitter(this.emitterProperties)
+        }).width(300).height(300).key('particle')
+        // .emitter(this.emitterProperties)
       }.width('100%').height('50%').align(Alignment.Center)
 
       Button('GetInspector').id('getInspectorId').onClick((e: ClickEvent) => {
         let filterTree = inspector.getInspectorByKey('particle');
+        await CommonFunc.sleep(2000)
         if (filterTree) {
           let myjson: string =
             'XHQ' + JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles'))
@@ -168,22 +172,22 @@ struct ParticleEmitter {
       })
       Button('Update').onClick((e: ClickEvent) => {
         this.flag = !this.flag
-        this.emitterProperties = [
-          {
-            index: 0,
-            emitRate: 500,
-            position: { x: 0, y: 0 },
-            size: { width: 300, height: 300 },
-            annulusRegion: {
-              center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
-              outerRadius: LengthMetrics.px(this.flag ? 150 : 300),
-              innerRadius: LengthMetrics.px(this.flag ? 100 : 250),
-              startAngle: 0,
-              endAngle: 360
-            }
-
-          }
-        ]
+        // this.emitterProperties = [
+        //   {
+        //     index: 0,
+        //     emitRate: 500,
+        //     position: { x: 0, y: 0 },
+        //     size: { width: 300, height: 300 },
+        //     annulusRegion: {
+        //       center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
+        //       outerRadius: LengthMetrics.px(this.flag ? 150 : 300),
+        //       innerRadius: LengthMetrics.px(this.flag ? 100 : 250),
+        //       startAngle: 0,
+        //       endAngle: 360
+        //     }
+        //
+        //   }
+        // ]
       })
     }
     .height('100%')

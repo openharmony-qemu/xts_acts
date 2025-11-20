@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import { UIContext } from '@ohos.arkui.UIContext';
-import events_emitter from '@ohos.events.emitter';
-import { $r, Circle, ClickEvent, Column, Component, Entry, Margin, } from '@ohos.arkui.component';
+import emitter from '@ohos.events.emitter';
+import { $r, Circle, ClickEvent, Column, Component, Entry, Margin,KeyframeAnimateParam,KeyframeState } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -27,7 +27,7 @@ struct ExpectedFrameRateRange {
   uiContext: UIContext | undefined = undefined;
 
   aboutToAppear() {
-    this.uiContext = this.getUIContext?.();
+    this.uiContext = this.getUIContext();
   }
 
   build() {
@@ -39,12 +39,55 @@ struct ExpectedFrameRateRange {
         .fill('#46B1E3')
         .margin(100)
         .scale({ x: this.myScale, y: this.myScale })
-        .onClick((e: ClickEvent) => {
+        .onClick((e: ClickEvent)=> {
           if (!this.uiContext) {
             console.info('no uiContext, keyframe failed');
             return;
           }
           this.myScale = 1;
+          // this.uiContext!.keyframeAnimateTo(
+          //   {
+          //     iterations: 5,
+          //     expectedFrameRateRange: {
+          //       max: this.maxNumber,
+          //       expected: this.expectedNumber,
+          //       min: this.minNumber,
+          //     },
+          //     onFinish: () => {
+          //       try {
+          //         let backData: emitter.EventData = {
+          //           data: {
+          //             'min': this.minNumber,
+          //             'expected': this.expectedNumber,
+          //             'max': this.maxNumber,
+          //           } as Record<string, undefined|null|Object>
+          //         }
+          //         let backEvent: emitter.InnerEvent = {
+          //           eventId: 51,
+          //           priority: emitter.EventPriority.LOW
+          //         } as emitter.InnerEvent
+          //         console.info('onFinish start to emit action state')
+          //         emitter.emit(backEvent, backData)
+          //       } catch (err) {
+          //         console.info('onFinish emit action state err: ' + JSON.stringify(err))
+          //       }
+          //     },
+          //   },
+          //   [
+          //   {
+          //     duration: 1000,
+          //     event: () => {
+          //       this.myScale = 1.5;
+          //     }
+          //   },
+          //   {
+          //     duration: 2000,
+          //     event: () => {
+          //       this.myScale = 0.8;
+          //     }
+          //   }
+          // ]
+          // );
         })
     }.width('100%').margin({ top: 5 } as Margin)
   }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,8 +51,6 @@ export default function visualEffectTest() {
         if (!("visualEffect" == pages.name)) {
           console.info("get visualEffectTest state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push visualEffectTest page error: " + err);
@@ -60,76 +58,92 @@ export default function visualEffectTest() {
       }
     });
 
-
+    
     /*
-     * @tc.number    visualEffectTest_static_0100
-     * @tc.name      visualEffectTest_static_0100
-     * @tc.desc      visualEffectTest_static_0100
-     * @tc.level     2
+     * @tc.number   visualEffectTest_static_0100
+     * @tc.name     visualEffectTest_static_0100
+     * @tc.desc     visualEffectTest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('visualEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('visualEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('visualEffectTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('visualEffect_text');
-      console.log('visualEffectTest_static_0100', JSON.parseJsonElement(strJson).getElement('$attrs'))
-      console.log('visualEffectTest_static_0100',
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('visualEffect'))
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visualEffect')).assertEqual(undefined);
+      await CommonFunc.sleep(1000);
+
+      console.log('visualEffectTest_static_0100 111',
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')))
+
+      // console.log('visualEffectTest_static_0100 000 ',
+      //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visualEffect')))
+
+      expect(JSON.parseJsonElement(strJson).tryGetElement('$attrs')?.tryGetElement('visualEffect'))
+        .assertEqual(undefined);
+
       console.info('visualEffectTest_static_0100 END');
       done();
     });
 
 
+    
     /*
-     * @tc.number    foregroundFilterTest_static_0200
-     * @tc.name      foregroundFilterTest_static_0200
-     * @tc.desc      foregroundFilterTest_static_0200
-     * @tc.level     2
+     * @tc.number   foregroundFilterTest_static_0200
+     * @tc.name     foregroundFilterTest_static_0200
+     * @tc.desc     foregroundFilterTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('foregroundFilterTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('foregroundFilterTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('foregroundFilterTest_static_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('foregroundFilter_text');
+      await CommonFunc.sleep(1000);
       console.log('foregroundFilterTest_static_0200', JSON.parseJsonElement(strJson).getElement('$attrs'))
-      console.log('foregroundFilterTest_static_0200',
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('foregroundFilter'))
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('foregroundFilter')).assertEqual(undefined);
+      // console.log('foregroundFilterTest_static_0200',
+      //   JSON.parseJsonElement(strJson).getElement('$attrs').getString('foregroundFilter'))
+      expect(JSON.parseJsonElement(strJson).tryGetElement('$attrs')?.tryGetElement('foregroundFilter'))
+        .assertEqual(undefined);
       console.info('foregroundFilterTest_static_0200 END');
       done();
     });
 
 
+    
     /*
-     * @tc.number    backgroundFilterTest_static_0300
-     * @tc.name      backgroundFilterTest_static_0300
-     * @tc.desc      backgroundFilterTest_static_0300
-     * @tc.level     2
+     * @tc.number   backgroundFilterTest_static_0300
+     * @tc.name     backgroundFilterTest_static_0300
+     * @tc.desc     backgroundFilterTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('backgroundFilterTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('backgroundFilterTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('backgroundFilterTest_static_0300 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('backgroundFilter_text');
+      await CommonFunc.sleep(1000);
       console.log('backgroundFilterTest_static_0300', JSON.parseJsonElement(strJson).getElement('$attrs'))
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundFilter')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).tryGetElement('$attrs')?.tryGetElement('backgroundFilter'))
+        .assertEqual(undefined);
       console.info('backgroundFilterTest_static_0300 END');
       done();
     });
 
 
+    
     /*
-     * @tc.number    compositingFilterTest_static_0400
-     * @tc.name      compositingFilterTest_static_0400
-     * @tc.desc      compositingFilterTest_static_0400
-     * @tc.level     2
+     * @tc.number   compositingFilterTest_static_0400
+     * @tc.name     compositingFilterTest_static_0400
+     * @tc.desc     compositingFilterTest_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('compositingFilterTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('compositingFilterTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('compositingFilterTest_static_0400 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('compositingFilter_text');
+      await CommonFunc.sleep(1000);
       console.log('compositingFilterTest_static_0400', JSON.parseJsonElement(strJson).getElement('$attrs'))
-      console.log('compositingFilterTest_static_0400',
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('compositingFilter'))
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('compositingFilter')).assertEqual(undefined);
+      // console.log('compositingFilterTest_static_0400',
+      //   JSON.parseJsonElement(strJson).getElement('$attrs').getString('compositingFilter'))
+      expect(JSON.parseJsonElement(strJson).tryGetElement('$attrs')?.tryGetElement('compositingFilter'))
+        .assertEqual(undefined);
       console.info('compositingFilterTest_static_0400 END');
       done();
     });
