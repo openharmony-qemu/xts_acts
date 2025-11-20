@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,6 +22,7 @@ import {
   Component,
   Entry,
   Image,
+  Position,
   Stack,
   TransitionEffect
 } from '@ohos.arkui.component';
@@ -40,11 +41,12 @@ struct geometryTransitionExample {
           .clip(true)
           .width(300)
           .height(400)
+          .offset({ y: 100 } as Position)
           .geometryTransition("picture", {
             follow: true
           })
           .key('geometry_follow_2')
-          .transition(TransitionEffect.OPACITY)
+        // .transition(TransitionEffect.OPACITY)
       } else {
         Column() {
           Column() {
@@ -63,11 +65,13 @@ struct geometryTransitionExample {
           follow: true
         })
         .key('geometry_follow_1')
-        .transition(TransitionEffect.OPACITY)
+
+        // .transition(TransitionEffect.OPACITY)
       }
     }
     .onClick((e: ClickEvent) => {
       animateTo({ duration: 1000 }, () => {
+        console.log('test click011')
         this.isShow = !this.isShow
       })
     })

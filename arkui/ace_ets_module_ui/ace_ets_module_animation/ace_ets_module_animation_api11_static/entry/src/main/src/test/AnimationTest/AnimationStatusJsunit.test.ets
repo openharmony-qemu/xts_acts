@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,7 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
@@ -44,7 +44,6 @@ export default function animationStatusJsunit() {
         console.info("get animationStatusJsunit state pages:" + JSON.stringify(pages));
         if (!("animationStatus" == pages.name)) {
           console.info("get animationStatusJsunit pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -58,12 +57,11 @@ export default function animationStatusJsunit() {
       await CommonFunc.sleep(1000);
       console.info("animationStatus after each called");
     });
-
     /*
-     * @tc.number    animationStatus_static_01
-     * @tc.name      animationStatus_static_01
-     * @tc.desc      animationStatus_static_01
-     * @tc.level     2
+     * @tc.number   animationStatus_static_01
+     * @tc.name     animationStatus_static_01
+     * @tc.desc     animationStatus_static_01
+     * @tc.level    Level.LEVEL0
      */
     it('animationStatus_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[animationStatus_static_01] START');
@@ -71,16 +69,15 @@ export default function animationStatusJsunit() {
       let strJson = inspector.getInspectorByKey('ImageAnimator');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[animationStatus_static_01] obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$type')).assertEqual('ImageAnimator');
+      expect(obj.getString('$type')).assertEqual('ImageAnimator');
       console.info('[animationStatus_static_01] END');
       done();
     });
-
     /*
-     * @tc.number    animationStatus_static_02
-     * @tc.name      animationStatus_static_02
-     * @tc.desc      animationStatus_static_02
-     * @tc.level     2
+     * @tc.number   animationStatus_static_02
+     * @tc.name     animationStatus_static_02
+     * @tc.desc     animationStatus_static_02
+     * @tc.level    Level.LEVEL0
      */
     it('animationStatus_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[animationStatus_static_02] START');
@@ -92,58 +89,60 @@ export default function animationStatusJsunit() {
       console.info('[animationStatus_static_02] END');
       done();
     });
-
     /*
-     * @tc.number    animationStatus_static_03
-     * @tc.name      animationStatus_static_03
-     * @tc.desc      animationStatus_static_03
-     * @tc.level     2
+     * @tc.number   animationStatus_static_03
+     * @tc.name     animationStatus_static_03
+     * @tc.desc     animationStatus_static_03
+     * @tc.level    Level.LEVEL0
      */
     it('animationStatus_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animationStatus_static_03 START');
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("animationStatus_static_03 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject)?.getProperty('animationStatus')).assertEqual(AnimationStatus.Paused);
+        const data: Record<String, undefined | null | Object> =
+          indexEvent.data as Record<String, undefined | null | Object>
+        expect(data['animationStatus']).assertEqual(AnimationStatus.Paused);
         done();
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 56,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animationStatus_static_03 on events_emitter err : " + JSON.stringify(err));
+        console.info("animationStatus_static_03 on emitter err : " + JSON.stringify(err));
       }
       console.info("animationStatus_static_03 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('animationStatus_static_03 END');
     });
-
     /*
-     * @tc.number    animationStatus_static_04
-     * @tc.name      animationStatus_static_04
-     * @tc.desc      animationStatus_static_04
-     * @tc.level     2
+     * @tc.number   animationStatus_static_04
+     * @tc.name     animationStatus_static_04
+     * @tc.desc     animationStatus_static_04
+     * @tc.level    Level.LEVEL0
      */
     it('animationStatus_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animationStatus_static_04 START');
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("animationStatus_static_04 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject)?.getProperty('animationStatus')).assertEqual(AnimationStatus.Stopped);
+        const data: Record<String, undefined | null | Object> =
+          indexEvent.data as Record<String, undefined | null | Object>
+        expect(data['animationStatus']).assertEqual(AnimationStatus.Stopped);
         done();
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 57,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animationStatus_static_04 on events_emitter err : " + JSON.stringify(err));
+        console.info("animationStatus_static_04 on emitter err : " + JSON.stringify(err));
       }
       console.info("animationStatus_static_04 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button3', 10, "")));

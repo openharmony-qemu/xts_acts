@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -21,7 +21,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function curvesJsunit() {
   describe('curvesJsunit', () => {
-
     beforeAll(() => {
       console.info("curvesJsunit beforeEach start");
       await UtilsTest.msSleep(4000)
@@ -32,7 +31,7 @@ export default function curvesJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("curvesJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/curves',
+        url: 'MainAbility/pages/Curves',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

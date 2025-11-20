@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,15 +19,20 @@ import {
   ColumnOptions,
   Component,
   Entry,
+  Length,
+  LocalizedPosition,
   Position,
-  
+  RemoteWindow,
   Row,
   Text,
   TextAlign,
-  TextOverflow
+  TextOverflow,
+  WindowAnimationTarget
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
+import { UIContext } from '@ohos.arkui.UIContext';
+import windowAnimationManager from '@ohos.animation.windowAnimationManager';
 
 const TAG = 'ets_apiLack_add';
 
@@ -35,6 +40,9 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct FormComponentFormDimension {
+  @State target: WindowAnimationTarget | undefined = undefined // 通过windowAnimationManager获取
+  uiContext: UIContext = this.getUIContext()
+
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear Dimension start`);
   }
@@ -52,13 +60,25 @@ struct FormComponentFormDimension {
           .fontSize(20)
           .opacity(1)
           .align(Alignment.TopStart)
-          .fontColor(0xCCCCCC)
+          .fontColor('#FFCCCCCC')
           .lineHeight(25)
           .border({ width: 1 })
           .padding(10)
           .textAlign(TextAlign.Center)
           .textOverflow({ overflow: TextOverflow.None })
           .key("formComponentFormDimensionWindowBoundsText")
+
+        // RemoteWindow(this.target as WindowAnimationTarget)
+        // .translate({ x: 100, y: 200 })
+        // .scale({ x: 0.5, y: 0.5 })
+        // .opacity(0.8)
+        // .position({
+        //   x: this.uiContext.px2vp((this.target?.windowBounds.left) as Double) as Length,
+        //   y: this.uiContext.px2vp((this.target?.windowBounds.top) as Double) as Length,
+        // } as Position)
+        // .width(this.uiContext.px2vp((this.target?.windowBounds.width) as number))
+        // .height(this.uiContext.px2vp((this.target?.windowBounds.height) as number))
+        // .key('remoteWindow')
       }
       .width('100%')
     }

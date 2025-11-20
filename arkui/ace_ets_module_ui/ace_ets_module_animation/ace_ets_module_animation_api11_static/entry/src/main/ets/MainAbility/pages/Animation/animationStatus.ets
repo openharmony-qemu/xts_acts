@@ -1,18 +1,18 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   AnimationStatus,
   Button,
@@ -23,17 +23,17 @@ import {
   Entry,
   FillMode,
   ImageAnimator,
+  Margin,
   Row
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
-struct ImageAnimatorExample {
+struct ImageAnimatorExampleu {
   @State state: AnimationStatus = AnimationStatus.Initial;
   @State reverse: boolean = false;
-  @State iterations: int = 1;
+  @State iterations: Int = 1;
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
@@ -76,10 +76,12 @@ struct ImageAnimatorExample {
         .state(this.state)
         .reverse(this.reverse)
         .fixedSize(false)
+        // .preDecode(2)
         .fillMode(FillMode.None)
         .iterations(this.iterations)
         .width(325)
         .height(210)
+        .margin({ top: 100 } as Margin)
         .onStart(() => {
           console.info('Start')
         })
@@ -111,17 +113,17 @@ struct ImageAnimatorExample {
           .onClick((e: ClickEvent) => {
             this.state = AnimationStatus.Paused
             try {
-              let backData: events_emitter.EventData = {
+              let backData: emitter.EventData = {
                 data: {
                   "animationStatus": this.state,
-                } as Record<string, RecordData>
-              } as events_emitter.EventData
-              let backEvent: events_emitter.InnerEvent = {
+                } as Record<string, undefined | null | Object>
+              } as emitter.EventData
+              let backEvent: emitter.InnerEvent = {
                 eventId: 56,
-                priority: events_emitter.EventPriority.LOW
-              } as events_emitter.InnerEvent
+                priority: emitter.EventPriority.LOW
+              } as emitter.InnerEvent
               console.info("button2 start to emit action state")
-              events_emitter.emit(backEvent, backData)
+              emitter.emit(backEvent, backData)
             } catch (err) {
               console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
             }
@@ -134,17 +136,17 @@ struct ImageAnimatorExample {
           .onClick((e: ClickEvent) => {
             this.state = AnimationStatus.Stopped
             try {
-              let backData: events_emitter.EventData = {
+              let backData: emitter.EventData = {
                 data: {
                   "animationStatus": this.state,
-                } as Record<string, RecordData>
-              } as events_emitter.EventData
-              let backEvent: events_emitter.InnerEvent = {
+                } as Record<string, undefined | null | Object>
+              } as emitter.EventData
+              let backEvent: emitter.InnerEvent = {
                 eventId: 57,
-                priority: events_emitter.EventPriority.LOW
-              } as events_emitter.InnerEvent
+                priority: emitter.EventPriority.LOW
+              } as emitter.InnerEvent
               console.info("button3 start to emit action state")
-              events_emitter.emit(backEvent, backData)
+              emitter.emit(backEvent, backData)
             } catch (err) {
               console.info("button3 emit action state err: " + JSON.stringify((err as Error)?.message))
             }
@@ -174,6 +176,6 @@ struct ImageAnimatorExample {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xF1F3F5)
+    .backgroundColor('0xF1F3F5')
   }
 }

@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
@@ -64,7 +64,7 @@ export default function animationCurveTest() {
     beforeEach(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/animationCurve",
+        url: "MainAbility/pages/AnimationCurve",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -81,12 +81,12 @@ export default function animationCurveTest() {
       }
       console.info("playModeReverseTest beforeEach end");
     });
-
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     /*
-     * @tc.number    ArkUX_ohos.curves_customCurve_static_1000
-     * @tc.name      ArkUX_ohos.curves_customCurve_static_1000
-     * @tc.desc      ArkUX_ohos.curves_customCurve_static_1000
-     * @tc.level     2
+     * @tc.number   ArkUX_ohos.curves_customCurve_static_1000
+     * @tc.name     ArkUX_ohos.curves_customCurve_static_1000
+     * @tc.desc     ArkUX_ohos.curves_customCurve_static_1000
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_ohos.curves_customCurve_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1000 START');
@@ -108,12 +108,11 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
-
     /*
-     * @tc.number    ArkUX_ohos.curves_customCurve_static_1100
-     * @tc.name      ArkUX_ohos.curves_customCurve_static_1100
-     * @tc.desc      ArkUX_ohos.curves_customCurve_static_1100
-     * @tc.level     2
+     * @tc.number   ArkUX_ohos.curves_customCurve_static_1100
+     * @tc.name     ArkUX_ohos.curves_customCurve_static_1100
+     * @tc.desc     ArkUX_ohos.curves_customCurve_static_1100
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_ohos.curves_customCurve_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1000 START');
@@ -136,12 +135,11 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
-
     /*
-     * @tc.number    ArkUX_ohos.curves_customCurve_static_1200
-     * @tc.name      ArkUX_ohos.curves_customCurve_static_1200
-     * @tc.desc      ArkUX_ohos.curves_customCurve_static_1200
-     * @tc.level     2
+     * @tc.number   ArkUX_ohos.curves_customCurve_static_1200
+     * @tc.name     ArkUX_ohos.curves_customCurve_static_1200
+     * @tc.desc     ArkUX_ohos.curves_customCurve_static_1200
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_ohos.curves_customCurve_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1200 START');
@@ -164,12 +162,11 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
-
     /*
-     * @tc.number    ArkUX_ohos.curves_customCurve_static_1300
-     * @tc.name      ArkUX_ohos.curves_customCurve_static_1300
-     * @tc.desc      ArkUX_ohos.curves_customCurve_static_1300
-     * @tc.level     2
+     * @tc.number   ArkUX_ohos.curves_customCurve_static_1300
+     * @tc.name     ArkUX_ohos.curves_customCurve_static_1300
+     * @tc.desc     ArkUX_ohos.curves_customCurve_static_1300
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_ohos.curves_customCurve_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1300 START');
@@ -196,12 +193,11 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
-
     /*
-     * @tc.number    ArkUX_ohos.curves_customCurve_static_1400
-     * @tc.name      ArkUX_ohos.curves_customCurve_static_1400
-     * @tc.desc      ArkUX_ohos.curves_customCurve_static_1400
-     * @tc.level     2
+     * @tc.number   ArkUX_ohos.curves_customCurve_static_1400
+     * @tc.name     ArkUX_ohos.curves_customCurve_static_1400
+     * @tc.desc     ArkUX_ohos.curves_customCurve_static_1400
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUX_ohos.curves_customCurve_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1400 START');

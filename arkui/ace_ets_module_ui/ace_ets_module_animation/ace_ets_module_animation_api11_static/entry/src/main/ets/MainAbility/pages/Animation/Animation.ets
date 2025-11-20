@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -40,18 +40,18 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import curves from '@ohos.curves';
 
 class AnimatorOption implements AnimatorOptions {
-  duration: int = 0;
+  duration: Int = 0;
   easing: string = '';
-  delay: int = 0;
+  delay: Int = 0;
   fill: "none" | "forwards" | "backwards" | "both" = 'forwards';
   direction: "normal" | "reverse" | "alternate" | "alternate-reverse" = 'normal';
-  iterations: int = 0;
-  begin: double = 0;
-  end: double = 0;
+  iterations: Int = 0;
+  begin: number = 0;
+  end: number = 0;
 
-  constructor(duration: int, easing: string, delay: int, fill: "none" | "forwards" | "backwards" | "both",
-    direction: "normal" | "reverse" | "alternate" | "alternate-reverse", iterations: int, begin: double,
-    end: double) {
+  constructor(duration: Int, easing: string, delay: Int, fill: "none" | "forwards" | "backwards" | "both",
+    direction: "normal" | "reverse" | "alternate" | "alternate-reverse", iterations: Int, begin: number,
+    end: number) {
     this.duration = duration
     this.easing = easing
     this.delay = delay
@@ -72,11 +72,11 @@ struct AnimatorInterpolatingSpringTest {
   @State stiffnes: number = 1;
   @State damping: number = 1;
   @State curve: string = 'linear';
-  @State delay: int = 0;
+  @State delay: Int = 0;
   @State fill: "none" | "forwards" | "backwards" | "both" = 'forwards';
   @State myDirection: "normal" | "reverse" | "alternate" | "alternate-reverse" = 'normal';
-  @State iteration: int = 1;
-  @State duration: int = 1000;
+  @State iteration: Int = 1;
+  @State duration: number = 1000;
   @State onframenum: number = 0;
   @State onframeflag: boolean = false;
   @State numflag: string = 'null';
@@ -251,8 +251,8 @@ struct AnimatorInterpolatingSpringTest {
               Button('interpolating-springn')
                 .key('interpolating-springn')
                 .onClick((e: ClickEvent) => {
-                  this.useInterpolating = true;
-                  this.curve = `interpolating-spring(${this.velocity},1,${this.stiffnes},${this.damping})`;
+                  // this.useInterpolating = true;
+                  // this.curve = `interpolating-spring(${this.velocity},1,${this.stiffnes},${this.damping})`;
                 })
               Button('linear')
                 .key('linear')

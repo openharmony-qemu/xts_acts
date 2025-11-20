@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
@@ -44,7 +44,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 interface DataI {
-  duration: int
+  duration: number
   curve: string
   iterations: number
   tempo: number
@@ -99,7 +99,6 @@ export default function animateJsunit() {
         console.info("get animateJsunit state pages:" + JSON.stringify(pages));
         if (!("animate" == pages.name)) {
           console.info("get animateJsunit pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -116,30 +115,30 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0100
-     * @tc.name      animateTest_static_0100
-     * @tc.desc      animateTest_static_0100
-     * @tc.level     2
+     * @tc.number   animateTest_static_0100
+     * @tc.name     animateTest_static_0100
+     * @tc.desc     animateTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0100 START');
       await CommonFunc.sleep(1500);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 51,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0100 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.duration == 100).assertTrue();
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration'] == 100).assertTrue();
         } catch (err) {
           console.info("animateTest_0100 get state result is errr: " + JSON.stringify(err));
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0100 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
       await CommonFunc.sleep(2000);
@@ -147,28 +146,27 @@ export default function animateJsunit() {
       done();
     });
 
-
     /*
-     * @tc.number    animateTest_static_0200
-     * @tc.name      animateTest_static_0200
-     * @tc.desc      animateTest_static_0200
-     * @tc.level     2
+     * @tc.number   animateTest_static_0200
+     * @tc.name     animateTest_static_0200
+     * @tc.desc     animateTest_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0200 START');
       await CommonFunc.sleep(1500);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 52,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
-        let eventData: DataI = indexEvent.data as DataI
-        expect(eventData?.curve).assertEqual('Ease')
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0200 get state result is: " + JSON.stringify(indexEvent))
+        expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('Ease');
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0200 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
       await CommonFunc.sleep(2000);
@@ -177,30 +175,30 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0300
-     * @tc.name      animateTest_static_0300
-     * @tc.desc      animateTest_static_0300
-     * @tc.level     2
+     * @tc.number   animateTest_static_0300
+     * @tc.name     animateTest_static_0300
+     * @tc.desc     animateTest_static_0300
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0300 START');
       await CommonFunc.sleep(1500);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 53,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0300 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.iterations == 1).assertTrue();
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['iterations'] == 1).assertTrue();
         } catch (err) {
           console.info("animateTest_0300 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0300 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
       await CommonFunc.sleep(2000);
@@ -209,26 +207,26 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0400
-     * @tc.name      animateTest_static_0400
-     * @tc.desc      animateTest_static_0400
-     * @tc.level     2
+     * @tc.number   animateTest_static_0400
+     * @tc.name     animateTest_static_0400
+     * @tc.desc     animateTest_static_0400
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0400 START');
       await CommonFunc.sleep(1500);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 54,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
-        let eventData: DataI = indexEvent.data as DataI
-        expect(eventData?.tempo).assertEqual(1000)
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0400 get state result is: " + JSON.stringify(indexEvent))
+        expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(1000);
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0400 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0400 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('button4', 10, "")));
       await CommonFunc.sleep(2000);
@@ -237,26 +235,26 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0500
-     * @tc.name      animateTest_static_0500
-     * @tc.desc      animateTest_static_0500
-     * @tc.level     2
+     * @tc.number   animateTest_static_0500
+     * @tc.name     animateTest_static_0500
+     * @tc.desc     animateTest_static_0500
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0500 START');
       await CommonFunc.sleep(1500);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 55,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
-        let eventData: DataI = indexEvent.data as DataI
-        expect(eventData?.playmode).assertEqual('normal')
+        priority: emitter.EventPriority.LOW
+      }
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0500 get state result is: " + JSON.stringify(indexEvent))
+        expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode']).assertEqual(PlayMode.Normal);
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0500 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0500 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('button5', 10, "")));
       await CommonFunc.sleep(2000);
@@ -265,36 +263,35 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0600
-     * @tc.name      animateTest_static_0600
-     * @tc.desc      animateTest_static_0600
-     * @tc.level     2
+     * @tc.number   animateTest_static_0600
+     * @tc.name     animateTest_static_0600
+     * @tc.desc     animateTest_static_0600
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
-        name: 'duration',
-        value: 2000
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManager")
+      let msg: Message<Int> = {
+        name: 'duration', value: 2000
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 151,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      }
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0600 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.duration == 2000).assertTrue();
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration'] == 2000).assertTrue();
         } catch (err) {
           console.info("animateTest_0600 get state result err is: " + JSON.stringify(err));
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0600 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0600 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0600 click result is: " + JSON.stringify(inspector.sendEventByKey('button11', 10, "")));
       await CommonFunc.sleep(2000);
@@ -303,35 +300,35 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0700
-     * @tc.name      animateTest_static_0700
-     * @tc.desc      animateTest_static_0700
-     * @tc.level     2
+     * @tc.number   animateTest_static_0700
+     * @tc.name     animateTest_static_0700
+     * @tc.desc     animateTest_static_0700
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0700 START');
-      const animate = AppStorage.get<ParamName1>("value")
+      const animate = AppStorage.get<MessageManager<String>>("MessageManagerString")
       let msg: Message<string> = {
         name: 'curve', value: 'Linear'
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 152,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      }
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0700 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.curve).assertEqual('Linear');
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('Linear');
         } catch (err) {
           console.info("animateTest_0700 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0700 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0700 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('button12', 10, "")));
       await CommonFunc.sleep(2000);
@@ -340,35 +337,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0800
-     * @tc.name      animateTest_static_0800
-     * @tc.desc      animateTest_static_0800
-     * @tc.level     2
+     * @tc.number   animateTest_static_0800
+     * @tc.name     animateTest_static_0800
+     * @tc.desc     animateTest_static_0800
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0800 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
+
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManager")
+      let msg: Message<Int> = {
         name: 'iteration', value: 2
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 153,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0800 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.iterations).assertEqual(2)
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['iterations']).assertEqual(2);
         } catch (err) {
           console.info("animateTest_0800 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0800 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0800 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0800 click result is: " + JSON.stringify(inspector.sendEventByKey('button13', 10, "")));
       await CommonFunc.sleep(2000);
@@ -377,35 +375,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_0900
-     * @tc.name      animateTest_static_0900
-     * @tc.desc      animateTest_static_0900
-     * @tc.level     2
+     * @tc.number   animateTest_static_0900
+     * @tc.name     animateTest_static_0900
+     * @tc.desc     animateTest_static_0900
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0900 START');
-      const animate = AppStorage.get<ParamName1>("value")
-      let msg: Message<string> = {
-        name: 'tempo', value: "20000"
+
+      const animate = AppStorage.get<MessageManager<Double>>("MessageManagerLong")
+      let msg: Message<Double> = {
+        name: 'tempo', value: 20000
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 154,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_0900 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.tempo).assertEqual('20000');
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(20000);
         } catch (err) {
           console.info("animateTest_0900 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_0900 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_0900 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0900 click result is: " + JSON.stringify(inspector.sendEventByKey('button14', 10, "")));
       await CommonFunc.sleep(2000);
@@ -414,35 +413,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1000
-     * @tc.name      animateTest_static_1000
-     * @tc.desc      animateTest_static_1000
-     * @tc.level     2
+     * @tc.number   animateTest_static_1000
+     * @tc.name     animateTest_static_1000
+     * @tc.desc     animateTest_static_1000
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1000 START');
-      const animate = AppStorage.get<ParamName2>("value")
+      const animate = AppStorage.get<MessageManager<PlayMode>>("MessageManagerPlayMode")
       let msg: Message<PlayMode> = {
         name: 'playmode', value: PlayMode.Alternate
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 155,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1000 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.playmode).assertEqual('alternate');
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode'])
+            .assertEqual(PlayMode.Alternate);
         } catch (err) {
           console.info("animateTest_1000 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1000 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1000 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1000 click result is: " + JSON.stringify(inspector.sendEventByKey('button15', 10, "")));
       await CommonFunc.sleep(2000);
@@ -451,35 +451,35 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1100
-     * @tc.name      animateTest_static_1100
-     * @tc.desc      animateTest_static_1100
-     * @tc.level     2
+     * @tc.number   animateTest_static_1100
+     * @tc.name     animateTest_static_1100
+     * @tc.desc     animateTest_static_1100
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1100 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManager")
+      let msg: Message<Int> = {
         name: 'duration', value: -1000
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1001,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1100 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.duration).assertEqual(-1000);
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration']).assertEqual(-1000);
         } catch (err) {
           console.info("animateTest_1100 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1100 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1100 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1100 click result is: " + JSON.stringify(inspector.sendEventByKey('button6', 10, "")));
       await CommonFunc.sleep(2000);
@@ -488,35 +488,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1200
-     * @tc.name      animateTest_static_1200
-     * @tc.desc      animateTest_static_1200
-     * @tc.level     2
+     * @tc.number   animateTest_static_1200
+     * @tc.name     animateTest_static_1200
+     * @tc.desc     animateTest_static_1200
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1200 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
+
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManager")
+      let msg: Message<Int> = {
         name: 'duration', value: 100000000
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1002,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1200 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.duration).assertEqual(100000000);
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration']).assertEqual(100000000);
         } catch (err) {
           console.info("animateTest_1200 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1200 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1200 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1200 click result is: " + JSON.stringify(inspector.sendEventByKey('button7', 10, "")));
       await CommonFunc.sleep(2000);
@@ -525,35 +526,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1300
-     * @tc.name      animateTest_static_1300
-     * @tc.desc      animateTest_static_1300
-     * @tc.level     2
+     * @tc.number   animateTest_static_1300
+     * @tc.name     animateTest_static_1300
+     * @tc.desc     animateTest_static_1300
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1300 START');
-      const animate = AppStorage.get<ParamName1>("value")
+
+      const animate = AppStorage.get<MessageManager<String>>("MessageManagerString")
       let msg: Message<string> = {
         name: 'curve', value: '123'
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1003,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1300 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.curve).assertEqual('123');
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('123');
         } catch (err) {
           console.info("animateTest_1300 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1300 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1300 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1300 click result is: " + JSON.stringify(inspector.sendEventByKey('button8', 10, "")));
       await CommonFunc.sleep(2000);
@@ -562,35 +564,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1400
-     * @tc.name      animateTest_static_1400
-     * @tc.desc      animateTest_static_1400
-     * @tc.level     2
+     * @tc.number   animateTest_static_1400
+     * @tc.name     animateTest_static_1400
+     * @tc.desc     animateTest_static_1400
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1400 START');
-      const animate = AppStorage.get<ParamName1>("value")
+
+      const animate = AppStorage.get<MessageManager<String>>("MessageManagerString")
       let msg: Message<string> = {
         name: 'curve', value: 'abc'
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1004,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1400 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.curve).assertEqual('abc')
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('abc');
         } catch (err) {
           console.info("animateTest_1400 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1400 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1400 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1400 click result is: " + JSON.stringify(inspector.sendEventByKey('button9', 10, "")));
       await CommonFunc.sleep(2000);
@@ -599,35 +602,35 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1500
-     * @tc.name      animateTest_static_1500
-     * @tc.desc      animateTest_static_1500
-     * @tc.level     2
+     * @tc.number   animateTest_static_1500
+     * @tc.name     animateTest_static_1500
+     * @tc.desc     animateTest_static_1500
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1500 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManager")
+      let msg: Message<Int> = {
         name: 'iteration', value: 121
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1005,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1500 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.iteration).assertEqual(121);
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['iteration']).assertEqual(121);
         } catch (err) {
           console.info("animateTest_1500 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1500 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1500 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1500 click result is: " + JSON.stringify(inspector.sendEventByKey('button10', 10, "")));
       await CommonFunc.sleep(2000);
@@ -636,35 +639,35 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1600
-     * @tc.name      animateTest_static_1600
-     * @tc.desc      animateTest_static_1600
-     * @tc.level     2
+     * @tc.number   animateTest_static_1600
+     * @tc.name     animateTest_static_1600
+     * @tc.desc     animateTest_static_1600
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1600 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManager")
+      let msg: Message<Int> = {
         name: 'iteration', value: -5
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1006,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1600 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.iteration).assertEqual(-5);
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['iteration']).assertEqual(-5);
         } catch (err) {
           console.info("animateTest_1600 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1600 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1600 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1600 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button111', 10, "")));
@@ -674,35 +677,35 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1700
-     * @tc.name      animateTest_static_1700
-     * @tc.desc      animateTest_static_1700
-     * @tc.level     2
+     * @tc.number   animateTest_static_1700
+     * @tc.name     animateTest_static_1700
+     * @tc.desc     animateTest_static_1700
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1700 START');
-      const animate = AppStorage.get<ParamName1>("value")
-      let msg: Message<string> = {
-        name: 'tempo', value: "12121212121212"
+      const animate = AppStorage.get<MessageManager<Double>>("MessageManagerLong")
+      let msg: Message<Double> = {
+        name: 'tempo', value: 12121212121212
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1007,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1700 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.tempo).assertEqual('12121212121212');
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(12121212121212);
         } catch (err) {
           console.info("animateTest_1700 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1700 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1700 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1700 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button121', 10, "")));
@@ -712,35 +715,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1800
-     * @tc.name      animateTest_static_1800
-     * @tc.desc      animateTest_static_1800
-     * @tc.level     2
+     * @tc.number   animateTest_static_1800
+     * @tc.name     animateTest_static_1800
+     * @tc.desc     animateTest_static_1800
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1800 START');
-      const animate = AppStorage.get<ParamName1>("value")
-      let msg: Message<string> = {
-        name: 'tempo', value: "-5"
+
+      const animate = AppStorage.get<MessageManager<Double>>("MessageManagerLong")
+      let msg: Message<Double> = {
+        name: 'tempo', value: -5
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1008,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1800 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.tempo).assertEqual('-5')
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(-5);
         } catch (err) {
           console.info("animateTest_1800 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1800 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1800 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1800 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button131', 10, "")));
@@ -750,35 +754,36 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_1900
-     * @tc.name      animateTest_static_1900
-     * @tc.desc      animateTest_static_1900
-     * @tc.level     2
+     * @tc.number   animateTest_static_1900
+     * @tc.name     animateTest_static_1900
+     * @tc.desc     animateTest_static_1900
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_1900 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
+
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManagerPlayModeInt")
+      let msg: Message<Int> = {
         name: 'playmode', value: -6
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1009,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      } as emitter.InnerEvent
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_1900 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.playmode).assertEqual(-6);
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode']).assertEqual(-6);
         } catch (err) {
           console.info("animateTest_1900 get state result err is: " + JSON.stringify(err))
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_1900 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_1900 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1900 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button141', 10, "")));
@@ -788,35 +793,35 @@ export default function animateJsunit() {
     });
 
     /*
-     * @tc.number    animateTest_static_2000
-     * @tc.name      animateTest_static_2000
-     * @tc.desc      animateTest_static_2000
-     * @tc.level     2
+     * @tc.number   animateTest_static_2000
+     * @tc.name     animateTest_static_2000
+     * @tc.desc     animateTest_static_2000
+     * @tc.level    Level.LEVEL0
      */
     it('animateTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_2000 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<number> = {
+      const animate = AppStorage.get<MessageManager<Int>>("MessageManagerPlayModeInt")
+      let msg: Message<Int> = {
         name: 'playmode', value: 123456
       }
-      animate?.message.notify(msg);
+      animate?.notify(msg);
       await CommonFunc.sleep(200);
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 1010,
-        priority: events_emitter.EventPriority.LOW
-      } as events_emitter.InnerEvent
-      let callback = (indexEvent: events_emitter.EventData) => {
+        priority: emitter.EventPriority.LOW
+      }
+      let callback = (indexEvent: emitter.EventData) => {
+        console.info("animateTest_2000 get state result is: " + JSON.stringify(indexEvent))
         try {
-          let eventData: DataI = indexEvent.data as DataI
-          expect(eventData?.playmode).assertEqual(123456);
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode']).assertEqual(123456);
         } catch (err) {
           console.info("animateTest_2000 get state result err is: " + JSON.stringify(err));
         }
       }
       try {
-        events_emitter.on(indexEvent, callback);
+        emitter.on(indexEvent, callback);
       } catch (err) {
-        console.info("animateTest_2000 on events_emitter err : " + JSON.stringify(err));
+        console.info("animateTest_2000 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_2000 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button151', 10, "")));

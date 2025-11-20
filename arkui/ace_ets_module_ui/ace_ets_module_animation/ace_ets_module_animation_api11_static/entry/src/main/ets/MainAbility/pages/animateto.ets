@@ -4,17 +4,17 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { Callback, Message, MessageManager } from '../common/MessageManager';
-import animator, { AnimatorOptions, AnimatorResult, PlayMode, SimpleAnimatorOptions } from '@ohos.animator';
+import animator, { AnimatorOptions, AnimatorResult, SimpleAnimatorOptions } from '@ohos.animator';
 import {
   Alignment,
   animateTo,
@@ -24,6 +24,7 @@ import {
   Column,
   Component,
   Curve,
+  PlayMode,
   Entry,
   ExpectedFrameRateRange,
   FillMode,
@@ -47,11 +48,10 @@ import { AppStorage, Link, State, StorageLink, Watch } from '@ohos.arkui.stateMa
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import curves from '@ohos.curves';
 import common from '@ohos.app.ability.common';
-import { RecordData } from '@ohos.base';
 
 interface ParamName {
   name: string,
-  message: MessageManager<number>
+  message: MessageManager<Int>
 }
 
 @Entry
@@ -59,67 +59,95 @@ interface ParamName {
 struct animateto {
   @State show: string = "btShow";
   @State btn1: boolean = false;
-  @State duration: int = 100;
+  @State duration: Int = 100;
   @State curve: string = 'Ease';
-  @State iteration: int = 1;
-  @State tempo: number = 1000;
-  @State playmode: PlayMode = PlayMode.Normal;
-  @State finishCallbackType: FinishCallbackType = FinishCallbackType.REMOVED;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @State iteration: Int = 1;
+  @State tempo: Long = 1000;
+  @State playmode: PlayMode | Int = PlayMode.Normal;
+  @State finishCallbackType: FinishCallbackType | Int = FinishCallbackType.REMOVED;
+  messageManager: MessageManager<Int> = new MessageManager<Int>();
+  messageManagerString: MessageManager<string> = new MessageManager<string>();
+  messageManagerLong: MessageManager<Long> = new MessageManager<Long>();
+  messageManagerPlayMode: MessageManager<PlayMode | Int> = new MessageManager<PlayMode | Int>();
+  messageManagerFinishCallbackType: MessageManager<FinishCallbackType | Int> =
+    new MessageManager<FinishCallbackType | Int>();
 
   onPageShow() {
-    let value: ParamName = {
-      name: 'messageManager', message: this.messageManager
-    }
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManagerPlayModeInt', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManagerFinishCallbackTypeInt', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string>>('messageManagerString', this.messageManagerString);
+    AppStorage.setOrCreate<MessageManager<Long>>('messageManagerLong', this.messageManagerLong);
+    AppStorage.setOrCreate<MessageManager<PlayMode | Int>>('messageManagerPlayMode', this.messageManagerPlayMode);
+    AppStorage.setOrCreate<MessageManager<FinishCallbackType | Int>>('messageManagerFinishCallbackType',
+      this.messageManagerFinishCallbackType);
 
-    AppStorage.setOrCreate<ParamName>('value', value);
-    let callback: Callback<number> = (message: Message<number>) => {
+    let callback: Callback<Int> = (message: Message<Int>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'duration') {
-        this.duration = message.value.toInt()
-      }
-      if (message.name == 'curve') {
-        this.curve = (message as Message<string>).value
+        this.duration = message.value as Int
       }
       if (message.name == 'iteration') {
-        this.iteration = message.value.toInt()
-      }
-      if (message.name == 'tempo') {
-        this.tempo = message.value
+        this.iteration = message.value as Int
       }
       if (message.name == 'playmode') {
-        this.playmode = (message as Message<PlayMode>).value
+        this.playmode = message.value as Int
       }
       if (message.name == 'finishCallbackType') {
-        this.finishCallbackType = (message as Message<FinishCallbackType>).value
+        this.finishCallbackType = message.value as Int
       }
     }
+    let stringCallback: Callback<string> = (message: Message<string>) => {
+      if (message.name == 'curve') {
+        this.curve = message.value as String
+      }
+    }
+    let longCallback: Callback<Long> = (message: Message<Long>) => {
+      if (message.name == 'tempo') {
+        this.tempo = message.value as Long
+      }
+    }
+    let PlayModeCallback: Callback<PlayMode | Int> = (message: Message<PlayMode | Int>) => {
+      if (message.name == 'playmode') {
+        this.playmode = message.value as PlayMode
+      }
+    }
+    let FinishCallbackTypeCallback: Callback<FinishCallbackType | Int> =
+      (message: Message<FinishCallbackType | Int>) => {
+        if (message.name == 'finishCallbackType') {
+          this.finishCallbackType = message.value as FinishCallbackType
+        }
+      }
+    this.messageManagerPlayMode.registerCallback(PlayModeCallback)
+    this.messageManagerFinishCallbackType.registerCallback(FinishCallbackTypeCallback)
+    this.messageManagerLong.registerCallback(longCallback)
+    this.messageManagerString.registerCallback(stringCallback)
     this.messageManager.registerCallback(callback)
   }
 
   build() {
     Column() {
       Button(this.show)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button1')
         .onClick((e: ClickEvent) => {
           try {
-            let data1: Record<String, RecordData> = {
+            let data1: Record<String, undefined | null | Object> = {
               "duration": this.duration,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data1 as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data1 as Record<String, undefined | null | Object>
+            } as emitter.EventData
+            let backEvent: emitter.InnerEvent = {
               eventId: 51,
-              priority: events_emitter.EventPriority.LOW
-            } as events_emitter.InnerEvent
+              priority: emitter.EventPriority.LOW
+            } as emitter.InnerEvent
             console.info("button1 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -130,26 +158,26 @@ struct animateto {
           })
         })
       Button(this.show)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button11')
         .onClick((e: ClickEvent) => {
           try {
-            let data2: Record<String, RecordData> = {
+            let data2: Record<String, undefined | null | Object> = {
               "duration": this.duration,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data2 as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data2 as Record<String, undefined | null | Object>
+            } as emitter.EventData
+            let backEvent: emitter.InnerEvent = {
               eventId: 151,
-              priority: events_emitter.EventPriority.LOW
-            } as events_emitter.InnerEvent
+              priority: emitter.EventPriority.LOW
+            } as emitter.InnerEvent
             console.info("button1 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -160,26 +188,26 @@ struct animateto {
           })
         })
       Button(this.show)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button12')
         .onClick((e: ClickEvent) => {
           try {
-            let data3: Record<String, RecordData> = {
+            let data3: Record<String, undefined | null | Object> = {
               "curve": this.curve,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data3 as Record<String, RecordData>
-            } as events_emitter.EventData
-            let backEvent: events_emitter.InnerEvent = {
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data3 as Record<String, undefined | null | Object>
+            } as emitter.EventData
+            let backEvent: emitter.InnerEvent = {
               eventId: 152,
-              priority: events_emitter.EventPriority.LOW
-            } as events_emitter.InnerEvent
+              priority: emitter.EventPriority.LOW
+            } as emitter.InnerEvent
             console.info("button1 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -192,23 +220,22 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button2')
         .onClick((e: ClickEvent) => {
           try {
-            let data4: Record<String, RecordData> = {
-              "curve": this.curve,
-            } as Record<String, RecordData>
-            let backDataOne: events_emitter.EventData = {
-              data: data4 as Record<String, RecordData>
-            }
-            let backEventOne: events_emitter.InnerEvent = {
+            let backDataOne: emitter.EventData = {
+              data: {
+                "curve": this.curve,
+              } as Record<String, undefined | null | Object>
+            } as emitter.EventData
+            let backEventOne: emitter.InnerEvent = {
               eventId: 52,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button2 start to emit action state")
-            events_emitter.emit(backEventOne, backDataOne)
+            emitter.emit(backEventOne, backDataOne)
           } catch (err) {
             console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -221,23 +248,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button3')
         .onClick((e: ClickEvent) => {
           try {
-            let data5: Record<String, RecordData> = {
+            let data5: Record<String, undefined | null | Object> = {
               "iterations": this.iteration,
-            } as Record<String, RecordData>
-            let backDataTwo: events_emitter.EventData = {
-              data: data5 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backDataTwo: emitter.EventData = {
+              data: data5 as Record<String, undefined | null | Object>
             }
-            let backEventTwo: events_emitter.InnerEvent = {
+            let backEventTwo: emitter.InnerEvent = {
               eventId: 53,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button3 start to emit action state")
-            events_emitter.emit(backEventTwo, backDataTwo)
+            emitter.emit(backEventTwo, backDataTwo)
           } catch (err) {
             console.info("button3 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -250,23 +277,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button13')
         .onClick((e: ClickEvent) => {
           try {
-            let data6: Record<String, RecordData> = {
+            let data6: Record<String, undefined | null | Object> = {
               "iterations": this.iteration,
-            } as Record<String, RecordData>
-            let backDataTwo: events_emitter.EventData = {
-              data: data6 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backDataTwo: emitter.EventData = {
+              data: data6 as Record<String, undefined | null | Object>
             }
-            let backEventTwo: events_emitter.InnerEvent = {
+            let backEventTwo: emitter.InnerEvent = {
               eventId: 153,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button3 start to emit action state")
-            events_emitter.emit(backEventTwo, backDataTwo)
+            emitter.emit(backEventTwo, backDataTwo)
           } catch (err) {
             console.info("button3 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -279,23 +306,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button4')
         .onClick((e: ClickEvent) => {
           try {
-            let data7: Record<String, RecordData> = {
+            let data7: Record<String, undefined | null | Object> = {
               "tempo": this.tempo
-            } as Record<String, RecordData>
-            let backDataThree: events_emitter.EventData = {
-              data: data7 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backDataThree: emitter.EventData = {
+              data: data7 as Record<String, undefined | null | Object>
             }
-            let backEventThree: events_emitter.InnerEvent = {
+            let backEventThree: emitter.InnerEvent = {
               eventId: 54,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button4 start to emit action state")
-            events_emitter.emit(backEventThree, backDataThree)
+            emitter.emit(backEventThree, backDataThree)
           } catch (err) {
             console.info("button4 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -308,23 +335,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button14')
         .onClick((e: ClickEvent) => {
           try {
-            let data8: Record<String, RecordData> = {
+            let data8: Record<String, undefined | null | Object> = {
               "tempo": this.tempo
-            } as Record<String, RecordData>
-            let backDataThree: events_emitter.EventData = {
-              data: data8 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backDataThree: emitter.EventData = {
+              data: data8 as Record<String, undefined | null | Object>
             }
-            let backEventThree: events_emitter.InnerEvent = {
+            let backEventThree: emitter.InnerEvent = {
               eventId: 154,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button4 start to emit action state")
-            events_emitter.emit(backEventThree, backDataThree)
+            emitter.emit(backEventThree, backDataThree)
           } catch (err) {
             console.info("button4 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -337,23 +364,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button5')
         .onClick((e: ClickEvent) => {
           try {
-            let data9: Record<String, RecordData> = {
+            let data9: Record<String, undefined | null | Object> = {
               "playmode": this.playmode,
-            } as Record<String, RecordData>
-            let backDataFour: events_emitter.EventData = {
-              data: data9 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backDataFour: emitter.EventData = {
+              data: data9 as Record<String, undefined | null | Object>
             }
-            let backEventFour: events_emitter.InnerEvent = {
+            let backEventFour: emitter.InnerEvent = {
               eventId: 55,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button5 start to emit action state")
-            events_emitter.emit(backEventFour, backDataFour)
+            emitter.emit(backEventFour, backDataFour)
           } catch (err) {
             console.info("button5 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -366,23 +393,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button15')
         .onClick((e: ClickEvent) => {
           try {
-            let data10: Record<String, RecordData> = {
+            let data10: Record<String, undefined | null | Object> = {
               "playmode": this.playmode,
-            } as Record<String, RecordData>
-            let backDataFour: events_emitter.EventData = {
-              data: data10 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backDataFour: emitter.EventData = {
+              data: data10 as Record<String, undefined | null | Object>
             }
-            let backEventFour: events_emitter.InnerEvent = {
+            let backEventFour: emitter.InnerEvent = {
               eventId: 155,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button5 start to emit action state")
-            events_emitter.emit(backEventFour, backDataFour)
+            emitter.emit(backEventFour, backDataFour)
           } catch (err) {
             console.info("button5 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -395,23 +422,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button6')
         .onClick((e: ClickEvent) => {
           try {
-            let data11: Record<String, RecordData> = {
+            let data11: Record<String, undefined | null | Object> = {
               "duration": this.duration,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data11 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data11 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1001,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button6 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button6 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -424,23 +451,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button7')
         .onClick((e: ClickEvent) => {
           try {
-            let data12: Record<String, RecordData> = {
+            let data12: Record<String, undefined | null | Object> = {
               "duration": this.duration,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data12 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data12 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1002,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button7 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button7 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -453,23 +480,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button8')
         .onClick((e: ClickEvent) => {
           try {
-            let data13: Record<String, RecordData> = {
+            let data13: Record<String, undefined | null | Object> = {
               "curve": this.curve,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data13 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data13 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1003,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button8 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button8 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -482,23 +509,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button9')
         .onClick((e: ClickEvent) => {
           try {
-            let data14: Record<String, RecordData> = {
+            let data14: Record<String, undefined | null | Object> = {
               "curve": this.curve,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data14 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data14 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1004,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button9 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button9 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -511,23 +538,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button10')
         .onClick((e: ClickEvent) => {
           try {
-            let data15: Record<String, RecordData> = {
+            let data15: Record<String, undefined | null | Object> = {
               "iteration": this.iteration,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data15 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data15 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1005,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button10 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button10 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -540,23 +567,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button111')
         .onClick((e: ClickEvent) => {
           try {
-            let data16: Record<String, RecordData> = {
+            let data16: Record<String, undefined | null | Object> = {
               "iteration": this.iteration,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data16 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data16 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1006,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button11 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button11 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -569,23 +596,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button121')
         .onClick((e: ClickEvent) => {
           try {
-            let data17: Record<String, RecordData> = {
+            let data17: Record<String, undefined | null | Object> = {
               "tempo": this.tempo,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data17 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data17 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1007,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button12 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button12 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -598,23 +625,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button131')
         .onClick((e: ClickEvent) => {
           try {
-            let data18: Record<String, RecordData> = {
+            let data18: Record<String, undefined | null | Object> = {
               "tempo": this.tempo,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data18 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data18 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1008,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button13 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button13 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -627,23 +654,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button141')
         .onClick((e: ClickEvent) => {
           try {
-            let data19: Record<String, RecordData> = {
+            let data19: Record<String, undefined | null | Object> = {
               "playmode": this.playmode,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data19 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data19 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1009,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button14 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button14 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -656,23 +683,23 @@ struct animateto {
       Button(this.show)
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button151')
         .onClick((e: ClickEvent) => {
           try {
-            let data20: Record<String, RecordData> = {
+            let data20: Record<String, undefined | null | Object> = {
               "playmode": this.playmode,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data20 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data20 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1010,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button15 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button15 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -683,26 +710,26 @@ struct animateto {
           })
         })
       Button(this.show)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button161')
         .onClick((e: ClickEvent) => {
           try {
-            let data21: Record<String, RecordData> = {
+            let data21: Record<String, undefined | null | Object> = {
               "finishCallbackType": this.finishCallbackType,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data21 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data21 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1011,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button1011 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button1011 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -713,26 +740,26 @@ struct animateto {
           })
         })
       Button(this.show)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button171')
         .onClick((e: ClickEvent) => {
           try {
-            let data22: Record<String, RecordData> = {
+            let data22: Record<String, undefined | null | Object> = {
               "finishCallbackType": this.finishCallbackType,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data22 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data22 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1012,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button171 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button171 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -743,26 +770,26 @@ struct animateto {
           })
         })
       Button(this.show)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .width(80)
         .height(30)
-        .backgroundColor(0x317aff)
+        .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
         .key('button181')
         .onClick((e: ClickEvent) => {
           try {
-            let data23: Record<String, RecordData> = {
+            let data23: Record<String, undefined | null | Object> = {
               "finishCallbackType": this.finishCallbackType,
-            } as Record<String, RecordData>
-            let backData: events_emitter.EventData = {
-              data: data23 as Record<String, RecordData>
+            } as Record<String, undefined | null | Object>
+            let backData: emitter.EventData = {
+              data: data23 as Record<String, undefined | null | Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 1013,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button181 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button181 emit action state err: " + JSON.stringify((err as Error)?.message))
           }

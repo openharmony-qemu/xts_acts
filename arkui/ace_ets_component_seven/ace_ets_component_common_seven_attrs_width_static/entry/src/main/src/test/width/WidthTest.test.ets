@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,20 +22,20 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
  * Test of common attribute: width
  */
 export default function widthTest() {
-  
+  //A list of components that support width attributes is required.
   console.info('WidthTest  ======= list+start')
   let supportView = [
     'Button',
   ]
 
-  
+  //Page related configuration, this parameter is required.
   let pageConfig: PageConfig = {
     testName: 'testWidth',
     pageName: 'WidthPage',
     pageUrl: 'MainAbility/pages/width/WidthPage',
   }
 
-  
+  //The data type to be tested, this parameter is required.
   let testValues:TestValue[]= [{
     describe: 'SetWidth',
     setValue: {
@@ -50,7 +50,7 @@ export default function widthTest() {
    * Create test suite.
    */
   describe('WidthTest', () => {
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     beforeAll(() => {
       await UtilsTest.msSleep(4000)
       console.info('WidthTest  ======= start')
@@ -58,7 +58,7 @@ export default function widthTest() {
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       console.info('[' + data.caseTag + '] widthTest');
       console.info('[' + data.caseTag + '] check width_value' + ` ${data.testValue.expectValue.width}`);
       console.info('[' + data.caseTag + '] check width.' + data.viewObj!.getElement('$attrs').getString('width'));
