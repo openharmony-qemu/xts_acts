@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,7 +32,7 @@ import { Callback, MessageManager } from '../../../ets/MainAbility/utils/Message
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import inspector from '@ohos.arkui.inspector'
+import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import display from '@ohos.display'
@@ -63,12 +63,11 @@ export default function popoverDialogTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get popoverDialogTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("popoverDialogTest" == pages.name)) {
           console.info("get popoverDialogTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push popoverDialogTest page error:" + err);
@@ -77,30 +76,29 @@ export default function popoverDialogTest() {
     });
 
 
+    
     /*
-     * @tc.number    popoverDialogTest_static_0100
-     * @tc.name      popoverDialogTest_static_0100
-     * @tc.desc      popoverDialogTest_static_0100
-     * @tc.level     2
+     * @tc.number   popoverDialogTest_static_0100
+     * @tc.name     popoverDialogTest_static_0100
+     * @tc.desc     popoverDialogTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('popoverDialogTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('popoverDialogTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('btn'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click()
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.text('确认'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[popoverDialogTest_0100] popoverDialogTest JSON.parse(strJson) is: " + JSON.stringify(strJson));
-      console.info("[popoverDialogTest_0100] component JSON.parse(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[popoverDialogTest_0100] title: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+      console.info("[popoverDialogTest_0100] popoverDialogTest JSON.parseJsonElement(strJson) is: " + JSON.stringify(strJson));
+      console.info("[popoverDialogTest_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[popoverDialogTest_0100] title: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('close');
-      await CommonFunc.sleep(1000);
+            await CommonFunc.sleep(1000);
       console.info('[popoverDialogTest_0100] END');
       done();
     });

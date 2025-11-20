@@ -69,13 +69,13 @@ export default function ShowActionMenuLife() {
       await CommonFunc.sleep(1000);
       console.info('PromptAction after each called');
     })
- /*
+
+    /*
      * @tc.number   showActionMenu_static_0010
      * @tc.name     showActionMenu_static_0010
      * @tc.desc     showActionMenu_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    
     it('showActionMenu_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[showActionMenu_static_0010] START');

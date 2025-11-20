@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -66,12 +66,11 @@ export default function timePickerDialogHoverMode() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get timePickerDialogHoverMode state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("timePickerDialogHoverMode" == pages.name)) {
           console.info("get timePickerDialogHoverMode pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push timePickerDialogHoverMode page error:" + err);
@@ -84,12 +83,12 @@ export default function timePickerDialogHoverMode() {
       await CommonFunc.sleep(1000);
       console.info("MultiNavigation after each called");
     });
-
+    
     /*
-     * @tc.number    timePickerDialogHoverMode_static_0100
-     * @tc.name      timePickerDialogHoverMode_static_0100
-     * @tc.desc      timePickerDialogHoverMode_static_0100
-     * @tc.level     2
+     * @tc.number   timePickerDialogHoverMode_static_0100
+     * @tc.name     timePickerDialogHoverMode_static_0100
+     * @tc.desc     timePickerDialogHoverMode_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('timePickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('timePickerDialogHoverMode_0100 START');
@@ -100,28 +99,28 @@ export default function timePickerDialogHoverMode() {
         let height = await (col?.getBoundsCenter() as Promise<Point>)
         console.info('col is' + height.y)
         let btn1 = await driver.findComponent(ON.id('btn1'));
-        await (btn1?.click() as Promise<void>);
+        btn1!.click()
         await CommonFunc.sleep(1000);
         let btn2 = await driver.findComponent(ON.id('timePickerDialog'));
-        await (btn2?.click() as Promise<void>);
+        btn2!.click()
         await CommonFunc.sleep(1000);
         let btn4 = await driver.findComponent(ON.text('确定'))
         let rect = await (btn4?.getBounds() as Promise<Rect>)
         console.info(`rect is: ` + JSON.stringify(rect))
         expect(rect.top - height.y < 0).assertTrue();
         await CommonFunc.sleep(1000);
-        await (btn4?.click() as Promise<void>);
+        btn4!.click()
         await CommonFunc.sleep(1000);
       }
       console.info('[timePickerDialogHoverMode_0100] END');
       done();
     });
-
+    
     /*
-     * @tc.number    timePickerDialogHoverMode_static_0200
-     * @tc.name      timePickerDialogHoverMode_static_0200
-     * @tc.desc      timePickerDialogHoverMode_static_0200
-     * @tc.level     2
+     * @tc.number   timePickerDialogHoverMode_static_0200
+     * @tc.name     timePickerDialogHoverMode_static_0200
+     * @tc.desc     timePickerDialogHoverMode_static_0200
+     * @tc.level    Level.LEVEL0
      */
     it('timePickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('timePickerDialogHoverMode_0200 START');
@@ -132,20 +131,20 @@ export default function timePickerDialogHoverMode() {
         let height = await (col?.getBoundsCenter() as Promise<Point>)
         console.info('col is' + height.y)
         let btn1 = await driver.findComponent(ON.id('btn1'));
-        await (btn1?.click() as Promise<void>);
+        btn1!.click()
         await CommonFunc.sleep(1000);
         let btn2 = await driver.findComponent(ON.id('btn2'));
-        await (btn2?.click() as Promise<void>);
+        btn2!.click()
         await CommonFunc.sleep(1000);
         let btn3 = await driver.findComponent(ON.id('timePickerDialog'))
-        await (btn3?.click() as Promise<void>);
+        btn3!.click()
         await CommonFunc.sleep(1000);
         let btn4 = await driver.findComponent(ON.text('确定'))
         let rect = await (btn4?.getBounds() as Promise<Rect>)
         console.info(`rect is: ` + JSON.stringify(rect))
         expect(rect.top - height.y > 0).assertTrue();
         await CommonFunc.sleep(1000);
-        await (btn4?.click() as Promise<void>);
+        btn4!.click()
         await CommonFunc.sleep(1000);
       }
       console.info('[timePickerDialogHoverMode_0200] END');

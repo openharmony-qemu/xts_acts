@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,12 +63,11 @@ export default function activeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get activeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("activeTest" == pages.name)) {
           console.info("get activeTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push activeTest page error:" + err);
@@ -77,11 +76,12 @@ export default function activeTest() {
     });
 
 
+    
     /*
-     * @tc.number    activeTest_static_0010
-     * @tc.name      activeTest_static_0010
-     * @tc.desc      activeTest_static_0010
-     * @tc.level     2
+     * @tc.number   activeTest_static_0010
+     * @tc.name     activeTest_static_0010
+     * @tc.desc     activeTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
     it('activeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0010 START');
@@ -89,26 +89,27 @@ export default function activeTest() {
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button = await scrollBar.scrollSearch(ON.id('active1'));
-      await ((button?.click()) as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let button2 = await scrollBar.scrollSearch(ON.id('active2'));
-      await ((button2?.click()) as Promise<void>)
+      button2?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[activeTest_0010] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[activeTest_0010] content is: " +
+      console.info("[activeTest_0010] attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[activeTest_0010] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('true true');
       await CommonFunc.sleep(1000);
       console.info('[activeTest_0010] END');
       done();
     });
-
+    
     /*
-     * @tc.number    activeTest_static_0020
-     * @tc.name      activeTest_static_0020
-     * @tc.desc      activeTest_static_0020
-     * @tc.level     2
+     * @tc.number   activeTest_static_0020
+     * @tc.name     activeTest_static_0020
+     * @tc.desc     activeTest_static_0020
+     * @tc.level    Level.LEVEL0
      */
     it('activeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0020 START');
@@ -116,26 +117,27 @@ export default function activeTest() {
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      await ((button3?.click()) as Promise<void>)
+      button3?.click()
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active1'));
-      await ((button?.click()) as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[activeTest_0020] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[activeTest_0020] content is: " +
+      console.info("[activeTest_0020] attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[activeTest_0020] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('true false');
       await CommonFunc.sleep(1000);
       console.info('[activeTest_0020] END');
       done();
     });
-
+    
     /*
-     * @tc.number    activeTest_static_0030
-     * @tc.name      activeTest_static_0030
-     * @tc.desc      activeTest_static_0030
-     * @tc.level     2
+     * @tc.number   activeTest_static_0030
+     * @tc.name     activeTest_static_0030
+     * @tc.desc     activeTest_static_0030
+     * @tc.level    Level.LEVEL0
      */
     it('activeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0030 START');
@@ -143,11 +145,12 @@ export default function activeTest() {
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      await ((button3?.click()) as Promise<void>)
+      button3?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[activeTest_0030] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[activeTest_0030] content is: " +
+      console.info("[activeTest_0030] attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[activeTest_0030] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('false false');
       await CommonFunc.sleep(1000);
@@ -155,12 +158,12 @@ export default function activeTest() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    activeTest_static_0040
-     * @tc.name      activeTest_static_0040
-     * @tc.desc      activeTest_static_0040
-     * @tc.level     2
+     * @tc.number   activeTest_static_0040
+     * @tc.name     activeTest_static_0040
+     * @tc.desc     activeTest_static_0040
+     * @tc.level    Level.LEVEL0
      */
     it('activeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0040 START');
@@ -169,14 +172,15 @@ export default function activeTest() {
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
 
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      await ((button3?.click()) as Promise<void>)
+      button3?.click()
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active2'));
-      await ((button?.click()) as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[activeTest_0040] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[activeTest_0040] content is: " +
+      console.info("[activeTest_0040] attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[activeTest_0040] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('false true');
       await CommonFunc.sleep(1000);
@@ -184,12 +188,12 @@ export default function activeTest() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    activeTest_static_0050
-     * @tc.name      activeTest_static_0050
-     * @tc.desc      activeTest_static_0050
-     * @tc.level     2
+     * @tc.number   activeTest_static_0050
+     * @tc.name     activeTest_static_0050
+     * @tc.desc     activeTest_static_0050
+     * @tc.level    Level.LEVEL0
      */
     it('activeTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0040 START');
@@ -197,14 +201,15 @@ export default function activeTest() {
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      await ((button3?.click()) as Promise<void>)
+      button3?.click()
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active3'));
-      await ((button?.click()) as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[activeTest_0050] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[activeTest_0050] content is: " +
+      console.info("[activeTest_0050] attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[activeTest_0050] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('true false');
       await CommonFunc.sleep(1000);
@@ -212,12 +217,12 @@ export default function activeTest() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    activeTest_static_0060
-     * @tc.name      activeTest_static_0060
-     * @tc.desc      activeTest_static_0060
-     * @tc.level     2
+     * @tc.number   activeTest_static_0060
+     * @tc.name     activeTest_static_0060
+     * @tc.desc     activeTest_static_0060
+     * @tc.level    Level.LEVEL0
      */
     it('activeTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0040 START');
@@ -225,16 +230,17 @@ export default function activeTest() {
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      await ((button3?.click()) as Promise<void>)
+      button3?.click()
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active3'));
-      await ((button?.click()) as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
-      await ((button?.click()) as Promise<void>)
+      button?.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
-      console.info("[activeTest_0050] attrs is: " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$attrs')));
-      console.info("[activeTest_0050] content is: " +
+      console.info("[activeTest_0050] attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[activeTest_0050] getString('content') is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('false false');
       await CommonFunc.sleep(1000);
