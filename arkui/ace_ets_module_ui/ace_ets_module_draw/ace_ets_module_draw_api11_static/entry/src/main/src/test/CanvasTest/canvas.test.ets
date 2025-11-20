@@ -14,17 +14,17 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
@@ -51,15 +51,15 @@ export default function canvasActualBoundingBoxAscentJsunit() {
         console.info("get canvas state pages:" + JSON.stringify(pages));
         if (!("canvas" == pages.name)) {
           console.info("get canvas pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push canvas page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push canvas page error: " + err);
       }
-      
+      // done()
     });
 
     afterEach(async () => {
@@ -67,13 +67,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       console.info("canvasActualBoundingBoxAscent after each called");
     });
 
+    
     /*
      * @tc.number   testcanvasAttributes_static_0001
      * @tc.name     testcanvasAttributes_static_0001
      * @tc.desc     testcanvasAttributes_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testcanvasAttributes_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testcanvasAttributes_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0001 testcanvasAttributes0001 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
@@ -85,13 +86,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   testcanvasAttributes_static_0002
      * @tc.name     testcanvasAttributes_static_0002
      * @tc.desc     testcanvasAttributes_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('testcanvasAttributes_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testcanvasAttributes_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0002 testcanvasAttributes0002 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
@@ -104,13 +106,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   testcanvasAttributes_static_0003
      * @tc.name     testcanvasAttributes_static_0003
      * @tc.desc     testcanvasAttributes_static_0003
      * @tc.level    Level.LEVEL0
      */
-    it('testcanvasAttributes_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testcanvasAttributes_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0003 testcanvasAttributes0003 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
@@ -123,13 +126,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   testcanvasAttributes_static_0004
      * @tc.name     testcanvasAttributes_static_0004
      * @tc.desc     testcanvasAttributes_static_0004
      * @tc.level    Level.LEVEL0
      */
-    it('testcanvasAttributes_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testcanvasAttributes_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0004 testcanvasAttributes0004 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
@@ -138,18 +142,17 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Canvas');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement("position").getString('x'))
         .assertEqual("3.00vp");
-      console.info("[testcanvasAttributes_static_0004] position value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString("position"));
       done();
     });
 
+    
     /*
      * @tc.number   testcanvasAttributes_static_0005
      * @tc.name     testcanvasAttributes_static_0005
      * @tc.desc     testcanvasAttributes_static_0005
      * @tc.level    Level.LEVEL0
      */
-    it('testcanvasAttributes_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testcanvasAttributes_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0005 testcanvasAttributes0004 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');

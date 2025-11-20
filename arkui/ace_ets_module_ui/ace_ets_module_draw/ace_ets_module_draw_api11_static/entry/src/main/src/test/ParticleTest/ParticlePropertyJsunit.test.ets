@@ -61,28 +61,27 @@ export default function ParticleJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ParticleJsunit state pages:" + JSON.stringify(pages));
-        if (!("ParticleJsunit" == pages.name)) {
+        if (!("ParticleProperty" == pages.name)) {
           console.info("get ParticleJsunit pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ParticleJsunit page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0100
      * @tc.name     ParticleJsunit_static_0100
      * @tc.desc     ParticleJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0100] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -94,14 +93,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0200
      * @tc.name     ParticleJsunit_static_0200
      * @tc.desc     ParticleJsunit_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0200] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -115,14 +115,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0300
      * @tc.name     ParticleJsunit_static_0300
      * @tc.desc     ParticleJsunit_static_0300
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0200] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -135,14 +136,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0400
      * @tc.name     ParticleJsunit_static_0400
      * @tc.desc     ParticleJsunit_static_0400
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0400] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -155,14 +157,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0500
      * @tc.name     ParticleJsunit_static_0500
      * @tc.desc     ParticleJsunit_static_0500
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0500] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -175,14 +178,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0600
      * @tc.name     ParticleJsunit_static_0600
      * @tc.desc     ParticleJsunit_static_0600
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0600] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -196,14 +200,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0700
      * @tc.name     ParticleJsunit_static_0700
      * @tc.desc     ParticleJsunit_static_0700
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0700] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -216,14 +221,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0800
      * @tc.name     ParticleJsunit_static_0800
      * @tc.desc     ParticleJsunit_static_0800
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0800] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -236,14 +242,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_0900
      * @tc.name     ParticleJsunit_static_0900
      * @tc.desc     ParticleJsunit_static_0900
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_0900] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -256,14 +263,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1000
      * @tc.name     ParticleJsunit_static_1000
      * @tc.desc     ParticleJsunit_static_1000
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1000] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -276,14 +284,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1100
      * @tc.name     ParticleJsunit_static_1100
      * @tc.desc     ParticleJsunit_static_1100
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1100] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -296,14 +305,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1200
      * @tc.name     ParticleJsunit_static_1200
      * @tc.desc     ParticleJsunit_static_1200
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1200] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -316,14 +326,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1300
      * @tc.name     ParticleJsunit_static_1300
      * @tc.desc     ParticleJsunit_static_1300
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1300] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -337,14 +348,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1400
      * @tc.name     ParticleJsunit_static_1400
      * @tc.desc     ParticleJsunit_static_1400
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1400] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -357,14 +369,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1500
      * @tc.name     ParticleJsunit_static_1500
      * @tc.desc     ParticleJsunit_static_1500
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1500] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -377,14 +390,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1600
      * @tc.name     ParticleJsunit_static_1600
      * @tc.desc     ParticleJsunit_static_1600
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1600] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -397,14 +411,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1700
      * @tc.name     ParticleJsunit_static_1700
      * @tc.desc     ParticleJsunit_static_1700
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1700] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);
@@ -417,14 +432,15 @@ export default function ParticleJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   ParticleJsunit_static_1800
      * @tc.name     ParticleJsunit_static_1800
      * @tc.desc     ParticleJsunit_static_1800
      * @tc.level    Level.LEVEL0
      */
-    it('ParticleJsunit_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+it('ParticleJsunit_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Get the information of the Particle component
       console.info('[ParticleJsunit_static_1800] START');
       let strJson = inspector.getInspectorByKey('Particle_Property');
       let obj = JSON.parseJsonElement(strJson);

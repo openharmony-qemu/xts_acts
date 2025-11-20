@@ -34,7 +34,7 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct CanvasActualBoundingBoxAscent {
-  private settings: RenderingContextSettings = new RenderingContextSettings(true) 
+  private settings: RenderingContextSettings = new RenderingContextSettings(true) //antialias:boolean
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
 
   aboutToAppear() {
@@ -79,7 +79,6 @@ struct CanvasActualBoundingBoxAscent {
           this.context.fillText("hangingBaseline:" + this.context.measureText("Hello World!").hangingBaseline, 20, 650)
           this.context.fillText("ideographicBaseline" + this.context.measureText("Hello World!")
             .ideographicBaseline, 20, 700)
-          
         })
     }
     .width('100%')

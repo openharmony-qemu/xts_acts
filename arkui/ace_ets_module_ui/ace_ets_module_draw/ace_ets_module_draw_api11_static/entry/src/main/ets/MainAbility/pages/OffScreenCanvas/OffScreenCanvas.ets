@@ -29,8 +29,7 @@ import {
   FlexAlign,
   Canvas,
   OffscreenCanvas,
-  Scroll,
-  ImageBitmap
+  Scroll,ImageBitmap
 } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
@@ -50,10 +49,10 @@ struct OffScreenCanvas {
           .height('100%')
           .key('OffScreenCanvas_Canvas1')
           .onReady(() => {
-            
-            
-            
-            
+            // this.offscreenCanvas.getContext(null)
+            // this.offscreenCanvas.getContext(undefined)
+            // this.offscreenCanvas.getContext(undefined, { antialias: true })
+            // this.offscreenCanvas.getContext(null, { antialias: false })
             this.getContext_2d()
             this.getContext_2d_settings_false()
             this.getContext_2d_settings_true()
@@ -67,7 +66,7 @@ struct OffScreenCanvas {
     offCanvasContext.fillStyle = '#0000ff'
     offCanvasContext.fillRect(0, 0, 150, 100)
     let image = offCanvasContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image as ImageBitmap);
+    this.context.transferFromImageBitmap(image as ImageBitmap) ;
   }
 
   getContext_2d_settings_false() {
@@ -75,7 +74,7 @@ struct OffScreenCanvas {
     offCanvasContext.fillStyle = '#00ff00'
     offCanvasContext.fillRect(0, 0, 150, 100)
     let image = offCanvasContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image as ImageBitmap);
+    this.context.transferFromImageBitmap(image as ImageBitmap) ;
   }
 
   getContext_2d_settings_true() {
@@ -83,6 +82,6 @@ struct OffScreenCanvas {
     offCanvasContext.fillStyle = '#00ff00'
     offCanvasContext.fillRect(0, 0, 150, 100)
     let image = offCanvasContext.transferToImageBitmap();
-    this.context.transferFromImageBitmap(image as ImageBitmap);
+    this.context.transferFromImageBitmap(image as ImageBitmap) ;
   }
 }

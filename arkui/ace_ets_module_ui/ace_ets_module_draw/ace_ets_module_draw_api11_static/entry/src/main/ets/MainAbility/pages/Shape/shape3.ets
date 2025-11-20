@@ -12,42 +12,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
-  Entry,
-  Component,
   $r,
+  $rawfile,
+  Alignment,
+  Circle,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  Color,
-  $rawfile,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Circle,
-  TextOverflow,
-  Polyline,
-  PolylineAttribute,
-  Image,
-  Alignment,
-  TextAlign,
+  Component,
   Ellipse,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  Image,
+  ItemAlign,
+  Length,
   Line,
-  Path,
-  Margin,
-  Polygon,
-  PolygonAttribute,
   LineCapStyle,
   LineJoinStyle,
-  Shape,
-  Rect,
-  Length,
   Margin,
+  Path,
+  Polygon,
+  PolygonAttribute,
+  Polyline,
+  PolylineAttribute,
   Position,
+  Rect,
+  Shape,
+  Text,
+  TextAlign,
+  TextOverflow,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -59,65 +58,27 @@ struct ShapeExample {
   @State strokeOpacity: number = 1;
   @State strokeWidth: number = 1;
   @State antiAlias: boolean = true;
-  @State strokeDashArray: Array<Length> = [20] as Array<Length>;
+  @State strokeDashArray: Array<Length> = [20, 20, 2, 3] as Array<Length>;
   @State fillOpacity: number = 0;
   @State strokeValue: string = '#FF000000';
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData): void => {
-      if (eventData != null) {
-        console.info("text page state change called:" + JSON.stringify(eventData));
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-      }
-    }
 
   onPageShow() {
     console.info('qrCode page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 192,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
+    console.log('test get data is: ' + this.antiAlias)
   }
 
   build() {
     Column({ space: 2 } as ColumnOptions) {
-      Text('basic').fontSize(30).fontColor(0xCCCCCC).width(320)
+      Text('basic').fontSize(30).fontColor('0xCCCCCC').width(320)
       Shape() {
         Rect().width(300).height(50)
         Ellipse().width(300).height(50).offset({ x: 0, y: 60 } as Position)
-        
+        Path().width(300).height(10).commands('M0 0 L900 0').offset({ x: 0, y: 120 } as Position)
       }
       .key('shape')
       .viewPort({
@@ -126,7 +87,7 @@ struct ShapeExample {
         width: 304,
         height: 130
       })
-      .fill(0x317Af7)
+      .fill('0x317Af7')
       .stroke(this.strokeValue)
       .strokeDashArray(this.strokeDashArray)
       .strokeDashOffset(this.strokeDashOffset)
@@ -140,4 +101,47 @@ struct ShapeExample {
       .mesh([], 1, 1)
     }.width('100%').margin({ top: 15 } as Margin)
   }
+
+  private stateChangCallBack: (eventData: emitter.EventData) => void =
+    (eventData: emitter.EventData): void => {
+      if (eventData != null) {
+        console.info("text page state change called:" + JSON.stringify(eventData));
+        const data: Record<String, undefined | null | Object> =
+          eventData.data as Record<String, undefined | null | Object>
+        if (data['strokeDashOffset'] != null) {
+          this.strokeDashOffset = parseInt(data['strokeDashOffset']?.toString() as string);
+        }
+        if (data['strokeLineCap'] != null) {
+          this.strokeLineCap = data['strokeLineCap'] as LineCapStyle;
+        }
+        if (data['strokeLineJoin'] != null) {
+          this.strokeLineJoin = data['strokeLineJoin'] as LineJoinStyle;
+        }
+        if (data['strokeMiterLimit'] != null) {
+          this.strokeMiterLimit = data['strokeMiterLimit'] as number;
+        }
+        if (data['strokeOpacity'] != null) {
+          this.strokeOpacity = parseInt(data['strokeOpacity']?.toString() as string);
+        }
+        if (data['fillOpacity'] != null) {
+          this.fillOpacity = parseInt(data['fillOpacity']?.toString() as string);
+        }
+        if (data['antiAlias'] != null) {
+          console.log('test get data is: ' + data['antiAlias'])
+          this.antiAlias = data['antiAlias'] as boolean;
+        }
+        if (data['strokeDashArrayOne'] != null) {
+          this.strokeDashArray[0] = parseInt(data['strokeDashArrayOne']?.toString() as string);
+        }
+        if (data['strokeDashArrayTwo'] != null) {
+          this.strokeDashArray[1] = parseInt(data['strokeDashArrayTwo']?.toString() as string);
+        }
+        if (data['strokeDashArrayThree'] != null) {
+          this.strokeDashArray[2] = parseInt(data['strokeDashArrayThree']?.toString() as string);
+        }
+        if (data['stroke'] != null) {
+          this.strokeValue = data['stroke'] as string;
+        }
+      }
+    }
 }

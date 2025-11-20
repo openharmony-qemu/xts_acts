@@ -62,10 +62,10 @@ export default function ellipseNeJsunit() {
         console.info("get ellipse state success " + JSON.stringify(pages));
         if (!("ellipse1" == pages.name)) {
           console.info("get ellipse state success " + JSON.stringify(pages.name));
-          
+          // let result = await ellipse1.pushUrl(options);
           ellipse1.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ellipse page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ellipse page error: " + err);
@@ -78,13 +78,14 @@ export default function ellipseNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testellipseNe0001
      * @tc.name     testellipseNe0001
      * @tc.desc     testellipseNe0001
      * @tc.level    Level.LEVEL0
      */
-    it('testellipseNe0001', Level.LEVEL0, async (): Promise<void> => {
+it('testellipseNe0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('ellipseNe testellipseNe0001_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ellipse');
@@ -98,13 +99,14 @@ export default function ellipseNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testellipseNe0002
      * @tc.name     testellipseNe0002
      * @tc.desc     testellipseNe0002
      * @tc.level    Level.LEVEL0
      */
-    it('testellipseNe0002', Level.LEVEL0, async (): Promise<void> => {
+it('testellipseNe0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('ellipseNe testellipseNe0002_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ellipse');

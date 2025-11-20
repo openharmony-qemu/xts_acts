@@ -14,13 +14,13 @@
  */
 
 import Log from '../common/Log';
-
 import {
   Entry,
   Column,
   Component,
   ICurve,
   Flex,
+  AlignRuleOption,
   KeyEvent,
   FlexDirection,
   ItemAlign,
@@ -37,8 +37,7 @@ import {
   TapGesture,
   VerticalAlign,
   HorizontalAlign,
-  KeyType,
-  AlignRuleOption
+  KeyType
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
@@ -62,50 +61,50 @@ struct CommonBackgroundBlurStyle {
     Log.showInfo(TAG, `onPageHide CommonBackgroundBlurStyle start`)
   }
 
-  
-  
-  
+  // onBackPress():void {
+  //   Log.showInfo(TAG, `onBackPress CommonBackgroundBlurStyle start`)
+  // }
 
-  
-  
-  
-  
-  
+  // @Styles  //87
+  // pressedStyles() {
+  //   .backgroundColor('red')
+  //   .opacity(1)
+  // }
 
   buttonTab() {
-    
-    
-    
-    
-    
-    
-    
+    // let keyEventDown: inputEventClient.KeyEvent = {
+    //   isPressed: true,
+    //   keyCode: 2049,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res1 = inputEventClient.injectEvent({ KeyEvent: keyEventDown });
 
-    
-    
-    
-    
-    
-    
-    
+    // let keyEventUp: inputEventClient.KeyEvent = {
+    //   isPressed: false,
+    //   keyCode: 2049,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res2 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
   }
 
   buttonOnKey() {
-    
-    
-    
-    
-    
-    
-    
+    // let keyEventDown: inputEventClient.KeyEvent = {
+    //   isPressed: true,
+    //   keyCode: 2054,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res3 = inputEventClient.injectEvent({ KeyEvent: keyEventDown });
 
-    
-    
-    
-    
-    
-    
-    
+    // let keyEventUp: inputEventClient.KeyEvent = {
+    //   isPressed: false,
+    //   keyCode: 2054,
+    //   keyDownDuration: 0,
+    //   isIntercepted: false
+    // }
+    // let res4 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
   }
 
   build() {
@@ -211,7 +210,7 @@ struct CommonBackgroundBlurStyle {
           this.buttonOnKey()
         })
         .key("onKeyEventButton")
-        .onKeyEvent((event: KeyEvent) => {
+        .onKeyEvent((event: KeyEvent):boolean => {
           if (event.keyCode === 2054) {
             console.info("onKeyEvent 2054 inject Success ");
           }
@@ -222,7 +221,7 @@ struct CommonBackgroundBlurStyle {
             Log.showInfo(TAG, `Up`)
           }
           Log.showInfo(TAG, 'KeyType:' + event.type + ';keyCode:' + event.keyCode + ';keyText:' + event.keyText)
-          return false
+          return true
         })
 
       Text("common-TabIndex")
@@ -254,7 +253,7 @@ struct CommonBackgroundBlurStyle {
         .textOverflow({ overflow: TextOverflow.None })
         .key("parallelGestureText")
         .parallelGesture(TapGesture().onAction(() => {
-          
+          // 并行手势
           this.value = 'gesture onAction'
         }))
 
@@ -308,9 +307,9 @@ struct CommonBackgroundBlurStyle {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("stateStylesText")
-      
-      
-      
+      // .stateStyles({
+      //   pressed: this.pressedStyles
+      // })
 
       Text("common-OnVisibleAreaChange")
         .width(320)

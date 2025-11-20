@@ -33,13 +33,13 @@ import {
   Ellipse,
   Line,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 
 import Log from '../../common/Log';
 
 const TAG = 'ets_apiLack_add';
 
-
+// let my_line = new Line()
 
 @Entry
 @Component
@@ -64,7 +64,7 @@ struct LineNe {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .key("neText")
-      
+      Line({ width: 50, height: 100 }).startPoint([0, 0]).endPoint([50, 100]).key("line1")
       Line()
         .width(200)
         .height(200)

@@ -62,10 +62,10 @@ export default function RectCommonShapeMethodTest() {
         console.info("get RectCommonShapeMethodPage state success " + JSON.stringify(pages));
         if (!("RectCommonShapeMethodPage" == pages.name)) {
           console.info("get RectCommonShapeMethodPage state success " + JSON.stringify(pages.name));
-          
+          // let result = await rectCommonShapeMethodTest.pushUrl(options);
           rectCommonShapeMethodTest.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push RectCommonShapeMethodPage page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RectCommonShapeMethodPage page error: " + err);
@@ -78,13 +78,14 @@ export default function RectCommonShapeMethodTest() {
     });
 
 
+    
     /*
      * @tc.number   RectCommonShapeMethodTest_static_0010
      * @tc.name     RectCommonShapeMethodTest_static_0010
      * @tc.desc     RectCommonShapeMethodTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('RectCommonShapeMethodTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RectCommonShapeMethodTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RectCommonShapeMethodTest_static_0010] START');
       await CommonFunc.sleep(1000);
 

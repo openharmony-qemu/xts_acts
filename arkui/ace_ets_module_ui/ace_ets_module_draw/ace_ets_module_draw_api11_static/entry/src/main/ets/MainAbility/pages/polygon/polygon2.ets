@@ -37,7 +37,7 @@ import {
   Polygon,
   PolygonAttribute,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 
 import Log from '../../common/Log';
 
@@ -46,10 +46,7 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct PolygonNe {
-  
-  
-  
-  
+
 
   aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear PolygonNe end`)
@@ -72,8 +69,8 @@ struct PolygonNe {
         .textOverflow({ overflow: TextOverflow.None })
         .key("neText")
 
-      
-      
+      Polygon({ width: "100px", height: "100px" }).points([[0, 0], [50, 100], [100, 0]])
+        .key("Polygon")
 
     }.width("100%").height("100%")
   }

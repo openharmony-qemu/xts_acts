@@ -50,17 +50,14 @@ export default function Matrix2DTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Matrix2DPage state pages:" + JSON.stringify(pages));
-        if (!("FlexLayoutPolicyPage" == pages.name)) {
+        if (!("Matrix2DPage" == pages.name)) {
           console.info("get Matrix2DPage pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Matrix2DPage page error: " + err);
       }
-      
     });
 
     afterEach(async () => {
@@ -68,13 +65,14 @@ export default function Matrix2DTest() {
       console.info("Matrix2D after each called");
     });
 
+    
     /*
      * @tc.number   testMatrix2D_static_0010
      * @tc.name     testMatrix2D_static_0010
      * @tc.desc     testMatrix2D_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('testMatrix2D_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testMatrix2D_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testMatrix2D_static_0010] START');
       await Utils.sleep(2000);
 

@@ -13,29 +13,28 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   $r,
+  $rawfile,
+  Alignment,
+  Circle,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  Color,
-  $rawfile,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Circle,
-  TextOverflow,
-  Image,
-  Alignment,
-  TextAlign,
+  Component,
   Ellipse,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  Image,
+  ItemAlign,
+  Text,
+  TextAlign,
+  TextOverflow,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
 
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
@@ -45,38 +44,24 @@ struct EllipseExample {
 
   onPageShow() {
     console.info('[ellipse] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 92,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
 
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
+    let stateChangeEventTwo: emitter.InnerEvent = {
       eventId: 907,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack);
+    emitter.on(stateChangeEventTwo, this.stateChangCallBack);
 
-    let stateChangeEventThree: events_emitter.InnerEvent = {
+    let stateChangeEventThree: emitter.InnerEvent = {
       eventId: 908,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEventThree, this.stateChangCallBack);
+    emitter.on(stateChangeEventThree, this.stateChangCallBack);
   }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData): void => {
-      console.info("[ellipse] page stateChangCallBack");
-      if (eventData != null) {
-        console.info("[ellipse] page state change called:" + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, RecordData>)?.['width'] != null) {
-          this.theWidth = ((eventData.data) as Record<string, RecordData>)?.['width'] as string;
-        }
-        if (((eventData.data) as Record<string, RecordData>)?.['height'] != null) {
-          this.theHeight = ((eventData.data) as Record<string, RecordData>)?.['height'] as string;
-        }
-      }
-    }
 
   build() {
     Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -88,4 +73,20 @@ struct EllipseExample {
     .width('100%')
     .height('100%')
   }
+
+  private stateChangCallBack: (eventData: emitter.EventData) => void =
+    (eventData: emitter.EventData): void => {
+      console.info("[ellipse] page stateChangCallBack");
+      if (eventData != null) {
+        const data: Record<String, undefined | null | Object> =
+          eventData.data as Record<String, undefined | null | Object>
+        console.info("[ellipse] page state change called:" + JSON.stringify(eventData));
+        if (data['width'] != null) {
+          this.theWidth = data['width'] as string;
+        }
+        if (data['height'] != null) {
+          this.theHeight = data['height'] as string;
+        }
+      }
+    }
 }

@@ -62,10 +62,10 @@ export default function lineNeJsunit() {
         console.info("get line state success: " + JSON.stringify(pages));
         if (!("line" == pages.name)) {
           console.info("get line state success: " + JSON.stringify(pages.name));
-          
+          // let result = await videoCallback.pushUrl(options);
           lineCallback.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push VideoCallbackJsunit page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push line page error: " + err);
@@ -79,13 +79,14 @@ export default function lineNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testlineNe0001
      * @tc.name     testlineNe0001
      * @tc.desc     testlineNe0001
      * @tc.level    Level.LEVEL0
      */
-    it('testlineNe0001', Level.LEVEL0, async (): Promise<void> => {
+it('testlineNe0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0001_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('line1');
@@ -99,13 +100,14 @@ export default function lineNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testlineNe0002
      * @tc.name     testlineNe0002
      * @tc.desc     testlineNe0002
      * @tc.level    Level.LEVEL0
      */
-    it('testlineNe0002', Level.LEVEL0, async (): Promise<void> => {
+it('testlineNe0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0002_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('line1');
@@ -119,13 +121,14 @@ export default function lineNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testlineNe0005
      * @tc.name     testlineNe0005
      * @tc.desc     testlineNe0005
      * @tc.level    Level.LEVEL0
      */
-    it('testlineNe0005', Level.LEVEL0, async (): Promise<void> => {
+it('testlineNe0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0005_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('line2');
@@ -139,13 +142,14 @@ export default function lineNeJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testlineNe0006
      * @tc.name     testlineNe0006
      * @tc.desc     testlineNe0006
      * @tc.level    Level.LEVEL0
      */
-    it('testlineNe0006', Level.LEVEL0, async (): Promise<void> => {
+it('testlineNe0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0006_static START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('line2');

@@ -12,20 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import emitter from '@ohos.events.emitter'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -35,15 +34,15 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { BusinessError } from '@ohos.base';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function enableJsunit() {
-  describe('appInfoTest_four_4', () => {
+export default function pathJsunit() {
+  describe('pathJsunit', () => {
     beforeAll(() => {
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
@@ -76,16 +75,18 @@ export default function enableJsunit() {
       console.info("path after each called");
     });
 
+    
     /*
      * @tc.number   testPath_static_01
      * @tc.name     testPath_static_01
      * @tc.desc     testPath_static_01
      * @tc.level    Level.LEVEL0
      */
-    it('testPath_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testPath_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testPath_static_01_static] START');
       await CommonFunc.sleep(1000);
-      let strJson = JSON.parseJsonElement('path1');
+      let str = inspector.getInspectorByKey('path1');
+      const strJson = JSON.parseJsonElement(str)
       console.info("[testPath_static_01_static] strJson is: " + JSON.stringify(strJson));
       expect(strJson.getElement('$attrs').getString('width')).assertEqual('300.00px');
       expect(strJson.getElement('$attrs').getString('height')).assertEqual('10.00px');
@@ -93,34 +94,35 @@ export default function enableJsunit() {
       done();
     });
 
+    
     /*
      * @tc.number   testPath_static_02
      * @tc.name     testPath_static_02
      * @tc.desc     testPath_static_02
      * @tc.level    Level.LEVEL0
      */
-    it('testPath_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testPath_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testPath_static_02_static] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "height": '200.00px',
             "commands": "M0 110 L900 0",
             "width": '200.00px',
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String, undefined | null | Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 151,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
+          priority: emitter.EventPriority.LOW
+        } as emitter.InnerEvent
         console.info("[testPath_static_02_static] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testPath_static_02_static] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = JSON.parseJsonElement('path1');
+      let str = inspector.getInspectorByKey('path1');
+      const strJson = JSON.parseJsonElement(str)
       console.info("[testPath_static_02_static] strJson is: " + JSON.stringify(strJson));
       expect(strJson.getElement('$attrs').getString('width')).assertEqual('200.00px');
       expect(strJson.getElement('$attrs').getString('height')).assertEqual('200.00px');

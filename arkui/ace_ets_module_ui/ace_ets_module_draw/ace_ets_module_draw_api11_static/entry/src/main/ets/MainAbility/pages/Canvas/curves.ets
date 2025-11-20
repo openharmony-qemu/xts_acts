@@ -14,7 +14,7 @@
  */
 
 import Log from '../../common/Log';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import Curves from '@ohos.curves'
 import {
   Entry,
@@ -32,7 +32,6 @@ import {
 } from '@ohos.arkui.component';
 import { ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -76,19 +75,19 @@ struct CurvesSteps {
             this.curveApi = "callBackFail"
           }
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "curveApi": this.curveApi,
                 "curveSpringMotion": this.curve1,
                 "curveResSpringMotion": this.curve2
-              } as Record<string, RecordData>
+              } as Record<string, undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 60229,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("curveApi onClick start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("curveApi onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }

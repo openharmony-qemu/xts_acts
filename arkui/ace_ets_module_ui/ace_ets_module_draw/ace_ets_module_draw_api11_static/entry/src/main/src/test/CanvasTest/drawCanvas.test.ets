@@ -62,40 +62,42 @@ export default function drawCanvas() {
         console.info("get drawCanvas state pages:" + JSON.stringify(pages));
         if (!("drawCanvas" == pages.name)) {
           console.info("get drawCanvas pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push drawCanvas page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push drawCanvas page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
      * @tc.number   drawCanvas_static_0100
      * @tc.name     drawCanvas_static_0100
      * @tc.desc     drawCanvas_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('drawCanvas_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('drawCanvas_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('drawCanvas_static_0100 START');
         await CommonFunc.sleep(1000);
         try {
           let value: drawing.Canvas | undefined =
             AppStorage.get<drawing.Canvas | undefined>("canvas");
-          
+          // expect(value).assertNotEqual(undefined)
+          expect(value !== undefined).assertEqual(true);
         } catch (err) {
           console.error("push drawCanvas page error" + JSON.stringify(err));
         }
 
         console.info('[drawCanvas_static_0100] END');
         done();
-      } catch (err) {
+      } catch (err: Error) {
         expect().assertFail();
       }
     });

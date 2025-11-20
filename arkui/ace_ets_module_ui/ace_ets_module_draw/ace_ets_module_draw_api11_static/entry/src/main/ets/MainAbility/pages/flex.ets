@@ -13,80 +13,39 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
   $r,
-  ItemAlign,
+  Button,
+  Color,
   Column,
-  Flex,
   ColumnOptions,
-  TextAlign,
+  Component,
+  Entry,
+  Flex,
   FlexDirection,
-  Margin
+  ItemAlign,
+  Margin,
+  Row,
+  Text,
+  TextAlign
 } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
 struct FlexExample {
-  
-  
-  
+  private theFlexBasis: ESObject | null = null
+  private theFlexGrow: ESObject | null = null
+  private theFlexShrink: ESObject | null = null
   private theAlignSelf: ItemAlign | null = null
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("Flex page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as Record<string, RecordData>)?.['flexBasis'] != null) {
-        
-      }
-      if (((eventData.data) as Record<string, RecordData>)?.['flexGrow'] != null) {
-        
-      }
-      if (((eventData.data) as Record<string, RecordData>)?.['flexShrink'] != null) {
-        
-      }
-      if (((eventData.data) as Record<string, RecordData>)?.['alignSelf'] != null) {
-        this.theAlignSelf = ((eventData.data) as Record<string, RecordData>)?.['alignSelf'] as ItemAlign | null;
-      }
-      switch (((eventData.data) as Record<string, RecordData>)?.['alignSelf'] as string) {
-        case 'Auto':
-          this.theAlignSelf = ItemAlign.Auto;
-          break;
-        case 'Start':
-          this.theAlignSelf = ItemAlign.Start;
-          break;
-        case 'Center':
-          this.theAlignSelf = ItemAlign.Center;
-          break;
-        case 'End':
-          this.theAlignSelf = ItemAlign.End;
-          break;
-        case 'Stretch':
-          this.theAlignSelf = ItemAlign.Stretch;
-          break;
-        case 'Baseline':
-          this.theAlignSelf = ItemAlign.Baseline;
-          break;
-        default:
-          this.theAlignSelf = ItemAlign.Auto;
-      }
-    }
-  }
 
   onPageShow() {
     console.info('flex page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 8,
-      priority: events_emitter.EventPriority.LOW
-    } as events_emitter.InnerEvent
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+      priority: emitter.EventPriority.LOW
+    } as emitter.InnerEvent
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {
@@ -205,5 +164,45 @@ struct FlexExample {
     }
     .width('100%')
     .margin({ top: 5 } as Margin)
+  }
+
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    if (eventData != null) {
+      console.info("Flex page state change called:" + JSON.stringify(eventData));
+      if (((eventData.data) as ESObject)?.getProperty('flexBasis') != null) {
+        this.theFlexBasis = ((eventData.data) as ESObject)?.getProperty('flexBasis')!;
+      }
+      if (((eventData.data) as ESObject)?.getProperty('flexGrow') != null) {
+        this.theFlexGrow = ((eventData.data) as ESObject)?.getProperty('flexGrow')!;
+      }
+      if (((eventData.data) as ESObject)?.getProperty('flexShrink') != null) {
+        this.theFlexShrink = ((eventData.data) as ESObject)?.getProperty('flexShrink')!;
+      }
+      if (((eventData.data) as ESObject)?.getProperty('alignSelf') != null) {
+        // this.theAlignSelf = ((eventData.data) as ESObject)?.getProperty('alignSelf').toStaticObject() as ItemAlign;  //无法as 枚举类型
+      }
+      switch (((eventData.data) as ESObject)?.getProperty('alignSelf').toString() as string) {
+        case 'Auto':
+          this.theAlignSelf = ItemAlign.Auto;
+          break;
+        case 'Start':
+          this.theAlignSelf = ItemAlign.Start;
+          break;
+        case 'Center':
+          this.theAlignSelf = ItemAlign.Center;
+          break;
+        case 'End':
+          this.theAlignSelf = ItemAlign.End;
+          break;
+        case 'Stretch':
+          this.theAlignSelf = ItemAlign.Stretch;
+          break;
+        case 'Baseline':
+          this.theAlignSelf = ItemAlign.Baseline;
+          break;
+        default:
+          this.theAlignSelf = ItemAlign.Auto;
+      }
+    }
   }
 }

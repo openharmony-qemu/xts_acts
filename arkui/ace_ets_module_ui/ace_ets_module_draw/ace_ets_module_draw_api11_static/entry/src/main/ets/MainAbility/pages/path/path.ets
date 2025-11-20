@@ -13,32 +13,31 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
-  Entry,
-  Component,
   $r,
+  $rawfile,
+  Alignment,
+  Circle,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  Color,
-  $rawfile,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Circle,
-  TextOverflow,
-  Image,
-  Alignment,
-  TextAlign,
+  Component,
   Ellipse,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  Image,
+  ItemAlign,
   Line,
-  Path,
   Margin,
+  Path,
+  Text,
+  TextAlign,
+  TextOverflow,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { RecordData } from '@ohos.base';
+import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -49,74 +48,76 @@ struct PathExample {
 
   onPageShow() {
     console.info('[path] page show called ');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 151,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData): void => {
-      console.info("[stateChangCallBack] stateChangCallBack ");
-      if (eventData != null) {
-        console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, RecordData>)?.['commands'] != null) {
-          this.commandsOne = ((eventData.data) as Record<string, RecordData>)?.['commands'] as string;
-        }
-        if (((eventData.data) as Record<string, RecordData>)?.['width'] != null) {
-          this.widthOne = ((eventData.data) as Record<string, RecordData>)?.['width'] as string;
-        }
-        if (((eventData.data) as Record<string, RecordData>)?.['height'] != null) {
-          this.heightOne = ((eventData.data) as Record<string, RecordData>)?.['height'] as string;
-        }
-
-      }
-    }
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Text('Straight line').fontSize(9).fontColor(0xCCCCCC).width('90%')
-      
-      
-      
-      
-      
-      
-      
+      Path()
+        .width(this.widthOne)
+        .height(this.heightOne)
+        .commands(this.commandsOne)
+        .stroke(Color.Black)
+        .key('path1')
+        .strokeWidth(3)
 
       Text('Straight line graph')
         .fontSize(9)
         .fontColor(0xCCCCCC)
         .width('90%')
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        Path()
+          .width(100)
+          .height(100)
+          .commands('M150 0 L300 300 L0 300 Z')
+        Path()
+          .width(100)
+          .height(100)
+          .commands('M0 0 H300 V300 H0 Z')
+        Path()
+          .width(100)
+          .height(100)
+          .commands('M150 0 L0 150 L60 300 L240 300 L300 150 Z')
       }.width('100%')
 
       Text('Curve graphics').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        
-        
-        
-        
-        
-        
-        
-        
+        Path()
+          .width(100)
+          .height(100)
+          .commands("M0 300 S150 0 300 300 Z")
+        Path()
+          .width(100)
+          .height(100)
+          .commands('M0 150 C0 150 150 0 300 150 L150 300 Z')
       }
     }
     .width('100%')
     .margin({ top: 5 } as Margin)
   }
+
+  private stateChangCallBack: (eventData: emitter.EventData) => void =
+    (eventData: emitter.EventData): void => {
+      console.info("[stateChangCallBack] stateChangCallBack ");
+      if (eventData != null) {
+        const data: Record<String, undefined | null | Object> =
+          eventData.data as Record<String, undefined | null | Object>
+        console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
+        if (data['commands'] != null) {
+          this.commandsOne = data['commands'] as string;
+        }
+        if (data['width'] != null) {
+          this.widthOne = data['width'] as string;
+        }
+        if (data['height'] != null) {
+          this.heightOne = data['height'] as string;
+        }
+
+      }
+    }
 }

@@ -13,27 +13,27 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  $r,
+  Alignment,
+  Button,
+  Canvas,
+  Color,
   Column,
   Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Canvas,
+  Curve,
+  Entry,
   OffscreenCanvas,
+  Particle,
+  ParticleAttribute,
+  ParticleEmitterShape,
+  ParticleOptions,
+  ParticlePropertyAnimation,
+  ParticleType,
+  ParticleUpdater,
+  Row,
   Scroll,
   Stack,
-  Particle,
-  ParticleType,
-  ParticleEmitterShape,
-  ParticleUpdater,
-  Alignment,
-  ParticleOptions,
-  ParticleAttribute,
-  ParticlePropertyAnimation,
-  Curve
+  Text
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -41,11 +41,12 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct ParticleExample {
   @State
-  myCount: number = 100
+  myCount: Int = 100
   flag: boolean = false;
 
   build() {
     Column() {
+      Text('测试')
       Stack() {
         Particle({
           particles: [
@@ -57,7 +58,7 @@ struct ParticleExample {
                     src: $r("app.media.icon"),
                     size: [10, 10]
                   },
-                  count: this.myCount.toInt(),
+                  count: this.myCount,
                   lifetime: 10000
                 },
                 emitRate: 3,
@@ -182,7 +183,7 @@ struct ParticleExample {
                   src: $r('app.media.icon'),
                   size: [10, 10]
                 },
-                count: this.myCount.toInt(),
+                count: this.myCount,
                 lifetime: 10000
               },
               emitRate: 3,
@@ -302,7 +303,7 @@ struct ParticleExample {
                   src: $r('app.media.icon'),
                   size: [10, 10]
                 },
-                count: this.myCount.toInt(),
+                count: this.myCount,
                 lifetime: 10000
               },
               emitRate: 3,

@@ -61,10 +61,10 @@ export default function polylineJsunit() {
         console.info("get polyline state pages:" + JSON.stringify(pages));
         if (!("polyline" == pages.name)) {
           console.info("get polyline state pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await polyLine.pushUrl(options);
           polyLine.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push polyline page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push polyline page error:" + err);
@@ -76,13 +76,14 @@ export default function polylineJsunit() {
       console.info("polyline after each called");
     });
 
+    
     /*
      * @tc.number   testPolyline_static_001
      * @tc.name     testPolyline_static_001
      * @tc.desc     testPolyline_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('testPolyline_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testPolyline_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[testPolyline_static_001] START');
         await CommonFunc.sleep(4000);

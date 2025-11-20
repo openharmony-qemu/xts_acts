@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -62,13 +62,12 @@ export default function ellipseJsunit() {
         console.info("get ellipse state pages:" + JSON.stringify(pages));
         if (!("ellipse" == pages.name)) {
           console.info("get ellipse state pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await ellipse.pushUrl(options);
           ellipse.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ellipse page result:" + JSON.stringify(result));
         }
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.error("push ellipse page error:" + err);
       }
     });
@@ -78,13 +77,14 @@ export default function ellipseJsunit() {
       console.info("ellipse after each called");
     });
 
+    
     /*
      * @tc.number   testEllipse_static_01
      * @tc.name     testEllipse_static_01
      * @tc.desc     testEllipse_static_01
      * @tc.level    Level.LEVEL0
      */
-    it('testEllipse_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEllipse_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_01] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('ellipse');
@@ -95,28 +95,28 @@ export default function ellipseJsunit() {
       done()
     });
 
+    
     /*
      * @tc.number   testEllipse_static_02
      * @tc.name     testEllipse_static_02
      * @tc.desc     testEllipse_static_02
      * @tc.level    Level.LEVEL0
      */
-    it('testEllipse_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEllipse_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_02] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "width": '100px'
-          } as Record<string, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 92,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
+          priority: emitter.EventPriority.LOW
+        } as emitter.InnerEvent
         console.info("[testEllipse_static_02] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testEllipse_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -127,28 +127,28 @@ export default function ellipseJsunit() {
       done()
     });
 
+    
     /*
      * @tc.number   testEllipse_static_03
      * @tc.name     testEllipse_static_03
      * @tc.desc     testEllipse_static_03
      * @tc.level    Level.LEVEL0
      */
-    it('testEllipse_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEllipse_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_03] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "height": '500px'
-          } as Record<string, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 92,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
+          priority: emitter.EventPriority.LOW
+        } as emitter.InnerEvent
         console.info("[testEllipse_static_03] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testEllipse_static_03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -159,28 +159,28 @@ export default function ellipseJsunit() {
       done()
     });
 
+    
     /*
      * @tc.number   testEllipse_static_04
      * @tc.name     testEllipse_static_04
      * @tc.desc     testEllipse_static_04
      * @tc.level    Level.LEVEL0
      */
-    it('testEllipse_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEllipse_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_04] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "width": '1111111111111.00px'
-          } as Record<string, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 907,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
+          priority: emitter.EventPriority.LOW
+        } as emitter.InnerEvent
         console.info("[testEllipse_static_04] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testEllipse_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -191,28 +191,28 @@ export default function ellipseJsunit() {
       done()
     });
 
+    
     /*
      * @tc.number   testEllipse_static_05
      * @tc.name     testEllipse_static_05
      * @tc.desc     testEllipse_static_05
      * @tc.level    Level.LEVEL0
      */
-    it('testEllipse_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEllipse_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_05] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "height": '12111111111111.00px'
-          } as Record<string, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 907,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
+          priority: emitter.EventPriority.LOW
+        } as emitter.InnerEvent
         console.info("[testEllipse_static_05] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testEllipse_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -224,28 +224,28 @@ export default function ellipseJsunit() {
       done()
     });
 
+    
     /*
      * @tc.number   testEllipse_static_06
      * @tc.name     testEllipse_static_06
      * @tc.desc     testEllipse_static_06
      * @tc.level    Level.LEVEL0
      */
-    it('testEllipse_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEllipse_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_06] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "height": '-40.00px'
-          } as Record<string, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 908,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
+          priority: emitter.EventPriority.LOW
+        } as emitter.InnerEvent
         console.info("[testEllipse_static_06] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testEllipse_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -256,28 +256,28 @@ export default function ellipseJsunit() {
       done()
     });
 
+    
     /*
      * @tc.number   testEllipse07
      * @tc.name     testEllipse07
      * @tc.desc     testEllipse07
      * @tc.level    Level.LEVEL0
      */
-    it('testEllipse07', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEllipse07', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse07_static] START');
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "width": '-10.00px'
-          } as Record<string, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
+          } as Record<String, undefined|null|Object>
+        } as emitter.EventData
+        let innerEvent: emitter.InnerEvent = {
           eventId: 908,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
+          priority: emitter.EventPriority.LOW
+        } as emitter.InnerEvent
         console.info("[testEllipse07_static] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+        emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
         console.log("[testEllipse07_static] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

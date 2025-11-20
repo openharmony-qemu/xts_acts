@@ -61,10 +61,10 @@ export default function polygonJsunit() {
         console.info("get polygon state pages:" + JSON.stringify(pages));
         if (!("polygon" == pages.name)) {
           console.info("get polygon state pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await polygon.pushUrl(options);
           polygon.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push polygon page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push polygon page error:" + err);
@@ -76,13 +76,14 @@ export default function polygonJsunit() {
       console.info("polygon after each called");
     });
 
+    
     /*
      * @tc.number   testPolygon_static_001
      * @tc.name     testPolygon_static_001
      * @tc.desc     testPolygon_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('testPolygon_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testPolygon_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[testPolygon_static_001] START');
         await CommonFunc.sleep(1000);

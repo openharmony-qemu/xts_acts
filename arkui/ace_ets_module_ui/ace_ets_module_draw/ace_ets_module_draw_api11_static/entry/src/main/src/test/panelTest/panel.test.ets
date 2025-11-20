@@ -14,13 +14,13 @@
  */
 
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -46,26 +46,16 @@ export default function panelBackgroundMaskJsunit() {
         url: 'MainAbility/pages/panel/panel',
       }
       try {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get panel state pages:" + JSON.stringify(pages));
-        if (!("FlexLayoutPolicyPage" == pages.name)) {
+        if (!("panel" == pages.name)) {
           console.info("get panel pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push panel page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push panel page error: " + err);
@@ -78,13 +68,14 @@ export default function panelBackgroundMaskJsunit() {
     });
 
 
+    // 接口未交付 页面注释导致用例失败
     /*
      * @tc.number   testpanelBackgroundMask_static_0001
      * @tc.name     testpanelBackgroundMask_static_0001
      * @tc.desc     testpanelBackgroundMask_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('panelBackgroundMask testpanelBackgroundMask_static_0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('panel');
@@ -99,35 +90,36 @@ export default function panelBackgroundMaskJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testpanelOnHeightChange_static_0002
      * @tc.name     testpanelOnHeightChange_static_0002
      * @tc.desc     testpanelOnHeightChange_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('panelBackgroundMask testpanelOnHeightChange_static_0002 START');
-      let panelOnHeightChangeEvent: events_emitter.InnerEvent = {
+      let panelOnHeightChangeEvent: emitter.InnerEvent = {
         eventId: 10111,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
-      let callback1 = (backData: events_emitter.EventData) => {
+      let callback1 = (backData: emitter.EventData) => {
         console.info("testpanelOnHeightChange_static_0002 backData.data.result is: " +
-          ((backData.data) as Record<string, RecordData>)?.['result']);
+          ((backData.data) as Record<String, undefined|null|Object>)?.['result']);
         try {
           console.info("testpanelOnHeightChange_static_0002 callback1 success");
-          expect(((backData.data) as Record<string, RecordData>)?.['result']).assertEqual("success");
+          expect(((backData.data) as Record<String, undefined|null|Object>)?.['result']).assertEqual("success");
 
         } catch (err) {
-          console.info("testpanelOnHeightChange_static_0002 on events_emitter err : " + JSON.stringify(err));
+          console.info("testpanelOnHeightChange_static_0002 on emitter err : " + JSON.stringify(err));
         }
       }
       try {
         console.info("testpanelOnHeightChange_static_0002 click result is: " +
         JSON.stringify(inspector.sendEventByKey('onHeightChangeText', 10, "")));
-        events_emitter.on(panelOnHeightChangeEvent, callback1);
+        emitter.on(panelOnHeightChangeEvent, callback1);
       } catch (err) {
-        console.info("testpanelOnHeightChange_static_0002 on events_emitter err : " + JSON.stringify(err));
+        console.info("testpanelOnHeightChange_static_0002 on emitter err : " + JSON.stringify(err));
       }
     });
 

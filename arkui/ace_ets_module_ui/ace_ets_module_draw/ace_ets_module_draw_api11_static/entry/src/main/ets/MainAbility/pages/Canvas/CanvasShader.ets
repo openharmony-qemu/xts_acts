@@ -32,7 +32,9 @@ import {
   Margin,
   Canvas
 } from '@ohos.arkui.component';
-import { UIContext } from '@ohos.arkui.UIContext';
+import { UIContext } from "@ohos.arkui.UIContext";
+const uiContext = new UIContext();
+
 
 @Entry
 @Component
@@ -62,13 +64,13 @@ struct CanvasShader {
             this.createConicGradient8()
             this.createConicGradient9()
             this.createConicGradient10()
-            
-            
-            
-            
-            
-            
-            
+            // this.createConicGradient11()
+            // this.createConicGradient12()
+            // this.createConicGradient13()
+            // this.createConicGradient14()
+            // this.createConicGradient15()
+            // this.createConicGradient16()
+            // this.createConicGradient17()
           })
 
         Canvas(this.context1)
@@ -178,122 +180,114 @@ struct CanvasShader {
     this.context.fillRect(0, 0, 200, 200)
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
+  // createConicGradient11() {
+  //   let grad = this.context.createConicGradient(0, null, 100)
+  //   grad.addColorStop(0.0, '#ff0000')
+  //   grad.addColorStop(0.3, '#0000ff')
+  //   grad.addColorStop(1.0, '#ff00ff')
+  //   this.context.fillStyle = grad
+  //   this.context.fillRect(0, 0, 200, 200)
+  // }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // createConicGradient12() {
+  //   let grad = this.context.createConicGradient(0, undefined, 100)
+  //   grad.addColorStop(0.0, '#ff0000')
+  //   grad.addColorStop(0.3, '#0000ff')
+  //   grad.addColorStop(1.0, '#ff00ff')
+  //   this.context.fillStyle = grad
+  //   this.context.fillRect(0, 0, 200, 200)
+  // }
+  //
+  // createConicGradient13() {
+  //   let grad = this.context.createConicGradient(0, 100, null)
+  //   grad.addColorStop(0.0, '#ff0000')
+  //   grad.addColorStop(0.3, '#0000ff')
+  //   grad.addColorStop(1.0, '#ff00ff')
+  //   this.context.fillStyle = grad
+  //   this.context.fillRect(0, 0, 200, 200)
+  // }
+  //
+  // createConicGradient14() {
+  //   let grad = this.context.createConicGradient(0, 100, undefined)
+  //   grad.addColorStop(0.0, '#ff0000')
+  //   grad.addColorStop(0.3, '#0000ff')
+  //   grad.addColorStop(1.0, '#ff00ff')
+  //   this.context.fillStyle = grad
+  //   this.context.fillRect(0, 0, 200, 200)
+  // }
+  //
+  // createConicGradient15() {
+  //   let grad = this.context.createConicGradient(null, 100, 100)
+  //   grad.addColorStop(0.0, '#ff0000')
+  //   grad.addColorStop(0.3, '#0000ff')
+  //   grad.addColorStop(1.0, '#ff00ff')
+  //   this.context.fillStyle = grad
+  //   this.context.fillRect(0, 0, 200, 200)
+  // }
+  //
+  // createConicGradient16() {
+  //   let grad = this.context.createConicGradient(undefined, 100, 100)
+  //   grad.addColorStop(0.0, '#ff0000')
+  //   grad.addColorStop(0.3, '#0000ff')
+  //   grad.addColorStop(1.0, '#ff00ff')
+  //   this.context.fillStyle = grad
+  //   this.context.fillRect(0, 0, 200, 200)
+  // }
+  //
+  // createConicGradient17() {
+  //   let grad = this.context.createConicGradient(null, null, null)
+  //   grad.addColorStop(0.0, '#ff0000')
+  //   grad.addColorStop(0.3, '#0000ff')
+  //   grad.addColorStop(1.0, '#ff00ff')
+  //   this.context.fillStyle = grad
+  //   this.context.fillRect(0, 0, 200, 200)
+  // }
 
   clamp1() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276 * 2),
-      UIContext.getFocusedUIContext()!.px2vp(183))
+    this.context1.fillRect(0, 0, uiContext.px2vp(276 * 2), uiContext.px2vp(183))
   }
 
   clamp2() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276),
-      UIContext.getFocusedUIContext()!.px2vp(183 * 2))
+    this.context1.fillRect(0, 0, uiContext.px2vp(276), uiContext.px2vp(183 * 2))
   }
 
   clamp3() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276 * 2),
-      UIContext.getFocusedUIContext()!.px2vp(183 * 2))
+    this.context1.fillRect(0, 0, uiContext.px2vp(276 * 2), uiContext.px2vp(183 * 2))
   }
 
   clamp4() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276),
-      UIContext.getFocusedUIContext()!.px2vp(183))
+    this.context1.fillRect(0, 0, uiContext.px2vp(276), uiContext.px2vp(183))
   }
 
   mirror1() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150 * 2),
-      UIContext.getFocusedUIContext()!.px2vp(150))
+    this.context1.fillRect(0, 0, uiContext.px2vp(150 * 2), uiContext.px2vp(150))
   }
 
   mirror2() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150),
-      UIContext.getFocusedUIContext()!.px2vp(150 * 2))
+    this.context1.fillRect(0, 0, uiContext.px2vp(150), uiContext.px2vp(150 * 2))
   }
 
   mirror3() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150 * 2),
-      UIContext.getFocusedUIContext()!.px2vp(150 * 2))
+    this.context1.fillRect(0, 0, uiContext.px2vp(150 * 2), uiContext.px2vp(150 * 2))
   }
 
   mirror4() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150),
-      UIContext.getFocusedUIContext()!.px2vp(150))
+    this.context1.fillRect(0, 0, uiContext.px2vp(150), uiContext.px2vp(150))
   }
 }

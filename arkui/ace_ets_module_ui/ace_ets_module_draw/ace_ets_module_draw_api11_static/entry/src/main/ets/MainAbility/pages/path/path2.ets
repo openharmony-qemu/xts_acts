@@ -35,7 +35,7 @@ import {
   Path,
   Margin,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 
 import Log from '../../common/Log';
 
@@ -65,12 +65,12 @@ struct PathNew {
         .textOverflow({ overflow: TextOverflow.None })
         .key("neText")
 
-      
-      
+      Path().width("100px").height("100px").commands('M150 0 L300 300 L0 300 Z')
+        .key("Path")
 
-      
-      
-      
+      // Image($rawfile('test.png'))
+      //   .mask(new Path({ width: '150px', height: '150px' }).fill(Color.Gray))
+      //   .width('500px').height('280px')
 
     }.width("100%").height("100%")
   }
