@@ -29,7 +29,7 @@ struct TextInputTypeApi20 {
     Column({ space: 1 }) {
       Text('TextInput: InputType新增枚举类型').height('5%')
       TextInput({ placeholder: 'InputType.ONE_TIME_CODE' })
-        .id("TextInputTypeApi20_ONE_TIME_CODE")
+        .id('TextInputTypeApi20_ONE_TIME_CODE')
         .type(InputType.ONE_TIME_CODE)
         .height('10%')
 

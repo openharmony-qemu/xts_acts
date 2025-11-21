@@ -20,7 +20,7 @@ struct TextInputTypeApi12 {
     Column({ space: 1 }) {
       Text('TextInput: InputType新增枚举类型').height('5%')
       TextInput({ placeholder: 'InputType.URL' })
-        .id("TextInputTypeApi12_URL")
+        .id('TextInputTypeApi12_URL')
         .type(InputType.URL)
         .height('10%')
 
