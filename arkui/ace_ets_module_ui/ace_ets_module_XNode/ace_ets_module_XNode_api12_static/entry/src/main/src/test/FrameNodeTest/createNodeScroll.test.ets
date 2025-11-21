@@ -48,19 +48,20 @@ export default function createNodeScroll() {
         console.info("get createNodeScroll state pages: " + JSON.stringify(pages));
         if (!("createNodeScroll" == pages.name)) {
           console.info("get createNodeScroll state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push createNodeScroll success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push createNodeScroll page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   createNodeScroll_static_0100
@@ -68,7 +69,7 @@ export default function createNodeScroll() {
      * @tc.desc     createNodeScroll_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('createNodeScroll_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('createNodeScroll_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('createNodeScroll_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

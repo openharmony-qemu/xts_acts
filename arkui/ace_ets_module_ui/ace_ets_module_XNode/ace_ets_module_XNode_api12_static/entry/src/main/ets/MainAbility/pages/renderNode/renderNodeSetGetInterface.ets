@@ -35,10 +35,10 @@ renderNode.borderStyle = {
   bottom: BorderStyle.Solid
 };
 renderNode.borderRadius = { topLeft: 32, topRight: 32, bottomLeft: 32, bottomRight: 32}
-const borderColor = renderNode.borderColor!;
-const borderRadius = renderNode.borderRadius!;
-const borderWidth = renderNode.borderWidth!;
-const borderStyle = renderNode.borderStyle!;
+const borderColor = renderNode.borderColor;
+const borderRadius = renderNode.borderRadius;
+const borderWidth = renderNode.borderWidth;
+const borderStyle = renderNode.borderStyle;
 
 
 class MyNodeController extends NodeController {
@@ -86,7 +86,7 @@ struct renderSetGetInterface{
           .onClick((e:ClickEvent) => {
             borderColor!.left = 0xFF00FFEE
             renderNode.invalidate()
-            this.bColor = renderNode.borderColor!.left
+            this.bColor = renderNode!.borderColor!.left
           })
 
 
@@ -94,18 +94,18 @@ struct renderSetGetInterface{
         Button('changeWidth').height('2%')
           .id("bWidthChange")
           .onClick((e:ClickEvent) => {
-            borderWidth.left = 40
+            borderWidth!.left = 40
             renderNode.invalidate()
-            this.bWidth = renderNode.borderWidth!.left
+            this.bWidth = renderNode!.borderWidth!.left
           })
 
         Text('bStyle:' + this.bBorderStyle).margin(10).id("bStyle").height('2%')
         Button('changeStyle').height('2%')
           .id("bChangeStyle")
           .onClick((e:ClickEvent) => {
-            borderStyle.left = BorderStyle.Dashed
+            borderStyle!.left = BorderStyle.Dashed
             renderNode.invalidate()
-            this.bBorderStyle = renderNode.borderStyle!.left
+            this.bBorderStyle = renderNode!.borderStyle!.left
           })
 
       }

@@ -31,7 +31,6 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
   Scroller,
   Scroll,
   ScrollDirection,
@@ -51,10 +50,10 @@ class MyNodeController extends NodeController {
     return this.rootNode
   }
 
-  addCommonEvent(frameNode: FrameNode, ratios: Array<double>, expectedUpdateInterval?: int) {
+  addCommonEvent(frameNode: FrameNode, ratios: Array<number>, expectedUpdateInterval?: int) {
     frameNode.commonEvent.setOnVisibleAreaApproximateChange({
-      ratios: ratios, expectedUpdateInterval: expectedUpdateInterval
-    }, (isVisible: boolean, currentRatio: double):void => {
+      ratios, expectedUpdateInterval: expectedUpdateInterval as int
+    }, (isVisible: boolean, currentRatio: number):void => {
       console.info('Test FrameNode isVisible:' + isVisible + ', currentRatio:' + currentRatio)
       if(isVisible && currentRatio >= 1.0) {
         console.info('Test FrameNode is fully visible')

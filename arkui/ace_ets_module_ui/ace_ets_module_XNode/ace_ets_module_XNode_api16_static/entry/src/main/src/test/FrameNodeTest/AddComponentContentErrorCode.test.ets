@@ -46,13 +46,13 @@ export default function AddComponentContentErrorCodeTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        
+        // // let result = await router.replaceUrl(options);
         router.replaceUrl(options);
         console.info('get AddComponentContentErrorCodeTest state pages:' + JSON.stringify(pages));
         if (!('AddComponentContentErrorCodeTest' == pages.name)) {
           console.info('get AddComponentContentErrorCodeTest pages.name:' + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          
+          //console.info('push AddComponentContentErrorCodeTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push AddComponentContentErrorCodeTest page error:' + err);
@@ -68,13 +68,14 @@ export default function AddComponentContentErrorCodeTest() {
     
     
 
+
 /*
      * @tc.number   addComponentContentErrorCodeTest_static_0100
      * @tc.name     addComponentContentErrorCodeTest_static_0100
      * @tc.desc     addComponentContentErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('addComponentContentErrorCodeTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('addComponentContentErrorCodeTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('addComponentContentErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -29,6 +29,10 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct ColorMetricsTest {
   @State errorStr401: string = '';
 
+  onPageShow(): void {
+    console.log('---------------onPageShow0000')
+
+  }
   build() {
     Column() {
       Button('ResourceColor ErrorCode 401').id('error_button401_id')
@@ -36,7 +40,7 @@ struct ColorMetricsTest {
         .onClick((e:ClickEvent) => {
           let sourceColor: ColorMetrics = ColorMetrics.resourceColor(Color.Red);
           try {
-            
+            // sourceColor.blendColor(null);
           } catch (e) {
             this.errorStr401 = (e as BusinessError).code + '';
           }

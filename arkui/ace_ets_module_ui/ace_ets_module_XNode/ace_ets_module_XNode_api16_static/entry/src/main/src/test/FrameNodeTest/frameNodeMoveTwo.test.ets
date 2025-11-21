@@ -58,10 +58,10 @@ export default function frameNodeMoveTwoTest() {
         console.info("get frameNodeMoveTwoTest state pages:" + JSON.stringify(pages));
         if (!("frameNodeMoveTwoTest" == pages.name)) {
           console.info("get frameNodeMoveTwoTest pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push frameNodeMoveTwoTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push frameNodeMoveTwoTest page error:" + err);
@@ -77,13 +77,14 @@ export default function frameNodeMoveTwoTest() {
     
     
 
+
 /*
      * @tc.number   frameNodeMoveTwoTest_static_0100
      * @tc.name     frameNodeMoveTwoTest_static_0100
      * @tc.desc     frameNodeMoveTwoTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('frameNodeMoveTwoTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+    it('frameNodeMoveTwoTest_static_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('frameNodeMoveTwoTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

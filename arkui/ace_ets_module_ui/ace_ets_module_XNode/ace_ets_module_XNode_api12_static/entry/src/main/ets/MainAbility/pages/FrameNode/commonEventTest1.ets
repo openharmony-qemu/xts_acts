@@ -32,7 +32,6 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
   ColumnOptions,
   HoverEvent,
   KeyEvent,

@@ -40,19 +40,20 @@ export default function updateConfigurationTest2() {
         console.info("get updateConfigurationTest2 state pages: " + JSON.stringify(pages));
         if (!("updateConfiguration2" == pages.name)) {
           console.info("get updateConfigurationTest2 state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push updateConfigurationTest2 success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push updateConfigurationTest2 page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
     
     
+
 
 /*
      * @tc.number   updateConfigurationTest2_static_0100
@@ -60,7 +61,7 @@ export default function updateConfigurationTest2() {
      * @tc.desc     updateConfigurationTest2_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('updateConfigurationTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('updateConfigurationTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('updateConfigurationTest2_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

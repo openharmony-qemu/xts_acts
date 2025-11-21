@@ -44,21 +44,21 @@ class MyNodeController extends NodeController {
     this.uiContext = uiContext
     this.rootNode = new FrameNode(uiContext)
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    const stack = typeNode.createStackNode(this.uiContext!)
+    const column = typeNode.createColumnNode(this.uiContext!)
+    // const button = typeNode.createButtonNode(this.uiContext!, 'Button')
+    stack.attribute.id('Stack')
+    stack.attribute.backgroundColor(Color.Green)
+    // button.attribute.width(200)
+    // button.attribute.height(100)
+    // button.initialize(this.buttonText)
+    column.attribute.id('Column')
+    this.stackNode = stack
+    this.columnNode = column
+    // this.button = button
+    this.rootNode!.appendChild(this.stackNode!)
+    this.rootNode!.appendChild(this.columnNode!)
+    // this.stackNode!.appendChild(this.button!)
 
     return this.rootNode
   }
@@ -74,9 +74,9 @@ class MyNodeController2 extends NodeController {
     this.uiContext = uiContext
     this.rootNode = new FrameNode(uiContext)
 
-    
-    
-    
+    const column = typeNode.createColumnNode(this.uiContext!)
+    this.columnNode = column
+    this.rootNode!.appendChild(this.columnNode!)
 
     return this.rootNode
   }

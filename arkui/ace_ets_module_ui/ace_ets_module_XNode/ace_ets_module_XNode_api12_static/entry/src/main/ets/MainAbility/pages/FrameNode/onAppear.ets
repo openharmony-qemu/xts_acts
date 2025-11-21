@@ -31,7 +31,6 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
   HoverEvent,
   TouchEvent,
   KeyEvent,
@@ -144,7 +143,7 @@ struct onAppearExample {
           })
           .onKeyEvent((event: KeyEvent) => {
             console.log(`Key Text    : ${JSON.stringify(event)}`)
-            return false
+            return true
           })
           .onMouse((event: MouseEvent) => {
             console.log(`Mouse Text : ${JSON.stringify(event)}`)

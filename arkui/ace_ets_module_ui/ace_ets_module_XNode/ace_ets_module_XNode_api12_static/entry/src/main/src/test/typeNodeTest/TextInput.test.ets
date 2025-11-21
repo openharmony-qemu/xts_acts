@@ -40,20 +40,21 @@ export default function typeNodeTextInputTest() {
         console.info("get typeNodeTextInputTest state pages: " + JSON.stringify(pages));
         if (!("TextInput" == pages.name)) {
           console.info("get typeNodeTextInputTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodeTextInputTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodeTextInputTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   TextInputTest_static_0100
@@ -61,7 +62,7 @@ export default function typeNodeTextInputTest() {
      * @tc.desc     TextInputTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('TextInputTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextInputTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

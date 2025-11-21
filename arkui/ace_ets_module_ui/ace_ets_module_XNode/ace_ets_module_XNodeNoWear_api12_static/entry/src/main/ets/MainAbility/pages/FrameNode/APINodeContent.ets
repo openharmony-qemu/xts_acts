@@ -17,10 +17,9 @@ import { NodeContent, typeNode,FrameNode } from '@ohos.arkui.node';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State, Watch, Link, LocalStorage } from '@ohos.arkui.stateManagement'
 
-// let para: Record<string, number> = { 'NodeContentFlagAPI': 0 };
-// let storage: LocalStorage = new LocalStorage();
-let storage: LocalStorage = new LocalStorage();
-storage.setOrCreate<number>('NodeContentFlagAPI', 0 );
+let para: Record<string, number> = { 'NodeContentFlagAPI': 0 };
+let storage: LocalStorage = new LocalStorage(para);
+
 
 class NodeContentCtrl {
   content: NodeContent = new NodeContent()
@@ -38,21 +37,17 @@ class NodeContentCtrl {
   AddNode() {
     let node = typeNode.createTextNode(this.uiContext)
     node.initialize("ContentText:" + this.textNode.length).fontSize(20)
-    if(node == undefined){
-      console.log('++++++++++++++AddNodeundefined')
-    }
-
     this.textNode.push(node)
     this.textNode1 = node
     console.log('++++++++++this.textNode.length1',this.textNode.length)
-    storage.set('NodeContentFlagAPI', this.textNode.length); //set后再get就会报错
-    console.log('++++++++++this.textNode.length2',storage.get<number|undefined>('NodeContentFlagAPI'))
+      storage.set<Int>('NodeContentFlagAPI', this.textNode.length);
+    console.log('++++++++++this.textNode.length2')
     this.content.addFrameNode(node)
   }
 
   RemoveNode() {
     let node = this.textNode1
-    storage.set('NodeContentFlagAPI', this.textNode.length);
+    storage.set<Int>('NodeContentFlagAPI', this.textNode.length);
     if(node == undefined){
       console.log('++++++++++++++RemoveNodeundefined')
     }
@@ -69,25 +64,21 @@ class NodeContentCtrl {
 struct APINodeContent {
   @State message: string = 'Hello World';
   controller:NodeContentCtrl = new NodeContentCtrl(this.getUIContext());
-  @State text1: string = '0';
+  @State text1: Int = 0;
 
   build() {
     Row() {
       Column() {
-        console.log('+++++++++++++++++++++++++++++++++++1 get',storage.get<number|undefined>('NodeContentFlagAPI'))
+        console.log('+++++++++++++++++++++++++++++++++++1 get',storage.get<number>('NodeContentFlagAPI'))
         Text(`${this.text1}`).id('APINodeContent_Text')
         Button('get context').width('50%').id('APINodeContent_Button_get')
           .onClick((event: ClickEvent) => {
-            try{
-              console.log('++++++++++1')
-              let a = storage.get<number|undefined>('NodeContentFlagAPI')  //appDied
-              console.log('++++++++++storage.get',a)
-            }catch(err){
-              console.log("++++++++++err：",err)
-            }
-              // storage.setOrCreate<number>('NodeContentFlagAPI', 0 );
-            // this.text1 = '1';
-          })
+            console.log('+++++++++++++++++storage.get1')
+            // this.text1 = storage.get<Int>('NodeContentFlagAPI') as Int
+            this.text1 = 1
+            // console.log('+++++++++++++storage.get',storage.get<Int>('NodeContentFlagAPI') as Int,', this.text1:',this.text1)
+            console.log('+++++++++++++++++storage.get2: '  + this.text1)
+      })
         ContentSlot(this.controller.GetContent())
 
         Button("AddToSlot").id('APINodeContent_Button_AddToSlot')

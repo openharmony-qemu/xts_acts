@@ -55,13 +55,13 @@ export default function frameNodeMoveToErrorCodeTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        
+        // let result = await router.replaceUrl(options);
         router.replaceUrl(options);
         console.info('get frameNodeMoveToErrorCodeTest state pages:' + JSON.stringify(pages));
         if (!('frameNodeMoveToErrorCodeTest' == pages.name)) {
           console.info('get frameNodeMoveToErrorCodeTest pages.name:' + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          
+          //console.info('push frameNodeMoveToErrorCodeTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push frameNodeMoveToErrorCodeTest page error:' + err);
@@ -77,13 +77,14 @@ export default function frameNodeMoveToErrorCodeTest() {
     
     
 
+
 /*
      * @tc.number   frameNodeMoveToErrorCodeTest_static_0100
      * @tc.name     frameNodeMoveToErrorCodeTest_static_0100
      * @tc.desc     frameNodeMoveToErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('frameNodeMoveToErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+    it('frameNodeMoveToErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('frameNodeMoveOneTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

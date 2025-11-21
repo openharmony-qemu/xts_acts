@@ -52,7 +52,7 @@ struct borderRadiusesExample {
   build() {
     Column() {
       NodeContainer(this.myNodeController)
-      Text('borderRadiusesValue:' + this.borderRadiusesValue).margin(10).id("borderRadiusesValue") 
+      Text('borderRadiusesValue:' + this.borderRadiusesValue).margin(10).id("borderRadiusesValue") //30
       Button('click borderRadiusesValue')
         .id("borderRadiusesClick")
         .onClick((e:ClickEvent) => {

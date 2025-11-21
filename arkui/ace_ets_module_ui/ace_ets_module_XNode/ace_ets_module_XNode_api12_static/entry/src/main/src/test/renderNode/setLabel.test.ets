@@ -40,20 +40,21 @@ export default function setLabelTest() {
         console.info("get setLabelTest state pages: " + JSON.stringify(pages));
         if (!("setLabel" == pages.name)) {
           console.info("get setLabelTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push setLabelTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setLabelTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   setLabelTest_static_0010
@@ -61,7 +62,7 @@ export default function setLabelTest() {
      * @tc.desc     setLabelTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('setLabelTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('setLabelTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setLabelTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

@@ -17,8 +17,8 @@ import { BusinessError } from '@ohos.base';
 import { ComponentContent } from '@kit.ArkUI';
 import { BuilderNode, FrameNode, NodeController,typeNode } from '@ohos.arkui.node'
 import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
-  HorizontalAlign,ColumnOptions,Stack,Row,Position
+  Visibility,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
+  HorizontalAlign,ColumnOptions,Stack,Row,Position,CustomBuilderT,Alignment,
 
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
@@ -46,6 +46,7 @@ class MyNodeController extends NodeController {
   public textNode: FrameNode | null = null
 
   makeNode(uiContext: UIContext): FrameNode | null {
+    console.log('++++++++++++makeNode',uiContext)
     this.uiContext = uiContext
     this.rootNode = new FrameNode(uiContext)
     this.rootNode?.commonAttribute.width('100%').id('root_id1')
@@ -53,10 +54,15 @@ class MyNodeController extends NodeController {
   }
 
   refreshNode(): void {
+    console.log('++++++++++++refreshNode1',this.uiContext)
     this.nativeNode = this.uiContext!.getFrameNodeById('column')
-    const builderNode = new BuilderNode<[string]>(this.uiContext!)
-    
+    console.log('++++++++++++refreshNode2',this.nativeNode)
+    const builderNode = new BuilderNode<string>(this.uiContext!)
+    console.log('++++++++++++refreshNode3')
+    builderNode.build(new WrappedBuilder<CustomBuilderT<string>>(buildText), 'hello')
+    console.log('++++++++++++refreshNode4')
     this.builderRootNode = builderNode.getFrameNode()
+    console.log('++++++++++++refreshNode5')
   }
 
   operate(): void {
@@ -67,40 +73,42 @@ class MyNodeController extends NodeController {
       .backgroundColor(Color.Gray)
       .borderWidth(1)
       .id('node1_sally')
+    console.log('++++++++++++++++this.node2-1+uicontext',this.uiContext)
     this.node2 = new FrameNode(this.uiContext!)
+    console.log('++++++++++++++++this.node2-2')
     this.node2?.commonAttribute.width(150)
       .height(150)
       .backgroundColor(Color.Grey)
       .position({ x: 200, y: 0 } as Position)
       .borderWidth(1)
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    const stack1 = typeNode.createStackNode(this.uiContext!)
+    stack1.commonAttribute.width(30).height(30).backgroundColor(Color.Red)
+    stack1.initialize({ alignContent: Alignment.Bottom })
+    const stack2 = typeNode.createStackNode(this.uiContext!)
+    stack2.commonAttribute.width(30)
+      .height(30)
+      .backgroundColor(Color.Yellow)
+      .offset({ x: 20, y: 15 } as Position)
+    this.stackBlue = typeNode.createStackNode(this.uiContext!)
     this.stackBlue?.commonAttribute.width(30)
       .height(30)
       .backgroundColor(Color.Blue)
       .offset({ x: 40 } as Position)
-    
-    
-    
-    
-    
-    
-    
+    const stack4 = typeNode.createStackNode(this.uiContext!)
+    stack4.commonAttribute.width(30).height(30).backgroundColor(Color.Red)
+    const stack5 = typeNode.createStackNode(this.uiContext!)
+    stack5.commonAttribute.width(30)
+      .height(30)
+      .backgroundColor(Color.Yellow)
+      .offset({ x: 20, y: 15 } as Position)
 
     this.rootNode!.appendChild(this.node1!)
 
-    
-    
-    
-    
+    this.node1!.appendChild(stack1)
+    this.node1!.appendChild(stack2)
+    this.node2!.appendChild(stack4)
+    this.node2!.appendChild(stack5)
 
     const current = node
     const source = current.getParent()
@@ -116,7 +124,18 @@ class MyNodeController extends NodeController {
   }
 
   addFrame2(): void {
-    this.rootNode!.appendChild(this.node2!)
+    console.log('+++++++++addFrame2-1')
+    if(this.rootNode == null ){
+      console.log('+++++++++addFrame2-1 rootNode = null ',)
+    }
+    try{
+      console.log('++++++++++++node2',this.node2)
+      this.rootNode!.appendChild(this.node2!)  // NullPointerError
+    } catch(err:Error){
+      console.log('+++++++++addFrame2-1 Error ',err)
+    }
+    // this.rootNode!.appendChild(this.node2!) //
+    console.log('+++++++++addFrame2-2')
   }
 
   frame1AddBlue(): void {
@@ -133,14 +152,14 @@ class MyNodeController extends NodeController {
   }
 
   addText(uicontext: UIContext): void {
-    
-    
-    
+    let textNode = typeNode.createTextNode(uicontext)
+    textNode.initialize('hello sally').fontColor(Color.White).id('text_id')
+    textNode.commonAttribute.offset({ y: 100 } as Position)
 
-    
-    
-    
-    
+    this.textNode = textNode
+    if (this.rootNode) {
+      this.rootNode!.appendChild(this.textNode!)
+    }
   }
 
   moveText(): void {
@@ -160,8 +179,11 @@ struct frameNodeMoveOne {
   @State moveFlag: boolean = true
 
   onPageShow(): void {
+    console.log('+++++++++++++++++onPageShow0')
     this.myNodeController.refreshNode()
+    console.log('+++++++++++++++++onPageShow1')
     this.myNodeController.operate()
+    console.log('+++++++++++++++++onPageShow2')
   }
 
   build() {
@@ -176,11 +198,25 @@ struct frameNodeMoveOne {
       Row() {
         Button('addFrame2').height('3%').id('addFrame2_id')
           .onClick((e:ClickEvent) => {
+            console.log('++++++++++++++++++++1')
             this.myNodeController.addFrame2()
+            console.log('++++++++++++++++++++2')
+            if(this.myNodeController.rootNode!==null){
+              console.log('+++++++++++++++++this.myNodeController.rootNode null')
+              if(this.myNodeController.rootNode!.getFirstChild()==null){
+                console.log('+++++++++++++++++this.myNodeController.rootNode!.getFirstChild() null')
+                if(this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount() == null ){
+                  console.log('+++++++++++++++++this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount() null')
+                }
+              }
+            }
             this.frame1ChildCount = this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount()
+
+            console.log('++++++++++++++++++++3')
             if (this.myNodeController.rootNode!.getChild(1)) {
               console.log('sally' + this.myNodeController.rootNode!.getChild(1)!.getChildrenCount())
               this.frame2ChildCount = this.myNodeController.rootNode!.getChild(1)!.getChildrenCount()
+              console.log('++++++++++++++++++++4')
             }
           })
         Button('frame1AddBlue').height('3%').id('frame1AddBlue_id')

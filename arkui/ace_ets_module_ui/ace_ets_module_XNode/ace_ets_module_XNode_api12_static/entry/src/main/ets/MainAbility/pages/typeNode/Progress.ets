@@ -23,12 +23,12 @@ import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 
-
-
-
-
-
-
+// let para: Record<string> = {
+//   'ProgressType': 'Init',
+//   'initialize': 'Init',
+//   'attribute': 'Init',
+// };
+// let storage: LocalStorage = new LocalStorage(para);
 let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate('ProgressType', 'Init');
 storage.setOrCreate('initialize', 'Init');
@@ -47,16 +47,16 @@ class MyNodeController extends NodeController {
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    
-    
-    
-    
-    
+    let progress = typeNode.createProgressNode(uiContext);
+    progress.initialize({ value: 100 }).width('100%').height('100%').margin({ top: 5 } as Margin).padding(10);
+    col.appendChild(progress);
+    storage.set('ProgressType', '' + progress.getNodeType());
+    storage.set('initialize', '' + JSON.stringify(progress.getUserConfigPadding()));
 
-    
-    
-    
-    
+    let text1 = typeNode.createTextNode(uiContext);
+    text1.attribute.padding(5).fontColor(Color.Blue).fontSize(10);
+    col.appendChild(text1);
+    storage.set('attribute', '' + JSON.stringify(text1.getUserConfigPadding()));
     return node;
   }
 }

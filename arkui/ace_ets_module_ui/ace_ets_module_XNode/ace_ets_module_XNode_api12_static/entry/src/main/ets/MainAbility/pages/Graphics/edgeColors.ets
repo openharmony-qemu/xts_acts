@@ -56,13 +56,13 @@ struct edgeColorsExample {
   build() {
     Column() {
       NodeContainer(this.myNodeController)
-      Text('edgeColorsValue:' + this.edgeColorsValue).margin(10).id("edgeColorsValue") 
+      Text('edgeColorsValue:' + this.edgeColorsValue).margin(10).id("edgeColorsValue") //4278190335
       Button('click edgeColorsValue')
         .id("edgeColorsClick")
         .onClick((e:ClickEvent) => {
           renderNode.borderColor = edgeColors(0xFF0000FF)
           renderNode.invalidate()
-          this.edgeColorsValue = renderNode.borderColor!.left
+          this.edgeColorsValue = renderNode!.borderColor!.left
         })
     }
   }

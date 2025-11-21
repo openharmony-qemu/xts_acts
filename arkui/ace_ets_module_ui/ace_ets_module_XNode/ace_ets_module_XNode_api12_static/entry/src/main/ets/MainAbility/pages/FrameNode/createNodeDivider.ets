@@ -30,8 +30,7 @@ import {
   Color,
   Builder,
   Row,
-  NodeContainer,
-  wrapBuilder
+  NodeContainer
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';

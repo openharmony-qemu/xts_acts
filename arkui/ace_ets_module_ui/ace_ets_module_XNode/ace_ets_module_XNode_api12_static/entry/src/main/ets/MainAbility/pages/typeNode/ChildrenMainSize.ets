@@ -31,11 +31,11 @@ struct ListExample {
   @State listChildrenSize: ChildrenMainSize = new ChildrenMainSize(100)
   @State text:string="init"
   aboutToAppear(){
-    
+    // 初始化数据源。
     for (let i = 0; i < 10; i++) {
       this.arr.push(i)
     }
-    
+    // 前5个item的主轴大小不是默认大小100，因此需要通过ChildrenMainSize通知List。
     this.listChildrenSize.splice(0, 5, [300, 300, 300, 300, 300])
   }
   build() {
@@ -77,8 +77,8 @@ struct ListExample {
           this.listChildrenSize.childDefaultSize = 50
         }).height('50%').width('30%')
         Button('') { Text('scrollTo (0, 310)') }.onClick((e:ClickEvent)=>{
-          
-          
+          // 310: 跳转到item 1顶部与List顶部平齐的位置。
+          // 如果不设置childrenMainSize，item高度不一致时scrollTo会不准确。
           this.scroller.scrollTo({xOffset: 0, yOffset: 310})
         }).height('50%').width('30%')
       }.height('20%')

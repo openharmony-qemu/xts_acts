@@ -41,21 +41,22 @@ export default function getAlpha() {
         console.info("get getAlpha state pages: " + JSON.stringify(pages));
         if (!("getAlpha" == pages.name)) {
           console.info("get getAlpha state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push getAlpha success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getAlpha page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   getAlpha_static_0100
@@ -63,7 +64,7 @@ export default function getAlpha() {
      * @tc.desc     getAlpha_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getAlpha_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getAlpha_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getAlpha_0100 START');
       let strJson: string = inspector.getInspectorByKey('getAlpha');
       let obj = JSON.parseJsonElement(strJson);

@@ -41,21 +41,22 @@ export default function getBlue() {
         console.info("get getBlue state pages: " + JSON.stringify(pages));
         if (!("getBlue" == pages.name)) {
           console.info("get getBlue state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push getBlue success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getBlue page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   getBlue_static_0100
@@ -63,7 +64,7 @@ export default function getBlue() {
      * @tc.desc     getBlue_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getBlue_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getBlue_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getBlue_0100 START');
       let strJson: string = inspector.getInspectorByKey('getBlue');
       let obj = JSON.parseJsonElement(strJson);

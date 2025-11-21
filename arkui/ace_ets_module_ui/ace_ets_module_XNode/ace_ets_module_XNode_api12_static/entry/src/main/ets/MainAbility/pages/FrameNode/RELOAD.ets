@@ -59,7 +59,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt();
+    const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       console.info('remove listener');
       this.listeners.splice(pos, 1);
@@ -72,27 +72,27 @@ class BasicDataSource implements IDataSource<string> {
     })
   }
 
-  notifyDataAdd(index: int): void {
+  notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataAdd(index);
+      listener.onDataAdd(index as int);
     })
   }
 
-  notifyDataChange(index: int): void {
+  notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataChange(index);
+      listener.onDataChange(index as int);
     })
   }
 
-  notifyDataDelete(index: int): void {
+  notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataDelete(index);
+      listener.onDataDelete(index as int);
     })
   }
 
-  notifyDataMove(from: int, to: int): void {
+  notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataMove(from, to);
+      listener.onDataMove(from as int, to as int);
     })
   }
 
@@ -114,8 +114,8 @@ class MyDataSource extends BasicDataSource {
     return this.dataArray[index.toInt()];
   }
 
-  public addData(index: int, data: string): void {
-    this.dataArray.splice(index, 0, data);
+  public addData(index: number, data: string): void {
+    this.dataArray.splice(index as int, 0, data);
     this.notifyDataAdd(index);
   }
 
@@ -124,14 +124,14 @@ class MyDataSource extends BasicDataSource {
     this.notifyDataAdd(this.dataArray.length - 1);
   }
 
-  public deleteData(index: int): void {
-    this.dataArray.splice(index, 1);
+  public deleteData(index: number): void {
+    this.dataArray.splice(index as int, 1);
     this.notifyDataDelete(index);
   }
 
-  public changeData(index: int, data: string): void {
-    this.dataArray.splice(index, 1, data);
-    this.notifyDatasetChange([{index: index, type: DataOperationType.CHANGE} as DataChangeOperation]);
+  public changeData(index: number, data: string): void {
+    this.dataArray.splice(index as int, 1, data);
+    this.notifyDatasetChange([{index: index as int, type: DataOperationType.CHANGE} as DataChangeOperation]);
   }
 
   public modifyAllData(): void {
@@ -163,22 +163,22 @@ struct MyComponent {
     Column(){
       Text(this.value).id("RELOADText")
       List({ space: 3 }) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        LazyForEach(this.data, (item: string, index: int) => {
+          ListItem() {
+            Row() {
+              Text(item).fontSize(50)
+                .onAppear(() => {
+                  this.value = "appear:" + item
+                  console.info("appear:" + item)
+                })
+            }.margin({ left: 10, right: 10 } as Margin)
+          }
+          .id("DataOperationType")
+          .onClick((e:ClickEvent) => {
+            this.data.modifyAllData();
+            this.data.reloadData();
+          })
+        }, (item: string, index:int) => item)
       }.cachedCount(5)
     }
   }

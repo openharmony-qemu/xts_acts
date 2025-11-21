@@ -40,16 +40,16 @@ export default function LengthUnitTest() {
         console.info("get LengthUnitTest state pages: " + JSON.stringify(pages));
         if (!("LengthUnit" == pages.name)) {
           console.info("get LengthUnitTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push LengthUnitTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LengthUnitTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     afterEach(async () => {
@@ -59,13 +59,14 @@ export default function LengthUnitTest() {
     
     
 
+
 /*
      * @tc.number   LengthUnitTest_static_001
      * @tc.name     LengthUnitTest_static_001
      * @tc.desc     LengthUnitTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LengthUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LengthUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LengthUnitTest_001] START');
       await CommonFunc.sleep(1000);
       let span_px = inspector.getInspectorByKey('span_px');
@@ -78,13 +79,14 @@ it('LengthUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<
     
     
 
+
 /*
      * @tc.number   LengthUnitTest_static_002
      * @tc.name     LengthUnitTest_static_002
      * @tc.desc     LengthUnitTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('LengthUnitTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LengthUnitTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LengthUnitTest_002] START');
       await CommonFunc.sleep(1000);
       let span_fp = inspector.getInspectorByKey('span_fp');
@@ -97,13 +99,14 @@ it('LengthUnitTest_static_002', Level.LEVEL0, async (done: () => void): Promise<
     
     
 
+
 /*
      * @tc.number   LengthUnitTest_static_003
      * @tc.name     LengthUnitTest_static_003
      * @tc.desc     LengthUnitTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('LengthUnitTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LengthUnitTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LengthUnitTest_003] START');
       await CommonFunc.sleep(1000);
       let span_percent = inspector.getInspectorByKey('span_percent');
@@ -117,13 +120,14 @@ it('LengthUnitTest_static_003', Level.LEVEL0, async (done: () => void): Promise<
     
     
 
+
 /*
      * @tc.number   LengthUnitTest_static_004
      * @tc.name     LengthUnitTest_static_004
      * @tc.desc     LengthUnitTest_static_004
      * @tc.level    Level.LEVEL0
      */
-it('LengthUnitTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LengthUnitTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LengthUnitTest_004] START');
       await CommonFunc.sleep(1000);
       let span_lpx = inspector.getInspectorByKey('span_lpx');

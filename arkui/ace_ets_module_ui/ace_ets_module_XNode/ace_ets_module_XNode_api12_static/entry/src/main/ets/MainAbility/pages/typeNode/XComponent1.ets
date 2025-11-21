@@ -15,18 +15,19 @@
 
 import { 
   Entry, Component, Builder,NodeContainer,
-  Column, ColumnOptions,
-  Flex, FlexDirection, ItemAlign, FlexAlign,
-  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, 
+  Column, ColumnOptions, XComponentParameters,
+  Flex, FlexDirection, ItemAlign, FlexAlign, XComponentType,
+  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, Callback, NativeXComponentPointer,
 } from '@ohos.arkui.component'
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
+import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 
-
-
-
-
+// let para: Record<string> = {
+//   'XComponentType': 'Init',
+// };
+// let storage: LocalStorage = new LocalStorage(para);
 let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate('XComponentType', 'Init');
 
@@ -43,13 +44,14 @@ class MyNodeController extends NodeController {
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    
-    
-    
-    
-    
-    
-    
+    // let XComponent = typeNode.createXComponentNode(uiContext);   10.27 编译不过
+    // XComponent.initialize({
+    //   id: 'XComponentTypeId',
+    //   type: XComponentType.SURFACE,
+    //   nativeXComponentHandler: (data:NativeXComponentPointer):void=>{},
+    // } as XComponentParameters).margin({ top: 5 } as Margin);
+    // col.appendChild(XComponent);
+    // storage.set('XComponentType', '' + XComponent.getNodeType());
 
     return node;
   }

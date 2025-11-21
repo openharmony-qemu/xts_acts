@@ -26,7 +26,6 @@ export default function UIObserverDensityUpdateTest() {
   describe('UIObserverDensityUpdateTest', () => {
     beforeAll(() => {
       console.info("UIObserverDensityUpdateTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -39,8 +38,8 @@ export default function UIObserverDensityUpdateTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        
-        router.replaceUrl(options);
+        // let result = await router.replaceUrl(options);
+        router.pushUrl(options);
         console.info("get UIObserverDensityUpdateTest state pages:" + JSON.stringify(pages));
         if (!("UIObserverDensityUpdateTest" == pages.name)) {
           console.info("get UIObserverDensityUpdateTest pages.name:" + JSON.stringify(pages.name));
@@ -61,18 +60,22 @@ export default function UIObserverDensityUpdateTest() {
     
     
 
+
 /*
      * @tc.number   UIObserverDensityUpdateTest_static_0100
      * @tc.name     UIObserverDensityUpdateTest_static_0100
      * @tc.desc     UIObserverDensityUpdateTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('UIObserverDensityUpdateTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('UIObserverDensityUpdateTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('UIObserverDensityUpdateTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
+  console.info('++++++++++++++++++++++++1');
       let button1 = await driver.findComponent(ON.id('densityUpdate_on_id'));
+  console.info('++++++++++++++++++++++++2');
       await (button1?.click() as Promise<void>);
+  console.info('++++++++++++++++++++++++3');
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('densityUpdate_off_id'));
       await (button2?.click() as Promise<void>);

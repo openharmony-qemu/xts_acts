@@ -33,6 +33,7 @@ import {
   NodeContainer,
   wrapBuilder,
   WrappedBuilder,
+  CustomBuilderT,
   ColumnOptions
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -41,16 +42,16 @@ import inspector from '@ohos.arkui.inspector'
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   private builderNode: BuilderNode<[]> | null = null;
-  private wrappedBuilder: WrappedBuilder<[]>;
+  private wrappedBuilder: WrappedBuilder<CustomBuilderT<[]>>;
 
-  constructor(builder: WrappedBuilder<[]>) {
+  constructor(builder: WrappedBuilder<CustomBuilderT<[]>>) {
     super();
     this.wrappedBuilder = builder;
   }
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.builderNode = new BuilderNode<[]>(uiContext, { selfIdealSize: { width: 200, height: 100 } });
-    
+    this.builderNode?.build(this.wrappedBuilder,[]);
 
     return this.builderNode?.getFrameNode()!;
   }
@@ -71,7 +72,7 @@ class MyNodeController extends NodeController {
 
 @Component
 struct TestComponent {
-  
+  private myNodeController: MyNodeController = new MyNodeController(wrapBuilder<CustomBuilderT<[]>>(buildComponent2));
   @State text: string = 'start'
   build() {
     Column() {
@@ -82,7 +83,7 @@ struct TestComponent {
         })
         .fontSize(36)
         .fontWeight(700)
-      
+      NodeContainer(this.myNodeController)
     }
     .width('100%')
     .backgroundColor(Color.Gray)
@@ -99,16 +100,16 @@ struct TestComponent {
 
 @Component
 struct TestComponent2 {
-  
-  
+  private myNodeController: MyNodeController = new MyNodeController(wrapBuilder<CustomBuilderT<[]>>(buildComponent3));
+  private myNodeController2: MyNodeController = new MyNodeController(wrapBuilder<CustomBuilderT<[]>>(buildComponent4));
 
   build() {
     Column() {
       Text('This is a BuilderNode 2.')
         .fontSize(16)
         .fontWeight(FontWeight.Bold)
-      
-      
+      NodeContainer(this.myNodeController)
+      NodeContainer(this.myNodeController2)
     }
     .width('100%')
     .backgroundColor(Color.Gray)
@@ -189,19 +190,19 @@ function buildComponent4() {
 @Entry
 @Component
 struct APIdisposeTree {
-  
+  private myNodeController: MyNodeController = new MyNodeController(wrapBuilder<CustomBuilderT<[]>>(buildComponent));
 
   build() {
     Column({ space: 0 } as ColumnOptions) {
       Button('BuilderNode rebuild').key('APIdisposeTree_Button1')
         .onClick((e:ClickEvent) => {
-          
+          this.myNodeController.rebuild();
         }).height(80)
         .width('100%')
-      
+      NodeContainer(this.myNodeController)
       Button('BuilderNode dispose').key('APIdisposeTree_Button2')
         .onClick((e:ClickEvent) => {
-          
+          this.myNodeController.dispose();
         })
         .width('100%').height(80)
     }

@@ -41,20 +41,21 @@ export default function typeNodeListItemTest() {
         console.info("get typeNodeListItemTest state pages: " + JSON.stringify(pages));
         if (!("ListItem" == pages.name)) {
           console.info("get typeNodeListItemTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodeListItemTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodeListItemTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   ListItemTest_static_0100
@@ -62,7 +63,7 @@ export default function typeNodeListItemTest() {
      * @tc.desc     ListItemTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ListItemTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ListItemTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ListItemTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

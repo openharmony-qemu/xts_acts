@@ -41,21 +41,22 @@ export default function getBlendColor() {
         console.info("get getBlendColor state pages: " + JSON.stringify(pages));
         if (!("getBlendColor" == pages.name)) {
           console.info("get getBlendColor state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push getBlendColor success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getBlendColor page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   getBlendColor_static_0100
@@ -63,7 +64,7 @@ export default function getBlendColor() {
      * @tc.desc     getBlendColor_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getBlendColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getBlendColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getBlendColor_0100 START');
       let strJson: string = inspector.getInspectorByKey('getBlendColor');
       let obj = JSON.parseJsonElement(strJson);

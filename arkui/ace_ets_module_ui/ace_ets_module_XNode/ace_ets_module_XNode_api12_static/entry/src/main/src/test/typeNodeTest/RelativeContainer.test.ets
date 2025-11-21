@@ -40,20 +40,21 @@ export default function typeNodeRelativeContainerTest() {
         console.info("get typeNodeRelativeContainerTest state pages: " + JSON.stringify(pages));
         if (!("RelativeContainer" == pages.name)) {
           console.info("get typeNodeRelativeContainerTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodeRelativeContainerTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodeRelativeContainerTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   RelativeContainerTest_static_0100
@@ -61,7 +62,7 @@ export default function typeNodeRelativeContainerTest() {
      * @tc.desc     RelativeContainerTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('RelativeContainerTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RelativeContainerTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RelativeContainerTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

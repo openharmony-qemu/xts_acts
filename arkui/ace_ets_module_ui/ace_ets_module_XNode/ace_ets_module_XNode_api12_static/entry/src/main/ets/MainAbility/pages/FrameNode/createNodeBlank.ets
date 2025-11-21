@@ -30,8 +30,7 @@ import {
   Color,
   Builder,
   Row,
-  NodeContainer,
-  wrapBuilder
+  NodeContainer
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -56,7 +55,7 @@ class MyNodeController extends NodeController {
       .height(100)
       .borderWidth(1)
       .borderColor(Color.Black)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor('0xAFEEEE')
     this.node?.appendChild(col)
     return this.node
   }

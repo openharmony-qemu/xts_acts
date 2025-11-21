@@ -40,20 +40,21 @@ export default function RenderNodeDemo05Test() {
         console.info("get RenderNodeDemo05Test state pages: " + JSON.stringify(pages));
         if (!("RenderNodeDemo05" == pages.name)) {
           console.info("get RenderNodeDemo05Test state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push RenderNodeDemo05Test success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RenderNodeDemo05Test page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   RenderNodeDemo05Test_static_0100
@@ -61,7 +62,7 @@ export default function RenderNodeDemo05Test() {
      * @tc.desc     RenderNodeDemo05Test_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('RenderNodeDemo05Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RenderNodeDemo05Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RenderNodeDemo05Test_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

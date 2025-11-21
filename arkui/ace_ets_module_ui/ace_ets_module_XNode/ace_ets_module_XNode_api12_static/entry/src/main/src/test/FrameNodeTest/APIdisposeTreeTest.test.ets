@@ -48,19 +48,20 @@ export default function APIdisposeTreeTest() {
         console.info("get APIdisposeTreeTest state pages: " + JSON.stringify(pages));
         if (!("APIdisposeTree" == pages.name)) {
           console.info("get APIdisposeTreeTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push APIdisposeTreeTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APIdisposeTreeTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   APIdisposeTreeTest_static_static_0100
@@ -68,7 +69,7 @@ export default function APIdisposeTreeTest() {
      * @tc.desc     APIdisposeTreeTest_static_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('APIdisposeTreeTest_static_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIdisposeTreeTest_static_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIdisposeTreeTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
