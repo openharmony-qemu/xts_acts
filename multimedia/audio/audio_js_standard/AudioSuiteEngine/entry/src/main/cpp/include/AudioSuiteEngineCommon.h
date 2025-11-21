@@ -19,6 +19,7 @@ enum class TestResult {
     TEST_FAIL = 0,
     TEST_PASS = 1,
 };
+
 enum class AudioNodeTypeTest {
     INPUT_NODE_TYPE_DEFAULT_TEST = 1,
     OUTPUT_NODE_TYPE_DEFAULT_TEST = 101,
@@ -41,7 +42,7 @@ enum class AudioSuitePipelineStateTest {
     AUDIOSUITE_PIPELINE_RUNNING_TEST = 2,
 };
 
-enum class AudioSuiteResultTest{
+enum class AudioSuiteResultTest {
     AUDIOSUITE_SUCCESS_TEST = 0,
     AUDIOSUITE_ERROR_INVALID_PARAM_TEST = 1,
     AUDIOSUITE_ERROR_INVALID_STATE_TEST = 2,
@@ -69,7 +70,6 @@ enum class AudioEncodingTypeTest {
 };
 
 enum class AudioSampleRateTest {
-
     SAMPLE_RATE_8000_TEST = 8000,
     SAMPLE_RATE_11025_TEST = 11025,
     SAMPLE_RATE_12000_TEST = 12000,
@@ -86,24 +86,24 @@ enum class AudioSampleRateTest {
     SAMPLE_RATE_192000_TEST = 192000
 };
 
-enum class AudioSuiteSoundFieldTypeTest{
+enum class AudioSuiteSoundFieldTypeTest {
     SOUND_FIELD_FRONT_FACING_TEST = 1,
     SOUND_FIELD_GRAND_TEST = 2,
     SOUND_FIELD_NEAR_TEST = 3,
     SOUND_FIELD_WIDE_TEST = 4,
 };
 
-enum class AudioSuiteEnvironmentTypeTest{
+enum class AudioSuiteEnvironmentTypeTest {
     ENVIRONMENT_TYPE_BROADCAST_TEST = 1,
     ENVIRONMENT_TYPE_EARPIECE_TEST = 2,
     ENVIRONMENT_TYPE_UNDERWATER_TEST = 3,
     ENVIRONMENT_TYPE_GRAMOPHONE_TEST = 4
 };
 
-enum class AudioSuiteVoiceBeautifierTypeTest{
+enum class AudioSuiteVoiceBeautifierTypeTest {
     VOICE_BEAUTIFIER_TYPE_CLEAR_TEST = 1,
     VOICE_BEAUTIFIER_TYPE_THEATRE_TEST = 2,
     VOICE_BEAUTIFIER_TYPE_CD_TEST = 3,
     VOICE_BEAUTIFIER_TYPE_RECORDING_STUDIO_TEST = 4
 };
-#endif 
+#endif
