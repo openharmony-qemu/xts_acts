@@ -165,7 +165,6 @@ static BOOL DiscoveryServiceTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   PublishServiceTest001
  * @tc.number PublishServiceTest001
  * @tc.desc   Verify wrong parameter
@@ -226,7 +225,6 @@ LITE_TEST_CASE(DiscoveryServiceTestSuite, PublishServiceTest001, Function | Medi
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   UnPublishServiceTest001
  * @tc.number UnPublishServiceTest001
  * @tc.desc   Verify wrong parameter
@@ -243,7 +241,6 @@ LITE_TEST_CASE(DiscoveryServiceTestSuite, UnPublishServiceTest001, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   StartDiscoveryTest001
  * @tc.number StartDiscoveryTest001
  * @tc.desc   Verify wrong parameter
@@ -302,7 +299,6 @@ LITE_TEST_CASE(DiscoveryServiceTestSuite, StartDiscoveryTest001, Function | Medi
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   StopDiscoveryTest001
  * @tc.number StopDiscoveryTest001
  * @tc.desc   Verify wrong parameter

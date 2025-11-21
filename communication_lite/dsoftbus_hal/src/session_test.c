@@ -132,7 +132,6 @@ static BOOL SessionTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestCreateSessionServer001
  * @tc.number TestCreateSessionServer001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -154,7 +153,6 @@ LITE_TEST_CASE(SessionTestSuite, TestCreateSessionServer001, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestRemoveSessionServer001
  * @tc.number TestRemoveSessionServer001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -173,7 +171,6 @@ LITE_TEST_CASE(SessionTestSuite, TestRemoveSessionServer001, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestOpenSession001
  * @tc.number TestOpenSession001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -203,7 +200,6 @@ LITE_TEST_CASE(SessionTestSuite, TestOpenSession001, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestSendBytes001
  * @tc.number TestSendBytes001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -230,7 +226,6 @@ LITE_TEST_CASE(SessionTestSuite, TestSendBytes001, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestSendMessage001
  * @tc.number TestSendMessage001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -258,7 +253,6 @@ LITE_TEST_CASE(SessionTestSuite, TestSendMessage001, Function | MediumTest | Lev
 
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestSendStream001
  * @tc.number TestSendStream001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -288,7 +282,6 @@ LITE_TEST_CASE(SessionTestSuite, TestSendStream001, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestQosReport001
  * @tc.number TestQosReport001
  * @tc.desc   test the wrong parameter.
@@ -310,7 +303,6 @@ LITE_TEST_CASE(SessionTestSuite, TestQosReport001, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestSetFileSendListener001
  * @tc.number TestSetFileSendListener001
  * @tc.desc   test the wrong parameter.
@@ -325,7 +317,6 @@ LITE_TEST_CASE(SessionTestSuite, TestSetFileSendListener001, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestSendFile001
  * @tc.number TestSendFile001
  * @tc.desc   test the wrong parameter.
@@ -352,7 +343,6 @@ LITE_TEST_CASE(SessionTestSuite, TestSendFile001, Function | MediumTest | Level0
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestSetFileReceiveListener001
  * @tc.number TestSetFileReceiveListener001
  * @tc.desc   test the wrong parameter.
@@ -367,7 +357,6 @@ LITE_TEST_CASE(SessionTestSuite, TestSetFileReceiveListener001, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestGetMySessionName001
  * @tc.number TestGetMySessionName001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -385,7 +374,6 @@ LITE_TEST_CASE(SessionTestSuite, TestGetMySessionName001, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestGetPeerSessionName001
  * @tc.number TestGetPeerSessionName001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -403,7 +391,6 @@ LITE_TEST_CASE(SessionTestSuite, TestGetPeerSessionName001, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestGetPeerDeviceId001
  * @tc.number TestGetPeerDeviceId001
  * @tc.desc   extern module active publish, use the wrong parameter.
@@ -421,7 +408,6 @@ LITE_TEST_CASE(SessionTestSuite, TestGetPeerDeviceId001, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   TestGetSessionSide001
  * @tc.number TestGetSessionSide001
  * @tc.desc   extern module active publish, use the wrong parameter.

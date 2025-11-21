@@ -281,7 +281,6 @@ static BOOL WifiServiceFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testEnableDisableWifi
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -316,7 +315,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testEnableDisableWifi, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testScan
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -357,7 +355,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testScan, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testConnectDisConnect
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -389,7 +386,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testConnectDisConnect, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testHandleDeviceConfig
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -458,7 +454,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testHandleDeviceConfig, Function | Medi
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testHandleHotspotConfig
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -505,7 +500,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testHandleHotspotConfig, Function | Med
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testEnableDisableHotSpot
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -559,7 +553,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testEnableDisableHotSpot, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetSignalLevel
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -603,7 +596,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testGetSignalLevel, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAdvanceScanType
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -661,7 +653,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanType, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAdvanceScanInvalidParam01
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -693,7 +684,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanInvalidParam01, Function
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAdvanceScanInvalidParam02
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -742,7 +732,6 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanInvalidParam02, Function
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAdvanceScanInvalidParam03
  * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_1100
  * @tc.desc   [C- SOFTWARE -0200]

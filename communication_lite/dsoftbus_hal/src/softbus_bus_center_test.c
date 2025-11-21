@@ -185,7 +185,6 @@ static SubscribeInfo g_sInfo1 = {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testJoinLNN0001
  * @tc.number testJoinLNN0001
  * @tc.desc   [C- SOFTWARE -0200]
@@ -212,7 +211,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testJoinLNN0001, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testLeaveLNN001
  * @tc.number testLeaveLNN001
  * @tc.desc   [C- SOFTWARE -0200]
@@ -238,7 +236,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testLeaveLNN001, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegNodeDeviceStateCb001
  * @tc.number testRegNodeDeviceStateCb001
  * @tc.desc   get all node info interface test
@@ -255,7 +252,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testRegNodeDeviceStateCb001, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegNodeDeviceStateCb002
  * @tc.number testRegNodeDeviceStateCb002
  * @tc.desc   get all node info interface test
@@ -279,7 +275,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testRegNodeDeviceStateCb002, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetAllNodeDeviceInfo001
  * @tc.number testGetAllNodeDeviceInfo001
  * @tc.desc   get all node info interface test
@@ -303,7 +298,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testGetAllNodeDeviceInfo001, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetLocalNodeDeviceInfo001
  * @tc.number testGetLocalNodeDeviceInfo001
  * @tc.desc   get local info interface test
@@ -324,7 +318,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testGetLocalNodeDeviceInfo001, Function | Med
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetNodeKeyInfo001
  * @tc.number testGetNodeKeyInfo001
  * @tc.desc   get node key info interface test
@@ -347,7 +340,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testGetNodeKeyInfo001, Function | MediumTest 
 
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testStartTimeSync001
  * @tc.number testStartTimeSync001
  * @tc.desc   start time sync interface test
@@ -365,7 +357,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testStartTimeSync001, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testStartTimeSync002
  * @tc.number testStartTimeSync002
  * @tc.desc   start time sync interface test
@@ -382,7 +373,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testStartTimeSync002, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublishLNN001
  * @tc.number testPublishLNN001
  * @tc.desc   Verify wrong parameter
@@ -428,7 +418,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testPublishLNN001, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRefreshLNN001
  * @tc.number testRefreshLNN001
  * @tc.desc   Verify wrong parameter
@@ -476,7 +465,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testRefreshLNN001, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testActiveMetaNode001
  * @tc.number testActiveMetaNode001
  * @tc.desc   meta node interface test
@@ -510,7 +498,6 @@ LITE_TEST_CASE(BusCenterTestSuite, testActiveMetaNode001, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetAllMetaNodeInfo001
  * @tc.number testGetAllMetaNodeInfo001
  * @tc.desc   meta node interface test

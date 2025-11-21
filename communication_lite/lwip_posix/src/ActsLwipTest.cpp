@@ -498,7 +498,6 @@ static int SelectServerForFork(unsigned int timeoutSec)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testTcpSample
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -529,7 +528,6 @@ HWTEST_F(ActsLwipTest, testTcpSample, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUdpSample
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -590,7 +588,6 @@ HWTEST_F(ActsLwipTest, testUdpSample, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInterProcessComm
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -634,7 +631,6 @@ HWTEST_F(ActsLwipTest, testInterProcessComm, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSelectTimeout
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -664,7 +660,6 @@ HWTEST_F(ActsLwipTest, testSelectTimeout, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSelectOneClient
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -708,7 +703,6 @@ HWTEST_F(ActsLwipTest, testSelectOneClient, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSelectMultiClients
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -759,7 +753,6 @@ HWTEST_F(ActsLwipTest, testSelectMultiClients, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSocketOpt
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -815,7 +808,6 @@ HWTEST_F(ActsLwipTest, testSocketOpt, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetSocketNameInvalidInput
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -854,7 +846,6 @@ HWTEST_F(ActsLwipTest, testGetSocketNameInvalidInput, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv4Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -886,7 +877,6 @@ HWTEST_F(ActsLwipTest, testInetPtonIpv4Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv4Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -906,7 +896,6 @@ HWTEST_F(ActsLwipTest, testInetPtonIpv4Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv6Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -927,7 +916,6 @@ HWTEST_F(ActsLwipTest, testInetPtonIpv6Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv6Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -948,7 +936,6 @@ HWTEST_F(ActsLwipTest, testInetPtonIpv6Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonInvalidFamily
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -966,7 +953,6 @@ HWTEST_F(ActsLwipTest, testInetPtonInvalidFamily, Function | MediumTest | Level2
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv4Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1001,7 +987,6 @@ HWTEST_F(ActsLwipTest, testInetNtopIpv4Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv4Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1025,7 +1010,6 @@ HWTEST_F(ActsLwipTest, testInetNtopIpv4Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv6Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1058,7 +1042,6 @@ HWTEST_F(ActsLwipTest, testInetNtopIpv6Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv6Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1084,7 +1067,6 @@ HWTEST_F(ActsLwipTest, testInetNtopIpv6Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopInvalidFamily
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1108,7 +1090,6 @@ HWTEST_F(ActsLwipTest, testInetNtopInvalidFamily, Function | MediumTest | Level2
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInvalidParameter
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1900
  * @tc.desc   [C- SOFTWARE -0200]

@@ -458,7 +458,6 @@ static BOOL LwipFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testTcp
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -560,7 +559,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testTcp, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUdp
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -622,7 +620,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testUdp, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSelectTimeout
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -657,7 +654,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testSelectTimeout, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSelectOneClient
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -705,7 +701,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testSelectOneClient, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSocketOpt
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -761,7 +756,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testSocketOpt, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetSocketNameInvalidInput
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -800,7 +794,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testGetSocketNameInvalidInput, Function | Medi
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv4Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -832,7 +825,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetPtonIpv4Normal, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv4Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -853,7 +845,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetPtonIpv4Abnormal, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv6Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -875,7 +866,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetPtonIpv6Normal, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonIpv6Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -897,7 +887,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetPtonIpv6Abnormal, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetPtonInvalidFamily
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -915,7 +904,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetPtonInvalidFamily, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv4Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -954,7 +942,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetNtopIpv4Normal, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv4Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -978,7 +965,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetNtopIpv4Abnormal, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv6Normal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1012,7 +998,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetNtopIpv6Normal, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopIpv6Abnormal
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1038,7 +1023,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetNtopIpv6Abnormal, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInetNtopInvalidFamily
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1061,7 +1045,6 @@ LITE_TEST_CASE(LwipFuncTestSuite, testInetNtopInvalidFamily, Function | MediumTe
     TEST_ASSERT_TRUE(ret == NULL);
 }
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInvalidParameter
  * @tc.number SUB_COMMUNICATION_LWIP_SDK_0500
  * @tc.desc   [C- SOFTWARE -0200]
