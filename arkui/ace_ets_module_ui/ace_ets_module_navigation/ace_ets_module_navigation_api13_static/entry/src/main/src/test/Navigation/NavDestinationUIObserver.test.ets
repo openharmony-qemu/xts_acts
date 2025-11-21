@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -52,9 +52,10 @@ export default function NavDestinationUIObserver() {
         console.info("get NavDestinationUIObserver state pages:" + JSON.stringify(pages));
         if (!("NavDestinationUIObserver" == pages.name)) {
           console.info("get NavDestinationUIObserver pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push NavDestinationUIObserver page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push NavDestinationUIObserver page error:" + err);
@@ -69,13 +70,14 @@ export default function NavDestinationUIObserver() {
 
 
     
-    /*
+    
+/*
      * @tc.number   NavDestinationUIObserver_static_0100
      * @tc.name     NavDestinationUIObserver_static_0100
      * @tc.desc     NavDestinationUIObserver_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavDestinationUIObserver_0100 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -90,7 +92,9 @@ it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void
       console.info('[NavDestinationUIObserver_0100] btn2 click');
       await driver.delayMs(2000);
 
+      console.log('++++++++++++++get1')
       let showText: string = AppStorage.get('showText')! as string
+      console.log('++++++++++++++get2')
       console.log('NavDestinationUIObserver_0100 on showText value : ' + showText)
       expect(showText).assertEqual('on');
       AppStorage.delete('showText');
@@ -110,13 +114,14 @@ it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void
     });
 
     
-    /*
+    
+/*
      * @tc.number   NavDestinationUIObserver_static_0200
      * @tc.name     NavDestinationUIObserver_static_0200
      * @tc.desc     NavDestinationUIObserver_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('NavDestinationUIObserver_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavDestinationUIObserver_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavDestinationUIObserver_0200 START');
       let driver = Driver.create();
       await driver.delayMs(1000);

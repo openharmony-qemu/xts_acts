@@ -20,9 +20,9 @@ import OnResultPage from './Navigation/OnResultPage.test'
 
 
 export default function testsuite() {
-  CustomTransitionPage()
-  HideBackButtonPage()
-  EnableModeChangeAnimation()
-  SystemTransition2()
-  OnResultPage()
+  CustomTransitionPage()  // pass 4
+  HideBackButtonPage()  //  pass 4
+  EnableModeChangeAnimation()  // pass2
+  SystemTransition2()  // pass 4
+  OnResultPage()  //  pass 8
 }

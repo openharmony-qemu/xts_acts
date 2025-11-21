@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -33,9 +33,8 @@ export default function CustomTransitionPage() {
   describe('CustomTransitionPage', () => {
     beforeAll(() => {
       console.info("CustomTransitionPage beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.msSleep(8000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("CustomTransitionPage beforeEach start");
@@ -49,9 +48,10 @@ export default function CustomTransitionPage() {
         console.info("get CustomTransitionPage state pages:" + JSON.stringify(pages));
         if (!("CustomTransitionPage" == pages.name)) {
           console.info("get CustomTransitionPage pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push CustomTransitionPage page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CustomTransitionPage page error:" + err);
@@ -66,13 +66,14 @@ export default function CustomTransitionPage() {
 
 
     
-    /*
+    
+/*
      * @tc.number   CustomTransitionPage_static_0100
      * @tc.name     CustomTransitionPage_static_0100
      * @tc.desc     CustomTransitionPage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('CustomTransitionPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CustomTransitionPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomTransitionPage_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -85,6 +86,7 @@ it('CustomTransitionPage_static_0100', Level.LEVEL0, async (done: () => void): P
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('pushTrueId');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[CustomTransitionPage_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[CustomTransitionPage_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
@@ -95,13 +97,14 @@ it('CustomTransitionPage_static_0100', Level.LEVEL0, async (done: () => void): P
     });
 
     
-    /*
+    
+/*
      * @tc.number   CustomTransitionPage_static_0200
      * @tc.name     CustomTransitionPage_static_0200
      * @tc.desc     CustomTransitionPage_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('CustomTransitionPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CustomTransitionPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomTransitionPage_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -131,13 +134,14 @@ it('CustomTransitionPage_static_0200', Level.LEVEL0, async (done: () => void): P
 
 
     
-    /*
+    
+/*
      * @tc.number   CustomTransitionPage_static_0300
      * @tc.name     CustomTransitionPage_static_0300
      * @tc.desc     CustomTransitionPage_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('CustomTransitionPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CustomTransitionPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomTransitionPage_0300 START');
       await CommonFunc.sleep(1000);
 
@@ -166,13 +170,14 @@ it('CustomTransitionPage_static_0300', Level.LEVEL0, async (done: () => void): P
     });
 
     
-    /*
+    
+/*
      * @tc.number   CustomTransitionPage_static_0400
      * @tc.name     CustomTransitionPage_static_0400
      * @tc.desc     CustomTransitionPage_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('CustomTransitionPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CustomTransitionPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomTransitionPage_0400 START');
       await CommonFunc.sleep(1000);
 

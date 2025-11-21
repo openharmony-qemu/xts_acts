@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect, Point} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-
+// import { vp2px } from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -35,7 +35,6 @@ export default function NavigationBindToNestedScrollable() {
   describe('NavigationBindToNestedScrollable', () => {
     beforeAll(() => {
       console.info("NavigationBindToNestedScrollable beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -51,9 +50,10 @@ export default function NavigationBindToNestedScrollable() {
         console.info("get NavigationBindToNestedScrollable state pages:" + JSON.stringify(pages));
         if (!("NavigationBindToNestedScrollable" == pages.name)) {
           console.info("get NavigationBindToNestedScrollable pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push NavigationBindToNestedScrollable page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push NavigationBindToNestedScrollable page error:" + err);
@@ -68,15 +68,17 @@ export default function NavigationBindToNestedScrollable() {
 
 
     
-    /*
+    
+/*
      * @tc.number   NavigationBindToNestedScrollable_static_0100
      * @tc.name     NavigationBindToNestedScrollable_static_0100
      * @tc.desc     NavigationBindToNestedScrollable_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavigationBindToNestedScrollable_0100 START');
       let driver = Driver.create();
+      let uiContext =AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.text('push pageOne'));
@@ -103,7 +105,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let right = scrollBarRect.right;
       let bottom = scrollBarRect.bottom;
       
-      await driver.swipe(Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(top + UIContext.getFocusedUIContext()!.vp2px(12)) as int, Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(bottom) as int);
+      await driver.swipe(Math.round(right - uiContext!.vp2px(11)) as int, Math.round(top + uiContext!.vp2px(12)) as int, Math.round(right - uiContext!.vp2px(11)) as int, Math.round(bottom) as int);
       await driver.delayMs(500)
 
       await driver.assertComponentExist(ON.type('TitleBar'));
@@ -119,7 +121,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       console.info('NavigationBindToNestedScrollable_0100 tooBarTop1: ', tooBarTop1);
       console.info('NavigationBindToNestedScrollable_0100 tooBarBottom1: ', tooBarBottom1);
 
-      await driver.swipe(Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(12)) as int, Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(top) as int);
+      await driver.swipe(Math.round(right - uiContext!.vp2px(11)) as int, Math.round(bottom - uiContext!.vp2px(12)) as int, Math.round(right - uiContext!.vp2px(11)) as int, Math.round(top) as int);
       await driver.delayMs(500)
       let list = await driver.findComponent(ON.type('List'));
       
@@ -128,7 +130,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let listRight = listRect.right;
       let listBottom = listRect.bottom;
 
-      await driver.swipe(Math.round(listRight - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(listTop + UIContext.getFocusedUIContext()!.vp2px(12)) as int, Math.round(listRight - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(listBottom) as int);
+      await driver.swipe(Math.round(listRight - uiContext!.vp2px(11)) as int, Math.round(listTop + uiContext!.vp2px(12)) as int, Math.round(listRight - uiContext!.vp2px(11)) as int, Math.round(listBottom) as int);
       await driver.delayMs(500)
 
       let component1 = await driver.findComponent(ON.type('TitleBar').text('pageOne'));

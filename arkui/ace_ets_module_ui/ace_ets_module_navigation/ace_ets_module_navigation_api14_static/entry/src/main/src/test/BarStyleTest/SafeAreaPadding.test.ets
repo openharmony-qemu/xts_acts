@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-
+// import { vp2px } from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -35,7 +35,6 @@ export default function SafeAreaPadding() {
   describe('SafeAreaPadding', () => {
     beforeAll(() => {
       console.info("SafeAreaPadding beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -51,9 +50,10 @@ export default function SafeAreaPadding() {
         console.info("get SafeAreaPadding state pages:" + JSON.stringify(pages));
         if (!("SafeAreaPadding" == pages.name)) {
           console.info("get SafeAreaPadding pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SafeAreaPadding page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SafeAreaPadding page error:" + err);
@@ -68,20 +68,22 @@ export default function SafeAreaPadding() {
 
 
     
-    /*
+    
+/*
      * @tc.number   SafeAreaPadding_static_0100
      * @tc.name     SafeAreaPadding_static_0100
      * @tc.desc     SafeAreaPadding_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('SafeAreaPadding_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SafeAreaPadding_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SafeAreaPadding_0100 START');
+      let uiContext =AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(1000);
       let navRect = CommonFunc.getComponentRect('BarStyle_SafeAreaPadding');
       console.info('navRect.top is' + navRect.top)
       let navContentRect = CommonFunc.getComponentRect('NavigationBarStyle_content2');
       console.info('navContentRect.top is' + navContentRect.top)
-      expect(Math.abs(Math.round(navRect.top - navContentRect.top) as int)- UIContext.getFocusedUIContext()!.vp2px(112) <= 1).assertTrue();
+      expect(Number(Math.abs(Math.round(navRect.top - navContentRect.top) as int)- uiContext!.vp2px(112)) <= 1).assertTrue();
       console.info('SafeAreaPadding_0100 END');
       done();
     });

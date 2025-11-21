@@ -90,9 +90,9 @@ struct NavigationEnableDragBar {
     .navBarWidth(250)
     .minContentWidth(100)
     .title(this.NavigationTitle)
-    .menus(this.NavigationMenus)
-    .hideTitleBar(false)
-    .hideToolBar(false)
+    .menus(this.NavigationMenus,{})
+    .hideTitleBar(false,true)
+    .hideToolBar(false,true)
     .onTitleModeChange((titleModel: NavigationTitleMode) => {
       console.info('titleMode' + titleModel)
     })

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -32,6 +32,11 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RouterRecoverable2() {
   describe('RouterRecoverable2', () => {
+    beforeAll(() => {
+      console.info("RouterRecoverable2 beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
+    });
     beforeEach(async (): Promise<void> => {
       console.info("RouterRecoverable2 beforeEach start");
       let options: router.RouterOptions = {
@@ -44,9 +49,10 @@ export default function RouterRecoverable2() {
         console.info("get RouterRecoverable2 state pages:" + JSON.stringify(pages));
         if (!("RouterRecoverable2" == pages.name)) {
           console.info("get RouterRecoverable2 pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push RouterRecoverable2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RouterRecoverable2 page error:" + err);
@@ -61,13 +67,14 @@ export default function RouterRecoverable2() {
 
 
     
-    /*
+    
+/*
      * @tc.number   RouterRecoverable2_static_0100
      * @tc.name     RouterRecoverable2_static_0100
      * @tc.desc     RouterRecoverable2_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('RouterRecoverable2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RouterRecoverable2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RouterRecoverable2_0100 START');
       await CommonFunc.sleep(200);
 

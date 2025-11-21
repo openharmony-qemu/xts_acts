@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,9 +51,10 @@ export default function HideToolBarNavPage() {
         console.info('get HideToolBarNavPage state pages:' + JSON.stringify(pages));
         if (!('HideToolBarNavPage' == pages.name)) {
           console.info('get HideToolBarNavPage pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info('push HideToolBarNavPage page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push HideToolBarNavPage page error:' + err);
@@ -68,13 +69,14 @@ export default function HideToolBarNavPage() {
 
 
     
-    /*
+    
+/*
      * @tc.number   HideToolBarNavPage_static_0100
      * @tc.name     HideToolBarNavPage_static_0100
      * @tc.desc     HideToolBarNavPage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('HideToolBarNavPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('HideToolBarNavPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HideToolBarNavPage_0100 START');
       await CommonFunc.sleep(1000);
 

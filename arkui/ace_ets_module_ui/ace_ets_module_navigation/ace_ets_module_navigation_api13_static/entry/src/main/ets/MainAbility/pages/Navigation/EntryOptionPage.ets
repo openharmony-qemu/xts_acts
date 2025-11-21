@@ -17,4 +17,25 @@ import { Entry, Component, NavPathStack, Builder, Navigation, Column, Button, Co
 } from '@ohos.arkui.component'
 import { State, Provide, Consume, AppStorage, LocalStorage, LocalStoragePropRef } from '@ohos.arkui.stateManagement'
 
+let storages = new LocalStorage();
+storages.setOrCreate<int>('eee', 22)
+let storageFunc = ():LocalStorage=>{
+  return storages;
+}
 
+@Entry({storage: 'storageFunc', useSharedStorage: false})
+@Component
+struct EntryOptionPage {
+  @LocalStoragePropRef('eee') eee: int = 222;
+
+  build() {
+    Navigation(new NavPathStack()) {
+      Column() {
+        Text(this.eee + '').id('textId')
+      }
+    }
+    .title('MainPage')
+    .titleMode(NavigationTitleMode.Mini)
+    .mode(NavigationMode.Stack)
+  }
+}

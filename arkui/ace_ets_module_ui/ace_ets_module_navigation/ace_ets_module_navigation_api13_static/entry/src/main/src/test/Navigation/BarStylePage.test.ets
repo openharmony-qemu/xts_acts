@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,9 +50,10 @@ export default function BarStylePage() {
         console.info('get BarStylePage state pages:' + JSON.stringify(pages));
         if (!('BarStylePage' == pages.name)) {
           console.info('get BarStylePage pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info('push BarStylePage page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push BarStylePage page error:' + err);
@@ -67,13 +68,14 @@ export default function BarStylePage() {
 
 
     
-    /*
+    
+/*
      * @tc.number   BarStylePage_static_0100
      * @tc.name     BarStylePage_static_0100
      * @tc.desc     BarStylePage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('BarStylePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('BarStylePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('BarStylePage_0100 START');
       await CommonFunc.sleep(1000);
 

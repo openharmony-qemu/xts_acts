@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,9 +51,10 @@ export default function EntryOptionPage() {
         console.info("get EntryOptionPage state pages:" + JSON.stringify(pages));
         if (!("EntryOptionPage" == pages.name)) {
           console.info("get EntryOptionPage pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push EntryOptionPage page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push EntryOptionPage page error:" + err);
@@ -69,13 +70,14 @@ export default function EntryOptionPage() {
 
 
     
-    /*
+    
+/*
      * @tc.number   EntryOptionPage_0100
      * @tc.name     EntryOptionPage_0100
      * @tc.desc     EntryOptionPage_0100
      * @tc.level    Level.LEVEL0
      */
-it('EntryOptionPage_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('EntryOptionPage_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('EntryOptionPage_0100 START');
       await CommonFunc.sleep(1000);
 

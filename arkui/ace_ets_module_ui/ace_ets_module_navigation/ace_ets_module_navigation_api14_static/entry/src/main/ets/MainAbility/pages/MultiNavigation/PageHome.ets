@@ -13,15 +13,16 @@
  * limitations under the License.
  */
  
-
+import { MultiNavPathStack, SplitPolicy } from '@ohos.arkui.advanced.MultiNavigation';
 import hilog from '@ohos.hilog';
 import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
 import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Color, Builder, Scroll, Margin, Row, $r,
-  NavDestination, FontWeight, ButtonType, NavDestinationMode, LaunchMode,
+  NavDestination, FontWeight, ButtonType, NavDestinationMode, LaunchMode, NavPathInfo,
 } from '@ohos.arkui.component'
 @Component
 export struct PageHome {
   @State message: string = 'PageHome';
+  @Consume('pageStack') pageStack: MultiNavPathStack;
   @State mode: NavDestinationMode = NavDestinationMode.STANDARD;
 
   build() {
@@ -40,21 +41,33 @@ export struct PageHome {
                 .height('8%')
               Button('replacePathFalse')
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.replacePath(new NavPathInfo('PageDetail',undefined), true);
+                  }
                 })
                 .height('8%')
                 .id('replacePathFalseId')
               Button('replacePathLaunchMode')
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.replacePath(new NavPathInfo('PageDetail',undefined), { launchMode: LaunchMode.STANDARD, animated: false });
+                  }
                 })
                 .height('8%')
                 .id('replacePathLaunchModeId')
               Button('replacePathByName')
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.replacePathByName('PageDetail', 'testParam', true);
+                  }
                 })
                 .height('8%')
                 .id('replacePathByNameId')
               Button('pushPathByName')
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.pushPathByName('PageDetail', 'testParam', true);
+                  }
                 })
                 .height('8%')
                 .id('pushPathByNameId')

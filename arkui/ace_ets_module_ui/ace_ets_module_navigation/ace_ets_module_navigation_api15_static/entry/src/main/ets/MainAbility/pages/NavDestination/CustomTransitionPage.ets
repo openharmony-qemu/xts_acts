@@ -56,7 +56,7 @@ struct CustomTransitionPage {
       Navigation(this.pageInfos) {
         Column({space: '5vp'} as ColumnOptions) {
           Button('push pageOne').id('pushOneId').onClick((e: ClickEvent) => {
-            
+            this.pageInfos.pushPath(new NavPathInfo('pageOne',undefined), true )  // 第二个参数必填, 默认true
           }).height('10%')
         }
         .width('100%')
@@ -86,7 +86,7 @@ struct PageOne {
   build() {
     NavDestination() {
       Button('push pageTwo').id('pushId').onClick((e: ClickEvent) => {
-        
+        this.pageInfos.pushPath(new NavPathInfo('pageTwo',undefined),true)
       }).height('10%')
     }
     .title('pageOne')
@@ -133,12 +133,12 @@ struct PageTwo {
         this.pageInfos.pop()
       }).height('10%')
       Button('replace pageOne').id('replaceId').onClick((e: ClickEvent) => {
-        
+        this.pageInfos.replacePath(new NavPathInfo('pageOne',undefined),true)
       }).height('10%')
     }
     .title('pageTwo')
     .customTransition((op: NavigationOperation, isEnter: boolean): Array<NavDestinationTransition> | undefined => {
-      let transitionOneDuration: Int = 500;
+      let transitionOneDuration: number = 500;
       let testTag: string = '[NavDestCustomTransition]';
       let transitionOneEvent: voidFunc = () => { console.log(testTag, 'reached transitionOne, empty now!'); }
       let transitionOneFinishEvent: voidFunc = () => {
@@ -188,7 +188,7 @@ struct PageTwo {
         console.log(testTag, '----- NOT-IMPL BRANCH of NAV-DESTINATION CUSTOM TRANSITION -----');
       }
       let transitionOne: NavDestinationTransition = {
-        duration: transitionOneDuration,
+        duration: transitionOneDuration as int,
         delay: 0,
         curve: Curve.Friction,
         event: transitionOneEvent,

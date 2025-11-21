@@ -37,9 +37,10 @@ struct SystemTransition {
     Navigation(this.pageInfos) {
       Column({space: '5vp'} as ColumnOptions) {
         Button('push pageOne').id('pageOneId').onClick((e: ClickEvent) => {
-          
+          this.pageInfos.pushPath(new NavPathInfo('pageOne',undefined),true)
         })
         Button('push pageTwo').id('pageTwoId').onClick((e: ClickEvent) => {
+          this.pageInfos.pushPath(new NavPathInfo('pageTwo',undefined),true)
         })
 
       }

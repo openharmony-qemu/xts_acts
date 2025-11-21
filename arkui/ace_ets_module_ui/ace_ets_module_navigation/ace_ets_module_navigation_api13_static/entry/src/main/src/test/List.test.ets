@@ -23,13 +23,12 @@ import TitleOptionsToolOptions from './Navigation/TitleOptionsToolOptions.test'
 
 
 export default function testsuite() {
-  BarStylePage()
-  EntryOptionPage()
-  EntryOptionPage()
-  EntryOptionPage2()
-  HideToolBarNavPage()
+  BarStylePage()  // pass 35000ms  1个用例
+  NavigationTitleTextModifier()  // 1.(page88) Cannot find method '<set>mainTitleModifier 造成 页面颜色未更新 1个用例
+  TitleOptionsToolOptions() // 取不到值  Button 组件 组件树取不到children
+  EntryOptionPage() // pass 1个用例
+  EntryOptionPage2() // pass 1个用例
+  HideToolBarNavPage()   // app died  代码注释 1个用例
+  NavigationCustomTitlePage() //  (page47) Cannot find method 'pushPathByName 导致 app died 2ge用例
   NavDestinationUIObserver()
-  NavigationCustomTitlePage()
-  NavigationTitleTextModifier()
-  TitleOptionsToolOptions()
 }
