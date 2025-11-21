@@ -14,8 +14,8 @@
  */
 
 #include "napi/native_api.h"
-#include "utils/common_utils.h"
-#include "utils/pixelmap_helper.h"
+#include "utils/CommonUtilsTest.h"
+#include "utils/PixelmapHelperTest.h"
 #include <multimedia/image_effect/image_effect.h>
 #include <multimedia/image_effect/image_effect_filter.h>
 #include <multimedia/image_framework/image_pixel_map_mdk.h>
@@ -59,8 +59,8 @@
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
 
-static std::string ImagePath;
-static std::string OutImagePath;
+static std::string g_ImagePath;
+static std::string g_OutImagePath;
 
 napi_value savePixelMapForPath(napi_env env, napi_callback_info info)
 {
@@ -69,10 +69,10 @@ napi_value savePixelMapForPath(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    ImagePath = CommonUtils::GetStringArgument(env, args[0]);
+    g_ImagePath = CommonUtils::GetStringArgument(env, args[0]);
     napi_value ret;
     int status = -1;
-    if (ImagePath.length() > 0) {
+    if (g_ImagePath.length() > 0) {
         status = 0;
     }
     napi_create_int32(env, status, &ret);
@@ -86,17 +86,17 @@ napi_value creatOutPixeMapForPath(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    OutImagePath = CommonUtils::GetStringArgument(env, args[0]);
+    g_OutImagePath = CommonUtils::GetStringArgument(env, args[0]);
     napi_value ret;
     int status = -1;
-    if (OutImagePath.length() > 0) {
+    if (g_OutImagePath.length() > 0) {
         status = 0;
     }
     napi_create_int32(env, status, &ret);
     return ret;
 }
 
-napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info) 
+napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -126,7 +126,7 @@ napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info)
     return ret;
 }
 
-napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info) 
+napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -161,7 +161,7 @@ napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info)
     return ret;
 }
 
-napi_value OHImageEffectInsertFilterSupp(napi_env env, napi_callback_info info) 
+napi_value OHImageEffectInsertFilterSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -222,10 +222,10 @@ napi_value OHImageEffectRemoveFilterSupp(napi_env env, napi_callback_info info)
         result = OH_ImageEffect_RemoveFilter(imageEffect, OH_EFFECT_BRIGHTNESS_FILTER);
         break;
     case CASE_INDEX_4:
-        result = OH_ImageEffect_RemoveFilter(imageEffect, IMAGE_NULL_STRING );
+        result = OH_ImageEffect_RemoveFilter(imageEffect, IMAGE_NULL_STRING);
         break;
     case CASE_INDEX_5:
-        result = OH_ImageEffect_RemoveFilter(imageEffect, nullptr );
+        result = OH_ImageEffect_RemoveFilter(imageEffect, nullptr);
         break;
     default:
         break;

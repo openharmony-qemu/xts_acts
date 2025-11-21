@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include "pixelmap_helper.h"
-#include "common_utils.h"
+#include "PixelmapHelperTest.h"
+#include "CommonUtilsTest.h"
 #include <multimedia/image_framework/image/image_source_native.h>
 #include <multimedia/image_framework/image/image_packer_native.h>
 #include <fcntl.h>

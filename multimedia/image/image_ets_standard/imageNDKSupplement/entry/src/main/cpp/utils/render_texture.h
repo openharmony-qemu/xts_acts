@@ -16,7 +16,7 @@
 #ifndef RENDER_TEXTURE_H
 #define RENDER_TEXTURE_H
 
-#include "gl_utils.h"
+#include "GlUtilsTest.h"
 
 class RenderTexture {
 public:

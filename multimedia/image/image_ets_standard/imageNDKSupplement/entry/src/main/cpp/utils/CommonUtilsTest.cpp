@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "common_utils.h"
+#include "CommonUtilsTest.h"
 #include <memory>
 
 std::string CommonUtils::GetStringArgument(napi_env env, napi_value value)
