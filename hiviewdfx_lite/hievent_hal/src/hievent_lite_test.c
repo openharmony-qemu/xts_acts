@@ -50,7 +50,6 @@ static int HieventLiteTestOutputFunc(uint8 *data)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HieventLiteFuncTest001
  * @tc.number HieventLiteFuncTest001
  * @tc.desc   Test HiEventCreate
@@ -68,7 +67,6 @@ LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest001, Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HieventLiteFuncTest002
  * @tc.number HieventLiteFuncTest002
  * @tc.desc   Test HiEventPutInteger 3 items whth async flush
@@ -90,7 +88,6 @@ LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest002, Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HieventLiteFuncTest003
  * @tc.number HieventLiteFuncTest003
  * @tc.desc   Test HiEventCreate
@@ -116,7 +113,6 @@ LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest003, Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HieventLiteFuncTest004
  * @tc.number HieventLiteFuncTest004
  * @tc.desc   Test HiEventCreate

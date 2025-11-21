@@ -44,13 +44,12 @@ static BOOL DfxFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   subDfxDftHilog0100
  * @tc.number SUB_DFX_DFT_Hilog_0100
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0100, LEVEL0)
 {
@@ -59,13 +58,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0100, LEVEL0)
 
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   subDfxDftHilog0200
  * @tc.number SUB_DFX_DFT_Hilog_0200
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0200, LEVEL1)
 {
@@ -73,13 +71,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0200, LEVEL1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   subDfxDftHilog0300
  * @tc.number SUB_DFX_DFT_Hilog_0300
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0300, LEVEL1)
 {
@@ -87,13 +84,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0300, LEVEL1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   subDfxDftHilog0400
  * @tc.number SUB_DFX_DFT_Hilog_0400
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0400, LEVEL1)
 {
@@ -101,13 +97,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0400, LEVEL1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   subDfxDftHilog0500
  * @tc.number SUB_DFX_DFT_Hilog_0500
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0500, LEVEL1)
 {
@@ -115,13 +110,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0500, LEVEL1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   subDfxDftHilog0600
  * @tc.number SUB_DFX_DFT_Hilog_0600
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0600, LEVEL0)
 {
@@ -131,13 +125,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0600, LEVEL0)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   subDfxDftHilog0700
  * @tc.number SUB_DFX_DFT_Hilog_0700
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0700, LEVEL0)
 {
