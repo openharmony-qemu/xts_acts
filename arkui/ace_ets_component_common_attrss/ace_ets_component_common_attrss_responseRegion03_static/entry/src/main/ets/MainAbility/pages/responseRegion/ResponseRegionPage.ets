@@ -15,20 +15,120 @@
 
 import router from '@ohos.router'
 import {
-  Entry,Text,Column,Button,Component,FlexDirection,ItemAlign,ImageFit,FlexAlign,FontWeight,$r,TextInput,TextArea,Builder,applyStyles,
-  List,ListItem,Search,Image,Grid,GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,
-  Search,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,TextPicker,StepperItem,Stepper,Slider,Select,Swiper,Tabs,WebviewController,
-  TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,ColumnOptions,Scroller,ClickEvent,
-  Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,
-  BreakpointsReference,GridColColumnOption,Rectangle,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,QRCode,ScrollBar,
-  SliderStyle,TextClock,TextTimer,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,Refresh,CommonMethod,
-  RelativeContainer,BarState,WaterFlow,ProgressType,FlowItem,BadgeParamWithNumber,HorizontalAlign,VerticalAlign,GridColOptions
+  Entry,
+  Text,
+  Column,
+  Button,
+  Component,
+  FlexDirection,
+  ItemAlign,
+  ImageFit,
+  FlexAlign,
+  FontWeight,
+  $r,
+  TextInput,
+  TextArea,
+  List,
+  ListItem,
+  Search,
+  Image,
+  Grid,
+  GridItem,
+  Rating,
+  MenuItemGroup,
+  MenuItem,
+  Menu,
+  ImageAnimator,
+  DatePicker,
+  CheckboxGroup,
+  Checkbox,
+  Counter,
+  ColumnSplit,
+  AlphabetIndexer,
+  Web,
+  Toggle,
+  TimePicker,
+  TextPicker,
+  StepperItem,
+  Stepper,
+  Slider,
+  Select,
+  Swiper,
+  Tabs,
+  TabContent,
+  SideBarContainer,
+  Scroll,
+  RowSplit,
+  GridCol,
+  ForEach,
+  Row,
+  GridRow,
+  Flex,
+  Color,
+  ColumnOptions,
+  Scroller,
+  Margin,
+  TextAlign,
+  MenuItemOptions,
+  Radio,
+  ToggleType,
+  GridRowDirection,
+  Axis,
+  ListItemGroup,
+  SideBarContainerType,
+  Stack,
+  BreakPoints,
+  GridRowOptions,
+  GutterOption,
+  BreakpointsReference,
+  GridColColumnOption,
+  Rectangle,
+  Blank,
+  DataPanel,
+  Divider,
+  Gauge,
+  LoadingProgress,
+  Marquee,
+  Navigation,
+  Progress,
+  QRCode,
+  ScrollBar,
+  SliderStyle,
+  TextClock,
+  TextTimer,
+  Circle,
+  Ellipse,
+  Line,
+  Polyline,
+  Polygon,
+  Path,
+  Rect,
+  Shape,
+  Badge,
+  Refresh,
+  RelativeContainer,
+  BarState,
+  WaterFlow,
+  ProgressType,
+  FlowItem,
+  BadgeParamWithNumber,
+  HorizontalAlign,
+  VerticalAlign,
+  GridColOptions,
+  CommonMethod,
+  Builder,
+  ClickEvent,
+  applyStyles,
+  WebviewController,
+  AlignRuleOption
 } from '@ohos.arkui.component'
+
 import { SetValue } from '../../common/Utils'
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
+
 interface ViewOption {
   targetView: string
   componentKey: string
@@ -36,31 +136,39 @@ interface ViewOption {
   targetHeight: number
   referenceComponentKey: string
 }
+
 interface RouterParamOptions {
   view: ViewOption
 }
+
 @Entry
 @Component
 struct ResponseRegionPage {
   @State eventCallBackStr: string = ''
-  @State _responseRegion: SetValue[] | Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' } as SetValue]
+  @StorageProp('_responseRegion') _responseRegion: Array<Rectangle> = [{
+    x: 0,
+    y: 0,
+    width: '100%',
+    height: '100%'
+  } as Rectangle] as Array<Rectangle>
   @State targetView: string = ''
-  @State componentKey: string =  ''
+  @State componentKey: string = ''
   @State targetWidth: number = 0
   @State targetHeight: number = 0
-  @State referenceComponentKey: string =  ''
-
+  @State referenceComponentKey: string = ''
 
   onPageShow() {
     console.info('responseRegion page show called ')
-    attrsManager.registerDataChange((value: SetValue[]):void => {
-      this._responseRegion = value
-      this.eventCallBackStr = ''
-    })
-  }
-  aboutToAppear(){
+    // attrsManager.registerDataChange((value: Array<Rectangle>):void => {
+    //   this._responseRegion = value
+    //   this.eventCallBackStr = ''
+    // })
+
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion',
+        routerParamOptions.view.testValue.setValue as Array<Rectangle>)
+      console.info('[wll]after' + JSON.stringify(routerParamOptions.view.testValue.setValue[0]))
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.targetWidth = routerParamOptions.view.targetWidth
@@ -70,6 +178,11 @@ struct ResponseRegionPage {
       console.log(' routerParamOptions error ' + error);
     }
   }
+
+  aboutToAppear() {
+
+  }
+
   @Builder
   myBuilder() {
     Column() {
@@ -80,6 +193,7 @@ struct ResponseRegionPage {
     .height('100%')
     .backgroundColor(Color.Pink)
   }
+
   commonStyle(instance: CommonMethod) {
     instance.width(this.targetWidth)
     instance.height(this.targetHeight)
@@ -88,8 +202,9 @@ struct ResponseRegionPage {
       console.info('[ResponseRegionPage] ' + this.targetView + ' onClick called at' + event.timestamp);
       this.eventCallBackStr += 'onClick, '
     })
-      .key(this.componentKey)
+    instance.key(this.componentKey)
   }
+
   build() {
     Column() {
       Stack() {
@@ -100,7 +215,8 @@ struct ResponseRegionPage {
           Text('text1')
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }).applyStyles(this.commonStyle)
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Blank') {
           Row() {
             Blank()
@@ -144,7 +260,7 @@ struct ResponseRegionPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: Infinity as int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).applyStyles(this.commonStyle)
@@ -198,7 +314,7 @@ struct ResponseRegionPage {
                 Text('Page One')
               }
             }
-			.nextLabel('')
+            .nextLabel('')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
@@ -250,7 +366,12 @@ struct ResponseRegionPage {
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
-            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            style: {
+              color: 0xFFFFFF,
+              fontSize: 16,
+              badgeSize: 20,
+              badgeColor: Color.Red
+            }
           } as BadgeParamWithNumber) {
             Button('message')
               .width(100)
@@ -289,7 +410,14 @@ struct ResponseRegionPage {
           }) {
             ForEach([Color.Red, Color.Orange, Color.Yellow, Color.Green,
               Color.Pink, Color.Grey, Color.Blue, Color.Brown], (color: Color) => {
-              GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } as GridColOptions) {
+              GridCol({
+                span: {
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  lg: 4
+                } as GridColColumnOption
+              } as GridColOptions) {
                 Row()
                   .width('100%')
                   .height('20vp')
@@ -352,12 +480,14 @@ struct ResponseRegionPage {
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Panel') {
-          Column(){
+          Column() {
             Text('Text')
-          }.height('100%').width('100%')
+          }
+          .height('100%')
+          .width('100%')
           .backgroundColor(Color.Yellow)
           .applyStyles(this.commonStyle)
-          .bindSheet(true,this.myBuilder)
+          .bindSheet(true, this.myBuilder)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
@@ -371,7 +501,7 @@ struct ResponseRegionPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('responseRegion')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Row') {
@@ -385,13 +515,13 @@ struct ResponseRegionPage {
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index:Int) => {
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
                 Text('Scroll' + item.toString())
                   .width('90%')
                   .height(50)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: Int, index:Int):string => String(item))
+              }, (item: Int, index: int): string => String(item))
             }.width('100%')
           }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
 import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
+import { jsonx } from "std/core"
 
 export class RectValue {
   left: number = 0;
@@ -42,7 +43,7 @@ export class ResponseRegion {
 export class TestValue {
   describe: string = ""
   exceptView:string[] = []
-  setValue: SetValue[] = [];
+  setValue: Array<Rectangle>= [{ x: 0, y: 0, width: '100%', height: '100%' } as Rectangle] ;
   expectValue?: ResponseRegion = {};
 }
 
@@ -71,7 +72,7 @@ export class BasePageConfig {
 
   caseTag: string = '';
   customParams?: Object;
-  viewObj?: Record<string, string | number | boolean>;
+  viewObj?:jsonx.JsonElement;
 }
 
 export class PageConfig {
@@ -121,7 +122,7 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = router.getParams() as RouterParams;
+      let pageParams: RouterParams = new RouterParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
@@ -133,20 +134,13 @@ export default class Utils {
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        // let result = await router.pushUrl({
-        //   url: obj.pageUrl,
-        //   params: {
-        //     view: obj
-        //   } as RouterParams
-        // });
         router.pushUrl({
           url: obj.pageUrl,
           params: {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(2000);
-        //console.info('push ' + obj.pageName + ' page result:' + JSON.stringify(result));
+        await Utils.sleep(1000);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -171,6 +165,7 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
+    await Utils.sleep(1000);
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -204,6 +199,7 @@ export default class Utils {
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
+    await Utils.sleep(1000);
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -290,7 +286,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -300,14 +296,14 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode,
+      keyCode: keyCode as int,
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,
