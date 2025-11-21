@@ -25,7 +25,7 @@ export default function CircleResourceTest() {
   describe('CircleResourceTest', () => {
     beforeAll(() => {
       console.info("CircleResourceTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -42,11 +42,11 @@ export default function CircleResourceTest() {
         console.info("get CircleResourceTest state pages:" + JSON.stringify(pages));
         if (!("CircleResourceTest" == pages.name)) {
           console.info("get CircleResourceTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CircleResourceTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CircleResourceTest page error:" + err);
@@ -57,25 +57,29 @@ export default function CircleResourceTest() {
     
     
 
+
 /*
      * @tc.number   CircleResourceTest_0100
      * @tc.name     CircleResourceTest_0100
      * @tc.desc     CircleResourceTest_0100
      * @tc.level    Level.LEVEL2
      */
-it('CircleResourceTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('CircleResourceTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[CircleResourceTest_0100] START');
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey("CircleResource1");
+      await CommonFunc.sleep(2000);
       console.info("[CircleResourceTest_0100] width1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')));
       console.info("[CircleResourceTest_0100] height1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')));
 
       let strJson2 = inspector.getInspectorByKey("CircleResource2");
+      await CommonFunc.sleep(2000);
       console.info("[CircleResourceTest_0100] width2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')));
       console.info("[CircleResourceTest_0100] height2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')));
 
       let strJson3 = inspector.getInspectorByKey("CircleResource3");
+      await CommonFunc.sleep(2000);
       console.info("[CircleResourceTest_0100] width3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width')));
       console.info("[CircleResourceTest_0100] height3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height')));
       

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import Configuration from '@system.configuration';
 import emitter from '@ohos.events.emitter';
 import {
   Entry, Component,
@@ -33,25 +33,25 @@ struct promptExample {
         .margin({ top: 20 } as Margin)
         .onClick((e:ClickEvent) => {
           console.info('button is start');
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          let localeInfo = Configuration.getLocale();   //在这里died
+          console.info('localeInfo result is' + JSON.stringify(localeInfo));
+          try {
+            let backData: emitter.EventData = {
+              data: {
+                "COUNTRY": localeInfo.countryOrRegion,
+                "DIR": localeInfo.dir
+              }  as Record<String, undefined|null|Object>
+            }
+            console.log("backData is" + JSON.stringify(backData.data));
+            let backEvent: emitter.InnerEvent = {
+              eventId: 78,
+              priority: emitter.EventPriority.LOW
+            }
+            console.info("confituration start to emit action state");
+            emitter.emit(backEvent, backData);
+          } catch (error:Error){
+            console.info("confituration emit action state err: ");
+          }
         })
     }
   }

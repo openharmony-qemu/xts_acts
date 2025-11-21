@@ -18,5 +18,5 @@ import LoadingProgressContentModifier from './component/LoadingProgressContentMo
 
 
 export default function testsuite() {
-  LoadingProgressContentModifier()
+  LoadingProgressContentModifier() //LoadingProgress
 }

@@ -25,16 +25,15 @@ import RectResourceTest from './Rect/RectResourceTest';
 import ShapeResourceTest from './Shape/ShapeResourceTest';
 
 export default function testsuite() {
-  RoundRectTest(); 
-
-  StartImageAnalyzerErrorCodeTest();
-  CircleResourceTest();
-  EllipseResourceTest();
-  LineResourceTest();
-  PathResourceTest();
-  PolygonResourceTest();
-  PolylineResourceTest();
-  RectResourceTest();
-  ShapeResourceTest();
+  RoundRectTest(); // pass
+  StartImageAnalyzerErrorCodeTest();  // getImageAnalyzerSupportTypes
+  CircleResourceTest(); //CircleResource
+  EllipseResourceTest(); //EllipseResource
+  LineResourceTest(); //LineResource
+  PathResourceTest(); //PathResource
+  PolygonResourceTest();//PolygonResource
+  PolylineResourceTest();//PolylineResource
+  RectResourceTest();//RectResource
+  ShapeResourceTest();//ShapeResource
 
 }

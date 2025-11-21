@@ -27,8 +27,8 @@ struct EllipseResource1 {
 
       Ellipse({ width: 100, height: 50 }).id('EllipseResource1')
 
-      
-      Ellipse({ width: "100", height: "50" }).id('EllipseResource2')
+      // Ellipse({ width: $r('app.string.Width_100'), height: $r('app.string.Height_50') }).id('EllipseResource2')
+      Ellipse({ width: 100, height: 50 }).id('EllipseResource2')
 
       Ellipse()
         .id('EllipseResource3')

@@ -73,19 +73,19 @@ struct ResourceFloat {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        LazyForEach(this.data, (item: number, index: int) => {
+          Column() {
+            Column() {
+              Text('float test').fontSize(20)
+              Text('float').fontSize($r(`app.float.float_${String(item)}`)).id('float')
+            }.border({ width: 2 }).margin(30)
+
+          }
+          .justifyContent(FlexAlign.SpaceEvenly)
+          .width(300)
+          .height(300)
+
+        }, (item: number) => String(item))
       }
       .cachedCount(2)
       .index(1)

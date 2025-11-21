@@ -27,18 +27,18 @@ struct RectResource1 {
       Row() {
 
         Column({ space: 2 } as ColumnOptions) {
-          
-          Rect({ width: "100", height: "50" } as RectOptions)
-            
-            
-            .radiusHeight("20")
-            .radiusWidth("40")
+          // Rect({ width: $r('app.string.Width_100'), height: $r('app.string.Height_50') } as RectOptions)
+          Rect({ width: 100, height: 50 } as RectOptions)
+            // .radiusHeight($r('app.string.Rect_Radius_20'))
+            // .radiusWidth($r('app.string.Rect_Radius_40'))
+            .radiusHeight(20)
+            .radiusWidth(40)
             .fill(Color.Pink)
             .id('RectResource1')
-          
-          Rect({ width: "100" , height: "50" } as RectOptions)
-            
-            .radius("20")
+          // Rect({ width: $r('app.string.Width_100') , height: $r('app.string.Height_50') } as RectOptions)
+          Rect({ width: 100 , height: 50 } as RectOptions)
+            // .radius($r('app.string.Rect_Radius_20'))
+            .radius(20)
             .fill(Color.Pink)
             .stroke(Color.Transparent)
             .id('RectResource2')

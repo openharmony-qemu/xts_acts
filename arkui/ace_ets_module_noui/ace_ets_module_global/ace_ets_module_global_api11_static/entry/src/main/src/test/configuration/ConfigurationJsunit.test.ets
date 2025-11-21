@@ -44,11 +44,11 @@ export default function configurationJsunit() {
         console.info("get configurationJsunit state pages:" + JSON.stringify(pages));
         if (!("configuration" == pages.name)) {
           console.info("get configurationJsunit pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push configurationJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push configurationJsunit page error:" + err);
@@ -63,13 +63,14 @@ export default function configurationJsunit() {
     
     
 
+
 /*
      * @tc.number   configurationTest_static_0100
      * @tc.name     configurationTest_static_0100
      * @tc.desc     configurationTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('configurationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('configurationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('configurationTest_static_0100 is start');
       try {
         let callBackConfiguration = (backData: emitter.EventData) => {
@@ -82,14 +83,16 @@ it('configurationTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
           eventId: 78,
           priority: emitter.EventPriority.LOW
         }
+        console.info('configurationTest_static_0100 is start+++++++++++++++++++++1');
         emitter.on(configurationEvent, callBackConfiguration);
+        console.info('configurationTest_static_0100 is start+++++++++++++++++++++2');
       } catch (err) {
         console.info("configurationTest_static_0100 on configurationEvent err : " + JSON.stringify(err));
       }
+       console.info('configurationTest_static_0100 is start+++++++++++++++++++++3');
       console.info("testAppear01 click result is: " + JSON.stringify(inspector.sendEventByKey('button_c', 10, "")));
       console.info('[configurationTest01] END');
     }
     )
-    ;
   })
 }

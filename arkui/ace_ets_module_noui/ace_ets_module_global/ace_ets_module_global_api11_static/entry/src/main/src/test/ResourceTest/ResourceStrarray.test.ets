@@ -55,11 +55,11 @@ export default function ResourceStrarray() {
         console.info("get ResourceStrarray state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ResourceStrarray pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(5000);
+          // console.info("push ResourceStrarray page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ResourceStrarray page error:" + err);
@@ -69,13 +69,14 @@ export default function ResourceStrarray() {
 
     
 
+
 /*
      * @tc.number   ResourceStrarray_static_0100
      * @tc.name     ResourceStrarray_static_0100
      * @tc.desc     ResourceStrarray_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ResourceStrarray_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceStrarray_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceStrarray_0100 START');
       try {
         let strJson = inspector.getInspectorByKey('strarray');
@@ -95,19 +96,20 @@ it('ResourceStrarray_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
     
 
+
 /*
      * @tc.number   ResourceStrarray_static_0200
      * @tc.name     ResourceStrarray_static_0200
      * @tc.desc     ResourceStrarray_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ResourceStrarray_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceStrarray_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceStrarray_0200 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('ResourceStrarray'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('strarray');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceStrarray_0200] component obj is: " + JSON.stringify(obj));

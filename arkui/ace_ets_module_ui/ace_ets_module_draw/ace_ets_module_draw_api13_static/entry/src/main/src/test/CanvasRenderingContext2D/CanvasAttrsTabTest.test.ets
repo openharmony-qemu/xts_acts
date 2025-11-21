@@ -25,7 +25,6 @@ export default function CanvasAttrsTabTest() {
   describe('CanvasAttrsTabTest', () => {
     beforeAll(() => {
       console.info("CanvasAttrsTabTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.drawAPI13.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -40,13 +39,13 @@ export default function CanvasAttrsTabTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CanvasAttrsTabTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("CanvasAttrsTabTest" == pages.name)) {
           console.info("get CanvasAttrsTabTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CanvasAttrsTabTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CanvasAttrsTabTest page error:" + err);
@@ -57,18 +56,19 @@ export default function CanvasAttrsTabTest() {
     
     
 
+
 /*
      * @tc.number   CanvasAttrsTabTest_static_0100
      * @tc.name     CanvasAttrsTabTest_static_0100
      * @tc.desc     CanvasAttrsTabTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CanvasAttrsTabTest_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
 
-      
+      // 页面加载
       let strJson1 = inspector.getInspectorByKey('visible_content');
       let strJson2 = inspector.getInspectorByKey('invisible_content');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -78,9 +78,12 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('Canvas 1 is fully visible.');
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('');
 
-      
-      let button = await driver.findComponent(ON.text('Tab two'));
+      // 切换至tab two页面
+      let button = await driver.findComponent(ON.text('Tab two'));     // driver.findComponent(ON.text('Tab two')) 获取不到button
+      await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
+      // OHOS_REPORT_STATUS: stack=	at std.core.ClassCastError.<ctor> (Errors.ets:187:0)
+      //  at entry.src.main.src.test.CanvasRenderingContext2D.CanvasAttrsTabTest.test.ETSGLOBAL.%%async-lambda_invoke-74 (CanvasAttrsTabTest.test.ets:83:0)
       await CommonFunc.sleep(1000);
 
       strJson1 = inspector.getInspectorByKey('visible_content');
@@ -92,8 +95,9 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('Canvas 2 is fully visible.');
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('Canvas 1 is completely invisible.');
 
-      
+      // 切换至tab three页面
       button = await driver.findComponent(ON.text('Tab three'));
+      await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -106,8 +110,9 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('Canvas 3 is fully visible.');
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('Canvas 2 is completely invisible.');
 
-      
+      // 切换至tab one页面
       button = await driver.findComponent(ON.text('Tab one'));
+      await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 

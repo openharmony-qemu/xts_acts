@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 import webview from '@ohos.web.webview';
 import {  WebResourceResponse } from '@ohos.arkui.component'
 import {
@@ -32,7 +31,7 @@ struct WebComponent {
   @State progress: number = 0;
   @State hideProgress: boolean = true;
   fileAccess: boolean = true;
-  
+  // 定义Web组件的控制器controller
   controller: webview.WebviewController = new webview.WebviewController();
   controllerTwo: webview.WebviewController = new webview.WebviewController();
   webResourceResponse: WebResourceResponse = new WebResourceResponse();
@@ -44,7 +43,7 @@ struct WebComponent {
       Progress({ value: this.progress, total: 100 })
         .color('#0000ff')
         .visibility(this.hideProgress ? Visibility.None : Visibility.Visible)
-      
+      // 初始化Web组件，并绑定controller
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .key("getTitleText")
         .fileAccess(this.fileAccess)
@@ -52,8 +51,8 @@ struct WebComponent {
         .height(500)
         .padding(20)
         .blur(2)
-        
-        
+        // .setCustomUserAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36")  //userAgent
+        // .fileFromUrlAccess(true)
         .initialScale(2)
         .onPrompt((event) => {
           console.info('onPrompt url: ', event.url);
@@ -84,10 +83,10 @@ struct WebComponent {
         })
         .onResourceLoad((event:OnResourceLoadEvent) => {
           console.info('onResourceLoad url: ', event.url);
-          
+          // return true;
         })
         .onPageEnd(e => {
-          
+          // test()在index.html中定义
           this.controller.runJavaScript('test()');
           console.info('url: ', e.url);
         })
@@ -109,33 +108,33 @@ struct WebComponent {
             console.log('The request header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
           }
           return this.webResourceResponse;
-        })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        })//        .onContextMenuShow((event) => {  // 1.1注释
+        //          console.info("x coord = " + event.param.x());
+        //          console.info("y coord = " + event.param.y());
+        //          console.info("link url = " + event.param.getLinkUrl());
+        //          console.info("unfilterendLinkUrl = " + event.param.getUnfilteredLinkUrl());
+        //          console.info("sourceUrl = " + event.param.getSourceUrl());
+        //          console.info("existsImageContents = " + event.param.existsImageContents());
+        //          console.info("closeContextMenu = " + event.result.closeContextMenu());
+        //          console.info("copyImage = " + event.result.copyImage());
+        //        })
+        //        .onPermissionRequest((event) => {
+        //          uiContext.showAlertDialog({
+        //            title: 'title',
+        //            message: 'text',
+        //            confirm: {
+        //              value: 'onConfirm',
+        //              action: () => {
+        //                event.request.grant(event.request.getAccessibleResource());
+        //                console.info('onPermissionRequest getAccessibleResource: ', event.request.getAccessibleResource());
+        //                console.info('onPermissionRequest getOrigin: ', event.request.getOrigin());
+        //              }
+        //            },
+        //            cancel: () => {
+        //              event.request.deny();
+        //            }
+        //          })
+        //        })
         .onScaleChange((event) => {
           console.info('onScaleChange oldScale: ', event.oldScale);
           console.info('onScaleChange newScale: ', event.newScale);
@@ -163,38 +162,38 @@ struct WebComponent {
             event.response.setResponseMimeType("application/json")
             console.log('setResponseHeader:');
             event.response.setResponseHeader([])
-            console.log('web getExtra:' + this.controllerTwo.getLastHitTest().extra); 
-            console.log('web getType:' + this.controllerTwo.getLastHitTest().type); 
-            
-            console.log('web fetchCookieSync:' + webview.WebCookieManager.fetchCookieSync("www.baidu.com")); 
+            console.log('web getExtra:' + this.controllerTwo.getLastHitTest().extra); // getHitTestValue被平替
+            console.log('web getType:' + this.controllerTwo.getLastHitTest().type); // getHitTestValue被平替
+            // console.log('web fetchCookieSync:' + this.controller.getCookieManager()); //1.2需解决getCookieManager
+            console.log('web fetchCookieSync:' + webview.WebCookieManager.fetchCookieSync("www.baidu.com")); // getCookie被平替
             console.log('web existCookie:' + webview.WebCookieManager.existCookie());
             console.log('web clearAllCookiesSync:');
-            webview.WebCookieManager.clearAllCookiesSync(); 
-            
+            webview.WebCookieManager.clearAllCookiesSync(); // deleteEntireCookie被平替
+            // console.log('web deleteExpiredCookie:' + this.controller.getCookieManager().deleteExpiredCookie());// 1.1注释
             console.log('web clearSessionCookieSync:');
-            webview.WebCookieManager.clearSessionCookieSync(); 
+            webview.WebCookieManager.clearSessionCookieSync(); // deleteSessionCookie被平替
             console.log('web isCookieAllowed:' + webview.WebCookieManager.isCookieAllowed());
-            
+            // console.log('web isFileURICookieAllowed:' + this.controller.getCookieManager().isFileURICookieAllowed());// 1.1注释
             console.log('web isThirdPartyCookieAllowed:' + webview.WebCookieManager.isThirdPartyCookieAllowed());
             console.log('web putAcceptCookieEnabled:');
             webview.WebCookieManager.putAcceptCookieEnabled(true)
-            
-            
+            // console.log('web putAcceptFileURICookieEnabled:' + this.controller.getCookieManager() // 1.1注释
+            //   .putAcceptFileURICookieEnabled(true));
             console.log('web putAcceptThirdPartyCookieEnabled:');
             webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(true)
-            
+            // console.log('web saveCookieSync:' + this.controller.getCookieManager().saveCookieSync());// 1.1注释
             console.log('web zoomIn:');
             this.controllerTwo.zoomIn()
             console.log('web zoomOut:');
             this.controllerTwo.zoomOut()
             console.log('web zoom:');
-            this.controller.zoom(2)
+            this.controller.zoom(2);
             console.log('web getWebId:' + this.controllerTwo.getWebId());
-            console.log('web getDefaultUserAgent:' + webview.WebviewController.getDefaultUserAgent());
-            console.log('web getTitle:' + this.controller.getTitle());
-            console.log('web getPageHeight:' + this.controller.getPageHeight());
-            console.log('web backOrForward:');
-            this.controller.backOrForward(2)
+            // console.log('web getDefaultUserAgent:' + webview.WebviewController.getDefaultUserAgent()); // 1.1注释
+            // console.log('web getTitle:' + this.controller.getTitle());
+            // console.log('web getPageHeight:' + this.controller.getPageHeight());
+            // console.log('web backOrForward:' + this.controller.backOrForward(2));
+
           } catch (error) {
             console.info('the error is ' + JSON.stringify(error));
           }

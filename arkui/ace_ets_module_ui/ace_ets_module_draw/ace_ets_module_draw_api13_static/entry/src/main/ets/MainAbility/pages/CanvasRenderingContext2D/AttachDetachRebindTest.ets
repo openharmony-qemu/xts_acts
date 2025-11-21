@@ -41,7 +41,8 @@ struct AttachDetachRebindTest {
 
 
   aboutToAppear(): void {
-    this.context.onAttach(() => {
+    console.log('++++++++++++aboutToAppear')
+    this.context.onAttach( () => {
       console.info('onAttach')
       if (this.message == '') {
         this.message = 'onAttach'
@@ -50,7 +51,7 @@ struct AttachDetachRebindTest {
       }
     })
 
-    this.context.onDetach(() => {
+    this.context.onDetach( () => {
       console.info('onDetach')
       if (this.message == '') {
         this.message = 'onDetach'
@@ -62,6 +63,7 @@ struct AttachDetachRebindTest {
 
   build() {
     Column() {
+      console.log('+++++++++++++++++++++++++++1')
       Row() {
         Button('Change Canvas').id('change_canvas')
           .onClick((e:ClickEvent) => {

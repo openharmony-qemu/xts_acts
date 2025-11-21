@@ -14,17 +14,28 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils'
 
 let emitKey = "emitUserAgent";
+
 export default function web9Jsunit() {
   describe('web9Jsunit', () => {
     beforeAll(() => {
@@ -46,11 +57,11 @@ export default function web9Jsunit() {
         console.info("get web9Jsunit state pages:" + JSON.stringify(pages));
         if (!("web_api_9" == pages.name)) {
           console.info("get web9Jsunit pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push web9Jsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push web9Jsunit page error:" + err);
@@ -64,7 +75,7 @@ export default function web9Jsunit() {
         let backData: emitter.EventData = {
           data: {
             "ACTION": emitKey
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let backEvent: emitter.InnerEvent = {
           eventId: 10,
@@ -78,7 +89,7 @@ export default function web9Jsunit() {
       await Utils.sleep(2000);
     })
 
-    
+
     /*
      * @tc.number   webContextMenuResultTest_static_001
      * @tc.name     webContextMenuResultTest_static_001
@@ -88,13 +99,12 @@ export default function web9Jsunit() {
     it('webContextMenuResultTest_static_001', Level.LEVEL0, async () => {
       try {
         emitKey = "emitwebContextMenuResult";
-        
-      } catch(ERROR) {
+        // Utils.registerContainEvent("webContextMenuResult", true, 1101);
+      } catch (Error) {
         expect().assertFail();
       }
     })
 
-    
 
     /*
      * @tc.number   setWebControllerTest_static_002
@@ -103,30 +113,29 @@ export default function web9Jsunit() {
      * @tc.level    Level.LEVEL0
      */
     it('setWebControllerTest_static_002', Level.LEVEL0, async () => {
-            try {
-              emitKey = "emitsetWebController";
-              
-            } catch(ERROR) {
-                expect().assertFail();
-            }
+      try {
+        emitKey = "emitsetWebController";
+        // Utils.registerContainEvent("setWebController", true, 1102);
+      } catch (Error) {
+        expect().assertFail();
+      }
     })
 
-    
 
     /*
-     * @tc.number   setWebControllerTest_static_003
-     * @tc.name     setWebControllerTest_static_003
-     * @tc.desc     setWebControllerTest_static_003
-     * @tc.level    Level.LEVEL0
-     */
-  it('setWebControllerTest_static_003', Level.LEVEL0, async () => {
-            try {
-              emitKey = "emitHitTestValue";
-              
-              inspector.sendEventByKey('web2', 10, '');
-            } catch(ERROR) {
-                expect().assertFail();
-            }
+       * @tc.number   setWebControllerTest_static_003
+       * @tc.name     setWebControllerTest_static_003
+       * @tc.desc     setWebControllerTest_static_003
+       * @tc.level    Level.LEVEL0
+       */
+    it('setWebControllerTest_static_003', Level.LEVEL0, async () => {
+      try {
+        emitKey = "emitHitTestValue";
+        // Utils.registerContainEvent("HitTestValue", true, 1103);
+        inspector.sendEventByKey('web2', 10, '');
+      } catch (Error) {
+        expect().assertFail();
+      }
     })
   })
 }

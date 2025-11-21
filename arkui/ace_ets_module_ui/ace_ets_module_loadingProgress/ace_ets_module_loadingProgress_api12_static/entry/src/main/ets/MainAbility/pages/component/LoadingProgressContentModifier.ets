@@ -39,26 +39,32 @@ import {
   ContentModifier,
   WrappedBuilder,
   LoadingProgress,
-  wrapBuilder
+  wrapBuilder,
+  CustomBuilderT,
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 
+console.info('[wll]MyLoadingProgressStyle')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class MyLoadingProgressStyle implements ContentModifier<LoadingProgressConfiguration> {
+  public enableLoading: boolean = false
+  constructor(enableLoading: boolean){
+    this.enableLoading = enableLoading
+  }
+  applyContent(): WrappedBuilder<CustomBuilderT<LoadingProgressConfiguration>>{
+    return wrapBuilder<CustomBuilderT<LoadingProgressConfiguration>>(buildLoadingProgress)
+  }
+}
+@Builder
+function buildLoadingProgress(config: LoadingProgressConfiguration){
+  Column() {
+    Text('config.enableLoading是：' + (config.contentModifier as MyLoadingProgressStyle).enableLoading)
+      .fontColor(0x106836)
+      .fontSize(14)
+      .id('loadingProgressContentModifierKey01')
+  }
+}
 @Entry
 @Component
 struct LoadingProgressDemoExample {
@@ -67,7 +73,7 @@ struct LoadingProgressDemoExample {
       LoadingProgress()
         .color('#106836')
         .size({ width: 150 })
-      
+      .contentModifier(new MyLoadingProgressStyle(true))
     }.width('100%').margin({ top: 5 } as Margin)
   }
 }

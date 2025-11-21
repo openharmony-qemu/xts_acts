@@ -31,8 +31,8 @@ struct PolylineResource {
         .strokeWidth(3)
         .id('PolylineResource1')
 
-      
-      Polyline({ width: "100", height: "50" })
+      // Polyline({ width: $r('app.string.Width_100'), height: $r('app.string.Height_50') })
+      Polyline({ width: 100, height: 50 })
         .points([[0, 0], [20, 50], [50, 50]])
         .fillOpacity(0)
         .stroke(Color.Blue)

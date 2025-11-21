@@ -55,11 +55,11 @@ export default function ResourceInteger() {
         console.info("get ResourceInteger state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ResourceInteger pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(5000);
+          // console.info("push ResourceInteger page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ResourceInteger page error:" + err);
@@ -69,13 +69,14 @@ export default function ResourceInteger() {
 
     
 
+
 /*
      * @tc.number   ResourceInteger_static_0100
      * @tc.name     ResourceInteger_static_0100
      * @tc.desc     ResourceInteger_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ResourceInteger_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceInteger_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceInteger_0100 START');
       let strJson = inspector.getInspectorByKey('integer');
       let obj = JSON.parseJsonElement(strJson);
@@ -89,19 +90,20 @@ it('ResourceInteger_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
     
 
+
 /*
      * @tc.number   ResourceInteger_static_0200
      * @tc.name     ResourceInteger_static_0200
      * @tc.desc     ResourceInteger_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ResourceInteger_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceInteger_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceInteger_0200 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('ResourceInteger'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('integer');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceInteger_0200] component obj is: " + JSON.stringify(obj));

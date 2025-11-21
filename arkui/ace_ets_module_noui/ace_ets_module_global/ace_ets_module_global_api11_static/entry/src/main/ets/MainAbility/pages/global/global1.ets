@@ -16,7 +16,7 @@ import Log from '../../common/Log';
 import {
   Entry, Component,
   Column, ColumnOptions, List, ListItem, ListOptions,
-  Flex, FlexDirection, ItemAlign, FlexAlign,
+  Flex, FlexDirection, ItemAlign, FlexAlign, StickyStyle,
   Text, TextAlign, Button, FontWeight, ClickEvent, Margin, Color, Row,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector';
@@ -53,10 +53,10 @@ struct GlobalLack {
           .backgroundColor(0xFFFFFF)
         }
         .key("ListItem")
-        
-        
-        
+        .selectable(false)
+        // .editable(true)
       }
+      .sticky(StickyStyle.None)
     }
     .padding(10)
     .backgroundColor(0xDCDCDC)
