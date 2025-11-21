@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,9 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-export const savePixelMapForPath: (path: string) => number;
-export const creatOutPixeMapForPath: (path: string) => number;
 
 export const OHImageEffectCreateSupp: (a: number) => number;
 export const OHImageEffectAddFilterSupp: (a: number) => number;

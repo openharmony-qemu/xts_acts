@@ -20,15 +20,12 @@
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
 
 napi_property_descriptor desc1[] = {
-    DESCRIPTOR("savePixelMapForPath", savePixelMapForPath),
-    DESCRIPTOR("creatOutPixeMapForPath", creatOutPixeMapForPath),
     DESCRIPTOR("OHImageEffectCreateSupp", OHImageEffectCreateSupp),
-        DESCRIPTOR("OHImageEffectAddFilterSupp", OHImageEffectAddFilterSupp),
+    DESCRIPTOR("OHImageEffectAddFilterSupp", OHImageEffectAddFilterSupp),
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
-   DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
 };
-
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

@@ -20,7 +20,6 @@
 #include <multimedia/image_effect/image_effect_filter.h>
 #include <multimedia/image_framework/image_pixel_map_mdk.h>
 #include <multimedia/image_framework/image/picture_native.h>
-#include <string>
 #include "ImageEffectSuppTest.h"
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
@@ -58,43 +57,6 @@
 #define IMAGE_EFFECT_5120 5120
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
-
-static std::string g_ImagePath;
-static std::string g_OutImagePath;
-
-napi_value savePixelMapForPath(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    napi_get_undefined(env, &result);
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    g_ImagePath = CommonUtils::GetStringArgument(env, args[0]);
-    napi_value ret;
-    int status = -1;
-    if (g_ImagePath.length() > 0) {
-        status = 0;
-    }
-    napi_create_int32(env, status, &ret);
-    return ret;
-}
-
-napi_value creatOutPixeMapForPath(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    napi_get_undefined(env, &result);
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    g_OutImagePath = CommonUtils::GetStringArgument(env, args[0]);
-    napi_value ret;
-    int status = -1;
-    if (g_OutImagePath.length() > 0) {
-        status = 0;
-    }
-    napi_create_int32(env, status, &ret);
-    return ret;
-}
 
 napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info)
 {
