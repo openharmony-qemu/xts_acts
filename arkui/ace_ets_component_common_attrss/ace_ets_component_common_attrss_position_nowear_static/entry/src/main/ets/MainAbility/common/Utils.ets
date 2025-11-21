@@ -42,22 +42,25 @@ export interface ExpectValue {
   top?: number;
 }
 
-export interface SetValue {
-  x:string | number;
-  y:string | number;
-  xp?:number;
-  yp?:number;
+// export interface SetPosition {
+//   x: string|number;
+//   y: string|number;
+//   xp?: number;
+//   yp?: number;
+// }
+
+export class SetValue {
+  x:string | number = 0;
+  y:string | number = 0;
+  xp?:number = 0;
+  yp?:number = 0;
 
 }
 
 export class TestValue {
   describe: string = '';
-  setValue: SetValue = {
-    x:0,
-    y:0,
-    xp:0,
-    yp:0,
-  };
+  // setValue: SetValue = new SetValue();
+  setValue: Position = { x:0, y:0 };
   exceptView: string = '';
   expectValue:ExpectValue = {x: '',
   y: '',
@@ -89,9 +92,11 @@ export class PageConfig {
   referenceComponentKey: string = '';
   targetView: string = '';
   testValue: TestValue = new TestValue();
-  componentKey?: string = '';
+  componentKey: string = '';
   sharePage?: boolean;
   containerView?: string;
+
+
 }
 
 export default class Utils {
@@ -121,33 +126,38 @@ export default class Utils {
     })
   }
 
-  static async pushPage(obj: PageConfig) {
-    try {
-      const router = AppStorage.get<Router>("router") as Router
-      let pages = router.getState();
-      let pageParams = router.getParams();
-      console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-
-      if (!(obj.pageName == pages.name)) {
-        console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-       const paramData: RouterParams = {
-        view: obj
-       }
-        const routerParams: router.RouterOptions = {
-          url: obj.pageUrl,
-          params: paramData
-        }
-        router.pushUrl(routerParams)
-        await Utils.sleep(2000)
-      }
-    } catch (err) {
-      console.error('push ' + obj.pageName + ' page error:' + err);
+static async pushPage(obj: PageConfig) {
+  try {
+    const router = AppStorage.get<Router>("router") as Router
+    let pages = router.getState();
+    let pageParams: RouterParams = new RouterParams();
+    console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
+    if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
+      console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
+      console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+      console.info('targetView: ' + obj.targetView);
+      await Utils.back();
+      pages = router.getState();
     }
+
+    if (!(obj.pageName == pages.name)) {
+      console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
+      router.pushUrl({
+        url: obj.pageUrl,
+        params: {
+          view: obj
+        } as RouterParams
+      });
+      await Utils.sleep(1000);
+    }
+  } catch (err) {
+    console.error('push ' + obj.pageName + ' page error:' + err);
   }
+}
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!router.getState().name.endsWith("/Index")) {
+    if (!('MainAbility/pages/index/Index' == router.getState().name)) {//正确写法：'Index' == router.getState().name)，目前为了规避方案
       router.back()
     }
     AttrsManager.unRegisterDataChange();
@@ -163,6 +173,7 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
+    await Utils.sleep(1000);
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -182,20 +193,24 @@ export default class Utils {
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
     // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    let rect_value: RectValue = {
-      left:Number(rectInfo[0][0] ?? 0),
-      top:Number(rectInfo[0][1] ?? 0),
-      right:Number(rectInfo[1][0] ?? 0),
-      bottom:Number(rectInfo[1][1] ?? 0),
-    };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
+    const str = obj.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
+    await Utils.sleep(1000);
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -282,7 +297,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -292,14 +307,14 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode,
+      keyCode: keyCode as int,
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

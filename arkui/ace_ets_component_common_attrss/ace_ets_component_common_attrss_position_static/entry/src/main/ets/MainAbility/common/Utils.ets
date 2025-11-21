@@ -47,18 +47,18 @@ export interface ExpectValue {
 export interface SetValue {
   x:string | number;
   y:string | number;
-  xp?:number;
-  yp?:number;
+  // xp?:number;
+  // yp?:number;
 
 }
 
 export class TestValue {
   describe: string = '';
-  setValue: SetValue = {
+  setValue: Position = {
     x: '',
     y: '',
-    xp: 0,
-    yp: 0
+    // xp: 0,
+    // yp: 0
   };
   exceptView: string = '';
   expectValue:ExpectValue = {x: '',
@@ -91,7 +91,7 @@ export class PageConfig {
   referenceComponentKey: string = '';
   targetView: string = '';
   testValue: TestValue = new TestValue();
-  componentKey?: string = '';
+  componentKey: string = '';
   sharePage?: boolean;
   containerView?: string;
 }
@@ -123,33 +123,38 @@ export default class Utils {
     })
   }
 
-  static async pushPage(obj: PageConfig) {
-    try {
-      const router = AppStorage.get<Router>("router") as Router
-      let pages = router.getState();
-      let pageParams = router.getParams();
-      console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-
-      if (!(obj.pageName == pages.name)) {
-        console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-       const paramData: RouterParams = {
-        view: obj
-       }
-        const routerParams: router.RouterOptions = {
-          url: obj.pageUrl,
-          params: paramData
-        }
-        router.pushUrl(routerParams)
-        await Utils.sleep(2000)
-      }
-    } catch (err) {
-      console.error('push ' + obj.pageName + ' page error:' + err);
+static async pushPage(obj: PageConfig) {
+  try {
+    const router = AppStorage.get<Router>("router") as Router
+    let pages = router.getState();
+    let pageParams: RouterParams = new RouterParams();
+    console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
+    if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
+      console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
+      console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+      console.info('targetView: ' + obj.targetView);
+      await Utils.back();
+      pages = router.getState();
     }
+
+    if (!(obj.pageName == pages.name)) {
+      console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
+      router.pushUrl({
+        url: obj.pageUrl,
+        params: {
+          view: obj
+        } as RouterParams
+      });
+      await Utils.sleep(1000);
+    }
+  } catch (err) {
+    console.error('push ' + obj.pageName + ' page error:' + err);
   }
+}
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!router.getState().name.endsWith("/Index")) {
+    if (!('Index' == router.getState().name)) { //'Index' == router.getState().name
       router.back()
     }
     AttrsManager.unRegisterDataChange();
@@ -165,6 +170,7 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
+    await Utils.sleep(1000);
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -198,6 +204,7 @@ export default class Utils {
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
+    await Utils.sleep(1000);
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -284,7 +291,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -294,14 +301,14 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode,
+      keyCode: keyCode as int,
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,
