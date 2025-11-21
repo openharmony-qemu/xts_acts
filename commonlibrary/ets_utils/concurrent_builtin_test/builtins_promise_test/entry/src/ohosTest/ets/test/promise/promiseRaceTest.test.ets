@@ -22,7 +22,7 @@ import { sleep } from './utils';
 export default function promiseRaceTest() {
   describe('promiseRaceTest', () => {
     afterEach(async () => {
-      await sleep(50)
+      await sleep(100)
     })
 
     /**

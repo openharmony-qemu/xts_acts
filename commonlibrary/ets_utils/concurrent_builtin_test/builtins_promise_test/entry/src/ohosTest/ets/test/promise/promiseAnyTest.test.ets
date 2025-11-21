@@ -6,7 +6,7 @@ import { sleep } from './utils';
 export default function promiseAnyTest() {
   describe('promiseAnyTest', () => {
     afterEach(async () => {
-      await sleep(50)
+      await sleep(100)
     })
     /**
      * @tc.number SUB_BUILTINS_Promise_any_TEST_0010
