@@ -19,6 +19,14 @@
     {
       "name": "RED",
       "value": "#FFE01111"
+    },
+    {
+      "name": "Progress_updateColor",
+      "value": "#FFFD0000"
+    },
+    {
+      "name": "Progress_updateColor_transparency",
+      "value": "#33006cde"
     }
   ]
 }

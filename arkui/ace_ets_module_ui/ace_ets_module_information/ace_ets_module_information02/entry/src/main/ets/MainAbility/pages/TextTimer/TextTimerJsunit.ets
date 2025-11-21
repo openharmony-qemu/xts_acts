@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct TextTimerExample {
+struct TextTimerJsunitTestExample {
   myTimerController: TextTimerController = new TextTimerController();
   @State format: string = 'hh:mm:ss.ms';
 
