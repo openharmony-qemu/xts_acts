@@ -15,6 +15,7 @@
 
 import fileIOAccess from "./Access.test";
 import fileIOClose from "./Close.test";
+import fileIOCopyDir from "./CopyDir.test";
 import fileIOCopyfile from "./CopyFile.test";
 import fileIOCreateStream from "./CreateStream.test";
 import fileIOCreateRandomAccessFile from "./CreateRandomAccessFile.test";
@@ -60,6 +61,7 @@ import atomicFileTest from './class_atomicFile/AtomicFile.test';
 export default function testsuite() {
     fileIOAccess();
     fileIOClose();
+    fileIOCopyDir();
     fileIOCopyfile();
     fileIOCreateStream();
     fileIOCreateRandomAccessFile();
