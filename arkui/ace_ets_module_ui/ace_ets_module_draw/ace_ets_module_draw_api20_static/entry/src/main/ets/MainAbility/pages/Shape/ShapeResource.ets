@@ -46,24 +46,24 @@ struct ShapeResource {
       }
       .width(100)
       .height(100)
-      
-      
-      
-      
-      
-      
+      // .viewPort({
+      //   x: $r('app.string.x_20'),
+      //   y: $r('app.string.y_5'),
+      //   width: $r('app.string.w_100'),
+      //   height: $r('app.string.h_90')
+      // })
       .viewPort({
-        x: "-20",
-        y: "-5",
-        width: "100",
-        height: "90"
+        x: -20,
+        y: -5,
+        width: 100,
+        height: 90
       })
       .fill($r('app.color.color_fill'))
       .stroke($r('app.color.color_stroke'))
       .strokeWidth("10")
       .strokeLineJoin(LineJoinStyle.Miter)
-      
-      .strokeMiterLimit("5")
+      // .strokeMiterLimit($r('app.string.sml_5'))
+      .strokeMiterLimit(5)
       .id('ShapeResource2')
 
     }.width('100%')

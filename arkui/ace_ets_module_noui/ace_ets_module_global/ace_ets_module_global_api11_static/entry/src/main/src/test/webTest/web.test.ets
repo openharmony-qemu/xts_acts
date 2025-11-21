@@ -45,11 +45,11 @@ export default function webEditTextJsunit() {
         console.info("get ResourceString state pages:" + JSON.stringify(pages));
         if (!("web" == pages.name)) {
           console.info("get ResourceString pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ResourceString page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ResourceString page error:" + err);

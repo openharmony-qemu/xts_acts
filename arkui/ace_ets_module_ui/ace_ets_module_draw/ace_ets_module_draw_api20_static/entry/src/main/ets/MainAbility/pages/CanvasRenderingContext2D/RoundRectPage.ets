@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// xxx.ets
 
 import {
   Entry, Component,
@@ -35,51 +35,51 @@ struct RoundRectPage {
         .backgroundColor('#ffff00')
         .id('RoundRectPage_Canvas')
         .onReady(() => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // this.context.beginPath();
+          // this.context.roundRect(15, 0, 50, 30);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(75, 0, 50, 30, 10);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(135, 0, 50, 30, [10]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(15, 40, 50, 30, [10, 5]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(75, 40, 50, 30, [10, 5, 10]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(135, 40, 50, 30, [10, 5, 10, 5]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(15, 80, 50, 30,);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(75, 80, 50, 30, null);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(135, 80, 50, 30, undefined);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(15, 120, 50, 30, [null]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(75, 120, 50, 30, [null, undefined]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(135, 120, 50, 30, [null, undefined, 10]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(15, 160, 50, 30, [10, null, undefined, 5]);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(75, 200, -50, 30, 10);
+          // this.context.stroke();
+          //
+          // this.context.roundRect(135, 200, 50, -30, 10);
+          // this.context.stroke();
         })
     }
     .width('100%')

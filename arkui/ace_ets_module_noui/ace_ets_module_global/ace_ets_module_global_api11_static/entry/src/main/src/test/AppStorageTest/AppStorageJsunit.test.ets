@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
 import resourceManager from '@ohos.resourceManager'
-
+// import { LayoutDirection, Storage } from '@ohos.arkui.component'
 import  Environment  from '@ohos.file.environment'
 
 export default function AppStorageJsunit() {
@@ -46,11 +46,11 @@ export default function AppStorageJsunit() {
         console.info("get appStorage state pages:" + JSON.stringify(pages));
         if (!("appStorage" == pages.name)) {
           console.info("get appStorage pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push appStorage page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push appStorage page error:" + err);
@@ -67,13 +67,14 @@ export default function AppStorageJsunit() {
 
     
 
+
 /*
      * @tc.number   stateManagement_AppStorage_setOrCreate_static_0100
      * @tc.name     stateManagement_AppStorage_setOrCreate_static_0100
      * @tc.desc     stateManagement_AppStorage_setOrCreate_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('stateManagement_AppStorage_setOrCreate_static_0100', Level.LEVEL0, (done: () => void):void => {
+    it('stateManagement_AppStorage_setOrCreate_static_0100', Level.LEVEL0, (done: () => void):void => {
       console.info('[stateManagement_AppStorage_setOrCreate_0100] START');
       AppStorage.setOrCreate<string>("key1", "value1");
       AppStorage.setOrCreate<string>("key2", "value2");
@@ -92,21 +93,38 @@ it('stateManagement_AppStorage_setOrCreate_static_0100', Level.LEVEL0, (done: ()
 
     
 
+
 /*
      * @tc.number   stateManagement_Storage_set_static_0100
      * @tc.name     stateManagement_Storage_set_static_0100
      * @tc.desc     stateManagement_Storage_set_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('stateManagement_Storage_set_static_0100', Level.LEVEL0, (done: () => void):void => {
+    it('stateManagement_Storage_set_static_0100', Level.LEVEL0, (done: () => void):void => {
       done();
       return;
 
       console.info('[stateManagement_Storage_set_0100] START');
 
       try {
-
-      } catch(ERROR) {
+        // let storage = new Storage();
+        // console.info('[stateManagement_Storage_set_0100] 0000');
+        // storage.set("key5", "value5");
+        // storage.set("key6", "value6");
+        // console.info('[stateManagement_Storage_set_0100] 1111');
+        // let key5: string|undefined = storage.get("key5");
+        // let key6: string|undefined = storage.get("key6");
+        // console.info('[stateManagement_Storage_set_0100] 2222' + key5);
+        // storage.delete("key5");
+        // key5 = storage.get("key5");
+        // console.info('[stateManagement_Storage_set_0100] 3333');
+        // console.info('[stateManagement_Storage_set_0100] key5 =' + key5);
+        // console.info('[stateManagement_Storage_set_0100] key6 =' + key6);
+        // storage.clear();
+        // key6 = storage.get("key6");
+        // console.info('[stateManagement_Storage_set_0100] key6 =' + key6);
+        // console.info('[stateManagement_Storage_set_0100] END');
+      }catch(Error) {
           expect().assertFail();
       }
       done();
@@ -117,26 +135,27 @@ it('stateManagement_Storage_set_static_0100', Level.LEVEL0, (done: () => void):v
 
     
 
+
 /*
      * @tc.number   stateManagement_Environment_EnvProps_static_0100
      * @tc.name     stateManagement_Environment_EnvProps_static_0100
      * @tc.desc     stateManagement_Environment_EnvProps_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('stateManagement_Environment_EnvProps_static_0100', Level.LEVEL0, (done: () => void):void => {
+    it('stateManagement_Environment_EnvProps_static_0100', Level.LEVEL0, (done: () => void):void => {
       console.info('[stateManagement_Environment_EnvProps_0100] START');
       try {
-        
-        
-        
-        
-        
+        // Environment.envProps([{
+        //   key: "colorMode", defaultValue: resourceManager.ColorMode.LIGHT
+        // }, {
+        //   key: "layoutDirection", defaultValue: LayoutDirection.LTR
+        // }]);
         let enable: number | undefined = AppStorage.get<number>("colorMode");
         let enable1: number | undefined = AppStorage.get<number>("layoutDirection");
         expect(enable == (resourceManager.ColorMode.LIGHT as number))
           .assertTrue;
-        
-        
+        // expect(enable1 == (LayoutDirection.RTL as number))
+        //   .assertTrue;
         console.info('[stateManagement_Environment_EnvProps_0100] enable = ' + enable);
         console.info('[stateManagement_Environment_EnvProps_0100] enable1 = ' + enable1);
       } catch (err) {

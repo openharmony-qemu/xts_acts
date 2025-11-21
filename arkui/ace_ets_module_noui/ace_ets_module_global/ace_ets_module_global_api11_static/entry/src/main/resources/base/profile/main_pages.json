@@ -7,6 +7,13 @@
         "MainAbility/pages/Resource/ResourcePlural",
         "MainAbility/pages/Resource/ResourceStrarray",
         "MainAbility/pages/Resource/ResourceString",
-        "MainAbility/pages/global/global"
+        "MainAbility/pages/global/global",
+        "MainAbility/pages/global/global1",
+        "MainAbility/pages/configuration/configuration",
+        "MainAbility/pages/web/web",
+        "MainAbility/pages/web/web2",
+        "MainAbility/pages/web/web_api_9",
+        "MainAbility/pages/web/webapi9",
+        "MainAbility/pages/web/webviewpageLackattr"
     ]
 }

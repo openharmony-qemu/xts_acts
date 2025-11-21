@@ -25,7 +25,7 @@ export default function RoundRectTest() {
   describe('RoundRectTest', () => {
     beforeAll(() => {
       console.info("RoundRectTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -42,11 +42,11 @@ export default function RoundRectTest() {
         console.info("get RoundRectTest state pages:" + JSON.stringify(pages));
         if (!("RoundRectTest" == pages.name)) {
           console.info("get RoundRectTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push RoundRectTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RoundRectTest page error:" + err);
@@ -57,20 +57,21 @@ export default function RoundRectTest() {
     
     
 
+
 /*
      * @tc.number   RoundRectTest_0100
      * @tc.name     RoundRectTest_0100
      * @tc.desc     RoundRectTest_0100
      * @tc.level    Level.LEVEL2
      */
-it('RoundRectTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('RoundRectTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RoundRectTest_0100] START');
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('RoundRectPage_Canvas');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[RoundRectTest_0100] type is: " + JSON.stringify(obj.getElement('$type')));
-      expect(obj.getElement('$type')).assertEqual('Canvas');
+      console.info("[RoundRectTest_0100] type is: " + JSON.stringify(obj.getString('$type')));
+      expect(obj.getString('$type')).assertEqual('Canvas');
 
       console.info('[RoundRectTest_0100] END');
       done();

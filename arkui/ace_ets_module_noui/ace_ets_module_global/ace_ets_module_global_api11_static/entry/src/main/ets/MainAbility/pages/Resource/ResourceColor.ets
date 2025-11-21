@@ -33,6 +33,7 @@ import {
   Text,
   FlexAlign
 } from '@ohos.arkui.component';
+import inspector from '@ohos.arkui.inspector';
 
 class MyDataColor implements IDataSource<number> {
   private list: Array<number> = new Array<number>()
@@ -74,22 +75,19 @@ struct ResourceColor1 {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        LazyForEach(this.data, (item: number, index: int) => {
+            Column() {
+              Column() {
+                Text('color test').fontSize(20)
+                Text('color').backgroundColor($r('app.color.color_' + String(item))).id('color')
+              }.border({ width: 2 }).margin(30)
+            }
+            .justifyContent(FlexAlign.SpaceEvenly)
+            .width(300)
+            .height(300)
+
+          },
+          (item: number) => String(item))
       }
       .cachedCount(2)
       .index(1)
@@ -104,6 +102,7 @@ struct ResourceColor1 {
         Button('showNext')
           .id('ResourceColor')
           .onClick((e: ClickEvent) => {
+            console.log('+++++++++++++++++++++++++++2.1')
             this.swiperController.showNext()
           })
         Button('showPrevious')

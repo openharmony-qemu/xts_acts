@@ -62,9 +62,14 @@ struct CanvasAttrsTest {
     this.node = null
   }
 
+  aboutToAppear(): void {
+    this.context.onAttach( this.attachCallback)
+    this.context.onDetach( this.detachCallback)
+  }
+
   aboutToDisappear(): void {
-    this.context.offAttach(this.attachCallback)
-    this.context.offDetach(this.detachCallback)
+    this.context.offAttach( this.attachCallback)
+    this.context.offDetach( this.detachCallback)
   }
 
   build() {
@@ -72,15 +77,15 @@ struct CanvasAttrsTest {
       Row() {
         Button('Swipe to Top').id('swipe_top')
           .onClick((e:ClickEvent) => {
-            let rect = this.scroller.getItemRect(Double.toInt(this.swipeStartIndex)) 
-            this.scroller.scrollToIndex(0) 
-            this.scroller.scrollBy(0, -rect.y) 
+            let rect = this.scroller.getItemRect(this.swipeStartIndex as int) // Get child components size and position
+            this.scroller.scrollToIndex(0) // Slide to the specified index
+            this.scroller.scrollBy(0, -rect.y as int) // Slide a specified distance
           })
         Button('Swipe to Bottom').id('swipe_bottom')
           .onClick((e:ClickEvent) => {
-            let rect = this.scroller.getItemRect(Double.toInt(this.swipeStartIndex)) 
-            this.scroller.scrollToIndex(this.arr.length - 1) 
-            this.scroller.scrollBy(0, -rect.y) 
+            let rect = this.scroller.getItemRect(this.swipeStartIndex as int) // Get child components size and position
+            this.scroller.scrollToIndex(this.arr.length - 1) // Slide to the specified index
+            this.scroller.scrollBy(0, -rect.y as int) // Slide a specified distance
           })
       }
 
@@ -95,8 +100,10 @@ struct CanvasAttrsTest {
                 .height('20%')
                 .backgroundColor('#ffff00')
                 .onReady(():void => {
+                  console.log('Canvas onReady 1')
                   this.context.font = '30vp sans-serif'
-                  this.node?.commonEvent.setOnVisibleAreaApproximateChange(
+                  console.log('Canvas onReady 2',this.node)
+                  this.node?.commonEvent.setOnVisibleAreaApproximateChange(  //回调没执行 11.4sdk
                     { ratios: [0, 1], expectedUpdateInterval: 10 },
                     (isVisible: boolean, currentRatio: number) => {
                       if (!isVisible && currentRatio <= 0.0) {

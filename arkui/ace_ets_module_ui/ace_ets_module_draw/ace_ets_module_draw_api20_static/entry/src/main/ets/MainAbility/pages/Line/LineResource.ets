@@ -22,19 +22,20 @@ struct LineResource {
   build() {
     Column({ space: 5 } as ColumnOptions) {
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      Line({width: 100, height: 50})
+        .id('LineResource1')
+        .startPoint([0, 0])
+        .endPoint([50, 50])
+        .stroke(Color.Black)
+        .backgroundColor('#F5F5F5')
+
+      // Line({width: $r('app.string.Width_100'), height: $r('app.string.Height_50')})
+      Line({width: 100, height: 50})
+        .id('LineResource2')
+        .startPoint([0, 0])
+        .endPoint([50, 50])
+        .stroke(Color.Black)
+        .backgroundColor('#F5F5F5')
 
       Line()
         .id('LineResource3')

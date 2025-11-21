@@ -43,7 +43,7 @@ import {  FrameNode } from '@ohos.arkui.node';
 struct CanvasAttrsTabTest {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: int = 0
+  @State currentIndex: number = 0
   @State selectedIndex: number = 0
   private controller: TabsController = new TabsController()
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
@@ -71,7 +71,7 @@ struct CanvasAttrsTabTest {
       Text(this.message1).id('visible_content').fontSize(12).width('100%')
       Text(this.message2).id('invisible_content').fontSize(12).width('100%')
 
-      Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
+      Tabs({ barPosition: BarPosition.Start, index: this.currentIndex as int, controller: this.controller }) {
         TabContent() {
           Column() {
             Canvas(this.context).id('canvas1')
@@ -153,7 +153,7 @@ struct CanvasAttrsTabTest {
       .vertical(false)
       .barMode(BarMode.Fixed)
       .onChange((index: int) => {
-        
+        // currentIndex控制TabContent显示页签
         this.currentIndex = index
         this.selectedIndex = index
       })

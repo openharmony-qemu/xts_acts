@@ -55,11 +55,11 @@ export default function ResourceFloat() {
         console.info("get ResourceFloat state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ResourceFloat pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(5000);
+          // console.info("push ResourceFloat page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ResourceFloat page error:" + err);
@@ -69,13 +69,14 @@ export default function ResourceFloat() {
 
     
 
+
 /*
      * @tc.number   ResourceFloat_static_0100
      * @tc.name     ResourceFloat_static_0100
      * @tc.desc     ResourceFloat_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ResourceFloat_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceFloat_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceFloat_0100 START');
       let strJson = inspector.getInspectorByKey('float');
       let obj = JSON.parseJsonElement(strJson);
@@ -89,19 +90,20 @@ it('ResourceFloat_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 
     
 
+
 /*
      * @tc.number   ResourceFloat_static_0200
      * @tc.name     ResourceFloat_static_0200
      * @tc.desc     ResourceFloat_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ResourceFloat_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceFloat_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceFloat_0200 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('ResourceFloat'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('float');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceFloat_0200] component obj is: " + JSON.stringify(obj));

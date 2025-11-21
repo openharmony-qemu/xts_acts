@@ -73,19 +73,19 @@ struct ResourcePlural {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        LazyForEach(this.data, (item: number, index: int) => {
+          Column() {
+            Column() {
+              Text('plural test').fontSize(20)
+              Text($r(`app.plural.plural_${String(item)}`, 100, 100)).fontSize(20).id('plural')
+            }.border({ width: 2 }).margin(30)
+
+          }
+          .justifyContent(FlexAlign.SpaceEvenly)
+          .width(300)
+          .height(300)
+
+        }, (item: number) => String(item))
       }
       .cachedCount(2)
       .index(1)

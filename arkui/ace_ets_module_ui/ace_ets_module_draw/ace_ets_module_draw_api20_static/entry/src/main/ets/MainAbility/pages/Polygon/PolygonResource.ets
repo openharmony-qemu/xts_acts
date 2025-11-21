@@ -29,8 +29,8 @@ struct PolygonResource {
         .fill(Color.Green)
         .id('PolygonResource1')
 
-      
-      Polygon({ width: "100", height: "50" })
+      // Polygon({ width: $r('app.string.Width_100'), height: $r('app.string.Height_50') })
+      Polygon({ width: 100, height: 50 })
         .points([[0, 0], [50, 50], [50, 0]])
         .fill(Color.Green)
         .id('PolygonResource2')

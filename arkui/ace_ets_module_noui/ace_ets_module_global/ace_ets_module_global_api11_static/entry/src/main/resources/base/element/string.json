@@ -107,6 +107,18 @@
     {
       "name": "string_0",
       "value": "default"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "module_desc",
+      "value": "m"
     }
 
   ]

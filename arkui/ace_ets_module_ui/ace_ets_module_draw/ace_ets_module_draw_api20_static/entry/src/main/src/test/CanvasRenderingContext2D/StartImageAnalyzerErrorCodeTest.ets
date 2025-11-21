@@ -26,7 +26,7 @@ export default function StartImageAnalyzerErrorCodeTest() {
   describe('StartImageAnalyzerErrorCodeTest', () => {
     beforeAll(() => {
       console.info("StartImageAnalyzerErrorCodeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -43,11 +43,11 @@ export default function StartImageAnalyzerErrorCodeTest() {
         console.info("get StartImageAnalyzerErrorCodeTest state pages:" + JSON.stringify(pages));
         if (!("StartImageAnalyzerErrorCode" == pages.name)) {
           console.info("get StartImageAnalyzerErrorCodeTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push StartImageAnalyzerErrorCodeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StartImageAnalyzerErrorCodeTest page error:" + err);
@@ -58,13 +58,14 @@ export default function StartImageAnalyzerErrorCodeTest() {
     
     
 
+
 /*
      * @tc.number   StartImageAnalyzerErrorCodeTest_static_0100
      * @tc.name     StartImageAnalyzerErrorCodeTest_static_0100
      * @tc.desc     StartImageAnalyzerErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('StartImageAnalyzerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('StartImageAnalyzerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[StartImageAnalyzerErrorCodeTest_static_0100] START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -91,6 +92,7 @@ it('StartImageAnalyzerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () 
       await Utils.sleep(2000)
 
       let strJson2 = inspector.getInspectorByKey('TextErrorCode1');
+      await Utils.sleep(4000)
       console.info("[StartImageAnalyzerErrorCodeTest_static_0100] StartImageAnalyzerErrorCode2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('110001');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('110002');

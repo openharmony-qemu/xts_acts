@@ -25,8 +25,7 @@ import {
   ClickEvent,
   Color,
   Text,
-  Canvas,
-  VoidCallback,
+  Canvas,VoidCallback
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -52,12 +51,12 @@ struct AttachDetachTest {
   }
 
   aboutToAppear(): void {
-    this.context.onAttach(() => {
+    this.context.onAttach( () => {
       console.info('onAttach 1')
       this.message1 = 'onAttach 1'
     })
 
-    this.context.onDetach(() => {
+    this.context.onDetach( () => {
       console.info('onDetach 1')
       this.message2 = 'onDetach 1'
     })
@@ -68,36 +67,42 @@ struct AttachDetachTest {
       Row() {
         Button('on onAttach').id('on_onAttach')
           .onClick((e:ClickEvent) => {
-            this.context.onAttach(this.attachCallback)
+            console.log('[AttachDetachTest_0100]on onAttach')
+            this.context.onAttach( this.attachCallback)
           })
 
         Button('off onAttach').id('off_onAttach')
           .onClick((e:ClickEvent) => {
-            this.context.offAttach(this.attachCallback)
+            console.log('[AttachDetachTest_0100]off onAttach')
+            this.context.offAttach( this.attachCallback)
           })
       }
 
       Row() {
         Button('on onDetach').id('on_onDetach')
           .onClick((e:ClickEvent) => {
-            this.context.onDetach(this.detachCallback)
+            console.log('[AttachDetachTest_0100]on onDetach')
+             this.context.onDetach( this.detachCallback)
           })
 
         Button('off onDetach').id('off_onDetach')
           .onClick((e:ClickEvent) => {
-            this.context.offDetach(this.detachCallback)
+            console.log('[AttachDetachTest_0100]off onDetach')
+            this.context.offDetach( this.detachCallback)   //好像是这里超时了，未生效
           })
       }
 
       Row() {
         Button('off onAttach all').id('off_onAttach_all')
           .onClick((e:ClickEvent) => {
+            console.log('[AttachDetachTest_0100]off onAttach all')
             this.context.offAttach()
           })
 
         Button('off onDetach all').id('off_onDetach_all')
           .onClick((e:ClickEvent) => {
-            this.context.offDetach()
+            console.log('[AttachDetachTest_0100]off onDetach all')
+             this.context.offDetach()
           })
       }
 
@@ -109,6 +114,7 @@ struct AttachDetachTest {
             this.message3 = ''
             this.message4 = ''
             this.flag = !this.flag
+            console.log('[AttachDetachTest_0100]change content <=> undefined ','msg1: '+this.message1, ' msg2: '+this.message2,' msg3: '+this.message3,' msg4: '+this.message4,'flag: '+this.flag)
           })
       }
 

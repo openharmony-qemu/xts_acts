@@ -29,8 +29,8 @@ struct CircleResource {
       Circle({ width: 50, height: 50 })
         .id('CircleResource1')
 
-      
-      Circle({ width: "50", height: "50" }).id('CircleResource2')
+      // Circle({ width: $r('app.string.Width_50'), height: $r('app.string.Height_50') }).id('CircleResource2')
+      Circle({ width: 50, height: 50 }).id('CircleResource2')
 
       Circle()
         .id('CircleResource3')

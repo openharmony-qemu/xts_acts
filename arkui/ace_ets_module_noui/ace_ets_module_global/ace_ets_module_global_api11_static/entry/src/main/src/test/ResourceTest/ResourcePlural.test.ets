@@ -55,11 +55,11 @@ export default function ResourcePlural() {
         console.info("get ResourcePlural state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ResourcePlural pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(5000);
+          // console.info("push ResourcePlural page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ResourcePlural page error:" + err);
@@ -69,13 +69,14 @@ export default function ResourcePlural() {
 
     
 
+
 /*
      * @tc.number   ResourcePlural_static_0100
      * @tc.name     ResourcePlural_static_0100
      * @tc.desc     ResourcePlural_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ResourcePlural_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourcePlural_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourcePlural_0100 START');
       let strJson = inspector.getInspectorByKey('plural');
       let obj = JSON.parseJsonElement(strJson);
@@ -89,19 +90,20 @@ it('ResourcePlural_static_0100', Level.LEVEL0, async (done: () => void): Promise
 
     
 
+
 /*
      * @tc.number   ResourcePlural_static_0200
      * @tc.name     ResourcePlural_static_0200
      * @tc.desc     ResourcePlural_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ResourcePlural_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourcePlural_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourcePlural_0200 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('ResourcePlural'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('plural');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourcePlural_0200] component obj is: " + JSON.stringify(obj));

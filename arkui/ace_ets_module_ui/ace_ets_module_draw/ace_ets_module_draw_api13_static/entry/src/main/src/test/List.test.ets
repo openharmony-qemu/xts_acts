@@ -17,8 +17,8 @@ import AttachDetachRebindTest from './CanvasRenderingContext2D/AttachDetachRebin
 import CanvasAttrsTest from './CanvasRenderingContext2D/CanvasAttrsTest.test';
 import CanvasAttrsTabTest from './CanvasRenderingContext2D/CanvasAttrsTabTest.test';
 export default function testsuite() {
-  AttachDetachTest(); 
-  AttachDetachRebindTest(); 
-  CanvasAttrsTest(); 
-  CanvasAttrsTabTest();
+  AttachDetachTest(); //pass 11.4
+  AttachDetachRebindTest(); //pass 11.4
+  CanvasAttrsTest(); // Page106 setOnVisibleAreaApproximateChange 没调用 11.4sdk
+  CanvasAttrsTabTest();//setOnVisibleAreaApproximateChange
 }

@@ -32,16 +32,16 @@ struct PathResource {
         .id('PathResource1')
 
       Path({
-        
-        
-        
+        // commands: $r('app.string.Path_commands'),
+        // width: $r('app.string.Width_100'),
+        // height: $r('app.string.Height_50')
         commands: "M0 300 S100 0 240 300 Z",
-        width: "100",
-        height: "50"
+        width: 100,
+        height: 50
       }).id('PathResource2')
 
       Path()
-        
+        // .commands($r('app.string.Path_commands'))   // "M0 300 S100 0 240 300 Z"
         .commands("M0 300 S100 0 240 300 Z")
         .width($r('app.string.Width_100'))
         .height($r('app.string.Height_50'))
