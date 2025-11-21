@@ -92,7 +92,6 @@ protected:
 
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearAbilityInfoIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0044
  * @tc.desc   [C- SOFTWARE -0200]
@@ -115,7 +114,6 @@ HWTEST_F(BundleMgrTest, testClearAbilityInfoIllegal, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearBundleInfoIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0045
  * @tc.desc   [C- SOFTWARE -0200]
@@ -138,7 +136,6 @@ HWTEST_F(BundleMgrTest, testClearBundleInfoIllegal, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearModuleInfoIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0046
  * @tc.desc   [C- SOFTWARE -0200]
@@ -161,7 +158,6 @@ HWTEST_F(BundleMgrTest, testClearModuleInfoIllegal, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementAbilityName
  * @tc.number SUB_APPEXECFWK_AMS_API_0009
  * @tc.desc   [C- SOFTWARE -0100]
@@ -186,7 +182,6 @@ HWTEST_F(BundleMgrTest, testSetElementAbilityName, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementAbilityNameIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0010
  * @tc.desc   [C- SOFTWARE -0100]
@@ -214,7 +209,6 @@ HWTEST_F(BundleMgrTest, testSetElementAbilityNameIllegal, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementBundleName
  * @tc.number SUB_APPEXECFWK_AMS_API_0007
  * @tc.desc   [C- SOFTWARE -0100]
@@ -238,7 +232,6 @@ HWTEST_F(BundleMgrTest, testSetElementBundleName, Function | MediumTest | Level0
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementBundleNameIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0008
  * @tc.desc   [C- SOFTWARE -0100]
@@ -266,7 +259,6 @@ HWTEST_F(BundleMgrTest, testSetElementBundleNameIllegal, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementDeviceID
  * @tc.number SUB_APPEXECFWK_AMS_API_0005
  * @tc.desc   [C- SOFTWARE -0100]
@@ -289,7 +281,6 @@ HWTEST_F(BundleMgrTest, testSetElementDeviceID, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementDeviceIDIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0006
  * @tc.desc   [C- SOFTWARE -0100]
@@ -315,7 +306,6 @@ HWTEST_F(BundleMgrTest, testSetElementDeviceIDIllegal, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInstallWithNullptr
  * @tc.number SUB_APPEXECFWK_BMS_API_0007
  * @tc.desc   [C- SOFTWARE -0200]
@@ -335,7 +325,6 @@ HWTEST_F(BundleMgrTest, testInstallWithNullptr, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInstallWithNullPath
  * @tc.number SUB_APPEXECFWK_BMS_API_0004
  * @tc.desc   [C- SOFTWARE -0200]
@@ -354,7 +343,6 @@ HWTEST_F(BundleMgrTest, testInstallWithNullPath, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInstallWithErrorPath
  * @tc.number SUB_APPEXECFWK_BMS_API_0002
  * @tc.desc   [C- SOFTWARE -0200]
@@ -383,7 +371,6 @@ HWTEST_F(BundleMgrTest, testInstallWithErrorPath, Function | MediumTest | Level2
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testBundleMgrInstallright
  * @tc.number SUB_APPEXECFWK_BMS_API_0001
  * @tc.desc   [C- SOFTWARE -0200]
@@ -411,7 +398,6 @@ HWTEST_F(BundleMgrTest, testBundleMgrInstallright, Function | MediumTest | Level
     printf("------end testBundleMgrInstallright------\n");
 }
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testBundleMgrInstallEmpty
  * @tc.number SUB_APPEXECFWK_BMS_API_0003
  * @tc.desc   [C- SOFTWARE -0200]
@@ -440,7 +426,6 @@ HWTEST_F(BundleMgrTest, testBundleMgrInstallEmpty, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testBundleMgrInstallBin
  * @tc.number SUB_APPEXECFWK_BMS_API_0009
  * @tc.desc   [C- SOFTWARE -0200]
@@ -469,7 +454,6 @@ HWTEST_F(BundleMgrTest, testBundleMgrInstallBin, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testBundleMgrInstallBadfile
  * @tc.number SUB_APPEXECFWK_BMS_API_0008
  * @tc.desc   [C- SOFTWARE -0200]
@@ -498,7 +482,6 @@ HWTEST_F(BundleMgrTest, testBundleMgrInstallBadfile, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallNullCallback
  * @tc.number SUB_APPEXECFWK_BMS_API_0014
  * @tc.desc   [C- SOFTWARE -0200]
@@ -518,7 +501,6 @@ HWTEST_F(BundleMgrTest, testUninstallNullCallback, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallnullBundleName
  * @tc.number SUB_APPEXECFWK_BMS_API_0013
  * @tc.desc   [C- SOFTWARE -0200]
@@ -537,7 +519,6 @@ HWTEST_F(BundleMgrTest, testUninstallnullBundleName, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallright
  * @tc.number SUB_APPEXECFWK_BMS_API_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -572,7 +553,6 @@ HWTEST_F(BundleMgrTest, testUninstallright, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallErrorName
  * @tc.number SUB_APPEXECFWK_BMS_API_0011
  * @tc.desc   [C- SOFTWARE -0200]
@@ -602,7 +582,6 @@ HWTEST_F(BundleMgrTest, testUninstallErrorName, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallEmptyName
  * @tc.number SUB_APPEXECFWK_BMS_API_0012
  * @tc.desc   [C- SOFTWARE -0200]
@@ -633,7 +612,6 @@ HWTEST_F(BundleMgrTest, testUninstallEmptyName, Function | MediumTest | Level2)
 
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryAbilityInfoRight
  * @tc.number SUB_APPEXECFWK_BMS_API_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -668,7 +646,6 @@ HWTEST_F(BundleMgrTest, testQueryAbilityInfoRight, Function | MediumTest | Level
     printf("------end testQueryAbilityInfoRight------\n");
 }
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryAbilityInfoIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0041
  * @tc.desc   [C- SOFTWARE -0200]
@@ -715,7 +692,6 @@ HWTEST_F(BundleMgrTest, testQueryAbilityInfoIllegal, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfoRight
  * @tc.number SUB_APPEXECFWK_BMS_API_0029
  * @tc.desc   [C- SOFTWARE -0200]
@@ -749,7 +725,6 @@ HWTEST_F(BundleMgrTest, testGetBundleInfoRight, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfoIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -794,7 +769,6 @@ HWTEST_F(BundleMgrTest, testGetBundleInfoIllegal, Function | MediumTest | Level2
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfosRight
  * @tc.number SUB_APPEXECFWK_BMS_API_0042
  * @tc.desc   [C- SOFTWARE -0200]
@@ -830,7 +804,6 @@ HWTEST_F(BundleMgrTest, testGetBundleInfosRight, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfosIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0043
  * @tc.desc   [C- SOFTWARE -0200]
@@ -856,7 +829,6 @@ HWTEST_F(BundleMgrTest, testGetBundleInfosIllegal, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfosByMetaDataIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0039
  * @tc.desc   [C- SOFTWARE -0200]
@@ -891,7 +863,6 @@ HWTEST_F(BundleMgrTest, testGetBundleInfosByMetaDataIllegal, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfosByMetaDataRight
  * @tc.number SUB_APPEXECFWK_BMS_API_0038
  * @tc.desc   [C- SOFTWARE -0200]
@@ -916,7 +887,6 @@ HWTEST_F(BundleMgrTest, testGetBundleInfosByMetaDataRight, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryKeepAliveBundleInfosIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0037
  * @tc.desc   [C- SOFTWARE -0200]
@@ -939,7 +909,6 @@ HWTEST_F(BundleMgrTest, testQueryKeepAliveBundleInfosIllegal, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleNameForUidWithNullptr
  * @tc.number SUB_APPEXECFWK_BMS_API_0034
  * @tc.desc   [C- SOFTWARE -0200]
@@ -957,7 +926,6 @@ HWTEST_F(BundleMgrTest, testGetBundleNameForUidWithNullptr, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleNameForUidWithIllegal
  * @tc.number SUB_APPEXECFWK_BMS_API_0035
  * @tc.desc   [C- SOFTWARE -0200]
@@ -979,7 +947,6 @@ HWTEST_F(BundleMgrTest, testGetBundleNameForUidWithIllegal, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleSizeWithLegal_0001
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0001
  * @tc.desc   [C- SOFTWARE -0200]
@@ -997,7 +964,6 @@ HWTEST_F(BundleMgrTest, testGetBundleSizeWithLegal_0001, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleSizeWithLegal_0002
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0002
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1026,7 +992,6 @@ HWTEST_F(BundleMgrTest, testGetBundleSizeWithLegal_0002, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleSizeWithIllegal_0001
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0003
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1046,7 +1011,6 @@ HWTEST_F(BundleMgrTest, testGetBundleSizeWithIllegal_0001, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleSizeWithIllegal_0002
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0004
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1065,7 +1029,6 @@ HWTEST_F(BundleMgrTest, testGetBundleSizeWithIllegal_0002, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleSizeWithIllegal_0003
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0005
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1084,7 +1047,6 @@ HWTEST_F(BundleMgrTest, testGetBundleSizeWithIllegal_0003, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleSizeWithIllegal_0004
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0006
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1103,7 +1065,6 @@ HWTEST_F(BundleMgrTest, testGetBundleSizeWithIllegal_0004, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testStressConfig_0001
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0007
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1123,7 +1084,6 @@ HWTEST_F(BundleMgrTest, testStressConfig_0001, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testStressConfig_0002
  * @tc.number SUB_APPEXECFWK_BMS_SIZE_0008
  * @tc.desc   [C- SOFTWARE -0200]

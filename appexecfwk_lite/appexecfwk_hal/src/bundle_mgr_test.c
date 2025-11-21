@@ -92,7 +92,6 @@ static BOOL BundleMgrTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearAbilityInfoLegal
  * @tc.number SUB_APPEXECFWK_0001
  * @tc.desc   testClearAbilityInfo parameter legal test with bundle name
@@ -119,7 +118,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testClearAbilityInfoLegal, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearAbilityInfoIllegal
  * @tc.number SUB_APPEXECFWK_0002
  * @tc.desc   testClearAbilityInfo parameter illegal test
@@ -146,7 +144,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testClearAbilityInfoIllegal, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearBundleInfoLegal
  * @tc.number SUB_APPEXECFWK_0003
  * @tc.desc   testClearBundleInfo parameter legal test with bundle name
@@ -173,7 +170,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testClearBundleInfoLegal, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearBundleInfoIllegal
  * @tc.number SUB_APPEXECFWK_0004
  * @tc.desc   testClearBundleInfo parameter illegal test
@@ -200,7 +196,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testClearBundleInfoIllegal, Function | Medium
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearModuleInfoLegal
  * @tc.number SUB_APPEXECFWK_0005
  * @tc.desc   ClearAbilityInfo parameter legal test with module info
@@ -227,7 +222,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testClearModuleInfoLegal, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testClearModuleInfoIllegal
  * @tc.number SUB_APPEXECFWK_0006
  * @tc.desc   ClearAbilityInfo parameter illegal test
@@ -254,7 +248,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testClearModuleInfoIllegal, Function | Medium
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementAbilityNameLegal
  * @tc.number SUB_APPEXECFWK_0007
  * @tc.desc   testSetElementAbilityName parameter legal test
@@ -277,7 +270,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testSetElementAbilityNameLegal, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementAbilityNameIllegal
  * @tc.number SUB_APPEXECFWK_0008
  * @tc.desc   testSetElementAbilityName parameter illegal test
@@ -305,7 +297,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testSetElementAbilityNameIllegal, Function | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementBundleNameLegal
  * @tc.number SUB_APPEXECFWK_0009
  * @tc.desc   testSetElementBundleName parameter legal test
@@ -328,7 +319,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testSetElementBundleNameLegal, Function | Med
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementBundleNameIllegal
  * @tc.number SUB_APPEXECFWK_0010
  * @tc.desc   testSetElementBundleName parameter illegal test
@@ -355,7 +345,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testSetElementBundleNameIllegal, Function | M
     printf("------end testSetElementBundleNameIllegal------\n");
 }
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementDeviceIDLegal
  * @tc.number SUB_APPEXECFWK_0011
  * @tc.desc   testSetElementDeviceID parameter legal test
@@ -378,7 +367,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testSetElementDeviceIDLegal, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSetElementDeviceIDIllegal
  * @tc.number SUB_APPEXECFWK_0012
  * @tc.desc   testSetElementDeviceID parameter illegal test
@@ -406,7 +394,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testSetElementDeviceIDIllegal, Function | Med
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfoIllegal
  * @tc.number SUB_APPEXECFWK_0013
  * @tc.desc   GetBundleInfo parameter illegal test
@@ -435,7 +422,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testGetBundleInfoIllegal, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfosIllegal
  * @tc.number SUB_APPEXECFWK_0014
  * @tc.desc   GetBundleInfos parameter illegal test
@@ -461,7 +447,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testGetBundleInfosIllegal, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetBundleInfoLegal
  * @tc.number SUB_APPEXECFWK_0015
  * @tc.desc   GetBundleInfo parameter legal test
@@ -486,7 +471,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testGetBundleInfoLegal, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryAbilityInfoLegal
  * @tc.number SUB_APPEXECFWK_0016
  * @tc.desc   QueryAbilityInfo parameter legal test
@@ -518,7 +502,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testQueryAbilityInfoLegal, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryAbilityInfoWithNullptr
  * @tc.number SUB_APPEXECFWK_0017
  * @tc.desc   QueryAbilityInfo parameter nullptr test
@@ -557,7 +540,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testQueryAbilityInfoWithNullptr, Function | M
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryAbilityInfoIllegal
  * @tc.number SUB_APPEXECFWK_0018
  * @tc.desc   QueryAbilityInfo parameter illegal test
@@ -587,7 +569,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testQueryAbilityInfoIllegal, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInstallWithNullptr
  * @tc.number SUB_APPEXECFWK_0019
  * @tc.desc   Install parameter nullptr test
@@ -611,7 +592,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testInstallWithNullptr, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInstallWithErrorPath
  * @tc.number SUB_APPEXECFWK_0020
  * @tc.desc   Install parameter illegal path test
@@ -639,7 +619,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testInstallWithErrorPath, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInstallWithEmptyPath
  * @tc.number SUB_APPEXECFWK_0021
  * @tc.desc   Install parameter illegal path test
@@ -667,7 +646,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testInstallWithEmptyPath, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testInstallLegal
  * @tc.number SUB_APPEXECFWK_0022
  * @tc.desc   Install parameter legal test
@@ -701,7 +679,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testInstallLegal, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallNullBundleName
  * @tc.number SUB_APPEXECFWK_0023
  * @tc.desc   Uninstall parameter illegal test that bundleName is null
@@ -725,7 +702,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testUninstallNullBundleName, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallErrBundleName
  * @tc.number SUB_APPEXECFWK_0024
  * @tc.desc   Uninstall parameter illegal test that bundleName is wrong
@@ -753,7 +729,6 @@ LITE_TEST_CASE(BundleMgrTestSuite, testUninstallErrBundleName, Function | Medium
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUninstallLegal
  * @tc.number SUB_APPEXECFWK_0025
  * @tc.desc   Uninstall parameter legal test
