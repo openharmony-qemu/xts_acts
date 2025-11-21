@@ -37,9 +37,12 @@ void AlarmTest::SignalHandler(int signum)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_ALARM_0100
- * @tc.name    alarm function test, cancel alarm. basic alarm function is tested in {signal}
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testAlarmCancel
+ * @tc.number SUB_KERNEL_TIME_API_ALARM_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AlarmTest, testAlarmCancel, Function | MediumTest | Level2)
 {
@@ -55,9 +58,12 @@ HWTEST_F(AlarmTest, testAlarmCancel, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_ALARM_0200
- * @tc.name    alarm function test, multi alarm call test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testAlarmMultiCall
+ * @tc.number SUB_KERNEL_TIME_API_ALARM_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AlarmTest, testAlarmMultiCall, Function | MediumTest | Level2)
 {
@@ -81,9 +87,12 @@ HWTEST_F(AlarmTest, testAlarmMultiCall, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_ALARM_0300
- * @tc.name    test thar alarm should not reserved to sub process via fork
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testAlarmFork
+ * @tc.number SUB_KERNEL_TIME_API_ALARM_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AlarmTest, testAlarmFork, Function | MediumTest | Level2)
 {
@@ -115,9 +124,12 @@ HWTEST_F(AlarmTest, testAlarmFork, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_UALARM_0100
- * @tc.name    ualarm function create oneshot mode timer
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testUalarmOneshot
+ * @tc.number SUB_KERNEL_TIME_API_UALARM_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testUalarmOneshot, Function | MediumTest | Level3)
 {
@@ -129,9 +141,12 @@ HWTEST_F(AlarmTest, testUalarmOneshot, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_UALARM_0200
- * @tc.name    ualarm function create repeate mode timer
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testUalarmRepeate
+ * @tc.number SUB_KERNEL_TIME_API_UALARM_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testUalarmRepeate, Function | MediumTest | Level3)
 {
@@ -154,9 +169,12 @@ HWTEST_F(AlarmTest, testUalarmRepeate, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_UALARM_0300
- * @tc.name    ualarm function stop alarm test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testUalarmStop
+ * @tc.number SUB_KERNEL_TIME_API_UALARM_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testUalarmStop, Function | MediumTest | Level3)
 {
@@ -187,9 +205,12 @@ HWTEST_F(AlarmTest, testUalarmStop, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_UALARM_0400
- * @tc.name    ualarm function errno for ENOMEM test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testUalarmEINVAL
+ * @tc.number SUB_KERNEL_TIME_API_UALARM_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testUalarmEINVAL, Function | MediumTest | Level3)
 {
@@ -209,9 +230,12 @@ HWTEST_F(AlarmTest, testUalarmEINVAL, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_TIMER_CREATE_0100
- * @tc.name    timer_create function create a timer for give signal test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testTimerCreateEventSignal
+ * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testTimerCreateEventSignal, Function | MediumTest | Level3)
 {
@@ -241,9 +265,12 @@ HWTEST_F(AlarmTest, testTimerCreateEventSignal, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_TIMER_CREATE_0200
- * @tc.name    timer_create function test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testTimerCreateEventDefault
+ * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testTimerCreateEventDefault, Function | MediumTest | Level3)
 {
@@ -282,9 +309,12 @@ HWTEST_F(AlarmTest, testTimerCreateEventDefault, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_TIMER_CREATE_0300
- * @tc.name    timer_create function create a timer for unique identify test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testTimerCreateUniqueId
+ * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AlarmTest, testTimerCreateUniqueId, Function | MediumTest | Level2)
 {
@@ -329,9 +359,12 @@ HWTEST_F(AlarmTest, testTimerCreateUniqueId, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_TIMER_CREATE_0400
- * @tc.name    timer_create function that timer shall not be inherited by a child process across a fork
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testTimerCreateFork
+ * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AlarmTest, testTimerCreateFork, Function | MediumTest | Level2)
 {
@@ -368,9 +401,12 @@ HWTEST_F(AlarmTest, testTimerCreateFork, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_TIMER_CREATE_0500
- * @tc.name    timer_create function errno for EINVAL test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testTimerCreateEINVAL
+ * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(AlarmTest, testTimerCreateEINVAL, Function | MediumTest | Level4)
 {
@@ -382,9 +418,12 @@ HWTEST_F(AlarmTest, testTimerCreateEINVAL, Function | MediumTest | Level4)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_TIMER_GETTIME_0100
- * @tc.name    timer_gettime function create a timer and get time test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testTimerGetTime
+ * @tc.number SUB_KERNEL_TIME_API_TIMER_GETTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testTimerGetTime, Function | MediumTest | Level3)
 {
@@ -443,9 +482,12 @@ HWTEST_F(AlarmTest, testTimerGetTime, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_TIMER_GETOVERRUN_0100
- * @tc.name    timer_getoverrun function create a timer for SIGALRM signal and get overrun time test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testTimerGetOverrun
+ * @tc.number SUB_KERNEL_TIME_API_TIMER_GETOVERRUN_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testTimerGetOverrun, Function | MediumTest | Level3)
 {
@@ -482,9 +524,12 @@ HWTEST_F(AlarmTest, testTimerGetOverrun, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_SETITIMER_0100
- * @tc.name    setitimer function create oneshot mode timer
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testSetItTimerOneshot
+ * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testSetItTimerOneshot, Function | MediumTest | Level3)
 {
@@ -517,9 +562,12 @@ HWTEST_F(AlarmTest, testSetItTimerOneshot, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_SETITIMER_0200
- * @tc.name    setitimer function create repeate mode timer
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testSetItTimerRepeate
+ * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testSetItTimerRepeate, Function | MediumTest | Level3)
 {
@@ -551,9 +599,12 @@ HWTEST_F(AlarmTest, testSetItTimerRepeate, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_SETITIMER_0300
- * @tc.name    setitimer function that cancel timer
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testCancelTimer
+ * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testCancelTimer, Function | MediumTest | Level3)
 {
@@ -577,9 +628,12 @@ HWTEST_F(AlarmTest, testCancelTimer, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_SETITIMER_0400
- * @tc.name    setitimer function test which ovalue is not null
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testSetItTimerOldvalue
+ * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testSetItTimerOldvalue, Function | MediumTest | Level3)
 {
@@ -605,9 +659,12 @@ HWTEST_F(AlarmTest, testSetItTimerOldvalue, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number  SUB_KERNEL_TIME_API_GETITIMER_0100
- * @tc.name    getitimer function create a timer and get time test
- * @tc.desc    [C- SOFTWARE -0200]
+ * @tc.name   testGetItTimer
+ * @tc.number SUB_KERNEL_TIME_API_GETITIMER_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AlarmTest, testGetItTimer, Function | MediumTest | Level3)
 {

@@ -60,10 +60,13 @@ void TestVideoRecorderCallback::OnInfo(int32_t type, int32_t extra)
 }
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0100
- * @tc.name      : Start recorder
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Start_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Start_test_001, Level1)
 {
@@ -89,10 +92,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Start_test_001, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0200
- * @tc.name      : Start recorder without recorder sink prepare
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Start_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Start_test_002, Level1)
 {
@@ -116,10 +122,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Start_test_002, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0300
- * @tc.name      : Pasue recorder
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Pause_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Pause_test_001, Level1)
 {
@@ -147,10 +156,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Pause_test_001, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0400
- * @tc.name      : Pause recorder - pause multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Pause_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Pause_test_002, Level1)
 {
@@ -180,10 +192,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Pause_test_002, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0500
- * @tc.name      : Resume recorder
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Resume_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Resume_test_001, Level1)
 {
@@ -214,10 +229,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Resume_test_001, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0600
- * @tc.name      : Resume recorder - resume multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Resume_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Resume_test_002, Level1)
 {
@@ -250,10 +268,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Resume_test_002, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0700
- * @tc.name      : Stop recorder
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Stop_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Stop_test_001, Level1)
 {
@@ -281,10 +302,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Stop_test_001, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0800
- * @tc.name      : Stop recorder - stop multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Stop_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Stop_test_002, Level1)
 {
@@ -314,10 +338,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Stop_test_002, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_0900
- * @tc.name      : Reset recorder
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Reset_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Reset_test_001, Level1)
 {
@@ -345,10 +372,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Reset_test_001, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1000
- * @tc.name      : Reset recorder - Reset multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Reset_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Reset_test_002, Level1)
 {
@@ -378,10 +408,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Reset_test_002, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1100
- * @tc.name      : Release recorder
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Release_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Release_test_001, Level1)
 {
@@ -408,10 +441,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Release_test_001, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1200
- * @tc.name      : Reset recorder - Reset multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Release_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Release_test_002, Level1)
 {
@@ -440,10 +476,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Release_test_002, Level1)
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1300
- * @tc.name      : SetFileSplitDuration POST recording
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetFileSplitDuration_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_001, Level1)
 {
@@ -474,10 +513,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_001, Leve
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1400
- * @tc.name      : SetFileSplitDuration PRE recording
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetFileSplitDuration_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_002, Level1)
 {
@@ -508,10 +550,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_002, Leve
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1500
- * @tc.name      : SetFileSplitDuration NORMAL recording
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetFileSplitDuration_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_003, Level1)
 {
@@ -542,10 +587,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_003, Leve
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1600
- * @tc.name      : SetFileSplitDuration NORMAL recording in PAUSE state
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetFileSplitDuration_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_004, Level1)
 {
@@ -578,10 +626,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetFileSplitDuration_test_004, Leve
     recInstance = nullptr;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1700
- * @tc.name      : Set Video Source ES
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSource_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_001, Level1)
 {
@@ -595,10 +646,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1800
- * @tc.name      : Set Video Source YUV
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSource_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_002, Level1)
 {
@@ -612,10 +666,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_1900
- * @tc.name      : Set Video Source RGB
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSource_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_003, Level1)
 {
@@ -629,10 +686,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2000
- * @tc.name      : Set Video Source invalid
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSource_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_004, Level1)
 {
@@ -646,10 +706,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_004, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2100
- * @tc.name      : Set Video Source Max count 4
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSource_test_005
+ * @tc.number SUB_MEDIA_REC_TEST_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_005, Level1)
 {
@@ -666,10 +729,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSource_test_005, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2200
- * @tc.name      : Set Video Encoder with video surface
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncoder_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_001, Level1)
 {
@@ -683,10 +749,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2300
- * @tc.name      : Set Video Encoder without video surface
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncoder_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_002, Level1)
 {
@@ -698,10 +767,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2400
- * @tc.name      : Set Video Encoder with VIDEO_DEFAULT
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncoder_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_003, Level1)
 {
@@ -715,10 +787,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2500
- * @tc.name      : Set Video Encoder with H264
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncoder_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_004, Level1)
 {
@@ -732,10 +807,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_004, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2600
- * @tc.name      : Set Video Encoder with invalid video source
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncoder_test_005
+ * @tc.number SUB_MEDIA_REC_TEST_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_005, Level1)
 {
@@ -749,10 +827,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncoder_test_005, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2700
- * @tc.name      : Set Video Size valid resolution
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSize_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_001, Level1)
 {
@@ -768,10 +849,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2800
- * @tc.name      : Set Video Size invalid resolution
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSize_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_002, Level1)
 {
@@ -787,10 +871,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_2900
- * @tc.name      : Set Video Size valid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSize_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_003, Level1)
 {
@@ -804,10 +891,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3000
- * @tc.name      : Set Video Size unsupported resolution
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSize_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_004, Level1)
 {
@@ -821,10 +911,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_004, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3100
- * @tc.name      : Set Video Size invalid resolution
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoSize_test_005
+ * @tc.number SUB_MEDIA_REC_TEST_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_005, Level1)
 {
@@ -838,10 +931,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoSize_test_005, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3200
- * @tc.name      : Set Video FrameRate with valid value
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoFrameRate_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoFrameRate_test_001, Level1)
 {
@@ -856,10 +952,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoFrameRate_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3300
- * @tc.name      : Set Video FrameRate with invalid value
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoFrameRate_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoFrameRate_test_002, Level1)
 {
@@ -874,10 +973,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoFrameRate_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3400
- * @tc.name      : Set Video FrameRate with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoFrameRate_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoFrameRate_test_003, Level1)
 {
@@ -890,10 +992,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoFrameRate_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3500
- * @tc.name      : Set Video Encoding BitRate with valid info
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncodingBitRate_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_3500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncodingBitRate_test_001, Level1)
 {
@@ -908,10 +1013,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncodingBitRate_test_001, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3600
- * @tc.name      : Set Video Encoding BitRate with invalid rate
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncodingBitRate_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_3600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncodingBitRate_test_002, Level1)
 {
@@ -926,10 +1034,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncodingBitRate_test_002, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3700
- * @tc.name      : Set Video Encoding BitRate with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetVideoEncodingBitRate_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_3700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncodingBitRate_test_003, Level1)
 {
@@ -942,10 +1053,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetVideoEncodingBitRate_test_003, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3800
- * @tc.name      : Set Capture Rate with valid info
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetCaptureRate_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_3800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetCaptureRate_test_001, Level1)
 {
@@ -960,10 +1074,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetCaptureRate_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_3900
- * @tc.name      : Set Capture Rate with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetCaptureRate_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_3900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetCaptureRate_test_002, Level1)
 {
@@ -976,10 +1093,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetCaptureRate_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4000
- * @tc.name      : Set Capture Rate with invalid fps
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetCaptureRate_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetCaptureRate_test_003, Level1)
 {
@@ -994,10 +1114,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetCaptureRate_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4100
- * @tc.name      : Set Audio Source with valid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSource_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_4100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSource_test_001, Level1)
 {
@@ -1009,10 +1132,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSource_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4200
- * @tc.name      : Set Audio Source with invalid source
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSource_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSource_test_002, Level1)
 {
@@ -1024,10 +1150,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSource_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4300
- * @tc.name      : Set Audio Source multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSource_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_4300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSource_test_003, Level1)
 {
@@ -1045,10 +1174,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSource_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4400
- * @tc.name      : Set Audio Encoder with AAC_LC
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncoder_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_4400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_001, Level1)
 {
@@ -1062,10 +1194,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4500
- * @tc.name      : Set Audio Encoder with AUDIO_DEFAULT
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncoder_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_4500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_002, Level1)
 {
@@ -1079,10 +1214,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4600
- * @tc.name      : Set Audio Encoder with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncoder_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_4600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_003, Level1)
 {
@@ -1094,10 +1232,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4700
- * @tc.name      : Set Audio Encoder with valid data AAC_HE_V1
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncoder_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_4700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_004, Level1)
 {
@@ -1111,10 +1252,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_004, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4800
- * @tc.name      : Set Audio Encoder with valid data AAC_HE_V2
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncoder_test_005
+ * @tc.number SUB_MEDIA_REC_TEST_4800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_005, Level1)
 {
@@ -1128,10 +1272,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_005, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_4900
- * @tc.name      : Set Audio Encoder with valid data AAC_LD
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncoder_test_006
+ * @tc.number SUB_MEDIA_REC_TEST_4900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_006, Level1)
 {
@@ -1145,10 +1292,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_006, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5000
- * @tc.name      : Set Audio Encoder with valid data AAC_ELD
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncoder_test_007
+ * @tc.number SUB_MEDIA_REC_TEST_5000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_007, Level1)
 {
@@ -1162,10 +1312,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncoder_test_007, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5100
- * @tc.name      : Set Audio Sample Rate with valid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSampleRate_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_5100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_001, Level1)
 {
@@ -1180,10 +1333,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_001, Level1
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5200
- * @tc.name      : Set Audio Sample Rate with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSampleRate_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_5200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_002, Level1)
 {
@@ -1196,10 +1352,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_002, Level1
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5300
- * @tc.name      : Set Audio Sample Rate with invalid sample rate
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSampleRate_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_5300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_003, Level1)
 {
@@ -1214,10 +1373,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_003, Level1
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5400
- * @tc.name      : Set Audio Sample Rate with 44.1Khz
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSampleRate_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_5400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_004, Level1)
 {
@@ -1232,10 +1394,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_004, Level1
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5500
- * @tc.name      : Set Audio Sample Rate with 8Khz
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSampleRate_test_005
+ * @tc.number SUB_MEDIA_REC_TEST_5500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_005, Level1)
 {
@@ -1250,10 +1415,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_005, Level1
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5600
- * @tc.name      : Set Audio Sample Rate with 16Khz
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSampleRate_test_006
+ * @tc.number SUB_MEDIA_REC_TEST_5600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_006, Level1)
 {
@@ -1268,10 +1436,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_006, Level1
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5700
- * @tc.name      : Set Audio Sample Rate with 32Khz
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioSampleRate_test_007
+ * @tc.number SUB_MEDIA_REC_TEST_5700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_007, Level1)
 {
@@ -1286,10 +1457,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioSampleRate_test_007, Level1
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5800
- * @tc.name      : Set Audio Channels with valid one channel count
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioChannels_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_5800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_001, Level1)
 {
@@ -1304,10 +1478,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_5900
- * @tc.name      : Set Audio Channels with valid two channel count
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioChannels_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_5900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_002, Level1)
 {
@@ -1322,10 +1499,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6000
- * @tc.name      : Set Audio Channels with invalid channel count
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioChannels_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_6000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_003, Level1)
 {
@@ -1340,10 +1520,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6100
- * @tc.name      : Set Audio Channels with valid one channel count and AUDIO_VOICE_CALL as source
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioChannels_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_6100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_004, Level1)
 {
@@ -1358,10 +1541,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_004, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6200
- * @tc.name      : Set Audio Channels with valid two channel count and AUDIO_VOICE_CALL as source
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioChannels_test_005
+ * @tc.number SUB_MEDIA_REC_TEST_6200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_005, Level1)
 {
@@ -1376,10 +1562,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_005, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6300
- * @tc.name      : Set Audio Channels with invalid channel count and AUDIO_VOICE_CALL as source
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioChannels_test_006
+ * @tc.number SUB_MEDIA_REC_TEST_6300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_006, Level1)
 {
@@ -1394,10 +1583,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_006, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6400
- * @tc.name      : Set Audio Channels with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioChannels_test_007
+ * @tc.number SUB_MEDIA_REC_TEST_6400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_007, Level1)
 {
@@ -1410,10 +1602,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioChannels_test_007, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6500
- * @tc.name      : Set Audio Encoding BitRate with valid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_6500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_001, Level1)
 {
@@ -1428,10 +1623,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_001, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6600
- * @tc.name      : Set Audio Encoding BitRate with 44000
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_6600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_002, Level1)
 {
@@ -1446,10 +1644,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_002, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6700
- * @tc.name      : Set Audio Encoding BitRate with 8000
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_6700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_003, Level1)
 {
@@ -1464,10 +1665,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_003, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6800
- * @tc.name      : Set Audio Encoding BitRate with 16000
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_6800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_004, Level1)
 {
@@ -1482,10 +1686,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_004, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_6900
- * @tc.name      : Set Audio Encoding BitRate with 32000
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_005
+ * @tc.number SUB_MEDIA_REC_TEST_6900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_005, Level1)
 {
@@ -1500,10 +1707,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_005, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7000
- * @tc.name      : Set Audio Encoding BitRate with invalid bitrate
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_006
+ * @tc.number SUB_MEDIA_REC_TEST_7000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_006, Level1)
 {
@@ -1518,10 +1728,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_006, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7100
- * @tc.name      : Set Audio Encoding BitRate with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_007
+ * @tc.number SUB_MEDIA_REC_TEST_7100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_007, Level1)
 {
@@ -1534,10 +1747,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_007, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7200
- * @tc.name      : Set Audio Encoding BitRate with valid data and source AUDIO_VOICE_CALL
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_008
+ * @tc.number SUB_MEDIA_REC_TEST_7200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_008, Level1)
 {
@@ -1552,10 +1768,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_008, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7300
- * @tc.name      : Set Audio Encoding BitRate with 44000 and source AUDIO_VOICE_CALL
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_009
+ * @tc.number SUB_MEDIA_REC_TEST_7300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_009, Level1)
 {
@@ -1570,10 +1789,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_009, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7400
- * @tc.name      : Set Audio Encoding BitRate with 8000 and source AUDIO_VOICE_CALL
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_010
+ * @tc.number SUB_MEDIA_REC_TEST_7400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_010, Level1)
 {
@@ -1588,10 +1810,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_010, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7500
- * @tc.name      : Set Audio Encoding BitRate with 16000 and source AUDIO_VOICE_CALL
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_011
+ * @tc.number SUB_MEDIA_REC_TEST_7500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_011, Level1)
 {
@@ -1606,10 +1831,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_011, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7600
- * @tc.name      : Set Audio Encoding BitRate with 32000 and source AUDIO_VOICE_CALL
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetAudioEncodingBitRate_test_012
+ * @tc.number SUB_MEDIA_REC_TEST_7600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_012, Level1)
 {
@@ -1624,10 +1852,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetAudioEncodingBitRate_test_012, L
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7700
- * @tc.name      : Prepare recorder with valid info
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_Prepare_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_7700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_Prepare_test_001, Level1)
 {
@@ -1644,10 +1875,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_Prepare_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7800
- * @tc.name      : GetSurface with valid info
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_GetSurface_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_7800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_GetSurface_test_001, Level1)
 {
@@ -1662,10 +1896,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_GetSurface_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_7900
- * @tc.name      : GetSurface with invalid source ID
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_GetSurface_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_7900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_GetSurface_test_002, Level1)
 {
@@ -1677,10 +1914,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_GetSurface_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8000
- * @tc.name      : Set Max Duration with valid value
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetMaxDuration_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_8000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_001, Level1)
 {
@@ -1691,10 +1931,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8100
- * @tc.name      : Set Max Duration with zero value
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetMaxDuration_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_8100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_002, Level1)
 {
@@ -1705,10 +1948,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8200
- * @tc.name      : Set Max Duration with invalid value
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetMaxDuration_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_8200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_003, Level1)
 {
@@ -1719,10 +1965,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_003, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8300
- * @tc.name      : Set Max Duration with invalid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetMaxDuration_test_004
+ * @tc.number SUB_MEDIA_REC_TEST_8300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_004, Level1)
 {
@@ -1733,10 +1982,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxDuration_test_004, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8400
- * @tc.name      : Set Max File Size with invalid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetMaxFileSize_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_8400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxFileSize_test_001, Level1)
 {
@@ -1747,10 +1999,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxFileSize_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8500
- * @tc.name      : Set Max File Size with valid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetMaxFileSize_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_8500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxFileSize_test_002, Level1)
 {
@@ -1761,10 +2016,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetMaxFileSize_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8600
- * @tc.name      : Set Output File with invalid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetOutputFile_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_8600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputFile_test_001, Level1)
 {
@@ -1775,10 +2033,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputFile_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8700
- * @tc.name      : Set Next Output File with invalid data
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetNextOutputFile_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_8700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetNextOutputFile_test_001, Level1)
 {
@@ -1789,10 +2050,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetNextOutputFile_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8800
- * @tc.name      : Set Output Path with empty path
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetOutputPath_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_8800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputPath_test_001, Level1)
 {
@@ -1804,10 +2068,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputPath_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_8900
- * @tc.name      : Set Output Path with FORMAT_DEFAULT
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetOutputFormat_test_001
+ * @tc.number SUB_MEDIA_REC_TEST_8900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputFormat_test_001, Level1)
 {
@@ -1818,10 +2085,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputFormat_test_001, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_9000
- * @tc.name      : Set Output Path with FORMAT_MPEG_4
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetOutputFormat_test_002
+ * @tc.number SUB_MEDIA_REC_TEST_9000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputFormat_test_002, Level1)
 {
@@ -1832,10 +2102,13 @@ HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputFormat_test_002, Level1)
     recorder = NULL;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_REC_TEST_9100
- * @tc.name      : Set Output Path with FORMAT_TS
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   medialite_recorder_SetOutputFormat_test_003
+ * @tc.number SUB_MEDIA_REC_TEST_9100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(RecoderLiteTest, medialite_recorder_SetOutputFormat_test_003, Level1)
 {

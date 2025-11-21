@@ -89,9 +89,12 @@ protected:
 };
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0590
- * @tc.name       Unload permissions to large and small PIDs
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0590
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0590
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0590, Function | MediumTest | Level3)
 {
@@ -106,9 +109,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0590, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0600
- * @tc.name       Unload permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0600
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0600
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0600, Function | MediumTest | Level2)
 {
@@ -120,9 +126,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0600, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0610
- * @tc.name       Unload permissions not loaded
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0610
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0610
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0610, Function | MediumTest | Level3)
 {
@@ -133,9 +142,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0610, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0620
- * @tc.name       Unload permissions not installed
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0620
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0620
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0620, Function | MediumTest | Level4)
 {
@@ -144,9 +156,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0620, Function | MediumTest | Level4)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0640
- * @tc.name       Duplicate unload application permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0640
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0640
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0640, Function | MediumTest | Level3)
 {
@@ -165,9 +180,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0640, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0660
- * @tc.name       Unload multiple application permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0660
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0660
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0660, Function | MediumTest | Level3)
 {
@@ -184,9 +202,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0660, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0750
- * @tc.name       Unload immediately after installing permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0750
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0750
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0750, Function | MediumTest | Level2)
 {
@@ -201,9 +222,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0750, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0760
- * @tc.name       Unload immediately after updating permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0760
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0760
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0760, Function | MediumTest | Level2)
 {
@@ -218,9 +242,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0760, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0770
- * @tc.name       Unload immediately after deleting permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0770
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0770
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0770, Function | MediumTest | Level3)
 {
@@ -233,9 +260,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0770, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0780
- * @tc.name       Unload after loading and deleting permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0780
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0780
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0780, Function | MediumTest | Level3)
 {
@@ -249,9 +279,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0780, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0790
- * @tc.name       Unload immediately after querying permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0790
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0790
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0790, Function | MediumTest | Level4)
 {
@@ -266,9 +299,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0790, Function | MediumTest | Level4)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0800
- * @tc.name       Unload permission after grant runtime permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0800
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0800
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0800, Function | MediumTest | Level2)
 {
@@ -283,9 +319,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0800, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0810
- * @tc.name       Unload immediately after granting permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0810
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0810
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0810, Function | MediumTest | Level2)
 {
@@ -300,9 +339,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0810, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0820
- * @tc.name       Unload immediately after revoking permissions
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0820
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0820
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0820, Function | MediumTest | Level2)
 {
@@ -318,9 +360,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0820, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0840
- * @tc.name       Another application permission change does not affect unload permission
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0840
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0840
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0840, Function | MediumTest | Level3)
 {
@@ -340,9 +385,12 @@ HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0840, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0900
- * @tc.name       Permission to unload exception data
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMPMS_0900
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0900
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSUnloadTest, testSecPMPMS_0900, Function | MediumTest | Level4)
 {

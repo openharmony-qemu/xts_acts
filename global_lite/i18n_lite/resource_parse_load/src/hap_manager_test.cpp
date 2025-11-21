@@ -61,11 +61,13 @@ void HapManagerTest::TearDown()
     HILOG_DEBUG("HapManagerTest teardown");
 }
 
-/*
- * this test shows how to load a hap, then find value list by id
- * @tc.name: HapManagerFuncTest001
- * @tc.desc: Test AddResourcePath & GetResourceList function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   HapManagerFuncTest001
+ * @tc.number HapManagerFuncTest001
+ * @tc.desc   Test AddResourcePath & GetResourceList function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapManagerTest, HapManagerFuncTest001, TestSize.Level1)
 {
@@ -86,11 +88,13 @@ HWTEST_F(HapManagerTest, HapManagerFuncTest001, TestSize.Level1)
     delete hapManager;
 }
 
-/*
- * this test shows how to reload a hap
- * @tc.name: HapManagerFuncTest002
- * @tc.desc: Test UpdateResConfig & AddResourcePath function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   HapManagerFuncTest002
+ * @tc.number HapManagerFuncTest002
+ * @tc.desc   Test UpdateResConfig & AddResourcePath function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapManagerTest, HapManagerFuncTest002, TestSize.Level1)
 {
