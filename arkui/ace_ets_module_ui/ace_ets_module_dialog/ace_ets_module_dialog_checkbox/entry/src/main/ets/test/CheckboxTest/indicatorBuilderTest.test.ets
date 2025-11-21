@@ -49,7 +49,7 @@ export default function indicatorBuilderTest() {
      * @tc.number    indicatorBuilderTest_001
      * @tc.name      testBack
      * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
+     * @tc.level     Level 1
      * @tc.type
      * @tc.size
      */
