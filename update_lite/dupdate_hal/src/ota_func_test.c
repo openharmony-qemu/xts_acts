@@ -48,7 +48,6 @@ static BOOL OtaFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subUpgradeAPI0100
  * @tc.number SUB_Upgrade_API_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -65,7 +64,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0100, Function | MediumTest | Leve
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subUpgradeAPI0200
  * @tc.number SUB_Upgrade_API_0200
  * @tc.desc   [C- SOFTWARE -0100]
@@ -85,7 +83,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0200, Function | MediumTest | Leve
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subUpgradeAPI0300
  * @tc.number SUB_Upgrade_API_0300
  * @tc.desc   [C- SOFTWARE -0100]
@@ -103,7 +100,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0300, Function | MediumTest | Leve
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subUpgradeAPI0800
  * @tc.number SUB_Upgrade_API_0800
  * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
@@ -120,7 +116,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0800, Function | MediumTest | Leve
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subUpgradeAPI1000
  * @tc.number SUB_Upgrade_API_1000
  * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
@@ -144,7 +139,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1000, Function | MediumTest | Leve
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subUpgradeAPI1100
  * @tc.number SUB_Upgrade_API_1100
  * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
@@ -171,7 +165,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1100, Function | MediumTest | Leve
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subUpgradeAPI1200
  * @tc.number SUB_Upgrade_API_1200
  * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
