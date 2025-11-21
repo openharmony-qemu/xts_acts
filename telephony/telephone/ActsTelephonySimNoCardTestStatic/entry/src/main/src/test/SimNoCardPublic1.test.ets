@@ -72,13 +72,13 @@ export default function SimNoCardPublic1() {
               }
             });
           } catch(err) {
-            console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+            console.info(`${caseName} failed, promise: err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
             done();
           }
         }else {
-          console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed, promise: err->` + err);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
@@ -122,13 +122,13 @@ export default function SimNoCardPublic1() {
                 }
               });
             } catch (err) {
-              console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+              console.info(`${caseName} failed, promise: err->` + err);
               ExpectFail();
               console.info(`${caseName} test end`);
               done();
             }
           } else {
-            console.info(`${caseName} failed, have card: err->${JSON.stringify(err)}`);
+            console.info(`${caseName} failed, have card: err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
             done();
@@ -168,7 +168,7 @@ export default function SimNoCardPublic1() {
               console.info(`${caseName} test end`);
               done();
             } else {
-              console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+              console.info(`${caseName} failed, err->` + err);
               ExpectFail();
               console.info(`${caseName} test end`);
               done();
@@ -180,7 +180,7 @@ export default function SimNoCardPublic1() {
             done();
           });
         } else {
-          console.info(`${caseName} failed, have card: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed, have card: err->` + err);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
@@ -215,7 +215,7 @@ export default function SimNoCardPublic1() {
                 console.info(`${caseName} test end`);
                 done();
               } else {
-                console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+                console.info(`${caseName} failed, err->` + err);
                 ExpectFail();
                 console.info(`${caseName} test end`);
                 done();
@@ -227,7 +227,7 @@ export default function SimNoCardPublic1() {
               done();
             });
           } else {
-            console.info(`${caseName} failed, have card: err->${JSON.stringify(err)}`);
+            console.info(`${caseName} failed, have card: err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
             done();
@@ -268,19 +268,19 @@ export default function SimNoCardPublic1() {
               console.info(`${caseName} test end`);
               done();
             } else {
-              console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+              console.info(`${caseName} failed, err->` + err);
               ExpectFail();
               console.info(`${caseName} test end`);
               done();
             }
           } catch (err) {
-            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+            console.info(`${caseName} failed, err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
             done();
           }
         } else {
-          console.info(`${caseName} failed, have card1: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed, have card1: err->` + err);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
@@ -316,19 +316,19 @@ export default function SimNoCardPublic1() {
                 console.info(`${caseName} test end`);
                 done();
               } else {
-                console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+                console.info(`${caseName} failed, err->` + err);
                 ExpectFail();
                 console.info(`${caseName} test end`);
                 done();
               }
             } catch (err) {
-              console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+              console.info(`${caseName} failed, err->` + err);
               ExpectFail();
               console.info(`${caseName} test end`);
               done();
             }
           } else {
-            console.info(`${caseName} failed, have card1: err->${JSON.stringify(err)}`);
+            console.info(`${caseName} failed, have card1: err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
             done();
