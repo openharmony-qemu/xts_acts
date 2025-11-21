@@ -113,7 +113,6 @@ static void TestAieClientSyncProcess(bool isAsync, bool isSyncProcessInputInfoNu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientSyncProcessShareMemoryFunction0101
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcessShareMemory_0100
  * @tc.desc   [C- SOFTWARE -0200]

@@ -76,7 +76,6 @@ static void TestAieClientInit(const char *configDesc, bool isAsync, bool isDeadC
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientInitFunction0101
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientInit_configInfo_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -94,7 +93,6 @@ HWTEST_F(AieClientInitFunctionTest, testAieClientInitFunction0101, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientInitFunction0102
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientInit_configInfo_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -112,7 +110,6 @@ HWTEST_F(AieClientInitFunctionTest, testAieClientInitFunction0102, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientInitFunction0103
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientInit_configInfo_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -129,7 +126,6 @@ HWTEST_F(AieClientInitFunctionTest, testAieClientInitFunction0103, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientInitFunction0201
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientInit_algorithmInfo_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -144,7 +140,6 @@ HWTEST_F(AieClientInitFunctionTest, testAieClientInitFunction0201, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientInitFunction0202
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientInit_algorithmInfo_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -159,7 +154,6 @@ HWTEST_F(AieClientInitFunctionTest, testAieClientInitFunction0202, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientInitFunction0301
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientInit_cb_0100
  * @tc.desc   [C- SOFTWARE -0200]

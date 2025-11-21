@@ -70,7 +70,6 @@ static void TestPluginManagerUnloadPlugin(std::string aid)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPluginManagerFunction0101
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -85,7 +84,6 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0101, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPluginManagerFunction0102
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -100,7 +98,6 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0102, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPluginManagerFunction0103
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -115,7 +112,6 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0103, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPluginManagerFunction0201
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -130,7 +126,6 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0201, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPluginManagerFunction0202
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -145,7 +140,6 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0202, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPluginManagerFunction0203
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2300
  * @tc.desc   [C- SOFTWARE -0200]

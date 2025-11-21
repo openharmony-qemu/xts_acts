@@ -195,7 +195,6 @@ static void TestAieClientSetOptionWithoutPrepare(bool isAsync, bool isPerformSet
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientSetOptionFunction0101
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -211,7 +210,6 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0101, Fun
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientSetOptionFunction0102
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -227,7 +225,6 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0102, Fun
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientSetOptionFunction0103
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -243,7 +240,6 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0103, Fun
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientSetOptionFunction0201
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_02_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -259,7 +255,6 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0201, Fun
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientSetOptionFunction0202
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_02_0200
  * @tc.desc   [C- SOFTWARE -0200]

@@ -109,7 +109,6 @@ static void TestAieClientAsyncProcess(bool isAsync, bool isAsyncProcessInputInfo
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientAsyncProcessFunction0101
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientAsyncProcess_01_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -124,7 +123,6 @@ HWTEST_F(AieClientAsyncProcessFunctionTest, testAieClientAsyncProcessFunction010
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientAsyncProcessFunction0102
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientAsyncProcess_01_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -139,7 +137,6 @@ HWTEST_F(AieClientAsyncProcessFunctionTest, testAieClientAsyncProcessFunction010
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientAsyncProcessFunction0201
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientAsyncProcess_02_0100
  * @tc.desc   [C- SOFTWARE -0200]

@@ -107,7 +107,6 @@ static void TestAieClientDestroy(bool isAsync)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientDestroyFunction001
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -147,7 +146,6 @@ HWTEST_F(AieClientDestroyFunctionTest, testAieClientDestroyFunction001, Function
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientDestroyFunction002
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -162,7 +160,6 @@ HWTEST_F(AieClientDestroyFunctionTest, testAieClientDestroyFunction002, Function
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientDestroyFunction003
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0300
  * @tc.desc   [C- SOFTWARE -0200]

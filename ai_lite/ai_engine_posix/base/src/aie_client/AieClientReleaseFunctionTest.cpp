@@ -111,7 +111,6 @@ static void TestAieClientRelease(bool isAsync, bool isPerformProcess)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientReleaseFunction001
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -126,7 +125,6 @@ HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction001, Function
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientReleaseFunction002
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -141,7 +139,6 @@ HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction002, Function
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientReleaseFunction003
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -156,7 +153,6 @@ HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction003, Function
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientReleaseFunction004
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0400
  * @tc.desc   [C- SOFTWARE -0200]

@@ -118,7 +118,6 @@ static void TestAieClientPrepare(bool isAsync, bool isPrepareInputInfoNull, bool
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0101
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -133,7 +132,6 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0101, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0102
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -148,7 +146,6 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0102, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0103
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -163,7 +160,6 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0103, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0104
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -178,7 +174,6 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0104, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0201
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -193,7 +188,6 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0201, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0202
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -208,7 +202,6 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0202, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0203
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -223,7 +216,6 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0203, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAieClientPrepareFunction0204
  * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0400
  * @tc.desc   [C- SOFTWARE -0200]
