@@ -451,7 +451,7 @@ export default function Sim4Public() {
         console.info(`${caseName} test end`);
         done();
       } catch (err) {
-        if (err === “Error: Invalid parameter value.”){
+        if (err === 'Error: Invalid parameter value.'){
           console.info(`${caseName} successfully: err ->` + err);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
@@ -585,7 +585,7 @@ export default function Sim4Public() {
         console.info(`${caseName} test end`);
         done();
       } catch (err) {
-        if (err === “Error: Invalid parameter value.”){
+        if (err === 'Error: Invalid parameter value.'){
           console.info(`${caseName} successfully: err ->` + err);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
