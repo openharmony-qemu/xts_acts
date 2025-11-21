@@ -977,6 +977,9 @@ int32_t VDecAPI11Sample::CheckAttrFlag(OH_AVCodecBufferAttr attr)
 void VDecAPI11Sample::GetStride()
 {
     OH_AVFormat *format = OH_VideoDecoder_GetOutputDescription(vdec_);
+    if (format == nullptr) {
+        return;
+    }
     int32_t currentWidth = 0;
     int32_t currentHeight = 0;
     int32_t stride = 0;

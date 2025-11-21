@@ -87,6 +87,7 @@ public:
     OH_AVCodec *vdec_;
     OH_AVCodec *venc_;
     uint32_t errorCount = 0;
+    std::mutex mtx;
 private:
     OHNativeWindow *window = nullptr;
     OH_AVCodecAsyncCallback encCb_;

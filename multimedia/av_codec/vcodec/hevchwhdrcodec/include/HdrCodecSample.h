@@ -27,6 +27,7 @@
 #include <string>
 #include <unordered_map>
 #include <condition_variable>
+#include <mutex>
 
 #include "native_avcodec_base.h"
 #include "native_avdemuxer.h"
@@ -76,6 +77,7 @@ public:
     int32_t SendData(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data);
     void PtrStep(uint32_t &bufferSize, unsigned char **pBuffer, uint32_t size);
     void PtrStepExtraRead(uint32_t &bufferSize, unsigned char **pBuffer);
+    void SendDataEnd(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr, uint32_t bufferSize);
     int32_t SendDataHdr(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data);
     int32_t SendDataH263(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data);
     int32_t SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data);
@@ -121,6 +123,7 @@ public:
     bool finishLastPush = false;
     bool bframe = false;
     bool DEMUXER_FLAG = false;
+    std::mutex fileMutex;
 
 private:
     OHNativeWindow *window = nullptr;
