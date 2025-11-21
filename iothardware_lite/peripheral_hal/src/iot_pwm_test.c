@@ -43,7 +43,6 @@ static BOOL IotPwmTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotPwm001
  * @tc.number SUB_UTILS_WIFIIOT_API_4000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -58,7 +57,6 @@ LITE_TEST_CASE(IotPwmTestSuite, testIotPwm001, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotPwm002
  * @tc.number SUB_UTILS_WIFIIOT_API_4100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -76,7 +74,6 @@ LITE_TEST_CASE(IotPwmTestSuite, testIotPwm002, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotPwm003
  * @tc.number SUB_UTILS_WIFIIOT_API_4200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -91,7 +88,6 @@ LITE_TEST_CASE(IotPwmTestSuite, testIotPwm003, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotPwm004
  * @tc.number SUB_UTILS_WIFIIOT_API_4300
  * @tc.desc   [C- SOFTWARE -0200]

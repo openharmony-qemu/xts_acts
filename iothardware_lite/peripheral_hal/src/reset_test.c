@@ -41,7 +41,6 @@ static BOOL IotResetTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotReset001
  * @tc.number SUB_UTILS_WIFIIOT_API_8000
  * @tc.desc   [C- SOFTWARE -0200]

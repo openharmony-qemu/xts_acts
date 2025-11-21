@@ -42,7 +42,6 @@ static BOOL IotGpioTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio001
  * @tc.number SUB_UTILS_WIFIIOT_API_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -56,7 +55,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio001, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio002
  * @tc.number SUB_UTILS_WIFIIOT_API_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -71,7 +69,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio002, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio003
  * @tc.number SUB_UTILS_WIFIIOT_API_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -86,7 +83,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio003, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio004
  * @tc.number SUB_UTILS_WIFIIOT_API_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -100,7 +96,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio004, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio005
  * @tc.number SUB_UTILS_WIFIIOT_API_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -115,7 +110,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio005, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio006
  * @tc.number SUB_UTILS_WIFIIOT_API_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -141,7 +135,6 @@ void IOT_GPIO_CALLBACK_Func(char *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio007
  * @tc.number SUB_UTILS_WIFIIOT_API_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -159,7 +152,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio007, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio008
  * @tc.number SUB_UTILS_WIFIIOT_API_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -173,7 +165,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio008, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio09
  * @tc.number SUB_UTILS_WIFIIOT_API_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -187,7 +178,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio09, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio010
  * @tc.number SUB_UTILS_WIFIIOT_API_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -201,7 +191,6 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio010, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIoTGpio011
  * @tc.number SUB_UTILS_WIFIIOT_API_2800
  * @tc.desc   [C- SOFTWARE -0200]

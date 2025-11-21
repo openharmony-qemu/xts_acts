@@ -43,7 +43,6 @@ static BOOL IotUartTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotUart001
  * @tc.number SUB_UTILS_WIFIIOT_API_5000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -66,7 +65,6 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart001, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotUart002
  * @tc.number SUB_UTILS_WIFIIOT_API_5100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -81,7 +79,6 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart002, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotUart003
  * @tc.number SUB_UTILS_WIFIIOT_API_5200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -96,7 +93,6 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart003, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotUart004
  * @tc.number SUB_UTILS_WIFIIOT_API_5300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -110,7 +106,6 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart004, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotUart005
  * @tc.number SUB_UTILS_WIFIIOT_API_5400
  * @tc.desc   [C- SOFTWARE -0200]

@@ -42,7 +42,6 @@ static BOOL IotLowPowerTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotLowPower001
  * @tc.number SUB_UTILS_WIFIIOT_API_7000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -56,7 +55,6 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower001, Function | MediumTest |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotLowPower002
  * @tc.number SUB_UTILS_WIFIIOT_API_7100
  * @tc.desc   [C- SOFTWARE -0200]

@@ -41,7 +41,6 @@ static BOOL IotWatchDogTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotWatchDog001
  * @tc.number SUB_UTILS_WIFIIOT_API_6000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -55,7 +54,6 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog001, Function | MediumTest |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotWatchDog002
  * @tc.number SUB_UTILS_WIFIIOT_API_6100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -69,7 +67,6 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog002, Function | MediumTest |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotWatchDog003
  * @tc.number SUB_UTILS_WIFIIOT_API_6200
  * @tc.desc   [C- SOFTWARE -0200]

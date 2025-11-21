@@ -53,7 +53,6 @@ void IOT_ResetFunc(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotI2C001
  * @tc.number SUB_UTILS_WIFIIOT_API_3100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -68,7 +67,6 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C001, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotI2C002
  * @tc.number SUB_UTILS_WIFIIOT_API_3200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -90,7 +88,6 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C002, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotI2C003
  * @tc.number SUB_UTILS_WIFIIOT_API_3300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -110,7 +107,6 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C003, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotI2C004
  * @tc.number SUB_UTILS_WIFIIOT_API_3400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -125,7 +121,6 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C004, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotI2C005
  * @tc.number SUB_UTILS_WIFIIOT_API_3500
  * @tc.desc   [C- SOFTWARE -0200]

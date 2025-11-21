@@ -52,7 +52,6 @@ static BOOL IotFlashTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotFlash001
  * @tc.number SUB_UTILS_WIFIIOT_API_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -66,7 +65,6 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash001, Function | MediumTest | Level
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotFlash002
  * @tc.number SUB_UTILS_WIFIIOT_API_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -81,7 +79,6 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash002, Function | MediumTest | Level
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotFlash003
  * @tc.number SUB_UTILS_WIFIIOT_API_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -95,7 +92,6 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash003, Function | MediumTest | Level
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotFlash004
  * @tc.number SUB_UTILS_WIFIIOT_API_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -109,7 +105,6 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash004, Function | MediumTest | Level
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIotFlash005
  * @tc.number SUB_UTILS_WIFIIOT_API_0500
  * @tc.desc   [C- SOFTWARE -0200]
