@@ -89,7 +89,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_1390
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1390
  * @tc.desc   [C- SOFTWARE -0200]
@@ -114,7 +113,6 @@ HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1390, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_1400
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1400
  * @tc.desc   [C- SECURITY -1100]
@@ -134,7 +132,6 @@ HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1400, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_1410
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1410
  * @tc.desc   [C- SECURITY -1100]
@@ -154,7 +151,6 @@ HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1410, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_1420
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1420
  * @tc.desc   [C- SECURITY -1100]

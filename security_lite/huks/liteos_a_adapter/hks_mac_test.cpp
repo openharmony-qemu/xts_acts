@@ -180,7 +180,6 @@ static int32_t BaseTestMac(uint32_t index)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   HksMacTest001
  * @tc.number HksMacTest001
  * @tc.desc   The static function will return true;
@@ -196,7 +195,6 @@ HWTEST_F(HksMacTest, HksMacTest001, TestSize.Level1)
 
 #ifndef _CUT_AUTHENTICATE_
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   HksMacTest002
  * @tc.number HksMacTest002
  * @tc.desc   The static function will return true;

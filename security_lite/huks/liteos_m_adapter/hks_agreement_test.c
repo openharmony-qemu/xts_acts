@@ -219,7 +219,6 @@ static void ExecHksAgreementTest002(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAgreementTest001
  * @tc.number HksAgreementTest001
  * @tc.desc   The static function will return true;
@@ -246,7 +245,6 @@ LITE_TEST_CASE(HksAgreementTest, HksAgreementTest001, Level1)
 
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAgreementTest002
  * @tc.number HksAgreementTest002
  * @tc.desc   The static function will return true;

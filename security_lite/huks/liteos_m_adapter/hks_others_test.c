@@ -153,7 +153,6 @@ static void ExcHksOthersTest008(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest001
  * @tc.number HksOthersTest001
  * @tc.desc   The static function will return true;
@@ -179,7 +178,6 @@ LITE_TEST_CASE(HksOthersTest, HksOthersTest001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest002
  * @tc.number HksOthersTest002
  * @tc.desc   The static function will return true;
@@ -205,7 +203,6 @@ LITE_TEST_CASE(HksOthersTest, HksOthersTest002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest003
  * @tc.number HksOthersTest003
  * @tc.desc   The static function will return true;
@@ -231,7 +228,6 @@ LITE_TEST_CASE(HksOthersTest, HksOthersTest003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest004
  * @tc.number HksOthersTest004
  * @tc.desc   The static function will return true;
@@ -257,7 +253,6 @@ LITE_TEST_CASE(HksOthersTest, HksOthersTest004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest005
  * @tc.number HksOthersTest005
  * @tc.desc   The static function will return true;
@@ -283,7 +278,6 @@ LITE_TEST_CASE(HksOthersTest, HksOthersTest005, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest006
  * @tc.number HksOthersTest006
  * @tc.desc   The static function will return true;
@@ -309,7 +303,6 @@ LITE_TEST_CASE(HksOthersTest, HksOthersTest006, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest007
  * @tc.number HksOthersTest007
  * @tc.desc   The static function will return true;
@@ -335,7 +328,6 @@ LITE_TEST_CASE(HksOthersTest, HksOthersTest007, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksOthersTest008
  * @tc.number HksOthersTest008
  * @tc.desc   The static function will return true;

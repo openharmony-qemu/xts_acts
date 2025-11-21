@@ -230,7 +230,6 @@ void CreateAppDir(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0010
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0010
  * @tc.desc   [C- SECURITY -0700]
@@ -248,7 +247,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0010, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0020
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0020
  * @tc.desc   [C- SECURITY -0300]
@@ -265,7 +263,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0020, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0030
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0030
  * @tc.desc   [C- SECURITY -0700]
@@ -287,7 +284,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0030, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0040
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0040
  * @tc.desc   [C- SECURITY -0700]
@@ -305,7 +301,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0040, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0050
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0050
  * @tc.desc   [C- SECURITY -0700]
@@ -327,7 +322,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0050, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0060
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0060
  * @tc.desc   [C- SECURITY -0700]
@@ -355,7 +349,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0060, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0070
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0070
  * @tc.desc   [C- SECURITY -0700]
@@ -377,7 +370,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0070, Function | MediumTest | Level4)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0080
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0080
  * @tc.desc   [C- SECURITY -0700]
@@ -406,7 +398,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0080, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0090
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0090
  * @tc.desc   [C- SECURITY -0700]
@@ -428,7 +419,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0090, Function | MediumTest | Level4)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0100
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0100
  * @tc.desc   [C- SECURITY -0700]
@@ -450,7 +440,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0100, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0110
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0110
  * @tc.desc   [C- SECURITY -0700]
@@ -470,7 +459,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0110, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0120
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0120
  * @tc.desc   [C- SECURITY -0700]
@@ -490,7 +478,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0120, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0130
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0130
  * @tc.desc   [C- SECURITY -0700]
@@ -518,7 +505,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0130, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0140
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0140
  * @tc.desc   [C- SECURITY -0700]
@@ -550,7 +536,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0140, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0150
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0150
  * @tc.desc   [C- SECURITY -0700]
@@ -575,7 +560,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0150, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0160
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0160
  * @tc.desc   [C- SECURITY -0700]
@@ -605,7 +589,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0160, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0170
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0170
  * @tc.desc   [C- SECURITY -0700]
@@ -638,7 +621,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0170, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0180
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0180
  * @tc.desc   [C- SECURITY -0700]
@@ -663,7 +645,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0180, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0190
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0190
  * @tc.desc   [C- SECURITY -0700]
@@ -689,7 +670,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0190, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0220
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0220
  * @tc.desc   [C- SECURITY -0700]
@@ -711,7 +691,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0220, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0240
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0240
  * @tc.desc   [C- SECURITY -0600]
@@ -735,7 +714,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0240, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0320
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0320
  * @tc.desc   [C- SECURITY -0700]
@@ -760,7 +738,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0320, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0330
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0330
  * @tc.desc   [C- SECURITY -0700]
@@ -783,7 +760,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0330, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0340
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0340
  * @tc.desc   [C- SECURITY -0700]
@@ -810,7 +786,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0340, Function | MediumTest | Level4)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0350
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0350
  * @tc.desc   [C- SECURITY -0700]
@@ -833,7 +808,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0350, Function | MediumTest | Level4)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0360
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0360
  * @tc.desc   [C- SECURITY -0700]
@@ -859,7 +833,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0360, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0370
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0370
  * @tc.desc   [C- SECURITY -0700]
@@ -886,7 +859,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0370, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0380
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0380
  * @tc.desc   [C- SECURITY -0700]
@@ -910,7 +882,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0380, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0390
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0390
  * @tc.desc   [C- SECURITY -0700]
@@ -925,7 +896,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0390, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0410
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0410
  * @tc.desc   [C- SECURITY -0700]
@@ -953,7 +923,6 @@ HWTEST_F(ActsPMSSaveTest, testSecPMPMS_0410, Function | MediumTest | Level4)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_0490
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0490
  * @tc.desc   [C- SECURITY -0700]

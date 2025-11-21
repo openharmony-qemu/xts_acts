@@ -156,7 +156,6 @@ static void ExecHksGenerateKeyTest001(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksGenerateKeyTest001
  * @tc.number HksGenerateKeyTest001
  * @tc.desc   The static function will return true;

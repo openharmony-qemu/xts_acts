@@ -183,7 +183,6 @@ static void ExecHksCipherTest012(void const *argument)
 
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest001
  * @tc.number HksCipherTest001
  * @tc.desc   The static function will return true;
@@ -211,7 +210,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest001, Level1)
 #ifndef _CUT_AUTHENTICATE_
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest002
  * @tc.number HksCipherTest002
  * @tc.desc   HksCipherTest002
@@ -238,7 +236,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest003
  * @tc.number HksCipherTest003
  * @tc.desc   HksCipherTest003
@@ -264,7 +261,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest004
  * @tc.number HksCipherTest004
  * @tc.desc   HksCipherTest004
@@ -290,7 +286,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest005
  * @tc.number HksCipherTest005
  * @tc.desc   HksCipherTest005
@@ -316,7 +311,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest005, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest006
  * @tc.number HksCipherTest006
  * @tc.desc   HksCipherTest006
@@ -342,7 +336,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest006, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest007
  * @tc.number HksCipherTest007
  * @tc.desc   HksCipherTest007
@@ -368,7 +361,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest007, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest008
  * @tc.number HksCipherTest008
  * @tc.desc   HksCipherTest008
@@ -394,7 +386,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest008, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest009
  * @tc.number HksCipherTest009
  * @tc.desc   HksCipherTest009
@@ -420,7 +411,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest009, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest010
  * @tc.number HksCipherTest010
  * @tc.desc   HksCipherTest010
@@ -446,7 +436,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest010, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest011
  * @tc.number HksCipherTest011
  * @tc.desc   HksCipherTest011
@@ -472,7 +461,6 @@ LITE_TEST_CASE(HksCipherTest, HksCipherTest011, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCipherTest012
  * @tc.number HksCipherTest012
  * @tc.desc   HksCipherTest012

@@ -61,7 +61,6 @@ const struct HksTestKeyExistParams g_testKeyExistParams[] = {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   HksDeleteTest001
  * @tc.number HksDeleteTest001
  * @tc.desc   The static function will return true;

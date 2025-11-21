@@ -94,7 +94,6 @@ static int32_t AgreeKey(const struct HksTestAgreeParamSet *agreeParamSetParams, 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAgreementTest001
  * @tc.number HksAgreementTest001
  * @tc.desc   The static function will return true;
@@ -147,7 +146,6 @@ HWTEST_F(HksAgreementTest, HksAgreementTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAgreementTest002
  * @tc.number HksAgreementTest002
  * @tc.desc   The static function will return true;

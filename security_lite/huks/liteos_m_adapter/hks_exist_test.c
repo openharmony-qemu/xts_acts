@@ -123,7 +123,6 @@ static BOOL HksExistTestTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksExistTest001
  * @tc.number HksExistTest001
  * @tc.desc   The static function will return true;

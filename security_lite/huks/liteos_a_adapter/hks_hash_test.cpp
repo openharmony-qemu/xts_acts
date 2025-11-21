@@ -69,7 +69,6 @@ const struct HksTestHashParams g_testHashParams[] = {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksHashTest001
  * @tc.number HksHashTest001
  * @tc.desc   The static function will return true;

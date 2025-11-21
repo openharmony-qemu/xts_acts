@@ -199,7 +199,6 @@ static int32_t BaseTestDerive(uint32_t index)
 
 #ifndef _CUT_AUTHENTICATE_
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksDeriveTest001
  * @tc.number HksDeriveTest001
  * @tc.desc   The static function will return true;
@@ -215,7 +214,6 @@ HWTEST_F(HksDeriveTest, HksDeriveTest001, TestSize.Level1)
 #endif /* _CUT_AUTHENTICATE_ */
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksDeriveTest002
  * @tc.number HksDeriveTest002
  * @tc.desc   The static function will return true;

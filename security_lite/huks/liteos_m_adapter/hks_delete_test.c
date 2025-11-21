@@ -111,7 +111,6 @@ static BOOL HksDeleteTestTearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksDeleteTest001
  * @tc.number HksDeleteTest001
  * @tc.desc   The static function will return true;

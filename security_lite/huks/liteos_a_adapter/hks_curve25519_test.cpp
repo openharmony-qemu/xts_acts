@@ -55,7 +55,6 @@ void HksCurve25519Test::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test001
  * @tc.number HksCurve25519Test001
  * @tc.desc   The static function will return true;
@@ -69,7 +68,6 @@ HWTEST_F(HksCurve25519Test, HksCurve25519Test001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test002
  * @tc.number HksCurve25519Test002
  * @tc.desc   The static function will return true;
@@ -83,7 +81,6 @@ HWTEST_F(HksCurve25519Test, HksCurve25519Test002, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test003
  * @tc.number HksCurve25519Test003
  * @tc.desc   The static function will return true;
@@ -97,7 +94,6 @@ HWTEST_F(HksCurve25519Test, HksCurve25519Test003, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test004
  * @tc.number HksCurve25519Test004
  * @tc.desc   The static function will return true;

@@ -117,7 +117,6 @@ static void ExecHksAesTest004(void const *argument)
 #ifndef _CUT_AUTHENTICATE_
 #ifndef _CUT_ED25519_
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAesTest001
  * @tc.number HksAesTest001
  * @tc.desc   The static function will return true;
@@ -143,7 +142,6 @@ LITE_TEST_CASE(HksAesTest, HksAesTest001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAesTest002
  * @tc.number HksAesTest002
  * @tc.desc   The static function will return true;
@@ -169,7 +167,6 @@ LITE_TEST_CASE(HksAesTest, HksAesTest002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAesTest003
  * @tc.number HksAesTest003
  * @tc.desc   The static function will return true;
@@ -198,7 +195,6 @@ LITE_TEST_CASE(HksAesTest, HksAesTest003, Level1)
 #endif /* _CUT_AUTHENTICATE_ */
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksAesTest004
  * @tc.number HksAesTest004
  * @tc.desc   The static function will return true;

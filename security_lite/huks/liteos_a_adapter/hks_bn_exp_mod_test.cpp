@@ -92,7 +92,6 @@ static int32_t TestValue()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   HksBnExpModTest001
  * @tc.number HksBnExpModTest001
  * @tc.desc   The static function will return true;

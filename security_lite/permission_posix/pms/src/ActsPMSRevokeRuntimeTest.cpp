@@ -89,7 +89,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5000
  * @tc.number testSecPMPMS_5000
  * @tc.desc   revoke permissions to large and small PIDs
@@ -116,7 +115,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5000, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5100
  * @tc.number testSecPMPMS_5100
  * @tc.desc   revoke permissions while not load permiossion
@@ -135,7 +133,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5100, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5200
  * @tc.number testSecPMPMS_5200
  * @tc.desc   revoke runtime app permissions
@@ -156,7 +153,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5200, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5300
  * @tc.number testSecPMPMS_5300
  * @tc.desc   revoke permissions without request
@@ -177,7 +173,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5300, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5400
  * @tc.number testSecPMPMS_5400
  * @tc.desc   revoke system_grant permissions
@@ -198,7 +193,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5400, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5500
  * @tc.number testSecPMPMS_5500
  * @tc.desc   revoke user_grant permissions
@@ -222,7 +216,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5500, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5600
  * @tc.number testSecPMPMS_5600
  * @tc.desc   revoke unknown permissions
@@ -243,7 +236,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5600, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5700
  * @tc.number testSecPMPMS_5700
  * @tc.desc   revoke runtime permissions after revoke permission
@@ -266,7 +258,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5700, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5800
  * @tc.number testSecPMPMS_5800
  * @tc.desc   revoke runtime permissions after grant permission
@@ -288,7 +279,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5800, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_5900
  * @tc.number testSecPMPMS_5900
  * @tc.desc   revoke runtime permissions continuously
@@ -315,7 +305,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5900, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_6000
  * @tc.number testSecPMPMS_6000
  * @tc.desc   revoke permissions of unnormal task
@@ -330,7 +319,6 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_6000, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMPMS_6100
  * @tc.number testSecPMPMS_6100
  * @tc.desc   revoke permissions of unnormal permission

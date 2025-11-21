@@ -114,7 +114,6 @@ static void ExecHksGenerateRandomTest001(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksGenerateRandomTest001
  * @tc.number HksGenerateRandomTest001
  * @tc.desc   The static function will return true;

@@ -115,7 +115,6 @@ static void LocalHksCurve25519Test004(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test001
  * @tc.number HksCurve25519Test001
  * @tc.desc   The static function will return true;
@@ -141,7 +140,6 @@ LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test002
  * @tc.number HksCurve25519Test002
  * @tc.desc   The static function will return true;
@@ -167,7 +165,6 @@ LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test003
  * @tc.number HksCurve25519Test003
  * @tc.desc   The static function will return true;
@@ -193,7 +190,6 @@ LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   HksCurve25519Test004
  * @tc.number HksCurve25519Test004
  * @tc.desc   The static function will return true;

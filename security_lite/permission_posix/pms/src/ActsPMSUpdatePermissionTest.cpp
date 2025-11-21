@@ -98,7 +98,6 @@ long GetCurrentTimeMillis()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMUpdatePMFlags_6200
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6200
  * @tc.desc   [C- SECURITY -1000]
@@ -134,7 +133,6 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6200, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMUpdatePMFlags_6300
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6300
  * @tc.desc   [C- SECURITY -1000]
@@ -170,7 +168,6 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6300, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMUpdatePMFlags_6400
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6400
  * @tc.desc   [C- SECURITY -1000]
@@ -211,7 +208,6 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6400, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMUpdatePMFlags_6500
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6500
  * @tc.desc   [C- SECURITY -1000]
@@ -252,7 +248,6 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6500, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMUpdatePMFlags_6600
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6600
  * @tc.desc   [C- SECURITY -1000]
@@ -289,7 +284,6 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6600, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMUpdatePMFlags_6700
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6700
  * @tc.desc   [C- SECURITY -1000]
@@ -326,7 +320,6 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6700, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSecPMUpdatePMFlags_6800
  * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6800
  * @tc.desc   [C- SECURITY -1000]
