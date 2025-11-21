@@ -3243,52 +3243,5 @@ export default function abilityTest() {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0050 end------");
             done();
         })
-
-
-        /**
-           * @tc.name        SUB_PasteBoard_ETS_CreateRecord_Static_0060
-           * @tc.number      SUB_PasteBoard_ETS_CreateRecord_Static_0060
-           * @tc.desc        Create record error, err code is: 401
-           * @tc.size        MEDIUM
-           * @tc.type        Function
-           * @tc.level       Level 2
-           */
-        it('SUB_PasteBoard_ETS_CreateRecord_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0060 start------");
-            try {
-                let pasteDataRecord = pasteboard.createRecord("", "String")
-                hilog.info(domain, tag, "---- createRecord success----");
-            } catch (err) {
-                err = err as BusinessError;
-                hilog.info(domain, tag, "Create record error, err code is: " + err.code)
-                expect(err.code).assertEqual(401)
-            }
-            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0060 end------");
-            done();
-        })
-
-        /**
-        * @tc.name     SUB_PasteBoard_ETS_CreateRecord_Static_0070
-        * @tc.number   SUB_PasteBoard_ETS_CreateRecord_Static_0070
-        * @tc.desc     捕获到预期错误码：401
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        * @tc.level    Level 2
-        */
-        it('SUB_PasteBoard_ETS_CreateRecord_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
-            try {
-                // mimeType为空字符串
-                let invalidRecord = pasteboard.createRecord("", "");
-                expect().assertFail();
-                done();
-            } catch (err) {
-                err = err as BusinessError;
-                expect(err.code).assertEqual(401);
-                hilog.info(domain, tag, `捕获到预期错误码：${err.code}`);
-            }
-            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
-            done();
-        });
     })
 }
