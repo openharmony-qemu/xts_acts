@@ -336,7 +336,7 @@ export class CancelAndExecuteDelayed {
     } catch (e) {
     }
 
-    taskpool.executeDelayed(1000, this.task).then((value: NullishType) => { //line:361
+    taskpool.executeDelayed(1000, this.task).then((value: Any) => { //line:361
       this.i++;
       this.res += value as number;
       this.isTerminate = true;

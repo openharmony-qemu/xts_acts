@@ -72,10 +72,10 @@ export default function taskPoolTaskMultipleUITest() {
         taskGroup.addTask(task1);
         taskGroup.addTask(task2);
 
-        taskpool.execute(taskGroup).then((e: NullishType) => {
+        taskpool.execute(taskGroup).then((e: Any) => {
           console.info('=======', count)
           count++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           console.info('=======error', JSON.stringify(e as BusinessError))
           expect(true).assertFalse()
         })
@@ -110,10 +110,10 @@ export default function taskPoolTaskMultipleUITest() {
         taskGroup.addTask(task1);
         taskGroup.addTask(task2);
 
-        taskpool.execute(taskGroup).then((e: NullishType) => {
+        taskpool.execute(taskGroup).then((e: Any) => {
           console.info('=======', count)
           count++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           console.info('=======error', JSON.stringify(e as BusinessError))
           expect(true).assertFalse()
         })

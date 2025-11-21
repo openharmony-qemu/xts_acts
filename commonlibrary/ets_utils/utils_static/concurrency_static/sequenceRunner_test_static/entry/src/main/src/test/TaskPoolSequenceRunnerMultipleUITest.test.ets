@@ -84,7 +84,7 @@ export default function taskPoolSequenceRunnerMultipleUITest() {
         runner.execute(arr1[i]).then((): void => {
           console.info('=======', count1)
           count1++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           console.info('=======error', JSON.stringify(e))
           expect(true).assertFalse()
         })
@@ -92,7 +92,7 @@ export default function taskPoolSequenceRunnerMultipleUITest() {
         runner.execute(arr2[i]).then((): void => {
           console.info('=======', count2)
           count2++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           console.info('=======error', JSON.stringify(e))
           expect(true).assertFalse()
         })
@@ -138,14 +138,14 @@ export default function taskPoolSequenceRunnerMultipleUITest() {
         runner.execute(arr1[i]).then((): void => {
           console.info('=======', count)
           count++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           console.info('=======error', JSON.stringify(e))
           expect(true).assertFalse()
         })
         runner.execute(arr2[i]).then((): void => {
           console.info('=======', count)
           count++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           console.info('=======error', JSON.stringify(e))
           expect(true).assertFalse()
         })

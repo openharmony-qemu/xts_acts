@@ -225,7 +225,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowFocusable promise success');
           expect(true).assertTrue();
           done();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowFocusable promise fail. err: ${e}`);
           expect(false).assertTrue();
           done();
@@ -306,7 +306,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] showWindow promise success');
           expect(true).assertTrue();
           done();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] showWindow promise fail. err: ${e}`);
           expect(false).assertTrue();
           done();
@@ -353,7 +353,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] destroyWindow promise success');
           expect(true).assertTrue();
           done();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] destroyWindow promise fail. err: ${e}`);
           expect(false).assertTrue();
           done();
@@ -633,7 +633,7 @@ export default function abilityTest() {
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] createSubWindow promise Succeeded');
         expect(true).assertTrue();
         done();
-      }).catch((e: NullishType): void => {
+      }).catch((e: Any): void => {
         hilog.info(0x0000, '[ANI]', `finaltest [ANI] createSubWindow promise Failed. err: ${e}`);
         win.destroyWindow();
         expect(false).assertTrue();
@@ -663,7 +663,7 @@ export default function abilityTest() {
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose Promise Succeeded');
         expect(true).assertTrue();
         done();
-      }).catch((e: NullishType) => {
+      }).catch((e: Any) => {
         let err =e as BusinessError;
         if(err?.code == 801){
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose Promise success. e.code: '+err?.code);

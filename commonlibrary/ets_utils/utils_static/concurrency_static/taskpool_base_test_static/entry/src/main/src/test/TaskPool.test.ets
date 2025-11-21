@@ -407,7 +407,7 @@ export default function taskPoolTest() {
         const TAG: string = 'TaskPoolTest002';
         console.info(`${TAG} test start`);
         try {
-          await taskpool.execute(taskPoolArgs).then((value: NullishType) => {
+          await taskpool.execute(taskPoolArgs).then((value: Any) => {
             expect(value as string).assertEqual('20');
           });
         } catch (err) {
@@ -435,7 +435,7 @@ export default function taskPoolTest() {
             name: 'testName'
           }
           let taskFlag = false;
-          await taskpool.execute(taskPoolArgObj, _obj).then((value: NullishType) => {
+          await taskpool.execute(taskPoolArgObj, _obj).then((value: Any) => {
             taskFlag = true;
           });
           expect(taskFlag).assertTrue();
@@ -460,7 +460,7 @@ export default function taskPoolTest() {
         const TAG: string = 'TaskPoolTest004';
         console.info(`${TAG} test start`);
         try {
-          await taskpool.execute(taskPoolArgNumber, 20).then((value: NullishType) => {
+          await taskpool.execute(taskPoolArgNumber, 20).then((value: Any) => {
             expect(value as int).assertEqual(21);
           });
         } catch (err) {
@@ -486,7 +486,7 @@ export default function taskPoolTest() {
         try {
           let inputTuple: [number, string] = [10, 'Hello'];
           const task = new taskpool.Task(taskPoolArgTuple, inputTuple);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(`[${value as [number, string]}]`).assertEqual('[20,Helloprocessed]');
           });
         } catch (err) {
@@ -511,7 +511,7 @@ export default function taskPoolTest() {
         console.info(`${TAG} test start`);
         let taskFlag = false;
         try {
-          await taskpool.execute(taskPoolArgFun, simpleCallback).then((value: NullishType) => {
+          await taskpool.execute(taskPoolArgFun, simpleCallback).then((value: Any) => {
             taskFlag = true;
           });
           expect(taskFlag).assertTrue();
@@ -538,7 +538,7 @@ export default function taskPoolTest() {
         let sendableA1: SendableA = new SendableA();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendableAFunc, sendableA1);
-          await taskpool.execute(task1).then((value: NullishType) => {
+          await taskpool.execute(task1).then((value: Any) => {
             expect(value as number).assertEqual(20);
           })
         } catch (error) {
@@ -564,7 +564,7 @@ export default function taskPoolTest() {
         let sendAble: SendAbleClassB = new SendAbleClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(SendAbleClassB.add, 'test');
-          await taskpool.execute(task1).then((value: NullishType) => {
+          await taskpool.execute(task1).then((value: Any) => {
             expect(value as number).assertEqual(21);
           })
         } catch (error) {
@@ -616,7 +616,7 @@ export default function taskPoolTest() {
         console.info(`${TAG} test start`);
         try {
           const task = new taskpool.Task(noParamReturnUndefinedTask);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as undefined).assertEqual(undefined);
           })
         } catch (err) {
@@ -670,7 +670,7 @@ export default function taskPoolTest() {
         console.info(TAG, 'test begin with input: ' + inputValue);
         try {
           const task = new taskpool.Task(processLongValue, inputValue);
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as long).assertEqual(expectedValue);
           })
         } catch (err) {
@@ -736,7 +736,7 @@ export default function taskPoolTest() {
             Promise.resolve('success')
           );
           await taskpool.execute(task1)
-            .then((value: NullishType) => {
+            .then((value: Any) => {
               console.info("Async task result: " + value);
               expect(value as string).assertEqual('success');
             })
@@ -768,7 +768,7 @@ export default function taskPoolTest() {
         };
         try {
           const task = new taskpool.Task(containerOperation);
-          const executePromise = worker.run<Promise<NullishType>>(() => {
+          const executePromise = worker.run<Promise<Any>>(() => {
             return taskpool.execute(task);
           });
           await executePromise.Await();
@@ -796,7 +796,7 @@ export default function taskPoolTest() {
         const TAG: string = 'TaskPoolTest016';
         console.info(`${TAG} test start`);
         try {
-          await taskpool.execute(createNoParamInstance).then((instance: NullishType) => {
+          await taskpool.execute(createNoParamInstance).then((instance: Any) => {
             expect((instance as NoParamConstructor).getValue()).assertEqual(100);
           })
         } catch (err) {
@@ -822,7 +822,7 @@ export default function taskPoolTest() {
         console.info(`${TAG} test start`);
         try {
           await taskpool.execute(createParamTestClass, 'TestName')
-            .then((instance: NullishType) => {
+            .then((instance: Any) => {
               const instanceTask = (instance as ParamTestClass).getName();
               expect(instanceTask).assertEqual('TestName');
             })
@@ -1376,7 +1376,7 @@ export default function taskPoolTest() {
             }, param ?? 20 as int);
           };
           const task = taskFunc();
-          await taskpool.execute(task).then((value: NullishType) => {
+          await taskpool.execute(task).then((value: Any) => {
             expect(value as int).assertEqual(20);
           });
         } catch (err) {
@@ -1650,7 +1650,7 @@ export default function taskPoolTest() {
         let testTuple: [number, string] = [10, 'Hello'];
         try {
           const task = new taskpool.Task(taskArgTuple, testTuple);
-          await taskpool.execute(task, taskpool.Priority.HIGH).then((value: NullishType) => {
+          await taskpool.execute(task, taskpool.Priority.HIGH).then((value: Any) => {
             expect(`[${value as [number, string]}]`).assertEqual('[20,processed]');
           })
         } catch (err) {

@@ -27,9 +27,9 @@ export function testHappyPath() {
 async function testHappyPathImpl(): Promise<string> {
   let sab = createUint32Array(3);
   let task1 = new taskpool.Task(indexSetter, sab, Number(1));
-  let task: Promise<NullishType> = taskpool.execute(task1, taskpool.Priority.HIGH);
+  let task: Promise<Any> = taskpool.execute(task1, taskpool.Priority.HIGH);
 
-  let res: NullishType = await (task);
+  let res: Any = await (task);
   if (1 == (res as Uint32Array)[1]) {
     return 'Test passed';
   }
@@ -45,11 +45,11 @@ async function testTwoTasksImpl(): Promise<string> {
   let sab = createUint32Array(3);
   let task1 = new taskpool.Task(indexSetter, sab, Number(1));
   let task2 = new taskpool.Task(indexSetter, sab, Number(2));
-  let task: Promise<NullishType> = taskpool.execute(task1);
-  let taskNext: Promise<NullishType> = taskpool.execute(task2);
+  let task: Promise<Any> = taskpool.execute(task1);
+  let taskNext: Promise<Any> = taskpool.execute(task2);
 
   await (task);
-  let res: NullishType = await (taskNext);
+  let res: Any = await (taskNext);
   if (1 == ((res as Uint32Array)[1] as number) && 2 == ((res as Uint32Array)[2] as number)) {
     return 'Test passed';
   }
@@ -65,10 +65,10 @@ async function testManyTasksImpl(): Promise<string> {
   let stressCount: number = 10;
   let size: number = stressCount + 3;
   let sab = createUint32Array(size);
-  let res: NullishType;
+  let res: Any;
   for (let idx: number = 0; idx < stressCount; idx++) {
-    let taskCurr: NullishType = new taskpool.Task(indexSetter, sab, idx);
-    let promiseCurr: Promise<NullishType> = taskpool.execute(taskCurr);
+    let taskCurr: Any = new taskpool.Task(indexSetter, sab, idx);
+    let promiseCurr: Promise<Any> = taskpool.execute(taskCurr);
     res = await (promiseCurr);
   }
   for (let idx = 0; idx < stressCount; idx++) {
@@ -86,8 +86,8 @@ export function testTwoTasksChained() {
 
 async function testTwoTasksChainedImpl(): Promise<string> {
   let sab = createUint32Array(3);
-  let taskCurr: NullishType = new taskpool.Task(taskpoolExecuteChained, sab, Number(0), Number(2));
-  let promiseCurr: Promise<NullishType> = taskpool.execute(taskCurr);
+  let taskCurr: Any = new taskpool.Task(taskpoolExecuteChained, sab, Number(0), Number(2));
+  let promiseCurr: Promise<Any> = taskpool.execute(taskCurr);
   await (promiseCurr);
   for (let idx = 0; idx < 2; idx++) {
     let res:number = sab[idx]
@@ -108,7 +108,7 @@ async function testManyTasksChainedImpl(): Promise<string> {
   let size: number = stressCount + 3;
   let sab = createUint32Array(size);
   let taskCurr = new taskpool.Task(taskpoolExecuteChained, sab, Number(0), stressCount);
-  let promiseCurr: Promise<NullishType> = taskpool.execute(taskCurr);
+  let promiseCurr: Promise<Any> = taskpool.execute(taskCurr);
   await (promiseCurr);
   for (let idx = 0; idx < stressCount; idx++) {
     let res:number = sab[idx]
@@ -129,9 +129,9 @@ async function testUnder3MinutesImpl(): Promise<string> {
   let sab = createUint32Array(3);
   let timeout: number = 1000 * 60 * 2 + 1000 * 50;
   let task1 = new taskpool.Task(indexSetterWithTimeout, sab, 1, timeout);
-  let task: Promise<NullishType> = taskpool.execute(task1);
+  let task: Promise<Any> = taskpool.execute(task1);
 
-  let res: NullishType = await (task);
+  let res: Any = await (task);
   if (1 == (((res as Uint32Array)[1]) as number)) {
     return 'Test passed';
   }
@@ -148,9 +148,9 @@ async function testOver3MinutesImpl(): Promise<string> {
   let sab = createUint32Array(3);
   let timeout: number = 1000 * 60 * 4;
   let task1 = new taskpool.Task(indexSetterWithTimeout, sab, 1, timeout);
-  let task: Promise<NullishType> = taskpool.execute(task1);
+  let task: Promise<Any> = taskpool.execute(task1);
 
-  let res: NullishType = await (task);
+  let res: Any = await (task);
   if (1 == (((res as Uint32Array)[1]) as number)) {
     return 'Test passed';
   }
@@ -169,10 +169,10 @@ async function testRepeatsImpl(): Promise<string> {
   let sab = createUint32Array(size);
   let res: Uint32Array = sab;
 
-  let promises: Promise<NullishType>[] = [];
+  let promises: Promise<Any>[] = [];
   for (let idx: number = 0; idx < repeats; idx++) {
     let task = new taskpool.Task(indexSetter, sab, idx);
-    let promise: Promise<NullishType> = taskpool.execute(task);
+    let promise: Promise<Any> = taskpool.execute(task);
     promises.push(promise);
   }
 

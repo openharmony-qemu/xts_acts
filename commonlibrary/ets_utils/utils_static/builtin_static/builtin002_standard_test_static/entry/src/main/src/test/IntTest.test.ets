@@ -581,7 +581,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_2600
      * @tc.name IntTest2600
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -602,7 +602,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_2700
      * @tc.name IntTest2700
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -623,7 +623,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_2800
      * @tc.name IntTest2800
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -644,7 +644,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_2900
      * @tc.name IntTest2900
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -665,7 +665,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_3000
      * @tc.name IntTest3000
-     * @tc.desc test equals(other: NullishType) return value
+     * @tc.desc test equals(other: Any) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

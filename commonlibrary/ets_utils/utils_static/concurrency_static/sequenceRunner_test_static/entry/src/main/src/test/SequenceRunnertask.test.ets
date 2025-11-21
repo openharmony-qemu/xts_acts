@@ -361,7 +361,7 @@ export default function sequenceRunnerTaskTest() {
 
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs7, 1.0);
-          task1.onReceiveData((): NullishType => {
+          task1.onReceiveData((): Any => {
             try {
               count1 += 1
               throw Error(`${Tag}---error`)
@@ -375,7 +375,7 @@ export default function sequenceRunnerTaskTest() {
           });
 
           let task2: taskpool.Task = new taskpool.Task(printArgs7, 1.0);
-          task2.onReceiveData((): NullishType => {
+          task2.onReceiveData((): Any => {
             try {
               count2 += 1
               throw Error(`${Tag}---error`)

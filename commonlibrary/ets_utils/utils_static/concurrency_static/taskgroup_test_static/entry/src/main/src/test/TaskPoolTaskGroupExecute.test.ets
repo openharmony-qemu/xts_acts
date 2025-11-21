@@ -85,7 +85,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(printArgs1, 1.0);
           taskGroup.addTask(printArgs2, 1.0);
-          taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+          taskpool.execute(taskGroup).then((num: Array<Any>) => {
             hilog.info(0x0000, 'taskPoolTaskGroupExecute1001', '%{public}s', `num========${num}`);
             Count1.count = Count1.count + (num[0] as Number)
             Count2.count = Count2.count + (num[1] as Number)
@@ -122,11 +122,11 @@ export default function taskPoolTaskGroupExecuteTest() {
           taskGroup.addTask(printArgs3, 1.0);
           taskGroup.addTask(printArgs4, 2.0);
           try {
-            taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+            taskpool.execute(taskGroup).then((num: Array<Any>) => {
               Count3.count = Count3.count + (num[0] as Number)
               Count4.count = Count4.count + (num[1] as Number)
               console.info('======', Count3.count, Count4.count)
-            }).catch((error: NullishType) => {
+            }).catch((error: Any) => {
               // expect(String((error as BusinessError).message)).assertContain('Cannot read property split of undefined');
               count++
               console.error(`error message error: ${JSON.stringify(error)}`)
@@ -166,7 +166,7 @@ export default function taskPoolTaskGroupExecuteTest() {
         taskGroup.addTask(task2);
         Count1.count = 0.0
         Count2.count = 0.0
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count, Count2.count)
@@ -201,11 +201,11 @@ export default function taskPoolTaskGroupExecuteTest() {
         let count: Number = 0.0
         Count1.count = 0.0
         Count2.count = 0.0
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count, Count2.count)
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
           count++
           console.error(`error message error: ${JSON.stringify(error)}`)
@@ -241,7 +241,7 @@ export default function taskPoolTaskGroupExecuteTest() {
         Count1.count = 0.0
         Count2.count = 0.0
 
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count)
@@ -276,11 +276,11 @@ export default function taskPoolTaskGroupExecuteTest() {
         taskGroup.addTask(task2);
         let count1: Number = 0
 
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count)
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           //expect((e as BusinessError)?.name).assertContain('BusinessError')
           count1++
           console.info('======e', JSON.stringify(e))
@@ -327,7 +327,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           count2++
         });
 
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info("taskpool: execute task success")
@@ -385,7 +385,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           }
         })
 
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           console.info("taskpool: execute task success")
         });
 
@@ -429,7 +429,7 @@ export default function taskPoolTaskGroupExecuteTest() {
         task2.onStartExecution(() => {
           count2++
         });
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info("taskpool: execute task success")
@@ -488,7 +488,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           }
         })
 
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info("taskpool: execute task success")
@@ -534,7 +534,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           count2++
         })
 
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           console.info("taskpool: execute task success")
         });
 
@@ -585,7 +585,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           }
         })
 
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           console.info("taskpool: execute task success")
         });
 

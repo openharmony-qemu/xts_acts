@@ -164,7 +164,7 @@ export default function sequenceRunnerAbilityTest() {
             task1Count++;
             array1.push(er);
             er = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
 
@@ -175,7 +175,7 @@ export default function sequenceRunnerAbilityTest() {
             task2Count++;
             array2.push(ir);
             ir = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
@@ -224,7 +224,7 @@ export default function sequenceRunnerAbilityTest() {
             task1Count++;
             array1.push(er);
             er = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -235,7 +235,7 @@ export default function sequenceRunnerAbilityTest() {
             task2Count++;
             array2.push(ir);
             ir = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -337,7 +337,7 @@ export default function sequenceRunnerAbilityTest() {
             task1Count++;
             array1.push(er);
             er = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             task3Count++;
             console.error(`${caseName}error message error1300: ${JSON.stringify(error)}`)
@@ -348,7 +348,7 @@ export default function sequenceRunnerAbilityTest() {
             task2Count++;
             array2.push(ir);
             ir = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             task4Count++;
             console.error(`error message error3: ${JSON.stringify(error)}`)
@@ -398,7 +398,7 @@ export default function sequenceRunnerAbilityTest() {
             task1Count++;
             array1.push(er);
             er = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             task3Count++;
             console.error(`${caseName} error message error3: ${JSON.stringify(error)}`)
@@ -409,7 +409,7 @@ export default function sequenceRunnerAbilityTest() {
             task2Count++;
             array2.push(ir);
             ir = '';
-          }).catch((error: NullishType) => {
+          }).catch((error: Any) => {
             // expect(error.message).assertContain('Cannot read property split of undefined')
             task4Count++;
             console.error(`${caseName}error message error3: ${JSON.stringify(error)}`)
@@ -452,14 +452,14 @@ export default function sequenceRunnerAbilityTest() {
     //       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
     //       let task1: taskpool.Task = new taskpool.Task(bigintTaskFunction1, 1n);
     //       let task2: taskpool.Task = new taskpool.Task(bigintTaskFunction2, 2n);
-    //       sequenceRunner.execute(task1).then((result: NullishType): void => {
+    //       sequenceRunner.execute(task1).then((result: Any): void => {
     //         console.log(`${caseName}Execution ${i + 1}: ${result}`);
     //         er = result as string;
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
     //       });
-    //       sequenceRunner.execute(task2).then((result: NullishType): void => {
+    //       sequenceRunner.execute(task2).then((result: Any): void => {
     //         console.log(`${caseName}Execution ${i + 1}: ${result}`);
     //         ir = result as string;
     //         task2Count++;
@@ -511,7 +511,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -522,7 +522,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -572,7 +572,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -583,7 +583,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -632,7 +632,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -643,7 +643,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -693,7 +693,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -704,7 +704,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -756,7 +756,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -767,7 +767,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -814,7 +814,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -825,7 +825,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -876,7 +876,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -887,7 +887,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -934,7 +934,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -945,7 +945,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -993,7 +993,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -1004,7 +1004,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -1052,7 +1052,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -1063,7 +1063,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -1110,7 +1110,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -1121,7 +1121,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)
@@ -1169,7 +1169,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task1Count++;
     //         array1.push(er);
     //         er = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task3Count++;
     //         console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
@@ -1180,7 +1180,7 @@ export default function sequenceRunnerAbilityTest() {
     //         task2Count++;
     //         array2.push(ir);
     //         ir = '';
-    //       }).catch((error: NullishType) => {
+    //       }).catch((error: Any) => {
     //         // expect(error.message).assertContain('Cannot read property split of undefined')
     //         task4Count++;
     //         console.error(`error message error2: ${JSON.stringify(error)}`)

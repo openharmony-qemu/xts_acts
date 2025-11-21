@@ -161,7 +161,7 @@ export function printArgs10(args: Number): Number {
 export async function printArgs11(args: Number): Promise<Number> {
   console.info('printArgs: ' + args);
   let task: taskpool.Task = new taskpool.Task(test);
-  await taskpool.execute(task).then((e: NullishType) => {
+  await taskpool.execute(task).then((e: Any) => {
 
   })
   return args;
@@ -175,7 +175,7 @@ export async function printArgs11(args: Number): Promise<Number> {
 export async function printArgs12(args: Number): Promise<Number> {
   console.info('printArgs: ' + args);
   let task: taskpool.Task = new taskpool.Task(test1);
-  await taskpool.execute(task).then((e: NullishType) => {
+  await taskpool.execute(task).then((e: Any) => {
     let s: string[] = []
     s[0].split('')[1].toString()
   })
@@ -191,10 +191,10 @@ export async function printArgs12(args: Number): Promise<Number> {
 export async function printArgs13(args: Number): Promise<Number> {
   console.info('printArgs: ' + args);
   let task: taskpool.Task = new taskpool.Task(test1);
-  await taskpool.execute(task).then((e: NullishType) => {
+  await taskpool.execute(task).then((e: Any) => {
     let s: string[] = []
     s[0].split('')[1].toString()
-  }).catch((error: NullishType) => {
+  }).catch((error: Any) => {
     let s: string[] = []
     s[0].split('')[1].toString()
   })
@@ -239,24 +239,24 @@ export async function asyncLock(a: AsyncLockTest) {
 }
 
 export async function asyncLock1(a: AsyncLockTest1) {
-  await a.setCount(10).then((e: NullishType): void => {
+  await a.setCount(10).then((e: Any): void => {
     let s: string[] = []
     s[0].split('')[1].toString()
   })
 }
 
 export async function asyncLock2(a: AsyncLockTest1) {
-  await a.setCount(10).then((e: NullishType): void => {
+  await a.setCount(10).then((e: Any): void => {
     let s: string[] = []
     s[0].split('')[1].toString()
-  }).catch((error: NullishType) => {
+  }).catch((error: Any) => {
     let s: string[] = []
     s[0].split('')[1].toString()
   })
 }
 
 export async function asyncLock3(a: AsyncLockTest1) {
-  await a.setCount(10).then((e: NullishType): void => {
+  await a.setCount(10).then((e: Any): void => {
 
   }).finally(() => {
     let s: string[] = []
@@ -292,7 +292,7 @@ export function printArgs1007(args: Number): Number {
   })
   promise.then((result: Number) => {
     console.info(`Random number1 is ${result}`);
-  }).catch((error: NullishType) => {
+  }).catch((error: Any) => {
     console.error((error as BusinessError).message);
   });
   return args;
@@ -312,7 +312,7 @@ export function printArgs1008(args: Number): Number {
   })
   promise.then((result: Number) => {
     console.info(`Random number2 is ${result}`);
-  }).catch((error: NullishType) => {
+  }).catch((error: Any) => {
     console.error((error as BusinessError).message);
   });
   return args;
@@ -333,7 +333,7 @@ export function printArgs1009(args: Number, taskGroup: taskpool.TaskGroup): Numb
   })
   promise.then((result: Number) => {
     console.info(`task1 is cancel`);
-  }).catch((error: NullishType) => {
+  }).catch((error: Any) => {
     console.error((error as BusinessError).message);
   });
   return args;
@@ -353,7 +353,7 @@ export function printArgs1010(args: Number, taskGroup: taskpool.TaskGroup): Numb
   })
   promise.then((result: Number) => {
     console.info(`task2 is cancel`);
-  }).catch((error: NullishType) => {
+  }).catch((error: Any) => {
     console.error((error as BusinessError).message);
   });
   return args;

@@ -69,7 +69,7 @@ export default function executeDelayedTest() {
           -100 as Int,
           new taskpool.Task(task),
           taskpool.Priority.MEDIUM
-        ).then((value: NullishType) => {
+        ).then((value: Any) => {
           expect(value as undefined).assertEqual(undefined);
         })
       } catch (err) {
@@ -146,7 +146,7 @@ export default function executeDelayedTest() {
             3000,
             task,
             taskpool.Priority.HIGH
-          ).then((value:NullishType) => {
+          ).then((value:Any) => {
             expect(value as undefined).assertEqual(undefined);
           })
           expect(taskExecuted).assertTrue();

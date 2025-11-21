@@ -136,7 +136,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const result: NullishType = await taskpool.execute(Add, true, true);
+        const result: Any = await taskpool.execute(Add, true, true);
         if (result) {
           expect(result as boolean).assertEqual(true);
         } else {
@@ -155,7 +155,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result: NullishType = await taskpool.execute(StrCat, 'abc', 'def');
+        let result: Any = await taskpool.execute(StrCat, 'abc', 'def');
         expect(result as string).assertEqual('abcdef');
         done();
       })
@@ -170,7 +170,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result: NullishType = await taskpool.execute(StrCat, 'abc', 'def');
+        let result: Any = await taskpool.execute(StrCat, 'abc', 'def');
         expect(result as string).assertEqual('abcdef');
         done();
       })
@@ -185,7 +185,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result: NullishType = await taskpool.execute(funcStrCat, 'abc', 'def', 'hello');
+        let result: Any = await taskpool.execute(funcStrCat, 'abc', 'def', 'hello');
         expect(result as string).assertEqual('abcdefhello');
         done();
       })
@@ -206,7 +206,7 @@ export default function TaskPoolLibTest() {
         let bb: B = new B();
         bb.a = 3;
         bb.b = 4;
-        let result: NullishType = await taskpool.execute(objectSum, aa, bb);
+        let result: Any = await taskpool.execute(objectSum, aa, bb);
         expect(string((result as A).a)).assertEqual('4');
         expect(string((result as A).b)).assertEqual('6');
         done();
@@ -222,7 +222,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result: NullishType = await taskpool.execute(Sum, 10.0, 20.0, 30.0);
+        let result: Any = await taskpool.execute(Sum, 10.0, 20.0, 30.0);
         expect(result as number).assertEqual(30);
         done();
       })
@@ -237,8 +237,8 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result1: NullishType = await taskpool.execute(Sum, 10.0, 20.0);
-        let result2: NullishType = await taskpool.execute(Sum, 30.0, 40.0);
+        let result1: Any = await taskpool.execute(Sum, 10.0, 20.0);
+        let result2: Any = await taskpool.execute(Sum, 30.0, 40.0);
         expect(result1 as number).assertEqual(30);
         expect(result2 as number).assertEqual(70);
         done();
@@ -254,8 +254,8 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result1: NullishType = await taskpool.execute(Sum, 10.0, 20.0);
-        let result2: NullishType = await taskpool.execute(Sum, 10.0, 20.0);
+        let result1: Any = await taskpool.execute(Sum, 10.0, 20.0);
+        let result2: Any = await taskpool.execute(Sum, 10.0, 20.0);
         expect(result1 as number).assertEqual(30);
         expect(result2 as number).assertEqual(30);
         done();
@@ -271,10 +271,10 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result1: NullishType = await taskpool.execute(Sum, 10.0, 20.0);
-        let result2: NullishType = await taskpool.execute(Multi, 10.0, 20.0);
-        let result3: NullishType = await taskpool.execute(Sum, 10.0, 30.0);
-        let result4: NullishType = await taskpool.execute(Multi, 20.0, 20.0);
+        let result1: Any = await taskpool.execute(Sum, 10.0, 20.0);
+        let result2: Any = await taskpool.execute(Multi, 10.0, 20.0);
+        let result3: Any = await taskpool.execute(Sum, 10.0, 30.0);
+        let result4: Any = await taskpool.execute(Multi, 20.0, 20.0);
         expect(result1 as number).assertEqual(30);
         expect(result2 as number).assertEqual(200);
         expect(result3 as number).assertEqual(40);
@@ -293,7 +293,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(result as number).assertEqual(30);
         done();
       })
@@ -309,7 +309,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(Add, true, true);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(result as boolean).assertEqual(true);
         done();
       })
@@ -325,7 +325,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(StrCat, 'abc', 'def');
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(result as string).assertEqual('abcdef');
         done();
       })
@@ -341,7 +341,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(funcStrCat, 'abc', 'def', 'hello');
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(result as string).assertEqual('abcdefhello');
         done();
       })
@@ -363,7 +363,7 @@ export default function TaskPoolLibTest() {
         bb.a = 3;
         bb.b = 4;
         let task: taskpool.Task = new taskpool.Task(objectSum, aa, bb);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(string((result as A).a)).assertEqual('4');
         expect(string((result as A).b)).assertEqual('6');
         done();
@@ -380,7 +380,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0, 30.0);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(result as number).assertEqual(30);
         done();
       })
@@ -396,8 +396,8 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0);
-        let result1: NullishType = await taskpool.execute(task);
-        let result2: NullishType = await taskpool.execute(task);
+        let result1: Any = await taskpool.execute(task);
+        let result2: Any = await taskpool.execute(task);
         expect(result1 as number).assertEqual(30);
         expect(result2 as number).assertEqual(30);
         done();
@@ -415,8 +415,8 @@ export default function TaskPoolLibTest() {
       async (done: () => void): Promise<void> => {
         let task1: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0);
         let task2: taskpool.Task = new taskpool.Task(Sum, 30.0, 40.0);
-        let result1: NullishType = await taskpool.execute(task1);
-        let result2: NullishType = await taskpool.execute(task2);
+        let result1: Any = await taskpool.execute(task1);
+        let result2: Any = await taskpool.execute(task2);
         expect(result1 as number).assertEqual(30);
         expect(result2 as number).assertEqual(70);
         done();
@@ -434,8 +434,8 @@ export default function TaskPoolLibTest() {
       async (done: () => void): Promise<void> => {
         let task1: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0);
         let task2: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0);
-        let result1: NullishType = await taskpool.execute(task1);
-        let result2: NullishType = await taskpool.execute(task2);
+        let result1: Any = await taskpool.execute(task1);
+        let result2: Any = await taskpool.execute(task2);
         expect(result1 as number).assertEqual(30);
         expect(result2 as number).assertEqual(30);
         done();
@@ -452,13 +452,13 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task1: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0);
-        let result1: NullishType = await taskpool.execute(task1);
+        let result1: Any = await taskpool.execute(task1);
         let task2: taskpool.Task = new taskpool.Task(Multi, 10.0, 20.0);
-        let result2: NullishType = await taskpool.execute(task2);
+        let result2: Any = await taskpool.execute(task2);
         let task3: taskpool.Task = new taskpool.Task(Sum, 10.0, 30.0);
-        let result3: NullishType = await taskpool.execute(task3);
+        let result3: Any = await taskpool.execute(task3);
         let task4: taskpool.Task = new taskpool.Task(Multi, 20.0, 20.0);
-        let result4: NullishType = await taskpool.execute(task4);
+        let result4: Any = await taskpool.execute(task4);
         expect(result1 as number).assertEqual(30.0);
         expect(result2 as number).assertEqual(200.0);
         expect(result3 as number).assertEqual(40.0);
@@ -1172,7 +1172,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result: NullishType = await taskpool.execute(printArgsFunc, Sum, 10.0, 20.0);
+        let result: Any = await taskpool.execute(printArgsFunc, Sum, 10.0, 20.0);
         expect(result as number).assertEqual(30);
         done();
       })
@@ -1205,11 +1205,11 @@ export default function TaskPoolLibTest() {
         }
 
         for (let i = 0; i < allCount; i += 3) {
-          let res1: NullishType = await taskpool.execute(taskArray[i], taskpool.Priority.HIGH);
+          let res1: Any = await taskpool.execute(taskArray[i], taskpool.Priority.HIGH);
           lowTime += (res1 as number - begin);
-          let res2: NullishType = await taskpool.execute(taskArray[i + 1], taskpool.Priority.LOW);
+          let res2: Any = await taskpool.execute(taskArray[i + 1], taskpool.Priority.LOW);
           mediumTime += (res2 as number - begin);
-          let res3: NullishType = await taskpool.execute(taskArray[i + 2], taskpool.Priority.MEDIUM);
+          let res3: Any = await taskpool.execute(taskArray[i + 2], taskpool.Priority.MEDIUM);
           highTime += (res3 as number - begin);
         }
 
@@ -1227,7 +1227,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let result: NullishType = await taskpool.execute(asyncSum, 10.0, 20.0);
+        let result: Any = await taskpool.execute(asyncSum, 10.0, 20.0);
         expect(result as number).assertEqual(30);
         done();
       })
@@ -1243,7 +1243,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(testNumber, 10.0, 20.0);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(result as number).assertEqual(30);
         done();
       })
@@ -1328,7 +1328,7 @@ export default function TaskPoolLibTest() {
 
         let task: taskpool.Task = new taskpool.Task(setTransferListTest, view, view1);
         // task.setTransferList([view.buffer as ArrayBuffer, view1.buffer as ArrayBuffer]);
-        taskpool.execute(task).then((ret: NullishType): void => {
+        taskpool.execute(task).then((ret: Any): void => {
           result = ret as number;
           isTerminate = true;
         });
@@ -1350,17 +1350,17 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let outerTask1 = new taskpool.Task(outerTaskFunc, '001')
-        let res1: NullishType = await taskpool.execute(outerTask1);
+        let res1: Any = await taskpool.execute(outerTask1);
         expect(res1 as string).assertEqual('outerTaskRes-001');
 
         let outerTask2 = new taskpool.Task(outerTaskFunc, '002')
-        let res2: NullishType = await taskpool.execute(outerTask2);
+        let res2: Any = await taskpool.execute(outerTask2);
         expect(res2 as string).assertEqual('outerTaskRes-002');
 
-        let res3: NullishType = await taskpool.execute(outerTaskFunc, '001');
+        let res3: Any = await taskpool.execute(outerTaskFunc, '001');
         expect(res3 as string).assertEqual('outerTaskRes-001');
 
-        let res4: NullishType = await taskpool.execute(outerTaskFunc, '002');
+        let res4: Any = await taskpool.execute(outerTaskFunc, '002');
         expect(res4 as string).assertEqual('outerTaskRes-002');
         done();
       })
@@ -2927,7 +2927,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10.0, 20.0);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         taskpool.terminateTask(task);
         expect(result as number).assertEqual(30);
         done();
@@ -2944,7 +2944,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10.0, 20.0);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         taskpool.terminateTask(task);
         try {
           taskpool.execute(task)
@@ -3044,7 +3044,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task: taskpool.Task = new taskpool.Task(errorTest)
-        taskpool.execute(task).then((res: NullishType): void => {
+        taskpool.execute(task).then((res: Any): void => {
           console.info('errTest res ' + res)
         }).catch((e: Error): void => {
           expect(e.message).assertContain('this is an error');
@@ -4028,7 +4028,7 @@ export default function TaskPoolLibTest() {
     it('TaskPoolTestClass183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
-        let result1: NullishType = await taskpool.execute(task1);
+        let result1: Any = await taskpool.execute(task1);
         expect(task1.isDone()).assertTrue();
 
         let isFinish: boolean = false;
@@ -4218,7 +4218,7 @@ export default function TaskPoolLibTest() {
       async (done: () => void): Promise<void> => {
         let int8Buffer: Int8Array = new Int8Array(3);
         let task: taskpool.Task = new taskpool.Task(Int8ArrayTestFunc, int8Buffer);
-        let res: NullishType = await taskpool.execute(task);
+        let res: Any = await taskpool.execute(task);
         expect((res as Int8Array).length).assertEqual(3);
         expect((res as Int8Array).at(1)).assertEqual(1);
         expect((res as Int8Array).at(2)).assertEqual(2);
@@ -4237,7 +4237,7 @@ export default function TaskPoolLibTest() {
       async (done: () => void): Promise<void> => {
         let set: Set<number> = new Set<number>(new Array<number>(1, 2, 3));
         let task: taskpool.Task = new taskpool.Task(SetTestFunc, set);
-        let res: NullishType = await taskpool.execute(task);
+        let res: Any = await taskpool.execute(task);
         expect((res as Set<number>).size).assertEqual(4);
         expect((res as Set<number>).has(4)).assertTrue();
         done();
@@ -4257,7 +4257,7 @@ export default function TaskPoolLibTest() {
         map.set(1, 2);
         map.set(3, 4);
         let task: taskpool.Task = new taskpool.Task(MapTestFunc, map);
-        let res: NullishType = await taskpool.execute(task);
+        let res: Any = await taskpool.execute(task);
         expect((res as Map<number, number>).size).assertEqual(3);
         expect((res as Map<number, number>).get(5)).assertEqual(6);
         done();
@@ -4293,7 +4293,7 @@ export default function TaskPoolLibTest() {
       async (done: () => void): Promise<void> => {
         let arkTSTest: Uint8ClampedArray = new Uint8ClampedArray(3);
         let task: taskpool.Task = new taskpool.Task(Uint8ClampedArrayTestFunc, arkTSTest);
-        let res: NullishType = await taskpool.execute(task);
+        let res: Any = await taskpool.execute(task);
         expect((res as Uint8ClampedArray).length).assertEqual(3);
         expect((res as Uint8ClampedArray).at(1)).assertEqual(1);
         done();
@@ -4319,15 +4319,15 @@ export default function TaskPoolLibTest() {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0); // 100: test number
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200.0); // 200: test number
         let task3: taskpool.Task = new taskpool.Task(printArgs, 300.0); // 300: test number
-        taskpool.execute(task1, taskpool.Priority.LOW).then((value: NullishType): void => {
+        taskpool.execute(task1, taskpool.Priority.LOW).then((value: Any): void => {
           isTerminate1 = true;
           ret1 = value as number;
         });
-        taskpool.execute(task2, taskpool.Priority.MEDIUM).then((value: NullishType): void => {
+        taskpool.execute(task2, taskpool.Priority.MEDIUM).then((value: Any): void => {
           isTerminate2 = true;
           ret2 = value as number;
         });
-        taskpool.execute(task3, taskpool.Priority.HIGH).then((value: NullishType): void => {
+        taskpool.execute(task3, taskpool.Priority.HIGH).then((value: Any): void => {
           isTerminate3 = true;
           ret3 = value as number;
         });
@@ -4659,7 +4659,7 @@ export default function TaskPoolLibTest() {
       async (done: () => void): Promise<void> => {
         let value: number = 500;
         let task: taskpool.Task = new taskpool.Task(promiseTest, value);
-        let result: NullishType = await taskpool.execute(task);
+        let result: Any = await taskpool.execute(task);
         expect(result as number).assertEqual(1000.0);
         done();
       })

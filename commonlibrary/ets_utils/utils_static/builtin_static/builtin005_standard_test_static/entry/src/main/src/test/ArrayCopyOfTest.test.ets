@@ -966,7 +966,7 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0100';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, null, null] as FixedArray<NullishType>;
+        const src: FixedArray<Any> = [null, null, null] as FixedArray<Any>;
         const result = copyOf(src);
         expect([...result]).assertDeepEquals([null, null, null]);
         console.info(`${caseName}, test end`);
@@ -985,7 +985,7 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0200';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [undefined, undefined, undefined] as FixedArray<NullishType>;
+        const src: FixedArray<Any> = [undefined, undefined, undefined] as FixedArray<Any>;
         const result = copyOf(src);
         expect([...result]).assertDeepEquals([undefined, undefined, undefined]);
         console.info(`${caseName}, test end`);
@@ -1004,7 +1004,7 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0300';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, undefined, null, undefined] as FixedArray<NullishType>;
+        const src: FixedArray<Any> = [null, undefined, null, undefined] as FixedArray<Any>;
         const result = copyOf(src);
         expect([...result]).assertDeepEquals([null, undefined, null, undefined]);
         console.info(`${caseName}, test end`);
@@ -1023,7 +1023,7 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0400';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [] as FixedArray<NullishType>;
+        const src: FixedArray<Any> = [] as FixedArray<Any>;
         const result = copyOf(src);
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
@@ -1042,7 +1042,7 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0500';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null] as FixedArray<NullishType>;
+        const src: FixedArray<Any> = [null] as FixedArray<Any>;
         const result = copyOf(src);
         expect([...result]).assertDeepEquals([null]);
         console.info(`${caseName}, test end`);
@@ -1061,7 +1061,7 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0600';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [undefined] as FixedArray<NullishType>;
+        const src: FixedArray<Any> = [undefined] as FixedArray<Any>;
         const result = copyOf(src);
         expect([...result]).assertDeepEquals([undefined]);
         console.info(`${caseName}, test end`);
@@ -1080,7 +1080,7 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0700';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [null, undefined, null, undefined, null] as FixedArray<NullishType>;
+        const src: FixedArray<Any> = [null, undefined, null, undefined, null] as FixedArray<Any>;
         const result = copyOf(src);
         expect([...result]).assertDeepEquals([null, undefined, null, undefined, null]);
         console.info(`${caseName}, test end`);
@@ -1099,10 +1099,10 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsCopyOfNullishTest0800';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<NullishType> = [
+        const src: FixedArray<Any> = [
           null, undefined, null,
           undefined, null, undefined
-        ] as FixedArray<NullishType>;
+        ] as FixedArray<Any>;
         const result = copyOf(src);
         expect([...result]).assertDeepEquals([
           null, undefined, null,

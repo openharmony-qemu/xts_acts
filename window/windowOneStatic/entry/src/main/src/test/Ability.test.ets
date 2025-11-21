@@ -96,7 +96,7 @@ export default function abilityTest() {
         windowStage.getMainWindow().then((ret: window.Window): void => {
           expect(ret != null).assertTrue();
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getMainWindow promise success ' + JSON.stringify(ret));
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           let err = e as BusinessError;
           expect(false).assertTrue();
           hilog.info(0x0000, '[ANI]',
@@ -286,7 +286,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setSpecificSystemBarEnabled promise Succeeded');
 
           expect(true).assertTrue();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           let err = e as BusinessError;
           hilog.info(0x0000, '[ANI]',
             `finaltest [ANI] setSpecificSystemBarEnabled promise Failed, Cause code: ${err.code}, message: ${err.message}`);
@@ -336,7 +336,7 @@ export default function abilityTest() {
         win.setWindowKeepScreenOn(true).then((): void => {
           expect(true).assertTrue();
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowKeepScreenOn promise Succeeded');
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           expect(false).assertTrue();
           let err = e as BusinessError;
           hilog.info(0x0000, '[ANI]',
@@ -387,7 +387,7 @@ export default function abilityTest() {
         win.setWindowTouchable(true).then((): void => {
           expect(true).assertTrue();
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowTouchable promise Succeeded');
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           expect(false).assertTrue();
           let err = e as BusinessError;
           hilog.info(0x0000, '[ANI]',
@@ -459,7 +459,7 @@ export default function abilityTest() {
         win.isWindowSupportWideGamut().then((data: boolean): void => {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] isWindowSupportWideGamut  promise Succeeded' + data);
           expect(true).assertTrue();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           let err = e as BusinessError;
           hilog.info(0x0000, '[ANI]',
             `finaltest [ANI] isWindowSupportWideGamut promise Failed , Cause code: ${err.code}, message: ${err.message}`);
@@ -879,7 +879,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowSystemBarProperties promise Succeeded');
           expect(true).assertTrue();
           done();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           let err = e as BusinessError;
           hilog.info(0x0000, '[ANI]',
             `finaltest [ANI] setWindowSystemBarProperties promise Failed, Cause code: ${err.code}, message: ${err.message}`);
@@ -904,7 +904,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowLayoutFullScreen promise Succeeded');
           expect(true).assertTrue();
           done();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           let err = e as BusinessError;
           hilog.info(0x0000, '[ANI]',
             `finaltest [ANI] setWindowLayoutFullScreen promise Failed, Cause code: ${err},:${err}`);
@@ -1261,7 +1261,7 @@ export default function abilityTest() {
         win.recover().then((): void => {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] recover Succeeded');
           expect(true).assertTrue();
-        }).catch((e: NullishType): void => {
+        }).catch((e: Any): void => {
           let err = e as BusinessError;
 
           if (err.code == 801) {
@@ -1424,7 +1424,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowPrivacyMode promise success');
           expect(true).assertTrue();
           done();
-        }).catch((err: NullishType): void => {
+        }).catch((err: Any): void => {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowPrivacyMode promise fail. err: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done();
