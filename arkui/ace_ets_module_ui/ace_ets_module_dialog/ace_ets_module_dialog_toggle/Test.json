@@ -11,8 +11,8 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsAceEtsModuleDialogRadioTest.hap",
-                "ActsAceEtsModuleDialogRadioTestMain.hap"
+                "ActsAceEtsModuleDialogToggleTest.hap",
+                "ActsAceEtsModuleDialogToggleTestMain.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
