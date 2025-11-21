@@ -17,17 +17,12 @@
 #include "napi/native_api.h"
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
+#include <GLES2/gl2ext.h>
 #include <GLES3/gl32.h>
-#include <bits/alltypes.h>
 #include <cstring>
 #include <native_buffer/native_buffer.h>
 #include <native_image/native_image.h>
 #include <native_window/external_window.h>
-#include <sys/mman.h>
-#include <chrono>
-#include <iostream>
-#include <map>
-#include <native_image/graphic_error_code.h>
 #include <common/log_common.h>
 
 using GetPlatformDisplayExt = PFNEGLGETPLATFORMDISPLAYEXTPROC;
@@ -138,7 +133,6 @@ napi_value OHNativeImageCreateWithSingleBufferModeUsingTextImageNormal(napi_env 
     napi_value result = nullptr;
     OH_NativeImage *nativeImage = nullptr;
     GLenum nativeImageTexId_;
-    GLuint GL_TEXTURE_EXTERNAL_OES;
     glBindTexture(GL_TEXTURE_EXTERNAL_OES, nativeImageTexId_);
     nativeImage = OH_NativeImage_CreateWithSingleBufferMode(nativeImageTexId_, GL_TEXTURE_EXTERNAL_OES, true);
     if (nativeImage == nullptr) {
@@ -195,7 +189,6 @@ napi_value OHNativeImageCreateWithSingleBufferModeUsingTextImageMultipleCalls(na
     const int count = NUMBER_10;
     OH_NativeImage *imageArray[10] = {nullptr};
     for (int i = 0; i < count; ++i) {
-        GLuint GL_TEXTURE_EXTERNAL_OES;
         glBindTexture(GL_TEXTURE_EXTERNAL_OES, 1);
         imageArray[i] = OH_NativeImage_CreateWithSingleBufferMode(1, GL_TEXTURE_EXTERNAL_OES, true);
         if (imageArray[i] == nullptr) {
@@ -471,7 +464,6 @@ napi_value OHNativeImageGetColorSpaceMultipleCalls(napi_env env, napi_callback_i
     OH_NativeBuffer_ColorSpace colorSpace;
     OH_NativeImage *imageArray[10] = {nullptr};
     for (int i = 0; i < count; ++i) {
-        GLuint GL_TEXTURE_EXTERNAL_OES;
         glBindTexture(GL_TEXTURE_EXTERNAL_OES, 1);
         imageArray[i] = OH_NativeImage_CreateWithSingleBufferMode(1, GL_TEXTURE_EXTERNAL_OES, true);
         if (imageArray[i] == nullptr) {
@@ -503,7 +495,6 @@ napi_value OHNativeImageGetColorSpaceDestoryImage(napi_env env, napi_callback_in
     OH_NativeImage *image = nullptr;
     OH_NativeBuffer_ColorSpace colorSpace;
     GLenum nativeImageTexId_;
-    GLuint GL_TEXTURE_EXTERNAL_OES;
     glBindTexture(GL_TEXTURE_EXTERNAL_OES, nativeImageTexId_);
     image = OH_NativeImage_CreateWithSingleBufferMode(nativeImageTexId_, GL_TEXTURE_EXTERNAL_OES, true);
     if (image == nullptr) {
@@ -846,5 +837,47 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_c
     OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     delete initNative;
+    return result;
+}
+
+napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitEGLEnv();
+    GLuint textureId;
+    glGenTextures(PARAM_1, &textureId);
+    OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_EXTERNAL_OES, true);
+    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    int code = SET_BUFFER_GEOMETRY;
+    int32_t width = PARAM_800;
+    int32_t height = PARAM_600;
+    OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, code, width, height);
+    OHNativeWindowBuffer *buffer = nullptr;
+    int fenceFd;
+    int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
+    if (ret != 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result; 
+    }
+    Region region{nullptr, PARAM_0};
+    ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
+    if (ret != 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
+    if (ret != 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result; 
+    }
+    ret = OH_NativeImage_ReleaseTextImage(nativeImage);
+    if (ret != 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result; 
+    }
+    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    OH_NativeImage_Destroy(&nativeImage);
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
