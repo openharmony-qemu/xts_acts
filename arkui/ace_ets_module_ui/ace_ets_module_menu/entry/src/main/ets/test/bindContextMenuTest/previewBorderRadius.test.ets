@@ -61,7 +61,7 @@ export default function previewBorderRadius() {
       let strJson2 = getInspectorByKey('text1');
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('20');
       let btn1: Component = await driver.findComponent(ON.text('菜单选项'));
-      btn1.click();
+      await btn1.click();
       console.info('[' + tagName + '] END============================');
       done();
     });
@@ -84,7 +84,7 @@ export default function previewBorderRadius() {
       let strJson2 = getInspectorByKey('text2');
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('16');
       let btn1: Component = await driver.findComponent(ON.text('菜单选项'));
-      btn1.click();
+      await btn1.click();
       console.info('[' + tagName + '] END============================');
       done();
     });
@@ -107,7 +107,7 @@ export default function previewBorderRadius() {
       let strJson2 = getInspectorByKey('text3');
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('16');
       let btn1: Component = await driver.findComponent(ON.text('菜单选项'));
-      btn1.click();
+      await btn1.click();
       console.info('[' + tagName + '] END============================');
       done();
     });
