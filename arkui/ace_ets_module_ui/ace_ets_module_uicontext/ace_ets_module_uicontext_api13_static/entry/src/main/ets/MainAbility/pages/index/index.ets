@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium } from '../../../../../hypium/index';
+import { Hypium } from '../../../../../hypium';
 import testsuite from '../../../../src/test/List.test'
 import { Entry, Column, Component, Flex, FlexDirection,ClickEvent,Margin,
   ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,BorderStyle, Search
@@ -38,7 +38,7 @@ struct Index {
       let indexRouter = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', indexRouter );
       AppStorage.setOrCreate<UIContext>('uiCOntext', this.getUIContext() );
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

@@ -17,21 +17,21 @@ import router from '@ohos.router';
 import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {
+  TouchType,
+  KeyType,
+  MouseButton,
+  MouseAction,
   AlignRuleOption,
   focusControl,
   KeySource,
-  KeyType,
-  MouseAction,
-  MouseButton,
   SourceTool,
-  SourceType,
-  TouchType
+  SourceType
 } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendKeyEvent, sendMouseEvent, sendTouchEvent } from '@ohos.arkui.Test';
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import RectValue from './Rect';
 
@@ -149,8 +149,8 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<String, undefined | null | Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String, undefined | null | Object>;
+    let obj: Record<string, Object> =
+      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
@@ -287,7 +287,7 @@ export default class Utils {
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode.toInt(),
+      keyCode: keyCode as int,
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

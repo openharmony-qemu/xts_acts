@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -56,14 +56,15 @@ export default function GetWindowWidthAndHeightTest() {
       console.info("themePageToggleTest beforeEach end");
     });
 
-    
-    /*
-     * @tc.number   GetWindowWidthBreakpoint_static_0100
-     * @tc.name     GetWindowWidthBreakpoint_static_0100
-     * @tc.desc     GetWindowWidthBreakpoint_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    GetWindowWidthBreakpoint_static_0100
+     * @tc.name      GetWindowWidthBreakpoint_static_0100
+     * @tc.desc      api
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
-it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0,  async (done: () => void): Promise<void> => {
       console.info('GetWindowWidthBreakpoint_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -83,14 +84,15 @@ it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0, async (done: () => void
       console.info('[GetWindowWidthBreakpoint_static_0100] END');
       done();
     });
-    
-    /*
-     * @tc.number   GetWindowHeightBreakpoint_static_0200
-     * @tc.name     GetWindowHeightBreakpoint_static_0200
-     * @tc.desc     GetWindowHeightBreakpoint_static_0200
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    GetWindowHeightBreakpoint_static_0200
+     * @tc.name      GetWindowHeightBreakpoint_static_0200
+     * @tc.desc      api
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
-it('GetWindowHeightBreakpoint_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('GetWindowHeightBreakpoint_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GetWindowHeightBreakpoint_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -17,7 +17,7 @@ import image from '@ohos.multimedia.image';
 import {
   Entry, Component, $r,
   Column, ColumnOptions, Row, RowOptions, Color, Image, ImageFit, ButtonType,
-  Text, Button, FontWeight, ClickEvent, Margin, Visibility,
+  Text, Button, FontWeight, ClickEvent, Margin, Visibility,PixelMap
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -50,10 +50,14 @@ struct componentSnapshotSync{
             .id('gPromise')
             .onClick((e:ClickEvent)=>{
               try {
+                console.log('++++++++++++++++++++1')
                 let pixelmap = componentSnapshot.getSync('image2',{scale:1,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap
-              } catch (error) {
+                console.log('++++++++++++++++++++1pixelmap'+pixelmap)
+                this.pixmap = pixelmap as PixelMap
+              } catch (error:Error) {
+                console.log('++++++++++++++++++++1Error')
                 this.code = error.code.toString()
+                console.log('++++++++++++++++++++1Error'+error.code.toString()) //错误码不对 0
               }
             }).height('5%')
           Button('getSync-0.1')
@@ -61,8 +65,8 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap =componentSnapshot.getSync('-0.1',{scale:4,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap
-              } catch (error) {
+                this.pixmap = pixelmap as PixelMap
+              } catch (error:Error) {
                 this.code1 = error.code.toString()
               }
             }).height('5%')
@@ -71,8 +75,8 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('-2',{scale:4,waitUntilRenderFinished:false});
-                this.pixmap = pixelmap
-              } catch (error) {
+                this.pixmap = pixelmap as PixelMap
+              } catch (error:Error) {
                 this.code2 = error.code.toString()
               }
             }).height('5%')
@@ -81,8 +85,8 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('ab',{scale:0.5,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap
-              } catch (error) {
+                this.pixmap = pixelmap as PixelMap
+              } catch (error:Error) {
                 this.code3 = error.code.toString()
               }
             }).height('5%')
@@ -91,8 +95,8 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('1',{scale:1,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap
-              } catch (error) {
+                this.pixmap = pixelmap as PixelMap
+              } catch (error:Error) {
                 this.code4 = error.code.toString()
               }
             }).height('5%')

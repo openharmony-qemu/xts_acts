@@ -15,8 +15,12 @@
 
 import UIContextTestCase from './UIContext/UIContextTestCase.test'
 import UIContextComponentSnapshot from './UIContext/UIContextComponentSnapshot.test'
+import ComponentSnapshotSync from './componentSnapshot/componentSnapshotSync.test'
+import UIContextApi1 from './UIContext/UIContextApi1.test'
 
 export default function testsuite() {
-  UIContextTestCase();
-  UIContextComponentSnapshot()
+  // UIContextTestCase(); //getHostContext
+  // UIContextComponentSnapshot(); //getComponentSnapshot().getSync
+  ComponentSnapshotSync();//componentSnapshot.getSync
+  // UIContextApi1();//getFocusController().clearFocus()
 }

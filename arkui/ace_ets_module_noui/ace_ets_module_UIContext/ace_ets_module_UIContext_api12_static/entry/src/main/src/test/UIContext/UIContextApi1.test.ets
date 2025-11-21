@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -60,19 +60,19 @@ export default function UIContextApi1() {
     
 
     /*
-     * @tc.number   UIContextApi1_0100
-     * @tc.name     UIContextApi1_0100
-     * @tc.desc     UIContextApi1_0100
+     * @tc.number   UIContextApi1_static_0100
+     * @tc.name     UIContextApi1_static_0100
+     * @tc.desc     UIContextApi1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('UIContextApi1_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextApi1_0100 START');
+it('UIContextApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('UIContextApi1_static_0100 START');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('UIContextApi1_btn2',10,"")
       await CommonFunc.sleep(1000);
       let UIContextApi1_1 = inspector.getInspectorByKey('UIContextApi1_btn2');
       expect(JSON.stringify(JSON.parseJsonElement(UIContextApi1_1).getElement('$attrs').getString('backgroundColor'))).assertEqual('"#FF0000FF"');
-      console.info('UIContextApi1_0100 END');
+      console.info('UIContextApi1_static_0100 END');
       done();
     });
   })
