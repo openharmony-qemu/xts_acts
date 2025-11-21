@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+class TextAreaModifierApi20 implements AttributeModifier<TextAreaAttribute> {
 
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance.type(TextAreaType.ONE_TIME_CODE)
@@ -22,8 +22,8 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 
 @Entry
 @Component
-struct TextAreaTypeExample {
-  @State textAreaModifier: TextAreaModifier = new TextAreaModifier()
+struct TextAreaTypeApi20 {
+  @State textAreaModifier: TextAreaModifierApi20 = new TextAreaModifierApi20()
 
   build() {
     Column({ space: 5 }) {
@@ -32,7 +32,7 @@ struct TextAreaTypeExample {
         placeholder: 'input your word...',
       })
         .fontSize(16)
-        .id('TextAreaType_ONE_TIME_CODE')
+        .id('TextAreaTypeApi20_ONE_TIME_CODE')
         .backgroundColor('#FFFFFF')
         .type(TextAreaType.ONE_TIME_CODE)
         .height('5%')
@@ -42,7 +42,7 @@ struct TextAreaTypeExample {
         placeholder: 'input your word...',
       })
         .fontSize(16)
-        .id('TextAreaType_default')
+        .id('TextAreaTypeApi20_default')
         .backgroundColor('#FFFFFF')
         .height('5%')
 
@@ -52,7 +52,7 @@ struct TextAreaTypeExample {
       })
         .fontSize(16)
         .backgroundColor('#FFFFFF')
-        .id('TextAreaType_undefined')
+        .id('TextAreaTypeApi20_undefined')
         .type(undefined)
         .height('5%')
 
@@ -61,7 +61,7 @@ struct TextAreaTypeExample {
         placeholder: 'TextArea组件, 请输入...' 
       })
         .attributeModifier(this.textAreaModifier)
-        .id('TextAreaType_Modifier')
+        .id('TextAreaTypeApi20_Modifier')
         .height('5%')
         .margin(1)
         .borderWidth(1)

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+class SearchModifierApi11 implements AttributeModifier<SearchAttribute> {
   applyNormalAttribute(SearchInstance: SearchAttribute): void {
     SearchInstance.textFont({ size: 15 });
   }
@@ -21,9 +21,9 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 
 @Entry
 @Component
-struct SearchModifier1 {
+struct SearchModifierApi11Page {
   @State value: string = 'init'
-  @State modifier: SearchModifier = new SearchModifier();
+  @State modifier: SearchModifierApi11 = new SearchModifierApi11();
 
   aboutToAppear(): void {
     this.value = typeof SearchInstance

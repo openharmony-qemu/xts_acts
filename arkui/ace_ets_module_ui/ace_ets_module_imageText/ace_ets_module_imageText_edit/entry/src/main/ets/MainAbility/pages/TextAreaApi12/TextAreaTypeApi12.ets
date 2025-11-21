@@ -14,27 +14,46 @@
  */
 @Entry
 @Component
-struct TextAreaTypeExample {
+struct TextAreaTypeApi12 {
   build() {
     Column({ space: 5 }) {
       TextArea({
-        text: 'TextAreaType.NORMAL',
+        text: 'TextAreaType.NUMBER_DECIMAL',
         placeholder: 'input your word...',
       })
         .fontSize(16)
-        .id('TextAreaType_NORMAL')
+        .id('TextAreaTypeApi12_NUMBER_DECIMAL')
         .backgroundColor('#FFFFFF')
-        .type(TextAreaType.NORMAL)
+        .type(TextAreaType.NUMBER_DECIMAL)
         .height('5%')
 
       TextArea({
-        text: 'TextAreaType.NUMBER',
+        text: 'TextAreaType.URL',
         placeholder: 'input your word...',
       })
         .fontSize(16)
         .backgroundColor('#FFFFFF')
-        .id('TextAreaType_NUMBER')
-        .type(TextAreaType.NUMBER)
+        .id('TextAreaTypeApi12_URL')
+        .type(TextAreaType.URL)
+        .height('5%')
+
+      TextArea({
+        text: 'TextAreaType: default',
+        placeholder: 'input your word...',
+      })
+        .fontSize(16)
+        .id('TextAreaTypeApi12_default')
+        .backgroundColor('#FFFFFF')
+        .height('5%')
+
+      TextArea({
+        text: 'TextAreaType: undefined',
+        placeholder: 'input your word...',
+      })
+        .fontSize(16)
+        .backgroundColor('#FFFFFF')
+        .id('TextAreaTypeApi12_undefined')
+        .type(undefined)
         .height('5%')
     }.height('100%')
   }

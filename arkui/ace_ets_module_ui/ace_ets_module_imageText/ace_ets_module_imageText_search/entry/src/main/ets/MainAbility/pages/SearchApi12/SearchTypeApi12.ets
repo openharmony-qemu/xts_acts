@@ -12,53 +12,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
- class SearchModifier implements AttributeModifier<SearchAttribute> {
-
-  applyNormalAttribute(instance: SearchAttribute): void {
-    instance.type(SearchType.ONE_TIME_CODE)
-  }
-}
-
 @Entry
 @Component
-struct SearchTypeExample {
-  @State searchModifier: SearchModifier = new SearchModifier()
-
+struct SearchTypeApi12 {
   build() {
     Column({ space: 5 }) {
       Search({
-        value:'SearchType.ONE_TIME_CODE',
+        value:'SearchType.NUMBER_DECIMAL',
         placeholder: 'input your word...',
       })
-        .id('SearchType_ONE_TIME_CODE')
-        .type(SearchType.ONE_TIME_CODE)
+        .id('SearchTypeApi12_NUMBER_DECIMAL')
+        .type(SearchType.NUMBER_DECIMAL)
+        .height('5%')
+
+      Search({
+        value:'SearchType.URL',
+        placeholder: 'input your word...',
+      })
+        .id('SearchTypeApi12_URL')
+        .type(SearchType.URL)
         .height('5%')
 
       Search({
         value:'SearchType: default',
         placeholder: 'input your word...',
       })
-        .id('SearchType_default')
+        .id('SearchTypeApi12_default')
         .height('5%')
 
       Search({
         value:'SearchType: undefined',
         placeholder: 'input your word...',
       })
-        .id('SearchType_undefined')
+        .id('SearchTypeApi12_undefined')
         .type(undefined)
         .height('5%')
-
-      Search({
-        value:'SearchModifier',
-        placeholder:'Search组件, 请输入...'
-      })
-        .attributeModifier(this.searchModifier)
-        .id('SearchType_Modifier')
-        .height('5%')
-        .margin(1)
-        .borderWidth(1)
     }.height('100%')
   }
 }

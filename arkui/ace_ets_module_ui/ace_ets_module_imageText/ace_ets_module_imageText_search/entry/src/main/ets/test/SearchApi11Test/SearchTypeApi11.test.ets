@@ -17,63 +17,63 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
 
-export default function SearchTypeTest() {
-  describe('SearchTypeTest', () => {
+export default function SearchTypeApi11Test() {
+  describe('SearchTypeApi11Test', () => {
     beforeEach(async (done: Function) => {
-      console.info("SearchTypeTest beforeEach start");
+      console.info("SearchTypeApi11Test beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/SearchApi11/SearchType',
+        url: 'MainAbility/pages/SearchApi11/SearchTypeApi11',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get SearchTypeTest state pages: " + JSON.stringify(pages));
-        if (!("SearchType" == pages.name)) {
-          console.info("get SearchTypeTest state pages.name: " + JSON.stringify(pages.name));
+        console.info("get SearchTypeApi11Test state pages: " + JSON.stringify(pages));
+        if (!("SearchTypeApi11" == pages.name)) {
+          console.info("get SearchTypeApi11Test state pages.name: " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push SearchTypeTest success: " + JSON.stringify(result));
+          console.info("push SearchTypeApi11Test success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push SearchTypeTest page error: " + err);
+        console.error("push SearchTypeApi11Test page error: " + err);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeTest_0010
-     * @tc.name      SearchTypeTest_0010
+     * @tc.number    SUB_ACE_SearchTypeApi11Test_0010
+     * @tc.name      SearchTypeApi11Test_0010
      * @tc.desc      test Search: SearchType.NORMAL
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('SearchTypeTest_0010', Level.LEVEL0, async (done: Function) => {
-      console.info('[SearchTypeTest_0010] START');
-      let strJson = getInspectorByKey('SearchType_NORMAL');
+    it('SearchTypeApi11Test_0010', Level.LEVEL0, async (done: Function) => {
+      console.info('[SearchTypeApi11Test_0010] START');
+      let strJson = getInspectorByKey('SearchTypeApi11_NORMAL');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('[SearchTypeTest_0010] SearchType: ' + JSON.stringify(obj.$attrs.type));
+      console.info('[SearchTypeApi11Test_0010] SearchType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('SearchType.NORMAL');
-      console.info('[SearchTypeTest_0010] END');
+      console.info('[SearchTypeApi11Test_0010] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeTest_0020
-     * @tc.name      SearchTypeTest_0020
+     * @tc.number    SUB_ACE_SearchTypeApi11Test_0020
+     * @tc.name      SearchTypeApi11Test_0020
      * @tc.desc      test Search: SearchType.NUMBER
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('SearchTypeTest_0020', Level.LEVEL0, async (done: Function) => {
-      console.info('[SearchTypeTest_0020] START');
-      let strJson = getInspectorByKey('SearchType_NUMBER');
+    it('SearchTypeApi11Test_0020', Level.LEVEL0, async (done: Function) => {
+      console.info('[SearchTypeApi11Test_0020] START');
+      let strJson = getInspectorByKey('SearchTypeApi11_NUMBER');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('[SearchTypeTest_0020] SearchType: ' + JSON.stringify(obj.$attrs.type));
+      console.info('[SearchTypeApi11Test_0020] SearchType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('SearchType.NUMBER');
-      console.info('[SearchTypeTest_0020] END');
+      console.info('[SearchTypeApi11Test_0020] END');
       done();
     });
   })

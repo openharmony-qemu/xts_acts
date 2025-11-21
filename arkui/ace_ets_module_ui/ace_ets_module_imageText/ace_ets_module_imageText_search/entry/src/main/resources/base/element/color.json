@@ -31,6 +31,14 @@
     {
       "name": "color_D90013_red",
       "value": "#D90013"
+    },
+    {
+      "name": "maxFontScale",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "minFontScale",
+      "value": "#FFFFFF"
     }
   ]
 }

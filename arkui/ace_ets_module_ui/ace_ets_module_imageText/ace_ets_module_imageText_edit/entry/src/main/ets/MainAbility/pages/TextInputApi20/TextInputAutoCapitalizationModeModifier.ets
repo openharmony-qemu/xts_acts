@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-class TextInputModifier1 implements AttributeModifier<TextInputAttribute> {
+class TextInputModifierAuto implements AttributeModifier<TextInputAttribute> {
 
   applyNormalAttribute(instance: TextInputAttribute): void {
     instance.autoCapitalizationMode(AutoCapitalizationMode.NONE)
@@ -58,7 +58,7 @@ class TextInputModifier6 implements AttributeModifier<TextInputAttribute> {
 @Entry
 @Component
 struct TextInputAutoCapitalizationModeModifier {
-  @State TextInputModifier1: TextInputModifier1 = new TextInputModifier1()
+  @State TextInputModifier1: TextInputModifierAuto = new TextInputModifierAuto()
   @State TextInputModifier2: TextInputModifier2 = new TextInputModifier2()
   @State TextInputModifier3: TextInputModifier3 = new TextInputModifier3()
   @State TextInputModifier4: TextInputModifier4 = new TextInputModifier4()

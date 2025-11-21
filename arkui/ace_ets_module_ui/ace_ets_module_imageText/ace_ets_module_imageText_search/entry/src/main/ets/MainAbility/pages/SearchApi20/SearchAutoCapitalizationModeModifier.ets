@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-class SearchModifier1 implements AttributeModifier<SearchAttribute> {
+class SearchModifier111 implements AttributeModifier<SearchAttribute> {
 
   applyNormalAttribute(instance: SearchAttribute): void {
     instance.autoCapitalizationMode(AutoCapitalizationMode.NONE)
@@ -58,7 +58,7 @@ class SearchModifier6 implements AttributeModifier<SearchAttribute> {
 @Entry
 @Component
 struct SearchAutoCapitalizationModeModifier {
-  @State SearchModifier1: SearchModifier1 = new SearchModifier1()
+  @State SearchModifier1: SearchModifier111 = new SearchModifier111()
   @State SearchModifier2: SearchModifier2 = new SearchModifier2()
   @State SearchModifier3: SearchModifier3 = new SearchModifier3()
   @State SearchModifier4: SearchModifier4 = new SearchModifier4()

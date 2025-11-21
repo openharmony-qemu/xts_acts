@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct TextAreaExample {
+struct TextAreaApi11 {
   @State text: string = ''
   @State text1: string = 'TextArea1'
   @State text2: string = 'TextArea2'

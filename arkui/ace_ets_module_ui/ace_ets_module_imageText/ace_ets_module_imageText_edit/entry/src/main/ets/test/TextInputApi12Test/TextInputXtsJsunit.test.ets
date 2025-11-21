@@ -14,7 +14,7 @@
  */
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import Utils from './Utils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function TextInputXtsJsunit() {
   describe('TextInputXtsJsunit', () => {
@@ -31,7 +31,7 @@ export default function TextInputXtsJsunit() {
         if (!('TextInputXts' == pages.name)) {
           console.info('get TextInputXts state pages.name: ' + JSON.stringify(pages.name));
           result = await router.push(options);
-          await Utils.sleep(2000);
+          await CommonFunc.sleep(2000);
           console.info('push TextInputXts page result: ' + JSON.stringify(result));
         }
       } catch (err) {

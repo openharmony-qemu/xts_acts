@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+class TextInputModifierApi12 implements AttributeModifier<TextInputAttribute> {
   applyNormalAttribute(TextInputInstance: TextInputAttribute): void {
     TextInputInstance.fontSize(20);
   }
@@ -21,9 +21,9 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 
 @Entry
 @Component
-struct TextInputModifier1 {
+struct TextInputModifierApi12 {
   @State value: string = 'init'
-  @State modifier: TextInputModifier = new TextInputModifier();
+  @State modifier: TextInputModifierApi12 = new TextInputModifierApi12();
 
   aboutToAppear(): void {
     this.value = typeof TextInputInstance

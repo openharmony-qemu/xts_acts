@@ -22,7 +22,7 @@ import search_maxLength2 from './SearchApi11Test/search_maxLength2.test';
 import search_top from './SearchApi11Test/search_top.test'
 import search_bottom from './SearchApi11Test/search_bottom.test'
 import searchTest from './SearchApi11Test/SearchJsunit1.test';
-import SearchTypeTest from "./SearchApi11Test/SearchType.test";
+import SearchTypeApi11Test from "./SearchApi11Test/SearchTypeApi11.test";
 import SearchModifierTest from "./SearchApi11Test/SearchModifier.test";
 import SearchEvent from './SearchApi12Test/SearchEvent.test'
 import SearchEvent2 from './SearchApi12Test/SearchEvent2.test'
@@ -33,10 +33,10 @@ import searchDecoration from "./SearchApi12Test/searchDecoration.test";
 import searchLetterSpacing from "./SearchApi12Test/searchLetterSpacing.test";
 import searchLineHeight from "./SearchApi12Test/searchLineHeight.test";
 import APISearchExample from "./SearchApi12Test/APISearchExample.test";
-import MenuPolicy_HIDE_APITest from './SearchApi12Test/Search_APITest/MenuPolicy_HIDE_APITest';
-import MenuPolicy_SHOW_APITest from './SearchApi12Test/Search_APITest/MenuPolicy_SHOW_APITest';
+import MenuPolicy_HIDE_APITest from './SearchApi12Test/MenuPolicy_HIDE_APITest';
+import MenuPolicy_SHOW_APITest from './SearchApi12Test/MenuPolicy_SHOW_APITest';
 import SearchXtsJsunit from './SearchApi12Test/SearchXtsJsunit.test'
-import SearchTypeTest from "./SearchApi12Test/SearchType.test";
+import SearchTypeApi12Test from "./SearchApi12Test/SearchTypeApi12.test";
 import searchEnterKeyTypeTest from "./SearchApi12Test/SearchEnterKeyType.test";
 import SearchFontFeatureTest from "./SearchApi12Test/SearchFontFeature.test";
 import SearchKeyboardAppearanceTest from './SearchApi15Test/SearchKeyboardAppearance.test';
@@ -45,7 +45,7 @@ import SearchStopBackPressTest from './SearchApi16Test/SearchStopBackPress.test'
 import searchFontScaleTest from './SearchApi16Test/searchFontScaleTest.test';
 import searchHalfLeadingTest from './SearchApi16Test/searchHalfLeadingTest.test';
 import SearchGetTextTest from './SearchApi18Test/SearchGetText.test';
-import SearchTypeTest from './SearchApi20Test/SearchType.test';
+import SearchTypeApi20Test from './SearchApi20Test/SearchTypeApi20.test';
 import SearchEnableAutoSpacingTest from './SearchApi20Test/SearchEnableAutoSpacing.test';
 import SearchAutoCapitalizationModeTest from './SearchApi20Test/SearchAutoCapitalizationMode.test';
 import SearchAutoCapitalizationModeModifierTest from './SearchApi20Test/SearchAutoCapitalizationModeModifier.test';
@@ -64,7 +64,7 @@ export default function testsuite() {
   search_top()
   search_bottom()
   searchTest()
-  SearchTypeTest()
+  SearchTypeApi11Test()
   SearchModifierTest()
   SearchEvent()         // Api12
   SearchEvent2()
@@ -78,6 +78,7 @@ export default function testsuite() {
   MenuPolicy_HIDE_APITest()
   MenuPolicy_SHOW_APITest()
   SearchXtsJsunit()
+  SearchTypeApi12Test()
   searchEnterKeyTypeTest()
   SearchFontFeatureTest()
   SearchKeyboardAppearanceTest()  // Api15
@@ -86,7 +87,7 @@ export default function testsuite() {
   searchFontScaleTest()
   searchHalfLeadingTest()
   SearchGetTextTest()             // Api18
-  SearchTypeTest()                // Api20
+  SearchTypeApi20Test()           // Api20
   SearchEnableAutoSpacingTest()
   SearchAutoCapitalizationModeTest()
   SearchAutoCapitalizationModeModifierTest()

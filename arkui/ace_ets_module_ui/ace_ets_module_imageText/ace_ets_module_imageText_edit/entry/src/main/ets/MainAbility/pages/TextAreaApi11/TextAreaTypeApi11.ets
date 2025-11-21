@@ -14,39 +14,27 @@
  */
 @Entry
 @Component
-struct SearchTypeExample1 {
+struct TextAreaTypeApi11 {
   build() {
     Column({ space: 5 }) {
-      Search({
-        value: 'SearchType.NORMAL',
+      TextArea({
+        text: 'TextAreaType.NORMAL',
         placeholder: 'input your word...',
       })
-        .id('SearchType_NORMAL')
-        .type(SearchType.NORMAL)
+        .fontSize(16)
+        .id('TextAreaTypeApi11_NORMAL')
+        .backgroundColor('#FFFFFF')
+        .type(TextAreaType.NORMAL)
         .height('5%')
 
-      Search({
-        value: 'SearchType.NUMBER',
+      TextArea({
+        text: 'TextAreaType.NUMBER',
         placeholder: 'input your word...',
       })
-        .id('SearchType_NUMBER')
-        .type(SearchType.NUMBER)
-        .height('5%')
-
-      Search({
-        value:'SearchType.NUMBER_DECIMAL',
-        placeholder: 'input your word...',
-      })
-        .id('SearchType_NUMBER_DECIMAL')
-        .type(SearchType.NUMBER_DECIMAL)
-        .height('5%')
-
-      Search({
-        value:'SearchType.URL',
-        placeholder: 'input your word...',
-      })
-        .id('SearchType_URL')
-        .type(SearchType.URL)
+        .fontSize(16)
+        .backgroundColor('#FFFFFF')
+        .id('TextAreaTypeApi11_NUMBER')
+        .type(TextAreaType.NUMBER)
         .height('5%')
     }.height('100%')
   }

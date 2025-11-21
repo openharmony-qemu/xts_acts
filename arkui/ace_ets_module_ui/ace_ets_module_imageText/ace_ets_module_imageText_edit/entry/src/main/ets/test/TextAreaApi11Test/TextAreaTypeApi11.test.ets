@@ -18,63 +18,63 @@ import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 
-export default function TextAreaTypeTest() {
-  describe('TextAreaTypeTest', () => {
+export default function TextAreaTypeApi11Test() {
+  describe('TextAreaTypeApi11Test', () => {
     beforeEach(async (done: Function) => {
-      console.info("TextAreaTypeTest beforeEach start");
+      console.info("TextAreaTypeApi11Test beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextAreaApi11/TextAreaType',
+        url: 'MainAbility/pages/TextAreaApi11/TextAreaTypeApi11',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get TextAreaTypeTest state pages: " + JSON.stringify(pages));
+        console.info("get TextAreaTypeApi11Test state pages: " + JSON.stringify(pages));
         if (!("TextAreaType" == pages.name)) {
-          console.info("get TextAreaTypeTest state pages.name: " + JSON.stringify(pages.name));
+          console.info("get TextAreaTypeApi11Test state pages.name: " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TextAreaTypeTest success: " + JSON.stringify(result));
+          console.info("push TextAreaTypeApi11Test success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push TextAreaTypeTest page error: " + err);
+        console.error("push TextAreaTypeApi11Test page error: " + err);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeTest_0010
-     * @tc.name      TextAreaTypeTest_0010
+     * @tc.number    SUB_ACE_TextAreaTypeApi11Test_0010
+     * @tc.name      TextAreaTypeApi11Test_0010
      * @tc.desc      test TextArea: TextAreaType.NORMAL
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('TextAreaTypeTest_0010', Level.LEVEL0, async (done: Function) => {
-      console.info('[TextAreaTypeTest_0010] START');
-      let strJson = getInspectorByKey('TextAreaType_NORMAL');
+    it('TextAreaTypeApi11Test_0010', Level.LEVEL0, async (done: Function) => {
+      console.info('[TextAreaTypeApi11Test_0010] START');
+      let strJson = getInspectorByKey('TextAreaTypeApi11_NORMAL');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('[TextAreaTypeTest_0010] TextAreaType: ' + JSON.stringify(obj.$attrs.type));
+      console.info('[TextAreaTypeApi11Test_0010] TextAreaType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('TextAreaType.NORMAL');
-      console.info('[TextAreaTypeTest_0010] END');
+      console.info('[TextAreaTypeApi11Test_0010] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeTest_0020
-     * @tc.name      TextAreaTypeTest_0020
+     * @tc.number    SUB_ACE_TextAreaTypeApi11Test_0020
+     * @tc.name      TextAreaTypeApi11Test_0020
      * @tc.desc      test TextArea: TextAreaType.NUMBER
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('TextAreaTypeTest_0020', Level.LEVEL0, async (done: Function) => {
-      console.info('[TextAreaTypeTest_0020] START');
-      let strJson = getInspectorByKey('TextAreaType_NUMBER');
+    it('TextAreaTypeApi11Test_0020', Level.LEVEL0, async (done: Function) => {
+      console.info('[TextAreaTypeApi11Test_0020] START');
+      let strJson = getInspectorByKey('TextAreaTypeApi11_NUMBER');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('[TextAreaTypeTest_0020] TextAreaType: ' + JSON.stringify(obj.$attrs.type));
+      console.info('[TextAreaTypeApi11Test_0020] TextAreaType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('TextAreaType.NUMBER');
-      console.info('[TextAreaTypeTest_0020] END');
+      console.info('[TextAreaTypeApi11Test_0020] END');
       done();
     });
   })

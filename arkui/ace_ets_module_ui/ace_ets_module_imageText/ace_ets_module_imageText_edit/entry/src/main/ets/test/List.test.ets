@@ -28,7 +28,7 @@ import textAenEnabledJsunit from './TextAreaApi11Test/textAenEnabledJsunit.test'
 import textAreaOnCutJsunit from './TextAreaApi11Test/textArea.test';
 import textAreaJsunit3 from './TextAreaApi11Test/TextAreaJsunit3.test';
 import textAreaOnCaretAndKeyboardTest from './TextAreaApi11Test/textAreaOnCaretAndKeyboard.test';
-import TextAreaTypeTest from "./TextAreaApi11Test/TextAreaType.test";
+import TextAreaTypeApi11Test from "./TextAreaApi11Test/TextAreaTypeApi11.test";
 import TextAreaShowCounterTest from './TextAreaApi11Test/TextAreaShowCounter.test';
 import TextAreaApi1 from './TextAreaApi12Test/TextAreaApi1.test'
 import TextAreaApi2 from './TextAreaApi12Test/TextAreaApi2.test'
@@ -36,7 +36,7 @@ import TextAreaApi3 from './TextAreaApi12Test/TextAreaApi3.test'
 import TextArea_lineBreakStrategyTest from './TextAreaApi12Test/TextArea_lineBreakStrategyTest.test'
 import TextArea_lineSpacingTest from './TextAreaApi12Test/TextArea_lineSpacingTest.test'
 import TextAreaApi4 from './TextAreaApi12Test/TextAreaApi4.test'
-import TextAreaTest from './TextAreaApi12Test/TextAreaAPITest/TextAreaTest.test'
+import TextAreaTest from './TextAreaApi12Test/TextAreaTest.test'
 import textAreaPreview from './TextAreaApi12Test/textAreaPreview.test'
 import textAreaAutoFillTest from './TextAreaApi12Test/TextAreaAutoFillJsUnit.test'
 import textAreaHeightAdaptivePolicyTest from "./TextAreaApi12Test/textAreaHeightAdaptivePolicy.test";
@@ -46,7 +46,7 @@ import textAreaDecoration from "./TextAreaApi12Test/textAreaDecoration.test";
 import textAreaLineHeight from "./TextAreaApi12Test/textAreaLineHeight.test";
 import textAreaLetterSpacing from "./TextAreaApi12Test/textAreaLetterSpacing.test";
 import TextAreaXtsJsunit from './TextAreaApi12Test/TextAreaXtsJsunit.test'
-import TextAreaTypeTest from "./TextAreaApi12Test/TextAreaType.test";
+import TextAreaTypeApi12Test from "./TextAreaApi12Test/TextAreaTypeApi12.test";
 import textAreaNode from "./TextAreaApi14Test/textAreaNode.test";
 import onSubmitTest from './TextAreaApi14Test/onSubmitTest.test';
 import TextAreaKeyboardAppearanceTest from './TextAreaApi15Test/TextAreaKeyboardAppearance.test';
@@ -56,7 +56,7 @@ import textAreaFontScaleTest from './TextAreaApi16Test/textAreaFontScaleTest.tes
 import textAreaHalfLeadingTest from './TextAreaApi16Test/textAreaHalfLeadingTest.test';
 import TextAreaGetTextTest from './TextAreaApi18Test/TextAreaGetText.test';
 import WordBreakTest from './TextAreaApi18Test/WordBreakTest.test';
-import TextAreaTypeTest from './TextAreaApi20Test/TextAreaType.test';
+import TextAreaTypeApi20Test from './TextAreaApi20Test/TextAreaTypeApi20.test';
 import TextAreaEnableAutoSpacingTest from './TextAreaApi20Test/TextAreaEnableAutoSpacing.test';
 import TextAreaMinLinesTest from './TextAreaApi20Test/TextAreaMinLines.test';
 import TextAreaLineSpacingTest from './TextAreaApi20Test/TextAreaLineSpacing.test';
@@ -67,10 +67,9 @@ import TextAreaBindControllerTest from './TextAreaApi20Test/TextAreaBindControll
 import textAreaObserverTest from './TextAreaApi22Test/textAreaObserver.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
-import textInputApi1 from './TextInputApi11Test/textInputApi/textInputApi1.test'
-import textInputApiTest from './TextInputApi11Test/textInputApi/textinputkeyNewLine.test'
+import textInputApi1 from './TextInputApi11Test/textInputApi1.test'
+import textInputApiTest from './TextInputApi11Test/textinputkeyNewLine.test'
 import textInputJsunit from './TextInputApi11Test/TextInputJsunit.test';
-import textInputTest from './TextInputApi11Test/textinputCaretPosition.test'
 import textInput_caret from './TextInputApi11Test/textInput_caret.test';
 import textInputOnEditChangeJsunit from './TextInputApi11Test/textInput.test';
 import textInputJsunit3 from './TextInputApi11Test/TextInputJsunit3.test';
@@ -95,7 +94,7 @@ import textInputDecoration from "./TextInputApi12Test/textInputDecoration.test";
 import textInputLetterSpacing from "./TextInputApi12Test/textInputLetterSpacing.test";
 import textInputLineHeight from "./TextInputApi12Test/textInputLineHeight.test";
 import TextInputXtsJsunit from './TextInputApi12Test/TextInputXtsJsunit.test'
-import TextInputTypeTest from "./TextInputApi12Test/TextInputType.test";
+import TextInputTypeApi12Test from "./TextInputApi12Test/TextInputTypeApi12.test";
 import ContentTypeTest from './TextInputApi12Test/ContentType.test';
 import fontFeatureTest from './TextInputApi12Test/fontFeature.test';
 import TextInputModifierTest from "./TextInputApi12Test/TextInputModifier.test";
@@ -107,7 +106,7 @@ import textInputHalfLeadingTest from './TextInputApi16Test/textInputHalfLeadingT
 import ContentTypeTest1 from './TextInputApi18Test/ContentType1.test';
 import ContentTypeTest2 from './TextInputApi18Test/ContentType2.test';
 import TextInputGetTextTest from './TextInputApi18Test/TextInputGetText.test';
-import TextInputTypeTest from './TextInputApi20Test/TextInputType.test';
+import TextInputTypeApi20Test from './TextInputApi20Test/TextInputTypeApi20.test';
 import TextInputEnableAutoFillAnimationTest from './TextInputApi20Test/TextInputEnableAutoFillAnimation.test';
 import TextInputEnableAutoSpacingTest from './TextInputApi20Test/TextInputEnableAutoSpacing.test';
 import TextInputAutoCapitalizationModeTest from './TextInputApi20Test/TextInputAutoCapitalizationMode.test';
@@ -134,7 +133,7 @@ export default function testsuite() {
   textAreaOnCutJsunit()
   textAreaJsunit3()
   textAreaOnCaretAndKeyboardTest()
-  TextAreaTypeTest()
+  TextAreaTypeApi11Test()
   TextAreaShowCounterTest()
   TextAreaApi1()           // Api12
   TextAreaApi2()
@@ -152,7 +151,7 @@ export default function testsuite() {
   textAreaLineHeight()
   textAreaLetterSpacing()
   TextAreaXtsJsunit()
-  TextAreaTypeTest()
+  TextAreaTypeApi12Test()
   textAreaNode()                   // Api14
   onSubmitTest()
   TextAreaKeyboardAppearanceTest() // Api15
@@ -162,7 +161,7 @@ export default function testsuite() {
   textAreaHalfLeadingTest()
   TextAreaGetTextTest()            // Api18
   WordBreakTest()
-  TextAreaTypeTest()               // Api20
+  TextAreaTypeApi20Test()          // Api20
   TextAreaEnableAutoSpacingTest()
   TextAreaMinLinesTest()
   TextAreaLineSpacingTest()
@@ -177,7 +176,6 @@ export default function testsuite() {
   textInputApi1()            // Api11
   textInputApiTest()
   textInputJsunit()
-  textInputTest()
   textInput_caret()
   textInputOnEditChangeJsunit()
   textInputJsunit3()
@@ -202,7 +200,7 @@ export default function testsuite() {
   textInputLetterSpacing()
   textInputLineHeight()
   TextInputXtsJsunit()
-  TextInputTypeTest()
+  TextInputTypeApi12Test()
   ContentTypeTest()
   fontFeatureTest()
   TextInputModifierTest()
@@ -214,7 +212,7 @@ export default function testsuite() {
   ContentTypeTest1()                 // Api18
   ContentTypeTest2()
   TextInputGetTextTest()
-  TextInputTypeTest()                // Api20
+  TextInputTypeApi20Test()           // Api20
   TextInputEnableAutoFillAnimationTest()
   TextInputEnableAutoSpacingTest()
   TextInputAutoCapitalizationModeTest()

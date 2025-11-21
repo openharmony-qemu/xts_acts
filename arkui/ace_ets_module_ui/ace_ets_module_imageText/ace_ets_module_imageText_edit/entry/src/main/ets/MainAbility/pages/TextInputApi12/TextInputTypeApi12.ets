@@ -12,42 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
-
-  applyNormalAttribute(instance: TextInputAttribute): void {
-    instance.type(InputType.ONE_TIME_CODE)
-  }
-}
-
 @Entry
 @Component
-struct TextInputType {
-  @State textInputModifier: TextInputModifier = new TextInputModifier()
+struct TextInputTypeApi12 {
 
   build() {
     Column({ space: 1 }) {
       Text('TextInput: InputType新增枚举类型').height('5%')
-      TextInput({ placeholder: 'InputType.ONE_TIME_CODE' })
-        .id("TextInputType_ONE_TIME_CODE")
-        .type(InputType.ONE_TIME_CODE)
+      TextInput({ placeholder: 'InputType.URL' })
+        .id("TextInputTypeApi12_URL")
+        .type(InputType.URL)
         .height('10%')
 
       TextInput({ placeholder: 'TextInputType: default' })
-        .id('TextInputType_default')
+        .id('TextInputTypeApi12_default')
         .height('10%')
 
       TextInput({ placeholder: 'TextInputType: undefined' })
-        .id('TextInputType_undefined')
+        .id('TextInputTypeApi12_undefined')
         .type(undefined)
         .height('10%')
-
-      TextInput({ placeholder: 'TextInputType: Modifier' })
-        .id('TextInputType_Modifier')
-        .attributeModifier(this.textInputModifier)
-        .height('10%')
-        .margin(1)
-        .borderWidth(1)
     }.width('100%')
   }
 }

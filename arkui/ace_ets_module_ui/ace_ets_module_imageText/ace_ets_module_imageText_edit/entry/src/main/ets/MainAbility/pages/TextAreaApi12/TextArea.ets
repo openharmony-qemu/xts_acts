@@ -14,7 +14,7 @@
  */
 @Entry
 @Component
-struct TextAreaExample {
+struct TextAreaApi12 {
   @State insertValue: string = ""
   @State deleteValue: string = ""
   @State insertOffset: number = 0

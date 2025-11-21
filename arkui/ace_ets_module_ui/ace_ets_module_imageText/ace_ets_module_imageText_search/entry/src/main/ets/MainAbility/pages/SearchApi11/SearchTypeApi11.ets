@@ -14,46 +14,39 @@
  */
 @Entry
 @Component
-struct TextAreaTypeExample {
+struct SearchTypeApi11 {
   build() {
     Column({ space: 5 }) {
-      TextArea({
-        text: 'TextAreaType.NUMBER_DECIMAL',
+      Search({
+        value: 'SearchType.NORMAL',
         placeholder: 'input your word...',
       })
-        .fontSize(16)
-        .id('TextAreaType_NUMBER_DECIMAL')
-        .backgroundColor('#FFFFFF')
-        .type(TextAreaType.NUMBER_DECIMAL)
+        .id('SearchTypeApi11_NORMAL')
+        .type(SearchType.NORMAL)
         .height('5%')
 
-      TextArea({
-        text: 'TextAreaType.URL',
+      Search({
+        value: 'SearchType.NUMBER',
         placeholder: 'input your word...',
       })
-        .fontSize(16)
-        .backgroundColor('#FFFFFF')
-        .id('TextAreaType_URL')
-        .type(TextAreaType.URL)
+        .id('SearchTypeApi11_NUMBER')
+        .type(SearchType.NUMBER)
         .height('5%')
 
-      TextArea({
-        text: 'TextAreaType: default',
+      Search({
+        value:'SearchType.NUMBER_DECIMAL',
         placeholder: 'input your word...',
       })
-        .fontSize(16)
-        .id('TextAreaType_default')
-        .backgroundColor('#FFFFFF')
+        .id('SearchTypeApi11_NUMBER_DECIMAL')
+        .type(SearchType.NUMBER_DECIMAL)
         .height('5%')
 
-      TextArea({
-        text: 'TextAreaType: undefined',
+      Search({
+        value:'SearchType.URL',
         placeholder: 'input your word...',
       })
-        .fontSize(16)
-        .backgroundColor('#FFFFFF')
-        .id('TextAreaType_undefined')
-        .type(undefined)
+        .id('SearchTypeApi11_URL')
+        .type(SearchType.URL)
         .height('5%')
     }.height('100%')
   }
