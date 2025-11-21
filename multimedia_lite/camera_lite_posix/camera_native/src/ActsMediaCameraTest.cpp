@@ -571,7 +571,6 @@ void GetCameraId(CameraKit *cameraKit, list<string> &cameraList, string &cameraI
 
 /* start camera kit interface test */
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetInstance_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -587,7 +586,6 @@ HWTEST_F(CameraLiteTest, Test_GetInstance_001, Level1)
 
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetInstance_001
  * @tc.number PrfTest_GetInstance_001
  * @tc.desc   PrfTest_GetInstance_001
@@ -614,7 +612,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetInstance_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraIds_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -630,7 +627,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraIds_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetCameraIds_001
  * @tc.number PrfTest_GetCameraIds_001
  * @tc.desc   PrfTest_GetCameraIds_001
@@ -658,7 +654,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraIds_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraAbility_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -675,7 +670,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraAbility_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraAbility_002
  * @tc.number Test_GetCameraAbility_002
  * @tc.desc   Test_GetCameraAbility_002
@@ -692,7 +686,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraAbility_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraAbility_003
  * @tc.number Test_GetCameraAbility_003
  * @tc.desc   Test_GetCameraAbility_003
@@ -709,7 +702,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraAbility_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetCameraAbility_001
  * @tc.number PrfTest_GetCameraAbility_001
  * @tc.desc   PrfTest_GetCameraAbility_001
@@ -738,7 +730,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraAbility_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraInfo_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -757,7 +748,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraInfo_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraInfo_002
  * @tc.number Test_GetCameraInfo_002
  * @tc.desc   Test_GetCameraInfo_002
@@ -774,7 +764,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraInfo_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraInfo_003
  * @tc.number Test_GetCameraInfo_003
  * @tc.desc   Test_GetCameraInfo_003
@@ -791,7 +780,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraInfo_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetCameraInfo_001
  * @tc.number PrfTest_GetCameraInfo_001
  * @tc.desc   PrfTest_GetCameraInfo_001
@@ -819,7 +807,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraInfo_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_RegisterCameraDeviceCallback_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -843,7 +830,6 @@ HWTEST_F(CameraLiteTest, Test_RegisterCameraDeviceCallback_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_RegisterCameraDeviceCallback_001
  * @tc.number PrfTest_RegisterCameraDeviceCallback_001
  * @tc.desc   PrfTest_RegisterCameraDeviceCallback_001
@@ -876,7 +862,6 @@ HWTEST_F(CameraLiteTest, PrfTest_RegisterCameraDeviceCallback_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_UnregisterCameraDeviceCallback_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -903,7 +888,6 @@ HWTEST_F(CameraLiteTest, Test_UnregisterCameraDeviceCallback_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_UnregisterCameraDeviceCallback_001
  * @tc.number PrfTest_UnregisterCameraDeviceCallback_001
  * @tc.desc   PrfTest_UnregisterCameraDeviceCallback_001
@@ -937,7 +921,6 @@ HWTEST_F(CameraLiteTest, PrfTest_UnregisterCameraDeviceCallback_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_CreateCamera_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -960,7 +943,6 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_CreateCamera_002
  * @tc.number Test_CreateCamera_002
  * @tc.desc   Test_CreateCamera_002
@@ -983,7 +965,6 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_CreateCamera_003
  * @tc.number Test_CreateCamera_003
  * @tc.desc   Test_CreateCamera_003
@@ -1007,7 +988,6 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_CreateCamera_004
  * @tc.number Test_CreateCamera_004
  * @tc.desc   Test_CreateCamera_004
@@ -1033,7 +1013,6 @@ HWTEST_F(CameraLiteTest, Test_CreateCamera_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_CreateCamera_001
  * @tc.number PrfTest_CreateCamera_001
  * @tc.desc   PrfTest_CreateCamera_001
@@ -1064,7 +1043,6 @@ HWTEST_F(CameraLiteTest, PrfTest_CreateCamera_001, Level1)
 
 /* start camera ability interface test */
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSupportedSizes_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1084,7 +1062,6 @@ HWTEST_F(CameraLiteTest, Test_GetSupportedSizes_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetSupportedSizes_001
  * @tc.number PrfTest_GetSupportedSizes_001
  * @tc.desc   PrfTest_GetSupportedSizes_001
@@ -1113,7 +1090,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSupportedSizes_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSupportedAfModes_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1133,7 +1109,6 @@ HWTEST_F(CameraLiteTest, Test_GetSupportedAfModes_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetSupportedAfModes_001
  * @tc.number PrfTest_GetSupportedAfModes_001
  * @tc.desc   PrfTest_GetSupportedAfModes_001
@@ -1162,7 +1137,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSupportedAfModes_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSupportedAeModes_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1182,7 +1156,6 @@ HWTEST_F(CameraLiteTest, Test_GetSupportedAeModes_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetSupportedAeModes_001
  * @tc.number PrfTest_GetSupportedAeModes_001
  * @tc.desc   PrfTest_GetSupportedAeModes_001
@@ -1212,7 +1185,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSupportedAeModes_001, Level1)
 
 /* start camera state callback test */
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_OnCreate_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1235,7 +1207,6 @@ HWTEST_F(CameraLiteTest, Test_OnCreate_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_OnCreate_002
  * @tc.number Test_OnCreate_002
  * @tc.desc   Test_OnCreate_002
@@ -1259,7 +1230,6 @@ HWTEST_F(CameraLiteTest, Test_OnCreate_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_OnCreateFailed_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1280,7 +1250,6 @@ HWTEST_F(CameraLiteTest, Test_OnCreateFailed_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_OnCreateFailed_002
  * @tc.number Test_OnCreateFailed_002
  * @tc.desc   Test_OnCreateFailed_002
@@ -1302,7 +1271,6 @@ HWTEST_F(CameraLiteTest, Test_OnCreateFailed_002, Level1)
 
 /* start frame config & frame state call back interface test */
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_FrameConfig_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1317,7 +1285,6 @@ HWTEST_F(CameraLiteTest, Test_FrameConfig_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_FrameConfig_002
  * @tc.number Test_FrameConfig_002
  * @tc.desc   Test_FrameConfig_002
@@ -1332,7 +1299,6 @@ HWTEST_F(CameraLiteTest, Test_FrameConfig_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_FrameConfig_003
  * @tc.number Test_FrameConfig_003
  * @tc.desc   Test_FrameConfig_003
@@ -1347,7 +1313,6 @@ HWTEST_F(CameraLiteTest, Test_FrameConfig_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_FrameConfig_004
  * @tc.number Test_FrameConfig_004
  * @tc.desc   Test_FrameConfig_004
@@ -1362,7 +1327,6 @@ HWTEST_F(CameraLiteTest, Test_FrameConfig_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_Frameconfig_001
  * @tc.number PrfTest_Frameconfig_001
  * @tc.desc   PrfTest_Frameconfig_001
@@ -1389,7 +1353,6 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_Frameconfig_002
  * @tc.number PrfTest_Frameconfig_002
  * @tc.desc   PrfTest_Frameconfig_002
@@ -1416,7 +1379,6 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_Frameconfig_003
  * @tc.number PrfTest_Frameconfig_003
  * @tc.desc   PrfTest_Frameconfig_003
@@ -1443,7 +1405,6 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_Frameconfig_004
  * @tc.number PrfTest_Frameconfig_004
  * @tc.desc   PrfTest_Frameconfig_004
@@ -1470,7 +1431,6 @@ HWTEST_F(CameraLiteTest, PrfTest_Frameconfig_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetFrameConfigureType_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1493,7 +1453,6 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetFrameConfigureType_002
  * @tc.number Test_GetFrameConfigureType_002
  * @tc.desc   Test_GetFrameConfigureType_002
@@ -1517,7 +1476,6 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetFrameConfigureType_003
  * @tc.number Test_GetFrameConfigureType_003
  * @tc.desc   Test_GetFrameConfigureType_003
@@ -1541,7 +1499,6 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetFrameConfigureType_004
  * @tc.number Test_GetFrameConfigureType_004
  * @tc.desc   Test_GetFrameConfigureType_004
@@ -1567,7 +1524,6 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetFrameConfigureType_005
  * @tc.number Test_GetFrameConfigureType_005
  * @tc.desc   Test_GetFrameConfigureType_005
@@ -1593,7 +1549,6 @@ HWTEST_F(CameraLiteTest, Test_GetFrameConfigureType_005, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_SetVendorParameter_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1615,7 +1570,6 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_SetVendorParameter_002
  * @tc.number Test_SetVendorParameter_002
  * @tc.desc   Test_SetVendorParameter_002
@@ -1637,7 +1591,6 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_SetVendorParameter_003
  * @tc.number Test_SetVendorParameter_003
  * @tc.desc   Test_SetVendorParameter_003
@@ -1659,7 +1612,6 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_SetVendorParameter_004
  * @tc.number Test_SetVendorParameter_004
  * @tc.desc   Test_SetVendorParameter_004
@@ -1681,7 +1633,6 @@ HWTEST_F(CameraLiteTest, Test_SetVendorParameter_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_SetVendorParameter_001
  * @tc.number PrfTest_SetVendorParameter_001
  * @tc.desc   PrfTest_SetVendorParameter_001
@@ -1711,7 +1662,6 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_SetVendorParameter_002
  * @tc.number PrfTest_SetVendorParameter_002
  * @tc.desc   PrfTest_SetVendorParameter_002
@@ -1741,7 +1691,6 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_SetVendorParameter_003
  * @tc.number PrfTest_SetVendorParameter_003
  * @tc.desc   PrfTest_SetVendorParameter_003
@@ -1771,7 +1720,6 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_SetVendorParameter_004
  * @tc.number PrfTest_SetVendorParameter_004
  * @tc.desc   PrfTest_SetVendorParameter_004
@@ -1801,7 +1749,6 @@ HWTEST_F(CameraLiteTest, PrfTest_SetVendorParameter_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetVendorParameter_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1834,7 +1781,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetVendorParameter_002
  * @tc.number PrfTest_GetVendorParameter_002
  * @tc.desc   PrfTest_GetVendorParameter_002
@@ -1867,7 +1813,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetVendorParameter_003
  * @tc.number PrfTest_GetVendorParameter_003
  * @tc.desc   PrfTest_GetVendorParameter_003
@@ -1900,7 +1845,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetVendorParameter_004
  * @tc.number PrfTest_GetVendorParameter_004
  * @tc.desc   PrfTest_GetVendorParameter_004
@@ -1933,7 +1877,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetVendorParameter_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSurface_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1959,7 +1902,6 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSurface_002
  * @tc.number Test_GetSurface_002
  * @tc.desc   Test_GetSurface_002
@@ -1985,7 +1927,6 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSurface_003
  * @tc.number Test_GetSurface_003
  * @tc.desc   Test_GetSurface_003
@@ -2011,7 +1952,6 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSurface_004
  * @tc.number Test_GetSurface_004
  * @tc.desc   Test_GetSurface_004
@@ -2030,7 +1970,6 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSurface_005
  * @tc.number Test_GetSurface_005
  * @tc.desc   Test_GetSurface_005
@@ -2048,7 +1987,6 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_005, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetSurface_006
  * @tc.number Test_GetSurface_006
  * @tc.desc   Test_GetSurface_006
@@ -2066,7 +2004,6 @@ HWTEST_F(CameraLiteTest, Test_GetSurface_006, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetSurfaces_001
  * @tc.number PrfTest_GetSurfaces_001
  * @tc.desc   PrfTest_GetSurfaces_001
@@ -2095,7 +2032,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetSurfaces_002
  * @tc.number PrfTest_GetSurfaces_002
  * @tc.desc   PrfTest_GetSurfaces_002
@@ -2124,7 +2060,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetSurfaces_003
  * @tc.number PrfTest_GetSurfaces_003
  * @tc.desc   PrfTest_GetSurfaces_003
@@ -2153,7 +2088,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetSurfaces_004
  * @tc.number PrfTest_GetSurfaces_004
  * @tc.desc   PrfTest_GetSurfaces_004
@@ -2182,7 +2116,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetSurfaces_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_OnFrameProgressed_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2207,7 +2140,6 @@ HWTEST_F(CameraLiteTest, Test_OnFrameProgressed_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_OnFrameCompletedFlag_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2231,7 +2163,6 @@ HWTEST_F(CameraLiteTest, Test_OnFrameCompletedFlag_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_OnFrameErrorFlag_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2255,7 +2186,6 @@ HWTEST_F(CameraLiteTest, Test_OnFrameErrorFlag_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_AddSurface_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2273,7 +2203,6 @@ HWTEST_F(CameraLiteTest, Test_AddSurface_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_AddSurface_002
  * @tc.number Test_AddSurface_002
  * @tc.desc   Test_AddSurface_002
@@ -2292,7 +2221,6 @@ HWTEST_F(CameraLiteTest, Test_AddSurface_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_AddSurface_003
  * @tc.number Test_AddSurface_003
  * @tc.desc   Test_AddSurface_003
@@ -2312,7 +2240,6 @@ HWTEST_F(CameraLiteTest, Test_AddSurface_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_AddSurface_001
  * @tc.number PrfTest_AddSurface_001
  * @tc.desc   PrfTest_AddSurface_001
@@ -2340,7 +2267,6 @@ HWTEST_F(CameraLiteTest, PrfTest_AddSurface_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_RemoveSurface_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2359,7 +2285,6 @@ HWTEST_F(CameraLiteTest, Test_RemoveSurface_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_RemoveSurface_002
  * @tc.number Test_RemoveSurface_002
  * @tc.desc   Test_RemoveSurface_002
@@ -2380,7 +2305,6 @@ HWTEST_F(CameraLiteTest, Test_RemoveSurface_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_RemoveSurface_003
  * @tc.number Test_RemoveSurface_003
  * @tc.desc   Test_RemoveSurface_003
@@ -2402,7 +2326,6 @@ HWTEST_F(CameraLiteTest, Test_RemoveSurface_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_RemoveSurface_001
  * @tc.number PrfTest_RemoveSurface_001
  * @tc.desc   PrfTest_RemoveSurface_001
@@ -2431,7 +2354,6 @@ HWTEST_F(CameraLiteTest, PrfTest_RemoveSurface_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2458,7 +2380,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_002
  * @tc.number Test_Capture_002
  * @tc.desc   Test_Capture_002
@@ -2487,7 +2408,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_003
  * @tc.number Test_Capture_003
  * @tc.desc   Test_Capture_003
@@ -2514,7 +2434,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_004
  * @tc.number Test_Capture_004
  * @tc.desc   Test_Capture_004
@@ -2543,7 +2462,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_005
  * @tc.number Test_Capture_005
  * @tc.desc   Test_Capture_005
@@ -2572,7 +2490,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_005, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_006
  * @tc.number Test_Capture_006
  * @tc.desc   Test_Capture_006
@@ -2601,7 +2518,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_006, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_007
  * @tc.number Test_Capture_007
  * @tc.desc   Test_Capture_007
@@ -2630,7 +2546,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_007, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Capture_008
  * @tc.number Test_Capture_008
  * @tc.desc   Test_Capture_008
@@ -2661,7 +2576,6 @@ HWTEST_F(CameraLiteTest, Test_Capture_008, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Preview_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2686,7 +2600,6 @@ HWTEST_F(CameraLiteTest, Test_Preview_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Preview_002
  * @tc.number Test_Preview_002
  * @tc.desc   Test_Preview_002
@@ -2711,7 +2624,6 @@ HWTEST_F(CameraLiteTest, Test_Preview_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Preview_003
  * @tc.number Test_Preview_003
  * @tc.desc   Test_Preview_003
@@ -2738,7 +2650,6 @@ HWTEST_F(CameraLiteTest, Test_Preview_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Preview_004
  * @tc.number Test_Preview_004
  * @tc.desc   Test_Preview_004
@@ -2766,7 +2677,6 @@ HWTEST_F(CameraLiteTest, Test_Preview_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Preview_005
  * @tc.number Test_Preview_005
  * @tc.desc   Test_Preview_005
@@ -2795,7 +2705,6 @@ HWTEST_F(CameraLiteTest, Test_Preview_005, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_Preview_006
  * @tc.number Test_Preview_006
  * @tc.desc   Test_Preview_006
@@ -2823,7 +2732,6 @@ HWTEST_F(CameraLiteTest, Test_Preview_006, Level1)
 
 /* start camera info interface test */
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraType_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2842,7 +2750,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraType_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetCameraType_001
  * @tc.number PrfTest_GetCameraType_001
  * @tc.desc   PrfTest_GetCameraType_001
@@ -2871,7 +2778,6 @@ HWTEST_F(CameraLiteTest, PrfTest_GetCameraType_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Test_GetCameraFacingType_001
  * @tc.number SUB_MEDIA_CAMERA_DEV_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2890,7 +2796,6 @@ HWTEST_F(CameraLiteTest, Test_GetCameraFacingType_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   PrfTest_GetCameraFacingType_001
  * @tc.number PrfTest_GetCameraFacingType_001
  * @tc.desc   PrfTest_GetCameraFacingType_001

@@ -233,7 +233,6 @@ static int32_t CreateAndSetSource()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_001
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -257,7 +256,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_001, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_002
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -289,7 +287,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_002, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_003
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -319,7 +316,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_003, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_004
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -343,7 +339,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_004, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_005
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -369,7 +364,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_005, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_006
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -397,7 +391,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_006, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_007
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -427,7 +420,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_007, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_008
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -455,7 +447,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_008, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_009
  * @tc.number SUB_MEDIA_PLAYER_PLAY_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -485,7 +476,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_009, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_010
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -511,7 +501,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_010, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_011
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -540,7 +529,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_011, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_012
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -569,7 +557,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_012, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_013
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -598,7 +585,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_013, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_014
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -627,7 +613,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_014, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_015
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -656,7 +641,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_015, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_016
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -685,7 +669,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_016, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_017
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -715,7 +698,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_017, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_018
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -747,7 +729,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_018, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_019
  * @tc.number SUB_MEDIA_PLAYER_PLAY_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -776,7 +757,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_019, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_020
  * @tc.number SUB_MEDIA_PLAYER_PLAY_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -803,7 +783,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_020, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_021
  * @tc.number SUB_MEDIA_PLAYER_PLAY_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -832,7 +811,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_021, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_022
  * @tc.number SUB_MEDIA_PLAYER_PLAY_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -860,7 +838,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_022, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_023
  * @tc.number SUB_MEDIA_PLAYER_PLAY_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -884,7 +861,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_023, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_024
  * @tc.number SUB_MEDIA_PLAYER_PLAY_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -915,7 +891,6 @@ HWTEST_F(ActsMediaPlayerAudioTest, player_lite_audio_test_024, Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   player_lite_audio_test_025
  * @tc.number SUB_MEDIA_PLAYER_PLAY_2500
  * @tc.desc   [C- SOFTWARE -0200]
