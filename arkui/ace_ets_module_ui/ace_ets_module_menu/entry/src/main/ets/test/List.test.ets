@@ -52,6 +52,7 @@ import PreviewScaleModeTest from './MenuTest/PreviewScaleModeTest.test';
 import AvailableLayoutAreaTest from './MenuTest/AvailableLayoutAreaTest.test';
 
 export default function testsuite() {
+  bindMenuHapticFeedbackMode();
   blurStyleOptions();
   effectOptions();
   menuTransition()
@@ -77,7 +78,6 @@ export default function testsuite() {
   menuBindMenuModifierTest();
   bindContextMenuHapticFeedbackMode();
   previewBorderRadius();
-  bindMenuHapticFeedbackMode();
   closeMenu();
   openMenu();
   updateMenu();
