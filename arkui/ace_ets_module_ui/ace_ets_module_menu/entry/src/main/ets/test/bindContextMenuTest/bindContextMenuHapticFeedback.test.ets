@@ -55,6 +55,7 @@ export default function bindContextMenuHapticFeedbackMode() {
       let tagName = 'bindContextMenuHapticFeedbackModeTest_0100';
       console.info('[' + tagName + '] START============================');
       let driver: Driver = Driver.create();
+      await Utils.sleep(2000);
       let btn01 = await driver.findComponent(ON.id('button01'));
       await btn01.longClick();
       await Utils.sleep(1000);

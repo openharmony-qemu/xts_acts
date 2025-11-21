@@ -108,6 +108,7 @@ export default function previewBorderRadius() {
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('16');
       let btn1: Component = await driver.findComponent(ON.text('菜单选项'));
       await btn1.click();
+      await Utils.sleep(1000);
       console.info('[' + tagName + '] END============================');
       done();
     });
