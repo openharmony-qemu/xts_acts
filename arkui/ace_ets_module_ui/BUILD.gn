@@ -49,6 +49,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_media:ActsAceEtsModuleMediaTest",
       "ace_ets_module_swiper:ActsAceEtsModuleSwiperTest",
       "ace_ets_module_tab:ActsAceEtsModuleTabTest",
+      "ace_ets_module_menu:ActsAceEtsModuleMenuTest",
     ]
   } else {
     deps = [
@@ -92,6 +93,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_media:ActsAceEtsModuleMediaTest",
       "ace_ets_module_swiper:ActsAceEtsModuleSwiperTest",
       "ace_ets_module_tab:ActsAceEtsModuleTabTest",
+      "ace_ets_module_menu:ActsAceEtsModuleMenuTest",
     ]
   }
 }
