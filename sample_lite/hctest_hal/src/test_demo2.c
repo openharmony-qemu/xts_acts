@@ -44,7 +44,6 @@ static BOOL StringTestSuiteTearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   TestCase003
  * @tc.number Test_Case_300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -59,7 +58,6 @@ LITE_TEST_CASE(StringTestSuite, TestCase003, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   TestCase004
  * @tc.number Test_Case_400
  * @tc.desc   [C- SOFTWARE -0200]

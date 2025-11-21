@@ -46,7 +46,6 @@ static int Sum(int n)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Negative
  * @tc.number TEST_CASE_100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -60,7 +59,6 @@ HWTEST_F(Demo, Negative, Function | MediumTest | Level0) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Zero
  * @tc.number TEST_CASE_200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -73,7 +71,6 @@ HWTEST_F(Demo, Zero, Function | MediumTest | Level0) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   Positive
  * @tc.number TEST_CASE_300
  * @tc.desc   [C- SOFTWARE -0200]

@@ -44,7 +44,6 @@ static BOOL IntTestSuiteTearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   TestCase001
  * @tc.number Test_Case_100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -58,7 +57,6 @@ LITE_TEST_CASE(IntTestSuite, TestCase001, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   TestCase002
  * @tc.number Test_Case_200
  * @tc.desc   [C- SOFTWARE -0200]
