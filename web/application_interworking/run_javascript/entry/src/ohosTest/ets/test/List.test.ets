@@ -19,6 +19,9 @@ import runJavaScript from './runJavaScript.test';
 import jsMessageExt from './JsMessageExt.test';
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test';
 import runJavaScriptErrorCode from './RunJavaScriptErrorCode.test';
+import jsMessageExtTwo from './JsMessageExtTwo.test';
+import jsMessageExtThree from './JsMessageExtThree.test';
+import jsMessageExtFour from './JsMessageExtFour.test';
 
 export default function testsuite() {
   webJsunit()
@@ -27,4 +30,7 @@ export default function testsuite() {
   jsMessageExt()
   WebViewEnumAndFontLibrary()
   runJavaScriptErrorCode()
+  jsMessageExtTwo()
+  jsMessageExtThree()
+  jsMessageExtFour()
 }
