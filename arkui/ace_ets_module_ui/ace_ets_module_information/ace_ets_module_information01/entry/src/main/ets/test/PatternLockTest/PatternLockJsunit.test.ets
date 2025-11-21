@@ -42,7 +42,7 @@ export default function PatternLockJsunit() {
       }
       done();
     });
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0100
      * @tc.name:        PatternLockJsunit_0100
      * @tc.desc:        test PatternLock
@@ -69,7 +69,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0100] END');
       done();
     });
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0200
      * @tc.name:        PatternLockJsunit_0200
      * @tc.desc:        test PatternLock
@@ -86,7 +86,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0200] END');
       done();
     });
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0300
      * @tc.name:        PatternLockJsunit_0300
      * @tc.desc:        test PatternLock
@@ -110,7 +110,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0300] END');
       done();
     });
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0400
      * @tc.name:        PatternLockJsunit_0400
      * @tc.desc:        test PatternLock
@@ -132,7 +132,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0400] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0500
      * @tc.name:        PatternLockJsunit_0500
      * @tc.desc:        test PatternLock
@@ -153,7 +153,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0500] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0600
      * @tc.name:        PatternLockJsunit_0600
      * @tc.desc:        test PatternLock
@@ -174,7 +174,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0600] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0700
      * @tc.name:        PatternLockJsunit_0700
      * @tc.desc:        test PatternLock
@@ -195,7 +195,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0700] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0800
      * @tc.name:        PatternLockJsunit_0800
      * @tc.desc:        test PatternLock
@@ -216,7 +216,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0800] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_0900
      * @tc.name:        PatternLockJsunit_0900
      * @tc.desc:        test PatternLock
@@ -237,7 +237,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_0500] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_1000
      * @tc.name:        PatternLockJsunit_1000
      * @tc.desc:        test PatternLock
@@ -258,7 +258,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_1000] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_1100
      * @tc.name:        PatternLockJsunit_1100
      * @tc.desc:        test PatternLock
@@ -280,7 +280,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_1100] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_1200
      * @tc.name:        PatternLockJsunit_1200
      * @tc.desc:        test PatternLock
@@ -302,7 +302,7 @@ export default function PatternLockJsunit() {
       console.info('[PatternLockJsunit_1200] END');
       done();
     }); 
-    /*
+    /**
      * @tc.number:      PatternLockJsunit_1300
      * @tc.name:        PatternLockJsunit_1300
      * @tc.desc:        test PatternLock
