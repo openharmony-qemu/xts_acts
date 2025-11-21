@@ -857,7 +857,7 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
     int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     if (ret != 0) {
         napi_create_int32(env, FAIL, &result);
-        return result; 
+        return result;
     }
     Region region{nullptr, PARAM_0};
     ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
@@ -868,7 +868,7 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
     ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
     if (ret != 0) {
         napi_create_int32(env, FAIL, &result);
-        return result; 
+        return result;
     }
     ret = OH_NativeImage_ReleaseTextImage(nativeImage);
     if (ret != 0) {
