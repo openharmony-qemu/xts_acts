@@ -15,7 +15,6 @@
 import { attrsManager  }  from '../../common/AttrsManager';
 import { RouterParams , SetValue ,RectValue} from '../../common/Utils';
 import router from '@ohos.router'
-import { StepperView } from '../../view/alignRules/StepperView';
 import {
   Entry,
   Component,
@@ -28,13 +27,16 @@ import {
 ,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
   AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection
 ,Padding,Web,WebviewController,RichText,MenuItemGroup,GridRowOptions,GutterOption,RefreshOptions,ForEach,BreakpointsReference,BreakPoints,ListOptions,
-  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions
+  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions,Resource,
 } from '@ohos.arkui.component'
 import {
   State,
-  AppStorage
+  // MutableState,
+  // stateOf,
+  // observableProxy,
+  AppStorage,
+  StorageProp
 } from '@ohos.arkui.stateManagement'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Color } from '@ohos.arkui.component'
 
@@ -55,23 +57,36 @@ interface RouterParamOptions {
 struct PaddingPage_Length {
   //Use for Grid.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>
-  @State _padding: number | string = 0 as number;
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
-  @State parentBackGroundColor: Color = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
-  @State referenceComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey
-
+  @StorageProp('_padding') _padding: number|string|Padding|Resource = 0 as number;
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentBackGroundColor: Color = Color.Pink
+  @State parentComponentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State referenceComponentKey: string = '';
+  @Builder
+  myBuilder() {
+    Column() {
+      Text("bindSheet")
+        .fontSize(20)
+    }
+    .applyStyles(this.commonStyle)
+    .height('50%')
+    .width('50%')
+  }
   onPageShow() {
     console.info('padding page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._padding = value.padding as string
-    })
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   this._padding = value.padding as string
+    // })
 
+    console.info('[wll]75')
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      console.info('[wll]77')
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      console.info('[wll]79')
+      AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', (routerParamOptions.view.testValue.setValue as SetValue)!.padding as number|string|Padding|Resource)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
@@ -89,16 +104,7 @@ struct PaddingPage_Length {
     instance.padding(this._padding)
     instance.key(this.componentKey)
   }
-  @Builder
-  myBuilder() {
-    Column() {
-      Text("bindSheet")
-        .fontSize(20)
-    }
-    .applyStyles(this.commonStyle)
-    .height('50%')
-    .width('50%')
-  }
+
   build() {
     Row() {
       if (this.targetView == 'Badge') {
@@ -184,7 +190,7 @@ struct PaddingPage_Length {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<number>(1, 2, 3), (item: number,index:Int) => {
+            ForEach(new Array<number>(1, 2, 3), (item: number,index:int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(64)

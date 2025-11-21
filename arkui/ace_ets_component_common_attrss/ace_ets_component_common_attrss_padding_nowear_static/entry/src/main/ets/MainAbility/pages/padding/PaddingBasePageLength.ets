@@ -19,7 +19,7 @@ import router from '@ohos.router'
 import {
   Entry,
   Component,Navigation,
-  Text,CommonMethod,applyStyles,
+  Text,CommonMethod,applyStyles, Resource,
   AlphabetIndexer,Checkbox,CheckboxGroup,DataPanel,DatePicker,Divider,Gauge,ImageAnimator,LoadingProgress,Marquee,Menu,
   Progress,QRCode,Radio,Rating,ScrollBar,Stepper,Select,Slider,TextArea,TextClock,TextInput,TextPicker,TextTimer,TimePicker,Toggle,Badge,
   Counter,GridRow,Grid,List,RelativeContainer,Row,Refresh,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,
@@ -28,13 +28,16 @@ import {
 ,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
   AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection
 ,Padding,Web,WebviewController,RichText,MenuItemGroup,GridRowOptions,GutterOption,RefreshOptions,ForEach,BreakpointsReference,BreakPoints,ListOptions,
-  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions,MarqueeOptions
+  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions
 } from '@ohos.arkui.component'
 import {
   State,
-  AppStorage
+  // MutableState,
+  // stateOf,
+  // observableProxy,
+  AppStorage,
+  StorageProp
 } from '@ohos.arkui.stateManagement'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Color } from '@ohos.arkui.component'
 interface ViewOption {
@@ -57,7 +60,7 @@ struct PaddingPage_Length {
   private value: string[] = ['#', 'A', 'B'];
   //Use for Scroll,Grid,DataPanel.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>;
-  @State _padding: number | string | Padding = 0 as number;
+  @StorageProp('_padding') _padding: number|string|Padding|Resource = 0 as number;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentBackGroundColor: Color = Color.Pink
@@ -65,16 +68,19 @@ struct PaddingPage_Length {
 
   onPageShow() {
     console.info('padding page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._padding = value.padding as Padding
-    })
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   console.info('[wll]attrsManager2' + value.padding)
+    //   this._padding = value.padding as Padding
+    // })
+    AppStorage.setOrCreate<number>('_padding', 0 as number)
 
     try {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
-this.targetView = routerParamOptions.view.targetView
-this.componentKey = routerParamOptions.view.componentKey
-this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-this.parentComponentKey = routerParamOptions.view.parentComponentKey
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', (routerParamOptions.view.testValue.setValue as SetValue)!.padding as number|string|Padding|Resource)
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
+      this.parentComponentKey = routerParamOptions.view.parentComponentKey
   } catch (error: Error) {
     console.log(' routerParamOptions error ' + error);
   }
@@ -137,10 +143,10 @@ commonStyle(instance: CommonMethod) {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: Infinity as int,
           fromStart: true,
           src: this.src
-        } as MarqueeOptions).applyStyles(this.commonStyle)
+        }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Navigation') {
         Navigation({}).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Stepper') {

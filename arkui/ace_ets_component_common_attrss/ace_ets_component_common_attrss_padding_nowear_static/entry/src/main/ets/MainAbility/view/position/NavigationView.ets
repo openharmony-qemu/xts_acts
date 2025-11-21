@@ -47,9 +47,9 @@ export struct NavigationView {
   build() {
     Navigation(new NavPathStack()) {
       List({ space: 12, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: Int) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
-            Column() {
+            // NavRouter() {
               Row() {
                 Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
                 Text(`NavRouter${item + 1}`)
@@ -72,8 +72,10 @@ export struct NavigationView {
                 }
               }.backgroundColor('#ccc')
               .title(`NavDestination${item + 1}`)
-            }.position(this._position)
-            .key(this.componentKey)
+            // }.onStateChange((isActivated: boolean) => {
+            //   console.info('isActivated = ' + isActivated);
+            //   this.dex = index
+            // })
           }
         }, (item: number) => String(item))
       }
