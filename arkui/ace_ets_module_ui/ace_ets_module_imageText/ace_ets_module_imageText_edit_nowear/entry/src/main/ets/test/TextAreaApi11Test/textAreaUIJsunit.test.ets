@@ -52,7 +52,7 @@ export default function textAreaUIJsunit() {
        console.info('textAreaUIJsunit_0100');
        await CommonFunc.sleep(1000);
        // get the textArea component and test attribute
-       let strJson = getInspectorByKey('textArea');
+       let strJson = getInspectorByKey('textArea_test');
        let obj: ESObject = JSON.parse(strJson);
        console.info('textAreaUIJsunit_0100 component obj is: ' + obj.$attrs.placeholderFont + "---" + obj.$attrs.text + "--" + obj.$attrs.placeholderColor + "--" + obj.$attrs.placeholder
        + "--" + obj.$attrs.textAlign + "--" + obj.$attrs.caretColor + "--" + obj.$attrs.fontSize + "--" + obj.$attrs.inputFilter + "--" + obj.$attrs.copyOption);
@@ -81,7 +81,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'weightT',value:300})
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_0200 component obj is: ' + obj.$attrs.placeholderFont);
       expect(obj.$attrs.placeholderFont).assertEqual('{"style":"FontStyle.Normal","size":"20.00fp","weight":"300","fontFamily":"sans-serif"}');
@@ -103,7 +103,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'weightT',value:-300})
       await CommonFunc.sleep(200);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_0300 component obj is: ' + obj.$attrs.placeholderFont);
       expect(obj.$attrs.placeholderFont).assertEqual('{"style":"FontStyle.Normal","size":"-30.00fp","fontWeight":"FontWeight.Normal","fontFamily":"sans-serif"}');
@@ -124,7 +124,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'caretColor',value:'#EEFFFF'})
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_0400 component obj is: ' + obj.$attrs.placeholderColor + '--' + obj.$attrs.caretColor);
       expect(obj.$attrs.placeholderColor).assertEqual('#FFFFFFFF');
@@ -146,7 +146,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'caretColor',value:'rgb(238, 131, 233)'})
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_0500 component obj is: ' + obj.$attrs.placeholderColor + '--' + obj.$attrs.caretColor);
       expect(obj.$attrs.placeholderColor).assertEqual('#FFEE82EE');
@@ -168,7 +168,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'caretColor',value:Color.Red})
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_0600 component obj is: ' + obj.$attrs.placeholderColor + '--' + obj.$attrs.caretColor);
       expect(obj.$attrs.placeholderColor).assertEqual('#FF008000');
@@ -190,7 +190,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'caretColor',value:'#ACD'})
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_0700 component obj is: ' + obj.$attrs.placeholderColor + '--' + obj.$attrs.caretColor);
       expect(obj.$attrs.placeholderColor).assertEqual('#FFAAEEDD');
@@ -211,7 +211,7 @@ export default function textAreaUIJsunit() {
       let driver = UiDriver.create();
       await CommonFunc.sleep(1000);
       // test the change event
-      let text = await driver.findComponent(BY.key('textArea'));
+      let text = await driver.findComponent(BY.key('textArea_test'));
       await text.inputText('123');
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('change');
@@ -233,7 +233,7 @@ export default function textAreaUIJsunit() {
       // test the copy event
       let driver = UiDriver.create();
       let driverX = await Driver.create()
-      let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea')
+      let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea_test')
       let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2)
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
@@ -283,11 +283,11 @@ export default function textAreaUIJsunit() {
       await CommonFunc.sleep(1000);
       // test the cut event
       let driver = UiDriver.create();
-      let textArea = await driver.findComponent(BY.key('textArea'));
+      let textArea = await driver.findComponent(BY.key('textArea_test'));
       await textArea.inputText('123');
       await CommonFunc.sleep(1000);
       let driverX = await Driver.create()
-      let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea')
+      let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea_test')
       let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2)
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
@@ -324,7 +324,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'caretColor',value:'rgba(0, 255, 0, 1)'})
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_1100 component obj is: ' + obj.$attrs.placeholderColor + '--' + obj.$attrs.caretColor);
       expect(obj.$attrs.caretColor).assertEqual('#FF00FF00');
@@ -343,7 +343,7 @@ export default function textAreaUIJsunit() {
       globalThis.value.message.notify({name:'caretColor',value:0xffc0cb})
       await CommonFunc.sleep(2000);
       // check the value of changed parameter
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_1200 component obj is: ' + obj.$attrs.placeholderColor + '--' + obj.$attrs.caretColor);
       expect(obj.$attrs.caretColor).assertEqual('#FFFFC0CB');
@@ -358,7 +358,7 @@ export default function textAreaUIJsunit() {
     */
     it('textAreaUIJsunit_1300', Level.LEVEL0, async (done: Function) => {
       console.info("[textAreaUIJsunit_1300] start");
-      let newJson = getInspectorByKey('textArea');
+      let newJson = getInspectorByKey('textArea_test');
       console.info("[textAreaUIJsunit_1300]: " + JSON.stringify(newJson));
 
       let caretColor = $r('sys.color.ohos_id_color_connected');
@@ -367,7 +367,7 @@ export default function textAreaUIJsunit() {
       });
       await CommonFunc.sleep(2000);
 
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_test');
       let strJson2 = getInspectorByKey('textAreaResource');
       console.info("[textAreaUIJsunit_1300]: " + JSON.stringify(strJson))
       let obj: ESObject = JSON.parse(strJson);

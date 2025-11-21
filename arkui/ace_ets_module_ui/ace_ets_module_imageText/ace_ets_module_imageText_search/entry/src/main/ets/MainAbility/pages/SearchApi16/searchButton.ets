@@ -47,7 +47,7 @@ struct searchButtonDemo {
     Column({space:20}) {
       Column() {
         Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.searchController })
-          .id('search1')
+          .id('searchButton1')
           .searchIcon(new SymbolGlyphModifier($r('sys.symbol.magnifyingglass')).fontColor([Color.Red]))
           .cancelButton({
             style: CancelButtonStyle.CONSTANT,

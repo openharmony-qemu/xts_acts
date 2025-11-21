@@ -18,19 +18,19 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-export default function setTextSelection() {
-  describe('setTextSelection', () => {
+export default function setTextSelectionTest() {
+  describe('setTextSelectionTest', () => {
     beforeEach(async (done: Function) => {
       console.info("setTextSelection beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextArea/setTextSelection',
+        url: 'MainAbility/pages/TextAreaApi12/setTextSelectionApi12',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get setTextSelection state pages:" + JSON.stringify(pages));
         let result = await router.replaceUrl(options);
-        if (!("setTextSelection" == pages.name)) {
+        if (!("setTextSelectionApi12" == pages.name)) {
           console.info("get setTextSelection pages.name:" + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
           console.info("push setTextSelection page result:" + JSON.stringify(result));

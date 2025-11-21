@@ -98,7 +98,7 @@ struct TextAreaExample {
         .placeholderFont({ size: this.sizeT, weight: this.weightT })
         .placeholderColor(this.placeholderColor)
         .width(336)
-        .key('textArea')
+        .id('textArea_test')
         .height('10%')
         .fontSize(this.fontSize)
         .fontColor('#182431')

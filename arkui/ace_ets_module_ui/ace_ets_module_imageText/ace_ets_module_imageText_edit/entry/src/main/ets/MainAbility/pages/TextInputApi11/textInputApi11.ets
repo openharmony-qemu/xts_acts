@@ -17,7 +17,7 @@
 struct textInputApi11Page {
   @State value: string = ''
   @State text1: string = ''
-  @State TextError: string = ''
+  @State textError: string = ''
   textInputController:TextInputController = new TextInputController()
   build() {
     Column() {
@@ -25,7 +25,7 @@ struct textInputApi11Page {
         .id('textInputApi11')
         .showUnderline(true)
         .width(380)
-        .showError(this.TextError)
+        .showError(this.textError)
         .enterKeyType(EnterKeyType.PREVIOUS)
         .onSubmit((enter: EnterKeyType) => {
           this.value = EnterKeyType[enter]
@@ -33,7 +33,7 @@ struct textInputApi11Page {
 
       Button('stopEditBtn').onClick(()=>{
         this.textInputController.stopEditing()
-      }).id('stopEditBtn')
+      }).id('stopEditBtn_Api11')
       Text( this.value ).height('60%').width('100%') .key('textInputApi11_text')
     }
   }

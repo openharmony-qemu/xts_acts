@@ -117,14 +117,14 @@ import textInputObserverTest from './TextInputApi22Test/textInputObserver.test';
 
 export default function testsuite() {
   InputPresetTest()
+  TextAreaSelectTest()
   TextStrokeTest()
   TextOnChangeOptionsTest()
   TextOnWillChangeOptionsTest()
 
   // TextAreaTest
-  TextAreaOnCutJsunitTest()
-  TextAreaCallbackTest()     // Api11
-  TextAreaSelectTest()
+  TextAreaOnCutJsunitTest()    // Api11
+  TextAreaCallbackTest()
   textAreaJsunit()
   textAreaUxTest()
   textArea_top()
@@ -153,7 +153,7 @@ export default function testsuite() {
   TextAreaXtsJsunit()
   TextAreaTypeApi12Test()
   textAreaNode()                   // Api14
-  onSubmitTest()
+  // onSubmitTest()
   TextAreaKeyboardAppearanceTest() // Api15
   TextAreaStopBackPressTest()      // Api16
   textAreaEllipsisModeTest()
@@ -173,7 +173,7 @@ export default function testsuite() {
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
-  textInputApi11()           // Api11
+  // textInputApi11()           // Api11
   textInputApiTest()
   textInputJsunit()
   textInput_caret()

@@ -18,7 +18,7 @@ import { image } from '@kit.ImageKit'
 
 @Entry
 @Component
-struct setTextSelectionTest {
+struct setTextSelectionApi12Test {
   @State text: string = '';
   controller: TextAreaController = new TextAreaController()
   controller2: TextInputController = new TextInputController()
