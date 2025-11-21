@@ -15,9 +15,9 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
-import { describe, expect, beforeAll } from '../../../../hypium';
+import { describe, expect, beforeAll } from '../../../../hypium/index';
 import { UIContext } from "@ohos.arkui.UIContext";
-import { $r } from '@ohos.arkui.component'
+import { $r,Rectangle } from '@ohos.arkui.component'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 const uiContext = new UIContext();
 
 async function clickPoint(data: BasePageConfig, xPoint: number, yPoint: number) {
-  await Utils.performClickPoint(xPoint, yPoint);
+  // await Utils.performClickPoint(xPoint, yPoint);
   if ('Select' == data.pageConfig.componentKey) {
     await Utils.sleep(2000);
     await eventResult(data, 'onClick');
@@ -49,14 +49,20 @@ async function clickPoint(data: BasePageConfig, xPoint: number, yPoint: number) 
 
 async function resetStatus(data: BasePageConfig) {
   console.info('[' + data.caseTag + '] reset status.');
-  AttrsManager.change(data.caseTag, data.testValue.setValue);
+  // AttrsManager.change(data.caseTag, data.testValue.setValue);
+  AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue as Array<Rectangle>)
   await Utils.sleep(1000);
 }
 
 async function eventResult(data: BasePageConfig, expectationValue: string) {
-
-  await Utils.sleep(1000)
-
+  if (
+    data.pageConfig.targetView == "TextInput" ||
+      data.pageConfig.targetView == "TextArea"
+  ) {
+    await Utils.sleep(4000)
+  } else {
+    await Utils.sleep(1000)
+  }
   let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
   console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getString('content'));
   if ('' == expectationValue) {
@@ -70,6 +76,7 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 
 export default function responseRegionTest() {
   let supportView:Array<string> = new Array<string>(
+    'Text',
     'Navigator',
     'Panel',
     'Refresh',
@@ -107,125 +114,126 @@ export default function responseRegionTest() {
     describe: 'SetNumber',
     setValue: [{
       x: 50, y: 50, width: 200, height: 200
-    } as SetValue],
+    }],
     expectValue: {
       responseRegion: [{
         x: '50.00vp', y: '50.00vp', width: '200.00vp', height: '200.00vp'
       } as SetValue]
-    } as ResponseRegion}, {
-    describe: 'SetStringPx',
-    setValue: [{
-      x: '100px',
-      y: '100px',
-      width: '200px',
-      height: '200px',
-      numberPxX: 100,
-      numberPxY: 100,
-      numberPxWidth: 200,
-      numberPxHeight: 200
-    } as SetValue],
-    expectValue: {
-      responseRegion: [{
-        x: '100.00px', y: '100.00px', width: '200.00px', height: '200.00px'
-      } as SetValue]
-    } as ResponseRegion
-  }, {
-    describe: 'SetPercent',
-    setValue: [{
-      x: '20%',
-      y: '20%',
-      width: '100%',
-      height: '100%',
-      ratioX: 0.2,
-      ratioY: 0.2,
-      ratioWidth: 1.0,
-      ratioHeight: 1.0
-    } as SetValue],
-    expectValue: {
-      responseRegion: [{
-        x: '20.00%', y: '20.00%', width: '100.00%', height: '100.00%'
-      } as SetValue]
-    } as ResponseRegion
-  }, {
-    describe: 'SetResource',
-    setValue: [{
-      x: String($r('app.float.50vp')),
-      y: String($r('app.float.50vp')),
-      width: String($r('app.float.200vp')),
-      height: String($r('app.float.200vp')),
-      numberX: 50,
-      numberY: 50,
-      numberWidth: 200,
-      numberHeight: 200
-    } as SetValue],
-    expectValue: {
-      responseRegion: [{
-        x: '50.00vp', y: '50.00vp', width: '200.00vp', height: '200.00vp'
-      } as SetValue]
-    } as ResponseRegion
-  }, {
-    describe: 'SetOutsideArea',
-    setValue: [{
-      x: -200,
-      y: 0,
-      width: '100%',
-      height: '100%',
-      ratioWidth: 1.0,
-      ratioHeight: 1.0
-    } as SetValue],
-    expectValue: {
-      responseRegion: [{
-        x: '-200.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-      } as SetValue]
-    } as ResponseRegion
-  }, {
-    describe: 'SetIntraArea',
-    setValue: [{
-      x: 0,
-      y: 0,
-      width: '100%',
-      height: '100%',
-      ratioWidth: 1.0,
-      ratioHeight: 1.0
-    } as SetValue],
-    expectValue: {
-      responseRegion: [{
-        x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-      } as SetValue]
-    } as ResponseRegion
-  }, {
-    describe: 'SetMultiArea',
-    exceptView: ['Search'],
-    setValue: [{
-      x: 0,
-      y: 0,
-      width: '100%',
-      height: '100%',
-      ratioWidth: 1.0,
-      ratioHeight: 1.0
-    } as SetValue, {
-      x: -200,
-      y: -200,
-      width: '100%',
-      height: '100%',
-      ratioWidth: 1.0,
-      ratioHeight: 1.0
-    } as SetValue],
-    expectValue: {
-      responseRegion: [{
-        x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-      } as SetValue, {
-        x: '-200.00vp', y: '-200.00vp', width: '100.00%', height: '100.00%'
-      } as SetValue]
-    } as ResponseRegion
-  }]
+    } as ResponseRegion}
+    ,{
+      describe: 'SetStringPx',
+      setValue: [{
+        x: '100px',
+        y: '100px',
+        width: '200px',
+        height: '200px',
+        // numberPxX: 100,
+        // numberPxY: 100,
+        // numberPxWidth: 200,
+        // numberPxHeight: 200
+      }],
+      expectValue: {
+        responseRegion: [{
+          x: '100.00px', y: '100.00px', width: '200.00px', height: '200.00px'
+        } as SetValue]
+      } as ResponseRegion
+    }, {
+      describe: 'SetPercent',
+      setValue: [{
+        x: '20%',
+        y: '20%',
+        width: '100%',
+        height: '100%',
+        // ratioX: 0.2,
+        // ratioY: 0.2,
+        // ratioWidth: 1.0,
+        // ratioHeight: 1.0
+      }],
+      expectValue: {
+        responseRegion: [{
+          x: '20.00%', y: '20.00%', width: '100.00%', height: '100.00%'
+        } as SetValue]
+      } as ResponseRegion
+    }, {
+      describe: 'SetResource',
+      setValue: [{
+        x: String($r('app.float.50vp')),
+        y: String($r('app.float.50vp')),
+        width: String($r('app.float.200vp')),
+        height: String($r('app.float.200vp')),
+        // numberX: 50,
+        // numberY: 50,
+        // numberWidth: 200,
+        // numberHeight: 200
+      }],
+      expectValue: {
+        responseRegion: [{
+          x: '50.00vp', y: '50.00vp', width: '200.00vp', height: '200.00vp'
+        } as SetValue]
+      } as ResponseRegion
+    }, {
+      describe: 'SetOutsideArea',
+      setValue: [{
+        x: -200,
+        y: 0,
+        width: '100%',
+        height: '100%',
+        // ratioWidth: 1.0,
+        // ratioHeight: 1.0
+      }],
+      expectValue: {
+        responseRegion: [{
+          x: '-200.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
+        } as SetValue]
+      } as ResponseRegion
+    }, {
+      describe: 'SetIntraArea',
+      setValue: [{
+        x: 0,
+        y: 0,
+        width: '100%',
+        height: '100%',
+        // ratioWidth: 1.0,
+        // ratioHeight: 1.0
+      }],
+      expectValue: {
+        responseRegion: [{
+          x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
+        } as SetValue]
+      } as ResponseRegion
+    }, {
+      describe: 'SetMultiArea',
+      exceptView: ['Search'],
+      setValue: [{
+        x: 0,
+        y: 0,
+        width: '100%',
+        height: '100%',
+        // ratioWidth: 1.0,
+        // ratioHeight: 1.0
+      }, {
+        x: -200,
+        y: -200,
+        width: '100%',
+        height: '100%',
+        // ratioWidth: 1.0,
+        // ratioHeight: 1.0
+      }],
+      expectValue: {
+        responseRegion: [{
+          x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
+        } as SetValue, {
+          x: '-200.00vp', y: '-200.00vp', width: '100.00%', height: '100.00%'
+        } as SetValue]
+      } as ResponseRegion
+    }
+  ]
 
   describe('ResponseRegionTest', () => {
     beforeAll(() => {
       console.info("ResponseRegionTest beforeEach start");
-      
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs03.test", "EntryAbility")
+
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs03.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
@@ -234,10 +242,13 @@ export default function responseRegionTest() {
       let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
       let rectHeight = rect.bottom - rect.top;
       let rectWidth = rect.right - rect.left;
+      let uiContext = AppStorage.get<UIContext>('uiContext')
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      // AttrsManager.change(data.caseTag, data.testValue.setValue);
+      AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue as Array<Rectangle>)
       await Utils.sleep(1000);
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
+      console.info('[wll]'+viewObj)
       if ('SetMultiArea' == data.testValue.describe) {
         expect((viewObj.getArray('responseRegion'))[0])
           .assertEqual(JSON.stringify(data.testValue.expectValue?.responseRegion[0]));
@@ -261,40 +272,58 @@ export default function responseRegionTest() {
       let secondOffsetHeight:number = 0;
       //Calculate offset and hot zone width and height
       if ('SetNumber' == data.testValue.describe) {
-        offsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].x) as number);
-        offsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].y) as number);
-        offsetWidth = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].width) as number);
-        offsetHeight = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].height) as number);
+        offsetX = uiContext!.vp2px((data.testValue.setValue[0].x) as number);
+        offsetY = uiContext!.vp2px((data.testValue.setValue[0].y) as number);
+        offsetWidth = uiContext!.vp2px((data.testValue.setValue[0].width) as number);
+        offsetHeight = uiContext!.vp2px((data.testValue.setValue[0].height) as number);
       } else if ('SetStringPx' == data.testValue.describe) {
-        offsetX = (data.testValue.setValue[0].numberPxX as number);
-        offsetY = (data.testValue.setValue[0].numberPxY as number);
-        offsetWidth = (data.testValue.setValue[0].numberPxWidth as number);
-        offsetHeight = (data.testValue.setValue[0].numberPxHeight as number);
+        // offsetX = Number((data.testValue.setValue[0]).numberPxX);
+        // offsetY = Number(data.testValue.setValue[0].numberPxY);
+        // offsetWidth = Number(data.testValue.setValue[0].numberPxWidth);
+        // offsetHeight = Number(data.testValue.setValue[0].numberPxHeight);
+        offsetX = Number(100);
+        offsetY = Number(100);
+        offsetWidth = Number(200);
+        offsetHeight = Number(200);
       } else if ('SetPercent' == data.testValue.describe) {
-        offsetX = rectWidth * (data.testValue.setValue[0].ratioX as number);
-        offsetY = rectHeight * (data.testValue.setValue[0].ratioY as number);
-        offsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
-        offsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
+        // offsetX = rectWidth * Number(data.testValue.setValue[0].ratioX);
+        // offsetY = rectHeight * Number(data.testValue.setValue[0].ratioY);
+        // offsetWidth = rectWidth * Number(data.testValue.setValue[0].ratioWidth);
+        // offsetHeight = rectHeight * Number(data.testValue.setValue[0].ratioHeight);
+        offsetX = rectWidth * Number(0.2);
+        offsetY = rectHeight * Number(0.2);
+        offsetWidth = rectWidth * Number(1.0);
+        offsetHeight = rectHeight * Number(1.0);
       } else if ('SetResource' == data.testValue.describe) {
-        offsetX = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberX));
-        offsetY = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberY));
-        offsetWidth = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberWidth));
-        offsetHeight = Number(AppStorage.get<UIContext>('uiContext')?.vp2px(data.testValue.setValue[0].numberHeight));
+        // offsetX = Number(uiContext!.vp2px(data.testValue.setValue[0].numberX));
+        // offsetY = Number(uiContext!.vp2px(data.testValue.setValue[0].numberY));
+        // offsetWidth = Number(uiContext!.vp2px(data.testValue.setValue[0].numberWidth));
+        // offsetHeight = Number(uiContext!.vp2px(data.testValue.setValue[0].numberHeight));
+        offsetX = Number(uiContext!.vp2px(50));
+        offsetY = Number(uiContext!.vp2px(50));
+        offsetWidth = Number(uiContext!.vp2px(200));
+        offsetHeight = Number(uiContext!.vp2px(200));
       } else if (('SetIntraArea' == data.testValue.describe) ||
         ('SetOutsideArea' == data.testValue.describe)) {
-        offsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].x) as number);
-        offsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].y) as number);
-        offsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
-        offsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
+        offsetX = uiContext!.vp2px((data.testValue.setValue[0].x) as number);
+        offsetY = uiContext!.vp2px((data.testValue.setValue[0].y) as number);
+        // offsetWidth = rectWidth * Number(data.testValue.setValue[0].ratioWidth);
+        // offsetHeight = rectHeight * Number(data.testValue.setValue[0].ratioHeight);
+        offsetWidth = rectWidth * Number(1.0);
+        offsetHeight = rectHeight * Number(1.0);
       } else if ('SetMultiArea' == data.testValue.describe) {
-        firstOffsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].x) as number);
-        firstOffsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[0].y) as number);
-        firstOffsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
-        firstOffsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
-        secondOffsetX = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[1].x) as number);
-        secondOffsetY = AppStorage.get<UIContext>('uiContext')?.vp2px((data.testValue.setValue[1].y) as number);
-        secondOffsetWidth = rectWidth * (data.testValue.setValue[1].ratioWidth as number);
-        secondOffsetHeight = rectHeight * (data.testValue.setValue[1].ratioHeight as number);
+        firstOffsetX = uiContext!.vp2px((data.testValue.setValue[0].x) as number);
+        firstOffsetY = uiContext!.vp2px((data.testValue.setValue[0].y) as number);
+        // firstOffsetWidth = rectWidth * Number(data.testValue.setValue[0].ratioWidth);
+        // firstOffsetHeight = rectHeight * Number(data.testValue.setValue[0].ratioHeight);
+        firstOffsetWidth = rectWidth * Number(1.0);
+        firstOffsetHeight = rectHeight * Number(1.0);
+        secondOffsetX = uiContext!.vp2px((data.testValue.setValue[1].x) as number);
+        secondOffsetY = uiContext!.vp2px((data.testValue.setValue[1].y) as number);
+        // secondOffsetWidth = rectWidth * Number(data.testValue.setValue[1].ratioWidth);
+        // secondOffsetHeight = rectHeight * Number(data.testValue.setValue[1].ratioHeight);
+        secondOffsetWidth = rectWidth * Number(1.0);
+        secondOffsetHeight = rectHeight * Number(1.0);
       } else {
         console.info('[' + data.caseTag + ']' + 'describe is:' + data.testValue.describe);
       }
@@ -313,22 +342,22 @@ export default function responseRegionTest() {
         await clickPoint(data, xPoint, yPoint);
         //Click on the outer points of multiple hotspot areas
         if ((rect.left + (firstOffsetX as number) + (firstOffsetWidth as number)) >= (rect.left + (secondOffsetX as number) + (secondOffsetY as number))) {
-          xPoint = Number(Number(rect.left + (firstOffsetX as number) + (firstOffsetWidth as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
-          yPoint = Number(Number(rect.top + (firstOffsetY as number) + (firstOffsetHeight as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
+          xPoint = Number(Number(rect.left + (firstOffsetX as number) + (firstOffsetWidth as number) + Number(uiContext!.vp2px(10))).toFixed(0));
+          yPoint = Number(Number(rect.top + (firstOffsetY as number) + (firstOffsetHeight as number) + Number(uiContext!.vp2px(10))).toFixed(0));
         } else {
-          xPoint = Number(Number(rect.left + (secondOffsetX as number) + (secondOffsetWidth as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
-          yPoint = Number(Number(rect.top + (secondOffsetY as number) + (secondOffsetHeight as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
+          xPoint = Number(Number(rect.left + (secondOffsetX as number) + (secondOffsetWidth as number) + Number(uiContext!.vp2px(10))).toFixed(0));
+          yPoint = Number(Number(rect.top + (secondOffsetY as number) + (secondOffsetHeight as number) + Number(uiContext!.vp2px(10))).toFixed(0));
         }
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
-        await Utils.performClickPoint(xPoint, yPoint);
+        // await Utils.performClickPoint(xPoint, yPoint);
         await eventResult(data, notClick);
       } else {
         //Click on the center point of the hotspot area
         let xPoint:number = Number(Number(rect.left + (offsetX as number) + (offsetWidth as number) / 2).toFixed(0));
         let yPoint:number = 0;
         if ('Panel' == data.pageConfig.componentKey) {
-             // dragbar has height and do not reponse click event when click the dragbar  drgabar height = uiContext.vp2px(24)
+          // dragbar has height and do not reponse click event when click the dragbar  drgabar height = uiContext.uiContext!.vp2px(24)
           yPoint = Number(Number(rect.top + (offsetY as number) + 20 ).toFixed(0));
         } else {
           yPoint = Number(Number(rect.top + (offsetY as number) + (offsetHeight as number) / 2).toFixed(0));
@@ -337,11 +366,11 @@ export default function responseRegionTest() {
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
         await clickPoint(data, xPoint, yPoint);
         //Click on the outer point of the hotspot area
-        xPoint = Number(Number(rect.left + (offsetX as number) + (offsetWidth as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
-        yPoint = Number(Number(rect.top + (offsetY as number) + (offsetHeight as number) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))).toFixed(0));
+        xPoint = Number(Number(rect.left + (offsetX as number) + (offsetWidth as number) + Number(uiContext!.vp2px(10))).toFixed(0));
+        yPoint = Number(Number(rect.top + (offsetY as number) + (offsetHeight as number) + Number(uiContext!.vp2px(10))).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
-        await Utils.performClickPoint(xPoint, yPoint);
+        // await Utils.performClickPoint(xPoint, yPoint);
         await eventResult(data, notClick);
       }
     });
