@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -42,11 +42,11 @@ export default function APIFontPrimaryTest() {
         console.info("get APIFontPrimaryTest state pages:" + JSON.stringify(pages));
         if (!("APIFontPrimary" == pages.name)) {
           console.info("get APIFontPrimaryTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push APIFontPrimaryTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APIFontPrimaryTest page error:" + err);
@@ -58,7 +58,6 @@ export default function APIFontPrimaryTest() {
       await Utils.sleep(2000);
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0100
      * @tc.name     APIFontPrimaryTest_static_0100
@@ -66,10 +65,12 @@ export default function APIFontPrimaryTest() {
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('APIFontPrimaryTest_static_0100 START');
+      console.info('c');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));   //
+      await Utils.sleep(1000);
+      console.log("++++++++++++++APIFontPrimaryTest_static_0100button " + button);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text02');
@@ -81,7 +82,6 @@ it('APIFontPrimaryTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0200
      * @tc.name     APIFontPrimaryTest_static_0200
@@ -93,6 +93,7 @@ it('APIFontPrimaryTest_static_0200', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text03');
@@ -104,7 +105,6 @@ it('APIFontPrimaryTest_static_0200', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0300
      * @tc.name     APIFontPrimaryTest_static_0300
@@ -116,6 +116,7 @@ it('APIFontPrimaryTest_static_0300', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text04');
@@ -127,7 +128,6 @@ it('APIFontPrimaryTest_static_0300', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0400
      * @tc.name     APIFontPrimaryTest_static_0400
@@ -139,6 +139,7 @@ it('APIFontPrimaryTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text05');
@@ -150,7 +151,6 @@ it('APIFontPrimaryTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0500
      * @tc.name     APIFontPrimaryTest_static_0500
@@ -162,6 +162,7 @@ it('APIFontPrimaryTest_static_0500', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text06');
@@ -173,7 +174,6 @@ it('APIFontPrimaryTest_static_0500', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0600
      * @tc.name     APIFontPrimaryTest_static_0600
@@ -185,6 +185,7 @@ it('APIFontPrimaryTest_static_0600', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text07');
@@ -196,7 +197,6 @@ it('APIFontPrimaryTest_static_0600', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0700
      * @tc.name     APIFontPrimaryTest_static_0700
@@ -208,6 +208,7 @@ it('APIFontPrimaryTest_static_0700', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text08');
@@ -219,7 +220,6 @@ it('APIFontPrimaryTest_static_0700', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0800
      * @tc.name     APIFontPrimaryTest_static_0800
@@ -231,6 +231,7 @@ it('APIFontPrimaryTest_static_0800', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text09');
@@ -242,7 +243,6 @@ it('APIFontPrimaryTest_static_0800', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_0900
      * @tc.name     APIFontPrimaryTest_static_0900
@@ -254,6 +254,7 @@ it('APIFontPrimaryTest_static_0900', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text10');
@@ -265,7 +266,6 @@ it('APIFontPrimaryTest_static_0900', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_1000
      * @tc.name     APIFontPrimaryTest_static_1000
@@ -277,6 +277,7 @@ it('APIFontPrimaryTest_static_1000', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text11');
@@ -288,7 +289,6 @@ it('APIFontPrimaryTest_static_1000', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_1100
      * @tc.name     APIFontPrimaryTest_static_1100
@@ -300,6 +300,7 @@ it('APIFontPrimaryTest_static_1100', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text12');
@@ -311,7 +312,6 @@ it('APIFontPrimaryTest_static_1100', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_1200
      * @tc.name     APIFontPrimaryTest_static_1200
@@ -323,6 +323,7 @@ it('APIFontPrimaryTest_static_1200', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text13');
@@ -334,7 +335,6 @@ it('APIFontPrimaryTest_static_1200', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_1300
      * @tc.name     APIFontPrimaryTest_static_1300
@@ -346,6 +346,7 @@ it('APIFontPrimaryTest_static_1300', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text14');
@@ -357,7 +358,6 @@ it('APIFontPrimaryTest_static_1300', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_1400
      * @tc.name     APIFontPrimaryTest_static_1400
@@ -369,6 +369,7 @@ it('APIFontPrimaryTest_static_1400', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text15');
@@ -380,7 +381,6 @@ it('APIFontPrimaryTest_static_1400', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-
 /*
      * @tc.number   APIFontPrimaryTest_static_1500
      * @tc.name     APIFontPrimaryTest_static_1500
@@ -392,6 +392,7 @@ it('APIFontPrimaryTest_static_1500', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text16');

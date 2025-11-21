@@ -32,10 +32,10 @@ class MyNodeController extends  NodeController {
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
     let scroll = typeNode.createScrollNode(uiContext)
     scroll.initialize()
-    
-    
-    
-    
+    // let toggle = typeNode.createNode(uiContext, 'Toggle', toggleOptions)
+    // toggle.initialize( { type: ToggleType.Button, isOn: false }).width(50)
+    //   .key('key_Toggle_001')
+    // col.appendChild(toggle)
     scroll.appendChild(col)
     col1.appendChild(scroll)
     node.appendChild(col1)

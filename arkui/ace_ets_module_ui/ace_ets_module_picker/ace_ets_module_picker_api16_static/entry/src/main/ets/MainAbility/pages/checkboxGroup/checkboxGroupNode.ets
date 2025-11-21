@@ -27,18 +27,18 @@ class MyNodeController extends  NodeController {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // let checkboxGroup = typeNode.createNode(uiContext, 'CheckboxGroup')
+    // checkboxGroup.initialize({group:'checkboxGroup'}).key('key_checkboxGroup_001')
+    // let checkbox1 = typeNode.createCheckboxNode(uiContext)
+    // checkbox1.initialize({name:'checkbox1',group:'checkboxGroup'})
+    // let checkbox2 = typeNode.createCheckboxNode(uiContext)
+    // checkbox2.initialize({name:'checkbox2',group:'checkboxGroup'})
+    // let checkbox3 = typeNode.createCheckboxNode(uiContext)
+    // checkbox3.initialize({name:'checkbox3',group:'checkboxGroup'})
+    // col.appendChild(checkbox1)
+    // col.appendChild(checkbox2)
+    // col.appendChild(checkbox3)
+    // col.appendChild(checkboxGroup)
     node.appendChild(col)
     return node
   }

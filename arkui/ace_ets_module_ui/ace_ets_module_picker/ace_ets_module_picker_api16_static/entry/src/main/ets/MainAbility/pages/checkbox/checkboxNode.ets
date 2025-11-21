@@ -26,10 +26,10 @@ class MyNodeController extends  NodeController {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-    
-    
-    
-    
+    // let checkbox = typeNode.createCheckboxNode(uiContext)
+    // checkbox.initialize({name:'checkbox1',group:'CheckboxGroup'})
+    //   .key('key_checkbox_01')
+    // col.appendChild(checkbox)
     node.appendChild(col)
     return node
   }

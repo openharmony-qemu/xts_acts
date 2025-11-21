@@ -12,35 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 {
   "module": {
     "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
-    "metadata": [
-            {
-              "name": "ArkTSPartialUpdate",
-              "value": "true"
-            }
-        ],
     "abilities": [
       {
-        "name": "com.arkui.ace.commonAttrsLayout.api13.EntryAbility",
+        "name": "EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
-        "description": "$string:description_application",
-        "icon": "$media:icon",
-        "label": "$string:entry_label",
-        "startWindowIcon": "$media:icon",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
-        "orientation": "portrait",
         "skills": [
           {
             "entities": [

@@ -29,14 +29,10 @@ struct TimePickerPage {
   @State minute: number = 0
   @State mode: boolean = true
   messageManager: MessageManager<boolean|Date|number> = new MessageManager<boolean|Date|number>()
-  @State enableCascade: boolean | undefined | null = true
+  @State enableCascade: boolean | undefined | null= true
 
   onPageShow() {
     console.info('TimePicker onPageShow')
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<boolean|Date|number>>('messageManager', this.messageManager )
     let callback: Callback<boolean|Date|number> = (message: Message<boolean|Date|number> ) => {
       console.error('message = ' + message.name + '--' + message.value)
@@ -132,14 +128,14 @@ struct TimePickerPage {
         .key('timePicker')
         .width('100%')
         .height('50%')
-        
-        
-        
-        
-        
-        
-        
-        
+        // .enableCascade(this.enableCascade) //给enableCascade传的值的类型有boolean | undefined | null，但SDK不支持
+        // .useMilitaryTime(this.isMilitaryTime)
+        // .onChange((value: TimePickerResult) => {
+        //   this.hour = value.hour
+        //   this.minute = value.minute
+        //   this.selectedTime.setHours(value.hour, value.minute)
+        //   console.info('select current date is: ' + JSON.stringify(value))
+        // })
       Text('hour:' + this.hour).fontSize(20).margin(10).key('hour')
       Text('minute:' + this.minute).fontSize(20).margin(10).key('minute')
       Text('24hour:false')

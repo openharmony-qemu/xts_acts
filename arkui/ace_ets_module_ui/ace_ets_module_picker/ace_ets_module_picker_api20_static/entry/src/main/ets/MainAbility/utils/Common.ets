@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import RectValue from '../common/Rect';
 import inspector from '@ohos.arkui.inspector'

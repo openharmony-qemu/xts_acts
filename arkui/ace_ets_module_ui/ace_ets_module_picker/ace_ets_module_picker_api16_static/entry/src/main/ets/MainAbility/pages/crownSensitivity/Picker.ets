@@ -32,7 +32,8 @@ struct DatePickerExample {
         end: new Date('1980-1-1'),
       })
         .key('picker01')
-        .digitalCrownSensitivity(CrownSensitivity.HIGH)
+
+        .digitalCrownSensitivity(CrownSensitivity.HIGH)  //取值不对，得到的是1,期望是2
         .focusable(true)
         .focusOnTouch(true)
         .disappearTextStyle({ color: Color.Green, font: { size: '16fp', weight: FontWeight.Bold } })
