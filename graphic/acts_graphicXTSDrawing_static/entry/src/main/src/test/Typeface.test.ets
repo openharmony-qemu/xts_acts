@@ -41,6 +41,56 @@ export default function typefaceTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0100
+     * @tc.name      : testTypeFaceGetFamilyNameNormalStatic
+     * @tc.desc      : Test for testTypeFaceGetFamilyNameNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testTypeFaceGetFamilyNameNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testTypeFaceGetFamilyNameNormalStatic';
+      try {
+        let font = new drawing.Font();
+        let typeface = font.getTypeface();
+        if(typeface){
+          typeface.getFamilyName();
+          console.info(msg + ' getFamilyName successed');
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` getFamilyName errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0102
+     * @tc.name      : testTypeFaceGetFamilyNameMultipleCallsStatic
+     * @tc.desc      : Test for testTypeFaceGetFamilyNameMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testTypeFaceGetFamilyNameMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceGetFamilyNameMultipleCallsStatic';
+
+      let font = new drawing.Font();
+      let typeface = font.getTypeface();
+      if(typeface){
+        for (let i = 0; i < 20; i++) {
+          try {
+            typeface.getFamilyName();
+            console.info(msg + ' getFamilyName successed');
+          } catch (e) {
+            e = e as BusinessError;
+            console.info(msg + ` getFamilyName errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+            expect().assertFail();
+          }
+        }
+      }
+    });
+    /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0200
      * @tc.name      : testTypeFaceMakeFromFileNormalStatic
      * @tc.desc      : testTypeFaceMakeFromFileNormal
@@ -105,6 +155,88 @@ export default function typefaceTest() {
         console.info(msg + ' test failed.');
       } catch (e: BusinessError) {
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0302
+     * @tc.name      : testTypeFaceMakeFromRawFileAbNormalStatic
+     * @tc.desc      : testTypeFaceMakeFromRawFileAbNormalStatic
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testTypeFaceMakeFromRawFileAbNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceMakeFromRawFileAbNormalStatic';
+      try {
+        const mytypeface: drawing.Typeface | undefined = drawing.Typeface.makeFromRawFile($rawfile('image.png'));
+        console.info(msg + ' makeFromRawFile image.png success' + JSON.stringify(mytypeface));
+        expect(mytypeface == null).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` makeFromRawFile image.png errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0301
+     * @tc.name      : testTypeFaceMakeFromRawFileMultipleCallsStatic
+     * @tc.desc      : testTypeFaceMakeFromRawFileMultipleCallsStatic
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testTypeFaceMakeFromRawFileMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceMakeFromRawFileMultipleCallsStatic';
+      try {
+        for (let i = 0; i < 20; i += 1) {
+          let mytypeface: drawing.Typeface | undefined =
+            drawing.Typeface.makeFromRawFile($rawfile('HarmonyOS_Sans_Condensed.ttf'));
+          console.info(msg + ' makeFromRawFile HarmonyOS_Sans_Condensed.ttf success' + JSON.stringify(mytypeface));
+          if (mytypeface) {
+            expect(!!mytypeface).assertTrue();
+          }
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg +
+          ` makeFromRawFile HarmonyOS_Sans_Condensed.ttf errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0300
+     * @tc.name      : testTypeFaceMakeFromRawFileNormalStatic
+     * @tc.desc      : testTypeFaceMakeFromRawFileNormalStatic
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testTypeFaceMakeFromRawFileNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceMakeFromRawFileNormalStatic';
+      try {
+        let mytypeface: drawing.Typeface | undefined =
+          drawing.Typeface.makeFromRawFile($rawfile('HarmonyOS_Sans_Condensed.ttf'));
+        console.info(msg + ' makeFromRawFile HarmonyOS_Sans_Condensed.ttf success' + JSON.stringify(mytypeface));
+        if (mytypeface) {
+          expect(!!mytypeface).assertTrue();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg +
+          ` makeFromRawFile HarmonyOS_Sans_Condensed.ttf errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let mytypeface2: drawing.Typeface | undefined = drawing.Typeface.makeFromRawFile($rawfile('ttf/HarmonyOS_Sans_Condensed.ttf'));
+        console.info(msg + ' makeFromRawFile ttf/HarmonyOS_Sans_Condensed.ttf success' + JSON.stringify(mytypeface2));
+        if (mytypeface2) {
+          expect(!!mytypeface2).assertTrue();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg +
+          ` makeFromRawFile ttf/HarmonyOS_Sans_Condensed.ttf errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
     });
