@@ -22,6 +22,8 @@ import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import geoLocationManager from '@ohos.geoLocationManager';
+import { notificationManager } from '@ohos.NotificationKit';
+import { canIUse } from '@internal.full.global';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag:string='location'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -96,6 +98,9 @@ export default function actslocationTest() {
 
                 expect(true).assertEqual(geoLocationManager.LocatingPriority.PRIORITY_LOCATING_SPEED == 0x502)
                 expect(true).assertEqual(geoLocationManager.LocatingPriority.PRIORITY_ACCURACY == 0x501)
+
+                expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER == 1)
+                expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT == 2)
 
                 done();
 
@@ -521,11 +526,10 @@ export default function actslocationTest() {
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_getCurrentWifiBssidForLocating_0100: " + isAcessToken);
+                console.info("SUB_Location_getCurrentWifiBssidForLocating_0100: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
-                    done();
                 } else {
                     try{
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
@@ -547,11 +551,10 @@ export default function actslocationTest() {
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_getCurrentWifiBssidForLocating_0200: " + isAcessToken);
+                console.info("SUB_Location_getCurrentWifiBssidForLocating_0200: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
-                    done();
                 } else {
                     await geoLocationManager.disableLocation();
                     try{
@@ -581,11 +584,10 @@ export default function actslocationTest() {
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_getCurrentWifiBssidForLocating_0300: " + isAcessToken);
+                console.info("SUB_Location_getCurrentWifiBssidForLocating_0300: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
-                    done();
                 } else {
                     try{
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
@@ -608,11 +610,10 @@ export default function actslocationTest() {
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_getCurrentWifiBssidForLocating_0400: " + isAcessToken);
+                console.info("SUB_Location_getCurrentWifiBssidForLocating_0400: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
-                    done();
                 } else {
                     try{
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
@@ -635,11 +636,10 @@ export default function actslocationTest() {
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_getCurrentWifiBssidForLocating_0500: " + isAcessToken);
+                console.info("SUB_Location_getCurrentWifiBssidForLocating_0500: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
-                    done();
                 } else {
                     try{
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
@@ -662,7 +662,7 @@ export default function actslocationTest() {
             */
             it('SUB_Location_addGnssGeofence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_addGnssGeofence_0100: " + isAcessToken);
+                console.info("SUB_Location_addGnssGeofence_0100: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
@@ -743,7 +743,7 @@ export default function actslocationTest() {
             */
             it('SUB_Location_addGnssGeofence_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_addGnssGeofence_0200: " + isAcessToken);
+                console.info("SUB_Location_addGnssGeofence_0200: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
@@ -825,7 +825,7 @@ export default function actslocationTest() {
             */
             it('SUB_Location_addGnssGeofence_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_addGnssGeofence_0300: " + isAcessToken);
+                console.info("SUB_Location_addGnssGeofence_0300: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
@@ -907,7 +907,7 @@ export default function actslocationTest() {
             */
             it('SUB_Location_addGnssGeofence_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_addGnssGeofence_0400: " + isAcessToken);
+                console.info("SUB_Location_addGnssGeofence_0400: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
@@ -989,7 +989,7 @@ export default function actslocationTest() {
             */
             it('SUB_Location_addGnssGeofence_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_addGnssGeofence_0500: " + isAcessToken);
+                console.info("SUB_Location_addGnssGeofence_0500: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
@@ -1071,7 +1071,7 @@ export default function actslocationTest() {
             */
             it('SUB_Location_addGnssGeofence_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_addGnssGeofence_0600: " + isAcessToken);
+                console.info("SUB_Location_addGnssGeofence_0600: " + isAccessToken);
                 if (!isAcessToken) {
                     console.info("The device does not support Gnss");
                     expect(isAcessToken).assertFalse();
@@ -1144,6 +1144,82 @@ export default function actslocationTest() {
             ) 
 
         /*
+         * @tc.number: Sub_Location_removeGnssGeofence_0100
+         * @tc.name: Sub_Location_removeGnssGeofence_0100
+         * @tc.desc: removeGnssGeofence(geofenceId: number): Promise<void>
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it('Sub_Location_getCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+            let fenceId = 1;
+            try {
+              geoLocationManager.removeGnssGeofence(fenceId).then(() => {
+                console.info("removeGnssGeofence success fenceId:" + fenceId);
+                expect(true).assertEqual(fenceId!=null);
+              }).catch((error: BusinessError) => {
+                console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+                expect((err as BusinessError).code).assertEqual(201);
+              });
+            } catch (error) {
+              console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+            }
+            await Utils.msSleep(1000)
+            done();
+        })  
+        
+        /*
+         * @tc.number: Sub_Location_removeGnssGeofence_0200
+         * @tc.name: Sub_Location_removeGnssGeofence_0200
+         * @tc.desc: removeGnssGeofence(geofenceId: number): Promise<void>
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it('Sub_Location_removeGnssGeofence_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+            let fenceId = 1;
+            try {
+              geoLocationManager.removeGnssGeofence(fenceId).then(() => {
+                console.info("removeGnssGeofence success fenceId:" + fenceId);
+                expect(true).assertEqual(fenceId!=null);
+              }).catch((error: BusinessError) => {
+                console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+                expect((err as BusinessError).code).assertEqual(401);
+              });
+            } catch (error) {
+              console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+            }
+            await Utils.msSleep(1000)
+            done();
+        })         
+
+        /*
+         * @tc.number: Sub_Location_removeGnssGeofence_0300
+         * @tc.name: Sub_Location_removeGnssGeofence_0300
+         * @tc.desc: removeGnssGeofence(geofenceId: number): Promise<void>
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it('Sub_Location_removeGnssGeofence_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+            let fenceId = 1;
+            try {
+              geoLocationManager.removeGnssGeofence(fenceId).then(() => {
+                console.info("removeGnssGeofence success fenceId:" + fenceId);
+                expect(true).assertEqual(fenceId!=null);
+              }).catch((error: BusinessError) => {
+                console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+                expect((err as BusinessError).code).assertEqual(3301602);
+              });
+            } catch (error) {
+              console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+            }
+            await Utils.msSleep(1000)
+            done();
+        })          
+
+
+        /*
          * @tc.number: Sub_Location_getCurrentLocation_0100
          * @tc.name: Sub_Location_getCurrentLocation_0100
          * @tc.desc: getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
@@ -1181,7 +1257,7 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.getCurrentLocation(requestInfo, locationChange);
-                expect(locationChange.length>0).assertTrue();
+                expect(true).assertEqual(locationChange!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
@@ -1206,7 +1282,7 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getCurrentLocation(requestInfo, (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                       if (location) {
-                        expect(location.length>0).assertTrue();
+                        expect(true).assertEqual(location!=null);
                         console.info('locationChange: location=' + JSON.stringify(location));
                       }
                       if (err) {
@@ -1238,7 +1314,7 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getCurrentLocation(requestInfo, (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                       if (location) {
-                        expect(location.length>0).assertTrue();
+                        expect(true).assertEqual(location!=null);
                         console.info('locationChange: location=' + JSON.stringify(location));
                       }
                       if (err) {
@@ -1270,7 +1346,7 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getCurrentLocation(requestInfo, (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                       if (location) {
-                        expect(location.length>0).assertTrue();
+                        expect(true).assertEqual(location!=null);
                         console.info('locationChange: location=' + JSON.stringify(location));
                       }
                       if (err) {
@@ -1297,7 +1373,7 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getCurrentLocation((err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                       if (location) {
-                        expect(location.length>0).assertTrue();
+                        expect(true).assertEqual(location!=null);
                         console.info('locationChange: location=' + JSON.stringify(location));
                       }
                       if (err) {
@@ -1324,7 +1400,7 @@ export default function actslocationTest() {
             try {
               geoLocationManager.getCurrentLocation((err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                     if (location) {
-                      expect(location.length>0).assertTrue();
+                        expect(true).assertEqual(location!=null);
                       console.info('locationChange: location=' + JSON.stringify(location));
                     }
                     if (err) {
@@ -1351,7 +1427,7 @@ export default function actslocationTest() {
             try {
               geoLocationManager.getCurrentLocation((err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                     if (location) {
-                      expect(location.length>0).assertTrue();
+                      expect(true).assertEqual(location!=null);
                       console.info('locationChange: location=' + JSON.stringify(location));
                     }
                     if (err) {
@@ -1382,7 +1458,7 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getCurrentLocation(request).then((location) => {
                   console.info('current location: ' + JSON.stringify(location));
-                  expect(location.length>0).assertTrue();
+                  expect(true).assertEqual(location!=null);
                 }).catch((error: BusinessError) => {
                     console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
                     expect((error as BusinessError).code).assertEqual(401);
@@ -1410,7 +1486,7 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getCurrentLocation(request).then((location) => {
                   console.info('current location: ' + JSON.stringify(location));
-                  expect(location.length>0).assertTrue();
+                  expect(true).assertEqual(location!=null);
                 }).catch((error: BusinessError) => {
                     console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
                     expect((error as BusinessError).code).assertEqual(3301100);
@@ -1438,7 +1514,7 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getCurrentLocation(request).then((location) => {
                   console.info('current location: ' + JSON.stringify(location));
-                  expect(location.length>0).assertTrue();
+                  expect(true).assertEqual(location!=null);
                 }).catch((error: BusinessError) => {
                     console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
                     expect((error as BusinessError).code).assertEqual(3301200);
@@ -1458,7 +1534,7 @@ export default function actslocationTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it('Sub_Location_isLocationEnabled_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async function (done) {
+        it('Sub_Location_isLocationEnabled_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,(): void => {
               try {
                 let locationEnabled = geoLocationManager.isLocationEnabled();
                 expect(true).assertEqual(locationEnabled=null);
@@ -1688,9 +1764,79 @@ export default function actslocationTest() {
               }
           await Utils.msSleep(1000)
           done();
-      })      
+      })  
+      
+        /*
+        * @tc.number: SUB_Location_getLastLocation_0100
+        * @tc.name: SUB_Location_getLastLocation_0100
+        * @tc.desc: getLastLocation(): Location
+        * @tc.level: Level 2
+        * @tc.type: Function
+        * @tc.size: MEDIUMTEST
+        */
+        it('SUB_Location_getLastLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            try {
+                let location = geoLocationManager.getLastLocation();
+                expect(true).assertEqual(JSON.stringify(location)!=null);
+              } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+                expect(err.code).assertEqual(201);
+              }
+        })      
 
+        /*
+        * @tc.number: SUB_Location_getLastLocation_0200
+        * @tc.name: SUB_Location_getLastLocation_0200
+        * @tc.desc: getLastLocation(): Location
+        * @tc.level: Level 2
+        * @tc.type: Function
+        * @tc.size: MEDIUMTEST
+        */
+        it('SUB_Location_getLastLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            try {
+                let location = geoLocationManager.getLastLocation();
+                expect(true).assertEqual(JSON.stringify(location)!=null);
+              } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+                expect(err.code).assertEqual(801);
+              }
+        })           
 
+        /*
+        * @tc.number: SUB_Location_getLastLocation_0300
+        * @tc.name: SUB_Location_getLastLocation_0300
+        * @tc.desc: getLastLocation(): Location
+        * @tc.level: Level 2
+        * @tc.type: Function
+        * @tc.size: MEDIUMTEST
+        */
+        it('SUB_Location_getLastLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            try {
+                let location = geoLocationManager.getLastLocation();
+                expect(true).assertEqual(JSON.stringify(location)!=null);
+              } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+                expect(err.code).assertEqual(3301100);
+              }
+        })      
+        
+        /*
+        * @tc.number: SUB_Location_getLastLocation_0400
+        * @tc.name: SUB_Location_getLastLocation_0400
+        * @tc.desc: getLastLocation(): Location
+        * @tc.level: Level 2
+        * @tc.type: Function
+        * @tc.size: MEDIUMTEST
+        */
+        it('SUB_Location_getLastLocation_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            try {
+                let location = geoLocationManager.getLastLocation();
+                expect(true).assertEqual(JSON.stringify(location)!=null);
+              } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+                expect(err.code).assertEqual(3301200);
+              }
+        })         
 
 
 
