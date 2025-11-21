@@ -242,7 +242,7 @@ export default function AddContactTest() {
             ExpectTrue(data > 0);
             contact.queryContactsCount(context).then((CountData) => {
               console.log(`${caseName} queryContactsCount: success CountData>${JSON.stringify(CountData)}`);
-              ExpectTrue(CountData >= 1);
+              expect(CountData >= 1).assertTrue;
               done();
             }).catch((err) => {
               console.log(`${caseName} CountData: err>${JSON.stringify(err)}`);
@@ -294,7 +294,7 @@ export default function AddContactTest() {
                   done();
                 } else {
                   console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                  ExpectTrue(queryData?.name?.hasName === true);
+                  expect(queryData?.name?.hasName === true).assertTrue;
                   done();
                 }
               });
