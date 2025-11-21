@@ -67,7 +67,7 @@ import TextAreaBindControllerTest from './TextAreaApi20Test/TextAreaBindControll
 import textAreaObserverTest from './TextAreaApi22Test/textAreaObserver.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
-import textInputApi1 from './TextInputApi11Test/textInputApi1.test'
+import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
 import textInputApiTest from './TextInputApi11Test/textinputkeyNewLine.test'
 import textInputJsunit from './TextInputApi11Test/TextInputJsunit.test';
 import textInput_caret from './TextInputApi11Test/textInput_caret.test';
@@ -173,7 +173,7 @@ export default function testsuite() {
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
-  textInputApi1()            // Api11
+  textInputApi11()           // Api11
   textInputApiTest()
   textInputJsunit()
   textInput_caret()

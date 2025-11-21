@@ -57,7 +57,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0001 START');
         await CommonFunc.sleep(1000);
-        let area1 = getInspectorByKey('area1');
+        let area1 = getInspectorByKey('Api16_area1');
         let obj: ESObject = JSON.parse(area1);
         console.log('textAreaFontScaleTest0001---' + obj.$attrs.maxFontScale)
         console.log('textAreaFontScaleTest0001---' + obj.$attrs.minFontScale)
@@ -78,7 +78,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0002 START');
         await CommonFunc.sleep(1000);
-        let area2 = getInspectorByKey('area2');
+        let area2 = getInspectorByKey('Api16_area2');
         let obj: ESObject = JSON.parse(area2);
         console.log('textAreaFontScaleTest0002---' + obj.$attrs.maxFontScale)
         console.log('textAreaFontScaleTest0002---' + obj.$attrs.minFontScale)
@@ -99,7 +99,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0003 START');
         await CommonFunc.sleep(1000);
-        let area3 = getInspectorByKey('area3');
+        let area3 = getInspectorByKey('Api16_area3');
         let obj: ESObject = JSON.parse(area3);
         console.log('textAreaFontScaleTest0003---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0003---' + obj.$attrs.minFontScale)
@@ -120,7 +120,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0004 START');
         await CommonFunc.sleep(1000);
-        let area4 = getInspectorByKey('area4');
+        let area4 = getInspectorByKey('Api16_area4');
         let obj: ESObject = JSON.parse(area4);
         console.log('textAreaFontScaleTest0004---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0004---' + obj.$attrs.minFontScale)
@@ -141,7 +141,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0005 START');
         await CommonFunc.sleep(1000);
-        let area5 = getInspectorByKey('area5');
+        let area5 = getInspectorByKey('Api16_area5');
         let obj: ESObject = JSON.parse(area5);
         console.log('textAreaFontScaleTest0005---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0005---' + obj.$attrs.minFontScale)
@@ -162,7 +162,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0006 START');
         await CommonFunc.sleep(1000);
-        let area6 = getInspectorByKey('area6');
+        let area6 = getInspectorByKey('Api16_area6');
         let obj: ESObject = JSON.parse(area6);
         console.log('textAreaFontScaleTest0006---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0006---' + obj.$attrs.minFontScale)
@@ -183,7 +183,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0007 START');
         await CommonFunc.sleep(1000);
-        let area7 = getInspectorByKey('area7');
+        let area7 = getInspectorByKey('Api16_area7');
         let obj: ESObject = JSON.parse(area7);
         console.log('textAreaFontScaleTest0007---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0007---' + obj.$attrs.minFontScale)
@@ -204,7 +204,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0008 START');
         await CommonFunc.sleep(1000);
-        let area8 = getInspectorByKey('area8');
+        let area8 = getInspectorByKey('Api16_area8');
         let obj: ESObject = JSON.parse(area8);
         console.log('textAreaFontScaleTest0008---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0008---' + obj.$attrs.minFontScale)
@@ -225,7 +225,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0009 START');
         await CommonFunc.sleep(1000);
-        let area9 = getInspectorByKey('area9');
+        let area9 = getInspectorByKey('Api16_area9');
         let obj: ESObject = JSON.parse(area9);
         console.log('textAreaFontScaleTest0009---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0009---' + obj.$attrs.minFontScale)
@@ -246,7 +246,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0010 START');
         await CommonFunc.sleep(1000);
-        let area10 = getInspectorByKey('area10');
+        let area10 = getInspectorByKey('Api16_area10');
         let obj: ESObject = JSON.parse(area10);
         console.log('textAreaFontScaleTest0010---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0010---' + obj.$attrs.minFontScale)
@@ -267,7 +267,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0011 START');
         await CommonFunc.sleep(1000);
-        let area11 = getInspectorByKey('area11');
+        let area11 = getInspectorByKey('Api16_area11');
         let obj: ESObject = JSON.parse(area11);
         console.log('textAreaFontScaleTest0011---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0011---' + obj.$attrs.minFontScale)
@@ -288,7 +288,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0012 START');
         await CommonFunc.sleep(1000);
-        let area12 = getInspectorByKey('area12');
+        let area12 = getInspectorByKey('Api16_area12');
         let obj: ESObject = JSON.parse(area12);
         console.log('textAreaFontScaleTest0012---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0012---' + obj.$attrs.minFontScale)
@@ -309,7 +309,7 @@ export default function textAreaFontScaleTest() {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0013 START');
         await CommonFunc.sleep(1000);
-        let area13 = getInspectorByKey('area13');
+        let area13 = getInspectorByKey('Api16_area13');
         let obj: ESObject = JSON.parse(area13);
         console.log('textAreaFontScaleTest0013---' + obj.$attrs.maxFontScale)
 		console.log('textAreaFontScaleTest0013---' + obj.$attrs.minFontScale)

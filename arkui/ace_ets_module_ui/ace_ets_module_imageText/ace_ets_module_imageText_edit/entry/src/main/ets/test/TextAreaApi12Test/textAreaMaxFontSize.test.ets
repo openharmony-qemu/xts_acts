@@ -22,7 +22,7 @@ export default function textAreaMaxFontSize() {
     beforeEach(async (done: Function) => {
       console.info("searchMaxFontSizeTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/textAreaLineHeight/textAreaMaxFontSize',
+        url: 'MainAbility/pages/TextAreaApi12/textAreaMaxFontSize',
       }
       try {
         router.clear();

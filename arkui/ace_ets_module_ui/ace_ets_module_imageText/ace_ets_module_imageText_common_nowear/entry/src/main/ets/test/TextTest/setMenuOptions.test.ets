@@ -42,14 +42,6 @@ export default function SetMenuOptionsTest() {
       done();
     });
 
-    afterEach(async (done: Function) => {
-      console.info("SetMenuOptionsTest afterEach start");
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
-      console.info("SetMenuOptionsTest afterEach end");
-    });
-
     /**
      * @tc.number    SUB_ACE_SetMenuOptionsTest_0010
      * @tc.name      SetMenuOptionsTest_0010
@@ -70,6 +62,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0010] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0010] END');
       done();
     });
@@ -126,6 +120,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0030] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0030] END');
       done();
     });
@@ -154,6 +150,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0040] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0040] END');
       done();
     });
@@ -178,6 +176,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0050] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0050] END');
       done();
     });
@@ -206,6 +206,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0060] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0060] END');
       done();
     });
@@ -234,6 +236,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0070] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0070] END');
       done();
     });
@@ -262,6 +266,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0080] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0080] END');
       done();
     });
@@ -286,6 +292,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0090] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0090] END');
       done();
     });
@@ -342,6 +350,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0110] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0110] END');
       done();
     });
@@ -370,6 +380,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0120] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0120] END');
       done();
     });
@@ -394,6 +406,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0130] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0130] END');
       done();
     });
@@ -450,6 +464,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0150] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0150] END');
       done();
     });
@@ -478,6 +494,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0160] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0160] END');
       done();
     });
@@ -502,6 +520,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0170] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0170] END');
       done();
     });
@@ -530,6 +550,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0180] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0180] END');
       done();
     });
@@ -558,6 +580,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0190] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0190] END');
       done();
     });
@@ -586,6 +610,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0200] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0200] END');
       done();
     });
@@ -614,6 +640,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0210] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0210] END');
       done();
     });
@@ -642,6 +670,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0220] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0220] END');
       done();
     });
@@ -670,6 +700,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0230] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0230] END');
       done();
     });
@@ -698,6 +730,8 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0240] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0240] END');
       done();
     });
@@ -725,7 +759,7 @@ export default function SetMenuOptionsTest() {
       let window: UiWindow = await driver.findWindow({ actived: true });
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0250] mode: ' + JSON.stringify(mode));
-      expect('0, 3').assertContain(mode);
+      expect('0, 3').assertContain(mode);  
       console.info('[SetMenuOptionsTest_0250] END');
       done();
     });

@@ -50,13 +50,13 @@ export default function onSubmitTest() {
     beforeEach(async (done: Function) => {
       console.info("onSubmitTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextAreaApi14/onSubmitTest',
+        url: 'MainAbility/pages/TextAreaApi14/onSubmitTestApi14',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get onSubmitTest state pages: " + JSON.stringify(pages));
-        if (!("onSubmitTest" == pages.name)) {
+        if (!("onSubmitTestApi14" == pages.name)) {
           console.info("get onSubmitTest state pages.name: " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
@@ -97,7 +97,7 @@ export default function onSubmitTest() {
       console.info('onSubmitTest_0010 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
-      let TextArea = await driver.findComponent(ON.id('TextArea'));
+      let TextArea = await driver.findComponent(ON.id('TextArea_onSubmit'));
       await CommonFunc.sleep(500);
       await TextArea.inputText('这是测试文本')
       await CommonFunc.sleep(500);
@@ -152,7 +152,7 @@ export default function onSubmitTest() {
       await CommonFunc.sleep(500);
       await button.click()
       await CommonFunc.sleep(500);
-      let TextArea = await driver.findComponent(ON.id('TextArea'));
+      let TextArea = await driver.findComponent(ON.id('TextArea_onSubmit'));
       await TextArea.inputText('这是测试文本')     
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070)

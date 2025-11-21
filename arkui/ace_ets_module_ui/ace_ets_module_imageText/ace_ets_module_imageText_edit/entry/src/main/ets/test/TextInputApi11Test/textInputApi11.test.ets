@@ -21,8 +21,8 @@ import commoneventmanager from '@ohos.commonEventManager';
 import inputMethod from '@ohos.inputMethod';
 import { BusinessError } from '@ohos.base'
 
-export default function textInputApi1() {
-  describe('textInputApi1', () => {
+export default function textInputApi11() {
+  describe('textInputApi11', () => {
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     beforeAll(async (done: Function) => {
       console.info('====>beforeAll inputMethod_enable start!')
@@ -48,30 +48,30 @@ export default function textInputApi1() {
     })
 
     beforeEach(async (done: Function) => {
-      console.info("textInputApi1 beforeEach start");
+      console.info("textInputApi11 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextInputApi11/textInputApi1',
+        url: 'MainAbility/pages/textInputApi11/textInputApi11',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get textInputApi1 state pages:" + JSON.stringify(pages));
-        if (!("textInputApi1" == pages.name)) {
-          console.info("get textInputApi1 pages.name:" + JSON.stringify(pages.name));
+        console.info("get textInputApi11 state pages:" + JSON.stringify(pages));
+        if (!("textInputApi11" == pages.name)) {
+          console.info("get textInputApi11 pages.name:" + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info("push textInputApi1 page result:" + JSON.stringify(result));
+          console.info("push textInputApi11 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textInputApi1 page error:" + err);
+        console.error("push textInputApi11 page error:" + err);
       }
-      console.info("textInputApi1 beforeEach end");
+      console.info("textInputApi11 beforeEach end");
       done();
     });
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info("textInputApi1 after each called");
+      console.info("textInputApi11 after each called");
     });
 
     afterAll(async (done: Function) =>{
@@ -92,24 +92,24 @@ export default function textInputApi1() {
     });
 
     /* *
-    * @tc.number: textInputApi1_001
-    * @tc.name  : textInputApi1_001
+    * @tc.number: textInputApi11_001
+    * @tc.name  : textInputApi11_001
     * @tc.desc  : onSubmit event test
     * @tc.level : Level 2
     */
-    it('textInputApi1_001', Level.LEVEL2, async (done: Function) => {
+    it('textInputApi11_001', Level.LEVEL2, async (done: Function) => {
 
-      console.info('[textInputApi1_001] START');
+      console.info('[textInputApi11_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
-      let text = await driver.findComponent(ON.id('textInputApi1'));
+      let text = await driver.findComponent(ON.id('textInputApi11'));
       await CommonFunc.sleep(1000);
       await text.inputText('9');
       await CommonFunc.sleep(1000);
       //回车点击
       await driver.triggerKey(2070)
       await CommonFunc.sleep(500);
-      let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn'));
+      let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn_Api11'));
       await CommonFunc.sleep(500);
       await stopEditBtn.click()
       await CommonFunc.sleep(500);
@@ -127,14 +127,14 @@ export default function textInputApi1() {
       }
       commoneventmanager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
       await CommonFunc.sleep(3000);
-      let strJson = getInspectorByKey('textInputApi1_text');
+      let strJson = getInspectorByKey('textInputApi11_text');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[textInputApi1_001] component obj is: " + JSON.stringify(obj));
+      console.info("[textInputApi11_001] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
       expect(obj.$attrs.content).assertEqual('PREVIOUS');
 
-      console.info('[textInputApi1_001] END');
+      console.info('[textInputApi11_001] END');
       done();
     });
   })

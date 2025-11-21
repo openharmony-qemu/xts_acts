@@ -21,7 +21,7 @@ export default function TextfieldSingleTest() {
     beforeEach(async (done: Function) => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/TextfieldSingle',
+        url: 'MainAbility/pages/TextInputApi11/TextfieldSingle',
       };
       try {
         router.clear();

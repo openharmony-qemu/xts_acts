@@ -14,7 +14,7 @@
  */
 @Entry
 @Component
-struct textInputApi1 {
+struct textInputApi11Page {
   @State value: string = ''
   @State text1: string = ''
   @State TextError: string = ''
@@ -22,7 +22,7 @@ struct textInputApi1 {
   build() {
     Column() {
       TextInput({ placeholder: '请输入用户名', text: this.text1 ,controller:this.textInputController})
-        .id('textInputApi1')
+        .id('textInputApi11')
         .showUnderline(true)
         .width(380)
         .showError(this.TextError)
@@ -34,7 +34,7 @@ struct textInputApi1 {
       Button('stopEditBtn').onClick(()=>{
         this.textInputController.stopEditing()
       }).id('stopEditBtn')
-      Text( this.value ).height('60%').width('100%') .key('textInputApi1_text')
+      Text( this.value ).height('60%').width('100%') .key('textInputApi11_text')
     }
   }
 }

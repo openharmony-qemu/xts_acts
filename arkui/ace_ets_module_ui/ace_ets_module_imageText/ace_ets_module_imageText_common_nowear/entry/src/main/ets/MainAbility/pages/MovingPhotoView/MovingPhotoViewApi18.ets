@@ -43,8 +43,8 @@ function checkResourceFile(context: Context) {
 }
 async function example111() {
   try {
-    let imageFileUri = 'file://com.arkui.ace.imageText.nowear.api18/data/storage/el2/base/haps/entry/files/test_mov_1.jpg';
-    let videoFileUri = 'file://com.arkui.ace.imageText.nowear.api18/data/storage/el2/base/haps/entry/files/test_mov_1.mp4';
+    let imageFileUri = 'file://com.arkui.ace.imageText.common.nowear/data/storage/el2/base/haps/entry/files/test_mov_1.jpg';
+    let videoFileUri = 'file://com.arkui.ace.imageText.common.nowear/data/storage/el2/base/haps/entry/files/test_mov_1.mp4';
     data = await photoAccessHelper.MediaAssetManager.loadMovingPhoto(context, imageFileUri, videoFileUri);
     console.info('load moving photo successfully');
   } catch (err) {
@@ -92,7 +92,7 @@ struct MovingPhotoViewApi18 {
             controller: this.controller,
             imageAIOptions: this.options
           })
-            .id('MovingPhotoView')
+            .id('MovingPhotoViewApi18')
             .width(200)
             .height(200)
             .muted(this.flag)

@@ -57,7 +57,7 @@ export default function textAreaEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0001 START');
       await CommonFunc.sleep(1000);
-      let area1 = getInspectorByKey('area1');
+      let area1 = getInspectorByKey('EllipsisMode_area1');
       let obj: ESObject = JSON.parse(area1);
       console.log('textAreaEllipsisModeTest0001---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.END");
@@ -76,7 +76,7 @@ export default function textAreaEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0002 START');
       await CommonFunc.sleep(1000);
-      let area2 = getInspectorByKey('area2');
+      let area2 = getInspectorByKey('EllipsisMode_area2');
       let obj: ESObject = JSON.parse(area2);
       console.log('textAreaEllipsisModeTest0002---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.START");
@@ -95,7 +95,7 @@ export default function textAreaEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0003 START');
       await CommonFunc.sleep(1000);
-      let area3 = getInspectorByKey('area3');
+      let area3 = getInspectorByKey('EllipsisMode_area3');
       let obj: ESObject = JSON.parse(area3);
       console.log('textAreaEllipsisModeTest0003---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.CENTER");
@@ -114,7 +114,7 @@ export default function textAreaEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0004 START');
       await CommonFunc.sleep(1000);
-      let area4 = getInspectorByKey('area4');
+      let area4 = getInspectorByKey('EllipsisMode_area4');
       let obj: ESObject = JSON.parse(area4);
       console.log('textAreaEllipsisModeTest0004---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.END");
@@ -133,7 +133,7 @@ export default function textAreaEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0005 START');
       await CommonFunc.sleep(1000);
-      let area5 = getInspectorByKey('area5');
+      let area5 = getInspectorByKey('EllipsisMode_area5');
       let obj: ESObject = JSON.parse(area5);
       console.log('textAreaEllipsisModeTest0005---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.END");

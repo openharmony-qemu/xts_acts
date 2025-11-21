@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct onSubmitTest {
+struct onSubmitTestPage {
   @State searchText :string = ''
   @State searchEventText :string = ''
   @State enterKeyType:EnterKeyType = 0
@@ -27,7 +27,7 @@ struct onSubmitTest {
   searchController:SearchController = new SearchController()
 
   @Builder
-
+  
   build() {
     Column() {
       Column(){
@@ -130,7 +130,7 @@ struct onSubmitTest {
           .onEditChange((isEditing: boolean) => {
             this.textAreaIsEditing = isEditing
           })
-          .id('TextArea')
+          .id('TextArea_onSubmit')
       }
     }.height('100%')
   }
