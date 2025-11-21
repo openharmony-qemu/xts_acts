@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,29 +26,29 @@ let testAbilityContext:common.UIAbilityContext;
 export default function webMediaOption(){
   describe('WebMediaOptionTest', () => {
     beforeAll(async (): Promise<void> => {
-      console.log("App start")
+      console.log('App start')
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
+        abilityName: 'EntryAbility',
+        moduleName:'entry',
         onAbilityCreate: (abilitys : UIAbility) : void => {
           testAbilityContext = abilitys.context
-          console.log("onAbilityCreate end")
+          console.log('onAbilityCreate end')
         },
       }, (err: BusinessError<void> | null): void => {
         if (err != null ) {
-          console.log("-----" + err.code)
+          console.log('-----' + err.code)
         }
-        console.log("BusinessError  end")
+        console.log('BusinessError  end')
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.videoplaybackTwotest.static")
-      await Utils.msSleep(2000)
-      console.log("beforeAll end,%s", "Succeed!")
+      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.videoplaybackTwotest.static')
+      await Utils.msSleep(5000);
+      console.log('beforeAll end,%s', 'Succeed!')
     });
     beforeEach(async () => {
-      await Utils.msSleep(2000);
-      console.info("web beforeEach start");
+      await Utils.msSleep(3000);
+      console.info('web beforeEach start');
     })
 
 
@@ -58,16 +58,35 @@ export default function webMediaOption(){
     * @tc.desc        : test mediaOptions single instance
     * @tc.size        : MediumTest
     * @tc.type        : Function
-    * @tc.level       : Level 1
+    * @tc.level       : Level 3
     */
     it('testMediaOptionsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      Utils.emitEvent("emitMediaOptions001", 10)
+      await Utils.msSleep(5000);
+      Utils.emitEvent('emitMediaOptions001', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testMediaOptions001", true, 415, done);
+      Utils.registerEvent('testMediaOptions001', true, 415, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewMediaOptionTestButton', 10, '');
-      await Utils.msSleep(25000);
+      await Utils.msSleep(3000);
       done()
     })
+
+    /*
+    * @tc.number      : SUB_WEB_MEDIAOPTIONS_0200
+    * @tc.name        : testMediaOptionsStatic002
+    * @tc.desc        : test mediaOptions single instance
+    * @tc.size        : MediumTest
+    * @tc.type        : Function
+    * @tc.level       : Level 3
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webViewMediaOptionTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }
