@@ -114,7 +114,7 @@ export default function Sim4Public() {
           ExpectTrue(true);
           done();
         }else {
-          console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed, promise: err->` + err);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
@@ -159,7 +159,7 @@ export default function Sim4Public() {
           }
         });
       } catch (err)  {
-        console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+        console.info(`${caseName} failed, promise: err->` + err);
         ExpectFail();
         console.info(`${caseName} test end`);
         done();
@@ -204,7 +204,7 @@ export default function Sim4Public() {
             }
           })
         } catch (err) {
-          console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed, promise: err->` + err);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
@@ -502,7 +502,7 @@ export default function Sim4Public() {
           done();
         }
       } catch (err) {
-        console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} failed, err->` + err);
         ExpectFail();
         console.info(`${caseName} test end`);
         done();
@@ -552,7 +552,7 @@ export default function Sim4Public() {
             console.info(`${caseName} 01 test end`);
             done();
           } else {
-            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+            console.info(`${caseName} failed, err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
             done();
