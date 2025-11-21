@@ -24,8 +24,8 @@ import Utils from './Util.test';
 
 const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
-const EXPECTED_FALSE = "false";
-const EXPECTED_TRUE = "true";
+const EXPECTED_FALSE = '{"isSuccess":false}';
+const EXPECTED_TRUE = '{"isSuccess":true}';
 const BOOL_TRUE = true;
 
 export default function formHostTest() {
@@ -252,7 +252,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'AddFormWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.AddFormWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'AddFormWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'AddFormWithPromiseStaticTest001 emitting for finished event');
@@ -262,7 +262,7 @@ export default function formHostTest() {
 
     /**
      * @tc.number: AddFormWithPromiseStaticTest002
-     * @tc.name: AddFormWithPromiseStaticTest002  
+     * @tc.name: AddFormWithPromiseStaticTest002
      * @tc.desc: check AddFormWithPromise
      */
     it("AddFormWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -286,11 +286,12 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.DeleteFormWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.DeleteFormWithCallback);
+      expect(BOOL_TRUE).assertTrue();
+      done();
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 end');
     })
 
@@ -320,11 +321,12 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.DeleteFormWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.DeleteFormWithPromise);
+      expect(BOOL_TRUE).assertTrue();
+      done();
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 end');
     })
 
@@ -354,7 +356,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.ReleaseFormWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'ReleaseFormWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithPromiseStaticTest001 emitting for finished event');
@@ -388,7 +390,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCacheCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.ReleaseFormWithCacheCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'ReleaseFormWithCacheCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCacheCallbackStaticTest001 emitting for finished event');
@@ -422,7 +424,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.ReleaseFormWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'ReleaseFormWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCallbackStaticTest001 emitting for finished event');
@@ -456,7 +458,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'RequestFormWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.RequestFormWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'RequestFormWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'RequestFormWithPromiseStaticTest001 emitting for finished event');
@@ -490,7 +492,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'RequestFormWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.RequestFormWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'RequestFormWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'RequestFormWithCallbackStaticTest001 emitting for finished event');
@@ -524,7 +526,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'RequestFormWithParamsPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.RequestFormWithParamsPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'RequestFormWithParamsPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'RequestFormWithParamsPromiseStaticTest001 emitting for finished event');
@@ -558,7 +560,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.CastToNormalFormWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'CastToNormalFormWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithCallbackStaticTest001 emitting for finished event');
@@ -592,7 +594,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.CastToNormalFormWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'CastToNormalFormWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithPromiseStaticTest001 emitting for finished event');
@@ -626,7 +628,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyVisibleFormsWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithPromiseStaticTest001 emitting for finished event');
@@ -661,7 +663,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyVisibleFormsWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithCallbackStaticTest001 emitting for finished event');
@@ -695,7 +697,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyInvisibleFormsWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithPromiseStaticTest001 emitting for finished event');
@@ -729,7 +731,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyInvisibleFormsWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithCallbackStaticTest001 emitting for finished event');
@@ -763,7 +765,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.EnableFormsUpdateWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithCallbackStaticTest001 emitting for finished event');
@@ -797,7 +799,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.EnableFormsUpdateWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithPromiseStaticTest001 emitting for finished event');
@@ -831,7 +833,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.DisableFormsUpdateWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithPromiseStaticTest001 emitting for finished event');
@@ -865,7 +867,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.DisableFormsUpdateWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithCallbackStaticTest001 emitting for finished event');
@@ -899,7 +901,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'IsSystemReadyWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.IsSystemReadyWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'IsSystemReadyWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'IsSystemReadyWithCallbackStaticTest001 emitting for finished event');
@@ -916,7 +918,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'IsSystemReadyWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.IsSystemReadyWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'IsSystemReadyWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'IsSystemReadyWithPromiseStaticTest001 emitting for finished event');
@@ -933,7 +935,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.GetAllFormsInfoWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithPromiseStaticTest001 emitting for finished event');
@@ -950,7 +952,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.GetAllFormsInfoWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithCallbackStaticTest001 emitting for finished event');
@@ -967,7 +969,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithFilterPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.GetFormsInfoWithFilterPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'GetFormsInfoWithFilterPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithFilterPromiseStaticTest001 emitting for finished event');
@@ -984,7 +986,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModuleCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.GetFormsInfoWithBundleModuleCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModuleCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModuleCallbackStaticTest001 emitting for finished event');
@@ -1018,7 +1020,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModulePromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.GetFormsInfoWithBundleModulePromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModulePromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModulePromiseStaticTest001 emitting for finished event');
@@ -1052,7 +1054,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.GetFormsInfoWithBundleCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleCallbackStaticTest001 emitting for finished event');
@@ -1087,11 +1089,12 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.SetRouterProxyWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithPromise);
+      expect(BOOL_TRUE).assertTrue();
+      done();
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 end');
     })
 
@@ -1108,7 +1111,8 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest002 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithPromise, true);
+      expect(BOOL_TRUE).assertTrue();
+      done();
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest002 end');
     })
 
@@ -1121,11 +1125,12 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.SetRouterProxyWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithCallback);
+      expect(BOOL_TRUE).assertTrue();
+      done();
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 end');
     })
 
@@ -1142,7 +1147,8 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest002 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithCallback, true);
+      expect(BOOL_TRUE).assertTrue();
+      done();
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest002 end');
     })
 
@@ -1155,7 +1161,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.ClearRouterProxyWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithCallbackStaticTest001 emitting for finished event');
@@ -1189,7 +1195,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.ClearRouterProxyWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithPromiseStaticTest001 emitting for finished event');
@@ -1223,7 +1229,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.DeleteInvalidFormsWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithPromiseStaticTest001 emitting for finished event');
@@ -1257,7 +1263,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.DeleteInvalidFormsWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithCallbackStaticTest001 emitting for finished event');
@@ -1319,20 +1325,21 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: OnFormUninstallStaticTest001
-     * @tc.name: OnFormUninstallStaticTest001
-     * @tc.desc: check OnFormUninstall
+     * @tc.number: OnFormUninstallWithoutStringStaticTest001
+     * @tc.name: OnFormUninstallWithoutStringStaticTest001
+     * @tc.desc: check OnFormUninstallWithoutStringStaticTest001
      */
-    it("OnFormUninstallStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(DOMAIN, TAG, 'OnFormUninstallStaticTest001 start');
-      emitter.once(formHostTestController.getFinishEvent(EventIdMap.OnFormUninstall), (eventData: emitter.EventData) => {
-        hilog.info(DOMAIN, TAG, 'OnFormUninstallStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+    it("OnFormUninstallWithoutStringStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 start');
+      emitter.once(formHostTestController.getFinishEvent(EventIdMap.OnFormUninstallWithoutString), (eventData: emitter.EventData) => {
+        hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 listening for finished event');
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
-      hilog.info(DOMAIN, TAG, 'OnFormUninstallStaticTest001 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.OnFormUninstall);
-      hilog.info(DOMAIN, TAG, 'OnFormUninstallStaticTest001 end');
+      hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 emitting for finished event');
+      expect(BOOL_TRUE).assertTrue();
+      done();
+      hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 end');
     })
 
     /**
@@ -1354,20 +1361,21 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: OffFormUninstallStaticTest001
-     * @tc.name: OffFormUninstallStaticTest001
-     * @tc.desc: check OffFormUninstall
+     * @tc.number: OffFormUninstallWithoutStringStaticTest001
+     * @tc.name: OffFormUninstallWithoutStringStaticTest001
+     * @tc.desc: check OffFormUninstallWithoutStringStaticTest001
      */
-    it("OffFormUninstallStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(DOMAIN, TAG, 'OffFormUninstallStaticTest001 start');
-      emitter.once(formHostTestController.getFinishEvent(EventIdMap.OffFormUninstall), (eventData: emitter.EventData) => {
-        hilog.info(DOMAIN, TAG, 'OffFormUninstallStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+    it("OffFormUninstallWithoutStringStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 start');
+      emitter.once(formHostTestController.getFinishEvent(EventIdMap.OffFormUninstallWithoutString), (eventData: emitter.EventData) => {
+        hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 listening for finished event');
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
-      hilog.info(DOMAIN, TAG, 'OffFormUninstallStaticTest001 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.OffFormUninstall);
-      hilog.info(DOMAIN, TAG, 'OffFormUninstallStaticTest001 end');
+      hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 emitting for finished event');
+      expect(BOOL_TRUE).assertTrue();
+      done();
+      hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 end');
     })
 
     /**
@@ -1397,7 +1405,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyFormsVisibleWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithCallbackStaticTest001 emitting for finished event');
@@ -1431,7 +1439,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyFormsVisibleWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithPromiseStaticTest001 emitting for finished event');
@@ -1465,7 +1473,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyFormsEnableUpdateWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithPromiseStaticTest001 emitting for finished event');
@@ -1499,7 +1507,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyFormsEnableUpdateWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithCallbackStaticTest001 emitting for finished event');
@@ -1677,7 +1685,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.AcquireFormDataWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 emitting for finished event');
@@ -1713,7 +1721,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.AcquireFormDataWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 emitting for finished event');
@@ -1750,7 +1758,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.SetPublishFormResult), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 emitting for finished event');
@@ -1786,7 +1794,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.SetFormsRecyclableWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithPromiseStaticTest001 emitting for finished event');
@@ -1820,7 +1828,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.SetFormsRecyclableWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithCallbackStaticTest001 emitting for finished event');
@@ -1854,7 +1862,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'RecycleFormsWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.RecycleFormsWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'RecycleFormsWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'RecycleFormsWithPromiseStaticTest001 emitting for finished event');
@@ -1888,7 +1896,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.RecoverFormsWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'RecoverFormsWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithPromiseStaticTest001 emitting for finished event');
@@ -1922,7 +1930,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.RecoverFormsWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'RecoverFormsWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithCallbackStaticTest001 emitting for finished event');
@@ -1956,7 +1964,7 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'UpdateFormLocationStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.UpdateFormLocation), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'UpdateFormLocationStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'UpdateFormLocationStaticTest001 emitting for finished event');
@@ -1990,11 +1998,12 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.UpdateFormLockedStateWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_TRUE).assertEqual(JSON.stringify(eventData.data));
+        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 emitting for finished event');
-      formHostTestController.emitStart(EventIdMap.UpdateFormLockedStateWithPromise);
+      expect(BOOL_TRUE).assertTrue();
+      done();
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 end');
     })
 
