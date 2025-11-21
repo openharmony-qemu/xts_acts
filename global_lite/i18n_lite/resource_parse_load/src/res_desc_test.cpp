@@ -59,7 +59,6 @@ void ResDescTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResDescFuncTest001
  * @tc.number ResDescFuncTest001
  * @tc.desc   Test IsRef function, non file case.
@@ -127,7 +126,6 @@ void TestKeyParam(KeyType keyType, int value, std::string expectStr)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResDescFuncTest002
  * @tc.number ResDescFuncTest002
  * @tc.desc   Test IsRef function, non file case.

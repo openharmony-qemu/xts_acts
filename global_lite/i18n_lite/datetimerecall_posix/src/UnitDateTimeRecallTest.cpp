@@ -60,7 +60,6 @@ static int GetLocaleIndex(LocaleInfo locale, vector<LocaleInfo> locales)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_LocaleRecall_0100
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_LOCALE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -84,7 +83,6 @@ HWTEST_F(DateTimeLocaleRecallTest, GLOBAL_DateTimeFormat_LocaleRecall_0100, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_LocaleRecall_0200
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_LOCALE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -108,7 +106,6 @@ HWTEST_F(DateTimeLocaleRecallTest, GLOBAL_DateTimeFormat_LocaleRecall_0200, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_LocaleRecall_0300
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_LOCALE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -132,7 +129,6 @@ HWTEST_F(DateTimeLocaleRecallTest, GLOBAL_DateTimeFormat_LocaleRecall_0300, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_LocaleRecall_0400
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_LOCALE_0400
  * @tc.desc   [C- SOFTWARE -0200]

@@ -60,7 +60,6 @@ void HapParserTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapParserFuncTest001
  * @tc.number HapParserFuncTest001
  * @tc.desc   Test CreateResConfigFromKeyParams
@@ -115,7 +114,6 @@ HWTEST_F(HapParserTest, HapParserFuncTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapParserFuncTest002
  * @tc.number HapParserFuncTest002
  * @tc.desc   Test GetDeviceType
@@ -135,7 +133,6 @@ HWTEST_F(HapParserTest, HapParserFuncTest002, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapParserFuncTest003
  * @tc.number HapParserFuncTest003
  * @tc.desc   Test GetScreenDensity
@@ -155,7 +152,6 @@ HWTEST_F(HapParserTest, HapParserFuncTest003, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapParserFuncTest004
  * @tc.number HapParserFuncTest004
  * @tc.desc   Test ToFolderPath

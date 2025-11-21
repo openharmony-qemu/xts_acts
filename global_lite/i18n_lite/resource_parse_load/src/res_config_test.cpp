@@ -57,7 +57,6 @@ void ResConfigTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResConfigFuncTest001
  * @tc.number ResConfigFuncTest001
  * @tc.desc   Test Config function, non file case.

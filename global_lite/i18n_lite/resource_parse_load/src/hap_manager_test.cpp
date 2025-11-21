@@ -62,7 +62,6 @@ void HapManagerTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapManagerFuncTest001
  * @tc.number HapManagerFuncTest001
  * @tc.desc   Test AddResourcePath & GetResourceList function, file case.
@@ -90,7 +89,6 @@ HWTEST_F(HapManagerTest, HapManagerFuncTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapManagerFuncTest002
  * @tc.number HapManagerFuncTest002
  * @tc.desc   Test UpdateResConfig & AddResourcePath function, file case.

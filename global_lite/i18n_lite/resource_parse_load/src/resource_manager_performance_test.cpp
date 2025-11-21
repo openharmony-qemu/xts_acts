@@ -107,7 +107,6 @@ void ResourceManagerPerformanceTest::TearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest001
  * @tc.number ResourceManagerPerformanceFuncTest001
  * @tc.desc   Test AddResource
@@ -138,7 +137,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest001, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest002
  * @tc.number ResourceManagerPerformanceFuncTest002
  * @tc.desc   Test UpdateResConfig
@@ -178,7 +176,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest002, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest003
  * @tc.number ResourceManagerPerformanceFuncTest003
  * @tc.desc   Test GetResConfig
@@ -216,7 +213,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest003, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest004
  * @tc.number ResourceManagerPerformanceFuncTest004
  * @tc.desc   Test GetStringByID
@@ -257,7 +253,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest004, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest005
  * @tc.number ResourceManagerPerformanceFuncTest005
  * @tc.desc   Test GetStringByName
@@ -291,7 +286,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest005, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest006
  * @tc.number ResourceManagerPerformanceFuncTest006
  * @tc.desc   Test GetStringByName
@@ -325,7 +319,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest006, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest007
  * @tc.number ResourceManagerPerformanceFuncTest007
  * @tc.desc   Test GetStringFormatById
@@ -366,7 +359,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest007, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest008
  * @tc.number ResourceManagerPerformanceFuncTest008
  * @tc.desc   Test GetStringFormatByName
@@ -400,7 +392,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest008, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest009
  * @tc.number ResourceManagerPerformanceFuncTest009
  * @tc.desc   Test GetStringArrayById
@@ -433,7 +424,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest009, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest010
  * @tc.number ResourceManagerPerformanceFuncTest010
  * @tc.desc   Test GetStringArrayByName
@@ -463,7 +453,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest010, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest011
  * @tc.number ResourceManagerPerformanceFuncTest011
  * @tc.desc   Test GetPatternById
@@ -503,7 +492,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest011, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest012
  * @tc.number ResourceManagerPerformanceFuncTest012
  * @tc.desc   Test GetPatternByName
@@ -537,7 +525,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest012, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest013
  * @tc.number ResourceManagerPerformanceFuncTest013
  * @tc.desc   Test GetPluralStringById
@@ -574,7 +561,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest013, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest014
  * @tc.number ResourceManagerPerformanceFuncTest014
  * @tc.desc   Test GetPluralStringByName
@@ -608,7 +594,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest014, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest015
  * @tc.number ResourceManagerPerformanceFuncTest015
  * @tc.desc   Test GetPluralStringByIdFormat
@@ -645,7 +630,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest015, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest016
  * @tc.number ResourceManagerPerformanceFuncTest016
  * @tc.desc   Test GetPluralStringByNameFormat
@@ -679,7 +663,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest016, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest017
  * @tc.number ResourceManagerPerformanceFuncTest017
  * @tc.desc   Test GetThemeById
@@ -712,7 +695,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest017, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest018
  * @tc.number ResourceManagerPerformanceFuncTest018
  * @tc.desc   Test GetThemeByName
@@ -742,7 +724,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest018, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest019
  * @tc.number ResourceManagerPerformanceFuncTest019
  * @tc.desc   Test GetBooleanById
@@ -775,7 +756,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest019, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest020
  * @tc.number ResourceManagerPerformanceFuncTest020
  * @tc.desc   Test GetBooleanByName
@@ -805,7 +785,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest020, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest021
  * @tc.number ResourceManagerPerformanceFuncTest021
  * @tc.desc   Test GetIntegerById
@@ -838,7 +817,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest021, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest022
  * @tc.number ResourceManagerPerformanceFuncTest022
  * @tc.desc   Test GetIntegerByName
@@ -868,7 +846,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest022, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest023
  * @tc.number ResourceManagerPerformanceFuncTest023
  * @tc.desc   Test GetFloatById
@@ -901,7 +878,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest023, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest024
  * @tc.number ResourceManagerPerformanceFuncTest024
  * @tc.desc   Test GetFloatByName
@@ -931,7 +907,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest024, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest025
  * @tc.number ResourceManagerPerformanceFuncTest025
  * @tc.desc   Test GetIntArrayById
@@ -964,7 +939,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest025, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest026
  * @tc.number ResourceManagerPerformanceFuncTest026
  * @tc.desc   Test GetIntArrayByName
@@ -994,7 +968,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest026, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest027
  * @tc.number ResourceManagerPerformanceFuncTest027
  * @tc.desc   Test GetColorById
@@ -1027,7 +1000,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest027, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest028
  * @tc.number ResourceManagerPerformanceFuncTest028
  * @tc.desc   Test GetColorByName
@@ -1057,7 +1029,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest028, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest029
  * @tc.number ResourceManagerPerformanceFuncTest029
  * @tc.desc   Test GetProfileById
@@ -1090,7 +1061,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest029, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest030
  * @tc.number ResourceManagerPerformanceFuncTest030
  * @tc.desc   Test GetProfileByName
@@ -1120,7 +1090,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest030, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest031
  * @tc.number ResourceManagerPerformanceFuncTest031
  * @tc.desc   Test GetMediaById
@@ -1153,7 +1122,6 @@ HWTEST_F(ResourceManagerPerformanceTest, ResourceManagerPerformanceFuncTest031, 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   ResourceManagerPerformanceFuncTest032
  * @tc.number ResourceManagerPerformanceFuncTest032
  * @tc.desc   Test GetMediaByName

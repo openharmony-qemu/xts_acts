@@ -76,7 +76,6 @@ int GetResId(const std::string &name, ResType resType)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GlobalFuncTest001
  * @tc.number GlobalFuncTest001
  * @tc.desc   Test GLOBAL_ConfigLanguage function, file case.
@@ -128,7 +127,6 @@ HWTEST_F(GlobalTest, GlobalFuncTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GlobalFuncTest002
  * @tc.number GlobalFuncTest002
  * @tc.desc   Test GLOBAL_GetValueByName function, file case.
@@ -148,7 +146,6 @@ HWTEST_F(GlobalTest, GlobalFuncTest002, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GlobalFuncTest003
  * @tc.number GlobalFuncTest003
  * @tc.desc   Test GLOBAL_GetValueById function, file case.

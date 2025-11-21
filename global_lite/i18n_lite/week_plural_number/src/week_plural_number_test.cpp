@@ -43,7 +43,6 @@ void WeekPluralNumberTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0100
  * @tc.number WeekPluralNumberTest0100
  * @tc.desc   WeekPluralNumberTest0100
@@ -69,7 +68,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0100, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0200
  * @tc.number WeekPluralNumberTest0200
  * @tc.desc   WeekPluralNumberTest0200
@@ -95,7 +93,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0200, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0300
  * @tc.number WeekPluralNumberTest0300
  * @tc.desc   WeekPluralNumberTest0300
@@ -150,7 +147,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0300, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0400
  * @tc.number WeekPluralNumberTest0400
  * @tc.desc   WeekPluralNumberTest0400
@@ -173,7 +169,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0400, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0500
  * @tc.number WeekPluralNumberTest0500
  * @tc.desc   WeekPluralNumberTest0500
@@ -206,7 +201,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0500, Function | MediumTest |
 }                                                                                                           
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0600
  * @tc.number WeekPluralNumberTest0600
  * @tc.desc   WeekPluralNumberTest0600
@@ -222,7 +216,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0600, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0700
  * @tc.number WeekPluralNumberTest0700
  * @tc.desc   WeekPluralNumberTest0700
@@ -238,7 +231,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0700, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0800
  * @tc.number WeekPluralNumberTest0800
  * @tc.desc   WeekPluralNumberTest0800
@@ -263,7 +255,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0800, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest0900
  * @tc.number WeekPluralNumberTest0900
  * @tc.desc   WeekPluralNumberTest0900
@@ -288,7 +279,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest0900, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1000
  * @tc.number WeekPluralNumberTest1000
  * @tc.desc   WeekPluralNumberTest1000
@@ -305,7 +295,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1000, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1100
  * @tc.number WeekPluralNumberTest1100
  * @tc.desc   WeekPluralNumberTest1100
@@ -323,7 +312,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1100, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1200
  * @tc.number WeekPluralNumberTest1200
  * @tc.desc   WeekPluralNumberTest1200
@@ -341,7 +329,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1200, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1300
  * @tc.number WeekPluralNumberTest1300
  * @tc.desc   WeekPluralNumberTest1300
@@ -359,7 +346,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1300, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1400
  * @tc.number WeekPluralNumberTest1400
  * @tc.desc   WeekPluralNumberTest1400
@@ -377,7 +363,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1400, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1500
  * @tc.number WeekPluralNumberTest1500
  * @tc.desc   WeekPluralNumberTest1500
@@ -395,7 +380,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1500, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1600
  * @tc.number WeekPluralNumberTest1600
  * @tc.desc   WeekPluralNumberTest1600
@@ -413,7 +397,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1600, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1700
  * @tc.number WeekPluralNumberTest1700
  * @tc.desc   WeekPluralNumberTest1700
@@ -431,7 +414,6 @@ HWTEST_F(WeekPluralNumberTest, WeekPluralNumberTest1700, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   WeekPluralNumberTest1800
  * @tc.number WeekPluralNumberTest1800
  * @tc.desc   WeekPluralNumberTest1800

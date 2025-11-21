@@ -305,7 +305,6 @@ INSTANTIATE_TEST_CASE_P(AllDateTimeTest, DateTimeTest,
 
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0100
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -328,7 +327,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0100, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0200
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -351,7 +349,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0200, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0300
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -374,7 +371,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0300, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0400
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -397,7 +393,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0400, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0500
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -420,7 +415,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0500, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0600
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -443,7 +437,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0600, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0700
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -466,7 +459,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0700, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0800
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -489,7 +481,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0800, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0900
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -512,7 +503,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0900, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1000
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -535,7 +525,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1000, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1100
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -558,7 +547,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1100, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1200
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -581,7 +569,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1200, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1300
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -604,7 +591,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1300, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1400
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -627,7 +613,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1400, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1500
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -650,7 +635,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1500, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1600
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -673,7 +657,6 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1600, Func
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1700
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1700
  * @tc.desc   [C- SOFTWARE -0200]

@@ -56,7 +56,6 @@ void LocaleInfoTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoFindAndSortTest001
  * @tc.number LocaleInfoFindAndSortTest001
  * @tc.desc   Test FindAndSort
@@ -83,7 +82,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoFindAndSortTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoFindAndSortTest002
  * @tc.number LocaleInfoFindAndSortTest002
  * @tc.desc   Test FindAndSort
@@ -108,7 +106,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoFindAndSortTest002, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoFindAndSortTest003
  * @tc.number LocaleInfoFindAndSortTest003
  * @tc.desc   Test FindAndSort
@@ -133,7 +130,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoFindAndSortTest003, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoFindAndSortTest004
  * @tc.number LocaleInfoFindAndSortTest004
  * @tc.desc   Test FindAndSort
@@ -158,7 +154,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoFindAndSortTest004, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoFindAndSortTest005
  * @tc.number LocaleInfoFindAndSortTest005
  * @tc.desc   Test FindAndSort
@@ -185,7 +180,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoFindAndSortTest005, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoGetSysDefaultTest001
  * @tc.number LocaleInfoGetSysDefaultTest001
  * @tc.desc   Test GetSysDefault
@@ -215,7 +209,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoGetSysDefaultTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoUpdateSysDefaultTest001
  * @tc.number LocaleInfoUpdateSysDefaultTest001
  * @tc.desc   Test UpdateSysDefault
@@ -272,7 +265,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoUpdateSysDefaultTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoGetLanguageTest001
  * @tc.number LocaleInfoGetLanguageTest001
  * @tc.desc   Test LocaleInfo GetLanguage
@@ -294,7 +286,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoGetLanguageTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoGetRegionTest001
  * @tc.number LocaleInfoGetRegionTest001
  * @tc.desc   Test LocaleInfo GetRegion
@@ -316,7 +307,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoGetRegionTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoGetScriptTest001
  * @tc.number LocaleInfoGetScriptTest001
  * @tc.desc   Test LocaleInfo GetScript
@@ -338,7 +328,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoGetScriptTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromPartsTest001
  * @tc.number LocaleInfoBuildFromPartsTest001
  * @tc.desc   Test BuildFromParts
@@ -363,7 +352,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromPartsTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromPartsTest002
  * @tc.number LocaleInfoBuildFromPartsTest002
  * @tc.desc   Test BuildFromParts
@@ -382,7 +370,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromPartsTest002, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromPartsTest003
  * @tc.number LocaleInfoBuildFromPartsTest003
  * @tc.desc   Test BuildFromParts
@@ -401,7 +388,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromPartsTest003, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromPartsTest004
  * @tc.number LocaleInfoBuildFromPartsTest004
  * @tc.desc   Test BuildFromParts
@@ -420,7 +406,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromPartsTest004, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromPartsTest005
  * @tc.number LocaleInfoBuildFromPartsTest005
  * @tc.desc   Test BuildFromParts
@@ -439,7 +424,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromPartsTest005, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromPartsTest006
  * @tc.number LocaleInfoBuildFromPartsTest006
  * @tc.desc   Test BuildFromParts
@@ -464,7 +448,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromPartsTest006, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest001
  * @tc.number LocaleInfoBuildFromStringTest001
  * @tc.desc   Test BuildFromString
@@ -489,7 +472,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest002
  * @tc.number LocaleInfoBuildFromStringTest002
  * @tc.desc   Test BuildFromString
@@ -508,7 +490,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest002, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest003
  * @tc.number LocaleInfoBuildFromStringTest003
  * @tc.desc   Test BuildFromString
@@ -527,7 +508,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest003, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest004
  * @tc.number LocaleInfoBuildFromStringTest004
  * @tc.desc   Test BuildFromString
@@ -552,7 +532,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest004, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest005
  * @tc.number LocaleInfoBuildFromStringTest005
  * @tc.desc   Test BuildFromString
@@ -577,7 +556,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest005, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest006
  * @tc.number LocaleInfoBuildFromStringTest006
  * @tc.desc   Test BuildFromString
@@ -596,7 +574,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest006, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest007
  * @tc.number LocaleInfoBuildFromStringTest007
  * @tc.desc   Test BuildFromString
@@ -621,7 +598,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest007, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest008
  * @tc.number LocaleInfoBuildFromStringTest008
  * @tc.desc   Test BuildFromString
@@ -640,7 +616,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest008, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest009
  * @tc.number LocaleInfoBuildFromStringTest009
  * @tc.desc   Test BuildFromString
@@ -659,7 +634,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest009, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoBuildFromStringTest0010
  * @tc.number LocaleInfoBuildFromStringTest0010
  * @tc.desc   Test BuildFromString
@@ -684,7 +658,6 @@ HWTEST_F(LocaleInfoTest, LocaleInfoBuildFromStringTest0010, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   LocaleInfoPerformanceFuncTest001
  * @tc.number LocaleInfoPerformanceFuncTest001
  * @tc.desc   Test FindAndSort Performance

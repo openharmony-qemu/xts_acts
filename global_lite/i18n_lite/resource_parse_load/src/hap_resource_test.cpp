@@ -63,7 +63,6 @@ void HapResourceTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapResourceFuncTest001
  * @tc.number HapResourceFuncTest001
  * @tc.desc   Test Load & GetIdValues & GetIdValuesByName function, file case.
@@ -140,7 +139,6 @@ HWTEST_F(HapResourceTest, HapResourceFuncTest001, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapResourceFuncTest002
  * @tc.number HapResourceFuncTest002
  * @tc.desc   Test Load & GetIdValues & GetIdValuesByName function, file case.
@@ -216,7 +214,6 @@ HWTEST_F(HapResourceTest, HapResourceFuncTest002, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapResourceFuncTest003
  * @tc.number HapResourceFuncTest003
  * @tc.desc   Test GetIdValuesByName function, file case.
@@ -293,7 +290,6 @@ ResDesc *LoadFromHap(const char *hapPath, const ResConfigImpl *defaultConfig)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   HapResourceFuncTest004
  * @tc.number HapResourceFuncTest004
  * @tc.desc   Test HapParser::ReadIndexFromFile function, file case.

@@ -59,7 +59,6 @@ void StringUtilsTest::TearDown()
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   StringUtilsFuncTest001
  * @tc.number StringUtilsFuncTest001
  * @tc.desc   Test FormatString, none file case.

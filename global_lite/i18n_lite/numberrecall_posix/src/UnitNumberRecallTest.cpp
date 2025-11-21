@@ -42,7 +42,6 @@ static int GetLocaleIndex(LocaleInfo locale, vector<LocaleInfo> locales)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0100
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -68,7 +67,6 @@ HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0100, Function |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0200
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -94,7 +92,6 @@ HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0200, Function |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0300
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -120,7 +117,6 @@ HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0300, Function |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0400
  * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0400
  * @tc.desc   [C- SOFTWARE -0200]
