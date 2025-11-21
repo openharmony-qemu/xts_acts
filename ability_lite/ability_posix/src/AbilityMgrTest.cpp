@@ -158,7 +158,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testClearElement
  * @tc.number SUB_APPEXECFWK_AMS_API_0013
  * @tc.desc   [C- SOFTWARE -0200]
@@ -182,7 +181,6 @@ HWTEST_F(AbilityMgrTest, testClearElement, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testClearElementIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0014
  * @tc.desc   [C- SOFTWARE -0200]
@@ -207,7 +205,6 @@ HWTEST_F(AbilityMgrTest, testClearElementIllegal, Function | MediumTest | Level2
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testSetWantElement
  * @tc.number SUB_APPEXECFWK_AMS_API_0015
  * @tc.desc   [C- SOFTWARE -0200]
@@ -237,7 +234,6 @@ HWTEST_F(AbilityMgrTest, testSetWantElement, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testSetWantElementIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0016
  * @tc.desc   [C- SOFTWARE -0200]
@@ -262,7 +258,6 @@ HWTEST_F(AbilityMgrTest, testSetWantElementIllegal, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testClearWantIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0022
  * @tc.desc   [C- SOFTWARE -0200]
@@ -292,7 +287,6 @@ HWTEST_F(AbilityMgrTest, testClearWantIllegal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantToUri
  * @tc.number SUB_APPEXECFWK_AMS_API_0025
  * @tc.desc   [C- SOFTWARE -0200]
@@ -324,7 +318,6 @@ HWTEST_F(AbilityMgrTest, testWantToUri, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantToUriIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0026
  * @tc.desc   [C- SOFTWARE -0200]
@@ -347,7 +340,6 @@ HWTEST_F(AbilityMgrTest, testWantToUriIllegal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testSetWantDate
  * @tc.number SUB_APPEXECFWK_AMS_API_0017
  * @tc.desc   [C- SOFTWARE -0200]
@@ -371,7 +363,6 @@ HWTEST_F(AbilityMgrTest, testSetWantDate, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testSetWantDateIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0018
  * @tc.desc   [C- SOFTWARE -0200]
@@ -395,7 +386,6 @@ HWTEST_F(AbilityMgrTest, testSetWantDateIllegal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantParseUri
  * @tc.number SUB_APPEXECFWK_AMS_API_0023
  * @tc.desc   [C- SOFTWARE -0200]
@@ -432,7 +422,6 @@ HWTEST_F(AbilityMgrTest, testWantParseUri, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantParseUriIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0024
  * @tc.desc   [C- SOFTWARE -0200]
@@ -481,7 +470,6 @@ HWTEST_F(AbilityMgrTest, testWantParseUriIllegal, Function | MediumTest | Level2
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testGetBundleNameIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -509,7 +497,6 @@ HWTEST_F(AbilityMgrTest, testGetBundleNameIllegal, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testGetSrcPathIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0031
  * @tc.desc   [C- SOFTWARE -0200]
@@ -534,7 +521,6 @@ HWTEST_F(AbilityMgrTest, testGetSrcPathIllegal, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testGetDataPathIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0032
  * @tc.desc   [C- SOFTWARE -0200]
@@ -560,7 +546,6 @@ HWTEST_F(AbilityMgrTest, testGetDataPathIllegal, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testDumpIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0019
  * @tc.desc   [C- SOFTWARE -0200]
@@ -589,7 +574,6 @@ HWTEST_F(AbilityMgrTest, testDumpIllegal, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testStartAbility
  * @tc.number SUB_APPEXECFWK_AMS_API_0033
  * @tc.desc   [C- SOFTWARE -0200]
@@ -615,7 +599,6 @@ HWTEST_F(AbilityMgrTest, testStartAbility, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testStartAbilityIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0005
  * @tc.desc   [C- SOFTWARE -0200]
@@ -634,7 +617,6 @@ HWTEST_F(AbilityMgrTest, testStartAbilityIllegal, Function | MediumTest | Level2
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testStopAbility
  * @tc.number SUB_APPEXECFWK_AMS_API_0006
  * @tc.desc   [C- SOFTWARE -0200]
@@ -664,7 +646,6 @@ HWTEST_F(AbilityMgrTest, testStopAbility, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testStopAbilityIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0007
  * @tc.desc   [C- SOFTWARE -0200]
@@ -682,7 +663,6 @@ HWTEST_F(AbilityMgrTest, testStopAbilityIllegal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testConnectAbility
  * @tc.number SUB_APPEXECFWK_AMS_API_0008
  * @tc.desc   [C- SOFTWARE -0200]
@@ -715,7 +695,6 @@ HWTEST_F(AbilityMgrTest, testConnectAbility, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testDisConnectAbility
  * @tc.number SUB_APPEXECFWK_AMS_API_0010
  * @tc.desc   [C- SOFTWARE -0100]
@@ -751,7 +730,6 @@ HWTEST_F(AbilityMgrTest, testDisConnectAbility, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testConnectAbilityIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0009
  * @tc.desc   [C- SOFTWARE -0200]
@@ -779,7 +757,6 @@ HWTEST_F(AbilityMgrTest, testConnectAbilityIllegal, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testDisConnectAbilityIllegal
  * @tc.number SUB_APPEXECFWK_AMS_API_0011
  * @tc.desc   [C- SOFTWARE -0200]
@@ -814,7 +791,6 @@ HWTEST_F(AbilityMgrTest, testDisConnectAbilityIllegal, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testTerminateAbility
  * @tc.number SUB_APPEXECFWK_AMS_API_0012
  * @tc.desc   [C- SOFTWARE -0200]
@@ -846,7 +822,6 @@ HWTEST_F(AbilityMgrTest, testTerminateAbility, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantMatchBundle
  * @tc.number SUB_APPEXECFWK_AMS_WANT_0001
  * @tc.desc   [C- SOFTWARE -0200]
@@ -885,7 +860,6 @@ HWTEST_F(AbilityMgrTest, testWantMatchBundle, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantNotMathBundle
  * @tc.number SUB_APPEXECFWK_AMS_WANT_0004
  * @tc.desc   [C- SOFTWARE -0200]
@@ -918,7 +892,6 @@ HWTEST_F(AbilityMgrTest, testWantNotMathBundle, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantOnlyMathBundleName
  * @tc.number SUB_APPEXECFWK_AMS_WANT_0002
  * @tc.desc   [C- SOFTWARE -0200]
@@ -951,7 +924,6 @@ HWTEST_F(AbilityMgrTest, testWantOnlyMathBundleName, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantOnlyMathAbility
  * @tc.number SUB_APPEXECFWK_AMS_WANT_0003
  * @tc.desc   [C- SOFTWARE -0200]
@@ -984,7 +956,6 @@ HWTEST_F(AbilityMgrTest, testWantOnlyMathAbility, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantDataMatchLength
  * @tc.number SUB_APPEXECFWK_AMS_WANT_0005
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1021,7 +992,6 @@ HWTEST_F(AbilityMgrTest, testWantDataMatchLength, Function | MediumTest | Level1
 
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testWantDataNotMatchLength
  * @tc.number SUB_APPEXECFWK_AMS_WANT_0006
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1049,7 +1019,6 @@ HWTEST_F(AbilityMgrTest, testWantDataNotMatchLength, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:49
  * @tc.name   testPostTask
  * @tc.number SUB_APPEXECFWK_AMS_API_0040
  * @tc.desc   [C- SOFTWARE -0200]
