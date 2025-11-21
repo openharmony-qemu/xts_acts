@@ -51,7 +51,6 @@ static BOOL UtilsFileFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreateAndClose001
  * @tc.number SUB_UTILS_FILE_OPERATION_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -70,7 +69,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreateAndClose001, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreateAndClose002
  * @tc.number SUB_UTILS_FILE_OPERATION_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +87,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreateAndClose002, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreateAndClose003
  * @tc.number SUB_UTILS_FILE_OPERATION_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -108,7 +105,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreateAndClose003, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileOpenAndClose001
  * @tc.number SUB_UTILS_FILE_OPERATION_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -129,7 +125,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileOpenAndClose001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileOpenAndClose002
  * @tc.number SUB_UTILS_FILE_OPERATION_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -150,7 +145,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileOpenAndClose002, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileOpenAndClose003
  * @tc.number SUB_UTILS_FILE_OPERATION_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -171,7 +165,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileOpenAndClose003, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileOpenAndClose004
  * @tc.number SUB_UTILS_FILE_OPERATION_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -192,7 +185,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileOpenAndClose004, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileOpenAndClose005
  * @tc.number SUB_UTILS_FILE_OPERATION_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -213,7 +205,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileOpenAndClose005, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreateAndClose004
  * @tc.number SUB_UTILS_FILE_OPERATION_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -236,7 +227,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreateAndClose004, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreateAndClose005
  * @tc.number SUB_UTILS_FILE_OPERATION_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -259,7 +249,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreateAndClose005, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreatAndClose006
  * @tc.number SUB_UTILS_FILE_OPERATION_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -282,7 +271,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreatAndClose006, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreateAndClose007
  * @tc.number SUB_UTILS_FILE_OPERATION_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -305,7 +293,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreateAndClose007, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCreateAndClose008
  * @tc.number SUB_UTILS_FILE_OPERATION_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -328,7 +315,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCreateAndClose008, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileWrite001
  * @tc.number SUB_UTILS_FILE_OPERATION_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -349,7 +335,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileWrite001, Function | MediumTest |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileWrite002
  * @tc.number SUB_UTILS_FILE_OPERATION_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -375,7 +360,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileWrite002, Function | MediumTest |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCreateLongNameFile
  * @tc.number SUB_UTILS_FILE_OPERATION_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -393,7 +377,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testCreateLongNameFile, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testOpenNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -409,7 +392,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testOpenNotExistFile, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testWriteNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -425,7 +407,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testWriteNotExistFile, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCloseNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -441,7 +422,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testCloseNotExistFile, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCreateInvalidlongNameFile
  * @tc.number SUB_UTILS_FILE_OPERATION_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -458,7 +438,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testCreateInvalidlongNameFile, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek001
  * @tc.number SUB_UTILS_FILE_OPERATION_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -480,7 +459,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek001, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek002
  * @tc.number SUB_UTILS_FILE_OPERATION_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -502,7 +480,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek002, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek003
  * @tc.number SUB_UTILS_FILE_OPERATION_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -524,7 +501,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek003, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek004
  * @tc.number SUB_UTILS_FILE_OPERATION_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -546,7 +522,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek004, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek005
  * @tc.number SUB_UTILS_FILE_OPERATION_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -568,7 +543,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek005, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek006
  * @tc.number SUB_UTILS_FILE_OPERATION_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -590,7 +564,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek006, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek007
  * @tc.number SUB_UTILS_FILE_OPERATION_2800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -613,7 +586,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek007, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek008
  * @tc.number SUB_UTILS_FILE_OPERATION_2900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -636,7 +608,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek008, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek009
  * @tc.number SUB_UTILS_FILE_OPERATION_3000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -659,7 +630,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek009, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek010
  * @tc.number SUB_UTILS_FILE_OPERATION_3100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -682,7 +652,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek010, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeek011
  * @tc.number SUB_UTILS_FILE_OPERATION_3200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -706,7 +675,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeek011, Function | MediumTest | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileSeekForNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_3300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -722,7 +690,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileSeekForNotExistFile, Function | M
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testObtainFileSize
  * @tc.number SUB_UTILS_FILE_OPERATION_3400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -743,7 +710,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testObtainFileSize, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testObtainSizeForNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_3500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -760,7 +726,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testObtainSizeForNotExistFile, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileRead
  * @tc.number SUB_UTILS_FILE_OPERATION_3600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -783,7 +748,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileRead, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testReadNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_3700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -800,7 +764,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testReadNotExistFile, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testObtainLongNameFileSize
  * @tc.number SUB_UTILS_FILE_OPERATION_3800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -821,7 +784,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testObtainLongNameFileSize, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileCopy
  * @tc.number SUB_UTILS_FILE_OPERATION_4000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -843,7 +805,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileCopy, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCopyNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_4100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -860,7 +821,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testCopyNotExistFile, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCopyLongNameFile
  * @tc.number SUB_UTILS_FILE_OPERATION_4200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -882,7 +842,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testCopyLongNameFile, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileMove
  * @tc.number SUB_UTILS_FILE_OPERATION_4400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -903,7 +862,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileMove, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMoveNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_4500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -920,7 +878,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testMoveNotExistFile, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMoveLongNameFile
  * @tc.number SUB_UTILS_FILE_OPERATION_4600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -941,7 +898,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testMoveLongNameFile, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileDelete
  * @tc.number SUB_UTILS_FILE_OPERATION_4800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -960,7 +916,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testFileDelete, Function | MediumTest | L
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testDeleteNotExistFile
  * @tc.number SUB_UTILS_FILE_OPERATION_4900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -976,7 +931,6 @@ LITE_TEST_CASE(UtilsFileFuncTestSuite, testDeleteNotExistFile, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testDeleteLongNameFile
  * @tc.number SUB_UTILS_FILE_OPERATION_5000
  * @tc.desc   [C- SOFTWARE -0200]

@@ -50,7 +50,6 @@ static BOOL UtilsFileReliTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCreateFileAfterMaxFilesOpened
  * @tc.number SUB_UTILS_FILE_OPERATION_5200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -98,7 +97,6 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testCreateFileAfterMaxFilesOpened, Functi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testDeleteFileAfterMaxFilesOpened
  * @tc.number SUB_UTILS_FILE_OPERATION_5300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -141,7 +139,6 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testDeleteFileAfterMaxFilesOpened, Functi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCopyFileAfterMaxFilesOpened
  * @tc.number SUB_UTILS_FILE_OPERATION_5400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -193,7 +190,6 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testCopyFileAfterMaxFilesOpened, Function
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMoveFileAfterMaxFilesOpened
  * @tc.number SUB_UTILS_FILE_OPERATION_5500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -245,7 +241,6 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testMoveFileAfterMaxFilesOpened, Function
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileOperFlow001
  * @tc.number SUB_UTILS_FILE_OPERATION_5600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -286,7 +281,6 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testFileOperFlow001, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testFileOperFlow002
  * @tc.number SUB_UTILS_FILE_OPERATION_5700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -333,7 +327,6 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testFileOperFlow002, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testEmptyFileOperFlow001
  * @tc.number SUB_UTILS_FILE_OPERATION_5800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -372,7 +365,6 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testEmptyFileOperFlow001, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testEmptyFileOperFlow002
  * @tc.number SUB_UTILS_FILE_OPERATION_5900
  * @tc.desc   [C- SOFTWARE -0200]
