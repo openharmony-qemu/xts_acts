@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
-import { Driver, ON, Component } from '@kit.TestKit';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import { router } from '@kit.ArkUI';
 import Utils from '../../MainAbility/common/Utils';
 import CommonFunc from "../../MainAbility/common/Common"
