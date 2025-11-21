@@ -13,12 +13,11 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '../../../../hypium';
+import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
 export default class CommonTest {
   /**
@@ -29,17 +28,22 @@ export default class CommonTest {
    * @param functions    : [0]:executeTest, [last] checkTestResult
    */
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+    console.log('functionsfunctions' + functions?.length)
+    console.log('++++++++++++++++++++++++++++++++++++pageConfig',JSON.stringify(pageConfig))
+    console.log('++++++++++++++++++++++++++++++++++++supportView',JSON.stringify(supportView))
+    console.log('++++++++++++++++++++++++++++++++++++testValues',JSON.stringify(testValues))
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: Int= 0;
-      testValues.forEach((temp: TestValue, index: Int) => {
+      let lastIndex: number = 0;
+      console.log("====================================== testValues " + JSON.stringify(testValues));
+      testValues.forEach((temp: TestValue, index: int, p3: Array<TestValue>) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index: Int) => {
+      testValues.forEach((testValue: TestValue, index: int, p3: Array<TestValue>) => {
 
         //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
@@ -48,9 +52,9 @@ export default class CommonTest {
           if (pageConfig.sharePage != undefined) {
             sharePage = pageConfig.sharePage!;
           }
-
+          console.log("====================================== testValue " + JSON.stringify(testValue));
           //Create case name.
-          let caseTag = pageConfig.testName + targetView + testValue.describe;
+          let caseTag = pageConfig.testName + targetView + '_static_' + testValue.describe;
 
           //If there is a specified container view.
           let containerView = '';
@@ -74,6 +78,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
+            console.log('++++++++++++++++pushPage')
             try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
@@ -93,32 +98,23 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              if (funcs.length > 1) {
-                let customParams = await (functions[0] as CallbackWithReturn)(data);
-                //Set custom params to data, can be used by check test result.
-                if (customParams) {
-                  data.customParams = customParams;
-                }
-              } else {
-                //If there is only an assertion function, automatically modify the status value
-                console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
-                await Utils.sleep(1000);
-              }
-
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              console.info('[' + caseTag + '] setValue BasePageConfig : ' + JSON.stringify(data));
+              await Utils.sleep(1000);
               //Check test result
-              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
+              await Utils.sleep(2000);
+              console.info('[' + caseTag + '] ================== strJson: ' + strJson);
               data.viewObj = JSON.parseJsonElement(strJson);
-              if (funcs.length>1) {
-                await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
-              }
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
+
             } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);
               if (err.name != 'AssertException') {
                 await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-                expect(msg).assertTrue();
+                expect().assertFail();
               }
             }
 
