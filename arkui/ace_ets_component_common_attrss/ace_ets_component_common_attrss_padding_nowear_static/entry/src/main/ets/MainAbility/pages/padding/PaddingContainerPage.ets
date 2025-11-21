@@ -31,9 +31,12 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  AppStorage
+  // MutableState,
+  // stateOf,
+  // observableProxy,
+  AppStorage,
+  StorageProp
 } from '@ohos.arkui.stateManagement'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Color,Padding } from '@ohos.arkui.component'
 interface ViewOption {
@@ -50,7 +53,7 @@ interface RouterParamOptions {
 struct paddingPage {
   //Use for Grid.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>
-  @State _padding: Padding = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
+  @StorageProp('_padding') _padding: Padding|String|number = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentBackGroundColor: Color = Color.Pink
@@ -67,18 +70,19 @@ struct paddingPage {
   }
   onPageShow() {
     console.info('padding page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._padding = value.padding as Padding
-    })
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   this._padding = value.padding as Padding
+    // })
     try {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
-this.targetView = routerParamOptions.view.targetView
-this.componentKey = routerParamOptions.view.componentKey
-this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
-  } catch (error: Error) {
-    console.log(' routerParamOptions error ' + error);
-  }
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<Padding>('_padding', (routerParamOptions.view.testValue.setValue as SetValue)!.padding as Padding)
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
+      this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
 
@@ -159,7 +163,7 @@ commonStyle(instance: CommonMethod) {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<number>(1, 2, 3), (item:number,index:Int) => {
+            ForEach(new Array<number>(1, 2, 3), (item:number,index:int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(64)

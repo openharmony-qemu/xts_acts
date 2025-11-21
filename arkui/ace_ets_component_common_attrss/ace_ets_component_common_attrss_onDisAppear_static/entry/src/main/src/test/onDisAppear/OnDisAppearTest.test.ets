@@ -16,7 +16,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
-import { describe, beforeAll, expect } from '../../../../hypium';
+import { describe, beforeAll, expect } from '../../../../hypium/index';
 import { UIContext } from "@ohos.arkui.UIContext";
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import hilog from '@ohos.hilog'
@@ -36,54 +36,54 @@ let testAbilityContext:common.UIAbilityContext;
 export default function onDisAppearTest() {
 
   let supportView: Array<string> = new Array<string>(
-    'AlphabetIndexer',
-    'Blank',
-    'Button',
-    'Checkbox',
-    'CheckboxGroup',
-    'DataPanel',
-    'DatePicker',
-    'Divider',
-    'Gauge',
-    'Image',
-    'Marquee',
-    'Progress',
-    'QRCode',
-    'Radio',
-    'Rating',
-    'ScrollBar',
-    'Search',
-    'Slider',
-    'Text',
-    'TextArea',
-    'TextClock',
-    'TextInput',
-    'TextPicker',
-    'TimePicker',
-    'Toggle',
-    'Column',
-    'Flex',
-    'Grid',
-    'GridItem',
-    'List',
-    'ListItem',
-    'Navigator',
-    'Refresh',
-    'RelativeContainer',
-    'Row',
-    'Scroll',
-    'Stack',
-    'Swiper',
-    'Tabs',
-    'Circle',
-    'Ellipse',
-    'Line',
-    'Polyline',
-    'Polygon',
-    'Path',
-    'Rect',
-    'Shape',
-    'Counter'
+  'AlphabetIndexer',
+   'Blank',
+   'Button',
+   'Checkbox',
+   'CheckboxGroup',
+   'DataPanel',
+   'DatePicker',
+   'Divider',
+   'Image',
+   'Marquee',
+   'Progress',
+   'QRCode',
+   'Radio',
+   'Rating',
+   'ScrollBar',
+   'Search',
+   'Slider',
+   'Text',
+   'TextArea',
+   'TextClock',
+   'TextInput',
+   'TextPicker',
+   'TimePicker',
+   'Toggle',
+   'Column',
+   'Flex',
+   'Grid',
+   'GridItem',
+   'List',
+   'ListItem',
+   'Refresh',
+   'RelativeContainer',
+   'Row',
+   'Scroll',
+   'Stack',
+   'Swiper',
+   'Tabs',
+   'Circle',
+   'Ellipse',
+   'Line',
+   'Polyline',
+   'Polygon',
+   'Path',
+   'Rect',
+   'Shape',
+    'Counter',
+  'Navigator',  // 引入失敗  推荐使用 Navigation  ——————已有Navigation，删除处理
+  'Gauge', // died
   )
 
   //Custom params.
@@ -122,7 +122,8 @@ export default function onDisAppearTest() {
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig): Promise<void> => {
       //Set value
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      // AttrsManager.change(data.caseTag, data.testValue.setValue);
+      AppStorage.setOrCreate<boolean>('_isShow', data.testValue.setValue.isShow)
       await Utils.sleep(2000);
       //Get text content,check content is changeDisAppear
       let compareTextObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.compareTextKey);

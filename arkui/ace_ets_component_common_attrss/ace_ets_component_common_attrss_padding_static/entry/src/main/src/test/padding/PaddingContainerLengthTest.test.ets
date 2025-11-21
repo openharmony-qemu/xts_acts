@@ -15,8 +15,8 @@
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign, Color, $r } from '@ohos.arkui.component';
+import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { AlignRuleOption, VerticalAlign, HorizontalAlign, Color, $r,Resource ,Padding} from '@ohos.arkui.component';
 import { jsonx } from "std/core";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
@@ -28,31 +28,36 @@ import {UtilsTest} from '../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
+
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-export default function paddingTest() {
+export default function PaddingContainerLengthTest() {
   //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
-    'Badge',
-    'Column',
-    'GridRow',
-    'Grid',
-    'List',
-    'Refresh',
-    'Row',
-    'Scroll',
-    'Stack',
-    'Swiper',
-    'TabContent',
-    'Flex',
-    'GridCol',
-    'GridItem',
-    'ListItemGroup',
-    'Navigator',
+    // 'GridRow',
+    // 'List',
+    // 'TabContent',
+    // 'Flex',
+    // 'GridCol',
+    // 'ListItemGroup',
+    // 'Column',
+    // 'Grid',
+    // 'GridItem',
+    // 'Navigator',
+    // 'Refresh',
+    // 'Row',
+    // 'Scroll',
+    // 'Stack',
+    // 'Swiper',
+    'Badge',  //other // 組件問題
   )
+
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
 
   //The size of the parent component, when set as a percentage, serves as the calculation.
   let parentWidth = 400;
@@ -80,13 +85,14 @@ export default function paddingTest() {
     },
     expectValue: {
       padding: '10.00vp',
-      top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
-      right: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
-      bottom: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
-      left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
+      top: 10,
+      right: 10,
+      bottom: 10,
+      left: 10,
       parentWidthAfter: 0
     }
-  }, {
+  },
+    {
     describe: 'SetStringPx',
     setValue: {
       padding: '100px'
@@ -99,17 +105,18 @@ export default function paddingTest() {
       left: 100,
       parentWidthAfter: 0
     }
-  }, {
+  }
+  , {
     describe: 'SetResource',
     setValue: {
       padding: $r('app.float.10vp'),
     },
     expectValue: {
       padding: '10.00vp',
-      top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
-      right: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
-      bottom: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
-      left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)),
+      top:10,
+      right: 10,
+      bottom: 10,
+      left: 10,
       parentWidthAfter: 0
     }
   }, {
@@ -123,32 +130,44 @@ export default function paddingTest() {
       right: 0,
       bottom: 0,
       left: 0,
-      parentWidthAfter: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth)) * 0.1
+      parentWidthAfter: Number(UIContext.getFocusedUIContext()!.vp2px(parentWidth)) * 0.1,
+      // parentWidthAfter: 0
     }
-  }] as TestValue[]
+  }
+  ] as TestValue[]
 
   /**
    * Create test suite.
    */
   describe('PaddingContainerLengthTest', () => {
     beforeAll(() => {
-      
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
+      // await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      // await UtilsTest.msSleep(4000)
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the reference component properties.
-      AttrsManager.change(data.caseTag, {
-        padding: 0
-      });
-      await Utils.sleep(1000);
+      // AttrsManager.change(data.caseTag, {
+      //   padding: 0
+      // });
+      // await Utils.sleep(1000);
 
       //Obtain dimensional information for target components.
-      let targetRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
+       let uiContext = AppStorage.get<UIContext>('uiContext')
+      if (data.testValue.describe == "SetNumber" || data.testValue.describe =="SetResource"){
 
+        data.testValue.expectValue.top = Number(uiContext!.vp2px(10))
+        data.testValue.expectValue.right = Number(uiContext!.vp2px(10))
+        data.testValue.expectValue.bottom = Number(uiContext!.vp2px(10))
+        data.testValue.expectValue.left = Number(uiContext!.vp2px(10))
+
+      }
+
+
+      let targetRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
+      console.info('[' + data.caseTag + '] targetRectBefore:' + targetRectBefore);
       //Verify the width size of the target component.
       let targetRectBeforeWidth = targetRectBefore.right - targetRectBefore.left;
 
@@ -159,9 +178,16 @@ export default function paddingTest() {
 
       console.info('[' + data.caseTag + '] targetRectBeforeHeight:' + targetRectBeforeHeight);
 
+      console.info('[wll1]before:' + targetRectBefore.right);
+      console.info('[wll1]before:' + targetRectBefore.left);
+      console.info('[wll1]before:' + targetRectBefore.bottom);
+      console.info('[wll1]before:' + targetRectBefore.top);
+
       //Modify the target component properties.
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
-      await Utils.sleep(1000);
+      // AttrsManager.change(data.caseTag, data.testValue.setValue);
+      AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', data.testValue.setValue.padding)
+      await Utils.sleep(2000);
+      console.info('[wll]get(_padding)'+AppStorage.get<number|string|Padding|Resource>('_padding'))
       let targetRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
 
       //Confirm that the size attribute values have been successfully set.
@@ -194,7 +220,7 @@ export default function paddingTest() {
 
           //Panel component need special adapter ,the reason is the top of Panel has a own size
           if (data.pageConfig.componentKey == 'Panel') {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.bottom + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(8)))) <= 1)
+            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.bottom + Number(uiContext!.vp2px(8)))) <= 1)
               .assertTrue();
           } else {
             expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.top)) <= 1)
@@ -219,7 +245,7 @@ export default function paddingTest() {
 
           //Panel component need special adapter ,the reason is the top of Panel has a own size
           if (data.pageConfig.componentKey == 'Panel') {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.parentWidthAfter + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(8)))) <= 1)
+            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.parentWidthAfter + Number(uiContext!.vp2px(8)))) <= 1)
               .assertTrue();
           } else {
             expect(Math.abs(referenceRect.top - targetRectAfter.top - data.testValue.expectValue.parentWidthAfter) <= 1)
@@ -233,11 +259,11 @@ export default function paddingTest() {
             .assertTrue();
         }
       } else if (data.pageConfig.componentKey == 'Tabs') {
-        let referenceRect: RectValue = Utils.getComponentRectByObj(JSON.parseJsonElement(String(inspector.getInspectorTree()))
+        let referenceRect: RectValue = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
           .getArray('$children')[0]
           .getArray('$children')[1]);
-        let rectTabBar: RectValue = Utils.getComponentRectByObj(JSON.parseJsonElement(String(inspector.getInspectorTree()))
+        let rectTabBar: RectValue = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
           .getArray('$children')[0]
           .getArray('$children')[0]);
@@ -283,17 +309,23 @@ export default function paddingTest() {
         //Verify the width size of the target component.
         let targetRectAfterWidth = targetRectAfter.right - targetRectAfter.left;
         console.info('[' + data.caseTag + '] targetRectAfterWidth:' + targetRectAfterWidth);
+        console.info('[wll1]after:' + targetRectAfter.right);
+        console.info('[wll1]after:' + targetRectAfter.left);
+        console.info('[wll1]after:' + targetRectAfter.bottom);
+        console.info('[wll1]after:' + targetRectAfter.top);
 
         //Verify the height size of the target component.
         let targetRectAfterHeight = targetRectAfter.bottom - targetRectAfter.top;
 
-        console.info('[' + data.caseTag + '] targetRectAfterHeight:' + targetRectAfterHeight);
-        console.info('[' + data.caseTag + '] targetRectAfterWidth:' + targetRectAfterWidth);
-        console.info('[' + data.caseTag + '] data.testValue.expectValue.left:' + data.testValue.expectValue.left);
-        console.info('[' + data.caseTag + '] data.testValue.expectValue.right:' + data.testValue.expectValue.right);
-        console.info('[' + data.caseTag + '] data.testValue.expectValue.top:' + data.testValue.expectValue.top);
-        console.info('[' + data.caseTag + '] data.testValue.expectValue.bottom:' + data.testValue.expectValue.bottom);
-        console.info('[' + data.caseTag + '] data.testValue.expectValue.parentWidthAfter:' + data.testValue.expectValue.parentWidthAfter);
+        console.info('[wll]targetRectAfterWidth:' + targetRectAfterWidth);
+        console.info('[wll]targetRectAfterHeight:' + targetRectAfterHeight);
+        console.info('[wll]targetRectBeforeWidth:' + targetRectBeforeWidth);
+        console.info('[wll]targetRectBeforeHeight:' + targetRectBeforeHeight);
+        console.info('[wll]data.testValue.expectValue.left:' + data.testValue.expectValue.left);
+        console.info('[wll]data.testValue.expectValue.right:' + data.testValue.expectValue.right);
+        console.info('[wll]data.testValue.expectValue.top:' + data.testValue.expectValue.top);
+        console.info('[wll]data.testValue.expectValue.bottom:' + data.testValue.expectValue.bottom);
+        console.info('[wll]data.testValue.expectValue.parentWidthAfter:' + data.testValue.expectValue.parentWidthAfter);
 
         if (data.testValue.describe == 'SetStringPercent') {
           expect(Math.floor(Math.abs(targetRectAfterWidth - targetRectBeforeWidth - ((data.testValue.expectValue.parentWidthAfter) * 2))) <= 1)

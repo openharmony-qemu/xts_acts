@@ -21,12 +21,12 @@ import {
   Row,GridRow,Flex,Color,FlexAlign,ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,
   Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,TextTimerController,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,PatternLock,Progress,QRCode,RichText,ScrollBar,
   TextClock,TextTimer,Badge,WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,Line,Polyline,Polygon,CommonMethod,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,
-  HorizontalAlign,applyStyles,NavDestination,Builder
+  HorizontalAlign,applyStyles,NavDestination,Builder,AlignRuleOption
 } from '@ohos.arkui.component'
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 interface ViewOption {
   targetView: string
@@ -44,7 +44,7 @@ interface RouterParamOptions {
 @Component
 struct OnDisAppearPage {
   @State changeDisAppear: string = '';
-  @State _isShow: boolean = true;
+  @StorageProp("_isShow") _isShow: boolean = true;
   @State targetView: string = ''
   @State targetGroupView: string = ''
   @State componentKey: string = ''
@@ -68,19 +68,22 @@ struct OnDisAppearPage {
   }
   onPageShow() {
     console.info('OnDisAppearPage show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._isShow = value.isShow
-    })
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   this._isShow = value.isShow
+    // })
+    AppStorage.setOrCreate<boolean>('_isShow', true)
 
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView
       this.componentKey = routerParamOptions.view.componentKey
       this.compareTextKey = routerParamOptions.view.compareTextKey
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
-
+      console.info('[wll11]'+routerParamOptions.view.targetView)
+      console.info('[wll12]'+routerParamOptions.view.componentKey)
+      console.info('[wll13]'+this._isShow)
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
@@ -332,6 +335,8 @@ struct OnDisAppearPage {
           List() {
             ListItemGroup().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
           }.width(60).height(60)
+        // }  else if (this.targetView == 'Navigator') {    // 引入失敗  推荐使用 Navigation  ——————已有Navigation，删除处理
+        //   Navigator({ target: '' }).backgroundColor(Color.Pink).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Panel') {
           Column(){
           }
@@ -350,7 +355,7 @@ struct OnDisAppearPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('OnDisAppear')
           }
           .backgroundColor(Color.Pink)
@@ -366,19 +371,19 @@ struct OnDisAppearPage {
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:Int):void => {
+              ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:int):void => {
                 Text('Scroll' + item.toString())
                   .width('90%')
                   .height(150)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: number, index:Int):string => String(item))
+              }, (item: number, index:int):string => String(item))
             }.width('100%')
           }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
-              ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+              ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
                 Column({ space: 5 } as ColumnOptions) {
                   Image($r('app.media.icon'))
                     .width(50)
@@ -402,9 +407,9 @@ struct OnDisAppearPage {
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
-            ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+            ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
               Text('Swiper' + item)
-            }, (item: number, index:Int):string => String(item))
+            }, (item: number, index:int):string => String(item))
           }
           .indicator(true)
           .backgroundColor(Color.Pink)

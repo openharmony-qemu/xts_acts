@@ -1,6 +1,6 @@
 {
   "src": [
-    "MainAbility/pages/index/index",
+    "MainAbility/pages/index/Index",
     "MainAbility/pages/padding/PaddingBasePageLength",
     "MainAbility/pages/padding/PaddingContainerPageLength"
   ]

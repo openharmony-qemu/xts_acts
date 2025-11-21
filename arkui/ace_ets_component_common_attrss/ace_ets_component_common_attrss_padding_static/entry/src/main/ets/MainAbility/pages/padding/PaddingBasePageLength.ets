@@ -28,13 +28,14 @@ import {
 ,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
   AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection
 ,Padding,Web,WebviewController,RichText,MenuItemGroup,GridRowOptions,GutterOption,RefreshOptions,ForEach,BreakpointsReference,BreakPoints,ListOptions,
-  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions
+  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions,Resource
 } from '@ohos.arkui.component'
 import {
   State,
-  AppStorage
+  AppStorage,
+  StorageProp
 } from '@ohos.arkui.stateManagement'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Color } from '@ohos.arkui.component'
 interface ViewOption {
@@ -48,7 +49,7 @@ interface RouterParamOptions {
 }
 @Entry
 @Component
-struct PaddingPage_Length {
+struct PaddingBasePage_Length {
   //Use for TimePicker.
   private selectedTime: Date = new Date('2022-07-22T08:00:00');
   //Use for QRCode,Marquee.
@@ -57,7 +58,7 @@ struct PaddingPage_Length {
   private value: string[] = ['#', 'A', 'B'];
   //Use for Scroll,Grid,DataPanel.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>;
-  @State _padding: number | string | Padding = 0 as number;
+  @StoragePropRef('_padding') _padding: number|string|Padding|Resource = 0 as number;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentBackGroundColor: Color = Color.Pink
@@ -65,16 +66,20 @@ struct PaddingPage_Length {
 
   onPageShow() {
     console.info('padding page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._padding = value.padding as Padding
-    })
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   console.info('padding page show called 11')
+    //   this._padding = value.padding as Padding
+    //   console.info('padding page show called 22')
+    // })
 
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', routerParamOptions.view.testValue.setValue.padding as number|string|Padding|Resource)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
+      console.log('wj--onPageShow--',this._padding);
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
@@ -84,6 +89,7 @@ struct PaddingPage_Length {
     instance.padding(this._padding)
     instance.key(this.componentKey)
   }
+
   build() {
     Row() {
       if (this.targetView == 'AlphabetIndexer') {
@@ -134,16 +140,20 @@ struct PaddingPage_Length {
       } else if (this.targetView == 'LoadingProgress') {
         LoadingProgress().backgroundColor(Color.Red).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Marquee') {
+        console.log('==================wj',this.targetView);
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: Infinity as int,
           fromStart: true,
           src: this.src
         }).applyStyles(this.commonStyle)
+        console.log('==================wj222',this.targetView);
       } else if (this.targetView == 'Navigation') {
         Navigation({}).applyStyles(this.commonStyle)
-      } else if (this.targetView == 'Stepper') {
+      } /*else if (this.targetView == 'NavRouter') {
+        NavRouter().applyStyles(this.commonStyle)
+      }*/ else if (this.targetView == 'Stepper') {
         Stepper() {
           StepperItem()
         }.applyStyles(this.commonStyle)
@@ -184,6 +194,8 @@ struct PaddingPage_Length {
           value: 50,
         }).showTips(true).applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextArea') {
+        console.log('wj===this.padding'+this._padding);
+        console.log('wj===this.componentKey'+this.componentKey);
         TextArea({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...'
         }).placeholderFont({ size: 16, weight: 400 }).applyStyles(this.commonStyle)
