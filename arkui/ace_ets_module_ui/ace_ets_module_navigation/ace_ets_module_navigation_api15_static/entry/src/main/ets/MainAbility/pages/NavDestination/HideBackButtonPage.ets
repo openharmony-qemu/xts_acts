@@ -40,16 +40,19 @@ struct HideBackButtonPage {
     Navigation(this.pageInfos) {
       Column({space: '5vp'} as ColumnOptions) {
         Button('push pageOne').id('pushOneId').onClick((e: ClickEvent) => {
-          
+          this.pageInfos.pushPath(new NavPathInfo('pageOne',undefined),true)
         }).height('10%')
 
         Button('push pageTwo').id('pushTwoId').onClick((e: ClickEvent) => {
+          this.pageInfos.pushPath(new NavPathInfo('pageTwo',undefined),true)
         }).height('10%')
 
         Button('push pageThree').id('pageThreeId').onClick((e: ClickEvent) => {
+          this.pageInfos.pushPath(new NavPathInfo('pageThree',undefined),true )
         }).height('10%')
 
         Button('push pageFour').id('pushFourId').onClick((e: ClickEvent) => {
+          this.pageInfos.pushPath(new NavPathInfo('pageFour',undefined),true )
         }).height('10%')
       }
       .width('100%')
@@ -100,7 +103,7 @@ struct PageThree2 {
       }).height('10%')
     }
     .title('pageThree')
-    
+    // .hideBackButton(null)
   }
 }
 

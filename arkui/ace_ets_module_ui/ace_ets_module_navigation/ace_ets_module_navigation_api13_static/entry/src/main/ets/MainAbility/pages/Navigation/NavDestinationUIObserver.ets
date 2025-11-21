@@ -24,9 +24,17 @@ struct PageOne {
   @Consume('stackA') stackA:NavPathStack;
   build() {
     NavDestination() {
+      console.log('+++++++++++++++++123456') //进来后appDied 1104sdk
       Text('pageOne')
       Button('back').onClick((e: ClickEvent) => {
-        this.stackA.pop();
+        try{
+          console.log('++++++++++++++this.stackA.pop 1')
+          this.stackA.pop();
+          console.log('++++++++++++++this.stackA.pop 2')
+        }catch(err){
+          console.log('++++++++++++++backerr',err)
+        }
+
       })
       .height('5%')
       .id('backId')
@@ -61,8 +69,11 @@ struct NavDestinationUIObserver {
   }
 
   navDestinationSwitchCallbackWithUIContext1(info: observer.NavDestinationSwitchInfo) {
+    console.log('++++++++navDestinationSwitchCallbackWithUIContext1 11111')
     if (info) {
+      console.log('++++++++navDestinationSwitchCallbackWithUIContext1 22222')
       if (info.context) {
+        console.log('++++++++navDestinationSwitchCallbackWithUIContext1 33333')
         AppStorage.setOrCreate('showText', 'on');
         console.log(`testTag navDestinationSwitchCallbackWithUIContext1, info: \"from\":${typeof info.from === 'string' ? ('"' + info.from + '"') : JSON.stringify(info.from)},\"to\":${typeof info.to === 'string' ? ('"' + info.to + '"') : JSON.stringify(info.to)}`);
       }
@@ -70,39 +81,45 @@ struct NavDestinationUIObserver {
   }
 
   navDesUpdateCallback1(info: NavDestinationInfo) {
+    console.log('++++++++navDesUpdateCallback1 11111')
     AppStorage.setOrCreate('showUpdateText', 'on');
+    console.log('++++++++navDesUpdateCallback1 2222222')
     console.log(`testTag navDesUpdateCallback1, info: ${AppStorage.get('showUpdateText')! as string}`);
   }
 
   aboutToAppear(): void {
-    this.obs = this.getUIContext().getUIObserver();
+    this.obs = this.getUIContext().getUIObserver();// 报错信息	at entry.src.main.ets.MainAbility.pages.Navigation.NavDestinationUIObserver.NavDestinationUIObserver.aboutToAppear (<unknown>:78:0)
   }
 
   contextObserverOn(){
-    this.obs?.onNavDestinationSwitch(this.navDestinationSwitchCallbackWithUIContext1);
-    this.obs?.onNavDestinationUpdate(this.navDesUpdateCallback1);
+    this.obs?.onNavDestinationSwitch( this.navDestinationSwitchCallbackWithUIContext1);
+    this.obs?.onNavDestinationUpdate( this.navDesUpdateCallback1);
   }
 
   contextObserverOff(){
     AppStorage.setOrCreate('showText', 'off');
     AppStorage.setOrCreate('showUpdateText', 'off');
     console.log(`testTag navDesUpdateCallback1, info: ${AppStorage.get('showUpdateText')! as string}`);
-    this.obs?.offNavDestinationSwitch(this.navDestinationSwitchCallbackWithUIContext1);
-    this.obs?.offNavDestinationUpdate(this.navDesUpdateCallback1);
+    this.obs?.offNavDestinationSwitch( this.navDestinationSwitchCallbackWithUIContext1);
+    this.obs?.offNavDestinationUpdate( this.navDesUpdateCallback1);
   }
 
   build() {
     Column({space:5} as ColumnOptions) {
       Button('contextObserver.on')
         .onClick((e: ClickEvent) => {
+          console.log('+++++++++++++++++++++1.1')
           this.contextObserverOn()
+          console.log('+++++++++++++++++++++1.2')
         })
         .height('5%')
         .id('onBtn')
 
       Button('contextObserver.off')
         .onClick((e: ClickEvent) => {
+          console.log('+++++++++++++++++++++2.1')
           this.contextObserverOff()
+          console.log('+++++++++++++++++++++2.2')
         })
         .height('5%')
         .id('offBtn')
@@ -112,7 +129,9 @@ struct NavDestinationUIObserver {
         Column({space:10} as ColumnOptions){
           Button('MainA push pageOne')
             .onClick((e: ClickEvent) => {
+              console.log('+++++++++++++++++++++3.1')
               this.stackA.pushPath(new NavPathInfo('pageOne', 1 ))
+              console.log('+++++++++++++++++++++3.2')
             })
             .id('pushId')
         }

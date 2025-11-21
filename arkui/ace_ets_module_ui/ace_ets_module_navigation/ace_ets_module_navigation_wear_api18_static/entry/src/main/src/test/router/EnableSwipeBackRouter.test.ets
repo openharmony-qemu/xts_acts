@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,10 +27,11 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-
+// import { vp2px } from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let uiContext = AppStorage.get<UIContext>('uiContext');
 
 export default function EnableSwipeBackRouter() {
   describe('EnableSwipeBackRouter', () => {
@@ -52,10 +53,10 @@ export default function EnableSwipeBackRouter() {
         console.info('get EnableSwipeBackRouter state pages:' + JSON.stringify(pages));
         if (!('EnableSwipeBackRouter' == pages.name)) {
           console.info('get EnableSwipeBackRouter pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info('push EnableSwipeBackRouter page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push EnableSwipeBackRouter page error:' + err);
@@ -70,16 +71,17 @@ export default function EnableSwipeBackRouter() {
 
 
     
-    /*
+    
+/*
      * @tc.number   EnableSwipeBackRouter_static_00100
      * @tc.name     EnableSwipeBackRouter_static_00100
      * @tc.desc     EnableSwipeBackRouter_static_00100
      * @tc.level    Level.LEVEL0
      */
-it('EnableSwipeBackRouter_static_00100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('EnableSwipeBackRouter_static_00100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('EnableSwipeBackRouter_0100 START');
 
-      try {
+      // try {
         let driver = Driver.create();
         await driver.delayMs(500);
 
@@ -95,28 +97,29 @@ it('EnableSwipeBackRouter_static_00100', Level.LEVEL0, async (done: () => void):
         let bottom = navRect.bottom;
         console.info('[EnableSwipeBackRouter_0100] right is ', right);
         console.info('[EnableSwipeBackRouter_0100] bottom is ', bottom);
-        await driver.fling({x: Math.round(UIContext.getFocusedUIContext()!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
+        await driver.fling({x: Math.round(uiContext!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
         await driver.delayMs(1000)
 
         await driver.assertComponentExist(ON.id('pushId'));
         console.log('[EnableSwipeBackRouter_0100] END');
-      }catch(error) {
-        expect().assertFail();
-      }
+      // }catch(error) {
+      //   expect().assertFail();
+      // }
       done();
     });
 
     
-    /*
+    
+/*
      * @tc.number   EnableSwipeBackRouter_static_0200
      * @tc.name     EnableSwipeBackRouter_static_0200
      * @tc.desc     EnableSwipeBackRouter_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('EnableSwipeBackRouter_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('EnableSwipeBackRouter_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('EnableSwipeBackRouter_0200 START');
 
-      try {
+      // try {
         let driver = Driver.create();
         await driver.delayMs(500);
 
@@ -137,7 +140,7 @@ it('EnableSwipeBackRouter_static_0200', Level.LEVEL0, async (done: () => void): 
         let bottom = navRect.bottom;
         console.info('[EnableSwipeBackRouter_0200] right is ', right);
         console.info('[EnableSwipeBackRouter_0200] bottom is ', bottom);
-        await driver.fling({x: Math.round(UIContext.getFocusedUIContext()!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
+        await driver.fling({x: Math.round(uiContext!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
         await driver.delayMs(1000)
         await driver.assertComponentExist(ON.id('enableId'));
 
@@ -146,9 +149,9 @@ it('EnableSwipeBackRouter_static_0200', Level.LEVEL0, async (done: () => void): 
         console.info('[EnableSwipeBackRouter_0200] btn3 click');
         await driver.delayMs(1000);
         console.log('[EnableSwipeBackRouter_0200] END');
-      }catch(error) {
-        expect().assertFail();
-      }
+      // }catch(error) {
+      //   expect().assertFail();
+      // }
       done();
     });
 

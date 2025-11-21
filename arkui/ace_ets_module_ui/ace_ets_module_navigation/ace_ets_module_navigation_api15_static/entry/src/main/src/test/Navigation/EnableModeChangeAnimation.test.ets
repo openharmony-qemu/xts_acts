@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,9 +50,10 @@ export default function EnableModeChangeAnimation() {
         console.info('get EnableModeChangeAnimation state pages:' + JSON.stringify(pages));
         if (!('EnableModeChangeAnimation' == pages.name)) {
           console.info('get EnableModeChangeAnimation pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(1000);
+          // console.info('push EnableModeChangeAnimation page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push EnableModeChangeAnimation page error:' + err);
@@ -66,13 +67,14 @@ export default function EnableModeChangeAnimation() {
 
 
     
-    /*
+    
+/*
      * @tc.number   EnableModeChangeAnimation_static_0100
      * @tc.name     EnableModeChangeAnimation_static_0100
      * @tc.desc     EnableModeChangeAnimation_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('EnableModeChangeAnimation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('EnableModeChangeAnimation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('EnableModeChangeAnimation_0100 START');
       await CommonFunc.sleep(200);
 
@@ -97,22 +99,23 @@ it('EnableModeChangeAnimation_static_0100', Level.LEVEL0, async (done: () => voi
 
       let strJson = inspector.getInspectorByKey('navigationId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[EnableModeChangeAnimation_0100] component obj is: ' + JSON.stringify(obj));
-      console.info('[EnableModeChangeAnimation_0100] enableModeChangeAnimation obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('enableModeChangeAnimation')));
-      expect(obj.getElement('$attrs').getString('enableModeChangeAnimation')).assertTrue();
+      console.info('[EnableModeChangeAnimation_0100] component $attrs is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
+      console.info('[EnableModeChangeAnimation_0100] enableModeChangeAnimation obj is: ' + obj.getElement('$attrs').getBoolean('enableModeChangeAnimation'));
+      expect(obj.getElement('$attrs').getBoolean('enableModeChangeAnimation')).assertTrue();
 
       console.info('EnableModeChangeAnimation_0100 END');
       done();
     });
 
         
-    /*
+    
+/*
      * @tc.number   EnableModeChangeAnimation_static_0200
      * @tc.name     EnableModeChangeAnimation_static_0200
      * @tc.desc     EnableModeChangeAnimation_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('EnableModeChangeAnimation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('EnableModeChangeAnimation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('EnableModeChangeAnimation_0200 START');
       await CommonFunc.sleep(200);
 
@@ -138,8 +141,8 @@ it('EnableModeChangeAnimation_static_0200', Level.LEVEL0, async (done: () => voi
       let strJson = inspector.getInspectorByKey('navigationId');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[EnableModeChangeAnimation_0200] component obj is: ' + JSON.stringify(obj));
-      console.info('[EnableModeChangeAnimation_0200] enableModeChangeAnimation obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('enableModeChangeAnimation')));
-      expect(obj.getElement('$attrs').getString('enableModeChangeAnimation')).assertFalse();
+      console.info('[EnableModeChangeAnimation_0200] enableModeChangeAnimation obj is: ' + JSON.stringify(obj.getElement('$attrs').getBoolean('enableModeChangeAnimation')));
+      expect(obj.getElement('$attrs').getBoolean('enableModeChangeAnimation')).assertFalse();
 
       console.info('EnableModeChangeAnimation_0200 END');
       done();

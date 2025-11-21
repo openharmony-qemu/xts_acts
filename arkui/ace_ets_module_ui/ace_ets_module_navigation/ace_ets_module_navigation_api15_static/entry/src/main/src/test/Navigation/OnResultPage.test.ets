@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,9 +50,10 @@ export default function OnResultPage() {
         console.info("get OnResultPage state pages:" + JSON.stringify(pages));
         if (!("OnResultPage" == pages.name)) {
           console.info("get OnResultPage pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push OnResultPage page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push OnResultPage page error:" + err);
@@ -67,13 +68,14 @@ export default function OnResultPage() {
 
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0100
      * @tc.name     OnResultPage_static_0100
      * @tc.desc     OnResultPage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -106,13 +108,14 @@ it('OnResultPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0200
      * @tc.name     OnResultPage_static_0200
      * @tc.desc     OnResultPage_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -140,13 +143,14 @@ it('OnResultPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0300
      * @tc.name     OnResultPage_static_0300
      * @tc.desc     OnResultPage_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0300 START');
       await CommonFunc.sleep(1000);
 
@@ -174,13 +178,14 @@ it('OnResultPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0400
      * @tc.name     OnResultPage_static_0400
      * @tc.desc     OnResultPage_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0400 START');
       await CommonFunc.sleep(1000);
 
@@ -208,13 +213,14 @@ it('OnResultPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0500
      * @tc.name     OnResultPage_static_0500
      * @tc.desc     OnResultPage_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0500 START');
       await CommonFunc.sleep(1000);
 
@@ -243,13 +249,14 @@ it('OnResultPage_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
 
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0600
      * @tc.name     OnResultPage_static_0600
      * @tc.desc     OnResultPage_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0600 START');
       await CommonFunc.sleep(1000);
 
@@ -277,13 +284,14 @@ it('OnResultPage_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0700
      * @tc.name     OnResultPage_static_0700
      * @tc.desc     OnResultPage_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0700 START');
       await CommonFunc.sleep(1000);
 
@@ -311,13 +319,14 @@ it('OnResultPage_static_0700', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/*
      * @tc.number   OnResultPage_static_0800
      * @tc.name     OnResultPage_static_0800
      * @tc.desc     OnResultPage_static_0800
      * @tc.level    Level.LEVEL0
      */
-it('OnResultPage_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('OnResultPage_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnResultPage_0800 START');
       await CommonFunc.sleep(1000);
 

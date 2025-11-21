@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,9 +50,10 @@ export default function HideBackButtonPage() {
         console.info("get HideBackButtonPage state pages:" + JSON.stringify(pages));
         if (!("HideBackButtonPage" == pages.name)) {
           console.info("get HideBackButtonPage pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push HideBackButtonPage page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push HideBackButtonPage page error:" + err);
@@ -67,13 +68,14 @@ export default function HideBackButtonPage() {
 
 
     
-    /*
+    
+/*
      * @tc.number   HideBackButtonPage_static_0100
      * @tc.name     HideBackButtonPage_static_0100
      * @tc.desc     HideBackButtonPage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('HideBackButtonPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('HideBackButtonPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HideBackButtonPage_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -93,13 +95,14 @@ it('HideBackButtonPage_static_0100', Level.LEVEL0, async (done: () => void): Pro
     });
 
     
-    /*
+    
+/*
      * @tc.number   HideBackButtonPage_static_0200
      * @tc.name     HideBackButtonPage_static_0200
      * @tc.desc     HideBackButtonPage_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('HideBackButtonPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('HideBackButtonPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HideBackButtonPage_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -123,13 +126,14 @@ it('HideBackButtonPage_static_0200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    /*
+    
+/*
      * @tc.number   HideBackButtonPage_static_0300
      * @tc.name     HideBackButtonPage_static_0300
      * @tc.desc     HideBackButtonPage_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('HideBackButtonPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('HideBackButtonPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HideBackButtonPage_0300 START');
 
       try {
@@ -156,13 +160,14 @@ it('HideBackButtonPage_static_0300', Level.LEVEL0, async (done: () => void): Pro
     });
 
     
-    /*
+    
+/*
      * @tc.number   HideBackButtonPage_static_0400
      * @tc.name     HideBackButtonPage_static_0400
      * @tc.desc     HideBackButtonPage_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('HideBackButtonPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('HideBackButtonPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HideBackButtonPage_0400 START');
 
       try {

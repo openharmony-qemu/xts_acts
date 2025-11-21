@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,9 +45,10 @@ export default function TitleOptionsToolOptions() {
         console.info("get TitleOptionsToolOptions state pages:" + JSON.stringify(pages));
         if (!("TitleOptionsToolOptions" == pages.name)) {
           console.info("get TitleOptionsToolOptions pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push TitleOptionsToolOptions page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TitleOptionsToolOptions page error:" + err);
@@ -62,13 +63,14 @@ export default function TitleOptionsToolOptions() {
 
 
     
-    /*
+    
+/*
      * @tc.number   TitleOptionsToolOptions_static_0100
      * @tc.name     TitleOptionsToolOptions_static_0100
      * @tc.desc     TitleOptionsToolOptions_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('TitleOptionsToolOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TitleOptionsToolOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TitleOptionsToolOptions_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -97,13 +99,14 @@ it('TitleOptionsToolOptions_static_0100', Level.LEVEL0, async (done: () => void)
     });
 
         
-    /*
+    
+/*
      * @tc.number   TitleOptionsToolOptions_static_0200
      * @tc.name     TitleOptionsToolOptions_static_0200
      * @tc.desc     TitleOptionsToolOptions_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('TitleOptionsToolOptions_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TitleOptionsToolOptions_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TitleOptionsToolOptions_0200 START');
       await CommonFunc.sleep(1000);
 

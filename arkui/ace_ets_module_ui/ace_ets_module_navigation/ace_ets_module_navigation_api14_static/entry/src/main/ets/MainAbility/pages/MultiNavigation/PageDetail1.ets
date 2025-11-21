@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+import {  MultiNavPathStack } from '@ohos.arkui.advanced.MultiNavigation';
 import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
 import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Color, Builder, Scroll, Margin, Row, $r,
   NavDestination, FontWeight, ButtonType,
@@ -21,6 +21,7 @@ import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Colo
 @Component
 export struct PageDetail1 {
   @State message: string = 'PageDetail1';
+  @Consume('pageStack') pageStack: MultiNavPathStack;
 
   build() {
       NavDestination() {
@@ -40,20 +41,31 @@ export struct PageDetail1 {
                 .margin(10)
                 .backgroundColor('#ffac056d')
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.pop();
+                  }
                 })
                 .id('detailPopId')
 
+              //clear
               Button('clear', { stateEffect: true, type: ButtonType.Capsule })
                 .height(40)
                 .margin(10)
                 .backgroundColor('#ffac056d')
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.clear()
+                  }
                 })
 
+              //setKeepBottomPage
               Button('setKeepBottomPage true', { stateEffect: true, type: ButtonType.Capsule })
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.keepBottomPage(true);
+                  }
                 })
                 .id('setKeepBottomPageId')
 
@@ -61,6 +73,9 @@ export struct PageDetail1 {
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.keepBottomPage(false);
+                  }
                 })
             }
             .width('100%')

@@ -17,7 +17,7 @@ import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
 import { Entry, Component, NavPathStack, Navigation, Column, Button, ColumnOptions, ClickEvent, BarStyle, Stack,
   StackOptions, BlurStyle, Text, Color, Builder, Scroller, NavigationTitleMode, Scroll, ForEach, List, ListItem, Margin,
-  ScrollDirection, BarState, EdgeEffect, NavDestination, ListOptions, Row, $r
+  ScrollDirection, BarState, EdgeEffect, NavDestination, ListOptions, Row, $r,CommonMethod,applyStyles
 } from '@ohos.arkui.component'
 @Entry
 @Component
@@ -47,7 +47,13 @@ struct NavigationBindToScrollable {
 
 @Component
 export struct PageOne {
- 
+  // @Styles
+  listCard(instance: CommonMethod) {
+    instance.backgroundColor(Color.Orange)
+    instance.height(120)
+    instance.width('100%')
+    instance.borderRadius(12)
+  }
   @Consume('navPathStack') navPathStack:NavPathStack;
   private arr: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
 
@@ -61,6 +67,9 @@ export struct PageOne {
             ListItem() {
               Text('item' + item).fontSize(16)
             }
+            // .listCard()
+            .applyStyles(this.listCard)
+
           })
         }
         .width('100%')

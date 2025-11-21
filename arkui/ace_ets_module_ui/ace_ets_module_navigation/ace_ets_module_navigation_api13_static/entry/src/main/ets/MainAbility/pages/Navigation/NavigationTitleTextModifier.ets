@@ -45,10 +45,13 @@ class SubTitleTextModifier extends TextModifier {
 @Component
 struct NavigationTitleTextModifier {
   private navPathStack: NavPathStack = new NavPathStack();
-  
+  // 初始化标题栏起始端内间距
   @State paddingStart: LengthMetrics = LengthMetrics.vp(10);
+  // 初始化标题栏结束端内间距
   @State paddingEnd: LengthMetrics = LengthMetrics.vp(10);
+  // 主标题样式修改器
   @State mainTitleModifier: MainTitleTextModifier = new MainTitleTextModifier();
+  // 副标题样式修改器
   @State subTitleModifier: SubTitleTextModifier = new SubTitleTextModifier();
   @State applyModifier: boolean = false;
 
@@ -57,9 +60,13 @@ struct NavigationTitleTextModifier {
       Column() {
         Row() {
           Text(`apply Modifier`)
-          Toggle({isOn: this.applyModifier, type: ToggleType.Switch}).onChange((isOn: boolean) => {
+          Toggle({isOn: this.applyModifier, type: ToggleType.Switch})
+            .onChange((isOn: boolean) => {
+              console.log('+++++++++++++++++++++++1',this.applyModifier)
             this.applyModifier = isOn;
-          }).id('applyModifier_toggleId')
+            console.log('+++++++++++++++++++++++2',this.applyModifier)
+             })
+            .id('applyModifier_toggleId')
         }
         .padding({ top: 95, left: 5, right: 5 } as Padding)
         .width(180)
@@ -84,5 +91,6 @@ struct NavigationTitleTextModifier {
         paddingStart: this.paddingStart,
         paddingEnd: this.paddingEnd
       } as NavigationTitleOptions)
+    console.log('+++++++++++++++++++++++3',this.applyModifier)
   }
 }

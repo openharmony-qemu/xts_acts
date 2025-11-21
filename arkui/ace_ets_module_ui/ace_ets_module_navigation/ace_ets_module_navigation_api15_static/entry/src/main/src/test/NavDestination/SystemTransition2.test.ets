@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,9 +50,10 @@ export default function SystemTransition() {
         console.info('get SystemTransition state pages:' + JSON.stringify(pages));
         if (!('SystemTransition' == pages.name)) {
           console.info('get SystemTransition pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(1000);
+          // console.info('push SystemTransition page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push SystemTransition page error:' + err);
@@ -67,13 +68,14 @@ export default function SystemTransition() {
 
 
     
-    /*
+    
+/*
      * @tc.number   SystemTransition_static_0100
      * @tc.name     SystemTransition_static_0100
      * @tc.desc     SystemTransition_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('SystemTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SystemTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SystemTransition_0100 START');
       await CommonFunc.sleep(200);
 
@@ -101,13 +103,14 @@ it('SystemTransition_static_0100', Level.LEVEL0, async (done: () => void): Promi
     });
 
     
-    /*
+    
+/*
      * @tc.number   SystemTransition_static_0200
      * @tc.name     SystemTransition_static_0200
      * @tc.desc     SystemTransition_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('SystemTransition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SystemTransition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SystemTransition_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -135,13 +138,14 @@ it('SystemTransition_static_0200', Level.LEVEL0, async (done: () => void): Promi
     });
 
     
-    /*
+    
+/*
      * @tc.number   SystemTransition_static_0300
      * @tc.name     SystemTransition_static_0300
      * @tc.desc     SystemTransition_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('SystemTransition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SystemTransition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SystemTransition_0300 START');
       await CommonFunc.sleep(1000);
 
@@ -169,13 +173,14 @@ it('SystemTransition_static_0300', Level.LEVEL0, async (done: () => void): Promi
     });
 
     
-    /*
+    
+/*
      * @tc.number   SystemTransition_static_0400
      * @tc.name     SystemTransition_static_0400
      * @tc.desc     SystemTransition_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('SystemTransition_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SystemTransition_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SystemTransition_0400 START');
       await CommonFunc.sleep(1000);
 
