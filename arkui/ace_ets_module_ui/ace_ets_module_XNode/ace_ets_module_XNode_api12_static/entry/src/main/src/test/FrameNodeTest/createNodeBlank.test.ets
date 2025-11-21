@@ -48,19 +48,20 @@ export default function createNodeBlank() {
         console.info("get createNodeBlank state pages: " + JSON.stringify(pages));
         if (!("createNodeBlank" == pages.name)) {
           console.info("get createNodeBlank state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push createNodeBlank success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push createNodeBlank page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   createNodeBlank_static_0100
@@ -68,7 +69,7 @@ export default function createNodeBlank() {
      * @tc.desc     createNodeBlank_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('createNodeBlank_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('createNodeBlank_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('createNodeBlank_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

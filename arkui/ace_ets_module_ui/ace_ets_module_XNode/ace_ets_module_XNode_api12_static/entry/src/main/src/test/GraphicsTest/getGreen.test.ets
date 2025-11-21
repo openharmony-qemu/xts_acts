@@ -41,21 +41,22 @@ export default function getGreen() {
         console.info("get getGreen state pages: " + JSON.stringify(pages));
         if (!("getGreen" == pages.name)) {
           console.info("get getGreen state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push getGreen success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getGreen page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   getGreen_static_0100
@@ -63,7 +64,7 @@ export default function getGreen() {
      * @tc.desc     getGreen_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getGreen_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getGreen_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getGreen_0100 START');
       let strJson: string = inspector.getInspectorByKey('getGreen');
       let obj = JSON.parseJsonElement(strJson);

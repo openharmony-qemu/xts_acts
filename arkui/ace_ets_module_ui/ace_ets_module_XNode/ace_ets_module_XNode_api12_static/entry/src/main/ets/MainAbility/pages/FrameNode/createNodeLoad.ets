@@ -30,8 +30,7 @@ import {
   Color,
   Builder,
   Row,
-  NodeContainer,
-  wrapBuilder
+  NodeContainer
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -51,13 +50,13 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext)
     this.node?.commonAttribute.width(300).height(300).backgroundColor(Color.Red)
-    
-    
-    
-    
-    
-    
-    
+    let col = typeNode.createLoadingProgressNode(uiContext)
+    col.attribute.width(200)
+      .height(100)
+      .borderWidth(1)
+      .borderColor(Color.Black)
+      .backgroundColor(0xAFEEEE)
+    this.node?.appendChild(col)
     return this.node
   }
   getNodeType()

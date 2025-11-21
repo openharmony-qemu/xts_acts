@@ -38,7 +38,8 @@ import {
   List,
   ListItem,
   LazyForEach,
-  IDataSource
+  IDataSource,
+  CustomBuilderT,
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
@@ -87,13 +88,13 @@ function buildNode(param: Params = new Params("hello")) {
 }
 
 class MyNodeController extends NodeController {
-  public builderNode: BuilderNode<[Params]> | null = null;
+  public builderNode: BuilderNode<Params> | null = null;
   public item: string = "";
 
   makeNode(uiContext: UIContext): FrameNode | null {
     if (this.builderNode == null) {
-      this.builderNode = new BuilderNode<[Params]>(uiContext, { selfIdealSize: { width: 300, height: 200 } });
-      
+      this.builderNode = new BuilderNode<Params>(uiContext, { selfIdealSize: { width: 300, height: 200 } });
+      this.builderNode?.build(wrapBuilder<CustomBuilderT<Params>>(buildNode), new Params(this.item));
     }
     return this.builderNode?.getFrameNode()!;
   }
@@ -109,7 +110,7 @@ struct ReusableChildComponent {
   }
   aboutToReuse(params: object): void {
     console.log("ReusableChildComponentAboutToReuse " + JSON.stringify(params));
-    
+    this.controller?.builderNode?.reuse(params);
   }
   build() {
     NodeContainer(this.controller);
@@ -153,11 +154,11 @@ struct BuilderNodeApiReuse {
   build() {
     Column() {
       List({ space: 3 }) {
-        
-        
-        
-        
-        
+        LazyForEach(this.data, (item: String, index:int):void => {
+          ListItem() {
+            ReusableChildComponent({ item: item })
+          }
+        }, (item: String, index:int):string => item)
       }
       .width('100%')
       .height('100%')

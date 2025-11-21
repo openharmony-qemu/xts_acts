@@ -26,7 +26,6 @@ export default function UIObserverDidLayoutTest() {
   describe('UIObserverDidLayoutTest', () => {
     beforeAll(() => {
       console.info("UIObserverDidLayoutTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -39,8 +38,8 @@ export default function UIObserverDidLayoutTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        
-        router.replaceUrl(options);
+        // let result = await router.replaceUrl(options);
+        router.pushUrl(options);
         console.info("get UIObserverDidLayoutTest state pages:" + JSON.stringify(pages));
         if (!("UIObserverDidLayoutTest" == pages.name)) {
           console.info("get UIObserverDidLayoutTest pages.name:" + JSON.stringify(pages.name));
@@ -60,13 +59,14 @@ export default function UIObserverDidLayoutTest() {
     
     
 
+
 /*
      * @tc.number   UIObserverDidLayoutTest_static_0100
      * @tc.name     UIObserverDidLayoutTest_static_0100
      * @tc.desc     UIObserverDidLayoutTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('UIObserverDidLayoutTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('UIObserverDidLayoutTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('UIObserverDidLayoutTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

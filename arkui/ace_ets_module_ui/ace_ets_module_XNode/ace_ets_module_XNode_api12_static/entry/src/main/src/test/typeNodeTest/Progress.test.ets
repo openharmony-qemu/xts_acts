@@ -40,20 +40,21 @@ export default function typeNodeProgressTest() {
         console.info("get typeNodeProgressTest state pages: " + JSON.stringify(pages));
         if (!("Progress" == pages.name)) {
           console.info("get typeNodeProgressTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodeProgressTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodeProgressTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   ProgressTest_static_0100
@@ -61,7 +62,7 @@ export default function typeNodeProgressTest() {
      * @tc.desc     ProgressTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProgressTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -78,13 +79,14 @@ it('ProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
     
     
 
+
 /*
      * @tc.number   initializeTest_static_0200
      * @tc.name     initializeTest_static_0200
      * @tc.desc     initializeTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('initializeTest_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -101,13 +103,14 @@ it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
     
     
 
+
 /*
      * @tc.number   attributeTest_static_0300
      * @tc.name     attributeTest_static_0300
      * @tc.desc     attributeTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('attributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('attributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('attributeTest_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

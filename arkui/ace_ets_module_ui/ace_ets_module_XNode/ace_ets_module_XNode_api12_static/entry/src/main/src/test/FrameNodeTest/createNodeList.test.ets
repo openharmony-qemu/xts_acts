@@ -48,19 +48,20 @@ export default function createNodeList() {
         console.info("get createNodeList state pages: " + JSON.stringify(pages));
         if (!("createNodeList" == pages.name)) {
           console.info("get createNodeList state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push createNodeList success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push createNodeList page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   createNodeList_static_0100
@@ -68,7 +69,7 @@ export default function createNodeList() {
      * @tc.desc     createNodeList_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('createNodeList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('createNodeList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('createNodeList_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

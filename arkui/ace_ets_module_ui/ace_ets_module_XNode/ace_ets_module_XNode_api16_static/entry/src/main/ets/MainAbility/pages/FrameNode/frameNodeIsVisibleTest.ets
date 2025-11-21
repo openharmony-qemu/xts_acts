@@ -19,7 +19,6 @@ import { BuilderNode, FrameNode, NodeController,typeNode } from '@ohos.arkui.nod
 import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
   Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
   HorizontalAlign,ColumnOptions,Stack
-
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { ClickEvent } from '@ohos.arkui.component';
@@ -51,11 +50,11 @@ struct Index {
           this.stackNode = this.getUIContext().getFrameNodeById('stack')
           this.columnNode = this.getUIContext().getFrameNodeById('column')
           if (this.stackNode) {
-            
+            // Stack节点的可见性，为false
             console.log('stackNode.isVisible:', this.stackNode?.isVisible())
           }
           if (this.columnNode) {
-            
+            // Column节点的可见性，变更前为true，变更后为false
             console.log('columnNode.isVisible:', this.columnNode?.isVisible())
             this.columnNodeIsVisible = this.columnNode?.isVisible() + ''
           }

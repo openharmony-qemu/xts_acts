@@ -58,10 +58,10 @@ export default function frameNodeIsVisibleTest() {
         console.info("get frameNodeIsVisibleTest state pages:" + JSON.stringify(pages));
         if (!("frameNodeIsVisibleTest" == pages.name)) {
           console.info("get frameNodeIsVisibleTest pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push frameNodeIsVisibleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push frameNodeIsVisibleTest page error:" + err);
@@ -77,13 +77,14 @@ export default function frameNodeIsVisibleTest() {
     
     
 
+
 /*
      * @tc.number   frameNodeIsVisibleTest_static_0100
      * @tc.name     frameNodeIsVisibleTest_static_0100
      * @tc.desc     frameNodeIsVisibleTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('frameNodeIsVisibleTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+    it('frameNodeIsVisibleTest_static_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('frameNodeIsVisibleTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

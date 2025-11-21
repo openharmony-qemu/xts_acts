@@ -31,7 +31,8 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder
+  wrapBuilder,
+  CustomBuilderT,
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -77,11 +78,11 @@ struct ComponentContentAPIReuse {
           .onClick((e:ClickEvent) => {
             let uiContext = this.getUIContext();
             let promptAction = uiContext.getPromptAction();
-            
-            
-            
-            
-            
+            let contentNode = new ComponentContent<Params>(uiContext, wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message));
+            promptAction.openCustomDialog(contentNode);
+            setTimeout(() => {
+              contentNode.reuse(new Params("new message"));
+            }, 2000); //2秒后自动更新弹窗内容文本
           })
         Button('fdhjkfshfjkfhsd').id('ComponentContentAPIReuse_Button02')
       }

@@ -15,5 +15,5 @@
 import APINodeContentTest from './FrameNodeTest/APINodeContentTest.test';
 
 export default function testsuite() {
-  // APINodeContentTest(); // NodeContentCtrl
+  APINodeContentTest(); // NodeContentCtrl
 }

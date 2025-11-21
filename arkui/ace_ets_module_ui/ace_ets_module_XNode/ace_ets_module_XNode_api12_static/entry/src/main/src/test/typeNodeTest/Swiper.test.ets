@@ -40,20 +40,21 @@ export default function typeNodeSwiperTest() {
         console.info("get typeNodeSwiperTest state pages: " + JSON.stringify(pages));
         if (!("Swiper" == pages.name)) {
           console.info("get typeNodeSwiperTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodeSwiperTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodeSwiperTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   SwiperTest_static_0100
@@ -61,7 +62,7 @@ export default function typeNodeSwiperTest() {
      * @tc.desc     SwiperTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('SwiperTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SwiperTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SwiperTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

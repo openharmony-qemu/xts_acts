@@ -48,19 +48,20 @@ export default function onAppear() {
         console.info("get onAppear state pages: " + JSON.stringify(pages));
         if (!("onAppear" == pages.name)) {
           console.info("get onAppear state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push onAppear success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push onAppear page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   onAppear_static_0100
@@ -68,7 +69,7 @@ export default function onAppear() {
      * @tc.desc     onAppear_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('onAppear_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onAppear_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('onAppear_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('setOnAppear');
@@ -82,13 +83,14 @@ it('onAppear_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
     
     
 
+
 /*
      * @tc.number   onAppear_static_0200
      * @tc.name     onAppear_static_0200
      * @tc.desc     onAppear_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('onAppear_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onAppear_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('onAppear_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

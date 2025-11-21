@@ -54,13 +54,13 @@ struct edgeWidthsExample {
   build() {
     Column() {
       NodeContainer(this.myNodeController)
-      Text('edgeWidthsValue:' + this.edgeWidthsValue).margin(10).id("edgeWidthsValue") 
+      Text('edgeWidthsValue:' + this.edgeWidthsValue).margin(10).id("edgeWidthsValue") //5
       Button('click edgeWidthsValue')
         .id("edgeWidthsClick")
         .onClick((e:ClickEvent) => {
           renderNode.borderWidth = edgeWidths(5)
           renderNode.invalidate()
-          this.edgeWidthsValue = renderNode.borderWidth!.left
+          this.edgeWidthsValue = renderNode!.borderWidth!.left
         })
     }
   }

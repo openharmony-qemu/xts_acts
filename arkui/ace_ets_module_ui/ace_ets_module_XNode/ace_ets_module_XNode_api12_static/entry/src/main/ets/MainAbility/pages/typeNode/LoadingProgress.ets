@@ -23,10 +23,10 @@ import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 
-
-
-
-
+// let para: Record<string> = {
+//   'LoadingProgressType': 'Init',
+// };
+// let storage: LocalStorage = new LocalStorage(para);
 let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate('LoadingProgressType', 'Init');
 
@@ -43,10 +43,10 @@ class MyNodeController extends NodeController {
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    
-    
-    
-    
+    let loadingProgress = typeNode.createLoadingProgressNode(uiContext);
+    loadingProgress.initialize().width('100%').height('100%').margin({ top: 5 } as Margin);
+    col.appendChild(loadingProgress);
+    storage.set('LoadingProgressType', '' + loadingProgress.getNodeType());
 
     return node;
   }

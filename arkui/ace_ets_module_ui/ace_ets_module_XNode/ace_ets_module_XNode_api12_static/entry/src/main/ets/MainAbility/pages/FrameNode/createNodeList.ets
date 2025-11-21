@@ -58,15 +58,15 @@ class MyNodeController extends NodeController {
       .borderColor(Color.Black)
       .backgroundColor(0xAFEEEE)
     this.node?.appendChild(col)
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    let row4 = typeNode.createListItemNode(uiContext)
+    row4.attribute.width(50)
+      .height(50)
+      .borderWidth(1)
+      .borderColor(Color.Black)
+      .backgroundColor(Color.Green)
+    let component = new ComponentContent<Object>(uiContext, wrapBuilder(buildText))
+    row4.addComponentContent(component)
+    col.appendChild(row4)
     return this.node
   }
   getNodeType() {

@@ -42,10 +42,10 @@ export default function postFrameCallbackTest() {
           console.info("get postFrameCallbackTest state pages:" + JSON.stringify(pages));
           if (!("postFrameCallbackTest" == pages.name)) {
             console.info("get postFrameCallbackTest pages.name:" + JSON.stringify(pages.name));
-            
+            //let result = await router.pushUrl(options);
             router.pushUrl(options);
             await CommonFunc.sleep(2000);
-            
+            //console.info("push postFrameCallbackTest page result:" + JSON.stringify(result));
           }
         } catch (err) {
           console.error("push postFrameCallbackTest page error:" + err);
@@ -61,13 +61,14 @@ export default function postFrameCallbackTest() {
     
     
 
+
 /*
      * @tc.number   postFrameCallbackTest_static_0100
      * @tc.name     postFrameCallbackTest_static_0100
      * @tc.desc     postFrameCallbackTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('postFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+    it('postFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void) => {
       console.info('postFrameCallbackTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -16,9 +16,9 @@ import frameNodeIsVisibleTest from './FrameNodeTest/frameNodeIsVisible.test';
 import frameNodeMoveOneTest from './FrameNodeTest/frameNodeMoveOne.test';
 import frameNodeMoveTwoTest from './FrameNodeTest/frameNodeMoveTwo.test';
 import frameNodeMoveToErrorCodeTest from './FrameNodeTest/frameNodeMoveToErrorCode.test';
-import addComponentContentErrorCodeTest from './FrameNodeTest/AddComponentContentErrorCode.test';
-import bindControllerErrorCodeTest from './FrameNodeTest/BindControllerErrorCode.test';
-import renderNodeDisposeTest from './FrameNodeTest/RenderNodeDispose.test';
+import AddComponentContentErrorCodeTest from './FrameNodeTest/AddComponentContentErrorCode.test';
+import BindControllerErrorCodeTest from './FrameNodeTest/BindControllerErrorCode.test';
+import RenderNodeDisposeTest from './FrameNodeTest/RenderNodeDispose.test';
 import componentContentDisposeTest from './FrameNodeTest/componentContentDispose.test';
 import blendColorErrorCodeTest from './FrameNodeTest/blendColorErrorCode.test';
 import resourceColorErrorCodeTest from './FrameNodeTest/resourceColorErrorCode.test';
@@ -26,16 +26,16 @@ import setCrossLanguageOptionsErrorCodeTest from './FrameNodeTest/setCrossLangua
 import postFrameCallbackTest from './PostFrameTest/postFrameCallback.test';
 
 export default function testsuite() {
-  frameNodeIsVisibleTest();
-  frameNodeMoveOneTest();
-  frameNodeMoveTwoTest();
-  frameNodeMoveToErrorCodeTest();
-  addComponentContentErrorCodeTest();
-  bindControllerErrorCodeTest();
-  renderNodeDisposeTest();
-  componentContentDisposeTest();
-  blendColorErrorCodeTest();
-  resourceColorErrorCodeTest();
-  setCrossLanguageOptionsErrorCodeTest();
-  postFrameCallbackTest();
+  blendColorErrorCodeTest(); // sourceColor.blendColor
+  resourceColorErrorCodeTest(); // ColorMetrics.resourceColor
+  postFrameCallbackTest(); //FrameCallback
+  frameNodeIsVisibleTest(); // pass1
+  frameNodeMoveOneTest(); // NodeController
+  frameNodeMoveTwoTest(); // NodeController
+  frameNodeMoveToErrorCodeTest(); // NodeController
+  AddComponentContentErrorCodeTest(); // NodeController
+  BindControllerErrorCodeTest();// NodeController
+  RenderNodeDisposeTest();// NodeController
+  componentContentDisposeTest();// NodeController
+  setCrossLanguageOptionsErrorCodeTest();// setCrossLanguageOptions
 }

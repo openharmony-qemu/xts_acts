@@ -32,9 +32,9 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
   ColumnOptions,
-  WrappedBuilder
+  WrappedBuilder,
+  CustomBuilderT,
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -71,7 +71,7 @@ class MyNodeControllerDispose extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
     this.builderNode = new BuilderNode<[]>(uiContext, { selfIdealSize: { width: 200, height: 100 } });
-    
+    this.builderNode?.build(new WrappedBuilder<CustomBuilderT<[]>>(buildComponent),[]);
 
     const rootRenderNode = this.rootNode?.getRenderNode();
     if (rootRenderNode !== null) {

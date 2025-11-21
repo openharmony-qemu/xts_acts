@@ -58,10 +58,10 @@ export default function blendColorErrorCodeTest() {
         console.info("get blendColorErrorCodeTest state pages:" + JSON.stringify(pages));
         if (!("blendColorErrorCodeTest" == pages.name)) {
           console.info("get blendColorErrorCodeTest pages.name:" + JSON.stringify(pages.name));
-          
+          ////let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push blendColorErrorCodeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push blendColorErrorCodeTest page error:" + err);
@@ -77,13 +77,14 @@ export default function blendColorErrorCodeTest() {
     
     
 
+
 /*
      * @tc.number   blendColorErrorCodeTest_static_0100
      * @tc.name     blendColorErrorCodeTest_static_0100
      * @tc.desc     blendColorErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('blendColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+    it('blendColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
       console.info('blendColorErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

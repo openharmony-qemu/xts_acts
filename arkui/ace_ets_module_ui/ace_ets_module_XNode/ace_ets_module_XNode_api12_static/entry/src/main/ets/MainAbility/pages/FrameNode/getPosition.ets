@@ -32,7 +32,6 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
   TextAlign
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -71,13 +70,13 @@ class MyNodeController extends NodeController {
   insertChildAfter(index : number)
   {
     let insertNode = new FrameNode(this.uiContext!);
-    let childNode = this.rootNode!.getChild(Double.toInt(index));
+    let childNode = this.rootNode!.getChild(index as int);
     this.rootNode!.insertChildAfter(insertNode,childNode);
     this.childrenCount = this.childrenCount + 1;
   }
   removeChild(index : number)
   {
-    let childNode = this.rootNode!.getChild(Double.toInt(index));
+    let childNode = this.rootNode!.getChild(index as int);
     if(childNode == null)
     {
       console.log(`${TEST_TAG} getchild at index {${index}} : fail`);
@@ -228,7 +227,7 @@ struct getPositionExample {
           let  promise = window.getLastWindow(AppStorage.get<common.UIAbilityContext>('abilityContext')!);
           promise.then((mainWindow:window.Window) => {
             let windowRect:window.Rect = mainWindow.getWindowProperties().windowRect;
-            this.windowLeftVP = UIContext.getFocusedUIContext()!.px2vp(windowRect.left).toString().split('.')[0];
+            this.windowLeftVP = uiContext.px2vp(windowRect.left).toString().split('.')[0];
           })
         })
 

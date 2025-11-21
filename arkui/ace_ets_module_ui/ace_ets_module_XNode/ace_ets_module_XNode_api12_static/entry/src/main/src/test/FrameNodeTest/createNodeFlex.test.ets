@@ -48,19 +48,20 @@ export default function createNodeFlex() {
         console.info("get createNodeFlex state pages: " + JSON.stringify(pages));
         if (!("createNodeFlex" == pages.name)) {
           console.info("get createNodeFlex state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push createNodeFlex success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push createNodeFlex page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   createNodeFlex_static_0100
@@ -68,7 +69,7 @@ export default function createNodeFlex() {
      * @tc.desc     createNodeFlex_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('createNodeFlex_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('createNodeFlex_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('createNodeFlex_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

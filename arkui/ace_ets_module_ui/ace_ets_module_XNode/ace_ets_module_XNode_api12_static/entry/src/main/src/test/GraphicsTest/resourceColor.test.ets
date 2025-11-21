@@ -41,21 +41,22 @@ export default function resourceColor() {
         console.info("get resourceColor state pages: " + JSON.stringify(pages));
         if (!("resourceColor" == pages.name)) {
           console.info("get resourceColor state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push resourceColor success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push resourceColor page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   resourceColor_static_0100
@@ -63,7 +64,7 @@ export default function resourceColor() {
      * @tc.desc     resourceColor_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('resourceColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('resourceColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('resourceColor_0100 START');
       let strJson: string = inspector.getInspectorByKey('resourceColor');
       let obj = JSON.parseJsonElement(strJson);

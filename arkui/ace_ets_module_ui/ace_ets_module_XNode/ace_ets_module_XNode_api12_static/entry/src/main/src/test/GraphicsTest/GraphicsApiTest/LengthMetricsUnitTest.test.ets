@@ -40,16 +40,16 @@ export default function LengthMetricsUnitTest() {
         console.info("get LengthMetricsUnitTest state pages: " + JSON.stringify(pages));
         if (!("LengthMetricsUnit" == pages.name)) {
           console.info("get LengthMetricsUnitTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push LengthMetricsUnitTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LengthMetricsUnitTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     afterEach(async () => {
@@ -57,13 +57,14 @@ export default function LengthMetricsUnitTest() {
       console.info("LengthMetricsUnitTest after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   LengthMetricsUnitTest_static_001
      * @tc.name     LengthMetricsUnitTest_static_001
      * @tc.desc     LengthMetricsUnitTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('LengthMetricsUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LengthMetricsUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[LengthMetricsUnitTest_001] START");
       await CommonFunc.sleep(1000);
       let LengthMetricsUnit = inspector.getInspectorByKey("LengthMetricsUnit");

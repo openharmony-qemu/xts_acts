@@ -46,11 +46,11 @@ export default function lazyForEachTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        
-        router.replaceUrl(options);
+        // let result = await router.replaceUrl(options);
         console.info("get lazyForEachTest state pages:" + JSON.stringify(pages));
-        if (!("lazyForEachTest" == pages.name)) {
+        if (!("MainAbility/pages/FrameNode/lazyForEachTest" == pages.name)) {
           console.info("get lazyForEachTest pages.name:" + JSON.stringify(pages.name));
+          router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -65,22 +65,29 @@ export default function lazyForEachTest() {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0100
      * @tc.name     lazyForEachTest_static_0100
      * @tc.desc     lazyForEachTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
+      console.info('+++++++++++++++++++++1');
       let button = await driver.findComponent(ON.id('button_expand'));
+  console.info('+++++++++++++++++++++2');
       await (button?.click() as Promise<void>);
+  console.info('+++++++++++++++++++++3');
       await CommonFunc.sleep(1500);
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
+  console.info('+++++++++++++++++++++4');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
+  console.info('+++++++++++++++++++++5');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');
+  console.info('+++++++++++++++++++++6');
       let obj1 = JSON.parseJsonElement(strJson1);
       let obj2 = JSON.parseJsonElement(strJson2);
       let obj3 = JSON.parseJsonElement(strJson3);
@@ -96,13 +103,14 @@ it('lazyForEachTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0200
      * @tc.name     lazyForEachTest_static_0200
      * @tc.desc     lazyForEachTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -127,13 +135,14 @@ it('lazyForEachTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0300
      * @tc.name     lazyForEachTest_static_0300
      * @tc.desc     lazyForEachTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -158,13 +167,14 @@ it('lazyForEachTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0400
      * @tc.name     lazyForEachTest_static_0400
      * @tc.desc     lazyForEachTest_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -189,13 +199,14 @@ it('lazyForEachTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0500
      * @tc.name     lazyForEachTest_static_0500
      * @tc.desc     lazyForEachTest_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0500 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -220,13 +231,14 @@ it('lazyForEachTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0600
      * @tc.name     lazyForEachTest_static_0600
      * @tc.desc     lazyForEachTest_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0600 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -251,13 +263,14 @@ it('lazyForEachTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0700
      * @tc.name     lazyForEachTest_static_0700
      * @tc.desc     lazyForEachTest_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0700', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0700', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0700 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -282,13 +295,14 @@ it('lazyForEachTest_static_0700', Level.LEVEL0, async (done: ()=>void) => {
     
     
 
+
 /*
      * @tc.number   lazyForEachTest_static_0800
      * @tc.name     lazyForEachTest_static_0800
      * @tc.desc     lazyForEachTest_static_0800
      * @tc.level    Level.LEVEL0
      */
-it('lazyForEachTest_static_0800', Level.LEVEL0, async (done: ()=>void) => {
+    it('lazyForEachTest_static_0800', Level.LEVEL0, async (done: ()=>void) => {
       console.info('lazyForEachTest_0800 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

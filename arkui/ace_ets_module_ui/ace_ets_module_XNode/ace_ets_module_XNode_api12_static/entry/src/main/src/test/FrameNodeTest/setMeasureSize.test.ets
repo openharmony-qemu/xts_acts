@@ -48,19 +48,20 @@ export default function setMeasureSizeTest() {
         console.info("get setMeasureSizeTest state pages: " + JSON.stringify(pages));
         if (!("setMeasureSize" == pages.name)) {
           console.info("get setMeasureSizeTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push setMeasureSizeTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setMeasureSizeTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   setMeasureSizeTest_static_0010
@@ -68,7 +69,7 @@ export default function setMeasureSizeTest() {
      * @tc.desc     setMeasureSizeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('setMeasureSizeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('setMeasureSizeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setMeasureSizeTest_static_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -85,13 +86,14 @@ it('setMeasureSizeTest_static_0010', Level.LEVEL0, async (done: () => void): Pro
     
     
 
+
 /*
      * @tc.number   setMeasureSizeTest_static_0020
      * @tc.name     setMeasureSizeTest_static_0020
      * @tc.desc     setMeasureSizeTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('setMeasureSizeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('setMeasureSizeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setMeasureSizeTest_static_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

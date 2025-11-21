@@ -48,19 +48,20 @@ export default function createNodeImage() {
         console.info("get createNodeImage state pages: " + JSON.stringify(pages));
         if (!("createNodeImage" == pages.name)) {
           console.info("get createNodeImage state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push createNodeImage success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push createNodeImage page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   createNodeImage_static_0100
@@ -68,7 +69,7 @@ export default function createNodeImage() {
      * @tc.desc     createNodeImage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('createNodeImage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('createNodeImage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('createNodeImage_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

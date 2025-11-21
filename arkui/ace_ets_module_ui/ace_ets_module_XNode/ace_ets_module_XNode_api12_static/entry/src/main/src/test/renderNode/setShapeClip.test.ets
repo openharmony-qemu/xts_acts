@@ -40,20 +40,21 @@ export default function setShapeClipTest() {
         console.info("get setShapeClipTest state pages: " + JSON.stringify(pages));
         if (!("setShapeClip" == pages.name)) {
           console.info("get setShapeClipTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push setShapeClipTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setShapeClipTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   setShapeClipTest_static_0010
@@ -61,7 +62,7 @@ export default function setShapeClipTest() {
      * @tc.desc     setShapeClipTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('setShapeClipTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('setShapeClipTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setShapeClipTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

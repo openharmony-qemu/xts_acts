@@ -38,7 +38,7 @@ struct ColorMetricsIndex {
         .height(50)
         .onClick((e:ClickEvent) => {
           try {
-            
+            // ColorMetrics.resourceColor(null);
           } catch (e) {
             this.errorStr401 = (e as BusinessError).code + '';
           }
