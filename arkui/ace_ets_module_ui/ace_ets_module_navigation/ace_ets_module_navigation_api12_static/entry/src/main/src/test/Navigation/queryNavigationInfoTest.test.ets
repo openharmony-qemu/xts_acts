@@ -62,13 +62,14 @@ export default function queryNavigationInfoTest() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   queryNavigationInfoTest_static_0100
      * @tc.name     queryNavigationInfoTest_static_0100
      * @tc.desc     queryNavigationInfoTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('queryNavigationInfoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('queryNavigationInfoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[queryNavigationInfoTest_static_0100] START');
       await CommonFunc.sleep(1000);
 

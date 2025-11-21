@@ -15,7 +15,7 @@
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
+  Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
@@ -58,8 +58,12 @@ struct UIObserverObserver4Page {
 
   aboutToAppear() {
     if (this.firstTime == false) {
-      uiObserver.onNavDestinationSwitch( this.getUIContext(), { navigationId: 'myNavId' }, callBackFuncOn) //白屏
-      this.firstTime = true
+      try{
+        uiObserver.onNavDestinationSwitch( this.getUIContext(), { navigationId: 'myNavId' }, callBackFuncOn) //页面加载失败 sdk11.5
+        this.firstTime = true
+      }catch(err){
+        console.log('++++++++++++++++++++++onNavDestinationSwitchError',err)
+      }
     }
   }
 

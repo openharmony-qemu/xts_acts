@@ -63,13 +63,14 @@ export default function ignoreLayoutSafeArea() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   ignoreLayoutSafeArea_static_0100
      * @tc.name     ignoreLayoutSafeArea_static_0100
      * @tc.desc     ignoreLayoutSafeArea_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ignoreLayoutSafeArea_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ignoreLayoutSafeArea_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ignoreLayoutSafeArea_static_0100] START');
       await CommonFunc.sleep(2000);
 

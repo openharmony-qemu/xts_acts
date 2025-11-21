@@ -60,13 +60,14 @@ export default function NavPathStack8() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   NavPathStack8_static_0100
      * @tc.name     NavPathStack8_static_0100
      * @tc.desc     NavPathStack8_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavPathStack8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavPathStack8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavPathStack8_static_0100 START');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('NavPathStack8_btn2',10,"")

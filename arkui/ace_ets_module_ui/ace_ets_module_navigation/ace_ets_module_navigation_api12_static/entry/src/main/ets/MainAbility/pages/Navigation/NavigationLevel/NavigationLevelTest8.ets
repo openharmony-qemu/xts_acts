@@ -15,7 +15,7 @@
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavPathInfo,
-  Position,EffectType,EffectComponent,Text,Color,Flex,NavDestinationContext,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
+  Position,EffectType,Text,Color,Flex,NavDestinationContext,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
   FontWeight,Axis,Margin,Swiper,ForEach,ColumnOptions, LayoutSafeAreaEdge, LayoutSafeAreaType,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
@@ -39,7 +39,7 @@ struct NavigationLevelTest8 {
         Button('popToIndex 11000000')
           .onClick((e: ClickEvent) => {
             console.log('++++++++++++++++++++++1')
-            this.pageInfos.popToIndex(11000000)
+            this.pageInfos.popToIndex(11000000)   //appDied  11.4
             console.log('++++++++++++++++++++++2')
           })
           .id('NavigationLevelTest8_btn2')

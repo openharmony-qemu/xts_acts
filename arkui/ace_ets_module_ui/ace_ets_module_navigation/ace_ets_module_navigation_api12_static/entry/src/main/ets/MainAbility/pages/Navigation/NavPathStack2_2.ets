@@ -15,7 +15,7 @@
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,PopInfo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
+  Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, NavigationInterception,CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
@@ -61,12 +61,20 @@ class DerivedNavPathStack extends NavPathStack{
     return super.pop(result as Object,animated as boolean)
   }
 
-  popToName(name: string, result?: Object| undefined , animated?: boolean| undefined): int {
-    return super.popToName(name,result as Object,animated as boolean)
+  popToName(name: string, result: Object , animated?: boolean| undefined): int {
+    if(animated){
+      return super.popToName(name,result as Object,animated as boolean)
+    }else{
+      return super.popToName(name,result as Object)
+    }
   }
 
-  popToIndex(index: int, result?: Object| undefined, animated?: boolean| undefined): void {
-    return super.popToIndex(index,result as Object,animated as boolean)
+  popToIndex(index: int, result: Object, animated?: boolean| undefined): void {
+    if(animated){
+      return super.popToIndex(index,result as Object,animated as boolean)
+    }else{
+      return super.popToIndex(index,result as Object)
+    }
   }
 }
 class param{
@@ -82,6 +90,9 @@ class param{
 struct NavPathStack2_2{
   derivedStack:DerivedNavPathStack = new DerivedNavPathStack()
 
+  // onPageShow(){
+  //   let mes = this.derivedStack.popToName('pageOne',new param('pop ok'))  //app died
+  // }
   @Builder
   pageMap(name:string){
     if (name == 'pageOne'){
@@ -154,10 +165,11 @@ struct NavPathStack2_2{
           console.log('++++++++++++++++++++++++++++++++++++++9')
         }).id('NavPathStack2_2_btn9').height('5%')
 
-        Button('popToName(result) pageOne').onClick((event: ClickEvent) => {
+        Button('popToName(result) pageOne')
+          .onClick((event: ClickEvent) => {
           console.log('++++++++++++++++++++++++++++++++++++++10.1')
-          let mes = this.derivedStack.popToName('pageOne',new param('pop ok'))  //app died
-          console.log('' + mes)
+              let mes = this.derivedStack.popToName('pageOne',new param('pop ok'))  //app died
+              console.log('' + mes)
           console.log('++++++++++++++++++++++++++++++++++++++10')
         }).id('NavPathStack2_2_btn10').height('5%')
 

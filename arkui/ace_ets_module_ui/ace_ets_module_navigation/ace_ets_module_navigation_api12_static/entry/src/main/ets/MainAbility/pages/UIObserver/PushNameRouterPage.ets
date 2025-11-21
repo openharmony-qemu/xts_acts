@@ -15,7 +15,7 @@
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
+  Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
@@ -52,8 +52,8 @@ struct PushNameRouterPage {
         } as Param,
         recoverable: false
       } as router.NamedRouterOptions,
-        (err: BusinessError|null): void => {
-        console.log('+++++++++++++++++++++++++++3');
+        (err: BusinessError|null): void => {  //没走这里
+        console.log('+++++++++++++++++++++++++++2.1');
         if (err) {
           let message = (err as BusinessError).message;
           let code = (err as BusinessError).code;
@@ -61,8 +61,9 @@ struct PushNameRouterPage {
           return;
         }
         console.info('pushNamedRoute success');
-        AppStorage.setOrCreate<string>('PushNameRouterPage_pushNamedRoute', 'success')
+        AppStorage.setOrCreate<string>('PushNameRouterPage_pushNamedRoute', 'success') //没走到这里
       })
+      console.log('+++++++++++++++++++++++++++3');
     }else {
       console.error('UIContext or Router is undefined');
     }

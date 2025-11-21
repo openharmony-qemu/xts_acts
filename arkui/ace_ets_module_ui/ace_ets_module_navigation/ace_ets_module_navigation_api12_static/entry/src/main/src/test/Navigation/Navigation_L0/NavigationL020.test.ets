@@ -60,13 +60,14 @@ export default function Navigation_L0_20() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   Navigation_L0_20_static_0100
      * @tc.name     Navigation_L0_20_static_0100
      * @tc.desc     Navigation_L0_20_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Navigation_L0_20_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Navigation_L0_20_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Navigation_L0_20_static_0100 START');
       await CommonFunc.sleep(1000);
 

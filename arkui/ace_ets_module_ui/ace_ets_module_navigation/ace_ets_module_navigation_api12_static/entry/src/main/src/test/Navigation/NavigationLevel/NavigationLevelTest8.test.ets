@@ -62,13 +62,14 @@ export default function NavigationLevelTest8() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   NavigationLevelTest8_static_0100
      * @tc.name     NavigationLevelTest8_static_0100
      * @tc.desc     NavigationLevelTest8_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationLevelTest8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationLevelTest8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[NavigationLevelTest8_static_0100] START');
       await CommonFunc.sleep(1000);
 

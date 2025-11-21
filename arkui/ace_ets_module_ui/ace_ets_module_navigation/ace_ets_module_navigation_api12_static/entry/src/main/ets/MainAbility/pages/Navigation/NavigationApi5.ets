@@ -15,7 +15,7 @@
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavDestinationInfo,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,NavigationTransitionProxy,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,NavigationAnimatedTransition,
+  Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,NavigationTransitionProxy,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,NavigationAnimatedTransition,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavContentInfo,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
@@ -48,11 +48,14 @@ struct NavigationApi5{
   @Builder
   PageOne(){
     NavDestination(){
+      console.log('+++++++++++123')
       Text('pageOne').id('NavigationApi5_text1')
     }
     .title('pageOne')
     .onReady((context:NavDestinationContext) => {
+      console.log('+++++++++++pageone onReady1')
       this.text = JSON.stringify(context.getConfigInRouteMap()?.pageSourceFile)
+      console.log('+++++++++++pageone onReady2')
     })
   }
 
@@ -68,7 +71,9 @@ struct NavigationApi5{
       Scroll(){
         Column(){
           Button('push pageOne').onClick((e: ClickEvent) => {
+            console.log('++++++++++++++++++++++++1')
             this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
+            console.log('++++++++++++++++++++++++2')
           }).id('NavigationApi5_btn1')
         }
       }

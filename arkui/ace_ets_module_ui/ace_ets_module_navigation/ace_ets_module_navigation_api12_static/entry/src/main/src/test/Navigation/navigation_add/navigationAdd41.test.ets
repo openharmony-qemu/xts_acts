@@ -26,8 +26,8 @@ import { UtilsTest, startAbility } from '../../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function Navigation_L0_13() {
-  describe('Navigation_L0_13', () => {
+export default function navigation_add4_1() {
+  describe('navigation_add4_1', () => {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000);
@@ -36,53 +36,66 @@ export default function Navigation_L0_13() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("Navigation_L0_13 beforeEach start");
+      console.info("navigation_add4_1 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/Navigation_L0/Navigation_L0_13',
+        url: 'MainAbility/pages/Navigation/navigation_add/navigation_add4_1',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get Navigation_L0_13 state pages:" + JSON.stringify(pages));
+        console.info("get navigation_add4_1 state pages:" + JSON.stringify(pages));
         if (!("List_SpaceChange" == pages.name)) {
-          console.info("get Navigation_L0_13 pages.name:" + JSON.stringify(pages.name));
+          console.info("get navigation_add4_1 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push Navigation_L0_13 page result:");
+          console.info("push navigation_add4_1 page result:");
         }
       } catch (err) {
-        console.error("push Navigation_L0_13 page error:" + err);
+        console.error("push navigation_add4_1 page error:" + err);
       }
-      console.info("Navigation_L0_13 beforeEach end");
+      console.info("navigation_add4_1 beforeEach end");
     });
     afterEach(async () => {
     });
-
     
-    /*
-     * @tc.number   Navigation_L0_13_static_0100
-     * @tc.name     Navigation_L0_13_static_0100
-     * @tc.desc     Navigation_L0_13_static_0100
+    
+    
+/*
+     * @tc.number   navigation_add4_1_static_0100
+     * @tc.name     navigation_add4_1_static_0100
+     * @tc.desc     navigation_add4_1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Navigation_L0_13_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('Navigation_L0_13_static_0100 START');
+    it('navigation_add4_1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('navigation_add4_1_static_0100 START');
       await CommonFunc.sleep(1000);
-
-      inspector.sendEventByKey('Navigation_L0_13_btn1',10,"")
+      
+      let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('Navigation_L0_13_pageOne_btn1',10,"")
+      
+      let navigation = CommonFunc.getComponentRectOnScreen('navigation_add4_1_navigation');
+      
+      // await driver.swipe( Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3) ,Math.round(navigation.top + (navigation.bottom - navigation.top) / 2) ,Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1) ,Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2));
       await CommonFunc.sleep(1000);
-      let text1 = inspector.getInspectorByKey('Navigation_L0_13_text1');
-      expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('pageTwo');
+      
+      let btn1 = await driver.findComponent(ON.id('navigation_add4_1_pageTwo_btn1'));
+      await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-
-      console.info('Navigation_L0_13_static_0100 END');
+      
+      let text1 = inspector.getInspectorByKey('navigation_add4_1_pageTwo_text1');
+      expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('["pageOne","pageTwo"]');
+      await CommonFunc.sleep(1000);
+      
+      
+      
+      
+      
+      console.info('navigation_add4_1_static_0100 END');
       done();
     });
-
-
-
+    
+    
+    
   })
 }

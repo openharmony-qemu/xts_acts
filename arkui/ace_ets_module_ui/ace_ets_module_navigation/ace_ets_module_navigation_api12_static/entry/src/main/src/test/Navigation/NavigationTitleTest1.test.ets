@@ -13,20 +13,19 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, beforeAll, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, beforeAll, afterEach, it, expect, Level} from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager,Callback  } from '../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
 import common from '@ohos.app.ability.common';
 import { UtilsTest, startAbility } from '../Util.test';
-import { SharedTransitionEffectType, Color } from '@ohos.arkui.component';
+import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
 export default function NavigationTitleTest1() {
   describe('NavigationTitleTest1', () => {
     beforeAll(() => {
@@ -64,27 +63,31 @@ export default function NavigationTitleTest1() {
     });
 
 
-    /*
+
+    
+/*
      * @tc.number   NavigationTitleTest1_static_0100
      * @tc.name     NavigationTitleTest1_static_0100
      * @tc.desc     NavigationTitleTest1_static_0100
      * @tc.level    Level.LEVEL0
      */
     it('NavigationTitleTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('NavigationTitleTest1_static_0100 START');
       try {
-        await CommonFunc.sleep(1000);
+        console.info('NavigationTitleTest1_static_0100 START');
+          await CommonFunc.sleep(1000);
 
-        let driver = Driver.create();
-        await CommonFunc.sleep(1000);
+          let driver = Driver.create();
+          await CommonFunc.sleep(1000);
 
-        await driver.assertComponentExist(ON.text('NavigationTitle'));
-        await CommonFunc.sleep(1000);
-      } catch(error) {
+          await driver.assertComponentExist(ON.text('NavigationTitle'));
+          await CommonFunc.sleep(1000);
+
+          console.info('NavigationTitleTest1_static_0100 END');
+          done();
+      } catch (error) {
         expect().assertFail();
       }
-      console.info('NavigationTitleTest1_static_0100 END');
-      done();
+      
     });
 
 
