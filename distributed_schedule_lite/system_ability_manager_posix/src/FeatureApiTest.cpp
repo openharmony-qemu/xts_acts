@@ -132,7 +132,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0010
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -154,7 +153,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0010, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0020
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -177,7 +175,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0020, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0030
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -197,7 +194,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0030, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0040
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -217,7 +213,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0040, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0050
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -239,7 +234,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0050, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0060
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -259,7 +253,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0060, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0070
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0070
  * @tc.desc   [C- SOFTWARE -0200]
@@ -279,7 +272,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0070, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeatureApi0080
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0080
  * @tc.desc   [C- SOFTWARE -0200]
@@ -303,7 +295,6 @@ HWTEST_F(FeatureApiTest, testRegisterFeatureApi0080, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetFeatureApi0010
  * @tc.number DMSLite_SAMGR_GetFeatureApi_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -325,7 +316,6 @@ HWTEST_F(FeatureApiTest, testGetFeatureApi0010, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetFeatureApi0020
  * @tc.number DMSLite_SAMGR_GetFeatureApi_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -349,7 +339,6 @@ HWTEST_F(FeatureApiTest, testGetFeatureApi0020, Function | MediumTest | Level2) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetFeatureApi0030
  * @tc.number DMSLite_SAMGR_GetFeatureApi_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -373,7 +362,6 @@ HWTEST_F(FeatureApiTest, testGetFeatureApi0030, Function | MediumTest | Level2) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetFeatureApi0040
  * @tc.number DMSLite_SAMGR_GetFeatureApi_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -395,7 +383,6 @@ HWTEST_F(FeatureApiTest, testGetFeatureApi0040, Function | MediumTest | Level2) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetFeatureApi0050
  * @tc.number DMSLite_SAMGR_GetFeatureApi_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -415,7 +402,6 @@ HWTEST_F(FeatureApiTest, testGetFeatureApi0050, Function | MediumTest | Level2) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetFeatureApi0060
  * @tc.number DMSLite_SAMGR_GetFeatureApi_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -438,7 +424,6 @@ HWTEST_F(FeatureApiTest, testGetFeatureApi0060, Function | MediumTest | Level2) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeatureApi0010
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -459,7 +444,6 @@ HWTEST_F(FeatureApiTest, testUnregisterFeatureApi0010, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeatureApi0020
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -483,7 +467,6 @@ HWTEST_F(FeatureApiTest, testUnregisterFeatureApi0020, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeatureApi0030
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -505,7 +488,6 @@ HWTEST_F(FeatureApiTest, testUnregisterFeatureApi0030, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeatureApi0040
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -527,7 +509,6 @@ HWTEST_F(FeatureApiTest, testUnregisterFeatureApi0040, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeatureApi0050
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -549,7 +530,6 @@ HWTEST_F(FeatureApiTest, testUnregisterFeatureApi0050, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeatureApi0060
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0060
  * @tc.desc   [C- SOFTWARE -0200]

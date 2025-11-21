@@ -265,7 +265,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSpecifiedTask0010
  * @tc.number DMSLite_SAMGR_Taskpool_SpecifiedTask_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -325,7 +324,6 @@ HWTEST_F(TaskpoolSpecifiedTaskTest, testSpecifiedTask0010, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSpecifiedTask0020
  * @tc.number DMSLite_SAMGR_Taskpool_SpecifiedTask_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -385,7 +383,6 @@ HWTEST_F(TaskpoolSpecifiedTaskTest, testSpecifiedTask0020, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSpecifiedTask0030
  * @tc.number DMSLite_SAMGR_Taskpool_SpecifiedTask_0030
  * @tc.desc   [C- SOFTWARE -0200]

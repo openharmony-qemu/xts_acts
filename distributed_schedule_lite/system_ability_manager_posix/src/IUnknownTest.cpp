@@ -155,7 +155,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testGetIUnknown0010
  * @tc.number DMSLite_SAMGR_GetIUnknown_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -169,7 +168,6 @@ HWTEST_F(IUnknownTest, testGetIUnknown0010, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testGetObject0010
  * @tc.number DMSLite_SAMGR_GetObject_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -185,7 +183,6 @@ HWTEST_F(IUnknownTest, testGetObject0010, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testQueryInterface0010
  * @tc.number DMSLite_SAMGR_QueryInterface_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -212,7 +209,6 @@ HWTEST_F(IUnknownTest, testQueryInterface0010, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testQueryInterface0020
  * @tc.number DMSLite_SAMGR_QueryInterface_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -232,7 +228,6 @@ HWTEST_F(IUnknownTest, testQueryInterface0020, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testQueryInterface0030
  * @tc.number DMSLite_SAMGR_QueryInterface_0030
  * @tc.desc   [C- SOFTWARE -0200]

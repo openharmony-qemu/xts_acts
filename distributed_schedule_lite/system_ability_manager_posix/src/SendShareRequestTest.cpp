@@ -358,7 +358,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendSharedRequest0010
  * @tc.number DMSLite_SAMGR_SendSharedRequest_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -400,7 +399,6 @@ HWTEST_F(SendShareRequestTest, testSendSharedRequest0010, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendSharedDirectRequest0010
  * @tc.number DMSLite_SAMGR_SendSharedDirectRequest_0010
  * @tc.desc   [C- SOFTWARE -0200]

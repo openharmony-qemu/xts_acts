@@ -296,7 +296,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSharedTask0010
  * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -356,7 +355,6 @@ HWTEST_F(TaskpoolSharedTaskTest, testSharedTask0010, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSharedTask0020
  * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -416,7 +414,6 @@ HWTEST_F(TaskpoolSharedTaskTest, testSharedTask0020, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSharedTask0030
  * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -464,7 +461,6 @@ HWTEST_F(TaskpoolSharedTaskTest, testSharedTask0030, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSharedTask0040
  * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0040
  * @tc.desc   [C- SOFTWARE -0200]

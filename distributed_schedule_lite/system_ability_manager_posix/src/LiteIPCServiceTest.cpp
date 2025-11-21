@@ -169,7 +169,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIPCService0010
  * @tc.number DMSLite_SAMGR_IPCService_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -185,7 +184,6 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0010, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIPCService0020
  * @tc.number DMSLite_SAMGR_IPCService_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -211,7 +209,6 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0020, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIPCService0030
  * @tc.number DMSLite_SAMGR_IPCService_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -231,7 +228,6 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0030, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIPCService0040
  * @tc.number DMSLite_SAMGR_IPCService_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -249,7 +245,6 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0040, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testIPCService0050
  * @tc.number DMSLite_SAMGR_IPCService_0050
  * @tc.desc   [C- SOFTWARE -0200]

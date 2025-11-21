@@ -213,7 +213,6 @@ static BOOL TaskPoolNoTaskFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testNoTask0010
  * @tc.number DMSLite_SAMGR_Taskpool_NoTask_0010
  * @tc.desc   [C- SOFTWARE -0200]

@@ -147,7 +147,6 @@ static BOOL FeatureTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeature0010
  * @tc.number DMSLite_SAMGR_RegisterFeature_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -164,7 +163,6 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0010, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeature0020
  * @tc.number DMSLite_SAMGR_RegisterFeature_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -179,7 +177,6 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0020, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeature0030
  * @tc.number DMSLite_SAMGR_RegisterFeature_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -194,7 +191,6 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0030, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeature0040
  * @tc.number DMSLite_SAMGR_RegisterFeature_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -209,7 +205,6 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0040, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeature0050
  * @tc.number DMSLite_SAMGR_RegisterFeature_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -228,7 +223,6 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0050, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterFeature0060
  * @tc.number DMSLite_SAMGR_RegisterFeature_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -248,7 +242,6 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0060, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeature0010
  * @tc.number DMSLite_SAMGR_UnregisterFeature_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -265,7 +258,6 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0010, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeature0020
  * @tc.number DMSLite_SAMGR_UnregisterFeature_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -287,7 +279,6 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0020, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeature0030
  * @tc.number DMSLite_SAMGR_UnregisterFeature_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -309,7 +300,6 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0030, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeature0040
  * @tc.number DMSLite_SAMGR_UnregisterFeature_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -328,7 +318,6 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0040, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeature0050
  * @tc.number DMSLite_SAMGR_UnregisterFeature_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -347,7 +336,6 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0050, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeature0060
  * @tc.number DMSLite_SAMGR_UnregisterFeature_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -368,7 +356,6 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0060, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterFeature0070
  * @tc.number DMSLite_SAMGR_UnregisterFeature_0070
  * @tc.desc   [C- SOFTWARE -0200]

@@ -129,7 +129,6 @@ static BOOL ServiceTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterService0010
  * @tc.number DMSLite_SAMGR_RegisterService_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -146,7 +145,6 @@ LITE_TEST_CASE(ServiceTestSuite, testRegisterService0010, Function | MediumTest 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterService0020
  * @tc.number DMSLite_SAMGR_RegisterService_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -161,7 +159,6 @@ LITE_TEST_CASE(ServiceTestSuite, testRegisterService0020, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterService0030
  * @tc.number DMSLite_SAMGR_RegisterService_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -178,7 +175,6 @@ LITE_TEST_CASE(ServiceTestSuite, testRegisterService0030, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterService0010
  * @tc.number DMSLite_SAMGR_UnregisterService_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -196,7 +192,6 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0010, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterService0020
  * @tc.number DMSLite_SAMGR_UnregisterService_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -214,7 +209,6 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0020, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterService0030
  * @tc.number DMSLite_SAMGR_UnregisterService_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -229,7 +223,6 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0030, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterService0040
  * @tc.number DMSLite_SAMGR_UnregisterService_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -250,7 +243,6 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0040, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterService0050
  * @tc.number DMSLite_SAMGR_UnregisterService_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -271,7 +263,6 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0050, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterService0060
  * @tc.number DMSLite_SAMGR_UnregisterService_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -292,7 +283,6 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0060, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testBootstrap0010
  * @tc.number DMSLite_SAMGR_Bootstrap_0010
  * @tc.desc   [C- SOFTWARE -0200]

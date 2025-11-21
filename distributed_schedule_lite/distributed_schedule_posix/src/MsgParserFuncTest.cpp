@@ -61,7 +61,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0010
  * @tc.number DMSLite_DMS_MsgParserFunc_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -94,7 +93,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0010, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0020
  * @tc.number DMSLite_DMS_MsgParserFunc_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -121,7 +119,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0020, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0030
  * @tc.number DMSLite_DMS_MsgParserFunc_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -143,7 +140,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0030, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0040
  * @tc.number DMSLite_DMS_MsgParserFunc_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -170,7 +166,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0040, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0050
  * @tc.number DMSLite_DMS_MsgParserFunc_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -191,7 +186,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0050, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0060
  * @tc.number DMSLite_DMS_MsgParserFunc_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -213,7 +207,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0060, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0070
  * @tc.number DMSLite_DMS_MsgParserFunc_0070
  * @tc.desc   [C- SOFTWARE -0200]
@@ -237,7 +230,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0070, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0080
  * @tc.number DMSLite_DMS_MsgParserFunc_0080
  * @tc.desc   [C- SOFTWARE -0200]
@@ -262,7 +254,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0080, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0090
  * @tc.number DMSLite_DMS_MsgParserFunc_0090
  * @tc.desc   [C- SOFTWARE -0200]
@@ -289,7 +280,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0090, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0100
  * @tc.number DMSLite_DMS_MsgParserFunc_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -315,7 +305,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0100, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0110
  * @tc.number DMSLite_DMS_MsgParserFunc_0110
  * @tc.desc   [C- SOFTWARE -0200]
@@ -340,7 +329,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0110, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0120
  * @tc.number DMSLite_DMS_MsgParserFunc_0120
  * @tc.desc   [C- SOFTWARE -0200]
@@ -367,7 +355,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0120, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0130
  * @tc.number DMSLite_DMS_MsgParserFunc_0130
  * @tc.desc   [C- SOFTWARE -0200]
@@ -396,7 +383,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0130, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0140
  * @tc.number DMSLite_DMS_MsgParserFunc_0140
  * @tc.desc   [C- SOFTWARE -0200]
@@ -425,7 +411,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0140, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0150
  * @tc.number DMSLite_DMS_MsgParserFunc_0150
  * @tc.desc   [C- SOFTWARE -0200]
@@ -453,7 +438,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0150, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0160
  * @tc.number DMSLite_DMS_MsgParserFunc_0160
  * @tc.desc   [C- SOFTWARE -0200]
@@ -476,7 +460,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0160, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0170
  * @tc.number DMSLite_DMS_MsgParserFunc_0170
  * @tc.desc   [C- SOFTWARE -0200]
@@ -501,7 +484,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0170, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0180
  * @tc.number DMSLite_DMS_MsgParserFunc_0180
  * @tc.desc   [C- SOFTWARE -0200]
@@ -528,7 +510,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0180, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0190
  * @tc.number DMSLite_DMS_MsgParserFunc_0190
  * @tc.desc   [C- SOFTWARE -0200]
@@ -556,7 +537,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0190, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0200
  * @tc.number DMSLite_DMS_MsgParserFunc_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -582,7 +562,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0200, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0210
  * @tc.number DMSLite_DMS_MsgParserFunc_0210
  * @tc.desc   [C- SOFTWARE -0200]
@@ -609,7 +588,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0210, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0220
  * @tc.number DMSLite_DMS_MsgParserFunc_0220
  * @tc.desc   [C- SOFTWARE -0200]
@@ -636,7 +614,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0220, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0230
  * @tc.number DMSLite_DMS_MsgParserFunc_0230
  * @tc.desc   [C- SOFTWARE -0200]
@@ -657,7 +634,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0230, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0240
  * @tc.number DMSLite_DMS_MsgParserFunc_0240
  * @tc.desc   [C- SOFTWARE -0200]
@@ -681,7 +657,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0240, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0250
  * @tc.number DMSLite_DMS_MsgParserFunc_0250
  * @tc.desc   [C- SOFTWARE -0200]
@@ -707,7 +682,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0250, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0260
  * @tc.number DMSLite_DMS_MsgParserFunc_0260
  * @tc.desc   [C- SOFTWARE -0200]
@@ -735,7 +709,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0260, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0270
  * @tc.number DMSLite_DMS_MsgParserFunc_0270
  * @tc.desc   [C- SOFTWARE -0200]
@@ -762,7 +735,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0270, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0280
  * @tc.number DMSLite_DMS_MsgParserFunc_0280
  * @tc.desc   [C- SOFTWARE -0200]
@@ -789,7 +761,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0280, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0290
  * @tc.number DMSLite_DMS_MsgParserFunc_0290
  * @tc.desc   [C- SOFTWARE -0200]
@@ -816,7 +787,6 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0290, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserFunc0300
  * @tc.number DMSLite_DMS_MsgParserFunc_0300
  * @tc.desc   [C- SOFTWARE -0200]

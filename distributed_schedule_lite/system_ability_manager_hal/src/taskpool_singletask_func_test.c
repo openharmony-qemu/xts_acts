@@ -333,7 +333,6 @@ static BOOL SingleTaskFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0010
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -394,7 +393,6 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0010, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0020
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -453,7 +451,6 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0020, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0030
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -512,7 +509,6 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0030, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0040
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -571,7 +567,6 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0040, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0050
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0050
  * @tc.desc   [C- SOFTWARE -0200]

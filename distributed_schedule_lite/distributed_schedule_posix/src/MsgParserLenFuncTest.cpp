@@ -60,7 +60,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserLen0010
  * @tc.number DMSLite_DMS_MsgParserLen_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -97,7 +96,6 @@ HWTEST_F(MsgParserLenFuncTest, testMsgParserLen0010, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserLen0020
  * @tc.number DMSLite_DMS_MsgParserLen_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -135,7 +133,6 @@ HWTEST_F(MsgParserLenFuncTest, testMsgParserLen0020, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testMsgParserLen0030
  * @tc.number DMSLite_DMS_MsgParserLen_0030
  * @tc.desc   [C- SOFTWARE -0200]

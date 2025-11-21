@@ -142,7 +142,6 @@ static BOOL IUnknownTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetIUnknown0010
  * @tc.number DMSLite_SAMGR_GetIUnknown_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -157,7 +156,6 @@ LITE_TEST_CASE(IUnknownTestSuite, testGetIUnknown0010, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetObject0010
  * @tc.number DMSLite_SAMGR_GetObject_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -177,7 +175,6 @@ LITE_TEST_CASE(IUnknownTestSuite, testGetObject0010, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryInterface0010
  * @tc.number DMSLite_SAMGR_QueryInterface_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -200,7 +197,6 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0010, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryInterface0020
  * @tc.number DMSLite_SAMGR_QueryInterface_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -221,7 +217,6 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0020, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testQueryInterface0030
  * @tc.number DMSLite_SAMGR_QueryInterface_0030
  * @tc.desc   [C- SOFTWARE -0200]

@@ -187,7 +187,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCFeature0010
  * @tc.number DMSLite_SAMGR_IPCFeature_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -202,7 +201,6 @@ HWTEST_F(LiteIPCFeatureTest, testIPCFeature0010, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCFeature0020
  * @tc.number DMSLite_SAMGR_IPCFeature_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -228,7 +226,6 @@ HWTEST_F(LiteIPCFeatureTest, testIPCFeature0020, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCFeature0030
  * @tc.number DMSLite_SAMGR_IPCFeature_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -248,7 +245,6 @@ HWTEST_F(LiteIPCFeatureTest, testIPCFeature0030, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCFeature0040
  * @tc.number DMSLite_SAMGR_IPCFeature_0040
  * @tc.desc   [C- SOFTWARE -0200]

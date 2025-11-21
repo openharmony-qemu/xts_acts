@@ -87,7 +87,6 @@ static BOOL DefaultFeatureApiTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterDefaultFeatureApi0010
  * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -104,7 +103,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0010, Fu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterDefaultFeatureApi0020
  * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -119,7 +117,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0020, Fu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterDefaultFeatureApi0030
  * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -134,7 +131,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0030, Fu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterDefaultFeatureApi0040
  * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -149,7 +145,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0040, Fu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testRegisterDefaultFeatureApi0050
  * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -167,7 +162,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0050, Fu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetDefaultFeatureApi0010
  * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -186,7 +180,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0010, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetDefaultFeatureApi0020
  * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -205,7 +198,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0020, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetDefaultFeatureApi0030
  * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -224,7 +216,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0030, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testGetDefaultFeatureApi0040
  * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -244,7 +235,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0040, Functio
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterDefaultFeatureApi0010
  * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -261,7 +251,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0010, 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterDefaultFeatureApi0020
  * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -283,7 +272,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0020, 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterDefaultFeatureApi0030
  * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -298,7 +286,6 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0030, 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnregisterDefaultFeatureApi0040
  * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0040
  * @tc.desc   [C- SOFTWARE -0200]

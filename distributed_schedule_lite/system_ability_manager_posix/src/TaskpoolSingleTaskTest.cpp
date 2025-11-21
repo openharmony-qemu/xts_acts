@@ -343,7 +343,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0010
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -408,7 +407,6 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0010, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0020
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -467,7 +465,6 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0020, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0030
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -526,7 +523,6 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0030, Function | MediumTest | Lev
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0040
  * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -586,7 +582,6 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0040, Function | MediumTest | Lev
 
 #ifndef __LINUX__
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSingleTask0050
  * @tc.number testSingleTask0050
  * @tc.desc   testSingleTask0050

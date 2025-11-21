@@ -136,7 +136,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testRegisterService0010
  * @tc.number DMSLite_SAMGR_RegisterService_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -152,7 +151,6 @@ HWTEST_F(ServiceTest, testRegisterService0010, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testRegisterService0020
  * @tc.number DMSLite_SAMGR_RegisterService_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -166,7 +164,6 @@ HWTEST_F(ServiceTest, testRegisterService0020, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testRegisterService0030
  * @tc.number DMSLite_SAMGR_RegisterService_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -182,7 +179,6 @@ HWTEST_F(ServiceTest, testRegisterService0030, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUnregisterService0010
  * @tc.number DMSLite_SAMGR_UnregisterService_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -197,7 +193,6 @@ HWTEST_F(ServiceTest, testUnregisterService0010, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUnregisterService0020
  * @tc.number DMSLite_SAMGR_UnregisterService_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -214,7 +209,6 @@ HWTEST_F(ServiceTest, testUnregisterService0020, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUnregisterService0030
  * @tc.number DMSLite_SAMGR_UnregisterService_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -228,7 +222,6 @@ HWTEST_F(ServiceTest, testUnregisterService0030, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUnregisterService0040
  * @tc.number DMSLite_SAMGR_UnregisterService_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -248,7 +241,6 @@ HWTEST_F(ServiceTest, testUnregisterService0040, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUnregisterService0050
  * @tc.number DMSLite_SAMGR_UnregisterService_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -268,7 +260,6 @@ HWTEST_F(ServiceTest, testUnregisterService0050, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUnregisterService0060
  * @tc.number DMSLite_SAMGR_UnregisterService_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -288,7 +279,6 @@ HWTEST_F(ServiceTest, testUnregisterService0060, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testBootstrap0010
  * @tc.number DMSLite_SAMGR_Bootstrap_0010
  * @tc.desc   [C- SOFTWARE -0200]

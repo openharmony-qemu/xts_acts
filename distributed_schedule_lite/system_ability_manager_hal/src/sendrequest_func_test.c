@@ -403,7 +403,6 @@ static BOOL SendRequestTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSyncCall0010
  * @tc.number DMSLite_SAMGR_SyncCall_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -435,7 +434,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSyncCall0010, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0010
  * @tc.number DMSLite_SAMGR_SendRequest_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -476,7 +474,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0010, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0020
  * @tc.number DMSLite_SAMGR_SendRequest_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -517,7 +514,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0020, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0030
  * @tc.number DMSLite_SAMGR_SendRequest_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -550,7 +546,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0030, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0040
  * @tc.number DMSLite_SAMGR_SendRequest_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -582,7 +577,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0040, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0050
  * @tc.number DMSLite_SAMGR_SendRequest_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -620,7 +614,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0050, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0060
  * @tc.number DMSLite_SAMGR_SendRequest_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -662,7 +655,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0060, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0070
  * @tc.number DMSLite_SAMGR_SendRequest_0070
  * @tc.desc   [C- SOFTWARE -0200]
@@ -699,7 +691,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0070, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0080
  * @tc.number DMSLite_SAMGR_SendRequest_0080
  * @tc.desc   [C- SOFTWARE -0200]
@@ -738,7 +729,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0080, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendRequest0090
  * @tc.number DMSLite_SAMGR_SendRequest_0090
  * @tc.desc   [C- SOFTWARE -0200]

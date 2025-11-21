@@ -343,7 +343,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSyncCall0010
  * @tc.number DMSLite_SAMGR_SyncCall_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -375,7 +374,6 @@ HWTEST_F(SendRequestTest, testSyncCall0010, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0010
  * @tc.number DMSLite_SAMGR_SendRequest_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -419,7 +417,6 @@ HWTEST_F(SendRequestTest, testSendRequest0010, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0020
  * @tc.number DMSLite_SAMGR_SendRequest_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -462,7 +459,6 @@ HWTEST_F(SendRequestTest, testSendRequest0020, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0030
  * @tc.number DMSLite_SAMGR_SendRequest_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -499,7 +495,6 @@ HWTEST_F(SendRequestTest, testSendRequest0030, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0040
  * @tc.number DMSLite_SAMGR_SendRequest_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -543,7 +538,6 @@ HWTEST_F(SendRequestTest, testSendRequest0040, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0050
  * @tc.number DMSLite_SAMGR_SendRequest_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -585,7 +579,6 @@ HWTEST_F(SendRequestTest, testSendRequest0050, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0060
  * @tc.number DMSLite_SAMGR_SendRequest_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -640,7 +633,6 @@ HWTEST_F(SendRequestTest, testSendRequest0060, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0070
  * @tc.number DMSLite_SAMGR_SendRequest_0070
  * @tc.desc   [C- SOFTWARE -0200]
@@ -690,7 +682,6 @@ HWTEST_F(SendRequestTest, testSendRequest0070, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0080
  * @tc.number DMSLite_SAMGR_SendRequest_0080
  * @tc.desc   [C- SOFTWARE -0200]
@@ -734,7 +725,6 @@ HWTEST_F(SendRequestTest, testSendRequest0080, Function | MediumTest | Level2) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testSendRequest0090
  * @tc.number DMSLite_SAMGR_SendRequest_0090
  * @tc.desc   [C- SOFTWARE -0200]

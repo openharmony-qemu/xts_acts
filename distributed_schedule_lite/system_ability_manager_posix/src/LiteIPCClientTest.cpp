@@ -83,7 +83,6 @@ protected:
 
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0010
  * @tc.number DMSLite_SAMGR_IPCClient_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -103,7 +102,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0010, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0020
  * @tc.number DMSLite_SAMGR_IPCClient_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -124,7 +122,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0020, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0040
  * @tc.number DMSLite_SAMGR_IPCClient_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -152,7 +149,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0040, Function | MediumTest | Level1)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0050
  * @tc.number DMSLite_SAMGR_IPCClient_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -175,7 +171,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0050, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0060
  * @tc.number DMSLite_SAMGR_IPCClient_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -203,7 +198,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0060, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0070
  * @tc.number DMSLite_SAMGR_IPCClient_0070
  * @tc.desc   [C- SOFTWARE -0200]
@@ -232,7 +226,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0070, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0100
  * @tc.number DMSLite_SAMGR_IPCClient_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -250,7 +243,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0100, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0110
  * @tc.number DMSLite_SAMGR_IPCClient_0110
  * @tc.desc   [C- SOFTWARE -0200]
@@ -268,7 +260,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0110, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0120
  * @tc.number DMSLite_SAMGR_IPCClient_0120
  * @tc.desc   [C- SOFTWARE -0200]
@@ -283,7 +274,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0120, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0130
  * @tc.number DMSLite_SAMGR_IPCClient_0130
  * @tc.desc   [C- SOFTWARE -0200]
@@ -299,7 +289,6 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0130, Function | MediumTest | Level2)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testIPCClient0140
  * @tc.number DMSLite_SAMGR_IPCClient_0140
  * @tc.desc   [C- SOFTWARE -0200]

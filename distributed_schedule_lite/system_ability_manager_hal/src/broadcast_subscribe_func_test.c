@@ -121,7 +121,6 @@ static BOOL Broadcast01TestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAddTopic0010
  * @tc.number DMSLite_SAMGR_AddTopic_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -148,7 +147,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0010, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAddTopic0020
  * @tc.number DMSLite_SAMGR_AddTopic_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -180,7 +178,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0020, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0010
  * @tc.number DMSLite_SAMGR_Subscribe_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -211,7 +208,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0010, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0020
  * @tc.number DMSLite_SAMGR_Subscribe_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -240,7 +236,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0020, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0030
  * @tc.number DMSLite_SAMGR_Subscribe_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -271,7 +266,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0030, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0040
  * @tc.number DMSLite_SAMGR_Subscribe_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -303,7 +297,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0040, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnsubscribe0010
  * @tc.number DMSLite_SAMGR_UnSubscribe_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -335,7 +328,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0010, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnsubscribe0020
  * @tc.number DMSLite_SAMGR_UnSubscribe_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -370,7 +362,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0020, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnsubscribe0030
  * @tc.number DMSLite_SAMGR_UnSubscribe_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -403,7 +394,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0030, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0010
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -437,7 +427,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0010, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0020
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -477,7 +466,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0020, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0030
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -512,7 +500,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0030, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0040
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -547,7 +534,6 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0040, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0050
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0050
  * @tc.desc   [C- SOFTWARE -0200]

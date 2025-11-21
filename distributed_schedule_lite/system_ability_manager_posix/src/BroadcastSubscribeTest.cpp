@@ -121,7 +121,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAddTopic0010
  * @tc.number DMSLite_SAMGR_AddTopic_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -148,7 +147,6 @@ HWTEST_F(BroadcastSubscribeTest, testAddTopic0010, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testAddTopic0020
  * @tc.number DMSLite_SAMGR_AddTopic_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -180,7 +178,6 @@ HWTEST_F(BroadcastSubscribeTest, testAddTopic0020, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0010
  * @tc.number DMSLite_SAMGR_Subscribe_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -211,7 +208,6 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0010, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0020
  * @tc.number DMSLite_SAMGR_Subscribe_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -244,7 +240,6 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0020, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0030
  * @tc.number DMSLite_SAMGR_Subscribe_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -275,7 +270,6 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0030, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSubscribe0040
  * @tc.number DMSLite_SAMGR_Subscribe_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -307,7 +301,6 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0040, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnsubscribe0010
  * @tc.number DMSLite_SAMGR_UnSubscribe_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -338,7 +331,6 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0010, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnsubscribe0020
  * @tc.number DMSLite_SAMGR_UnSubscribe_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -373,7 +365,6 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0020, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnsubscribe0030
  * @tc.number DMSLite_SAMGR_UnSubscribe_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -406,7 +397,6 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0030, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testUnsubscribe0040
  * @tc.number DMSLite_SAMGR_UnSubscribe_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -439,7 +429,6 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0040, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0010
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -473,7 +462,6 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0010, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0020
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -513,7 +501,6 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0020, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0030
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -548,7 +535,6 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0030, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0040
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -583,7 +569,6 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0040, Function | MediumTest |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testModifyConsumer0050
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0050
  * @tc.desc   [C- SOFTWARE -0200]

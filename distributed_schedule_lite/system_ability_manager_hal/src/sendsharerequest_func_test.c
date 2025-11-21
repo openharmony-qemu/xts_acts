@@ -367,7 +367,6 @@ static BOOL SendSharedRequestTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendSharedRequest0010
  * @tc.number DMSLite_SAMGR_SendSharedRequest_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -408,7 +407,6 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0010, Function |
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testSendSharedDirectRequest0010
  * @tc.number DMSLite_SAMGR_SendSharedDirectRequest_0010
  * @tc.desc   [C- SOFTWARE -0200]

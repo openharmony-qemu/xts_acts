@@ -58,7 +58,6 @@ static BOOL CommonTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0010
  * @tc.number DMSLite_SAMGR_Common_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -94,7 +93,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0010, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0020
  * @tc.number DMSLite_SAMGR_Common_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -132,7 +130,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0020, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0030
  * @tc.number DMSLite_SAMGR_Common_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -189,7 +186,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0030, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0040
  * @tc.number DMSLite_SAMGR_Common_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -241,7 +237,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0040, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0050
  * @tc.number DMSLite_SAMGR_Common_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -302,7 +297,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0050, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0060
  * @tc.number DMSLite_SAMGR_Common_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -325,7 +319,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0060, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0070
  * @tc.number DMSLite_SAMGR_Common_0070
  * @tc.desc   [C- SOFTWARE -0200]
@@ -346,7 +339,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0070, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0080
  * @tc.number DMSLite_SAMGR_Common_0080
  * @tc.desc   [C- SOFTWARE -0200]
@@ -373,7 +365,6 @@ LITE_TEST_CASE(CommonTestSuite, testCommon0080, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testCommon0090
  * @tc.number DMSLite_SAMGR_Common_0090
  * @tc.desc   [C- SOFTWARE -0200]

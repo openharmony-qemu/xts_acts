@@ -122,7 +122,6 @@ static BOOL Broadcast02TestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublish0010
  * @tc.number DMSLite_SAMGR_Publish_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -157,7 +156,6 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0010, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublish0020
  * @tc.number DMSLite_SAMGR_Publish_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -193,7 +191,6 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0020, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublish0030
  * @tc.number DMSLite_SAMGR_Publish_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -231,7 +228,6 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0030, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublish0040
  * @tc.number DMSLite_SAMGR_Publish_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -266,7 +262,6 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0040, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublish0050
  * @tc.number DMSLite_SAMGR_Publish_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -300,7 +295,6 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0050, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublish0060
  * @tc.number DMSLite_SAMGR_Publish_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -335,7 +329,6 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0060, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   testPublish0070
  * @tc.number DMSLite_SAMGR_Publish_0070
  * @tc.desc   [C- SOFTWARE -0200]
