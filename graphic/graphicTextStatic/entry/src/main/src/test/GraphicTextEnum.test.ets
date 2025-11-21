@@ -337,5 +337,105 @@ export default function GraphicTextEnum() {
         }
       })
 
+    /**
+     * @tc.number     testPlaceholderAlignmentStatic
+     * @tc.name       testPlaceholderAlignmentStatic
+     * @tc.desc       To test the enum value of PlaceholderAlignment.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testPlaceholderAlignmentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testPlaceholderAlignmentStatic"
+        console.info(msg + 'begin');
+        try {
+          expect('0').assertEqual(text.PlaceholderAlignment.OFFSET_AT_BASELINE + '');
+          expect('1').assertEqual(text.PlaceholderAlignment.ABOVE_BASELINE + '');
+          expect('2').assertEqual(text.PlaceholderAlignment.BELOW_BASELINE + '');
+          expect('3').assertEqual(text.PlaceholderAlignment.TOP_OF_ROW_BOX + '');
+          expect('4').assertEqual(text.PlaceholderAlignment.BOTTOM_OF_ROW_BOX + '');
+          expect('5').assertEqual(text.PlaceholderAlignment.CENTER_OF_ROW_BOX + '');
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testPlaceholderAlignmentStatic error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number     testRectWidthStyleStatic
+     * @tc.name       testRectWidthStyleStatic
+     * @tc.desc       To test the enum value of RectWidthStyle.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testRectWidthStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testRectWidthStyleStatic"
+        console.info(msg + 'begin');
+        try {
+          expect('0').assertEqual(text.RectWidthStyle.TIGHT + '');
+          expect('1').assertEqual(text.RectWidthStyle.MAX + '');
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testRectWidthStyleStatic error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number     testRectHeightStyleStatic
+     * @tc.name       testRectHeightStyleStatic
+     * @tc.desc       To test the enum value of RectHeightStyle.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testRectHeightStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testRectHeightStyleStatic"
+        console.info(msg + 'begin');
+        try {
+          expect('0').assertEqual(text.RectHeightStyle.TIGHT + '');
+          expect('1').assertEqual(text.RectHeightStyle.MAX + '');
+          expect('2').assertEqual(text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE + '');
+          expect('3').assertEqual(text.RectHeightStyle.INCLUDE_LINE_SPACE_TOP + '');
+          expect('4').assertEqual(text.RectHeightStyle.INCLUDE_LINE_SPACE_BOTTOM + '');
+          expect('5').assertEqual(text.RectHeightStyle.STRUT + '');
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testRectHeightStyleStatic error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number     testAffinityStatic
+     * @tc.name       testAffinityStatic
+     * @tc.desc       To test the enum value of Affinity.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testAffinityStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testAffinityStatic"
+        console.info(msg + 'begin');
+        try {
+          expect('0').assertEqual(text.Affinity.UPSTREAM + '');
+          expect('1').assertEqual(text.Affinity.DOWNSTREAM + '');
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testAffinityStatic error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }
