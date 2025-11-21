@@ -54,7 +54,8 @@ export default function TextPickerDialogBGColorTest() {
       console.info("textAreaInputTest after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_001
      * @tc.name     TextPickerDialogBGColorTest_static_001
      * @tc.desc     TextPickerDialogBGColorTest_static_001
@@ -75,7 +76,8 @@ it('TextPickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_002
      * @tc.name     TextPickerDialogBGColorTest_static_002
      * @tc.desc     TextPickerDialogBGColorTest_static_002
@@ -96,7 +98,8 @@ it('TextPickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_003
      * @tc.name     TextPickerDialogBGColorTest_static_003
      * @tc.desc     TextPickerDialogBGColorTest_static_003
@@ -117,7 +120,8 @@ it('TextPickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_004
      * @tc.name     TextPickerDialogBGColorTest_static_004
      * @tc.desc     TextPickerDialogBGColorTest_static_004
@@ -138,7 +142,8 @@ it('TextPickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_005
      * @tc.name     TextPickerDialogBGColorTest_static_005
      * @tc.desc     TextPickerDialogBGColorTest_static_005
@@ -159,7 +164,8 @@ it('TextPickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_006
      * @tc.name     TextPickerDialogBGColorTest_static_006
      * @tc.desc     TextPickerDialogBGColorTest_static_006
@@ -185,7 +191,8 @@ it('TextPickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_007
      * @tc.name     TextPickerDialogBGColorTest_static_007
      * @tc.desc     TextPickerDialogBGColorTest_static_007
@@ -211,7 +218,8 @@ it('TextPickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_008
      * @tc.name     TextPickerDialogBGColorTest_static_008
      * @tc.desc     TextPickerDialogBGColorTest_static_008
@@ -237,7 +245,8 @@ it('TextPickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TextPickerDialogBGColorTest_static_009
      * @tc.name     TextPickerDialogBGColorTest_static_009
      * @tc.desc     TextPickerDialogBGColorTest_static_009

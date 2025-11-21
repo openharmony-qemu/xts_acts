@@ -69,10 +69,10 @@ export default function PropColor() {
         console.info("get PropColor state pages:" + JSON.stringify(pages));
         if (!("PropColor" == pages.name)) {
           console.info("get PropColor pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push PropColor page result:" + JSON.stringify(result));
+          // console.info("push PropColor page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PropColor page error:" + err);
@@ -80,11 +80,13 @@ export default function PropColor() {
       console.info("PropColor beforeEach end");
     });
 
+    // pass过 注释
+    
     /*
      * @tc.number   PropColor_static_0100
      * @tc.name     PropColor_static_0100
      * @tc.desc     PropColor_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropColor_static_0100 START');
@@ -101,12 +103,12 @@ it('PropColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[PropColor_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropColor_static_0200
      * @tc.name     PropColor_static_0200
      * @tc.desc     PropColor_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropColor_static_0100 START');
@@ -123,12 +125,12 @@ it('PropColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[PropColor_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropColor_static_0300
      * @tc.name     PropColor_static_0300
      * @tc.desc     PropColor_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropColor_static_0100 START');
@@ -145,12 +147,12 @@ it('PropColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[PropColor_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   PropColor_static_0400
      * @tc.name     PropColor_static_0400
      * @tc.desc     PropColor_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropColor_static_0100 START');
@@ -168,11 +170,12 @@ it('PropColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
+    
     /*
      * @tc.number   PropColor_static_0500
      * @tc.name     PropColor_static_0500
      * @tc.desc     PropColor_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropColor_static_0100 START');
@@ -190,11 +193,12 @@ it('PropColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
+    
     /*
      * @tc.number   PropColor_static_0600
      * @tc.name     PropColor_static_0600
      * @tc.desc     PropColor_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('PropColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropColor_static_0100 START');

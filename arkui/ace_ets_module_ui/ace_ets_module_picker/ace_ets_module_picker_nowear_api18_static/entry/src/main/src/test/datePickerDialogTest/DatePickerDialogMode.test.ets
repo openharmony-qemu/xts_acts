@@ -44,6 +44,7 @@ export default function datePickerDialogModeTest() {
         if (!('DatePickerDialogMode' == pages.name)) {
           console.info('get DatePickerDialog state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push DatePickerDialog page error ' + JSON.stringify(err));
@@ -51,57 +52,81 @@ export default function datePickerDialogModeTest() {
     });
 
      
-     /*
+     
+/*
      * @tc.number   DatePickerDialog_static_0010
      * @tc.name     DatePickerDialog_static_0010
      * @tc.desc     DatePickerDialog_static_0010
      * @tc.level    Level.LEVEL1
      */
 it('DatePickerDialog_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let driver = Driver.create();
         let tagName = 'DatePickerDialog_static_0010';
         console.info('[' + tagName + '] START============================');
-        await Utils.sleep(1000);
-        inspector.sendEventByKey('DatePickerDialog_static_001',10,"")
-        await Utils.sleep(1000);
+        await CommonFunc.sleep(1000);
+        // inspector.sendEventByKey('DatePickerDialog_static_001',10,"")
+        let btn1 = await driver.findComponent(ON.id('DatePickerDialog_static_001'));
+        await CommonFunc.sleep(1000);
+        await (btn1?.click() as Promise<void>);
+        console.info('[' + tagName + '] 333333333333333');
+
+        await CommonFunc.sleep(2000);
+          console.info('[' + tagName + '] 11111');
+
+        console.info('[' + tagName + '] 22222222');
         let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await Utils.sleep(2000);
-        let datePicker1 =JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-        console.info("[DatePickerDialog_static_0010] obj1 is: " + datePicker1);
-        console.info("[DatePickerDialog_static_0010] obj1 is: " + JSON.stringify(JSON.parseJsonElement(datePicker1).getElement('$attrs').getElement('constructor').getString('mode')));
-        expect(JSON.parseJsonElement(datePicker1).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-        console.info('[' + tagName + '] END ===========================');
+        console.info('[' + tagName + '] 4444444444');
+        // await CommonFunc.sleep(2000);
+        // console.info("test : " +JSON.stringifyJsonElement(obj1))
+        // let datePicker1 =JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
+        // console.info("[DatePickerDialog_static_0010] obj1 is: " + datePicker1);
+        // console.info("[DatePickerDialog_static_0010] obj1 is: " + JSON.stringify(JSON.parseJsonElement(datePicker1).getElement('$attrs').getElement('constructor').getString('mode')));
+        expect(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
+        // console.info('[' + tagName + '] END ===========================');
+        // console.info('ffffffff111111111111',obj1.getArray('$children')[1])
         inspector.sendEventByKey('DatePickerDialog_static_001',10,"")
-        await Utils.sleep(2000);
+        // await CommonFunc.sleep(2000);
         done();
       });
   
        
-      /*
+      
+/*
      * @tc.number   DatePickerDialog_static_0020
      * @tc.name     DatePickerDialog_static_0020
      * @tc.desc     DatePickerDialog_static_0020
      * @tc.level    Level.LEVEL1
      */
 it('DatePickerDialog_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let driver = Driver.create();
         let tagName = 'DatePickerDialog_static_0020';
         console.info('[' + tagName + '] START============================');
-        await Utils.sleep(1000);
-        inspector.sendEventByKey('DatePickerDialog_static_002',10,"")
-        await Utils.sleep(1000);
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id('DatePickerDialog_static_002'));
+        await CommonFunc.sleep(1000);
+        await (btn1?.click() as Promise<void>);
+        // inspector.sendEventByKey('DatePickerDialog_static_002',10,"")
+        await CommonFunc.sleep(2000);
         let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await Utils.sleep(2000);
-        let datePicker2 =JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-        console.info("[DatePickerDialog_static_0020] obj2 is: " + datePicker2);
-        console.info("[DatePickerDialog_static_0020] obj2 is: " + JSON.stringify(JSON.parseJsonElement(datePicker2).getElement('$attrs').getElement('constructor').getString('mode')));
-        expect(JSON.parseJsonElement(datePicker2).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.YEAR_AND_MONTH');
-        console.info('[' + tagName + '] END ===========================');
-        inspector.sendEventByKey('DatePickerDialog_static_002',10,"")
-        await Utils.sleep(2000);
+        // await CommonFunc.sleep(2000);
+        // let datePicker2 =JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
+        // console.info("[DatePickerDialog_static_0020] obj2 is: " + datePicker2);
+        // console.info("[DatePickerDialog_static_0020] obj2 is: " + JSON.stringify(JSON.parseJsonElement(datePicker2).getElement('$attrs').getElement('constructor').getString('mode')));
+        console.info('vvvvvvvvvvvv444444444444',obj2.getArray('$children')[1].getArray('$children')[0])
+        let button3 = await driver.findComponent(ON.id('DatePickerDialog_static_002'));
+        await CommonFunc.sleep(500);
+        await (button3?.click() as Promise<void>);
+        expect(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.YEAR_AND_MONTH');
+        // console.info('[' + tagName + '] END ===========================');
+        // inspector.sendEventByKey('DatePickerDialog_static_002',10,"")
+        // await CommonFunc.sleep(2000);
+
         done();
       });
-  
-       
-      /*
+
+
+      
+/*
      * @tc.number   DatePickerDialog_static_0030
      * @tc.name     DatePickerDialog_static_0030
      * @tc.desc     DatePickerDialog_static_0030
@@ -112,22 +137,23 @@ it('DatePickerDialog_static_0030', Level.LEVEL1, async (done: () => void): Promi
         console.info('[' + tagName + '] START============================');
         await Utils.sleep(1000);
         inspector.sendEventByKey('DatePickerDialog_static_003',10,"")
-        await Utils.sleep(1000);
+        await Utils.sleep(2000);
         let obj3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
         await Utils.sleep(2000);
-        let datePicker3 =JSON.stringify(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-        console.info("[DatePickerDialog_static_0030] obj3 is: " + datePicker3);
-        console.info("[DatePickerDialog_static_0030] obj3 is: " + JSON.stringify(JSON.parseJsonElement(datePicker3).getElement('$attrs').getElement('constructor').getString('mode')));
-        expect(JSON.parseJsonElement(datePicker3).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.MONTH_AND_DAY');
-        console.info('[' + tagName + '] END ===========================');
-        await Utils.sleep(1000);
-        inspector.sendEventByKey('DatePickerDialog_static_003',10,"")
+        // let datePicker3 =JSON.stringify(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
+        // console.info("[DatePickerDialog_static_0030] obj3 is: " + datePicker3);
+        // console.info("[DatePickerDialog_static_0030] obj3 is: " + JSON.stringify(JSON.parseJsonElement(datePicker3).getElement('$attrs').getElement('constructor').getString('mode')));
+        expect(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.MONTH_AND_DAY');
+        // console.info('[' + tagName + '] END ===========================');
+        // await Utils.sleep(1000);
+        // inspector.sendEventByKey('DatePickerDialog_static_003',10,"")
         await Utils.sleep(2000);
         done();
       });
-  
-       
-      /*
+
+
+      
+/*
      * @tc.number   DatePickerDialog_static_0040
      * @tc.name     DatePickerDialog_static_0040
      * @tc.desc     DatePickerDialog_static_0040
@@ -138,21 +164,22 @@ it('DatePickerDialog_static_0040', Level.LEVEL1, async (done: () => void): Promi
         console.info('[' + tagName + '] START============================');
         await Utils.sleep(1000);
         inspector.sendEventByKey('DatePickerDialog_static_004',10,"")
-        await Utils.sleep(1000);
+        await Utils.sleep(2000);
         let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
         await Utils.sleep(2000);
-        let datePicker4 =JSON.stringify(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-        console.info("[DatePickerDialog_static_0040] obj4 is: " + datePicker4);
-        console.info("[DatePickerDialog_static_0040] obj4 is: " + JSON.stringify(JSON.parseJsonElement(datePicker4).getElement('$attrs').getElement('constructor').getString('mode')));
-        expect(JSON.parseJsonElement(datePicker4).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-        console.info('[' + tagName + '] END ===========================');
-        inspector.sendEventByKey('DatePickerDialog_static_004',10,"")
+        // let datePicker4 =JSON.stringify(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
+        // console.info("[DatePickerDialog_static_0040] obj4 is: " + datePicker4);
+        // console.info("[DatePickerDialog_static_0040] obj4 is: " + JSON.stringify(JSON.parseJsonElement(datePicker4).getElement('$attrs').getElement('constructor').getString('mode')));
+        expect(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
+        // console.info('[' + tagName + '] END ===========================');
+        // inspector.sendEventByKey('DatePickerDialog_static_004',10,"")
         await Utils.sleep(2000);
         done();
       });
-  
-       
-      /*
+
+
+      
+/*
      * @tc.number   DatePickerDialog_static_0050
      * @tc.name     DatePickerDialog_static_0050
      * @tc.desc     DatePickerDialog_static_0050
@@ -163,21 +190,22 @@ it('DatePickerDialog_static_0050', Level.LEVEL1, async (done: () => void): Promi
         console.info('[' + tagName + '] START============================');
         await Utils.sleep(1000);
         inspector.sendEventByKey('DatePickerDialog_static_005',10,"")
-        await Utils.sleep(1000);
+        await Utils.sleep(2000);
         let obj5 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
         await Utils.sleep(2000);
-        let datePicker5 =JSON.stringify(obj5.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-        console.info("[DatePickerDialog_static_0050] obj5 is: " + datePicker5);
-        console.info("[DatePickerDialog_static_0050] obj5 is: " + JSON.stringify(JSON.parseJsonElement(datePicker5).getElement('$attrs').getElement('constructor').getString('mode')));
-        expect(JSON.parseJsonElement(datePicker5).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-        console.info('[' + tagName + '] END ===========================');
-        inspector.sendEventByKey('DatePickerDialog_static_005',10,"")
+        // let datePicker5 =JSON.stringify(obj5.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
+        // console.info("[DatePickerDialog_static_0050] obj5 is: " + datePicker5);
+        // console.info("[DatePickerDialog_static_0050] obj5 is: " + JSON.stringify(JSON.parseJsonElement(datePicker5).getElement('$attrs').getElement('constructor').getString('mode')));
+        expect(obj5.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
+        // console.info('[' + tagName + '] END ===========================');
+        // inspector.sendEventByKey('DatePickerDialog_static_005',10,"")
         await Utils.sleep(2000);
         done();
       });
-  
-       
-      /*
+
+
+      
+/*
      * @tc.number   DatePickerDialog_static_0060
      * @tc.name     DatePickerDialog_static_0060
      * @tc.desc     DatePickerDialog_static_0060
@@ -188,22 +216,23 @@ it('DatePickerDialog_static_0060', Level.LEVEL1, async (done: () => void): Promi
         console.info('[' + tagName + '] START============================');
         await Utils.sleep(1000);
         inspector.sendEventByKey('DatePickerDialog_static_006',10,"")
-        await Utils.sleep(1000);
+        await Utils.sleep(2000);
         let obj6 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
         await Utils.sleep(2000);
-        let datePicker6 =JSON.stringify(obj6.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-        console.info("[DatePickerDialog_static_0060] obj6 is: " + datePicker6);
-        console.info("[DatePickerDialog_static_0060] obj6 is: " + JSON.stringify(JSON.parseJsonElement(datePicker6).getElement('$attrs').getElement('constructor').getString('mode')));
-        expect(JSON.parseJsonElement(datePicker6).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-        console.info('[' + tagName + '] END ===========================');
-        await Utils.sleep(1000);
-        inspector.sendEventByKey('DatePickerDialog_static_006',10,"")
+        // let datePicker6 =JSON.stringify(obj6.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
+        // console.info("[DatePickerDialog_static_0060] obj6 is: " + datePicker6);
+        // console.info("[DatePickerDialog_static_0060] obj6 is: " + JSON.stringify(JSON.parseJsonElement(datePicker6).getElement('$attrs').getElement('constructor').getString('mode')));
+        expect(obj6.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
+        // console.info('[' + tagName + '] END ===========================');
+        // await Utils.sleep(1000);
+        // inspector.sendEventByKey('DatePickerDialog_static_006',10,"")
         await Utils.sleep(2000);
         done();
       });
-  
-       
-      /*
+
+
+      
+/*
      * @tc.number   DatePickerDialog_static_0070
      * @tc.name     DatePickerDialog_static_0070
      * @tc.desc     DatePickerDialog_static_0070
@@ -214,15 +243,15 @@ it('DatePickerDialog_static_0070', Level.LEVEL1, async (done: () => void): Promi
         console.info('[' + tagName + '] START============================');
         await Utils.sleep(1000);
         inspector.sendEventByKey('DatePickerDialog_static_007',10,"")
-        await Utils.sleep(1000);
+        await Utils.sleep(2000);
         let obj7 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
         await Utils.sleep(2000);
-        let datePicker7 =JSON.stringify(obj7.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-        console.info("[DatePickerDialog_static_0070] obj7 is: " + datePicker7);
-        console.info("[DatePickerDialog_static_0070] obj7 is: " + JSON.stringify(JSON.parseJsonElement(datePicker7).getElement('$attrs').getElement('constructor').getString('mode')));
-        expect(JSON.parseJsonElement(datePicker7).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-        console.info('[' + tagName + '] END ===========================');
-        inspector.sendEventByKey('DatePickerDialog_static_007',10,"")
+        // let datePicker7 =JSON.stringify(obj7.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
+        // console.info("[DatePickerDialog_static_0070] obj7 is: " + datePicker7);
+        // console.info("[DatePickerDialog_static_0070] obj7 is: " + JSON.stringify(JSON.parseJsonElement(datePicker7).getElement('$attrs').getElement('constructor').getString('mode')));
+        expect(obj7.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
+        // console.info('[' + tagName + '] END ===========================');
+        // inspector.sendEventByKey('DatePickerDialog_static_007',10,"")
         await Utils.sleep(2000);
         done();
       });

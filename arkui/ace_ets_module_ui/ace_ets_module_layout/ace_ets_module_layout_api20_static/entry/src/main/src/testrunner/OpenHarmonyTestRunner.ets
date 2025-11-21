@@ -18,19 +18,17 @@ import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '../../../hypium/hypium';
+import { Hypium } from '../../../hypium/index';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import testsuite from '../test/List.test';
-
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: Int = 0x0000; 
-let tag: string = 'testTag'; 
+let domain: int = 0x0000;
+let tag: string = 'testTag';
 
 export class OpenHarmonyTestRunner implements TestRunner {
-  constructor() {
-  }
+  constructor() {}
 
   public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');

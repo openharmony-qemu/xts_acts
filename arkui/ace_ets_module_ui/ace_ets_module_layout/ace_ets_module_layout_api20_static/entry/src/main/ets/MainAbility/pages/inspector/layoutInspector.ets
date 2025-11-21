@@ -2,7 +2,7 @@ import fs from '@ohos.file.fs';
 import common from '@ohos.app.ability.common';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-
+// import { UIContext } from '@kit.ArkUI';
 import {
   Entry,
   Column,
@@ -33,7 +33,7 @@ struct ChildComponent {
 @Entry
 @Component
 struct ComponentPage {
-  
+  // private context= getContext(this) as common.UIAbilityContext;
 
   loopConsole(testStr: string, i: string) {
     console.log(`layoutinspector ${i}| type: ${JSON.parseJsonElement(testStr)
@@ -48,7 +48,7 @@ struct ComponentPage {
   }
 
   onPageShow(): void {
-    
+    // globalThis.context= this.getUIContext()
     let UIContext: UIContext = this.getUIContext()
     AppStorage.setOrCreate<UIContext>("UIContext", UIContext);
   }

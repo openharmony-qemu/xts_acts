@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, DatePickerMode, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
+import { Entry, Column, Component, AdaptiveColor, DatePickerMode, BlurStyleActivePolicy, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -24,17 +24,35 @@ struct DatePickerDialogExample {
     Flex({ wrap: FlexWrap.Wrap }) {
       Button('1')
         .onClick((e: ClickEvent) => {
+          console.info('ccccccc5555555555')
           this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
             mode:DatePickerMode.DATE,
+            // showTime:true,
+            // useMilitaryTime:false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
             onDateAccept: (value: Date) => {
               this.selectedDate = value
             },
+            // onDateAccept: (value: Date) => {
+            //   this.selectedDate = value
+            // },
+            // backgroundEffect:{
+            //   radius:40.0,
+            //   saturation:25,
+            //   brightness:2,
+            //   color:Color.Pink,
+            //   adaptiveColor:AdaptiveColor.DEFAULT,
+            //   policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+            //   inactiveColor:Color.Blue,
+            //   blurOptions:{
+            //     grayscale:[20,20]
+            //   }
+            // }
           })
-        }).id('DatePickerDialog_001')
+        }).id('DatePickerDialog_static_001')
       Button('2')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
@@ -47,69 +65,72 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_002')
-      Button('3')
-        .onClick((e: ClickEvent) => {
-          this.getUIContext().showDatePickerDialog({
-            start: new Date('2000-1-1'),
-            end: new Date('2100-12-31'),
-            selected: this.selectedDate,
-            mode:DatePickerMode.MONTH_AND_DAY,
-            dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-            onDateAccept: (value: Date) => {
-              this.selectedDate = value
-            },
-          })
-        }).id('DatePickerDialog_003')
-      Button('4')
-        .onClick((e: ClickEvent) => {
-          this.getUIContext().showDatePickerDialog({
-            start: new Date('2000-1-1'),
-            end: new Date('2100-12-31'),
-            selected: this.selectedDate,
-            mode:undefined,
-            dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-            onDateAccept: (value: Date) => {
-              this.selectedDate = value
-            },
-          })
-        }).id('DatePickerDialog_004')
-      Button('5')
-        .onClick((e: ClickEvent) => {
-          this.getUIContext().showDatePickerDialog({
-            start: new Date('2000-1-1'),
-            end: new Date('2100-12-31'),
-            selected: this.selectedDate,
-            dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-            onDateAccept: (value: Date) => {
-              this.selectedDate = value
-            },
-          })
-        }).id('DatePickerDialog_005')
-      Button('6')
-        .onClick((e: ClickEvent) => {
-          this.getUIContext().showDatePickerDialog({
-            start: new Date('2000-1-1'),
-            end: new Date('2100-12-31'),
-            selected: this.selectedDate,
-            dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-            onDateAccept: (value: Date) => {
-              this.selectedDate = value
-            },
-          })
-        }).id('DatePickerDialog_006')
-      Button('7')
-        .onClick((e: ClickEvent) => {
-          this.getUIContext().showDatePickerDialog({
-            start: new Date('2000-1-1'),
-            end: new Date('2100-12-31'),
-            selected: this.selectedDate,
-            dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-            onDateAccept: (value: Date) => {
-              this.selectedDate = value
-            },
-          })
-        }).id('DatePickerDialog_007')
+        }).id('DatePickerDialog_static_002')
+      // Button('3')
+      //   .onClick((e: ClickEvent) => {
+      //     this.getUIContext().showDatePickerDialog({
+      //       start: new Date('2000-1-1'),
+      //       end: new Date('2100-12-31'),
+      //       selected: this.selectedDate,
+      //       mode:DatePickerMode.MONTH_AND_DAY,
+      //       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
+      //       onDateAccept: (value: Date) => {
+      //         this.selectedDate = value
+      //       },
+      //     })
+      //   }).id('DatePickerDialog_static_003')
+      // Button('4')
+      //   .onClick((e: ClickEvent) => {
+      //     this.getUIContext().showDatePickerDialog({
+      //       start: new Date('2000-1-1'),
+      //       end: new Date('2100-12-31'),
+      //       selected: this.selectedDate,
+      //       mode:undefined,
+      //       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
+      //       onDateAccept: (value: Date) => {
+      //         this.selectedDate = value
+      //       },
+      //     })
+      //   }).id('DatePickerDialog_static_004')
+      // Button('5')
+      //   .onClick((e: ClickEvent) => {
+      //     this.getUIContext().showDatePickerDialog({
+      //       start: new Date('2000-1-1'),
+      //       end: new Date('2100-12-31'),
+      //       selected: this.selectedDate,
+      //       // mode:null,
+      //       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
+      //       onDateAccept: (value: Date) => {
+      //         this.selectedDate = value
+      //       },
+      //     })
+      //   }).id('DatePickerDialog_static_005')
+      // Button('6')
+      //   .onClick((e: ClickEvent) => {
+      //     this.getUIContext().showDatePickerDialog({
+      //       start: new Date('2000-1-1'),
+      //       end: new Date('2100-12-31'),
+      //       selected: this.selectedDate,
+      //       // mode:100,
+      //       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
+      //       onDateAccept: (value: Date) => {
+      //         this.selectedDate = value
+      //       },
+      //     })
+      //   }).id('DatePickerDialog_static_006')
+      // Button('7')
+      //   .onClick((e: ClickEvent) => {
+      //     this.getUIContext().showDatePickerDialog({
+      //       start: new Date('2000-1-1'),
+      //       end: new Date('2100-12-31'),
+      //       selected: this.selectedDate,
+      //       // mode:-1,
+      //       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
+      //       onDateAccept: (value: Date) => {
+      //         this.selectedDate = value
+      //       },
+      //     })
+      //   }).id('DatePickerDialog_static_007')
     }.width('100%')
   }
 }

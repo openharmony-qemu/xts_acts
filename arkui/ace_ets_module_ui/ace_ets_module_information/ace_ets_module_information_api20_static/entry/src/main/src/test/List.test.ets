@@ -12,8 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import TextPickerValue from './textPicker/TextPickerValue.test';
+import badgeResource from './badgeTest/badgeResource.test'
+import ProgressContent from './progressTest/ProgressContent.test'
+import QRCodeResourceStr from './qrcode/QRCodeResourceStr.test'
+import TextClockFormat from './textClockTest/TextClockFormat.test'
+import TextPickerValue from './textPicker/TextPickerValue.test'
+import TextTimerFontWeight from './textTimerTest/TextTimerFontWeight.test'
 export default function testsuite() {
-  TextPickerValue();
+  ProgressContent()
+  QRCodeResourceStr()
+  TextClockFormat()
+  TextPickerValue()
+  TextTimerFontWeight()
 }

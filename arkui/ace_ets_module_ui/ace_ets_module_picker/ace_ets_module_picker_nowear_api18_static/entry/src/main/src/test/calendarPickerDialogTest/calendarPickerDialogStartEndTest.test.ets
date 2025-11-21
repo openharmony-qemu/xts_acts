@@ -54,7 +54,8 @@ export default function calendarPickerDialogStartEndTest() {
 
     
 
-    /*
+    
+/*
      * @tc.number   CalendarPickerDialog_StartEnd_static_001
      * @tc.name     CalendarPickerDialog_StartEnd_static_001
      * @tc.desc     CalendarPickerDialog_StartEnd_static_001
@@ -64,7 +65,7 @@ it('CalendarPickerDialog_StartEnd_static_001', Level.LEVEL1, async (done: () => 
       let tagName = 'CalendarPickerDialog_StartEnd_static_001';
       console.info('[' + tagName + '] START============================');
       let driver: Driver = Driver.create();
-      let button: Component = await driver.findComponent(ON.id('CalendarPickerDialog01')) as Component;
+      let button = await driver.findComponent(ON.id('CalendarPickerDialog01'));
       await CommonFunc.sleep(300);
       button?.click();
       await CommonFunc.sleep(300);
@@ -75,15 +76,16 @@ it('CalendarPickerDialog_StartEnd_static_001', Level.LEVEL1, async (done: () => 
       console.info("CalendarPickerStartEndTest_static_001 " + obj.getElement('$attrs').getString('end'))
       expect(obj.getElement('$attrs').getString('start')).assertEqual('2024年3月5日星期二')
       expect(obj.getElement('$attrs').getString('end')).assertEqual('2024年4月5日星期五')
-      let cancelButton: Component = await driver.findComponent(ON.text('取消')) as Component;
+      let cancelButton = await driver.findComponent(ON.text('取消'));
       await CommonFunc.sleep(300);
       cancelButton?.click();
       console.info('CalendarPickerStartEndTest_static_001 END');
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   CalendarPickerDialog_StartEnd_static_002
      * @tc.name     CalendarPickerDialog_StartEnd_static_002
      * @tc.desc     CalendarPickerDialog_StartEnd_static_002
@@ -110,8 +112,9 @@ it('CalendarPickerDialog_StartEnd_static_002', Level.LEVEL1, async (done: () => 
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   CalendarPickerDialog_StartEnd_static_003
      * @tc.name     CalendarPickerDialog_StartEnd_static_003
      * @tc.desc     CalendarPickerDialog_StartEnd_static_003
@@ -139,8 +142,9 @@ it('CalendarPickerDialog_StartEnd_static_003', Level.LEVEL1, async (done: () => 
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   CalendarPickerDialog_StartEnd_static_004
      * @tc.name     CalendarPickerDialog_StartEnd_static_004
      * @tc.desc     CalendarPickerDialog_StartEnd_static_004
@@ -168,8 +172,9 @@ it('CalendarPickerDialog_StartEnd_static_004', Level.LEVEL1, async (done: () => 
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   CalendarPickerDialog_StartEnd_static_005
      * @tc.name     CalendarPickerDialog_StartEnd_static_005
      * @tc.desc     CalendarPickerDialog_StartEnd_static_005

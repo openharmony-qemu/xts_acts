@@ -36,6 +36,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import Utils from '../../../ets/MainAbility/common/Utils';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -64,22 +65,22 @@ export default function FlexLayoutPolicyTest() {
         console.info("get FlexLayoutPolicyTest state pages:" + JSON.stringify(pages));
         if (!("FlexLayoutPolicyPage" == pages.name)) {
           console.info("get FlexLayoutPolicyTest pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push FlexLayoutPolicyTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push FlexLayoutPolicyTest page error:" + err);
       }
       console.info("FlexLayoutPolicyTest beforeEach end");
-      
     });
     afterEach(async () => {
     });
 
     
-    /*
+    
+/*
      * @tc.number   FlexLayoutPolicyTest_static_0100
      * @tc.name     FlexLayoutPolicyTest_static_0100
      * @tc.desc     FlexLayoutPolicyTest_static_0100
@@ -89,8 +90,10 @@ it('FlexLayoutPolicyTest_static_0100', Level.LEVEL1, async (done: () => void): P
       console.info('[FlexLayoutPolicyTest_static_0100] START');
       await CommonFunc.sleep(1000);
 
-      let flex_parent: RectValue = CommonFunc.getComponentRect('FlexLayoutPolicyTest_static_0100_Flex_parent');
-      let flex_child: RectValue = CommonFunc.getComponentRect('FlexLayoutPolicyTest_static_0100_Flex_child');
+      let flex_parent = Utils.getComponentRect('FlexLayoutPolicyTest_static_0100_Flex_parent');
+      console.info('flex_parent111111',flex_parent)
+      let flex_child = Utils.getComponentRect('FlexLayoutPolicyTest_static_0100_Flex_child');
+      console.info('flex_child111111',flex_child)
       let flex_parent_width = flex_parent.right - flex_parent.left;
       let flex_parent_height = flex_parent.bottom - flex_parent.top;
       let flex_child_width = flex_child.right - flex_child.left;
@@ -100,7 +103,7 @@ it('FlexLayoutPolicyTest_static_0100', Level.LEVEL1, async (done: () => void): P
       console.log('[FlexLayoutPolicyTest_static_0100] flex_child_width is:' + flex_child_width);
       console.log('[FlexLayoutPolicyTest_static_0100] flex_child_height is:' + flex_child_height);
 
-      
+      // padding(20*2) + border(5*2) + safeAreaPadding(10*2)
       expect(Math.floor(Math.abs(flex_parent_width - flex_child_width - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(flex_parent_height - flex_child_height - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
 

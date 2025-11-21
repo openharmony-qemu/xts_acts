@@ -42,10 +42,8 @@ export default function clear1() {
         console.info("get clear1 state success " + JSON.stringify(pages));
         if (!("clear1" == pages.name)) {
           console.info("get clear1 state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push clear1 page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push clear1 page error: " + err);
@@ -57,13 +55,14 @@ export default function clear1() {
       console.info("clear1 after each called");
     });
 
-    /**
-     * @tc.number    clear1_static_0100
-     * @tc.name      clear1_static_0100
-     * @tc.desc      Test clear
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   clear1_static_0100
+     * @tc.name     clear1_static_0100
+     * @tc.desc     clear1_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('clear1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('clear1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[clear1_static_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -71,7 +70,7 @@ export default function clear1() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('clear1_get'));
-      await (btn?.click() as Promise<void>)
+      await btn!.click()
       await CommonFunc.sleep(1000);
       console.info('[clear1_static_0100] btn click');
 
@@ -81,11 +80,11 @@ export default function clear1() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('size2');
 
       let btn2 = await driver.findComponent(ON.id('clear1_btn'));
-      await (btn2?.click() as Promise<void>)
+      await btn2!.click()
       await CommonFunc.sleep(1000);
       console.info('[clear1_static_0100] btn2 click');
 
-      await (btn?.click() as Promise<void>)
+      await btn!.click()
       await CommonFunc.sleep(1000);
       console.info('[clear1_static_0100] btn click2');
 
@@ -94,11 +93,11 @@ export default function clear1() {
       console.info("[clear1_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson2)));
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('size1');
 
-      await (btn2?.click() as Promise<void>)
+      await btn2!.click()
       await CommonFunc.sleep(1000);
       console.info('[clear1_static_0100] btn2 click2');
 
-      await (btn?.click() as Promise<void>)
+      await btn!.click()
       await CommonFunc.sleep(1000);
       console.info('[clear1_static_0100] btn click3');
 

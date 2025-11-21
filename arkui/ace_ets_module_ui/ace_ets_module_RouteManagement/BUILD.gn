@@ -31,6 +31,7 @@ group("ActsAceEtsModuleRouteManagementTest") {
       "ace_ets_module_RouteManagement_nowear_api12:ActsAceEtsModuleRouteManagementNoWearApi12Test",
       "ace_ets_module_RouteManagement_api11_static:ActsAceEtsModuleRouteManagementApi11StaticTest",
       "ace_ets_module_RouteManagement_api12_static:ActsAceEtsModuleRouteManagementApi12StaticTest",
+      "ace_ets_module_RouteManagement_nowear_api12_static:ActsAceEtsModuleRouteManagementNoWearApi12StaticTest"
     ]
   }
 }

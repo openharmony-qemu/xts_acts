@@ -69,22 +69,22 @@ export default function LinkArray() {
         console.info("get LinkArray state pages:" + JSON.stringify(pages));
         if (!("LinkArray" == pages.name)) {
           console.info("get LinkArray pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          //let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LinkArray page result:" + JSON.stringify(result));
+          // console.info("push LinkArray page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LinkArray page error:" + err);
       }
       console.info("LinkArray beforeEach end");
     });
-
+    
     /*
      * @tc.number   LinkArray_static_0100
      * @tc.name     LinkArray_static_0100
      * @tc.desc     LinkArray_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_static_0100 START');
@@ -101,12 +101,12 @@ it('LinkArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[LinkArray_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkArray_static_0200
      * @tc.name     LinkArray_static_0200
      * @tc.desc     LinkArray_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_static_0100 START');
@@ -123,12 +123,12 @@ it('LinkArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[LinkArray_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkArray_static_0300
      * @tc.name     LinkArray_static_0300
      * @tc.desc     LinkArray_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_static_0100 START');
@@ -145,12 +145,12 @@ it('LinkArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[LinkArray_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkArray_static_0400
      * @tc.name     LinkArray_static_0400
      * @tc.desc     LinkArray_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkArray_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_static_0100 START');

@@ -18,8 +18,8 @@ import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
 import CustomLayoutUniqueidTest from './CustomLayout/CustomLayoutUniqueidTest.test';
 
 export default function testsuite() {
-  ColumnSpaceResourceTest();
+  ColumnSpaceResourceTest();//pass:3
   FlexSpaceResourceTest();
   RowSpaceResourceTest();
-  CustomLayoutUniqueidTest()
+  CustomLayoutUniqueidTest();
 }

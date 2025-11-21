@@ -33,6 +33,7 @@ struct CalendarPickerDialogExample {
       Button('Show CalendarPicker Dialog')
         .margin(20)
         .onClick((e: ClickEvent) => {
+          // CalendarPickerDialog.show({ start: null, end: null })
         }).id('CalendarPickerDialog03')
       Button('Show CalendarPicker Dialog')
         .margin(20)

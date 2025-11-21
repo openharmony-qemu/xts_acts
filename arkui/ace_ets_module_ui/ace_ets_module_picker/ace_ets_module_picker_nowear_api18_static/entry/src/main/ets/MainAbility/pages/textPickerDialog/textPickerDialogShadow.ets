@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, ShadowOptions, ShadowStyle, Flex, FlexWrap } from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, ShadowOptions, ShadowStyle, Flex, FlexWrap, ShadowType, Color } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -30,6 +30,14 @@ struct TextPickerDialogShadow {
     Flex({wrap: FlexWrap.Wrap}) {
       Button('ShadowOptions')
         .onClick((e: ClickEvent) => {
+          this.showDialog({
+            radius: 30,
+            type: ShadowType.COLOR,
+            color: Color.Red,
+            offsetX: 100,
+            offsetY: 100,
+            fill: true,
+          } as ShadowOptions)
         })
         .id('shadowOptionID')
       Button('OUTER_DEFAULT_XS')
