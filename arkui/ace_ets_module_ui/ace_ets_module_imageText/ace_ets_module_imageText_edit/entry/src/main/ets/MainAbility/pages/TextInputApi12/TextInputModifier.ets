@@ -21,7 +21,7 @@ class TextInputModifierApi12 implements AttributeModifier<TextInputAttribute> {
 
 @Entry
 @Component
-struct TextInputModifierApi12 {
+struct TextInputModifierApi12Page {
   @State value: string = 'init'
   @State modifier: TextInputModifierApi12 = new TextInputModifierApi12();
 

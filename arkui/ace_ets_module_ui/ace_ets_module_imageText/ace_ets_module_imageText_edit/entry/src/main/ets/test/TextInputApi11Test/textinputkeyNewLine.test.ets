@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
 import router from '@ohos.router';
-import CommonFunc from "../../../MainAbility/common/Common";
+import CommonFunc from "../../MainAbility/common/Common";
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 export default function textInputApiTest() {
@@ -22,7 +22,7 @@ export default function textInputApiTest() {
     beforeEach(async (done: Function) => {
       console.info("textInputApiTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextInput/textInputApi/input_keytype',
+        url: 'MainAbility/pages/TextInputApi11/input_keytype',
       }
       try {
         router.clear();
@@ -46,11 +46,11 @@ export default function textInputApiTest() {
     });
 
     /* *
-       * @tc.number: SUB_ACE_TextInputApiTest_001
-       * @tc.name  : textInputApiTest_001
-       * @tc.desc  : test the enterKeyType enum
-       * @tc.level : Level 2
-       */
+    * @tc.number: SUB_ACE_TextInputApiTest_001
+    * @tc.name  : textInputApiTest_001
+    * @tc.desc  : test the enterKeyType enum
+    * @tc.level : Level 2
+    */
     it('textInputApiTest_001', Level.LEVEL2, async (done: Function) => {
       // default
       let strJson = getInspectorByKey('textInputkeyN');
