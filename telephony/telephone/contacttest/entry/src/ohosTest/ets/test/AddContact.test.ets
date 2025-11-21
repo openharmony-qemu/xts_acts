@@ -244,7 +244,7 @@ export default function AddContactTest() {
               console.log(`${caseName} queryContactsCount: success CountData>${JSON.stringify(CountData)}`);
               expect(CountData >= 1).assertTrue;
               done();
-            }).catch((err) => {
+            }).catch((err:BusinessError) => {
               console.log(`${caseName} CountData: err>${JSON.stringify(err)}`);
               ExpectFail();
               done();
