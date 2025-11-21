@@ -219,6 +219,93 @@ export default function AddContactTest() {
     });
 
     /**
+     * @tc.number     : SUB_Telephony_Contact_ContactsCount_0100
+     * @tc.name       : testTelephonyContactContactsCount0100
+     * @tc.desc       : Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testTelephonyContactContactsCount0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testTelephonyContactContactsCount0100";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (err: BusinessError, data: number) => {
+          if (err) {
+            console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+            ExpectTrue(data > 0);
+            contact.queryContactsCount(context).then((CountData) => {
+              console.log(`${caseName} queryContactsCount: success CountData>${JSON.stringify(CountData)}`);
+              ExpectTrue(CountData >= 1);
+              done();
+            }).catch((err) => {
+              console.log(`${caseName} CountData: err>${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number : SUB_Telephony_Contact_HasName_0100
+     * @tc.name   : testTelephonyContactHasName0100
+     * @tc.desc   : Add a contacts and useing the callback method as an asynchronous method
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 2
+     */
+    it('testTelephonyContactHasName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testTelephonyContactHasName0100";
+      console.info(`${caseName} test start `);
+      let context: Context = AppStorage.get('context') as Context;
+      contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
+        if (addErr) {
+          console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+          ExpectFail();
+          done();
+        } else {
+          console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+          ExpectTrue(addData > 0);
+          contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+            if (keyErr) {
+              console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+              ExpectFail();
+              done();
+            } else {
+              console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+              contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                if (queryErr) {
+                  console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                  ExpectFail();
+                  done();
+                } else {
+                  console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                  ExpectTrue(queryData?.name?.hasName === true);
+                  done();
+                }
+              });
+            }
+          });
+        }
+      });
+      console.info(`${caseName} test end `);
+    });
+
+    /**
      * @tc.number     : SUB_Telephony_Contact_AddContact_0100
      * @tc.name       : testTelephonyContactAddContact0100
      * @tc.desc       : Add a contacts and useing the callback method as an asynchronous method 10+
