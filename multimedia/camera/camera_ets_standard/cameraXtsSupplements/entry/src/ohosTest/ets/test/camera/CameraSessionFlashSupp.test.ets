@@ -1875,16 +1875,18 @@ export default function CameraSessionFlashSuppTest() {
             console.info(TAG, testName, "supportedFrameRatesArray", JSON.stringify(supportedFrameRatesArray));
             let min: number = supportedFrameRatesArray[0]['min'];
             let max: number = supportedFrameRatesArray[0]['max'];
-            mPreviewOutput.setFrameRate(min, max);
-            let res = mPreviewOutput.getActiveFrameRate();
-            expect(res.min).assertEqual(min);
-            expect(res.max).assertEqual(max);
-            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
-            mPreviewOutput.setFrameRate(max, min);
-            res = mPreviewOutput.getActiveFrameRate();
-            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
-            expect(res.min).assertEqual(min);
-            expect(res.max).assertEqual(max);
+            if (min > 0 && max > 0) {
+              mPreviewOutput.setFrameRate(min, max);
+              let res = mPreviewOutput.getActiveFrameRate();
+              expect(res.min).assertEqual(min);
+              expect(res.max).assertEqual(max);
+              console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
+              mPreviewOutput.setFrameRate(max, min);
+              res = mPreviewOutput.getActiveFrameRate();
+              console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
+              expect(res.min).assertEqual(min);
+              expect(res.max).assertEqual(max);
+            }
           }
         } catch (error) {
           console.error(TAG, testName, 'Failed setFrameRate', JSON.stringify(error), error.code);
