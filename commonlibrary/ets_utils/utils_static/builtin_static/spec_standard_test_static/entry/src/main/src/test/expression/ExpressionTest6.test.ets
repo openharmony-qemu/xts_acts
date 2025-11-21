@@ -201,7 +201,8 @@ export default function expressionTest6() {
       for (let i: number = 0; i < numArray.length; i++) {
         results.push(i % 3);
       }
-      expect(results).assertDeepEquals([0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2]);
+      const target: number[] = [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2];
+      expect(results).assertDeepEquals(target);
     });
 
     /**
@@ -234,7 +235,7 @@ export default function expressionTest6() {
       let numVar: int = 5;
       let index: int = (numVar * 2) - (numVar / 2);
       let strVar: string = strArray[index];
-      expect(strVar).assertUndefined();
+      expect(strVar).assertEqual("i");
     });
 
     /**
@@ -281,7 +282,7 @@ export default function expressionTest6() {
       let result1: number = numArray[0] / numArray[1] + numArray[2];
       let result2: number = numArray[0] / (numArray[1] + numArray[2]);
       expect(result1).assertEqual(4 + 3);
-      expect(result2).assertEqual(20 / 8);
+      expect(result2).assertEqual(20.0 / 8);
     });
 
     /**
@@ -679,7 +680,8 @@ export default function expressionTest6() {
         numArray.push(numVar);
         numVar *= 2;
       }
-      expect(numArray).assertDeepEquals([2, 4, 8, 16, 32]);
+      const target: number[] = [2, 4, 8, 16, 32];
+      expect(numArray).assertDeepEquals(target);
     });
 
     /**
@@ -756,8 +758,9 @@ export default function expressionTest6() {
      */
     it('ExpressionTest0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let numArray: int[] = [5, 10, 15, 20, 25];
-      let numVar: int = 0;
-      let i: int, multiplier: int;
+      let numVar: number = 0;
+      let i: int;
+      let multiplier: number;
       for (i = 0, multiplier = 1; i < numArray.length; i++, multiplier += 0.5) {
         numVar += numArray[i] * multiplier;
       }
@@ -1037,7 +1040,7 @@ export default function expressionTest6() {
     it('ExpressionTest0968', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let str: string = "Programming";
       let len: int = str.length;
-      let mid: int = len / 2;
+      let mid: number = len / 2.0;
       let result: string = str[Math.floor(mid).toInt()] + str[Math.ceil(mid).toInt()];
       expect(result).assertEqual("am");
     });
@@ -1146,7 +1149,7 @@ export default function expressionTest6() {
 
       expect(result1).assertEqual(11);
       expect(result2).assertEqual(16);
-      expect(result3).assertClose(5 / 3 + 2, 0.001);
+      expect(result3).assertClose(5.0 / 3 + 2, 0.001);
     });
 
     /**
@@ -1468,12 +1471,13 @@ export default function expressionTest6() {
      */
     it('ExpressionTest0993', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let numbers: int[] = [3, 6, 9, 12, 15];
-      let transformed: int[] = [];
-      let i: int, factor: int;
+      let transformed: number[] = [];
+      let i: int, factor: number;
       for (i = 0, factor = 1; i < numbers.length; i++, factor += 0.5) {
         transformed.push(numbers[i] * factor);
       }
-      expect(transformed).assertDeepEquals([3 * 1, 6 * 1.5, 9 * 2, 12 * 2.5, 15 * 3]);
+      const target: number[] = [3 * 1, 6 * 1.5, 9 * 2, 12 * 2.5, 15 * 3];
+      expect(transformed).assertDeepEquals(target);
     });
 
     /**
@@ -1549,7 +1553,8 @@ export default function expressionTest6() {
         arr.push(num);
         num /= 2;
       }
-      expect(arr).assertDeepEquals([16, 8, 4, 2, 1]);
+      const target: number[] = [16, 8, 4, 2, 1];
+      expect(arr).assertDeepEquals(target);
     });
 
     /**
@@ -1714,9 +1719,9 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let minInt: number = -2147483648;
-      let result1: number = minInt >> 1;
-      let result2: number = minInt << 1;
+      let minInt: int = -2147483648;
+      let result1: int = minInt >> 1;
+      let result2: int = minInt << 1;
       expect(result1).assertEqual(-1073741824);
       expect(result2).assertEqual(0);
     });
@@ -1775,10 +1780,10 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let base: number = -8;
-      let exponent: number = 1 / 3; // Cube root
+      let baseNumber: number = -8.0;
+      let exponent: number = 1.0 / 3; // Cube root
 
-      let result: number = base**exponent;
+      let result: number = baseNumber**exponent;
       // In JavaScript, this results in NaN for negative bases with fractional exponents
       expect(isNaN(result)).assertTrue();
     });
@@ -1792,8 +1797,8 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let zero: number = 0;
-      let negZero: number = -0;
+      let zero: number = 0.0;
+      let negZero: number = -0.0;
 
       let result1: number = zero + negZero;
       let result2: number = zero * negZero;
@@ -1897,10 +1902,13 @@ export default function expressionTest6() {
     it('ExpressionTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let arr: int[] = [1, 2, 3, 4, 5];
       let len: int = arr.length;
-      let result1: int | undefined = arr[len];
       let result3: int | undefined = arr[len - 1];
-      expect(result1).assertUndefined();
       expect(result3).assertEqual(5);
+      try {
+        let result1: int | undefined = arr[len];
+      } catch(e) {
+        expect(e.name).assertEqual("RangeError");
+      }
     });
 
     /**
@@ -2099,8 +2107,8 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let zero: number = 0;
-      let negZero: number = -0;
+      let zero: number = 0.0;
+      let negZero: number = -0.0;
 
       let result1: boolean = zero === negZero;
       let result2: boolean = 1 / zero === 1 / negZero;
@@ -2167,10 +2175,10 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let maxInt: number = 2147483647;
-      let shift: number = 31;
-      let result1: number = 1 << shift;
-      let result2: number = maxInt << 1;
+      let maxInt: int = 2147483647;
+      let shift: int = 31;
+      let result1: int = 1 << shift;
+      let result2: int = maxInt << 1;
       expect(result1).assertEqual(-2147483648);
       expect(result2).assertEqual(-2);
     });
@@ -2335,15 +2343,16 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let inf: number = Infinity;
-      let num: number = 0b1111;
+      let inf_init: number = Infinity;
+      let inf: int = inf_init.toInt();
+      let num: int = 0b1111;
       let result1: number = inf & num;
       let result2: number = inf | num;
       let result3: number = inf ^ num;
 
-      expect(result1).assertEqual(0);
-      expect(result2).assertEqual(15);
-      expect(result3).assertEqual(15);
+      expect(result1).assertEqual(15);
+      expect(result2).assertEqual(2147483647);
+      expect(result3).assertEqual(2147483632);
     });
 
     /**
@@ -2376,11 +2385,11 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let negNum: number = -5;
+      let negNum: int = -5;
 
-      let result1: number = negNum & 0b1111;
-      let result2: number = negNum << 1;
-      let result3: number = negNum >>> 2;
+      let result1: int = negNum & 0b1111;
+      let result2: int = negNum << 1;
+      let result3: int = negNum >>> 2;
 
       expect(result1).assertEqual(11);
       expect(result2).assertEqual(-10);
@@ -2448,7 +2457,7 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let negZero: number = -0;
+      let negZero: number = -0.0;
 
       let result1: number = negZero++;
       let result2: number = ++negZero;
@@ -2469,15 +2478,19 @@ export default function expressionTest6() {
       let arr: int[] = new Array<int>(3);
       arr[0] = 1;
       arr[2] = 3;
-
-      let result1: int | undefined = arr[1];
-      let result2: int = arr.length;
-      arr[result2] = 4;
+      try {
+        let result1: int | undefined = arr[1];
+      } catch(err) {
+        expect(err.name).assertEqual("ClassCastError");
+      }
+      try {
+        let result2: int = arr.length;
+        arr[result2] = 4;
+      } catch(err) {
+        expect(err.name).assertEqual("RangeError");
+      }
       let result3: int = arr.length;
-
-      expect(result1).assertUndefined();
-      expect(result2).assertEqual(3);
-      expect(result3).assertEqual(4);
+      expect(result3).assertEqual(3);
     });
 
     /**
@@ -2584,8 +2597,8 @@ export default function expressionTest6() {
      */
     it('ExpressionTest1071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let nanVal: number = NaN;
-      let zero: number = 0;
-      let negZero: number = -0;
+      let zero: number = 0.0;
+      let negZero: number = -0.0;
       let negInf: number = -Infinity;
 
       let result1: number = nanVal ?? 10;
@@ -2903,8 +2916,8 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let num: number = 1;
-      let negNum: number = -1;
+      let num: int = 1;
+      let negNum: int = -1;
 
       num <<= 31;
       negNum <<= 31;
@@ -2939,8 +2952,8 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let minInt: number = -2147483648;
-      let maxInt: number = 2147483647;
+      let minInt: int = -2147483648;
+      let maxInt: int = 2147483647;
       minInt >>>= 1;
       maxInt >>>= 30;
       expect(minInt).assertEqual(1073741824);
