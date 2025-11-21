@@ -174,7 +174,6 @@ BOOL DeleteKVFiles (int num, const char* key)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue001
  * @tc.number SUB_UTILS_KV_STORE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -194,7 +193,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue001, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue002
  * @tc.number SUB_UTILS_KV_STORE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -214,7 +212,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue002, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue003
  * @tc.number SUB_UTILS_KV_STORE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -234,7 +231,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue003, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue004
  * @tc.number SUB_UTILS_KV_STORE_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -254,7 +250,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue004, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue005
  * @tc.number SUB_UTILS_KV_STORE_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -271,7 +266,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue005, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue006
  * @tc.number SUB_UTILS_KV_STORE_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -288,7 +282,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue006, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue007
  * @tc.number SUB_UTILS_KV_STORE_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -305,7 +298,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue007, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue008
  * @tc.number SUB_UTILS_KV_STORE_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -322,7 +314,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue008, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue009
  * @tc.number SUB_UTILS_KV_STORE_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -339,7 +330,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue009, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue010
  * @tc.number SUB_UTILS_KV_STORE_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -356,7 +346,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue010, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue011
  * @tc.number SUB_UTILS_KV_STORE_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -377,7 +366,6 @@ running so fast one has no ears one has no tail How strange How strangesleeping"
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue012
  * @tc.number SUB_UTILS_KV_STORE_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -395,7 +383,6 @@ running so fast one has no ears one has no tail How strange How strange sleeping
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue013
  * @tc.number SUB_UTILS_KV_STORE_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -413,7 +400,6 @@ running so fast one has no ears one has no tail How strange How strange  Are you
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue014
  * @tc.number SUB_UTILS_KV_STORE_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -431,7 +417,6 @@ running so fast one has no ears one has no tail How strange How strange  Are you
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue015
  * @tc.number SUB_UTILS_KV_STORE_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -451,7 +436,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue015, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue016
  * @tc.number SUB_UTILS_KV_STORE_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -468,7 +452,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue016, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreSetValue017
  * @tc.number SUB_UTILS_KV_STORE_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -488,7 +471,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue017, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreGetValue001
  * @tc.number SUB_UTILS_KV_STORE_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -516,7 +498,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreGetValue001, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreGetValue002
  * @tc.number SUB_UTILS_KV_STORE_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -544,7 +525,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreGetValue002, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreGetValue003
  * @tc.number SUB_UTILS_KV_STORE_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -578,7 +558,6 @@ running so fast one has no ears one has no tail How strange How strangesleeping"
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreGetValue004
  * @tc.number SUB_UTILS_KV_STORE_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -595,7 +574,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreGetValue004, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreGetValue005
  * @tc.number SUB_UTILS_KV_STORE_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -623,7 +601,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreGetValue005, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreDeleteValue
  * @tc.number SUB_UTILS_KV_STORE_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -640,7 +617,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreDeleteValue, Function | MediumTe
 
 #ifdef FEATURE_KV_CACHE
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreClearCache001
  * @tc.number SUB_UTILS_KV_STORE_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -673,7 +649,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreClearCache001, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreClearCache002
  * @tc.number SUB_UTILS_KV_STORE_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -712,7 +687,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreClearCache002, Function | Medium
 #endif
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreCacheSize001
  * @tc.number SUB_UTILS_KV_STORE_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -744,7 +718,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreCacheSize001, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreCacheSize002
  * @tc.number SUB_UTILS_KV_STORE_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -776,7 +749,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreCacheSize002, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreCacheSize003
  * @tc.number SUB_UTILS_KV_STORE_2800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -808,7 +780,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreCacheSize003, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreMaxSize001
  * @tc.number SUB_UTILS_KV_STORE_2900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -840,7 +811,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreMaxSize001, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreMaxSize002
  * @tc.number SUB_UTILS_KV_STORE_3000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -872,7 +842,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreMaxSize002, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreMaxSize003
  * @tc.number SUB_UTILS_KV_STORE_3100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -904,7 +873,6 @@ LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreMaxSize003, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKvStoreMaxSize004
  * @tc.number SUB_UTILS_KV_STORE_3200
  * @tc.desc   [C- SOFTWARE -0200]

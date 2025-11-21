@@ -166,7 +166,6 @@ bool KvStoreTest::DeleteKVFiles (int num, const char* key) const
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue001
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -186,7 +185,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue001, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue002
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -206,7 +204,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue002, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue003
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -226,7 +223,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue003, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue004
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -246,7 +242,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue004, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue005
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -263,7 +258,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue005, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue006
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -280,7 +274,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue006, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue007
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -297,7 +290,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue007, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue008
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -314,7 +306,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue008, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue009
  * @tc.number SUB_UTILS_KV_STORE_POSIX_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -331,7 +322,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue009, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue010
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -348,7 +338,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue010, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue0011
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -365,7 +354,6 @@ HWTEST_F(KvStoreTest, testUtilsSetValue0011, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue012
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -386,7 +374,6 @@ running so fast one has no ears one has no tail How strange How strange ";
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue013
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -407,7 +394,6 @@ running so fast one has no ears one has no tail How strange Howstrangesleeping";
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue014
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -428,7 +414,6 @@ running so fast one has no ears one has no tail How strange How strangesleeping"
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue015
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -446,7 +431,6 @@ running so fast one has no ears one has no tail How strange How strange sleeping
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue016
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -464,7 +448,6 @@ running so fast one has no ears one has no tail How strange How strange  Are you
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsSetValue017
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -482,7 +465,6 @@ running so fast one has no ears one has no tail How strange How strange  Are you
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsGetValue001
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -506,7 +488,6 @@ HWTEST_F(KvStoreTest, testUtilsGetValue001, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsGetValue002
  * @tc.number SUB_UTILS_KV_STORE_POSIX_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -530,7 +511,6 @@ HWTEST_F(KvStoreTest, testUtilsGetValue002, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testUtilsGetValue003
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -556,7 +536,6 @@ HWTEST_F(KvStoreTest, testUtilsGetValue003, Function | MediumTest | Level1)
 
 #ifdef FEATURE_KV_CACHE
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testClearKVCache001
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -589,7 +568,6 @@ HWTEST_F(KvStoreTest, testClearKVCache001, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testClearKVCache002
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -624,7 +602,6 @@ HWTEST_F(KvStoreTest, testClearKVCache002, Function | MediumTest | Level1)
 #endif
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKVCacheCacheSize001
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -665,7 +642,6 @@ HWTEST_F(KvStoreTest, testKVCacheCacheSize001, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKVCacheCacheSize002
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -706,7 +682,6 @@ HWTEST_F(KvStoreTest, testKVCacheCacheSize002, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKVCacheCacheSize003
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -747,7 +722,6 @@ HWTEST_F(KvStoreTest, testKVCacheCacheSize003, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKVStoreSize001
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -788,7 +762,6 @@ HWTEST_F(KvStoreTest, testKVStoreSize001, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKVStoreSize002
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -829,7 +802,6 @@ HWTEST_F(KvStoreTest, testKVStoreSize002, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKVStoreSize003
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -870,7 +842,6 @@ HWTEST_F(KvStoreTest, testKVStoreSize003, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testKVStoreSize004
  * @tc.number SUB_UTILS_KV_STORE_POSIX_2900
  * @tc.desc   [C- SOFTWARE -0200]
