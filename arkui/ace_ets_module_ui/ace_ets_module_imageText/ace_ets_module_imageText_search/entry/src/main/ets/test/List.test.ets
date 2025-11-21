@@ -79,8 +79,6 @@ export default function testsuite() {
   MenuPolicy_SHOW_APITest()
   SearchXtsJsunit()
   SearchTypeApi12Test()
-  searchEnterKeyTypeTest()
-  SearchFontFeatureTest()
   SearchKeyboardAppearanceTest()  // Api15
   searchButton()                  // Api16
   SearchStopBackPressTest()

@@ -51,7 +51,7 @@ export default function SearchTypeApi20Test() {
      */
     it('SearchTypeApi20Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi20Test_0010] START');
-      let strJson = getInspectorByKey('SearchType_ONE_TIME_CODE');
+      let strJson = getInspectorByKey('SearchTypeApi20_ONE_TIME_CODE');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[SearchTypeApi20Test_0010] SearchType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('SearchType.ONE_TIME_CODE');
@@ -69,7 +69,7 @@ export default function SearchTypeApi20Test() {
      */
     it('SearchTypeApi20Test_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi20Test_0020] START');
-      let strJson = getInspectorByKey('SearchType_undefined');
+      let strJson = getInspectorByKey('SearchTypeApi20_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[SearchTypeApi20Test_0020] SearchType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('SearchType.NORMAL');
@@ -87,7 +87,7 @@ export default function SearchTypeApi20Test() {
      */
     it('SearchTypeApi20Test_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi20Test_0030] START');
-      let strJson = getInspectorByKey('SearchType_default');
+      let strJson = getInspectorByKey('SearchTypeApi20_default');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[SearchTypeApi20Test_0030] SearchType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('SearchType.NORMAL');
@@ -105,7 +105,7 @@ export default function SearchTypeApi20Test() {
      */
     it('SearchTypeApi20Test_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi20Test_0040] START');
-      let strJson = getInspectorByKey('SearchType_Modifier');
+      let strJson = getInspectorByKey('SearchTypeApi20_Modifier');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[SearchTypeApi20Test_0040] SearchType: ' + JSON.stringify(obj.$attrs.type));
       expect(obj.$attrs.type).assertEqual('SearchType.ONE_TIME_CODE');

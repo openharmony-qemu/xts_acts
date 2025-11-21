@@ -22,7 +22,7 @@ export default function searchObserverTest() {
   describe('searchObserverTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/SearchApi20/searchObserver',
+        url: 'MainAbility/pages/SearchApi22/searchObserver',
       }
       try {
         router.clear();

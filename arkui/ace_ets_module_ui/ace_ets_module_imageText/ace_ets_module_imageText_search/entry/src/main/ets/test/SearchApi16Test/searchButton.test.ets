@@ -56,7 +56,7 @@ export default function searchButton() {
         console.info('searchButton searchButton0001 START');
         await CommonFunc.sleep(500);
 
-        let strJson = getInspectorByKey('search1');
+        let strJson = getInspectorByKey('searchButton1');
         let obj: ESObject = JSON.parse(strJson);
         console.log('searchButton0001---obj.$attrs.searchButtonOption.autoDisable---' +
          JSON.stringify(obj.$attrs.searchButtonOption.autoDisable));

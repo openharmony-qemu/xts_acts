@@ -22,7 +22,7 @@
 
 @Entry
 @Component
-struct SearchTypeApi20 {
+struct SearchTypeApi20Page {
   @State searchModifier: SearchModifierApi20 = new SearchModifierApi20()
 
   build() {

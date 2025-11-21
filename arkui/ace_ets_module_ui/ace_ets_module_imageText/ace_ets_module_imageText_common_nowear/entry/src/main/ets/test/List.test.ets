@@ -22,6 +22,7 @@ import editMenuIdAIWriterTest from './TextTest/editMenuIdAIWriter.test';
 import TextContentGetSelectionTest from './TextTest/TextContentGetSelectionTest.test';
 import editMenuOptionsApi16Test from './TextTest/editMenuOptionsApi16.test'
 import OnPrepareMenuTest from './TextTest/OnPrepareMenuTest.test';
+import SetMenuOptionsTest from './TextTest/setMenuOptions.test';
 
 import styledStringChange from './StyledStringTest/styledStringChange.test'
 import MovingPhotoViewApi13Test from './MovingPhotoViewTest/MovingPhotoViewApi13.test';
@@ -35,11 +36,12 @@ export default function testsuite() {
   text_drag()
   positionSettingJsunit()
   OnTextSelectionChangeTest()
-  editMenuOptionsApi12Test()  
+  editMenuOptionsApi12Test()
   editMenuIdAIWriterTest()
   TextContentGetSelectionTest()
   editMenuOptionsApi16Test()
   OnPrepareMenuTest()
+  SetMenuOptionsTest()
 
   styledStringChange()
   MovingPhotoViewApi13Test()

@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct searchFontScaleTest {
+struct searchFontScalePage {
   @State text: string = 'As the sun begins to set, casting a warm golden hue across the sky'
   build() {
     Row() {
@@ -23,7 +23,7 @@ struct searchFontScaleTest {
         Search({ value:this.text})
           .maxFontScale(undefined)
           .minFontScale(undefined)
-          .id('search1')
+          .id('searchFontScale1')
           .height('5%')
           .margin(0)
         Search({ value: this.text})

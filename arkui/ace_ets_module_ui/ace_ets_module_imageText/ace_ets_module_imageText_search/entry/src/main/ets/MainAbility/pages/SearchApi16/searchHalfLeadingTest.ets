@@ -15,14 +15,14 @@
 
 @Entry
 @Component
-struct searchHalfLeadingTest {
+struct searchHalfLeadingPage {
   @State text: string = 'As the sun begins to set, casting a warm golden hue across the sky'
   build() {
     Row() {
       Column({ space: 20 }) {
         Search({ value:this.text})
           .halfLeading(true)
-          .id('search1')
+          .id('searchHalfLeading1')
           .height('10%')
         Search({ value: this.text})
           .halfLeading(false)
