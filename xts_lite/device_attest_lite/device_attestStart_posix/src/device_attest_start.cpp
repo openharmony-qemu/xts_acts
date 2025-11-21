@@ -37,7 +37,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subDeviceAttestTest0100
  * @tc.number Sub_Device_Attest_Test_0100
  * @tc.desc   [C- SOFTWARE -0200]

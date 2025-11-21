@@ -97,7 +97,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subDeviceAttestTest0200
  * @tc.number Sub_Device_Attest_Test_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -118,7 +117,6 @@ HWTEST_F(DeviceAttestQuerryTest, subDeviceAttestTest0200, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subDeviceAttestTest0300
  * @tc.number Sub_Device_Attest_Test_0300
  * @tc.desc   [C- SOFTWARE -0200]

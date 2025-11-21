@@ -89,13 +89,12 @@ BOOL AttestStatusValid(AttestResultInfo attestResultInfo)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subDeviceAttest0100
  * @tc.number SUB_Device_Attest_0100
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DeviceAttestFuncTestSuite, subDeviceAttest0100, LEVEL0)
 {
@@ -105,13 +104,12 @@ LITE_TEST_CASE(DeviceAttestFuncTestSuite, subDeviceAttest0100, LEVEL0)
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   subDeviceAttest0200
  * @tc.number SUB_Device_Attest_0200
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  请输入文本
+ * @tc.level  [CORRECT ME] INVALID TCLEVEL.
  */
 LITE_TEST_CASE(DeviceAttestFuncTestSuite, subDeviceAttest0200, LEVEL0)
 {
