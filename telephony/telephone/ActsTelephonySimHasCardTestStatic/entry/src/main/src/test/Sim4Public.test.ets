@@ -450,9 +450,8 @@ export default function Sim4Public() {
         ExpectFail();
         console.info(`${caseName} test end`);
         done();
-      } catch (err) {
-        let err = err as BusinessError;
-        if (err?.code === 8300001){
+      } catch (err: Error) {
+        if (err && (err as BusinessError)?.code === 8300001){
           console.info(`${caseName} successfully: err is 8300001, msg: ` + err);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
@@ -585,9 +584,8 @@ export default function Sim4Public() {
         ExpectFail();
         console.info(`${caseName} test end`);
         done();
-      } catch (err) {
-        let err = err as BusinessError;
-        if (err?.code === 8300001){
+      } catch (err: Error) {
+        if (err && (err as BusinessError)?.code === 8300001){
           console.info(`${caseName} successfully: err is 8300001, msg: ` + err);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
