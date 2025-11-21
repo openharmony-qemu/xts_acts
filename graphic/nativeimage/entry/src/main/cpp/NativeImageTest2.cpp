@@ -873,7 +873,7 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
     ret = OH_NativeImage_ReleaseTextImage(nativeImage);
     if (ret != 0) {
         napi_create_int32(env, FAIL, &result);
-        return result; 
+        return result;
     }
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     OH_NativeWindow_DestroyNativeWindow(nativeWindow);

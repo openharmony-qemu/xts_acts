@@ -810,13 +810,13 @@ napi_value testNativeWindowCleanBufferUsage(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     // 1.  create native window
-    int32_t width_ = 0x100;
-    int32_t height_ = 0x100;
+    int32_t width = 0x100;
+    int32_t height = 0x100;
     OHNativeWindow *nativeWindow = nullptr;
     OH_NativeImage *image = nullptr;
     image = OH_ConsumerSurface_Create();
     nativeWindow = OH_NativeImage_AcquireNativeWindow(image);
-    OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, width_, height_);
+    OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, width, height);
     if (nativeWindow == nullptr) {
         napi_create_int32(env, CONSTANT_998899, &result);
         return result;
@@ -825,7 +825,7 @@ napi_value testNativeWindowCleanBufferUsage(napi_env env, napi_callback_info inf
     int32_t ret1 = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_USAGE, &usage);
     usage &= ~NATIVEBUFFER_USAGE_CPU_READ;
     int32_t ret2 = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_USAGE, &usage);
-    if (ret1 != 0 && ret2 != 0){
+    if (ret1 != 0 && ret2 != 0) {
         napi_create_int32(env, CONSTANT_998899 - 1, &result);
         return result;
     }
@@ -849,7 +849,7 @@ napi_value testNativeWindowCleanBufferUsage(napi_env env, napi_callback_info inf
     if (ret != 0) {
         napi_create_int32(env, FAIL, &result);
         return result;
-    }    
+    }
     // 4.  invoke OH_NativeImage_AcquireNativeWindowBuffer
     ret = OH_NativeImage_AcquireNativeWindowBuffer(image, &nativeWindowBuffer, &fenceFd);
     if (ret != 0) {
@@ -1197,11 +1197,9 @@ napi_value testNativeWindowLockBufferUpperLimit(napi_env env, napi_callback_info
     ret = OH_NativeImage_ReleaseNativeWindowBuffer(nativeImage, buffer3, fenceFd);
     if (ret != 0) {
         napi_create_int32(env, FAIL, &result);
-        return result;}
+        return result;
+    }
     OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer1);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer2);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer3);
     OH_NativeImage_Destroy(&nativeImage);
     napi_create_int32(env, SUCCESS, &result);
     return result;
