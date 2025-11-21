@@ -648,7 +648,7 @@ export default function drawingTsCanvasPart7Test() {
       let fYDivs: Array<int> = [80, 150];
       let fXCount = 2
       let fYCount = 2
-      let lattice = drawing.Lattice.createImageLattice(fXDivs, fYDivs, fXCount, fYCount, null, null, null);
+      let lattice = drawing.Lattice.createImageLattice(fXDivs, fYDivs, fXCount, fYCount, null, null, null) as drawing.Lattice;
       let dst: common2D.Rect = { left: 0, top: 0, right: 200, bottom: 200 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
@@ -661,7 +661,7 @@ export default function drawingTsCanvasPart7Test() {
       let fYDivs1: Array<int> = [310, 320, 340, 360, 400];
       fXCount = 5;
       fYCount = 5;
-      lattice = drawing.Lattice.createImageLattice(fXDivs1, fYDivs1, fXCount, fYCount, null, null, null);
+      lattice = drawing.Lattice.createImageLattice(fXDivs1, fYDivs1, fXCount, fYCount, null, null, null) as drawing.Lattice;
       dst = { left: 225, top:0, right: 425, bottom: 200 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
@@ -681,7 +681,7 @@ export default function drawingTsCanvasPart7Test() {
       let fYDivs2: Array<int> = [200, 400];
       fXCount = 2;
       fYCount = 2;
-      lattice = drawing.Lattice.createImageLattice(fXDivs2, fYDivs2, fXCount, fYCount, bound1, null, null);
+      lattice = drawing.Lattice.createImageLattice(fXDivs2, fYDivs2, fXCount, fYCount, bound1, null, null) as drawing.Lattice;
       dst = { left: 450, top:0, right: 650, bottom: 200 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
@@ -726,7 +726,7 @@ export default function drawingTsCanvasPart7Test() {
         let yDivs: Array<int> = [80, 160, 320, 560];
         let xCount = 4;
         let yCount = 4;
-        let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, xCount, yCount, null, null, null);
+        let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, xCount, yCount, null, null, null) as drawing.Lattice;
         let dst: common2D.Rect = { left: 0+ i * 0.01, top: 0+ i * 0.01, right: 200+ i * 0.01, bottom: 200+ i * 0.01 };
         try {
           canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
@@ -753,7 +753,7 @@ export default function drawingTsCanvasPart7Test() {
       let yDivs: Array<int> = [80, 160, 320, 560];
       let xCount = 4;
       let yCount = 4;
-      let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, xCount, yCount, null, null, null);
+      let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, xCount, yCount, null, null, null) as drawing.Lattice;
       let dst: common2D.Rect = {
         left: Number.MAX_VALUE, top: Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };

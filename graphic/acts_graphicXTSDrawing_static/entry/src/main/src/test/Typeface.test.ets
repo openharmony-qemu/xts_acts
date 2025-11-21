@@ -16,6 +16,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
 import { BusinessError } from '@ohos.base';
+import { $r, $rawfile, Color, ResourceColor } from '@ohos.arkui.component'
 
 export default function typefaceTest() {
   describe('DrawingTsTypeFaceTest', () => {

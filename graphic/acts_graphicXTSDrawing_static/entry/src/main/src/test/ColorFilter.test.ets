@@ -258,7 +258,7 @@ export default function colorFilterTest() {
       try {
         colorFilter1 = drawing.ColorFilter.createBlendModeColorFilter({
           alpha: 255, red: 255, green: 0, blue: 0
-        }, drawing.BlendMode.SRC);
+        }, drawing.BlendMode.SRC) as drawing.ColorFilter;
         console.info(msg + ' createBlendModeColorFilter successed');
       } catch(e) {
         e = e as BusinessError ;
@@ -268,9 +268,9 @@ export default function colorFilterTest() {
 
       let colorFilter2: drawing.ColorFilter | null = null;
       try {
-        colorFilter2 = drawing.ColorFilter.createBlendModeColorFilter({
+        colorFilter2  = drawing.ColorFilter.createBlendModeColorFilter({
           alpha: 255, red: 255, green: 0, blue: 0
-        }, drawing.BlendMode.DST);
+        }, drawing.BlendMode.DST) as drawing.ColorFilter;
         console.info(msg + ' createBlendModeColorFilter successed');
       } catch(e) {
         e = e as BusinessError ;

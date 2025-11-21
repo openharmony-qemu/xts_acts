@@ -74,7 +74,7 @@ export default function FontPart4() {
         let msg = " ====SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0200==== "
         try {
           let font = new drawing.Font();
-          let fontMetrics = font.getMetrics();
+          let fontMetrics = font.getMetrics() as drawing.FontMetrics;
           console.info(msg + ' ' + fontMetrics.maxCharWidth);
           console.info(msg + ' ' + fontMetrics.flags);
           expect(fontMetrics.maxCharWidth != undefined).assertTrue();

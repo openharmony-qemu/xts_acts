@@ -15,16 +15,26 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
+import image from '@ohos.multimedia.image';
 import { getEnumCount } from './Util.test';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
 export default function drawingTsPath4Test() {
   describe('DrawingTsPath4Test', () => {
-    const DEFAULT = 0;
+    let pixel: image.PixelMap;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-
+    beforeAll(async () => {
+      const color: ArrayBuffer = new ArrayBuffer(40000); // 96为需要创建的像素buffer大小，取值为：height * width *4
+      let opts: image.InitializationOptions = {
+        editable: true,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: {
+          height: 100,
+          width: 100
+        }
+      }
+      pixel = await image.createPixelMap(color, opts);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -715,6 +725,7 @@ export default function drawingTsPath4Test() {
     it('testPathIsRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathIsRectNormalStatic';
       let path = new drawing.Path();
+      let canvas = new drawing.Canvas(pixel);
       try {
         let isRect = path.isRect(null);
         console.info(msg + `path isRect success`);
