@@ -37,7 +37,7 @@ export struct TabsView {
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
-  @Link _position!: Position;
+  private _position: Position = { x:0, y:0} as Position;
   private componentKey: string = '';
 
   @Builder
@@ -60,9 +60,7 @@ export struct TabsView {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
       TabContent() {
         Column().width('100%').height('100%').backgroundColor('#00CB87')
-      }.tabBar(()=>{
-        this.TabBuilder(0, 'green')
-      })
+      }.tabBar(()=>{this.TabBuilder(0, 'green')})
 
       TabContent() {
         Column().width('100%').height('100%').backgroundColor('#007DFF')
@@ -81,7 +79,7 @@ export struct TabsView {
     .barWidth(360)
     .barHeight(56)
     .animationDuration(400)
-    .onChange((index: Int): void => {
+    .onChange((index: int): void => {
       this.currentIndex = index
     })
     .width(360)

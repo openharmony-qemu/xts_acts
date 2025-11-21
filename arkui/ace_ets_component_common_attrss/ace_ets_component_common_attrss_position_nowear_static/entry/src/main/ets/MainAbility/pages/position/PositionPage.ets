@@ -26,43 +26,148 @@ import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import {
-  Entry,Component,LineJoinStyle,$r,AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,
-  RowOptions,LazyForEach,Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,Color,Scroller,
-  Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,Circle,
-  WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,GridRow,Grid,Flex,Counter,Badge,Toggle,TimePicker,TextPicker,TextInput,TextClock,TextArea,
-  Slider,Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,
-  Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,GutterOption,BreakPoints,BreakpointsReference,
-  GridCol,GridColOptions,GridColColumnOption,ColumnOptions,MenuItemOptions,Position,TabContent,Axis,ListItem,FlowItem,FlexDirection,MenuItemGroup,Blank,DataPanelType,SliderStyle,
-  RectOptions,CommonMethod,applyStyles,Builder
+  Entry,
+  Component,
+  LineJoinStyle,
+  $r,
+  AlignRuleOption,
+  Row,
+  Button,
+  Margin,
+  IDataSource,
+  DataChangeListener,
+  SwiperController,
+  Column,
+  ColumnOptions,
+  ClickEvent,
+  RowOptions,
+  LazyForEach,
+  Text,
+  FlexAlign,
+  TextCase,
+  TextDecorationType,
+  Resource,
+  VerticalAlign,
+  HorizontalAlign,
+  RelativeContainer,
+  Color,
+  Scroller,
+  Menu,
+  ScrollBar,
+  TextTimer,
+  ColumnSplit,
+  RowSplit,
+  Refresh,
+  Shape,
+  Rect,
+  Path,
+  Polygon,
+  Polyline,
+  Line,
+  Ellipse,
+  Circle,
+  WaterFlow,
+  Tabs,
+  Swiper,
+  Stack,
+  SideBarContainer,
+  Scroll,
+  List,
+  GridRow,
+  Grid,
+  Flex,
+  Counter,
+  Badge,
+  Toggle,
+  TimePicker,
+  TextPicker,
+  TextInput,
+  TextClock,
+  TextArea,
+  Slider,
+  Search,
+  Rating,
+  QRCode,
+  Progress,
+  AlphabetIndexer,
+  ImageAnimator,
+  Image,
+  Navigation,
+  Marquee,
+  LoadingProgress,
+  Gauge,
+  Divider,
+  DatePicker,
+  DataPanel,
+  CheckboxGroup,
+  Checkbox,
+  Select,
+  Radio,
+  MenuItem,
+  ProgressType,
+  ToggleType,
+  ForEach,
+  GridRowDirection,
+  BarState,
+  SideBarContainerType,
+  TextAlign,
+  GridItem,
+  BadgeStyle,
+  BadgeParamWithString,
+  GutterOption,
+  BreakPoints,
+  BreakpointsReference,
+  GridCol,
+  GridColOptions,
+  GridColColumnOption,
+  MenuItemOptions,
+  Position,
+  TabContent,
+  Axis,
+  ListItem,
+  FlowItem,
+  FlexDirection,
+  MenuItemGroup,
+  Blank,
+  DataPanelType,
+  SliderStyle,
+  RectOptions,
+  CommonMethod,
+  applyStyles,
+  Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { SetValue } from '../../common/Utils';
+import { SetValue, TestValue } from '../../common/Utils';
+
 interface ViewOption {
-targetView: string
-componentKey: string
-parentWidth: number
-parentHeight: number
-parentComponentKey: string
-referenceComponentKey: string
+  targetView: string
+  componentKey: string
+  parentWidth: number
+  parentHeight: number
+  parentComponentKey: string
+  referenceComponentKey: string
 }
+
 interface RouterParamOptions {
   view: ViewOption
 }
+
 /**
  * Test page of common attribute: position
  */
 @Entry
 @Component
 struct PositionPage {
-  @State _position: SetValue = { x: 0, y: 0 } as SetValue;
+  @StorageProp('_position') _position: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 0
   @State parentHeight: number = 0
-  @State parentComponentKey: string =  ''
+  @State parentComponentKey: string = ''
   @State referenceComponentKey: string = ''
+
   @Builder
   myBuilder() {
     Column() {
@@ -73,34 +178,43 @@ struct PositionPage {
     .height('100%')
     .backgroundColor(Color.Pink)
   }
+
   onPageShow() {
     console.info('[PositionPage] page show called ')
 
     //Register data change call back.
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._position = value
-    })
-  }
-aboutToAppear(){
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   this._position = value
+    // })
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      // console.info('[wll]x'+routerParamOptions.view.testValue.setValue.x)
+      // console.info('[wll]xp'+routerParamOptions.view.testValue.setValue.y)
+      // console.info('[wll]y'+routerParamOptions.view.testValue.setValue.xp)
+      // console.info('[wll]yp'+routerParamOptions.view.testValue.setValue.yp)
+      AppStorage.setOrCreate<Position>('_position',
+        (routerParamOptions.view.testValue as TestValue).setValue as Position)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+
+      console.info('wj============= ' + routerParamOptions.view.componentKey)
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
+
   /**
    * Set common style.
    */
   commonStyle(instance: CommonMethod) {
-      instance.position(this._position as Position)
-      instance.key(this.componentKey)
+    instance.position(this._position)
+    instance.key(this.componentKey)
   }
+
   build() {
     Row() {
       Column() {
@@ -108,7 +222,8 @@ aboutToAppear(){
         if (this.targetView == 'MenuItem') {
           Row() {
             Menu() {
-              MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).applyStyles(this.commonStyle)
+              MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
+                .applyStyles(this.commonStyle)
               MenuItem({ startIcon: $r('app.media.icon'), content: 'referenceComponent' } as MenuItemOptions)
                 .key(this.referenceComponentKey)
             }
@@ -253,10 +368,20 @@ aboutToAppear(){
           GridRow({
             columns: 5,
             gutter: { x: 5, y: 10 } as GutterOption,
-            breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
+            breakpoints: {
+              value: ['400vp', '600vp', '800vp'],
+              reference: BreakpointsReference.WindowSize
+            } as BreakPoints,
             direction: GridRowDirection.Row
           }) {
-            GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } ) {
+            GridCol({
+              span: {
+                xs: 1,
+                sm: 2,
+                md: 3,
+                lg: 4
+              } as GridColColumnOption
+            }) {
               Row()
                 .width('100%')
                 .height('20vp')
@@ -265,7 +390,14 @@ aboutToAppear(){
             .borderWidth(2)
             .applyStyles(this.commonStyle)
 
-            GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }) {
+            GridCol({
+              span: {
+                xs: 1,
+                sm: 2,
+                md: 3,
+                lg: 4
+              } as GridColColumnOption
+            }) {
               Row()
                 .width('100%')
                 .height('20vp')
@@ -396,6 +528,7 @@ aboutToAppear(){
               .backgroundColor('#ededed')
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Stepper') {
+              console.info('wj=============22 ' + this.componentKey)
               StepperView({ _position: this._position as Position, componentKey: this.componentKey });
             } else if (this.targetView == 'Search') {
               Search({ placeholder: 'Type to search...' })
@@ -464,12 +597,22 @@ aboutToAppear(){
               GridRow({
                 columns: 5,
                 gutter: { x: 5, y: 10 } as GutterOption,
-                breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
+                breakpoints: {
+                  value: ['400vp', '600vp', '800vp'],
+                  reference: BreakpointsReference.WindowSize
+                } as BreakPoints,
                 direction: GridRowDirection.Row
               }) {
                 ForEach(new Array<Color>(Color.Red, Color.Orange, Color.Yellow, Color.Green,
                   Color.Pink, Color.Grey, Color.Blue, Color.Brown), (color: Color) => {
-                  GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }) {
+                  GridCol({
+                    span: {
+                      xs: 1,
+                      sm: 2,
+                      md: 3,
+                      lg: 4
+                    } as GridColColumnOption
+                  }) {
                     Row()
                       .width('100%')
                       .height('20vp')
@@ -481,8 +624,8 @@ aboutToAppear(){
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Grid') {
               Grid() {
-                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day:string, index:Int):void => {
-                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item:string, index:Int):void => {
+                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day: string, index: int): void => {
+                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item: string, index: int): void => {
                     GridItem() {
                       Text(day)
                         .backgroundColor(Color.White)
@@ -498,14 +641,14 @@ aboutToAppear(){
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'List') {
               List({ space: 20, initialIndex: 0 }) {
-                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item:number, index:Int):void => {
+                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index: int): void => {
                   ListItem() {
                     Text('' + item)
                       .width('100%')
                       .textAlign(TextAlign.Center)
                       .backgroundColor(Color.White)
                   }
-                }, (item: number, index:Int):string => String(item))
+                }, (item: number, index: int): string => String(item))
               }
               .width('100%')
               .height('100%')
@@ -520,7 +663,7 @@ aboutToAppear(){
                   .alignRules({
                     top: { anchor: '__container__', align: VerticalAlign.Top },
                     left: { anchor: '__container__', align: HorizontalAlign.Start }
-                  })
+                  } as AlignRuleOption)
                   .id('PositionPageRow')
               }
               .height('50%')
@@ -534,11 +677,11 @@ aboutToAppear(){
                 .backgroundColor(Color.Green)
                 .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Panel') {
-              Column(){
+              Column() {
                 Text('Panel')
               }.height('100%').width('100%')
               .applyStyles(this.commonStyle)
-              .bindSheet(true,this.myBuilder)
+              .bindSheet(true, this.myBuilder)
 
             } else if (this.targetView == 'Refresh') {
               Refresh({ refreshing: true }) {
@@ -548,13 +691,13 @@ aboutToAppear(){
             } else if (this.targetView == 'Scroll') {
               Scroll() {
                 Column() {
-                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:Int):void => {
+                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index: int): void => {
                     Text('Scroll' + item.toString())
                       .width('90%')
                       .height(150)
                       .backgroundColor(Color.White)
                       .textAlign(TextAlign.Center)
-                  }, (item: number, index:Int):string => String(item))
+                  }, (item: number, index: int): string => String(item))
                 }.width('100%')
               }
               .scrollBar(BarState.On)
@@ -562,7 +705,7 @@ aboutToAppear(){
             } else if (this.targetView == 'SideBarContainer') {
               SideBarContainer(SideBarContainerType.Embed) {
                 Column() {
-                  ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+                  ForEach(new Array<number>(1, 2, 3), (item: number, index: int): void => {
                     Column({ space: 5 } as ColumnOptions) {
                       Image($r('app.media.icon'))
                         .width(64)
@@ -590,11 +733,11 @@ aboutToAppear(){
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Swiper') {
               Swiper() {
-                ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+                ForEach(new Array<number>(1, 2, 3), (item: number, index: int): void => {
                   Text('Swiper' + item)
                     .width('90%')
                     .height(160)
-                }, (item: number, index:Int):string => String(item))
+                }, (item: number, index: int): string => String(item))
               }
               .indicator(true)
               .backgroundColor(Color.White)
@@ -652,7 +795,12 @@ aboutToAppear(){
               }
               .width(300)
               .height(200)
-              .viewPort({ x: -20, y: -5, width: 310, height: 90 })
+              .viewPort({
+                x: -20,
+                y: -5,
+                width: 310,
+                height: 90
+              })
               .fill(0x317AF7)
               .stroke(0xEE8443)
               .strokeWidth(10)

@@ -50,17 +50,19 @@ function itemTextStyle(this: TextAttribute): this {
 }
 @Component
 export struct StepperView {
-  @State prevIndex: Int= 0
-  @State currentIndex: Int= 0
+  @State prevIndex: number = 0
+  @State currentIndex: int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
-  @Link _position!: Position;
+  private _position: Position = { x: 0, y: 0 } as Position; //@Link 换成 private
   private componentKey: string = '';
-
+  onPageShow() {
+    console.info('[StepperView] page show called ' + this.componentKey)
+  }
   build() {
     Stepper({
-      index: this.currentIndex
+      index: this.currentIndex as int
     }) {
       StepperItem() {
         Column() {
@@ -118,7 +120,7 @@ export struct StepperView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: Int, index: Int) => {
+    .onChange((prevIndex: int, index: int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

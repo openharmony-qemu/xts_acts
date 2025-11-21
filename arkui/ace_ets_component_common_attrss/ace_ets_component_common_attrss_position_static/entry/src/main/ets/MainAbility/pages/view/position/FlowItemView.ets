@@ -60,7 +60,7 @@ export struct FlowItemView {
         .key(this.referenceComponentKey)
       }
       .columnsTemplate('1fr 1fr')
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor('0xFAEEE0')
       .width(this.parentWidth)
       .height(this.parentHeight)
       .key(this.parentComponentKey)
