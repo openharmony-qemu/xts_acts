@@ -13,11 +13,20 @@
  * limitations under the License.
  */
 
+import AVImageFetchFrameByTime from './media/AVImageFetchFrameByTimeTest.test';
+import AVMetaFetchFrameByTime from './media/AVMetadataFetchFrameByTimeTest.test';
 import AVPlayerLocalDeprecatedTest from './media/AVPlayerLocalDeprecatedTest.test';
 import AVPlayerLocalSuppTest from './media/AVPlayerLocalTest.test';
+import SetUrISourceTest from './media/MediaSetUrlSourceTest.test';
+import RespondDataTest from './media/RespondDataTest.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
   AVPlayerLocalSuppTest();
+  AVImageFetchFrameByTime();
+  AVMetaFetchFrameByTime();
+  SetUrISourceTest();
+  RespondDataTest();
+
 }
 
