@@ -50,7 +50,6 @@ void SensorDataCallbackImpl(SensorEvent *event)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   GetAllSensorsInterfaceTest001
  * @tc.number SUB_DSS_SensorsSystem_lite_GetAllSensors_0010
  * @tc.desc   Test the interface for obtaining the sensor list
@@ -77,7 +76,6 @@ HWTEST_F(SensorAgentInterfacesTest, GetAllSensorsInterfaceTest001, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   GetAllSensorsInterfaceTest002
  * @tc.number SUB_DSS_SensorsSystem_lite_GetAllSensors_0020
  * @tc.desc   Test the interface for obtaining the sensor list
@@ -94,7 +92,6 @@ HWTEST_F(SensorAgentInterfacesTest, GetAllSensorsInterfaceTest002, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   GetAllSensorsInterfaceTest003
  * @tc.number SUB_DSS_SensorsSystem_lite_GetAllSensors_0030
  * @tc.desc   Test the interface for obtaining the sensor list
@@ -112,7 +109,6 @@ HWTEST_F(SensorAgentInterfacesTest, GetAllSensorsInterfaceTest003, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   ActivateSensorInterfaceTest001
  * @tc.number SUB_DSS_SensorsSystem_lite_Enable_0010
  * @tc.desc   Test the enable sensor interface
@@ -129,7 +125,6 @@ HWTEST_F(SensorAgentInterfacesTest, ActivateSensorInterfaceTest001, Function | M
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   ActivateSensorInterfaceTest002
  * @tc.number SUB_DSS_SensorsSystem_lite_Enable_0020
  * @tc.desc   Test the enable sensor interface
@@ -146,7 +141,6 @@ HWTEST_F(SensorAgentInterfacesTest, ActivateSensorInterfaceTest002, Function | M
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   ActivateSensorInterfaceTest003
  * @tc.number SUB_DSS_SensorsSystem_lite_Enable_0030
  * @tc.desc   Test the enable sensor interface
@@ -175,7 +169,6 @@ HWTEST_F(SensorAgentInterfacesTest, ActivateSensorInterfaceTest003, Function | M
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SetBatchInterfaceTest002
  * @tc.number SUB_DSS_SensorsSystem_lite_SetBatch_0010
  * @tc.desc   Set sensor param.
@@ -192,7 +185,6 @@ HWTEST_F(SensorAgentInterfacesTest, SetBatchInterfaceTest002, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SetBatchInterfaceTest003
  * @tc.number SUB_DSS_SensorsSystem_lite_SetBatch_0020
  * @tc.desc   Set sensor param.
@@ -209,7 +201,6 @@ HWTEST_F(SensorAgentInterfacesTest, SetBatchInterfaceTest003, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SubscribeSensorInterfaceTest001
  * @tc.number SUB_DSS_SensorsSystem_lite_Register_0010
  * @tc.desc   SubscribeSensor sensor.
@@ -236,7 +227,6 @@ HWTEST_F(SensorAgentInterfacesTest, SubscribeSensorInterfaceTest001, Function | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   UnSubscribeSensorInterfaceTest001
  * @tc.number SUB_DSS_SensorsSystem_lite_Register_0020
  * @tc.desc   UnSubscribeSensor sensor.
@@ -253,7 +243,6 @@ HWTEST_F(SensorAgentInterfacesTest, UnSubscribeSensorInterfaceTest001, Function 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   DataReportInterfaceTest001
  * @tc.number SUB_DSS_SensorsSystem_lite_Register_0030
  * @tc.desc   Sensor data report.
