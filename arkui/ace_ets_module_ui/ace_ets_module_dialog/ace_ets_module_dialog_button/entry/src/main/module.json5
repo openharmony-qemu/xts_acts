@@ -32,7 +32,7 @@
     ],
     "abilities": [
       {
-        "name": "com.arkui.ace.imageText.EntryAbility",
+        "name": "com.arkui.ace.dialog.button.EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:description_application",
         "icon": "$media:icon",

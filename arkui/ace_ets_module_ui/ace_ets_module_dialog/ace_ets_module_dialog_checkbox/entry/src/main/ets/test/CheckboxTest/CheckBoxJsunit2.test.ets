@@ -90,7 +90,7 @@ export default function CheckBoxJsunit2() {
     it('testCheckbox_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_300] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Checkbox1');
+      let strJson: string = getInspectorByKey('CheckboxExample_Checkbox1');
       console.info("testCheckbox_300 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)
         .$attrs
         .borderRadius));
@@ -110,7 +110,7 @@ export default function CheckBoxJsunit2() {
     it('testCheckbox_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_400] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Checkbox1');
+      let strJson: string = getInspectorByKey('CheckboxExample_Checkbox1');
 
       console.info("testCheckbox_400 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual("Visibility.Visible");

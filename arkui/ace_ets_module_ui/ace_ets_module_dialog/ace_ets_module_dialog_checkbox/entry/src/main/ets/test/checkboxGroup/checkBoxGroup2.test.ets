@@ -29,7 +29,7 @@ export default function checkBoxGroupSelectAllJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get checkBoxGroup state success " + JSON.stringify(pages));
-        if (!("checkBoxGroup" == pages.name)) {
+        if (!("checkBoxGroup2" == pages.name)) {
           console.info("get checkBoxGroup state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await Utils.sleep(2000);
