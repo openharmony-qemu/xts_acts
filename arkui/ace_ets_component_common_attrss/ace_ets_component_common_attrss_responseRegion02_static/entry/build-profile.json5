@@ -14,7 +14,7 @@
  */
 
 {
-  "arkTSVersion": "1.2",
+  "apiType": "stageMode",
   "buildOption": {
   },
   "buildOptionSet": [

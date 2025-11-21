@@ -20,12 +20,12 @@ import {
   TextPicker,StepperItem,Stepper,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,applyStyles,CommonMethod,
   ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,Blank,
   DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,QRCode,ScrollBar,SliderStyle,TextClock,TextTimer,Circle,Ellipse,Line,Polyline,Polygon,Path,ClickEvent,
-  Rect,Shape,Badge,Refresh,RelativeContainer,BarState,WaterFlow,ProgressType,FlowItem,BadgeParamWithNumber,HorizontalAlign,VerticalAlign,GridColOptions,CommonMethod
+  Rect,Shape,Badge,Refresh,RelativeContainer,BarState,WaterFlow,ProgressType,FlowItem,BadgeParamWithNumber,HorizontalAlign,VerticalAlign,GridColOptions,CommonMethod,AlignRuleOption
 } from '@ohos.arkui.component'
 import { SetValue } from '../../common/Utils'
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage ,StorageProp} from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 interface ViewOption {
 targetView: string
@@ -41,7 +41,7 @@ interface RouterParamOptions {
 @Component
 struct ResponseRegionPage {
   @State eventCallBackStr: string = ''
-  @State _responseRegion: SetValue[] | Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' } as SetValue]
+  @StorageProp('_responseRegion') _responseRegion: Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' }as Rectangle] as Array<Rectangle>
   @State targetView: string = ''
   @State componentKey: string =  ''
   @State targetWidth: number = 0
@@ -51,23 +51,28 @@ struct ResponseRegionPage {
 
   onPageShow() {
     console.info('responseRegion page show called ')
-    attrsManager.registerDataChange((value: SetValue[]):void => {
-      this._responseRegion = value
-      this.eventCallBackStr = ''
-    })
-  }
-aboutToAppear(){
+    // attrsManager.registerDataChange((value: SetValue[]):void => {
+    //   this._responseRegion = value
+    //   this.eventCallBackStr = ''
+    // })
+
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
       this.targetView = routerParamOptions.view.targetView
-this.componentKey = routerParamOptions.view.componentKey
-this.targetWidth = routerParamOptions.view.targetWidth
-this.targetHeight = routerParamOptions.view.targetHeight
-this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+      this.componentKey = routerParamOptions.view.componentKey
+      this.targetWidth = routerParamOptions.view.targetWidth
+      this.targetHeight = routerParamOptions.view.targetHeight
+      this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
+
+  aboutToAppear(){
+
+  }
+
   @Builder
   myBuilder() {
     Column() {
@@ -143,7 +148,7 @@ this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: Infinity as int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).applyStyles(this.commonStyle)
@@ -370,7 +375,7 @@ this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('responseRegion')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Row') {
@@ -384,13 +389,13 @@ this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index:Int) => {
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index:int) => {
                 Text('Scroll' + item.toString())
                   .width('90%')
                   .height(50)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: Int, index:Int):string => String(item))
+              }, (item: Int, index:int):string => String(item))
             }.width('100%')
           }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {

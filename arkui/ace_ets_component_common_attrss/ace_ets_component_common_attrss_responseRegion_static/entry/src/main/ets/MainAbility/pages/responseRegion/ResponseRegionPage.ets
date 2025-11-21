@@ -21,12 +21,13 @@ import {
   ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,
   GridColColumnOption,Rectangle,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,QRCode,ScrollBar,SliderStyle,TextClock,TextTimer,
   Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,Refresh,RelativeContainer,BarState,WaterFlow,ProgressType,
-  FlowItem,BadgeParamWithNumber,HorizontalAlign,VerticalAlign,GridColOptions,CommonMethod,Builder,ClickEvent,applyStyles,WebviewController
+  FlowItem,BadgeParamWithNumber,HorizontalAlign,VerticalAlign,GridColOptions,CommonMethod,Builder,ClickEvent,applyStyles,WebviewController,AlignRuleOption
 } from '@ohos.arkui.component'
+
 import { SetValue } from '../../common/Utils'
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 interface ViewOption {
   targetView: string
@@ -42,7 +43,7 @@ interface RouterParamOptions {
 @Component
 struct ResponseRegionPage {
   @State eventCallBackStr: string = ''
-  @State _responseRegion: SetValue[] | Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' } as SetValue]
+  @StoragePropRef('_responseRegion') _responseRegion: Array<Rectangle> = [{ x: 0, y: 0, width: '100%', height: '100%' } ]
   @State targetView: string = ''
   @State componentKey: string =  ''
   @State targetWidth: number = 0
@@ -51,15 +52,10 @@ struct ResponseRegionPage {
 
 
   onPageShow() {
-    console.info('responseRegion page show called ')
-    attrsManager.registerDataChange((value: SetValue[]):void => {
-      this._responseRegion = value
-      this.eventCallBackStr = ''
-    })
-  }
-  aboutToAppear(){
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
+      console.info('[wll]after'+JSON.stringify(routerParamOptions.view.testValue.setValue[0]))
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.targetWidth = routerParamOptions.view.targetWidth
@@ -68,6 +64,9 @@ struct ResponseRegionPage {
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
+  }
+  aboutToAppear(){
+
   }
   @Builder
   myBuilder() {
@@ -82,12 +81,12 @@ struct ResponseRegionPage {
   commonStyle(instance: CommonMethod) {
     instance.width(this.targetWidth)
     instance.height(this.targetHeight)
-    instance.responseRegion(this._responseRegion as Array<Rectangle>)
+    instance.responseRegion(this._responseRegion)
     instance.onClick((event: ClickEvent) => {
       console.info('[ResponseRegionPage] ' + this.targetView + ' onClick called at' + event.timestamp);
       this.eventCallBackStr += 'onClick, '
     })
-      .key(this.componentKey)
+    instance.key(this.componentKey)
   }
 
   build() {
@@ -127,7 +126,7 @@ struct ResponseRegionPage {
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
             .applyStyles(this.commonStyle)
-            .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
+            .colors([['0x317AF7', 1], ['0x5BA854', 1], ['0xE08C3A', 1], ['0x9C554B', 1]])
         } else if (this.targetView == 'Image') {
           Image($r('app.media.icon'))
             .applyStyles(this.commonStyle)
@@ -144,7 +143,7 @@ struct ResponseRegionPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity.toInt(),
+            loop: Infinity as int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).applyStyles(this.commonStyle)
@@ -255,21 +254,21 @@ struct ResponseRegionPage {
             Button('message')
               .width(100)
               .height(50)
-              .backgroundColor(0x317aff)
+              .backgroundColor('0x317aff')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Column') {
           Column() {
             Column()
               .width('100%')
               .height(30)
-              .backgroundColor(0xAFEEEE)
+              .backgroundColor('0xAFEEEE')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1')
               .width('100%')
               .height(50)
-              .backgroundColor(0xF5DEB3)
+              .backgroundColor('0xF5DEB3')
               .textAlign(TextAlign.Center)
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Counter') {
@@ -280,7 +279,7 @@ struct ResponseRegionPage {
             Text('1')
               .width('20%')
               .height(50)
-              .backgroundColor(0xF5DEB3)
+              .backgroundColor('0xF5DEB3')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'GridRow') {
           GridRow({
@@ -315,12 +314,12 @@ struct ResponseRegionPage {
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
           .applyStyles(this.commonStyle)
-          .backgroundColor(0xFAEEE0)
+          .backgroundColor('0xFAEEE0')
         } else if (this.targetView == 'GridItem') {
           Grid() {
             GridItem() {
               Text('4')
-                .backgroundColor(0xFAEEE0)
+                .backgroundColor('0xFAEEE0')
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
@@ -371,7 +370,7 @@ struct ResponseRegionPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('responseRegion')
           }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Row') {
@@ -385,13 +384,13 @@ struct ResponseRegionPage {
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index:Int) => {
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index:int) => {
                 Text('Scroll' + item.toString())
                   .width('90%')
                   .height(50)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: Int, index:Int):string => String(item))
+              }, (item: Int, index:int):string => String(item))
             }.width('100%')
           }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {
@@ -512,7 +511,7 @@ struct ResponseRegionPage {
           Grid() {
             GridItem() {
               Text('4')
-                .backgroundColor(0xFAEEE0)
+                .backgroundColor('0xFAEEE0')
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
@@ -548,7 +547,7 @@ struct ResponseRegionPage {
       Text(this.eventCallBackStr)
         .width(100)
         .height(100)
-        .backgroundColor(0xc1cbac)
+        .backgroundColor('0xc1cbac')
         .key(this.referenceComponentKey)
     }
     .backgroundColor(Color.Yellow)
