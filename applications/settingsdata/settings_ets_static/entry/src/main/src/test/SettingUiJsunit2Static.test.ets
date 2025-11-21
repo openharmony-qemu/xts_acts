@@ -289,7 +289,7 @@ export default function settingUiJsunit() {
      * @tc.desc: check settings get value
      */
     it('settings_get_value_static_041',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
-      let str ="settings.display.font_scale"
+      let str ="font_scale"
       expect(str).assertEqual(settings.display.FONT_SCALE);
       done();
     });
