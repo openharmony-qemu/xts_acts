@@ -60,13 +60,14 @@ export default function PushNameRouterTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   PushNameRouterTest_static_0100
      * @tc.name     PushNameRouterTest_static_0100
      * @tc.desc     PushNameRouterTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('PushNameRouterTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('PushNameRouterTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('PushNameRouterTest_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -74,7 +75,8 @@ it('PushNameRouterTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
       let button = await driver.findComponent(ON.id("PushNameRouter_btn_push"));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-
+console.log('+++++++PushNameRouterPage_pushNamedRoute',AppStorage.get('PushNameRouterPage_pushNamedRoute'))
+console.log('+++++++PushNameRouterPage_aboutToAppear',AppStorage.get('PushNameRouterPage_aboutToAppear'))
       expect(AppStorage.get('PushNameRouterPage_pushNamedRoute')).assertEqual('success');
       expect(AppStorage.get('PushNameRouterPage_aboutToAppear')).assertEqual('success');
       AppStorage.delete('PushNameRouterPage_pushNamedRoute')

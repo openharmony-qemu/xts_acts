@@ -60,13 +60,14 @@ export default function NavPathStack5() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   NavPathStack5_static_0100
      * @tc.name     NavPathStack5_static_0100
      * @tc.desc     NavPathStack5_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavPathStack5_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavPathStack5_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavPathStack5_static_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -85,13 +86,14 @@ it('NavPathStack5_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/*
      * @tc.number   NavPathStack5_0200
      * @tc.name     NavPathStack5_0200
      * @tc.desc     NavPathStack5_0200
      * @tc.level    Level.LEVEL0
      */
-it('NavPathStack5_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavPathStack5_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavPathStack5_0200 START');
       await CommonFunc.sleep(1000);
 

@@ -60,13 +60,14 @@ export default function Navigation_SingleInstanceJump7() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   Navigation_SingleInstanceJump7_static_0100
      * @tc.name     Navigation_SingleInstanceJump7_static_0100
      * @tc.desc     Navigation_SingleInstanceJump7_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Navigation_SingleInstanceJump7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Navigation_SingleInstanceJump7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Navigation_SingleInstanceJump7_static_0100 START');
       await CommonFunc.sleep(1000);
 

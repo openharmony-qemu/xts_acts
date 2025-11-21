@@ -42,7 +42,6 @@ import {
   SearchController,
   Position,
   EffectType,
-  EffectComponent,
   Text,
   Color,
   Flex,

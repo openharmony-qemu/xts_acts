@@ -64,13 +64,14 @@ export default function NavigationSymbolIcon() {
 
 
 
-    /*
+    
+/*
      * @tc.number   NavigationSymbolIcon_static_0100
      * @tc.name     NavigationSymbolIcon_static_0100
      * @tc.desc     NavigationSymbolIcon_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationSymbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationSymbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavigationSymbolIcon_static_0100 START');
       await CommonFunc.sleep(1000);
       let str = JSON.stringify(inspector.getInspectorTree())

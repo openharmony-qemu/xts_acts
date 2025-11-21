@@ -60,13 +60,14 @@ export default function NavPathStack11() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   NavPathStack11_static_0100
      * @tc.name     NavPathStack11_static_0100
      * @tc.desc     NavPathStack11_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavPathStack11_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavPathStack11_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavPathStack11_static_0100 START');
       await CommonFunc.sleep(1000);
 

@@ -64,13 +64,14 @@ export default function NavDestinationRouterMap() {
 
 
     
-    /*
+    
+/*
      * @tc.number   NavDestinationRouterMap_static_0100
      * @tc.name     NavDestinationRouterMap_static_0100
      * @tc.desc     NavDestinationRouterMap_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavDestinationRouterMap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavDestinationRouterMap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavDestinationRouterMap_static_0100 START');
       await CommonFunc.sleep(1000);
 

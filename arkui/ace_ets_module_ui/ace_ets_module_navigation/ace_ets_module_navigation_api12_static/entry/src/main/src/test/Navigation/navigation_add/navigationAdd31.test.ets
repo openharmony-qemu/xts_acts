@@ -26,8 +26,8 @@ import { UtilsTest, startAbility } from '../../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function navigation_add4_1() {
-  describe('navigation_add4_1', () => {
+export default function navigation_add3_1() {
+  describe('navigation_add3_1', () => {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000);
@@ -36,65 +36,68 @@ export default function navigation_add4_1() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("navigation_add4_1 beforeEach start");
+      console.info("navigation_add3_1 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/navigation_add/navigation_add4_1',
+        url: 'MainAbility/pages/Navigation/navigation_add/navigation_add3_1',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get navigation_add4_1 state pages:" + JSON.stringify(pages));
+        console.info("get navigation_add3_1 state pages:" + JSON.stringify(pages));
         if (!("List_SpaceChange" == pages.name)) {
-          console.info("get navigation_add4_1 pages.name:" + JSON.stringify(pages.name));
+          console.info("get navigation_add3_1 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push navigation_add4_1 page result:");
+          console.info("push navigation_add3_1 page result:");
         }
       } catch (err) {
-        console.error("push navigation_add4_1 page error:" + err);
+        console.error("push navigation_add3_1 page error:" + err);
       }
-      console.info("navigation_add4_1 beforeEach end");
+      console.info("navigation_add3_1 beforeEach end");
     });
     afterEach(async () => {
     });
+
     
     
-    /*
-     * @tc.number   navigation_add4_1_static_0100
-     * @tc.name     navigation_add4_1_static_0100
-     * @tc.desc     navigation_add4_1_static_0100
+/*
+     * @tc.number   navigation_add3_1_static_0100
+     * @tc.name     navigation_add3_1_static_0100
+     * @tc.desc     navigation_add3_1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('navigation_add4_1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('navigation_add4_1_static_0100 START');
+    it('navigation_add3_1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('navigation_add3_1_static_0100 START');
       await CommonFunc.sleep(1000);
-      
+
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      
-      let navigation = CommonFunc.getComponentRectOnScreen('navigation_add4_1_navigation');
-      
-      // await driver.swipe( Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3) ,Math.round(navigation.top + (navigation.bottom - navigation.top) / 2) ,Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1) ,Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2));
-      await CommonFunc.sleep(1000);
-      
-      let btn1 = await driver.findComponent(ON.id('navigation_add4_1_pageTwo_btn1'));
+      let btn1 = await driver.findComponent(ON.id('navigation_add3_1_btn1'));
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      
-      let text1 = inspector.getInspectorByKey('navigation_add4_1_pageTwo_text1');
-      expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('["pageOne","pageTwo"]');
+      let btn2 = await driver.findComponent(ON.id('navigation_add3_1_pageOne_btn1'));
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      
-      
-      
-      
-      
-      console.info('navigation_add4_1_static_0100 END');
+      let navigation_text1_1 = inspector.getInspectorByKey('navigation_add3_1_text1');
+      expect(String(JSON.parseJsonElement(navigation_text1_1).getElement('$attrs').getString('content'))).assertEqual('"pageOne"');
+      await CommonFunc.sleep(1000);
+      let navigation_text2_1 = inspector.getInspectorByKey('navigation_add3_1_text2');
+      expect(String(JSON.parseJsonElement(navigation_text2_1).getElement('$attrs').getString('content'))).assertEqual('"pageTwo"');
+      await CommonFunc.sleep(1000);
+      let navigation_text3_1 = inspector.getInspectorByKey('navigation_add3_1_text3');
+      expect(String(JSON.parseJsonElement(navigation_text3_1).getElement('$attrs').getString('content'))).assertEqual('1');
+      await CommonFunc.sleep(1000);
+      let navigation_text4_1 = inspector.getInspectorByKey('navigation_add3_1_text4');
+      expect(String(JSON.parseJsonElement(navigation_text4_1).getElement('$attrs').getString('content'))).assertEqual('true');
+      await CommonFunc.sleep(1000);
+
+
+      console.info('navigation_add3_1_static_0100 END');
       done();
     });
-    
-    
-    
+
+
+
   })
 }

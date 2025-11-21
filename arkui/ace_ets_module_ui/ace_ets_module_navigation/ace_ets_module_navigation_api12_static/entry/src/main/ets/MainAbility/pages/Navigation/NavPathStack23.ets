@@ -13,62 +13,118 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,PopInfo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
+  Entry,
+  Component,
+  $r,
+  Scroll,
+  Builder,
+  List,
+  ListItem,
+  Resource,
+  animateTo,
+  PopInfo,
+  AnimateParam,
+  Search,
+  TextAlign,
+  Axis,
+  NavBarPosition,
+  FlexAlign,
+  NavPathInfo,
+  NavDestinationContext,
+  NavigationTitleMode,
+  Image,
+  NavigationMode,
+  Column,
+  Navigation,
+  ButtonType,
+  NavDestination,
+  Stack,
+  ColumnOptions,
+  TextInput,
+  SearchController,
+  NavigationOperation,
+  PanGesture,
+  Position,
+  EffectType,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  NavDestinationMode,
+  Dimension,
+  TextOverflow,
+  GestureEvent,
+  FontWeight,
+  Axis,
+  Margin,
+  Swiper,
+  ForEach,
+  PickerTextStyle,
+  CalendarAlign,
+  Visibility,
+  NavigationCommonTitle,
+  NavDestinationCommonTitle,
+  Alignment,
+  BarStyle,
+  LaunchMode,
+  NavPathStack
+} from '@ohos.arkui.component';
 import {
-  State,
-  Link,
-  Prop,Provide
+  State, Link, Prop, Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Callback } from '@ohos.base'
 
-class DerivedNavPathStack extends NavPathStack{
-  id:string = '__default__'
-  setId(id:string){
+class DerivedNavPathStack extends NavPathStack {
+  id: string = '__default__'
+
+  setId(id: string) {
     this.id = id
   }
-  getInfo():string{
+
+  getInfo(): string {
     return "this page used Derived navPathStack,id:" + this.id
   }
 
-
   pushPath(info: NavPathInfo, animated?: boolean): void {
-    super.pushPath(info,animated)
+    super.pushPath(info, animated)
   }
 
-  pushPathByName1(name: string, param: Object, animated?: boolean | undefined): void{
-    super.pushPathByName(name,param,animated)
+  pushPathByName1(name: string, param: Object, animated?: boolean | undefined): void {
+    super.pushPathByName(name, param, animated)
   }
-  pushPathByName2(name: string, param: Object, onPop:Callback<PopInfo> , animated?: boolean | undefined): void{
-    super.pushPathByName(name,param,onPop,animated)
+
+  pushPathByName2(name: string, param: Object, onPop: Callback<PopInfo>, animated?: boolean | undefined): void {
+    super.pushPathByName(name, param, onPop, animated)
   }
 
   pop(result?: Object | undefined, animated?: boolean | undefined): NavPathInfo | undefined {
-    return super.pop(result as Object ,animated as boolean)
+    return super.pop(result as Object, animated as boolean)
   }
 }
-class param{
-  info:string = 'default_param'
 
-  constructor(info:string) {
-    this.info= info
+class param {
+  info: string = 'default_param'
+
+  constructor(info: string) {
+    this.info = info
   }
 }
 
 @Entry
 @Component
-struct NavPathStack23{
-  derivedStack:DerivedNavPathStack = new DerivedNavPathStack()
-  @State text1:string = ''
+struct NavPathStack23 {
+  derivedStack: DerivedNavPathStack = new DerivedNavPathStack()
+  @State text1: string = ''
 
   @Builder
-  PageOne(){
-    NavDestination(){
-      Column(){
+  PageOne() {
+    NavDestination() {
+      Column() {
         Text('pageOne').id('NavPathStack2_pageOne_text1')
       }
     }
@@ -100,9 +156,9 @@ struct NavPathStack23{
   }
 
   @Builder
-  PageTwo(){
-    NavDestination(){
-      Column(){
+  PageTwo() {
+    NavDestination() {
+      Column() {
         Text('pageTwo').id('NavPathStack2_pageOne_text1')
       }
     }
@@ -134,9 +190,9 @@ struct NavPathStack23{
   }
 
   @Builder
-  PageThree(){
-    NavDestination(){
-      Column(){
+  PageThree() {
+    NavDestination() {
+      Column() {
         Text('pageThree').id('NavPathStack2_pageOne_text1')
       }
     }
@@ -167,28 +223,27 @@ struct NavPathStack23{
     })
   }
 
-
   @Builder
-  pageMap(name:string){
-    if (name == 'pageOne'){
+  pageMap(name: string) {
+    if (name == 'pageOne') {
       this.PageOne()
-    }else if(name == 'pageTwo'){
+    } else if (name == 'pageTwo') {
       this.PageTwo()
-    }else if(name == 'pageThree'){
+    } else if (name == 'pageThree') {
       this.PageThree()
     }
   }
 
   build() {
-    Navigation(this.derivedStack){
-      Scroll(){
-        Column(){
+    Navigation(this.derivedStack) {
+      Scroll() {
+        Column() {
           Text(this.text1).id('NavPathStack23_text1').height('5%')
           Button('pushPath pageOne').onClick((event: ClickEvent) => {
-            this.derivedStack.pushPath(new NavPathInfo('pageOne',null))
+            this.derivedStack.pushPath(new NavPathInfo('pageOne', null))
           }).id('NavPathStack23_btn1').height('5%')
           Button('pushPathByName(onPop) pageThree').onClick((event: ClickEvent) => {
-            this.derivedStack.pushPathByName2('pageThree',new param('ok'),(popInfo) => {
+            this.derivedStack.pushPathByName2('pageThree', new param('ok'), (popInfo) => {
               console.log(popInfo.info.name)
             })
           }).id('NavPathStack23_btn2').height('5%')

@@ -45,7 +45,7 @@ export default function NavigationApi1() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get NavigationApi1 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("NavigationApi1" == pages.name)) {
           console.info("get NavigationApi1 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -60,13 +60,14 @@ export default function NavigationApi1() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   NavigationApi1_static_0100
      * @tc.name     NavigationApi1_static_0100
      * @tc.desc     NavigationApi1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavigationApi1_static_0100 START');
       await CommonFunc.sleep(1000);
 

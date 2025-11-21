@@ -60,13 +60,14 @@ export default function NavPathStack4() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   NavPathStack4_static_0100
      * @tc.name     NavPathStack4_static_0100
      * @tc.desc     NavPathStack4_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavPathStack4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavPathStack4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavPathStack4_static_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -85,13 +86,14 @@ it('NavPathStack4_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/*
      * @tc.number   NavPathStack4_0200
      * @tc.name     NavPathStack4_0200
      * @tc.desc     NavPathStack4_0200
      * @tc.level    Level.LEVEL0
      */
-it('NavPathStack4_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavPathStack4_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavPathStack4_0200 START');
       await CommonFunc.sleep(1000);
 

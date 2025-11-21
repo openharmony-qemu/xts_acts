@@ -138,38 +138,38 @@ import NavigationLaunchMode from './Navigation/NavigationLaunchMode.test'
 import NavigationTitleTest1 from './Navigation/NavigationTitleTest1.test'
 import removeByNavDestinationIdTest from './Navigation/removeByNavDestinationIdTest.test'
 
-import navigation_add1_1 from './Navigation/navigation_add/navigation_add1_1.test'
-import navigation_add1_2 from './Navigation/navigation_add/navigation_add1_2.test'
-import navigation_add2_1 from './Navigation/navigation_add/navigation_add2_1.test'
-import navigation_add2_2 from './Navigation/navigation_add/navigation_add2_2.test'
-import navigation_add3_1 from './Navigation/navigation_add/navigation_add3_1.test'
-import navigation_add3_2 from './Navigation/navigation_add/navigation_add3_2.test'
-import navigation_add4_1 from './Navigation/navigation_add/navigation_add4_1.test'
+import navigation_add1_1 from './Navigation/navigation_add/navigationAdd11.test'
+import navigation_add1_2 from './Navigation/navigation_add/navigationAdd12.test'
+import navigation_add2_1 from './Navigation/navigation_add/navigationAdd21.test'
+import navigation_add2_2 from './Navigation/navigation_add/navigationAdd22.test'
+import navigation_add3_1 from './Navigation/navigation_add/navigationAdd31.test'
+import navigation_add3_2 from './Navigation/navigation_add/navigationAdd32.test'
+import navigation_add4_1 from './Navigation/navigation_add/navigationAdd41.test'
 import queryNavigationInfoTest from './Navigation/queryNavigationInfoTest.test'
 
-import Navigation_L0_1 from './Navigation/Navigation_L0/Navigation_L0_1.test'
-import Navigation_L0_2 from './Navigation/Navigation_L0/Navigation_L0_2.test'
-import Navigation_L0_3 from './Navigation/Navigation_L0/Navigation_L0_3.test'
-import Navigation_L0_4 from './Navigation/Navigation_L0/Navigation_L0_4.test'
-import Navigation_L0_5_1 from './Navigation/Navigation_L0/Navigation_L0_5_1.test'
-import Navigation_L0_5_2 from './Navigation/Navigation_L0/Navigation_L0_5_2.test'
-import Navigation_L0_6 from './Navigation/Navigation_L0/Navigation_L0_6.test'
-import Navigation_L0_7 from './Navigation/Navigation_L0/Navigation_L0_7.test'
-import Navigation_L0_8 from './Navigation/Navigation_L0/Navigation_L0_8.test'
-import Navigation_L0_9 from './Navigation/Navigation_L0/Navigation_L0_9.test'
-import Navigation_L0_10 from './Navigation/Navigation_L0/Navigation_L0_10.test'
-import Navigation_L0_11 from './Navigation/Navigation_L0/Navigation_L0_11.test'
-import Navigation_L0_12 from './Navigation/Navigation_L0/Navigation_L0_12.test'
-import Navigation_L0_13 from './Navigation/Navigation_L0/Navigation_L0_13.test'
-import Navigation_L0_14 from './Navigation/Navigation_L0/Navigation_L0_14.test'
-import Navigation_L0_15 from './Navigation/Navigation_L0/Navigation_L0_15.test'
-import Navigation_L0_16 from './Navigation/Navigation_L0/Navigation_L0_16.test'
-import Navigation_L0_17 from './Navigation/Navigation_L0/Navigation_L0_17.test'
-import Navigation_L0_18 from './Navigation/Navigation_L0/Navigation_L0_18.test'
-import Navigation_L0_19 from './Navigation/Navigation_L0/Navigation_L0_19.test'
-import Navigation_L0_20 from './Navigation/Navigation_L0/Navigation_L0_20.test'
-import Navigation_L0_21_1 from './Navigation/Navigation_L0/Navigation_L0_21_1.test'
-import Navigation_L0_21_2 from './Navigation/Navigation_L0/Navigation_L0_21_2.test'
+import Navigation_L0_1 from './Navigation/Navigation_L0/NavigationL01.test'
+import Navigation_L0_2 from './Navigation/Navigation_L0/NavigationL02.test'
+import Navigation_L0_3 from './Navigation/Navigation_L0/NavigationL03.test'
+import Navigation_L0_4 from './Navigation/Navigation_L0/NavigationL04.test'
+import Navigation_L0_5_1 from './Navigation/Navigation_L0/NavigationL051.test'
+import Navigation_L0_5_2 from './Navigation/Navigation_L0/NavigationL052.test'
+import Navigation_L0_6 from './Navigation/Navigation_L0/NavigationL06.test'
+import Navigation_L0_7 from './Navigation/Navigation_L0/NavigationL07.test'
+import Navigation_L0_8 from './Navigation/Navigation_L0/NavigationL08.test'
+import Navigation_L0_9 from './Navigation/Navigation_L0/NavigationL09.test'
+import Navigation_L0_10 from './Navigation/Navigation_L0/NavigationL010.test'
+import Navigation_L0_11 from './Navigation/Navigation_L0/NavigationL011.test'
+import Navigation_L0_12 from './Navigation/Navigation_L0/NavigationL012.test'
+import Navigation_L0_13 from './Navigation/Navigation_L0/NavigationL013.test'
+import Navigation_L0_14 from './Navigation/Navigation_L0/NavigationL014.test'
+import Navigation_L0_15 from './Navigation/Navigation_L0/NavigationL015.test'
+import Navigation_L0_16 from './Navigation/Navigation_L0/NavigationL016.test'
+import Navigation_L0_17 from './Navigation/Navigation_L0/NavigationL017.test'
+import Navigation_L0_18 from './Navigation/Navigation_L0/NavigationL018.test'
+import Navigation_L0_19 from './Navigation/Navigation_L0/NavigationL019.test'
+import Navigation_L0_20 from './Navigation/Navigation_L0/NavigationL020.test'
+import Navigation_L0_21_1 from './Navigation/Navigation_L0/NavigationL0211.test'
+import Navigation_L0_21_2 from './Navigation/Navigation_L0/NavigationL0212.test'
 
 import NavigationLevelTest1 from './Navigation/NavigationLevel/NavigationLevelTest1.test'
 import NavigationLevelTest2 from './Navigation/NavigationLevel/NavigationLevelTest2.test'
@@ -204,16 +204,16 @@ import PushNameRouterTest from './UIObserver/PushNameRouterTest.test'
 import RouterPageUpdateTest from './UIObserver/RouterPageUpdateTest.test'
 
 export default function testsuite() {
-  // NavigationApi1();  // Q1 NullPointerError Cannot find method 'pop （page页56）造成页面加载失败，NullPointerError
-  // NavigationApi2();  //  NullPointerError
+  NavigationApi1();  // Q1 NullPointerError Cannot find method 'pop （page页56）造成页面加载失败，NullPointerError
+  NavigationApi2();  //  NullPointerError
   NavigationApi3();  // pass
   NavigationApi4();   // pass
   NavigationBarStyle();  // Q3 pass
-  // NavigationOnPop();   // Q4 (page页75行)param参数未传递
+  NavigationOnPop();   // pass
   NavDestinationEvents();  // pass
   NavDestinationRouterMap();  //   pass
-  // NavigationSymbolIcon();  // Q5 NavigationSymbolIcon.test.ets:81:0  The key '$children' was not found in the JSON object
-  //
+  NavigationSymbolIcon();  // Q5 NavigationSymbolIcon.test.ets:81:0  The key '$children' was not found in the JSON object
+
   NavPathStack1()  // pass
   NavPathStack1_2()  // pass
   NavPathStack1_3()  // pass
@@ -221,16 +221,16 @@ export default function testsuite() {
   NavPathStack1_5() // pass
   NavPathStack1_6()   // pass
   NavPathStack2() // pass
-  // NavPathStack2_2()  // app died  (page159)popToName造成appDied
+  NavPathStack2_2()  // pass
   NavPathStack2_3() // pass
-  // NavPathStack2_4()   // app died  (page158)popToIndex造成appDied
+  NavPathStack2_4()   // pass
   NavPathStack3() // pass 2个用例
   NavPathStack4() // pass 2个用例
   NavPathStack5()  // pass 2个用例
   NavPathStack6() // pass 1个
   NavPathStack7() // pass 1个
-  // NavPathStack8() // app died   (page46)Cannot find method 'pushPathByName 1
-  // NavPathStack9() // （page126）getParamByIndex 取不到值 1个
+  NavPathStack8() // app died   (page46)Cannot find method 'pushPathByName 1
+  NavPathStack9() // （page126）getParamByIndex 取不到值 1个
   NavPathStack10() // pass 1个
   NavPathStack11() // pass 1个
   NavPathStack12()  // pass 1个
@@ -243,91 +243,91 @@ export default function testsuite() {
   NavPathStack19() // pass
   NavPathStack20() // pass 1
   NavPathStack21()  // pass 1
-  // NavPathStack22()  // 生命周期顺序不对
-  // NavPathStack23() // 生命周期顺序不对
-  // NavPathStack24() // 生命周期顺序不对
-  //
+  NavPathStack22()  // 生命周期顺序不对
+  NavPathStack23() // pass
+  NavPathStack24() // 生命周期顺序不对
+
   Navigation_SingleInstanceJump1()  // pass 1
-  // Navigation_SingleInstanceJump2()  // (test79)断言失败page1,Param:undefined equals page1,Param:1
-  // Navigation_SingleInstanceJump3()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump4()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump5()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump6()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump7()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump8()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump9()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump10()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump11()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump12()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump13()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump14()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump15()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump16()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump17()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump18()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump19()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump20()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump21()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump22()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump23()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump24()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump25()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump26()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump27()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump28()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump29()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump30()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump31()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump32()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump33()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump34()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump35()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump36()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump37()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump38()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump39()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump40()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump41()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
-  // Navigation_SingleInstanceJump42()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump2()  // (test79)断言失败page1,Param:undefined equals page1,Param:1
+  Navigation_SingleInstanceJump3()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump4()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump5()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump6()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump7()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump8()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump9()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump10()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump11()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump12()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump13()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump14()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump15()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump16()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump17()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump18()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump19()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump20()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump21()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump22()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump23()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump24()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump25()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump26()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump27()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump28()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump29()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump30()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump31()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump32()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump33()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump34()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump35()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump36()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump37()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump38()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump39()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump40()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump41()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
+  Navigation_SingleInstanceJump42()  // app died   (page84)Cannot find method 'pushPath 1 重载问题
   ignoreLayoutSafeArea();  //  pass1
   ignoreLayoutSafeArea2();  // pass1
-  // NavigationApi5()  // (page35)造成页面加载失败 CustomTransition
-  // MultiNavigation1()  // NullPointerError  存在注释 编译问题  pushPath  (page53)pushPath重载报错
-  // MultiNavigation2()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation3()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation4()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation5()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation6()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation7()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation8()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation9()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation10()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation11()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation12()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation13()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation14()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation15()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation16()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation17()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation18()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation19()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation20()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation21()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation22()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation23()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation24()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation25()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation26()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation27()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation28()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation29()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation30()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation31()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // MultiNavigation32()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
-  // NavigationLaunchMode(); // app died （page55）造成appDied
+  NavigationApi5()  // (page35)造成页面加载失败 CustomTransition
+  MultiNavigation1()  // NullPointerError  存在注释 编译问题  pushPath  (page53)pushPath重载报错
+  MultiNavigation2()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation3()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation4()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation5()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation6()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation7()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation8()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation9()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation10()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation11()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation12()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation13()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation14()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation15()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation16()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation17()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation18()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation19()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation20()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation21()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation22()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation23()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation24()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation25()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation26()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation27()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation28()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation29()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation30()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation31()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  MultiNavigation32()  // NullPointerError  存在注释 编译问题  (page58) pushPath重载不正确，导致无法打开自定义组件
+  NavigationLaunchMode(); // app died （page55）造成appDied
   NavigationTitleTest1();  // pass
   removeByNavDestinationIdTest();  //  pass
-  //
+
   navigation_add1_1()   // pass1
   navigation_add1_2()   // apass1
   navigation_add2_1()   // pass1
@@ -336,61 +336,61 @@ export default function testsuite() {
   navigation_add3_2()   // pass1
   navigation_add4_1()   // pass1
   queryNavigationInfoTest()  //  pass
-  //
+
   Navigation_L0_1() // pass
   Navigation_L0_2() // pass
   Navigation_L0_3()  // pass
   Navigation_L0_4()  //  pass
-  // Navigation_L0_5_1()   // Navigation_L0_5_1(page44)pushDestinationByName的catch未捕获错误码，导致断言失败
-  // Navigation_L0_5_2()    // Navigation_L0_5_2(page44)pushDestinationByName的catch未捕获错误码，导致断言失败
+  Navigation_L0_5_1()   // Navigation_L0_5_1(page44)pushDestinationByName的catch未捕获错误码，导致断言失败
+  Navigation_L0_5_2()    // Navigation_L0_5_2(page44)pushDestinationByName的catch未捕获错误码，导致断言失败
   Navigation_L0_6()  // pass
-  // Navigation_L0_7()  //  (page64)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_8()  //  (page64)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_9()  //  (page64)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_10()  // (page60)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_11()  //  (page58)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_12()  // (page61)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_13()  //  (page61)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_14()  //  (page61)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_15()  // (page60)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_16()  // (61)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_17()  // (60)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_18()  // (58)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_19()  // app died (page38)this.pageInfos.pop() 导致appDied。
-  // Navigation_L0_20()  // (page60)no Provide found for Consume 造成页面加载失败
-  // Navigation_L0_21_1()  // expect  equals 100006  (page45)pushDestination接口有问题，等更新9.26 SDK后再试
-  // Navigation_L0_21_2() // expect  equals 100005 (page46)pushDestination接口有问题，等更新9.26 SDK后再试
+  Navigation_L0_7()  //  (page64)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_8()  //  (page64)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_9()  //  (page64)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_10()  // (page60)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_11()  //  (page58)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_12()  // (page61)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_13()  //  (page61)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_14()  //  (page61)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_15()  // (page60)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_16()  // (61)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_17()  // (60)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_18()  // (58)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_19()  // app died (page38)this.pageInfos.pop() 导致appDied。
+  Navigation_L0_20()  // (page60)no Provide found for Consume 造成页面加载失败
+  Navigation_L0_21_1()  // expect  equals 100006  (page45)pushDestination接口有问题，等更新9.26 SDK后再试
+  Navigation_L0_21_2() // expect  equals 100005 (page46)pushDestination接口有问题，等更新9.26 SDK后再试
   NavigationLevelTest1();  // pass
-  // NavigationLevelTest2();  //  app died (page38)this.pageInfos.pop() 导致appDied。
+  NavigationLevelTest2();  //  app died (page38)this.pageInfos.pop() 导致appDied。
   NavigationLevelTest3();  // pass
   NavigationLevelTest4();  // pass
   NavigationLevelTest5();  // pass
   NavigationLevelTest6();  // pass
   NavigationLevelTest7();  // pass
-  // NavigationLevelTest8();  // driver.findComponent(ON.id('xxx'))
-  // NavigationLevelTest9();  //  undefined cannot be cast to Promise<void>
-  // NavigationLevelTest10();  //  undefined cannot be cast to Promise<void>
+  NavigationLevelTest8();  // driver.findComponent(ON.id('xxx'))
+  NavigationLevelTest9();  //  undefined cannot be cast to Promise<void>
+  NavigationLevelTest10();  //  undefined cannot be cast to Promise<void>
   NavigationLevelTest11();  // pass
   NavigationLevelTest12();  // pass
-  // NavigationLevelTest13();  // driver.findComponent(ON.id('xxx'))
+  NavigationLevelTest13();  // driver.findComponent(ON.id('xxx'))
   NavigationLevelTest14();  // pass
-  // NavigationLevelTest15();  // driver.findComponent(ON.id('xxx'))
-  // NavigationLevelTest16();  // driver.findComponent(ON.id('xxx'))
+  NavigationLevelTest15();  // driver.findComponent(ON.id('xxx'))
+  NavigationLevelTest16();  // driver.findComponent(ON.id('xxx'))
   NavigationLevelTest17();  // pass
-  // NavigationLevelTest18();  // undefined cannot be cast to Promise<void>
+  NavigationLevelTest18();  // undefined cannot be cast to Promise<void>
   NavigationLevelTest19();  // pass
   NavigationLevelTest20();  // pass
   NavigationLevelTest21();  // pass
-  // NavigationLevelTest22();  //expect  equals from:pageTwo;to:pageThree;operation:3;animated:true
+  NavigationLevelTest22();  //expect  equals from:pageTwo;to:pageThree;operation:3;animated:true
   NavigationLevelTest23();  // pass
-  // NavPathInfoIsEntry(); // expect hello equals isEntry is: true
-  //
-  //
+  NavPathInfoIsEntry(); // expect hello equals isEntry is: true
+
+
   GetStateByIndexTest()  // pass
-  // UIObserverObserver4Test()  //  undefined cannot be cast to Promise<void>
-  // UIObserverContext2Test()  //  undefined cannot be cast to Promise<void>
-  // UIObserverContext3Test()  //  undefined cannot be cast to Promise<void>
-  // UIObserverUpdateContextTest()  //  undefined cannot be cast to Promise<void>
-  // RouterPageUpdateTest()  // driver.findComponent(ON.id('xxx'))
-  // PushNameRouterTest()   //Q9 app died  86个   PushNameRouterTest_static_0100
+  UIObserverObserver4Test()  //  undefined cannot be cast to Promise<void>
+  UIObserverContext2Test()  //  undefined cannot be cast to Promise<void>
+  UIObserverContext3Test()  //  undefined cannot be cast to Promise<void>
+  UIObserverUpdateContextTest()  //  undefined cannot be cast to Promise<void>
+  RouterPageUpdateTest()  // driver.findComponent(ON.id('xxx'))
+  PushNameRouterTest()   //Q9 app died  86个   PushNameRouterTest_static_0100
 }

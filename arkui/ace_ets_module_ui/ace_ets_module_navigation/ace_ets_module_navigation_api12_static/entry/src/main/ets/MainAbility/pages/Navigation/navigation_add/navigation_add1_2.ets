@@ -13,35 +13,86 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
-,NavPathStack} from '@ohos.arkui.component';
+  Entry,
+  Component,
+  $r,
+  Scroll,
+  Builder,
+  List,
+  ListItem,
+  Resource,
+  animateTo,
+  AnimateParam,
+  Search,
+  TextAlign,
+  Axis,
+  NavBarPosition,
+  FlexAlign,
+  NavPathInfo,
+  NavDestinationContext,
+  NavigationTitleMode,
+  Image,
+  NavigationMode,
+  Column,
+  Navigation,
+  ButtonType,
+  NavDestination,
+  Stack,
+  ColumnOptions,
+  TextInput,
+  SearchController,
+  NavigationOperation,
+  Position,
+  EffectType,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  NavDestinationMode,
+  Dimension,
+  TextOverflow,
+  FontWeight,
+  Axis,
+  Margin,
+  Swiper,
+  ForEach,
+  PickerTextStyle,
+  CalendarAlign,
+  Visibility,
+  NavigationCommonTitle,
+  NavDestinationCommonTitle,
+  Alignment,
+  NavPathStack
+} from '@ohos.arkui.component';
 import {
-  State,
-  Link,
-  Prop,Provide
+  State, Link, Prop, Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 @Entry
 @Component
 struct navigation_add1_2 {
   @Provide pageInfos: NavPathStack = new NavPathStack()
   isUseInterception: boolean = false;
-  @State from:string = ''
-  @State to:string = ''
-  @State operation:string = ''
-  @State animated:boolean = false
-  @Builder pageOne(){
+  @State from: string = ''
+  @State to: string = ''
+  @State operation: string = ''
+  @State animated: boolean = false
+
+  @Builder
+  pageOne() {
     NavDestination() {
-      Column(){
+      Column() {
         Text('pageOne').id('navigation_add1_2_pageOne_text1')
         Button('pageTwo').onClick((event: ClickEvent) => {
-          this.pageInfos.pushPathByName('pageTwo','1')
+          this.pageInfos.pushPathByName('pageTwo', '1')
           this.pageInfos.setInterception({
             willShow: (from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
-                       operation: NavigationOperation, animated: boolean) => {
+              operation: NavigationOperation, animated: boolean) => {
 
               if (typeof from === "string") {
                 console.log("target page is navigation home");
@@ -50,10 +101,10 @@ struct navigation_add1_2 {
               let target1: NavDestinationContext = from as NavDestinationContext;
               let target2: NavDestinationContext = to as NavDestinationContext;
               if (target2.pathInfo.name === 'pageTwo') {
-                this.from =  JSON.stringify(target1.pathInfo.name)
-                this.to =  JSON.stringify(target2.pathInfo.name)
-                this.operation =  String(operation)
-                this.animated =  animated
+                this.from = JSON.stringify(target1.pathInfo.name)
+                this.to = JSON.stringify(target2.pathInfo.name)
+                this.operation = String(operation)
+                this.animated = animated
               }
             }
           })
@@ -70,15 +121,16 @@ struct navigation_add1_2 {
     })
   }
 
-  @Builder pageTwo(){
+  @Builder
+  pageTwo() {
     NavDestination() {
-      Column(){
+      Column() {
         Text('pageTwo').id('navigation_add1_2_pageTwo_text1')
         Button('popToOneByName').onClick((event: ClickEvent) => {
           this.pageInfos.popToName('pageOne')
           this.pageInfos.setInterception({
             willShow: (from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
-                       operation: NavigationOperation, animated: boolean) => {
+              operation: NavigationOperation, animated: boolean) => {
 
               if (typeof from === "string") {
                 console.log("target page is navigation home");
@@ -87,10 +139,10 @@ struct navigation_add1_2 {
               let target1: NavDestinationContext = from as NavDestinationContext;
               let target2: NavDestinationContext = to as NavDestinationContext;
               if (target2.pathInfo.name === 'pageOne') {
-                this.from =  JSON.stringify(target1.pathInfo.name)
-                this.to =  JSON.stringify(target2.pathInfo.name)
-                this.operation =  String(operation)
-                this.animated =  animated
+                this.from = JSON.stringify(target1.pathInfo.name)
+                this.to = JSON.stringify(target2.pathInfo.name)
+                this.operation = String(operation)
+                this.animated = animated
               }
             }
           })
@@ -108,10 +160,10 @@ struct navigation_add1_2 {
   }
 
   @Builder
-  PageMap(name:string){
-    if (name === 'pageOne'){
+  PageMap(name: string) {
+    if (name === 'pageOne') {
       this.pageOne()
-    }else if (name === 'pageTwo'){
+    } else if (name === 'pageTwo') {
       this.pageTwo()
     }
   }
@@ -128,7 +180,7 @@ struct navigation_add1_2 {
           .height(40)
           .margin(20)
           .onClick((e: ClickEvent) => {
-            this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
+            this.pageInfos.pushPath(new NavPathInfo('pageOne', null))
           })
           .key('navigation_add1_2_btn1')
           .height('5%')
