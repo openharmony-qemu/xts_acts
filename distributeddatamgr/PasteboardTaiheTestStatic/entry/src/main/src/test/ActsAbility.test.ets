@@ -3290,7 +3290,5 @@ export default function abilityTest() {
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
             done();
         });
-
-        
     })
 }
