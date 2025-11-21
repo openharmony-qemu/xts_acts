@@ -50,14 +50,14 @@ export default function TextPickerTextStyleAnimationTest() {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
           await UtilsTest.msSleep(2000)
-          
+          // let result = await routerInstance.pushUrl(options)
+          // console.info('push TextStyleAnimation page success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TextStyleAnimation page error ' + JSON.stringify(err));
       }
     });
 
-    
     
     
     /*
@@ -88,7 +88,6 @@ export default function TextPickerTextStyleAnimationTest() {
 
     
     
-    
     /*
      * @tc.number   TextStyleAnimationTest_static_0200
      * @tc.name     TextStyleAnimationTest_static_0200
@@ -117,7 +116,6 @@ export default function TextPickerTextStyleAnimationTest() {
 
     
     
-    
     /*
      * @tc.number   TextStyleAnimationTest_static_0300
      * @tc.name     TextStyleAnimationTest_static_0300
@@ -144,7 +142,6 @@ export default function TextPickerTextStyleAnimationTest() {
       done();
     });
 
-    
     
     
     /*

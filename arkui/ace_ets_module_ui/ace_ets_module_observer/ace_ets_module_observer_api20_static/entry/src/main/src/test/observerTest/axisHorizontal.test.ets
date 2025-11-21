@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import emitter from '@ohos.events.emitter';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,9 +51,10 @@ export default function axisHorizontal() {
         console.info("get axisHorizontal state pages:" + JSON.stringify(pages));
         if (!("axisHorizontal" == pages.name)) {
           console.info("get axisHorizontal pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push axisHorizontal page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push axisHorizontal page error:" + err);
@@ -71,7 +72,8 @@ export default function axisHorizontal() {
 it('axisHorizontal_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[axisHorizontal_0100] START');
       let driver = Driver.create()
-      let btn1 = await driver.findComponent(ON.id('axisHorizontal_on'));
+      let btn1 = await driver.findComponent(ON.id('axisHorizontal_on'));  //获取不到按钮
+      await CommonFunc.sleep(1500);
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
@@ -93,7 +95,7 @@ it('axisHorizontal_static_0100', Level.LEVEL0, async (done: () => void): Promise
 
       let strJson2 = inspector.getInspectorByKey('scroll_axis_horizontal');
       console.info("[axisHorizontal_0100] content2: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
-      
+      // expect(JSON.parse(strJson2).$attrs.content).assertEqual('axis: Axis.Horizontal');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('axis: 1');
 
       await CommonFunc.sleep(1000);

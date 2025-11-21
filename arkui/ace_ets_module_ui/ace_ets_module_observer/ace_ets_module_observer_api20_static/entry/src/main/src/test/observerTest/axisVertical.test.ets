@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import emitter from '@ohos.events.emitter';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,8 +51,10 @@ export default function axisVertical() {
         console.info("get axisVertical state pages:" + JSON.stringify(pages));
         if (!("axisVertical" == pages.name)) {
           console.info("get axisVertical pages.name:" + JSON.stringify(pages.name));
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push axisVertical page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push axisVertical page error:" + err);
@@ -70,8 +72,10 @@ export default function axisVertical() {
 it('axisVertical_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[axisVertical_0100] START');
       let driver = Driver.create()
-      let btn1 = await driver.findComponent(ON.id('axisVertical_on'));
-      await CommonFunc.sleep(500);
+      console.info('[axisVertical_0100] START++++++++++++++');
+      let btn1 = await driver.findComponent(ON.id('axisVertical_on')); //获取不到按钮
+      console.info('[axisVertical_0100] START++++++++++++++',btn1);
+      await CommonFunc.sleep(2500);
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
@@ -93,6 +97,7 @@ it('axisVertical_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
       let strJson2 = inspector.getInspectorByKey('scroll_axis_vertical');
       console.info("[axisVertical_0100] content2: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
+      //expect(JSON.parse(strJson2).$attrs.content).assertEqual('axis: Axis.Vertical');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('axis: 0');
 
       await CommonFunc.sleep(1000);

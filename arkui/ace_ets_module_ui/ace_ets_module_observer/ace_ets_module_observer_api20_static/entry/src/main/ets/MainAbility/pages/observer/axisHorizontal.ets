@@ -22,10 +22,14 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Component
 struct scrollAxisHorizontalIndex {
   scroller: Scroller = new Scroller();
-  options: uiObserver.ObserverOptions = { id: 'axisHorizontal' } as uiObserver.ObserverOptions;
+  options: uiObserver.ObserverOptions = { id: 'axisHorizontal' } as uiObserver.ObserverOptions; //造成create Page Fail
   private arr: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5)
   @State Id1: string = '0'
   @State axis1: Axis | undefined = undefined
+
+  aboutToAppear(){
+      console.log('wj+++++++++++++++++++++++++++++++' );
+  }
 
   build() {
     Column() {
@@ -35,13 +39,15 @@ struct scrollAxisHorizontalIndex {
         Row() {
           Button('observer on')
             .onClick((e: ClickEvent) => {
+              console.log("========================== observer on click")
               uiObserver.onScrollEvent((info: uiObserver.ScrollEventInfo) => {
                 console.info('scrollEventInfo', JSON.stringify(info));
-                
+                // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
               });
             })
           Button('observer off')
             .onClick((e: ClickEvent) => {
+              console.log("========================== observer off click")
               uiObserver.offScrollEvent();
             })
         }
@@ -50,15 +56,19 @@ struct scrollAxisHorizontalIndex {
           Button('observerWithId on')
             .id('axisHorizontal_on')
             .onClick((e: ClickEvent) => {
-              uiObserver.onScrollEvent(this.options, (info: uiObserver.ScrollEventInfo) => {
-                this.Id1 = info.id
-                console.info('scrollEventInfo', JSON.stringify(info));
+              console.log('++++++++++++++++++++++++++1')
+              uiObserver.onScrollEvent( this.options as uiObserver.ObserverOptions, (info: uiObserver.ScrollEventInfo) => {
+                this.Id1 = info!.id as string
+                // this.axis1 = info!.axis as Axis//Property 'axis' does not exist on type 'ScrollEventInfo'  //SDK11.13 暂时不支持，以后会支持
+                console.info('scrollEventInfo');
+                // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
               });
+              console.log('++++++++++++++++++++++++++2')
             })
           Button('observerWithId off')
             .id('axisHorizontal_off')
             .onClick((e: ClickEvent) => {
-              uiObserver.offScrollEvent(this.options);
+              uiObserver.offScrollEvent( this.options);
             })
         }
       }.margin({top:5} as Margin)

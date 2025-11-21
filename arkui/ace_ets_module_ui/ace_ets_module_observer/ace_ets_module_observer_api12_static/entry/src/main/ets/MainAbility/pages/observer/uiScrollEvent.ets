@@ -15,7 +15,7 @@
 import { UIObserver } from '@ohos.arkui.UIContext'
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll,
   TabsController, ForEach, Margin, Row, TabContent, Tabs} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -35,18 +35,29 @@ struct scrollEventUIIndex {
           Button('UIObserver on')
             .id('scrollEvent_off_ui')
             .onClick((e: ClickEvent) => {
-              this.observer.onScrollEvent((info) => {
+            /*  this.observer.on('scrollEvent', (info) => {
                 console.info('scrollEventInfo', JSON.stringify(info));
                 console.info('scrollEvent id', JSON.stringify(info.id));
                 console.info('scrollEvent uniqueId', JSON.stringify(info.uniqueId));
                 console.info('scrollEvent offset', JSON.stringify(info.offset));
                 console.info('scrollEvent scrollEvent', JSON.stringify(info.scrollEvent));
-              });
+              });*/
+
+              let observer = this.getUIContext().getUIObserver();
+              observer.onScrollEvent( (info) => {
+               console.info('scrollEventInfo', JSON.stringify(info));
+               console.info('scrollEvent id', JSON.stringify(info.id));
+               console.info('scrollEvent uniqueId', JSON.stringify(info.uniqueId));
+               console.info('scrollEvent offset', JSON.stringify(info.offset));
+               console.info('scrollEvent scrollEvent', JSON.stringify(info.scrollEvent));
+             });
             })
           Button('UIObserver off')
             .id('scrollEvent_off_on')
             .onClick((e: ClickEvent) => {
-              this.observer.offScrollEvent();
+              // this.observer.off('scrollEvent');
+              let observer = this.getUIContext().getUIObserver();
+              observer.offScrollEvent();
             })
         }
 
@@ -54,7 +65,19 @@ struct scrollEventUIIndex {
           Button('UIObserverWithId on')
             .id('scrollEvent_uiId_on')
             .onClick((e: ClickEvent) => {
-              this.observer.onScrollEvent({ id:'testId_uiScroll' }, (info) => {
+              /*this.observer.on('scrollEvent', { id:'testId_uiScroll' }, (info) => {
+                console.info('scrollEventInfo options', JSON.stringify(info));
+                console.info('scrollEvent options id', JSON.stringify(info.id));
+                console.info('scrollEvent options uniqueId', JSON.stringify(info.uniqueId));
+                console.info('scrollEvent options offset', JSON.stringify(info.offset));
+                console.info('scrollEvent options scrollEvent', JSON.stringify(info.scrollEvent));
+                this.message1 = info.id
+                if (info.scrollEvent !== 0) {
+                  this.message2 = 'scrollEvent'
+                }
+              });*/
+              let observer = this.getUIContext().getUIObserver();
+              observer.onScrollEvent({ id:'testId_uiScroll' }, (info) => {
                 console.info('scrollEventInfo options', JSON.stringify(info));
                 console.info('scrollEvent options id', JSON.stringify(info.id));
                 console.info('scrollEvent options uniqueId', JSON.stringify(info.uniqueId));
@@ -69,7 +92,9 @@ struct scrollEventUIIndex {
           Button('UIObserverWithId off')
             .id('scrollEvent_uiId_off')
             .onClick((e: ClickEvent) => {
-              this.observer.offScrollEvent({ id:'testId_uiScroll' });
+              // this.observer.off('scrollEvent', { id:'testId_uiScroll' });
+              let observer = this.getUIContext().getUIObserver();
+              observer.offScrollEvent( { id:'testId_uiScroll' });
             })
         }
         Scroll(this.scroller) {

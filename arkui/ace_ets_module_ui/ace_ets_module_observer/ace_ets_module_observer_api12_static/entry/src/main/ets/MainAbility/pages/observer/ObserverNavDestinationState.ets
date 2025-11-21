@@ -15,7 +15,7 @@
 import observer  from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, NavPathStack,
   NavDestinationContext, Builder, NavDestinationInfo, Builder, NavDestination, Navigation, NavPathInfo} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -67,7 +67,7 @@ struct ObserverNavDestinationState {
   }
 
   aboutToAppear(){
-    observer.onNavDestinationUpdate(this.testFunc);
+    // observer.onNavDestinationUpdate( this.testFunc);  //create page failed
   }
 
   aboutToDisappear(){
@@ -78,11 +78,14 @@ struct ObserverNavDestinationState {
   @Builder
   pageOneTmp() {
     NavDestination() {
+      console.log('++++++++++++++++++++++++++++++3')
       Column({ space: 10 } as ColumnOptions) {
 
         Button('pushPath pageTwo' ,)
           .onClick((e: ClickEvent) => {
+            console.log('++++++++++++++++++++++++++++++4')
             this.pageInfos.pushPath(new NavPathInfo('pageTwo', null))
+            console.log('++++++++++++++++++++++++++++++5')
           })
           .id('ObserverNavDestinationState_pageTwo')
       }
@@ -98,6 +101,7 @@ struct ObserverNavDestinationState {
   @Builder
   pageTwoTmp() {
     NavDestination() {
+      console.log('++++++++++++++++++++++++++++++6')
       Column({ space: 5 } as ColumnOptions) {
       }
     }.title('pageTwo')
@@ -111,7 +115,9 @@ struct ObserverNavDestinationState {
   @Builder
   PageMap(name: string, param?: object) {
     if (name === 'pageOne') {
-      this.pageOneTmp()
+      // console.log('++++++++++++++++++++++++++++++2')
+      this.pageOneTmp()//
+      // console.log('++++++++++++++++++++++++++++++3')
     } else if (name === 'pageTwo') {
       this.pageTwoTmp()
     }
@@ -132,7 +138,9 @@ struct ObserverNavDestinationState {
 
           Button('pushPath pageOne' ,)
             .onClick((e:ClickEvent) => {
-              this.pageInfos.pushPath(new NavPathInfo('pageOne', null))
+              console.log('++++++++++++++++++++++++++++++0')
+              this.pageInfos.pushPath(new NavPathInfo('pageOne', null))//页面无法跳转
+              console.log('++++++++++++++++++++++++++++++1')
             })
             .id('ObserverNavDestinationState_pageOne')
 

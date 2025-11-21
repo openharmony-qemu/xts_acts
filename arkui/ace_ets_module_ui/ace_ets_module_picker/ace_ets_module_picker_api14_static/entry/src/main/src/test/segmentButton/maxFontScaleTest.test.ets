@@ -50,8 +50,9 @@ export default function maxFontScaleTest() {
         if (!('maxFontScaleTest' == pages.name)) {
           console.info('get maxFontScaleTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          
+          // let result = await routerInstance.replace(options);
           await CommonFunc.sleep(2000);
+          // console.info('push maxFontScaleTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push maxFontScaleTest page error:' + err); 
@@ -61,7 +62,6 @@ export default function maxFontScaleTest() {
     afterEach(async () => {
     });
 
-    
     
     
     /*

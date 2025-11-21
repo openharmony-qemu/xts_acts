@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import { uiObserver } from '@kit.ArkUI';
 import uiObserver from '@ohos.arkui.observer';
 
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll,
@@ -33,7 +33,7 @@ function callbackFunc(info: uiObserver.TabContentInfo) {
 @Entry
 @Component
 struct TabsUIExample {
-  @State currentIndex: int = 0
+  @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
   @State index1:number = -1
 
@@ -56,7 +56,7 @@ struct TabsUIExample {
           this.currentIndex = 1
         })
       Text('index: ' + this.index1).id('text_index_ui')
-      Tabs({ index: this.currentIndex, controller: this.controller }) {
+      Tabs({ index: this.currentIndex as int, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar('green').id('tabContentId0')

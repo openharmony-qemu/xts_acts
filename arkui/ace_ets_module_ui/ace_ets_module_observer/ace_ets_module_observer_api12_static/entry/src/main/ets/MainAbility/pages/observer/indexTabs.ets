@@ -19,7 +19,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct observerIndexTabsExample {
-  @State currentIndex: int = 0
+  @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
   @State index1: number = -1
 
@@ -30,7 +30,7 @@ struct observerIndexTabsExample {
           .id('observer_tabs_on')
           .height('5%')
           .onClick((e: ClickEvent)=>{
-            observer.onTabContentUpdate({ id: 'tabsIdIndex' }, (info: observer.TabContentInfo) => {
+            observer.onTabContentUpdate( { id: 'tabsIdIndex' }, (info: observer.TabContentInfo) => {
               this.index1 = info.index
               console.info('on tabContentUpdate', JSON.stringify(info));
               console.info('on tabContentUpdate id', JSON.stringify(info.id));
@@ -58,7 +58,7 @@ struct observerIndexTabsExample {
         .onClick((e: ClickEvent)=>{
           this.currentIndex = 1
         })
-      Tabs({ index: this.currentIndex, controller: this.controller }) {
+      Tabs({ index: this.currentIndex as int, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar('green').id('tabContent01')

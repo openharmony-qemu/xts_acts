@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-export default function DensityInfoTest() {
+export default function DensityInfo() {
   describe('DensityInfoTest', () => {
     beforeAll(() => {
       console.info("DensityInfoTest beforeEach start");
@@ -52,9 +52,10 @@ export default function DensityInfoTest() {
         console.info("get DensityInfoTest state pages: " + JSON.stringify(pages));
         if (!("DensityInfo" == pages.name)) {
           console.info("get DensityInfoTest state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push DensityInfoTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push DensityInfoTest page error: " + err);

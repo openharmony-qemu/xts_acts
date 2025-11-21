@@ -17,9 +17,6 @@ import common from '@ohos.app.ability.common';
 import router from '@ohos.router';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
-import { UIObserver } from '@ohos.arkui.UIContext';
-import { Router } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct ObserverApiTest {
@@ -27,29 +24,24 @@ struct ObserverApiTest {
   @State text2 :string = '2'
   // private context = getContext(this) as common.UIAbilityContext
   private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext
-  observer: UIObserver = this.getUIContext().getUIObserver();
+
 
   testFunc(info:uiObserver.RouterPageInfo){
-    try{
-      if(info) {
-        if(info.context) {
-          if (info.state == uiObserver.RouterPageState.ABOUT_TO_APPEAR){
-            AppStorage.setOrCreate<string>('Observer_APPEAR', 'Appear')
-          } else if (info.state == uiObserver.RouterPageState.ABOUT_TO_DISAPPEAR){
-            AppStorage.setOrCreate<string>('Observer_DISAPPEAR', 'Disappear')
-          } else if (info.state == uiObserver.RouterPageState.ON_PAGE_SHOW){
-            AppStorage.setOrCreate<string>('Observer_SHOW', 'Show')
-          } else if (info.state == uiObserver.RouterPageState.ON_PAGE_HIDE){
-            AppStorage.setOrCreate<string>('Observer_HIDE', 'Hide')
-          } else if (info.state == uiObserver.RouterPageState.ON_BACK_PRESS){
-            AppStorage.setOrCreate<string>('Observer_BACK', 'Back')
-          }
+    if(info) {
+      if(info.context) {
+        if (info.state == uiObserver.RouterPageState.ABOUT_TO_APPEAR){
+          AppStorage.setOrCreate<string>('Observer_APPEAR', 'Appear')
+        } else if (info.state == uiObserver.RouterPageState.ABOUT_TO_DISAPPEAR){
+          AppStorage.setOrCreate<string>('Observer_DISAPPEAR', 'Disappear')
+        } else if (info.state == uiObserver.RouterPageState.ON_PAGE_SHOW){
+          AppStorage.setOrCreate<string>('Observer_SHOW', 'Show')
+        } else if (info.state == uiObserver.RouterPageState.ON_PAGE_HIDE){
+          AppStorage.setOrCreate<string>('Observer_HIDE', 'Hide')
+        } else if (info.state == uiObserver.RouterPageState.ON_BACK_PRESS){
+          AppStorage.setOrCreate<string>('Observer_BACK', 'Back')
         }
       }
-    }catch(error){
-      console.log("==================================== testFunc error " + error);
     }
-
 
   }
 
@@ -76,15 +68,14 @@ struct ObserverApiTest {
       Button('ObserverOn')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          // uiObserver.on('routerPageUpdate', this.context, this.testFunc)
-          this.observer.onRouterPageUpdate(this.testFunc)
+          uiObserver.onRouterPageUpdate( this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOn')
 
       Button('ObserverOff')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          this.observer.offRouterPageUpdate(this.testFunc);
+          uiObserver.offRouterPageUpdate( this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOff')
 

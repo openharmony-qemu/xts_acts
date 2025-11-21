@@ -50,8 +50,9 @@ export default function accessibilitySelectedTypeTest() {
         if (!('accessibilitySelectedTypeTest' == pages.name)) {
           console.info('get accessibilitySelectedTypeTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          
+          // let result = await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info('push accessibilitySelectedTypeTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push accessibilitySelectedTypeTest page error:' + err);
@@ -61,7 +62,6 @@ export default function accessibilitySelectedTypeTest() {
     afterEach(async () => {
     });
 
-    
     
     
     /*

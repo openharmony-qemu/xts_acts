@@ -50,13 +50,13 @@ export default function TextPickerTextStyleTest() {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
           await UtilsTest.msSleep(2000)
-          
+          // let result = await routerInstance.pushUrl(options)
+          // console.info('push TextPickerTextStyle page success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TextPickerTextStyle page error ' + JSON.stringify(err));
       }
     });
-    
     
     
     /*
@@ -80,14 +80,13 @@ export default function TextPickerTextStyleTest() {
       console.info('[TextPickerTextStyleTest_static_0100 obj Normal1 $attrs.defaultTextStyle]:' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('defaultTextStyle')));
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize')).assertEqual('18.00fp');
-      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('28.00fp');
+      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('28.00fp');  //maxFontSize默认单位变成vp
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       await CommonFunc.sleep(1000);
       console.info('[TextPickerTextStyleTest_static_0100] END');
       done();
     });
 
-    
     
     
     /*
@@ -111,14 +110,13 @@ export default function TextPickerTextStyleTest() {
       console.info('[TextPickerTextStyleTest_static_0200 obj Normal2 $attrs.defaultTextStyle]:' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('defaultTextStyle')));
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize')).assertEqual('18.00fp');
-      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');
+      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');  //
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       await CommonFunc.sleep(1000);
       console.info('[TextPickerTextStyleTest_static_0200] END');
       done();
     });
 
-    
     
     
     /*
@@ -142,14 +140,13 @@ export default function TextPickerTextStyleTest() {
       console.info('[TextPickerTextStyleTest_static_0300 obj Normal3 $attrs.defaultTextStyle]:' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('defaultTextStyle')));
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize')).assertEqual('28.00fp');
-      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');
+      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');  //
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       await CommonFunc.sleep(1000);
       console.info('[TextPickerTextStyleTest_static_0300] END');
       done();
     });
 
-    
     
     
     /*
@@ -182,7 +179,6 @@ export default function TextPickerTextStyleTest() {
 
     
     
-    
     /*
      * @tc.number   TextPickerTextStyleTest_static_0500
      * @tc.name     TextPickerTextStyleTest_static_0500
@@ -211,7 +207,6 @@ export default function TextPickerTextStyleTest() {
       done();
     });
 
-    
     
     
     /*

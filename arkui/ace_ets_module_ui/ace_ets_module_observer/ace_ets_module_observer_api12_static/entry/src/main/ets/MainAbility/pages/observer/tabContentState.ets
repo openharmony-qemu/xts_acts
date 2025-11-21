@@ -34,11 +34,13 @@ struct TabsStateExample {
   @State text:string = '1'
 
   aboutToAppear(): void {
+    let observer = this.getUIContext().getUIObserver();
     observer.onTabContentUpdate({ id: 'tabsId' }, callbackFunc);
   }
 
   aboutToDisappear(): void {
-    observer.offTabContentUpdate({ id: 'tabsId' }, callbackFunc);
+    let observer = this.getUIContext().getUIObserver();
+    observer.onTabContentUpdate( { id: 'tabsId' }, callbackFunc);
   }
 
   build() {
@@ -50,7 +52,13 @@ struct TabsStateExample {
         .id('observer_getState')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          this.text = AppStorage.get<string>('Observer_HIDE') as string + AppStorage.get<string>('Observer_SHOW') as string + ''
+          console.log('+++++++++++++++++++++++++++++getText 1')
+          let text1=AppStorage.get<string>('Observer_HIDE') as string
+          console.log('+++++++++++++++++++++++++++++2')
+          let text2=AppStorage.get<string>('Observer_SHOW') as string
+          console.log('+++++++++++++++++++++++++++++3')
+          this.text = text1 + text2 + ''
+          console.log('+++++++++++++++++++++++++++++4')
         })
       Tabs() {
         TabContent() {
