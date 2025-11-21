@@ -125,7 +125,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ProtoConfigNullAndInvalidSo
  * @tc.number ProtoConfigNullAndInvalidSo
  * @tc.desc   ProtoConfigNullAndInvalidSo
@@ -140,7 +139,6 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigNullAndInvalidSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ProtoConfigNullAndEffectiveSo
  * @tc.number ProtoConfigNullAndEffectiveSo
  * @tc.desc   ProtoConfigNullAndEffectiveSo
@@ -155,7 +153,6 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigNullAndEffectiveSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ProtoConfigMemAndInvalidSo
  * @tc.number ProtoConfigMemAndInvalidSo
  * @tc.desc   ProtoConfigMemAndInvalidSo
@@ -171,7 +168,6 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigMemAndInvalidSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ProtoConfigMemAndEffectiveSo
  * @tc.number ProtoConfigMemAndEffectiveSo
  * @tc.desc   ProtoConfigMemAndEffectiveSo
@@ -187,7 +183,6 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigMemAndEffectiveSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ProtoConfigPidAndInvalidSo
  * @tc.number ProtoConfigPidAndInvalidSo
  * @tc.desc   ProtoConfigPidAndInvalidSo
@@ -204,7 +199,6 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigPidAndInvalidSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ProtoConfigPidAndEffectiveSo
  * @tc.number ProtoConfigPidAndEffectiveSo
  * @tc.desc   ProtoConfigPidAndEffectiveSo
@@ -221,7 +215,6 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigPidAndEffectiveSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   MemoryPluginTreeAndInvalidSo
  * @tc.number MemoryPluginTreeAndInvalidSo
  * @tc.desc   MemoryPluginTreeAndInvalidSo
@@ -237,7 +230,6 @@ HWTEST_F(PluginModuleApiTest, MemoryPluginTreeAndInvalidSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   MemoryPluginTreeAndEffectiveSo
  * @tc.number MemoryPluginTreeAndEffectiveSo
  * @tc.desc   MemoryPluginTreeAndEffectiveSo
@@ -253,7 +245,6 @@ HWTEST_F(PluginModuleApiTest, MemoryPluginTreeAndEffectiveSo, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ApiCallInvalidSoAndInvalidStruct
  * @tc.number ApiCallInvalidSoAndInvalidStruct
  * @tc.desc   ApiCallInvalidSoAndInvalidStruct
@@ -271,7 +262,6 @@ HWTEST_F(PluginModuleApiTest, ApiCallInvalidSoAndInvalidStruct, TestSize.Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ApiCallEffectiveSoAndInvalidStruct
  * @tc.number ApiCallEffectiveSoAndInvalidStruct
  * @tc.desc   ApiCallEffectiveSoAndInvalidStruct
@@ -294,7 +284,6 @@ HWTEST_F(PluginModuleApiTest, ApiCallEffectiveSoAndInvalidStruct, TestSize.Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ApiCallInvalidSoAndEffectiveStruct
  * @tc.number ApiCallInvalidSoAndEffectiveStruct
  * @tc.desc   ApiCallInvalidSoAndEffectiveStruct
@@ -313,7 +302,6 @@ HWTEST_F(PluginModuleApiTest, ApiCallInvalidSoAndEffectiveStruct, TestSize.Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:50
  * @tc.name   ApiCallEffectiveSoAndEffectiveStruct
  * @tc.number ApiCallEffectiveSoAndEffectiveStruct
  * @tc.desc   ApiCallEffectiveSoAndEffectiveStruct
