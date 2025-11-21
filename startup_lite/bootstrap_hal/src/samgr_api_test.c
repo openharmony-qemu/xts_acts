@@ -329,7 +329,6 @@ APP_FEATURE_INIT_PRI(AppFeatureInit4, 4);
 APP_FEATURE_INIT_PRI(AppFeatureInit2, 2);
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   TestStartBootstrapSamgr001
  * @tc.number SUB_START_Bootstrap_Samgr_0100
  * @tc.desc   check total init index, return success
@@ -344,7 +343,6 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr001, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   TestStartBootstrapSamgr002
  * @tc.number SUB_START_Bootstrap_Samgr_0200
  * @tc.desc   check core init, return success
@@ -360,7 +358,6 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr002, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   TestStartBootstrapSamgr003
  * @tc.number SUB_START_Bootstrap_Samgr_0300
  * @tc.desc   check system service init, return success
@@ -376,7 +373,6 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr003, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   TestStartBootstrapSamgr004
  * @tc.number SUB_START_Bootstrap_Samgr_0400
  * @tc.desc   check system feature init, return success
@@ -392,7 +388,6 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr004, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   TestStartBootstrapSamgr005
  * @tc.number SUB_START_Bootstrap_Samgr_0500
  * @tc.desc   check system extend service and app service init, return success
@@ -410,7 +405,6 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr005, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   TestStartBootstrapSamgr006
  * @tc.number SUB_START_Bootstrap_Samgr_0600
  * @tc.desc   check system extend feature and app feature init, return success
@@ -428,7 +422,6 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr006, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   TestStartBootstrapSamgr007
  * @tc.number SUB_START_Bootstrap_Samgr_0700
  * @tc.desc   check system run, return success

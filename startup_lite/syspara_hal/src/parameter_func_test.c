@@ -49,7 +49,6 @@ static BOOL ParameterFuncTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter001
  * @tc.number SUB_UTILS_PARAMETER_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -69,7 +68,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter002
  * @tc.number SUB_UTILS_PARAMETER_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +87,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter003
  * @tc.number SUB_UTILS_PARAMETER_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -109,7 +106,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter004
  * @tc.number SUB_UTILS_PARAMETER_2800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -129,7 +125,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter005
  * @tc.number SUB_UTILS_PARAMETER_2900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -156,7 +151,6 @@ nopqrstuvwxyz1234567890abcdefghijklmnopqrstuvw";
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter006
  * @tc.number SUB_UTILS_PARAMETER_3000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -183,7 +177,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter007
  * @tc.number SUB_UTILS_PARAMETER_3100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -210,7 +203,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter008
  * @tc.number SUB_UTILS_PARAMETER_3200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -239,7 +231,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter009
  * @tc.number SUB_UTILS_PARAMETER_3300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -261,7 +252,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter010
  * @tc.number SUB_UTILS_PARAMETER_3400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -283,7 +273,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter011
  * @tc.number SUB_UTILS_PARAMETER_3500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -305,7 +294,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter012
  * @tc.number SUB_UTILS_PARAMETER_3600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -338,7 +326,6 @@ abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890";
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testSetParameter013
  * @tc.number SUB_UTILS_PARAMETER_3700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -358,7 +345,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter001
  * @tc.number SUB_UTILS_PARAMETER_3800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -381,7 +367,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter002
  * @tc.number SUB_UTILS_PARAMETER_3900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -404,7 +389,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter003
  * @tc.number SUB_UTILS_PARAMETER_4000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -427,7 +411,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter004
  * @tc.number SUB_UTILS_PARAMETER_4100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -450,7 +433,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter005
  * @tc.number SUB_UTILS_PARAMETER_4200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -473,7 +455,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter006
  * @tc.number SUB_UTILS_PARAMETER_4300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -494,7 +475,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter007
  * @tc.number SUB_UTILS_PARAMETER_4400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -527,7 +507,6 @@ ijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvw";
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter008
  * @tc.number SUB_UTILS_PARAMETER_4500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -551,7 +530,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter009
  * @tc.number SUB_UTILS_PARAMETER_4600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -574,7 +552,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter010
  * @tc.number SUB_UTILS_PARAMETER_4700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -594,7 +571,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter011
  * @tc.number SUB_UTILS_PARAMETER_4800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -614,7 +590,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter012
  * @tc.number SUB_UTILS_PARAMETER_4900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -636,7 +611,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter013
  * @tc.number SUB_UTILS_PARAMETER_5000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -658,7 +632,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter014
  * @tc.number SUB_UTILS_PARAMETER_5100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -679,7 +652,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter015
  * @tc.number SUB_UTILS_PARAMETER_5200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -701,7 +673,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter016
  * @tc.number SUB_UTILS_PARAMETER_5300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -723,7 +694,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter017
  * @tc.number SUB_UTILS_PARAMETER_5400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -745,7 +715,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter018
  * @tc.number SUB_UTILS_PARAMETER_5500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -766,7 +735,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter019
  * @tc.number SUB_UTILS_PARAMETER_5600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -789,7 +757,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testGetParameter020
  * @tc.number SUB_UTILS_PARAMETER_5700
  * @tc.desc   [C- SOFTWARE -0200]

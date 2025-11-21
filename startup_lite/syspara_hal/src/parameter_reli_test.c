@@ -43,7 +43,6 @@ static BOOL ParameterReliTestSuiteTearDown(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli001
  * @tc.number SUB_UTILS_PARAMETER_5800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -64,7 +63,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli002
  * @tc.number SUB_UTILS_PARAMETER_5900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -85,7 +83,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli003
  * @tc.number SUB_UTILS_PARAMETER_6000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -106,7 +103,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli004
  * @tc.number SUB_UTILS_PARAMETER_6100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -127,7 +123,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli005
  * @tc.number SUB_UTILS_PARAMETER_6200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -148,7 +143,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli006
  * @tc.number SUB_UTILS_PARAMETER_6300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -169,7 +163,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli007
  * @tc.number SUB_UTILS_PARAMETER_6400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -190,7 +183,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli008
  * @tc.number SUB_UTILS_PARAMETER_6500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -211,7 +203,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli009
  * @tc.number SUB_UTILS_PARAMETER_6600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -235,7 +226,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli010
  * @tc.number SUB_UTILS_PARAMETER_6700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -256,7 +246,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli011
  * @tc.number SUB_UTILS_PARAMETER_6800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -277,7 +266,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli012
  * @tc.number SUB_UTILS_PARAMETER_6900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -298,7 +286,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli013
  * @tc.number SUB_UTILS_PARAMETER_7000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -319,7 +306,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli014
  * @tc.number SUB_UTILS_PARAMETER_7100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -340,7 +326,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli015
  * @tc.number SUB_UTILS_PARAMETER_7200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -362,7 +347,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli016
  * @tc.number SUB_UTILS_PARAMETER_7300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -383,7 +367,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli017
  * @tc.number SUB_UTILS_PARAMETER_7400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -404,7 +387,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli018
  * @tc.number SUB_UTILS_PARAMETER_7500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -425,7 +407,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli019
  * @tc.number SUB_UTILS_PARAMETER_7600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -446,7 +427,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli020
  * @tc.number SUB_UTILS_PARAMETER_7700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -467,7 +447,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli021
  * @tc.number SUB_UTILS_PARAMETER_7800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -488,7 +467,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli022
  * @tc.number SUB_UTILS_PARAMETER_7900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -509,7 +487,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli023
  * @tc.number SUB_UTILS_PARAMETER_8000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -530,7 +507,6 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   testObtainSysParaReli024
  * @tc.number SUB_UTILS_PARAMETER_8100
  * @tc.desc   [C- SOFTWARE -0200]

@@ -70,7 +70,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Setting_Legal_0010
  * @tc.number SUB_START_Para_Setting_Legal_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +88,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_Legal_0010, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Setting_Legal_0020
  * @tc.number SUB_START_Para_Setting_Legal_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -113,7 +111,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_Legal_0020, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Setting_ilLegal_0010
  * @tc.number SUB_START_Para_Setting_ilLegal_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -135,7 +132,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_0010, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Setting_ilLegal_0020
  * @tc.number SUB_START_Para_Setting_ilLegal_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -150,7 +146,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_0020, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Setting_ilLegal_key_0010
  * @tc.number SUB_START_Para_Setting_ilLegal_key_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -174,7 +169,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_key_0010, Function | Medi
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Setting_ilLegal_key_0030
  * @tc.number SUB_START_Para_Setting_ilLegal_key_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -193,7 +187,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_key_0030, Function | Medi
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Setting_ilLegal_value_0010
  * @tc.number SUB_START_Para_Setting_ilLegal_value_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -217,7 +210,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_value_0010, Function | Me
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_Legal_0010
  * @tc.number SUB_START_Para_Getting_Legal_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -239,7 +231,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0010, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_Legal_0020
  * @tc.number SUB_START_Para_Getting_Legal_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -261,7 +252,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0020, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_Legal_0030
  * @tc.number SUB_START_Para_Getting_Legal_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -291,7 +281,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0030, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_ilLegal_0010
  * @tc.number SUB_START_Para_Getting_ilLegal_0010
  * @tc.desc   [C- SOFTWARE -0200]
@@ -310,7 +299,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0010, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_ilLegal_0020
  * @tc.number SUB_START_Para_Getting_ilLegal_0020
  * @tc.desc   [C- SOFTWARE -0200]
@@ -328,7 +316,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0020, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_ilLegal_0030
  * @tc.number SUB_START_Para_Getting_ilLegal_0030
  * @tc.desc   [C- SOFTWARE -0200]
@@ -353,7 +340,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0030, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_ilLegal_0040
  * @tc.number SUB_START_Para_Getting_ilLegal_0040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -372,7 +358,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0040, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_ilLegal_0050
  * @tc.number SUB_START_Para_Getting_ilLegal_0050
  * @tc.desc   [C- SOFTWARE -0200]
@@ -390,7 +375,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0050, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_ilLegal_0060
  * @tc.number SUB_START_Para_Getting_ilLegal_0060
  * @tc.desc   [C- SOFTWARE -0200]
@@ -409,7 +393,6 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0060, Function | MediumTe
 }
 
 /**
- * @generated.time 2025-11-09 00:50:54
  * @tc.name   SUB_START_Para_Getting_ReadOnly_0010
  * @tc.number SUB_START_Para_Getting_ReadOnly_0010
  * @tc.desc   [C- SOFTWARE -0200]
