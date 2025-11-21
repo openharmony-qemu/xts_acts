@@ -72,7 +72,6 @@ static void CmsisMessageQueueGetFunc001(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueNew001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +88,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueNew002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -105,7 +103,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew002, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueNew003
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -121,7 +118,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew003, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueDelete001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -139,7 +135,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueDelete001, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueDelete002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -155,7 +150,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueDelete002, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueuePut001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -177,7 +171,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueuePut002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -193,7 +186,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut002, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueuePut003
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -215,7 +207,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut003, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGet001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -247,7 +238,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGet002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -265,7 +255,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet002, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGet003
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -288,7 +277,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet003, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetMsgSize001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -310,7 +298,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetMsgSize001, Function 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetMsgSize002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -326,7 +313,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetMsgSize002, Function 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetCapacity001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -347,7 +333,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCapacity001, Function
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetCapacity002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -363,7 +348,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCapacity002, Function
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetCount001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -394,7 +378,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCount001, Function | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetCount002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -410,7 +393,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCount002, Function | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetSpace001
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -441,7 +423,6 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetSpace001, Function | 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMessageQueueGetSpace002
  * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1900
  * @tc.desc   [C- SOFTWARE -0200]

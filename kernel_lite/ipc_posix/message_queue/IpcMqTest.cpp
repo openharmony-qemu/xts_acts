@@ -27,7 +27,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqOneLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -65,7 +64,6 @@ HWTEST_F(IpcMqTest, testMqOneLevelCom, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedOneLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -109,7 +107,6 @@ HWTEST_F(IpcMqTest, testMqTimedOneLevelCom, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqAllOneLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -180,7 +177,6 @@ HWTEST_F(IpcMqTest, testMqAllOneLevelCom, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTwoLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -243,7 +239,6 @@ FINISH:
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedTwoLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -313,7 +308,6 @@ FINISH:
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqAllTwoLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -396,7 +390,6 @@ static void *PthreadCom(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTwoThreadCom
  * @tc.number SUB_KERNEL_IPC_MQ_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -462,7 +455,6 @@ static void *PthreadTimedCom(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedTwoThreadCom
  * @tc.number SUB_KERNEL_IPC_MQ_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -533,7 +525,6 @@ static void *PthreadAllCom(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqAllTwoThreadCom
  * @tc.number SUB_KERNEL_IPC_MQ_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -574,7 +565,6 @@ HWTEST_F(IpcMqTest, testMqAllTwoThreadCom, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqThreeLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -664,7 +654,6 @@ FINISH:
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqMinMaxLen
  * @tc.number SUB_KERNEL_IPC_MQ_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -701,7 +690,6 @@ HWTEST_F(IpcMqTest, testMqMinMaxLen, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqSetGetAttr
  * @tc.number SUB_KERNEL_IPC_MQ_1200
  * @tc.desc   [C- SOFTWARE -0200]

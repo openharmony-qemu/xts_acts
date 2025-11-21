@@ -37,7 +37,6 @@ using namespace testing::ext;
 
 #if defined(LITE_FS_NFS) || defined(LITE_FS_VFAT)
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFcntl
  * @tc.number SUB_KERNEL_FS_FCNTL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -64,7 +63,6 @@ HWTEST_F(FileSystemTest, testFcntl, Function | MediumTest | Level3)
 #endif
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFcntlFgetfl
  * @tc.number SUB_KERNEL_FS_FCNTL_0110
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +87,6 @@ HWTEST_F(FileSystemTest, testFcntlFgetfl, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFcntlFsetfl
  * @tc.number SUB_KERNEL_FS_FCNTL_0120
  * @tc.desc   [C- SOFTWARE -0200]
@@ -119,7 +116,6 @@ HWTEST_F(FileSystemTest, testFcntlFsetfl, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLseek
  * @tc.number SUB_KERNEL_FS_FCNTL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -155,7 +151,6 @@ HWTEST_F(FileSystemTest, testLseek, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLseekSeekSet
  * @tc.number SUB_KERNEL_FS_FCNTL_0210
  * @tc.desc   [C- SOFTWARE -0200]
@@ -190,7 +185,6 @@ HWTEST_F(FileSystemTest, testLseekSeekSet, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLseekSeekEnd
  * @tc.number SUB_KERNEL_FS_FCNTL_0220
  * @tc.desc   [C- SOFTWARE -0200]
@@ -221,7 +215,6 @@ HWTEST_F(FileSystemTest, testLseekSeekEnd, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFallocate
  * @tc.number SUB_KERNEL_FS_FCNTL_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -271,7 +264,6 @@ HWTEST_F(FileSystemTest, testFallocate, Function | MediumTest | Level2)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFallocateSmallSize
  * @tc.number SUB_KERNEL_FS_FCNTL_0310
  * @tc.desc   [C- SOFTWARE -0200]
@@ -320,7 +312,6 @@ HWTEST_F(FileSystemTest, testFallocateSmallSize, Function | MediumTest | Level2)
 #endif
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpen
  * @tc.number SUB_KERNEL_FS_FCNTL_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -336,7 +327,6 @@ HWTEST_F(FileSystemTest, testOpen, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpenEexist
  * @tc.number SUB_KERNEL_FS_FCNTL_0410
  * @tc.desc   [C- SOFTWARE -0200]
@@ -358,7 +348,6 @@ HWTEST_F(FileSystemTest, testOpenEexist, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpenEisdir
  * @tc.number SUB_KERNEL_FS_FCNTL_0420
  * @tc.desc   [C- SOFTWARE -0200]
@@ -379,7 +368,6 @@ HWTEST_F(FileSystemTest, testOpenEisdir, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpenEnoent
  * @tc.number SUB_KERNEL_FS_FCNTL_0430
  * @tc.desc   [C- SOFTWARE -0200]
@@ -398,7 +386,6 @@ HWTEST_F(FileSystemTest, testOpenEnoent, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpenEnametoolong
  * @tc.number SUB_KERNEL_FS_FCNTL_0440
  * @tc.desc   [C- SOFTWARE -0200]

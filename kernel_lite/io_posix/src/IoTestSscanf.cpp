@@ -20,7 +20,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfFloat
  * @tc.number SUB_KERNEL_IO_SSCANF_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -50,7 +49,6 @@ HWTEST_F(IoTest, testSscanfFloat, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfFloatE
  * @tc.number SUB_KERNEL_IO_SSCANF_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -88,7 +86,6 @@ HWTEST_F(IoTest, testSscanfFloatE, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfFloatG
  * @tc.number SUB_KERNEL_IO_SSCANF_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -118,7 +115,6 @@ HWTEST_F(IoTest, testSscanfFloatG, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfFloatA
  * @tc.number SUB_KERNEL_IO_SSCANF_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -156,7 +152,6 @@ HWTEST_F(IoTest, testSscanfFloatA, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfChar
  * @tc.number SUB_KERNEL_IO_SSCANF_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -187,7 +182,6 @@ HWTEST_F(IoTest, testSscanfChar, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfString
  * @tc.number SUB_KERNEL_IO_SSCANF_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -216,7 +210,6 @@ HWTEST_F(IoTest, testSscanfString, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfIntD
  * @tc.number SUB_KERNEL_IO_SSCANF_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -262,7 +255,6 @@ HWTEST_F(IoTest, testSscanfIntD, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfIntHhd
  * @tc.number SUB_KERNEL_IO_SSCANF_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -308,7 +300,6 @@ HWTEST_F(IoTest, testSscanfIntHhd, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfIntHd
  * @tc.number SUB_KERNEL_IO_SSCANF_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -354,7 +345,6 @@ HWTEST_F(IoTest, testSscanfIntHd, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfIntLd
  * @tc.number SUB_KERNEL_IO_SSCANF_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -400,7 +390,6 @@ HWTEST_F(IoTest, testSscanfIntLd, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfIntLld
  * @tc.number SUB_KERNEL_IO_SSCANF_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -446,7 +435,6 @@ HWTEST_F(IoTest, testSscanfIntLld, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfIntMax
  * @tc.number SUB_KERNEL_IO_SSCANF_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -492,7 +480,6 @@ HWTEST_F(IoTest, testSscanfIntMax, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfSizeT
  * @tc.number SUB_KERNEL_IO_SSCANF_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -521,7 +508,6 @@ HWTEST_F(IoTest, testSscanfSizeT, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfPtrdiffT
  * @tc.number SUB_KERNEL_IO_SSCANF_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -550,7 +536,6 @@ HWTEST_F(IoTest, testSscanfPtrdiffT, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfPointer
  * @tc.number SUB_KERNEL_IO_SSCANF_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -575,7 +560,6 @@ HWTEST_F(IoTest, testSscanfPointer, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfIntHexOct
  * @tc.number SUB_KERNEL_IO_SSCANF_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -624,7 +608,6 @@ HWTEST_F(IoTest, testSscanfIntHexOct, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfRegexp
  * @tc.number SUB_KERNEL_IO_SSCANF_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -657,7 +640,6 @@ HWTEST_F(IoTest, testSscanfRegexp, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSscanfReturnValue
  * @tc.number SUB_KERNEL_IO_SSCANF_1800
  * @tc.desc   [C- SOFTWARE -0200]

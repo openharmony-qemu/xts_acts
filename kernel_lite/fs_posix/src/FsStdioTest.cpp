@@ -34,7 +34,6 @@
 
 using namespace testing::ext;
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testRename
  * @tc.number SUB_KERNEL_FS_STDIO_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -55,7 +54,6 @@ HWTEST_F(FileSystemTest, testRename, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testRenameDir
  * @tc.number SUB_KERNEL_FS_STDIO_0710
  * @tc.desc   [C- SOFTWARE -0200]

@@ -41,7 +41,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testHelloWorld
  * @tc.number SUB_KERNEL_IPC_FIFO_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -80,7 +79,6 @@ HWTEST_F(FifoTest, testHelloWorld, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFifoAddDelete
  * @tc.number SUB_KERNEL_IPC_FIFO_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -106,7 +104,6 @@ HWTEST_F(FifoTest, testFifoAddDelete, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFifoNonblack
  * @tc.number SUB_KERNEL_IPC_FIFO_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -174,7 +171,6 @@ HWTEST_F(FifoTest, testFifoNonblack, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFifoBlock
  * @tc.number SUB_KERNEL_IPC_FIFO_0900
  * @tc.desc   [C- SOFTWARE -0200]

@@ -49,7 +49,6 @@ static int NumCompare(const void *p1, const void *p2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testBsearch0100
  * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_BSEARCH_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -69,7 +68,6 @@ HWTEST_F(ActsUtilDataStructApiTest, testBsearch0100, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testBsearch0200
  * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_BSEARCH_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +87,6 @@ HWTEST_F(ActsUtilDataStructApiTest, testBsearch0200, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testHcreate0300
  * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -125,7 +122,6 @@ HWTEST_F(ActsUtilDataStructApiTest, testHcreate0300, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testHcreate0400
  * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -153,7 +149,6 @@ HWTEST_F(ActsUtilDataStructApiTest, testHcreate0400, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testHcreateR0500
  * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_R_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -191,7 +186,6 @@ HWTEST_F(ActsUtilDataStructApiTest, testHcreateR0500, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testHcreateR0600
  * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_R_0600
  * @tc.desc   [C- SOFTWARE -0200]

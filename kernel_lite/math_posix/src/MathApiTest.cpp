@@ -27,7 +27,6 @@ class MathApiTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testCeil
  * @tc.number SUB_KERNEL_MATH_MATH_CEIL_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -47,7 +46,6 @@ HWTEST_F(MathApiTest, testCeil, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testCeilf
  * @tc.number SUB_KERNEL_MATH_MATH_CEILF_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -67,7 +65,6 @@ HWTEST_F(MathApiTest, testCeilf, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testfinite
  * @tc.number SUB_KERNEL_MATH_MATH_FINITE_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -89,7 +86,6 @@ HWTEST_F(MathApiTest, testfinite, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testfinitef
  * @tc.number SUB_KERNEL_MATH_MATH_FINITEF_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -111,7 +107,6 @@ HWTEST_F(MathApiTest, testfinitef, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testnan
  * @tc.number SUB_KERNEL_MATH_MATH_NAN_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -130,7 +125,6 @@ HWTEST_F(MathApiTest, testnan, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testnanf
  * @tc.number SUB_KERNEL_MATH_MATH_NANF_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -149,7 +143,6 @@ HWTEST_F(MathApiTest, testnanf, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testnanl
  * @tc.number SUB_KERNEL_MATH_MATH_NANL_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -168,7 +161,6 @@ HWTEST_F(MathApiTest, testnanl, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testpowf10
  * @tc.number SUB_KERNEL_MATH_MATH_POW10F_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -188,7 +180,6 @@ HWTEST_F(MathApiTest, testpowf10, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testpowl10
  * @tc.number SUB_KERNEL_MATH_MATH_POW10L_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -208,7 +199,6 @@ HWTEST_F(MathApiTest, testpowl10, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testsignbit
  * @tc.number SUB_KERNEL_MATH_MATH_SIGNBIT_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -228,7 +218,6 @@ HWTEST_F(MathApiTest, testsignbit, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testsignificand
  * @tc.number SUB_KERNEL_MATH_MATH_SIGNIFICAND_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -248,7 +237,6 @@ HWTEST_F(MathApiTest, testsignificand, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testsignificandf
  * @tc.number SUB_KERNEL_MATH_MATH_SIGNIFICANDF_0100
  * @tc.desc   [C- SOFTWARE -0100]

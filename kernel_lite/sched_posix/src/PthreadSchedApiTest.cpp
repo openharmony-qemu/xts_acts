@@ -34,7 +34,6 @@ class PthreadAllPrioTest : public testing::TestWithParam<int> {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrGetInheritsched
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_INHERIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -55,7 +54,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrGetInheritsched, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrSetInheritsched
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_INHERIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -84,7 +82,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrSetInheritsched, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrSetInheritschedError
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_INHERIT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -106,7 +103,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrSetInheritschedError, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrGetSchedParam
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCHEDPARAM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -126,7 +122,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrGetSchedParam, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrSetSchedParam
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCHEDPARAM_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -153,7 +148,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrSetSchedParam, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrSetSchedParamError
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCHEDPARAM_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -176,7 +170,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrSetSchedParamError, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrGetSchedPolicy
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCHEDPOLICY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -196,7 +189,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrGetSchedPolicy, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrSetSchedPolicy
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCHEDPOLICY_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -224,7 +216,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrSetSchedPolicy, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrSetSchedPolicyError
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCHEDPOLICY_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -251,7 +242,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrSetSchedPolicyError, Function | MediumTest
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrGetScope
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCOPE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -271,7 +261,6 @@ HWTEST_F(PthreadSchedApiTest, testAttrGetScope, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAttrSetScope
  * @tc.number SUB_KERNEL_SCHED_API_PATTR_SCOPE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -314,7 +303,6 @@ void* ThreadFunc1(void* arg)
     return nullptr;
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetSchedParam
  * @tc.number SUB_KERNEL_SCHED_API_PTHREAD_GETSCHEDPARAM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -437,7 +425,6 @@ void* ThrdFuncForSetSchedParamTest(void* arg)
     return nullptr;
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetSchedParamError
  * @tc.number SUB_KERNEL_SCHED_API_PTHREAD_SETSCHEDPARAM_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -493,7 +480,6 @@ void* ThrdFuncForSetSchedPrioTest(void* arg)
     return nullptr;
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetSchedPrio
  * @tc.number SUB_KERNEL_SCHED_API_PTHREAD_SETSCHEDPRIO_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -550,7 +536,6 @@ void *ThreadTestFifoSched2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedFifo
  * @tc.number SUB_KERNEL_SCHED_API_PTHREAD_SCHED_ALL_0100
  * @tc.desc   [C- SOFTWARE -0200]

@@ -23,7 +23,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testGcvt
  * @tc.number SUB_KERNEL_IO_STDLIB_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -48,7 +47,6 @@ HWTEST_F(IoTest, testGcvt, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFcvt
  * @tc.number SUB_KERNEL_IO_STDLIB_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -71,7 +69,6 @@ HWTEST_F(IoTest, testFcvt, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSwab
  * @tc.number SUB_KERNEL_IO_STDLIB_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -97,7 +94,6 @@ HWTEST_F(IoTest, testSwab, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtof
  * @tc.number SUB_KERNEL_IO_STDLIB_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -126,7 +122,6 @@ HWTEST_F(IoTest, testStrtof, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtod
  * @tc.number SUB_KERNEL_IO_STDLIB_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -155,7 +150,6 @@ HWTEST_F(IoTest, testStrtod, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtold
  * @tc.number SUB_KERNEL_IO_STDLIB_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -185,7 +179,6 @@ HWTEST_F(IoTest, testStrtold, Function | MediumTest | Level1)
 
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtol
  * @tc.number SUB_KERNEL_IO_STDLIB_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -245,7 +238,6 @@ HWTEST_F(IoTest, testStrtol, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtoul
  * @tc.number SUB_KERNEL_IO_STDLIB_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -296,7 +288,6 @@ HWTEST_F(IoTest, testStrtoul, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtoll
  * @tc.number SUB_KERNEL_IO_STDLIB_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -352,7 +343,6 @@ HWTEST_F(IoTest, testStrtoll, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtoull
  * @tc.number SUB_KERNEL_IO_STDLIB_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -404,7 +394,6 @@ HWTEST_F(IoTest, testStrtoull, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testA64l
  * @tc.number SUB_KERNEL_IO_STDLIB_1100
  * @tc.desc   [C- SOFTWARE -0200]

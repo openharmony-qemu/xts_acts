@@ -28,7 +28,6 @@ class ExecveTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExecFixedAddressELF
  * @tc.number SUB_KERNEL_DL_ELF_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -44,7 +43,6 @@ HWTEST_F(ExecveTest, testExecFixedAddressELF, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExecStaticELF
  * @tc.number SUB_KERNEL_DL_ELF_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -61,7 +59,6 @@ HWTEST_F(ExecveTest, testExecStaticELF, Function | MediumTest | Level1)
 
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testParaFilename
  * @tc.number SUB_KERNEL_DL_Execve_fname_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -115,7 +112,6 @@ HWTEST_F(ExecveTest, testParaFilename, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testParaArgv
  * @tc.number SUB_KERNEL_DL_Execve_argv_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -144,7 +140,6 @@ HWTEST_F(ExecveTest, testParaArgv, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testParaEnvp
  * @tc.number SUB_KERNEL_DL_Execve_envp_0100
  * @tc.desc   [C- SOFTWARE -0200]

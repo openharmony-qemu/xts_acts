@@ -37,7 +37,6 @@ void AlarmTest::SignalHandler(int signum)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAlarmCancel
  * @tc.number SUB_KERNEL_TIME_API_ALARM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -59,7 +58,6 @@ HWTEST_F(AlarmTest, testAlarmCancel, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAlarmMultiCall
  * @tc.number SUB_KERNEL_TIME_API_ALARM_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +87,6 @@ HWTEST_F(AlarmTest, testAlarmMultiCall, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAlarmFork
  * @tc.number SUB_KERNEL_TIME_API_ALARM_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -127,7 +124,6 @@ HWTEST_F(AlarmTest, testAlarmFork, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testUalarmOneshot
  * @tc.number SUB_KERNEL_TIME_API_UALARM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -145,7 +141,6 @@ HWTEST_F(AlarmTest, testUalarmOneshot, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testUalarmRepeate
  * @tc.number SUB_KERNEL_TIME_API_UALARM_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -174,7 +169,6 @@ HWTEST_F(AlarmTest, testUalarmRepeate, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testUalarmStop
  * @tc.number SUB_KERNEL_TIME_API_UALARM_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -211,7 +205,6 @@ HWTEST_F(AlarmTest, testUalarmStop, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testUalarmEINVAL
  * @tc.number SUB_KERNEL_TIME_API_UALARM_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -237,7 +230,6 @@ HWTEST_F(AlarmTest, testUalarmEINVAL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimerCreateEventSignal
  * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -273,7 +265,6 @@ HWTEST_F(AlarmTest, testTimerCreateEventSignal, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimerCreateEventDefault
  * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -318,7 +309,6 @@ HWTEST_F(AlarmTest, testTimerCreateEventDefault, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimerCreateUniqueId
  * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -369,7 +359,6 @@ HWTEST_F(AlarmTest, testTimerCreateUniqueId, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimerCreateFork
  * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -412,7 +401,6 @@ HWTEST_F(AlarmTest, testTimerCreateFork, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimerCreateEINVAL
  * @tc.number SUB_KERNEL_TIME_API_TIMER_CREATE_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -430,7 +418,6 @@ HWTEST_F(AlarmTest, testTimerCreateEINVAL, Function | MediumTest | Level4)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimerGetTime
  * @tc.number SUB_KERNEL_TIME_API_TIMER_GETTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -495,7 +482,6 @@ HWTEST_F(AlarmTest, testTimerGetTime, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimerGetOverrun
  * @tc.number SUB_KERNEL_TIME_API_TIMER_GETOVERRUN_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -538,7 +524,6 @@ HWTEST_F(AlarmTest, testTimerGetOverrun, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetItTimerOneshot
  * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -577,7 +562,6 @@ HWTEST_F(AlarmTest, testSetItTimerOneshot, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetItTimerRepeate
  * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -615,7 +599,6 @@ HWTEST_F(AlarmTest, testSetItTimerRepeate, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testCancelTimer
  * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -645,7 +628,6 @@ HWTEST_F(AlarmTest, testCancelTimer, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetItTimerOldvalue
  * @tc.number SUB_KERNEL_TIME_API_SETITIMER_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -677,7 +659,6 @@ HWTEST_F(AlarmTest, testSetItTimerOldvalue, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetItTimer
  * @tc.number SUB_KERNEL_TIME_API_GETITIMER_0100
  * @tc.desc   [C- SOFTWARE -0200]

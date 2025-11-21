@@ -34,7 +34,6 @@
 
 using namespace testing::ext;
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMktempMkdtemp
  * @tc.number SUB_KERNEL_FS_STDLIB_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -55,7 +54,6 @@ HWTEST_F(FileSystemTest, testMktempMkdtemp, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testRealpath
  * @tc.number SUB_KERNEL_FS_STDLIB_0500
  * @tc.desc   [C- SOFTWARE -0200]

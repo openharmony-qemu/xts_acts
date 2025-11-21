@@ -26,7 +26,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondInit
  * @tc.number SUB_KERNEL_PTHREAD_COND_INIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -46,7 +45,6 @@ HWTEST_F(FutexTest, testPthreadCondInit, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondDestroy
  * @tc.number SUB_KERNEL_PTHREAD_COND_DESTROY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -71,7 +69,6 @@ HWTEST_F(FutexTest, testPthreadCondDestroy, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondattrInit
  * @tc.number SUB_KERNEL_PTHREAD_CONDATTR_INIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -89,7 +86,6 @@ HWTEST_F(FutexTest, testPthreadCondattrInit, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondattrSetclock
  * @tc.number SUB_KERNEL_PTHREAD_CONDATTR_SETCLOCK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -147,7 +143,6 @@ void *ThreadPthreadCondSignalBefore2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondSignalBefore
  * @tc.number SUB_KERNEL_PTHREAD_COND_SIGNAL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -196,7 +191,6 @@ void *ThreadTestCondSignalWaitAfter2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondSignalAfter
  * @tc.number SUB_KERNEL_PTHREAD_COND_SIGNAL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -247,7 +241,6 @@ void *ThreadPthreadCondBroadcast2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondBroadcast
  * @tc.number SUB_KERNEL_PTHREAD_COND_BROADCAST_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -306,7 +299,6 @@ void *ThreadPthreadCondTimedwait2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondTimedwait
  * @tc.number SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -355,7 +347,6 @@ void *ThreadPthreadCondTimedwaitOut(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondTimedwaitOut
  * @tc.number SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -397,7 +388,6 @@ void *ThreadPthreadCondTimedwaitEinval(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCondTimedwaitEinval
  * @tc.number SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0300
  * @tc.desc   [C- SOFTWARE -0200]

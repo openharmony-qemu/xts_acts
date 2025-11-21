@@ -35,7 +35,6 @@ class MprotectApiTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectAnonAddReadPerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -72,7 +71,6 @@ HWTEST_F(MprotectApiTest, testMprotectAnonAddReadPerm, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectAnonAddWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -109,7 +107,6 @@ HWTEST_F(MprotectApiTest, testMprotectAnonAddWritePerm, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectAnonAddExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -150,7 +147,6 @@ HWTEST_F(MprotectApiTest, testMprotectAnonAddExecutePerm, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectAnonDelWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0500
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -186,7 +182,6 @@ HWTEST_F(MprotectApiTest, testMprotectAnonDelWritePerm, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectAnonDelExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0600
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -228,7 +223,6 @@ HWTEST_F(MprotectApiTest, testMprotectAnonDelExecutePerm, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectFileAddReadPerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0700
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -282,7 +276,6 @@ HWTEST_F(MprotectApiTest, testMprotectFileAddReadPerm, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectFileAddWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0800
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -343,7 +336,6 @@ HWTEST_F(MprotectApiTest, testMprotectFileAddWritePerm, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectFileAddExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0900
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -390,7 +382,6 @@ HWTEST_F(MprotectApiTest, testMprotectFileAddExecutePerm, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectFileDelWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -439,7 +430,6 @@ HWTEST_F(MprotectApiTest, testMprotectFileDelWritePerm, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectFileDelExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -487,7 +477,6 @@ HWTEST_F(MprotectApiTest, testMprotectFileDelExecutePerm, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectEACCES
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -519,7 +508,6 @@ HWTEST_F(MprotectApiTest, testMprotectEACCES, Function | MediumTest | Level4)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMprotectEINVAL
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1400
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.

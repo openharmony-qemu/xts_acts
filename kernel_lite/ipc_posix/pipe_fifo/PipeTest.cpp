@@ -32,7 +32,6 @@ class PipeTest : public::testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testHelloWorld
  * @tc.number SUB_KERNEL_IPC_PIPE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -76,7 +75,6 @@ HWTEST_F(PipeTest, testHelloWorld, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   tesPipeNonblack
  * @tc.number SUB_KERNEL_IPC_PIPE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -120,7 +118,6 @@ HWTEST_F(PipeTest, tesPipeNonblack, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPipeBuf
  * @tc.number SUB_KERNEL_IPC_PIPE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -187,7 +184,6 @@ HWTEST_F(PipeTest, testPipeBuf, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPipeBlock
  * @tc.number SUB_KERNEL_IPC_PIPE_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -247,7 +243,6 @@ HWTEST_F(PipeTest, testPipeBlock, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testBrotherHelloWorld
  * @tc.number SUB_KERNEL_IPC_PIPE_0600
  * @tc.desc   [C- SOFTWARE -0200]

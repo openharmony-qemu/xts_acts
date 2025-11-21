@@ -90,7 +90,6 @@ static void CmsisEventFlagsClearFunc001(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsNew001
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -106,7 +105,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsNew001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsDelete001
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -125,7 +123,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsDelete001, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsDelete002
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -142,7 +139,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsDelete002, Function | Me
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsSet001
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -162,7 +158,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsSet002
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -208,7 +203,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet002, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsSet003
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -225,7 +219,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet003, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsWait001
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -265,7 +258,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait001, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsWait002
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -287,7 +279,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait002, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsWait003
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -304,7 +295,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait003, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsGet001
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -328,7 +318,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsGet001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsGet002
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -344,7 +333,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsGet002, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsClear001
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -387,7 +375,6 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsClear001, Function | Med
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsEventFlagsClear002
  * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1300
  * @tc.desc   [C- SOFTWARE -0200]

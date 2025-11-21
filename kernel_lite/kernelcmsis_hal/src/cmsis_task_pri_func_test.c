@@ -79,7 +79,6 @@ static void CmsisThreadSetPriorityFunc002(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority001
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5120
  * @tc.desc   [C- SOFTWARE -0200]
@@ -105,7 +104,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority001, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority002
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5160
  * @tc.desc   [C- SOFTWARE -0200]
@@ -121,7 +119,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority002, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority003
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -138,7 +135,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority003, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority004
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5240
  * @tc.desc   [C- SOFTWARE -0200]
@@ -164,7 +160,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority004, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority005
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5280
  * @tc.desc   [C- SOFTWARE -0200]
@@ -190,7 +185,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority005, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority006
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5320
  * @tc.desc   [C- SOFTWARE -0200]
@@ -216,7 +210,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority006, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority007
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5360
  * @tc.desc   [C- SOFTWARE -0200]
@@ -242,7 +235,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority007, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority008
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -267,7 +259,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority008, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority009
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5440
  * @tc.desc   [C- SOFTWARE -0200]
@@ -292,7 +283,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority009, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadGetPriority010
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5480
  * @tc.desc   [C- SOFTWARE -0200]
@@ -317,7 +307,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority010, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority001
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5520
  * @tc.desc   [C- SOFTWARE -0200]
@@ -333,7 +322,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority001, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority002
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5560
  * @tc.desc   [C- SOFTWARE -0200]
@@ -350,7 +338,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority002, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority003
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -376,7 +363,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority003, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority004
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5640
  * @tc.desc   [C- SOFTWARE -0200]
@@ -402,7 +388,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority004, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority005
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5680
  * @tc.desc   [C- SOFTWARE -0200]
@@ -428,7 +413,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority005, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority006
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5720
  * @tc.desc   [C- SOFTWARE -0200]
@@ -454,7 +438,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority006, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority007
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5760
  * @tc.desc   [C- SOFTWARE -0200]
@@ -480,7 +463,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority007, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority008
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -506,7 +488,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority008, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority009
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5840
  * @tc.desc   [C- SOFTWARE -0200]
@@ -532,7 +513,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority009, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority010
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5880
  * @tc.desc   [C- SOFTWARE -0200]
@@ -558,7 +538,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority010, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority011
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5920
  * @tc.desc   [C- SOFTWARE -0200]
@@ -584,7 +563,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority011, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority012
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5960
  * @tc.desc   [C- SOFTWARE -0200]
@@ -610,7 +588,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority012, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority013
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -636,7 +613,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority013, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority014
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -662,7 +638,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority014, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority015
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6080
  * @tc.desc   [C- SOFTWARE -0200]
@@ -688,7 +663,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority015, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority016
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6120
  * @tc.desc   [C- SOFTWARE -0200]
@@ -714,7 +688,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority016, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority017
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6160
  * @tc.desc   [C- SOFTWARE -0200]
@@ -740,7 +713,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority017, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority018
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -766,7 +738,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority018, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority019
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6240
  * @tc.desc   [C- SOFTWARE -0200]
@@ -792,7 +763,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority019, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority020
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6280
  * @tc.desc   [C- SOFTWARE -0200]
@@ -818,7 +788,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority020, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority021
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6320
  * @tc.desc   [C- SOFTWARE -0200]
@@ -844,7 +813,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority021, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority022
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6360
  * @tc.desc   [C- SOFTWARE -0200]
@@ -870,7 +838,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority022, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority023
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -896,7 +863,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority023, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority024
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6440
  * @tc.desc   [C- SOFTWARE -0200]
@@ -922,7 +888,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority024, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority025
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6480
  * @tc.desc   [C- SOFTWARE -0200]
@@ -948,7 +913,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority025, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority026
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6520
  * @tc.desc   [C- SOFTWARE -0200]
@@ -974,7 +938,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority026, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority027
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6560
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1000,7 +963,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority027, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority028
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1026,7 +988,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority028, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority029
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6640
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1052,7 +1013,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority029, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority030
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6680
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1078,7 +1038,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority030, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority031
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6720
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1104,7 +1063,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority031, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority032
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6760
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1130,7 +1088,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority032, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority033
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1156,7 +1113,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority033, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority034
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6840
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1182,7 +1138,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority034, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority035
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6880
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1208,7 +1163,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority035, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority036
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6920
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1234,7 +1188,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority036, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority037
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6960
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1260,7 +1213,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority037, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority038
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1286,7 +1238,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority038, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority039
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7040
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1312,7 +1263,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority039, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority040
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7080
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1338,7 +1288,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority040, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority041
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7120
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1364,7 +1313,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority041, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority042
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7160
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1390,7 +1338,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority042, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority043
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1416,7 +1363,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority043, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority044
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7240
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1442,7 +1388,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority044, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority045
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7280
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1468,7 +1413,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority045, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority046
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7320
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1494,7 +1438,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority046, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority047
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7360
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1520,7 +1463,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority047, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority048
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1546,7 +1488,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority048, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority049
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7440
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1572,7 +1513,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority049, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority050
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7480
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1598,7 +1538,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority050, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority051
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7520
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1624,7 +1563,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority051, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority052
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7560
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1650,7 +1588,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority052, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority053
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1676,7 +1613,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority053, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority054
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7640
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1702,7 +1638,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority054, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority055
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7680
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1728,7 +1663,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority055, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority056
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7720
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1754,7 +1688,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority056, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority057
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7760
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1780,7 +1713,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority057, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority058
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1806,7 +1738,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority058, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsThreadSetPriority059
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7840
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1832,7 +1763,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority059, Function |
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsDelay001
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7880
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1848,7 +1778,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelay001, Function | MediumTest 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsDelay002
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7920
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1864,7 +1793,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelay002, Function | MediumTest 
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsDelayUntil001
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7960
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1884,7 +1812,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelayUntil001, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsDelayUntil002
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_8000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1900,7 +1827,6 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelayUntil002, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsDelayUntil003
  * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_8040
  * @tc.desc   [C- SOFTWARE -0200]

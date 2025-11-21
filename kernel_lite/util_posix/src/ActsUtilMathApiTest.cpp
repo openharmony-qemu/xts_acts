@@ -42,7 +42,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testDrand480100
  * @tc.number SUB_KERNEL_UTIL_MATH_DRAND48_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -62,7 +61,6 @@ HWTEST_F(ActsUtilMathApiTest, testDrand480100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testErand480200
  * @tc.number SUB_KERNEL_UTIL_MATH_ERAND48_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -80,7 +78,6 @@ HWTEST_F(ActsUtilMathApiTest, testErand480200, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testJrand480300
  * @tc.number SUB_KERNEL_UTIL_MATH_JRAND48_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -99,7 +96,6 @@ HWTEST_F(ActsUtilMathApiTest, testJrand480300, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMrand480400
  * @tc.number SUB_KERNEL_UTIL_MATH_MRAND48_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -119,7 +115,6 @@ HWTEST_F(ActsUtilMathApiTest, testMrand480400, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLrand480500
  * @tc.number SUB_KERNEL_UTIL_MATH_LRAND48_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -138,7 +133,6 @@ HWTEST_F(ActsUtilMathApiTest, testLrand480500, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSrandom0600
  * @tc.number SUB_KERNEL_UTIL_MATH_SRANDOM_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -164,7 +158,6 @@ HWTEST_F(ActsUtilMathApiTest, testSrandom0600, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testNrand480700
  * @tc.number SUB_KERNEL_UTIL_MATH_NRAND48_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -182,7 +175,6 @@ HWTEST_F(ActsUtilMathApiTest, testNrand480700, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testNrand480800
  * @tc.number SUB_KERNEL_UTIL_MATH_RAND_R_0800
  * @tc.desc   [C- SOFTWARE -0200]

@@ -37,7 +37,6 @@ const char ShmTest::SHM_TEST_STR[] = "hello shmem";
 const int ShmTest::SHM_TEST_STR_LEN = sizeof(SHM_TEST_STR);
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmBasic
  * @tc.number SUB_KERNEL_IPC_SHM_ALL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -99,7 +98,6 @@ HWTEST_F(ShmTest, testShmBasic, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmSingleProcess
  * @tc.number SUB_KERNEL_IPC_SHM_ALL_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -130,7 +128,6 @@ HWTEST_F(ShmTest, testShmSingleProcess, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmget
  * @tc.number SUB_KERNEL_IPC_SHM_SHMGET_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -182,7 +179,6 @@ HWTEST_F(ShmTest, testShmget, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmatSHM_REMAP
  * @tc.number SUB_KERNEL_IPC_SHM_SHMAT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -250,7 +246,6 @@ HWTEST_F(ShmTest, testShmatSHM_REMAP, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmatSHM_RDONLY
  * @tc.number SUB_KERNEL_IPC_SHM_SHMAT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -307,7 +302,6 @@ HWTEST_F(ShmTest, testShmatSHM_RDONLY, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmatSHM_RND
  * @tc.number SUB_KERNEL_IPC_SHM_SHMAT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -347,7 +341,6 @@ HWTEST_F(ShmTest, testShmatSHM_RND, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmctl
  * @tc.number SUB_KERNEL_IPC_SHM_SHMCTL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -407,7 +400,6 @@ HWTEST_F(ShmTest, testShmctl, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testShmctlINFO
  * @tc.number SUB_KERNEL_IPC_SHM_SHMCTL_0200
  * @tc.desc   [C- SOFTWARE -0200]

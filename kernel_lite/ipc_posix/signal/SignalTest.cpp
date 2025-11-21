@@ -91,7 +91,6 @@ HWTEST_P(IpcSignalTest, testAllSigDescription, Function | MediumTest | Level3)
 INSTANTIATE_TEST_CASE_P(AllSignalTest, IpcSignalTest, testing::Range(1, MAX_SIGNAL));
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testBlockSIGKILL
  * @tc.number SUB_KERNEL_IPC_SIG_ALL_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -124,7 +123,6 @@ HWTEST_F(IpcSignalTest, testBlockSIGKILL, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSuspendSIGKILL
  * @tc.number SUB_KERNEL_IPC_SIG_ALL_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -154,7 +152,6 @@ HWTEST_F(IpcSignalTest, testSuspendSIGKILL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSignalFailSig
  * @tc.number SUB_KERNEL_IPC_SIGNAL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -174,7 +171,6 @@ HWTEST_F(IpcSignalTest, testSignalFailSig, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSignal_DFL_IGN
  * @tc.number SUB_KERNEL_IPC_SIGNAL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -230,7 +226,6 @@ HWTEST_F(IpcSignalTest, testSignal_DFL_IGN, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testRaiseBasic
  * @tc.number SUB_KERNEL_IPC_SIG_RAISE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -258,7 +253,6 @@ HWTEST_F(IpcSignalTest, testRaiseBasic, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testAbortHandler
  * @tc.number SUB_KERNEL_IPC_SIG_ABORT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -309,7 +303,6 @@ HWTEST_F(IpcSignalTest, testAbortHandler, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigactionSiginfo
  * @tc.number SUB_KERNEL_IPC_SIGACTION_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -349,7 +342,6 @@ HWTEST_F(IpcSignalTest, testSigactionSiginfo, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigwaitBasic
  * @tc.number SUB_KERNEL_IPC_SIGWAIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -410,7 +402,6 @@ HWTEST_F(IpcSignalTest, testSigwaitBasic, Function | MediumTest | Level1)
     }
 }
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigwaitNotInSet
  * @tc.number SUB_KERNEL_IPC_SIGWAIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -452,7 +443,6 @@ HWTEST_F(IpcSignalTest, testSigwaitNotInSet, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigtimedwaitBlock
  * @tc.number SUB_KERNEL_IPC_SIGTIMEDWAIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -519,7 +509,6 @@ HWTEST_F(IpcSignalTest, testSigtimedwaitBlock, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigtimedwaitTimeout
  * @tc.number SUB_KERNEL_IPC_SIGTIMEDWAIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -570,7 +559,6 @@ HWTEST_F(IpcSignalTest, testSigtimedwaitTimeout, Function | MediumTest | Level2)
 
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigtimedwaitSiginfo
  * @tc.number SUB_KERNEL_IPC_SIGTIMEDWAIT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -612,7 +600,6 @@ HWTEST_F(IpcSignalTest, testSigtimedwaitSiginfo, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigwaitinfoBasic
  * @tc.number SUB_KERNEL_IPC_SIGWAITINFO_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -671,7 +658,6 @@ HWTEST_F(IpcSignalTest, testSigwaitinfoBasic, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPauseBasic
  * @tc.number SUB_KERNEL_IPC_SIG_PAUSE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -721,7 +707,6 @@ HWTEST_F(IpcSignalTest, testPauseBasic, Function | MediumTest | Level1)
     }
 }
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPauseAndMask
  * @tc.number SUB_KERNEL_IPC_SIG_PAUSE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -782,7 +767,6 @@ HWTEST_F(IpcSignalTest, testPauseAndMask, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigpendingBasic
  * @tc.number SUB_KERNEL_IPC_SIGPENDING_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -856,7 +840,6 @@ HWTEST_F(IpcSignalTest, testSigpendingBasic, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigprocmaskBasic
  * @tc.number SUB_KERNEL_IPC_SIGPROCMASK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -959,7 +942,6 @@ HWTEST_F(IpcSignalTest, testSigprocmaskBasic, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigprocmaskAlarm
  * @tc.number SUB_KERNEL_IPC_SIGPROCMASK_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -997,7 +979,6 @@ HWTEST_F(IpcSignalTest, testSigprocmaskAlarm, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigprocmaskSetMask
  * @tc.number SUB_KERNEL_IPC_SIGPROCMASK_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1053,7 +1034,6 @@ HWTEST_F(IpcSignalTest, testSigprocmaskSetMask, Function | MediumTest | Level2)
     EXPECT_EQ(1, sigisemptyset(&oldmask));
 }
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigprocmaskNotinSet
  * @tc.number SUB_KERNEL_IPC_SIGPROCMASK_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1093,7 +1073,6 @@ HWTEST_F(IpcSignalTest, testSigprocmaskNotinSet, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigprocmaskNotinSet0800
  * @tc.number SUB_KERNEL_IPC_SIGPROCMASK_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1126,7 +1105,6 @@ HWTEST_F(IpcSignalTest, testSigprocmaskNotinSet0800, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsuspendTerminate
  * @tc.number SUB_KERNEL_IPC_SIGSUSPEND_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1160,7 +1138,6 @@ HWTEST_F(IpcSignalTest, testSigsuspendTerminate, Function | MediumTest | Level1)
     }
 }
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsuspendContinue
  * @tc.number SUB_KERNEL_IPC_SIGSUSPEND_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1207,7 +1184,6 @@ HWTEST_F(IpcSignalTest, testSigsuspendContinue, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsuspendAndMask
  * @tc.number SUB_KERNEL_IPC_SIGSUSPEND_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1274,7 +1250,6 @@ HWTEST_F(IpcSignalTest, testSigsuspendAndMask, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPthreadkill
  * @tc.number SUB_KERNEL_IPC_SIG_PTDKILL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1300,7 +1275,6 @@ HWTEST_F(IpcSignalTest, testPthreadkill, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPthreadkillMain
  * @tc.number SUB_KERNEL_IPC_SIG_PTDKILL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1346,7 +1320,6 @@ HWTEST_F(IpcSignalTest, testPthreadkillMain, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPthreadSigmask
  * @tc.number SUB_KERNEL_IPC_SIG_PTDSIGMASK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1364,7 +1337,6 @@ HWTEST_F(IpcSignalTest, testPthreadSigmask, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPthreadSigmaskHandler
  * @tc.number SUB_KERNEL_IPC_SIG_PTDSIGMASK_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1386,7 +1358,6 @@ HWTEST_F(IpcSignalTest, testPthreadSigmaskHandler, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPthreadSigmaskInherit
  * @tc.number SUB_KERNEL_IPC_SIG_PTDSIGMASK_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1427,7 +1398,6 @@ HWTEST_F(IpcSignalTest, testPthreadSigmaskInherit, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetBasic
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1468,7 +1438,6 @@ HWTEST_F(IpcSignalTest, testSigsetBasic, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetAnd
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1492,7 +1461,6 @@ HWTEST_F(IpcSignalTest, testSigsetAnd, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetOr
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1516,7 +1484,6 @@ HWTEST_F(IpcSignalTest, testSigsetOr, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetDelete
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1544,7 +1511,6 @@ HWTEST_F(IpcSignalTest, testSigsetDelete, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetFill
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1575,7 +1541,6 @@ HWTEST_F(IpcSignalTest, testSigsetFill, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetDelete0600
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1600,7 +1565,6 @@ HWTEST_F(IpcSignalTest, testSigsetDelete0600, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetDelete0700
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1630,7 +1594,6 @@ HWTEST_F(IpcSignalTest, testSigsetDelete0700, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetOr1000
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1656,7 +1619,6 @@ HWTEST_F(IpcSignalTest, testSigsetOr1000, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetOr1100
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1688,7 +1650,6 @@ HWTEST_F(IpcSignalTest, testSigsetOr1100, Function | MediumTest | Level2)
 
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetAnd1200
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1713,7 +1674,6 @@ HWTEST_F(IpcSignalTest, testSigsetAnd1200, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetAnd1300
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1744,7 +1704,6 @@ HWTEST_F(IpcSignalTest, testSigsetAnd1300, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigsetAnd1400
  * @tc.number SUB_KERNEL_IPC_SIG_SETOP_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1776,7 +1735,6 @@ HWTEST_F(IpcSignalTest, testSigsetAnd1400, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigHold
  * @tc.number SUB_KERNEL_IPC_SIG_SIGHOLD_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1803,7 +1761,6 @@ HWTEST_F(IpcSignalTest, testSigHold, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigHoldError
  * @tc.number SUB_KERNEL_IPC_SIG_SIGHOLD_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1823,7 +1780,6 @@ HWTEST_F(IpcSignalTest, testSigHoldError, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigRelse
  * @tc.number SUB_KERNEL_IPC_SIG_SIGRELSE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1852,7 +1808,6 @@ HWTEST_F(IpcSignalTest, testSigRelse, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSigRelseError
  * @tc.number SUB_KERNEL_IPC_SIG_SIGRELSE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1872,7 +1827,6 @@ HWTEST_F(IpcSignalTest, testSigRelseError, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPsignal
  * @tc.number SUB_KERNEL_IPC_SIG_PSIGNAL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1901,7 +1855,6 @@ HWTEST_F(IpcSignalTest, testPsignal, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPsignalError1
  * @tc.number SUB_KERNEL_IPC_SIG_PSIGNAL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1928,7 +1881,6 @@ HWTEST_F(IpcSignalTest, testPsignalError1, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPsignalError2
  * @tc.number SUB_KERNEL_IPC_SIG_PSIGNAL_0300
  * @tc.desc   [C- SOFTWARE -0200]

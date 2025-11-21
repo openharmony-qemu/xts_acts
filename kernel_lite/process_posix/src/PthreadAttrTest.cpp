@@ -26,7 +26,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAttrSetdetachstate
  * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETDETACHSTATE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -75,7 +74,6 @@ void *ThreadPthreadAttrSetscope(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAttrSetscope
  * @tc.number SUB_KERNEL_PTHREAD_ATTR_SCOPE_ALL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -119,7 +117,6 @@ void *ThreadPthreadAttrSetguardsize(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAttrSetguardsize
  * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETGUARDSIZE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -166,7 +163,6 @@ void *ThreadPthreadAttrSetstacksize(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAttrSetstacksize
  * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETSTACKSIZE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -197,7 +193,6 @@ HWTEST_F(PthreadTest, testPthreadAttrSetstacksize, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAttrSetstacksizeEINVAL
  * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETSTACKSIZE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -231,7 +226,6 @@ void *ThreadPthreadAttrSetstack(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAttrSetstack
  * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETSTACK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -270,7 +264,6 @@ HWTEST_F(PthreadTest, testPthreadAttrSetstack, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAttrGetstackEINVAL
  * @tc.number SUB_KERNEL_PTHREAD_ATTR_GETSTACK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -315,7 +308,6 @@ void *ThreadPthreadGetattrNp(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadGetattrNp
  * @tc.number SUB_KERNEL_PTHREAD_GETATTR_NP_0100
  * @tc.desc   [C- SOFTWARE -0200]

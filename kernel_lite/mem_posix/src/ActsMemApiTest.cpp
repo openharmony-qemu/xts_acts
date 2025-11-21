@@ -51,7 +51,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemBcmp_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_BCMP_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -72,7 +71,6 @@ HWTEST_F(ActsMemApiTest, testMemBcmp_0100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemBcmp_1000
  * @tc.number SUB_KERNEL_NDKAPI_MEM_BCMP_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -93,7 +91,6 @@ HWTEST_F(ActsMemApiTest, testMemBcmp_1000, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemBcopy_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_BCOPY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -124,7 +121,6 @@ HWTEST_F(ActsMemApiTest, testMemBcopy_0100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemBzero_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_BZERO_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -157,7 +153,6 @@ HWTEST_F(ActsMemApiTest, testMemBzero_0100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMallocUsableSize_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MALLOC_USABLE_SIZE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -185,7 +180,6 @@ HWTEST_F(ActsMemApiTest, testMallocUsableSize_0100, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMallocUsableSize_1000
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MALLOC_USABLE_SIZE_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -204,7 +198,6 @@ HWTEST_F(ActsMemApiTest, testMallocUsableSize_1000, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemCcpy_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCCPY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -226,7 +219,6 @@ HWTEST_F(ActsMemApiTest, testMemCcpy_0100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemCcpy_0200
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCCPY_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -248,7 +240,6 @@ HWTEST_F(ActsMemApiTest, testMemCcpy_0200, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMempcpy_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMPCPY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -270,7 +261,6 @@ HWTEST_F(ActsMemApiTest, testMempcpy_0100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemchr_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCHR_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -292,7 +282,6 @@ HWTEST_F(ActsMemApiTest, testMemchr_0100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemchr_1000
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCHR_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -313,7 +302,6 @@ HWTEST_F(ActsMemApiTest, testMemchr_1000, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemchr_1100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMCHR_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -334,7 +322,6 @@ HWTEST_F(ActsMemApiTest, testMemchr_1100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemmem_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMMEM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -361,7 +348,6 @@ HWTEST_F(ActsMemApiTest, testMemmem_0100, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemmem_1000
  * @tc.number SUB_KERNEL_NDKAPI_MEM_MEMMEM_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -389,7 +375,6 @@ HWTEST_F(ActsMemApiTest, testMemmem_1000, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpenMemStream_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_OPEN_MEMSTREAM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -423,7 +408,6 @@ HWTEST_F(ActsMemApiTest, testOpenMemStream_0100, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemGetpagesize_0100
  * @tc.number SUB_KERNEL_NDKAPI_MEM_GETPAGESIZE_0100
  * @tc.desc   [C- SOFTWARE -0200]

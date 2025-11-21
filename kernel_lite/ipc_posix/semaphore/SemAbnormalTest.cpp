@@ -29,7 +29,6 @@ class SemAbnormalTest : public::testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSemInitAbnormalSemvaluemax
  * @tc.number SUB_KERNEL_IPC_SEM_INIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -50,7 +49,6 @@ HWTEST_F(SemAbnormalTest, testSemInitAbnormalSemvaluemax, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSemInitAbnormalGtsemvaluemax
  * @tc.number SUB_KERNEL_IPC_SEM_INIT_0210
  * @tc.desc   [C- SOFTWARE -0200]
@@ -73,7 +71,6 @@ HWTEST_F(SemAbnormalTest, testSemInitAbnormalGtsemvaluemax, Function | MediumTes
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSemInitAbnormalInitTwice
  * @tc.number SUB_KERNEL_IPC_SEM_INIT_0220
  * @tc.desc   [C- SOFTWARE -0200]
@@ -90,7 +87,6 @@ HWTEST_F(SemAbnormalTest, testSemInitAbnormalInitTwice, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSemPostAbnormal
  * @tc.number SUB_KERNEL_IPC_SEM_POST_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -118,7 +114,6 @@ HWTEST_F(SemAbnormalTest, testSemPostAbnormal, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSemTimedwaitAbnormalA
  * @tc.number SUB_KERNEL_IPC_SEM_TIMEDWAIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -149,7 +144,6 @@ HWTEST_F(SemAbnormalTest, testSemTimedwaitAbnormalA, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSemTimedwaitAbnormalB
  * @tc.number SUB_KERNEL_IPC_SEM_TIMEDWAIT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -180,7 +174,6 @@ HWTEST_F(SemAbnormalTest, testSemTimedwaitAbnormalB, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSemTryWaitEagain
  * @tc.number SUB_KERNEL_IPC_SEM_TRYWAIT_0110
  * @tc.desc   [C- SOFTWARE -0200]

@@ -42,7 +42,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFmtmsg0100
  * @tc.number SUB_KERNEL_UTIL_MSG_FMTMSG_0100
  * @tc.desc   [C- SOFTWARE -0200]

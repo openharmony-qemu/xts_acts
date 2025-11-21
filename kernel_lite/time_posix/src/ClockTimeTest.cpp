@@ -96,7 +96,6 @@ INSTANTIATE_TEST_CASE_P(ClockTimeTest, SupportedClockIDTest, ALL_SUPPORTED_IDS);
 
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testClockSettime
  * @tc.number SUB_KERNEL_TIME_API_CLOCK_SETTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -122,7 +121,6 @@ HWTEST_F(ClockTimeTest, testClockSettime, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFtime
  * @tc.number SUB_KERNEL_TIME_API_FTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -152,7 +150,6 @@ HWTEST_F(ClockTimeTest, testFtime, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testStime
  * @tc.number SUB_KERNEL_TIME_API_STIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -178,7 +175,6 @@ HWTEST_F(ClockTimeTest, testStime, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTime
  * @tc.number SUB_KERNEL_TIME_API_TIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -216,7 +212,6 @@ HWTEST_F(ClockTimeTest, testTime, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimes
  * @tc.number SUB_KERNEL_TIME_API_TIMES_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -267,7 +262,6 @@ HWTEST_F(ClockTimeTest, testTimes, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGettimeofday
  * @tc.number SUB_KERNEL_TIME_API_GETTIMEOFDAY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -293,7 +287,6 @@ HWTEST_F(ClockTimeTest, testGettimeofday, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSettimeofday
  * @tc.number SUB_KERNEL_TIME_API_SETTIMEOFDAY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -324,7 +317,6 @@ HWTEST_F(ClockTimeTest, testSettimeofday, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLocaltime
  * @tc.number SUB_KERNEL_TIME_API_LOCALTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -355,7 +347,6 @@ HWTEST_F(ClockTimeTest, testLocaltime, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLocaltimer
  * @tc.number SUB_KERNEL_TIME_API_LOCALTIMER_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -394,7 +385,6 @@ HWTEST_F(ClockTimeTest, testLocaltimer, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetdateBasic
  * @tc.number SUB_KERNEL_TIME_API_GETDATE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -434,7 +424,6 @@ HWTEST_F(ClockTimeTest, testGetdateBasic, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetdateError
  * @tc.number SUB_KERNEL_TIME_API_GETDATE_0200
  * @tc.desc   [C- SOFTWARE -0200]

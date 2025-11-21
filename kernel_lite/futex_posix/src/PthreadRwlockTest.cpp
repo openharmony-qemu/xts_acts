@@ -51,7 +51,6 @@ void *PthreadRWlockWW2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadRWlockWW
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -97,7 +96,6 @@ void *PthreadRWlockWR2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadRWlockWR
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -143,7 +141,6 @@ void *PthreadRWlockRR2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadRWlockRR
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -189,7 +186,6 @@ void *PthreadRWlockRW2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadRWlockRW
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -234,7 +230,6 @@ void *PthreadRWtrylockWR2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadRWtrylockWR
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -279,7 +274,6 @@ void *PthreadRWtrylockRW2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadRWtrylockRW
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -327,7 +321,6 @@ void *PthreadTimdNoOutRWlockWR2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadTimdNoOutRWlockWR
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -381,7 +374,6 @@ void *PthreadTimdOutRWlockWR2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadTimdOutRWlockWR
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -435,7 +427,6 @@ void *PthreadTimdOutRWlockWW2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadTimdOutRWlockWW
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -483,7 +474,6 @@ void *PthreadTimdNoOutRWlockWW2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadTimdNoOutRWlockWW
  * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -509,7 +499,6 @@ HWTEST_F(FutexTest, testPthreadTimdNoOutRWlockWW, Function | MediumTest | Level3
 /********************************************* Test case dividing line ***********************************************/
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadRwlockAttr
  * @tc.number SUB_KERNEL_FUTEX_RWLOCKATTR_0100
  * @tc.desc   [C- SOFTWARE -0200]

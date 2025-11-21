@@ -46,7 +46,6 @@ HWTEST_P(AllClockIDTest, testClockNanosleepInvalidID, Reliability | SmallTest | 
 INSTANTIATE_TEST_CASE_P(SleepTest, AllClockIDTest, ALL_CLOCK_IDS);
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testClockNanosleepInvalidPara
  * @tc.number SUB_KERNEL_TIME_API_CLOCK_NANOSLEEP_0300
  * @tc.desc   [C- SOFTWARE -0200]

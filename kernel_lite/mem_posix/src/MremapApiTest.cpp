@@ -35,7 +35,6 @@ class MremapApiTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSbrkZero
  * @tc.number SUB_KERNEL_MEM_SBRK_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -51,7 +50,6 @@ HWTEST_F(MremapApiTest, testSbrkZero, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSbrkENOMEM
  * @tc.number SUB_KERNEL_MEM_SBRK_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -68,7 +66,6 @@ HWTEST_F(MremapApiTest, testSbrkENOMEM, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapAnonExpand
  * @tc.number SUB_KERNEL_MEM_MREMAP_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -114,7 +111,6 @@ HWTEST_F(MremapApiTest, testMremapAnonExpand, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapAnonShrink
  * @tc.number SUB_KERNEL_MEM_MREMAP_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -156,7 +152,6 @@ HWTEST_F(MremapApiTest, testMremapAnonShrink, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapAnonExpandFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -204,7 +199,6 @@ HWTEST_F(MremapApiTest, testMremapAnonExpandFixAddr, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapAnonShrinkFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0400
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -248,7 +242,6 @@ HWTEST_F(MremapApiTest, testMremapAnonShrinkFixAddr, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapFileExpand
  * @tc.number SUB_KERNEL_MEM_MREMAP_0500
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -304,7 +297,6 @@ HWTEST_F(MremapApiTest, testMremapFileExpand, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapFileShrink
  * @tc.number SUB_KERNEL_MEM_MREMAP_0600
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -358,7 +350,6 @@ HWTEST_F(MremapApiTest, testMremapFileShrink, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapFileExpandFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0700
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -417,7 +408,6 @@ HWTEST_F(MremapApiTest, testMremapFileExpandFixAddr, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapFileShrinkFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0800
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -475,7 +465,6 @@ HWTEST_F(MremapApiTest, testMremapFileShrinkFixAddr, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMremapEINVAL
  * @tc.number SUB_KERNEL_MEM_MREMAP_0900
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.

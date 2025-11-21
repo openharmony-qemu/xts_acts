@@ -35,7 +35,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testReaddir
  * @tc.number SUB_KERNEL_FS_DIRENT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -76,7 +75,6 @@ HWTEST_F(FileSystemTest, testReaddir, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testReaddirEbadf
  * @tc.number SUB_KERNEL_FS_DIRENT_0110
  * @tc.desc   [C- SOFTWARE -0200]
@@ -100,7 +98,6 @@ HWTEST_F(FileSystemTest, testReaddirEbadf, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testReaddirR
  * @tc.number SUB_KERNEL_FS_DIRENT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -144,7 +141,6 @@ HWTEST_F(FileSystemTest, testReaddirR, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testScandir
  * @tc.number SUB_KERNEL_FS_DIRENT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -179,7 +175,6 @@ HWTEST_F(FileSystemTest, testScandir, Function | MediumTest | Level3)
 
 #ifndef COMMERCIAL
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSeekdir
  * @tc.number SUB_KERNEL_FS_DIRENT_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -240,7 +235,6 @@ HWTEST_F(FileSystemTest, testSeekdir, Function | MediumTest | Level3)
 #endif
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpendir
  * @tc.number SUB_KERNEL_FS_DIRENT_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -264,7 +258,6 @@ HWTEST_F(FileSystemTest, testOpendir, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpendirEinval
  * @tc.number SUB_KERNEL_FS_DIRENT_0510
  * @tc.desc   [C- SOFTWARE -0200]
@@ -286,7 +279,6 @@ HWTEST_F(FileSystemTest, testOpendirEinval, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpendirEnametoolong
  * @tc.number SUB_KERNEL_FS_DIRENT_0520
  * @tc.desc   [C- SOFTWARE -0200]
@@ -315,7 +307,6 @@ HWTEST_F(FileSystemTest, testOpendirEnametoolong, Function | MediumTest | Level3
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpendirENOENT
  * @tc.number SUB_KERNEL_FS_DIRENT_0530
  * @tc.desc   [C- SOFTWARE -0200]
@@ -337,7 +328,6 @@ HWTEST_F(FileSystemTest, testOpendirENOENT, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpendirEnotdir
  * @tc.number SUB_KERNEL_FS_DIRENT_0540
  * @tc.desc   [C- SOFTWARE -0200]
@@ -359,7 +349,6 @@ HWTEST_F(FileSystemTest, testOpendirEnotdir, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testClosedir
  * @tc.number SUB_KERNEL_FS_DIRENT_0600
  * @tc.desc   [C- SOFTWARE -0200]

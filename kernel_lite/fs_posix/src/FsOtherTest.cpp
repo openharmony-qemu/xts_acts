@@ -40,7 +40,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPath
  * @tc.number SUB_KERNEL_FS_OTHER_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -63,7 +62,6 @@ HWTEST_F(FileSystemTest, testPath, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetCurrentDirName
  * @tc.number SUB_KERNEL_FS_OTHER_0110
  * @tc.desc   [C- SOFTWARE -0200]
@@ -87,7 +85,6 @@ HWTEST_F(FileSystemTest, testGetCurrentDirName, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testBasename
  * @tc.number SUB_KERNEL_FS_OTHER_0120
  * @tc.desc   [C- SOFTWARE -0200]
@@ -144,7 +141,6 @@ int FtwCheckDirTree(const char *path, const struct stat *sb, int flag)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFtw
  * @tc.number SUB_KERNEL_FS_OTHER_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -193,7 +189,6 @@ int NftwCheckDirTree(const char *path, const struct stat *sb, int flag, struct F
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testNftw
  * @tc.number SUB_KERNEL_FS_OTHER_0210
  * @tc.desc   [C- SOFTWARE -0200]
@@ -208,7 +203,6 @@ HWTEST_F(FileSystemTest, testNftw, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testStatvfs
  * @tc.number SUB_KERNEL_FS_OTHER_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -254,7 +248,6 @@ HWTEST_F(FileSystemTest, testStatvfs, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGlob
  * @tc.number SUB_KERNEL_FS_OTHER_0400
  * @tc.desc   [C- SOFTWARE -0200]

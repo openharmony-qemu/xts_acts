@@ -29,7 +29,6 @@ class DlopenApiTest : public testing::Test {
 #define DYLOAD_TEST_DIR "/storage/data/"
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testDlopenSelf
  * @tc.number SUB_KERNEL_DL_API_DLOPEN_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -46,7 +45,6 @@ HWTEST_F(DlopenApiTest, testDlopenSelf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testDlopenError
  * @tc.number SUB_KERNEL_DL_API_DLOPEN_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -69,7 +67,6 @@ HWTEST_F(DlopenApiTest, testDlopenError, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testDlsymSelf
  * @tc.number SUB_KERNEL_DL_API_DLSYM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -86,7 +83,6 @@ HWTEST_F(DlopenApiTest, testDlsymSelf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testDlsymNext
  * @tc.number SUB_KERNEL_DL_API_DLSYM_0200
  * @tc.desc   [C- SOFTWARE -0200]

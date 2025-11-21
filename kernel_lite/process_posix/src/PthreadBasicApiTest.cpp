@@ -33,7 +33,6 @@ void *ThreadPthreadCreateBasic(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCreateBasic
  * @tc.number SUB_KERNEL_PTHREAD_CREATE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -58,7 +57,6 @@ void *ThreadPthreadJoinWait(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadJoinWait
  * @tc.number SUB_KERNEL_PTHREAD_JOIN_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -76,7 +74,6 @@ HWTEST_F(PthreadTest, testPthreadJoinWait, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testJoinReturn
  * @tc.number SUB_KERNEL_PTHREAD_JOIN_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -98,7 +95,6 @@ HWTEST_F(PthreadTest, testJoinReturn, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testJoinExited
  * @tc.number SUB_KERNEL_PTHREAD_JOIN_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -121,7 +117,6 @@ void *ThreadPthreadExitThread(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadExitThread
  * @tc.number SUB_KERNEL_PTHREAD_EXIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -153,7 +148,6 @@ void *ThreadPthreadExitFunction(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadExitFunction
  * @tc.number SUB_KERNEL_PTHREAD_EXIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -174,7 +168,6 @@ HWTEST_F(PthreadTest, testPthreadExitFunction, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadDetach
  * @tc.number SUB_KERNEL_PTHREAD_DETACH_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -199,7 +192,6 @@ void *ThreadPthreadEqual(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadEqual
  * @tc.number SUB_KERNEL_PTHREAD_EQUAL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -216,7 +208,6 @@ HWTEST_F(PthreadTest, testPthreadEqual, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadKeysMax
  * @tc.number SUB_KERNEL_PTHREAD_KEY_CREATE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -265,7 +256,6 @@ HWTEST_F(PthreadTest, testPthreadKeysMax, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadGetspecific
  * @tc.number SUB_KERNEL_PTHREAD_GETSPECIFIC_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -351,7 +341,6 @@ void *ThreadPthreadSpecificAllDelete(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadSpecificAllDelete
  * @tc.number SUB_KERNEL_PTHREAD_SPECIFIC_ALL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -389,7 +378,6 @@ void *ThreadTestPush(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCleanupPushPopBasic
  * @tc.number SUB_KERNEL_PTHREAD_CLEANUP_ALL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -423,7 +411,6 @@ void *ThreadTestPushParam(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCleanupPushPopParam
  * @tc.number SUB_KERNEL_PTHREAD_CLEANUP_ALL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -462,7 +449,6 @@ static void *ThreadTestop(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPop
  * @tc.number SUB_KERNEL_PTHREAD_CLEANUP_ALL_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -481,7 +467,6 @@ HWTEST_F(PthreadTest, testPop, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testBarrierInit
  * @tc.number SUB_KERNEL_PTHREAD_BARRIER_INIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -496,7 +481,6 @@ HWTEST_F(PthreadTest, testBarrierInit, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testBarrierattrInit
  * @tc.number SUB_KERNEL_PTHREAD_BARRIERATTR_INIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -546,7 +530,6 @@ void *ThreadTestBarrierWait2(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testBarrierWait
  * @tc.number SUB_KERNEL_PTHREAD_BARRIER_ALL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -593,7 +576,6 @@ void *ThreadTestBarrierAlwaysWait(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testBarrierAlwaysWait
  * @tc.number SUB_KERNEL_PTHREAD_BARRIER_ALL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -626,7 +608,6 @@ HWTEST_F(PthreadTest, testBarrierAlwaysWait, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadSetcancelstate
  * @tc.number SUB_KERNEL_PTHREAD_SETCANCELSTATE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -646,7 +627,6 @@ HWTEST_F(PthreadTest, testPthreadSetcancelstate, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadSetcanceltype
  * @tc.number SUB_KERNEL_PTHREAD_SETCANCELTYPE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -674,7 +654,6 @@ void *ThreadPthreadNoCancelPoint(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadNoCancelPoint
  * @tc.number SUB_KERNEL_PTHREAD_CANCEL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -705,7 +684,6 @@ void *ThreadPthreadCancelPoint(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCancelPoint
  * @tc.number SUB_KERNEL_PTHREAD_CANCEL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -736,7 +714,6 @@ void *ThreadPthreadCancelDisable(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCancelDisable
  * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -768,7 +745,6 @@ void *ThreadPthreadCancelAsynchronous(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCancelAsynchronous
  * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -800,7 +776,6 @@ void *ThreadPthreadCancelDeferred(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCancelDeferred
  * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -833,7 +808,6 @@ void *ThreadPthreadCancelEnable(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadCancelEnable
  * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -870,7 +844,6 @@ void ChildPthreadAtfork(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadAtfork
  * @tc.number SUB_KERNEL_PTHREAD_ATFORK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -967,7 +940,6 @@ void *ThreadNPthreadAtfork(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testNPthreadAtfork
  * @tc.number SUB_KERNEL_PTHREAD_ATFORK_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1005,7 +977,6 @@ void *ThreadOnce(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPthreadOnce
  * @tc.number SUB_KERNEL_PTHREAD_ONCE_0100
  * @tc.desc   [C- SOFTWARE -0200]

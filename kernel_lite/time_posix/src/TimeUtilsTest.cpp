@@ -28,7 +28,6 @@ class TimeUtilsTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAscTime
  * @tc.number SUB_KERNEL_TIME_API_ASCTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -57,7 +56,6 @@ HWTEST_F(TimeUtilsTest, testAscTime, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAscTimeR
  * @tc.number SUB_KERNEL_TIME_API_ASCTIMER_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -83,7 +81,6 @@ HWTEST_F(TimeUtilsTest, testAscTimeR, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testCtime
  * @tc.number SUB_KERNEL_TIME_API_CTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -104,7 +101,6 @@ HWTEST_F(TimeUtilsTest, testCtime, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testCtimeR
  * @tc.number SUB_KERNEL_TIME_API_CTIME_R_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -128,7 +124,6 @@ HWTEST_F(TimeUtilsTest, testCtimeR, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testDifftime
  * @tc.number SUB_KERNEL_NDKAPI_TIME_DIFFTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -156,7 +151,6 @@ HWTEST_F(TimeUtilsTest, testDifftime, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testTimegm
  * @tc.number SUB_KERNEL_NDKAPI_TIME_TIMEGM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -191,7 +185,6 @@ HWTEST_F(TimeUtilsTest, testTimegm, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGmtime
  * @tc.number SUB_KERNEL_TIME_API_GMTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -224,7 +217,6 @@ HWTEST_F(TimeUtilsTest, testGmtime, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGmtimeR
  * @tc.number SUB_KERNEL_TIME_API_GMTIMER_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -251,7 +243,6 @@ HWTEST_F(TimeUtilsTest, testGmtimeR, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMktime
  * @tc.number SUB_KERNEL_TIME_API_MKTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -279,7 +270,6 @@ HWTEST_F(TimeUtilsTest, testMktime, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testStrftime
  * @tc.number SUB_KERNEL_TIME_API_STRFTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -325,7 +315,6 @@ HWTEST_F(TimeUtilsTest, testStrftime, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testStrftimeL
  * @tc.number SUB_KERNEL_TIME_API_STRFTIMEL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -346,7 +335,6 @@ HWTEST_F(TimeUtilsTest, testStrftimeL, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testWcsftime
  * @tc.number SUB_KERNEL_TIME_API_WCSFTIME_0100
  * @tc.desc   [C- SOFTWARE -0200]

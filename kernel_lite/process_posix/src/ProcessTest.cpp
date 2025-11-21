@@ -32,7 +32,6 @@ class ProcessTest : public::testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLineBigExit
  * @tc.number SUB_KERNEL_PROCESS_LINE_BIGEXIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -60,7 +59,6 @@ HWTEST_F(ProcessTest, testLineBigExit, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLineBigExitFlush
  * @tc.number SUB_KERNEL_PROCESS_LINE_BIGEXIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -120,7 +118,6 @@ void AtexitCallback0(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLineBigExitAtexit
  * @tc.number SUB_KERNEL_PROCESS_LINE_BIGEXIT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -154,7 +151,6 @@ HWTEST_F(ProcessTest, testLineBigExitAtexit, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLineExit
  * @tc.number SUB_KERNEL_PROCESS_LINE_EXIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -182,7 +178,6 @@ HWTEST_F(ProcessTest, testLineExit, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLineExitFlush
  * @tc.number SUB_KERNEL_PROCESS_LINE_EXIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -242,7 +237,6 @@ void AtexitCallback1(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLineExitAtexit
  * @tc.number SUB_KERNEL_PROCESS_LINE_EXIT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -276,7 +270,6 @@ HWTEST_F(ProcessTest, testLineExitAtexit, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExit
  * @tc.number SUB_KERNEL_PROCESS_EXIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -303,7 +296,6 @@ HWTEST_F(ProcessTest, testExit, Function | MediumTest | Level2)
     }
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAssertTrue
  * @tc.number SUB_KERNEL_PROCESS_ASSERT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -346,7 +338,6 @@ int FunctionAssertFalse(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAssertFalse
  * @tc.number SUB_KERNEL_PROCESS_ASSERT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -387,7 +378,6 @@ void AtexitCallback(void)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testAtexit
  * @tc.number SUB_KERNEL_PROCESS_ATEXIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -420,7 +410,6 @@ HWTEST_F(ProcessTest, testAtexit, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testWaitReturn
  * @tc.number SUB_KERNEL_PROCESS_WAIT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -449,7 +438,6 @@ HWTEST_F(ProcessTest, testWaitReturn, Function | MediumTest | Level3)
 
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testWaitTest
  * @tc.number SUB_KERNEL_PROCESS_WAIT_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -476,7 +464,6 @@ HWTEST_F(ProcessTest, testWaitTest, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testWaitKilled
  * @tc.number SUB_KERNEL_PROCESS_WAIT_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -502,7 +489,6 @@ HWTEST_F(ProcessTest, testWaitKilled, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testWaitPidBasic
  * @tc.number SUB_KERNEL_PROCESS_WAITPID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -529,7 +515,6 @@ HWTEST_F(ProcessTest, testWaitPidBasic, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testWaitPidTest
  * @tc.number SUB_KERNEL_PROCESS_WAITPID_0200
  * @tc.desc   [C- SOFTWARE -0200]

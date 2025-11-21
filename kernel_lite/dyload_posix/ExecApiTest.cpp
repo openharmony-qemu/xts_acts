@@ -28,7 +28,6 @@ class ExecApiTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExecl
  * @tc.number SUB_KERNEL_DL_API_EXECL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -54,7 +53,6 @@ HWTEST_F(ExecApiTest, testExecl, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExeclp
  * @tc.number SUB_KERNEL_DL_API_EXECLP_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -80,7 +78,6 @@ HWTEST_F(ExecApiTest, testExeclp, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExecle
  * @tc.number SUB_KERNEL_DL_API_EXECLE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -109,7 +106,6 @@ HWTEST_F(ExecApiTest, testExecle, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExecv
  * @tc.number SUB_KERNEL_DL_API_EXECV_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -138,7 +134,6 @@ HWTEST_F(ExecApiTest, testExecv, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testExecvp
  * @tc.number SUB_KERNEL_DL_API_EXECVP_0100
  * @tc.desc   [C- SOFTWARE -0200]

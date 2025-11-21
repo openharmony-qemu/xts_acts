@@ -28,7 +28,6 @@ class MemApiTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMallocRandom
  * @tc.number SUB_KERNEL_MEM_MALLOC_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -51,7 +50,6 @@ HWTEST_F(MemApiTest, testMallocRandom, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMallocZero
  * @tc.number SUB_KERNEL_MEM_MALLOC_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -74,7 +72,6 @@ HWTEST_F(MemApiTest, testMallocZero, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMallocENOMEM
  * @tc.number SUB_KERNEL_MEM_MALLOC_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -106,7 +103,6 @@ HWTEST_F(MemApiTest, testMallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFreeNULL
  * @tc.number SUB_KERNEL_MEM_FREE_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -127,7 +123,6 @@ HWTEST_F(MemApiTest, testFreeNULL, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testReallocMem
  * @tc.number SUB_KERNEL_MEM_REALLOC_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -181,7 +176,6 @@ HWTEST_F(MemApiTest, testReallocMem, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testReallocNULL
  * @tc.number SUB_KERNEL_MEM_REALLOC_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -220,7 +214,6 @@ HWTEST_F(MemApiTest, testReallocNULL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testReallocENOMEM
  * @tc.number SUB_KERNEL_MEM_REALLOC_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -248,7 +241,6 @@ HWTEST_F(MemApiTest, testReallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testCallocRandom
  * @tc.number SUB_KERNEL_MEM_CALLOC_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -277,7 +269,6 @@ HWTEST_F(MemApiTest, testCallocRandom, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testCallocZero
  * @tc.number SUB_KERNEL_MEM_CALLOC_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -306,7 +297,6 @@ HWTEST_F(MemApiTest, testCallocZero, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testCallocENOMEM
  * @tc.number SUB_KERNEL_MEM_CALLOC_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -339,7 +329,6 @@ HWTEST_F(MemApiTest, testCallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testVallocBytes
  * @tc.number SUB_KERNEL_MEM_VALLOC_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -364,7 +353,6 @@ HWTEST_F(MemApiTest, testVallocBytes, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testVallocZero
  * @tc.number SUB_KERNEL_MEM_VALLOC_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -387,7 +375,6 @@ HWTEST_F(MemApiTest, testVallocZero, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testVallocENOMEM
  * @tc.number SUB_KERNEL_MEM_VALLOC_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -419,7 +406,6 @@ HWTEST_F(MemApiTest, testVallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemalignTwoAlign
  * @tc.number SUB_KERNEL_MEM_MEMALIHN_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -444,7 +430,6 @@ HWTEST_F(MemApiTest, testMemalignTwoAlign, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemalignEINVAL
  * @tc.number SUB_KERNEL_MEM_MEMALIHN_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -473,7 +458,6 @@ HWTEST_F(MemApiTest, testMemalignEINVAL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemalignENOMEM
  * @tc.number SUB_KERNEL_MEM_MEMALIHN_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -506,7 +490,6 @@ HWTEST_F(MemApiTest, testMemalignENOMEM, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPosixMemalignTwoAlign
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -536,7 +519,6 @@ HWTEST_F(MemApiTest, testPosixMemalignTwoAlign, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPosixMemalignZero
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -561,7 +543,6 @@ HWTEST_F(MemApiTest, testPosixMemalignZero, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPosixMemalignEINVAL
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0300
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -598,7 +579,6 @@ HWTEST_F(MemApiTest, testPosixMemalignEINVAL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testPosixMemalignENOMEM
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0400
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -630,7 +610,6 @@ HWTEST_F(MemApiTest, testPosixMemalignENOMEM, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOpenMemstreamBase
  * @tc.number SUB_KERNEL_MEM_OPEN_MEMSTREAM_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -688,7 +667,6 @@ HWTEST_F(MemApiTest, testOpenMemstreamBase, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemset
  * @tc.number SUB_KERNEL_MEM_MEMSET_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -719,7 +697,6 @@ HWTEST_F(MemApiTest, testMemset, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemcpy
  * @tc.number SUB_KERNEL_MEM_MEMCPY_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -752,7 +729,6 @@ HWTEST_F(MemApiTest, testMemcpy, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemcpyOverlay
  * @tc.number SUB_KERNEL_MEM_MEMCPY_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -789,7 +765,6 @@ HWTEST_F(MemApiTest, testMemcpyOverlay, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemmove
  * @tc.number SUB_KERNEL_MEM_MEMMOVE_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -822,7 +797,6 @@ HWTEST_F(MemApiTest, testMemmove, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemmoveOverlay
  * @tc.number SUB_KERNEL_MEM_MEMMOVE_0200
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -857,7 +831,6 @@ HWTEST_F(MemApiTest, testMemmoveOverlay, Function | MediumTest | Level3)
 
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemcmp
  * @tc.number SUB_KERNEL_MEM_MEMCMP_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
@@ -889,7 +862,6 @@ HWTEST_F(MemApiTest, testMemcmp, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMemrchr
  * @tc.number SUB_KERNEL_MEM_MEMRCHR_0100
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.

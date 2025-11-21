@@ -27,7 +27,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqOpenEEXIST
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -53,7 +52,6 @@ HWTEST_F(IpcMqTest, testMqOpenEEXIST, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqOpenEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -124,7 +122,6 @@ HWTEST_F(IpcMqTest, testMqOpenEINVAL, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqOpenENAMETOOLONG
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -155,7 +152,6 @@ HWTEST_F(IpcMqTest, testMqOpenENAMETOOLONG, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqOpenENOENT
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -180,7 +176,6 @@ HWTEST_F(IpcMqTest, testMqOpenENOENT, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqOpenENFILE
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -227,7 +222,6 @@ HWTEST_F(IpcMqTest, testMqOpenENFILE, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqOpenENOSPC
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -255,7 +249,6 @@ HWTEST_F(IpcMqTest, testMqOpenENOSPC, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqCloseEBADF
  * @tc.number SUB_KERNEL_IPC_MQ_CLOSE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -270,7 +263,6 @@ HWTEST_F(IpcMqTest, testMqCloseEBADF, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqSendEAGAIN
  * @tc.number SUB_KERNEL_IPC_MQ_SEND_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -299,7 +291,6 @@ HWTEST_F(IpcMqTest, testMqSendEAGAIN, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqSendEBADFEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_SEND_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -346,7 +337,6 @@ HWTEST_F(IpcMqTest, testMqSendEBADFEMSGSIZE, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqSendEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_SEND_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -374,7 +364,6 @@ HWTEST_F(IpcMqTest, testMqSendEINVAL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqReceiveEAGAIN
  * @tc.number SUB_KERNEL_IPC_MQ_RECEIVE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -410,7 +399,6 @@ HWTEST_F(IpcMqTest, testMqReceiveEAGAIN, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqReceiveEBADFEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_RECEIVE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -466,7 +454,6 @@ HWTEST_F(IpcMqTest, testMqReceiveEBADFEMSGSIZE, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqReceiveEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_RECEIVE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -495,7 +482,6 @@ HWTEST_F(IpcMqTest, testMqReceiveEINVAL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedSendEAGAINEBADF
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -549,7 +535,6 @@ HWTEST_F(IpcMqTest, testMqTimedSendEAGAINEBADF, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedSendEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -601,7 +586,6 @@ HWTEST_F(IpcMqTest, testMqTimedSendEINVAL, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedSendEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -632,7 +616,6 @@ HWTEST_F(IpcMqTest, testMqTimedSendEMSGSIZE, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedSendETIMEDOUT
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -667,7 +650,6 @@ HWTEST_F(IpcMqTest, testMqTimedSendETIMEDOUT, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedReceiveEAGAINEBADF
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -720,7 +702,6 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveEAGAINEBADF, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedReceiveEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -775,7 +756,6 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveEINVAL, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedReceiveETIMEDOUT
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -809,7 +789,6 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveETIMEDOUT, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqTimedReceiveEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -842,7 +821,6 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveEMSGSIZE, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqUnlinkENAMETOOLONG
  * @tc.number SUB_KERNEL_IPC_MQ_UNLINK_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -865,7 +843,6 @@ HWTEST_F(IpcMqTest, testMqUnlinkENAMETOOLONG, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqUnlinkENOENT
  * @tc.number SUB_KERNEL_IPC_MQ_UNLINK_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -882,7 +859,6 @@ HWTEST_F(IpcMqTest, testMqUnlinkENOENT, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqUnlinkEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_UNLINK_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -897,7 +873,6 @@ HWTEST_F(IpcMqTest, testMqUnlinkEINVAL, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqGetAttrEBADFEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_GETATTR_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -932,7 +907,6 @@ HWTEST_F(IpcMqTest, testMqGetAttrEBADFEINVAL, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testMqSetAttrEBADFEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_SETATTR_0100
  * @tc.desc   [C- SOFTWARE -0200]

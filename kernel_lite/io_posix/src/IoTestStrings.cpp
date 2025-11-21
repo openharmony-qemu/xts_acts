@@ -20,7 +20,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFfsl
  * @tc.number SUB_KERNEL_IO_STRINGS_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -44,7 +43,6 @@ HWTEST_F(IoTest, testFfsl, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrncasecmp
  * @tc.number SUB_KERNEL_IO_STRINGS_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -65,7 +63,6 @@ HWTEST_F(IoTest, testStrncasecmp, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcasecmp
  * @tc.number SUB_KERNEL_IO_STRINGS_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -86,7 +83,6 @@ HWTEST_F(IoTest, testStrcasecmp, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testIndex
  * @tc.number SUB_KERNEL_IO_STRINGS_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -112,7 +108,6 @@ HWTEST_F(IoTest, testIndex, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testRindex
  * @tc.number SUB_KERNEL_IO_STRINGS_0500
  * @tc.desc   [C- SOFTWARE -0200]

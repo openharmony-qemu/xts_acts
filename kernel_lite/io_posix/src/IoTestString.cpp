@@ -19,7 +19,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrverscmp
  * @tc.number SUB_KERNEL_IO_STRING_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -40,7 +39,6 @@ HWTEST_F(IoTest, testStrverscmp, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcoll
  * @tc.number SUB_KERNEL_IO_STRING_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -61,7 +59,6 @@ HWTEST_F(IoTest, testStrcoll, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcmp
  * @tc.number SUB_KERNEL_IO_STRING_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -81,7 +78,6 @@ HWTEST_F(IoTest, testStrcmp, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrncmp
  * @tc.number SUB_KERNEL_IO_STRING_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -104,7 +100,6 @@ HWTEST_F(IoTest, testStrncmp, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrxfrm
  * @tc.number SUB_KERNEL_IO_STRING_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -126,7 +121,6 @@ HWTEST_F(IoTest, testStrxfrm, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrsignal
  * @tc.number SUB_KERNEL_IO_STRING_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -144,7 +138,6 @@ HWTEST_F(IoTest, testStrsignal, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStpcpy
  * @tc.number SUB_KERNEL_IO_STRING_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -168,7 +161,6 @@ HWTEST_F(IoTest, testStpcpy, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStpncpy
  * @tc.number SUB_KERNEL_IO_STRING_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -192,7 +184,6 @@ HWTEST_F(IoTest, testStpncpy, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrlcpy
  * @tc.number SUB_KERNEL_IO_STRING_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -216,7 +207,6 @@ HWTEST_F(IoTest, testStrlcpy, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcpy
  * @tc.number SUB_KERNEL_IO_STRING_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -238,7 +228,6 @@ HWTEST_F(IoTest, testStrcpy, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrncpy
  * @tc.number SUB_KERNEL_IO_STRING_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -258,7 +247,6 @@ HWTEST_F(IoTest, testStrncpy, Function | MediumTest | Level1)
     EXPECT_STREQ(ret, destT);
 }
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcasestr
  * @tc.number SUB_KERNEL_IO_STRING_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -279,7 +267,6 @@ HWTEST_F(IoTest, testStrcasestr, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrlcat
  * @tc.number SUB_KERNEL_IO_STRING_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -303,7 +290,6 @@ HWTEST_F(IoTest, testStrlcat, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcat
  * @tc.number SUB_KERNEL_IO_STRING_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -323,7 +309,6 @@ HWTEST_F(IoTest, testStrcat, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrncat
  * @tc.number SUB_KERNEL_IO_STRING_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -343,7 +328,6 @@ HWTEST_F(IoTest, testStrncat, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrchr
  * @tc.number SUB_KERNEL_IO_STRING_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -362,7 +346,6 @@ HWTEST_F(IoTest, testStrchr, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrrchr
  * @tc.number SUB_KERNEL_IO_STRING_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -381,7 +364,6 @@ HWTEST_F(IoTest, testStrrchr, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrnlen
  * @tc.number SUB_KERNEL_IO_STRING_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -403,7 +385,6 @@ HWTEST_F(IoTest, testStrnlen, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtok
  * @tc.number SUB_KERNEL_IO_STRING_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -430,7 +411,6 @@ HWTEST_F(IoTest, testStrtok, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrtok_r
  * @tc.number SUB_KERNEL_IO_STRING_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -462,7 +442,6 @@ HWTEST_F(IoTest, testStrtok_r, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrsep
  * @tc.number SUB_KERNEL_IO_STRING_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -490,7 +469,6 @@ HWTEST_F(IoTest, testStrsep, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrdup
  * @tc.number SUB_KERNEL_IO_STRING_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -511,7 +489,6 @@ HWTEST_F(IoTest, testStrdup, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrndup
  * @tc.number SUB_KERNEL_IO_STRING_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -532,7 +509,6 @@ HWTEST_F(IoTest, testStrndup, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrpbrk
  * @tc.number SUB_KERNEL_IO_STRING_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -553,7 +529,6 @@ HWTEST_F(IoTest, testStrpbrk, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcspn
  * @tc.number SUB_KERNEL_IO_STRING_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -574,7 +549,6 @@ HWTEST_F(IoTest, testStrcspn, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrspn
  * @tc.number SUB_KERNEL_IO_STRING_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -601,7 +575,6 @@ HWTEST_F(IoTest, testStrspn, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrstr
  * @tc.number SUB_KERNEL_IO_STRING_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -627,7 +600,6 @@ HWTEST_F(IoTest, testStrstr, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrcoll_l
  * @tc.number SUB_KERNEL_IO_STRING_2800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -649,7 +621,6 @@ HWTEST_F(IoTest, testStrcoll_l, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testStrxfrm_l
  * @tc.number SUB_KERNEL_IO_STRING_2900
  * @tc.desc   [C- SOFTWARE -0200]

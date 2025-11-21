@@ -27,7 +27,6 @@ class MathStdApiTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testAbs
  * @tc.number SUB_KERNEL_MATH_STD_STDLIB_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -48,7 +47,6 @@ HWTEST_F(MathStdApiTest, testAbs, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testDiv
  * @tc.number SUB_KERNEL_MATH_STD_DIV_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -72,7 +70,6 @@ HWTEST_F(MathStdApiTest, testDiv, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testimaxabs
  * @tc.number SUB_KERNEL_MATH_STD_IMAXABS_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -94,7 +91,6 @@ HWTEST_F(MathStdApiTest, testimaxabs, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testimaxdiv
  * @tc.number SUB_KERNEL_MATH_STD_IMAXDIV_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -117,7 +113,6 @@ HWTEST_F(MathStdApiTest, testimaxdiv, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testlabs
  * @tc.number SUB_KERNEL_MATH_STD_LABS_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -139,7 +134,6 @@ HWTEST_F(MathStdApiTest, testlabs, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testldiv
  * @tc.number SUB_KERNEL_MATH_STD_LDIV_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -163,7 +157,6 @@ HWTEST_F(MathStdApiTest, testldiv, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testllabs
  * @tc.number SUB_KERNEL_MATH_STD_LLABS_0100
  * @tc.desc   [C- SOFTWARE -0100]
@@ -185,7 +178,6 @@ HWTEST_F(MathStdApiTest, testllabs, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:51
  * @tc.name   testlldiv
  * @tc.number SUB_KERNEL_MATH_STD_LLDIV_0100
  * @tc.desc   [C- SOFTWARE -0100]

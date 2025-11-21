@@ -76,7 +76,6 @@ static void CmsisMutexGetOwnerFunc001(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexNew001
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -93,7 +92,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexNew001, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexNew002
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -110,7 +108,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexNew002, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexDelete001
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -131,7 +128,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete001, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexDelete002
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -152,7 +148,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete002, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexDelete003
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -176,7 +171,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete003, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexDelete004
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -192,7 +186,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete004, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexAcquire001
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -208,7 +201,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexAcquire001, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexAcquire002
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -231,7 +223,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexAcquire002, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexRelease001
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -259,7 +250,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexRelease001, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexRelease002
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -275,7 +265,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexRelease002, Function | Medium
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexGetOwner001
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -299,7 +288,6 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexGetOwner001, Function | Mediu
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsMutexGetOwner002
  * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_1200
  * @tc.desc   [C- SOFTWARE -0200]

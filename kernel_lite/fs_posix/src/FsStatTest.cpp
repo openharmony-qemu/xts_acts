@@ -36,7 +36,6 @@ using namespace testing::ext;
 
 #ifndef COMMERCIAL
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testUmask
  * @tc.number SUB_KERNEL_FS_STAT_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -57,7 +56,6 @@ HWTEST_F(FileSystemTest, testUmask, Function | MediumTest | Level2)
 #if defined(LITE_FS_JFFS2)
 #ifndef COMMERCIAL
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testStatLimt
  * @tc.number SUB_KERNEL_FS_STAT_0210
  * @tc.desc   [C- SOFTWARE -0200]
@@ -96,7 +94,6 @@ HWTEST_F(FileSystemTest, testStatLimt, Function | MediumTest | Level3)
 #if defined(LITE_FS_JFFS2)
 #ifndef COMMERCIAL
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testLstatLimt
  * @tc.number SUB_KERNEL_FS_STAT_0310
  * @tc.desc   [C- SOFTWARE -0200]
@@ -136,7 +133,6 @@ HWTEST_F(FileSystemTest, testLstatLimt, Function | MediumTest | Level3)
 #if defined(LITE_FS_JFFS2)
 #ifndef COMMERCIAL
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testFstatLimt
  * @tc.number SUB_KERNEL_FS_STAT_0410
  * @tc.desc   [C- SOFTWARE -0200]
@@ -175,7 +171,6 @@ HWTEST_F(FileSystemTest, testFstatLimt, Function | MediumTest | Level3)
 #endif
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMkdirat
  * @tc.number SUB_KERNEL_FS_STAT_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -193,7 +188,6 @@ HWTEST_F(FileSystemTest, testMkdirat, Function | MediumTest | Level0)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMkdiratEinval
  * @tc.number SUB_KERNEL_FS_STAT_0510
  * @tc.desc   [C- SOFTWARE -0200]
@@ -208,7 +202,6 @@ HWTEST_F(FileSystemTest, testMkdiratEinval, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMkdiratEnametoolong
  * @tc.number SUB_KERNEL_FS_STAT_0520
  * @tc.desc   [C- SOFTWARE -0200]
@@ -231,7 +224,6 @@ HWTEST_F(FileSystemTest, testMkdiratEnametoolong, Function | MediumTest | Level3
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMkdiratEnoent
  * @tc.number SUB_KERNEL_FS_STAT_0530
  * @tc.desc   [C- SOFTWARE -0200]
@@ -247,7 +239,6 @@ HWTEST_F(FileSystemTest, testMkdiratEnoent, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testMkdiratEexist
  * @tc.number SUB_KERNEL_FS_STAT_0540
  * @tc.desc   [C- SOFTWARE -0200]
@@ -266,7 +257,6 @@ HWTEST_F(FileSystemTest, testMkdiratEexist, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_JFFS2)
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testChmod
  * @tc.number SUB_KERNEL_FS_STAT_0600
  * @tc.desc   [C- SOFTWARE -0200]

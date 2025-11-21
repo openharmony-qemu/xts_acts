@@ -48,7 +48,6 @@ protected:
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnum0100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -67,7 +66,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnum0100, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnum0200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -86,7 +84,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnum0200, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnum0300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -105,7 +102,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnum0300, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnum0400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -124,7 +120,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnum0400, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnum0500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -143,7 +138,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnum0500, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnumL0600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_L_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -162,7 +156,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnumL0600, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnumL0700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_L_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -181,7 +174,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnumL0700, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnumL0800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_L_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -200,7 +192,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnumL0800, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnumL0900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_L_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -219,7 +210,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnumL0900, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalnumL1000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALNUM_L_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -238,7 +228,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalnumL1000, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalpha1100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -257,7 +246,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalpha1100, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalpha1200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -276,7 +264,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalpha1200, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalpha1300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -295,7 +282,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalpha1300, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalpha1400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -314,7 +300,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalpha1400, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalphaL1500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_L_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -333,7 +318,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalphaL1500, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalphaL1600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_L_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -352,7 +336,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalphaL1600, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalphaL1700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_L_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -371,7 +354,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalphaL1700, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsalphaL1800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISALPHA_L_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -390,7 +372,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsalphaL1800, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsascii1900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISASCII_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -409,7 +390,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsascii1900, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsascii2000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISASCII_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -428,7 +408,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsascii2000, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsascii2100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISASCII_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -447,7 +426,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsascii2100, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsascii2200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISASCII_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -471,7 +449,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsascii2200, Function | MediumTest | Level1) 
 // * @tc.desc       [C- SOFTWARE -0200]
 // */
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsastream2300
  * @tc.number testIsastream2300
  * @tc.desc   testIsastream2300
@@ -488,7 +465,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsascii2200, Function | MediumTest | Level1) 
 // }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsatty2400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISATTY_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -507,7 +483,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsatty2400, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsblank2500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISBLANK_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -526,7 +501,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsblank2500, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsblank2600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISBLANK_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -545,7 +519,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsblank2600, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsblankL2700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISBLANK_L_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -564,7 +537,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsblankL2700, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsblankL2800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISBLANK_L_2800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -583,7 +555,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsblankL2800, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIscntrl2900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISCNTRL_2900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -602,7 +573,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIscntrl2900, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIscntrl3000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISCNTRL_3000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -621,7 +591,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIscntrl3000, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIscntrlL3100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISCNTRL_L_3100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -640,7 +609,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIscntrlL3100, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIscntrlL3200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISCNTRL_L_3200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -659,7 +627,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIscntrlL3200, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigit3300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_3300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -678,7 +645,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigit3300, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigitl3400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_3400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -697,7 +663,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigitl3400, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigitl3500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_3500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -716,7 +681,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigitl3500, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigit3600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_3600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -735,7 +699,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigit3600, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigitL3700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_L_3700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -754,7 +717,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigitL3700, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigitlL3800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_L_3800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -773,7 +735,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigitlL3800, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigitlL3900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_L_3900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -792,7 +753,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigitlL3900, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsdigitL4000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISDIGIT_L_4000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -811,7 +771,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsdigitL4000, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsfinite4100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISFINITE_4100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -830,7 +789,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsfinite4100, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsfinite4200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISFINITE_4200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -849,7 +807,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsfinite4200, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsfinite4300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISFINITE_4300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -868,7 +825,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsfinite4300, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraph4400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_4400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -887,7 +843,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraph4400, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraph4500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_4500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -906,7 +861,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraph4500, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraph4600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_4600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -925,7 +879,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraph4600, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraph4700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_4700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -944,7 +897,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraph4700, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraphL4800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_L_4800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -963,7 +915,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraphL4800, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraphL4900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_L_4900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -982,7 +933,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraphL4900, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraphL5000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_L_5000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1001,7 +951,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraphL5000, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgraphL5100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGRAPH_L_5100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1020,7 +969,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgraphL5100, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgreater5200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGREATER_5200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1041,7 +989,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgreater5200, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgreater5300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGREATER_5300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1062,7 +1009,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgreater5300, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgreater5400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGREATER_5400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1083,7 +1029,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgreater5400, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgreaterequal5500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGREATEREQUAL_5500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1104,7 +1049,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgreaterequal5500, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgreaterequal5600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGREATEREQUAL_5600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1125,7 +1069,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgreaterequal5600, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsgreaterequal5700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISGREATEREQUAL_5700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1146,7 +1089,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsgreaterequal5700, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsinf5800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISINF_5800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1165,7 +1107,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsinf5800, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslessequal5900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLESSEQUAL_5900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1186,7 +1127,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslessequal5900, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslessequal6000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLESSEQUAL_6000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1207,7 +1147,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslessequal6000, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslessequal6100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLESSEQUAL_6100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1228,7 +1167,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslessequal6100, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslessgreater6200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLESSGREATER_6200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1249,7 +1187,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslessgreater6200, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslessgreater6300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLESSGREATER_6300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1270,7 +1207,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslessgreater6300, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslessgreater6400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLESSGREATER_6400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1291,7 +1227,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslessgreater6400, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslower6500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_6500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1310,7 +1245,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslower6500, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslower6600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_6600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1329,7 +1263,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslower6600, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslower6700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_6700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1348,7 +1281,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslower6700, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslower6800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_6800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1367,7 +1299,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslower6800, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslowerL6900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_L_6900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1386,7 +1317,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslowerL6900, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslowerL7000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_L_7000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1405,7 +1335,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslowerL7000, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslowerL7100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_L_7100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1424,7 +1353,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslowerL7100, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIslowerL7200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISLOWER_L_7200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1443,7 +1371,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIslowerL7200, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsnan7300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISNAN_7300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1462,7 +1389,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsnan7300, Function | MediumTest | Level1) {
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsnormal7400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISNORMAL_7400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1481,7 +1407,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsnormal7400, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsnormal7500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISNORMAL_7500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1500,7 +1425,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsnormal7500, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsnormal7600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISNORMAL_7600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1519,7 +1443,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsnormal7600, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsprint7700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPRINT_7700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1538,7 +1461,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsprint7700, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsprint7800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPRINT_7800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1557,7 +1479,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsprint7800, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsprint7900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPRINT_7900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1576,7 +1497,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsprint7900, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsprintL8000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPRINT_L_8000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1595,7 +1515,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsprintL8000, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsprintL8100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPRINT_L_8100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1614,7 +1533,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsprintL8100, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsprintL8200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPRINT_L_8200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1633,7 +1551,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsprintL8200, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIspunct8300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPUNCT_8300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1652,7 +1569,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIspunct8300, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIspunct8400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPUNCT_8400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1671,7 +1587,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIspunct8400, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIspunct8500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPUNCT_8500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1690,7 +1605,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIspunct8500, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIspunctL8600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPUNCT_L_8600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1709,7 +1623,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIspunctL8600, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIspunctL8700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPUNCT_L_8700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1728,7 +1641,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIspunctL8700, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIspunctL8800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISPUNCT_L_8800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1747,7 +1659,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIspunctL8800, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspace8900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_8900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1766,7 +1677,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspace8900, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspace9000
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_9000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1785,7 +1695,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspace9000, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspace9100
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_9100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1804,7 +1713,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspace9100, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspace9200
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_9200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1823,7 +1731,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspace9200, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspace9300
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_9300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1842,7 +1749,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspace9300, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspace9400
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_9400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1861,7 +1767,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspace9400, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspaceL9500
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_L_9500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1880,7 +1785,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspaceL9500, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspaceL9600
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_L_9600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1899,7 +1803,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspaceL9600, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspaceL9620
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_L_9620
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1918,7 +1821,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspaceL9620, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspaceL9640
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_L_9640
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1937,7 +1839,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspaceL9640, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspaceL9660
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_L_9660
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1956,7 +1857,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspaceL9660, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsspaceL9680
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISSPACE_L_9680
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1975,7 +1875,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsspaceL9680, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsunordered9700
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUNORDERED_9700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1996,7 +1895,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsunordered9700, Function | MediumTest | Leve
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupper9720
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_9720
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2015,7 +1913,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupper9720, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupper9740
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_9740
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2034,7 +1931,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupper9740, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupper9760
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_9760
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2053,7 +1949,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupper9760, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupper9780
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_9780
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2072,7 +1967,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupper9780, Function | MediumTest | Level1) 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupperL9800
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_L_9800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2091,7 +1985,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupperL9800, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupperL9820
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_L_9820
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2110,7 +2003,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupperL9820, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupperL9840
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_L_9840
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2129,7 +2021,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupperL9840, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsupperL9860
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISUPPER_L_9860
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2148,7 +2039,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsupperL9860, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsxdigit9880
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISXDIGIT_9880
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2167,7 +2057,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsxdigit9880, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsxdigit9900
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISXDIGIT_9900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2186,7 +2075,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsxdigit9900, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsxdigitL9920
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISXDIGIT_L_9920
  * @tc.desc   [C- SOFTWARE -0200]
@@ -2205,7 +2093,6 @@ HWTEST_F(ActsUtilCheckApiTest, testIsxdigitL9920, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testIsxdigitL19940
  * @tc.number SUB_KERNEL_UTIL_CHECK_ISXDIGIT_L_9940
  * @tc.desc   [C- SOFTWARE -0200]

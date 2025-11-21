@@ -62,7 +62,6 @@ static void CmsisTimerFunc002(void const *argument)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerNew001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -81,7 +80,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew001, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerNew002
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -100,7 +98,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew002, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerNew003
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -118,7 +115,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew003, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerNew004
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -136,7 +132,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew004, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerNew005
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -154,7 +149,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew005, Function | MediumTest
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStart001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -176,7 +170,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart001, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStart002
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -198,7 +191,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart002, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStart003
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -224,7 +216,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart003, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStart004
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -250,7 +241,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart004, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStart005
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -271,7 +261,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart005, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStart006
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -292,7 +281,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart006, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStart007
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -309,7 +297,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart007, Function | MediumTe
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerDelete001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -331,7 +318,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete001, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerDelete002
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -353,7 +339,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete002, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerDelete003
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -377,7 +362,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete003, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerDelete004
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -401,7 +385,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete004, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerDelete005
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -417,7 +400,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete005, Function | MediumT
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStop001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -442,7 +424,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop001, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStop002
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -467,7 +448,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop002, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStop003
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -490,7 +470,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop003, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStop004
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -513,7 +492,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop004, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerStop005
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -529,7 +507,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop005, Function | MediumTes
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -551,7 +528,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning001, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning002
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -575,7 +551,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning002, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning003
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -601,7 +576,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning003, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning004
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -625,7 +599,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning004, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning005
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -647,7 +620,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning005, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning006
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -671,7 +643,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning006, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning007
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -697,7 +668,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning007, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning008
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -721,7 +691,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning008, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsTimerIsRunning009
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -737,7 +706,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning009, Function | Medi
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsKernelGetTickFreq001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -753,7 +721,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsKernelGetTickFreq001, Function | M
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsKernelGetSysTimerFreq001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -769,7 +736,6 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsKernelGetSysTimerFreq001, Function
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testOsKernelGetSysTimerCount001
  * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3400
  * @tc.desc   [C- SOFTWARE -0200]

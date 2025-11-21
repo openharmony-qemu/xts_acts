@@ -28,7 +28,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testUngetc
  * @tc.number SUB_KERNEL_IO_STDIO_0100
  * @tc.desc   [C- SOFTWAret -0200]
@@ -53,7 +52,6 @@ HWTEST_F(IoTest, testUngetc, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPuts
  * @tc.number SUB_KERNEL_IO_STDIO_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -71,7 +69,6 @@ HWTEST_F(IoTest, testPuts, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFmemopen
  * @tc.number SUB_KERNEL_IO_STDIO_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -92,7 +89,6 @@ HWTEST_F(IoTest, testFmemopen, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testGetw
  * @tc.number SUB_KERNEL_IO_STDIO_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -124,7 +120,6 @@ int FormatVdprintf(int fd, const char *format, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testVdprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -151,7 +146,6 @@ HWTEST_F(IoTest, testVdprintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testDprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -178,7 +172,6 @@ HWTEST_F(IoTest, testDprintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -223,7 +216,6 @@ int FormatVfscanf(FILE *stream, const char *format, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testVfprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -250,7 +242,6 @@ HWTEST_F(IoTest, testVfprintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testClearerr
  * @tc.number SUB_KERNEL_IO_STDIO_0900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -272,7 +263,6 @@ HWTEST_F(IoTest, testClearerr, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPrintf
  * @tc.number SUB_KERNEL_IO_STDIO_1000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -315,7 +305,6 @@ HWTEST_F(IoTest, testPrintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testScanf
  * @tc.number SUB_KERNEL_IO_STDIO_1100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -364,7 +353,6 @@ int FormatVasprintf(char **buffer, const char *fmt, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testVasprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -386,7 +374,6 @@ HWTEST_F(IoTest, testVasprintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testGetline
  * @tc.number SUB_KERNEL_IO_STDIO_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -414,7 +401,6 @@ HWTEST_F(IoTest, testGetline, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testGetdelim
  * @tc.number SUB_KERNEL_IO_STDIO_1400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -442,7 +428,6 @@ HWTEST_F(IoTest, testGetdelim, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFgetpos
  * @tc.number SUB_KERNEL_IO_STDIO_1500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -471,7 +456,6 @@ HWTEST_F(IoTest, testFgetpos, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSnprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -492,7 +476,6 @@ HWTEST_F(IoTest, testSnprintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testAsprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -514,7 +497,6 @@ HWTEST_F(IoTest, testAsprintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testGets
  * @tc.number SUB_KERNEL_IO_STDIO_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -573,7 +555,6 @@ int FormatVsscanf(const char *str, const char *format, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testVsprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -597,7 +578,6 @@ HWTEST_F(IoTest, testVsprintf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFgetln
  * @tc.number SUB_KERNEL_IO_STDIO_2000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -628,7 +608,6 @@ int FormatVsnprintf(char *format, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testVsnprintf
  * @tc.number SUB_KERNEL_IO_STDIO_2100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -662,7 +641,6 @@ void VwarnxTest(char *fmt, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPerror
  * @tc.number SUB_KERNEL_IO_STDIO_2200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -711,7 +689,6 @@ HWTEST_F(IoTest, testPerror, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testRewind
  * @tc.number SUB_KERNEL_IO_STDIO_2300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -742,7 +719,6 @@ int FormatVprintf(char *format, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testVprintf
  * @tc.number SUB_KERNEL_IO_STDIO_2400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -794,7 +770,6 @@ int FormatVscanf(const char *format, ...)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testVscanf
  * @tc.number SUB_KERNEL_IO_STDIO_2500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -855,7 +830,6 @@ void *Thread(void *arg)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testGetcharUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -898,7 +872,6 @@ HWTEST_F(IoTest, testGetcharUnlocked, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPutcharUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -915,7 +888,6 @@ HWTEST_F(IoTest, testPutcharUnlocked, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testPutcUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2800
  * @tc.desc   [C- SOFTWAret -0200]
@@ -938,7 +910,6 @@ HWTEST_F(IoTest, testPutcUnlocked, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testFputcUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2900
  * @tc.desc   [C- SOFTWARE -0200]
@@ -961,7 +932,6 @@ HWTEST_F(IoTest, testFputcUnlocked, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSetbuffer
  * @tc.number SUB_KERNEL_IO_STDIO_3000
  * @tc.desc   [C- SOFTWARE -0200]
@@ -999,7 +969,6 @@ HWTEST_F(IoTest, testSetbuffer, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSetlinebuf
  * @tc.number SUB_KERNEL_IO_STDIO_3100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1033,7 +1002,6 @@ HWTEST_F(IoTest, testSetlinebuf, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:53
  * @tc.name   testSetbuf
  * @tc.number SUB_KERNEL_IO_STDIO_3200
  * @tc.desc   [C- SOFTWARE -0200]

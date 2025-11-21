@@ -22,7 +22,6 @@
 using namespace testing::ext;
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetGetuid
  * @tc.number SUB_KERNEL_DAC_SetGetUID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -63,7 +62,6 @@ HWTEST_F(UidGidTest, testSetGetuid, Function | MediumTest | Level1)
     ASSERT_EQ(uid, 0);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetuidFail
  * @tc.number SUB_KERNEL_DAC_SetGetUID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -87,7 +85,6 @@ HWTEST_F(UidGidTest, testSetuidFail, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetGetgid
  * @tc.number SUB_KERNEL_DAC_SetGetGID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -128,7 +125,6 @@ HWTEST_F(UidGidTest, testSetGetgid, Function | MediumTest | Level1)
     ASSERT_EQ(gid, 0);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetgidFail
  * @tc.number SUB_KERNEL_DAC_SetGetGID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -153,7 +149,6 @@ HWTEST_F(UidGidTest, testSetgidFail, Function | MediumTest | Level3)
 
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetGeteuid
  * @tc.number SUB_KERNEL_DAC_SetGetEUID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -195,7 +190,6 @@ HWTEST_F(UidGidTest, testSetGeteuid, Function | MediumTest | Level1)
     AssertAllUid(SHELL_UID);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSeteuidFail
  * @tc.number SUB_KERNEL_DAC_SetGetEUID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -221,7 +215,6 @@ HWTEST_F(UidGidTest, testSeteuidFail, Function | MediumTest | Level3)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetGetegid
  * @tc.number SUB_KERNEL_DAC_SetGetEGID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -263,7 +256,6 @@ HWTEST_F(UidGidTest, testSetGetegid, Function | MediumTest | Level1)
     AssertAllGid(SHELL_GID);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetegidFail
  * @tc.number SUB_KERNEL_DAC_SetGetEGID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -290,7 +282,6 @@ HWTEST_F(UidGidTest, testSetegidFail, Function | MediumTest | Level3)
 
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetreuid
  * @tc.number SUB_KERNEL_DAC_SetREUID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -331,7 +322,6 @@ HWTEST_F(UidGidTest, testSetreuid, Function | MediumTest | Level1)
     AssertAllUid(SHELL_UID);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetreuidFail
  * @tc.number SUB_KERNEL_DAC_SetREUID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -377,7 +367,6 @@ HWTEST_F(UidGidTest, testSetreuidFail, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetregid
  * @tc.number SUB_KERNEL_DAC_SetREGID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -418,7 +407,6 @@ HWTEST_F(UidGidTest, testSetregid, Function | MediumTest | Level1)
     AssertAllGid(SHELL_GID);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetregidFail
  * @tc.number SUB_KERNEL_DAC_SetREGID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -465,7 +453,6 @@ HWTEST_F(UidGidTest, testSetregidFail, Function | MediumTest | Level2)
 
 // ================================== res ===========================================
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetGetresuid
  * @tc.number SUB_KERNEL_DAC_SetGetRESUID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -532,7 +519,6 @@ HWTEST_F(UidGidTest, testSetGetresuid, Function | MediumTest | Level1)
     AssertAllUid(SHELL_UID);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetresuidFail
  * @tc.number SUB_KERNEL_DAC_SetGetRESUID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -580,7 +566,6 @@ HWTEST_F(UidGidTest, testSetresuidFail, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetGetresgid
  * @tc.number SUB_KERNEL_DAC_SetGetRESGID_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -647,7 +632,6 @@ HWTEST_F(UidGidTest, testSetGetresgid, Function | MediumTest | Level1)
     AssertAllGid(SHELL_GID);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetresgidFail
  * @tc.number SUB_KERNEL_DAC_SetGetRESGID_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -695,7 +679,6 @@ HWTEST_F(UidGidTest, testSetresgidFail, Function | MediumTest | Level2)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetgroups
  * @tc.number SUB_KERNEL_DAC_GetGroups_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -719,7 +702,6 @@ HWTEST_F(UidGidTest, testGetgroups, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetgroups1
  * @tc.number SUB_KERNEL_DAC_SetGroups_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -771,7 +753,6 @@ HWTEST_F(UidGidTest, testSetgroups1, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetgroups2
  * @tc.number SUB_KERNEL_DAC_SetGroups_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -811,7 +792,6 @@ HWTEST_F(UidGidTest, testSetgroups2, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetgroupsFail
  * @tc.number SUB_KERNEL_DAC_SetGroups_0300
  * @tc.desc   [C- SOFTWARE -0200]

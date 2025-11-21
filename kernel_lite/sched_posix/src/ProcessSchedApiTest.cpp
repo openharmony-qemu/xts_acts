@@ -29,7 +29,6 @@ class ProcessSchedApiTest : public testing::Test {
 };
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetPriority
  * @tc.number SUB_KERNEL_SCHED_API_GETPRIORITY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -46,7 +45,6 @@ HWTEST_F(ProcessSchedApiTest, testGetPriority, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetPriorityError0200
  * @tc.number SUB_KERNEL_SCHED_API_GETPRIORITY_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -68,7 +66,6 @@ HWTEST_F(ProcessSchedApiTest, testGetPriorityError0200, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetPriorityError0300
  * @tc.number SUB_KERNEL_SCHED_API_GETPRIORITY_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -92,7 +89,6 @@ HWTEST_F(ProcessSchedApiTest, testGetPriorityError0300, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetPriorityError0400
  * @tc.number SUB_KERNEL_SCHED_API_GETPRIORITY_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -119,7 +115,6 @@ HWTEST_F(ProcessSchedApiTest, testGetPriorityError0400, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testGetPriorityError0500
  * @tc.number SUB_KERNEL_SCHED_API_GETPRIORITY_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -162,7 +157,6 @@ void SetPriorityAllTest()
     EXPECT_EQ(newPrio, DEFAULT_SHELL_PROCESS_PRIORITY);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriority
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -175,7 +169,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriority, Function | MediumTest | Level1)
     SetPriorityAllTest();
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriorityFiFo
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -198,7 +191,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriorityFiFo, Function | MediumTest | Level
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriorityError0300
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -221,7 +213,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriorityError0300, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriorityError0400
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -245,7 +236,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriorityError0400, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriorityError0500
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -273,7 +263,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriorityError0500, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriorityError0600
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -295,7 +284,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriorityError0600, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriorityError0700
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -333,7 +321,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriorityError0700, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSetPriorityError0800
  * @tc.number SUB_KERNEL_SCHED_API_SETPRIORITY_0800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -357,7 +344,6 @@ HWTEST_F(ProcessSchedApiTest, testSetPriorityError0800, Function | MediumTest | 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetParam
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_GETPARAM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -386,7 +372,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetParam, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetParamError0200
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_GETPARAM_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -413,7 +398,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetParamError0200, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetParamError0300
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_GETPARAM_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -435,7 +419,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetParamError0300, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetParamError0400
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_GETPARAM_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -475,7 +458,6 @@ void SchedSetParamAllTest()
     EXPECT_EQ(newPrio, DEFAULT_SHELL_PROCESS_PRIORITY);
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetParam
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_SETPARAM_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -488,7 +470,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetParam, Function | MediumTest | Level1)
     SchedSetParamAllTest();
 }
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetParamFiFo
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_SETPARAM_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -510,7 +491,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetParamFiFo, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetParamError0300
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_SETPARAM_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -540,7 +520,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetParamError0300, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetParamError0400
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_SETPARAM_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -564,7 +543,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetParamError0400, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetParamError0500
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_SETPARAM_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -582,7 +560,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetParamError0500, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetParamError0600
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_SETPARAM_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -628,7 +605,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetParamError0600, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetParamError0700
  * @tc.number SUB_KERNEL_SCHED_API_SCHED_SETPARAM_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -662,7 +638,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetParamError0700, Function | MediumTest 
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetPriorityMax
  * @tc.number SUB_KERNEL_SCHED_API_GET_PRIORITY_MAX_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -677,7 +652,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetPriorityMax, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetPriorityMaxError0200
  * @tc.number SUB_KERNEL_SCHED_API_GET_PRIORITY_MAX_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -699,7 +673,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetPriorityMaxError0200, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetPriorityMaxError0300
  * @tc.number SUB_KERNEL_SCHED_API_GET_PRIORITY_MAX_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -727,7 +700,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetPriorityMaxError0300, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetPriorityMin
  * @tc.number SUB_KERNEL_SCHED_API_GET_PRIORITY_MIN_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -742,7 +714,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetPriorityMin, Function | MediumTest | L
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetPriorityMinError0200
  * @tc.number SUB_KERNEL_SCHED_API_GET_PRIORITY_MIN_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -764,7 +735,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetPriorityMinError0200, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetPriorityMinError0300
  * @tc.number SUB_KERNEL_SCHED_API_GET_PRIORITY_MIN_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -790,7 +760,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetPriorityMinError0300, Function | Mediu
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetScheduler
  * @tc.number SUB_KERNEL_SCHED_API_GETSCHEDULER_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -811,7 +780,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetScheduler, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetSchedulerError0200
  * @tc.number SUB_KERNEL_SCHED_API_GETSCHEDULER_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -837,7 +805,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetSchedulerError0200, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedGetSchedulerError0300
  * @tc.number SUB_KERNEL_SCHED_API_GETSCHEDULER_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -859,7 +826,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedGetSchedulerError0300, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetScheduler
  * @tc.number SUB_KERNEL_SCHED_API_SETSCHEDULER_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -900,7 +866,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetScheduler, Function | MediumTest | Lev
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetSchedulerError0200
  * @tc.number SUB_KERNEL_SCHED_API_SETSCHEDULER_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -930,7 +895,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetSchedulerError0200, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetSchedulerError0300
  * @tc.number SUB_KERNEL_SCHED_API_SETSCHEDULER_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -954,7 +918,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetSchedulerError0300, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetSchedulerError0400
  * @tc.number SUB_KERNEL_SCHED_API_SETSCHEDULER_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -989,7 +952,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetSchedulerError0400, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetSchedulerError0500
  * @tc.number SUB_KERNEL_SCHED_API_SETSCHEDULER_0500
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1025,7 +987,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetSchedulerError0500, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetSchedulerError0600
  * @tc.number SUB_KERNEL_SCHED_API_SETSCHEDULER_0600
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1046,7 +1007,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetSchedulerError0600, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedSetSchedulerError0700
  * @tc.number SUB_KERNEL_SCHED_API_SETSCHEDULER_0700
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1072,7 +1032,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedSetSchedulerError0700, Function | MediumT
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedRRGetInterval
  * @tc.number SUB_KERNEL_SCHED_API_GETRRINTERVAL_0100
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1099,7 +1058,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedRRGetInterval, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedRRGetIntervalError0200
  * @tc.number SUB_KERNEL_SCHED_API_GETRRINTERVAL_0200
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1126,7 +1084,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedRRGetIntervalError0200, Function | Medium
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedRRGetIntervalError0300
  * @tc.number SUB_KERNEL_SCHED_API_GETRRINTERVAL_0300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1154,7 +1111,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedRRGetIntervalError0300, Function | Medium
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedRRGetIntervalError0400
  * @tc.number SUB_KERNEL_SCHED_API_GETRRINTERVAL_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -1173,7 +1129,6 @@ HWTEST_F(ProcessSchedApiTest, testSchedRRGetIntervalError0400, Function | Medium
 }
 
 /**
- * @generated.time 2025-11-09 00:50:52
  * @tc.name   testSchedYieldBasic
  * @tc.number SUB_KERNEL_SCHED_API_YIELD_0100
  * @tc.desc   [C- SOFTWARE -0200]
