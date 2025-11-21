@@ -46,9 +46,11 @@ import {
   PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
+const supportedDeviceForScreenShot = ['phone', 'tablet'];
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -174,7 +176,11 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       if (!isExecuteTestCase) {
         try {
-          driver.triggerCombineKeys(17, 18);
+          let deviceTypeInfo: string = deviceInfo.deviceType;
+          console.log(`deviceTypeInfo = ${deviceTypeInfo}`);
+          if(supportedDeviceForScreenShot.indexOf(deviceTypeInfo) !==-1){
+            driver.triggerCombineKeys(17, 18);
+          }
         } catch (error) {
           console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
         }
