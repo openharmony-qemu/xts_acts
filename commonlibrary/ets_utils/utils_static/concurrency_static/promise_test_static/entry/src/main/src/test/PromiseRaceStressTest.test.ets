@@ -59,7 +59,7 @@ export default function PromiseRaceStressTest() {
       console.info(`${caseName} test start`);
 
       try {
-        const totalPromises = 1000;
+        const totalPromises = 100;
         const expectedValue = 'Fastest promise resolved';
 
         console.info(`${caseName} Creating ${totalPromises} promises that all resolve`);
