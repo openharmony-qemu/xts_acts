@@ -55,11 +55,14 @@ export default function bindMenuHapticFeedbackMode() {
       let tagName = 'bindMenuHapticFeedbackModeTest_0100';
       console.info('[' + tagName + '] START============================');
       let driver: Driver = Driver.create();
+      await Utils.sleep(2000);
       let btn1 = await driver.findComponent(ON.id('button1'));
       await btn1.click();
+      console.info('[' + tagName + '] btn1 click ============================');
       await Utils.sleep(1000);
       let menu = await driver.findComponent(ON.id('menu'));
       await menu.click();
+      console.info('[' + menu + '] btn1 click ============================');
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('text1');
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('0');
