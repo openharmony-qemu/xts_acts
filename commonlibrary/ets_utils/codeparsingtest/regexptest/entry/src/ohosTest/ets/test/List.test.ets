@@ -18,9 +18,11 @@ import RegExpTest002 from './RegExp002.test';
 import RegExpTest003 from './RegExp003.test';
 import RegExpTest004 from './RegExp004.test';
 
+
 export default function testsuite() {
   RegExpTest001();
   RegExpTest002();
   RegExpTest003();
   RegExpTest004();
+  
 }
