@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
 import { Logger } from './utils/common/Logger.ets';
 import { StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { MergeOptions, SetParam, SetMultiParam, DeleteParam } from './utils/huks/HuksOptionsUtils.ets';
+import { MergeOptions, SetParam, SetMultiParam, DeleteParam, CheckSoftware } from './utils/huks/HuksOptionsUtils.ets';
 import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
 import {
   CipherData,
@@ -30,13 +30,20 @@ import {
   ReBuildCipherData,
   CipherForGcm
 } from './utils/huks/CipherUtils.ets';
+import { GetDataBySize } from './utils/common/CommonUtils.ets';
+import { GetGcmNoPaddingOptions } from './utils/huks/CipherUtils.ets';
 
 
 export default function SecurityHuksCipherAesTest() {
   let genKeyOptions: huks.HuksOptions;
   let cipherOptions: huks.HuksOptions;
+  let useSoftware: boolean = true;
 
   describe('SecurityHuksCipherAesTest', () => {
+
+    beforeAll(async () => {
+      useSoftware = await CheckSoftware();
+    })
 
     beforeEach(() => {
       genKeyOptions = GetAesGenerateOptions(128);
@@ -766,7 +773,11 @@ export default function SecurityHuksCipherAesTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+        if (useSoftware) {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
+        } else {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+        }
       }
     })
 
@@ -862,7 +873,11 @@ export default function SecurityHuksCipherAesTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+        if (useSoftware) {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
+        } else {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+        }
       }
     })
 
@@ -1434,11 +1449,11 @@ export default function SecurityHuksCipherAesTest() {
     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5700";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let cipherData: CipherData = BuildCipherData([64]);
       let tagLength: number = 16;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         let decryptResult: CipherData = await CipherForGcm(testNumber, cipherOptions, cipherData, tagLength);
         expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
@@ -1458,11 +1473,11 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5800";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let cipherData: CipherData = BuildCipherData([1]);
       let tagLength: number = 16;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         let decryptResult: CipherData = await CipherForCcm(testNumber, cipherOptions, cipherData, tagLength);
         expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
@@ -1482,11 +1497,11 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_5900";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let cipherData: CipherData = BuildCipherData([31, 32]);
       let tagLength: number = 16;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         let encryptResult: CipherData;
         let decryptResult: CipherData;
@@ -1519,11 +1534,11 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6000";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let cipherData: CipherData = BuildCipherData([32, 32, 1]);
       let tagLength: number = 16;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         let encryptResult: CipherData;
         let decryptResult: CipherData;
@@ -1556,10 +1571,10 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6100";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let tagLength: number = 14;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         await huks.initSession(testNumber, cipherOptions);
         expect(null).assertFail();
@@ -1579,10 +1594,10 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6200";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let tagLength: number = 15;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         await huks.initSession(testNumber, cipherOptions);
         expect(null).assertFail();
@@ -1602,10 +1617,10 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6300";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let tagLength: number = 17;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         await huks.initSession(testNumber, cipherOptions);
         expect(null).assertFail();
@@ -1625,10 +1640,10 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6400";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let tagLength: number = 18;
       try {
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         await huks.initSession(testNumber, cipherOptions);
         expect(null).assertFail();
@@ -1648,10 +1663,10 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6500";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let cipherData: CipherData = BuildCipherData([64]);
       let tagLength: number = 16;
       await huks.generateKeyItem(testNumber, genKeyOptions);
-      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
       SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
       let encryptResult: CipherData;
       SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
@@ -1681,13 +1696,13 @@ export default function SecurityHuksCipherAesTest() {
     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6600";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let cipherData: CipherData = BuildCipherData([64]);
       let tagLength: number = 16;
       let keySize = 192;
       try {
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_SIZE, keySize);
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         let decryptResult: CipherData = await CipherForGcm(testNumber, cipherOptions, cipherData, tagLength);
         expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
@@ -1707,13 +1722,13 @@ export default function SecurityHuksCipherAesTest() {
     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6700";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       let cipherData: CipherData = BuildCipherData([64]);
       let tagLength: number = 16;
       let keySize = 256;
       try {
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_SIZE, keySize);
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         let decryptResult: CipherData = await CipherForGcm(testNumber, cipherOptions, cipherData, tagLength);
         expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
@@ -1733,10 +1748,10 @@ export default function SecurityHuksCipherAesTest() {
     */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6800";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       try {
         DeleteParam(cipherOptions, huks.HuksTag.HUKS_TAG_PADDING);
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         await huks.initSession(testNumber, cipherOptions);
         expect(null).assertFail();
       } catch (err) {
@@ -1755,10 +1770,10 @@ export default function SecurityHuksCipherAesTest() {
      */
     it('SUB_Security_HUKS_Cipher_AES_API22_Func_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_6900";
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
       try {
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CCM);
         await huks.generateKeyItem(testNumber, genKeyOptions);
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM);
         await huks.initSession(testNumber, cipherOptions);
         expect(null).assertFail();
       } catch (err) {
@@ -1807,7 +1822,6 @@ export default function SecurityHuksCipherAesTest() {
         await huks.generateKeyItem(testNumber, genKeyOptions);
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
         let encryptResult: CipherData;
-        let decryptResult: CipherData;
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
         PrintCipherData(cipherData);
         encryptResult = await DoCipher(testNumber, cipherOptions, cipherData);
@@ -1823,7 +1837,126 @@ export default function SecurityHuksCipherAesTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+        if (useSoftware) {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
+        } else {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+        }
+      }
+    })
+
+    /**
+    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7200
+    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7200
+    * @tc.desc   test aes ccm noPadding cipher
+    * @tc.size   SmallTest
+    * @tc.type   Function
+    * @tc.level  Level3
+    */
+    it('SUB_Security_HUKS_Cipher_AES_API22_Func_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7200";
+      let cipherData: CipherData = BuildCipherData([64 * 1024 - 1]);
+      let tagLength: number = 16;
+      let nonceLength: number = 13;
+      try {
+        await huks.generateKeyItem(testNumber, genKeyOptions);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array(GetDataBySize(nonceLength)));
+        let decryptResult: CipherData = await CipherForCcm(testNumber, cipherOptions, cipherData, tagLength);
+        expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7300
+    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7300
+    * @tc.desc   test aes ccm noPadding cipher with unsupported data length
+    * @tc.size   SmallTest
+    * @tc.type   Function
+    * @tc.level  Level3
+    */
+    it('SUB_Security_HUKS_Cipher_AES_API22_Func_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7300";
+      let cipherData: CipherData = BuildCipherData([64 * 1024]);
+      let nonceLength: number = 13;
+      await huks.generateKeyItem(testNumber, genKeyOptions);
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array(GetDataBySize(nonceLength)));
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+      let initRes = await huks.initSession(testNumber, cipherOptions);
+      try {
+        cipherOptions.inData = cipherData.finishData!;
+        await huks.finishSession(initRes.handle, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        if (useSoftware) {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
+        } else {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+        }
+      }
+    })
+
+    /**
+    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7400
+    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7400
+    * @tc.desc   test aes ccm noPadding cipher with unsupported nonce length 6
+    * @tc.size   SmallTest
+    * @tc.type   Function
+    * @tc.level  Level3
+    */
+    it('SUB_Security_HUKS_Cipher_AES_API22_Func_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7400";
+      let cipherData: CipherData = BuildCipherData([64]);
+      let nonceLength: number = 6;
+      await huks.generateKeyItem(testNumber, genKeyOptions);
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array(GetDataBySize(nonceLength)));
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+      let initRes = await huks.initSession(testNumber, cipherOptions);
+      try {
+        cipherOptions.inData = cipherData.finishData!;
+        await huks.finishSession(initRes.handle, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        if (useSoftware) {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
+        } else {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXTERNAL_ERROR);
+        }
+      }
+    })
+
+    /**
+    * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_7500
+    * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_7500
+    * @tc.desc   test aes ccm noPadding cipher with unsupported nonce length 14
+    * @tc.size   SmallTest
+    * @tc.type   Function
+    * @tc.level  Level3
+    */
+    it('SUB_Security_HUKS_Cipher_AES_API22_Func_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_7500";
+      let cipherData: CipherData = BuildCipherData([64]);
+      let nonceLength: number = 14;
+      await huks.generateKeyItem(testNumber, genKeyOptions);
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array(GetDataBySize(nonceLength)));
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+      let initRes = await huks.initSession(testNumber, cipherOptions);
+      try {
+        cipherOptions.inData = cipherData.finishData!;
+        await huks.finishSession(initRes.handle, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        if (useSoftware) {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
+        } else {
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXTERNAL_ERROR);
+        }
       }
     })
 

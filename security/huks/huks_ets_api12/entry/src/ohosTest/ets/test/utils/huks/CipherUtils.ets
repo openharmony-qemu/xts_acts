@@ -37,7 +37,7 @@ export function GetCcmNoPaddingOptions(): huks.HuksOptions {
       GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
       GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CCM),
       GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
-      GenParam(huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array("120123456789")),
+      GenParam(huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array("7012345")),
       GenParam(huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array("1601234567890123"))
     )
   };
