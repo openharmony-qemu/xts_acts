@@ -351,7 +351,7 @@ export default function OhAVMetadataExtractorNDKTest() {
         expect(metadata.title).assertEqual("test");
         expect(metadata.mimeType).assertEqual("video/mp4");
 
-        expect(metadata.trackCount).assertEqual(2);
+        expect(metadata.trackCount).assertEqual(3);
         expect(metadata.hasAudio).assertEqual(1);
         expect(metadata.hasVideo).assertEqual(1);
         expect(metadata.sampleRate).assertEqual(44100);
