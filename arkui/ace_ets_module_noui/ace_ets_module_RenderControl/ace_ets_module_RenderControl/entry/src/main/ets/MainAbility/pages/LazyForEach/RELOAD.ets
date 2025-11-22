@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-class BasicDataSource implements IDataSource {
+class BasicDataSourceCase implements IDataSource {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -76,7 +76,7 @@ class BasicDataSource implements IDataSource {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+class MyDataSourceCase extends BasicDataSourceCase {
   private dataArray: string[] = [];
 
   public totalCount(): number {
@@ -123,7 +123,7 @@ class MyDataSource extends BasicDataSource {
 @Component
 struct MyComponentReloadData {
   private moved: number[] = [];
-  private data: MyDataSource = new MyDataSource();
+  private data: MyDataSourceCase = new MyDataSourceCase();
   @State value: string = ""
 
   aboutToAppear() {
