@@ -175,7 +175,7 @@ import RichEditorOnDoubleClickTest from './RichEditorApi14Test/onDoubleClickOnHo
 
 import RichEditorKeyboardAppearanceTest from './RichEditorApi15Test/RichEditorKeyboardAppearance.test';
 import RichEditorStopBackPressTest from './RichEditorApi15Test/RichEditorStopBackPress.test';
-import SelectionMenuOptions from './RichEditorApi15Test/SelectionMenuOptions.test';
+import SelectionMenuOptionsTest from './RichEditorApi15Test/SelectionMenuOptions.test';
 
 import RichEditorTextStyle from './RichEditorApi16Test/RichEditorTextStyle.test';
 
@@ -355,7 +355,7 @@ export default function testsuite() {
 
   RichEditorKeyboardAppearanceTest();  // Api15
   RichEditorStopBackPressTest();
-  SelectionMenuOptions();
+  SelectionMenuOptionsTest();
 
   RichEditorTextStyle();               // Api16
 
