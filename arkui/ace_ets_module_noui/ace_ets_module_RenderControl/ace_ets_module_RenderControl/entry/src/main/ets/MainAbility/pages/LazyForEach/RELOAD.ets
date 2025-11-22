@@ -113,7 +113,7 @@ struct MyComponent {
   @State value: string = ""
 
   aboutToAppear() {
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i < 1; i++) {
       this.data.pushData(`Hello ${i}`)
     }
   }
