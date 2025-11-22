@@ -26,17 +26,17 @@ export default function AbilityApplicationStaticTest() {
   describe('AbilityApplicationStaticTest', () => {
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_application_getApplicationContext_Static_0100
-     * @tc.name  SUB_Ability_AbilityRuntime_application_getApplicationContext_Static_0100
+     * @tc.number  SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100
+     * @tc.name  SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100
      * @tc.desc  applicationContext obtained by application calls the processName property
      */
-    it('SUB_Ability_AbilityRuntime_application_getApplicationContext_Static_0100', Level.LEVEL0,
+    it('SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const PROCESS_NAME = 'com.example.actsabilityapplicationtest.static';
-        let caseName = 'SUB_Ability_AbilityRuntime_application_getApplicationContext_Static_0100';
+        let caseName = 'SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100';
         try {
           hilog.info(domain, tag, `${caseName} start.`);
-          let applicationContext = application.getApplicationContext();
+          let applicationContext = application.getApplicationContextInstance();
           expect(applicationContext.bundleCodeDir).assertEqual('/data/storage/el1/bundle');
           expect(applicationContext.cloudFileDir).assertEqual('/data/storage/el2/cloud');
           expect(applicationContext.distributedFilesDir).assertEqual('/data/storage/el2/distributedfiles');
