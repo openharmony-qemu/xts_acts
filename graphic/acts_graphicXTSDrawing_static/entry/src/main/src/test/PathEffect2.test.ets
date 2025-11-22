@@ -14,7 +14,6 @@
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
-import text from "@ohos.graphics.text";
 import common2D from '@ohos.graphics.common2D';
 import drawing from '@ohos.graphics.drawing';
 import image from '@ohos.multimedia.image';
@@ -22,11 +21,6 @@ import image from '@ohos.multimedia.image';
 export default function PathEffect2() {
 
   describe('PathEffect2', () => {
-    let myColor: common2D.Color;
-    beforeAll(() => {
-      myColor = { alpha: 255, red: 255, green: 0, blue: 0 };
-    })
-
     /**
      * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_STATIC_0100
      * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_STATIC_0100

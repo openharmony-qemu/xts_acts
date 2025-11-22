@@ -14,7 +14,6 @@
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
-import text from "@ohos.graphics.text";
 import common2D from '@ohos.graphics.common2D';
 import drawing from '@ohos.graphics.drawing';
 
