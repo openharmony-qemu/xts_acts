@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct editMenuOptionsExample {
+struct editMenuOptionsApi16 {
   @State text: string = 'TextInput editMenuOptions'
   @State content: ResourceStr = ''
   @State textLabelInfo: ResourceStr | undefined = ''
