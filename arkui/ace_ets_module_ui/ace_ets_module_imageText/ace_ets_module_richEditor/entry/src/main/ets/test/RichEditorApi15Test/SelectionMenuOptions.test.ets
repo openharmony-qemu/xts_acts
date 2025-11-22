@@ -62,7 +62,7 @@ export default function SelectionMenuOptions() {
       await CommonFunc.sleep(500);
       await update.click();
       await CommonFunc.sleep(500);
-      let richEditor = await driver.findComponent(ON.id('richEditor'))
+      let richEditor = await driver.findComponent(ON.id('richEditor_SelectionMenu'))
       await CommonFunc.sleep(500);
       let point = await richEditor.getBoundsCenter();
       await CommonFunc.sleep(500);
@@ -96,7 +96,7 @@ export default function SelectionMenuOptions() {
       await CommonFunc.sleep(500);
       await update.click();
       await CommonFunc.sleep(500);
-      let richEditor = await driver.findComponent(ON.id('richEditor'))
+      let richEditor = await driver.findComponent(ON.id('richEditor_SelectionMenu'))
       await CommonFunc.sleep(500);
       await richEditor.longClick();
       await CommonFunc.sleep(500);

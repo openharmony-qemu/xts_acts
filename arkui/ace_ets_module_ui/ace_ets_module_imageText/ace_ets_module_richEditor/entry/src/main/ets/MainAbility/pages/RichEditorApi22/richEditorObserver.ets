@@ -17,7 +17,7 @@ import { UIObserver, uiObserver } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct Page {
+struct RichEditorGetUIObserverPage {
   controller: RichEditorController = new RichEditorController();
   observer: UIObserver = this.getUIContext().getUIObserver();
   @State globalOutput: string = '';

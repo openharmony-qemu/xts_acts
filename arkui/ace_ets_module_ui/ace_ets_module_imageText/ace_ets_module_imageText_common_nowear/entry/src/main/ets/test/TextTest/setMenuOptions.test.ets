@@ -759,7 +759,7 @@ export default function SetMenuOptionsTest() {
       let window: UiWindow = await driver.findWindow({ actived: true });
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0250] mode: ' + JSON.stringify(mode));
-      expect('0, 3').assertContain(mode);  
+      expect('0, 3').assertContain(mode);
       console.info('[SetMenuOptionsTest_0250] END');
       done();
     });
