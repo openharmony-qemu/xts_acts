@@ -26,6 +26,7 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_button:ActsAceEtsModuleDialogButtonTest",
       "ace_ets_module_dialog_toggle:ActsAceEtsModuleDialogToggleTest",
       "ace_ets_module_dialog_radio:ActsAceEtsModuleDialogRadioTest",
+      "ace_ets_module_dialog_checkbox:ActsAceEtsModuleDialogCheckBoxTest",
     ]
   } else {
     deps = [
@@ -45,6 +46,7 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_button:ActsAceEtsModuleDialogButtonTest",
       "ace_ets_module_dialog_toggle:ActsAceEtsModuleDialogToggleTest",
       "ace_ets_module_dialog_radio:ActsAceEtsModuleDialogRadioTest",
+      "ace_ets_module_dialog_checkbox:ActsAceEtsModuleDialogCheckBoxTest",
     ]
   }
 }
