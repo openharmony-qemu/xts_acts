@@ -115,6 +115,10 @@
     {
       "name": "minFontScale",
       "value": "0.5"
+    },
+    {
+      "name": "reason",
+      "value": "AI"
     }
   ]
 }
