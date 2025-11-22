@@ -22,6 +22,7 @@
         "MainAbility/pages/ImageSpan/ImageSpanVisibility",
         "MainAbility/pages/ImageSpan/ImageText",
         "MainAbility/pages/ImageSpan/OnCompleteTest",
+        "MainAbility/pages/ImageSpan/ImageSpanSupportSvg2",
 
         "MainAbility/pages/Span/Span3Jsunit",
         "MainAbility/pages/Span/SpanApi1",

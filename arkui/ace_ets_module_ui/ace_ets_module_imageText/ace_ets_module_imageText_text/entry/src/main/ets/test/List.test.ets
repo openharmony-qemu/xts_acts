@@ -32,6 +32,7 @@ import ImageSpanTest8 from './ImageSpanTest/ImageSpanTest8.test';
 import ImageSpanVisibilityTest from './ImageSpanTest/ImageSpanVisibility.test';
 import ImageTextTest from './ImageSpanTest/ImageTextTest.test';
 import OnCompleteTest from './ImageSpanTest/OnCompleteTest.test';
+import ImageSpanSupportSvg2 from './ImageSpanTest/ImageSpanSupportSvg2.test';
 
 import Span3JsunitTest from './SpanTest/Span3JsunitTest.test';
 import SpanApi1Test from './SpanTest/SpanApi1Test.test';
@@ -115,6 +116,7 @@ export default function testsuite() {
   ImageSpanVisibilityTest()
   ImageTextTest()
   OnCompleteTest()
+  ImageSpanSupportSvg2()
   // SpanTest
   Span3JsunitTest()
   SpanApi1Test()
