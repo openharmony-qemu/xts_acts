@@ -1,10 +1,6 @@
 {
   "integer": [
     {
-        "name": "flex_space",
-        "value": 10
-    },
-    {
         "name": "integerSpace",
         "value": 10
     }
