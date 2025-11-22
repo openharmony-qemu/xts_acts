@@ -23,13 +23,13 @@ export default function textAreaEllipsisModeTest() {
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextAreaApi16/textAreaEllipsisModeTest',
+        url: 'MainAbility/pages/TextAreaApi16/textAreaEllipsisMode',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get textAreaEllipsisModeTest state success " + JSON.stringify(pages));
-        if (!("textAreaEllipsisModeTest" == pages.name)) {
+        if (!("textAreaEllipsisMode" == pages.name)) {
           console.info("get textAreaEllipsisModeTest state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);

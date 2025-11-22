@@ -23,13 +23,13 @@ export default function textInputFontScaleTest() {
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextInputApi16/textInputFontScaleTest',
+        url: 'MainAbility/pages/TextInputApi16/textInputFontScale',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get textInputFontScaleTest state success " + JSON.stringify(pages));
-        if (!("textInputFontScaleTest" == pages.name)) {
+        if (!("textInputFontScale" == pages.name)) {
           console.info("get textInputFontScaleTest state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
@@ -57,7 +57,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0001 START');
         await CommonFunc.sleep(1000);
-        let input1 = getInspectorByKey('input1');
+        let input1 = getInspectorByKey('input_FontScale1');
         let obj: ESObject = JSON.parse(input1);
         console.log('textInputFontScaleTest0001---' + obj.$attrs.maxFontScale)
         console.log('textInputFontScaleTest0001---' + obj.$attrs.minFontScale)
@@ -78,7 +78,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0002 START');
         await CommonFunc.sleep(1000);
-        let input2 = getInspectorByKey('input2');
+        let input2 = getInspectorByKey('input_FontScale2');
         let obj: ESObject = JSON.parse(input2);
         console.log('textInputFontScaleTest0002---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0002---' + obj.$attrs.minFontScale)
@@ -99,7 +99,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0003 START');
         await CommonFunc.sleep(1000);
-        let input3 = getInspectorByKey('input3');
+        let input3 = getInspectorByKey('input_FontScale3');
         let obj: ESObject = JSON.parse(input3);
         console.log('textInputFontScaleTest0003---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0003---' + obj.$attrs.minFontScale)
@@ -120,7 +120,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0004 START');
         await CommonFunc.sleep(1000);
-        let input4 = getInspectorByKey('input4');
+        let input4 = getInspectorByKey('input_FontScale4');
         let obj: ESObject = JSON.parse(input4);
         console.log('textInputFontScaleTest0004---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0004---' + obj.$attrs.minFontScale)
@@ -141,7 +141,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0005 START');
         await CommonFunc.sleep(1000);
-        let input5 = getInspectorByKey('input5');
+        let input5 = getInspectorByKey('input_FontScale5');
         let obj: ESObject = JSON.parse(input5);
         console.log('textInputFontScaleTest0005---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0005---' + obj.$attrs.minFontScale)
@@ -163,7 +163,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0006 START');
         await CommonFunc.sleep(1000);
-        let input6 = getInspectorByKey('input6');
+        let input6 = getInspectorByKey('input_FontScale6');
         let obj: ESObject = JSON.parse(input6);
         console.log('textInputFontScaleTest0006---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0006---' + obj.$attrs.minFontScale)
@@ -184,7 +184,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0007 START');
         await CommonFunc.sleep(1000);
-        let input7 = getInspectorByKey('input7');
+        let input7 = getInspectorByKey('input_FontScale7');
         let obj: ESObject = JSON.parse(input7);
         console.log('textInputFontScaleTest0007---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0007---' + obj.$attrs.minFontScale)
@@ -205,7 +205,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0008 START');
         await CommonFunc.sleep(1000);
-        let input8 = getInspectorByKey('input8');
+        let input8 = getInspectorByKey('input_FontScale8');
         let obj: ESObject = JSON.parse(input8);
         console.log('textInputFontScaleTest0008---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0008---' + obj.$attrs.minFontScale)
@@ -226,7 +226,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0009 START');
         await CommonFunc.sleep(1000);
-        let input9 = getInspectorByKey('input9');
+        let input9 = getInspectorByKey('input_FontScale9');
         let obj: ESObject = JSON.parse(input9);
         console.log('textInputFontScaleTest0009---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0009---' + obj.$attrs.minFontScale)
@@ -248,7 +248,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0010 START');
         await CommonFunc.sleep(1000);
-        let input10 = getInspectorByKey('input10');
+        let input10 = getInspectorByKey('input_FontScale10');
         let obj: ESObject = JSON.parse(input10);
         console.log('textInputFontScaleTest0010---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0010---' + obj.$attrs.minFontScale)
@@ -269,7 +269,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0011 START');
         await CommonFunc.sleep(1000);
-        let input11 = getInspectorByKey('input11');
+        let input11 = getInspectorByKey('input_FontScale11');
         let obj: ESObject = JSON.parse(input11);
         console.log('textInputFontScaleTest0011---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0011---' + obj.$attrs.minFontScale)
@@ -291,7 +291,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0012 START');
         await CommonFunc.sleep(1000);
-        let input12 = getInspectorByKey('input12');
+        let input12 = getInspectorByKey('input_FontScale12');
         let obj: ESObject = JSON.parse(input12);
         console.log('textInputFontScaleTest0012---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0012---' + obj.$attrs.minFontScale)
@@ -313,7 +313,7 @@ export default function textInputFontScaleTest() {
         let driver = Driver.create();
         console.info('textInputFontScaleTest textInputFontScaleTest0013 START');
         await CommonFunc.sleep(1000);
-        let input13 = getInspectorByKey('input13');
+        let input13 = getInspectorByKey('input_FontScale13');
         let obj: ESObject = JSON.parse(input13);
         console.log('textInputFontScaleTest0013---' + obj.$attrs.maxFontScale)
 		console.log('textInputFontScaleTest0013---' + obj.$attrs.minFontScale)

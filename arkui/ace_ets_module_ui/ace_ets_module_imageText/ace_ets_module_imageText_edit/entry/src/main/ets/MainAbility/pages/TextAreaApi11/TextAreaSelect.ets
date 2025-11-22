@@ -17,7 +17,7 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 
 @Entry
 @Component
-struct TextAreaSelect {
+struct TextAreaSelectPage {
   controller: TextAreaController = new TextAreaController()
   controller2: TextAreaController = new TextAreaController()
   controller3: TextAreaController = new TextAreaController()
@@ -91,7 +91,7 @@ struct TextAreaSelect {
         .fontStyle(FontStyle.Normal)
         .fontColor(Color.Red)
         .tabIndex(1)
-        .key('TextAreaSelect_TextArea_1')
+        .id('TextAreaSelect_TextArea_1')
         .focusable(true)
         .focusOnTouch(true)
         .defaultFocus(true)
@@ -102,7 +102,7 @@ struct TextAreaSelect {
         .onClick(() => {
           this.controller.setTextSelection(-2, -1)
         })
-        .key('TextAreaSelect_Button_1')
+        .id('TextAreaSelect_Button_1')
 
       TextArea({ text: '', placeholder: 'input your word', controller: this.controller2 })
         .placeholderColor("rgb(0,0,225)")
@@ -115,13 +115,13 @@ struct TextAreaSelect {
         .fontStyle(FontStyle.Normal)
         .fontColor(Color.Red)
         .tabIndex(2)
-        .key('TextAreaSelect_TextArea_2')
+        .id('TextAreaSelect_TextArea_2')
       Button("Show selected (1,3)")
         .margin(30)
         .onClick(() => {
           this.controller2.setTextSelection(1, 3)
         })
-        .key('TextAreaSelect_Button_13')
+        .id('TextAreaSelect_Button_13')
       TextArea({ text: '北京aaaaa上海tianjin深圳', placeholder: 'input your word', controller: this.controller3 })
         .width(200)
         .height(50)
@@ -135,13 +135,13 @@ struct TextAreaSelect {
         .fontStyle(FontStyle.Normal)
         .fontColor(Color.Red)
         .tabIndex(3)
-        .key('TextAreaSelect_TextArea_3')
+        .id('TextAreaSelect_TextArea_3')
       Button("Show selected (6,10)")
         .margin(30)
         .onClick(() => {
           this.controller3.setTextSelection(6, 10)
         })
-        .key('TextAreaSelect_Button_14')
+        .id('TextAreaSelect_Button_14')
     }
   }
 }

@@ -16,7 +16,7 @@
 
 @Entry
 @Component
-struct textInputEllipsisModeTest {
+struct textInputEllipsisModeTestPage {
   @State text: string = 'As the sun begins to set, casting a warm golden hue across the sky,' +
     'the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, ' +
     ' pink, and lavender, creating a breath taking tapestry that stretches as far as the eye can see.' +
@@ -28,31 +28,31 @@ struct textInputEllipsisModeTest {
           .textOverflow(TextOverflow.Ellipsis)
           .ellipsisMode(EllipsisMode.END)
           .style(TextInputStyle.Inline)
-          .id('input1')
+          .id('input_Ellips1')
           .height('10%')
         TextInput({ text: this.text})
           .textOverflow(TextOverflow.Ellipsis)
           .ellipsisMode(EllipsisMode.START)
           .style(TextInputStyle.Inline)
-          .id('input2')
+          .id('input_Ellips2')
           .height('10%')
         TextInput({ text: this.text})
           .textOverflow(TextOverflow.Ellipsis)
           .ellipsisMode(EllipsisMode.CENTER)
           .style(TextInputStyle.Inline)
-          .id('input3')
+          .id('input_Ellips3')
           .height('10%')
         TextInput({ text: this.text})
           .textOverflow(TextOverflow.Ellipsis)
           .ellipsisMode(undefined)
           .style(TextInputStyle.Inline)
-          .id('input4')
+          .id('input_Ellips4')
           .height('10%')
         TextInput({ text: this.text})
           .textOverflow(TextOverflow.Ellipsis)
           .ellipsisMode(null)
           .style(TextInputStyle.Inline)
-          .id('input5')
+          .id('input_Ellips5')
           .height('10%')
       }
     }

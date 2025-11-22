@@ -23,13 +23,13 @@ export default function textInputEllipsisModeTest() {
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextInputApi16/textInputEllipsisModeTest',
+        url: 'MainAbility/pages/TextInputApi16/textInputEllipsisMode',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get textInputEllipsisModeTest state success " + JSON.stringify(pages));
-        if (!("textInputEllipsisModeTest" == pages.name)) {
+        if (!("textInputEllipsisMode" == pages.name)) {
           console.info("get textInputEllipsisModeTest state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
@@ -56,7 +56,7 @@ export default function textInputEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textInputEllipsisModeTest textInputEllipsisModeTest0001 START');
       await CommonFunc.sleep(1000);
-      let input1 = getInspectorByKey('input1');
+      let input1 = getInspectorByKey('input_Ellips1');
       let obj: ESObject = JSON.parse(input1);
       console.log('textInputEllipsisModeTest0001---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.END");
@@ -75,7 +75,7 @@ export default function textInputEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textInputEllipsisModeTest textInputEllipsisModeTest0002 START');
       await CommonFunc.sleep(1000);
-      let input2 = getInspectorByKey('input2');
+      let input2 = getInspectorByKey('input_Ellips2');
       let obj: ESObject = JSON.parse(input2);
       console.log('textInputEllipsisModeTest0002---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.START");
@@ -94,7 +94,7 @@ export default function textInputEllipsisModeTest() {
         let driver = Driver.create();
         console.info('textInputEllipsisModeTest textInputEllipsisModeTest0003 START');
         await CommonFunc.sleep(1000);
-        let input3 = getInspectorByKey('input3');
+        let input3 = getInspectorByKey('input_Ellips3');
         let obj: ESObject = JSON.parse(input3);
         console.log('textInputEllipsisModeTest0003---' + obj.$attrs.ellipsisMode)
         expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.CENTER");
@@ -113,7 +113,7 @@ export default function textInputEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textInputEllipsisModeTest textInputEllipsisModeTest0004 START');
       await CommonFunc.sleep(1000);
-      let input4 = getInspectorByKey('input4');
+      let input4 = getInspectorByKey('input_Ellips4');
       let obj: ESObject = JSON.parse(input4);
       console.log('textInputEllipsisModeTest0004---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.END");
@@ -132,7 +132,7 @@ export default function textInputEllipsisModeTest() {
       let driver = Driver.create();
       console.info('textInputEllipsisModeTest textInputEllipsisModeTest0005 START');
       await CommonFunc.sleep(1000);
-      let input5 = getInspectorByKey('input5');
+      let input5 = getInspectorByKey('input_Ellips5');
       let obj: ESObject = JSON.parse(input5);
       console.log('textInputEllipsisModeTest0005---' + obj.$attrs.ellipsisMode)
       expect(obj.$attrs.ellipsisMode).assertEqual("EllipsisMode.END");

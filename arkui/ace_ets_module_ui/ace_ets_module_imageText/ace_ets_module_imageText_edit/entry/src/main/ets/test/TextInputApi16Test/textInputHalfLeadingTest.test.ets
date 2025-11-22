@@ -23,13 +23,13 @@ export default function textInputHalfLeadingTest() {
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextInputApi16/textInputHalfLeadingTest',
+        url: 'MainAbility/pages/TextInputApi16/textInputHalfLeading',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get textInputHalfLeadingTest state success " + JSON.stringify(pages));
-        if (!("textInputHalfLeadingTest" == pages.name)) {
+        if (!("textInputHalfLeading" == pages.name)) {
           console.info("get textInputHalfLeadingTest state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
