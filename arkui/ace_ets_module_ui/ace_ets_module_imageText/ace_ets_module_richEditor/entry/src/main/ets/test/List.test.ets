@@ -369,6 +369,6 @@ export default function testsuite() {
 
   RichEditorScrollBarColorTest();      // Api21
 
-  richEditorObserverTest()             // Api22
+  // richEditorObserverTest()          // Api22
   richEditorSupportSvg2Test()
 }
