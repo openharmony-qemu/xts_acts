@@ -16,7 +16,7 @@
 import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import commonEventManager from '@ohos.commonEventManager';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -38,6 +38,15 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
 
         beforeAll(async () => {
             TestUiAbility = await abilityDelegator.getCurrentTopAbility();
+            let allowed: Component | undefined;
+            try {
+                allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+            } catch (err) {
+                console.error('findComponent failed: ' + JSON.stringify(err));
+            }
+            if (allowed) {
+                await allowed.click();
+            }
         })
 
         afterEach(async () => {
