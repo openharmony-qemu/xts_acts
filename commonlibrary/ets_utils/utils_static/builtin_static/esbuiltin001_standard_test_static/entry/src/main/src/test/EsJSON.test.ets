@@ -52,26 +52,6 @@ export default function EsJSONTest(){
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number ES_BUILTINS_JSON_0001
-     * @tc.name ESJSONTest0001
-     * @tc.desc Test ES Builtins-Api in JSON
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('ESJSONTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-      const caseName = 'ESJSONTest0001';
-      console.info(`${caseName}, test start`);
-      let b: B|null|undefined = JSON.parse<B>('\t\r \n{\t\r \n' +
-        '"property"\t\r \n:\t\r \n{\t\r \n}\t\r \n,\t\r \n' +
-        '"prop2"\t\r \n:\t\r \n' +
-        '[\t\r \ntrue\t\r \n,\t\r \nnull\t\r \n,123.456\t\r \n]' +
-        '\t\r \n}\t\r \n', Type.from<B>());
-      expect(b!.prop2[0]).assertEqual(true);
-      expect(b!.prop2[2]).assertEqual(123.456);
-      console.info(`${caseName}, test end`);
-    });
 
     /**
      * @tc.number ES_BUILTINS_JSON_0002

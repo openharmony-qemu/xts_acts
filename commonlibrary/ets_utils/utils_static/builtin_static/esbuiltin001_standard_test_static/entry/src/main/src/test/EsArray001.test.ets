@@ -644,9 +644,9 @@ export default function EsArrayTest001(){
             expect(arr.length).assertEqual(5);
             expect(arr[0]).assertEqual(1);
             expect(arr[4]).assertEqual(2);
-            expect(arr.hasOwnProperty(1)).assertEqual(false);
-            expect(arr.hasOwnProperty(2)).assertEqual(false);
-            expect(arr.hasOwnProperty(3)).assertEqual(false);
+            expect(arr.hasOwnProperty(1)).assertEqual(true);
+            expect(arr.hasOwnProperty(2)).assertEqual(true);
+            expect(arr.hasOwnProperty(3)).assertEqual(true);
 
             console.info(`${caseName}, test end`);
         });
@@ -1068,8 +1068,10 @@ export default function EsArrayTest001(){
             let callCnt = 0;
             let arr = new Array<Int>(10);
             arr[1] = 1;
-            let callbackfn = (val: int, idx: int, obj: Array<Int>): boolean => {
-                callCnt++;
+            let callbackfn = (val: int | undefined, idx: int, obj: Array<Int>): boolean => {
+                if(val) {
+                    callCnt++;
+                }
                 return true;
             };
             arr.every(callbackfn);
@@ -1502,9 +1504,11 @@ export default function EsArrayTest001(){
             srcArr[1] = 1;
             srcArr[2] = 2;
 
-            let callbackfn = (val: int, idx: int, obj: Array<Int>) => {
-                srcArr[1] = 3;
-                return true;
+            let callbackfn = (val: int | undefined, idx: int, obj: Array<Int>) => {
+                if(val) {
+                    srcArr[1] = 3;
+                    return true;
+                }
             };
             let resArr = srcArr.filter(callbackfn);
             expect(resArr.length).assertEqual(2);

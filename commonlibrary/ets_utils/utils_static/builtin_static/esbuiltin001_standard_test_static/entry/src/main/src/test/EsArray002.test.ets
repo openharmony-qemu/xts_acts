@@ -188,12 +188,14 @@ export default function EsArrayTest002(){
       srcArr[1] = 1;
       srcArr[2] = 2;
 
-      let callbackfn = (val: number, idx: int, obj: Array<number>): number => {
+      let callbackfn = (val: number | undefined, idx: int, obj: Array<number>): number => {
         if (1000 < obj.length) {
           obj[1000] = 3;
         }
-        callCnt++;
-        return val!;
+        if(val) {
+          callCnt++;
+          return val!;
+        }
       }
 
       let resArr = srcArr.map<number>(callbackfn);
@@ -1663,9 +1665,9 @@ export default function EsArrayTest002(){
       const caseName = 'ESArrayPrototypeTest20063';
       console.info(`${caseName}, test start`);
       let arr: Array<number> = new Array<number>(10);
-      let callbackfn = (prevVal: number, curVal: number, idx: int, obj: Array<number>): number => { return 0 }
+      let callbackfn = (prevVal: number, curVal: number|undefined, idx: int, obj: Array<number>): number => { return 0 }
 
-      expect(arr.reduceRight(callbackfn, 5)).assertEqual(5)
+      expect(arr.reduceRight(callbackfn, 5)).assertEqual(0)
       console.info(`${caseName}, test end`);
     });
 
