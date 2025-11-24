@@ -52,8 +52,10 @@ struct componentSnapshotSync{
               try {
                 console.log('++++++++++++++++++++1')
                 let pixelmap = componentSnapshot.getSync('image2',{scale:1,waitUntilRenderFinished:true});
-                console.log('++++++++++++++++++++1pixelmap'+pixelmap)
-                this.pixmap = pixelmap as PixelMap
+                if (pixelmap) {
+                  console.log('++++++++++++++++++++1pixelmap'+pixelmap)
+                  this.pixmap = pixelmap as PixelMap
+                }
               } catch (error:Error) {
                 console.log('++++++++++++++++++++1Error')
                 this.code = error.code.toString()
@@ -65,7 +67,9 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap =componentSnapshot.getSync('-0.1',{scale:4,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap as PixelMap
+                if (pixelmap) {
+                  this.pixmap = pixelmap as PixelMap
+                }
               } catch (error:Error) {
                 this.code1 = error.code.toString()
               }
@@ -75,7 +79,9 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('-2',{scale:4,waitUntilRenderFinished:false});
-                this.pixmap = pixelmap as PixelMap
+                if (pixelmap) {
+                  this.pixmap = pixelmap as PixelMap
+                }
               } catch (error:Error) {
                 this.code2 = error.code.toString()
               }
@@ -85,7 +91,9 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('ab',{scale:0.5,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap as PixelMap
+                if (pixelmap) {
+                  this.pixmap = pixelmap as PixelMap
+                }
               } catch (error:Error) {
                 this.code3 = error.code.toString()
               }
@@ -95,7 +103,9 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('1',{scale:1,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap as PixelMap
+                if (pixelmap) {
+                  this.pixmap = pixelmap as PixelMap
+                }
               } catch (error:Error) {
                 this.code4 = error.code.toString()
               }
