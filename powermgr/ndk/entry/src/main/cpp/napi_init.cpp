@@ -77,7 +77,7 @@ static napi_value GetPluggedType(napi_env env, napi_callback_info info)
             break;
     }
     napi_value ret;
-    napi_create_string_utf8(env, str.c_str(), NAPI_AUTO_LENGTH, &ret);
+    napi_create_int32(evn, value, &ret);
     return ret;
 }
 

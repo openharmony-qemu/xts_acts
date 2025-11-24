@@ -17,13 +17,6 @@ import batteryInfoNdk from 'libentry.so';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import batteryInfo from '@ohos.batteryInfo';
 
-const PluggedType = [
-  'NONE',
-  'AC',
-  'USB',
-  'WIRELESS'
-];
-
 export default function batteryInfoNdkTest() {
   describe('batteryInfoNdkTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -85,9 +78,9 @@ export default function batteryInfoNdkTest() {
         try {
           let pluggedType = batteryInfoNdk.getPluggedType();
           console.info(TAG + ` pluggedType: ${pluggedType}`);
-          let pt = PluggedType[batteryInfo.pluggedType];
+          let pt = batteryInfo.pluggedType;
           console.info(TAG + ` pt: ${pt}`);
-          expect(pluggedType).assertEqual(pt.toString());
+          expect(pluggedType).assertEqual(pt);
           done();
         } catch (error) {
           console.info(TAG + ` getPluggedType err: ${error.code}  ${error.message}`);
