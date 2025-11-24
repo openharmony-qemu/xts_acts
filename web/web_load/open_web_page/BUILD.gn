@@ -23,6 +23,7 @@ group("ActsWebOpenWebPageTest") {
       "ace_open_web_page_dev_webviewController:ActsWebOpenWebPageDevWebViewControllerTest",
       "ace_open_web_page_enhanced_one:ActsWebOpenWebPageEnhancedTest",
       "ace_open_web_page_enhanced_three:ActsWebOpenWebPageEnhancedThreeTest",
+      "ace_open_web_page_enhanced_three_static:ActsWebOpenWebPageEnhancedThreeStaticTest",
       "ace_open_web_page_enhanced_two:ActsWebOpenWebPageEnhancedTwoTest",
       "ace_open_web_page_napis_enhance_one:ActsWebOpenWebPageNapisEnhanceOneTest",
     ]

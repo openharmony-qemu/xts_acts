@@ -19,6 +19,7 @@ group("ActsWebJumpBetweenWebTest") {
       "ace_jump_between_web_dev_three:ActsWebJumpBetweenWebDevThreeTest",
       "ace_jump_between_web_enhanced_one:ActsWebJumpBetweenWebEnhancedTest",
       "ace_jump_between_web_enhanced_three:ActsWebJumpBetweenWebEnhancedThreeTest",
+      "ace_jump_between_web_enhanced_three_static:ActsWebJumpBetweenWebEnhancedThreeStaticTest",
       "ace_jump_between_web_enhanced_two:ActsWebJumpBetweenWebEnhancedTwoTest",
       "ace_jump_between_web_enhanced_two_static:ActsWebJumpBetweenWebEnhancedTwoStaticTest",
       "ace_jump_between_web_webviewController:ActsWebJumpBetweenWebWebViewControllerTest",
