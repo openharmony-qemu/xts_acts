@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http:
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,7 +27,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  
 } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -37,7 +36,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct TextAreaExampleBC1 {
   @State text:string = 'test1'
   @State sizeT:number = 16
-  @State weightT:number = 400
+  @State weightT:int = 400
   @State placeholderFont:string ="#FFAACCEE"
   @State placeholderColor:string ="#FFAACCEE"
   @State textAlign:TextAlign = TextAlign.Start
@@ -54,67 +53,63 @@ struct TextAreaExampleBC1 {
   @State message4:string = 'text'
   @State text2:string = 'test2'
   @State message5:string = 'start'
-  messageManager:MessageManager = new MessageManager()
+  messageManager:MessageManager<string | number|int|TextAlign|CopyOptions> = new MessageManager<string | number|int|TextAlign|CopyOptions>()
   onPageShow() {
     console.info('TextArea onPageShow')
-    
-    
-    
-    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string | number|int|TextAlign|CopyOptions>>("messageManager", this.messageManager);
 
-    let callback: Callback= (message: Message) => {
+    let callback: (message: Message<string | number|int|TextAlign|CopyOptions>) => void = (message: Message<string | number|int|TextAlign|CopyOptions>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'text') {
-        this.text = message.value as string
+        this.text = (message as Message<string>).value
       }
       if (message.name == 'text2') {
-        this.text2 = message.value  as string
+        this.text2 = (message as Message<string>).value
       }
       if (message.name == 'message5') {
-        this.message5 = message.value  as string
+        this.message5 = (message as Message<string>).value
       }
       if (message.name == 'message1') {
-        this.message1 = message.value  as string
+        this.message1 = (message as Message<string>).value
       }
       if (message.name == 'sizeT') {
-        this.sizeT = Number.parseInt(message.value.toString())
+        this.sizeT = (message as Message<number>).value
       }
       if (message.name == 'weightT') {
-        this.weightT = Number.parseInt(message.value.toString())
+        this.weightT = (message as Message<int>).value
       }
       if (message.name == 'placeholderFont') {
-        this.placeholderFont = message.value as string
+        this.placeholderFont = (message as Message<string>).value
       }
       if (message.name == 'placeholderColor') {
-        this.placeholderColor = message.value as string
+        this.placeholderColor = (message as Message<string>).value
       }
       if (message.name == 'textAlign') {
-        this.textAlign = message.value as TextAlign
+        this.textAlign = (message as Message<TextAlign>).value
       }
       if (message.name == 'caretColor') {
-        this.caretColor = message.value as string
+        this.caretColor = (message as Message<string>).value
       }
       if (message.name == 'fontSize') {
-        
-        this.fontSize = Number.parseInt(message.value.toString())
+        this.fontSize = (message as Message<number>).value
       }
       if (message.name == 'textColor') {
-        this.textColor = message.value as string
+        this.textColor = (message as Message<string>).value
       }
       if (message.name == 'copyOption') {
-        this.copyOption = message.value as CopyOptions
+        this.copyOption = (message as Message<CopyOptions>).value
       }
       if (message.name == 'placeholder') {
-        this.placeholder = message.value as string
+        this.placeholder = (message as Message<string>).value
       }
       if (message.name == 'message2') {
-        this.message2 = message.value as string
+        this.message2 = (message as Message<string>).value
       }
       if (message.name == 'message3') {
-        this.message3 = message.value as string
+        this.message3 = (message as Message<string>).value
       }
       if (message.name == 'message4') {
-        this.message4 = message.value as string
+        this.message4 = (message as Message<string>).value
       }
     }
     this.messageManager.registerCallback(callback)
@@ -127,7 +122,7 @@ struct TextAreaExampleBC1 {
         text: this.text
       })
         .focusable(true)
-        .placeholderFont({ size: this.sizeT, weight: this.weightT as int })
+        .placeholderFont({ size: this.sizeT, weight: this.weightT })
         .placeholderColor(this.placeholderColor)
         .width(336)
         .key('textArea1')

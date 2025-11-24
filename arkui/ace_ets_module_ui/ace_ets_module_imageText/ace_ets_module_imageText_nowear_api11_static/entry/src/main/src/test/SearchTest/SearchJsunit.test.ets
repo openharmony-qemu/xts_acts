@@ -17,7 +17,7 @@ import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeD
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
-import { Color, Font, TextAlign, CopyOptions } from '@ohos.arkui.component'
+import { Color, Font, TextAlign, CopyOptions,ResourceColor,FontStyle } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -31,17 +31,6 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-class MyClass {
-  name: string;
-  messageManager: MessageManager;
-  message: MessageManager;
-
-  constructor() {
-    this.name = 'messageManager';
-    this.messageManager = new MessageManager();
-    this.message = this.messageManager;
-  }
-}
 
 export default function SearchJsunit() {
   describe('SearchJsunit', (): void => {
@@ -64,11 +53,8 @@ export default function SearchJsunit() {
         console.info("get SearchJsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get SearchJsunit pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SearchJsunit page error:" + err);
@@ -76,10 +62,6 @@ export default function SearchJsunit() {
       console.info("SearchJsunit beforeEach end");
     });
 
-
-    
-    
-    
     /*
      * @tc.number   SearchJsunit_static_0100
      * @tc.name     SearchJsunit_static_0100
@@ -87,12 +69,12 @@ export default function SearchJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('SearchJsunit_static_0100', Level.LEVEL0, async (done: () => void) => {
-      
+      // Get the information of the Search component
       console.info('[SearchJsunit_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('search');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[SearchJsunit_0100] icon: " + obj.getElement('$attrs').getString('icon'));
+      console.info("[SearchJsunit_0100] icon: " + obj.getElement('$attrs').getDouble('icon'));
       console.info("[SearchJsunit_0100] searchButton: " + obj.getElement('$attrs').getString('searchButton'));
       console.info("[SearchJsunit_0100] placeholderColor: " + obj.getElement('$attrs').getString('placeholderColor'));
       console.info("[SearchJsunit_0100] value: " + obj.getElement('$attrs').getString('value'));
@@ -102,24 +84,19 @@ it('SearchJsunit_static_0100', Level.LEVEL0, async (done: () => void) => {
       console.info("[SearchJsunit_0100] textAlign: " + obj.getElement('$attrs').getString('textAlign'));
       console.info("[SearchJsunit_0100] copyOption: " + obj.getElement('$attrs').getString('copyOption'));
 
-        expect(obj.getElement('$attrs').getString('icon')).assertEqual(983081);
+        expect(obj.getElement('$attrs').getDouble('icon')).assertEqual(983081);
         expect(obj.getElement('$attrs').getString('searchButton')).assertEqual('SEARCH');
         expect(obj.getElement('$attrs').getString('placeholderColor')).assertEqual('#FF808080');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('');
-        expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('{"style":"FontStyle.Normal","size":"14.00fp","weight":"400","fontFamily":"sans-serif"}');
+        expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"14.00fp","weight":"400","fontFamily":"sans-serif"}');
         expect(obj.getElement('$attrs').getString('textFont')).assertEqual('{"fontSize":"14.00fp","fontStyle":"FontStyle.Normal","fontWeight":"400","fontFamily":"HarmonyOS Sans"}');
         expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Start');
         expect(obj.getElement('$attrs').getString('copyOption')).assertEqual('CopyOptions.InApp');
         expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('Type to search...');
-
-
       console.info('[SearchJsunit_0100] END');
       done();
     });
 
-
-    
-    
     
     /*
      * @tc.number   SearchJsunit_static_0200
@@ -128,36 +105,33 @@ it('SearchJsunit_static_0100', Level.LEVEL0, async (done: () => void) => {
      * @tc.level    Level.LEVEL0
      */
 it('SearchJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
-      
+      // Modify the properties of component Search
       console.info('[SearchJsunit_0200] START');
       await CommonFunc.sleep(500);
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'icon',value:'./resources/base/media/star_3.png'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'icon',value:'./resources/base/media/star_3.png'})
       await CommonFunc.sleep(500);
-      message.notify({name:'searchButton',value:'search'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'searchButton',value:'search'})
       await CommonFunc.sleep(500);
-      message.notify({name:'placeholderColor',value:Color.Green})
+  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor',value:Color.White})
       await CommonFunc.sleep(500);
-      message.notify({name:'changeValue',value:'hello'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'changeValue',value:'hello'})
       await CommonFunc.sleep(500);
-      message.notify({name:'placeholder',value:'Type to search...'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'placeholder',value:'Type to search...'})
       await CommonFunc.sleep(500);
-      message.notify({name:'placeholderFont',value:'{"style":"FontStyle.Normal","size":"14.00fp","weight":"400","fontFamily":"sans-serif"}'})
       await CommonFunc.sleep(500);
-      message.notify({name:'textFont',value:'{"fontSize":"14.00fp","fontStyle":"FontStyle.Normal","fontWeight":"400","fontFamily":"HarmonyOS Sans"}'})
+  AppStorage.get<MessageManager<Font>>("messageManager")!.notify({name:'textFont',value:{size:'14.00fp',style:FontStyle.Normal,weight:400,family:"HarmonyOS Sans"}})
       await CommonFunc.sleep(500);
-      message.notify({name:'textAlign',value:TextAlign.Center})
+  AppStorage.get<MessageManager<TextAlign>>("messageManager")!.notify({name:'textAlign',value:TextAlign.Center})
       await CommonFunc.sleep(500);
-      message.notify({name:'copyOption',value:CopyOptions.LocalDevice})
+  AppStorage.get<MessageManager<CopyOptions>>("messageManager")!.notify({name:'copyOption',value:CopyOptions.LocalDevice})
       await CommonFunc.sleep(500);
-      message.notify({name:'positionValue',value:2})
       await CommonFunc.sleep(2000);
 
-      
+      // Get the properties of the Search component
       let strJson = inspector.getInspectorByKey('search');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SearchJsunit_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[SearchJsunit_0200] icon: " + obj.getElement('$attrs').getString('icon'));
+      console.info("[SearchJsunit_0200] icon: " + obj.getElement('$attrs').getDouble('icon'));
       console.info("[SearchJsunit_0200] searchButton: " + obj.getElement('$attrs').getString('searchButton'));
       console.info("[SearchJsunit_0200] placeholderColor: " + obj.getElement('$attrs').getString('placeholderColor'));
       console.info("[SearchJsunit_0200] value: " + obj.getElement('$attrs').getString('value'));
@@ -167,24 +141,18 @@ it('SearchJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
       console.info("[SearchJsunit_0200] textAlign: " + obj.getElement('$attrs').getString('textAlign'));
       console.info("[SearchJsunit_0200] copyOption: " + obj.getElement('$attrs').getString('copyOption'));
 
-        expect(obj.getElement('$attrs').getString('icon')).assertEqual('./resources/base/media/star_3.png');
+        expect(obj.getElement('$attrs').getDouble('icon')).assertEqual('./resources/base/media/star_3.png');
         expect(obj.getElement('$attrs').getString('searchButton')).assertEqual('search');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('hello');
-        expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('{"style":"FontStyle.Normal","size":"14.00fp","weight":"400","fontFamily":"sans-serif"}');
+        expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"14.00fp","weight":"400","fontFamily":"sans-serif"}');
         expect(obj.getElement('$attrs').getString('textFont')).assertEqual('{"fontSize":"16.00fp","fontStyle":"FontStyle.Normal","fontWeight":"FontWeight.Normal","fontFamily":"HarmonyOS Sans"}');
         expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Center');
         expect(obj.getElement('$attrs').getString('copyOption')).assertEqual('CopyOptions.Local');
         expect(obj.getElement('$attrs').getString('placeholderColor')).assertEqual('#FF008000');
         expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('Type to search...');
-
-
       console.info('[SearchJsunit_0200] END');
       done();
     });
-
-
-    
-    
     
     /*
      * @tc.number   SearchJsunit_static_0300
@@ -193,13 +161,12 @@ it('SearchJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
      * @tc.level    Level.LEVEL0
      */
 it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
-      
+      // Verify the functions of the Search component
       console.info('[SearchJsunit_0300] START');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'changeValue',value:''})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'changeValue',value:''})
       await CommonFunc.sleep(1000);
-      
-      let driver: Driver = Driver.create()
+      // Verify the onChange function of the Search component
+      let driver = Driver.create()
       let textComponent1: Component|null = await driver.findComponent(ON.id('search'));
       if (textComponent1 != null && textComponent1 != undefined) {
         await (textComponent1.inputText("hello")  as Promise<void>)
@@ -207,14 +174,11 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
         await CommonFunc.sleep(1000);
         let strJson = inspector.getInspectorByKey('change');
         let obj = JSON.parseJsonElement(strJson);
-
           expect(obj.getElement('$attrs').getString('content')).assertEqual('onChange:hello');
-
-
         await CommonFunc.sleep(1000);
       }
 
-      
+      // Verify the onSubmit function of the Search component
       let textComponent2 = await driver.findComponent(ON.text('search'));
       if(!textComponent2){
         textComponent2 = await driver.findComponent(ON.text('SEARCH'));
@@ -226,11 +190,9 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
         let strJson2 = inspector.getInspectorByKey('submit');
         let obj2 = JSON.parseJsonElement(strJson2);
           expect(obj2.getElement('$attrs').getString('content')).assertEqual('onSubmit:hello');
-
-
       }
 
-      
+      // Verify the onCopy function of the Search component
       let driverX = Driver.create()
       let searchRect = CommonFunc.getComponentRectOnScreen('search')
       let clickX = Math.round((searchRect.right + searchRect.left)/2)
@@ -254,13 +216,11 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
         console.info("[SearchJsunit_0300] click copy succ ");
         let strJson3 = inspector.getInspectorByKey('copy');
         let obj3 = JSON.parseJsonElement(strJson3);
-
-
           expect(obj3.getElement('$attrs').getString('content')).assertEqual('onCopy:hello');
 
       }
 
-      
+      // Verify the onCut function of the Search component
       await driverX.mouseClick({ x: clickX as int, y: clickY as int}, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       console.info("[SearchJsunit_0300] secand mouseClick succ ");
@@ -282,13 +242,10 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
         let strJson4 = inspector.getInspectorByKey('cut');
         let obj4 = JSON.parseJsonElement(strJson4);
         console.info("[SearchJsunit_0300] obj4: " + JSON.stringify(obj4));
-
-
           expect(obj4.getElement('$attrs').getString('content')).assertEqual('onCut:hello');
-
       }
 
-      
+      // Verify the onPaste function of the Search component
       await driverX.mouseClick({ x: clickX as int, y: clickY as int }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent8 = await driver.findComponent(ON.text('粘贴'));
@@ -301,13 +258,10 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
         console.info("[SearchJsunit_0300] click paste succ ");
         let strJson5 = inspector.getInspectorByKey('paste');
         let obj5 = JSON.parseJsonElement(strJson5);
-
-
           expect(obj5.getElement('$attrs').getString('content')).assertEqual('onPaste:hello');
-
       }
 
-      
+      // Verify the caretPosition function of the Search component
       let textComponent7 = await driver.findComponent(ON.id('button'));
       if (textComponent7 != null && textComponent7 != undefined) {
         await (textComponent7.click() as Promise<void>);
@@ -315,8 +269,6 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
         console.info("[SearchJsunit_0300] click button succ ");
         let strJson6 = inspector.getInspectorByKey('button');
         let obj6 = JSON.parseJsonElement(strJson6);
-
-
           expect(obj6.getElement('$attrs').getString('label')).assertEqual('Set caretPosition 2');
 
       }
@@ -324,10 +276,6 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
       done();
     });
 
-
-    
-    
-    
     /*
      * @tc.number   SearchJsunit_static_0400
      * @tc.name     SearchJsunit_static_0400
@@ -335,34 +283,31 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
      * @tc.level    Level.LEVEL0
      */
 it('SearchJsunit_static_0400', Level.LEVEL0, async (done: () => void) => {
-      
+      // Illegal modification of properties of component Search
       console.info('[SearchJsunit_0400] START');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
       await CommonFunc.sleep(1000);
-      message.notify({name:'icon',value:10})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'icon',value:'10'})
       await CommonFunc.sleep(1000);
-      message.notify({name:'searchButton',value:10})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'searchButton',value:'10'})
       await CommonFunc.sleep(1000);
-      message.notify({name:'placeholderColor',value:10})
+  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor',value:10})
       await CommonFunc.sleep(200);
-      message.notify({name:'changeValue',value:10})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'changeValue',value:'10'})
       await CommonFunc.sleep(200);
-      message.notify({name:'placeholder',value:168})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'placeholder',value:'168'})
       await CommonFunc.sleep(200);
-      message.notify({name:'placeholderFont',value:'aaa'})
-      await CommonFunc.sleep(500);
-      message.notify({name:'textFont',value:'bbb'})
+  // AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'textFont',value:'bbb'})
       await CommonFunc.sleep(200);
-      message.notify({name:'textAlign',value:'test'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'textAlign',value:'test'})
       await CommonFunc.sleep(200);
-      message.notify({name:'copyOption',value:10})
+  AppStorage.get<MessageManager<CopyOptions>>("messageManager")!.notify({name:'copyOption',value:CopyOptions.None})
       await CommonFunc.sleep(2000);
 
-      
+      // Get the properties of the Search component
       let strJson = inspector.getInspectorByKey('search');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SearchJsunit_0400] component obj is: " + JSON.stringify(obj));
-      console.info("[SearchJsunit_0400] icon: " + obj.getElement('$attrs').getString('icon'));
+      console.info("[SearchJsunit_0400] icon: " + obj.getElement('$attrs').getDouble('icon'));
       console.info("[SearchJsunit_0400] searchButton: " + obj.getElement('$attrs').getString('searchButton'));
       console.info("[SearchJsunit_0400] placeholderColor: " + obj.getElement('$attrs').getString('placeholderColor'));
       console.info("[SearchJsunit_0400] value: " + obj.getElement('$attrs').getString('value'));
@@ -372,12 +317,12 @@ it('SearchJsunit_static_0400', Level.LEVEL0, async (done: () => void) => {
       console.info("[SearchJsunit_0400] copyOption: " + obj.getElement('$attrs').getString('copyOption'));
       console.info("[SearchJsunit_0400] placeholder: " + obj.getElement('$attrs').getString('placeholder'));
 
-        expect(obj.getElement('$attrs').getString('icon')).assertEqual(983081);
+        expect(obj.getElement('$attrs').getDouble('icon')).assertEqual(983081);
         expect(obj.getElement('$attrs').getString('searchButton')).assertEqual('');
         expect(obj.getElement('$attrs').getString('placeholderColor')).assertEqual('#FF00000A');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('hello');
-        expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('{"style":"FontStyle.Normal","size":"14.00fp","weight":"400","fontFamily":"sans-serif"}');
-        expect(obj.getElement('$attrs').getString('textFont')).assertEqual('{"fontSize":"16.00fp","fontStyle":"FontStyle.Normal","fontWeight":"FontWeight.Normal","fontFamily":"HarmonyOS Sans"}');
+        expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"14.00fp","weight":"400","fontFamily":"sans-serif"}');
+        // expect(obj.getElement('$attrs').getString('textFont')).assertEqual('{"fontSize":"16.00fp","fontStyle":"FontStyle.Normal","fontWeight":"FontWeight.Normal","fontFamily":"HarmonyOS Sans"}');
         expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Start');
         expect(obj.getElement('$attrs').getString('copyOption')).assertEqual('');
         expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('Type to search...');

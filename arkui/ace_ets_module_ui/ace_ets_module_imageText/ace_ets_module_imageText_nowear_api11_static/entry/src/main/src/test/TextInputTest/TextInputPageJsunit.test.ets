@@ -16,15 +16,13 @@ import {
   InputType,
   Color,
   EnterKeyType,
-  TextAlign
+  TextAlign,Font
 } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-
-
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -60,11 +58,8 @@ export default function TextInputPageJsunit() {
         console.info("get TextInputPageJsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextInputPageJsunit pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextInputPageJsunit page error:" + err);
@@ -82,7 +77,7 @@ export default function TextInputPageJsunit() {
      * @tc.level    Level.LEVEL1
      */
 it('TextInputPageJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
-      
+      // Get the information of the TextInput component
       console.info('[TextInputPageJsunit_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textInput');
@@ -96,7 +91,7 @@ it('TextInputPageJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info("[TextInputPageJsunit_0100] caretColor: " + JSON.stringify(obj.getElement('$attrs').getString('caretColor')));
       console.info("[TextInputPageJsunit_0100] maxLength: " + JSON.stringify(obj.getElement('$attrs').getString('maxLength')));
       console.info("[TextInputPageJsunit_0100] copyOption: " + JSON.stringify(obj.getElement('$attrs').getString('copyOption')));
-      console.info("[TextInputPageJsunit_0100] showPasswordIcon: " + JSON.stringify(obj.getElement('$attrs').getString('showPasswordIcon')));
+      console.info("[TextInputPageJsunit_0100] showPasswordIcon: " + JSON.stringify(obj.getElement('$attrs').getBoolean('showPasswordIcon')));
       console.info("[TextInputPageJsunit_0100] style: " + JSON.stringify(obj.getElement('$attrs').getString('style')));
       console.info("[TextInputPageJsunit_0100] textAlign: " + JSON.stringify(obj.getElement('$attrs').getString('textAlign')));
       expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('input your word...');
@@ -109,7 +104,7 @@ it('TextInputPageJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       expect(obj.getElement('$attrs').getString('style')).assertEqual('TextInputStyle.Default');
       expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Center');
       expect(obj.getElement('$attrs').getString('copyOption')).assertEqual('CopyOptions.InApp');
-      expect(obj.getElement('$attrs').getString('showPasswordIcon')).assertEqual(false);
+      expect(obj.getElement('$attrs').getBoolean('showPasswordIcon')).assertEqual(false);
       console.info('[TextInputPageJsunit_0100] END');
       done();
     });
@@ -124,11 +119,10 @@ it('TextInputPageJsunit_static_0100', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL1
      */
 it('TextInputPageJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
-      
+      // Get default attributes of TextInput component
       console.info('[TextInputPageJsunit_0200] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('input');
-      const uiContext = new UIContext();
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextInputPageJsunit_0200] component obj is: " + JSON.stringify(obj));
       console.info("[TextInputPageJsunit_0200] placeholder: " + JSON.stringify(obj.getElement('$attrs').getString('placeholder')));
@@ -139,30 +133,25 @@ it('TextInputPageJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       console.info("[TextInputPageJsunit_0200] caretColor: " + JSON.stringify(obj.getElement('$attrs').getString('caretColor')));
       console.info("[TextInputPageJsunit_0200] maxLength: " + JSON.stringify(obj.getElement('$attrs').getString('maxLength')));
       console.info("[TextInputPageJsunit_0200] copyOption: " + JSON.stringify(obj.getElement('$attrs').getString('copyOption')));
-      console.info("[TextInputPageJsunit_0200] showPasswordIcon: " + JSON.stringify(obj.getElement('$attrs').getString('showPasswordIcon')));
+      console.info("[TextInputPageJsunit_0200] showPasswordIcon: " + JSON.stringify(obj.getElement('$attrs').getBoolean('showPasswordIcon')));
       console.info("[TextInputPageJsunit_0200] style: " + JSON.stringify(obj.getElement('$attrs').getString('style')));
       console.info("[TextInputPageJsunit_0200] textAlign: " + JSON.stringify(obj.getElement('$attrs').getString('textAlign')));
 
-      
-      
-
+      // let resourceSize = AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('sys.float.ohos_id_text_size_body1').id)
 
         expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('inline style');
         expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Normal');
-        
+        // expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"'+AppStorage.get<UIContext>('uiContext')!.px2fp(resourceSize)+'.00fp","weight":"400","fontFamily":"sans-serif"}');
         expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done');
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual('INF');
         expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Start');
-        expect(obj.getElement('$attrs').getString('showPasswordIcon')).assertEqual(true);
+        expect(obj.getElement('$attrs').getBoolean('showPasswordIcon')).assertEqual(true);
 
       await CommonFunc.sleep(1000);
       console.info('[TextInputPageJsunit_0200] END');
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   TextInputPageJsunit_static_0300
      * @tc.name     TextInputPageJsunit_static_0300
@@ -170,34 +159,34 @@ it('TextInputPageJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL1
      */
 it('TextInputPageJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
-      
+      // Modify the properties of TextInput component
       console.info('[TextInputPageJsunit_0300] START');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
       message.notify({name:'placeholder', value:'place input your word...'})
       await CommonFunc.sleep(1000);
-      const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message1:MessageManager<InputType> = AppStorage.get<MessageManager<InputType>>("messageManager")!
       message1.notify({name:'type', value:InputType.Normal})
       await CommonFunc.sleep(1000);
-      const message2:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message2:MessageManager<Color> = AppStorage.get<MessageManager<Color>>("messageManager")!
       message2.notify({name:'placeholderColor', value:Color.Green})
       await CommonFunc.sleep(1000);
-      const message3:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message3:MessageManager<Font> = AppStorage.get<MessageManager<Font>>("messageManager")!
       message3.notify({name:'placeholderFont', value:{ size: 18, weight: 500 }})
       await CommonFunc.sleep(1000);
-      const message4:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message4:MessageManager<EnterKeyType> = AppStorage.get<MessageManager<EnterKeyType>>("messageManager")!
       message4.notify({name:'enterKeyType', value:EnterKeyType.Done})
       await CommonFunc.sleep(1000);
-      const message5:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message5:MessageManager<Color> = AppStorage.get<MessageManager<Color>>("messageManager")!
       message5.notify({name:'caretColor', value:Color.Red})
       await CommonFunc.sleep(1000);
-      const message6:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message6:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
       message6.notify({name:'maxLength', value:8})
       await CommonFunc.sleep(1000);
-      const message7:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message7:MessageManager<TextAlign> = AppStorage.get<MessageManager<TextAlign>>("messageManager")!
       message7.notify({name:'textAlign', value:TextAlign.Start})
       await CommonFunc.sleep(1000);
 
-      
+      // Get the propoties value of the TextInput component
       let strJson = inspector.getInspectorByKey('textInput');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextInputPageJsunit_0300] component obj is: " + JSON.stringify(obj));
@@ -219,10 +208,6 @@ it('TextInputPageJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[TextInputPageJsunit_0300] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   TextInputPageJsunit_static_0400
      * @tc.name     TextInputPageJsunit_static_0400
@@ -230,29 +215,27 @@ it('TextInputPageJsunit_static_0300', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL1
      */
 it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
-      
+      // Verify functions of TextInput component
       console.info('[TextInputPageJsunit_0400] START');
-
-      
       let driver = Driver.create()
       let textComponent = await driver.findComponent(ON.id('textInput'));
       await (textComponent?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       await (textComponent?.inputText("hello") as Promise<void>)
-	  await driver.triggerKey(2047)
+	    await driver.triggerKey(2047)
       await CommonFunc.sleep(1000);
       let component = await driver.findComponent(ON.id('text'));
       let text = await (component?.getText() as Promise<string>);
       expect(text).assertEqual('hello');
       console.info("[TextInputPageJsunit_0400] inputText hello succ !");
 
-      
+      // Verify submit function of TextInput component
       let textComponent1 = await driver.findComponent(ON.id('submit'));
       let text1 = await (textComponent1?.getText()  as Promise<string>);
       expect(text1).assertEqual('onSubmit:');
       console.info("[TextInputPageJsunit_0400] Verify submit succ !");
 
-      
+      // Verify editChange function of TextInput component
       let textComponent2 = await driver.findComponent(ON.id('editChange'));
       let text2 = await (textComponent2?.getText() as Promise<string>);
       expect(text2).assertEqual('onEditChange:true');
@@ -263,11 +246,11 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       expect(textFalse).assertEqual('onEditChange:false');
       console.info("[TextInputPageJsunit_0400] Verify editChange succ !");
 
-      
+      // Verify onCopy function of TextInput component
       let driverX = Driver.create()
       let textInputRect = CommonFunc.getComponentRectOnScreen('textInput')
-      let clickX = Math.round((textInputRect.right + textInputRect.left)/2) as int
-      let clickY = Math.round((textInputRect.bottom + textInputRect.top)/2) as int
+      let clickX = Math.round((textInputRect.right + textInputRect.left)/2).toInt()
+      let clickY = Math.round((textInputRect.bottom + textInputRect.top)/2).toInt()
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(3000);
       let textComponent3 = await driver.findComponent(ON.text('全选'));
@@ -288,7 +271,7 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
 
       console.info("[TextInputPageJsunit_0400] Verify copy succ !");
 
-      
+      // Verify onCut function of TextInput component
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent5 = await driver.findComponent(ON.text('全选'));
@@ -306,7 +289,7 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('onCut:hello');
       console.info("[TextInputPageJsunit_0400] Verify cut succ !");
 
-      
+      // Verify onPaste function of TextInput component
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent7 = await driver.findComponent(ON.text('粘贴'));

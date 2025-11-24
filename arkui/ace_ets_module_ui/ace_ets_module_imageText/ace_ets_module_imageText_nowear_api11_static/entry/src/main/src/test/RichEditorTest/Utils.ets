@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use Utils file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,8 @@
  */
 import inspector from '@ohos.arkui.inspector';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
+
 
 export class RectValue {
   left: number = 0;
@@ -42,17 +43,12 @@ export default class Utils {
     let strJson = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    
     let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    
-    
-    
-    
     Utils.rect_left = Number(rectInfo[0][0] ?? 0);
-    Utils.rect_left = Number(rectInfo[0][1] ?? 0);
-    Utils.rect_left = Number(rectInfo[1][0] ?? 0);
-    Utils.rect_left = Number(rectInfo[1][1] ?? 0);
+    Utils.rect_top = Number(rectInfo[0][1] ?? 0);
+    Utils.rect_right = Number(rectInfo[1][0] ?? 0);
+    Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return Utils.rect_value = {
       "left": Utils.rect_left, "top": Utils.rect_top, "right": Utils.rect_right, "bottom": Utils.rect_bottom
     }
@@ -92,8 +88,8 @@ export default class Utils {
       windowY: 0,
       displayX: 0,
       displayY: 0,
-      
-      
+      // screenX: 0,
+      // screenY: 0
     }
     console.info('down touch started: ' + JSON.stringify(downPonit))
     sendTouchEvent(downPonit);
@@ -111,8 +107,8 @@ export default class Utils {
         windowY: 0,
         displayX: 0,
         displayY: 0,
-        
-        
+        // screenX: 0,
+        // screenY: 0
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
       ret = sendTouchEvent(movePoint)
@@ -134,8 +130,8 @@ export default class Utils {
       windowY: 0,
       displayX: 0,
       displayY: 0,
-      
-      
+      // screenX: 0,
+      // screenY: 0
     }
     console.info('up touch started: ' + JSON.stringify(upPoint))
     sendTouchEvent(upPoint)

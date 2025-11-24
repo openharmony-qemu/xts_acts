@@ -48,14 +48,9 @@ export default function TextMenuItemId() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        
         if (!("TextClockApi" == pages.name)) {
-          
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextMenuItemId page error:" + err);
@@ -74,26 +69,24 @@ export default function TextMenuItemId() {
 it('TextMenuItemId_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextMenuItemId0001] start");
 
-      try {
-        let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0001 START');
-        await CommonFunc.sleep(500);
-        let text = await driver.findComponent(ON.id('text'));
-        console.info('TextMenuItemId TextMenuItemId0001 START2');
-        await CommonFunc.sleep(500);
-        let point:Point = await (text?.getBoundsCenter() as Promise<Point>)
-        console.info('TextMenuItemId TextMenuItemId0001 START3');
-        await CommonFunc.sleep(500);
-        console.info('TextMenuItemId TextMenuItemId0001 START3.1 x ' + point.x + 'y' + point.y);
-        await driver.longClick(point.x, point.y);
-        console.info('TextMenuItemId TextMenuItemId0001 START4');
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('翻译'));
-        console.info('TextMenuItemId TextMenuItemId0001 START5');
-        await driver.assertComponentExist(ON.text('搜索'));
-      }catch(error) {
-        expect().assertFail();
-      }
+  let driver = Driver.create();
+  console.info('TextMenuItemId TextMenuItemId0001 START');
+  await CommonFunc.sleep(500);
+  let text = await driver.findComponent(ON.id('text'));
+  console.info('TextMenuItemId TextMenuItemId0001 START2');
+  await CommonFunc.sleep(500);
+  let point:Point = await (text?.getBoundsCenter() as Promise<Point>)
+  console.info('TextMenuItemId TextMenuItemId0001 START3');
+  await CommonFunc.sleep(500);
+  console.info('TextMenuItemId TextMenuItemId0001 START3.1 x ' + point.x + 'y' + point.y);
+  await driver.longClick(point.x, point.y);
+  console.info('TextMenuItemId TextMenuItemId0001 START4');
+  await CommonFunc.sleep(500);
+  try{
+    await driver.assertComponentExist(ON.text('翻译'));
+    await driver.assertComponentExist(ON.text('搜索'));
+  }catch(e: Error){}
+      expect().assertFail();
       console.info('TextMenuItemId TextMenuItemId0001 START6');
       console.info("[TextMenuItemId0001] end");
       done();
@@ -109,22 +102,21 @@ it('TextMenuItemId_static_0001', Level.LEVEL0, async (done: () => void): Promise
 it('TextMenuItemId_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextMenuItemId0002] start");
 
-      try {
-        let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0002 START');
-        await CommonFunc.sleep(500);
-        let textArea = await driver.findComponent(ON.id('textArea'));
-        await CommonFunc.sleep(500);
-        let point:Point = await (textArea?.getBoundsCenter() as Promise<Point>)
-        await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
-      }catch(error) {
-        expect().assertFail();
-      }
+  let driver = Driver.create();
+  console.info('TextMenuItemId TextMenuItemId0002 START');
+  await CommonFunc.sleep(500);
+  let textArea = await driver.findComponent(ON.id('textArea'));
+  await CommonFunc.sleep(500);
+  let point:Point = await (textArea?.getBoundsCenter() as Promise<Point>)
+  await CommonFunc.sleep(500);
+  await driver.longClick(point.x, point.y);
+  await CommonFunc.sleep(500);
+  try{
+    await driver.assertComponentExist(ON.text('翻译'));
+    await driver.assertComponentExist(ON.text('搜索'));
+  }catch(e: Error){}
       console.info("[TextMenuItemId0002] end");
+      expect().assertFail();
       done();
     });
 
@@ -138,24 +130,23 @@ it('TextMenuItemId_static_0002', Level.LEVEL0, async (done: () => void): Promise
 it('TextMenuItemId_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextMenuItemId0003] start");
 
-      try {
-        let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0003 START');
-        await CommonFunc.sleep(500);
-        let textInput = await driver.findComponent(ON.id('textInput'));
-        await CommonFunc.sleep(500);
-        let point:Point = await (textInput?.getBoundsCenter() as Promise<Point>)
-        await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
-      }catch(error) {
-        expect().assertFail();
-      }
+  let driver = Driver.create();
+  console.info('TextMenuItemId TextMenuItemId0003 START');
+  await CommonFunc.sleep(500);
+  let textInput = await driver.findComponent(ON.id('textInput'));
+  await CommonFunc.sleep(500);
+  let point:Point = await (textInput?.getBoundsCenter() as Promise<Point>)
+  await CommonFunc.sleep(500);
+  await driver.longClick(point.x, point.y);
+  await CommonFunc.sleep(500);
+  try{
+    await driver.assertComponentExist(ON.text('翻译'));
+    await driver.assertComponentExist(ON.text('搜索'));
+  }catch(e: Error){}
       console.info("[TextMenuItemId0003] end");
+      expect().assertFail();
       done();
-    });
+  });
 
     
     /*
@@ -167,22 +158,21 @@ it('TextMenuItemId_static_0003', Level.LEVEL0, async (done: () => void): Promise
 it('TextMenuItemId_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextMenuItemId0004] start");
 
-      try {
-        let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0004 START');
-        await CommonFunc.sleep(500);
-        let richEditor = await driver.findComponent(ON.id('richEditor'));
-        await CommonFunc.sleep(500);
-        let point:Point = await (richEditor?.getBoundsCenter() as Promise<Point>)
-        await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
-      }catch(error) {
-        expect().assertFail();
-      }
+  let driver = Driver.create();
+  console.info('TextMenuItemId TextMenuItemId0004 START');
+  await CommonFunc.sleep(500);
+  let richEditor = await driver.findComponent(ON.id('richEditor'));
+  await CommonFunc.sleep(500);
+  let point:Point = await (richEditor?.getBoundsCenter() as Promise<Point>)
+  await CommonFunc.sleep(500);
+  await driver.longClick(point.x, point.y);
+  await CommonFunc.sleep(500);
+  try{
+    await driver.assertComponentExist(ON.text('翻译'));
+    await driver.assertComponentExist(ON.text('搜索'));
+  }catch(e: Error){}
       console.info("[TextMenuItemId0004] end");
+      expect().assertFail();
       done();
     });
 
@@ -196,22 +186,21 @@ it('TextMenuItemId_static_0004', Level.LEVEL0, async (done: () => void): Promise
 it('TextMenuItemId_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextMenuItemId0005] start");
 
-      try {
-        let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0005 START');
-        await CommonFunc.sleep(500);
-        let search = await driver.findComponent(ON.id('search'));
-        await CommonFunc.sleep(500);
-        let point:Point = await (search?.getBoundsCenter() as Promise<Point>)
-        await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
-      }catch(error) {
-        expect().assertFail();
-      }
+  let driver = Driver.create();
+  console.info('TextMenuItemId TextMenuItemId0005 START');
+  await CommonFunc.sleep(500);
+  let search = await driver.findComponent(ON.id('search'));
+  await CommonFunc.sleep(500);
+  let point:Point = await (search?.getBoundsCenter() as Promise<Point>)
+  await CommonFunc.sleep(500);
+  await driver.longClick(point.x, point.y);
+  await CommonFunc.sleep(500);
+  try{
+    await driver.assertComponentExist(ON.text('翻译'));
+    await driver.assertComponentExist(ON.text('搜索'));
+  }catch(e: Error){}
       console.info("[TextMenuItemId0005] end");
+      expect().assertFail();
       done();
     });
   })

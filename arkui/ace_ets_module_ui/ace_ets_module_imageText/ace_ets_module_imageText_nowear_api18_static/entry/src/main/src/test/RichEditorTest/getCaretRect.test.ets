@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, it, expect, Level,afterEach } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
@@ -52,18 +52,19 @@ export default function getCaretRect() {
         console.info("get getCaretRect state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get getCaretRect pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push getCaretRect page error:" + err);
       }
       console.info("getCaretRect beforeEach end");
-    }); 
-
+    });
+    afterEach(() => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
+      await CommonFunc.sleep(2000);
+    })
 
 
     /*
@@ -95,7 +96,7 @@ it('getCaretRect_static_0001', Level.LEVEL0, async (done: () => void): Promise<v
 
 
     /*
-     * @tc.number   getCaretRect_static_0002
+     * @tc.number
      * @tc.name     getCaretRect_static_0002
      * @tc.desc     getCaretRect_static_0002
      * @tc.level    Level.LEVEL0
@@ -110,9 +111,9 @@ it('getCaretRect_static_0002', Level.LEVEL0, async (done: () => void): Promise<v
       await (richEditor?.click() as  Promise<void>);
       await CommonFunc.sleep(500);
       let but = await driver.findComponent(ON.id('but'));
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       await (but?.click() as  Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('text');

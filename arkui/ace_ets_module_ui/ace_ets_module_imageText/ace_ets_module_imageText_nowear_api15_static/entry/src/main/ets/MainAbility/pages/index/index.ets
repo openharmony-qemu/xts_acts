@@ -12,42 +12,59 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import {
+  Entry,
+  Component,
+  Column,
+  ColumnOptions,
+  Text,
+  TextArea,
+  DragEvent,
+  CopyOptions
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import common2D from '@ohos.graphics.displaySync'
 
+import {
+  State,AppStorage
+} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
-struct Index {
-
+struct TextAreaInputTestExample {
+  @State text: string = '';
   aboutToAppear(){
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
-
   build() {
-    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text('Hello World')
-        .fontSize(50)
-      Button(' ') {
-        Text('next page')
-          .fontSize(25)
-      }
-      .margin({
-        top: 20
-      } as Margin)
-      .backgroundColor('#0D9FFB')
-      .onClick((e:ClickEvent) => {
+    Column({ space: 20 } as ColumnOptions) {
+      Column(){
+        Text('这是一段测试文本这是一段测试文本')
+          .id('textArea1')
+          .draggable(true)
+          .width('90%')
+          .margin(20)
+          .copyOption(CopyOptions.LocalDevice)
+          .onDragStart((event: DragEvent, extraParams?: string):(() => void) => {
+            this.text = 'Text--onDragStart'
+          })
+          .onDragEnd((event: DragEvent, extraParams?: string):void=>{
+            this.text = 'Text--onDragEnd'
+          })
 
-      })
+        TextArea({ placeholder: this.text })
+          .id('textArea2')
+          .width(336)
+          .height(56)
+          .margin(20)
+          .copyOption(CopyOptions.LocalDevice)
+
+
+      }.width('100%').height('100%')
     }
-    .width('100%')
-    .height('100%')
   }
 }

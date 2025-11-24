@@ -52,10 +52,10 @@ export default function StyledStringUrl() {
                 console.info("get StyledString state pages:" + JSON.stringify(pages));
                 if (!("StyledString" == pages.name)) {
                     console.info("get StyledString pages.name:" + JSON.stringify(pages.name));
-                    
+                    // let result = await router.push(options);
                     router.pushUrl(options);
                     await CommonFunc.sleep(2000);
-                    
+                    // console.info("push StyledString page result:" + JSON.stringify(result));
                 }
             } catch (err) {
                 console.error("push StyledString page error:" + err);
@@ -83,12 +83,9 @@ it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
             await (button1?.click() as Promise<void>)
             await CommonFunc.sleep(1000);
 
-
-
                 let text = inspector.getInspectorByKey('urlId');
                 let Obj= JSON.parseJsonElement(text);
                 expect(Obj.getElement('$attrs').getString('content')).assertEqual('7');
-
             await CommonFunc.sleep(500);
             console.info('[StyledString_static_0100] END');
             done();

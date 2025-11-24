@@ -1,4 +1,4 @@
-<svg xmlns="http:
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" version="1.1">
     <text x="0" y="200" fill="red">模糊偏移图像</text>
     <defs>
         <filter id="f1" x="0" y="0" width="200%" height="200%">

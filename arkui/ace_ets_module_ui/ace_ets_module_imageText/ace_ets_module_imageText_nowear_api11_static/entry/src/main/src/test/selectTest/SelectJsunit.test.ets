@@ -32,17 +32,6 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-class MyClass {
-  name: string;
-  messageManager: MessageManager;
-  message: MessageManager;
-
-  constructor() {
-    this.name = 'messageManager';
-    this.messageManager = new MessageManager();
-    this.message = this.messageManager;
-  }
-}
 
 export default function SelectJsunit() {
   describe('SelectJsunit', () => {
@@ -65,10 +54,8 @@ export default function SelectJsunit() {
         console.info("get SelectJsunit state pages: " + JSON.stringify(pages));
         if (!("SelectPage" == pages.name)) {
           console.info("get SelectJsunit state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SelectJsunit page error: " + err);
@@ -77,8 +64,6 @@ export default function SelectJsunit() {
     });
 
     
-    
-    
     /*
      * @tc.number   SelectJsunit_static_0100
      * @tc.name     SelectJsunit_static_0100
@@ -86,11 +71,10 @@ export default function SelectJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('SelectJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Get the information of the Select component
       console.info('[SelectJsunit_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('select');
-      
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SelectJsunit_0100] component obj is: " + JSON.stringify(obj));
       console.info("[SelectJsunit_0100] selected: " + JSON.stringify(obj.getElement('$attrs').getString('selected')));
@@ -106,12 +90,8 @@ it('SelectJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('indexValue');
-      
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SelectJsunit_0300] component obj1 is: " + JSON.stringify(obj1));
-      
-
-
         expect(obj.getElement('$attrs').getString('selected')).assertEqual('0');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('SelectButton');
         expect(obj.getElement('$attrs').getString('font')).assertEqual('{"size":"16.00fp","weight":"500","family":"","style":"FontStyle.Normal"}');
@@ -128,9 +108,6 @@ it('SelectJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   SelectJsunit_static_0200
      * @tc.name     SelectJsunit_static_0200
@@ -138,41 +115,30 @@ it('SelectJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
      * @tc.level    Level.LEVEL0
      */
 it('SelectJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Modify the properties of component select
       console.info('[SelectJsunit_0200] START');
-      
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'selected',value:2})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'selectValue',value:'testButton'})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'selectFont',value:'{ size: 16, weight: 500 }'})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'selectedOptionBgColor',value:Color.Blue})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'selectedOptionFont',value:'{ size: 16, weight: 400 }'})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'selectFont',value:'{ size: 16, weight: 500 }'})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'optionBgColor',value:Color.Grey})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'optionFont',value:'{ size: 16, weight: 400 }'})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'optionFontColor',value:Color.Red})
-      await CommonFunc.sleep(500);
-      
-      message.notify({name:'fontColor',value:Color.Green})
-      await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'selected',value:2})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectValue',value:'testButton'})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectFont',value:'{ size: 16, weight: 500 }'})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'selectedOptionBgColor',value:Color.Blue})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionFont',value:'{ size: 16, weight: 400 }'})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'selectedOptionFontColor',value:Color.Yellow})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'optionBgColor',value:Color.Grey})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionFont',value:'{ size: 16, weight: 400 }'})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'optionFontColor',value:Color.Red})
+  await CommonFunc.sleep(500);
+  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'fontColor',value:Color.Green})
+  await CommonFunc.sleep(500);
 
-      
+      // Get the propoties value of the select component
       let strJson = inspector.getInspectorByKey('select');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SelectJsunit_0200] component obj is: " + JSON.stringify(obj));
@@ -204,17 +170,17 @@ it('SelectJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
      * @tc.level    Level.LEVEL0
      */
 it('SelectJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Verify the functions of the select component
       console.info('[SelectJsunit_0300] START');
 
-      
+      // Verify the click function of the select component
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let textComponent1 = await driver.findComponent(ON.id('select'));
       await CommonFunc.sleep(500);
       await (textComponent1?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      
+      // Verify the onSelect function of the select component
       let textMenuComponent = await driver.findComponent(ON.text('bbb'));
       await CommonFunc.sleep(500);
       await (textMenuComponent?.click() as Promise<void>)
@@ -222,15 +188,13 @@ it('SelectJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson1 = inspector.getInspectorByKey('indexValue');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SelectJsunit_0300] component obj1 is: " + JSON.stringify(obj1));
-      
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('indexValue:1');
 
       let strJson = inspector.getInspectorByKey('select');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SelectJsunit_0300] component obj is: " + JSON.stringify(obj));
-      
-      
-
-
+      expect(obj.getElement('$attrs').getString('value')).assertEqual('bbb');
+      expect(obj.getElement('$attrs').getString('selected')).assertEqual('1');
         expect(obj1.getElement('$attrs').getString('content')).assertEqual('indexValue:1');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('bbb');
         expect(obj.getElement('$attrs').getString('selected')).assertEqual('1');
@@ -239,9 +203,6 @@ it('SelectJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   SelectJsunit_static_0400
      * @tc.name     SelectJsunit_static_0400
@@ -249,50 +210,39 @@ it('SelectJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
      * @tc.level    Level.LEVEL0
      */
 it('SelectJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Illegal modification of properties of component select
       console.info('[SelectJsunit_0400] START');
-      
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'optionValue',value:'-20'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'icon',value:'10'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'selected',value:'test'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'selectValue',value:'10'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'selectFont',value:'###'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'fontColor',value:'123'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'selectedOptionBgColor',value:'0'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'selectedOptionFont',value:'%666'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'selectedOptionFontColor',value:'hello'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'optionBgColor',value:'-10'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'optionFont',value:'aaa'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'optionFontColor',value:'123'})
-      await CommonFunc.sleep(2000);
-      
-      message.notify({name:'indexValue',value:'bbb'})
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionValue',value:'-20'})
       await CommonFunc.sleep(2000);
 
-      
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'icon',value:'10'})
+      await CommonFunc.sleep(2000);
+
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selected',value:'test'})
+      await CommonFunc.sleep(2000);
+
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectValue',value:'10'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectFont',value:'###'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'fontColor',value:'123'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionBgColor',value:'0'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionFont',value:'%666'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionFontColor',value:'hello'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionBgColor',value:'-10'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionFont',value:'aaa'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionFontColor',value:'123'})
+      await CommonFunc.sleep(2000);
+      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'indexValue',value:'bbb'})
+      await CommonFunc.sleep(2000);
+
+      // Get the propoties value of the select component
       let strJson = inspector.getInspectorByKey('select');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SelectJsunit_0400] component obj is: " + JSON.stringify(obj));
@@ -301,7 +251,7 @@ it('SelectJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson1 = inspector.getInspectorByKey('indexValue');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SelectJsunit_0400] component obj1 is: " + JSON.stringify(obj1));
-      
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('indexValue:1');
 
         expect(obj.getElement('$attrs').getString('selected')).assertEqual('0');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('10');

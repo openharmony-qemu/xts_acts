@@ -10,7 +10,6 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 import { describe, beforeEach,beforeAll, afterEach, it, expect, Level } from "../../../../hypium/index"
@@ -54,11 +53,8 @@ export default function RichEditor01() {
         console.info("get RichEditor01 state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get RichEditor01 pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditor01 page error:" + err);
@@ -90,12 +86,7 @@ it('RichEditor01_static_001', Level.LEVEL0, async (done: () => void) => {
       console.info('[RichEditor01_001] END');
       done();
     });
-
-    
-
-    
-    
-    
+    //aboutToIMEInput 事件测试
     /*
      * @tc.number   RichEditor01_static_002
      * @tc.name     RichEditor01_static_002
@@ -122,10 +113,7 @@ it('RichEditor01_static_002', Level.LEVEL0, async (done: () => void) => {
       done();
     });
 
-    
-
-    
-    
+    //onIMEInputComplete 事件测试
     
     /*
      * @tc.number   RichEditor01_static_003
@@ -150,11 +138,8 @@ it('RichEditor01_static_003', Level.LEVEL0, async (done: () => void) => {
       done();
     });
 
-    
+    //set setCaretOffset to 6
 
-    
-    
-    
     /*
      * @tc.number   RichEditor01_static_004
      * @tc.name     RichEditor01_static_004
@@ -179,7 +164,7 @@ it('RichEditor01_static_004', Level.LEVEL0, async (done: () => void) => {
       done();
     });
 
-    
+    //set setCaretOffset to 100
 
     
     
@@ -207,7 +192,7 @@ it('RichEditor01_static_005', Level.LEVEL0, async (done: () => void) => {
       done();
     });
 
-    
+    //set setCaretOffset to 100
 
     
     
@@ -239,19 +224,5 @@ it('RichEditor01_static_006', Level.LEVEL0, async (done: () => void) => {
       console.info('[RichEditor01_006] END');
       done();
     });
-
-     /* @tc.number   RichEditor01_007
-     * @tc.name     RichEditor01_007
-     * @tc.desc     RichEditor01_007
-     * @tc.level    Level.LEVEL0
-     */
-it('RichEditor01_007', Level.LEVEL0, async (done: Function) => {
-  try {
-
-  }catch(error) {
-    expect().assertFail();
-  }
-
-  })
 })
 }

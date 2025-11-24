@@ -54,10 +54,10 @@ export default function MovingPhotoViewTest() {
         console.info("get MovingPhotoViewTest state pages: " + JSON.stringify(pages));
         if (!("MovingPhotoView" == pages.name)) {
           console.info("get MovingPhotoViewTest state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push MovingPhotoViewTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push MovingPhotoViewTest page error: " + err);

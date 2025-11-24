@@ -23,6 +23,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Flex,
@@ -68,13 +69,10 @@ export default function search_center() {
         console.info("get search_center state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get search_center pages.name:" + "");
-          
-          
           console.info("push search_center page 1");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push search_center page 2");
-          
         }
       } catch (err) {
         console.error("push search_center page error:" + err);

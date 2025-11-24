@@ -28,8 +28,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct RichEditor01 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  private start: int = -1;
-  private end: int = -1;
+  private start: Int = -1;
+  private end: Int = -1;
   @State message: string = "[-1, -1]"
   @State content: string = ""
   @State text: string = ""
@@ -37,15 +37,6 @@ struct RichEditor01 {
   @State insertValue: string = ""
   @State addTextSpan: string = ""
 
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ImageSpanVisibility', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
 
   build() {
     Column() {
@@ -70,16 +61,18 @@ struct RichEditor01 {
           this.controller.getSpans({
             start: this.start,
             end: this.end
-          })?.forEach(item => {
-            if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
+          } as RichEditorRange)!.forEach(item => {
+            if((item as RichEditorImageSpanResult).imageStyle != 'undefined'){
               this.content += (item as RichEditorImageSpanResult).valueResourceStr;
               this.content += "\n"
-            } else {
+            }
+            else {
               this.content += (item as RichEditorTextSpanResult).value;
               this.content += "\n"
             }
           })
-        }).key('RichEditor01GetSpans')
+        }
+        ).key('RichEditor01GetSpans')
         Button("删除选择内容").onClick((e:ClickEvent) => {
           this.controller.deleteSpans({
             start: 0,
@@ -101,10 +94,7 @@ struct RichEditor01 {
           this.text = JSON.stringify(JSON.parseJsonElement(strJson))
         })
         Button("获取光标位置").onClick((e:ClickEvent) => {
-          let offset = this.controller.getCaretOffset()
-          if (offset !== undefined) {
-            this.content = offset + ''
-          }
+          this.content = this.controller.getCaretOffset() +''
         }).key('getCaretOffset')
 
       }

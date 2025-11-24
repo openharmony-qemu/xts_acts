@@ -53,18 +53,20 @@ export default function editMenuOptions() {
         console.info("get editMenuOptions state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get editMenuOptions pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push editMenuOptions page error:" + err);
       }
       console.info("editMenuOptions beforeEach end");
     });
-    
+    afterEach(()=>{
+      await CommonFunc.sleep(2000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.replaceUrl({ url:'MainAbility/pages/index/index' })
+      await CommonFunc.sleep(2000);
+    })
     
     /*
      * @tc.number   editMenuOptions_static_0001
@@ -76,16 +78,16 @@ it('editMenuOptions_static_0001', Level.LEVEL0, async (done: () =>void) : Promis
       let driver = Driver.create();
       console.info('editMenuOptions editMenuOptions0001 START');
       await CommonFunc.sleep(500);
-      let text = await driver.findComponent(ON.id('text'));
+      let text = await (driver.findComponent(ON.id('text')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (text?.longClick() as Promise<void>);
+      await text.longClick();
       await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('123456'));
+      let button = await (driver.findComponent(ON.text('123456')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (button?.click() as Promise<void>);
-      let search2 = await driver.findComponent(ON.id('search2'));
+      await button.click();
+      let search2 = await (driver.findComponent(ON.id('search2')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (search2?.click()  as Promise<void>);
+      await search2.click();
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('textLabelInfo');
       let obj = JSON.parseJsonElement(strJson);
@@ -96,7 +98,7 @@ it('editMenuOptions_static_0001', Level.LEVEL0, async (done: () =>void) : Promis
       done();
     });
 
-    
+
     /*
      * @tc.number   editMenuOptions_static_0002
      * @tc.name     editMenuOptions_static_0002
@@ -107,16 +109,16 @@ it('editMenuOptions_static_0002', Level.LEVEL0, async (done: () =>void) : Promis
       let driver = Driver.create();
       console.info('editMenuOptions editMenuOptions0002 START');
       await CommonFunc.sleep(500);
-      let textArea = await driver.findComponent(ON.id('textArea'));
+      let textArea = await (driver.findComponent(ON.id('textArea')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (textArea?.longClick() as Promise<void>);
+      await textArea.longClick();
       await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('111111'));
+      let button = await (driver.findComponent(ON.text('111111')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (button?.click() as Promise<void>);
-      let search2 = await driver.findComponent(ON.id('search2'));
+      await button.click();
+      let search2 = await (driver.findComponent(ON.id('search2')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (search2?.click() as Promise<void>);
+      await search2.click();
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('textAreaLabelInfo');
       let obj = JSON.parseJsonElement(strJson);
@@ -138,16 +140,16 @@ it('editMenuOptions_static_0003', Level.LEVEL0, async (done: () =>void) : Promis
       let driver = Driver.create();
       console.info('editMenuOptions editMenuOptions0003 START');
       await CommonFunc.sleep(500);
-      let textInput = await driver.findComponent(ON.id('textInput'));
+      let textInput = await (driver.findComponent(ON.id('textInput')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (textInput?.longClick() as Promise<void>);
+      await textInput.longClick();
       await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('custom2'));
+      let button = await (driver.findComponent(ON.text('custom2')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (button?.click() as Promise<void>);
-      let search2 = await driver.findComponent(ON.id('search2'));
+      await button.click();
+      let search2 = await (driver.findComponent(ON.id('search2')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (search2?.click() as Promise<void>);
+      await search2.click();
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('textInputLabelInfo');
       let obj = JSON.parseJsonElement(strJson);
@@ -169,17 +171,17 @@ it('editMenuOptions_static_0004', Level.LEVEL0, async (done: () =>void) : Promis
       let driver = Driver.create();
       console.info('editMenuOptions editMenuOptions0004 START');
       await CommonFunc.sleep(500);
-      let richEditor = await driver.findComponent(ON.id('richEditor'));
+      let richEditor = await (driver.findComponent(ON.id('richEditor')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (richEditor?.longClick() as Promise<void>);
+      await richEditor.longClick();
       await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('123456'));
+      let button = await (driver.findComponent(ON.text('123456')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (button?.click() as Promise<void>);
+      await button.click();
       console.log('editMenuOptions0004 button click succ');
-      let search2 = await driver.findComponent(ON.id('search2'));
+      let search2 = await (driver.findComponent(ON.id('search2')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (search2?.click() as Promise<void>);
+      await search2.click();
       await CommonFunc.sleep(500);
 
 
@@ -187,7 +189,7 @@ it('editMenuOptions_static_0004', Level.LEVEL0, async (done: () =>void) : Promis
         let obj = JSON.parseJsonElement(strJson);
         console.log('editMenuOptions0004---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
         console.log('editMenuOptions0004---obj.$attrs.content---' + obj.getElement('$attrs').getString('content'));
-        expect('' + obj.getElement('$attrs').getString('content')).assertEqual("");
+        expect('' + obj.getElement('$attrs').getString('content')).assertEqual("abc123456");
 
       console.info("[editMenuOptions0004] end");
       done();
@@ -204,17 +206,17 @@ it('editMenuOptions_static_0005', Level.LEVEL0, async (done: () =>void) : Promis
       let driver = Driver.create();
       console.info('editMenuOptions editMenuOptions0005 START');
       await CommonFunc.sleep(500);
-      let search = await driver.findComponent(ON.id('search'));
+      let search = await (driver.findComponent(ON.id('search')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (search?.longClick() as Promise<void>);
+      await search.longClick();
       await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('111111'));
+      let button = await (driver.findComponent(ON.text('111111')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (button?.click() as Promise<void>);
+      await button.click();
       console.log('editMenuOptions0005 button click succ');
-      let search2 = await driver.findComponent(ON.id('search2'));
+      let search2 = await (driver.findComponent(ON.id('search2')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      await (search2?.click() as Promise<void>);
+      await search2.click();
       await CommonFunc.sleep(500);
 
 

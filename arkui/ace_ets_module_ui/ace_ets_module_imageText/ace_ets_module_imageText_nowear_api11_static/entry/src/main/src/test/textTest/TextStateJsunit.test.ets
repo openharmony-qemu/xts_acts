@@ -49,11 +49,8 @@ export default function TextStateJsunit() {
         console.info("get TextStateJsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextStateJsunit pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextStateJsunit page error:" + err);
@@ -62,13 +59,9 @@ export default function TextStateJsunit() {
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
+
       console.info("TextStateJsunit after each called");
     });
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("positionSetting after each called");
-    });
-    
 
     
     
@@ -84,8 +77,9 @@ it('ArkUX_Stage_Text_TextShadow_static_0100', Level.LEVEL1, async (done: ()=> vo
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0100');
+          console.info('[ArkUX_Stage_Text_TextShadow_0100] strJson',strJson);
           let obj = JSON.parseJsonElement(strJson);
-          console.info("--->Text Shadow is :" + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow is :" + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("0.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -96,13 +90,9 @@ it('ArkUX_Stage_Text_TextShadow_static_0100', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0200
      * @tc.name     ArkUX_Stage_Text_TextShadow_static_0200
@@ -115,9 +105,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0200', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0200');
           let obj = JSON.parseJsonElement(strJson);
-          
-
-          console.info("--->Text Shadow is:" + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow is:" + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -128,12 +116,8 @@ it('ArkUX_Stage_Text_TextShadow_static_0200', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
-
-
-    
-    
     
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0300
@@ -147,9 +131,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0300', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0300');
           let obj = JSON.parseJsonElement(strJson);
-          
-
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("0.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -160,12 +142,8 @@ it('ArkUX_Stage_Text_TextShadow_static_0300', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
-
-
-    
-    
     
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0400
@@ -179,9 +157,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0400', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0400');
           let obj = JSON.parseJsonElement(strJson);
-          
-
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("20.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -192,13 +168,9 @@ it('ArkUX_Stage_Text_TextShadow_static_0400', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0500
      * @tc.name     ArkUX_Stage_Text_TextShadow_static_0500
@@ -211,9 +183,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0500', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0500');
           let obj = JSON.parseJsonElement(strJson);
-          
-
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("5.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -224,12 +194,8 @@ it('ArkUX_Stage_Text_TextShadow_static_0500', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0500 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
-
-
-    
-    
     
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0600
@@ -243,9 +209,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0600', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0600');
           let obj = JSON.parseJsonElement(strJson);
-          
-
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("0.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -256,13 +220,9 @@ it('ArkUX_Stage_Text_TextShadow_static_0600', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0600 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0700
      * @tc.name     ArkUX_Stage_Text_TextShadow_static_0700
@@ -275,9 +235,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0700', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0700');
           let obj = JSON.parseJsonElement(strJson);
-          
-
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF0000FF")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -288,12 +246,8 @@ it('ArkUX_Stage_Text_TextShadow_static_0700', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0700 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
-
-
-    
-    
     
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0800
@@ -308,7 +262,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0800', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0800');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FFFF0000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -319,12 +273,9 @@ it('ArkUX_Stage_Text_TextShadow_static_0800', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0800 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
-
-    
-    
     
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_0900
@@ -338,9 +289,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0900', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_0900');
           let obj = JSON.parseJsonElement(strJson);
-          
-
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FFFF0000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -351,13 +300,9 @@ it('ArkUX_Stage_Text_TextShadow_static_0900', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_0900 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_Text_TextShadow_static_1000
      * @tc.name     ArkUX_Stage_Text_TextShadow_static_1000
@@ -370,8 +315,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1000', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1000');
           let obj = JSON.parseJsonElement(strJson);
-          
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FFFD0000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -382,7 +326,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1000', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1000 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -402,7 +346,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1100', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1100');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -413,7 +357,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1100', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1100 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -433,7 +377,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1200', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1200');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("5.000000")
@@ -444,7 +388,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1200', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1200 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -464,7 +408,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1300', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1300');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("-5.000000")
@@ -475,7 +419,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1300', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1300 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -495,7 +439,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1400', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1400');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -506,7 +450,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1400', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1400 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -526,7 +470,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1500', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1500');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -537,7 +481,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1500', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1500 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -557,7 +501,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1600', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1600');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("5.000000")
@@ -568,7 +512,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1600', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1600 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -588,7 +532,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1700', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1700');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("5.000000")
@@ -599,7 +543,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1700', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1700 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -619,7 +563,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1800', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1800');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("-5.000000")
@@ -630,7 +574,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1800', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1800 ERROR: ' + JSON.stringify(err))
         }
         done();
-      }, 500)
+       }, 500)
     })
 
 
@@ -650,7 +594,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1900', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_1900');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("-5.000000")
@@ -661,7 +605,7 @@ it('ArkUX_Stage_Text_TextShadow_static_1900', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_1900 ERROR: ' + JSON.stringify(err))
         }
         done();
-      }, 500)
+       }, 500)
     })
 
 
@@ -681,7 +625,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2000', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_2000');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF0000FF")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("5.000000")
@@ -692,7 +636,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2000', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_2000 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -712,7 +656,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2100', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_2100');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(JSON.stringify(obj.getElement('$attrs').getString('textShadow'))).assertEqual("[]")
           done()
         } catch (err) {
@@ -720,7 +664,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2100', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_2000 ERROR: ' + JSON.stringify(err))
         }
         done();
-      }, 500)
+       }, 500)
     })
 
 
@@ -740,7 +684,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2200', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_2200');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FFFF0000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("5.000000")
@@ -751,7 +695,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2200', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_2200 ERROR: ' + JSON.stringify(err))
         }
         done();
-      }, 500)
+       }, 500)
     })
 
 
@@ -771,7 +715,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2300', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_2300');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FFFF0000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -782,7 +726,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2300', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_2300 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -802,7 +746,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2400', Level.LEVEL1, async (done: ()=> vo
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_2400');
           let obj = JSON.parseJsonElement(strJson);
           
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("1.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
@@ -813,7 +757,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2400', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_2400 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -832,7 +776,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2500', Level.LEVEL1, async (done: ()=> vo
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_TextShadow_2500');
           let obj = JSON.parseJsonElement(strJson);
-          console.info("--->Text Shadow " + JSON.stringify(obj.getElement('$attrs').getString('textShadow')))
+          console.info("--->Text Shadow " + strJson)
           expect(obj.getElement('$attrs').getElement('textShadow')[0].getString('radius')).assertEqual("10.000000")
           expect(obj.getElement('$attrs').getElement('textShadow')[0].getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow')[0].getString('offsetX')).assertEqual("-10.000000")
@@ -847,7 +791,7 @@ it('ArkUX_Stage_Text_TextShadow_static_2500', Level.LEVEL1, async (done: ()=> vo
           console.info('ArkUX_Stage_Text_TextShadow_2500 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -876,7 +820,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0100', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -904,7 +848,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0200', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -932,7 +876,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0300', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -960,7 +904,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0400', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -988,7 +932,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0500', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0500 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1016,7 +960,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0600', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0600 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1044,7 +988,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0700', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0700 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1072,7 +1016,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0800', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0800 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1102,7 +1046,7 @@ it('ArkUX_Stage_Text_TextOverflow_static_0900', Level.LEVEL1, async (done: ()=> 
           console.info('ArkUX_Stage_Text_TextOverflow_0900 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1130,7 +1074,7 @@ it('ArkUX_Stage_Text_TextAlign_static_0100', Level.LEVEL1, async (done: ()=> voi
           console.info('ArkUX_Stage_Text_TextAlign_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1158,7 +1102,7 @@ it('ArkUX_Stage_Text_TextAlign_static_0200', Level.LEVEL1, async (done: ()=> voi
           console.info('ArkUX_Stage_Text_TextAlign_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1187,7 +1131,7 @@ it('ArkUX_Stage_Text_TextAlign_static_0300', Level.LEVEL1, async (done: ()=> voi
           console.info('ArkUX_Stage_Text_TextAlign_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1215,7 +1159,7 @@ it('ArkUX_Stage_Text_TextAlign_static_0400', Level.LEVEL1, async (done: ()=> voi
           console.info('ArkUX_Stage_Text_TextAlign_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1243,7 +1187,7 @@ it('ArkUX_Stage_Text_TextAlign_static_0500', Level.LEVEL1, async (done: ()=> voi
           console.info('ArkUX_Stage_Text_TextAlign_0500 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1271,7 +1215,7 @@ it('ArkUX_Stage_Text_TextAlign_static_0600', Level.LEVEL1, async (done: ()=> voi
           console.info('ArkUX_Stage_Text_TextAlign_0600 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1301,7 +1245,7 @@ it('ArkUX_Stage_Text_TextAlign_static_0700', Level.LEVEL1, async (done: ()=> voi
           console.info('ArkUX_Stage_Text_TextAlign_0700 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1331,7 +1275,7 @@ it('ArkUX_Stage_Text_heightAdaptivePolicy_static_0100', Level.LEVEL1, async (don
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1363,7 +1307,7 @@ it('ArkUX_Stage_Text_heightAdaptivePolicy_static_0200', Level.LEVEL1, async (don
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1393,7 +1337,7 @@ it('ArkUX_Stage_Text_heightAdaptivePolicy_static_0300', Level.LEVEL1, async (don
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1423,7 +1367,7 @@ it('ArkUX_Stage_Text_heightAdaptivePolicy_static_0400', Level.LEVEL1, async (don
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
 
 
@@ -1453,7 +1397,7 @@ it('ArkUX_Stage_Text_heightAdaptivePolicy_static_0500', Level.LEVEL1, async (don
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0500 ERROR: ' + JSON.stringify(err))
           done()
         }
-      }, 500)
+       }, 500)
     })
   })
 }

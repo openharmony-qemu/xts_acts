@@ -51,11 +51,8 @@ export default function OnTextSelectionChangeTest() {
         console.info("get OnTextSelectionChangeTest state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get OnTextSelectionChangeTest pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push OnTextSelectionChangeTest page error:" + err);
@@ -67,10 +64,6 @@ export default function OnTextSelectionChangeTest() {
       console.info("OnTextSelectionChangeTest after each called");
     });
 
-
-    
-    
-    
     /*
      * @tc.number   OnTextSelectionChangeTest_static_0010
      * @tc.name     OnTextSelectionChangeTest_static_0010
@@ -79,9 +72,8 @@ export default function OnTextSelectionChangeTest() {
      */
 it('OnTextSelectionChangeTest_static_0010', Level.LEVEL2, async (done: ()=> void) => {
       console.info('[OnTextSelectionChangeTest_0010] START');
-      let driver: Driver = Driver.create();
+      let driver = Driver.create();
       await CommonFunc.sleep(500);
-
       try {
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
         let clickX1 = Math.round(textRect.left + 2) as int
@@ -90,23 +82,18 @@ it('OnTextSelectionChangeTest_static_0010', Level.LEVEL2, async (done: ()=> void
         let clickY = Math.round((textRect.bottom + textRect.top)/2) as int
         await driver.mouseDrag({ x: clickX1, y: clickY },{ x: clickX2, y: clickY }, 600);
         await CommonFunc.sleep(1000);
-        console.info('[OnTextSelectionChangeTest_0010] get1: ' + AppStorage.get('OnTextSelectionChange',));
-        expect(AppStorage.get('OnTextSelectionChange',)).assertEqual('start:0,end:11');
+        console.info('[OnTextSelectionChangeTest_0010] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
+        expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:0,end:11');
         await driver.mouseClick({ x: clickX3, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
         await CommonFunc.sleep(1000);
-        console.info('[OnTextSelectionChangeTest_0010] get2: ' + AppStorage.get('OnTextSelectionChange',));
-        expect(AppStorage.get('OnTextSelectionChange',)).assertEqual('start:-1,end:-1');
+        console.info('[OnTextSelectionChangeTest_0010] get2: ' + AppStorage.get<string>('OnTextSelectionChange'));
+        expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
       }catch(error) {
         expect().assertFail();
       }
       console.info("[OnTextSelectionChangeTest_0010] END");
       done();
     });
-
-
-    
-    
-    
     /*
      * @tc.number   OnTextSelectionChangeTest_static_0020
      * @tc.name     OnTextSelectionChangeTest_static_0020
@@ -115,40 +102,35 @@ it('OnTextSelectionChangeTest_static_0010', Level.LEVEL2, async (done: ()=> void
      */
 it('OnTextSelectionChangeTest_static_0020', Level.LEVEL2, async (done: ()=> void) => {
       console.info('[OnTextSelectionChangeTest_0020] START');
-      let driver: Driver = Driver.create();
+      let driver = Driver.create();
       await CommonFunc.sleep(500);
-      
+      // 点击tab键(2049),Text控件获焦
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
-      
+      // 点击shift键(2047)+向右方向键(2015)
       await driver.triggerCombineKeys(2047, 2015);
       await driver.triggerCombineKeys(2047, 2015);
       await driver.triggerCombineKeys(2047, 2015);
       await driver.triggerCombineKeys(2047, 2015);
       await CommonFunc.sleep(500);
-      console.info('[OnTextSelectionChangeTest_0020] get1: ' + AppStorage.get('OnTextSelectionChange',));
+      console.info('[OnTextSelectionChangeTest_0020] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
 
       try {
-        expect(AppStorage.get('OnTextSelectionChange',)).assertEqual('start:3,end:11');
+        expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:3,end:11');
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
         let clickX = Math.round((textRect.left + textRect.right)/2) as int
         let clickY = Math.round(textRect.bottom - 10) as int
-        
+        // 鼠标左键点击文本外，文本取消选中
         await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
         await CommonFunc.sleep(1000);
-        console.info('[OnTextSelectionChangeTest_0020] get2: ' + AppStorage.get('OnTextSelectionChange',));
-        expect(AppStorage.get('OnTextSelectionChange',)).assertEqual('start:-1,end:-1');
+        console.info('[OnTextSelectionChangeTest_0020] get2: ' + AppStorage.get<string>('OnTextSelectionChange'));
+        expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
       }catch(error) {
         expect().assertFail();
       }
       console.info("[OnTextSelectionChangeTest_0020] END");
       done();
     });
-
-
-    
-    
-    
     /*
      * @tc.number   OnTextSelectionChangeTest_static_0030
      * @tc.name     OnTextSelectionChangeTest_static_0030
@@ -159,18 +141,18 @@ it('OnTextSelectionChangeTest_static_0030', Level.LEVEL2, async (done: ()=>void)
       console.info('[OnTextSelectionChangeTest_0030] START');
 
       try {
-        let driver: Driver = Driver.create();
+        let driver = Driver.create();
         await CommonFunc.sleep(500);
-        console.info('[OnTextSelectionChangeTest_0030] get1: ' + AppStorage.get('OnTextSelectionChange',));
-        expect(AppStorage.get('OnTextSelectionChange',)).assertEqual('start:3,end:8');
+        console.info('[OnTextSelectionChangeTest_0030] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
+        expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:3,end:8');
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
         let clickX = Math.round(textRect.right + 10) as int
         let clickY = Math.round((textRect.bottom + textRect.top)/2) as int
         await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0030] get2: ' +
-        AppStorage.get('OnTextSelectionChange',));
-        expect(AppStorage.get('OnTextSelectionChange',)).assertEqual('start:-1,end:-1');
+        AppStorage.get<string>('OnTextSelectionChange'));
+        expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
       }catch(error) {
         expect().assertFail();
       }

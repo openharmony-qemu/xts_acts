@@ -25,11 +25,10 @@ import {
   TextArea,
   Text,
   Button,
-  $r
+  $r,Color,ResourceColor
 } from '@ohos.arkui.component'
 import {
   State,
-  
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
@@ -39,11 +38,11 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct TextAreaExample {
   @State text:string = 'test1'
   @State sizeT:number = 16
-  @State weightT:number = 400
+  @State weightT:int = 400
   @State placeholderFont:string ="#FFAACCEE"
-  @State placeholderColor:string ="#FFAACCEE"
+  @State placeholderColor:ResourceColor ="#FFAACCEE"
   @State textAlign:TextAlign = TextAlign.End
-  @State caretColor:string|int|Resource = "#ACDEFF"
+  @State caretColor:ResourceColor = "#ACDEFF"
   @State fontSize:number = 16
   @State copyOption:CopyOptions = CopyOptions.LocalDevice
   @State placeholder:string ="The text area can hold an unlimited amount of text. input your word..."
@@ -53,58 +52,55 @@ struct TextAreaExample {
   @State message3:string = 'text'
   @State message4:string = 'text'
 
-  messageManager:MessageManager = new MessageManager()
+  messageManager:MessageManager<string | number|int|TextAlign|CopyOptions|ResourceColor> = new MessageManager<string | number|int|TextAlign|CopyOptions|ResourceColor>()
 
   onPageShow() {
     console.info('TextArea onPageShow')
-    
-    
-    
-    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string | number|int|TextAlign|CopyOptions|ResourceColor>>("messageManager", this.messageManager);
 
-    let callback: Callback = (message: Message) => {
+    let callback: (message: Message<string | number|int|TextAlign|CopyOptions|ResourceColor>) => void = (message: Message<string | number|int|TextAlign|CopyOptions|ResourceColor>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'text') {
-          this.text = message.value as string
+          this.text = (message as Message<string>).value
       }
       if (message.name == 'message1') {
-          this.message1 = message.value as string
+          this.message1 = (message as Message<string>).value
       }
       if (message.name == 'sizeT') {
-          this.sizeT = Number.parseInt(message.value.toString())
+          this.sizeT = (message as Message<number>).value
       }
       if (message.name == 'weightT') {
-          this.weightT = Number.parseInt(message.value.toString())
+          this.weightT = (message as Message<int>).value
       }
       if (message.name == 'placeholderFont') {
-          this.placeholderFont = message.value as string
+          this.placeholderFont = (message as Message<string>).value
       }
       if (message.name == 'placeholderColor') {
-          this.placeholderColor = message.value as string
+          this.placeholderColor = (message as Message<ResourceColor>).value
       }
       if (message.name == 'textAlign') {
-          this.textAlign = message.value as TextAlign
+          this.textAlign = (message as Message<TextAlign>).value
       }
       if (message.name == 'caretColor') {
-          this.caretColor = message.value as string
+          this.caretColor = (message as Message<ResourceColor>).value
       }
       if (message.name == 'fontSize') {
-          this.fontSize = Number.parseInt(message.value.toString())
+          this.fontSize = (message as Message<number>).value
       }
       if (message.name == 'copyOption') {
-          this.copyOption = message.value as CopyOptions
+          this.copyOption = (message as Message<CopyOptions>).value
       }
       if (message.name == 'placeholder') {
-          this.placeholder = message.value as string
+          this.placeholder = (message as Message<string>).value
       }
       if (message.name == 'message2') {
-          this.message2 = message.value as string
+          this.message2 = (message as Message<string>).value
       }
       if (message.name == 'message3') {
-          this.message3 = message.value as string
+          this.message3 = (message as Message<string>).value
       }
       if (message.name == 'message4') {
-          this.message4 = message.value as string
+          this.message4 = (message as Message<string>).value
       }
     }
     this.messageManager.registerCallback(callback)
@@ -117,7 +113,7 @@ struct TextAreaExample {
         controller: this.controller,
         text: this.text
       })
-        .placeholderFont({ size: this.sizeT, weight: this.weightT as int })
+        .placeholderFont({ size: this.sizeT, weight: this.weightT })
         .placeholderColor(this.placeholderColor)
         .width(336)
         .key('textArea')
@@ -161,7 +157,7 @@ struct TextAreaExample {
         .backgroundColor('#007DFF')
         .margin(15)
         .onClick((e:ClickEvent) => {
-          
+          // 设置光标位置到第一个字符后
           this.controller.caretPosition(1)
         })
     }.width('100%').height('100%').backgroundColor('#F1F3F5')

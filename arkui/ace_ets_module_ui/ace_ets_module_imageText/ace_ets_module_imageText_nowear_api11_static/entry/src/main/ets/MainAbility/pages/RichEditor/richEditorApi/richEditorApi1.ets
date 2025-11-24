@@ -25,19 +25,9 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct richEditorApi1 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  @State types: TextDataDetectorType[] = [] as Array<TextDataDetectorType>;
+  @State types: TextDataDetectorType[] = new Array<TextDataDetectorType>();
   @State text1: string = '11';
-
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ImageSpanVisibility', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
-
+  @State isEvent: boolean = false
   build() {
     Column() {
       RichEditor(this.options)
@@ -46,16 +36,18 @@ struct richEditorApi1 {
             {
               style:
               {
-              fontSize: 50.0
+              fontSize: 50
               }
             }
           )
         })
         .onPaste((event?:PasteEvent):void => {
-          if(event != undefined && event != null){
-              this.text1 = '222'
-          }
-          event?.preventDefault?.();
+          // if(event != undefined && event != null){
+          //   event.preventDefault = ():void => {
+          //     this.text1 = '222'
+          //   }
+          // }
+          // event?.preventDefault?.();
         })
         .key("RichEditor1")
         .borderWidth(1)

@@ -51,11 +51,8 @@ export default function TextContentGetSelectionTest() {
         console.info("get TextContentGetSelectionTest state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextContentGetSelectionTest pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextContentGetSelectionTest page error:" + err);
@@ -92,8 +89,8 @@ it('TextContentGetSelectionTest_static_0001', Level.LEVEL1, async (done: () =>vo
       await CommonFunc.sleep(500);
 
 
-        let TextAreaSelectionStart:number | undefined = AppStorage.get('TextAreaSelectionStart')
-        let TextAreaSelectionEnd:number | undefined = AppStorage.get('TextAreaSelectionEnd')
+        let TextAreaSelectionStart = AppStorage.get<int|undefined>('TextAreaSelectionStart')
+        let TextAreaSelectionEnd = AppStorage.get<int|undefined>('TextAreaSelectionEnd')
         expect(TextAreaSelectionStart).assertEqual(0);
         expect(TextAreaSelectionEnd).assertEqual(7);
 
@@ -128,8 +125,8 @@ it('TextContentGetSelectionTest_static_0002', Level.LEVEL1, async (done: () =>vo
       await CommonFunc.sleep(500);
 
 
-        let SearchSelectionStart:number | undefined = AppStorage.get('SearchSelectionStart')
-        let SearchSelectionEnd:number | undefined = AppStorage.get('SearchSelectionEnd')
+        let SearchSelectionStart = AppStorage.get<int|undefined>('SearchSelectionStart')
+        let SearchSelectionEnd = AppStorage.get<int|undefined>('SearchSelectionEnd')
         expect(SearchSelectionStart).assertEqual(0);
         expect(SearchSelectionEnd).assertEqual(6);
 
@@ -164,8 +161,8 @@ it('TextContentGetSelectionTest_static_0003', Level.LEVEL1, async (done: () =>vo
       await CommonFunc.sleep(500);
 
 
-        let TextInputSelectionStart:number | undefined= AppStorage.get('TextInputSelectionStart')
-        let TextInputSelectionEnd:number | undefined = AppStorage.get('TextInputSelectionEnd')
+        let TextInputSelectionStart = AppStorage.get<int|undefined>('TextInputSelectionStart')
+        let TextInputSelectionEnd = AppStorage.get<int|undefined>('TextInputSelectionEnd')
         expect(TextInputSelectionStart).assertEqual(0);
         expect(TextInputSelectionEnd).assertEqual(8);
 

@@ -52,11 +52,8 @@ export default function RichEditorApi222() {
         console.info("get RichEditorApi222 state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get RichEditorApi222 pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorApi222 page error:" + err);
@@ -69,10 +66,6 @@ export default function RichEditorApi222() {
       console.info("RichEditorApi2 after each called");
     });
 
-
-
-    
-    
     
     /*
      * @tc.number   RichEditorApi2_static_001
@@ -128,7 +121,7 @@ it('RichEditorApi2_static_002', Level.LEVEL2, async (done: () => void): Promise<
       let strJson = inspector.getInspectorByKey('RichEditorApi2_text2');
       await CommonFunc.sleep(1000);
       console.info("[RichEditorApi2_002] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson)['$attrs']['content']).assertEqual('renderingStrategy:0,effectStrategy:0');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('renderingStrategy:0,effectStrategy:0');
 
       console.info('[RichEditorApi2_002] END');
       done();

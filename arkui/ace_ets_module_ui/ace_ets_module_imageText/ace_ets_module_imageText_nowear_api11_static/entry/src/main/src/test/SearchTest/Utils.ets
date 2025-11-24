@@ -14,7 +14,7 @@
  */
 import inspector from '@ohos.arkui.inspector';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 
 
 export class RectValue {
@@ -88,8 +88,8 @@ export default class Utils {
       windowY: 0,
       displayX: 0,
       displayY: 0,
-      
-      
+      // screenX: 0,
+      // screenY: 0
     }
     console.info('down touch started: ' + JSON.stringify(downPonit))
     sendTouchEvent(downPonit);
@@ -107,8 +107,8 @@ export default class Utils {
         windowY: 0,
         displayX: 0,
         displayY: 0,
-        
-        
+        // screenX: 0,
+        // screenY: 0
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
       ret = sendTouchEvent(movePoint)
@@ -130,8 +130,8 @@ export default class Utils {
       windowY: 0,
       displayX: 0,
       displayY: 0,
-      
-      
+      // screenX: 0,
+      // screenY: 0
     }
     console.info('up touch started: ' + JSON.stringify(upPoint))
     sendTouchEvent(upPoint)
