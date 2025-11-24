@@ -42,11 +42,13 @@ describe('ApplicationInfoTest', function () {
     beforeEach(async () => {
         await sleep(1000);
     })
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_FormBase_1000
-     * @tc.name    Validate formbindingdata creation data
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_FormBase_1000
+     * @tc.number SUB_AA_OpenHarmony_FormBase_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_FormBase_1000', Level.LEVEL0, async function (done) {
         console.info('------------start SUB_AA_OpenHarmony_FormBase_1000-------------');
@@ -80,11 +82,13 @@ describe('ApplicationInfoTest', function () {
         console.info('------------end SUB_AA_OpenHarmony_FormBase_1000-------------');
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_Want_0200
-     * @tc.name    Switching the mission in the launcherlist to the foreground is not supported
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Want_0200
+     * @tc.number SUB_AA_OpenHarmony_Want_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Want_0200', Level.LEVEL0, async function (done) {
         console.info('------------start SUB_AA_OpenHarmony_Want_0200-------------');
@@ -122,11 +126,13 @@ describe('ApplicationInfoTest', function () {
         console.info('------------end SUB_AA_OpenHarmony_Want_0200-------------');
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_Want_0300
-     * @tc.name    Switching the mission in the launcherlist to the foreground is not supported
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Want_0300
+     * @tc.number SUB_AA_OpenHarmony_Want_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Want_0300', Level.LEVEL0, async function (done) {
         console.info('------------start SUB_AA_OpenHarmony_Want_0300-------------');

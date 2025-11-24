@@ -112,12 +112,12 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0100
-     * @tc.name: Verify that the implicit startup application does not set flags and does not match the display popup
-     * @tc.desc: A pop-up dialog box
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0100
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0100
+     * @tc.desc   A pop-up dialog box
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0100';
@@ -147,12 +147,12 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0200
-     * @tc.name: Verify that the implicit startup application sets flags and does not display pop-ups if they do not match
-     * @tc.desc: No information dialog box is displayed
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0200
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0200
+     * @tc.desc   No information dialog box is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0200';
@@ -173,13 +173,13 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0500
-     * @tc.name: Verify that the implicit startup service does not set flags and does not display pop-ups
-     * @tc.desc: Pop-up selection box
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0500
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0500
+     * @tc.desc   Pop-up selection box
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0500';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
@@ -203,12 +203,12 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0600
-     * @tc.name: Verify that the implicit startup service sets flags and does not display pop-ups if they do not match
-     * @tc.desc: Pop-up selection box
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0600
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0600
+     * @tc.desc   Pop-up selection box
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0600';
@@ -234,12 +234,12 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0700
-     * @tc.name: Verify that the implicit startup application does not set flags and matches one that opens directly
-     * @tc.desc: Pull the matching UIAbility directly
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0700
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0700
+     * @tc.desc   Pull the matching UIAbility directly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0700';
@@ -274,12 +274,12 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0800
-     * @tc.name: Verify that the implicit startup application sets flags and matches one that opens directly
-     * @tc.desc: Pull the matching UIAbility directly
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0800
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0800
+     * @tc.desc   Pull the matching UIAbility directly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0800';

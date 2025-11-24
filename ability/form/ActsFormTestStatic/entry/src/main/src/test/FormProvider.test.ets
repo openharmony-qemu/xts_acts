@@ -59,9 +59,12 @@ export default function formProviderTest() {
 
 
     /**
-     * @tc.number: SetFormNextRefreshTimeTest001
-     * @tc.name: SetFormNextRefreshTimeTest001
-     * @tc.desc: check SetFormNextRefreshTime
+     * @tc.name   SetFormNextRefreshTimeTest001
+     * @tc.number SetFormNextRefreshTimeTest001
+     * @tc.desc   check SetFormNextRefreshTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SetFormNextRefreshTimeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest001 start');
@@ -85,9 +88,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SetFormNextRefreshTimeTest002
-     * @tc.name: SetFormNextRefreshTimeTest002
-     * @tc.desc: check SetFormNextRefreshTime
+     * @tc.name   SetFormNextRefreshTimeTest002
+     * @tc.number SetFormNextRefreshTimeTest002
+     * @tc.desc   check SetFormNextRefreshTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SetFormNextRefreshTimeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest002 start');
@@ -109,9 +115,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SetFormNextRefreshTimeTest003
-     * @tc.name: SetFormNextRefreshTimeTest003
-     * @tc.desc: check SetFormNextRefreshTime
+     * @tc.name   SetFormNextRefreshTimeTest003
+     * @tc.number SetFormNextRefreshTimeTest003
+     * @tc.desc   check SetFormNextRefreshTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SetFormNextRefreshTimeTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest003 start');
@@ -141,9 +150,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SetFormNextRefreshTimeTest004
-     * @tc.name: SetFormNextRefreshTimeTest004
-     * @tc.desc: check SetFormNextRefreshTime
+     * @tc.name   SetFormNextRefreshTimeTest004
+     * @tc.number SetFormNextRefreshTimeTest004
+     * @tc.desc   check SetFormNextRefreshTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SetFormNextRefreshTimeTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest004 start');
@@ -170,9 +182,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: UpdateFormTest001
-     * @tc.name: UpdateFormTest001
-     * @tc.desc: check UpdateForm
+     * @tc.name   UpdateFormTest001
+     * @tc.number UpdateFormTest001
+     * @tc.desc   check UpdateForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('UpdateFormTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormTest001 start');
@@ -199,9 +214,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: UpdateFormTest002
-     * @tc.name: UpdateFormTest002
-     * @tc.desc: check UpdateForm
+     * @tc.name   UpdateFormTest002
+     * @tc.number UpdateFormTest002
+     * @tc.desc   check UpdateForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('UpdateFormTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormTest002 start');
@@ -232,9 +250,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: UpdateFormTest003
-     * @tc.name: UpdateFormTest003
-     * @tc.desc: check UpdateForm
+     * @tc.name   UpdateFormTest003
+     * @tc.number UpdateFormTest003
+     * @tc.desc   check UpdateForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('UpdateFormTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormTest003 start');
@@ -271,9 +292,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: UpdateFormTest004
-     * @tc.name: UpdateFormTest004
-     * @tc.desc: check UpdateForm
+     * @tc.name   UpdateFormTest004
+     * @tc.number UpdateFormTest004
+     * @tc.desc   check UpdateForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('UpdateFormTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormTest004 start');
@@ -305,9 +329,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: OpenFormManagerTest001
-     * @tc.name: OpenFormManagerTest001
-     * @tc.desc: check OpenFormManager
+     * @tc.name   OpenFormManagerTest001
+     * @tc.number OpenFormManagerTest001
+     * @tc.desc   check OpenFormManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OpenFormManagerTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'OpenFormManagerTest001 start');
@@ -335,9 +362,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: OpenFormManagerTest002
-     * @tc.name: OpenFormManagerTest002
-     * @tc.desc: check OpenFormManager
+     * @tc.name   OpenFormManagerTest002
+     * @tc.number OpenFormManagerTest002
+     * @tc.desc   check OpenFormManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OpenFormManagerTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'OpenFormManagerTest002 start');
@@ -365,9 +395,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: OpenFormEditAbilityTest001
-     * @tc.name: OpenFormEditAbilityTest001
-     * @tc.desc: check OpenFormEditAbility
+     * @tc.name   OpenFormEditAbilityTest001
+     * @tc.number OpenFormEditAbilityTest001
+     * @tc.desc   check OpenFormEditAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OpenFormEditAbilityTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'OpenFormEditAbilityTest001 start');
@@ -385,9 +418,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: OpenFormEditAbilityTest002
-     * @tc.name: OpenFormEditAbilityTest002
-     * @tc.desc: check OpenFormEditAbility
+     * @tc.name   OpenFormEditAbilityTest002
+     * @tc.number OpenFormEditAbilityTest002
+     * @tc.desc   check OpenFormEditAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OpenFormEditAbilityTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'OpenFormEditAbilityTest002 start');
@@ -409,10 +445,13 @@ export default function formProviderTest() {
     })
 
 
-    /** 
-     * @tc.number: GetFormsInfoTest001
-     * @tc.name: GetFormsInfoTest001
-     * @tc.desc: check GetFormsInfo
+    /**
+     * @tc.name   GetFormsInfoTest001
+     * @tc.number GetFormsInfoTest001
+     * @tc.desc   check GetFormsInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetFormsInfoTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoTest001 start');
@@ -442,9 +481,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoTest002
-     * @tc.name: GetFormsInfoTest002
-     * @tc.desc: check GetFormsInfo
+     * @tc.name   GetFormsInfoTest002
+     * @tc.number GetFormsInfoTest002
+     * @tc.desc   check GetFormsInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetFormsInfoTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoTest002 start');
@@ -485,9 +527,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoTest003
-     * @tc.name: GetFormsInfoTest003
-     * @tc.desc: check GetFormsInfo
+     * @tc.name   GetFormsInfoTest003
+     * @tc.number GetFormsInfoTest003
+     * @tc.desc   check GetFormsInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetFormsInfoTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoTest003 start');
@@ -530,9 +575,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoTest004
-     * @tc.name: GetFormsInfoTest004
-     * @tc.desc: check GetFormsInfo
+     * @tc.name   GetFormsInfoTest004
+     * @tc.number GetFormsInfoTest004
+     * @tc.desc   check GetFormsInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetFormsInfoTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoTest004 start');
@@ -564,9 +612,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: IsRequestPublishFormSupportedTest001
-     * @tc.name: IsRequestPublishFormSupportedTest001
-     * @tc.desc: check IsRequestPublishFormSupported
+     * @tc.name   IsRequestPublishFormSupportedTest001
+     * @tc.number IsRequestPublishFormSupportedTest001
+     * @tc.desc   check IsRequestPublishFormSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IsRequestPublishFormSupportedTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'IsRequestPublishFormSupported start');
@@ -589,9 +640,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: IsRequestPublishFormSupportedTest002
-     * @tc.name: IsRequestPublishFormSupportedTest002
-     * @tc.desc: check IsRequestPublishFormSupported
+     * @tc.name   IsRequestPublishFormSupportedTest002
+     * @tc.number IsRequestPublishFormSupportedTest002
+     * @tc.desc   check IsRequestPublishFormSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IsRequestPublishFormSupportedTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'IsRequestPublishFormSupported start');
@@ -611,9 +665,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: RequestPublishFormTest001
-     * @tc.name: RequestPublishFormTest001
-     * @tc.desc: check RequestPublishForm
+     * @tc.name   RequestPublishFormTest001
+     * @tc.number RequestPublishFormTest001
+     * @tc.desc   check RequestPublishForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RequestPublishFormTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest001 start');
@@ -647,9 +704,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: RequestPublishFormTest002
-     * @tc.name: RequestPublishFormTest002
-     * @tc.desc: check RequestPublishForm
+     * @tc.name   RequestPublishFormTest002
+     * @tc.number RequestPublishFormTest002
+     * @tc.desc   check RequestPublishForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RequestPublishFormTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest002 start');
@@ -689,9 +749,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: RequestPublishFormTest003
-     * @tc.name: RequestPublishFormTest003
-     * @tc.desc: check RequestPublishForm
+     * @tc.name   RequestPublishFormTest003
+     * @tc.number RequestPublishFormTest003
+     * @tc.desc   check RequestPublishForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RequestPublishFormTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest003 start');
@@ -724,9 +787,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: RequestPublishFormTest004
-     * @tc.name: RequestPublishFormTest004
-     * @tc.desc: check RequestPublishForm
+     * @tc.name   RequestPublishFormTest004
+     * @tc.number RequestPublishFormTest004
+     * @tc.desc   check RequestPublishForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RequestPublishFormTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest004 start');
@@ -764,9 +830,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: RequestPublishFormTest005
-     * @tc.name: RequestPublishFormTest005
-     * @tc.desc: check RequestPublishForm
+     * @tc.name   RequestPublishFormTest005
+     * @tc.number RequestPublishFormTest005
+     * @tc.desc   check RequestPublishForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RequestPublishFormTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest005 start');
@@ -795,9 +864,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetPublishedRunningFormInfosTest001
-     * @tc.name: GetPublishedRunningFormInfosTest001
-     * @tc.desc: check GetPublishedRunningFormInfos
+     * @tc.name   GetPublishedRunningFormInfosTest001
+     * @tc.number GetPublishedRunningFormInfosTest001
+     * @tc.desc   check GetPublishedRunningFormInfos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetPublishedRunningFormInfosTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetPublishedRunningFormInfosTest001 start');
@@ -819,9 +891,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetPublishedRunningFormInfoByIdTest001
-     * @tc.name: GetPublishedRunningFormInfoByIdTest001
-     * @tc.desc: check GetPublishedRunningFormInfoById
+     * @tc.name   GetPublishedRunningFormInfoByIdTest001
+     * @tc.number GetPublishedRunningFormInfoByIdTest001
+     * @tc.desc   check GetPublishedRunningFormInfoById
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetPublishedRunningFormInfoByIdTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetPublishedFormInfoByIdTest001 start');
@@ -843,9 +918,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetPublishedRunningFormInfoByIdTest002
-     * @tc.name: GetPublishedRunningFormInfoByIdTest002
-     * @tc.desc: check GetPublishedRunningFormInfoById
+     * @tc.name   GetPublishedRunningFormInfoByIdTest002
+     * @tc.number GetPublishedRunningFormInfoByIdTest002
+     * @tc.desc   check GetPublishedRunningFormInfoById
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetPublishedRunningFormInfoByIdTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetPublishedRunningFormInfoByIdTest002 start');
@@ -872,9 +950,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetPublishedFormInfosTest001
-     * @tc.name: GetPublishedFormInfosTest001
-     * @tc.desc: check GetPublishedFormInfos
+     * @tc.name   GetPublishedFormInfosTest001
+     * @tc.number GetPublishedFormInfosTest001
+     * @tc.desc   check GetPublishedFormInfos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetPublishedFormInfosTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetPublishedFormInfosTest001 start');
@@ -896,9 +977,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetPublishedFormInfoByIdTest001
-     * @tc.name: GetPublishedFormInfoByIdTest001
-     * @tc.desc: check GetPublishedFormInfoById
+     * @tc.name   GetPublishedFormInfoByIdTest001
+     * @tc.number GetPublishedFormInfoByIdTest001
+     * @tc.desc   check GetPublishedFormInfoById
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetPublishedFormInfoByIdTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetPublishedFormInfoByIdTest001 start');
@@ -919,9 +1003,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: GetPublishedFormInfoByIdTest002
-     * @tc.name: GetPublishedFormInfoByIdTest002
-     * @tc.desc: check GetPublishedFormInfoById
+     * @tc.name   GetPublishedFormInfoByIdTest002
+     * @tc.number GetPublishedFormInfoByIdTest002
+     * @tc.desc   check GetPublishedFormInfoById
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetPublishedFormInfoByIdTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetPublishedFormInfoByIdTest002 start');

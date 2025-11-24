@@ -121,12 +121,13 @@ export default function lifecycleTest() {
     });
 
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0100
-     * @tc.name    Singlehap_LifeCycleTest_0100
-     * @tc.desc:   Register in abilitystage,listen to the lifecycle of abilityA,deregister after listening
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0100
+     * @tc.number Singlehap_LifeCycleTest_0100
+     * @tc.desc   Register in abilitystage,listen to the lifecycle of abilityA,deregister after listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0100 START-------------");
@@ -178,12 +179,13 @@ export default function lifecycleTest() {
         })
     })
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0200
-     * @tc.name    Singlehap_LifeCycleTest_0200
-     * @tc.desc:   Register in abilityA,listen to the lifecycle of abilityB,deregister after listening
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0200
+     * @tc.number Singlehap_LifeCycleTest_0200
+     * @tc.desc   Register in abilityA,listen to the lifecycle of abilityB,deregister after listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0200 START-------------");
@@ -255,13 +257,14 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-    * @tc.number  Singlehap_LifeCycleTest_0300
-    * @tc.name    Singlehap_LifeCycleTest_0300
-    * @tc.desc:  Register in abilityA,listening the lifecycle of abilityB,deregister,repeat the unregister
-    * @tc.type: Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0300
+     * @tc.number Singlehap_LifeCycleTest_0300
+     * @tc.desc   Register in abilityA,listening the lifecycle of abilityB,deregister,repeat the unregister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("Singlehap_LifeCycleTest_0300", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0300 START-------------");
       if (deviceSupport === 'false') {
@@ -342,12 +345,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0400
-     * @tc.name    Singlehap_LifeCycleTest_0400
-     * @tc.desc:   Register in abilityA,listening the lifecycle of abilityB,terminate abilityA,unregister
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0400
+     * @tc.number Singlehap_LifeCycleTest_0400
+     * @tc.desc   Register in abilityA,listening the lifecycle of abilityB,terminate abilityA,unregister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0400", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0400 START-------------");
@@ -438,12 +442,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0500
-     * @tc.name    Singlehap_LifeCycleTest_0500
-     * @tc.desc:   Register in abilityA and abilityB,unregister MainabilityB,then Register in ManinabilityC
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0500
+     * @tc.number Singlehap_LifeCycleTest_0500
+     * @tc.desc   Register in abilityA and abilityB,unregister MainabilityB,then Register in ManinabilityC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0500", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0500 START-------------");
@@ -535,12 +540,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0600
-     * @tc.name    Singlehap_LifeCycleTest_0600
-     * @tc.desc:   Register in abilityA,start abilityB、abilityC,terminate abilityB 、abilityC
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0600
+     * @tc.number Singlehap_LifeCycleTest_0600
+     * @tc.desc   Register in abilityA,start abilityB、abilityC,terminate abilityB 、abilityC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0600", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0600 START-------------");
@@ -627,12 +633,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0700
-     * @tc.name    Singlehap_LifeCycleTest_0700
-     * @tc.desc:   Multiple registration/unregistration
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0700
+     * @tc.number Singlehap_LifeCycleTest_0700
+     * @tc.desc   Multiple registration/unregistration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0700", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0700 START-------------");
@@ -738,12 +745,13 @@ export default function lifecycleTest() {
       })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0800
-     * @tc.name    Singlehap_LifeCycleTest_0800
-     * @tc.desc:   Maninability1 Register listening, Repeat starting and termination Ability2
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0800
+     * @tc.number Singlehap_LifeCycleTest_0800
+     * @tc.desc   Maninability1 Register listening, Repeat starting and termination Ability2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0800", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0800 START-------------");
@@ -821,12 +829,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_0900
-     * @tc.name    Singlehap_LifeCycleTest_0900
-     * @tc.desc:   Repeat switching Ability1 between front and back
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0900
+     * @tc.number Singlehap_LifeCycleTest_0900
+     * @tc.desc   Repeat switching Ability1 between front and back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_0900", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_0900 START-------------");
@@ -900,12 +909,13 @@ export default function lifecycleTest() {
         })
     })
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1000
-     * @tc.name    Singlehap_LifeCycleTest_1000
-     * @tc.desc:   Register listening in abilityA foreground,repeat the registration
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1000
+     * @tc.number Singlehap_LifeCycleTest_1000
+     * @tc.desc   Register listening in abilityA foreground,repeat the registration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1000", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1000 START-------------");
@@ -979,12 +989,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1100
-     * @tc.name    Singlehap_LifeCycleTest_1100
-     * @tc.desc:   Register listening in abilityA foreground,repeat the registration (singleton)
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1100
+     * @tc.number Singlehap_LifeCycleTest_1100
+     * @tc.desc   Register listening in abilityA foreground,repeat the registration (singleton)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1100 START-------------");
@@ -1040,12 +1051,13 @@ export default function lifecycleTest() {
           console.error(TAG + ' startMainAbility7 failed. Cause: ' + JSON.stringify(error));
         })
     });
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1200
-     * @tc.name    Singlehap_LifeCycleTest_1200
-     * @tc.desc:   Register listening in abilityA foreground,repeat the registration (standard)
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1200
+     * @tc.number Singlehap_LifeCycleTest_1200
+     * @tc.desc   Register listening in abilityA foreground,repeat the registration (standard)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1200", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1200 START-------------");
@@ -1102,13 +1114,14 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-    * @tc.number  Singlehap_LifeCycleTest_1300
-    * @tc.name    Singlehap_LifeCycleTest_1300
-     * @tc.desc:  The ability of HAP A listens to the ability lifecycle callback of HAP B (singleton)
-    * @tc.type: Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1300
+     * @tc.number Singlehap_LifeCycleTest_1300
+     * @tc.desc   The ability of HAP A listens to the ability lifecycle callback of HAP B (singleton)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("Singlehap_LifeCycleTest_1300", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1300 start-------------");
       if (deviceSupport === 'false') {
@@ -1184,12 +1197,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1400
-     * @tc.name    Singlehap_LifeCycleTest_1400
-     * @tc.desc:   The ability of HAP A listens to the ability lifecycle callback of HAP B (standard)
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1400
+     * @tc.number Singlehap_LifeCycleTest_1400
+     * @tc.desc   The ability of HAP A listens to the ability lifecycle callback of HAP B (standard)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1400", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1400 start-------------");
@@ -1265,12 +1279,13 @@ export default function lifecycleTest() {
           console.error(TAG + ' startMainAbility9 failed. Cause: ' + JSON.stringify(error));
         })
     });
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1500
-     * @tc.name    Singlehap_LifeCycleTest_1500
-     * @tc.desc:   Register in abilityA , starting and termination AbilityB,Repeat previous steps (standard)
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1500
+     * @tc.number Singlehap_LifeCycleTest_1500
+     * @tc.desc   Register in abilityA , starting and termination AbilityB,Repeat previous steps (standard)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1500", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1500 START-------------");
@@ -1366,12 +1381,13 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1600
-     * @tc.name    Singlehap_LifeCycleTest_1600
-     * @tc.desc:   input Nonexistent callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.type: Function
-     * @tc.level   1
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1600
+     * @tc.number Singlehap_LifeCycleTest_1600
+     * @tc.desc   input Nonexistent callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1600", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1600 START-------------");
@@ -1388,12 +1404,13 @@ export default function lifecycleTest() {
         });
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1700
-     * @tc.name    Singlehap_LifeCycleTest_1700
-     * @tc.desc:   input error callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.type: Function
-     * @tc.level   1
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1700
+     * @tc.number Singlehap_LifeCycleTest_1700
+     * @tc.desc   input error callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1700", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1700 START-------------");
@@ -1410,12 +1427,13 @@ export default function lifecycleTest() {
         });
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1800
-     * @tc.name    Singlehap_LifeCycleTest_1800
-     * @tc.desc:   input error type callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.type: Function
-     * @tc.level   1
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1800
+     * @tc.number Singlehap_LifeCycleTest_1800
+     * @tc.desc   input error type callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1800", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1800 START-------------");
@@ -1432,12 +1450,13 @@ export default function lifecycleTest() {
         });
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_1900
-     * @tc.name    Singlehap_LifeCycleTest_1900
-     * @tc.desc:   input null callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.type: Function
-     * @tc.level   1
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_1900
+     * @tc.number Singlehap_LifeCycleTest_1900
+     * @tc.desc   input null callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_1900", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1900 START-------------");
@@ -1454,12 +1473,13 @@ export default function lifecycleTest() {
         });
     });
 
-    /*
-     * @tc.number  Singlehap_LifeCycleTest_2000
-     * @tc.name    Singlehap_LifeCycleTest_2000
-     * @tc.desc:   Register in abilityA, starting and termination AbilityB, terminate abilityA, Re-register in abilityA
-     * @tc.type: Function
-     * @tc.level   0
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_2000
+     * @tc.number Singlehap_LifeCycleTest_2000
+     * @tc.desc   Register in abilityA, starting and termination AbilityB, terminate abilityA, Re-register in abilityA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Singlehap_LifeCycleTest_2000", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_2000 START-------------");
@@ -1554,14 +1574,14 @@ export default function lifecycleTest() {
         })
     });
 
-    /*
-    * @tc.number  Singlehap_LifeCycleTest_2100
-    * @tc.name    Singlehap_LifeCycleTest_2100
-    * @tc.desc:  Register in abilityA,register in abilityB, starting and termination abilityC,
-                termination abilityB、abilityA, Re-register in abilityA、abilityB
-    * @tc.type: Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_2100
+     * @tc.number Singlehap_LifeCycleTest_2100
+     * @tc.desc   Register in abilityA,register in abilityB, starting and termination abilityC,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("Singlehap_LifeCycleTest_2100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_2100 START-------------");
       if (deviceSupport === 'false') {

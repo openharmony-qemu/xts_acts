@@ -39,12 +39,12 @@ export default function ApplicationContext() {
     });
 
     /**
-     * @tc.number    : ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_PROMISE_0100
-     * @tc.name      : testGetRunningProcessInformationPromise001
-     * @tc.desc      : test getRunningProcessInformation(promise)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testGetRunningProcessInformationPromise001
+     * @tc.number ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_PROMISE_0100
+     * @tc.desc   test getRunningProcessInformation(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetRunningProcessInformationPromise001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -76,12 +76,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_NATIVE_LIBRARY_PATH_0100
-     * @tc.name      : testNativeLibraryPath001
-     * @tc.desc      : test nativeLibraryPath
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testNativeLibraryPath001
+     * @tc.number ABILITY_TEST_NATIVE_LIBRARY_PATH_0100
+     * @tc.desc   test nativeLibraryPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeLibraryPath001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -100,12 +100,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_NATIVE_LIBRARY_PATH_0200
-     * @tc.name      : testNativeLibraryPath002
-     * @tc.desc      : test nativeLibraryPath
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testNativeLibraryPath002
+     * @tc.number ABILITY_TEST_NATIVE_LIBRARY_PATH_0200
+     * @tc.desc   test nativeLibraryPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeLibraryPath002', Level.LEVEL0, async (done: Function) => {
       try {
@@ -144,12 +144,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_CALLBACK_0100
-     * @tc.name      : testGetRunningProcessInformationCb001
-     * @tc.desc      : test getRunningProcessInformation(callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testGetRunningProcessInformationCb001
+     * @tc.number ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_CALLBACK_0100
+     * @tc.desc   test getRunningProcessInformation(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetRunningProcessInformationCb001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -177,12 +177,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STAGEMODE_0100
-     * @tc.name      : testStageMode001
-     * @tc.desc      : test filed of stageMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testStageMode001
+     * @tc.number ABILITY_TEST_STAGEMODE_0100
+     * @tc.desc   test filed of stageMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStageMode001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -200,12 +200,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_RESOURCEMANAGER_0100
-     * @tc.name      : testResourceManager001
-     * @tc.desc      : test filed of resourceManager
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testResourceManager001
+     * @tc.number ABILITY_TEST_RESOURCEMANAGER_0100
+     * @tc.desc   test filed of resourceManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testResourceManager001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -223,12 +223,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_APPLICATIONINFO_0100
-     * @tc.name      : testApplicationInfo001
-     * @tc.desc      : test filed of applicationInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testApplicationInfo001
+     * @tc.number ABILITY_TEST_APPLICATIONINFO_0100
+     * @tc.desc   test filed of applicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testApplicationInfo001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -266,12 +266,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CACHEDIR_0100
-     * @tc.name      : testCacheDir001
-     * @tc.desc      : test filed of cacheDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCacheDir001
+     * @tc.number ABILITY_TEST_CACHEDIR_0100
+     * @tc.desc   test filed of cacheDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCacheDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -290,12 +290,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_TEMPDIR_0100
-     * @tc.name      : testTempDir001
-     * @tc.desc      : test filed of tempDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTempDir001
+     * @tc.number ABILITY_TEST_TEMPDIR_0100
+     * @tc.desc   test filed of tempDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTempDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -314,12 +314,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_RESOURCE_DIR_0100
-     * @tc.name      : testTempDir001
-     * @tc.desc      : test filed of tempDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testResourceDir001
+     * @tc.number ABILITY_TEST_RESOURCE_DIR_0100
+     * @tc.desc   test filed of tempDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testResourceDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -338,12 +338,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_FILESDIR_0100
-     * @tc.name      : testFilesDir001
-     * @tc.desc      : test filed of filesDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testFilesDir001
+     * @tc.number ABILITY_TEST_FILESDIR_0100
+     * @tc.desc   test filed of filesDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFilesDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -362,12 +362,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_DATABASEDIR_0100
-     * @tc.name      : testDatabaseDir001
-     * @tc.desc      : test filed of databaseDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testDatabaseDir001
+     * @tc.number ABILITY_TEST_DATABASEDIR_0100
+     * @tc.desc   test filed of databaseDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatabaseDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -386,12 +386,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_PREFERENCESDIR_0100
-     * @tc.name      : testPreferencesDir001
-     * @tc.desc      : test filed of preferencesDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testPreferencesDir001
+     * @tc.number ABILITY_TEST_PREFERENCESDIR_0100
+     * @tc.desc   test filed of preferencesDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPreferencesDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -410,12 +410,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_BUNDLECODEDIR_0100
-     * @tc.name      : testBundleCodeDir001
-     * @tc.desc      : test filed of bundleCodeDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testBundleCodeDir001
+     * @tc.number ABILITY_TEST_BUNDLECODEDIR_0100
+     * @tc.desc   test filed of bundleCodeDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBundleCodeDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -434,12 +434,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_0100
-     * @tc.name      : testCreateModuleContext001
-     * @tc.desc      : Context calls createModuleContext, passing in the moduleName of the current application hap1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext001
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_0100
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -462,12 +462,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_0200
-     * @tc.name      : testCreateModuleContext002
-     * @tc.desc      : Context calls createModuleContext, passing in the moduleName of the current application hap2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext002
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_0200
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext002", Level.LEVEL0, async (done: Function) => {
       try {
@@ -490,12 +490,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_0300
-     * @tc.name      : testCreateModuleContext003
-     * @tc.desc      : Context calls createModuleContext, passing in the moduleName of the cross-application hap1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext003
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_0300
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the cross-application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext003", Level.LEVEL0, async (done: Function) => {
       try {
@@ -515,12 +515,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_0400
-     * @tc.name      : testCreateModuleContext004
-     * @tc.desc      : Context calls createModuleContext, passing in a non-existing moduleName
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext004
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_0400
+     * @tc.desc   Context calls createModuleContext, passing in a non-existing moduleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext004", Level.LEVEL0, async (done: Function) => {
       try {
@@ -540,12 +540,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_0500
-     * @tc.name      : testCreateModuleContext005
-     * @tc.desc      : Context calls createModuleContext, and the incoming moduleName is undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext005
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_0500
+     * @tc.desc   Context calls createModuleContext, and the incoming moduleName is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext005", Level.LEVEL0, async (done: Function) => {
       try {
@@ -565,12 +565,12 @@ export default function ApplicationContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_GETAPPLICATIONCONTEXT_0100
-     * @tc.name      : testGetApplicationContext001
-     * @tc.desc      : test getApplicationContext return not empty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testGetApplicationContext001
+     * @tc.number ABILITY_TEST_GETAPPLICATIONCONTEXT_0100
+     * @tc.desc   test getApplicationContext return not empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetApplicationContext001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -590,12 +590,12 @@ export default function ApplicationContext() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0100
-     * @tc.name      : SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0100
-     * @tc.desc      : test createSystemHspModuleResourceManager failed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0100
+     * @tc.number SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0100
+     * @tc.desc   test createSystemHspModuleResourceManager failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -612,12 +612,12 @@ export default function ApplicationContext() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0200
-     * @tc.name      : SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0200
-     * @tc.desc      : test createSystemHspModuleResourceManager failed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0200
+     * @tc.number SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0200
+     * @tc.desc   test createSystemHspModuleResourceManager failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0200", Level.LEVEL0, async (done: Function) => {
       try {
@@ -634,12 +634,12 @@ export default function ApplicationContext() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0300
-     * @tc.name      : SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0300
-     * @tc.desc      : test createSystemHspModuleResourceManager failed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0300
+     * @tc.number SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0300
+     * @tc.desc   test createSystemHspModuleResourceManager failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_Create_CreateSystemHspModuleResourceManager_0300", Level.LEVEL0, async (done: Function) => {
       try {

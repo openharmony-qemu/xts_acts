@@ -59,12 +59,12 @@ export default function abilityTest() {
     const otherBundle = "com.example.commontestabilityapp";
 
     /**
-     * @tc.number    : UI_ABILITY_CONTEXT_TEST_0001
-     * @tc.name      : UI_Ability_Context_Test_0001
-     * @tc.desc      : Test context.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Context_Test_0001
+     * @tc.number UI_ABILITY_CONTEXT_TEST_0001
+     * @tc.desc   Test context.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Context_Test_0001", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_CONTEXT_TEST_0001 START-------------");
@@ -74,12 +74,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_CONTEXT_TEST_0002
-     * @tc.name      : UI_Ability_Context_Test_0002
-     * @tc.desc      : Test context.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Context_Test_0002
+     * @tc.number UI_ABILITY_CONTEXT_TEST_0002
+     * @tc.desc   Test context.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Context_Test_0002", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_CONTEXT_TEST_0002 START-------------");
@@ -90,12 +90,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_CONTEXT_TEST_0003
-     * @tc.name      : UIAbilityContextTest_0003
-     * @tc.desc      : Test context.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UIAbilityContextTest_0003
+     * @tc.number UI_ABILITY_CONTEXT_TEST_0003
+     * @tc.desc   Test context.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UIAbilityContextTest_0003", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_CONTEXT_TEST_0003 START-------------");
@@ -106,12 +106,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_LIFE_CYCLE_TEST_0001
-     * @tc.name      : UI_Ability_Life_Cycle_Test_0001
-     * @tc.desc      : Only start 'MainAbility2', MainAbility2 will terminate self after 1.5 seconds.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Life_Cycle_Test_0001
+     * @tc.number UI_ABILITY_LIFE_CYCLE_TEST_0001
+     * @tc.desc   Only start 'MainAbility2', MainAbility2 will terminate self after 1.5 seconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Life_Cycle_Test_0001", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_LIFE_CYCLE_TEST_0001 START-------------");
@@ -147,12 +147,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_LIFE_CYCLE_TEST_0002
-     * @tc.name      : UI_Ability_Life_Cycle_Test_0002
-     * @tc.desc      : Only start 'MainAbility1'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Life_Cycle_Test_0002
+     * @tc.number UI_ABILITY_LIFE_CYCLE_TEST_0002
+     * @tc.desc   Only start 'MainAbility1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Life_Cycle_Test_0002", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_LIFE_CYCLE_TEST_0002 START-------------");
@@ -190,12 +190,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_LIFE_CYCLE_TEST_0003
-     * @tc.name      : UI_Ability_Life_Cycle_Test_0003
-     * @tc.desc      : start 'MainAbility2', after MainAbility2 terminated, start MainAbility1, after 2 seconds, terminate MainAbility1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Life_Cycle_Test_0003
+     * @tc.number UI_ABILITY_LIFE_CYCLE_TEST_0003
+     * @tc.desc   start 'MainAbility2', after MainAbility2 terminated, start MainAbility1, after 2 seconds, terminate MainAbility1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Life_Cycle_Test_0003", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_LIFE_CYCLE_TEST_0003 START-------------");
@@ -257,13 +257,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_LIFE_CYCLE_TEST_0004
-     * @tc.name      : UI_Ability_Life_Cycle_Test_0004
-     * @tc.desc      : start mainability1, after 1.5 seconds, start mainability2, after 1.5 seconds, mainability2 terminated.
-     after 1 seconds, terminate mainability1.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Life_Cycle_Test_0004
+     * @tc.number UI_ABILITY_LIFE_CYCLE_TEST_0004
+     * @tc.desc   start mainability1, after 1.5 seconds, start mainability2, after 1.5 seconds, mainability2 terminated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Life_Cycle_Test_0004", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_LIFE_CYCLE_TEST_0004 START-------------");
@@ -343,12 +342,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_LIFE_CYCLE_TEST_0005
-     * @tc.name      : UI_Ability_Life_Cycle_Test_0005
-     * @tc.desc      : start mainability1, after 1seconds, start other app mainability.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Life_Cycle_Test_0005
+     * @tc.number UI_ABILITY_LIFE_CYCLE_TEST_0005
+     * @tc.desc   start mainability1, after 1seconds, start other app mainability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Life_Cycle_Test_0005", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_LIFE_CYCLE_TEST_0005 START-------------");
@@ -399,12 +398,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_LIFE_CYCLE_TEST_0006
-     * @tc.name      : UI_Ability_Life_Cycle_Test_0006
-     * @tc.desc      : start mainability3, after start mainability3 twice, mainability3 is a standard ability.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Life_Cycle_Test_0006
+     * @tc.number UI_ABILITY_LIFE_CYCLE_TEST_0006
+     * @tc.desc   start mainability3, after start mainability3 twice, mainability3 is a standard ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Life_Cycle_Test_0006", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_LIFE_CYCLE_TEST_0006 START-------------");
@@ -455,12 +454,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : UI_ABILITY_LIFE_CYCLE_TEST_0007
-     * @tc.name      : UIAbilityLifeCycleTest0007
-     * @tc.desc      : start mainability1, after start mainability1 twice, mainability1 is a single ability.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_ABILITY_LIFE_CYCLE_TEST_0007
+     * @tc.number UI_ABILITY_LIFE_CYCLE_TEST_0007
+     * @tc.desc   start mainability1, after start mainability1 twice, mainability1 is a single ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UI_ABILITY_LIFE_CYCLE_TEST_0007', Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_ABILITY_LIFE_CYCLE_TEST_0007 START-------------");
@@ -498,12 +497,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : UI_Ability_Constant_Test_0100
-     * @tc.name      : UI_Ability_Constant_Test_0100
-     * @tc.desc      : start mainability1, check ability constant.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   UI_Ability_Constant_Test_0100
+     * @tc.number UI_Ability_Constant_Test_0100
+     * @tc.desc   start mainability1, check ability constant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("UI_Ability_Constant_Test_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------UI_Ability_Constant_Test_0100 START-------------");

@@ -57,13 +57,13 @@ export default function UIAbilityContextStatic() {
       hilog.info(domain, tag, 'getcontext success, context: ' + context);
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200
-     * @tc.desc   : Call UIAbilityContext showAbility succeeded.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200
+     * @tc.desc   Call UIAbilityContext showAbility succeeded.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let want: Want = {
@@ -107,14 +107,14 @@ export default function UIAbilityContextStatic() {
       });
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100
-    * @tc.name   : SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100
-    * @tc.desc   : Call UIAbilityContext hideAbility succeeded.(promise),
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100
+     * @tc.desc   Call UIAbilityContext hideAbility succeeded.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let want: Want = {
         bundleName: 'com.acts.startabilityforresulttest.static',
@@ -157,14 +157,14 @@ export default function UIAbilityContextStatic() {
       });
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800
-    * @tc.name   : SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800
-    * @tc.desc   : API test for context.setRestoreEnabled.
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800
+     * @tc.desc   API test for context.setRestoreEnabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let par: boolean = true
       try {
@@ -180,14 +180,14 @@ export default function UIAbilityContextStatic() {
       }
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
-    * @tc.name   : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
-    * @tc.desc   : API test for context.SetAbilityInstanceInfo errcode 401
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
+     * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "it begin");
       try {
@@ -204,14 +204,14 @@ export default function UIAbilityContextStatic() {
       }
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
-    * @tc.name   : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
-    * @tc.desc   : API test for context.SetAbilityInstanceInfo errcode 801, 201
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
+     * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 801, 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag , "it begin");
       try {
@@ -235,13 +235,13 @@ export default function UIAbilityContextStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_HookAbility_Static_0700
-     * @tc.name   : SUB_Ability_AbilityRuntime_HookAbility_Static_0700
-     * @tc.desc   : API test for context.revokeDelegator.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HookAbility_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_HookAbility_Static_0700
+     * @tc.desc   API test for context.revokeDelegator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_HookAbility_Static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain,  tag , " it begin");
@@ -259,13 +259,13 @@ export default function UIAbilityContextStatic() {
       hilog.info(domain,  tag , '%{public}s', '--end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
-     * @tc.name   : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
-     * @tc.desc   : Expect: failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
+     * @tc.desc   Expect: failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {

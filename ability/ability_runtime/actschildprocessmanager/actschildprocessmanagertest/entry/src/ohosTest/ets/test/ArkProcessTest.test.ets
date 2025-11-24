@@ -51,13 +51,13 @@ export default function arkProcessTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartArkChildProcess_0100
-     * @tc.name   : Call startArkChildProcess to create a child process,give param correct srcEntry and args
-     * @tc.desc   : Expect: 1.Return child pid 2.ChildProcess onStart called 3.args passed correctly
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartArkChildProcess_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartArkChildProcess_0100
+     * @tc.desc   Expect: 1.Return child pid 2.ChildProcess onStart called 3.args passed correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartArkChildProcess_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `StartArkChildProcess_0100`;
@@ -128,13 +128,13 @@ export default function arkProcessTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartArkChildProcess_0200
-     * @tc.name   : Call startArkChildProcess to create a child process,give param correct srcEntry and empty args
-     * @tc.desc   : Expect: 1.Return child pid 2.ChildProcess onStart called 3.no args received in child process
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartArkChildProcess_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartArkChildProcess_0200
+     * @tc.desc   Expect: 1.Return child pid 2.ChildProcess onStart called 3.no args received in child process
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartArkChildProcess_0200', Level.LEVEL0, async (done: Function) => {
       let tag = `StartArkChildProcess_0200`;

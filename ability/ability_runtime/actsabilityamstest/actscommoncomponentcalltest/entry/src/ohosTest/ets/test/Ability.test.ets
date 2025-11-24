@@ -297,12 +297,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3700
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3700
-     * @tc.name test  Callee.off function
-     * @tc.desc test the parameter method of Callee.off function is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter method of Callee.off function is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3700';
@@ -356,12 +356,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4600
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4600
-     * @tc.name test Callee.on function
-     * @tc.desc test the callback parameter of the Callee.on function is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the callback parameter of the Callee.on function is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4600';
@@ -416,12 +416,12 @@ export default function abilityTest() {
 
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4200
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4200
-     * @tc.name test Caller.callWithResult function
-     * @tc.desc test the parameter data of Caller.callWithResult function is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter data of Caller.callWithResult function is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4200';
@@ -468,12 +468,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4100
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4100
-     * @tc.name test Caller.callWithResult function
-     * @tc.desc test the parameter data of Caller.callWithResult function is an empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter data of Caller.callWithResult function is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4100';
@@ -518,12 +518,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3000
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3000
-     * @tc.name test Caller.callWithResult function
-     * @tc.desc test the parameter method of Caller.callWithResult function is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter method of Caller.callWithResult function is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3000', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3000';
@@ -568,12 +568,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2900
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2900
-     * @tc.name test Caller.callWithResult function
-     * @tc.desc test the parameter method of Caller.callWithResult function is an empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter method of Caller.callWithResult function is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2900';
@@ -618,12 +618,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3900
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3900
-     * @tc.name test Caller.call function
-     * @tc.desc test the parameter data of Caller.call function is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter data of Caller.call function is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3900';
@@ -668,12 +668,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4000
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4000
-     * @tc.name test Caller.call function
-     * @tc.desc test the parameter data of Caller.call function is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter data of Caller.call function is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4000', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4000';
@@ -718,12 +718,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2700
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2700
-     * @tc.name test Caller.call function
-     * @tc.desc test the parameter method of Caller.call function is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter method of Caller.call function is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2700';
@@ -768,12 +768,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2800
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2800
-     * @tc.name test Caller.call function
-     * @tc.desc test the parameter method of Caller.call function is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter method of Caller.call function is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2800';
@@ -818,12 +818,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2600
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2600
-     * @tc.name test Caller.call function
-     * @tc.desc test the parameter method of Caller.call function is an empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter method of Caller.call function is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2600';
@@ -868,12 +868,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3800
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3800
-     * @tc.name test Caller.call function
-     * @tc.desc test the parameter of the Caller.call function is an empty string of data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the parameter of the Caller.call function is an empty string of data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3800';
@@ -918,12 +918,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4800
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4800
-     * @tc.name test single type system application calls other abilities of this application once.
-     * @tc.desc test caller.call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test caller.call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4800';
@@ -971,12 +971,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2000
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2000
-     * @tc.name test caller.callWithResult
-     * @tc.desc test the caller.call function and checked released function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test the caller.call function and checked released function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2000', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2000';
@@ -1050,12 +1050,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1300
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1300
-     * @tc.name test caller.call function
-     * @tc.desc test three party application calls other abilities of this application at once
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test three party application calls other abilities of this application at once
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1300';
@@ -1124,12 +1124,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2100
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2100
-     * @tc.name test caller.released function
-     * @tc.desc test  service kill and checked caller.released function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test  service kill and checked caller.released function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2100';
@@ -1174,12 +1174,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2300
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2300
-     * @tc.name test caller.released function
-     * @tc.desc test caller.call function and checked released function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test caller.call function and checked released function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2300';
@@ -1227,12 +1227,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2400
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2400
-     * @tc.name test caller.released function
-     * @tc.desc test  independent process called and checked released function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test  independent process called and checked released function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2400', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2400';
@@ -1279,12 +1279,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2200
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2200
-     * @tc.name test caller.released function
-     * @tc.desc test callee.on function and checked caller.release function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test callee.on function and checked caller.release function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2200';
@@ -1332,12 +1332,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2500
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2500
-     * @tc.name test callee.off function
-     * @tc.desc test callee.off function and checked released function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test callee.off function and checked released function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_2500';
@@ -1386,12 +1386,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1800
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1800
-     * @tc.name Test Three party application calls other common components of this application (target Ability non singleton) once (failed)
-     * @tc.desc test target ability set launchType as  standard page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test target ability set launchType as  standard page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1800';
@@ -1437,12 +1437,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1200
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1200
-     * @tc.name TestThree party applications can call other ability interfaces of this application once: callWithResult
-     * @tc.desc test target ability set launchType as  singleton
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test target ability set launchType as  singleton
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1200';
@@ -1488,12 +1488,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1400
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1400
-     * @tc.name TestThree party applications can call other ability interfaces of this application once: callWithResult
-     * @tc.desc test target ability set launchType as  singleton
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test target ability set launchType as  singleton
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1400', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1400';

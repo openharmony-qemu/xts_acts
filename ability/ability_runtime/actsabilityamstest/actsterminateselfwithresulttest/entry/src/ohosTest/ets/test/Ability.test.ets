@@ -53,12 +53,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1000
-     * @tc.name      : Test startAbilityForResult when options is invalid
-     * @tc.desc      : Verify that the startAbilityForResult is invalid when options is invalid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1000
+     * @tc.desc   Verify that the startAbilityForResult is invalid when options is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1000', Level.LEVEL0, (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1000';
@@ -93,12 +93,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1500
-     * @tc.name      : Test terminateSelfWithResult when resultCode is decimal
-     * @tc.desc      : Verify that the terminateSelfWithResult is invalid when resultCode is decimal
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1500
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1500
+     * @tc.desc   Verify that the terminateSelfWithResult is invalid when resultCode is decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1500';
@@ -136,12 +136,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1600
-     * @tc.name      : Test terminateSelfWithResult when resultCode is 3|5
-     * @tc.desc      : Verify that the terminateSelfWithResult is invalid when resultCode is 3|5
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1600
+     * @tc.desc   Verify that the terminateSelfWithResult is invalid when resultCode is 3|5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_1600';
@@ -179,12 +179,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2500
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is BigDecimal
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is BigDecimal
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2500
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2500
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is BigDecimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2500';
@@ -245,12 +245,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2600
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is BigInteger
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is BigInteger
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2600
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is BigInteger
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2600';
@@ -311,12 +311,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2700
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is boolean
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is boolean
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2700
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2700
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2700';
@@ -377,12 +377,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2800
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is double
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is double
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2800
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is double
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2800';
@@ -443,12 +443,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2900
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is float
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is float
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2900
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2900
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is float
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_2900';
@@ -509,12 +509,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3000
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is intArray
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is intArray
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3000
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is intArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3000', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3000';
@@ -575,12 +575,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3100
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is JsonArray
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is JsonArray
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3100
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is JsonArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3100';
@@ -652,12 +652,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3200
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is Json
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is Json
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3200
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3200
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3200';
@@ -732,12 +732,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3300
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is Single character
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is Single character
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3300
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3300
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is Single character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3300';
@@ -798,12 +798,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3400
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is string
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is string
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3400
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3400
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3400', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3400';
@@ -864,12 +864,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3600
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is stringArray
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is stringArray
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3600
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is stringArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3600';
@@ -930,12 +930,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3700
-     * @tc.name      : Test terminateSelfWithResult when parameters in want is integer
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is integer
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3700
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3700
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want is integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3700';
@@ -996,12 +996,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3800
-     * @tc.name      : Test terminateSelfWithResult when parameters in want have Multiple key
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when parameters in want have Multiple key
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3800
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when parameters in want have Multiple key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3800';
@@ -1067,12 +1067,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4000
-     * @tc.name      : Test terminateSelfWithResult when want is undefined
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when want is undefined
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4000
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when want is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4000', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4000';
@@ -1130,12 +1130,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4100
-     * @tc.name      : Test terminateSelfWithResult when want is {}
-     * @tc.desc      : StartAbilityForResult ability, then terminateSelfWithResult when want is {}
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4100
+     * @tc.desc   StartAbilityForResult ability, then terminateSelfWithResult when want is {}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4100';

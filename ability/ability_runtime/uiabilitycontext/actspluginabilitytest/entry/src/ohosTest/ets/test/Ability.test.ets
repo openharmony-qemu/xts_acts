@@ -39,13 +39,13 @@ export default function abilityTest() {
     afterEach(() => {})
     afterAll(() => {})
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_1900
-     * @tc.name   : start plugin ability wrong param
-     * @tc.desc   : Expect: failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1900
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1900
+     * @tc.desc   Expect: failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_PluginAbility_1900', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1900';
@@ -63,14 +63,14 @@ export default function abilityTest() {
       }
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_2100
-    * @tc.name   : start plugin ability wrong param
-    * @tc.desc   : Expect: failed with code 401
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_2100
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_2100
+     * @tc.desc   Expect: failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_PluginAbility_2100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_2100';
       hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
@@ -90,14 +90,14 @@ export default function abilityTest() {
       }
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_2200
-    * @tc.name   : start not existing plugin ability
-    * @tc.desc   : Expect: failed with code 16000001
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_2200
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_2200
+     * @tc.desc   Expect: failed with code 16000001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_PluginAbility_2200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_2200';
       hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
@@ -118,14 +118,14 @@ export default function abilityTest() {
       }
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_1200
-    * @tc.name   : create plugin module failed
-    * @tc.desc   : Expect: failed with code 401
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1200
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1200
+     * @tc.desc   Expect: failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_PluginAbility_1200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1200';
       hilog.info(DOMAIN, LOG_TAG, tag + " it begin");

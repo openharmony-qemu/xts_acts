@@ -62,11 +62,13 @@ export default function shareAcquireShareDataTest() {
 
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300
-     * @tc.name    SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300
-     * @tc.desc    Third-party application clears itself (via Promise invocation)
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300
+     * @tc.desc   Third-party application clears itself (via Promise invocation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300';
@@ -122,11 +124,13 @@ export default function shareAcquireShareDataTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100
-     * @tc.name    SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100
-     * @tc.desc    Calling acquireShareData without required permissions
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100
+     * @tc.desc   Calling acquireShareData without required permissions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100';

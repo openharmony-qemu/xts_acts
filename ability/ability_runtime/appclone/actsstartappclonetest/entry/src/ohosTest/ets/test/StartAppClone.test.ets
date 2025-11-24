@@ -38,13 +38,13 @@ export default function startAppCloneTest() {
     afterAll(() => {
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0100
-     * @tc.name   : Call UIAbilityContext startAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0100
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0100`;
@@ -92,13 +92,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0200
-     * @tc.name   : Call UIAbilityContext startAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0200
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0200', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0200`;
@@ -151,13 +151,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0300
-     * @tc.name   : Call UIAbilityContext startAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0300
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0300
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -190,13 +190,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0400
-     * @tc.name   : Call UIAbilityContext startAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0400
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0400
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0400', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0400`;
@@ -228,13 +228,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0500
-     * @tc.name   : Call UIAbilityContext startAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0500
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0500
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0500', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0500`;
@@ -266,13 +266,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0600
-     * @tc.name   : Call UIAbilityContext startAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0600
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0600', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0600`;
@@ -320,13 +320,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0700
-     * @tc.name   : Call UIAbilityContext startAbilityAsCaller
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0700
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0700
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0700`;
@@ -379,13 +379,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0800
-     * @tc.name   : Call UIAbilityContext startAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0800
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -418,13 +418,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_0900
-     * @tc.name   : Call UIAbilityContext startAbilityByCall
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_0900
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_0900
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0900', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0900`;
@@ -475,13 +475,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1000
-     * @tc.name   : Call UIAbilityContext startAbilityByCall
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1000
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -514,13 +514,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1100
-     * @tc.name   : Call UIAbilityContext startAbilityByCallWithAccount
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1100
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1100`;
@@ -571,13 +571,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1200
-     * @tc.name   : Call UIAbilityContext startAbilityByCallWithAccount
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1200
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1200
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1200', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -610,13 +610,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1300
-     * @tc.name   : Call UIAbilityContext startAbilityWithAccount
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1300
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1300
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1300', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1300`;
@@ -669,13 +669,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1400
-     * @tc.name   : Call UIAbilityContext startAbilityWithAccount
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1400
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1400
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -708,13 +708,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1500
-     * @tc.name   : Call UIAbilityContext startAbilityForResult
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1500
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1500
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1500', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1500`;
@@ -767,13 +767,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1600
-     * @tc.name   : Call UIAbilityContext startAbilityForResult
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1600
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -806,13 +806,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1700
-     * @tc.name   : Call UIAbilityContext startAbilityForResultWithAccount
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1700
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1700
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1700`;
@@ -865,13 +865,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1800
-     * @tc.name   : Call UIAbilityContext startAbilityForResultWithAccount
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1800
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1800', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -904,13 +904,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_1900
-     * @tc.name   : Call UIAbilityContext startRecentAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_1900
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_1900
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1900', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1900`;
@@ -963,13 +963,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAbilityClone_2000
-     * @tc.name   : Call UIAbilityContext startRecentAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityClone_2000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityClone_2000
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_2000', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1002,13 +1002,13 @@ export default function startAppCloneTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ProcessInformation_0100
-     * @tc.name   : Call UIAbilityContext startRecentAbility
-     * @tc.desc   : expect app clone to start.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ProcessInformation_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ProcessInformation_0100
+     * @tc.desc   expect app clone to start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ProcessInformation_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ProcessInformation_0100`;

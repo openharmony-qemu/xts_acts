@@ -50,13 +50,13 @@ export default function continuationManagerNopTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test01
-     * @tc.name: No permission test registerContinuation callback
-     * @tc.desc:Using the registerContinuation (options callback) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_registerContinuation_nop_Test01
+     * @tc.number continuationManager_nop_Test01
+     * @tc.desc   Using the registerContinuation (options callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_registerContinuation_nop_Test01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -90,14 +90,14 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-   * @tc.number:continuationManager_nop_Test02
-   * @tc.name: No permission test registerContinuation callback
-   * @tc.desc:Using the registerContinuation (callback) method without permission
-   * @tc.level:Level 0
-   * @tc.type:Function
-   * @tc.size:MediumTest
-   */
+    /**
+     * @tc.name   continuationManager_registerContinuation_nop_Test02
+     * @tc.number continuationManager_nop_Test02
+     * @tc.desc   Using the registerContinuation (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("continuationManager_registerContinuation_nop_Test02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
       try {
@@ -129,13 +129,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test03
-     * @tc.name: No permission test registerContinuation then
-     * @tc.desc:Using the registerContinuation (then) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_registerContinuation_nop_Test03
+     * @tc.number continuationManager_nop_Test03
+     * @tc.desc   Using the registerContinuation (then) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_registerContinuation_nop_Test03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -169,13 +169,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test04
-     * @tc.name: No permission test unregisterContinuation callback
-     * @tc.desc:Using the unregisterContinuation (callback) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_unregisterContinuation_nop_Test04
+     * @tc.number continuationManager_nop_Test04
+     * @tc.desc   Using the unregisterContinuation (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_unregisterContinuation_nop_Test04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -199,13 +199,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test05
-     * @tc.name: No permission test unregisterContinuation then
-     * @tc.desc:Using the unregisterContinuation (then) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_unregisterContinuation_nop_Test05
+     * @tc.number continuationManager_nop_Test05
+     * @tc.desc   Using the unregisterContinuation (then) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_unregisterContinuation_nop_Test05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -228,13 +228,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test06
-     * @tc.name: No permission test on callback
-     * @tc.desc:Using the on (callback) method without permission,type is deviceUnselected type
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_on_nop_Test06
+     * @tc.number continuationManager_nop_Test06
+     * @tc.desc   Using the on (callback) method without permission,type is deviceUnselected type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_on_nop_Test06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -256,13 +256,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test07
-     * @tc.name: No permission test on callback
-     * @tc.desc:Using the on (callback) method without permission,type is deviceSelected type
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_on_nop_Test07
+     * @tc.number continuationManager_nop_Test07
+     * @tc.desc   Using the on (callback) method without permission,type is deviceSelected type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_on_nop_Test07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -288,13 +288,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test08
-     * @tc.name: No permission test off
-     * @tc.desc:Using the off method without permission,type is deviceSelected type
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_off_nop_Test08
+     * @tc.number continuationManager_nop_Test08
+     * @tc.desc   Using the off method without permission,type is deviceSelected type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_off_nop_Test08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -313,13 +313,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test09
-     * @tc.name: No permission test off
-     * @tc.desc:Using the off  method without permission,type is deviceUnselected type
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_off_nop_Test09
+     * @tc.number continuationManager_nop_Test09
+     * @tc.desc   Using the off  method without permission,type is deviceUnselected type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_off_nop_Test09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -338,13 +338,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test10
-     * @tc.name: No permission test startContinuationDeviceManager callback
-     * @tc.desc:Using the startContinuationDeviceManager  method without permission,parameter(token、callback)
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_startContinuationDeviceManager_nop_Test10
+     * @tc.number continuationManager_nop_Test10
+     * @tc.desc   Using the startContinuationDeviceManager  method without permission,parameter(token、callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_startContinuationDeviceManager_nop_Test10", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -369,13 +369,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test11
-     * @tc.name: No permission test startContinuationDeviceManager callback
-     * @tc.desc:Using the startContinuationDeviceManager  method without permission,parameter(token、callback、options)
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_startContinuationDeviceManager_nop_Test11
+     * @tc.number continuationManager_nop_Test11
+     * @tc.desc   Using the startContinuationDeviceManager  method without permission,parameter(token、callback、options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_startContinuationDeviceManager_nop_Test11", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -405,13 +405,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test12
-     * @tc.name: No permission test startContinuationDeviceManager then
-     * @tc.desc:Using the startContinuationDeviceManager method without permission,parameter(token、options)
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_startContinuationDeviceManager_nop_Test12
+     * @tc.number continuationManager_nop_Test12
+     * @tc.desc   Using the startContinuationDeviceManager method without permission,parameter(token、options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_startContinuationDeviceManager_nop_Test12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -438,13 +438,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test13
-     * @tc.name: No permission test updateContinuationState callback
-     * @tc.desc:Using the updateContinuationState method without permission,parameter(token、deviceId、status、callback)
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_updateContinuationState_nop_Test13
+     * @tc.number continuationManager_nop_Test13
+     * @tc.desc   Using the updateContinuationState method without permission,parameter(token、deviceId、status、callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_updateContinuationState_nop_Test13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
@@ -470,13 +470,13 @@ export default function continuationManagerNopTest() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:continuationManager_nop_Test14
-     * @tc.name: No permission test updateContinuationState then
-     * @tc.desc:Using the updateContinuationState method without permission,parameter(token、deviceId、status)
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   continuationManager_updateContinuationState_nop_Test14
+     * @tc.number continuationManager_nop_Test14
+     * @tc.desc   Using the updateContinuationState method without permission,parameter(token、deviceId、status)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("continuationManager_updateContinuationState_nop_Test14", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('beforeEach');
