@@ -46,12 +46,12 @@ export default function ExportInterfaceTest() {
     })
 
     /**
+     * @tc.name   ExportInterfaceTest0100
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0100
-     * @tc.name ExportInterfaceTest0100
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ExportInterfaceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const newUser: User = {
@@ -67,12 +67,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0200
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0200
-     * @tc.name ExportInterfaceTest0200
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       expect(User1.name).assertContain('John Doe');
@@ -83,12 +83,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0300
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0300
-     * @tc.name ExportInterfaceTest0300
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       expect(User2.name).assertContain('John Doe');
@@ -99,12 +99,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0400
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0400
-     * @tc.name ExportInterfaceTest0400
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const newUser1: User3 = {
@@ -120,12 +120,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0500
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0500
-     * @tc.name ExportInterfaceTest0500
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const newUser2: User4 = {
@@ -141,12 +141,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0600
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0600
-     * @tc.name ExportInterfaceTest0600
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const newUser3: User5 = {
@@ -162,12 +162,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0700
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0700
-     * @tc.name ExportInterfaceTest0700
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const newUser4: User6Name = {
@@ -183,12 +183,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0800
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0800
-     * @tc.name ExportInterfaceTest0800
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       expect(newUser7.name).assertContain('John Doe');
@@ -199,12 +199,12 @@ export default function ExportInterfaceTest() {
 
 
     /**
+     * @tc.name   ExportInterfaceTest0900
      * @tc.number SUB_EXPORT_INTERFACE_TEST_0900
-     * @tc.name ExportInterfaceTest0900
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExportInterfaceTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       expect(newUser8.newUser7.name).assertContain('John Doe');

@@ -22,12 +22,12 @@ import { getDecoratorDesc } from 'har';
 export default function hspImport() {
   describe('HspTest', () => {
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0100
-     * @tc.name      : testNormalHspImport
-     * @tc.desc      : Import Basic API
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNormalHspImport
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0100
+     * @tc.desc   Import Basic API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNormalHspImport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let normalImport: string = '';
@@ -40,12 +40,12 @@ export default function hspImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0200
-     * @tc.name      : testMultiHsp
-     * @tc.desc      : Import Single-Level Multiple Shared Library
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMultiHsp
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0200
+     * @tc.desc   Import Single-Level Multiple Shared Library
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultiHsp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let multiHsp: string = '';
@@ -59,12 +59,12 @@ export default function hspImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0300
-     * @tc.name      : testMultiLevelHsp
-     * @tc.desc      : Import Multi-Level Shared Library
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMultiLevelHsp
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0300
+     * @tc.desc   Import Multi-Level Shared Library
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultiLevelHsp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let multiLevelHsp: string = '';
@@ -77,12 +77,12 @@ export default function hspImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0400
-     * @tc.name      : testHarImportLibrary
-     * @tc.desc      : Load Shared Library By Importing Static Library
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testHarImportLibrary
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0400
+     * @tc.desc   Load Shared Library By Importing Static Library
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHarImportLibrary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let harImportLibrary: string = "";
@@ -95,12 +95,12 @@ export default function hspImport() {
     })
     
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0500
-     * @tc.name      : testNativeso
-     * @tc.desc      : Import Native So
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeso
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0500
+     * @tc.desc   Import Native So
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeso', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let nativeso: string = "";
@@ -113,12 +113,12 @@ export default function hspImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0600
-     * @tc.name      : testNativeIsolationSo
-     * @tc.desc      : Import Native So Isolation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNativeIsolationSo
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_Hsp_0600
+     * @tc.desc   Import Native So Isolation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeIsolationSo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let nativeIsolationSo: string = "";

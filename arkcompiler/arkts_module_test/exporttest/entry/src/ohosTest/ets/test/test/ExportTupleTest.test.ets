@@ -43,12 +43,12 @@ export default function exportTupleTest() {
 
 
     /**
+     * @tc.name   exportTupleTest1001
      * @tc.number SUB_EXPORT_TUPLE_TEST_0100
-     * @tc.name exportTupleTest1001
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('exportTupleTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -65,12 +65,12 @@ export default function exportTupleTest() {
     })
 
     /**
+     * @tc.name   exportTupleTest1002
      * @tc.number SUB_EXPORT_TUPLE_TEST_0200
-     * @tc.name exportTupleTest1002
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -87,12 +87,12 @@ export default function exportTupleTest() {
     })
 
     /**
+     * @tc.name   exportTupleTest1003
      * @tc.number SUB_EXPORT_TUPLE_TEST_0300
-     * @tc.name exportTupleTest1003
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -109,12 +109,12 @@ export default function exportTupleTest() {
     })
 
     /**
+     * @tc.name   exportTupleTest1004
      * @tc.number SUB_EXPORT_TUPLE_TEST_0400
-     * @tc.name exportTupleTest1004
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -137,12 +137,12 @@ export default function exportTupleTest() {
 
 
     /**
+     * @tc.name   exportTupleTest1005
      * @tc.number SUB_EXPORT_TUPLE_TEST_0500
-     * @tc.name exportTupleTest1005
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -165,12 +165,12 @@ export default function exportTupleTest() {
     })
 
     /**
+     * @tc.name   exportTupleTest1006
      * @tc.number SUB_EXPORT_TUPLE_TEST_0600
-     * @tc.name exportTupleTest1006
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -185,12 +185,12 @@ export default function exportTupleTest() {
     })
 
     /**
+     * @tc.name   exportTupleTest1007
      * @tc.number SUB_EXPORT_TUPLE_TEST_0700
-     * @tc.name exportTupleTest1007
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -205,12 +205,12 @@ export default function exportTupleTest() {
     })
 
     /**
+     * @tc.name   exportTupleTest1008
      * @tc.number SUB_EXPORT_TUPLE_TEST_0800
-     * @tc.name exportTupleTest1008
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -231,12 +231,12 @@ export default function exportTupleTest() {
     })
 
     /**
+     * @tc.name   exportTupleTest1009
      * @tc.number SUB_EXPORT_TUPLE_TEST_0900
-     * @tc.name exportTupleTest1009
-     * @tc.desc test EXPORT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test EXPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('exportTupleTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
