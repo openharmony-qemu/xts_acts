@@ -30,6 +30,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -40,10 +41,6 @@ struct AlignStart_AddOffset {
 
   onPageShow() {
     console.info('AlignStart_AddOffset onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
     let callback: Callback<Position> = (message: Message<Position>) => {
       console.log('message = ' + message.name + "--" + message.value);

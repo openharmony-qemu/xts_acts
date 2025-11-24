@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Position } from '@ohos.arkui.component';
+import { Entry,Color, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Position } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -31,7 +31,7 @@ struct FlexOffset_Center {
   build() {
     Column() {
       Column() {
-        Text('FlexTest09').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('FlexTest09').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.Row,
           alignItems: ItemAlign.Center,
@@ -40,16 +40,16 @@ struct FlexOffset_Center {
           Text('1')
             .width(150)
             .height(50)
-            .backgroundColor(0xF5DEB3)
+            .backgroundColor(Color.Red)
             .offset({ x: 15, y: 30 }as Position)
             .key('textOffset01')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textOffset02')
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textOffset03')
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textOffset02')
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textOffset03')
         }
         .key('flexOffset')
         .height(200)
         .width(500)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
       }.width('100%').margin({ top: 5 } as Margin)
     }.width('100%')
   }

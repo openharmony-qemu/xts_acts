@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -35,7 +36,6 @@ export default function RelativeContainer_AnchorPoint_Id_Null() {
   describe('RelativeContainer_AnchorPoint_Id_Null', () => {
     beforeAll(async () => {
       console.info("RelativeContainer_AnchorPoint_Id_Null beforeEach start");
-   
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -54,7 +54,6 @@ export default function RelativeContainer_AnchorPoint_Id_Null() {
           console.info("get RelativeContainer_AnchorPoint_Id_Null pages.name:" + JSON.stringify(pages?.name));
             routerInstance?.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainer_AnchorPoint_Id_Null page error " + JSON.stringify(err));
@@ -66,10 +65,6 @@ export default function RelativeContainer_AnchorPoint_Id_Null() {
       console.info("RelativeContainer_AnchorPoint_Id_Null after each called")
     });
 
-    
-    
-    
-
 /*
      * @tc.number   SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_static_0100
      * @tc.name     SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_static_0100
@@ -78,29 +73,18 @@ export default function RelativeContainer_AnchorPoint_Id_Null() {
      */
 it('SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_0100] START');
-
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
       let RelativeContainer_AnchorPoint_Id_Null_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null_row1');
-      
-
       let RelativeContainer_AnchorPoint_Id_Null_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null_r1');
-
       console.log('assert position')
-
       expect(Math.abs(RelativeContainer_AnchorPoint_Id_Null_row1.left - RelativeContainer_AnchorPoint_Id_Null_r1.left) <= 1)
         .assertTrue();
       expect(Math.abs(RelativeContainer_AnchorPoint_Id_Null_row1.top - RelativeContainer_AnchorPoint_Id_Null_r1.top) <= 1)
         .assertTrue();
-
-      
-      
-
-
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_0100] END');
       done();
     });
-
 
   })
 }

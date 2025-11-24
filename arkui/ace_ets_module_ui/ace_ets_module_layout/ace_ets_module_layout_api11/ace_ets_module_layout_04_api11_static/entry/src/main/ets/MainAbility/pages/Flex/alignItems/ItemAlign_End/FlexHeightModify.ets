@@ -14,8 +14,6 @@
  */
 import { Entry, Component, Column, Text, Flex, HorizontalAlign, FlexDirection, ItemAlign, FlexWrap } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-import { GlobalContext } from '../../../../common/GlobalContext';
-import { ValueT } from '../../../../common/Value';
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
 
 @Entry

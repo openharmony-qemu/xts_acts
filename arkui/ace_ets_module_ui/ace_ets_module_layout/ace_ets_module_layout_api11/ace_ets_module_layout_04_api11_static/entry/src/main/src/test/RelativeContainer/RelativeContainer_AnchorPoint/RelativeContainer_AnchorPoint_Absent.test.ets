@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -35,7 +36,6 @@ export default function RelativeContainer_AnchorPoint_Absent() {
   describe('RelativeContainer_AnchorPoint_Absent', () => {
     beforeAll(async () => {
       console.info("RelativeContainer_AnchorPoint_Absent beforeEach start");
-   
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -52,10 +52,8 @@ export default function RelativeContainer_AnchorPoint_Absent() {
         console.info("get RelativeContainer_AnchorPoint_Absent state pages:" + JSON.stringify(pages));
         if (!("RelativeContainer_AnchorPoint_Absent" == pages?.name)) {
           console.info("get RelativeContainer_AnchorPoint_Absent pages.name:" + JSON.stringify(pages?.name));
-          
           await CommonFunc.sleep(2000);
           routerInstance?.pushUrl(options)
-          
         }
       } catch (err) {
         console.error("push RelativeContainer_AnchorPoint_Absent page error " + JSON.stringify(err));
@@ -79,15 +77,12 @@ export default function RelativeContainer_AnchorPoint_Absent() {
      */
 it('SUB_ACE_RelativeContainer_AnchorPoint_Absent_TEST_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Absent_TEST_0100] START');
-
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
       let RelativeContainer_AnchorPoint_Absent_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_bt1');
       let RelativeContainer_AnchorPoint_Absent_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_tx2');
       let RelativeContainer_AnchorPoint_Absent_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_r1');
       let RelativeContainer_AnchorPoint_Absent_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_row1');
-
-
       console.log('assert position')
       expect(Math.abs(RelativeContainer_AnchorPoint_Absent_r1.left - RelativeContainer_AnchorPoint_Absent_row1.left) <= 1)
         .assertTrue();
@@ -100,7 +95,5 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Absent_TEST_static_0100', Level.LEVEL0
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Absent_TEST_0100] END');
       done();
     });
-
-
   })
 }

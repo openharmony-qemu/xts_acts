@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Color,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,11 +27,6 @@ struct AlignStart_AddOneWidth {
 
   onPageShow() {
     console.info('AlignStart_AddOneWidth onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -46,16 +41,16 @@ struct AlignStart_AddOneWidth {
 
   build() {
     Column() {
-      Text('justifyContent:FlexAlign.Start').fontSize(9).fontColor(0xCCCCCC).width('90%');
+      Text('justifyContent:FlexAlign.Start').fontSize(9).fontColor(Color.Red).width('90%');
       Flex({ justifyContent: this.justifyContent, direction: FlexDirection.Row } as FlexOptions) {
-        Text('1').width(this.OneWidth).height(50).backgroundColor(0xF5DEB3).key("Start_AddOneWidth_011");
-        Text('2').width(150).height(100).backgroundColor(0xD2B48C).key("Start_AddOneWidth_012");
-        Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key("Start_AddOneWidth_013");
+        Text('1').width(this.OneWidth).height(50).backgroundColor(Color.Red).key("Start_AddOneWidth_011");
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key("Start_AddOneWidth_012");
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key("Start_AddOneWidth_013");
       }
       .key("Start_AddOneWidth_01")
       .width(500)
       .height(200)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
     }
   }
 }

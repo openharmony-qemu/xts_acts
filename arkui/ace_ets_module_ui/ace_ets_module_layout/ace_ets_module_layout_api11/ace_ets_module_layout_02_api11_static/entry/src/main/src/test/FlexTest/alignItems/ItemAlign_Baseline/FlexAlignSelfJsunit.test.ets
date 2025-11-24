@@ -39,9 +39,8 @@ export default function flexAlignSelf_BaselineJsunit() {
 
     beforeAll(() => {
       console.info("flexItemAlignAutoTest8 beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -57,11 +56,8 @@ export default function flexAlignSelf_BaselineJsunit() {
         console.info("get flexItemAlignAutoTest8 state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Baseline_FlexAlignSelf" == pages.name)) {
           console.info("get flexItemAlignAutoTest8 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignAutoTest8 page error:" + err);
@@ -92,16 +88,15 @@ it('testFlexItemAlignBaselineSetAlignSelf_static', Level.LEVEL0, async () : Prom
       let alignSelf02: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textAlignSelf02');
       let alignSelf03: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textAlignSelf03');
       let flexAlignSelf01: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_flexAlignSelf');
-      const uiContext = new UIContext();
       expect(Math.abs(alignSelf01.bottom - flexAlignSelf01.bottom) <= 1).assertTrue()
       expect(Math.abs(alignSelf03.top - flexAlignSelf01.top) <= 1).assertTrue()
       expect(Math.abs(alignSelf02.top - alignSelf03.top - (alignSelf03.bottom - alignSelf02.bottom)) <= 1).assertTrue()
-      expect(Math.abs(Math.round(alignSelf01.bottom - alignSelf01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(alignSelf02.bottom - alignSelf02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(alignSelf03.bottom - alignSelf03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(alignSelf01.right - alignSelf01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(alignSelf02.right - alignSelf02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(alignSelf03.right - alignSelf03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(alignSelf01.bottom - alignSelf01.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(alignSelf02.bottom - alignSelf02.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(alignSelf03.bottom - alignSelf03.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(alignSelf01.right - alignSelf01.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(alignSelf02.right - alignSelf02.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(alignSelf03.right - alignSelf03.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Baseline')

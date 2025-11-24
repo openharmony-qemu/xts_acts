@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Driver, ON} from '@ohos.UiTest';
@@ -64,11 +65,6 @@ export default function OnlyColumnsTemplate4() {
     afterEach(async () => {
       console.info("OnlyColumnsTemplate4 after each called");
     });
-
-    
-    
-    
-
 /*
      * @tc.number   SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300
      * @tc.name     SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300
@@ -78,15 +74,14 @@ export default function OnlyColumnsTemplate4() {
 it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300] START');
-      await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
       let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
       let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'columnStart1', value: 5
       })
@@ -105,20 +100,16 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: (
       let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
       let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
-      const uiContext = new UIContext();
+
       console.log('assert size')
-	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(52))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(52)))) <= 1).assertTrue();
       console.log('GridItem_011.right - GridItem_011.left' + (GridItem_011.right - GridItem_011.left))
-	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
       console.log('GridItem_011.bottom - GridItem_011.top' + (GridItem_011.bottom - GridItem_011.top))
 
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300] END');
       done();
     });
-
-    
-    
-    
 
 /*
      * @tc.number   SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500
@@ -128,7 +119,6 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: (
      */
 it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500] START');
-      await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
       let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
@@ -149,17 +139,17 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500', Level.LEVEL0, async (done: (
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'columnEnd2', value: 1
       })
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
       let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
       let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
-      const uiContext = new UIContext();
+
       console.log('assert size')
-	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(52))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(52)))) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_011.right - GridItem_011.left))
-	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_011.bottom - GridItem_011.top))
 
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500] END');

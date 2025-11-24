@@ -38,19 +38,21 @@ struct VisibilityExample {
   private hiddenChangCallBack: (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("[hiddenChangCallBack] stateChangCallBack");
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("[hiddenChangCallBack] state change called:" + JSON.stringify(eventData));
-      
-      
-      
+      if (data['visibility'] != null) {
+        this.visibility1 = data['visibility'] as Visibility;
+      }
     }
   }
   private noneChangCallBack: (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("[noneChangCallBack] stateChangCallBack");
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("[noneChangCallBack] state change called:" + JSON.stringify(eventData));
-      
-      
-      
+      if (data['visibility'] != null) {
+        this.visibility1 = data['visibility'] as Visibility;
+      }
     }
   }
 

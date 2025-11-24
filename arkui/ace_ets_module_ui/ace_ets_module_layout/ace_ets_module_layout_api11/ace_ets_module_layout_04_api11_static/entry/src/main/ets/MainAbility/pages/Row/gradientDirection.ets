@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, Text, Row, ColumnOptions, Margin, GradientDirection } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct linearGradientExample {
-  @State sDirection: GradientDirection = GradientDirection.LeftTop
+  @StorageProp('sDirection') sDirection: GradientDirection = GradientDirection.LeftTop
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
@@ -35,36 +35,5 @@ struct linearGradientExample {
     }
     .width('100%')
     .padding({ top: 5 } as Margin)
-  }
-
-  onPageShow() {
-    console.info('gradientDirection page show called');
-    let stateChangeEventOne: events_emitter.InnerEvent = {
-      eventId: 106,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventOne, this.stateChangCallBack)
-    console.info('gradientDirection page show called');
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 107,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack)
-    console.info('gradientDirection page show called');
-    let stateChangeEventThree: events_emitter.InnerEvent = {
-      eventId: 108,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventThree, this.stateChangCallBack)
-  }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("GradientDirection page state change called:" + JSON.stringify(eventData));
-      
-      
-      
-      
-    }
   }
 }

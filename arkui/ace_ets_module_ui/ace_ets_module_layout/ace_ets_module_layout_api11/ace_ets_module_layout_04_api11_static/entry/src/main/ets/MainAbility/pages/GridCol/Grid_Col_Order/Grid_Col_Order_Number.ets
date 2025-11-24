@@ -18,26 +18,20 @@ import { GlobalContext } from './../../../common/GlobalContext'
 import { ValueT } from '../../../common/Value';
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
 
-type MessageData = number | string
-
 @Entry
 @Component
 struct Grid_Col_Order_Number {
   @State addOrder: int = 0;
   @State currentBp: string = 'unknown';
-  messageManager: MessageManager<object> = new MessageManager<object>();
+  messageManager: MessageManager<int | string> = new MessageManager<int | string>();
 
   onPageShow() {
     console.info('Grid_Col_Order_Number onPageShow');
-    
-    
-    
-    
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<int | string>>("messageManager",  this.messageManager);
+    let callback: Callback<int | string> = (message: Message<int | string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addOrder') {
-        this.addOrder = (message.value as number).toInt();
+        this.addOrder = message.value as int;
       }
     };
     this.messageManager.registerCallback(callback);

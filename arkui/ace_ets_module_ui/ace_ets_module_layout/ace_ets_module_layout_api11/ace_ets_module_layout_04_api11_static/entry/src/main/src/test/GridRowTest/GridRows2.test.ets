@@ -14,10 +14,9 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import config from '@ohos.accessibility.config';
-import accessibility from '@ohos.accessibility';
+import { Component, Driver, MouseButton,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -27,29 +26,27 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
+// import config from '@ohos.accessibility.config';
+// import accessibility from '@ohos.accessibility';
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.arkui.ace.layout.split04.static/EntryAbility';
 
 
 export default function GridRows2() {
   describe('GridRows2', () => {
     beforeAll(() => {
-   
+      console.log('GridRows2 beforeAll')
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("GridRows2 beforeEach start");
-
-      
-      
-      
-      
-      
-
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info('[GridRows2] enable success');
+      // }).catch((err: object) => {
+      //   console.error(`[GridRows2] failed to enable, ${err}`)
+      // })
       console.info("GridRows2 beforeEach start 222")
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -73,11 +70,6 @@ export default function GridRows2() {
       console.info("GridRows2 after each called");
     });
 
-    
-
-    
-    
-
 /*
      * @tc.number   GridRows2_static_001
      * @tc.name     GridRows2_static_001
@@ -87,30 +79,24 @@ export default function GridRows2() {
 it('GridRows2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridRows2_static_001] START');
 
-      await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('GridRows2Bt1'));
-      await (button_Bottom?.click() as Promise<void>);
+      let button_Bottom = await (driver.findComponent(ON.id('GridRows2Bt1')) as Promise<Component>);
+      await button_Bottom.click();
       await CommonFunc.sleep(1000);
 
       let grid = CommonFunc.getComponentRect('GridRows2');
       let row1 = CommonFunc.getComponentRect('GridRows2_1');
       let row2 = CommonFunc.getComponentRect('GridRows2_2');
-      await CommonFunc.sleep(2000);
 
       console.info("[GridRows2_static_001] GridRows2_1 is: " + JSON.stringify(row1) + 'GridRows2_5:' + JSON.stringify(row2) );
+      console.info("[GridRows2_static_001] GridRows2_1 grid is: " + JSON.stringify(grid) );
       expect(Math.abs(Math.round(row2.left - row1.right)) <= 1).assertTrue();
       expect(Math.abs(Math.round(grid.bottom - row1.bottom)) <= 1).assertTrue();
 
       console.info('[GridRows2_static_001] END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   GridRows2_static_002
@@ -129,8 +115,8 @@ it('GridRows2_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
 
       let rel = CommonFunc.getComponentRect('GridRows2');
-      const uiContext = new UIContext();
-      await driver.mouseClick({x: Math.round(rel.left + UIContext.getFocusedUIContext()!.vp2px(50)) as Int, y: Math.round(rel.top + UIContext.getFocusedUIContext()!.vp2px(50)) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+
+      await driver.mouseClick({x: Math.round(rel.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as Int, y: Math.round(rel.top + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('GridRows2Text');
       await CommonFunc.sleep(200);

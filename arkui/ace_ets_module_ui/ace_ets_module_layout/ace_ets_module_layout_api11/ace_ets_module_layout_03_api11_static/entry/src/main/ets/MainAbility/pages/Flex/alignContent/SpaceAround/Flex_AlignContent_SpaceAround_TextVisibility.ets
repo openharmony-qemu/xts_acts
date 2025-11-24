@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Visibility } from '@ohos.arkui.component';
+import { Entry,Color, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Visibility } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,10 +27,6 @@ struct AlignContent_SpaceAround_TextVisibility {
 
   onPageShow() {
     console.info('AlignContent_SpaceAround_TextVisibility onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -47,16 +43,16 @@ struct AlignContent_SpaceAround_TextVisibility {
         Text('1')
           .width(150)
           .height(50)
-          .backgroundColor(0xD2B48C)
+          .backgroundColor(Color.Red)
           .key('AlignContent_SpaceAround_TextVisibility01')
           .visibility(this.testVisibility == 0? Visibility.Visible:(this.testVisibility == 1? Visibility.Hidden:Visibility.None));
-        Text('2').width(150).height(100).backgroundColor(0xF5DEB3).key('AlignContent_SpaceAround_TextVisibility02');
-        Text('3').width(150).height(50).backgroundColor(0xD2B48C).key('AlignContent_SpaceAround_TextVisibility03');
-        Text('4').width(150).height(100).backgroundColor(0xF5DEB3).key('AlignContent_SpaceAround_TextVisibility04');
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key('AlignContent_SpaceAround_TextVisibility02');
+        Text('3').width(150).height(50).backgroundColor(Color.Red).key('AlignContent_SpaceAround_TextVisibility03');
+        Text('4').width(150).height(100).backgroundColor(Color.Red).key('AlignContent_SpaceAround_TextVisibility04');
       }
       .width(200)
       .height(400)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
       .key('FlexAlign_SpaceAround_TextVisibility_Container01')
     }
     .width('100%')

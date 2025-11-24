@@ -30,6 +30,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
@@ -41,11 +42,6 @@ struct AlignCenter_AddVisibility {
 
   onPageShow() {
     console.info('AlignCenter_AddVisibility onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);

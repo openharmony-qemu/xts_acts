@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Component, Column,Button,Row,ColumnOptions,Text,Flex,Direction,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Alignment } from '@ohos.arkui.component';
+import { Entry, Component, Column,Button,Row,ColumnOptions,Text,Flex,Direction,FlexDirection,Color,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Alignment } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.base';
 
@@ -25,20 +25,20 @@ struct PositionExample {
   build() {
     Column() {
       Column({space: 10} as ColumnOptions) {
-        Text('align').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('align').fontSize(9).fontColor(Color.Red).width('90%')
         Text('top start')
           .align(Alignment.TopStart)
           .height(50)
           .width('90%')
           .fontSize(16)
-          .backgroundColor(0xFFE4C4)
+          .backgroundColor(Color.Red)
 
-        Text('direction').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('direction').fontSize(9).fontColor(Color.Red).width('90%')
         Row() {
-          Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
-          Text('2').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C)
-          Text('3').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
-          Text('4').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C)
+          Text('1').height(50).width('25%').fontSize(16).backgroundColor(Color.Red)
+          Text('2').height(50).width('25%').fontSize(16).backgroundColor(Color.Red)
+          Text('3').height(50).width('25%').fontSize(16).backgroundColor(Color.Red)
+          Text('4').height(50).width('25%').fontSize(16).backgroundColor(Color.Red)
         }
         .width('90%')
         .direction(this.sDirection).key('direction_2')
@@ -64,11 +64,12 @@ struct PositionExample {
 
   private stateChangCallBack:Callback<events_emitter.EventData> = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("direction2 page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)?.getProperty('direction') != null) {
-        if(((eventData.data) as ESObject)?.getProperty('direction')!.toNumber() === 0){
+      if (data['direction'] != null) {
+        if(data['direction'] === 0){
           this.sDirection = Direction.Ltr;
-        }else if(((eventData.data) as ESObject)?.getProperty('direction')!.toNumber() === 1){
+        }else if(data['direction']=== 1){
           this.sDirection = Direction.Rtl;
         }else {
           this.sDirection = Direction.Auto;

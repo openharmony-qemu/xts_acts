@@ -30,6 +30,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
@@ -42,15 +43,11 @@ struct FlexVisibility_Center {
 
   onPageShow() {
     console.info('FlexBase_Center onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + '--' + message.value);
       if (message.name == 'visibility') {
-        
+        this.testVisibility = message.value;
       }
     };
     this.messageManager.registerCallback(callback);
@@ -73,7 +70,7 @@ struct FlexVisibility_Center {
             .width(150)
             .height(50)
             .backgroundColor(0xF5DEB3)
-            
+            .visibility(this.testVisibility)
             .key('ItemAlign_Center_textVisible01')
           Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('ItemAlign_Center_textVisible02')
           Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('ItemAlign_Center_textVisible03')

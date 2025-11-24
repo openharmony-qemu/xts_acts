@@ -25,6 +25,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -48,6 +49,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -61,10 +63,6 @@ struct FlexVisibility_Auto {
 
   onPageShow() {
     console.info('FlexVisibility_Auto onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + '--' + message.value);
@@ -94,7 +92,8 @@ struct FlexVisibility_Auto {
             .width(150)
             .height(50)
             .backgroundColor(0xF5DEB3)
-            .key('ItemAlign_Auto_textVisible01');
+            .key('ItemAlign_Auto_textVisible01')
+            .visibility(this.testVisibility)
           Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('ItemAlign_Auto_textVisible02');
           Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('ItemAlign_Auto_textVisible03');
         }

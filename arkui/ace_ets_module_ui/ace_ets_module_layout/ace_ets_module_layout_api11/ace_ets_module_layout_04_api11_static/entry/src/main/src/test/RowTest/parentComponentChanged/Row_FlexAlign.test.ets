@@ -16,6 +16,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
@@ -36,7 +37,6 @@ export default function Row_FlexAlign() {
   describe('Row_FlexAlign', () => {
     beforeAll(() => {
       console.info("Row_FlexAlign beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,10 +54,8 @@ export default function Row_FlexAlign() {
         console.info("get Row_FlexAlign state success " + "");
         if (!("Row_FlexAlign" == pages.name)) {
           console.info("get Row_FlexAlign state success " + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Row_FlexAlign page error " + JSON.stringify(err));
@@ -71,11 +69,6 @@ export default function Row_FlexAlign() {
       console.info("Row_FlexAlign after each called");
     });
 
-    
-
-    
-    
-
 /*
      * @tc.number   testRowJustifyContentFlexAlignStart_static_01
      * @tc.name     testRowJustifyContentFlexAlignStart_static_01
@@ -84,29 +77,29 @@ export default function Row_FlexAlign() {
      */
 it('testRowJustifyContentFlexAlignStart_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testRowJustifyContentFlexAlignStart_static_01 START');
-      AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
-        name: 'justifyContent', value: FlexAlign.Start
-      });
-      await CommonFunc.sleep(3000);
+        AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
+          name: 'justifyContent', value: FlexAlign.Start
+        });
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
      console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       let Row: RectValue = CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
+      console.log('Row rect_value is:' + JSON.stringify(Row));
       let Text1: RectValue = CommonFunc.getComponentRect('Text1');
+      console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       let Text2: RectValue = CommonFunc.getComponentRect('Text2');
+      console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       let Text3: RectValue = CommonFunc.getComponentRect('Text3');
 
-      console.log('Row rect_value is:' + JSON.stringify(Row));
-      console.log('Text1 rect_value is:' + JSON.stringify(Text1));
-      console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
 
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('justifyContent')).assertEqual("FlexAlign.Start");
 
@@ -116,18 +109,13 @@ it('testRowJustifyContentFlexAlignStart_static_01', Level.LEVEL0, async (done: (
       expect(Math.abs(Math.round(Text2.top - Row.top) - Math.round(Row.bottom - Text2.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text3.top - Row.top) - Math.round(Row.bottom - Text3.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
       expect(Row.right).assertLarger(Text3.right);
 
       console.info('testRowJustifyContentFlexAlignStart_static_01 END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   testRowJustifyContentFlexAlignCenter_static_02
@@ -153,30 +141,25 @@ it('testRowJustifyContentFlexAlignCenter_static_02', Level.LEVEL0, async (done: 
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('justifyContent')).assertEqual("FlexAlign.Center");
 
       expect(Math.abs(Math.round(Text1.left - Row.left) - Math.round(Row.right - Text3.right)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text1.top - Row.top) - Math.round(Row.bottom - Text1.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text2.top - Row.top) - Math.round(Row.bottom - Text2.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text3.top - Row.top) - Math.round(Row.bottom - Text3.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
 
       console.info('testRowJustifyContentFlexAlignCenter_static_02 END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   testRowJustifyContentFlexAlignEnd_static_03
@@ -202,31 +185,26 @@ it('testRowJustifyContentFlexAlignEnd_static_03', Level.LEVEL0, async (done: () 
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('justifyContent')).assertEqual("FlexAlign.End");
 
       expect(Math.abs(Text3.right - Row.right) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text1.top - Row.top) - Math.round(Row.bottom - Text1.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text2.top - Row.top) - Math.round(Row.bottom - Text2.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text3.top - Row.top) - Math.round(Row.bottom - Text3.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
       expect(Text1.left).assertLarger(Row.left);
 
       console.info('testRowJustifyContentFlexAlignEnd_static_03 END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   testRowJustifyContentFlexAlignSpaceBetween_static_04
@@ -252,20 +230,20 @@ it('testRowJustifyContentFlexAlignSpaceBetween_static_04', Level.LEVEL0, async (
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('justifyContent')).assertEqual("FlexAlign.SpaceBetween");
 
       expect(Math.abs(Text1.left - Row.left) <= 1).assertTrue();
       expect(Math.abs(Text3.right - Row.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Math.round((Text2.left - Text1.right) * 10) / 10)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25)))) <= 1)
+      expect(Math.abs((Math.round(Math.round((Text2.left - Text1.right) * 10) / 10)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Math.round((Text3.left - Text2.right) * 10) / 10)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25)))) <= 1)
+      expect(Math.abs((Math.round(Math.round((Text3.left - Text2.right) * 10) / 10)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25))))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Text1.top - Row.top) - Math.round(Row.bottom - Text1.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text2.top - Row.top) - Math.round(Row.bottom - Text2.bottom)) <= 1).assertTrue();
@@ -274,11 +252,6 @@ it('testRowJustifyContentFlexAlignSpaceBetween_static_04', Level.LEVEL0, async (
       console.info('testRowJustifyContentFlexAlignSpaceBetween_static_04 END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   testRowJustifyContentFlexAlignSpaceAround_static_05
@@ -305,20 +278,20 @@ it('testRowJustifyContentFlexAlignSpaceAround_static_05', Level.LEVEL0, async (d
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
 
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('justifyContent')).assertEqual("FlexAlign.SpaceAround");
 
       expect(Math.abs(Math.round(Text1.left - Row.left) - Math.round(Row.right - Text3.right)) <= 1).assertTrue();
-      expect(Math.abs(Math.round((Text1.left - Row.left) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(50 / 6) * 10) / 10) <= 1)
+      expect(Math.abs(Math.round((Text1.left - Row.left) * 10) / 10 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 6)) * 10) / 10) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50 / 3)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50 / 3)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 3))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 3))))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Text1.top - Row.top) - Math.round(Row.bottom - Text1.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Text2.top - Row.top) - Math.round(Row.bottom - Text2.bottom)) <= 1).assertTrue();
@@ -327,11 +300,6 @@ it('testRowJustifyContentFlexAlignSpaceAround_static_05', Level.LEVEL0, async (d
       console.info('testRowJustifyContentFlexAlignSpaceAround_static_05 END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   testRowJustifyContentFlexAlignSpaceEvenly_static_06
@@ -357,21 +325,21 @@ it('testRowJustifyContentFlexAlignSpaceEvenly_static_06', Level.LEVEL0, async (d
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('justifyContent')).assertEqual("FlexAlign.SpaceEvenly");
 
       expect(Math.abs(Math.round(Text1.left - Row.left) - Math.round(Row.right - Text3.right)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Math.round((Text1.left - Row.left) * 100) / 100) - Math.round(Math.round(UIContext.getFocusedUIContext()!.vp2px(50 / 4) * 100) / 100)) <= 1)
+      expect(Math.abs(Math.round(Math.round((Text1.left - Row.left) * 100) / 100) - Math.round(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 4)) * 100) / 100)) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Math.round((Text2.left - Text1.right) * 100) / 100) - Math.round(Math.round(UIContext.getFocusedUIContext()!.vp2px(50 / 4) * 100) / 100)) <= 1)
+      expect(Math.abs(Math.round(Math.round((Text2.left - Text1.right) * 100) / 100) - Math.round(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 4)) * 100) / 100)) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Math.round((Text3.left - Text2.right) * 100) / 100) - Math.round(Math.round(UIContext.getFocusedUIContext()!.vp2px(50 / 4) * 100) / 100)) <= 1)
+      expect(Math.abs(Math.round(Math.round((Text3.left - Text2.right) * 100) / 100) - Math.round(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 4)) * 100) / 100)) <= 1)
         .assertTrue();
 
       expect(Math.abs(Math.round(Text1.top - Row.top) - Math.round(Row.bottom - Text1.bottom)) <= 1).assertTrue();

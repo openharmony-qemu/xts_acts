@@ -72,16 +72,13 @@ export default function FolderStack3ApiJsunit() {
         console.info("get FolderStack3ApiJsunit state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get FolderStack3ApiJsunit pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push FolderStack3ApiJsunit page error:" + err);
       }
       console.info("FolderStack3ApiJsunit beforeEach end");
-      
     });
 
     /*

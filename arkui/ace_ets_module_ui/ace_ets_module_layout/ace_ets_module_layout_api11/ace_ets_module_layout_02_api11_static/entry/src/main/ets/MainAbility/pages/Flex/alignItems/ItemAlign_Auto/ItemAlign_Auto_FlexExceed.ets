@@ -28,6 +28,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -45,10 +46,6 @@ struct FlexExceed_Auto {
 
   onPageShow() {
     console.info('FlexExceed_Auto onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + '--' + message.value);

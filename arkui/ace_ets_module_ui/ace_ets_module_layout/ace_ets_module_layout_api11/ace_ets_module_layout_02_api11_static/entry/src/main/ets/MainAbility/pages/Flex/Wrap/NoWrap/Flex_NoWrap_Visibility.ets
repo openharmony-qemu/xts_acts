@@ -31,6 +31,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -44,11 +45,6 @@ struct Flex_NoWrap_Visibility {
 
   onPageShow() {
     console.info('Flex_NoWrap_Visibility onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);

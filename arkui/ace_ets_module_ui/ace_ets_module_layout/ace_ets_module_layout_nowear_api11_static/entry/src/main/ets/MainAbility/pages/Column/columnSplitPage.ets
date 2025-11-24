@@ -21,28 +21,39 @@ import {
   ColumnSplit,
   AttributeModifier,
   TextAlign,
-  ColumnSplitDividerStyle
+  ColumnSplitDividerStyle,
+  ColumnSplitAttribute
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
 
+class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+  resizeable: boolean = false;
+  divider: ColumnSplitDividerStyle = { startMargin:0, endMargin:0 }
+  applyNormalAttribute(instance: ColumnSplitAttribute): void {
+    instance.resizeable(this.resizeable);
+    instance.divider(this.divider);
+  }
+}
+interface TypeValue {
+  typeValue: number
+}
 @Entry
 @Component
 struct ColumnSplitExample {
   @State message: string = 'ColumnSplit'
-  
+  @State mod: ColumnSplitModifier = new ColumnSplitModifier()
   @State resizeable: boolean = false;
   @State divider: ColumnSplitDividerStyle = { startMargin: 0, endMargin: 0 } as ColumnSplitDividerStyle
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info("ColumnSplit page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as Record<string, RecordData>)?.['typeValue'] === 0) {
+      if (((eventData.data) as TypeValue)?.typeValue == 0) {
         console.info(`ColumnSplit.resizeable=>false`)
-        
-      } else if (((eventData.data) as Record<string, RecordData>)?.['typeValue'] === 1) {
+        this.mod.resizeable = false
+      } else if (((eventData.data) as TypeValue)?.typeValue == 1) {
         console.info(`ColumnSplit.divider=>{startMargin:"10px", endMargin:"10px"}`)
-        
+        this.mod.divider = {startMargin:"10px", endMargin:"10px"}
       }
     }
   }
@@ -73,7 +84,7 @@ struct ColumnSplitExample {
       }
       .width(10)
       .borderWidth(10)
-      
+      .attributeModifier(this.mod)
       .key('columnsplitkey')
     }
     .width('100%')

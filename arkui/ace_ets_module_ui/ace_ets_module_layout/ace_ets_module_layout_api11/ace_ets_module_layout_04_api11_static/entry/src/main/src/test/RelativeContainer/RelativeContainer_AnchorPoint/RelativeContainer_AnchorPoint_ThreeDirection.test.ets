@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -52,9 +53,8 @@ export default function RelativeContainer_AnchorPoint_ThreeDirection() {
         console.info("get RelativeContainer_AnchorPoint_ThreeDirection state pages:" + JSON.stringify(pages));
         if (!("RelativeContainer_AnchorPoint_ThreeDirection" == pages?.name)) {
           console.info("get RelativeContainer_AnchorPoint_ThreeDirection pages.name:" + JSON.stringify(pages?.name));
-            routerInstance?.pushUrl(options)
+          routerInstance?.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainer_AnchorPoint_ThreeDirection page error " + JSON.stringify(err));

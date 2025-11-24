@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column,Button,ColumnOptions,Text,Flex,Direction,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry, Component, Column,Button,ColumnOptions,Color,Text,Flex,Direction,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -25,18 +25,18 @@ struct JustifyContentFlex {
       Text('1')
         .width('20%')
         .height(50)
-        .backgroundColor(0xF5DEB3)
+        .backgroundColor(Color.Red)
       Text('2')
         .width('20%')
         .height(50)
-        .backgroundColor(0xD2B48C)
+        .backgroundColor(Color.Red)
       Text('3')
         .width('20%')
         .height(50)
-        .backgroundColor(0xF5DEB3)
+        .backgroundColor(Color.Red)
     }.key("justifyContent")
     .width('90%')
     .padding(10)
-    .backgroundColor(0xAFEEEE)
+    .backgroundColor(Color.Red)
   }
 }

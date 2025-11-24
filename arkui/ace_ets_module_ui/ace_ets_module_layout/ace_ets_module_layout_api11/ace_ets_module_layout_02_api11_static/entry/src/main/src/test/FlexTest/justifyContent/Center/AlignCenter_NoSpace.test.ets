@@ -40,9 +40,8 @@ export default function AlignCenter_NoSpace() {
 
     beforeAll(() => {
       console.info("AlignCenter_NoSpace beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +58,8 @@ export default function AlignCenter_NoSpace() {
         console.info("get AlignCenter_NoSpace state pages:" + JSON.stringify(pages));
         if (!("AlignCenter_NoSpace" == pages.name)) {
           console.info("get AlignCenter_NoSpace pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignCenter_NoSpace page error:" + err);
@@ -90,11 +86,9 @@ it('testFlexAlignCenterFlexWidthOverflow_static', Level.LEVEL0, async () : Promi
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 400
+          name: 'DadWidth', value: 400
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Center_NoSpace_01');
 
@@ -105,7 +99,6 @@ it('testFlexAlignCenterFlexWidthOverflow_static', Level.LEVEL0, async () : Promi
       let Center_NoSpace_012: RectValue = CommonFunc.getComponentRect('Center_NoSpace_012');
       let Center_NoSpace_013: RectValue = CommonFunc.getComponentRect('Center_NoSpace_013');
       let Center_NoSpace_01: RectValue = CommonFunc.getComponentRect('Center_NoSpace_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Center_NoSpace_011.top - Center_NoSpace_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_NoSpace_012.top - Center_NoSpace_013.top) <= 1).assertTrue();
       expect(Math.abs(Center_NoSpace_011.top - Center_NoSpace_01.top) <= 1).assertTrue();
@@ -113,14 +106,14 @@ it('testFlexAlignCenterFlexWidthOverflow_static', Level.LEVEL0, async () : Promi
       expect(Math.abs(Center_NoSpace_013.left - Center_NoSpace_012.right) <= 1).assertTrue();
       expect(Math.abs(Center_NoSpace_011.left - Center_NoSpace_01.left) <= 1).assertTrue();
       expect(Math.abs(Center_NoSpace_013.right - Center_NoSpace_01.right) <= 1).assertTrue();
-      expect(Math.abs(Center_NoSpace_011.bottom - Center_NoSpace_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Center_NoSpace_012.bottom - Center_NoSpace_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Center_NoSpace_013.bottom - Center_NoSpace_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Center_NoSpace_011.right - Center_NoSpace_011.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3))) <= 1)
+      expect(Math.abs(Center_NoSpace_011.bottom - Center_NoSpace_011.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Center_NoSpace_012.bottom - Center_NoSpace_012.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Center_NoSpace_013.bottom - Center_NoSpace_013.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Center_NoSpace_011.right - Center_NoSpace_011.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_NoSpace_012.right - Center_NoSpace_012.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3))) <= 1)
+      expect(Math.abs(Center_NoSpace_012.right - Center_NoSpace_012.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_NoSpace_013.right - Center_NoSpace_013.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3))) <= 1)
+      expect(Math.abs(Center_NoSpace_013.right - Center_NoSpace_013.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterFlexWidthOverflow] END');
 
@@ -140,9 +133,7 @@ it('testFlexAlignCenterFlexWidthMeet_static', Level.LEVEL0, async () : Promise<v
         result!.notify({
           name: 'DadWidth', value: 500
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Center_NoSpace_01');
 
@@ -153,7 +144,6 @@ it('testFlexAlignCenterFlexWidthMeet_static', Level.LEVEL0, async () : Promise<v
       let Center_NoSpace_012: RectValue = CommonFunc.getComponentRect('Center_NoSpace_012');
       let Center_NoSpace_013: RectValue = CommonFunc.getComponentRect('Center_NoSpace_013');
       let Center_NoSpace_01: RectValue = CommonFunc.getComponentRect('Center_NoSpace_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Center_NoSpace_011.top - Center_NoSpace_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_NoSpace_012.top - Center_NoSpace_013.top) <= 1).assertTrue();
       expect(Math.abs(Center_NoSpace_011.top - Center_NoSpace_01.top) <= 1).assertTrue();
@@ -161,19 +151,19 @@ it('testFlexAlignCenterFlexWidthMeet_static', Level.LEVEL0, async () : Promise<v
       expect(Math.abs(Center_NoSpace_013.left - Center_NoSpace_012.right) <= 1).assertTrue();
       expect(Math.abs(Math.round(Center_NoSpace_011.left - Center_NoSpace_01.left) - Math.round(Center_NoSpace_01.right - Center_NoSpace_013.right)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_NoSpace_011.left - Center_NoSpace_01.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_NoSpace_011.left - Center_NoSpace_01.left) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_NoSpace_011.right - Center_NoSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_NoSpace_011.right - Center_NoSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_NoSpace_012.right - Center_NoSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_NoSpace_012.right - Center_NoSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_NoSpace_013.right - Center_NoSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_NoSpace_013.right - Center_NoSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_NoSpace_011.bottom - Center_NoSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_NoSpace_011.bottom - Center_NoSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_NoSpace_012.bottom - Center_NoSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_NoSpace_012.bottom - Center_NoSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_NoSpace_013.bottom - Center_NoSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_NoSpace_013.bottom - Center_NoSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterFlexWidthMeet] END');
 

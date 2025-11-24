@@ -14,7 +14,8 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+import { Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/utils/MessageManager';
 import inspector from '@ohos.arkui.inspector'

@@ -72,10 +72,8 @@ export default function ColumnReverseTest() {
         console.info("get ColumnReverseTest state pages:" + JSON.stringify(pages));
         if (!("ColumnReverseTest" == pages.name)) {
           console.info("get ColumnReverseTest pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ColumnReverseTest page error:" + err);
@@ -105,6 +103,7 @@ export default function ColumnReverseTest() {
       expect(Math.floor(Math.abs(Column_01.top - Column_02.bottom)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column_01.bottom - Column_1.bottom)) <= 1).assertTrue();
       console.info('[ColumnReverseTest_0100] END');
+      done()
     });
 
 
@@ -128,6 +127,7 @@ export default function ColumnReverseTest() {
       expect(Math.floor(Math.abs(Column_2.top - Column_03.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column_03.bottom - Column_04.top)) <= 1).assertTrue();
       console.info('[ColumnReverseTest_static_0200] END');
+      done()
     });
   })
 }

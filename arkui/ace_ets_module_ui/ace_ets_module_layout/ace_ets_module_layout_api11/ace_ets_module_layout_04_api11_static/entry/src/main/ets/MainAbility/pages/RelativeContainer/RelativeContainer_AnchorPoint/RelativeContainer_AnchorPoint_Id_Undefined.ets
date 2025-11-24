@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign, AlignRuleOption } from '@ohos.arkui.component'
+import { Entry, Component, Column,AlignRuleOption, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -45,7 +45,6 @@ struct RelativeContainer_AnchorPoint_Id_Undefined {
             right: { anchor: "__container__", align: HorizontalAlign.End }
           } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_Id_Undefined_row2")
-          .id(undefined!)
       }
       .key("RelativeContainer_AnchorPoint_Id_Undefined_r1")
       .width(300).height(300)

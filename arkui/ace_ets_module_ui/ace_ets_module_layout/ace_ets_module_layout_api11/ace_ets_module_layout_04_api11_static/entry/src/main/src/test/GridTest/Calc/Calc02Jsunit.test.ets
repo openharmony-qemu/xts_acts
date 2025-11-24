@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -50,10 +51,8 @@ export default function CalcJsunit02() {
         console.info("get CalcJsunit02 state pages:" + "");
         if (!("Calc02" == pages.name)) {
           console.info("get CalcJsunit02 pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push CalcJsunit02 page error:" + err);
@@ -66,8 +65,6 @@ export default function CalcJsunit02() {
       router.back()
       console.info("CalcJsunit02 after each called");
     });
-   
-    
 
 /*
      * @tc.number   CalcJsunit02_static_0100
@@ -97,16 +94,15 @@ it('CalcJsunit02_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.log('7777', calc0207.right, calc0207.left, calc0207.right - calc0207.left)
       console.log('8888', calc0208.right, calc0208.left, calc0208.right - calc0208.left)
       console.log('9999', calc0209.right, calc0209.left, calc0209.right - calc0209.left)
-      const uiContext = new UIContext();
-      expect(Math.abs(calc0201.bottom - calc0201.top - UIContext.getFocusedUIContext()!.vp2px(54)) <= 1).assertTrue();
-      expect(Math.abs(calc0202.right - calc0202.left - UIContext.getFocusedUIContext()!.vp2px(120)) <= 1).assertTrue();
-      expect(Math.abs(calc0203.right - calc0203.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(calc0204.right - calc0204.left - UIContext.getFocusedUIContext()!.vp2px(140)) <= 1).assertTrue();
-      expect(Math.abs(calc0205.right - calc0205.left - UIContext.getFocusedUIContext()!.vp2px(120)) <= 1).assertTrue();
-      expect(Math.abs(calc0206.right - calc0206.left - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(calc0207.right - calc0207.left - UIContext.getFocusedUIContext()!.vp2px(90)) <= 1).assertTrue();
-      expect(Math.abs(calc0208.right - calc0208.left - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs(calc0209.right - calc0209.left - UIContext.getFocusedUIContext()!.vp2px(90)) <= 1).assertTrue();
+      expect(Math.abs(calc0201.bottom - calc0201.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(54))) <= 1).assertTrue();
+      expect(Math.abs(calc0202.right - calc0202.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120))) <= 1).assertTrue();
+      expect(Math.abs(calc0203.right - calc0203.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(calc0204.right - calc0204.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140))) <= 1).assertTrue();
+      expect(Math.abs(calc0205.right - calc0205.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120))) <= 1).assertTrue();
+      expect(Math.abs(calc0206.right - calc0206.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs(calc0207.right - calc0207.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(90))) <= 1).assertTrue();
+      expect(Math.abs(calc0208.right - calc0208.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs(calc0209.right - calc0209.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(90))) <= 1).assertTrue();
       done();
     });
   })

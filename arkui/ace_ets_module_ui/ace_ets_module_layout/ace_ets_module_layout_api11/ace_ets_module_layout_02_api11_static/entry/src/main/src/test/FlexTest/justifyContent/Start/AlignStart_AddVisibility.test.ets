@@ -22,9 +22,7 @@ import { UtilsTest } from '../../../Util.test';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
-import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
-import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment,Visibility } from '@ohos.arkui.component'
+import {Visibility } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -41,9 +39,8 @@ export default function AlignStart_AddVisibility() {
 
     beforeAll(() => {
       console.info("AlignStart_AddVisibility beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +56,8 @@ export default function AlignStart_AddVisibility() {
         console.info("get AlignStart_AddVisibility state pages:" + JSON.stringify(pages));
         if (!("AlignStart_AddVisibility" == pages.name)) {
           console.info("get AlignStart_AddVisibility pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignStart_AddVisibility page error:" + err);
@@ -86,23 +80,13 @@ export default function AlignStart_AddVisibility() {
 it('testFlexAlignStartTextVisibilityNone_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[testFlexAlignStartTextVisibilityNone] START');
       try {
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.None
           })
         }
-        
-        
-        
-        AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
-          name: 'OneVisibility', value: Visibility.None
-        })
+
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('Start_AddVisibility_01');
 
@@ -115,17 +99,16 @@ it('testFlexAlignStartTextVisibilityNone_static', Level.LEVEL0, async () : Promi
         let Start_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_012');
         let Start_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_013');
         let Start_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_01');
-        const uiContext = new UIContext();
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_01.left) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_012.right - Start_AddVisibility_013.left) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_01.right - Start_AddVisibility_013.right) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
-      } catch (err) {
+        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_01.right - Start_AddVisibility_013.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue();
+      } catch (err:Error) {
         console.error('[testFlexAlignStartTextVisibilityNone] failed');
         expect().assertFail();
       }
@@ -143,23 +126,12 @@ it('testFlexAlignStartTextVisibilityNone_static', Level.LEVEL0, async () : Promi
 it('testFlexAlignStartTextVisibilityHidden_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[testFlexAlignStartTextVisibilityHidden] START');
       try {
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.Hidden
           })
         }
-        
-        
-        
-      AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
-        name: 'OneVisibility', value: Visibility.Hidden
-      })
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('Start_AddVisibility_01');
 
@@ -173,21 +145,20 @@ it('testFlexAlignStartTextVisibilityHidden_static', Level.LEVEL0, async () : Pro
         let Start_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_012');
         let Start_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_013');
         let Start_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_01');
-        const uiContext = new UIContext();
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right) <= 1).assertTrue();
         expect(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      } catch (err) {
+        expect(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      } catch (err:Error) {
         console.error('[testFlexAlignStartTextVisibilityHidden] failed');
         expect().assertFail();
       }
@@ -205,25 +176,12 @@ it('testFlexAlignStartTextVisibilityHidden_static', Level.LEVEL0, async () : Pro
 it('testFlexAlignStartTextVisibilityVisible_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[testFlexAlignStartTextVisibilityVisible] START');
       try {
-        
-        
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.Visible
           })
         }
-        
-        
-        
-        AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
-          name: 'OneVisibility', value: Visibility.Visible
-        })
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('Start_AddVisibility_01');
 
@@ -237,21 +195,20 @@ it('testFlexAlignStartTextVisibilityVisible_static', Level.LEVEL0, async () : Pr
         let Start_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_012');
         let Start_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_013');
         let Start_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_01');
-        const uiContext = new UIContext();
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top) <= 1).assertTrue()
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top) <= 1).assertTrue()
         expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top) <= 1).assertTrue()
         expect(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right) <= 1).assertTrue()
         expect(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right) <= 1).assertTrue()
         expect(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left) <= 1).assertTrue()
-        expect(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      } catch (err) {
+        expect(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      } catch (err:Error) {
         console.error('[testFlexAlignStartTextVisibilityVisible] failed');
         expect().assertFail();
       }

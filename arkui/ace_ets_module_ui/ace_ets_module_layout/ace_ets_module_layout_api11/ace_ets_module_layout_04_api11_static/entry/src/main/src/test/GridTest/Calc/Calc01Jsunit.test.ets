@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -33,7 +34,6 @@ export default function CalcJsunit01() {
   describe('CalcJsunit01', () => {
     beforeAll(() => {
       console.info("CalcJsunit01 beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -50,10 +50,8 @@ export default function CalcJsunit01() {
         console.info("get CalcJsunit01 state pages:" + "");
         if (!("Calc01" == pages.name)) {
           console.info("get CalcJsunit01 pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push CalcJsunit01 page error:" + err);
@@ -66,8 +64,6 @@ export default function CalcJsunit01() {
       router.back()
       console.info("CalcJsunit01 after each called");
     });
-   
-    
 
 /*
      * @tc.number   CalcJsunit01_static_0100
@@ -97,16 +93,16 @@ it('CalcJsunit01_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.log('77777', calc8.right, calc8.left, calc8.right - calc8.left)
       console.log('88888', calc9.right, calc9.left, calc9.right - calc9.left)
       console.log('99999', calc10.top, calc10.bottom, calc10.top - calc10.bottom)
-      const uiContext = new UIContext();
-      expect(Math.abs(calc2.right - calc2.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc3.bottom - calc3.top - UIContext.getFocusedUIContext()!.vp2px(18)) <= 1).assertTrue();
-      expect(Math.abs(calc4.right - calc4.left - UIContext.getFocusedUIContext()!.vp2px(90)) <= 1).assertTrue();
-      expect(Math.abs(calc5.bottom - calc5.top - UIContext.getFocusedUIContext()!.vp2px(18)) <= 1).assertTrue();
-      expect(Math.abs(calc6.right - calc6.left - UIContext.getFocusedUIContext()!.vp2px(90)) <= 1).assertTrue();
-      expect(Math.abs(calc7.right - calc7.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc8.right - calc8.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc9.right - calc9.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc10.bottom - calc10.top - UIContext.getFocusedUIContext()!.vp2px(54)) <= 1).assertTrue();
+
+      expect(Math.abs(calc2.right - calc2.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(270))) <= 1).assertTrue();
+      expect(Math.abs(calc3.bottom - calc3.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(18))) <= 1).assertTrue();
+      expect(Math.abs(calc4.right - calc4.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(90))) <= 1).assertTrue();
+      expect(Math.abs(calc5.bottom - calc5.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(18))) <= 1).assertTrue();
+      expect(Math.abs(calc6.right - calc6.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(90))) <= 1).assertTrue();
+      expect(Math.abs(calc7.right - calc7.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(270))) <= 1).assertTrue();
+      expect(Math.abs(calc8.right - calc8.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(270))) <= 1).assertTrue();
+      expect(Math.abs(calc9.right - calc9.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(270))) <= 1).assertTrue();
+      expect(Math.abs(calc10.bottom - calc10.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(54))) <= 1).assertTrue();
       done();
     });
   })

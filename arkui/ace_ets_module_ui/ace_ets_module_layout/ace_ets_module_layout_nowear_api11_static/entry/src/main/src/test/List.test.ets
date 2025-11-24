@@ -14,16 +14,16 @@
  */
 import FolderStack3ApiJsunit from './FolderStackTest/FolderStack3ApiJsunit.test';
 import enumFolderTest from "./FolderStackTest/enumflodstack.test"
-import columnSplitJsunit from './ColumnTest/ColumnSplitJsunit.test';
+import columnSplitTestJsunit from './ColumnTest/ColumnSplitJsunit.test';
 import rowSplitJsunit from './RowTest/RowSplitJsunit.test';
 import ColumnSplitJsunit from './Column/ColumnSplitJsunit.test';
 import waterFlowDemoJsunit from './waterflow/waterFlowDemo.test';
 
 export default function testsuite() {
-  FolderStack3ApiJsunit()
-  enumFolderTest()
-  columnSplitJsunit()
-  rowSplitJsunit()
+  FolderStack3ApiJsunit();
+  columnSplitTestJsunit();
+  enumFolderTest();
   ColumnSplitJsunit();
-  waterFlowDemoJsunit()
+  rowSplitJsunit();
+  waterFlowDemoJsunit();
 }

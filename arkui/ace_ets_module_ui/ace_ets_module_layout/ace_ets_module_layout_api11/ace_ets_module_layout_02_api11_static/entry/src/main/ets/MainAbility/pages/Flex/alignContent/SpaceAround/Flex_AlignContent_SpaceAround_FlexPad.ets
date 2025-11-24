@@ -26,6 +26,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -50,6 +51,7 @@ import {
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -61,10 +63,6 @@ struct FlexAlign_SpaceAround_FlexPad {
 
   onPageShow() {
     console.info('FlexAlign_SpaceAround_FlexPad onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);

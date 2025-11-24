@@ -14,8 +14,9 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -32,7 +33,6 @@ export default function GridRows1() {
   describe('GridRows1', () => {
     beforeAll(() => {
       console.info("GridRows1 beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -47,7 +47,6 @@ export default function GridRows1() {
         if (!("GridRows1" == pages.name)) {
           console.info("get  GridRows1 pages.name:" + "");
           routerInstance.pushUrl({url:"MainAbility/pages/GridRow/GridRows1"})
-          
           await CommonFunc.sleep(4000);
           console.info("push GridRows1 page result:" + "");
         }
@@ -60,11 +59,6 @@ export default function GridRows1() {
       await CommonFunc.sleep(1000);
       console.info("GridRows1 after each called");
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   GridRows1_static_001
@@ -86,11 +80,6 @@ it('GridRows1_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[GridRows1_static_001] END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   GridRows1_static_002
@@ -120,11 +109,6 @@ it('GridRows1_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
       done();
     });
 
-    
-
-    
-    
-
 /*
      * @tc.number   GridRows1_static_003
      * @tc.name     GridRows1_static_003
@@ -144,18 +128,13 @@ it('GridRows1_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
       let row1 = CommonFunc.getComponentRect('GridRows1_1');
       let row2 = CommonFunc.getComponentRect('GridRows1_5');
       await CommonFunc.sleep(2000);
-      const uiContext = new UIContext();
+
       console.info("[GridRows1_static_003] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
-      expect(Math.abs(Math.round(row2.top - row1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row2.top - row1.bottom) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
 
       console.info('[GridRows1_static_003] END');
       done();
     });
-
-    
-
-    
-    
 
 /*
      * @tc.number   GridRows1_static_004

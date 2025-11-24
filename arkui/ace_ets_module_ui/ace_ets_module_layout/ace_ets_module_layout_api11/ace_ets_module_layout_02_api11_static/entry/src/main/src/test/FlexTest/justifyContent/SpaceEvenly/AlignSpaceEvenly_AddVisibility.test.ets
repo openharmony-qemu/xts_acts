@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment,Visibility } from '@ohos.arkui.component'
+import {Visibility } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -41,9 +41,8 @@ export default function AlignSpaceEvenly_AddVisibility() {
 
     beforeAll(() => {
       console.info("AlignSpaceEvenly_AddVisibility beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +58,8 @@ export default function AlignSpaceEvenly_AddVisibility() {
         console.info("get AlignSpaceEvenly_AddVisibility state pages:" + JSON.stringify(pages));
         if (!("AlignSpaceEvenly_AddVisibility" == pages.name)) {
           console.info("get AlignSpaceEvenly_AddVisibility pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignSpaceEvenly_AddVisibility page error:" + err);
@@ -88,24 +84,12 @@ export default function AlignSpaceEvenly_AddVisibility() {
 it('textFlexAlignSpaceEvenlyTextVisibilityNone_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[textFlexAlignSpaceEvenlyTextVisibilityNone] START');
       try {
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.None
           })
         }
-
-        
-        
-        
-        AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
-            name: 'OneVisibility', value: Visibility.None
-          });
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('SpaceEvenly_AddVisibility_01');
 
@@ -119,32 +103,31 @@ it('textFlexAlignSpaceEvenlyTextVisibilityNone_static', Level.LEVEL0, async () :
         let SpaceEvenly_AddVisibility_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddVisibility_013');
         let SpaceEvenly_AddVisibility_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddVisibility_01');
 
-        const uiContext = new UIContext();
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_013.top)) <= 2)
           .assertTrue();
 
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_01.top)) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200 / 3))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_01.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200 / 3)))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200 / 3))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200 / 3)))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200 / 3))) <= 2)
-          .assertTrue();
-
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200 / 3)))) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
+          .assertTrue();
+
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
           .assertTrue();
 
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error('[textFlexAlignSpaceEvenlyTextVisibilityNone] failed' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -162,20 +145,12 @@ it('textFlexAlignSpaceEvenlyTextVisibilityNone_static', Level.LEVEL0, async () :
 it('textFlexAlignSpaceEvenlyTextVisibilityHidden_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[textFlexAlignSpaceEvenlyTextVisibilityHidden] START');
       try {
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.Hidden
           })
         }
-        /*GlobalContext.getContext().getObject<number>('value').message.notify({
-          name: 'OneVisibility', value: Visibility.Hidden
-        });*/
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('SpaceEvenly_AddVisibility_01');
 
@@ -189,7 +164,6 @@ it('textFlexAlignSpaceEvenlyTextVisibilityHidden_static', Level.LEVEL0, async ()
         let SpaceEvenly_AddVisibility_012: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddVisibility_012');
         let SpaceEvenly_AddVisibility_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddVisibility_013');
         let SpaceEvenly_AddVisibility_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddVisibility_01');
-        const uiContext = new UIContext();
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_013.top)) <= 2)
           .assertTrue();
         expect(Math.abs(Math.round(Math.round(SpaceEvenly_AddVisibility_012.top)) - Math.round(SpaceEvenly_AddVisibility_01.top)) <= 2)
@@ -197,32 +171,32 @@ it('textFlexAlignSpaceEvenlyTextVisibilityHidden_static', Level.LEVEL0, async ()
         expect(Math.abs(Math.round(Math.round(SpaceEvenly_AddVisibility_012.top)) - Math.round(SpaceEvenly_AddVisibility_011.top)) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-
-
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 2)
+
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 2)
           .assertTrue();
 
-      } catch (err) {
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
+          .assertTrue();
+
+      } catch (err:Error) {
         console.error('[textFlexAlignSpaceEvenlyTextVisibilityHidden] failed' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -240,20 +214,12 @@ it('textFlexAlignSpaceEvenlyTextVisibilityHidden_static', Level.LEVEL0, async ()
 it('textFlexAlignSpaceEvenlyTextVisibilityVisible_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[textFlexAlignSpaceEvenlyTextVisibilityVisible] START');
       try {
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.Visible
           })
         }
-       /* GlobalContext.getContext().getObject<number>('value').message.notify({
-          name: 'OneVisibility', value: Visibility.Visible
-        });*/
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('SpaceEvenly_AddVisibility_01');
 
@@ -268,38 +234,37 @@ it('textFlexAlignSpaceEvenlyTextVisibilityVisible_static', Level.LEVEL0, async (
         let SpaceEvenly_AddVisibility_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddVisibility_013');
         let SpaceEvenly_AddVisibility_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddVisibility_01');
 
-        const uiContext = new UIContext();
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_013.top)) <= 2)
           .assertTrue();
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_01.top)) <= 2)
           .assertTrue();
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_011.top)) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5)) * 100) / 100) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 2)
-          .assertTrue();
-
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
           .assertTrue();
 
-      } catch (err) {
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 2)
+          .assertTrue();
+
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
+          .assertTrue();
+
+      } catch (err:Error) {
         console.error('[textFlexAlignSpaceEvenlyTextVisibilityVisible] failed' + JSON.stringify(err));
         expect().assertFail();
       }

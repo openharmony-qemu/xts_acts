@@ -30,6 +30,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -40,7 +41,7 @@ struct AlignSpaceEvenly_AddMargin {
 
   onPageShow() {
     console.info('AlignSpaceEvenly_AddMargin onPageShow');
-        AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'DadMargin') {

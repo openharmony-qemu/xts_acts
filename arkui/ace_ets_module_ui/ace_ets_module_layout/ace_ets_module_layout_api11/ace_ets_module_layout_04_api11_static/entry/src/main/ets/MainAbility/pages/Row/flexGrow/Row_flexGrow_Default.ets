@@ -20,15 +20,15 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 @Component
 struct Row_flexGrow_Default {
   @State addflexGrow: number = 0;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  messageManager: MessageManager<number|undefined|null> = new MessageManager<number|undefined|null>();
 
   onPageShow() {
     console.info('Row_flexGrow_Default onPageShow');
-    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<number|undefined|null>>('messageManager', this.messageManager);
+    let callback: Callback<number|undefined|null> = (message: Message<number|undefined|null>) => {
       console.error('message = ' + message.name + "--" + message.value);
-      if (message.name == 'addflexGrow') {
-        this.addflexGrow = message.value;
+      if (message.name == 'addflexGrow'&& message.value != undefined && message.value != null ) {
+        this.addflexGrow = message.value as number;
       }
     };
     this.messageManager.registerCallback(callback);

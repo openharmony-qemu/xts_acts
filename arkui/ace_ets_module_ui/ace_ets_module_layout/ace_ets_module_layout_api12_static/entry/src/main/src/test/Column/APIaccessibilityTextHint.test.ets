@@ -74,10 +74,8 @@ export default function APIaccessibilityTextHint() {
         console.info("get APIaccessibilityTextHint state pages:" + JSON.stringify(pages));
         if (!("APIaccessibilityTextHint" == pages.name)) {
           console.info("get APIaccessibilityTextHint pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push APIaccessibilityTextHint page error:" + err);

@@ -73,10 +73,8 @@ export default function APIremoveGestureByTag() {
         console.info("get APIremoveGestureByTag state pages:" + JSON.stringify(pages));
         if (!("APIremoveGestureByTag" == pages.name)) {
           console.info("get APIremoveGestureByTag pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push APIremoveGestureByTag page error:" + err);

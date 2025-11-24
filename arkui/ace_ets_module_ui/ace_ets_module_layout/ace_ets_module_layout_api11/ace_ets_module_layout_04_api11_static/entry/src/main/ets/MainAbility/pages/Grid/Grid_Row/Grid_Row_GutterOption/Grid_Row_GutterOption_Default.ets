@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ struct Grid_Row_GutterOption_Default {
           reference: BreakpointsReference.ComponentSize } as BreakPoints,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: int) => {
+        ForEach(this.bgColors, (color: Color, index?: number) => {
           GridCol({ span: 1 }) {
             Row().width("100%").height("20vp")
           }.borderColor(color).borderWidth(2).key('GutterOptionChange_' + index)

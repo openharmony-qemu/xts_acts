@@ -15,6 +15,7 @@
 
 import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import hilog from '@ohos.hilog'
@@ -29,21 +30,10 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
-
-
-
-
-
-
-
-
-
 export default function blankJsunit() {
   describe('BlankTest', () => {
     beforeAll(() => {
       console.info("BlankTest beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -60,10 +50,8 @@ export default function blankJsunit() {
         console.info("get Blank state success " + "");
         if (!("Blank" == pages.name)) {
           console.info("get Blank state success " + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000)
-          
         }
       } catch (err) {
         console.error("push Blank page error " + JSON.stringify(err));
@@ -76,10 +64,6 @@ export default function blankJsunit() {
       await UtilsTest.msSleep(1000)
       console.info("Blank after each called");
     });
-
-    
-    
-    
 
 /*
      * @tc.number   BlankGetInspectorByKey_static_01

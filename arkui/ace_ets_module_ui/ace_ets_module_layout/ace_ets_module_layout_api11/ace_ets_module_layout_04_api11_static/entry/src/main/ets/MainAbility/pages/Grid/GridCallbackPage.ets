@@ -12,18 +12,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { GlobalContext } from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
-import { Entry, Component, Column, Color, GridItem, ForEach,OnScrollFrameBeginHandlerResult, EdgeEffect, TextAlign, GridDirection, Scroller, ClickEvent, ItemDragInfo, ScrollState, BarState, Button, Row, Text, Grid, Margin } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
-
-type MessageData = string | number | boolean | BarState | Color | GridDirection
+import {
+  Entry,
+  Component,
+  Column,
+  Color,
+  GridItem,
+  ForEach,
+  OnScrollFrameBeginHandlerResult,
+  EdgeEffect,
+  TextAlign,
+  GridDirection,
+  Scroller,
+  ClickEvent,
+  ItemDragInfo,
+  ScrollState,
+  BarState,
+  Button,
+  Row,
+  Text,
+  Grid,
+  Margin
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct GridCallbackPage {
-  @State numberData: String[] = ['0', '1', '2', '3', '4']
+  @State Number01: String[] = ['0', '1', '2', '3', '4'] as string[]
   @State columnsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State rowsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State columnsGap: number = 10
@@ -31,11 +48,11 @@ struct GridCallbackPage {
   @State scrollBar: BarState = BarState.Off
   @State scrollBarColor: Color = Color.Grey
   @State scrollBarWidth: number = 20
-  @State cachedCount: number = 1
+  @State cachedCount: int = 1
   @State editMode: boolean = false
   @State layoutDirection: GridDirection = GridDirection.Column
-  @State maxCount: number = Infinity
-  @State minCount: number = 1
+  @State maxCount: int = 1
+  @State minCount: int = 1
   @State cellLength: number = 40
   @State multiSelectable: boolean = false
   @State supportAnimation: boolean = false
@@ -56,117 +73,126 @@ struct GridCallbackPage {
   @State onScrollBarUpdateText: string = 'onScrollBarUpdate'
   @State myKey: number = 0
   scroller: Scroller = new Scroller()
-  messageManager: MessageManager<object> = new MessageManager<object>()
+  messageManager: MessageManager<string | number | boolean | BarState | Color | GridDirection> =
+    new MessageManager<string | number | boolean | BarState | Color | GridDirection>()
 
-  onPageShow(){
+  onPageShow() {
     console.info('GridPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
-      console.error('message = ' + message.name + '--' + message.value)
-      if (message.name == 'columnsTemplate') {
-        this.columnsTemplate = message.value as string
+    AppStorage.setOrCreate<MessageManager<string | number | boolean | BarState | Color | GridDirection>>("messageManager",
+      this.messageManager);
+    let callback: Callback<string | number | boolean | BarState | Color | GridDirection> =
+      (message: Message<string | number | boolean | BarState | Color | GridDirection>) => {
+        console.error('message = ' + message.name + '--' + message.value)
+        if (message.name == 'columnsTemplate') {
+          this.columnsTemplate = message.value as string
+        }
+        if (message.name == 'rowsTemplate') {
+          this.rowsTemplate = message.value as string
+        }
+        if (message.name == 'columnsGap') {
+          this.columnsGap = message.value as number
+        }
+        if (message.name == 'rowsGap') {
+          this.rowsGap = message.value as number
+        }
+        if (message.name == 'scrollBar') {
+          this.scrollBar = message.value as BarState
+        }
+        if (message.name == 'scrollBarColor') {
+          this.scrollBarColor = message.value as Color
+        }
+        if (message.name == 'scrollBarWidth') {
+          this.scrollBarWidth = message.value as number
+        }
+        if (message.name == 'cachedCount') {
+          this.cachedCount = message.value as int
+        }
+        if (message.name == 'editMode') {
+          this.editMode = message.value as boolean
+        }
+        if (message.name == 'layoutDirection') {
+          this.layoutDirection = message.value as GridDirection
+        }
+        if (message.name == 'maxCount') {
+          this.maxCount = message.value as int
+        }
+        if (message.name == 'minCount') {
+          this.minCount = message.value as int
+        }
+        if (message.name == 'cellLength') {
+          this.cellLength = message.value as number
+        }
+        if (message.name == 'multiSelectable') {
+          this.multiSelectable = message.value as boolean
+        }
+        if (message.name == 'supportAnimation') {
+          this.supportAnimation = message.value as boolean
+        }
       }
-      if (message.name == 'rowsTemplate') {
-        this.rowsTemplate = message.value as string
-      }
-      if (message.name == 'columnsGap') {
-        this.columnsGap = message.value as number
-      }
-      if (message.name == 'rowsGap') {
-        this.rowsGap = message.value as number
-      }
-      if (message.name == 'scrollBar') {
-        this.scrollBar = message.value as BarState
-      }
-      if (message.name == 'scrollBarColor') {
-        this.scrollBarColor = message.value as Color
-      }
-      if (message.name == 'scrollBarWidth') {
-        this.scrollBarWidth = message.value as number
-      }
-      if (message.name == 'cachedCount') {
-        this.cachedCount = message.value as number
-      }
-      if (message.name == 'editMode') {
-        this.editMode = message.value as boolean
-      }
-      if (message.name == 'layoutDirection') {
-        this.layoutDirection = message.value as GridDirection
-      }
-      if (message.name == 'maxCount') {
-        this.maxCount = message.value as number
-      }
-      if (message.name == 'minCount') {
-        this.minCount = message.value as number
-      }
-      if (message.name == 'cellLength') {
-        this.cellLength = message.value as number
-      }
-      if (message.name == 'multiSelectable') {
-        this.multiSelectable = message.value as boolean
-      }
-      if (message.name == 'supportAnimation') {
-        this.supportAnimation = message.value as boolean
-      }
-    }
     this.messageManager.registerCallback(callback)
   }
 
-  build(){
+  build() {
     Column() {
       Button('scoll to bottom')
         .key('bottom')
         .height('5%')
         .onClick((e: ClickEvent) => {
           console.log('滑动到底部')
-          this.scroller.scrollTo({xOffset:0,yOffset:2000})
+          this.scroller.scrollTo({ xOffset: 0, yOffset: 2000 })
         })
       Button(this.buttonName)
         .key('button')
         .height('5%')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => {
           this.buttonName = 'clicked'
           this.scroller.scrollPage({ next: true })
         })
-      Row(){
+      Row() {
         Text('onScrollIndex:' + this.onScrollIndex).key('onScrollIndex')
-          .fontSize(10).margin({right:5} as Margin)
+          .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onItemDragStart).key('onItemDragStart')
           .fontSize(10)
       }
-      Row(){
+
+      Row() {
         Text(this.onItemDragEnter).key('onItemDragEnter')
-          .fontSize(10).margin({right:5} as Margin)
+          .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onItemDragMove).key('onItemDragMove')
           .fontSize(10)
       }
-      Row(){
+
+      Row() {
         Text(this.onItemDragLeave).key('onItemDragLeave')
-          .fontSize(10).margin({right:5} as Margin)
+          .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onItemDrop).key('onItemDrop')
           .fontSize(10)
       }
+
       Row() {
         Text(this.onScrollText).key('onScrollText')
-          .fontSize(10).margin({right:5} as Margin)
+          .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onReachStartText).key('onReachStartText')
           .fontSize(10)
       }
+
       Row() {
         Text(this.onReachEndText).key('onReachEndText')
-          .fontSize(10).margin({right:5} as Margin)
+          .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onScrollStartText).key('onScrollStartText')
           .fontSize(10)
       }
+
       Row() {
         Text(this.onScrollIndexText).key('onScrollIndexText')
-          .fontSize(10).margin({right:5} as Margin)
+          .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onScrollStopText).key('onScrollStopText')
           .fontSize(10)
       }
-      Row(){
+
+      Row() {
         Text(this.onScrollFrameBeginText).key('onScrollFrameBeginText')
-          .fontSize(10).margin({right:5} as Margin)
+          .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onScrollBarUpdateText).key('onScrollBarUpdateText')
           .fontSize(10)
       }
@@ -174,8 +200,12 @@ struct GridCallbackPage {
       Text('default').fontColor(0xCCCCCC).fontSize(9).width('90%')
       Grid() {
         GridItem() {
-          Text('abc').fontSize(16).backgroundColor(0xF9CF93).width('100%')
-            .height(40).textAlign(TextAlign.Center)
+          Text('abc')
+            .fontSize(16)
+            .backgroundColor(0xF9CF93)
+            .width('100%')
+            .height(40)
+            .textAlign(TextAlign.Center)
         }.width('90%')
       }.columnsTemplate('1fr')
       .rowsTemplate('1fr')
@@ -183,8 +213,8 @@ struct GridCallbackPage {
       .key('grid_default')
 
       Grid() {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number01, (day: string) => {
+          ForEach(this.Number01, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -202,11 +232,11 @@ struct GridCallbackPage {
       .columnsGap(this.columnsGap)
       .rowsGap(this.rowsGap)
       .scrollBar(this.scrollBar)
-      .cachedCount(Double.toInt(this.cachedCount))
+      .cachedCount(this.cachedCount)
       .editMode(this.editMode)
       .layoutDirection(this.layoutDirection)
-      .maxCount(Double.toInt(this.maxCount))
-      .minCount(Double.toInt(this.minCount))
+      .maxCount(this.maxCount)
+      .minCount(this.minCount)
       .cellLength(this.cellLength)
       .multiSelectable(this.multiSelectable)
       .supportAnimation(this.supportAnimation)
@@ -227,7 +257,8 @@ struct GridCallbackPage {
       })
       .onItemDragMove((event: ItemDragInfo, itemIndex: int, insertIndex: int) => {
         this.onItemDragMove = 'onItemDragMove:succ'
-        console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y + ' itemIndex: ' + itemIndex + ' insertIndex: ' + insertIndex)
+        console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y + ' itemIndex: ' + itemIndex +
+          ' insertIndex: ' + insertIndex)
       })
       .onItemDragLeave((event: ItemDragInfo, itemIndex: int) => {
         this.onItemDragLeave = 'onItemDragLeave:succ'
@@ -235,13 +266,14 @@ struct GridCallbackPage {
       })
       .onItemDrop((event: ItemDragInfo, itemIndex: int, insertIndex: int, isSuccess: boolean) => {
         this.onItemDrop = 'onItemDrop:succ'
-        console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y + ' itemIndex: ' + itemIndex + ' insertIndex: ' + insertIndex + ' isSuccess: ' + isSuccess)
+        console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y + ' itemIndex: ' + itemIndex +
+          ' insertIndex: ' + insertIndex + ' isSuccess: ' + isSuccess)
       })
 
       Text('scroll').fontColor(0xCCCCCC).fontSize(9).width('90%')
       Grid(this.scroller) {
-        ForEach(this.numberData, (row: string) => {
-          ForEach(this.numberData, (column: string) => {
+        ForEach(this.Number01, (row: string) => {
+          ForEach(this.Number01, (column: string) => {
             GridItem() {
               Text(row + '-' + column)
                 .fontSize(16)
@@ -260,18 +292,19 @@ struct GridCallbackPage {
       .scrollBar(this.scrollBar)
       .scrollBarColor(this.scrollBarColor)
       .scrollBarWidth(this.scrollBarWidth)
-      .onScrollIndex((first: int,last: int) => {
+      .onScrollIndex((first: int, last: int) => {
         this.onScrollIndex = first
         console.info(first)
       })
       .width('90%')
       .backgroundColor(0xFAEEE0)
       .height('50%')
-      
-      
-      
-      
-      .onScrollIndex((first: int,last: int) => {
+      .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
+        this.onScrollText = 'onScroll:succ'
+        console.info('onScroll scrollOffset:' + JSON.stringify(scrollOffset) + ' ScrollState:' +
+        JSON.stringify(scrollState))
+      })
+      .onScrollIndex((first: int, last: int) => {
         this.onScrollIndexText = 'onScrollIndex:succ'
         console.info('onScrollIndex first:' + first + ' last:' + last)
       })

@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-import { GlobalContext } from '../../../../common/GlobalContext';
-import { ValueT } from '../../../../common/Value';
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
 import { Entry, Component, Column, FlexAlign, Position, Text, Flex, FlexDirection } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
@@ -27,7 +25,7 @@ struct AlignSpaceEvenly_AddOffset {
 
   onPageShow() {
     console.info('AlignSpaceEvenly_AddOffset onPageShow');
-        AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
     let callback: Callback<Position> = (message: Message<Position>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'OneOffset') {

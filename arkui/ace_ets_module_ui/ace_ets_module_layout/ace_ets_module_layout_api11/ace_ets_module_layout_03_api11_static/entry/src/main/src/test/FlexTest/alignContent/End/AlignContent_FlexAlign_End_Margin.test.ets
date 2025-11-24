@@ -37,7 +37,6 @@ export default function AlignContent_FlexAlign_End_Margin() {
   describe('AlignContent_FlexAlign_End_Margin', () => {
     beforeAll(() => {
       console.info("AlignContent_End_FlexP_Fixed_Visibility beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,11 +53,8 @@ export default function AlignContent_FlexAlign_End_Margin() {
         console.info("get AlignContent_FlexAlign_End_Margin state pages:" + JSON.stringify(pages));
         if (!("AlignContent_FlexAlign_End_Margin" == pages.name)) {
           console.info("get AlignContent_FlexAlign_End_Margin pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignContent_FlexAlign_End_Margin page error:" + err);
@@ -84,9 +80,6 @@ export default function AlignContent_FlexAlign_End_Margin() {
 it('testAlignContentEndFlexMarginSatisfy_static', Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexMarginSatisfy START');
       let strJson = inspector.getInspectorByKey('AlignContentFlexEndMargin_flex');
-      
-      
-
       let End_Margin_Column: RectValue = CommonFunc.getComponentRect('AlignContentFlexEndMargin_Column');
       let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexEndMargin_flex');
       let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexEndMargin_flex_1');
@@ -133,9 +126,8 @@ it('testAlignContentEndFlexMarginSatisfy_static', Level.LEVEL0, async () => {
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.End");
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.top - End_Margin_Column.top - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(End_Margin_Column.bottom - AlignContentFlexEnd_4.bottom - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.top - End_Margin_Column.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(End_Margin_Column.bottom - AlignContentFlexEnd_4.bottom - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_2.top - AlignContentFlexEnd_flex001.top - AlignContentFlexEnd_flex001_height*0.1)) <= 1).assertTrue();

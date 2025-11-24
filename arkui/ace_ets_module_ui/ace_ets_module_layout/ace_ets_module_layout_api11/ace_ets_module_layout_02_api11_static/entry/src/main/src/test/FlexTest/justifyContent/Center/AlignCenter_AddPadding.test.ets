@@ -40,9 +40,8 @@ export default function AlignCenter_AddPadding() {
 
     beforeAll(() => {
       console.info("AlignCenter_AddPadding beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +58,8 @@ export default function AlignCenter_AddPadding() {
         console.info("get AlignCenter_AddPadding state pages:" + JSON.stringify(pages));
         if (!("AlignCenter_AddPadding" == pages.name)) {
           console.info("get AlignCenter_AddPadding pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignCenter_AddPadding page error:" + err);
@@ -90,14 +86,12 @@ it('testFlexAlignCenterFlexPadOverflow_static', Level.LEVEL0, async () : Promise
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 30
+          name: 'DadPadding', value: 30
         });
-
       }
 
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Center_AddPadding_01');
-
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('justifyContent')).assertEqual('FlexAlign.Center');
@@ -105,28 +99,27 @@ it('testFlexAlignCenterFlexPadOverflow_static', Level.LEVEL0, async () : Promise
       let Center_AddPadding_012: RectValue = CommonFunc.getComponentRect('Center_AddPadding_012');
       let Center_AddPadding_013: RectValue = CommonFunc.getComponentRect('Center_AddPadding_013');
       let Center_AddPadding_01: RectValue = CommonFunc.getComponentRect('Center_AddPadding_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Center_AddPadding_011.top - Center_AddPadding_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddPadding_012.top - Center_AddPadding_013.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddPadding_012.left - Center_AddPadding_011.right) <= 1).assertTrue();
       expect(Math.abs(Center_AddPadding_013.left - Center_AddPadding_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_011.left - Center_AddPadding_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_011.left - Center_AddPadding_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_01.right - Center_AddPadding_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_01.right - Center_AddPadding_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_011.top - Center_AddPadding_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_011.top - Center_AddPadding_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_011.bottom - Center_AddPadding_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_011.bottom - Center_AddPadding_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_012.bottom - Center_AddPadding_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_012.bottom - Center_AddPadding_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_013.bottom - Center_AddPadding_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_013.bottom - Center_AddPadding_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_011.right - Center_AddPadding_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_011.right - Center_AddPadding_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_012.right - Center_AddPadding_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_012.right - Center_AddPadding_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_013.right - Center_AddPadding_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_013.right - Center_AddPadding_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterFlexPadOverflow] END');
 
@@ -144,9 +137,8 @@ it('testFlexAlignCenterFlexPadMeet_static', Level.LEVEL0, async () : Promise<voi
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 20
+          name: 'DadPadding', value: 20
         });
-
       }
 
       await CommonFunc.sleep(3000);
@@ -159,28 +151,27 @@ it('testFlexAlignCenterFlexPadMeet_static', Level.LEVEL0, async () : Promise<voi
       let Center_AddPadding_012: RectValue = CommonFunc.getComponentRect('Center_AddPadding_012');
       let Center_AddPadding_013: RectValue = CommonFunc.getComponentRect('Center_AddPadding_013');
       let Center_AddPadding_01: RectValue = CommonFunc.getComponentRect('Center_AddPadding_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Center_AddPadding_011.top - Center_AddPadding_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddPadding_012.top - Center_AddPadding_013.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddPadding_012.left - Center_AddPadding_011.right) <= 1).assertTrue();
       expect(Math.abs(Center_AddPadding_013.left - Center_AddPadding_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_011.top - Center_AddPadding_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_011.top - Center_AddPadding_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddPadding_011.left - Center_AddPadding_01.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddPadding_011.left - Center_AddPadding_01.left) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddPadding_01.right - Center_AddPadding_013.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddPadding_01.right - Center_AddPadding_013.right) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_011.right - Center_AddPadding_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_011.right - Center_AddPadding_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_012.right - Center_AddPadding_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_012.right - Center_AddPadding_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_013.right - Center_AddPadding_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_013.right - Center_AddPadding_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_011.bottom - Center_AddPadding_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_011.bottom - Center_AddPadding_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_012.bottom - Center_AddPadding_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_012.bottom - Center_AddPadding_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddPadding_013.bottom - Center_AddPadding_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddPadding_013.bottom - Center_AddPadding_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterFlexPadMeet] END');
 

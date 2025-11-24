@@ -21,7 +21,7 @@ import events_emitter from '@ohos.events.emitter'
 struct flexDirectionExample {
   @State sWidth: string = '20%'
   @State sHeight: number = 40
-  @State sBackgroundColor: Color = Color.Brown;
+  @State sBackgroundColor: Color = Color.Red
 
   build() {
     Column() {
@@ -84,15 +84,16 @@ struct flexDirectionExample {
 
   private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("swiper page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)!.getProperty('width') != null) {
-        this.sWidth = ((eventData.data) as ESObject)!.getProperty('width').toString();
+      if (data['width'] != null) {
+        this.sWidth = data['width'] as string;
       }
-      if (((eventData.data) as ESObject)!.getProperty('height') != null) {
-        this.sHeight = ((eventData.data) as ESObject)!.getProperty('height').toNumber();
+      if (data['height'] != null) {
+        this.sHeight = data['height'] as number;
       }
-      if (((eventData.data) as ESObject)!.getProperty('backgroundColor') != null) {
-        
+      if (data['backgroundColor'] != null) {
+        this.sBackgroundColor = data['backgroundColor'] as Color;
       }
     }
   }

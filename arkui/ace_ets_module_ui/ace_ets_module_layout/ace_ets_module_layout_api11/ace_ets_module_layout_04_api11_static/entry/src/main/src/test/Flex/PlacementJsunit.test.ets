@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
+
 import Utils from '../Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import { Placement } from '@ohos.arkui.component'
@@ -36,7 +37,6 @@ export default function placementJsunit() {
   describe('placementJsunit', () => {
     beforeAll(() => {
       console.info("placementJsunit beforeAll start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,10 +52,8 @@ export default function placementJsunit() {
         console.info("get placement state success " + "");
         if (!("placement" == pages.name)) {
           console.info("get placement state success " + "");
-
           routerInstance.pushUrl(options);
           await Utils.sleep(3000);
-
         }
       } catch (err) {
         console.error("push placement page error " + JSON.stringify(err));
@@ -78,10 +76,15 @@ export default function placementJsunit() {
       try {
         console.info('placementTest_static_0100 START');
         await Utils.sleep(1500);
-        let callback = (indexEvent: events_emitter.EventData) => {
-          console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-
-          done();
+        let callback: (indexEvent: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
+          if (indexEvent != null) {
+            const data = indexEvent.data as Record<String,undefined|null|Object>
+            console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
+            if (data['placement'] != null) {
+              expect((data['placement']) as Placement).assertEqual(Placement.TopLeft);
+              done();
+            }
+          }
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 157,
@@ -114,9 +117,15 @@ export default function placementJsunit() {
       try {
         console.info('placementTest_static_0200 START');
         await Utils.sleep(1500);
-        let callbackOne = (indexEventOne: events_emitter.EventData) => {
-          console.info("placementTest_static_0200 get state result is: " + JSON.stringify(indexEventOne));
-
+        let callbackOne: (indexEventOne: events_emitter.EventData) => void = (indexEventOne: events_emitter.EventData) => {
+          if (indexEventOne != null) {
+            const data = indexEventOne.data as Record<String,undefined|null|Object>
+            console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEventOne));
+            if (data['placement'] != null) {
+              expect((data['placement']) as Placement).assertEqual(Placement.TopRight);
+              done();
+            }
+          }
         }
         let indexEventOne: events_emitter.InnerEvent = {
           eventId: 158,
@@ -151,9 +160,15 @@ export default function placementJsunit() {
       console.info('placementTest_static_0300 START');
       try {
         await Utils.sleep(1500);
-        let callbackTwo = (indexEventTwo: events_emitter.EventData) => {
-          console.info("placementTest_static_0300 get state result is: " + JSON.stringify(indexEventTwo));
-
+        let callbackTwo: (indexEventTwo: events_emitter.EventData) => void = (indexEventTwo: events_emitter.EventData) => {
+          if (indexEventTwo != null) {
+            const data = indexEventTwo.data as Record<String,undefined|null|Object>
+            console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEventTwo));
+            if (data['placement'] != null) {
+              expect((data['placement']) as Placement).assertEqual(Placement.BottomLeft);
+              done();
+            }
+          }
         }
         let indexEventTwo: events_emitter.InnerEvent = {
           eventId: 159,
@@ -187,9 +202,15 @@ export default function placementJsunit() {
       try {
         console.info('placementTest_static_0400 START');
         await Utils.sleep(1500);
-        let callbackThree = (indexEventThree: events_emitter.EventData) => {
-          console.info("placementTest_static_0400 get state result is: " + JSON.stringify(indexEventThree));
-
+        let callbackThree: (indexEventThree: events_emitter.EventData) => void = (indexEventThree: events_emitter.EventData) => {
+          if (indexEventThree != null) {
+            const data = indexEventThree.data as Record<String,undefined|null|Object>
+            console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEventThree));
+            if (data['placement'] != null) {
+              expect((data['placement']) as Placement).assertEqual(Placement.BottomRight);
+              done();
+            }
+          }
         }
         let indexEventThree: events_emitter.InnerEvent = {
           eventId: 160,

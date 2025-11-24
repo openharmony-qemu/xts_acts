@@ -23,17 +23,17 @@ struct Grid_Col_Offset_GridColColumnOption {
   @State addSpan: int = 2;
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown];
   @State currentBp: string = 'unknown';
-  messageManager: MessageManager<string> = new MessageManager<string>();
+  messageManager: MessageManager<string | int> = new MessageManager<string | int>();
 
   onPageShow() {
     console.info('Grid_Col_Offset_GridColColumnOption onPageShow');
-    AppStorage.setOrCreate<MessageManager<string>>('messageManager', this.messageManager);
-    let callback: Callback<string> = (message: Message<string>) => {
+    AppStorage.setOrCreate<MessageManager<string | int>>('messageManager', this.messageManager);
+    let callback: Callback<string | int> = (message: Message<string | int>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addWidth') {
-        this.addWidth = message.value;
+        this.addWidth = (message as Message<string>).value;
       } else if (message.name == 'addSpan') {
-        this.addSpan = (Number.parseInt(message.value)).toInt();
+        this.addSpan = (message as Message<int>).value;
       }
     };
     this.messageManager.registerCallback(callback);
@@ -48,7 +48,7 @@ struct Grid_Col_Offset_GridColColumnOption {
           reference: BreakpointsReference.ComponentSize } as BreakPoints,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: int) => {
+        ForEach(this.bgColors, (color: Color, index?: number) => {
           GridCol({
             span: this.addSpan,
             offset: {

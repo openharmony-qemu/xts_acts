@@ -28,6 +28,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
 
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
@@ -41,11 +42,6 @@ struct FlexAlign_SpaceAround_fixedParentVisibility {
 
   onPageShow() {
     console.info('FlexAlign_SpaceAround_fixedParentVisibility page show called');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);

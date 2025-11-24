@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry,Color, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -28,10 +28,6 @@ struct FlexHeightModify_Baseline {
 
   onPageShow() {
     console.info('FlexHeightModify_Baseline onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -49,20 +45,20 @@ struct FlexHeightModify_Baseline {
   build() {
     Column() {
       Column() {
-        Text('FlexHeightModify').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('FlexHeightModify').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.Row,
           alignItems: ItemAlign.Baseline,
           wrap: FlexWrap.NoWrap,
         } as FlexOptions) {
-          Text('1').width(150).height(this.testHeight).backgroundColor(0xF5DEB3).key('textHeightModify01')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textHeightModify02')
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textHeightModify03')
+          Text('1').width(150).height(this.testHeight).backgroundColor(Color.Red).key('textHeightModify01')
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textHeightModify02')
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textHeightModify03')
         }
         .key('flexHeightModify')
         .height(200)
         .width(500)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
       }.width('100%').alignItems(HorizontalAlign.Start)
     }.width('100%')
   }

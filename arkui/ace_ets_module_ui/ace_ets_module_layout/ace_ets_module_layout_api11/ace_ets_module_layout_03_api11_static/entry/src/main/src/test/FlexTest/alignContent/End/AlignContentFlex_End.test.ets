@@ -16,7 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
-
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext } from "@ohos.arkui.UIContext";
@@ -39,7 +38,6 @@ export default function AlignContentFlex_End() {
   describe('AlignContentFlex_End', () => {
     beforeAll(() => {
       console.info("AlignContentFlex_End beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -56,11 +54,8 @@ export default function AlignContentFlex_End() {
         console.info("get AlignContentFlex_End state pages:" + JSON.stringify(pages));
         if (!("AlignContentFlex_End" == pages.name)) {
           console.info("get AlignContentFlex_End pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignContentFlex_End page error:" + err);
@@ -85,17 +80,13 @@ export default function AlignContentFlex_End() {
      */
 it('testAlignContentEndFlexHeightSatisfy_static', Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexHeightSatisfy START');
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 360
       })
       await CommonFunc.sleep(3000)
       let strJson = inspector.getInspectorByKey('AlignContentFlexEnd_flex001');
-
-      
-      
+      console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
       let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexEnd_flex001');
       let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexEnd_flex001_1');
       let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexEnd_flex001_2');
@@ -112,26 +103,25 @@ it('testAlignContentEndFlexHeightSatisfy_static', Level.LEVEL0, async () => {
       JSON.stringify(AlignContentFlexEnd_3));
       console.log('AlignContentFlexEnd_4 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_4));
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.bottom - AlignContentFlexEnd_1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.bottom - AlignContentFlexEnd_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top) - UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.right - AlignContentFlexEnd_1.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.right - AlignContentFlexEnd_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.top - AlignContentFlexEnd_flex001.top) - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.top - AlignContentFlexEnd_flex001.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1)
         .assertTrue();
 
       expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)) <= 1).assertTrue();
@@ -154,17 +144,11 @@ it('testAlignContentEndFlexHeightSatisfy_static', Level.LEVEL0, async () => {
      */
 it('testAlignContentEndFlexHeightNoSatisfy_static', Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexHeightNoSatisfy START');
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 250
       })
       await CommonFunc.sleep(3000)
       let strJson = inspector.getInspectorByKey('AlignContentFlexEnd_flex001');
-
-      
-      
       let AlignContentFlexEnd_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlexEnd_flex001');
       let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexEnd_flex001_1');
       let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexEnd_flex001_2');
@@ -182,22 +166,21 @@ it('testAlignContentEndFlexHeightNoSatisfy_static', Level.LEVEL0, async () => {
       JSON.stringify(AlignContentFlexEnd_3));
       console.log('AlignContentFlexEnd_4 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_4));
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.bottom - AlignContentFlexEnd_1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.bottom - AlignContentFlexEnd_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top) - UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.right - AlignContentFlexEnd_1.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.right - AlignContentFlexEnd_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
 
       expect(Math.floor(Math.abs(AlignContentFlexEnd_1.top - AlignContentFlexEnd_flex002.top)) <= 1).assertTrue();

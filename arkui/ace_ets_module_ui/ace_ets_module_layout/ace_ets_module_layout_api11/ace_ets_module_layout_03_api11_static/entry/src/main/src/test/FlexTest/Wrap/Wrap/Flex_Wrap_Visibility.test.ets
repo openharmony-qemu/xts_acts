@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,29 +82,17 @@ export default function flex_Wrap_VisibilityTest() {
 it('testWrapWrapTextVisibilityNoneOverflow_static', Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextVisibilityNoneOverflow] START');
       try {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'firstTextWidth', value: 250
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'secondTextWidth', value: 350
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'thirdTextWidth', value: 350
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-          name: 'visibility', value: Visibility.None
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+          name: 'visibility', value: 2
         });
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
@@ -113,21 +101,20 @@ it('testWrapWrapTextVisibilityNoneOverflow_static', Level.LEVEL0, async () => {
         let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
+        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
 
         let firstTextStrJson = inspector.getInspectorByKey('Wrap_Text_Visibility1');
         expect(JSON.parseJsonElement(firstTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.None");
-        const uiContext = new UIContext();
         expect(Math.abs((secondText.top) - (flexContainer.top)) <= 1).assertTrue();
         expect(Math.abs((secondText.left) - (flexContainer.left)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(350)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(350))))) <= 1).assertTrue();
         expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
           .assertTrue();
         expect(Math.abs((thirdText.top) - (secondText.bottom)) <= 1).assertTrue();
         expect(Math.abs((thirdText.left) - (secondText.left)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - flexContainer.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(thirdText.bottom - flexContainer.bottom)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
       } catch (err) {
         console.error('[testWrapWrapTextVisibilityNoneOverflow] failed');
@@ -147,29 +134,17 @@ it('testWrapWrapTextVisibilityNoneOverflow_static', Level.LEVEL0, async () => {
 it('testWrapWrapTextVisibilityNoneMeet_static', Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextVisibilityNoneMeet] START');
       try {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'firstTextWidth', value: 250
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'secondTextWidth', value: 150
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'thirdTextWidth', value: 150
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-          name: 'visibility', value: Visibility.None
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+          name: 'visibility', value: 2
         });
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
@@ -178,20 +153,19 @@ it('testWrapWrapTextVisibilityNoneMeet_static', Level.LEVEL0, async () => {
         let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
+        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
 
         let firstTextStrJson = inspector.getInspectorByKey('Wrap_Text_Visibility1');
         expect(JSON.parseJsonElement(firstTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.None");
-        const uiContext = new UIContext();
         expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
         expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
         expect(Math.abs((flexContainer.top) - (thirdText.top)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
         expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
           .assertTrue();
         expect(Math.abs((flexContainer.left) - (secondText.left)) <= 1).assertTrue();
       } catch (err) {
@@ -212,29 +186,17 @@ it('testWrapWrapTextVisibilityNoneMeet_static', Level.LEVEL0, async () => {
 it('testWrapWrapTextVisibilityHidden_static', Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextVisibilityHidden] START');
       try {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-          name: 'firstTextWidth', value: 250
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+          name: 'firstTextWidth', value: 150
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'secondTextWidth', value: 150
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
           name: 'thirdTextWidth', value: 150
         });
-        AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-          name: 'visibility', value: Visibility.Hidden
+        AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+          name: 'visibility', value: 1
         });
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
@@ -243,22 +205,24 @@ it('testWrapWrapTextVisibilityHidden_static', Level.LEVEL0, async () => {
         let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
+        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
 
         let firstTextStrJson = inspector.getInspectorByKey('Wrap_Text_Visibility1');
         expect(JSON.parseJsonElement(firstTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Hidden");
-        const uiContext = new UIContext();
         expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
         expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
         expect(Math.abs((flexContainer.top) - (thirdText.top)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
         expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(secondText.left - flexContainer.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        console.info('[testWrapWrapTextVisibilityHidden] secondText',JSON.stringify(secondText));
+        console.info('[testWrapWrapTextVisibilityHidden] flexContainer',JSON.stringify(flexContainer));
+        console.info('[testWrapWrapTextVisibilityHidden] vp2px(150)',AppStorage.get<UIContext>('uiContext')?.vp2px(150));
+        expect(Math.abs((Math.round(secondText.left - flexContainer.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
       } catch (err) {
         console.error('[testWrapWrapTextVisibilityHidden] failed');

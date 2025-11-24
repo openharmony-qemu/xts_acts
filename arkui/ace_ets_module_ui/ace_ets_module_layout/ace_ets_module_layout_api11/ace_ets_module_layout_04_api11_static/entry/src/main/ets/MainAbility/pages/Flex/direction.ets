@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, ItemAlign, FlexAlign, FlexDirection,Text, Flex, Button } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct Index {
-  @State sDirection: FlexDirection = FlexDirection.Column
+  @StorageProp('sDirection') sDirection: FlexDirection = FlexDirection.Column
   build() {
     Flex({ direction: this.sDirection, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
@@ -34,23 +34,5 @@ struct Index {
     .key('direction')
     .width('100%')
     .height('100%')
-  }
-
-  onPageShow() {
-    console.info('direction page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 84,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-  }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      console.info("direction page state change called:" + JSON.stringify(eventData));
-      
-      
-      
-    }
   }
 }

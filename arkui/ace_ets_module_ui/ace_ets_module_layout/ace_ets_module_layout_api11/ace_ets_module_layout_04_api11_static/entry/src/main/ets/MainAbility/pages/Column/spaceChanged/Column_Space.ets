@@ -13,13 +13,9 @@
  * limitations under the License.
  */
 
-import { GlobalContext } from './../../../common/GlobalContext';
-import { ValueT } from './../../../common/Value';
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
 import { Entry, Component, Column, FlexAlign, ColumnOptions, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-
-type MessageData = number
 
 @Entry
 @Component

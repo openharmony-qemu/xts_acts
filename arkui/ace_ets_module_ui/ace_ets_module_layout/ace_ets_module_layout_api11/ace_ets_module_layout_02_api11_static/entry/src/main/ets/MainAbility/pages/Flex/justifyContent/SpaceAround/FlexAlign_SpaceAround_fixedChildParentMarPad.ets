@@ -30,6 +30,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
 
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -43,11 +44,6 @@ struct FlexAlign_SpaceAround_fixedChildParentMarPad {
 
   onPageShow() {
     console.info('FlexAlign_SpaceAround_fixedChildParentMarPad page show called');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);

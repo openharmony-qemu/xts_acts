@@ -18,23 +18,20 @@ import { MessageManager, Callback, Message } from './../../common/MessageManager
 import { Entry, Component, Column, BreakpointsReference,Row, GridCol, GridColOptions, Color, GridRow,GridColColumnOption, GutterOption, BreakPoints, GridRowDirection, ForEach, Margin } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-
-type MessageData = number
-
 @Entry
 @Component
 struct GridColOffSetExample {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
   @State  gridColoffsetValue : int = -3;
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<int> = new MessageManager<int>()
   onPageShow() {
     console.info('GridColOffset onPageShow')
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>("messageManager",  this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'gridColoffset') {
-          this.gridColoffsetValue = message.value as int
+          this.gridColoffsetValue = message.value
       }
     }
     this.messageManager.registerCallback(callback)
@@ -49,7 +46,7 @@ struct GridColOffSetExample {
           reference: BreakpointsReference.WindowSize } as BreakPoints,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: int) => {
+        ForEach(this.bgColors, (color: Color, index?: number) => {
           GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption} as GridColOptions) {
             Row().width("100%").height("20vp")
           }.borderColor(color).borderWidth(2).gridColOffset(this.gridColoffsetValue).key('keykey'+index)

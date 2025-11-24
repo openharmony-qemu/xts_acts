@@ -22,7 +22,6 @@ import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
-import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
 import {Alignment } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
@@ -40,9 +39,8 @@ export default function AlignEnd_AddOneWidth() {
 
     beforeAll(() => {
       console.info("AlignEnd_AddOneWidth beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +57,8 @@ export default function AlignEnd_AddOneWidth() {
         console.info("get AlignEnd_AddOneWidth state pages:" + JSON.stringify(pages));
         if (!("AlignEnd_AddOneWidth" == pages.name)) {
           console.info("get AlignEnd_AddOneWidth pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignEnd_AddOneWidth page error:" + err);
@@ -91,9 +86,7 @@ it('testFlexAlignEndTextWidth_static', Level.LEVEL0, async () : Promise<void> =>
         result!.notify({
           name: 'OneWidth', value: 160
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson =  inspector.getInspectorByKey('End_AddOneWidth_01');
 
@@ -104,26 +97,25 @@ it('testFlexAlignEndTextWidth_static', Level.LEVEL0, async () : Promise<void> =>
       let End_AddOneWidth_012: RectValue = CommonFunc.getComponentRect('End_AddOneWidth_012');
       let End_AddOneWidth_013: RectValue = CommonFunc.getComponentRect('End_AddOneWidth_013');
       let End_AddOneWidth_01: RectValue = CommonFunc.getComponentRect('End_AddOneWidth_01');
-      const uiContext = new UIContext();
       expect(Math.abs((End_AddOneWidth_012.left) - (End_AddOneWidth_011.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddOneWidth_013.left) - (End_AddOneWidth_012.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddOneWidth_013.right) - (End_AddOneWidth_01.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddOneWidth_011.top) - (End_AddOneWidth_012.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddOneWidth_013.top) - (End_AddOneWidth_012.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddOneWidth_01.top) - (End_AddOneWidth_011.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddOneWidth_011.left - End_AddOneWidth_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOneWidth_011.left - End_AddOneWidth_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOneWidth_011.right - End_AddOneWidth_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(160)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOneWidth_011.right - End_AddOneWidth_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(160))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOneWidth_012.right - End_AddOneWidth_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOneWidth_012.right - End_AddOneWidth_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOneWidth_013.right - End_AddOneWidth_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOneWidth_013.right - End_AddOneWidth_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOneWidth_011.bottom - End_AddOneWidth_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOneWidth_011.bottom - End_AddOneWidth_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOneWidth_012.bottom - End_AddOneWidth_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOneWidth_012.bottom - End_AddOneWidth_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOneWidth_013.bottom - End_AddOneWidth_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOneWidth_013.bottom - End_AddOneWidth_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndTextWidth] END');
 

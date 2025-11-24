@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,12 +23,12 @@ import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.bas
 struct FlexWrapExample {
   @State sWidth: string = '20%'
   @State sHeight: number = 40
-  @State sBackgroundColor: Color = Color.Brown;
+  @State sBackgroundColor: Color = Color.Red
 
   build() {
     Column() {
       Column({ space: 5 }  as ColumnOptions) {
-        Text('WrapReverse').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('WrapReverse').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({ wrap: FlexWrap.WrapReverse, direction: FlexDirection.Row } as FlexOptions) {
           Text('1').width(this.sWidth).height(this.sHeight).backgroundColor(this.sBackgroundColor)
           Text('2').width(this.sWidth).height(this.sHeight).backgroundColor(this.sBackgroundColor)
@@ -38,7 +38,7 @@ struct FlexWrapExample {
         .width('90%')
         .height(120)
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
       }.width('100%').margin({ top: 5 } as Margin)
     }.width('100%')
   }
@@ -52,35 +52,36 @@ struct FlexWrapExample {
   }
   private stateChangCallBack:Callback<events_emitter.EventData> = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("swiper page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)?.getProperty('width') != null) {
-        this.sWidth = (((eventData.data) as ESObject)!.getProperty('width'))!.toString();
+      if (data['width'] != null) {
+        this.sWidth = data['width'] as string;
       }
-      if (((eventData.data) as ESObject)?.getProperty('height') != null) {
-        this.sHeight = ((eventData.data) as ESObject)!.getProperty('height')!.toNumber();
+      if (data['height'] != null) {
+        this.sHeight = data['height'] as number;
       }
-      if (((eventData.data) as ESObject)?.getProperty('backgroundColor') != null) {
-        if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 1) {
+      if (data['backgroundColor'] != null) {
+        if (data['backgroundColor'] === 1) {
           this.sBackgroundColor = Color.Black;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 2) {
+        }else if (data['backgroundColor'] === 2) {
           this.sBackgroundColor = Color.Blue;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 3) {
+        }else if (data['backgroundColor'] === 3) {
           this.sBackgroundColor = Color.Brown;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber()=== 4) {
+        }else if (data['backgroundColor']=== 4) {
           this.sBackgroundColor = Color.Gray;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 5) {
+        }else if (data['backgroundColor'] === 5) {
           this.sBackgroundColor = Color.Green;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 6) {
+        }else if (data['backgroundColor'] === 6) {
           this.sBackgroundColor = Color.Grey;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 7) {
+        }else if (data['backgroundColor'] === 7) {
           this.sBackgroundColor = Color.Orange;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 8) {
+        }else if (data['backgroundColor'] === 8) {
           this.sBackgroundColor = Color.Pink;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 9) {
+        }else if (data['backgroundColor'] === 9) {
           this.sBackgroundColor = Color.Red;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 10) {
+        }else if (data['backgroundColor'] === 10) {
           this.sBackgroundColor = Color.Yellow;
-        }else if (((eventData.data) as ESObject)?.getProperty('backgroundColor')!.toNumber() === 11) {
+        }else if (data['backgroundColor'] === 11) {
           this.sBackgroundColor = Color.Transparent;
         }else {
           this.sBackgroundColor = Color.White;

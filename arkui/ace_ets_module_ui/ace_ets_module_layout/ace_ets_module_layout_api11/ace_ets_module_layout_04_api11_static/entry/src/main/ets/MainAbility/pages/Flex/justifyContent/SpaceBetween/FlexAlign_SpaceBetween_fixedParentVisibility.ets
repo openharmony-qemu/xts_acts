@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,8 +15,6 @@
 
 import { Entry, Component, Column, FlexAlign, Alignment,Text, Flex, FlexDirection, FlexWrap,FlexOptions,Visibility } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-import { GlobalContext } from '../../../../common/GlobalContext';
-import { ValueT } from '../../../../common/Value';
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
 
 @Entry
@@ -28,10 +26,6 @@ struct FlexAlign_SpaceBetween_fixedParentVisibility {
 
   onPageShow() {
     console.info('FlexAlign_SpaceBetween_fixedParentVisibility page show called');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.error('message = ' + message.name + "--" + message.value);

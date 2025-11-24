@@ -119,38 +119,49 @@ import DividerJsunit from './DividerTest/DividerJsunit1.test';
 export default function testsuite() {
   GridRows2();
   GridRows1();
+
   OnlyRowsTemplate3();
-  OnlyColumnsTemplate4();
-  OnlyRowsTemplate4();
-  OnlyColumnsTemplate1();
-  OnlyRowsTemplate1();
-  OnlyColumnsTemplate5();
   OnlyRowsTemplate5();
+  OnlyRowsTemplate2();
+  OnlyRowsTemplate1();
+  OnlyRowsTemplate4();
+
+  OnlyColumnsTemplate4();
+  OnlyColumnsTemplate1();
+  OnlyColumnsTemplate5();
   OnlyColumnsTemplate2();
   OnlyColumnsTemplate3();
-  OnlyRowsTemplate2();
+
   ColumnsTemplateAndRowsTemplate1();
   ColumnsTemplateAndRowsTemplate2();
   ColumnsTemplateAndRowsTemplateNoSet();
+
   CalcJsunit01();
   CalcJsunit02();
-  Row_Space()
-  Row_Space_String()
-  Row_Space_Default()
-  Row_layoutWeight_All()
-  Row_layoutWeight_Default()
-  Row_layoutWeight_flexGrow()
-  Row_layoutWeight_flexShrink()
-  Row_layoutWeight_Part()
-  Row_flexGrow_Default()
-  Row_flexGrow_Part()
-  Row_flexShrink_Default()
-  Row_flexShrink_Part()
-  Row_flexBasis_Default()
-  Row_flexBasis_Type()
-  rowNesting_Space()
-  rowNesting_alignItems()
-  rowNesting_justifyContent()
+
+  Row_Space();
+  Row_Space_String();
+  Row_Space_Default();
+
+  Row_layoutWeight_All();
+  Row_layoutWeight_Default();
+  Row_layoutWeight_flexGrow();
+  Row_layoutWeight_flexShrink();
+  Row_layoutWeight_Part();
+
+  Row_flexGrow_Default();
+  Row_flexGrow_Part();
+
+  Row_flexShrink_Default();
+  Row_flexShrink_Part();
+
+  Row_flexBasis_Default();
+  Row_flexBasis_Type();
+
+  rowNesting_Space();
+  rowNesting_alignItems();
+  rowNesting_justifyContent();
+
   row_TextSizeTest();
   rowPad_TextMarPadTest();
   rowMar_TextMarPadTest();
@@ -161,46 +172,58 @@ export default function testsuite() {
   row_TextLayoutWeightTest();
   row_TextFlexShrinkTest();
   row_TextVisibilityTest();
+
   Row_FlexAlign();
   Row_Margin();
   Row_MarginPadding();
   Row_Padding();
   Row_Size();
   Row_VerticalAlign();
-  blankJsunit()
-  columnJsunit()
-  dividerJsunit()
-  flexJsunit()
-  dividerUIJsunit();
+
+  blankJsunit();
   blankUIJsunit();
   blank3Jsunit();
-  flexWrapJsunit();
-  gradientDirectionJsunit();
+
+  columnJsunit();
+  useShadowBatching();
+
+  dividerJsunit();
+  dividerUIJsunit();
   dividerJsunitt();
+  DividerJsunit();
+
+  flexJsunit();
+  flexWrapJsunit();
+
+  gradientDirectionJsunit();
+  rowJsunit2();
+  enumsVerticalAlignJsunit();
+
   directionJsunit();
   direction2Jsunit();
   placementJsunit();
-  rowJsunit2();
   flexDirectionJsunit();
-  DividerJsunit();
-  gridContainerJsunit()
-  useShadowBatching()
-  RelativeContainer_Level()
-  RelativeContainer_Vertical()
-  enumsHorizontalAlignJsunit()
-  enumsVerticalAlignJsunit()
-  RelativeContainer_AnchorPoint_Absent()
-  RelativeContainer_AnchorPoint_Circular_Dependency()
-  RelativeContainer_AnchorPoint_Interdependence()
-  RelativeContainer_AnchorPoint_Margin()
-  RelativeContainer_AnchorPoint_Padding()
-  RelativeContainer_AnchorPoint_ThreeDirection()
-  RelativeContainer_AnchorPoint_TwoDirection()
-  RelativeContainer_AnchorPoint_Visibility_Hidden()
-  RelativeContainer_AnchorPoint_Visibility_None()
-  RelativeContainer_AnchorPoint_NoId()
-  RelativeContainer_AnchorPoint_Id_Null()
-  RelativeContainer_AnchorPoint_Id_Undefined()
-  RelativeContainer_AnchorPoint_Offset()
-  RelativeContainer_AnchorPoint_Position()
+
+  gridContainerJsunit();
+
+  RelativeContainer_Level();
+
+  RelativeContainer_Vertical();
+
+  enumsHorizontalAlignJsunit();
+
+  RelativeContainer_AnchorPoint_Absent();
+  RelativeContainer_AnchorPoint_Circular_Dependency();
+  RelativeContainer_AnchorPoint_Interdependence();
+  RelativeContainer_AnchorPoint_Margin();
+  RelativeContainer_AnchorPoint_Padding();
+  RelativeContainer_AnchorPoint_ThreeDirection();
+  RelativeContainer_AnchorPoint_TwoDirection();
+  RelativeContainer_AnchorPoint_Visibility_Hidden();
+  RelativeContainer_AnchorPoint_Visibility_None();
+  RelativeContainer_AnchorPoint_NoId();
+  RelativeContainer_AnchorPoint_Id_Null();
+  RelativeContainer_AnchorPoint_Id_Undefined();
+  RelativeContainer_AnchorPoint_Offset();
+  RelativeContainer_AnchorPoint_Position();
 }

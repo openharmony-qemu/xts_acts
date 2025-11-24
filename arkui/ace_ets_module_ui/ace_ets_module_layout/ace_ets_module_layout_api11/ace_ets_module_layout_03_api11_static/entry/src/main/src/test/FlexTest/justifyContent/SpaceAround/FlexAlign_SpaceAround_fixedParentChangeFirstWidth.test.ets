@@ -38,7 +38,6 @@ export default function flexAlign_SpaceAround_fixedParentChangeFirstWidth() {
   describe('FlexAlign_SpaceAround_fixedParentChangeFirstWidth', () => {
     beforeAll(() => {
       console.info("flexAlign_SpaceAround_fixedParentChangeFirstWidth beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -55,25 +54,18 @@ export default function flexAlign_SpaceAround_fixedParentChangeFirstWidth() {
         console.info("get flexAlign_SpaceAround_fixedParentChangeFirstWidth state pages:" + JSON.stringify(pages));
         if (!("FlexAlign_SpaceAround_fixedParentChangeFirstWidth" == pages.name)) {
           console.info("get flexAlign_SpaceAround_fixedParentChangeFirstWidth pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexAlign_SpaceAround_fixedParentChangeFirstWidth page error:" + err);
       }
       console.info("flexAlign_SpaceAround_fixedParentChangeFirstWidth beforeEach end");
     });
-
-
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("FlexAlign_SpaceAround_fixedParentChangeFirstWidth afterEach called");
     });
-
-    
     
     /*
      * @tc.number   testAlignSpaceAroundRowNoWrapChangeFirst_static
@@ -97,24 +89,23 @@ it('testAlignSpaceAroundRowNoWrapChangeFirst_static', Level.LEVEL0, async () => 
       let locationText2: RectValue = CommonFunc.getComponentRect('AlignSpaceAround38');
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceAround39');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceAround13');
-      const uiContext = new UIContext();
       expect(Math.abs(locationText1.top - locationText2.top) <= 1).assertTrue();
       expect(Math.abs(locationText2.top - locationText3.top) <= 1).assertTrue();
       expect(Math.abs(locationText1.top - locationFlex.top) <= 1).assertTrue();
-      expect(Math.abs(locationText1.bottom - locationText1.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.bottom - locationText2.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(locationText3.bottom - locationText3.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(locationFlex.bottom - locationText3.bottom - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(locationText1.bottom - locationText1.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(locationText2.bottom - locationText2.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(locationText3.bottom - locationText3.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(locationFlex.bottom - locationText3.bottom - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
       expect(Math.abs(locationText2.left - locationText1.right -
         (locationText3.left - locationText2.right)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.left - locationText1.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(25 / 3))) <= 1).assertTrue();
+      expect(Math.abs(locationText2.left - locationText1.right - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25 / 3)))) <= 1).assertTrue();
       expect(Math.abs(locationText3.right - locationText3.left -
         (locationText2.right - locationText2.left)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.right - locationText2.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(locationText1.right - locationText1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(175))) <= 1).assertTrue();
+      expect(Math.abs(locationText2.right - locationText2.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(locationText1.right - locationText1.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(175)))) <= 1).assertTrue();
       expect(Math.abs(locationText1.left - locationFlex.left -
         (locationFlex.right - locationText3.right)) <= 1).assertTrue();
-      expect(Math.abs(locationText1.left - locationFlex.left - UIContext.getFocusedUIContext()!.vp2px(25 / 6)) <= 1).assertTrue();
+      expect(Math.abs(locationText1.left - locationFlex.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25 / 6))) <= 1).assertTrue();
       expect(Math.abs(locationText2.left - locationText1.right -
         2 * (locationFlex.right - locationText3.right)) <= 2).assertTrue();
       console.info('new testAlignSpaceAroundRowNoWrapChangeFirst END');

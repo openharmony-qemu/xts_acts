@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -50,10 +51,8 @@ export default function OnlyColumnsTemplate3() {
         console.info("get OnlyColumnsTemplate3 state pages:" + "");
         if (!("OnlyColumnsTemplate3" == pages.name)) {
           console.info("get OnlyColumnsTemplate3 pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push OnlyColumnsTemplate3 page error:" + err);
@@ -64,9 +63,6 @@ export default function OnlyColumnsTemplate3() {
       await CommonFunc.sleep(1000);
       console.info("OnlyColumnsTemplate3 after each called");
     });
-    
-    
-    
 
 /*
      * @tc.number   SUB_ACE_GRID_OnlyColumnsTemplate3_static_0100
@@ -82,10 +78,10 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate3_static_0100', Level.LEVEL0, async (done: (
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate3_GridItem_01');
 
       console.log('assert size')
-      const uiContext = new UIContext();
-      expect(Math.abs(GridItem_01.right - GridItem_01.left - UIContext.getFocusedUIContext()!.vp2px(114)) <= 1).assertTrue();
+
+      expect(Math.abs(GridItem_01.right - GridItem_01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(114))) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate3_static_0100] END');

@@ -31,6 +31,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -47,11 +48,6 @@ struct Flex_NoWrap_FlexPad_TextMarPad {
 
   onPageShow() {
     console.info('Flex_NoWrap_FlexPad_TextMarPad onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);

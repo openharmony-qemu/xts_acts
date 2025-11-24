@@ -18,18 +18,16 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 import { Entry, Component, Column, FlexAlign, ColumnOptions, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-type MessageData = number | string
-
 @Entry
 @Component
 struct Column_Space_Default {
   @State addSpace1:number=0
   @State addSpace2:string='0'
-  messageManager: MessageManager<object> = new MessageManager<object>()
+  messageManager: MessageManager<number | string> = new MessageManager<number | string>()
   onPageShow() {
     console.info('Column_Space_Default onPageShow');
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<number | string>>("messageManager",  this.messageManager);
+    let callback: Callback<number | string> = (message: Message<number | string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addSpace1') {
         this.addSpace1 = message.value as number

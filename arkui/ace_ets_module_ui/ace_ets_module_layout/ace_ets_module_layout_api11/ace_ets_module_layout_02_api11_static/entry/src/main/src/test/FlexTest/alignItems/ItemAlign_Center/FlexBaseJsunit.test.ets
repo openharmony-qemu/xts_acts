@@ -39,9 +39,8 @@ export default function flexBase_CenterJsunit() {
 
     beforeAll(() => {
       console.info("flexItemAlignCenterTest3 beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -57,11 +56,8 @@ export default function flexBase_CenterJsunit() {
         console.info("get flexItemAlignCenterTest3 state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Center_FlexBase" == pages.name)) {
           console.info("get flexItemAlignCenterTest3 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignCenterTest3 page error:" + err);
@@ -93,7 +89,6 @@ it('testFlexItemAlignCenter_static', Level.LEVEL0, async () : Promise<void>=> {
           name: 'width', value: 500
         });
       }
-
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Center_flex01');
 
@@ -101,20 +96,19 @@ it('testFlexItemAlignCenter_static', Level.LEVEL0, async () : Promise<void>=> {
       let textFlex02: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textFlex02');
       let textFlex03: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textFlex03');
       let flex01: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flex01');
-      const uiContext = new UIContext();
       expect(Math.abs(textFlex01.left - flex01.left) <= 1).assertTrue()
       expect(Math.abs(textFlex01.right - textFlex02.left) <= 1).assertTrue()
       expect(Math.abs(textFlex02.right - textFlex03.left) <= 1).assertTrue()
-      expect(Math.abs(flex01.right - textFlex03.right - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(flex01.right - textFlex03.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
       expect(Math.abs(textFlex01.top - flex01.top - flex01.bottom + textFlex01.bottom) <= 1).assertTrue()
       expect(Math.abs(textFlex02.top - flex01.top - flex01.bottom + textFlex02.bottom) <= 1).assertTrue()
       expect(Math.abs(textFlex03.top - flex01.top - flex01.bottom + textFlex03.bottom) <= 1).assertTrue()
-      expect(Math.abs(textFlex01.bottom - textFlex01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textFlex02.bottom - textFlex02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textFlex03.bottom - textFlex03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textFlex01.right - textFlex01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textFlex02.right - textFlex02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textFlex03.right - textFlex03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textFlex01.bottom - textFlex01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(textFlex02.bottom - textFlex02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(textFlex03.bottom - textFlex03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlex01.right - textFlex01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlex02.right - textFlex02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlex03.right - textFlex03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
       console.info('new testFlexItemAlignCenter END');
@@ -143,12 +137,10 @@ it('testFlexItemAlignCenterExceed_static', Level.LEVEL0, async () : Promise<void
 
       await CommonFunc.sleep(3000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Center_flex01');
-
       let textFlex01: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textFlex01');
       let textFlex02: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textFlex02');
       let textFlex03: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textFlex03');
       let flex01: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flex01');
-      const uiContext = new UIContext();
       expect(Math.abs(textFlex01.left - flex01.left) <= 1).assertTrue()
       expect(Math.abs(textFlex01.right - textFlex02.left) <= 1).assertTrue()
       expect(Math.abs(textFlex02.right - textFlex03.left) <= 1).assertTrue()
@@ -157,12 +149,12 @@ it('testFlexItemAlignCenterExceed_static', Level.LEVEL0, async () : Promise<void
       expect(Math.abs(textFlex03.right - flex01.right) <= 1).assertTrue()
       expect(Math.abs(textFlex01.top - flex01.top - flex01.bottom + textFlex01.bottom) <= 1).assertTrue()
       expect(Math.abs(textFlex02.top - flex01.top - flex01.bottom + textFlex02.bottom) <= 1).assertTrue()
-      expect(Math.abs(textFlex01.bottom - textFlex01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textFlex02.bottom - textFlex02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textFlex03.bottom - textFlex03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textFlex01.right - textFlex01.left - UIContext.getFocusedUIContext()!.vp2px(140)) <= 1).assertTrue()
-      expect(Math.abs(textFlex02.right - textFlex02.left - UIContext.getFocusedUIContext()!.vp2px(140)) <= 1).assertTrue()
-      expect(Math.abs(textFlex03.right - textFlex03.left - UIContext.getFocusedUIContext()!.vp2px(140)) <= 1).assertTrue()
+      expect(Math.abs(textFlex01.bottom - textFlex01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(textFlex02.bottom - textFlex02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(textFlex03.bottom - textFlex03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlex01.right - textFlex01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140))) <= 1).assertTrue()
+      expect(Math.abs(textFlex02.right - textFlex02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140))) <= 1).assertTrue()
+      expect(Math.abs(textFlex03.right - textFlex03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140))) <= 1).assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')

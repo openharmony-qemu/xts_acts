@@ -34,6 +34,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
 
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -45,11 +46,6 @@ struct Flex_Wrap_FlexSize {
 
   onPageShow() {
     console.info('Flex_Wrap_FlexSize onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);

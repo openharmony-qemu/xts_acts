@@ -14,6 +14,7 @@
  */
 import {describe, beforeAll, afterEach, afterAll, it, expect,beforeEach,Level} from "../../../../hypium/index"
 import router from '@ohos.router';
+
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../Utils2.test';
 import inspector from '@ohos.arkui.inspector'
@@ -50,10 +51,8 @@ export default function DividerJsunit() {
         console.info("get divider state pages: " + "");
         if (!("dividerPage" == pages.name)) {
           console.info("get divider pages.name: " + "");
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push divider page error: " + err);

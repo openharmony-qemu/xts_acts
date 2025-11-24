@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -35,7 +36,6 @@ export default function RelativeContainer_AnchorPoint_Visibility_None() {
   describe('RelativeContainer_AnchorPoint_Visibility_None', () => {
     beforeAll(async () => {
       console.info("RelativeContainer_AnchorPoint_Visibility_None beforeEach start");
-   
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -52,9 +52,8 @@ export default function RelativeContainer_AnchorPoint_Visibility_None() {
         console.info("get RelativeContainer_AnchorPoint_Visibility_None state pages:" + JSON.stringify(pages));
         if (!("RelativeContainer_AnchorPoint_Visibility_None" == pages?.name)) {
           console.info("get RelativeContainer_AnchorPoint_Visibility_None pages.name:" + JSON.stringify(pages?.name));
-            routerInstance?.pushUrl(options)
+          routerInstance?.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainer_AnchorPoint_Visibility_None page error " + JSON.stringify(err));
@@ -65,10 +64,6 @@ export default function RelativeContainer_AnchorPoint_Visibility_None() {
       await CommonFunc.sleep(2000);
       console.info("RelativeContainer_AnchorPoint_Visibility_None after each called")
     });
-
-    
-    
-    
 
 /*
      * @tc.number   SUB_ACE_RelativeContainer_AnchorPoint_Visibility_None_TEST_static_0100

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
@@ -35,7 +36,6 @@ export default function row_TextOffsetTest() {
   describe('Row_TextOffsetTest', () => {
     beforeAll(() => {
       console.info("Row_TextOffsetTest beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,10 +52,8 @@ export default function row_TextOffsetTest() {
         console.info("get Row_TextOffset state pages:" + "");
         if (!("Row_TextOffset" == pages.name)) {
           console.info("get Row_TextOffset pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Row_TextOffset page error:" + err);
@@ -95,21 +93,21 @@ it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promis
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextOffset3');
       let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextOffset_Container01');
       let rowContainerStrJson = inspector.getInspectorByKey('Row_TextOffset_Container01');
-      let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
-      expect(obj['$type']).assertEqual('Row');
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
+  let obj = JSON.parseJsonElement(rowContainerStrJson);
+  expect(obj.getString('$type')).assertEqual('Row');
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstText.right - firstText.left) - Math.round(secondText.right - secondText.left)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(secondText.right - secondText.left) - Math.round(thirdText.right - thirdText.left)) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(firstText.left - firstTextLeft)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(firstText.top - firstTextTop)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.left - firstTextLeft)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.top - firstTextTop)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
 
       expect(Math.abs(secondText.top - secondTextTop) <= 1).assertTrue();
       expect(Math.abs(secondText.left - secondTextLeft) <= 1).assertTrue();
@@ -119,9 +117,9 @@ it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.abs(Math.round(thirdText.top - rowContainer.top) - Math.round(rowContainer.bottom - thirdText.bottom)) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(thirdText.left - secondText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.left - secondText.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1).assertTrue();
       console.info('[testRowTextOffset_static_01] END');
       done();
     });

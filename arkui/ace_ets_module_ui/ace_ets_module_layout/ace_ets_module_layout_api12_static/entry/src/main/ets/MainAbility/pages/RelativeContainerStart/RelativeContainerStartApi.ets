@@ -25,7 +25,9 @@ import {
   LocalizedAlignRuleOptions,
   HorizontalAlign,
   VerticalAlign,
-  BarrierDirection
+  BarrierDirection,
+  Margin,
+  BarrierStyle
 } from '@ohos.arkui.component';
 
 @Entry
@@ -60,10 +62,9 @@ struct RelativeContainerStartApi {
 
       }
       .width(300).height(300)
-      
+      .margin({left: 50} as Margin)
       .border({ width: 2, color: '#6699FF' })
-
-      
+      .barrier([{id: 'barrier1', direction: BarrierDirection.RIGHT, referencedId:['row1', 'row2']} as BarrierStyle])
 
     }
     .height('100%')
