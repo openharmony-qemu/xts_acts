@@ -122,12 +122,7 @@ export default function storageStatistics_test() {
  
         try {
           const userStat: storageStatistics.StorageStats = await storageStatistics.getUserStorageStats();
-          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
-            'userStat.audio : %{public}s', String(userStat.audio),
-            'userStat.video : %{public}s', String(userStat.video),
-            'userStat.image : %{public}s', String(userStat.image),
-            'userStat.file : %{public}s', String(userStat.file),
-            'userStat.app : %{public}s', String(userStat.app));
+          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total));
           done();
         } catch (e) {
           const err = e as BusinessError;
@@ -165,12 +160,7 @@ export default function storageStatistics_test() {
               expect(false).assertTrue();
             }
             let storageStatTemp = storageStat as storageStatistics.StorageStats;
-            hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
-              'userStat.audio : %{public}s', String(userStat.audio),
-              'userStat.video : %{public}s', String(userStat.video),
-              'userStat.image : %{public}s', String(userStat.image),
-              'userStat.file : %{public}s', String(userStat.file),
-              'userStat.app : %{public}s', String(userStat.app));
+            hilog.info(domain, tag, 'storageStat.total : %{public}s', String(storageStatTemp.total));
             done();
           });
         } catch (err) {
@@ -204,12 +194,7 @@ export default function storageStatistics_test() {
         try {
           const userId = 100;
           const userStat: storageStatistics.StorageStats = await storageStatistics.getUserStorageStats(userId);
-          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
-            'userStat.audio : %{public}s', String(userStat.audio),
-            'userStat.video : %{public}s', String(userStat.video),
-            'userStat.image : %{public}s', String(userStat.image),
-            'userStat.file : %{public}s', String(userStat.file),
-            'userStat.app : %{public}s', String(userStat.app));
+          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total));
           done();
         } catch (e) {
           const err = e as BusinessError;
@@ -248,12 +233,7 @@ export default function storageStatistics_test() {
               expect(false).assertTrue();
             }
             let storageStatTemp = storageStat as storageStatistics.StorageStats;
-            hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
-              'userStat.audio : %{public}s', String(userStat.audio),
-              'userStat.video : %{public}s', String(userStat.video),
-              'userStat.image : %{public}s', String(userStat.image),
-              'userStat.file : %{public}s', String(userStat.file),
-              'userStat.app : %{public}s', String(userStat.app));
+            hilog.info(domain, tag, 'storageStat.total : %{public}s', String(storageStatTemp.total));
             done();
           });
         } catch (err) {
