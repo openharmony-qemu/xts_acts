@@ -41,9 +41,8 @@ export default function AlignEnd_AddAlign() {
 
     beforeAll(() => {
       console.info("AlignEnd_AddAlign beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -60,11 +59,8 @@ export default function AlignEnd_AddAlign() {
         console.info("get AlignEnd_AddAlign state pages:" + JSON.stringify(pages));
         if (!("AlignEnd_AddAlign" == pages.name)) {
           console.info("get AlignEnd_AddAlign pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignEnd_AddAlign page error:" + err);
@@ -91,11 +87,9 @@ it('testFlexAlignEndAlignBottomEnd_static', Level.LEVEL0, async () : Promise<voi
       let result = AppStorage.get<MessageManager<Alignment>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'DadAlign', value: Alignment.BottomEnd
+          name: 'DadAddAlign', value: Alignment.BottomEnd
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('End_AddAlign_01');
 
@@ -106,27 +100,19 @@ it('testFlexAlignEndAlignBottomEnd_static', Level.LEVEL0, async () : Promise<voi
       let End_AddAlign_012: RectValue = CommonFunc.getComponentRect('End_AddAlign_012');
       let End_AddAlign_013: RectValue = CommonFunc.getComponentRect('End_AddAlign_013');
       let End_AddAlign_01: RectValue = CommonFunc.getComponentRect('End_AddAlign_01');
-      const uiContext = new UIContext();
       expect(Math.abs((End_AddAlign_011.top) - (End_AddAlign_012.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddAlign_012.top) - (End_AddAlign_013.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddAlign_011.top) - (End_AddAlign_01.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddAlign_012.left) - (End_AddAlign_011.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddAlign_013.left) - (End_AddAlign_012.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddAlign_013.right) - (End_AddAlign_01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_011.left - End_AddAlign_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_011.right - End_AddAlign_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_012.right - End_AddAlign_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_013.right - End_AddAlign_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_011.bottom - End_AddAlign_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_012.bottom - End_AddAlign_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_013.bottom - End_AddAlign_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
-        .assertTrue();
+      expect(Math.abs((Math.round(End_AddAlign_011.left - End_AddAlign_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddAlign_011.right - End_AddAlign_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddAlign_012.right - End_AddAlign_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddAlign_013.right - End_AddAlign_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddAlign_011.bottom - End_AddAlign_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddAlign_012.bottom - End_AddAlign_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddAlign_013.bottom - End_AddAlign_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
       console.info('[testFlexAlignEndAlignBottomEnd] END');
 
     });

@@ -12,8 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { GlobalContext } from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import { Entry, Component, Column, Color, Row, TextAlign, Button, Text,OnScrollFrameBeginHandlerResult, Grid, GridItem, ForEach, EdgeEffect, Margin, GridDirection, Scroller, ClickEvent, ItemDragInfo, BarState, ScrollState, ColumnOptions } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
@@ -23,7 +21,7 @@ type MessageData = string | number | boolean | BarState | Color | GridDirection
 @Entry
 @Component
 struct GridPage {
-  @State numberData: String[] = ['0', '1', '2', '3', '4']
+  @State Number01: String[] = ['0', '1', '2', '3', '4'] as String[]
   @State columnsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State rowsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State columnsGap: number = 10
@@ -31,11 +29,11 @@ struct GridPage {
   @State scrollBar: BarState = BarState.Off
   @State scrollBarColor: Color = Color.Grey
   @State scrollBarWidth: number = 20
-  @State cachedCount: number = 1
+  @State cachedCount: int = 1
   @State editMode: boolean = false
   @State layoutDirection: GridDirection = GridDirection.Column
-  @State maxCount: number = Infinity
-  @State minCount: number = 1
+  @State maxCount: int = 1
+  @State minCount: int = 1
   @State cellLength: number = 40
   @State multiSelectable: boolean = false
   @State supportAnimation: boolean = false
@@ -55,12 +53,12 @@ struct GridPage {
   @State onScrollFrameBeginText: string = 'onScrollFrameBegin'
   @State myKey: number = 0
   scroller: Scroller = new Scroller()
-  messageManager: MessageManager<object> = new MessageManager<object>()
+  messageManager: MessageManager<string | number | boolean | BarState | Color | GridDirection> = new MessageManager<string | number | boolean | BarState | Color | GridDirection>()
 
   onPageShow() {
     console.info('GridPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<string | number | boolean | BarState | Color | GridDirection>>("messageManager",  this.messageManager);
+    let callback: Callback<string | number | boolean | BarState | Color | GridDirection> = (message: Message<string | number | boolean | BarState | Color | GridDirection>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'columnsTemplate') {
         this.columnsTemplate = message.value as string
@@ -84,7 +82,7 @@ struct GridPage {
         this.scrollBarWidth = message.value as number
       }
       if (message.name == 'cachedCount') {
-        this.cachedCount = message.value as number
+        this.cachedCount = message.value as int
       }
       if (message.name == 'editMode') {
         this.editMode = message.value as boolean
@@ -93,10 +91,10 @@ struct GridPage {
         this.layoutDirection = message.value as GridDirection
       }
       if (message.name == 'maxCount') {
-        this.maxCount = message.value as number
+        this.maxCount = message.value as int
       }
       if (message.name == 'minCount') {
-        this.minCount = message.value as number
+        this.minCount = message.value as int
       }
       if (message.name == 'cellLength') {
         this.cellLength = message.value as number
@@ -161,8 +159,8 @@ struct GridPage {
       .key('grid_default')
 
       Grid() {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number01, (day: string) => {
+          ForEach(this.Number01, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -180,11 +178,11 @@ struct GridPage {
       .columnsGap(this.columnsGap)
       .rowsGap(this.rowsGap)
       .scrollBar(this.scrollBar)
-      .cachedCount(Double.toInt(this.cachedCount))
+      .cachedCount(this.cachedCount)
       .editMode(this.editMode)
       .layoutDirection(this.layoutDirection)
-      .maxCount(Double.toInt(this.maxCount))
-      .minCount(Double.toInt(this.minCount))
+      .maxCount(this.maxCount)
+      .minCount(this.minCount)
       .cellLength(this.cellLength)
       .multiSelectable(this.multiSelectable)
       .supportAnimation(this.supportAnimation)
@@ -218,8 +216,8 @@ struct GridPage {
 
       Text('scroll').fontColor(0xCCCCCC).fontSize(9).width('90%')
       Grid(this.scroller) {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number01, (day: string) => {
+          ForEach(this.Number01, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -245,11 +243,10 @@ struct GridPage {
       .width('90%')
       .backgroundColor(0xFAEEE0)
       .height('30%')
-      
-      
-      
-      
-      
+      .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
+        this.onScrollText = 'onScroll:succ'
+        console.info('onScroll scrollOffset:' + JSON.stringify(scrollOffset) + ' ScrollState:' + JSON.stringify(scrollState))
+      })
       .onScrollIndex((first: int,last: int) => {
         this.onScrollIndexText = "onScrollIndex:succ"
         console.info("onScrollIndex first:" + first + " last:" + last)

@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -66,9 +67,6 @@ export default function RelativeContainer_AnchorPoint_NoId() {
       console.info("RelativeContainer_AnchorPoint_NoId after each called")
     });
 
-    
-    
-    
 
 /*
      * @tc.number   SUB_ACE_RelativeContainer_AnchorPoint_NoId_TEST_static_0100
@@ -83,7 +81,6 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_NoId_TEST_static_0100', Level.LEVEL0, 
       console.log('get Initial value')
       let RelativeContainer_AnchorPoint_NoId_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_NoId_row1');
 
-      
       let RelativeContainer_AnchorPoint_NoId_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_NoId_r1');
 
       console.log('assert position')
@@ -92,10 +89,6 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_NoId_TEST_static_0100', Level.LEVEL0, 
         .assertTrue();
       expect(Math.abs(RelativeContainer_AnchorPoint_NoId_row1.top - RelativeContainer_AnchorPoint_NoId_r1.top) <= 1)
         .assertTrue();
-
-      
-      
-
 
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_NoId_TEST_0100] END');
       done();

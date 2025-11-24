@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -97,13 +98,13 @@ it('testRowSizeBothSatisfy_static_01', Level.LEVEL0, async (done: () => void): P
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
 
       expect(Math.abs(Text1.left - Row.left) <= 1).assertTrue();
 
@@ -111,8 +112,8 @@ it('testRowSizeBothSatisfy_static_01', Level.LEVEL0, async (done: () => void): P
       expect(Math.abs(Text2.top - Row.top - (Row.bottom - Text2.bottom)) <= 1).assertTrue();
       expect(Math.abs(Text3.top - Row.top - (Row.bottom - Text3.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
 
       expect(Row.right).assertLarger(Text3.right);
       console.info('testRowSizeBothSatisfy_static_01 END');
@@ -149,19 +150,19 @@ it('testRowSizeWidthNOSatisfy_static_02', Level.LEVEL0, async (done: () => void)
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
       expect(Math.abs(Text1.left - Row.left) <= 1).assertTrue();
       expect(Math.abs(Text1.top - Row.top - (Row.bottom - Text1.bottom)) <= 1).assertTrue();
       expect(Math.abs(Text2.top - Row.top - (Row.bottom - Text2.bottom)) <= 1).assertTrue();
       expect(Math.abs(Text3.top - Row.top - (Row.bottom - Text3.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
       expect(Text3.right).assertLarger(Row.right);
 
       console.info('testRowSizeWidthNOSatisfy_static_02 END');
@@ -198,20 +199,20 @@ it('testRowSizeHeightNOSatisfy_static_03', Level.LEVEL0, async (done: () => void
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
 
       expect(Math.abs(Text1.left - Row.left) <= 1).assertTrue();
       expect(Math.abs(Text1.top - Row.top - (Row.bottom - Text1.bottom)) <= 1).assertTrue();
       expect(Math.abs(Text2.top - Row.top - (Row.bottom - Text2.bottom)) <= 1).assertTrue();
       expect(Math.abs(Text3.top - Row.top - (Row.bottom - Text3.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
       expect(Text3.bottom).assertLarger(Row.bottom);
       expect(Row.top).assertLarger(Text3.top);
 

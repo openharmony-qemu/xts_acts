@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,6 @@ export default function flex_NoWrap_FlexMarPad_TextMarPadTest() {
   describe('Flex_NoWrap_FlexMarPad_TextMarPadTest', () => {
     beforeAll(() => {
       console.info("Flex_NoWrap_FlexMarPad_TextMarPadTest beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -54,11 +53,8 @@ export default function flex_NoWrap_FlexMarPad_TextMarPadTest() {
         console.info("get Flex_NoWrap_FlexMarPad_TextMarPadTest state pages:" + JSON.stringify(pages));
         if (!("Flex_NoWrap_FlexMarPad_TextMarPad" == pages.name)) {
           console.info("get Flex_NoWrap_FlexMarPad_TextMarPadTest pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Flex_NoWrap_FlexMarPad_TextMarPadTest page error:" + err);
@@ -67,30 +63,6 @@ export default function flex_NoWrap_FlexMarPad_TextMarPadTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'firstTextMargin', value: 0
       })
@@ -128,21 +100,6 @@ export default function flex_NoWrap_FlexMarPad_TextMarPadTest() {
      */
 it('testWrapNoWrapFlexMarPadTextPad_static', Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapFlexMarPadTextPad] START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'firstTextPadding', value: 10
       })
@@ -167,31 +124,30 @@ it('testWrapNoWrapFlexMarPadTextPad_static', Level.LEVEL0, async () => {
       let flexContainerStrJson = inspector.getInspectorByKey('FlexNoWrap_FlexMarPad_TextMarPad_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.NoWrap');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(flexContainer.left - columnContainer.left - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue(); 
+      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');
+      expect(Math.floor(Math.abs(flexContainer.left - columnContainer.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(firstText.top - flexContainer.top - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue(); 
+      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(firstText.top - flexContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(secondText.top - thirdText.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(firstText.right - secondText.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(secondText.right - thirdText.left)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.right - firstText.left - UIContext.getFocusedUIContext()!.vp2px(440) / 3)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.right - firstText.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440)) / 3)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(firstText.right - firstText.left - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs(firstText.right - firstText.left - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
       console.info('[testWrapNoWrapFlexMarPadTextPad] END');
 
     });
@@ -205,21 +161,6 @@ it('testWrapNoWrapFlexMarPadTextPad_static', Level.LEVEL0, async () => {
      */
 it('testWrapNoWrapFlexMarPadTextMar_static', Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapFlexMarPadTextMar] START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'firstTextMargin', value: 10
       })
@@ -244,26 +185,25 @@ it('testWrapNoWrapFlexMarPadTextMar_static', Level.LEVEL0, async () => {
       let flexContainerStrJson = inspector.getInspectorByKey('FlexNoWrap_FlexMarPad_TextMarPad_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.NoWrap');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue(); 
-      expect(Math.floor(Math.abs(flexContainer.left - columnContainer.left - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue(); 
+      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');
+      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flexContainer.left - columnContainer.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(firstText.top - flexContainer.top - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue(); 
+      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.top - flexContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(secondText.top - thirdText.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.right - firstText.left - UIContext.getFocusedUIContext()!.vp2px(400) / 3)) <= 2).assertTrue();
+      expect(Math.floor(Math.abs(firstText.right - firstText.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400)) / 3)) <= 2).assertTrue();
       expect(Math.floor(Math.abs(firstText.right - firstText.left - (secondText.right - secondText.left))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(firstText.right - firstText.left - (thirdText.right - thirdText.left))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(secondText.left - firstText.right - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondText.left - firstText.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
       console.info('[testWrapNoWrapFlexMarPadTextMar] END');
 
     });
@@ -277,30 +217,6 @@ it('testWrapNoWrapFlexMarPadTextMar_static', Level.LEVEL0, async () => {
      */
 it('testWrapNoWrapFlexMarPadTextMarPad_static', Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapFlexMarPadTextMarPad] START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'firstTextMargin', value: 10
       })
@@ -334,32 +250,31 @@ it('testWrapNoWrapFlexMarPadTextMarPad_static', Level.LEVEL0, async () => {
       let flexContainerStrJson = inspector.getInspectorByKey('FlexNoWrap_FlexMarPad_TextMarPad_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.NoWrap');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(flexContainer.left - columnContainer.left - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');
+      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flexContainer.left - columnContainer.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1)
         .assertTrue(); 
 
-      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(firstText.top - flexContainer.top - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.top - flexContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40)))) <= 1)
         .assertTrue(); 
       expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(secondText.top - thirdText.top)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.right - firstText.left - UIContext.getFocusedUIContext()!.vp2px(380) / 3)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.right - firstText.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(380)) / 3)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(firstText.right - firstText.left - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs(firstText.right - firstText.left - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(secondText.left - firstText.right - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.left - secondText.right - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondText.left - firstText.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.left - secondText.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40)))) <= 1).assertTrue();
       console.info('[testWrapNoWrapFlexMarPadTextMarPad] END');
 
     });

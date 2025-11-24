@@ -108,6 +108,15 @@ import AlignStart_NoSpace from './FlexTest/justifyContent/Start/AlignStart_NoSpa
 
 export default function testsuite() {
   flexAlignSelf_AutoJsunit();
+  flexVisibility_AutoJsunit()
+  flexExceed_BaselineJsunit()
+  flexPadding_BaselineJsunit()
+  flexVisibility_BaselineJsunit()
+  flexVisibility_EndJsunit()
+  flexOffset_StartJsunit()
+  flexVisibility_StartJsunit()
+  AlignCenter_AddLayoutWeight()
+  AlignEnd_NoSpace()
   flexBase_AutoJsunit()
   flexExceed_AutoJsunit()
   flexHeightModify_AutoJsunit()
@@ -115,16 +124,16 @@ export default function testsuite() {
   flexOffset_AutoJsunit()
   flexPadding_AutoJsunit()
   flexTextMargin_AutoJsunit()
-  flexVisibility_AutoJsunit()
+
   flexAlignSelf_BaselineJsunit()
   flexBase_BaselineJsunit()
-  flexExceed_BaselineJsunit()
+
   flexHeightModify_BaselineJsunit()
   flexMargin_BaselineJsunit()
   flexOffset_BaselineJsunit()
-  flexPadding_BaselineJsunit()
+
   flexTextMargin_BaselineJsunit()
-  flexVisibility_BaselineJsunit()
+
   flexAlignSelf_EndJsunit()
   flexBase_EndJsunit()
   flexExceed_EndJsunit()
@@ -133,16 +142,16 @@ export default function testsuite() {
   flexOffset_EndJsunit()
   flexPadding_EndJsunit()
   flexTextMargin_EndJsunit()
-  flexVisibility_EndJsunit()
+
   flexAlignSelf_StartJsunit()
   flexBase_StartJsunit()
   flexExceed_StartJsunit()
   flexHeightModify_StartJsunit()
   flexMargin_StartJsunit()
-  flexOffset_StartJsunit()
+
   flexPadding_StartJsunit()
   flexTextMargin_StartJsunit()
-  flexVisibility_StartJsunit()
+
   flexAlignSelf_StretchJsunit()
   flexBase_StretchJsunit()
   flexExceed_StretchJsunit()
@@ -154,7 +163,7 @@ export default function testsuite() {
   flexVisibility_StretchJsunit()
   AlignCenter_AddAlign ()
   AlignCenter_AddAllSpace()
-  AlignCenter_AddLayoutWeight()
+
   AlignCenter_AddMargin()
   AlignCenter_AddOffset()
   AlignCenter_AddOneMargin()
@@ -171,7 +180,7 @@ export default function testsuite() {
   AlignEnd_AddOneWidth()
   AlignEnd_AddPadding()
   AlignEnd_AddVisibility()
-  AlignEnd_NoSpace()
+
   AlignSpaceEvenly_AddAlign()
   AlignSpaceEvenly_AddAllSpace()
   AlignSpaceEvenly_AddLayoutWeight()

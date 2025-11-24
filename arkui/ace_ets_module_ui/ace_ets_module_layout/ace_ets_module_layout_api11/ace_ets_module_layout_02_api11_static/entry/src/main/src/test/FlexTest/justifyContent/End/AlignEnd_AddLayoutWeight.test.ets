@@ -40,9 +40,8 @@ export default function AlignEnd_AddLayoutWeight() {
 
     beforeAll(() => {
       console.info("AlignEnd_AddLayoutWeight beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +58,8 @@ export default function AlignEnd_AddLayoutWeight() {
         console.info("get AlignEnd_AddLayoutWeight state pages:" + JSON.stringify(pages));
         if (!("AlignEnd_AddLayoutWeight" == pages.name)) {
           console.info("get AlignEnd_AddLayoutWeight pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignEnd_AddLayoutWeight page error:" + err);
@@ -110,7 +106,6 @@ it('testFlexAlignEndTextLayoutWeight01_static', Level.LEVEL0, async () : Promise
       let End_AddLayoutWeight_012: RectValue = CommonFunc.getComponentRect('End_AddLayoutWeight_012');
       let End_AddLayoutWeight_013: RectValue = CommonFunc.getComponentRect('End_AddLayoutWeight_013');
       let End_AddLayoutWeight_01: RectValue = CommonFunc.getComponentRect('End_AddLayoutWeight_01');
-      const uiContext = new UIContext();
       expect(Math.abs((End_AddLayoutWeight_011.top) - (End_AddLayoutWeight_01.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddLayoutWeight_011.top) - (End_AddLayoutWeight_012.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddLayoutWeight_013.top) - (End_AddLayoutWeight_012.top)) <= 1).assertTrue();
@@ -118,18 +113,12 @@ it('testFlexAlignEndTextLayoutWeight01_static', Level.LEVEL0, async () : Promise
       expect(Math.abs((End_AddLayoutWeight_012.right) - (End_AddLayoutWeight_013.left)) <= 1).assertTrue();
       expect(Math.abs((End_AddLayoutWeight_011.left) - (End_AddLayoutWeight_01.left)) <= 1).assertTrue();
       expect(Math.abs((End_AddLayoutWeight_013.right) - (End_AddLayoutWeight_01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddLayoutWeight_011.right - End_AddLayoutWeight_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddLayoutWeight_012.right - End_AddLayoutWeight_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddLayoutWeight_013.right - End_AddLayoutWeight_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddLayoutWeight_011.bottom - End_AddLayoutWeight_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddLayoutWeight_012.bottom - End_AddLayoutWeight_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(End_AddLayoutWeight_013.bottom - End_AddLayoutWeight_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
-        .assertTrue();
+      expect(Math.abs((Math.round(End_AddLayoutWeight_011.right - End_AddLayoutWeight_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddLayoutWeight_012.right - End_AddLayoutWeight_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddLayoutWeight_013.right - End_AddLayoutWeight_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddLayoutWeight_011.bottom - End_AddLayoutWeight_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddLayoutWeight_012.bottom - End_AddLayoutWeight_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(End_AddLayoutWeight_013.bottom - End_AddLayoutWeight_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
       console.info('[testFlexAlignEndTextLayoutWeight01] END');
 
     });
@@ -166,7 +155,6 @@ it('testFlexAlignEndTextLayoutWeight02_static', Level.LEVEL0, async () : Promise
       let End_AddLayoutWeight_012: RectValue = CommonFunc.getComponentRect('End_AddLayoutWeight_012');
       let End_AddLayoutWeight_013: RectValue = CommonFunc.getComponentRect('End_AddLayoutWeight_013');
       let End_AddLayoutWeight_01: RectValue = CommonFunc.getComponentRect('End_AddLayoutWeight_01');
-      const uiContext = new UIContext();
       expect(Math.abs((End_AddLayoutWeight_011.top) - (End_AddLayoutWeight_01.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddLayoutWeight_011.top) - (End_AddLayoutWeight_012.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddLayoutWeight_013.top) - (End_AddLayoutWeight_012.top)) <= 1).assertTrue();
@@ -177,15 +165,11 @@ it('testFlexAlignEndTextLayoutWeight02_static', Level.LEVEL0, async () : Promise
       let oneWidth = Math.round(End_AddLayoutWeight_011.right - End_AddLayoutWeight_011.left);
       let twoWidth = Math.round(End_AddLayoutWeight_012.right - End_AddLayoutWeight_012.left);
       expect(Math.abs((Math.round(twoWidth / oneWidth)) - (2)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(End_AddLayoutWeight_013.right - End_AddLayoutWeight_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(End_AddLayoutWeight_011.bottom - End_AddLayoutWeight_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(End_AddLayoutWeight_012.bottom - End_AddLayoutWeight_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(End_AddLayoutWeight_013.bottom - End_AddLayoutWeight_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
-        .assertTrue();
+      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(350)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(End_AddLayoutWeight_013.right - End_AddLayoutWeight_013.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(End_AddLayoutWeight_011.bottom - End_AddLayoutWeight_011.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(End_AddLayoutWeight_012.bottom - End_AddLayoutWeight_012.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(End_AddLayoutWeight_013.bottom - End_AddLayoutWeight_013.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
       console.info('[testFlexAlignEndTextLayoutWeight02] END');
 
     });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,11 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
-
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext } from "@ohos.arkui.UIContext";
@@ -38,7 +37,6 @@ export default function flex_AlignContent_SpaceBetween_TextOffsetTest() {
   describe('Flex_AlignContent_SpaceBetween_TextOffsetTest', () => {
     beforeAll(() => {
       console.info("flex_AlignContent_SpaceBetween_TextOffsetTest beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -55,11 +53,8 @@ export default function flex_AlignContent_SpaceBetween_TextOffsetTest() {
         console.info("get Flex_AlignContent_SpaceBetween_TextOffsetTest state pages:" + JSON.stringify(pages));
         if (!("Flex_AlignContent_SpaceBetween_TextOffset" == pages.name)) {
           console.info("get Flex_AlignContent_SpaceBetween_TextOffsetTest pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Flex_AlignContent_SpaceBetween_TextOffsetTest page error:" + err);
@@ -85,7 +80,7 @@ it('testFlexAlignContentSpaceAroundTextOffset_static', Level.LEVEL0, async () =>
       let secondText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceBetween_TextOffset02');
       let distanceBefore = secondText.top - firstText.bottom;
       let secondTextTop = secondText.top - firstText.top;
-      GlobalContext.getContext().getObject<Position>('value')?.message.notify({
+      AppStorage.get<MessageManager<Position>>("messageManager")?.notify({
         name: 'offset', value: {
           x: 10, y: 10
         }
@@ -99,16 +94,16 @@ it('testFlexAlignContentSpaceAroundTextOffset_static', Level.LEVEL0, async () =>
       let flexContainerStrJson = inspector.getInspectorByKey('FlexAlign_SpaceBetween_TextOffset_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
+      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceBetween');
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.top - flexContainer.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(firstText.left - flexContainer.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
+      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+
+      expect(Math.abs(firstText.top - flexContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(firstText.left - flexContainer.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(flexContainer.left - secondText.left) <= 1).assertTrue();
       expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
       expect(Math.abs(thirdText.left - fourthText.left) <= 1).assertTrue();

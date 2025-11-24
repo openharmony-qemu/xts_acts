@@ -12,24 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { GlobalContext } from './../../../common/GlobalContext';
-import { ValueT } from './../../../common/Value';
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
 import { Entry, Component, Column, FlexAlign, ColumnOptions, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-
-
 
 @Entry
 @Component
 struct layoutWeight_Default {
   @State layoutWeight1: number = 0
   @State layoutWeight2: string = '0'
-  messageManager: MessageManager<object> = new MessageManager<object>()
+  messageManager: MessageManager<number|string> = new MessageManager<number|string>()
   onPageShow() {
     console.info('layoutWeight_Default onPageShow');
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<number|string>>("messageManager",  this.messageManager);
+    let callback: Callback<number|string> = (message: Message<number|string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'layoutWeight1') {
         this.layoutWeight1 = message.value as number

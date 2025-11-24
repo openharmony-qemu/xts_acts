@@ -12,29 +12,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { GlobalContext } from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import { Entry, Component, Column, Scroller, TextAlign, Padding, GridDirection, ColumnOptions, Grid, Text, Margin, ForEach, GridItem } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
-type MessageData = number | GridDirection
-
 @Entry
 @Component
 struct GridLayoutDirection {
-  @State numberData: String[] = ['0', '1', '2']
+  @State Number01: String[] = ['0', '1', '2'] as String[]
   scroller: Scroller = new Scroller()
   @State columnsTemplate: string = '1fr 1fr 1fr'
   @State layoutDirection: GridDirection = GridDirection.Row
   @State gridPadding: number = 0
   @State gridMargin: number = 0
-  messageManager: MessageManager<object> = new MessageManager<object>()
+  messageManager: MessageManager<number | GridDirection> = new MessageManager<number | GridDirection>()
 
   onPageShow() {
     console.info('navigationPosition  onPageShow');
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<number | GridDirection>>("messageManager",  this.messageManager);
+    let callback: Callback<number | GridDirection> = (message: Message<number | GridDirection>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'layoutDirection') {
         this.layoutDirection = message.value as GridDirection
@@ -53,8 +49,8 @@ struct GridLayoutDirection {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid() {
-        ForEach(this.numberData, (day: string ,index1:int|undefined) => {
-          ForEach(this.numberData, (day: string ,index2:int|undefined) => {
+        ForEach(this.Number01, (day: string ,index1:int|undefined) => {
+          ForEach(this.Number01, (day: string ,index2:int|undefined) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

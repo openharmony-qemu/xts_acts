@@ -72,10 +72,8 @@ export default function FlexSpaceTest() {
         console.info("get FlexSpaceTest state pages:" + JSON.stringify(pages));
         if (!("FlexSpaceTest" == pages.name)) {
           console.info("get FlexSpaceTest pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push FlexSpaceTest page error:" + err);
@@ -105,6 +103,7 @@ export default function FlexSpaceTest() {
       console.info("[FlexSpaceTest_static_0100] text3Rect.top " + text3Rect.top);
       expect(Math.abs((text3Rect.top - text1Rect.bottom) - 50) <= 1).assertTrue();
       console.info('FlexSpaceTest_static_0100 END');
+      done()
     });
   })
 }

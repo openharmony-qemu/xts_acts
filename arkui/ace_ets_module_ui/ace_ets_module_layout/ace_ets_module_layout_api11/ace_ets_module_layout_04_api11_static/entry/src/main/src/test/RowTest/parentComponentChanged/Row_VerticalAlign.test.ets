@@ -16,6 +16,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
@@ -98,13 +99,13 @@ it('testRowAlignItemsVerticalAlignTop_static_01', Level.LEVEL0, async (done: () 
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
 
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems')).assertEqual("VerticalAlign.Top");
 
@@ -112,8 +113,8 @@ it('testRowAlignItemsVerticalAlignTop_static_01', Level.LEVEL0, async (done: () 
       expect(Math.abs(Text1.top - Row.top) <= 1).assertTrue();
       expect(Math.abs(Text2.top - Row.top) <= 1).assertTrue();
       expect(Math.abs(Text3.top - Row.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
       expect(Row.right).assertLarger(Text3.right);
 
       console.info('testRowAlignItemsVerticalAlignTop_static_01 END');
@@ -150,21 +151,21 @@ it('testRowAlignItemsVerticalAlignBottom_static_02', Level.LEVEL0, async (done: 
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(Text1.bottom - Text1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.bottom - Text2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.bottom - Text3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text1.right - Text1.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.right - Text2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.right - Text3.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems')).assertEqual("VerticalAlign.Bottom");
 
       expect(Math.abs(Text1.left - Row.left) <= 1).assertTrue();
       expect(Math.abs(Text1.bottom - Row.bottom) <= 1).assertTrue();
       expect(Math.abs(Text2.bottom - Row.bottom) <= 1).assertTrue();
       expect(Math.abs(Text3.bottom - Row.bottom) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text2.left - Text1.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(Text3.left - Text2.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
       expect(Row.right).assertLarger(Text3.right);
 
       console.info('testRowAlignItemsVerticalAlignBottom_static_02 END');

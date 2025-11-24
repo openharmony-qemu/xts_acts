@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -50,10 +51,8 @@ export default function rowNesting_Space() {
         console.info("get rowNesting_Space state pages:" + "");
         if (!("rowNesting_Space" == pages.name)) {
           console.info("get rowNesting_Space pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push rowNesting_Space page error " + JSON.stringify(err));
@@ -91,29 +90,29 @@ it('SUB_ACE_rowNesting_Space_TEST_static_0100', Level.LEVEL0, async (done: () =>
         .assertTrue();
       expect(Math.abs(Math.round(rowNesting_Space_013.top - rowNesting_Space_01.top) - Math.round(rowNesting_Space_01.bottom - rowNesting_Space_013.bottom)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs((Math.round(rowNesting_Space_012.left - rowNesting_Space_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_012.left - rowNesting_Space_011.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_Space_013.left - rowNesting_Space_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_013.left - rowNesting_Space_012.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
       console.log('rowNesting_Space_012.left - rowNesting_Space_011.right', rowNesting_Space_012.left - rowNesting_Space_011.right)
       console.log('rowNesting_Space_013.left - rowNesting_Space_012.right', rowNesting_Space_013.left - rowNesting_Space_012.right)
 
 
       console.log('assert height')
-      expect(Math.abs((Math.round(rowNesting_Space_011.bottom - rowNesting_Space_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_011.bottom - rowNesting_Space_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_Space_012.bottom - rowNesting_Space_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_012.bottom - rowNesting_Space_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_Space_013.bottom - rowNesting_Space_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_013.bottom - rowNesting_Space_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.log('assert weight')
-      expect(Math.abs((Math.round(rowNesting_Space_011.right - rowNesting_Space_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_011.right - rowNesting_Space_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_Space_012.right - rowNesting_Space_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_012.right - rowNesting_Space_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_Space_013.right - rowNesting_Space_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_Space_013.right - rowNesting_Space_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_rowNesting_Space_TEST_static_0100] END');
       done();

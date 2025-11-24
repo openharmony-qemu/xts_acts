@@ -40,9 +40,8 @@ export default function AlignSpaceEvenly_AddOneWidth() {
 
     beforeAll(() => {
       console.info("AlignSpaceEvenly_AddOneWidth beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function AlignSpaceEvenly_AddOneWidth() {
         console.info("get AlignSpaceEvenly_AddOneWidth state pages:" + JSON.stringify(pages));
         if (!("AlignSpaceEvenly_AddOneWidth" == pages.name)) {
           console.info("get AlignSpaceEvenly_AddOneWidth pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignSpaceEvenly_AddOneWidth page error:" + err);
@@ -91,9 +87,7 @@ it('testFlexAlignSpaceEvenlyTextWidth_static', Level.LEVEL0, async () : Promise<
         result!.notify({
           name: 'OneWidth', value: 160
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SpaceEvenly_AddOneWidth_01');
 
@@ -104,28 +98,27 @@ it('testFlexAlignSpaceEvenlyTextWidth_static', Level.LEVEL0, async () : Promise<
       let SpaceEvenly_AddOneWidth_012: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOneWidth_012');
       let SpaceEvenly_AddOneWidth_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOneWidth_013');
       let SpaceEvenly_AddOneWidth_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOneWidth_01');
-      const uiContext = new UIContext();
       expect(Math.abs(SpaceEvenly_AddOneWidth_012.left - SpaceEvenly_AddOneWidth_011.right - SpaceEvenly_AddOneWidth_013.left + SpaceEvenly_AddOneWidth_012.right) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_012.left - SpaceEvenly_AddOneWidth_011.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_012.left - SpaceEvenly_AddOneWidth_011.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1)
         .assertTrue()
       expect(Math.abs(SpaceEvenly_AddOneWidth_011.top - SpaceEvenly_AddOneWidth_012.top) <= 1).assertTrue()
       expect(Math.abs(SpaceEvenly_AddOneWidth_013.top - SpaceEvenly_AddOneWidth_012.top) <= 1).assertTrue()
       expect(Math.abs(SpaceEvenly_AddOneWidth_011.top - SpaceEvenly_AddOneWidth_01.top) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_011.left - SpaceEvenly_AddOneWidth_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_01.right - SpaceEvenly_AddOneWidth_013.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_011.left - SpaceEvenly_AddOneWidth_01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOneWidth_01.right - SpaceEvenly_AddOneWidth_013.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_011.right - SpaceEvenly_AddOneWidth_011.left - UIContext.getFocusedUIContext()!.vp2px(160)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_011.right - SpaceEvenly_AddOneWidth_011.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(160))) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_012.right - SpaceEvenly_AddOneWidth_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_012.right - SpaceEvenly_AddOneWidth_012.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_013.right - SpaceEvenly_AddOneWidth_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_013.right - SpaceEvenly_AddOneWidth_013.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_011.bottom - SpaceEvenly_AddOneWidth_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_011.bottom - SpaceEvenly_AddOneWidth_011.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_012.bottom - SpaceEvenly_AddOneWidth_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_012.bottom - SpaceEvenly_AddOneWidth_012.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOneWidth_013.bottom - SpaceEvenly_AddOneWidth_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
+      expect(Math.abs(SpaceEvenly_AddOneWidth_013.bottom - SpaceEvenly_AddOneWidth_013.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1)
         .assertTrue()
       console.info('[testFlexAlignSpaceEvenlyTextWidth] END');
 

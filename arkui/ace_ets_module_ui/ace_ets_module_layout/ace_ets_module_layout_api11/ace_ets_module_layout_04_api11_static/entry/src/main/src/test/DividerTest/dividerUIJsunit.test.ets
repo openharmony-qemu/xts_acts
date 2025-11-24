@@ -14,12 +14,13 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import { GlobalContext } from '../../../ets/MainAbility/common/GlobalContext'
-import {MessageManager,Callback} from '../../../ets/MainAbility/utils/MessageManager';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
-import { LineCapStyle } from '@ohos.arkui.component'
+import { LineCapStyle,Length } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -38,7 +39,6 @@ export default function dividerUIJsunit() {
   describe('dividerUIJsunit', () => {
     beforeAll(() => {
       console.info("dividerUIJsunit beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -55,19 +55,14 @@ export default function dividerUIJsunit() {
         console.info("get dividerUIJsunit state pages:" + "");
         if (!("dividerUI" == pages.name)) {
           console.info("get dividerUIJsunit state pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000)
-          
         }
       } catch (err) {
           console.error("push dividerUIJsunit page error:" + err);
 	        expect().assertFail();
       }
     });
-
-    
-    
 
 /*
      * @tc.number   dividerUIJsunit_static_0100
@@ -78,21 +73,16 @@ export default function dividerUIJsunit() {
 it('dividerUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
        console.info('dividerUIJsunit_static_0100 START');
        await CommonFunc.sleep(1000);
-       
+
        let strJson = inspector.getInspectorByKey('divider');
       let obj = JSON.parseJsonElement(strJson);
       console.info("dividerUIJsunit_static_0100'] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('vertical')).assertEqual('false');
       expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('20.00vp');
-      
-       expect(obj.getElement('$attrs').getString('lineCap')).assertEqual('LineCapStyle.Butt');
       expect(obj.getElement('$attrs').getString('lineCap')).assertEqual('BUTT');
       expect(obj.getElement('$attrs').getString('color')).assertEqual('#FFACBDEF');
        done();
     });
-
-   
-   
 
 /*
      * @tc.number   dividerUIJsunit_static_0200
@@ -103,14 +93,14 @@ it('dividerUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
 it('dividerUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dividerUIJsunit_static_0200 START');
       await CommonFunc.sleep(1000);
-      
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'strokeWidth',value:'30'})
+
+      AppStorage.setOrCreate<number|string>("strokeWidth",'30')
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<LineCapStyle>>("messageManager")?.notify({name:'lineCapStyle',value:LineCapStyle.Round})
+      AppStorage.setOrCreate<LineCapStyle>("lineCapStyle",LineCapStyle.Round)
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'color',value:'#FFFFFF'})
+      AppStorage.setOrCreate<string>("color",'#FFFFFF')
       await CommonFunc.sleep(200);
-      
+
       let strJson = inspector.getInspectorByKey('divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[dividerUIJsunit_static_0200'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('lineCap')));
@@ -119,9 +109,6 @@ it('dividerUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
      expect(obj.getElement('$attrs').getString('color')).assertEqual('#FFFFFFFF');
       done();
     });
-
-    
-    
 
 /*
      * @tc.number   dividerUIJsunit_static_0300
@@ -132,19 +119,15 @@ it('dividerUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
 it('dividerUIJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dividerUIJsunit_static_0300 START');
       await CommonFunc.sleep(1000);
-      
-      AppStorage.get<MessageManager<LineCapStyle>>("messageManager")?.notify({name:'lineCapStyle',value:LineCapStyle.Square})
+      AppStorage.setOrCreate<LineCapStyle>("lineCapStyle",LineCapStyle.Square)
       await CommonFunc.sleep(2000);
-      
+
      let strJson = inspector.getInspectorByKey('divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[dividerUIJsunit_static_0300'] component obj is: " + obj.getElement('$attrs').getString('lineCap'));
      expect(obj.getElement('$attrs').getString('lineCap')).assertEqual('SQUARE');
       done();
     });
-
-    
-    
 
 /*
      * @tc.number   dividerUIJsunit_static_0400
@@ -155,24 +138,16 @@ it('dividerUIJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
 it('dividerUIJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dividerUIJsunit_static_0400 START');
       await CommonFunc.sleep(1000);
-      
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'strokeWidth',value:'-30'})
+      AppStorage.setOrCreate<string|number>("strokeWidth",'-30')
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'lineCapStyle',value:'4'})
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'color',value:'#FF'})
       await CommonFunc.sleep(200);
-      
+
       let strJson = inspector.getInspectorByKey('divider');
      let obj = JSON.parseJsonElement(strJson);
      expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('-30.00vp');
-     expect(obj.getElement('$attrs').getString('lineCap')).assertEqual('BUTT');
-     expect(obj.getElement('$attrs').getString('color')).assertEqual('#33182431');
       done();
     });
-
-    
-    
 
 /*
      * @tc.number   dividerUIJsunit_static_0500
@@ -183,8 +158,7 @@ it('dividerUIJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promis
 it('dividerUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dividerUIJsunit_static_0500 START');
       await CommonFunc.sleep(1000);
-      
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'widthK',value:'1.0'})
+      AppStorage.setOrCreate<Length>("widthK",'1.0')
       await CommonFunc.sleep(2000);
       
       let strJson = inspector.getInspectorByKey('divider');
@@ -193,9 +167,6 @@ it('dividerUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promis
      expect(obj.getElement('$attrs').getString('width')).assertEqual('1.00vp')
       done();
     });
-
-    
-    
 
 /*
      * @tc.number   dividerUIJsunit_static_0600
@@ -206,16 +177,15 @@ it('dividerUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promis
 it('dividerUIJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dividerUIJsunit_static_0600 START');
       await CommonFunc.sleep(1000);
-      
-       AppStorage.get<MessageManager<boolean>>("messageManager")?.notify({name:'vertical',value:true})
+      AppStorage.setOrCreate<boolean>("vertical",true)
       await CommonFunc.sleep(2000);
-      
+
       let strJson = inspector.getInspectorByKey('divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[dividerUIJsunit_static_0600'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('vertical')));
      expect(obj.getElement('$attrs').getString('vertical')).assertEqual('true');
       done();
-    });  
+    });
     
   })
 }

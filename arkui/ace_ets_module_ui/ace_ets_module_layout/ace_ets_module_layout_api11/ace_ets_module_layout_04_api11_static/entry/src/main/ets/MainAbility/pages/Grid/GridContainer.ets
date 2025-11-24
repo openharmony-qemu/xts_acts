@@ -12,22 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Flex, Button, Row, Margin, ClickEvent, FlexDirection, ItemAlign, FlexAlign, Text, Scroll, ColumnOptions, FontWeight } from '@ohos.arkui.component'
+import { Entry, Component, GridCol,Column,GridColColumnOption,Color, Flex,GridColOptions,TextAlign, Button, Row, Margin, ClickEvent, FlexDirection, ItemAlign, FlexAlign, Text, Scroll, ColumnOptions, FontWeight } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
+
 @Entry
 @Component
 struct gridContainer {
-  
   @State active: boolean = false
   private content: string = "GridContainer Page"
-
-  onPageShow() {
-    console.info('GridContainer page show called');
-  }
-
-  onBuildDone() {
-    console.info('GridContainer page build done called');
-  }
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -36,130 +28,83 @@ struct gridContainer {
         .fontWeight(FontWeight.Bold)
       Scroll() {
         Column({ space: 5 } as ColumnOptions) {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption} as GridColOptions) {
+            Row() {
+              Text('1')
+              Text('2')
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+              Text('3')
+                .height(50).backgroundColor(Color.Green).textAlign(TextAlign.Center)
+            }
+          }.key('gridContainer')
+          .width('90%')
+          Text('Click Simulate to change the device width').fontSize(9).width('90%').fontColor(Color.Red)
+          Row() {
+            Button('XS')
+              .onClick(() => {
+              }).backgroundColor(Color.Red)
+            Button('SM')
+              .onClick(() => {
+              }).backgroundColor(Color.Red)
+            Button('MD')
+              .onClick(() => {
+              }).backgroundColor(Color.Red)
+            Button('LG')
+              .onClick(() => {
+              }).backgroundColor(Color.Red)
+          }
 
-          Text('Click Simulate to change the device width').fontSize(9).width('90%').fontColor(0xCCCCCC)
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption} as GridColOptions) {
+            Row() {
+              Text('1')
+              Text('2')
 
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+              Text('3')
 
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+            }
+          }.key('gridContainer1')
+          .width('90%')
+          GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption} as GridColOptions) {
+            Row() {
+              Text('1')
 
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+              Text('2')
+
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+              Text('3')
+
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+            }
+          }.key('gridContainer2')
+          .width('90%')
+
+          GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption} as GridColOptions) {
+            Row() {
+              Text('1')
+              Text('2')
+
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+              Text('3')
+
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+            }
+          }.key('gridContainer3')
+          .width('90%')
+          GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption} as GridColOptions) {
+            Row() {
+              Text('1')
+
+              Text('2')
+
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+              Text('3')
+
+                .height(50).backgroundColor(Color.Red).textAlign(TextAlign.Center)
+            }
+          }.key('gridContainer4')
+          .width('90%')
 
         }.width('100%').margin({ top: 5 } as Margin)
       }

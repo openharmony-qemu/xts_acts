@@ -15,7 +15,7 @@
 
 
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign, Visibility, AlignRuleOption } from '@ohos.arkui.component'
+import { Entry, Component, Column, HorizontalAlign,AlignRuleOption, Row, RelativeContainer, Button, Text, Color, VerticalAlign, Visibility } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component

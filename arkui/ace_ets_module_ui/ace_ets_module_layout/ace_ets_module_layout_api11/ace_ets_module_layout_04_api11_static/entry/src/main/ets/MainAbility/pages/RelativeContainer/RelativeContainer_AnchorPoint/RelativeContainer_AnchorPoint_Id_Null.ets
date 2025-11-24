@@ -14,7 +14,7 @@
  */
 
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign, AlignRuleOption} from '@ohos.arkui.component'
+import { Entry, Component, Column,AlignRuleOption, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign} from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -46,7 +46,6 @@ struct RelativeContainer_AnchorPoint_Id_Null {
             right: { anchor: "__container__", align: HorizontalAlign.End }
           } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_Id_Null_row2")
-          .id(null!)
       }
       .key("RelativeContainer_AnchorPoint_Id_Null_r1")
       .width(300).height(300)

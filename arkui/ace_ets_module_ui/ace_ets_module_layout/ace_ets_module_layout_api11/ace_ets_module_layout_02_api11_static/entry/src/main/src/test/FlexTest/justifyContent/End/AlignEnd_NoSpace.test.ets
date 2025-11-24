@@ -40,9 +40,8 @@ export default function AlignEnd_NoSpace() {
 
     beforeAll(() => {
       console.info("AlignEnd_NoSpace beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function AlignEnd_NoSpace() {
         console.info("get AlignEnd_NoSpace state pages:" + JSON.stringify(pages));
         if (!("AlignEnd_NoSpace" == pages.name)) {
           console.info("get AlignEnd_NoSpace pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignEnd_NoSpace page error:" + err);
@@ -91,9 +87,7 @@ it('testFlexAlignEndFlexWidthOverflow_static', Level.LEVEL0, async () : Promise<
         result!.notify({
           name: 'DadWidth', value: 400
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('End_NoSpace_01');
 
@@ -104,7 +98,6 @@ it('testFlexAlignEndFlexWidthOverflow_static', Level.LEVEL0, async () : Promise<
       let End_NoSpace_012: RectValue = CommonFunc.getComponentRect('End_NoSpace_012');
       let End_NoSpace_013: RectValue = CommonFunc.getComponentRect('End_NoSpace_013');
       let End_NoSpace_01: RectValue = CommonFunc.getComponentRect('End_NoSpace_01');
-      const uiContext = new UIContext();
       expect(Math.abs(End_NoSpace_011.top - End_NoSpace_012.top) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_012.top - End_NoSpace_013.top) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_011.top - End_NoSpace_01.top) <= 1).assertTrue();
@@ -112,17 +105,17 @@ it('testFlexAlignEndFlexWidthOverflow_static', Level.LEVEL0, async () : Promise<
       expect(Math.abs(End_NoSpace_012.left - End_NoSpace_011.right) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_013.left - End_NoSpace_012.right) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_013.right - End_NoSpace_01.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_011.bottom - End_NoSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_011.bottom - End_NoSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_012.bottom - End_NoSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_012.bottom - End_NoSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_013.bottom - End_NoSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_013.bottom - End_NoSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_011.right - End_NoSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_011.right - End_NoSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_012.right - End_NoSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_012.right - End_NoSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_013.right - End_NoSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_013.right - End_NoSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndFlexWidthOverflow] END');
 
@@ -142,9 +135,7 @@ it('testFlexAlignEndFlexWidthMeet_static', Level.LEVEL0, async () : Promise<void
         result!.notify({
           name: 'DadWidth', value: 500
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('End_NoSpace_01');
 
@@ -155,26 +146,25 @@ it('testFlexAlignEndFlexWidthMeet_static', Level.LEVEL0, async () : Promise<void
       let End_NoSpace_012: RectValue = CommonFunc.getComponentRect('End_NoSpace_012');
       let End_NoSpace_013: RectValue = CommonFunc.getComponentRect('End_NoSpace_013');
       let End_NoSpace_01: RectValue = CommonFunc.getComponentRect('End_NoSpace_01');
-      const uiContext = new UIContext();
       expect(Math.abs(End_NoSpace_011.top - End_NoSpace_012.top) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_012.top - End_NoSpace_013.top) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_011.top - End_NoSpace_01.top) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_012.left - End_NoSpace_011.right) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_013.left - End_NoSpace_012.right) <= 1).assertTrue();
       expect(Math.abs(End_NoSpace_013.right - End_NoSpace_01.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_011.left - End_NoSpace_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_011.left - End_NoSpace_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_011.bottom - End_NoSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_011.bottom - End_NoSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_012.bottom - End_NoSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_012.bottom - End_NoSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_013.bottom - End_NoSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_013.bottom - End_NoSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_011.right - End_NoSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_011.right - End_NoSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_012.right - End_NoSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_012.right - End_NoSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_NoSpace_013.right - End_NoSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_NoSpace_013.right - End_NoSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndFlexWidthMeet] END');
 

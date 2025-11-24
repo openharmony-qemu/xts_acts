@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,8 +17,6 @@ import { ValueT } from './../../../common/Value';
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
 import { Entry, Component, Column, FlexAlign, HorizontalAlign, Text, ColumnOptions } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-
-type MessageData = FlexAlign
 
 @Entry
 @Component

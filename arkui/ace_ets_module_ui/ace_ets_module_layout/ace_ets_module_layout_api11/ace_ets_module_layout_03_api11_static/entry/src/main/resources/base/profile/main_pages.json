@@ -64,6 +64,7 @@
     "MainAbility/pages/Flex/alignItems/ItemAlign_Baseline/FlexHeightModify",
     "MainAbility/pages/Flex/alignItems/ItemAlign_Baseline/FlexMargin",
     "MainAbility/pages/Flex/alignItems/ItemAlign_Baseline/FlexOffset",
+    "MainAbility/pages/Flex/justifyContent/SpaceAround/FlexAlign_SpaceAround_fixedParentChangeFirstWidth",
     "MainAbility/pages/Flex/alignItems/ItemAlign_Baseline/FlexPadding",
     "MainAbility/pages/Flex/alignItems/ItemAlign_Baseline/FlexTextMargin",
     "MainAbility/pages/Flex/alignItems/ItemAlign_Baseline/FlexVisibility",

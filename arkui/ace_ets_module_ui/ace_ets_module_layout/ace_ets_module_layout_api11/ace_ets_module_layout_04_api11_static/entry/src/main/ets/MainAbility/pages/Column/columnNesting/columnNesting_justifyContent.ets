@@ -12,8 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { GlobalContext } from './../../../common/GlobalContext';
-import { ValueT } from './../../../common/Value';
+
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
 import { Entry, Component, Column, FlexAlign, ColumnOptions, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,7 +24,7 @@ struct columnNesting_justifyContent {
   messageManager: MessageManager<string> = new MessageManager<string>()
   onPageShow() {
     console.info('columnNesting_justifyContent onPageShow');
-        AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
     let callback: Callback<string> = (message: Message<string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addSpace') {

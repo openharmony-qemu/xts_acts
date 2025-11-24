@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
+import { Entry, Color,Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -28,10 +28,6 @@ struct FlexVisibility_Baseline {
 
   onPageShow() {
     console.info('FlexVisibility_Baseline onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -49,7 +45,7 @@ struct FlexVisibility_Baseline {
   build() {
     Column() {
       Column() {
-        Text('FlexTest10').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('FlexTest10').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.Row,
           alignItems: ItemAlign.Baseline,
@@ -58,16 +54,16 @@ struct FlexVisibility_Baseline {
           Text('1')
             .width(150)
             .height(50)
-            .backgroundColor(0xF5DEB3)
+            .backgroundColor(Color.Red)
             .visibility(this.testVisibility == 0? Visibility.Visible:(this.testVisibility == 1? Visibility.Hidden:Visibility.None))
             .key('textVisible01')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textVisible02')
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textVisible03')
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textVisible02')
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textVisible03')
         }
         .key('flexVisible')
         .height(200)
         .width(500)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
       }.width('100%').alignItems(HorizontalAlign.Start)
     }.width('100%')
   }

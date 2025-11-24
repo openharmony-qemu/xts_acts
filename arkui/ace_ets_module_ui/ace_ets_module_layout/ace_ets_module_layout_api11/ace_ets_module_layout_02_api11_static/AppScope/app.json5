@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.arkui.ace_ets_module_layout_02_api11_static",
+    "bundleName": "com.arkui.ace.layout.split02.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

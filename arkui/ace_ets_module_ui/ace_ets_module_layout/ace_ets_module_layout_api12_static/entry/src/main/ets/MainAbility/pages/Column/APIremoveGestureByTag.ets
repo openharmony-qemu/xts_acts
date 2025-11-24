@@ -21,16 +21,15 @@ import {
   UIGestureEvent,
   TapGestureHandler,
   GestureEvent,
-  Text,
+  Text,LocalStorage,
   Color
 } from '@ohos.arkui.component';
 import {
   State,
-  LocalStorage,
+
   AppStorage
 } from '@ohos.arkui.stateManagement';
 
-let para: Record<string, string> = { 'storageContext': 'init' };
 let storage: LocalStorage = new LocalStorage();
 
 class MyButtonModifier implements GestureModifier {

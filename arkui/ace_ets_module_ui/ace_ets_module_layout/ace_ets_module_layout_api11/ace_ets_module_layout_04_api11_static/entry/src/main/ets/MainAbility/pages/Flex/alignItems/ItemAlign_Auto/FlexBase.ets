@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,8 +14,6 @@
  */
 import { Entry, Component, Column,Text, Flex, Margin,FlexDirection, ItemAlign, FlexWrap } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-import { GlobalContext } from '../../../../common/GlobalContext';
-import { ValueT } from '../../../../common/Value';
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
 
 @Entry

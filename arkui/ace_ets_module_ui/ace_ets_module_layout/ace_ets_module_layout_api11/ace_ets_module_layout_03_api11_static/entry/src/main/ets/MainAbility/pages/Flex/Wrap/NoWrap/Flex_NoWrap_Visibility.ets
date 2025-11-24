@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,13 +16,13 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Text,Color,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct Flex_NoWrap_Visibility {
-  @State testVisibility: number = Visibility.Visible;
+  @State testVisibility: number = 0;
   @State firstTextWidth: number = 150;
   @State secondTextWidth: number = 150;
   @State thirdTextWidth: number = 150;
@@ -30,11 +30,6 @@ struct Flex_NoWrap_Visibility {
 
   onPageShow() {
     console.info('Flex_NoWrap_Visibility onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -60,15 +55,15 @@ struct Flex_NoWrap_Visibility {
         Text('1')
           .width(this.firstTextWidth)
           .height(100)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .visibility(this.testVisibility == 0? Visibility.Visible:(this.testVisibility == 1? Visibility.Hidden:Visibility.None))
           .key('NoWrap_Text_Visibility1');
-        Text('2').width(this.secondTextWidth).height(150).backgroundColor(0xD2B48C).key('NoWrap_Text_Visibility2');
-        Text('3').width(this.thirdTextWidth).height(200).backgroundColor(0xF5DEB3).key('NoWrap_Text_Visibility3');
+        Text('2').width(this.secondTextWidth).height(150).backgroundColor(Color.Red).key('NoWrap_Text_Visibility2');
+        Text('3').width(this.thirdTextWidth).height(200).backgroundColor(Color.Red).key('NoWrap_Text_Visibility3');
       }
       .width(500)
       .height(200)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
       .key('Flex_NoWrap_Visibility_Container01')
     }.width('100%').height('100%')
   }

@@ -16,6 +16,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -35,7 +36,6 @@ export default function Row_MarginPadding() {
   describe('Row_MarginPadding', () => {
     beforeAll(() => {
       console.info("Row_MarginPadding beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,10 +53,8 @@ export default function Row_MarginPadding() {
         console.info("get Row_MarginPadding state success " + "");
         if (!("Row_MarginPadding" == pages.name)) {
           console.info("get Row_MarginPadding state success " + "");
-          
           routerInstance.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Row_MarginPadding page error " + JSON.stringify(err));
@@ -98,26 +96,26 @@ it('testRowMarginPaddingSatisfy_static_01', Level.LEVEL0, async (done: () => voi
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((Text1.bottom - Text1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text2.bottom - Text2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text3.bottom - Text3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text1.right - Text1.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text2.right - Text2.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text3.right - Text3.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((Row.left - Column.left) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Row.top - Column.top) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.bottom - Text1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text2.bottom - Text2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text3.bottom - Text3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.right - Text1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text2.right - Text2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text3.right - Text3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((Text1.left - Column.left) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text1.top - Column.top) - UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text1.left - Row.left) - UIContext.getFocusedUIContext()!.vp2px(15))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Row.left - Column.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Row.top - Column.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
+
+      expect(Math.floor(Math.abs((Text1.left - Column.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.top - Column.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(80)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.left - Row.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Text1.top - Row.top - (Row.bottom - Text1.bottom))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Text2.top - Row.top - (Row.bottom - Text2.bottom))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Text3.top - Row.top - (Row.bottom - Text3.bottom))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text2.left - Text1.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text3.left - Text2.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Row.right - Text3.right) - UIContext.getFocusedUIContext()!.vp2px(15))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text2.left - Text1.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text3.left - Text2.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Row.right - Text3.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15)))) <= 1).assertTrue();
 
       console.info('testRowMarginPaddingSatisfy_static_01 END');
       done();
@@ -153,27 +151,27 @@ it('testRowMarginPaddingNoSatisfy_static_02', Level.LEVEL0, async (done: () => v
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((Text1.bottom - Text1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text2.bottom - Text2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text3.bottom - Text3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text1.right - Text1.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text2.right - Text2.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text3.right - Text3.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((Row.left - Column.left) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Row.top - Column.top) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text1.left - Column.left) - UIContext.getFocusedUIContext()!.vp2px(45))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text1.top - Column.top) - UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.bottom - Text1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text2.bottom - Text2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text3.bottom - Text3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.right - Text1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text2.right - Text2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text3.right - Text3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((Text1.left - Row.left) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Row.left - Column.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Row.top - Column.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.left - Column.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(45)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text1.top - Column.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(80)))) <= 1).assertTrue();
+
+      expect(Math.floor(Math.abs((Text1.left - Row.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Text1.top - Row.top - (Row.bottom - Text1.bottom))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Text2.top - Row.top - (Row.bottom - Text2.bottom))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Text3.top - Row.top - (Row.bottom - Text3.bottom))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text2.left - Text1.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Text3.left - Text2.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text2.left - Text1.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Text3.left - Text2.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
       expect(Text3.right).assertLarger(Row.right);
-      expect(Text3.top - Row.top).assertLess(UIContext.getFocusedUIContext()!.vp2px(40));
+      expect(Text3.top - Row.top).assertLess(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40)));
 
       console.info('testRowMarginPaddingNoSatisfy_static_02 END');
       done();

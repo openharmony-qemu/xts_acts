@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Color,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,10 +27,6 @@ struct AlignSpaceEvenly_AddOneMargin {
 
   onPageShow() {
     console.info('AlignSpaceEvenly_AddOneMargin onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -49,16 +45,16 @@ struct AlignSpaceEvenly_AddOneMargin {
         Text('1')
           .width(150)
           .height(50)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key("SpaceEvenly_AddOneMargin_011")
           .margin(this.OneMargin);
-        Text('2').width(150).height(100).backgroundColor(0xD2B48C).key("SpaceEvenly_AddOneMargin_012");
-        Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key("SpaceEvenly_AddOneMargin_013");
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key("SpaceEvenly_AddOneMargin_012");
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key("SpaceEvenly_AddOneMargin_013");
       }
       .key("SpaceEvenly_AddOneMargin_01")
       .width(500)
       .height(200)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
     }
     .alignItems(HorizontalAlign.Start)
   }

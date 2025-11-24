@@ -20,9 +20,7 @@ import { UtilsTest } from '../../../Util.test';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
-import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
-import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
+import {Position } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -39,9 +37,8 @@ export default function AlignEnd_AddOffset() {
 
     beforeAll(() => {
       console.info("AlignEnd_AddOffset beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +55,8 @@ export default function AlignEnd_AddOffset() {
         console.info("get AlignEnd_AddOffset state pages:" + JSON.stringify(pages));
         if (!("AlignEnd_AddOffset" == pages.name)) {
           console.info("get AlignEnd_AddOffset pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignEnd_AddOffset page error:" + err);
@@ -86,20 +80,16 @@ export default function AlignEnd_AddOffset() {
      */
 it('testFlexAlignEndTextOffset_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('[testFlexAlignEndTextOffset] START');
-      let result = AppStorage.get<MessageManager<number>>("messageManager")
+      let result = AppStorage.get<MessageManager<Position>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'OneOffset', value: 0
+          name: 'OneOffset', value: {
+            x: 10, y: 15
+          }
         });
       }
-      /*GlobalContext.getContext().getObject<Position>('value').message.notify({
-        name: 'OneOffset', value:
-        {
-          x: 10, y: 15
-        }
-      })*/
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('End_AddAlign_01');
+      let strJson = inspector.getInspectorByKey('End_AddOffset_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
@@ -108,29 +98,28 @@ it('testFlexAlignEndTextOffset_static', Level.LEVEL0, async () : Promise<void>=>
       let End_AddOffset_012: RectValue = CommonFunc.getComponentRect('End_AddOffset_012');
       let End_AddOffset_013: RectValue = CommonFunc.getComponentRect('End_AddOffset_013');
       let End_AddOffset_01: RectValue = CommonFunc.getComponentRect('End_AddOffset_01');
-      const uiContext = new UIContext();
 
-      expect(Math.abs((Math.round((End_AddOffset_011.top - End_AddOffset_01.top) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(15) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((End_AddOffset_011.top - End_AddOffset_01.top) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15)) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_011.right - End_AddOffset_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_011.right - End_AddOffset_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_011.left - End_AddOffset_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(60)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_011.left - End_AddOffset_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60))))) <= 1)
         .assertTrue();
       expect(Math.abs((End_AddOffset_012.top) - (End_AddOffset_013.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddOffset_012.top) - (End_AddOffset_01.top)) <= 1).assertTrue();
       expect(Math.abs((End_AddOffset_013.left) - (End_AddOffset_012.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddOffset_01.right) - (End_AddOffset_013.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_011.right - End_AddOffset_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_011.right - End_AddOffset_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_012.right - End_AddOffset_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_012.right - End_AddOffset_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_013.right - End_AddOffset_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_013.right - End_AddOffset_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_011.bottom - End_AddOffset_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_011.bottom - End_AddOffset_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_012.bottom - End_AddOffset_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_012.bottom - End_AddOffset_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddOffset_013.bottom - End_AddOffset_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddOffset_013.bottom - End_AddOffset_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndTextOffset] END');
 

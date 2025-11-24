@@ -36,8 +36,8 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
-class WaterFlowDataSource implements IDataSource<number> {
-  private dataArray: number[] = []
+class WaterFlowDataSource implements IDataSource<int> {
+  private dataArray: int[] = []
   private listeners: DataChangeListener[] = []
 
   constructor() {
@@ -50,8 +50,9 @@ class WaterFlowDataSource implements IDataSource<number> {
     return this.dataArray.length
   }
 
-  getData(index: int): number {
-    return this.dataArray[index.toInt()]
+  getData(index: int): int {
+    let RealIndex:Int = index.toInt()
+    return this.dataArray[RealIndex]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -78,7 +79,7 @@ struct WaterflowDemo {
   scroller: Scroller = new Scroller();
   private datasource: WaterFlowDataSource = new WaterFlowDataSource();
 
-  
+  // 计算flow item宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
@@ -100,7 +101,7 @@ struct WaterflowDemo {
   build() {
     Column({ space: 2 } as ColumnOptions) {
       WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
-        LazyForEach(this.datasource, (item: number) => {
+        LazyForEach(this.datasource, (item: int) => {
           FlowItem() {
             Column() {
               Text("N" + item.toString()).fontSize(12).height('16')
@@ -110,9 +111,9 @@ struct WaterflowDemo {
           }
           .width(this.getSize())
           .height(this.getSize())
-          .backgroundColor(this.colors[item.toInt() % 5])
+          .backgroundColor(this.colors[(item.toInt()) % 5])
 
-        }, (item: number) => String(item))
+        }, (item: int) => String(item))
       }
       .columnsTemplate("1fr 1fr 1fr 1fr")
       .itemConstraintSize({

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,14 +19,14 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Grid_RowCol_maxCount {
-  @State addMaxCount: number = 1;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @State addMaxCount: int = 1;
+  messageManager: MessageManager<int> = new MessageManager<int>();
   private content: string = "Grid_RowCol_maxCount Page";
 
   onPageShow() {
     console.info('Grid_RowCol_maxCount page show called');
-    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>('messageManager', this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'addMaxCount') {
         this.addMaxCount = message.value;
@@ -64,7 +64,7 @@ struct Grid_RowCol_maxCount {
       .height(300)
       .backgroundColor(0xFAEEE0)
       .key('Grid_RowCol_maxCount_01')
-      .maxCount(Double.toInt(this.addMaxCount))
+      .maxCount(this.addMaxCount)
     }.width('100%')
   }
 }

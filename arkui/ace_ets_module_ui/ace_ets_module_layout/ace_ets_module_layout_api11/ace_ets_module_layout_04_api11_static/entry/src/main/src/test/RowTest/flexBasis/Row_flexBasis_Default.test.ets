@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -76,7 +77,7 @@ export default function Row_flexBasis_Default() {
      */
 it('SUB_ACE_Row_flexBasis_Default_TEST_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Row_flexBasis_Default_TEST_static_0100] START');
-      AppStorage.get<MessageManager<null>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|undefined|null>>('messageManager')?.notify({
         name: 'addflexBasis', value: null
       });
 
@@ -94,31 +95,31 @@ it('SUB_ACE_Row_flexBasis_Default_TEST_static_0100', Level.LEVEL0, async (done: 
         .assertTrue();
       expect(Math.abs(Math.round(Row_flexBasis_Default_013.top - Row_flexBasis_Default_01.top) - Math.round(Row_flexBasis_Default_01.bottom - Row_flexBasis_Default_013.bottom)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right', Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)
       console.log('Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right', Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top', Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top', Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top', Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_011.right - Row_flexBasis_Default_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_011.right - Row_flexBasis_Default_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.right - Row_flexBasis_Default_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.right - Row_flexBasis_Default_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.right - Row_flexBasis_Default_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.right - Row_flexBasis_Default_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_flexBasis_Default_TEST_static_0100] END');
       done();
@@ -136,7 +137,7 @@ it('SUB_ACE_Row_flexBasis_Default_TEST_static_0100', Level.LEVEL0, async (done: 
      */
 it('SUB_ACE_Row_flexBasis_Default_TEST_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Row_flexBasis_Default_TEST_static_0200] START');
-      AppStorage.get<MessageManager<undefined>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|undefined|null>>('messageManager')?.notify({
         name: 'addflexBasis', value: undefined
       });
 
@@ -154,31 +155,31 @@ it('SUB_ACE_Row_flexBasis_Default_TEST_static_0200', Level.LEVEL0, async (done: 
         .assertTrue();
       expect(Math.abs(Math.round(Row_flexBasis_Default_013.top - Row_flexBasis_Default_01.top) - Math.round(Row_flexBasis_Default_01.bottom - Row_flexBasis_Default_013.bottom)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right', Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)
       console.log('Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right', Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top', Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top', Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top', Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_011.right - Row_flexBasis_Default_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_011.right - Row_flexBasis_Default_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.right - Row_flexBasis_Default_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.right - Row_flexBasis_Default_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.right - Row_flexBasis_Default_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.right - Row_flexBasis_Default_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_flexBasis_Default_TEST_static_0200] END');
       done();
@@ -195,7 +196,7 @@ it('SUB_ACE_Row_flexBasis_Default_TEST_static_0200', Level.LEVEL0, async (done: 
      */
 it('SUB_ACE_Row_flexBasis_Default_TEST_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Row_flexBasis_Default_TEST_static_0300] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<number|undefined|null>>('messageManager')?.notify({
         name: 'addflexBasis', value: -5
       });
 
@@ -213,31 +214,31 @@ it('SUB_ACE_Row_flexBasis_Default_TEST_static_0300', Level.LEVEL0, async (done: 
         .assertTrue();
       expect(Math.abs(Math.round(Row_flexBasis_Default_013.top - Row_flexBasis_Default_01.top) - Math.round(Row_flexBasis_Default_01.bottom - Row_flexBasis_Default_013.bottom)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right', Row_flexBasis_Default_012.left - Row_flexBasis_Default_011.right)
       console.log('Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right', Row_flexBasis_Default_013.left - Row_flexBasis_Default_012.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top', Row_flexBasis_Default_011.bottom - Row_flexBasis_Default_011.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top', Row_flexBasis_Default_012.bottom - Row_flexBasis_Default_012.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top', Row_flexBasis_Default_013.bottom - Row_flexBasis_Default_013.top)
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_011.right - Row_flexBasis_Default_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_011.right - Row_flexBasis_Default_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_012.right - Row_flexBasis_Default_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_012.right - Row_flexBasis_Default_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_013.right - Row_flexBasis_Default_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_013.right - Row_flexBasis_Default_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_flexBasis_Default_TEST_static_0300] END');
       done();
@@ -269,30 +270,30 @@ it('SUB_ACE_Row_flexBasis_Default_TEST_static_004', Level.LEVEL0, async (done: (
         .assertTrue();
       expect(Math.abs(Math.round(Row_flexBasis_Default_023.top - Row_flexBasis_Default_02.top) - Math.round(Row_flexBasis_Default_02.bottom - Row_flexBasis_Default_023.bottom)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_022.left - Row_flexBasis_Default_021.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_022.left - Row_flexBasis_Default_021.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_023.left - Row_flexBasis_Default_022.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_023.left - Row_flexBasis_Default_022.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
 
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_021.bottom - Row_flexBasis_Default_021.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_021.bottom - Row_flexBasis_Default_021.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_021.bottom - Row_flexBasis_Default_021.top', Row_flexBasis_Default_021.bottom - Row_flexBasis_Default_021.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_022.bottom - Row_flexBasis_Default_022.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_022.bottom - Row_flexBasis_Default_022.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_022.bottom - Row_flexBasis_Default_022.top', Row_flexBasis_Default_022.bottom - Row_flexBasis_Default_022.top)
-      expect(Math.abs((Math.round(Row_flexBasis_Default_023.bottom - Row_flexBasis_Default_023.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_023.bottom - Row_flexBasis_Default_023.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexBasis_Default_023.bottom - Row_flexBasis_Default_023.top', Row_flexBasis_Default_023.bottom - Row_flexBasis_Default_023.top)
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_flexBasis_Default_021.right - Row_flexBasis_Default_021.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_021.right - Row_flexBasis_Default_021.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_022.right - Row_flexBasis_Default_022.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_022.right - Row_flexBasis_Default_022.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexBasis_Default_023.right - Row_flexBasis_Default_023.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexBasis_Default_023.right - Row_flexBasis_Default_023.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_flexBasis_Type_TEST_static_0400] END');
       done();

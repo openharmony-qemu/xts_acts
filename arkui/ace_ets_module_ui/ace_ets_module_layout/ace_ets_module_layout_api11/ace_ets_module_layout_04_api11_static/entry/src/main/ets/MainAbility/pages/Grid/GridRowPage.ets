@@ -18,8 +18,6 @@ import { MessageManager, Callback, Message } from './../../common/MessageManager
 import { Entry, Component, Column, Scroller, GridCol, ForEach, Row, GridLayoutOptions, GridColOptions, GridColColumnOption, Margin, GutterOption, BreakPoints, GridRowDirection, Color, BreakpointsReference, Text, GridRow } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-type MessageData = string | number | GutterOption | BreakPoints | GridRowDirection
-
 @Entry
 @Component
 struct GridRowPage {
@@ -29,18 +27,18 @@ struct GridRowPage {
   @State columns: int = 4
   @State breakpoints: BreakPoints = { value: ["400vp", "600vp", "800vp"], reference: BreakpointsReference.WindowSize } as BreakPoints
   @State grDirection: GridRowDirection = GridRowDirection.Row
-  messageManager: MessageManager<object> = new MessageManager<object>()
+  messageManager: MessageManager<int|string | number | GutterOption | BreakPoints | GridRowDirection> = new MessageManager<int|string | number | GutterOption | BreakPoints | GridRowDirection>()
 
   onPageShow() {
     console.info('GridRowPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<int|string | number | GutterOption | BreakPoints | GridRowDirection>>("messageManager",  this.messageManager);
+    let callback: Callback<int|string | number | GutterOption | BreakPoints | GridRowDirection> = (message: Message<int|string | number | GutterOption | BreakPoints | GridRowDirection>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'currentBp') {
         this.currentBp = message.value as string
       }
       if (message.name == 'columns') {
-        this.columns = (message.value as number).toInt()
+        this.columns = message.value as int
       }
       if (message.name == 'gutter') {
         this.gutter = message.value as GutterOption

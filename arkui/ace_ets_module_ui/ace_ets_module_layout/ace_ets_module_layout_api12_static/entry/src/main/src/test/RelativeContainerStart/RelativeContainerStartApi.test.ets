@@ -74,16 +74,13 @@ export default function RelativeContainerStartApi() {
         console.info("get RelativeContainerStartApi state pages:" + JSON.stringify(pages));
         if (!("RelativeContainerStartApi" == pages.name)) {
           console.info("get RelativeContainerStartApi pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainerStartApi page error:" + err);
       }
       console.info("RelativeContainerStartApi beforeEach end");
-      
     });
     afterEach(async () => {
     });

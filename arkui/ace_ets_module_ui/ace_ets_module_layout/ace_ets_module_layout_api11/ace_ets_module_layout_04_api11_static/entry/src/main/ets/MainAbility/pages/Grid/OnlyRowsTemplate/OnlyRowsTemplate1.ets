@@ -20,16 +20,16 @@ import { MessageManager, Callback, Message } from '../../../common/MessageManage
 @Entry
 @Component
 struct OnlyRowsTemplate1 {
-  @State rowStart1: number = 1;
-  @State rowEnd1: number = 2;
-  @State rowStart2: number = 1;
-  @State rowEnd2: number = 2;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @State rowStart1: int = 1;
+  @State rowEnd1: int = 2;
+  @State rowStart2: int = 1;
+  @State rowEnd2: int = 2;
+  messageManager: MessageManager<int> = new MessageManager<int>();
 
   onPageShow() {
     console.info('OnlyRowsTemplate1 page show called');
-    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>('messageManager', this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'rowStart1') {
         this.rowStart1 = message.value;
@@ -63,8 +63,8 @@ struct OnlyRowsTemplate1 {
         }
         .borderColor(0x000000)
         .width(100)
-        .rowStart(Double.toInt(this.rowStart1))
-        .rowEnd(Double.toInt(this.rowEnd1))
+        .rowStart(this.rowStart1)
+        .rowEnd(this.rowEnd1)
         .columnStart(2)
         .columnEnd(2)
         .key('OnlyRowsTemplate1_GridItem_01')
@@ -80,8 +80,8 @@ struct OnlyRowsTemplate1 {
         .border({ width: 1 })
         .borderColor(0x000000)
         .width(100)
-        .rowStart(Double.toInt(this.rowStart2))
-        .rowEnd(Double.toInt(this.rowEnd2))
+        .rowStart(this.rowStart2)
+        .rowEnd(this.rowEnd2)
         .key('OnlyRowsTemplate1_GridItem_02')
 
       }

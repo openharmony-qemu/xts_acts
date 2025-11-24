@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,11 +54,8 @@ export default function flex_AlignContent_SpaceAround_FlexMarTest() {
         console.info("get Flex_AlignContent_SpaceAround_FlexMarTest state pages:" + JSON.stringify(pages));
         if (!("Flex_AlignContent_SpaceAround_FlexMar" == pages.name)) {
           console.info("get Flex_AlignContent_SpaceAround_FlexMarTest pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Flex_AlignContent_SpaceAround_FlexMarTest page error:" + err);
@@ -80,9 +77,6 @@ export default function flex_AlignContent_SpaceAround_FlexMarTest() {
      */
 it('testFlexAlignContentSpaceAroundFlexMargin_static', Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundFlexMargin] START');
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'margin', value: 10
       })
@@ -96,15 +90,14 @@ it('testFlexAlignContentSpaceAroundFlexMargin_static', Level.LEVEL0, async () =>
       let flexContainerStrJson = inspector.getInspectorByKey('FlexAlign_SpaceAround_FlexMar_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$type').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
-      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$type').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(fourthText.bottom - fourthText.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
+      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(fourthText.bottom - fourthText.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(firstText.left - secondText.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(secondText.left - thirdText.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(thirdText.left - fourthText.left)) <= 1).assertTrue();

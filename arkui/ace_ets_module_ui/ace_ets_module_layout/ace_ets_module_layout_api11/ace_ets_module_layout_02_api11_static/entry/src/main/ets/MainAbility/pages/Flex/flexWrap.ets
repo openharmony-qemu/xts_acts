@@ -31,6 +31,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
 
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -66,17 +67,18 @@ struct FlexWrapExample {
     events_emitter.on(stateChangeEvent, this.stateChangCallBack)
   }
   private stateChangCallBack:(eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) => {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      console.info("swiper page state change called:" + JSON.stringify(eventData));
+      if (data['width'] != null) {
+        this.sWidth = data['width'] as string;
+      }
+      if (data['height']!= null) {
+        this.sHeight = data['height'] as number;
+      }
+      if (data['backgroundColor'] != null) {
+        this.sBackgroundColor = data['backgroundColor'] as Color;
+      }
+    }
   }
 }

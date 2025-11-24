@@ -40,9 +40,8 @@ export default function AlignSpaceEvenly_AddAllSpace() {
 
     beforeAll(() => {
       console.info("AlignSpaceEvenly_AddAllSpace beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function AlignSpaceEvenly_AddAllSpace() {
         console.info("get AlignSpaceEvenly_AddAllSpace state pages:" + JSON.stringify(pages));
         if (!("AlignSpaceEvenly_AddAllSpace" == pages.name)) {
           console.info("get AlignSpaceEvenly_AddAllSpace pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignSpaceEvenly_AddAllSpace page error:" + err);
@@ -91,9 +87,7 @@ it('testFlexAlignSpaceEvenlyFlexSpaceOverflow_static', Level.LEVEL0, async () : 
         result!.notify({
           name: 'DadAllSpace', value: 30
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SpaceEvenly_AddAllSpace_01');
 
@@ -105,36 +99,35 @@ it('testFlexAlignSpaceEvenlyFlexSpaceOverflow_static', Level.LEVEL0, async () : 
       let SpaceEvenly_AddAllSpace_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAllSpace_013');
       let SpaceEvenly_AddAllSpace_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAllSpace_01');
       let SpaceEvenly_AddAllSpace_01_Box: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAllSpace_01_Box');
-      const uiContext = new UIContext();
       expect(Math.abs(Math.round(SpaceEvenly_AddAllSpace_011.top) - Math.round(SpaceEvenly_AddAllSpace_012.top)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(SpaceEvenly_AddAllSpace_012.top) - Math.round(SpaceEvenly_AddAllSpace_013.top)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.top - SpaceEvenly_AddAllSpace_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.top - SpaceEvenly_AddAllSpace_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.right - SpaceEvenly_AddAllSpace_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.right - SpaceEvenly_AddAllSpace_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.left - SpaceEvenly_AddAllSpace_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.left - SpaceEvenly_AddAllSpace_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(SpaceEvenly_AddAllSpace_012.left) - Math.round(SpaceEvenly_AddAllSpace_011.right)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(SpaceEvenly_AddAllSpace_013.left) - Math.round(SpaceEvenly_AddAllSpace_012.right)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.left - SpaceEvenly_AddAllSpace_01_Box.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.left - SpaceEvenly_AddAllSpace_01_Box.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.top - SpaceEvenly_AddAllSpace_01_Box.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.top - SpaceEvenly_AddAllSpace_01_Box.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.bottom - SpaceEvenly_AddAllSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.bottom - SpaceEvenly_AddAllSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.bottom - SpaceEvenly_AddAllSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.bottom - SpaceEvenly_AddAllSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.bottom - SpaceEvenly_AddAllSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.bottom - SpaceEvenly_AddAllSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.right - SpaceEvenly_AddAllSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.right - SpaceEvenly_AddAllSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.right - SpaceEvenly_AddAllSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.right - SpaceEvenly_AddAllSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignSpaceEvenlyFlexSpaceOverflow] END');
 
@@ -154,9 +147,7 @@ it('testFlexAlignSpaceEvenlyFlexSpaceMeet_static', Level.LEVEL0, async () : Prom
         result!.notify({
           name: 'DadAllSpace', value: 20
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SpaceEvenly_AddAllSpace_01');
 
@@ -173,31 +164,31 @@ it('testFlexAlignSpaceEvenlyFlexSpaceMeet_static', Level.LEVEL0, async () : Prom
         .assertTrue();
       expect(Math.abs(Math.round(SpaceEvenly_AddAllSpace_012.top) - Math.round(SpaceEvenly_AddAllSpace_013.top)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.top - SpaceEvenly_AddAllSpace_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.top - SpaceEvenly_AddAllSpace_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.right - SpaceEvenly_AddAllSpace_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(22.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.right - SpaceEvenly_AddAllSpace_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(22.5))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.left - SpaceEvenly_AddAllSpace_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(22.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.left - SpaceEvenly_AddAllSpace_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(22.5))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.left - SpaceEvenly_AddAllSpace_01_Box.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.left - SpaceEvenly_AddAllSpace_01_Box.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.top - SpaceEvenly_AddAllSpace_01_Box.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_01.top - SpaceEvenly_AddAllSpace_01_Box.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.right - SpaceEvenly_AddAllSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.right - SpaceEvenly_AddAllSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.right - SpaceEvenly_AddAllSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.right - SpaceEvenly_AddAllSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.bottom - SpaceEvenly_AddAllSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_011.bottom - SpaceEvenly_AddAllSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.bottom - SpaceEvenly_AddAllSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.bottom - SpaceEvenly_AddAllSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.bottom - SpaceEvenly_AddAllSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_013.bottom - SpaceEvenly_AddAllSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(SpaceEvenly_AddAllSpace_012.left - SpaceEvenly_AddAllSpace_011.right) - Math.round(SpaceEvenly_AddAllSpace_013.left - SpaceEvenly_AddAllSpace_012.right)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.left - SpaceEvenly_AddAllSpace_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(2.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddAllSpace_012.left - SpaceEvenly_AddAllSpace_011.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(2.5))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignSpaceEvenlyFlexSpaceMeet] END');
 

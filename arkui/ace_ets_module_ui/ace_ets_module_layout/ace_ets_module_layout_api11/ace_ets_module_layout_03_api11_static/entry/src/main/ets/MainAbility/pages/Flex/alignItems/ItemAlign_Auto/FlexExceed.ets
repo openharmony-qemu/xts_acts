@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry,Color, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -29,10 +29,6 @@ struct FlexExceed_Auto {
 
   onPageShow() {
     console.info('FlexExceed_Auto onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -53,22 +49,22 @@ struct FlexExceed_Auto {
   build() {
     Column() {
       Column() {
-        Text('FlexExceed_1').fontSize(9).fontColor(0xCCCCCC).width('90%');
+        Text('FlexExceed_1').fontSize(9).fontColor(Color.Red).width('90%');
         Flex({
           direction: FlexDirection.Row,
           alignItems: ItemAlign.Auto,
           wrap: FlexWrap.NoWrap,
         }  as FlexOptions)  {
-          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('textExceed01');
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textExceed02');
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textExceed03');
+          Text('1').width(150).height(50).backgroundColor(Color.Red).key('textExceed01');
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textExceed02');
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textExceed03');
         }
         .key('flexExceed01')
         .height(200)
         .width(500)
         .margin(this.testMargin)
         .padding(this.testPadding)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
       }.width('100%').margin({ top: 5 } as Margin)
     }.width('100%')
   }

@@ -91,7 +91,7 @@ struct IndexFold {
           console.info("The device is currently in FOLD_STATUS_FOLDED state")
         }
       })
-      
+      // folderStack如果不撑满页面全屏，作为普通Stack使用
       .alignContent(Alignment.Bottom)
       .height("100%")
       .width("100%")

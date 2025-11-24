@@ -15,6 +15,7 @@
 
 import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
+import { Position } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../../Util.test';
@@ -37,12 +38,10 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function AlignCenter_AddOffset() {
   describe('AlignCenter_AddOffset', () => {
-
     beforeAll(() => {
       console.info("AlignCenter_AddOffset beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function AlignCenter_AddOffset() {
         console.info("get AlignCenter_AddOffset state pages:" + JSON.stringify(pages));
         if (!("AlignCenter_AddOffset" == pages.name)) {
           console.info("get AlignCenter_AddOffset pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignCenter_AddOffset page error:" + err);
@@ -86,19 +82,16 @@ export default function AlignCenter_AddOffset() {
      */
 it('testFlexAlignCenterTextOffset_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[testFlexAlignCenterTextOffset] START');
-      let result = AppStorage.get<MessageManager<number>>("messageManager")
+      let result = AppStorage.get<MessageManager<Position>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value:0
-          /*{
+          name: 'OneOffset', value: {
             x: 10, y: 15
-          } */
+          }
         });
-
       }
-
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Center_AddAlign_01');
+      let strJson = inspector.getInspectorByKey('Center_AddOffset_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
@@ -107,27 +100,26 @@ it('testFlexAlignCenterTextOffset_static', Level.LEVEL0, async () : Promise<void
       let Center_AddOffset_012: RectValue = CommonFunc.getComponentRect('Center_AddOffset_012');
       let Center_AddOffset_013: RectValue = CommonFunc.getComponentRect('Center_AddOffset_013');
       let Center_AddOffset_01: RectValue = CommonFunc.getComponentRect('Center_AddOffset_01');
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round((Center_AddOffset_011.top - Center_AddOffset_01.top) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(15) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddOffset_011.top - Center_AddOffset_01.top) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15)) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddOffset_011.left - Center_AddOffset_01.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(35) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddOffset_011.left - Center_AddOffset_01.left) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(35)) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddOffset_01.right - Center_AddOffset_013.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddOffset_01.right - Center_AddOffset_013.right) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
         .assertTrue();
       expect(Math.abs((Center_AddOffset_012.top) - (Center_AddOffset_013.top)) <= 1).assertTrue();
       expect(Math.abs((Center_AddOffset_012.top) - (Center_AddOffset_01.top)) <= 1).assertTrue();
       expect(Math.abs((Center_AddOffset_013.left) - (Center_AddOffset_012.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_011.right - Center_AddOffset_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_011.right - Center_AddOffset_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_012.right - Center_AddOffset_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_012.right - Center_AddOffset_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_013.right - Center_AddOffset_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_013.right - Center_AddOffset_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_011.bottom - Center_AddOffset_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_011.bottom - Center_AddOffset_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_012.bottom - Center_AddOffset_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_012.bottom - Center_AddOffset_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_013.bottom - Center_AddOffset_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_013.bottom - Center_AddOffset_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterTextOffset] END');
 

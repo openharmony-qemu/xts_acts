@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Text,Color,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,11 +27,6 @@ struct AlignEnd_AddVisibility {
 
   onPageShow() {
     console.info('AlignEnd_AddVisibility onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -46,21 +41,21 @@ struct AlignEnd_AddVisibility {
 
   build() {
     Column() {
-      Text('justifyContent:FlexAlign.End').fontSize(9).fontColor(0xCCCCCC).width('90%');
+      Text('justifyContent:FlexAlign.End').fontSize(9).fontColor(Color.Red).width('90%');
       Flex({ justifyContent: this.justifyContent, direction: FlexDirection.Row } as FlexOptions) {
         Text('1')
           .width(150)
           .height(50)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key("End_AddVisibility_011")
           .visibility(this.OneVisibility == 0? Visibility.Visible:(this.OneVisibility == 1? Visibility.Hidden:Visibility.None))
-        Text('2').width(150).height(100).backgroundColor(0xD2B48C).key("End_AddVisibility_012");
-        Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key("End_AddVisibility_013");
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key("End_AddVisibility_012");
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key("End_AddVisibility_013");
       }
       .key("End_AddVisibility_01")
       .width(500)
       .height(200)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
     }
   }
 }

@@ -31,6 +31,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -44,11 +45,6 @@ struct FlexWrapReverse_notFixedParentPaddind {
 
   onPageShow() {
     console.info('FlexWrapReverse_notFixedParentPaddind page show called');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);

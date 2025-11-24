@@ -27,10 +27,6 @@ struct AlignContent_FlexAlign_SpaceEvenly_padding {
 
   onPageShow() {
     console.info('AlignContentFlex onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);

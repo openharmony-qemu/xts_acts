@@ -15,23 +15,25 @@
 import { Entry, Component, Column, Row, RowOptions, Text } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct Row_flexBasis_Type {
   @State addflexBasis1: number = 0;
   @State addflexBasis2: string = '0';
-  messageManager: MessageManager<string> = new MessageManager<string>();
+  messageManager: MessageManager<number|string> = new MessageManager<number|string>();
 
   onPageShow() {
     console.info('Row_flexBasis_Type onPageShow');
-    AppStorage.setOrCreate<MessageManager<string>>('messageManager', this.messageManager);
-    let callback: Callback<string> = (message: Message<string>) => {
+    AppStorage.setOrCreate<UIContext>('context', this.getUIContext());
+    AppStorage.setOrCreate<MessageManager<number|string>>('messageManager', this.messageManager);
+    let callback: Callback<number|string> = (message: Message<number|string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addflexBasis1') {
-        this.addflexBasis1 = Number.parseInt(message.value);
+        this.addflexBasis1 = message.value as number;
       } else if (message.name == 'addflexBasis2') {
-        this.addflexBasis2 = message.value;
+        this.addflexBasis2 = message.value as string;
       }
     };
     this.messageManager.registerCallback(callback);

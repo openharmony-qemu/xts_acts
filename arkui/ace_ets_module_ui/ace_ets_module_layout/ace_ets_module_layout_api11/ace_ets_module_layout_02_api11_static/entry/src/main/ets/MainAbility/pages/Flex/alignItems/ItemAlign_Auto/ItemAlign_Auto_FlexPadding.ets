@@ -30,6 +30,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -42,10 +43,6 @@ struct FlexPadding_Auto {
 
   onPageShow() {
     console.info('FlexPadding_Auto onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + '--' + message.value);

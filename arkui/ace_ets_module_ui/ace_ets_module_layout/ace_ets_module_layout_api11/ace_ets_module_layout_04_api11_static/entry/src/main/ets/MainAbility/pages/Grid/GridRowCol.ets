@@ -18,12 +18,10 @@ import { MessageManager, Callback, Message } from './../../common/MessageManager
 import { Entry, Component, Column, Scroller,TextAlign, ColumnOptions, Grid, Margin, ForEach, GridItem, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-type MessageData = string
-
 @Entry
 @Component
 struct GridRowCol {
-  @State numberData: String[] = ['0', '1', '2', '3', '4']
+  @State Number01: String[] = ['0', '1', '2', '3', '4'] as String[]
   scroller: Scroller = new Scroller()
   @State columnsTemplate: string = '1fr 1fr 1fr'
   messageManager: MessageManager<string> = new MessageManager<string>()
@@ -36,7 +34,6 @@ struct GridRowCol {
       if (message.name == 'columnsTemplate') {
         this.columnsTemplate = message.value;
       }
-
     }
     this.messageManager.registerCallback(callback);
   }
@@ -44,8 +41,8 @@ struct GridRowCol {
   build() {
     Column({ space: 5 } as ColumnOptions)  {
       Grid() {
-        ForEach(this.numberData, (day: string ,index1:int|undefined) => {
-          ForEach(this.numberData, (day: string ,index2:int|undefined) => {
+        ForEach(this.Number01, (day: string ,index1:int|undefined) => {
+          ForEach(this.Number01, (day: string ,index2:int|undefined) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

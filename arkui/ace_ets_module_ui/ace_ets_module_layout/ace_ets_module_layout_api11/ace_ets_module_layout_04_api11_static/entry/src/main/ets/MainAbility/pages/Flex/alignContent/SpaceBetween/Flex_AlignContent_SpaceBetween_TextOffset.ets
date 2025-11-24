@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,10 +27,6 @@ struct FlexAlign_SpaceBetween_TextOffset {
 
   onPageShow() {
     console.info('FlexAlign_SpaceBetween_TextOffset onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
     let callback: Callback<Position> = (message: Message<Position>) => {
       console.log('message = ' + message.name + "--" + message.value);

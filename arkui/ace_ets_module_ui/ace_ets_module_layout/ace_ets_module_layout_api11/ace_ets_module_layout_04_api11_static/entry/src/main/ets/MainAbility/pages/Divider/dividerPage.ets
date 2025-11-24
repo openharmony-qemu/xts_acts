@@ -35,50 +35,51 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
 @Component
 struct DividerExample  {
   @State message: string = 'divider'
-  
+  @State mod: DividerModifier = new DividerModifier()
   @State color: ResourceColor = "#FF000000";
   @State lineCap: LineCapStyle = LineCapStyle.Butt
   @State strokeWidth: (Int | string) = 1
   @State vertical: boolean = false
   private stateChangCallBack: (eventData : events_emitter.EventData) => void = (eventData : events_emitter.EventData) => {
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("Divider page state change called:" + JSON.stringify(eventData));
-      if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 0)
+      if(data['typeValue'] === 0)
       {
         console.info(`Divider.Color=>Color.Black`)
         this.color = Color.Black;
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 1){
+      } else if(data['typeValue'] === 1){
         console.info(`Divider.Color=>#FF0000FF`)
 
         this.color = "#FF0000FF";
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 2){
+      } else if(data['typeValue'] === 2){
         console.info(`Divider.Color=>#ff0000`)
         this.color = "#ff0000"
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 3){
+      } else if(data['typeValue'] === 3){
         console.info(`Divider.color=>rgb(255, 100, 255)`)
         this.color = "rgb(255, 100, 255)"
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 4){
+      } else if(data['typeValue'] === 4){
         console.info(`Divider.color=>rgba(255, 100, 255, 0.5)`)
         this.color = "rgba(255, 100, 255, 0.5)"
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 5){
+      } else if(data['typeValue'] === 5){
         console.info(`Divider.lineCap=>LineCapStyle.Butt`)
         this.lineCap = LineCapStyle.Butt
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 6){
+      } else if(data['typeValue'] === 6){
         console.info(`Divider.lineCap=>LineCapStyle.Round`)
         this.lineCap = LineCapStyle.Round
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 7){
+      } else if(data['typeValue'] === 7){
         console.info(`Divider.lineCap=>LineCapStyle.Square`)
         this.lineCap = 100 as LineCapStyle
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 8){
+      } else if(data['typeValue'] === 8){
         console.info(`Divider.strokeWidth=>2`)
         this.strokeWidth = 2
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 9){
+      } else if(data['typeValue'] === 9){
         console.info(`Divider.strokeWidth=>10px`)
         this.strokeWidth = "10px"
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 10){
+      } else if(data['typeValue'] === 10){
         console.info(`Divider.vertical=>true`)
         this.vertical = true
-      } else if(((eventData.data) as ESObject)?.getProperty('typeValue').toNumber() === 11){
+      } else if(data['typeValue'] === 11){
         console.info(`Divider.vertical=>false`)
         this.vertical = false
       }
@@ -143,7 +144,7 @@ struct DividerExample  {
       Column() {
         Text(this.message).fontSize(9).width('90%').fontColor(0xCCCCCC)
         Divider()
-        
+          .attributeModifier(this.mod)
         .key('dividerkey')
       }
     }

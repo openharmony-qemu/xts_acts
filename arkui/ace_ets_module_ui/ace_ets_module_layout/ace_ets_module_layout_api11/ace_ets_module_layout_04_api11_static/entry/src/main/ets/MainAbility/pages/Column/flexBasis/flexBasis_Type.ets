@@ -18,19 +18,16 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 import { Entry, Component, Column, FlexAlign, ColumnOptions, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-
-type MessageData = number | string
-
 @Entry
 @Component
 struct flexBasis_Type {
   @State addflexBasis1: number = 0
   @State addflexBasis2: string = '0'
-  messageManager:MessageManager<object> = new MessageManager<object>()
+  messageManager:MessageManager<number | string> = new MessageManager<number | string>()
   onPageShow() {
     console.info('flexBasis_Type onPageShow');
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<number | string>>("messageManager",  this.messageManager);
+    let callback: Callback<number | string> = (message: Message<number | string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addflexBasis1') {
         this.addflexBasis1 = message.value as number;

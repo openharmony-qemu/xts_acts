@@ -39,7 +39,6 @@ export default function AlignContentFlex_Center() {
   describe('AlignContentFlex_CenterTest', () => {
     beforeAll(() => {
       console.info("AlignContentFlex_CenterTest beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -56,11 +55,8 @@ export default function AlignContentFlex_Center() {
         console.info("get AlignContentFlex_CenterTest state pages:" + JSON.stringify(pages));
         if (!("AlignContentFlex_Center" == pages.name)) {
           console.info("get AlignContentFlex_CenterTest pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignContentFlex_CenterTest page error:" + err);
@@ -85,9 +81,6 @@ export default function AlignContentFlex_Center() {
      */
 it('testAlignContentCenterFlexHeightSatisfy_static', Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexHeightSatisfy START');
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 360
       })
@@ -113,15 +106,14 @@ it('testAlignContentCenterFlexHeightSatisfy_static', Level.LEVEL0, async () => {
       JSON.stringify(AlignContentFlexCenter_3));
       console.log('AlignContentFlexCenter_4 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_4));
-      const uiContext = new UIContext();
-      expect(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.Center");
@@ -145,9 +137,6 @@ it('testAlignContentCenterFlexHeightSatisfy_static', Level.LEVEL0, async () => {
      */
 it('testAlignContentCenterFlexHeightNoSatisfy_static', Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexHeightNoSatisfy START');
-      
-      
-      
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 250
       })
@@ -171,15 +160,14 @@ it('testAlignContentCenterFlexHeightNoSatisfy_static', Level.LEVEL0, async () =>
       JSON.stringify(AlignContentFlexCenter_3));
       console.log('AlignContentFlexCenter_4 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_4));
-      const uiContext = new UIContext();
-      expect(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.Center");

@@ -14,6 +14,7 @@
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
 import router from '@ohos.router';
+
 import Utils from '../Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import inspector from '@ohos.arkui.inspector'
@@ -23,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -35,7 +36,6 @@ export default function directionJsunit() {
   describe('directionJsunit', () =>{
     beforeAll(() => {
       console.info("directionJsunit beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,10 +51,8 @@ export default function directionJsunit() {
         console.info("get direction state success " + "");
         if (!("direction" == pages.name)) {
           console.info("get direction state success " + "");
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push direction page error: " + err);
@@ -65,9 +63,6 @@ export default function directionJsunit() {
       await Utils.sleep(1000);
       console.info("direction after each called");
     });
-
-    
-    
 
 /*
      * @tc.number   directionTest_static_0100
@@ -85,9 +80,6 @@ it('directionTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-    
-    
-
 /*
      * @tc.number   directionTest_static_0200
      * @tc.name     directionTest_static_0200
@@ -96,18 +88,9 @@ it('directionTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
      */
 it('directionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('directionTest_static_0200 START');
+
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "direction": FlexDirection.Row,
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 84,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("directionTest_static_0200 start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
+        AppStorage.setOrCreate<FlexDirection>('sDirection',FlexDirection.Row)
       } catch (err) {
         console.log("directionTest_static_0200 change component data error: " + (err as Error)?.message);
       }
@@ -120,9 +103,6 @@ it('directionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-    
-    
-
 /*
      * @tc.number   directionTest_static_0300
      * @tc.name     directionTest_static_0300
@@ -132,17 +112,7 @@ it('directionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 it('directionTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('directionTest_static_0300 START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "direction": 666,
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 84,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("directionTest_static_0300 start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
+        AppStorage.setOrCreate<FlexDirection>('sDirection',666 as FlexDirection)
       } catch (err) {
         console.log("directionTest_static_0300 change component data error: " + (err as Error)?.message);
       }

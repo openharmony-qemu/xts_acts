@@ -39,9 +39,8 @@ export default function flexExceed_CenterJsunit() {
 
     beforeAll(() => {
       console.info("flexItemAlignCenterTest2 beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -57,11 +56,8 @@ export default function flexExceed_CenterJsunit() {
         console.info("get flexItemAlignCenterTest2 state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Center_FlexExceed" == pages.name)) {
           console.info("get flexItemAlignCenterTest2 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignCenterTest2 page error:" + err);
@@ -87,13 +83,12 @@ it('testFlexItemAlignCenterSetMarPad_static', Level.LEVEL0, async () : Promise<v
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 10
+          name: 'padding', value: 10
         });
         result!.notify({
-          name: 'width', value: 10
+          name: 'margin', value: 10
         });
       }
-
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Center_flexExceed01');
 
@@ -101,8 +96,7 @@ it('testFlexItemAlignCenterSetMarPad_static', Level.LEVEL0, async () : Promise<v
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flexExceed01');
-      const uiContext = new UIContext();
-      expect(Math.abs(textExceed01.left - flexExceed01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.left - flexExceed01.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
       expect(textExceed03.right).assertLess(flexExceed01.right)
       expect(Math.abs(textExceed01.top - flexExceed01.top - (flexExceed01.bottom - textExceed01.bottom)) <= 1)
         .assertTrue()
@@ -110,18 +104,15 @@ it('testFlexItemAlignCenterSetMarPad_static', Level.LEVEL0, async () : Promise<v
         .assertTrue()
       expect(Math.abs(textExceed03.top - flexExceed01.top - (flexExceed01.bottom - textExceed03.bottom)) <= 1)
         .assertTrue()
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textExceed01.right - textExceed01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.right - textExceed02.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.right - textExceed03.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.bottom - textExceed01.top - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.bottom - textExceed02.top - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.bottom - textExceed03.top - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.right - textExceed01.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.right - textExceed02.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.right - textExceed03.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
       console.info('new testFlexItemAlignCenterSetMarPad_static END');
-
     });
-
-
   })
 }

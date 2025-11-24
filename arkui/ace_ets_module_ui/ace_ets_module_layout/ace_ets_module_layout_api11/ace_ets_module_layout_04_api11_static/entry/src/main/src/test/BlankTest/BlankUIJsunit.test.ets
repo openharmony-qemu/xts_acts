@@ -14,10 +14,12 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { ResourceColor } from '@ohos.arkui.component'
+
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import { GlobalContext } from '../../../ets/MainAbility/common/GlobalContext'
-import {MessageManager,Callback} from '../../../ets/MainAbility/utils/MessageManager';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -34,7 +36,6 @@ export default function blankUIJsunit() {
   describe('blankUIJsunit', () => {
     beforeAll(() => {
       console.info("blankUIJsunit beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,10 +52,8 @@ export default function blankUIJsunit() {
         console.info("get blankJsunit state pages:" + "");
         if (!("blankParentWidth" == pages.name)) {
           console.info("get blankJsunit state pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000)
-          
         }
       } catch (err) {
           console.error("push blankJsunit page error:" + err);
@@ -62,9 +61,6 @@ export default function blankUIJsunit() {
       }
     });
 
-    
-    
-    
 
 /*
      * @tc.number   blankJsunit_static_0100
@@ -75,7 +71,7 @@ export default function blankUIJsunit() {
 it('blankJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'blankColor',value:'#FCAE5394'})
+      AppStorage.setOrCreate<ResourceColor>("blankColor",'#FCAE5394')
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('bl2');
      let obj = JSON.parseJsonElement(strJson);
@@ -83,10 +79,6 @@ it('blankJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
      expect(obj.getElement('$attrs').getString('color')).assertEqual('#FCAE5394');
       done();
     });
-
-    
-   
-   
 
 /*
      * @tc.number   blankJsunit_static_0200
@@ -97,8 +89,7 @@ it('blankJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
 it('blankJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0200 START');
       await CommonFunc.sleep(1000);
-       
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'minWith',value:'80'})
+      AppStorage.setOrCreate<number | string>("minWith",'80')
       await CommonFunc.sleep(3000);
       
       let strJson = inspector.getInspectorByKey('bl2');
@@ -107,9 +98,6 @@ it('blankJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
      expect(obj.getElement('$attrs').getString('min')).assertEqual('80.00vp');
       done();
     });
-
-    
-    
 
 /*
      * @tc.number   blankJsunit_static_0300
@@ -120,10 +108,8 @@ it('blankJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
 it('blankJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0300 START');
       await CommonFunc.sleep(1000);
-       
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'minWith',value:'-30'})
+      AppStorage.setOrCreate<number | string>("minWith",'-30')
       await CommonFunc.sleep(2000);
-      
       let strJson = inspector.getInspectorByKey('bl2');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[blankJsunit_static_0300'] component obj is: " + obj.getElement('$attrs').getString('min'));
@@ -131,9 +117,6 @@ it('blankJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
      expect(obj.getElement('$attrs').getString('min')).assertEqual('0.00vp');
       done();
     });
-
-    
-    
 
 /*
      * @tc.number   blankJsunit_static_0400
@@ -144,8 +127,7 @@ it('blankJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
 it('blankJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0400 START');
       await CommonFunc.sleep(1000);
-       
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'blankColor',value:'#AE53'})
+      AppStorage.setOrCreate<ResourceColor>("blankColor",'#AE53')
       await CommonFunc.sleep(3000);
        
       let strJson = inspector.getInspectorByKey('bl2');
@@ -155,9 +137,6 @@ it('blankJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<vo
      expect(obj.getElement('$attrs').getString('color')).assertEqual('#AAEE5533');
       done();
     });
-
-    
-    
 
 /*
      * @tc.number   blankJsunit_static_0500
@@ -182,9 +161,6 @@ it('blankJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
 
-    
-    
-
 /*
      * @tc.number   blankJsunit_static_0600
      * @tc.name     blankJsunit_static_0600
@@ -208,9 +184,6 @@ it('blankJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
 
-   
-   
-
 /*
      * @tc.number   blankJsunit_static_0700
      * @tc.name     blankJsunit_static_0700
@@ -230,9 +203,6 @@ it('blankJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
 
-    
-    
-
 /*
      * @tc.number   blankJsunit_static_0800
      * @tc.name     blankJsunit_static_0800
@@ -242,7 +212,7 @@ it('blankJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<vo
 it('blankJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0800 START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>("messageManager")?.notify({name:'minWith',value:'rr'})
+      AppStorage.setOrCreate<number | string>("minWith",'rr')
       await CommonFunc.sleep(200);
       let strJson2 = inspector.getInspectorByKey('bl2');
      let obj2 = JSON.parseJsonElement(strJson2);

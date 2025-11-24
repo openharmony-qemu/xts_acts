@@ -71,11 +71,8 @@ export default function SpaceMain5JustifyContentJsunit() {
         console.info("get SpaceMain5JustifyContentJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SpaceMain5JustifyContentJsunit pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SpaceMain5JustifyContentJsunit page error:" + err);

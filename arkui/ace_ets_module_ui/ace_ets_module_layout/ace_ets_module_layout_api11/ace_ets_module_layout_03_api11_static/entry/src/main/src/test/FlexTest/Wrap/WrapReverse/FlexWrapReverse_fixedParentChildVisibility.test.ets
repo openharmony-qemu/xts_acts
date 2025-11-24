@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
-import router from '@ohos.router';
+import router from '@ohos.router'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../../Util.test';
@@ -40,7 +40,6 @@ export default function flexWrapReverse_fixedParentChildVisibility() {
   describe('FlexWrapReverse_fixedParentChildVisibility', () => {
     beforeAll(() => {
       console.info("FlexWrapReverse_fixedParentChildVisibility beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -57,11 +56,8 @@ export default function flexWrapReverse_fixedParentChildVisibility() {
         console.info("get FlexWrapReverse_fixedParentChildVisibility state pages:" + JSON.stringify(pages));
         if (!("FlexWrapReverse_fixedParentChildVisibility" == pages.name)) {
           console.info("get FlexWrapReverse_fixedParentChildVisibility pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push FlexWrapReverse_fixedParentChildVisibility page error:" + err);
@@ -85,23 +81,14 @@ export default function flexWrapReverse_fixedParentChildVisibility() {
      */
 it('testWrapReverseParentfixedVisibilityNoneAndOtherOutRange_static', Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedVisibilityNoneAndOtherOutRange START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'test1Width', value: 150
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'test2Width', value: 300
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-        name: 'visibility', value: Visibility.None
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+        name: 'visibility', value: 2
       });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('FlexWrapReverseTest19');
@@ -116,17 +103,16 @@ it('testWrapReverseParentfixedVisibilityNoneAndOtherOutRange_static', Level.LEVE
       let locationText2: RectValue = CommonFunc.getComponentRect('WrapReverseTest56');
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest57');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest19');
-      const uiContext = new UIContext();
       expect(Math.abs(locationText2.left - locationText3.left) <= 1).assertTrue()
       expect(Math.abs(locationText2.right - locationText3.right) <= 1).assertTrue()
       expect(Math.abs(locationText2.right - locationFlex.right) <= 1).assertTrue()
-      expect(Math.abs((locationText2.left - locationFlex.left) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs((locationText2.left - locationFlex.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs((locationText3.right - locationText3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(300))) <= 1).assertTrue();
       expect(Math.abs(locationText2.top - locationFlex.top) <= 1).assertTrue()
       expect(Math.abs(locationText3.top - locationText2.bottom) <= 1).assertTrue()
-      expect(Math.abs((locationFlex.bottom - locationText3.bottom) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((locationFlex.bottom - locationText3.bottom) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs((locationText2.bottom - locationText2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs((locationText3.bottom - locationText3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
       console.info('new testWrapReverseParentfixedVisibilityNoneAndOtherOutRange END');
 
     });
@@ -141,23 +127,14 @@ it('testWrapReverseParentfixedVisibilityNoneAndOtherOutRange_static', Level.LEVE
      */
 it('testWrapReverseParentfixedVisibilityNoneAndOtherInRange_static', Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedVisibilityNoneAndOtherInRange START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'test1Width', value: 200
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'test2Width', value: 200
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-        name: 'visibility', value: Visibility.None
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+        name: 'visibility', value: 2
       });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('FlexWrapReverseTest19');
@@ -167,22 +144,21 @@ it('testWrapReverseParentfixedVisibilityNoneAndOtherInRange_static', Level.LEVEL
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('justifyContent')).assertEqual('FlexAlign.Start');
       let strJson2 = inspector.getInspectorByKey('WrapReverseTest55');
 
-      
+      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('visibility')).assertEqual('Visibility.None');
       let locationText1: RectValue = CommonFunc.getComponentRect('WrapReverseTest55');
       let locationText2: RectValue = CommonFunc.getComponentRect('WrapReverseTest56');
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest57');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest19');
-      const uiContext = new UIContext();
       expect(Math.abs(locationText2.right - locationFlex.right) <= 1).assertTrue()
       expect(Math.abs(locationText2.left - locationText3.right) <= 1).assertTrue()
-      expect(Math.abs((locationText3.left - locationFlex.left) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs((locationText3.left - locationFlex.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
       expect(Math.abs(locationText3.top - locationText2.top) <= 1).assertTrue()
       expect(Math.abs(locationText3.top - locationFlex.top) <= 1).assertTrue()
-      expect(Math.abs((locationFlex.bottom - locationText3.bottom) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs((locationFlex.bottom - locationText3.bottom) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs((locationText3.right - locationText3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs((locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs((locationText2.bottom - locationText2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs((locationText3.bottom - locationText3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
       console.info('new testWrapReverseParentfixedVisibilityNoneAndOtherInRange END');
 
     });
@@ -197,23 +173,14 @@ it('testWrapReverseParentfixedVisibilityNoneAndOtherInRange_static', Level.LEVEL
      */
 it('testWrapReverseParentfixedVisibilityHiddenAndOtherInRange_static', Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedVisibilityHiddenAndOtherInRange START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'test1Width', value: 200
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'test2Width', value: 200
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-        name: 'visibility', value: Visibility.Hidden
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+        name: 'visibility', value: 1
       });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('FlexWrapReverseTest19');
@@ -228,21 +195,20 @@ it('testWrapReverseParentfixedVisibilityHiddenAndOtherInRange_static', Level.LEV
       let locationText2: RectValue = CommonFunc.getComponentRect('WrapReverseTest56');
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest57');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest19');
-      const uiContext = new UIContext();
       expect(Math.abs(locationText1.right - locationFlex.right) <= 1).assertTrue()
       expect(Math.abs(locationText1.left - locationText2.right) <= 1).assertTrue()
-      expect(Math.abs((locationText2.left - locationFlex.left) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs((locationText2.left - locationFlex.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
       expect(Math.abs(locationText3.left - locationText1.left) <= 1).assertTrue()
       expect(Math.abs(locationText3.right - locationFlex.right) <= 1).assertTrue()
       expect(Math.abs(locationText1.top - locationText2.top) <= 1).assertTrue()
       expect(Math.abs(locationText2.top - locationFlex.top) <= 1).assertTrue()
       expect(Math.abs(locationText3.top - locationText2.bottom) <= 1).assertTrue()
-      expect(Math.abs((locationFlex.bottom - locationText3.bottom) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs((locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs((locationFlex.bottom - locationText3.bottom) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs((locationText3.right - locationText3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs((locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs((locationText1.bottom - locationText1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs((locationText2.bottom - locationText2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs((locationText3.bottom - locationText3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
       console.info('new testWrapReverseParentfixedVisibilityHiddenAndOtherInRange END');
 
     });

@@ -31,6 +31,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
 
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -79,9 +80,10 @@ struct PositionExample {
 
   private stateChangCallBack:(eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("direction2 page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)?.getProperty('direction') != null) {
-        
+      if (data['direction'] != null) {
+        this.sDirection = data['direction'] as Direction;
       }
     }
   }

@@ -14,6 +14,8 @@
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index";
 import router from '@ohos.router';
+import { ResourceColor,Length } from '@ohos.arkui.component'
+
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
@@ -22,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -34,7 +36,6 @@ export default function flexWrapJsunit() {
   describe('flexWrapJsunit', () => {
     beforeAll(() => {
       console.info("flexWrapJsunit beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,22 +52,17 @@ export default function flexWrapJsunit() {
         console.info("get flexWrap state pages:" + "");
         if (!("flexWrap" == pages.name)) {
           console.info("get flexWrap state pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexWrap page error:" + JSON.stringify(err));
       }
     });
     afterEach(async () => {
-      await Utils.sleep(1000);
+      await Utils.sleep(2000);
       console.info("flexWrap after each called");
     });
-
-    
-    
 
 /*
      * @tc.number   flexWrap_static_0100
@@ -86,9 +82,6 @@ it('flexWrap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       done();
     });
 
-    
-    
-
 /*
      * @tc.number   flexWrap_static_0200
      * @tc.name     flexWrap_static_0200
@@ -107,9 +100,6 @@ it('flexWrap_static_0200', Level.LEVEL0, async (done: () => void): Promise<void>
       done();
     });
 
-    
-    
-
 /*
      * @tc.number   flexWrap_static_0300
      * @tc.name     flexWrap_static_0300
@@ -119,19 +109,9 @@ it('flexWrap_static_0200', Level.LEVEL0, async (done: () => void): Promise<void>
 it('flexWrap_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('flexWrap_static_0300 START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "width": "40%",
-            "height": "70",
-            "backgroundColor": 0xF5DEB3,
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 100,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("flexWrap_static_0300 start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
+        AppStorage.setOrCreate<Length>('sWidth',"40%")
+        AppStorage.setOrCreate<Length>('sHeight',"70")
+        AppStorage.setOrCreate<ResourceColor>('sBackgroundColor',0xF5DEB3)
       } catch (err) {
         console.log("flexWrap_static_0300 change component data error: " + (err as Error)?.message);
       }

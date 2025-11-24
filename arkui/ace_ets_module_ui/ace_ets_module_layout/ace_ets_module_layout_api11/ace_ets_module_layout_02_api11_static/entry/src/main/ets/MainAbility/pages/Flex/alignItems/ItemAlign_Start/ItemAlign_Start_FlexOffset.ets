@@ -27,6 +27,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
@@ -56,7 +57,7 @@ struct FlexOffset_Start {
             .width(150)
             .height(50)
             .backgroundColor(0xF5DEB3)
-            
+            .offset({ x: 15, y: 30 } as Position)
             .key('ItemAlign_Start_textOffset01')
           Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('ItemAlign_Start_textOffset02')
           Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('ItemAlign_Start_textOffset03')

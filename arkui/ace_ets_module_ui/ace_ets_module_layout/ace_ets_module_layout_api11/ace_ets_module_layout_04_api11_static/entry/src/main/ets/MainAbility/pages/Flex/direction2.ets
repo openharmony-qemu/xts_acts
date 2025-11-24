@@ -62,10 +62,11 @@ struct PositionExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("direction2 page state change called:" + JSON.stringify(eventData));
-      
-      
-      
+      if (data['direction'] != null) {
+        this.sDirection = data['direction'] as Direction;
+      }
     }
   }
 }

@@ -14,6 +14,7 @@
  */
 import {describe, beforeAll, afterEach, afterAll, it, beforeEach,expect,Level} from "../../../../hypium/index"
 import router from '@ohos.router';
+
 import Utils from '../Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import inspector from '@ohos.arkui.inspector'
@@ -23,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -35,7 +36,6 @@ export default function direction2Jsunit() {
   describe('direction2Jsunit', () =>{
     beforeAll(() => {
       console.info("direction2Jsunit beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,10 +51,8 @@ export default function direction2Jsunit() {
         console.info("get direction state success " + "");
         if (!("direction2" == pages.name)) {
           console.info("get direction state success " + "");
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push direction page error: " + err);
@@ -81,7 +79,7 @@ it('direction2Test_static_0200', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "direction": Direction.Rtl,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1082,
@@ -135,7 +133,7 @@ it('direction2Test_static_0300', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "direction":  Direction.Auto,
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1083,

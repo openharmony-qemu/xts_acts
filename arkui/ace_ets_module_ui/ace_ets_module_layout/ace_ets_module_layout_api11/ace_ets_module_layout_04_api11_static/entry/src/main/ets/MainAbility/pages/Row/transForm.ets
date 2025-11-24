@@ -32,14 +32,15 @@ struct TransformExample {
   @State transformValue: Matrix4.Matrix4Transit = Matrix4.identity().translate({ x: 100, y: 100, z: 30 });
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("transFormExample page state change called:" + JSON.stringify(eventData));
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['rotateValue'] != null) {
+        this.rotateValue = data['rotateValue'] as RotateOptions ;
+      }
+      if (data['scaleValue'] != null) {
+        this.scaleValue = data['scaleValue'] as ScaleOptions;
+      }
+    }
   };
 
   onPageShow() {

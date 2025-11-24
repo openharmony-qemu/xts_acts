@@ -26,6 +26,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -51,6 +52,7 @@ import {
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -62,10 +64,6 @@ struct FlexAlign_SpaceAround_TextOffset {
 
   onPageShow() {
     console.info('FlexAlign_SpaceAround_TextOffset onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
     let callback: Callback<Position> = (message: Message<Position>) => {
       console.log('message = ' + message.name + "--" + message.value);

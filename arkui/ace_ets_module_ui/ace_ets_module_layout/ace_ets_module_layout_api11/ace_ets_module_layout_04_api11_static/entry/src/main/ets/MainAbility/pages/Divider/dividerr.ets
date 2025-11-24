@@ -12,14 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, LineCapStyle, Color, Flex, ClickEvent, Margin, FlexDirection, ItemAlign, FlexAlign, Text, Divider, FlexWrap, Row } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, LineCapStyle,ResourceColor, Color, Flex, ClickEvent, Margin, FlexDirection, ItemAlign, FlexAlign, Text, Divider, FlexWrap, Row } from '@ohos.arkui.component'
+import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct DividerExample2 {
-  @State color: Color = Color.Brown;
+  @StorageProp('color') color: ResourceColor = 0xCCCCCC
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
       Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)
@@ -49,30 +49,4 @@ struct DividerExample2 {
     .width('100%').height(350).padding({ left: 35, right: 35, top: 35 } as Margin)
   }
 
-    onPageShow() {
-    console.info('divider page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-    eventId: 85,
-    priority: events_emitter.EventPriority.LOW
-  }
-  events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-  }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("divider page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)?.getProperty('color') != null) {
-        this.color = ((eventData.data) as ESObject)!.getProperty('color').toStaticObject() as Color;
-      }
-    }
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
 }

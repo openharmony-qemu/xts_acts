@@ -18,8 +18,6 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 import { Entry, Component, Column, FlexAlign, Text, HorizontalAlign, ColumnOptions } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-type MessageData = number
-
 @Entry
 @Component
 struct ColumnSetDisplayPriorityTest {

@@ -19,14 +19,14 @@ import { MessageManager, Callback, Message } from '../../../common/MessageManage
 @Entry
 @Component
 struct OnlyColumnsTemplate2 {
-  @State columnStart1: number = 1;
-  @State columnStart2: number = 1;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @State columnStart1: int = 1;
+  @State columnStart2: int = 1;
+  messageManager: MessageManager<int> = new MessageManager<int>();
 
   onPageShow() {
     console.info('OnlyColumnsTemplate2 page show called');
-    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>('messageManager', this.messageManager);
+    let callback: Callback<int> = (message: Message<int>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'columnStart1') {
         this.columnStart1 = message.value;
@@ -51,7 +51,7 @@ struct OnlyColumnsTemplate2 {
         .border({ width: 1 })
         .borderColor(0x000000)
         .height(50)
-        .columnStart(Double.toInt(this.columnStart1))
+        .columnStart(this.columnStart1)
         .key('OnlyColumnsTemplate2_GridItem_01')
 
         GridItem() {
@@ -65,7 +65,7 @@ struct OnlyColumnsTemplate2 {
         .border({ width: 1 })
         .borderColor(0x000000)
         .height(50)
-        .columnStart(Double.toInt(this.columnStart2))
+        .columnStart(this.columnStart2)
         .key('OnlyColumnsTemplate2_GridItem_02')
 
       }

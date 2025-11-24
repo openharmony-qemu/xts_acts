@@ -15,34 +15,14 @@
 import { GlobalContext } from './../../common/GlobalContext';
 import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
-import { Entry, Component, Column, Row, Text, Blank, Toggle, ToggleType, Color, Margin } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
-
-type MessageData = string
+import { Entry, Component, Column, Row, Text, Blank, Toggle, ToggleType, Color, Margin,ResourceColor } from '@ohos.arkui.component'
+import { State,AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct BlankParentWidth {
-  @State colorString : string = "#fc7fae53"
-  @State minWith: string = '120'
-  messageManager:MessageManager<string> = new MessageManager<string>()
-
-  onPageShow() {
-    console.info('blankParentWidth onPageShow')
-    AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
-    let callback: Callback<string> = (message: Message<string>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'blankColor') {
-          this.colorString = message.value
-      }
-      if (message.name == 'minWith') {
-          this.minWith = message.value
-      }
-      
-    }
-    this.messageManager.registerCallback(callback)
-
-  }
+  @StoragePropRef('blankColor') colorString : ResourceColor = "#fc7fae53"
+  @StoragePropRef('minWith') minWith: string | number = '120'
   
   build() {
     Column() {
@@ -50,22 +30,22 @@ struct BlankParentWidth {
         Text('Bluetooth').fontSize(18).key('text')
         Blank().key('blankUIJsunit_blank')
         Toggle({ type: ToggleType.Switch }).key('toggle')
-      }.width('100%').backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 } as Margin).id('row')
+      }.width('100%').backgroundColor(Color.Red).borderRadius(15).padding({ left: 12 } as Margin).id('row')
 
       Row() {
         Text('Bluetooth01').fontSize(18).key('text1')
         Blank().color(Color.Yellow).key('bl1')
         Toggle({ type: ToggleType.Switch }).key('toggle1')
-      }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 } as Margin).margin({top:60} as Margin)
+      }.backgroundColor(Color.Red).borderRadius(15).padding({ left: 12 } as Margin).margin({top:60} as Margin)
 
       Row() {
         Text('Bluetooth02').fontSize(18)
         
         Blank(this.minWith).color(this.colorString).key('bl2')
         Toggle({ type: ToggleType.Switch })
-      }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 } as Margin).margin({top:60} as Margin)
+      }.backgroundColor(Color.Red).borderRadius(15).padding({ left: 12 } as Margin).margin({top:60} as Margin)
 
-    }.backgroundColor(0xEFEFEF).padding(20)
+    }.backgroundColor(Color.Red).padding(20)
     
   }
 }

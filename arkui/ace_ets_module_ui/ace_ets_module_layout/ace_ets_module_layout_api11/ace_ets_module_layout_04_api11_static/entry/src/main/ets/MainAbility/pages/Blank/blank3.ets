@@ -14,30 +14,17 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Text, Column, Component, Color, Blank, Row, ToggleType, Toggle, Margin } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement'
+import { State,AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
 import { Callback } from './../../common/MessageManager';
 
 @Entry
 @Component
 struct Blank3Example {
-  @State colorValue: Color = Color.Blue;
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("Blank page state change called:" + JSON.stringify(eventData));
-      const colorValue = ((eventData?.data) as ESObject)?.getProperty('colorValue');
-      if (colorValue !== undefined) {
-        this.colorValue = colorValue.toStaticObject() as Color;
-      }
-    }
-  }
+  @StoragePropRef('colorValue') colorValue: Color = Color.Blue;
 
   onPageShow() {
     console.info('Blank page1 show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 69,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+
   }
 
   build() {
@@ -47,9 +34,9 @@ struct Blank3Example {
         Blank().color(this.colorValue).key('blank3Jsunit_blank')
         Toggle({ type: ToggleType.Switch })
       }.width('100%')
-      .backgroundColor(0xFFFFFF)
+      .backgroundColor(Color.Red)
       .borderRadius(15)
       .padding({ left: 12 } as Margin)
-    }.backgroundColor(0xEFEFEF).padding(20)
+    }.backgroundColor(Color.Red).padding(20)
   }
 }

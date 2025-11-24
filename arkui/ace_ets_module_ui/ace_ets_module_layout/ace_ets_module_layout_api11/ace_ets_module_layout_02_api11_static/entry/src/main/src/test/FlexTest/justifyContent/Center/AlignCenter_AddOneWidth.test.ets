@@ -21,10 +21,6 @@ import { UtilsTest } from '../../../Util.test';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
-import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
-import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -40,9 +36,8 @@ export default function AlignCenter_AddOneWidth() {
 
     beforeAll(() => {
       console.info("AlignCenter_AddOneWidth beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +54,8 @@ export default function AlignCenter_AddOneWidth() {
         console.info("get AlignCenter_AddOneWidth state pages:" + JSON.stringify(pages));
         if (!("AlignCenter_AddOneWidth" == pages.name)) {
           console.info("get AlignCenter_AddOneWidth pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignCenter_AddOneWidth page error:" + err);
@@ -90,11 +82,9 @@ it('testFlexAlignCenterTextWidth_static', Level.LEVEL0, async () : Promise<void>
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: Alignment.BottomEnd
+          name: 'OneWidth', value: 160
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Center_AddOneWidth_01');
 
@@ -105,28 +95,27 @@ it('testFlexAlignCenterTextWidth_static', Level.LEVEL0, async () : Promise<void>
       let Center_AddOneWidth_012: RectValue = CommonFunc.getComponentRect('Center_AddOneWidth_012');
       let Center_AddOneWidth_013: RectValue = CommonFunc.getComponentRect('Center_AddOneWidth_013');
       let Center_AddOneWidth_01: RectValue = CommonFunc.getComponentRect('Center_AddOneWidth_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Center_AddOneWidth_011.top - Center_AddOneWidth_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddOneWidth_013.top - Center_AddOneWidth_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddOneWidth_011.top - Center_AddOneWidth_01.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddOneWidth_011.right - Center_AddOneWidth_012.left) <= 1).assertTrue();
       expect(Math.abs(Center_AddOneWidth_012.right - Center_AddOneWidth_013.left) <= 1).assertTrue();
 
-      expect(Math.abs(Center_AddOneWidth_011.left - Center_AddOneWidth_01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_011.left - Center_AddOneWidth_01.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_01.right - Center_AddOneWidth_013.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_01.right - Center_AddOneWidth_013.right - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_011.right - Center_AddOneWidth_011.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(160))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_011.right - Center_AddOneWidth_011.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(160)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_012.right - Center_AddOneWidth_012.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_012.right - Center_AddOneWidth_012.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_013.right - Center_AddOneWidth_013.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_013.right - Center_AddOneWidth_013.left - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_011.bottom - Center_AddOneWidth_011.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_011.bottom - Center_AddOneWidth_011.top - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_012.bottom - Center_AddOneWidth_012.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_012.bottom - Center_AddOneWidth_012.top - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_013.bottom - Center_AddOneWidth_013.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_013.bottom - Center_AddOneWidth_013.top - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
 
       console.info('[testFlexAlignCenterTextWidth] END');

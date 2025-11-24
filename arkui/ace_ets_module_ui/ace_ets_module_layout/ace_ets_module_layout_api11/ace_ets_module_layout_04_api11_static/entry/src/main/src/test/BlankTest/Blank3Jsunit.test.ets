@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -53,7 +53,6 @@ export default function blank3Jsunit() {
         if (!("blank3" == pages.name)) {
           console.info("get blank state pages.name: " + "");
           routerInstance.pushUrl(options);
-          
           await Utils.sleep(2000);
         }
       } catch (err) {
@@ -98,17 +97,7 @@ it('testBlank02_static_02', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testBlank02_static_02] START');
       await Utils.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "colorValue": Color.Red,
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 69,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBlank02_static_02] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<Color>('colorValue', Color.Red);
       } catch (err) {
         console.log("[testBlank02_static_02] change component data error: " + (err as Error)?.message);
       }

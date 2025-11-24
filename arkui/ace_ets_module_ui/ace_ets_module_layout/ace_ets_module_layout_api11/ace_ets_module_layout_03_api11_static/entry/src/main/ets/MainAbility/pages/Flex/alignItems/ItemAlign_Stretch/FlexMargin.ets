@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry,Color, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -31,21 +31,21 @@ struct FlexMargin_Stretch {
   build() {
     Column() {
       Column() {
-        Text('FlexTest05').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('FlexTest05').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.Row,
           alignItems: ItemAlign.Stretch,
           wrap: FlexWrap.NoWrap,
         }  as FlexOptions) {
-          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('textFlexMargin01')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textFlexMargin02')
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textFlexMargin03')
+          Text('1').width(150).height(50).backgroundColor(Color.Red).key('textFlexMargin01')
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textFlexMargin02')
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textFlexMargin03')
         }
         .key('flexMargin')
         .height(200)
         .width(500)
         .margin(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
       }.width('100%').alignItems(HorizontalAlign.Start)
     }.width('100%')
   }

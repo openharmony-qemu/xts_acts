@@ -72,11 +72,8 @@ export default function SpaceMainNumberJsunit() {
         console.info("get SpaceMainNumberJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SpaceMainNumberJsunit pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SpaceMainNumberJsunit page error:" + err);

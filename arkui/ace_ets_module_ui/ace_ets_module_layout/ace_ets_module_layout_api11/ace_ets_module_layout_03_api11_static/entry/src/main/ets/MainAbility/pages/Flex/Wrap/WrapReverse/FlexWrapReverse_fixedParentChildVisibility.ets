@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Text,Color,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -24,17 +24,12 @@ import { State,AppStorage } from '@ohos.arkui.stateManagement';
 struct FlexWrapReverse_fixedParentChildVisibility {
   @State test1Width: number = 150;
   @State test2Width: number = 300;
-  @State testVisibility: number = Visibility.Visible;
+  @State testVisibility: number = 0;
   messageManager: MessageManager<number> = new MessageManager<number>();
   private content: string = "FlexWrapReverse_fixedParentChildVisibility Page";
 
   onPageShow() {
     console.info('FlexWrapReverse_fixedParentChildVisibility page show called');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -57,21 +52,21 @@ struct FlexWrapReverse_fixedParentChildVisibility {
 
   build() {
     Column() {
-      Text('Wrap:WrapReverseTest19').fontSize(9).fontColor(0xCCCCCC).width('90%')
+      Text('Wrap:WrapReverseTest19').fontSize(9).fontColor(Color.Red).width('90%')
       Flex({ direction: FlexDirection.Row, wrap: FlexWrap.WrapReverse }  as FlexOptions) {
         Text('1')
           .width(this.test1Width)
           .height(50)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key('WrapReverseTest55')
           .visibility(this.testVisibility == 0? Visibility.Visible:(this.testVisibility == 1? Visibility.Hidden:Visibility.None))
-        Text('2').width(this.test2Width).height(100).backgroundColor(0xD2B48C).key('WrapReverseTest56')
-        Text('3').width(this.test2Width).height(150).backgroundColor(0xffa500).key('WrapReverseTest57')
+        Text('2').width(this.test2Width).height(100).backgroundColor(Color.Red).key('WrapReverseTest56')
+        Text('3').width(this.test2Width).height(150).backgroundColor(Color.Red).key('WrapReverseTest57')
       }
       .key('FlexWrapReverseTest19')
       .height(300)
       .width(500)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
     }.width('100%')
   }
 }

@@ -62,18 +62,19 @@ struct ColorGradientExample {
   } as RadialGradientOptions;
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("[ColorGradient] page stateChangCallBack");
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      console.info("[ColorGradient] page state change called:" + JSON.stringify(eventData));
+      if (data['linearGradientValue'] != null) {
+        this.linearGradientValue = data['linearGradientValue'] as LinearGradientOptions;
+      }
+      if (data['sweepGradientValue']!= null) {
+        this.sweepGradientValue = data['sweepGradientValue'] as SweepGradientOptions;
+      }
+      if (data['radialGradientValue'] != null) {
+        this.radialGradientValue = data['radialGradientValue'] as RadialGradientOptions;
+      }
+    }
   }
 
   onPageShow() {

@@ -26,6 +26,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -50,6 +51,7 @@ import {
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -62,10 +64,6 @@ struct AlignContent_FlexAlign_Start_Margin_padding {
 
   onPageShow() {
     console.info('AlignContentFlex onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);

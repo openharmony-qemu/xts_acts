@@ -19,7 +19,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridFrictionPage {
-  @State numberData: String[] = ['0', '1', '2', '3', '4'];
+  @State Number01: String[] = ['0', '1', '2', '3', '4'] as String[];
   scroller: Scroller = new Scroller();
   @State friction: number = 1000;
   messageManager: MessageManager<number> = new MessageManager<number>();
@@ -39,8 +39,8 @@ struct GridFrictionPage {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number01, (day: string) => {
+          ForEach(this.Number01, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -59,7 +59,7 @@ struct GridFrictionPage {
       .onScrollIndex((first: int,last: int) => {
         console.info(first)
       })
-      .onScrollBarUpdate((index: int, offset: double) => {
+      .onScrollBarUpdate((index: int, offset: number) => {
         return { totalOffset: (index / 5) * (80 + 10) - 10 + offset, totalLength: 80 * 5 + 10 * 4 } as ComputedBarAttribute
       })
       .width('90%')

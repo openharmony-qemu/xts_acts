@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { GlobalContext } from '../../../../common/GlobalContext';
 import { Value1 } from '../../../../common/Value';
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Position } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,Color,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Position } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,11 +27,7 @@ struct Flex_Wrap_Position {
 
   onPageShow() {
     console.info('Flex_Wrap_Position onPageShow');
-    let value: Value1<Position> = {
-      name: 'messageManager',
-      message: this.messageManager
-    };
-    GlobalContext.getContext().setObject('value', value);
+    AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
     let callback: Callback<Position> = (message: Message<Position>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'position') {
@@ -47,15 +43,15 @@ struct Flex_Wrap_Position {
         Text('1')
           .width(150)
           .height(50)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key('Wrap_Position01')
           .position(this.testPosition);
-        Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('Wrap_Position02');
-        Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('Wrap_Position03');
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key('Wrap_Position02');
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key('Wrap_Position03');
       }
       .width(500)
       .height(300)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
       .key('Flex_Wrap_Position_Container01')
     }.width('100%').height('100%')
   }

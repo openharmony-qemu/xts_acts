@@ -39,7 +39,6 @@ export default function flexWrapReverse_fixedParentChildPosition() {
   describe('FlexWrapReverse_fixedParentChildPosition', () => {
     beforeAll(() => {
       console.info("FlexWrapReverse_fixedParentChildPosition beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -56,11 +55,8 @@ export default function flexWrapReverse_fixedParentChildPosition() {
         console.info("get FlexWrapReverse_fixedParentChildPosition state pages:" + JSON.stringify(pages));
         if (!("FlexWrapReverse_fixedParentChildPosition" == pages.name)) {
           console.info("get FlexWrapReverse_fixedParentChildPosition pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push FlexWrapReverse_fixedParentChildPosition page error:" + err);
@@ -99,19 +95,18 @@ it('testWrapReverseParentfixedPosition_static', Level.LEVEL0, async () => {
       let locationText2: RectValue = CommonFunc.getComponentRect('WrapReverseTest65');
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest66');
       let locationFlexParent: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest22');
-      const uiContext = new UIContext();
       expect(Math.abs(locationText2.top - locationText3.top) <= 1).assertTrue();
       expect(Math.abs(locationText3.right - locationText2.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText1.top - locationFlexParent.top) - UIContext.getFocusedUIContext()!.vp2px(40)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText1.left - locationFlexParent.left) - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationFlexParent.right - locationText2.right) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText3.left - locationFlexParent.left) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText1.right - locationText1.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText1.top - locationFlexParent.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText1.left - locationFlexParent.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationFlexParent.right - locationText2.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText3.left - locationFlexParent.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
       console.info('new testWrapReverseParentfixedPosition END');
 
     });

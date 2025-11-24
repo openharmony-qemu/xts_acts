@@ -14,7 +14,6 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static sleep(count:int) : Promise<int> {
@@ -28,7 +27,7 @@ export default class Utils {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string, RecordData>
+      } as Record<String,undefined|null|Object>
     }
     let event: events_emitter.InnerEvent = {
       eventId: eventId,

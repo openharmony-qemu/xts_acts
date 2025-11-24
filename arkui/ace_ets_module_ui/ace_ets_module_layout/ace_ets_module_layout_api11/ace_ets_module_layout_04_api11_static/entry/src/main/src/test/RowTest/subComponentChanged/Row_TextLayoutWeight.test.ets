@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
@@ -34,7 +35,6 @@ export default function row_TextLayoutWeightTest() {
   describe('Row_TextLayoutWeightTest', () => {
     beforeAll(() => {
       console.info("Row_TextLayoutWeightTest beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,10 +51,8 @@ export default function row_TextLayoutWeightTest() {
         console.info("get Row_TextLayoutWeight state pages:" + "");
         if (!("Row_TextLayoutWeight" == pages.name)) {
           console.info("get Row_TextLayoutWeight pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Row_TextLayoutWeight page error:" + err);
@@ -92,14 +90,14 @@ it('testRowTextLayoutWeight_static_01', Level.LEVEL0, async (done: () => void): 
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextLayoutWeight3');
       let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextLayoutWeight_Container01');
       let rowContainerStrJson = inspector.getInspectorByKey('Row_TextLayoutWeight_Container01');
-      let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
-      expect(obj['$type']).assertEqual('Row');
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(110)))) <= 1).assertTrue();
+  let obj = JSON.parseJsonElement(rowContainerStrJson);
+  expect(obj.getString('$type')).assertEqual('Row');
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(110))))) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondText.right - secondText.left) - Math.round(firstText.right - firstText.left)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(thirdText.right - thirdText.left) - Math.round(secondText.right - secondText.left)) <= 1)
@@ -113,7 +111,7 @@ it('testRowTextLayoutWeight_static_01', Level.LEVEL0, async (done: () => void): 
         .assertTrue();
 
       expect(Math.abs(firstText.left - rowContainer.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.left - firstText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.left - firstText.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondText.left - firstText.right) - Math.round(thirdText.left - secondText.right)) <= 1)
         .assertTrue();
 

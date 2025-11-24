@@ -16,7 +16,7 @@
 import { GlobalContext } from '../../../../common/GlobalContext';
 import { Value1 } from '../../../../common/Value';
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry, Component,Color, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,10 +27,7 @@ struct AlignCenter_AddOneMargin {
 
   onPageShow() {
     console.info('AlignCenter_AddOneMargin onPageShow');
-    let value: Value1<number> = {
-      name: 'messageManager', message: this.messageManager
-    };
-    GlobalContext.getContext().setObject('value', value);
+    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'OneMargin') {
@@ -48,16 +45,16 @@ struct AlignCenter_AddOneMargin {
         Text('1')
           .width(150)
           .height(50)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key("Center_AddOneMargin_011")
           .margin(this.OneMargin);
-        Text('2').width(150).height(100).backgroundColor(0xD2B48C).key("Center_AddOneMargin_012");
-        Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key("Center_AddOneMargin_013");
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key("Center_AddOneMargin_012");
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key("Center_AddOneMargin_013");
       }
       .key("Center_AddOneMargin_01")
       .width(500)
       .height(200)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
     }
     .width("100%")
     .alignItems(HorizontalAlign.Start)

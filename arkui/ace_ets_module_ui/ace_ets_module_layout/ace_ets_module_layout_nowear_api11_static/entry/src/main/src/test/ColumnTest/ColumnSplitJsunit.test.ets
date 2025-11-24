@@ -30,16 +30,6 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-function sleep(time: int) {
-  return new Promise<string>((resolve, reject) => {
-    setTimeout(() => {
-      resolve("ok");
-    }, time * 1000);
-  }).then(() => {
-    console.info(`sleep ${time} over...`);
-  })
-}
-
 export default function columnSplitJsunit() {
 
 
@@ -64,21 +54,18 @@ export default function columnSplitJsunit() {
         console.info("get columnSplitTest state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get columnSplitTest pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push columnSplitTest page error:" + err);
       }
       console.info("columnSplitTest beforeEach end");
-      
     });
 
 
     afterEach(async () => {
-      await sleep(1);
+      await UtilsTest.msSleep(1000)
       console.info("ColumnSplit after each called");
     });
 
@@ -92,12 +79,11 @@ export default function columnSplitJsunit() {
     it('testColumnSplit_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new columnSplit0 START');
       let strJson = inspector.getInspectorByKey('columnSplit');
+      await UtilsTest.msSleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info("component obj is: " + JSON.stringify(obj));
+      console.info("component obj is: " + strJson);
       expect(obj.getString('$type')).assertEqual('ColumnSplit');
-      console.info("yr ColumnSplit0 type: " + JSON.stringify(obj.getString('$type')));
-      console.log("yr columnSplit0 obj.$resizable-'true':" +
-      JSON.stringify(obj.getElement('$attrs').getString('resizable')));
+      console.info("yr ColumnSplit0 type: " + obj.getString('$type'));
       expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('true');
       console.info('new columnSplit0 END');
       done();
@@ -113,10 +99,9 @@ export default function columnSplitJsunit() {
     it('testColumnSplit_static_020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new columnSplit1 START');
       let strJson = inspector.getInspectorByKey('columnSplit1');
+      await UtilsTest.msSleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info("component obj is: " + JSON.stringify(obj));
-      console.log("yr columnSplit obj.$resizable-'false':" +
-      JSON.stringify(obj.getElement('$attrs').getString('resizable')));
+      console.info("component obj is: " + strJson);
       expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('false');
       console.info('new columnSplit1 END');
       done();

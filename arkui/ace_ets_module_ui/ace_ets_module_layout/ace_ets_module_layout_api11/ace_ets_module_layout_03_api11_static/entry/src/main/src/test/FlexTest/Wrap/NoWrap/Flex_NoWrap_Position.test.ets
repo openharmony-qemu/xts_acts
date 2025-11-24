@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
@@ -22,7 +22,6 @@ import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector';
-import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext'
 import { Visibility,Position } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -39,7 +38,6 @@ export default function flex_NoWrap_PositionTest() {
   describe('Flex_NoWrap_PositionTest', () => {
     beforeAll(() => {
       console.info("Flex_NoWrap_PositionTest beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -56,11 +54,8 @@ export default function flex_NoWrap_PositionTest() {
         console.info("get Flex_NoWrap_PositionTest state pages:" + JSON.stringify(pages));
         if (!("Flex_NoWrap_Position" == pages.name)) {
           console.info("get Flex_NoWrap_PositionTest pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Flex_NoWrap_PositionTest page error:" + err);
@@ -82,7 +77,7 @@ export default function flex_NoWrap_PositionTest() {
      */
 it('testWrapNoWrapTextPosition_static', Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapTextPosition] START');
-      GlobalContext.getContext().getObject<Position>('value')?.message.notify({
+      AppStorage.get<MessageManager<Position>>("messageManager")?.notify({
         name: 'position', value: {
           x: 20, y: 40
         }
@@ -95,23 +90,22 @@ it('testWrapNoWrapTextPosition_static', Level.LEVEL0, async () => {
       let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Position_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.NoWrap');
-      const uiContext = new UIContext();
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1).assertTrue();
+      expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1).assertTrue();
 
       expect(Math.abs((secondText.top) - (flexContainer.top)) <= 1).assertTrue();
       expect(Math.abs((secondText.left) - (flexContainer.left)) <= 1).assertTrue();
       expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
       expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
         .assertTrue();
       expect(Math.abs((thirdText.bottom) - (flexContainer.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.top - flexContainer.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(firstText.left - flexContainer.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.top - flexContainer.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40))))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.left - flexContainer.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1).assertTrue();
       console.info('[testWrapNoWrapTextPosition] END');
 
     });
