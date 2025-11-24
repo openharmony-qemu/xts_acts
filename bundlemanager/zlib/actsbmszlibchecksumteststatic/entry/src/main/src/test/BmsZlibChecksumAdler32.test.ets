@@ -35,12 +35,12 @@ export default function bmsZlibChecksumAdler32Test() {
     })
 
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_static_0400
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_static_0400
-     * @tc.desc: test adler32(0,bufEmpty)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_static_0400
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_static_0400
+     * @tc.desc   test adler32(0,bufEmpty)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {

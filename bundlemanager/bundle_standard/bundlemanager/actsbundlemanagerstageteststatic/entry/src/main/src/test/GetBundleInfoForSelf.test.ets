@@ -34,9 +34,12 @@ export default function getBundleInfoForSelf() {
   describe('getBundleInfoForSelf', (): void => {
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5580
-     * @tc.name    getBundleInfoForSelfCallbackDefault
-     * @tc.desc    Test getBundleInfoForSelf with default flag(by callback).
+     * @tc.name   getBundleInfoForSelfCallbackDefault
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5580
+     * @tc.desc   Test getBundleInfoForSelf with default flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfCallbackDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -70,9 +73,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5560
-     * @tc.name    getBundleInfoForSelfPromiseDefault
-     * @tc.desc    Test getBundleInfoForSelf with default flag(by promise).
+     * @tc.name   getBundleInfoForSelfPromiseDefault
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5560
+     * @tc.desc   Test getBundleInfoForSelf with default flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfPromiseDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -102,9 +108,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5570
-     * @tc.name    getBundleInfoForSelfSyncDefault
-     * @tc.desc    Test getBundleInfoForSelf with default flag(by sync).
+     * @tc.name   getBundleInfoForSelfSyncDefault
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5570
+     * @tc.desc   Test getBundleInfoForSelf with default flag(by sync).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfSyncDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -131,10 +140,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-      * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5620
-      * @tc.name    getBundleInfoForSelfApplicationCallback
-      * @tc.desc    Test getBundleInfoForSelf with application flag(by callback).
-      */
+     * @tc.name   getBundleInfoForSelfApplicationCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5620
+     * @tc.desc   Test getBundleInfoForSelf with application flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION,
@@ -192,9 +204,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5600
-     * @tc.name    getBundleInfoForSelfApplicationPromise
-     * @tc.desc    Test getBundleInfoForSelf with application flag(by promise).
+     * @tc.name   getBundleInfoForSelfApplicationPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5600
+     * @tc.desc   Test getBundleInfoForSelf with application flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfApplicationPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -254,9 +269,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5610
-     * @tc.name    getBundleInfoForSelfApplicationSync
-     * @tc.desc    Test getBundleInfoForSelf with application flag(by sync).
+     * @tc.name   getBundleInfoForSelfApplicationSync
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5610
+     * @tc.desc   Test getBundleInfoForSelf with application flag(by sync).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfApplicationSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -315,9 +333,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5660
-     * @tc.name    getBundleInfoForSelfCallbackHapModuleInfo
-     * @tc.desc    Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
+     * @tc.name   getBundleInfoForSelfCallbackHapModuleInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5660
+     * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfCallbackHapModuleInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -363,9 +384,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5640
-     * @tc.name    getBundleInfoForSelfHapModuleInfoPromise
-     * @tc.desc    Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
+     * @tc.name   getBundleInfoForSelfHapModuleInfoPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5640
+     * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfHapModuleInfoPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -408,9 +432,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7060
-     * @tc.name    getBundleInfoForSelfHapModuleInfoSync
-     * @tc.desc    Test getBundleInfoForSelf with HapModuleInfo flag(by sync).
+     * @tc.name   getBundleInfoForSelfHapModuleInfoSync
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7060
+     * @tc.desc   Test getBundleInfoForSelf with HapModuleInfo flag(by sync).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfHapModuleInfoSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -447,9 +474,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7080
-     * @tc.name    getBundleInfoForSelfCallbackAbilitiesInfo
-     * @tc.desc    Test getBundleInfoForSelf with ability flag(by callback).
+     * @tc.name   getBundleInfoForSelfCallbackAbilitiesInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7080
+     * @tc.desc   Test getBundleInfoForSelf with ability flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfCallbackAbilitiesInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -501,9 +531,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7070
-     * @tc.name    getBundleInfoForSelfAbilitiesInfoPromise
-     * @tc.desc    Test getBundleInfoForSelf with AbilitiesInfo flag(by promise).
+     * @tc.name   getBundleInfoForSelfAbilitiesInfoPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7070
+     * @tc.desc   Test getBundleInfoForSelf with AbilitiesInfo flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfAbilitiesInfoPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -550,9 +583,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7090
-     * @tc.name    getBundleInfoForSelfAbilitiesInfoSync
-     * @tc.desc    Test getBundleInfoForSelf with AbilitiesInfo flag(by sync).
+     * @tc.name   getBundleInfoForSelfAbilitiesInfoSync
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7090
+     * @tc.desc   Test getBundleInfoForSelf with AbilitiesInfo flag(by sync).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfAbilitiesInfoSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -595,9 +631,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_AppInfo_7100
-     * @tc.name    getBundleInfoForSelfSyncExtensionAbilitiesInfo
-     * @tc.desc    Test getBundleInfoForSelfSync with extensionAbilitiesInfo flag.
+     * @tc.name   getBundleInfoForSelfSyncExtensionAbilitiesInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7100
+     * @tc.desc   Test getBundleInfoForSelfSync with extensionAbilitiesInfo flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncExtensionAbilitiesInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -829,10 +868,13 @@ export default function getBundleInfoForSelf() {
     })
 
     /**
-    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag01
-    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag01
-    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
-    */
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag01
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag01
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION)
@@ -868,10 +910,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag02
-    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag02
-    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
-    */
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag02
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag02
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
@@ -914,10 +959,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag03
-    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag03
-    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
-    */
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag03
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag03
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(
@@ -952,10 +1000,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag04
-    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag04
-    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
-    */
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag04
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag04
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(
@@ -988,10 +1039,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag05
-    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag05
-    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
-    */
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag05
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag05
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(
@@ -1041,10 +1095,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag06
-    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag06
-    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
-    */
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag06
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag06
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(
@@ -1092,10 +1149,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag07
-    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag07
-    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
-    */
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag07
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag07
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_SKILL |
@@ -1153,10 +1213,13 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-    * @tc.number  Sub_Bms_Framework_Query_AppInfo_5760
-    * @tc.name    getBundleInfoForSelfPermissionPro
-    * @tc.desc    Test getBundleInfoForSelf with permission flag(by promise).
-    */
+     * @tc.name   getBundleInfoForSelfPermissionPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5760
+     * @tc.desc   Test getBundleInfoForSelf with permission flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoForSelfPermissionPro', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION)
@@ -1181,10 +1244,13 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /***
-     * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag08
-     * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag08
-     * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
+    /**
+     * @tc.name   getBundleInfoForSelfApplicationPromiseBundleFlag08
+     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag08
+     * @tc.desc   Test getBundleInfoForSelf with BundleFlag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {

@@ -51,12 +51,12 @@ export default function bmsZlibChecksumCrc64Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_4800
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_4800
-     * @tc.desc: test crc64(0,bufEmpty)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_4800
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_4800
+     * @tc.desc   test crc64(0,bufEmpty)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Zlib_Checksum_Check_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -74,12 +74,12 @@ export default function bmsZlibChecksumCrc64Test() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_4900
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_4900
-     * @tc.desc: test crc64(-1,buf)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_4900
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_4900
+     * @tc.desc   test crc64(-1,buf)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Zlib_Checksum_Check_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -97,12 +97,12 @@ export default function bmsZlibChecksumCrc64Test() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_5000
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_5000
-     * @tc.desc: test crc64(9223372036854775808,buf)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_5000
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_5000
+     * @tc.desc   test crc64(9223372036854775808,buf)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -120,12 +120,12 @@ export default function bmsZlibChecksumCrc64Test() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_5200
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_5200
-     * @tc.desc: test crc64(undefined,buf)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_5200
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_5200
+     * @tc.desc   test crc64(undefined,buf)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -143,12 +143,12 @@ export default function bmsZlibChecksumCrc64Test() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_5300
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_5300
-     * @tc.desc: test crc64(0,null)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_5300
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_5300
+     * @tc.desc   test crc64(0,null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -167,12 +167,12 @@ export default function bmsZlibChecksumCrc64Test() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_5400
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_5400
-     * @tc.desc: test crc64(0,undefined)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_5400
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_5400
+     * @tc.desc   test crc64(0,undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {

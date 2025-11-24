@@ -20,9 +20,12 @@ export default function getTargetOverlayModuleInfos() {
   describe('getTargetOverlayModuleInfos',  () =>{
 
     /**
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0600
-     * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0600
-     * @tc.desc: The query fails when the incoming moduleName is empty
+     * @tc.name   Sub_Bms_Framework_Overlay_Query_static_0600
+     * @tc.number Sub_Bms_Framework_Overlay_Query_static_0600
+     * @tc.desc   The query fails when the incoming moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Overlay_Query_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -71,10 +74,13 @@ export default function getTargetOverlayModuleInfos() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0800
-     * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0800
-     * @tc.desc: The query fails when the incoming moduleName is not installed
+    /**
+     * @tc.name   Sub_Bms_Framework_Overlay_Query_static_0800
+     * @tc.number Sub_Bms_Framework_Overlay_Query_static_0800
+     * @tc.desc   The query fails when the incoming moduleName is not installed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Overlay_Query_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

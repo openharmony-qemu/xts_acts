@@ -27,10 +27,13 @@ export default function setShortcutVisible() {
   describe('setShortcutVisible', () => {
 
     /**
-     * @tc.number  Sub_Bms_Framework_shortcutManager_static_001
-     * @tc.name    Sub_Bms_Framework_shortcutManager_static_001
-     * @tc.desc    Obtain the shortcut config data through the get interface to determine if it is correct.
-    */
+     * @tc.name   Sub_Bms_Framework_shortcutManager_static_001
+     * @tc.number Sub_Bms_Framework_shortcutManager_static_001
+     * @tc.desc   Obtain the shortcut config data through the get interface to determine if it is correct.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_shortcutManager_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let tag = 'Sub_Bms_Framework_shortcutManager_static_001';
@@ -62,9 +65,12 @@ export default function setShortcutVisible() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
-     * @tc.name    Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
-     * @tc.desc    Test setShortcutVisibleForSelf with shortcut id is nonexistent.
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is nonexistent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_Icon_ShortcutVisible_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_static_0500 begin');
@@ -82,10 +88,13 @@ export default function setShortcutVisible() {
     })
 
     /**
-    * @tc.number  Sub_Bms_Framework_Icon_ShortcutVisible_static_0600
-    * @tc.name    Sub_Bms_Framework_Icon_ShortcutVisible_static_0600
-    * @tc.desc    Test setShortcutVisibleForSelf with shortcut id is valid.
-    */
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_static_0600
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_static_0600
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is valid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_Icon_ShortcutVisible_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_static_0600 begin');
       try {
