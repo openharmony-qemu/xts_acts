@@ -48,7 +48,7 @@ export default function spanTest() {
           await Utils.sleep(2000);
           console.info("push span page result success");
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push span page error: " + err);
       }
     });
@@ -56,15 +56,13 @@ export default function spanTest() {
       await Utils.sleep(1000);
       console.info("span after each called");
     })
-    
-    
-/*
+    /*
      * @tc.number   testSpanFontSize_static_01
      * @tc.name     testSpanFontSize_static_01
      * @tc.desc     testSpanFontSize_static_01
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanFontSize_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpanFontSize_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanFontSize_static01';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -75,8 +73,18 @@ it('testSpanFontSize_static_01', Level.LEVEL0, async (done: () => void): Promise
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual("16.00fp");
 
       try {
-        AppStorage.setOrCreate<number | string | Resource>("mFontSize", 68)
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mFontSize": 68 as double,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -87,8 +95,18 @@ it('testSpanFontSize_static_01', Level.LEVEL0, async (done: () => void): Promise
       expect(objNew.getElement('$attrs').getString('fontSize')).assertEqual("68.00fp");
 
       try {
-        AppStorage.setOrCreate<number | string | Resource>('mFontSize','resources50')
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mFontSize": $r('app.float.50vp'),
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -102,15 +120,13 @@ it('testSpanFontSize_static_01', Level.LEVEL0, async (done: () => void): Promise
       done();
     });
 
-    
-    
-/*
+    /*
      * @tc.number   testSpanfontFamily_static_02
      * @tc.name     testSpanfontFamily_static_02
      * @tc.desc     testSpanfontFamily_static_02
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanfontFamily_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpanfontFamily_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanfontFamily02';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -121,8 +137,18 @@ it('testSpanfontFamily_static_02', Level.LEVEL0, async (done: () => void): Promi
       expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("HarmonyOS Sans");
 
       try {
-        AppStorage.setOrCreate<string | Resource>('mFontFamily','Arial')
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mFontFamily": 'Arial',
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -135,15 +161,13 @@ it('testSpanfontFamily_static_02', Level.LEVEL0, async (done: () => void): Promi
       console.info('[' + tagName + '] END ===========================');
       done();
     });
-    
-    
-/*
+    /*
      * @tc.number   testSpanlineHeight_static_03
      * @tc.name     testSpanlineHeight_static_03
      * @tc.desc     testSpanlineHeight_static_03
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanlineHeight_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpanlineHeight_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanlineHeight03';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -154,8 +178,18 @@ it('testSpanlineHeight_static_03', Level.LEVEL0, async (done: () => void): Promi
       expect(obj.getElement('$attrs').getString('lineHeight')).assertEqual("0.00fp");
 
       try {
-        AppStorage.setOrCreate<Length>('mLineHeight','80fp')
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mLineHeight": '80fp',
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -166,8 +200,18 @@ it('testSpanlineHeight_static_03', Level.LEVEL0, async (done: () => void): Promi
       expect(objNew.getElement('$attrs').getString('lineHeight')).assertEqual("80.00fp");
 
       try {
-        AppStorage.setOrCreate<Length>('mLineHeight',50)
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mLineHeight": 50 as double,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -181,15 +225,13 @@ it('testSpanlineHeight_static_03', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-    
-    
-/*
+    /*
      * @tc.number   testSpanfontStyle_static_04
      * @tc.name     testSpanfontStyle_static_04
      * @tc.desc     testSpanfontStyle_static_04
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanfontStyle_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpanfontStyle_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanfontStyle04';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -200,8 +242,18 @@ it('testSpanfontStyle_static_04', Level.LEVEL0, async (done: () => void): Promis
       expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual("FontStyle.Normal");
 
       try {
-        AppStorage.setOrCreate<FontStyle>('mFontStyle',FontStyle.Italic)
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mFontStyle": FontStyle.Italic,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -213,15 +265,13 @@ it('testSpanfontStyle_static_04', Level.LEVEL0, async (done: () => void): Promis
       console.info('[' + tagName + '] END ===========================');
       done();
     });
-    
-    
-/*
+    /*
      * @tc.number   testSpanfontWeight_static_05
      * @tc.name     testSpanfontWeight_static_05
      * @tc.desc     testSpanfontWeight_static_05
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanfontWeight_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpanfontWeight_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanfontWeight05';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -232,8 +282,18 @@ it('testSpanfontWeight_static_05', Level.LEVEL0, async (done: () => void): Promi
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual("400");
 
       try {
-        AppStorage.setOrCreate<int|FontWeight|string|undefined>('mFontWeight',FontWeight.Bold)
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mFontWeight": FontWeight.Bold,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -245,15 +305,13 @@ it('testSpanfontWeight_static_05', Level.LEVEL0, async (done: () => void): Promi
       console.info('[' + tagName + '] END ===========================');
       done();
     });
-    
-    
-/*
+    /*
      * @tc.number   testSpantextCase_static_06
      * @tc.name     testSpantextCase_static_06
      * @tc.desc     testSpantextCase_static_06
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpantextCase_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpantextCase_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpantextCase06';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -264,9 +322,19 @@ it('testSpantextCase_static_06', Level.LEVEL0, async (done: () => void): Promise
       expect(obj.getElement('$attrs').getString('textCase')).assertEqual("TextCase.Normal");
 
       try {
-        AppStorage.setOrCreate<TextCase>('mTextCase',TextCase.UpperCase)
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mTextCase": TextCase.UpperCase,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
 
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -279,16 +347,14 @@ it('testSpantextCase_static_06', Level.LEVEL0, async (done: () => void): Promise
       console.info('[' + tagName + '] END ===========================');
       done();
     });
-    
-    
-    
-/*
+
+    /*
      * @tc.number   testSpandecoration_static_07
      * @tc.name     testSpandecoration_static_07
      * @tc.desc     testSpandecoration_static_07
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpandecoration_static_07', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpandecoration_static_07', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpandecoration07';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -299,10 +365,19 @@ it('testSpandecoration_static_07', Level.LEVEL0, async (done: () => void): Promi
       expect(obj.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.None","color":"#FFFF0000","style":"TextDecorationStyle.SOLID"}');
 
       try {
-        AppStorage.setOrCreate<TextDecorationType>('mDecorationType',TextDecorationType.Underline)
-        AppStorage.setOrCreate<ResourceColor>('mDecorationColor',Color.Red)
-
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mDecorationType": TextDecorationType.Underline,
+            "mDecorationColor":Color.Red
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -316,15 +391,13 @@ it('testSpandecoration_static_07', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-    
-    
-/*
+    /*
      * @tc.number   testSpanfontColor_static_08
      * @tc.name     testSpanfontColor_static_08
      * @tc.desc     testSpanfontColor_static_08
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanfontColor_static_08', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpanfontColor_static_08', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanfontColor08';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -332,11 +405,21 @@ it('testSpanfontColor_static_08', Level.LEVEL0, async (done: () => void): Promis
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Span');
-      expect(obj.getElement('$attrs').getString('fontColor')).assertEqual("#FF000000");
+      expect(obj.getElement('$attrs').getString('fontColor')).assertEqual("#FFFF0000");
 
       try {
-        AppStorage.setOrCreate<ResourceColor>('mFontColor',0xFF00FF)
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mFontColor": 0xFF00FF,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -350,15 +433,13 @@ it('testSpanfontColor_static_08', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    
-    
-/*
+    /*
      * @tc.number   testSpanletterSpacing_static_09
      * @tc.name     testSpanletterSpacing_static_09
      * @tc.desc     testSpanletterSpacing_static_09
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanletterSpacing_static_09', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSpanletterSpacing_static_09', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanletterSpacing09';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -369,8 +450,18 @@ it('testSpanletterSpacing_static_09', Level.LEVEL0, async (done: () => void): Pr
       expect(obj.getElement('$attrs').getString('letterSpacing')).assertEqual("0.00fp");
 
       try {
-        AppStorage.setOrCreate<number>('mLetterSpacing',5)
-      } catch (err) {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mLetterSpacing": 5 as double,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -384,17 +475,13 @@ it('testSpanletterSpacing_static_09', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    
-/*
+    /*
      * @tc.number   testSpanFont_static_10
      * @tc.name     testSpanFont_static_10
      * @tc.desc     testSpanFont_static_10
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('testSpanFont_static_10', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let resourceSize = 0
-        // AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id);
+    it('testSpanFont_static_10', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testSpanFont10';
       console.info('[' + tagName + '] START============================');
       await Utils.sleep(1000)
@@ -402,15 +489,25 @@ it('testSpanFont_static_10', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Span');
-      expect(obj.getElement('$attrs').getElement('font').getString('style')).assertEqual("FontStyle.Normal");
-      expect(obj.getElement('$attrs').getElement('font').getString('size')).assertEqual(AppStorage.get<UIContext>('uiContext')?.px2fp(resourceSize)+'.00fp');
-      expect(obj.getElement('$attrs').getElement('font').getString('weight')).assertEqual("FontWeight.Normal");
-      expect(obj.getElement('$attrs').getElement('font').getString('family')).assertEqual("HarmonyOS Sans");
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Normal");
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('font')).getString('size')).assertEqual('16.00fp');
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
 
       try {
-        AppStorage.setOrCreate<Font>('mFont',{ size: $r('app.float.50vp'), weight: FontWeight.Bold, family: $r('app.string.font_family_arial'), style: FontStyle.Italic })
+        let eventData: events_emitter.EventData = {
+          data: {
+            "mFont": { size: $r('app.float.50vp'), weight: FontWeight.Bold, family: $r('app.string.font_family_arial'), style: FontStyle.Italic } as Font,
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 6801,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[' + tagName + '] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
 
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

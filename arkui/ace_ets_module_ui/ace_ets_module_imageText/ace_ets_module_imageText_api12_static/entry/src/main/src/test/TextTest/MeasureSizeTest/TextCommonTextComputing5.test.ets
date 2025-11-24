@@ -59,15 +59,13 @@ export default function TextCommonTextComputing5() {
     }); 
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0200
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0200
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0200 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create();
@@ -93,15 +91,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0200', Level.LEVEL0, 
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0210
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0210
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0210
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0210 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create();
@@ -127,15 +123,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0210', Level.LEVEL0, 
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0220
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0220
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0220
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0220 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create();
@@ -161,15 +155,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0220', Level.LEVEL0, 
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0230
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0230
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0230
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0230 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create();
@@ -195,15 +187,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0230', Level.LEVEL0, 
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0240
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0240
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0240
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0240', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0240', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0240 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create();
@@ -229,15 +219,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0240', Level.LEVEL0, 
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0250
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0250
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0250
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0250 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create();
@@ -263,15 +251,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0250', Level.LEVEL0, 
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0260
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0260
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0260
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0260', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_static_0260', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0260 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create();

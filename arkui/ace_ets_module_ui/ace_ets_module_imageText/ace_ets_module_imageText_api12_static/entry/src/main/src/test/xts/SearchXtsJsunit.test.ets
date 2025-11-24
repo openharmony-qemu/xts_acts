@@ -59,15 +59,13 @@ export default function SearchXtsJsunit() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchXtsJsunit_static_0101
      * @tc.name     SearchXtsJsunit_static_0101
      * @tc.desc     SearchXtsJsunit_static_0101
      * @tc.level    Level.LEVEL0
      */
-it('SearchXtsJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchXtsJsunit_static_0101',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchXtsJsunit_0101] START');
       let strJson = inspector.getInspectorByKey('key_search_inputFilter');
       let obj = JSON.parseJsonElement(strJson);
@@ -78,15 +76,13 @@ it('SearchXtsJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promis
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchXtsJsunit_static_0102
      * @tc.name     SearchXtsJsunit_static_0102
      * @tc.desc     SearchXtsJsunit_static_0102
      * @tc.level    Level.LEVEL0
      */
-it('SearchXtsJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchXtsJsunit_static_0102',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchXtsJsunit_0102] START');
       let strJson = inspector.getInspectorByKey('key_search_selectedBackgroundColor');
       let obj = JSON.parseJsonElement(strJson);
@@ -98,15 +94,13 @@ it('SearchXtsJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promis
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchXtsJsunit_static_0103
      * @tc.name     SearchXtsJsunit_static_0103
      * @tc.desc     SearchXtsJsunit_static_0103
      * @tc.level    Level.LEVEL0
      */
-it('SearchXtsJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchXtsJsunit_static_0103',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchXtsJsunit_0103] START');
       let strJson = inspector.getInspectorByKey('key_search_textIndent');
       let obj = JSON.parseJsonElement(strJson);
@@ -118,15 +112,13 @@ it('SearchXtsJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promis
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchXtsTest_static_0105
      * @tc.name     SearchXtsTest_static_0105
      * @tc.desc     SearchXtsTest_static_0105
      * @tc.level    Level.LEVEL0
      */
-it('SearchXtsTest_static_0105', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchXtsTest_static_0105',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SearchXtsTest_0105 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('key_search_onEditChange'));

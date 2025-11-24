@@ -66,15 +66,13 @@ export default function imageAddApi() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   imageAddApi_static_001
      * @tc.name     imageAddApi_static_001
      * @tc.desc     imageAddApi_static_001
      * @tc.level    Level.LEVEL0
      */
-it('imageAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageAddApi_static_001',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[imageAddApi_001] START');
 
       await CommonFunc.sleep(1000);
@@ -92,15 +90,13 @@ it('imageAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   imageAddApi_static_002
      * @tc.name     imageAddApi_static_002
      * @tc.desc     imageAddApi_static_002
      * @tc.level    Level.LEVEL0
      */
-it('imageAddApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageAddApi_static_002',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[imageAddApi_002] START');
 
       await CommonFunc.sleep(1000);
@@ -118,15 +114,13 @@ it('imageAddApi_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   imageAddApi_static_003
      * @tc.name     imageAddApi_static_003
      * @tc.desc     imageAddApi_static_003
      * @tc.level    Level.LEVEL0
      */
-it('imageAddApi_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageAddApi_static_003',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[imageAddApi_003] START');
 
       await CommonFunc.sleep(1000);

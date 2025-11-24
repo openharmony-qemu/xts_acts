@@ -64,15 +64,13 @@ export default function StyledStringApi1() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   StyledStringApi1_static_0100
      * @tc.name     StyledStringApi1_static_0100
      * @tc.desc     StyledStringApi1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('StyledStringApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('StyledStringApi1_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StyledStringApi1_0100 START');
       await CommonFunc.sleep(5000);
 

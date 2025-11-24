@@ -58,22 +58,20 @@ build() {
       .id('RichEditor8_Text')
       RichEditor({controller:this.controller} as RichEditorOptions)
         .onReady((): void=>{
-          this.controller.addTextSpan('LineBreakStrategy.GREEDY',{
+          this.controller!.addTextSpan('LineBreakStrategy.GREEDY',{
             paragraphStyle: {
               lineBreakStrategy: LineBreakStrategy.GREEDY
             }
           })
         })
       Button('linebreak').onClick((e: ClickEvent) => {
-        let spanParagraphs = this.controller.getParagraphs({ start: -1, end: -1 } as RichEditorRange)
-        if (spanParagraphs !== undefined) {
-        spanParagraphs.forEach((item: RichEditorParagraphResult) => {
+        let spanParagraphs = this.controller!.getParagraphs({ start: -1, end: -1 } as RichEditorRange)
+        spanParagraphs!.forEach((item: RichEditorParagraphResult) => {
           if(typeof(item as RichEditorParagraphResult)?.style != 'undefined'){
             console.info('lineBreakStrategy:'+ JSON.stringify(typeof(item as RichEditorParagraphResult)?.style))
             this.text = Number(typeof(item as RichEditorParagraphResult)?.style?.lineBreakStrategy);
           }
         })
-      }
       })
     }
     .width('100%')

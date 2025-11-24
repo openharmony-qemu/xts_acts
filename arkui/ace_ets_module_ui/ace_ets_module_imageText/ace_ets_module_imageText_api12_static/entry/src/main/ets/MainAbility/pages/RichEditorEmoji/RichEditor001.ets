@@ -51,26 +51,20 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditor001 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  @State pointPosition: number = -1;
+  @State pointPosition: int = -1;
 
 build() {
     Column() {
 
       Column() {
         Button('光标定位').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.controller.setCaretOffset(caretOffset - 2);
-          }
+          this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int - 2);
         }).id('back')
 
         Text('Point Position:' + this.pointPosition).id('position_text');
 
         Button('get Point Position').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.pointPosition = caretOffset;
-          }
+          this.pointPosition = this.controller!.getCaretOffset() as int;
           console.log('this.point_position:' + this.pointPosition);
         }).id('get_position')
       }
@@ -82,7 +76,7 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('\uD83D\uDE00',
+            this.controller!.addTextSpan('\uD83D\uDE00',
               {
                 style:
                 {
@@ -92,7 +86,7 @@ build() {
               })
           })
           .aboutToDelete((value: RichEditorDeleteValue): boolean => {
-            value.richEditorDeleteSpans.forEach(item => {
+            value.richEditorDeleteSpans!.forEach(item => {
               if (typeof (item as RichEditorImageSpanResult).imageStyle != 'undefined') {
                 console.log('image:' + (item as RichEditorImageSpanResult).valueResourceStr)
               } else {

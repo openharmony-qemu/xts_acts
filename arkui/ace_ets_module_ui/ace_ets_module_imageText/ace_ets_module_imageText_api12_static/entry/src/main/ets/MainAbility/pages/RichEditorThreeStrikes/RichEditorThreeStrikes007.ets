@@ -62,7 +62,7 @@ build() {
 
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('\n')
+            this.controller!.addTextSpan('\n')
 
           })
           .onSelectionChange((value: RichEditorRange): void => {

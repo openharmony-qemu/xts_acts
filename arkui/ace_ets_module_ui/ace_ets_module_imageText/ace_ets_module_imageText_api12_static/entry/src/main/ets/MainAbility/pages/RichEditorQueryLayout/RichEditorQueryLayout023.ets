@@ -61,28 +61,25 @@ build() {
       Text('paragraphStyle:' + this.paragraphStyle).id('paragraphStyle')
 
       Button('getSpans').onClick((e: ClickEvent) => {
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 7
-        })
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            if ( (item as RichEditorImageSpanResult)?.imageStyle) {
-              if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-                this.layoutStyle =
-                  JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
-                    .layoutStyle);
-                console.log('RichEditorController this.layoutStyle:' + this.layoutStyle);
-              }
-            } else {
-              if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
-                console.log('RichEditorController get content get symbolSpanStyle');
-              } else {
-                console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
-              }
+        })!.forEach(item => {
+          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+              this.layoutStyle =
+                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                  .layoutStyle);
+              console.log('RichEditorController this.layoutStyle:' + this.layoutStyle);
             }
-          })
-        }
+          } else {
+            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+              console.log('RichEditorController get content get symbolSpanStyle');
+            } else {
+              console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
+            }
+          }
+        })
       }).id('get_content')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -91,7 +88,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('01', {
+          this.controller!.addTextSpan('01', {
             style: {
               fontColor: Color.Pink,
               fontSize: '32',

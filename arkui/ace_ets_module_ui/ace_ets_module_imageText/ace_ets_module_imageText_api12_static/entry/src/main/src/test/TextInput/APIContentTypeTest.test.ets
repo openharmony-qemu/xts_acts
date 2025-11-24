@@ -68,15 +68,13 @@ export default function APIContentTypeTest() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   APIContentTypeTest_static_001
      * @tc.name     APIContentTypeTest_static_001
      * @tc.desc     APIContentTypeTest_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('APIContentTypeTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIContentTypeTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[APIContentTypeTest_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -94,15 +92,13 @@ it('APIContentTypeTest_static_001', Level.LEVEL0, async (done: () => void): Prom
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   APIContentTypeTest_static_0200
      * @tc.name     APIContentTypeTest_static_0200
      * @tc.desc     APIContentTypeTest_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('APIContentTypeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIContentTypeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIContentTypeTest_0200 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -120,15 +116,13 @@ it('APIContentTypeTest_static_0200', Level.LEVEL0, async (done: () => void): Pro
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   APIContentTypeTest_static_0300
      * @tc.name     APIContentTypeTest_static_0300
      * @tc.desc     APIContentTypeTest_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('APIContentTypeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIContentTypeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIContentTypeTest_0300 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -146,15 +140,13 @@ it('APIContentTypeTest_static_0300', Level.LEVEL0, async (done: () => void): Pro
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   APIContentTypeTest_static_0400
      * @tc.name     APIContentTypeTest_static_0400
      * @tc.desc     APIContentTypeTest_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('APIContentTypeTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIContentTypeTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIContentTypeTest_0400 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

@@ -69,7 +69,7 @@ build() {
         Text('message:' + this.message).id('message')
         Button('addBuilder')
           .onClick((e: ClickEvent) => {
-            this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
+            this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
           }).id('addBuilder')
         Button('builder').onClick((e: ClickEvent) => {
           this.myBuilder = () => {

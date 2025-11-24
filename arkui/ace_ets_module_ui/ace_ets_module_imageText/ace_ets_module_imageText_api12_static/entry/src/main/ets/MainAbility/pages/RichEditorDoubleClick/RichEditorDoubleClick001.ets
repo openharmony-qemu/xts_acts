@@ -62,7 +62,7 @@ build() {
 
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('12\n23',
+            this.controller!.addTextSpan('12\n23',
               {
                 style:
                 {

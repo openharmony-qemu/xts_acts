@@ -139,7 +139,7 @@ struct RichEditorInterFace001 {
           let options: SelectionOptions = {
             menuPolicy: MenuPolicy.SHOW
           };
-          this.controller.setSelection(1, 3, options);
+          this.controller!.setSelection(1, 3, options);
         })
       Button('select 2')
         .id('select2')
@@ -149,7 +149,7 @@ struct RichEditorInterFace001 {
           let options: SelectionOptions = {
             menuPolicy: MenuPolicy.SHOW
           };
-          this.controller.setSelection(4, 5, options);
+          this.controller!.setSelection(4, 5, options);
         })
       Button('select 3')
         .id('select3')
@@ -159,7 +159,7 @@ struct RichEditorInterFace001 {
           let options: SelectionOptions = {
             menuPolicy: MenuPolicy.SHOW
           };
-          this.controller.setSelection(5, 6, options);
+          this.controller!.setSelection(5, 6, options);
         })
 
       Button('add span')
@@ -170,7 +170,7 @@ struct RichEditorInterFace001 {
           this.myBuilder = () => {
             this.placeholderBuilder();
           }
-          this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset});
+          this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset});
         })
 
       RichEditor(this.options)
@@ -179,7 +179,7 @@ struct RichEditorInterFace001 {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abcd',
+          this.controller!.addTextSpan('abcd',
             {
               style:
               {
@@ -187,7 +187,7 @@ struct RichEditorInterFace001 {
                 fontSize: 20
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
@@ -252,8 +252,8 @@ struct RichEditorInterFace001 {
   //   let start = richEditorSelection.selection[0]
   //   let end = richEditorSelection.selection[1]
   //   if (start == end && this.controller) {
-  //     start = this.controller.getCaretOffset()
-  //     end = this.controller.getCaretOffset()
+  //     start = this.controller!.getCaretOffset()
+  //     end = this.controller!.getCaretOffset()
   //   }
   //   let moveOffset = 0
   //   let sysBoard = pasteboard.getSystemPasteboard()
@@ -301,7 +301,7 @@ struct RichEditorInterFace001 {
   //       }
   //       if (element && element.plainText && element.mimeType === pasteboard.MIMETYPE_TEXT_PLAIN &&
   //       this.controller) {
-  //         this.controller.addTextSpan(element.plainText,
+  //         this.controller!.addTextSpan(element.plainText,
   //           {
   //             style: tex,
   //             offset: start + moveOffset
@@ -311,11 +311,11 @@ struct RichEditorInterFace001 {
   //       }
   //     }
   //     if (this.controller) {
-  //       this.controller.setCaretOffset(start + moveOffset)
-  //       this.controller.closeSelectionMenu()
+  //       this.controller!.setCaretOffset(start + moveOffset)
+  //       this.controller!.closeSelectionMenu()
   //     }
   //     if (start != end && this.controller) {
-  //       this.controller.deleteSpans({ start: start + moveOffset, end: end + moveOffset })
+  //       this.controller!.deleteSpans({ start: start + moveOffset, end: end + moveOffset })
   //     }
   //   })
   // }
@@ -346,9 +346,9 @@ struct RichEditorInterFace001 {
   //           if (index as number == 0) {
   //             this.sliderShow = false
   //             if (this.controller) {
-  //               let selection = this.controller.getSelection();
+  //               let selection = this.controller!.getSelection()!;
   //               let spans = selection.spans
-  //               spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+  //               spans!.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
   //                 if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
   //                   let span = item as RichEditorTextSpanResult
   //                   this.textStyle = span.textStyle
@@ -360,7 +360,7 @@ struct RichEditorInterFace001 {
   //                   } else {
   //                     this.textStyle.fontWeight = FontWeight.Normal
   //                   }
-  //                   this.controller.updateSpanStyle({
+  //                   this.controller!.updateSpanStyle({
   //                     start: offset + start,
   //                     end: offset + end,
   //                     textStyle: this.textStyle
@@ -373,7 +373,7 @@ struct RichEditorInterFace001 {
   //             if (this.controller) {
   //               let selection = this.controller.getSelection();
   //               let spans = selection.spans
-  //               spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+  //               spans!.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
   //                 if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
   //                   let span = item as RichEditorTextSpanResult
   //                   this.textStyle = span.textStyle
@@ -398,7 +398,7 @@ struct RichEditorInterFace001 {
   //             if (this.controller) {
   //               let selection = this.controller.getSelection();
   //               let spans = selection.spans
-  //               spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+  //               spans!.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
   //                 if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
   //                   let span = item as RichEditorTextSpanResult
   //                   this.textStyle = span.textStyle
@@ -429,7 +429,7 @@ struct RichEditorInterFace001 {
   //             if (this.controller) {
   //               let selection = this.controller.getSelection();
   //               let spans = selection.spans
-  //               spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+  //               spans!.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
   //                 if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
   //                   let span = item as RichEditorTextSpanResult
   //                   this.textStyle = span.textStyle
@@ -462,7 +462,7 @@ struct RichEditorInterFace001 {
   //           }
   //         })
   //         .onHover((isHover?: boolean, event?: HoverEvent) => {
-  //           this.iconBgColor.forEach((icon:ResourceColor, index1) => {
+  //           this.iconBgColor!.forEach((icon:ResourceColor, index1) => {
   //             this.iconBgColor[index1] = this.colorTransparent
   //           })
   //           if(isHover != undefined) {
@@ -543,7 +543,7 @@ struct RichEditorInterFace001 {
   //       let richEditorSelection = this.controller.getSelection()
   //       let start = richEditorSelection.selection[0]
   //       let end = richEditorSelection.selection[1]
-  //       if (start === 0 && this.controller.getSpans({ start: end + 1, end: end + 1 }).length === 0) {
+  //       if (start === 0 && this.controller!.getSpans({ start: end + 1, end: end + 1 }).length === 0) {
   //         this.visibilityValue = Visibility.None
   //       } else {
   //         this.visibilityValue = Visibility.Visible
@@ -571,7 +571,7 @@ struct RichEditorInterFace001 {
   //                 this.textSize = 0
   //               }
   //               let spans = selection.spans
-  //               spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+  //               spans!.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
   //                 if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
   //                   this.textSize = Math.max(this.textSize, (item as RichEditorTextSpanResult).textStyle.fontSize)
   //                 }

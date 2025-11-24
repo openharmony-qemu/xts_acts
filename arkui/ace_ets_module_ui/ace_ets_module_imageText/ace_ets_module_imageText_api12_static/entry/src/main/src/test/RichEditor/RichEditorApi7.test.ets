@@ -79,15 +79,13 @@ export default function RichEditorApi7() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorApi7_static_0100
      * @tc.name     RichEditorApi7_static_0100
      * @tc.desc     RichEditorApi7_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorApi7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorApi7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorApi7_static_0100 START');
       await CommonFunc.sleep(1000);
 

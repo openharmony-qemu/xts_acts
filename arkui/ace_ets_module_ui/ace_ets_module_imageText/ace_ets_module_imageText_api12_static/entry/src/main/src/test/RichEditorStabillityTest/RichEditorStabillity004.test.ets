@@ -75,15 +75,13 @@ export default function RichEditorStabillity004() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0007
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0007
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0007
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0007 START');
         let driver = Driver.create();

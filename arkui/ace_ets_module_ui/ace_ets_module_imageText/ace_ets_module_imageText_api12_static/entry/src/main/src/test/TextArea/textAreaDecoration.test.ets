@@ -66,15 +66,13 @@ export default function textAreaDecoration() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textAreaDecoration_static_0100
      * @tc.name     textAreaDecoration_static_0100
      * @tc.desc     textAreaDecoration_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaDecoration_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaDecoration_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[textAreaDecoration_0100] START');
       let strJson = inspector.getInspectorByKey('key_textArea_decoration_001');
       console.info("[textAreaDecoration_0100] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

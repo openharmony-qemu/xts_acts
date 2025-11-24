@@ -94,7 +94,7 @@ struct styled_string_demo1 {
   } as SpanStyle;
   @State string1: string = '';
   @State fontColor1: ResourceColor = Color.Red;
-  @State length: undefined | Int = 0
+  @State length: number = 0
   controller1: TextController = new TextController();
   controller2: TextController = new TextController();
   controller3: TextController = new TextController();
@@ -167,7 +167,7 @@ struct styled_string_demo1 {
           Button('初始长度')
             .onClick((e:ClickEvent) => {
               let styles = this.mutableStyledString2.getStyles(0,this.mutableStyledString2.length)
-              this.length = styles?.length
+              this.length = styles!.length
             }).id('clearFirstLength')
             .height('5%')
 
@@ -175,7 +175,7 @@ struct styled_string_demo1 {
             .onClick((e:ClickEvent) => {
               this.mutableStyledString2.clearStyles();
               let styles = this.mutableStyledString2.getStyles(0,this.mutableStyledString2.length)
-              this.length = styles?.length
+              this.length = styles!.length
             })
             .height('5%')
         }.width('100%')

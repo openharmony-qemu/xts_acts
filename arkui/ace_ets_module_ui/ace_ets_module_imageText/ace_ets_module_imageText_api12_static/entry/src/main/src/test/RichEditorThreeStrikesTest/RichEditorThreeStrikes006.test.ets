@@ -76,15 +76,13 @@ export default function RichEditorThreeStrikes006() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorThreeStrikes006')) as Promise<Component>);
@@ -101,7 +99,7 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015', Level.LEVEL0
       try{
         let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
         await copy.click();
-      }catch(e){}
+      }catch(e: Error){}
       await CommonFunc.sleep(1000);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();

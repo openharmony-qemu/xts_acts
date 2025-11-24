@@ -78,9 +78,10 @@ struct RichEditorSetStyledString019 {
       start: 0,
       length: 4,
       styledKey: StyledStringKey.FONT,
-      styledValue: {
-        // fontSize: LengthMetrics.vp(24) as number,
-        fontWeight: FontWeight.Bolder }
+      styledValue: new TextStyle({
+        fontSize: LengthMetrics.vp(24),
+        fontWeight: FontWeight.Bolder
+      })
     }, {
       start: 5,
       length: 3,
@@ -92,7 +93,7 @@ struct RichEditorSetStyledString019 {
 
   onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    this.controller.setStyledString(this.styledString)
+    this.controller!.setStyledString(this.styledString)
     this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
   }
 
@@ -121,21 +122,18 @@ struct RichEditorSetStyledString019 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_center')
 
       Button('get paragraphStyle')
         .onClick((e: ClickEvent) => {
-          let styles: Array<SpanStyle> | undefined = this.styledString.getStyles(0, this.styledString.length);
-          if (styles && styles.length !== 0) {
-            for (let i = 0; i < styles.length; i++) {
+          let styles: Array<SpanStyle> = this.styledString.getStyles(0, this.styledString.length) as Array<SpanStyle>;
+          if (styles!.length !== 0) {
+            for (let i = 0; i < styles!.length; i++) {
               if (styles[i].styledKey === 200) {
                 let paraAttr: ParagraphStyle = styles[i].styledValue as ParagraphStyle;
                 if(paraAttr.textAlign){

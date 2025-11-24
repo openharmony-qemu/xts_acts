@@ -77,15 +77,13 @@ export default function RichEditorOnSelectionChange018() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0160
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0160
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0160
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0160 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
@@ -117,15 +115,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0160', Level.L
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0120
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0120
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0120
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_static_0120 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);

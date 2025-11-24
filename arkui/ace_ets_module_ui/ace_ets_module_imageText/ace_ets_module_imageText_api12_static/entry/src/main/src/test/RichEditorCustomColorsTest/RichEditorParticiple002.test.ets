@@ -76,15 +76,13 @@ export default function RichEditorParticiple002() {
     });
     
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_AI_PARTICIPLE_static_0060
      * @tc.name     SUB_ACE_UI_AI_PARTICIPLE_static_0060
      * @tc.desc     SUB_ACE_UI_AI_PARTICIPLE_static_0060
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_AI_PARTICIPLE_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_AI_PARTICIPLE_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_AI_PARTICIPLE_static_0060 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorParticiple002')) as Promise<Component>);

@@ -105,31 +105,25 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let styledString = this.controller.getStyledString();
-          if (styledString !== undefined) {
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('imageTop')
       Text('onLongPressFlag:' + this.onLongPressFlag).id('onLongPressFlag')
       Text('onClickFlag:' + this.onClickFlag).id('onClickFlag')
       Button('add custom').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.richEditorStyledString = styledString;
-          this.style1.setStyle({ start: 0, length: 1, styledKey: StyledStringKey.GESTURE,
-            styledValue: this.gestureStyleAttr });
-          this.richEditorStyledString.appendStyledString(this.style1);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
-        }
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.style1.setStyle({ start: 0, length: 1, styledKey: StyledStringKey.GESTURE,
+          styledValue: this.gestureStyleAttr });
+        this.richEditorStyledString.appendStyledString(this.style1);
+        this.controller!.setStyledString(this.richEditorStyledString);
+        this.controller!.setCaretOffset(this.richEditorStyledString.length);
       }).id('addCustom')
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height(100)
         .width('100%')

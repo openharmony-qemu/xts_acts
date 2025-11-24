@@ -63,14 +63,14 @@ build() {
 
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+            this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
               {
                 style:
                 {
                   fontSize: 50
                 }
               })
-            this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+            this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
               {
                 style:
                 {

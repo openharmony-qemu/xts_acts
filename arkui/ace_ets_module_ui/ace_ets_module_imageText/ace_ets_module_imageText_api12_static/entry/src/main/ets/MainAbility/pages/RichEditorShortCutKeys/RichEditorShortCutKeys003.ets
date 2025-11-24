@@ -52,7 +52,7 @@ struct RichEditorShortCutKeys003 {
   controller: RichEditorController = new RichEditorController();
   private myOffset: int | undefined = undefined;
   private myBuilder: CustomBuilder = ()=>{};
-  @State positionNum: number = -1;
+  @State positionNum: int = -1;
   @Builder
   placeholderBuilder() {
     Row({ space: 2 } as RowOptions) {
@@ -70,10 +70,7 @@ build() {
         .margin(15)
         .backgroundColor(Color.Blue)
         .onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.positionNum = caretOffset;
-          }
+          this.positionNum = this.controller!.getCaretOffset() as int;
         })
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .padding('10px')
@@ -85,22 +82,22 @@ build() {
             this.myBuilder = () => {
               this.placeholderBuilder();
             }
-            this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {
                   size: ['25px', '25px']
                 }
               });
-            this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+            this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
               {
                 style:
                 {
                   fontSize: 30
                 }
               });
-          this.controller.addTextSpan('abc');
+          this.controller!.addTextSpan('abc');
         })
         .onSelectionChange((value: RichEditorRange): void => {
           console.log('RichEditorController value:' + JSON.stringify(value));

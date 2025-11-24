@@ -64,14 +64,14 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
                 size: ['25px', '25px']
               }
             });
-          this.controller.addTextSpan('abcd', {
+          this.controller!.addTextSpan('abcd', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -80,7 +80,7 @@ build() {
             }
           });
 
-          this.controller.addTextSpan('1234', {
+          this.controller!.addTextSpan('1234', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -91,7 +91,7 @@ build() {
             }
           });
 
-          this.controller.addTextSpan('hello', {
+          this.controller!.addTextSpan('hello', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -106,16 +106,13 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 14
-        });
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            this.style = JSON.stringify((item as RichEditorTextSpanResult));
-            console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
-          })
-        }
+        })!.forEach(item => {
+          this.style = JSON.stringify((item));
+          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+        })
       }).id('getSpans')
 
       Text('style:' + this.style).id('style')

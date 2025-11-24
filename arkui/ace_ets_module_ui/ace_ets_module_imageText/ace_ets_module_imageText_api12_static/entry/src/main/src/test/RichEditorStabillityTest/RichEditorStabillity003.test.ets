@@ -75,15 +75,13 @@ export default function RichEditorStabillity003() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0004
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0004
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0004
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0004 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);
@@ -138,15 +136,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0004', Level.LEVEL0, 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0005
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0005
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0005
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0005 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);
@@ -201,15 +197,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0005', Level.LEVEL0, 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0006
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0006
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0006
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0006 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);
@@ -251,15 +245,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0006', Level.LEVEL0, 
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0014
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0014
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0014
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_static_0014 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);

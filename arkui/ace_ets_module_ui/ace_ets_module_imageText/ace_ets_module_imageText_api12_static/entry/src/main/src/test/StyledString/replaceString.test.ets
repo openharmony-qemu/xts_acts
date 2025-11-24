@@ -64,15 +64,13 @@ export default function replaceString() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0100
      * @tc.name     replaceString_static_0100
      * @tc.desc     replaceString_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -98,15 +96,13 @@ it('replaceString_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0200
      * @tc.name     replaceString_static_0200
      * @tc.desc     replaceString_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0200',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -131,15 +127,13 @@ it('replaceString_static_0200', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0300
      * @tc.name     replaceString_static_0300
      * @tc.desc     replaceString_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0300',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0300 START');
       await CommonFunc.sleep(1000);
 
@@ -164,15 +158,13 @@ it('replaceString_static_0300', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0400
      * @tc.name     replaceString_static_0400
      * @tc.desc     replaceString_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0400 START');
       await CommonFunc.sleep(1000);
 
@@ -197,15 +189,13 @@ it('replaceString_static_0400', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0500
      * @tc.name     replaceString_static_0500
      * @tc.desc     replaceString_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0500',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0500 START');
       await CommonFunc.sleep(1000);
 
@@ -230,15 +220,13 @@ it('replaceString_static_0500', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0600
      * @tc.name     replaceString_static_0600
      * @tc.desc     replaceString_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0600',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0600 START');
       await CommonFunc.sleep(1000);
 
@@ -263,15 +251,13 @@ it('replaceString_static_0600', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0700
      * @tc.name     replaceString_static_0700
      * @tc.desc     replaceString_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0700',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0700 START');
       await CommonFunc.sleep(1000);
 
@@ -296,15 +282,13 @@ it('replaceString_static_0700', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0800
      * @tc.name     replaceString_static_0800
      * @tc.desc     replaceString_static_0800
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0800',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0800 START');
       await CommonFunc.sleep(1000);
 
@@ -329,15 +313,13 @@ it('replaceString_static_0800', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   replaceString_static_0900
      * @tc.name     replaceString_static_0900
      * @tc.desc     replaceString_static_0900
      * @tc.level    Level.LEVEL0
      */
-it('replaceString_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('replaceString_static_0900',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('replaceString_0900 START');
       await CommonFunc.sleep(1000);
 

@@ -70,29 +70,26 @@ build() {
     Column() {
 
       Button('toStyledString 0,500').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 0, end: 500});
-        if (str !== undefined) {
-          this.spans = str.getString();
-        }
+        let str = this.controller!.toStyledString({start: 0,
+          end: 500});
+        this.spans = str!.getString();
       }).id('toStyledString')
 
       Button('toStyledString 2,2').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 2, end: 2});
-        if (str !== undefined) {
-          this.spans = str.getString();
-        }
+        let str = this.controller!.toStyledString({start: 2,
+          end: 2});
+        this.spans = str!.getString();
       }).id('toStyledString1')
 
       Button('toStyledString 2,1').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 2, end: 1});
-        if (str !== undefined) {
-          this.spans = str.getString();
-        }
+        let str = this.controller!.toStyledString({start: 2,
+          end: 1});
+        this.spans = str!.getString();
       }).id('toStyledString2')
 
       Button('toStyledString undefined').onClick((e: ClickEvent) => {
-        // let str = this.controller.toStyledString(undefined);
-        // this.spans = str.getString();
+        // let str = this.controller!.toStyledString(undefined);
+        // this.spans = str!.getString();
       }).id('toStyledStringUndefined')
 
       Button('builder').onClick((e: ClickEvent) => {
@@ -102,26 +99,26 @@ build() {
       }).id('builder')
 
       Button('add symbol builder').onClick((e: ClickEvent) => {
-        this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+        this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
           {
             style:
             {
               fontSize: 30
             }
           })
-        this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+        this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
           {
             style:
             {
               fontSize: 30
             }
           })
-        this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
-        this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
+        this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
+        this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
       }).id('addSpans')
 
       Button('add image').onClick((e: ClickEvent) => {
-        this.controller.addImageSpan($r('app.media.icon'),
+        this.controller!.addImageSpan($r('app.media.icon'),
           {
             imageStyle:
             {

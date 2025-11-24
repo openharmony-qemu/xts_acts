@@ -65,15 +65,13 @@ export default function TextStyleWavy() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextStyleWavy_static_001
      * @tc.name     TextStyleWavy_static_001
      * @tc.desc     TextStyleWavy_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextStyleWavy_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextStyleWavy_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextStyleWavy_001] START');
 
       let strJson = inspector.getInspectorByKey('textWavy');

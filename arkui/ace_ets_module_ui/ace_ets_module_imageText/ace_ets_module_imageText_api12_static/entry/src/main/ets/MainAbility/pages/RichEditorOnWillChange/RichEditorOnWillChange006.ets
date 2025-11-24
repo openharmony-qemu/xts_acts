@@ -78,7 +78,7 @@ build() {
           console.log('RichEditorController：onWillChange')
           console.log('RichEditorController：value' + JSON.stringify(value));
           this.onWillChangeCallback = true;
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans');
             console.log('RichEditorController item:' + JSON.stringify(item));
             console.log('RichEditorController spanPosition spanIndex:' + JSON.stringify(item.spanPosition.spanIndex));
@@ -90,7 +90,7 @@ build() {
           return true;
         })
         .aboutToDelete((value: RichEditorDeleteValue): boolean => {
-          value.richEditorDeleteSpans.forEach(item => {
+          value.richEditorDeleteSpans!.forEach(item => {
             console.log('RichEditorController aboutToDelete spanIndex:' + item.spanPosition.spanIndex);
           })
           return true;

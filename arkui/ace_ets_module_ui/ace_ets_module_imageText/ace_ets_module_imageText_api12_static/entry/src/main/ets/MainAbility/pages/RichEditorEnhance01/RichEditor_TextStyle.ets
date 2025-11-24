@@ -67,7 +67,7 @@ build() {
               .id("addLineHeightBut")
               .onClick((e: ClickEvent)=>{
               this.LH = this.LH + 50
-              this.controller.updateSpanStyle({
+              this.controller!.updateSpanStyle({
                 start: this.start,
                 end: this.end,
                 textStyle:
@@ -78,7 +78,7 @@ build() {
             })
             Button("行高-50").onClick((e: ClickEvent)=>{
               this.LH = this.LH - 50
-              this.controller.updateSpanStyle({
+              this.controller!.updateSpanStyle({
                 start: this.start,
                 end: this.end,
                 textStyle:
@@ -91,7 +91,7 @@ build() {
               .id("addLetterSpacing")
               .onClick((e: ClickEvent)=>{
               this.LS = this.LS + 20
-              this.controller.updateSpanStyle({
+              this.controller!.updateSpanStyle({
                 start: this.start,
                 end: this.end,
                 textStyle:
@@ -102,7 +102,7 @@ build() {
             })
             Button("字符间距-20").onClick((e: ClickEvent)=>{
               this.LS = this.LS - 20
-              this.controller.updateSpanStyle({
+              this.controller!.updateSpanStyle({
                 start: this.start,
                 end: this.end,
                 textStyle:
@@ -116,20 +116,17 @@ build() {
             Button("getSpans")
               .id("RichEditorTextStyle_GetSpansBtn")
               .onClick((e: ClickEvent) => {
-              let spans = this.controller.getSpans({
+              this.controller!.getSpans({
                 start: this.start,
                 end: this.end
+              })!.forEach(item => {
+                if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
+                  this.content_H=""
+                  this.content_L=""
+                  this.content_H = "LineHeight_" + (item as RichEditorTextSpanResult)?.textStyle.lineHeight;
+                  this.content_L = "LetterSpacing_" + (item as RichEditorTextSpanResult)?.textStyle.letterSpacing;
+                }
               })
-              if (spans !== undefined) {
-                spans.forEach(item => {
-                  if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
-                    this.content_H=""
-                    this.content_L=""
-                    this.content_H = "LineHeight_" + (item as RichEditorTextSpanResult)?.textStyle.lineHeight;
-                    this.content_L = "LetterSpacing_" + (item as RichEditorTextSpanResult)?.textStyle.letterSpacing;
-                  }
-                })
-              }
             })
           }
         }
@@ -166,7 +163,7 @@ build() {
       Column() {
         RichEditor(this.options).clip(true).padding(10)
           .onReady((): void => {
-            this.controller.addTextSpan("0123456789",
+            this.controller!.addTextSpan("0123456789",
               {
                 style:
                 {

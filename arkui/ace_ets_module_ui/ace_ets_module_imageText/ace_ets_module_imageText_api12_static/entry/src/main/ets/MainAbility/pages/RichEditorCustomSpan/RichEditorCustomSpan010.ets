@@ -60,18 +60,18 @@ struct RichEditorCustomSpan010 {
   @State stylesInfo: string = '';
 
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle
-  fontStyleAttr1: TextStyle = {
+  fontStyleAttr1: TextStyle =new TextStyle({
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50)
-  } as TextStyle
+    fontSize: LengthMetrics.vp(50)
+  })
   mutableStyledString: MutableStyledString = new MutableStyledString('abcd',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
 
@@ -104,53 +104,42 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let styledString = this.controller.getStyledString();
-          if (styledString !== undefined) {
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('imageTop')
 
       Button('getStyles')
         .onClick((e: ClickEvent) => {
-          let richEditorStyledString = this.controller.getStyledString();
-          if (richEditorStyledString !== undefined) {
-            let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
-            if (styles !== undefined) {
-              let stylesArray = Array.from(styles);
-              for (let i = 0; i < stylesArray.length; i++) {
-                if (stylesArray[i].styledKey === 0) {
-                  let fontAttr = stylesArray[i].styledValue as TextStyle;
-                  this.stylesInfo += 'fontColor:' + fontAttr.fontColor + ',';
-                  this.stylesInfo += 'fontSize:' + fontAttr.fontSize + ',';
-                }
-              }
+          let richEditorStyledString = this.controller!.getStyledString()!;
+          let styles = richEditorStyledString!.getStyles(0, richEditorStyledString.length)!;
+          for (let i = 0; i < styles!.length; i++) {
+            if (styles[i as int].styledKey === 0) {
+              let fontAttr = styles[i as int].styledValue as TextStyle;
+              this.stylesInfo += 'fontColor:' + fontAttr.fontColor + ',';
+              this.stylesInfo += 'fontSize:' + fontAttr.fontSize + ',';
             }
           }
         })
         .id('getStyles')
-
       Button('setStyle').onClick((e: ClickEvent) => {
-        let richEditorStyledString = this.controller.getStyledString();
-        if (richEditorStyledString !== undefined) {
-          richEditorStyledString.setStyle({
-            start: 0,
-            length: 4,
-            styledKey: StyledStringKey.FONT,
-            styledValue: this.fontStyleAttr1
-          })
-          this.controller.setStyledString(richEditorStyledString);
-        }
+        let richEditorStyledString = this.controller!.getStyledString()!;
+        richEditorStyledString.setStyle({
+          start: 0,
+          length: 4,
+          styledKey: StyledStringKey.FONT,
+          styledValue: this.fontStyleAttr1
+        })
+        this.controller!.setStyledString(richEditorStyledString);
       }).id('setStyle')
 
       Text('stylesInfo:' + this.stylesInfo).id('stylesInfo')
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')
@@ -160,13 +149,10 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.richEditorStyledString.appendStyledString(this.style1);
-              this.controller.setStyledString(this.richEditorStyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.style1);
+            this.controller!.setStyledString(this.richEditorStyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('addCustom')
         }
 

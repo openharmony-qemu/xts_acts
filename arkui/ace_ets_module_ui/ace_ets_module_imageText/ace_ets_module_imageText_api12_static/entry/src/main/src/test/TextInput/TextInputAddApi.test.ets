@@ -68,15 +68,13 @@ export default function TextInputAddApi() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputAddApi_static_001
      * @tc.name     TextInputAddApi_static_001
      * @tc.desc     TextInputAddApi_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputAddApi_001] START');
 
       await CommonFunc.sleep(1000);
@@ -95,15 +93,13 @@ it('TextInputAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputAddApi_static_002
      * @tc.name     TextInputAddApi_static_002
      * @tc.desc     TextInputAddApi_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputAddApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputAddApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputAddApi_002] START');
 
       await CommonFunc.sleep(1000);

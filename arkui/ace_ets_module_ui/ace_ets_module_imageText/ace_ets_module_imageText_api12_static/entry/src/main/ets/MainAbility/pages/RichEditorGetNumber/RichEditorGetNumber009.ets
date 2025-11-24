@@ -50,7 +50,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct RichEditorGetNumber009 {
   controller: RichEditorController = new RichEditorController();
-  @State lineCount: Int | undefined = 0;
+  @State lineCount: int = 0;
 
 build() {
 
@@ -58,10 +58,8 @@ build() {
       Text('lineCount:' + this.lineCount).id('lineCount')
       Button('get lineCount').id('getLineCount')
         .onClick((e: ClickEvent) => {
-          let layoutManager = this.controller.getLayoutManager();
-          if (layoutManager !== undefined) {
-            this.lineCount = layoutManager.getLineCount();
-          }
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          this.lineCount = layoutManager.getLineCount() as int
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -71,7 +69,7 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addTextSpan('0123\n',
+          this.controller!.addTextSpan('0123\n',
             {
               style:
               {
@@ -81,7 +79,7 @@ build() {
                 letterSpacing: '5fp'
               }
             })
-          this.controller.addTextSpan('0123\n',
+          this.controller!.addTextSpan('0123\n',
             {
               style:
               {
@@ -91,7 +89,7 @@ build() {
                 letterSpacing: '10fp'
               }
             })
-          this.controller.addTextSpan('0123\n',
+          this.controller!.addTextSpan('0123\n',
             {
               style:
               {
@@ -101,7 +99,7 @@ build() {
                 letterSpacing: '15fp'
               }
             })
-          this.controller.addTextSpan('0123\n',
+          this.controller!.addTextSpan('0123\n',
             {
               style:
               {
@@ -111,7 +109,7 @@ build() {
                 letterSpacing: '20fp'
               }
             })
-          this.controller.addTextSpan('0123\n',
+          this.controller!.addTextSpan('0123\n',
             {
               style:
               {
@@ -121,7 +119,7 @@ build() {
                 letterSpacing: '25fp'
               }
             })
-          this.controller.addTextSpan('012',
+          this.controller!.addTextSpan('012',
             {
               style:
               {

@@ -60,15 +60,15 @@ build() {
       Text('onSelectCallBack:' + this.onSelectCallBack).id('onSelectCallBack')
       Text('message:' + this.message).id('message')
       Button('setCaretOffset 2').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(2);
+        this.controller!.setCaretOffset(2);
       }).id('setCaretOffset')
 
       Button('setCaretOffset begin').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(0);
+        this.controller!.setCaretOffset(0);
       }).id('setCaretOffset_begin')
 
       Button('setCaretOffset end').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(11);
+        this.controller!.setCaretOffset(11);
       }).id('setCaretOffset_end')
 
       Button('set int').onClick((e: ClickEvent) => {

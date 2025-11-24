@@ -51,7 +51,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorTransformation005 {
   controller: RichEditorController = new RichEditorController();
   @State textStyle: string = '';
-  @State length: Int | undefined = undefined;
+  @State length: int = -1;
   private myOffset: int | undefined = undefined
   private myBuilder: CustomBuilder = ()=>{}
 
@@ -68,7 +68,7 @@ build() {
       Button('setTypingStyle')
         .fontSize(10)
         .onClick((e: ClickEvent) => {
-          this.controller.setTypingStyle(
+          this.controller!.setTypingStyle(
             {
               fontWeight: FontWeight.Lighter,
               fontFamily: 'Arial',
@@ -79,14 +79,14 @@ build() {
             })
         }).id('setTypingStyle')
       Button('getTypingStyle').onClick((e: ClickEvent) => {
-        let richEditorTextStyle = this.controller.getTypingStyle();
+        let richEditorTextStyle = this.controller!.getTypingStyle();
         this.textStyle = JSON.stringify(richEditorTextStyle);
         console.log('RichEditor getTypingStyle:' + JSON.stringify(richEditorTextStyle));
       }).id('getTypingStyle')
       Text('textStyle:' + this.textStyle).id('textStyle')
       Text('length:' + this.length).id('length')
       Button('get length').onClick((e: ClickEvent) => {
-        this.length = this.controller.getCaretOffset();
+        this.length = this.controller!.getCaretOffset() as int;
       }).id('getLength')
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .width(200)
@@ -94,7 +94,7 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addTextSpan('\uD83D\uDE00 abc',
+          this.controller!.addTextSpan('\uD83D\uDE00 abc',
             {
               style:
               {
@@ -102,14 +102,14 @@ build() {
                 fontColor: Color.Red
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
                 size: ['25px', '25px']
               }
             })
-          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+          this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
               style:
               {
@@ -119,7 +119,7 @@ build() {
           this.myBuilder = () => {
             this.placeholderBuilder();
           }
-          this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+          this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
         })
         .rotate({
           angle: 100

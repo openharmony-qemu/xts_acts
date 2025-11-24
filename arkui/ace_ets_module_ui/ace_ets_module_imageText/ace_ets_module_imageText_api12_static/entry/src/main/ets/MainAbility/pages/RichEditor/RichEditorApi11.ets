@@ -63,15 +63,10 @@ build() {
 
       RichEditor({controller:this.controller} as RichEditorOptions)
       Button('属性字符串转span').onClick((event: ClickEvent) => {
-        let change = this.controller.fromStyledString(this.mutableStr)
-        if (change !== undefined) {
-          change.forEach(item => {
-            let spanRange = item?.spanPosition?.spanRange;
-            if (spanRange !== undefined) {
-              this.text = JSON.stringify(spanRange)
-            }
-          })
-        }
+        let change = this.controller!.fromStyledString(this.mutableStr)
+        change!.forEach(item => {
+          this.text = JSON.stringify(item.spanPosition.spanRange)
+        })
       }).id('RichEditorApi11_btn1')
 
       Text(this.text).id('RichEditorApi11_text1')

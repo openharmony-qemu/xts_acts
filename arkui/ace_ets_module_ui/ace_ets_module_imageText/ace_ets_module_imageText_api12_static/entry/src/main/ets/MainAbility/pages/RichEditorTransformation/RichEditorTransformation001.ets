@@ -71,21 +71,21 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addTextSpan('ab',
+          this.controller!.addTextSpan('ab',
             {
               style:
               {
                 fontSize: 30
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
                 size: ['25px', '25px']
               }
             })
-          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+          this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
               style:
               {
@@ -95,7 +95,7 @@ build() {
           this.myBuilder = () => {
             this.placeholderBuilder();
           }
-          this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+          this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
         })
         .rotate({ angle: 80 })
         .onSelectionChange((value: RichEditorRange): void => {

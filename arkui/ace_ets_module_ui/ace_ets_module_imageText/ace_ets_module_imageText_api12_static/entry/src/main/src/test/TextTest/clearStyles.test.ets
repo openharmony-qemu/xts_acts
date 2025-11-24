@@ -65,15 +65,13 @@ export default function clearStyles() {
       console.info("clearStyles after each called");
     });
     
-    
-    
-/*
+    /*
      * @tc.number   clearStyles_static_0100
      * @tc.name     clearStyles_static_0100
      * @tc.desc     clearStyles_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('clearStyles_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('clearStyles_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[clearStyles_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

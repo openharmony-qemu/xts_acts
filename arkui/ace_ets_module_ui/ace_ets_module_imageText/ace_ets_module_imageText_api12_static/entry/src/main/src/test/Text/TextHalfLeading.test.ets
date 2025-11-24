@@ -62,15 +62,13 @@ export default function TextHalfLeading() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextHalfLeading_static_0010
      * @tc.name     TextHalfLeading_static_0010
      * @tc.desc     TextHalfLeading_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextHalfLeading_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextHalfLeading_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextHalfLeading_0010 START');
       let TextHalfLeading_1 = inspector.getInspectorByKey('TextHalfLeading1');
       expect(""+JSON.parseJsonElement(TextHalfLeading_1).getString('$type')).assertEqual('Text');
@@ -79,15 +77,13 @@ it('TextHalfLeading_static_0010', Level.LEVEL0, async (done: () => void): Promis
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextHalfLeading_static_0020
      * @tc.name     TextHalfLeading_static_0020
      * @tc.desc     TextHalfLeading_static_0020
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextHalfLeading_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextHalfLeading_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextHalfLeading_0020 START');
       let TextHalfLeading_2 = inspector.getInspectorByKey('TextHalfLeading2');
       expect(""+JSON.parseJsonElement(TextHalfLeading_2).getString('$type')).assertEqual('Text');

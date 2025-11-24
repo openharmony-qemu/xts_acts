@@ -75,15 +75,13 @@ export default function RichEditorTextChange014() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0003
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0003
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0003
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0003 START');
       let driver = Driver.create();
       let richeditor = await (driver.findComponent(ON.id("RichEditorTextChange014")) as Promise<Component>);
@@ -108,15 +106,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0003', Level.LEVEL0, 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0010
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0010
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0010 START');
       let driver = Driver.create();
       let textArea = await (driver.findComponent(ON.id('TextArea')) as Promise<Component>);

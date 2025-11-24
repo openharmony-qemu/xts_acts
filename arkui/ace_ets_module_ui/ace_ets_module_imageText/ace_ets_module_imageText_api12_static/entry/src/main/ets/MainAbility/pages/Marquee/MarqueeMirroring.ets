@@ -61,16 +61,16 @@ struct MarqueeMirroring {
         .backgroundColor('#182431')
         .margin({ bottom: 40 } as Margin)
         .onStart(() => {
+          console.info('Marquee animation complete onStart',this.onStart)
           this.onStart = "onStart succ"
-          console.info('Marquee animation complete onStart')
         })
         .onBounce(() => {
-          this.onBounce = "onBounce succ"
           console.info('Marquee animation complete onBounce')
+          this.onBounce = "onBounce succ"
         })
         .onFinish(() => {
-          this.onFinish = "onFinish succ"
           console.info('Marquee animation complete onFinish')
+          this.onFinish = "onFinish succ"
         })
       Button('Start').id("MarqueeMirroring_Start")
         .onClick((e: ClickEvent) => {

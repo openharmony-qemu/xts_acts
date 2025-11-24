@@ -64,6 +64,8 @@ struct getStylesDemo {
     fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
   })
+  controller1: RichEditorController = new RichEditorController()
+  options1: RichEditorOptions = { controller: this.controller1 } as RichEditorOptions;
   fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
@@ -72,8 +74,7 @@ struct getStylesDemo {
     fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Italic
   })
-  controller1: RichEditorController = new RichEditorController()
-  options1: RichEditorOptions = { controller: this.controller1 } as RichEditorOptions;
+
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('初始属性字符串',
     [{
@@ -127,7 +128,7 @@ struct getStylesDemo {
           try {
             let styles = this.mutableStyledString.getStyles(20, 100)
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
 
@@ -140,7 +141,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.subStyledString(20, 100)
           }
-          catch (e) {
+          catch (e:Error) {
             this.text2 = e.code + ' ';
           }
         })

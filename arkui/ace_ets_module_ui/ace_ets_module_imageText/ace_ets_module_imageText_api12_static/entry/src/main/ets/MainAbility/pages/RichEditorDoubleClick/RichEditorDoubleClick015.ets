@@ -60,13 +60,13 @@ build() {
 
         Text('message:' + this.message).id('message')
         Button('setSelection').onClick((e: ClickEvent) => {
-          this.controller.setSelection(2, 5);
+          this.controller!.setSelection(2, 5);
         }).id('setSelection')
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('0123456');
-            this.controller.addTextSpan('abc');
-            this.controller.addTextSpan('def');
+            this.controller!.addTextSpan('0123456');
+            this.controller!.addTextSpan('abc');
+            this.controller!.addTextSpan('def');
           })
           .onSelectionChange((value: RichEditorRange): void => {
             console.log('RichEditorController value:' + JSON.stringify(value));

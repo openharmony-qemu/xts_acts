@@ -76,15 +76,13 @@ export default function RichEditorAddApi() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   RichEditorAddApi_static_001
      * @tc.name     RichEditorAddApi_static_001
      * @tc.desc     RichEditorAddApi_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RichEditorAddApi_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

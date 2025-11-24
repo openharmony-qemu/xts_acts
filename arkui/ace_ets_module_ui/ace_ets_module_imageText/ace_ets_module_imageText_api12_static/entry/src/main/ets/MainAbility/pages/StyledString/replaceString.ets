@@ -126,7 +126,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.replaceString(20, 100, '789');
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -138,7 +138,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.insertString(100, '789');
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -150,7 +150,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.removeString(100, 100);
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -167,7 +167,7 @@ struct getStylesDemo {
               styledValue: new TextStyle({ fontColor: Color.Blue })
             });
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -184,7 +184,7 @@ struct getStylesDemo {
               styledValue: new TextStyle({ fontColor: Color.Blue })
             })
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -196,7 +196,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.removeStyle(100, 1, StyledStringKey.DECORATION)
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -208,7 +208,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.removeStyles(100, 1)
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -225,7 +225,7 @@ struct getStylesDemo {
               styledValue: new TextStyle({fontColor: Color.Blue})
             }]))
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })
@@ -237,7 +237,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.insertStyledString(100, new StyledString('A'))
           }
-          catch (e) {
+          catch (e:Error) {
             this.text = e.code + ' ';
           }
         })

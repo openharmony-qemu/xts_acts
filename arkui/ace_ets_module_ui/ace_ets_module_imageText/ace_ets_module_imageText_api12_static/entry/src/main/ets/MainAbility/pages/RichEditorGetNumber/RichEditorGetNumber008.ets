@@ -54,25 +54,25 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct RichEditorGetNumber008 {
-  @State lineCount: Int | undefined = 0;
+  @State lineCount: int = 0;
   stringLength: number = 0;
   imagePixelMap: image.PixelMap | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('初始属性字符串',
     [{
@@ -112,23 +112,18 @@ build() {
       Text('lineCount:' + this.lineCount).id('lineCount')
       Button('get lineCount').id('getLineCount')
         .onClick((e: ClickEvent) => {
-          let layoutManager = this.controller.getLayoutManager();
-          if (layoutManager !== undefined) {
-            this.lineCount = layoutManager.getLineCount();
-          }
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          this.lineCount = layoutManager.getLineCount() as int
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor(this.options)
         .onReady((): void => {
           // 设定组件展示的属性字符串
-          this.controller.setStyledString(this.mutableStyledString);
-          let styledString = this.controller.getStyledString();
-          if (styledString !== undefined) {
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(this.styledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.controller!.setStyledString(this.mutableStyledString);
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(this.styledString);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         })
         .height('20%')
         .width('100%')

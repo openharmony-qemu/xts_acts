@@ -69,7 +69,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abc',
+          this.controller!.addTextSpan('abc',
             {
               style:
               {
@@ -81,7 +81,7 @@ build() {
         .onWillChange((value: RichEditorChangeValue): boolean => {
           console.log('RichEditorController：onWillChange')
           this.onWillChangeCallback = true;
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans');
             console.log('RichEditorController item:' + JSON.stringify(item));
             console.log('RichEditorController spanPosition spanIndex:' + JSON.stringify(item.spanPosition.spanIndex));

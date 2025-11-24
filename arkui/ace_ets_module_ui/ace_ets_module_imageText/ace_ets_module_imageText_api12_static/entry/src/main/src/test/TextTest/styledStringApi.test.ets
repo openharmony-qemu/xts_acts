@@ -65,15 +65,13 @@ export default function styledStringApi() {
       console.info("styledStringApi after each called");
     });
 
-    
-    
-/*
+    /*
      * @tc.number   styledStringApi_static_001
      * @tc.name     styledStringApi_static_001
      * @tc.desc     styledStringApi_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('styledStringApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[styledStringApi_001] START');
 
       await CommonFunc.sleep(1000);
@@ -96,15 +94,13 @@ it('styledStringApi_static_001', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   styledStringApi_static_002
      * @tc.name     styledStringApi_static_002
      * @tc.desc     styledStringApi_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('styledStringApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[styledStringApi_002] START');
 
       await CommonFunc.sleep(1000);

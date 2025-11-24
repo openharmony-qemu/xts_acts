@@ -75,7 +75,7 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addTextSpan('12', {
+          this.controller!.addTextSpan('12', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -84,14 +84,14 @@ build() {
               fontStyle: FontStyle.Italic
             }
           });
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
                 size: ['25px', '25px']
               }
             });
-          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+          this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
               style:
               {
@@ -99,7 +99,7 @@ build() {
               }
             })
 
-          this.controller.addTextSpan('ab\n', {
+          this.controller!.addTextSpan('ab\n', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -108,7 +108,7 @@ build() {
               fontStyle: FontStyle.Italic
             }
           });
-          this.controller.addTextSpan('ab12', {
+          this.controller!.addTextSpan('ab12', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -122,14 +122,14 @@ build() {
 
 
       Button('get position').onClick((e: ClickEvent) => {
-        this.carePosition = this.controller.getCaretOffset() + '';
+        this.carePosition = this.controller!.getCaretOffset() + '';
       }).id('getPosition')
 
       Button('builder').onClick((e: ClickEvent) => {
         this.myBuilder = () => {
           this.placeholderBuilder();
         }
-        let num = this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+        let num = this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
         console.info('addBuilderSpan return ' + num);
       }).id('builder')
       Text('carePosition:' + this.carePosition).id('carePosition')

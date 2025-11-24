@@ -55,7 +55,7 @@ build() {
 
     Column() {
       Button('setSelect').onClick((e: ClickEvent) => {
-        this.controller.setSelection(0, 2);
+        this.controller!.setSelection(0, 2);
       }).id('setSelect')
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .height(200)
@@ -63,7 +63,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('a', {
+          this.controller!.addTextSpan('a', {
             style:
             {
               fontColor: Color.Orange,
@@ -80,7 +80,7 @@ build() {
             }
           })
 
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {

@@ -64,15 +64,13 @@ export default function SearchApi1() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchApi1_static_0100
      * @tc.name     SearchApi1_static_0100
      * @tc.desc     SearchApi1_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SearchApi1_static0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchApi1');

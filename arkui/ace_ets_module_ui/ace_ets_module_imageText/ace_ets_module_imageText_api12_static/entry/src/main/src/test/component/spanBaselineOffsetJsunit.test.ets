@@ -59,16 +59,13 @@ export default function spanBaselineOffsetJsunit() {
       }
     })
     
-    
-    
-
-/*
+    /*
      * @tc.number   SpanBaselineOffsetJsunit_static_0101
      * @tc.name     SpanBaselineOffsetJsunit_static_0101
      * @tc.desc     SpanBaselineOffsetJsunit_static_0101
      * @tc.level    Level.LEVEL0
      */
-it('SpanBaselineOffsetJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SpanBaselineOffsetJsunit_static_0101',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SpanBaselineOffsetJsunit_0101] START');
       let strJson = inspector.getInspectorByKey('SpanBaselineOffsetKey001');
       console.info("[SpanBaselineOffsetJsunit_0101] JSON.parse(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -77,16 +74,13 @@ it('SpanBaselineOffsetJsunit_static_0101', Level.LEVEL0, async (done: () => void
       done();
     });
     
-    
-    
-
-/*
+    /*
      * @tc.number   SpanBaselineOffsetJsunit_static_0102
      * @tc.name     SpanBaselineOffsetJsunit_static_0102
      * @tc.desc     SpanBaselineOffsetJsunit_static_0102
      * @tc.level    Level.LEVEL0
      */
-it('SpanBaselineOffsetJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SpanBaselineOffsetJsunit_static_0102',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SpanBaselineOffsetJsunit_0102] START');
       let strJson = inspector.getInspectorByKey('SpanBaselineOffsetKey002');
       console.info("[SpanBaselineOffsetJsunit_0102] JSON.parse(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

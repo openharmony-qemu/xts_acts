@@ -75,15 +75,13 @@ export default function RichEditorSetStyledString020() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000116
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000116
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000116
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000116', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000116', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000116 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString020')) as Promise<Component>);
@@ -106,15 +104,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000116', Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000117
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000117
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000117
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000117', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000117', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_static_000117 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString020')) as Promise<Component>);

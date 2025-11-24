@@ -69,15 +69,13 @@ export default function ResourceModifierTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ResourceModifierTest_static_0010
      * @tc.name     ResourceModifierTest_static_0010
      * @tc.desc     ResourceModifierTest_static_0010
-     * @tc.level    Level.LEVEL3
+     * @tc.level   Level.LEVEL3
      */
-it('ResourceModifierTest_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('ResourceModifierTest_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('ResourceModifierTest_static_0010 START');
       let getObj = await driver.findComponent(ON.id('getObj_Modifier'))
@@ -105,15 +103,13 @@ it('ResourceModifierTest_static_0010', Level.LEVEL3, async (done: () => void): P
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ResourceModifierTest_static_0020
      * @tc.name     ResourceModifierTest_static_0020
      * @tc.desc     ResourceModifierTest_static_0020
-     * @tc.level    Level.LEVEL3
+     * @tc.level   Level.LEVEL3
      */
-it('ResourceModifierTest_static_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('ResourceModifierTest_static_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('ResourceModifierTest_static_0020 START');
       let change = await driver.findComponent(ON.id('change_Modifier'))
@@ -145,15 +141,13 @@ it('ResourceModifierTest_static_0020', Level.LEVEL3, async (done: () => void): P
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ResourceModifierTest_static_0030
      * @tc.name     ResourceModifierTest_static_0030
      * @tc.desc     ResourceModifierTest_static_0030
-     * @tc.level    Level.LEVEL3
+     * @tc.level   Level.LEVEL3
      */
-it('ResourceModifierTest_static_0030', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('ResourceModifierTest_static_0030', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('ResourceModifierTest_static_0030 START');
       let change = await driver.findComponent(ON.id('change_Modifier'))

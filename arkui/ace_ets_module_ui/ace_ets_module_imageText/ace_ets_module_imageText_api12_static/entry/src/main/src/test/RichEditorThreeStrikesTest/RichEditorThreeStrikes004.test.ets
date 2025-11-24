@@ -78,15 +78,13 @@ export default function RichEditorThreeStrikes004() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0011
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0011
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0011
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0011 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorThreeStrikes004')) as Promise<Component>);
@@ -109,15 +107,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0011', Level.LEVEL0
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0012
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0012
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0012
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0012 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorThreeStrikes004')) as Promise<Component>);

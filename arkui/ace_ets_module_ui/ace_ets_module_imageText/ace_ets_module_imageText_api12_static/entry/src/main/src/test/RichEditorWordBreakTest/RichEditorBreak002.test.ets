@@ -75,15 +75,13 @@ export default function RichEditorBreak002() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0006
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0006
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0006
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0006 START');
       let driver = Driver.create();
       await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
@@ -102,15 +100,13 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0006', Level.LEVEL0, a
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0005
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0005
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0005
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0005 START');
       let driver = Driver.create();
       await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);

@@ -59,7 +59,7 @@ build() {
     Column() {
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.addTextSpan("012",
+          this.controller!.addTextSpan("012",
             {
               style:
               {
@@ -67,7 +67,7 @@ build() {
                 fontSize: 50
               }
             })
-          this.controller.updateParagraphStyle({ start: -1, end: -1,
+          this.controller!.updateParagraphStyle({ start: -1, end: -1,
             style: {
               textAlign: TextAlign.Center,
             }
@@ -86,7 +86,7 @@ build() {
       Text('' + this.text2).key("onSelectionChange17_text2")
       Text('' + this.text3).key("onSelectionChange17_text3")
       Button("setCaretOffset:").onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(3)
+        this.controller!.setCaretOffset(3)
       }).id('onSelectionChange17_btn1')
     }
     .borderWidth(1)

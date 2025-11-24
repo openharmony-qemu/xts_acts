@@ -56,8 +56,8 @@ build() {
       Text('lineMetrics:' + this.lineMetrics).id('lineMetrics')
       Button('get lineMetrics(1000)').id('getLineMetrics')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // this.lineMetrics = JSON.stringify(layoutManager.getLineMetrics(1000));
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager()! as LayoutManager;
+          this.lineMetrics = JSON.stringify(layoutManager.getLineMetrics(1000));
         })
         .margin({ bottom: 20, top: 10 } as Margin)
 
@@ -67,7 +67,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addImageSpan($r('app.media.app_icon'),
+          this.controller!.addImageSpan($r('app.media.app_icon'),
             {
               imageStyle:
               {
@@ -75,14 +75,14 @@ build() {
               }
             })
           for (let i = 0; i < 50; i++) {
-            this.controller.addTextSpan('123', {
+            this.controller!.addTextSpan('123', {
               style: {
                 fontColor: Color.Pink,
                 fontSize: 20,
               }
             })
           }
-          this.controller.addImageSpan($r('app.media.app_icon'),
+          this.controller!.addImageSpan($r('app.media.app_icon'),
             {
               imageStyle:
               {

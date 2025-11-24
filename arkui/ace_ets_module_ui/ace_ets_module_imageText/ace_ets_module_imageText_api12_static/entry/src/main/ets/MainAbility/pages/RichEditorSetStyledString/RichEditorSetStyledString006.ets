@@ -63,21 +63,21 @@ struct RichEditorSetStyledString006 {
   @State rangeBefore: string = '';
   @State rangeAfter: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('init属性',
     [{ start: 0, length: 6, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
@@ -114,31 +114,26 @@ struct RichEditorSetStyledString006 {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_top')
 
       Button('get content').onClick((e: ClickEvent) => {
-        let imageArray = this.richEditorStyledString.getStyles(11, 1, StyledStringKey.IMAGE);
-        if (imageArray) {
-          for (let i = 0; i < imageArray.length; ++i) {
-            if (imageArray[i].styledKey === 300) {
-              let attachment = imageArray[i].styledValue as ImageAttachment;
-              if (attachment.size !== undefined) {
-                this.content += 'width:' + attachment.size?.width + ';height:' + attachment.size?.height;
-              }
-              this.content += ';verticalAlign:' + attachment.verticalAlign;
-              this.content += ';objectFit:' + attachment.objectFit;
-              if (attachment.layoutStyle !== undefined) {
-                let radius = attachment?.layoutStyle?.borderRadius as BorderRadiuses
-                this.content += JSON.stringify(radius);
-              }
+        let imageArray = this.richEditorStyledString.getStyles(11, 1, StyledStringKey.IMAGE)!;
+        for (let i = 0; i < imageArray.length; ++i) {
+          if (imageArray[i].styledKey === 300) {
+            let attachment = imageArray[i].styledValue as ImageAttachment;
+            if (attachment.size !== undefined) {
+              this.content += 'width:' + attachment.size?.width + ';height:' + attachment.size?.height;
+            }
+            this.content += ';verticalAlign:' + attachment.verticalAlign;
+            this.content += ';objectFit:' + attachment.objectFit;
+            if (attachment.layoutStyle !== undefined) {
+              let radius = attachment?.layoutStyle?.borderRadius as BorderRadiuses
+              this.content += JSON.stringify(radius);
             }
           }
         }
@@ -149,42 +144,36 @@ struct RichEditorSetStyledString006 {
       Text('lengthStr:' + this.lengthStr).id('lengthStr')
 
       Button('get length').onClick((e: ClickEvent) => {
-        this.lengthStr = this.controller.getStyledString()?.length + '';
+        this.lengthStr = this.controller!.getStyledString()!.length + '';
       }).id('get_length')
 
       Button('update style').onClick((e: ClickEvent) => {
-        let currentString = this.controller.getStyledString();
-        if (currentString !== undefined) {
-          this.richEditorStyledString = currentString;
-          this.richEditorStyledString.setStyle({
-            start: 11,
-            length: 1,
-            styledKey: StyledStringKey.IMAGE,
-            styledValue: new ImageAttachment({
-              value: this.imagePixelMap as image.PixelMap,
-              size: { width: 30, height: 30 },
-              layoutStyle: { borderRadius: LengthMetrics.vp(20) },
-              verticalAlign: ImageSpanAlignment.CENTER,
-              objectFit: ImageFit.Contain
-            } as ImageAttachmentInterface) as StyledStringValue
-          })
-          this.controller.setStyledString(this.richEditorStyledString as StyledString);
-          this.content = '';
-        }
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.richEditorStyledString.setStyle({
+          start: 11,
+          length: 1,
+          styledKey: StyledStringKey.IMAGE,
+          styledValue: new ImageAttachment({
+            value: this.imagePixelMap as image.PixelMap,
+            size: { width: 30, height: 30 },
+            layoutStyle: { borderRadius: LengthMetrics.vp(20) },
+            verticalAlign: ImageSpanAlignment.CENTER,
+            objectFit: ImageFit.Contain
+          } as ImageAttachmentInterface) as StyledStringValue
+        })
+        this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+        this.content = '';
       }).id('update_style')
 
       Button('remove').onClick((e: ClickEvent) => {
-        let currentString = this.controller.getStyledString();
-        if (currentString !== undefined) {
-          this.richEditorStyledString = currentString;
-          this.richEditorStyledString.removeStyles(6, 6);
-          this.controller.setStyledString(this.richEditorStyledString as StyledString);
-        }
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.richEditorStyledString.removeStyles(6, 6);
+        this.controller!.setStyledString(this.richEditorStyledString as StyledString);
       }).id('remove')
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')
@@ -194,13 +183,10 @@ struct RichEditorSetStyledString006 {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.richEditorStyledString.appendStyledString(this.styledString);
-              this.controller.setStyledString(this.richEditorStyledString as StyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.styledString);
+            this.controller.setStyledString(this.richEditorStyledString as StyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
           }).id('add_text')
         }
 

@@ -66,7 +66,7 @@ build() {
         Text('onSelectCall:' + this.onSelectCall).id('onSelectCall')
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('abc123', {
+            this.controller!.addTextSpan('abc123', {
               style: {
                 fontWeight: 'medium',
                 fontFamily: CommonFunc.FONT_FAMILY,
@@ -76,7 +76,7 @@ build() {
                 decoration: { type: TextDecorationType.Underline, color: Color.Green }
               }
             })
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {

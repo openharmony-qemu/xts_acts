@@ -75,35 +75,38 @@ export default function RichEditorQueryLayout001() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 START');
         let driver = Driver.create();
         let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 rich');
         let pointCenter = await rich.getBoundsCenter();
         await driver.click(pointCenter.x, pointCenter.y);
         await CommonFunc.sleep(1000);
-
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 pointCenter');
         await driver.triggerKey(KeyCode.KEYCODE_A);
-        await CommonFunc.sleep(500);
+        await CommonFunc.sleep(1000);
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 KEYCODE_A');
         await driver.triggerKey(KeyCode.KEYCODE_B);
-        await CommonFunc.sleep(500);
+        await CommonFunc.sleep(1000);
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 KEYCODE_B');
         await driver.triggerKey(KeyCode.KEYCODE_C);
-        await CommonFunc.sleep(500);
-
+        await CommonFunc.sleep(1000);
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 KEYCODE_C');
         let get_content = await (driver.findComponent(ON.id('get_content')) as Promise<Component>);
         await get_content.click();
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 get_content');
         await CommonFunc.sleep(1000);
         done();
       } catch(err) {
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_static_0025 err',JSON.stringify(err));
         expect().assertFail();
       }
     });

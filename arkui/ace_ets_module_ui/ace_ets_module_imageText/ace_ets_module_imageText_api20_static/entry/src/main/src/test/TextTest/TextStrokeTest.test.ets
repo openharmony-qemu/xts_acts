@@ -69,15 +69,13 @@ export default function TextStrokeTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextStrokeTest_static_0001
      * @tc.name     TextStrokeTest_static_0001
      * @tc.desc     TextStrokeTest_static_0001
-     * @tc.level    Level.LEVEL3
+     * @tc.level   Level.LEVEL3
      */
-it('TextStrokeTest_static_0001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('TextStrokeTest_static_0001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextStrokeTest_static_0001 START');
       let getStroke = await driver.findComponent(ON.id('getStroke'))
@@ -101,15 +99,13 @@ it('TextStrokeTest_static_0001', Level.LEVEL3, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextStrokeTest_static_0002
      * @tc.name     TextStrokeTest_static_0002
      * @tc.desc     TextStrokeTest_static_0002
-     * @tc.level    Level.LEVEL3
+     * @tc.level   Level.LEVEL3
      */
-it('TextStrokeTest_static_0002', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('TextStrokeTest_static_0002', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextStrokeTest_static_0002 START');
       let change = await driver.findComponent(ON.id('changeStroke'))
@@ -137,15 +133,13 @@ it('TextStrokeTest_static_0002', Level.LEVEL3, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextStrokeTest_static_0003
      * @tc.name     TextStrokeTest_static_0003
      * @tc.desc     TextStrokeTest_static_0003
-     * @tc.level    Level.LEVEL3
+     * @tc.level   Level.LEVEL3
      */
-it('TextStrokeTest_static_0003', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('TextStrokeTest_static_0003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextStrokeTest_static_0003 START');
       let change = await driver.findComponent(ON.id('changeStroke'))

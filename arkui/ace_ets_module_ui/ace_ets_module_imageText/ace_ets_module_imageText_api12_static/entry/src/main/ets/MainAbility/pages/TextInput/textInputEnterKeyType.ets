@@ -19,8 +19,8 @@ import {
   AttributeModifier, TextInputAttribute, EnterKeyType,
   Flex, FlexDirection, ItemAlign, FlexAlign
 } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-
+import { State,StoragePropRef,Observed } from '@ohos.arkui.stateManagement'
+@Observed
 class TextInputEnterKeyTypeModifier  implements AttributeModifier<TextInputAttribute> {
   enterKeyType: EnterKeyType | undefined = undefined;
   applyNormalAttribute(instance: TextInputAttribute): void {
@@ -32,33 +32,25 @@ class TextInputEnterKeyTypeModifier  implements AttributeModifier<TextInputAttri
 @Component
 struct TextInputEnterKeyType {
 
-  @State  enterKeyType: EnterKeyType | undefined = undefined;
   @State textInputEnterKeyTypeModifier: TextInputEnterKeyTypeModifier = new TextInputEnterKeyTypeModifier()
 
   private stateChangCallBack : (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null) {
-      console.info("TextInputEnterKeyTypeModifier page state change called:" + JSON.stringify(eventData));
-
-      // if (eventData.data?.['enterKeyType'] != null) {
-      //   console.info("[TextInputEnterKeyTypeModifier page] enterKeyType change data is " + eventData.data?.['enterKeyType']);
-      //   this.enterKeyType = eventData.data?.['enterKeyType'] as undefined;
-      //   // this.textInputEnterKeyTypeModifier.enterKeyType =  eventData.data?.['enterKeyType'];
-      // }
+      let eventD = eventData.data as Record<String,undefined|null|Object>
+      if (eventD!['enterKeyType'] != null) {
+        console.info("[TextInputEnterKeyTypeModifier page] enterKeyType change data is " + eventD!['enterKeyType']);
+        this.textInputEnterKeyTypeModifier.enterKeyType =  eventD!['enterKeyType'] as EnterKeyType;
+      }
     }
   }
 
   onPageShow() {
 
-    for( let i = 0; i < 5; i++)
-    {
-      let eventid:long = 810 + i;
-
-      let stateChangeEvent: events_emitter.InnerEvent = {
-        eventId: eventid,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 810,
+      priority: events_emitter.EventPriority.LOW
     }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
   build() {
@@ -66,7 +58,7 @@ struct TextInputEnterKeyType {
 
       TextInput({text: 'This is the text with the EnterKeyType set. '})
         .fontSize(12).border({ width: 1 } as BorderOptions).padding(10)
-        // .attributeModifier( this.textInputEnterKeyTypeModifier )
+        .attributeModifier( this.textInputEnterKeyTypeModifier )
         .key('key_textinput_enterkeytype')
     }.height(600).width(350).padding({ left: 35, right: 35, top: 35 } as Padding)
   }

@@ -60,7 +60,7 @@ build() {
         .borderColor(Color.Red)
         .width("90%")
         .onReady((): void => {
-          this.controller.addTextSpan("123",
+          this.controller!.addTextSpan("123",
             {
               style:
               {
@@ -72,10 +72,7 @@ build() {
 
       Button('get')
         .onClick((e: ClickEvent)=>{
-          let layoutManager = this.controller.getLayoutManager();
-          if (layoutManager !== undefined) {
-            this.text1 = String(layoutManager.getLineCount())
-          }
+          this.text1 = String(this.controller!.getLayoutManager()!.getLineCount() as int)
         })
         .id('RichEditorGetLayoutManagerTest1_btn')
 

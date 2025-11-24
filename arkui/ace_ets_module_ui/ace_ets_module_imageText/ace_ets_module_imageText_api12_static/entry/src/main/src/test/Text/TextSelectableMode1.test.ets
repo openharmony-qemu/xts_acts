@@ -63,15 +63,13 @@ export default function typeNodeTextSelectableMode1Test() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextSelectableMode1Test_static_0100
      * @tc.name     TextSelectableMode1Test_static_0100
      * @tc.desc     TextSelectableMode1Test_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextSelectableMode1Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextSelectableMode1Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextSelectableMode1Test_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -66,15 +66,13 @@ export default function textAreaMaxFontSize() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textAreaMaxFontSize_static_0100
      * @tc.name     textAreaMaxFontSize_static_0100
      * @tc.desc     textAreaMaxFontSize_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaMaxFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaMaxFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaMaxFontSize0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_maxFontSize_001');

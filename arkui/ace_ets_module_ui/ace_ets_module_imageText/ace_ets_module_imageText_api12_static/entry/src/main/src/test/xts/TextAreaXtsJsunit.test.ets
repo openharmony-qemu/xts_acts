@@ -60,15 +60,13 @@ export default function TextAreaXtsJsunit() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaXtsJsunit_static_0101
      * @tc.name     TextAreaXtsJsunit_static_0101
      * @tc.desc     TextAreaXtsJsunit_static_0101
      * @tc.level    Level.LEVEL0
      */
-it('TextAreaXtsJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaXtsJsunit_static_0101',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaXtsJsunit_0101] START');
       let strJson = inspector.getInspectorByKey('key_textarea_selectedBackgroundColor');
       let obj = JSON.parseJsonElement(strJson);
@@ -79,15 +77,13 @@ it('TextAreaXtsJsunit_static_0101', Level.LEVEL0, async (done: () => void): Prom
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaXtsJsunit_static_0102
      * @tc.name     TextAreaXtsJsunit_static_0102
      * @tc.desc     TextAreaXtsJsunit_static_0102
      * @tc.level    Level.LEVEL0
      */
-it('TextAreaXtsJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaXtsJsunit_static_0102',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaXtsJsunit_0102] START');
       let strJson = inspector.getInspectorByKey('key_textarea_caretStyle');
       let obj = JSON.parseJsonElement(strJson);
@@ -100,15 +96,13 @@ it('TextAreaXtsJsunit_static_0102', Level.LEVEL0, async (done: () => void): Prom
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaXtsJsunit_static_0103
      * @tc.name     TextAreaXtsJsunit_static_0103
      * @tc.desc     TextAreaXtsJsunit_static_0103
      * @tc.level    Level.LEVEL0
      */
-it('TextAreaXtsJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaXtsJsunit_static_0103',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaXtsJsunit_0103] START');
       let strJson = inspector.getInspectorByKey('key_textarea_textIndent');
       let obj = JSON.parseJsonElement(strJson);
@@ -119,15 +113,13 @@ it('TextAreaXtsJsunit_static_0103', Level.LEVEL0, async (done: () => void): Prom
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaXtsJsunit_static_0104
      * @tc.name     TextAreaXtsJsunit_static_0104
      * @tc.desc     TextAreaXtsJsunit_static_0104
      * @tc.level    Level.LEVEL0
      */
-it('TextAreaXtsJsunit_static_0104', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaXtsJsunit_static_0104',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaXtsJsunit_0104] START');
       let strJson = inspector.getInspectorByKey('key_textarea_textOverflow');
       let obj = JSON.parseJsonElement(strJson);

@@ -61,15 +61,13 @@ export default function TextAreaTest() {
     }); 
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaTest_static_0100
      * @tc.name     TextAreaTest_static_0100
      * @tc.desc     TextAreaTest_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAreaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextAreaTest_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -94,15 +92,13 @@ it('TextAreaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaTest_static_0200
      * @tc.name     TextAreaTest_static_0200
      * @tc.desc     TextAreaTest_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAreaTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextAreaTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

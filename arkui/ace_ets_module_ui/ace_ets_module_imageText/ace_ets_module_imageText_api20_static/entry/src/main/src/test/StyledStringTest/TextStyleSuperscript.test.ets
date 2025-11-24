@@ -69,15 +69,13 @@ export default function TextStyleSuperscriptTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextStyleSuperscriptTest_static_0010
      * @tc.name     TextStyleSuperscriptTest_static_0010
      * @tc.desc     TextStyleSuperscriptTest_static_0010
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextStyleSuperscriptTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextStyleSuperscriptTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextStyleSuperscriptTest_static_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -91,15 +89,13 @@ it('TextStyleSuperscriptTest_static_0010', Level.LEVEL2, async (done: () => void
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextStyleSuperscriptTest_static_0020
      * @tc.name     TextStyleSuperscriptTest_static_0020
      * @tc.desc     TextStyleSuperscriptTest_static_0020
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextStyleSuperscriptTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextStyleSuperscriptTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextStyleSuperscriptTest_static_0020] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -113,15 +109,13 @@ it('TextStyleSuperscriptTest_static_0020', Level.LEVEL2, async (done: () => void
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextStyleSuperscriptTest_static_0030
      * @tc.name     TextStyleSuperscriptTest_static_0030
      * @tc.desc     TextStyleSuperscriptTest_static_0030
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextStyleSuperscriptTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextStyleSuperscriptTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextStyleSuperscriptTest_static_0030] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);

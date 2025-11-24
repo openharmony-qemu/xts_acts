@@ -60,7 +60,7 @@ struct RichEditorApi6 {
     Column() {
       Row(){
         Button('增加特表情包').onClick((e: ClickEvent) => {
-          this.controller.addTextSpan("\uD83D\uDE0A",
+          this.controller!.addTextSpan("\uD83D\uDE0A",
             {
               style:
               {
@@ -74,16 +74,15 @@ struct RichEditorApi6 {
           GridItem() {
             Button(item + "")
               .width(110).onClick((e: ClickEvent) => {
-              let caretOffset = this.controller.getCaretOffset();
-              this.controller.addTextSpan(item + '', {
-                offset: caretOffset,
+              this.controller!.addTextSpan(item + '', {
+                offset: this.controller!.getCaretOffset(),
                 style:
                 {
                   fontColor: Color.Orange,
                   fontSize: 30
                 }
               })
-              this.controller.setCaretOffset((caretOffset ?? 0) + String(item).length)
+              this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int + String(item).length)
             })
           }
         })

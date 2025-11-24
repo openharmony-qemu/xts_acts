@@ -20,7 +20,11 @@ import {
   Column, Row, Text, ClickEvent,StyledString, ColumnOptions, $r , MutableStyledString, TextController, CopyOptions, Button,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-
+import {
+  State,
+  AppStorage,
+} from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 class MyCustomSpan extends CustomSpan {
   constructor(word: string, width: number, height: number) {
     super();
@@ -34,25 +38,27 @@ class MyCustomSpan extends CustomSpan {
   }
 
   onDraw(context: DrawContext, options: CustomSpanDrawInfo) {
-    // let canvas = context.canvas;
-    //
-    // const brush = new drawing.Brush();
+    let canvas = context.canvas;
+
+    const brush = new drawing.Brush();
     // brush.setColor({ alpha: 255, red: 0, green: 74, blue: 175 });
-    // const font = new drawing.Font();
-    // font.setSize(25);
-    // const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-    // canvas.attachBrush(brush);
-    // canvas.drawRect({
-    //   left: options.x + 10,
-    //   right: options.x + vp2px(this.width) - 10,
-    //   top: options.lineTop + 10,
-    //   bottom: options.lineBottom - 10
-    // });
-    //
+    brush.setColor(2)
+    const font = new drawing.Font();
+    font.setSize(25);
+    const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8) as drawing.TextBlob;
+    canvas.attachBrush(brush);
+    canvas.drawRect({
+      left: options.x + 10,
+      right: options.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(this.width)) - 10,
+      top: options.lineTop + 10,
+      bottom: options.lineBottom - 10
+    });
+
     // brush.setColor({ alpha: 255, red: 23, green: 169, blue: 141 });
-    // canvas.attachBrush(brush);
-    // canvas.drawTextBlob(textBlob, options.x + 20, options.lineBottom - 15);
-    // canvas.detachBrush();
+    brush.setColor(2)
+    canvas.attachBrush(brush);
+    canvas.drawTextBlob(textBlob, options.x + 20, options.lineBottom - 15);
+    canvas.detachBrush();
   }
 
   setWord(word: string) {

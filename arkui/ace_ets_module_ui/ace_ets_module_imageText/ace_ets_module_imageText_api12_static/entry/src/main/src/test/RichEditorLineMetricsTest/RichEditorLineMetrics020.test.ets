@@ -77,15 +77,13 @@ export default function RichEditorLineMetrics020() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0025
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0025
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0025
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0025', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0025', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0025 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics020')) as Promise<Component>);
@@ -103,7 +101,7 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0025', Level.LEVEL0,
       let lineMetrics2 = await (driver.findComponent(ON.id('lineMetrics2')) as Promise<Component>);
       let lineMetrics2Text = await lineMetrics2.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetrics1Text).assertLarger(parseInt(lineMetrics2Text));
+      expect(parseInt(lineMetrics1Text)).assertLarger(parseInt((lineMetrics2Text)));
       done();
     });
 

@@ -65,15 +65,13 @@ export default function ImageOnErrorTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_001
      * @tc.name     ImageOnErrorTest_static_001
      * @tc.desc     ImageOnErrorTest_static_001
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_001] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('101000msg');
@@ -90,15 +88,13 @@ it('ImageOnErrorTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_002
      * @tc.name     ImageOnErrorTest_static_002
      * @tc.desc     ImageOnErrorTest_static_002
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_002] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102030msg');
@@ -115,15 +111,13 @@ it('ImageOnErrorTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_003
      * @tc.name     ImageOnErrorTest_static_003
      * @tc.desc     ImageOnErrorTest_static_003
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_003] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102031msg');
@@ -140,15 +134,13 @@ it('ImageOnErrorTest_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_004
      * @tc.name     ImageOnErrorTest_static_004
      * @tc.desc     ImageOnErrorTest_static_004
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_004] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102050msg');
@@ -165,15 +157,13 @@ it('ImageOnErrorTest_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_005
      * @tc.name     ImageOnErrorTest_static_005
      * @tc.desc     ImageOnErrorTest_static_005
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_005] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102051msg');
@@ -190,15 +180,13 @@ it('ImageOnErrorTest_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_006
      * @tc.name     ImageOnErrorTest_static_006
      * @tc.desc     ImageOnErrorTest_static_006
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_006] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102070msg');
@@ -215,15 +203,13 @@ it('ImageOnErrorTest_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_007
      * @tc.name     ImageOnErrorTest_static_007
      * @tc.desc     ImageOnErrorTest_static_007
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_007] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102072msg');
@@ -240,15 +226,13 @@ it('ImageOnErrorTest_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_008
      * @tc.name     ImageOnErrorTest_static_008
      * @tc.desc     ImageOnErrorTest_static_008
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_008] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102091msg');
@@ -265,15 +249,13 @@ it('ImageOnErrorTest_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_009
      * @tc.name     ImageOnErrorTest_static_009
      * @tc.desc     ImageOnErrorTest_static_009
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_009] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102110msg');
@@ -290,15 +272,13 @@ it('ImageOnErrorTest_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_010
      * @tc.name     ImageOnErrorTest_static_010
      * @tc.desc     ImageOnErrorTest_static_010
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_010] START');
       await Utils.sleep(1500);
       let strJson = inspector.getInspectorByKey('102130msg');
@@ -315,15 +295,13 @@ it('ImageOnErrorTest_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_011
      * @tc.name     ImageOnErrorTest_static_011
      * @tc.desc     ImageOnErrorTest_static_011
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_011] START');
       await Utils.sleep(13000);
       let strJson = inspector.getInspectorByKey('102131msg');
@@ -340,15 +318,13 @@ it('ImageOnErrorTest_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_012
      * @tc.name     ImageOnErrorTest_static_012
      * @tc.desc     ImageOnErrorTest_static_012
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_012] START');
       await Utils.sleep(13000);
       let strJson = inspector.getInspectorByKey('103100msg');
@@ -365,15 +341,13 @@ it('ImageOnErrorTest_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ImageOnErrorTest_static_013
      * @tc.name     ImageOnErrorTest_static_013
      * @tc.desc     ImageOnErrorTest_static_013
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-it('ImageOnErrorTest_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ImageOnErrorTest_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageOnErrorTest_static_013] START');
       await Utils.sleep(13000);
       let strJson = inspector.getInspectorByKey('103200msg');

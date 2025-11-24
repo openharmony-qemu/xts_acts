@@ -117,9 +117,9 @@ struct Index {
       RichEditor(this.options)
         .onReady(():void => {
           // 注册文本变化回调
-          this.controller.onContentChanged(this.contentChangedListener);
+          this.controller!.onContentChanged(this.contentChangedListener);
           // 设定组件展示的属性字符串
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')

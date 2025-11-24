@@ -67,21 +67,21 @@ struct RichEditorSetStyledString002 {
   imageStyledString: MutableStyledString | undefined = undefined;
   imageStyledString1: MutableStyledString | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
   clickGestureAttr: GestureStyle = new GestureStyle({
     onClick: () => {
       console.log('RichEditorController ------ click 1')
@@ -125,13 +125,10 @@ struct RichEditorSetStyledString002 {
             value: this.imagePixelMap as image.PixelMap,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined && this.imageStyledString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(this.imageStyledString as StyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(this.imageStyledString as StyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
         if (this.imagePixelMap1 !== undefined) {
           this.imageStyledString1 = new MutableStyledString(new ImageAttachment({
@@ -139,13 +136,10 @@ struct RichEditorSetStyledString002 {
             value: this.imagePixelMap1 as image.PixelMap,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined && this.imageStyledString1 !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(this.imageStyledString1 as StyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(this.imageStyledString1 as StyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('add_image')
 
@@ -156,7 +150,7 @@ struct RichEditorSetStyledString002 {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')

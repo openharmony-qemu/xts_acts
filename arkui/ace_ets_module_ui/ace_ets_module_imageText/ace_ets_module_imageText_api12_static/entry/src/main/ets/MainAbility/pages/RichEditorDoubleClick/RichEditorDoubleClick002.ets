@@ -62,7 +62,7 @@ build() {
 
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('1',
+            this.controller!.addTextSpan('1',
               {
                 style:
                 {
@@ -70,14 +70,14 @@ build() {
                   fontSize: 50
                 }
               })
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {
                   size: ['57px', '57px']
                 }
               })
-            this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+            this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
               {
                 style:
                 {

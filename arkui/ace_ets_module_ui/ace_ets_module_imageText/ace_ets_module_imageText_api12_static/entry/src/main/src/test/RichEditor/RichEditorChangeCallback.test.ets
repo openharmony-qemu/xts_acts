@@ -85,15 +85,13 @@ export default function RichEditorChangeCallback() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorChangeCallback_static_001
      * @tc.name     RichEditorChangeCallback_static_001
      * @tc.desc     RichEditorChangeCallback_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorChangeCallback_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorChangeCallback_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RichEditorChangeCallback_static_001] START');
       await CommonFunc.sleep(1000);
 

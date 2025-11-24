@@ -75,15 +75,13 @@ export default function RichEditorParticiple001() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_AI_PARTICIPLE_static_0050
      * @tc.name     SUB_ACE_UI_AI_PARTICIPLE_static_0050
      * @tc.desc     SUB_ACE_UI_AI_PARTICIPLE_static_0050
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_AI_PARTICIPLE_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_AI_PARTICIPLE_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_AI_PARTICIPLE_static_0050 START');
       let driver = Driver.create();
 

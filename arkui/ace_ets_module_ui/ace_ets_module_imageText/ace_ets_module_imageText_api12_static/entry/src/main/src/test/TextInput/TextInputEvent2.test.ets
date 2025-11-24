@@ -68,15 +68,13 @@ export default function TextInputEvent2() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputEvent2_static_001
      * @tc.name     TextInputEvent2_static_001
      * @tc.desc     TextInputEvent2_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputEvent2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputEvent2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputEvent2_001] START');
 
       await CommonFunc.sleep(1000);
@@ -105,15 +103,13 @@ it('TextInputEvent2_static_001', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputEvent2_static_002
      * @tc.name     TextInputEvent2_static_002
      * @tc.desc     TextInputEvent2_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputEvent2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputEvent2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputEvent2_002] START');
 
       await CommonFunc.sleep(1000);
@@ -142,15 +138,13 @@ it('TextInputEvent2_static_002', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputEvent2_static_003
      * @tc.name     TextInputEvent2_static_003
      * @tc.desc     TextInputEvent2_static_003
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputEvent2_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputEvent2_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputEvent2_003] START');
 
       await CommonFunc.sleep(1000);
@@ -179,15 +173,13 @@ it('TextInputEvent2_static_003', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputEvent2_static_004
      * @tc.name     TextInputEvent2_static_004
      * @tc.desc     TextInputEvent2_static_004
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputEvent2_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputEvent2_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputEvent2_004] START');
 
       await CommonFunc.sleep(1000);
@@ -216,15 +208,13 @@ it('TextInputEvent2_static_004', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputEvent2_static_005
      * @tc.name     TextInputEvent2_static_005
      * @tc.desc     TextInputEvent2_static_005
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputEvent2_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputEvent2_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputEvent2_005] START');
 
       await CommonFunc.sleep(1000);
@@ -253,15 +243,13 @@ it('TextInputEvent2_static_005', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputEvent2_static_006
      * @tc.name     TextInputEvent2_static_006
      * @tc.desc     TextInputEvent2_static_006
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputEvent2_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputEvent2_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputEvent2_006] START');
 
       await CommonFunc.sleep(1000);
@@ -290,15 +278,13 @@ it('TextInputEvent2_static_006', Level.LEVEL0, async (done: () => void): Promise
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextInputEvent2_static_007
      * @tc.name     TextInputEvent2_static_007
      * @tc.desc     TextInputEvent2_static_007
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputEvent2_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputEvent2_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputEvent2_007] START');
 
       await CommonFunc.sleep(1000);

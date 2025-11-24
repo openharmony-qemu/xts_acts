@@ -63,15 +63,13 @@ export default function imageSpanTest7() {
 
     
      
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest7_static_0100
      * @tc.name     imageSpanTest7_static_0100
      * @tc.desc     imageSpanTest7_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest7_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_onComplete_71');
@@ -83,15 +81,13 @@ it('imageSpanTest7_static_0100', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest7_static_0200
      * @tc.name     imageSpanTest7_static_0200
      * @tc.desc     imageSpanTest7_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest7_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest7_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest7_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_onComplete_72');
@@ -103,15 +99,13 @@ it('imageSpanTest7_static_0200', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest7_static_0300
      * @tc.name     imageSpanTest7_static_0300
      * @tc.desc     imageSpanTest7_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest7_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest7_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest7_0300 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_onComplete_73');
@@ -123,15 +117,13 @@ it('imageSpanTest7_static_0300', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest7_static_0400
      * @tc.name     imageSpanTest7_static_0400
      * @tc.desc     imageSpanTest7_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest7_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest7_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest7_0400 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_onComplete_74');
@@ -143,15 +135,13 @@ it('imageSpanTest7_static_0400', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest7_static_0500
      * @tc.name     imageSpanTest7_static_0500
      * @tc.desc     imageSpanTest7_static_0500
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest7_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest7_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest7_0500 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_onComplete_75');

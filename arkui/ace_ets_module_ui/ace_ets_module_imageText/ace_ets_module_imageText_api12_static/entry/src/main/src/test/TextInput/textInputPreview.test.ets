@@ -63,15 +63,13 @@ export default function textInputPreview() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputPreview_static_0100
      * @tc.name     textInputPreview_static_0100
      * @tc.desc     textInputPreview_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputPreview_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputPreview_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputPreview_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('enablePreview_textInput');

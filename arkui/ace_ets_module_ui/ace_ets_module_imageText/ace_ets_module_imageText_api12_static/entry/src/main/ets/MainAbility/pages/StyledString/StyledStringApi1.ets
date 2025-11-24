@@ -120,7 +120,7 @@ struct StyledStringApi1 {
   ]);
   controller: TextController = new TextController();
   onPageShow() {
-    this.controller.setStyledString(this.paragraphStyledString1)
+    this.controller!.setStyledString(this.paragraphStyledString1)
   }
 
   @State text1:string = ''
@@ -138,9 +138,9 @@ struct StyledStringApi1 {
         //查询段落样式
         Button('查询其他文本样式')
           .onClick((e:ClickEvent) => {
-            let styles = this.paragraphStyledString1.getStyles(0, this.paragraphStyledString1.length)
-            if (styles && styles.length !== 0) {
-              for (let i = 0; i < styles.length; i++) {
+            let styles = this.paragraphStyledString1.getStyles(0, this.paragraphStyledString1.length)!
+            if (styles!.length !== 0) {
+              for (let i = 0; i < styles!.length; i++) {
                 console.info('mutableStyledString2 style object start:' + styles[i].start)
                 console.info('mutableStyledString2 style object length:' + styles[i].length)
                 console.info('mutableStyledString2 style object key:' + styles[i].styledKey)

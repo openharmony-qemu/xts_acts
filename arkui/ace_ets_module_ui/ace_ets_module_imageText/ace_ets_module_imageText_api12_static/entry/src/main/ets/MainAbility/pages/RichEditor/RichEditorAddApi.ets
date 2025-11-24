@@ -65,7 +65,7 @@ struct RichEditorAddApi {
 
   onCreateMenu(menuItems: Array<TextMenuItem>) {
     console.log('menuItems size=' + menuItems.length);
-    menuItems.forEach((value, index) => {
+    menuItems!.forEach((value, index) => {
       console.log('menuItem' + index + ', id=' + JSON.stringify(value));
     })
     let extensionMenuItems: Array<TextMenuItem> = [
@@ -97,7 +97,7 @@ build() {
       Text(this.text).key('RichEditorAddApi')
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.addTextSpan('RichEditor')
+          this.controller!.addTextSpan('RichEditor')
         })
         .editMenuOptions({
           onCreateMenu: (menuItems: Array<TextMenuItem>) => {
@@ -113,12 +113,9 @@ build() {
         .borderColor(Color.Red)
 
       Button('text').onClick((event: ClickEvent) => {
-        let previewText = this.controller.getPreviewText();
-        if (previewText !== undefined) {
-          let value: string = previewText.value
-          if (!value) {
-            this.text = 'true'
-          }
+        let value: string = this.controller!.getPreviewText()!.value as string
+        if (!value) {
+          this.text = 'true'
         }
       }).key('RichEditorAddApiBt')
     }

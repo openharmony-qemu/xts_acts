@@ -64,7 +64,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('01', {
+          this.controller!.addTextSpan('01', {
             style: {
               fontColor: Color.Pink,
               fontSize: '32',
@@ -75,7 +75,7 @@ build() {
             }
           })
 
-          this.controller.addImageSpan($r('app.media.app_icon'), {
+          this.controller!.addImageSpan($r('app.media.app_icon'), {
             imageStyle: {
               size: ['40px', '40px'],
               layoutStyle: {

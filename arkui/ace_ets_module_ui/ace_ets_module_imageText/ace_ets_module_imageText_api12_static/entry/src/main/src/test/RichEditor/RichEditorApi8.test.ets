@@ -78,15 +78,13 @@ export default function RichEditorApi8() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorApi8_static_0100
      * @tc.name     RichEditorApi8_static_0100
      * @tc.desc     RichEditorApi8_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorApi8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorApi8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorApi8_static_0100 START');
       await CommonFunc.sleep(1000);
 

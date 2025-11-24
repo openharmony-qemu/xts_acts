@@ -56,7 +56,7 @@ build() {
       Text('paragraphStyleInfo:' + this.paragraphStyleInfo).id('paragraphStyleInfo')
 
       Button('getParagraphStyle').onClick((e: ClickEvent) => {
-        this.paragraphStyleInfo = JSON.stringify(this.controller.getParagraphs({ start: -1, end: -1 }));
+        this.paragraphStyleInfo = JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 }));
       }).id('getParagraphStyle')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -65,7 +65,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abc',
+          this.controller!.addTextSpan('abc',
             {})
         })
         .id('RichEditorUxConFormance006')
