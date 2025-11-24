@@ -13,28 +13,32 @@
  * limitations under the License.
  */
 import TimePickerTest from './TimePickerTest/TimePicker.test';
-import CheckboxTest from './CheckboxTest/Checkbox.test';
-import textpicker from './TextPicker/TextPicker';
-import TextPickerSec from './TextPicker/TextPickerSec';
-import textpickermultiTest from './TextPicker/TextPickerMulti';
-import sliderTest from './SliderTest/SliderTest';
-import SliderTestSec from './SliderTest/SliderTestSec';
+import radioTest from './RadioTest/radio.test.test';
+import CheckboxTest2 from './CheckboxTest/CheckboxTest2.test';
+import textpicker from './TextPicker/TextPickerTest.test';
+import TextPickerSec from './TextPicker/TextPickerSec.test';
+import textpickermultiTest from './TextPicker/TextPickerMulti.test';
+import sliderTest from './SliderTest/SliderTest.test';
+import SliderTestSec from './SliderTest/SliderTestSec.test';
 import buttonJsunit from './ButtonTest/ButtonJsunit.test';
 import ratingJsunit from './RatingTest/RatingJsunit.test';
 import sliderJsunit from './SliderTest/SliderJsunit.test';
 import TimePicker1Test from './TimePickerTest/TimePicker1.test';
 import stageTimePickerDialog from './TimePickerTest/stageTimePickerDialog.test';
 import stageTextPickerDialog from './TextPicker/stageTextPickerDialog.test';
+import stageDatePickerDialog from './StageDatePickerDialog.test';
 import toggleJsunit from './Toggle/ToggleJsunit.test';
 import checkboxJsunit from './CheckboxTest/CheckboxJsunit.test';
 import checkboxGroupJsunit from './checkboxGroup/CheckboxGroupJsunit.test';
 import sliderJsunit1 from './slider/SliderJsunit1.test';
+import RadioJsunit from './RadioTest/RadioJsunit.test';
+import radioJsunit2 from './RadioTest/RadioJsunit2.test';
 import RatingUIJsunit from './RatingTest/RatingUIJsunit.test';
-import datepicker from './DatePickerTest/DatePicker';
+import datepicker from './DatePickerTest/DatePicker.test';
 import ActsDatePickerTest from './DatePickerTest/DatePicker.test';
-import checkBoxTest1 from './CheckboxTest/checkBox';
-import checkBoxGroupTest from './checkboxGroup/checkBoxGroup';
-import toggle3Jsunit from './Toggle/Toggle3Jsunit.test';
+import checkBoxTest1 from './CheckboxTest/checkBoxTest.test';
+import checkBoxGroupTest from './checkboxGroup/checkBoxGroup.test';
+import Toggle3Jsunit from './Toggle/Toggle3Jsunit.test';
 import rating3Jsunit from './RatingTest/Rating3Jsunit.test';
 import checkBoxGroupJsunit2 from './CheckboxTest/checkBoxFirst.test';
 import checkBoxGroupPartJsunit from './CheckboxTest/checkBoxGroup.test';
@@ -42,57 +46,61 @@ import radioGroupJsunit from './RadioTest/radioFirst.test';
 import sliderMovingJsunit from './SliderTest/slider.test';
 import datePickerLunarJsunit from './DatePickerTest/datePicker3.test';
 import checkBoxGroupSelectAllJsunit from './checkboxGroup/checkBoxGroup.test';
-import textPickerDefaultPickerItemHeightJsunit from './TextPicker/textPicker.test';
+import textPickerDefaultPickerItemHeightJsunit from './TextPicker/TextPickerTest.test';
 import datePickerJsunit from './DatePickerTest/DatePickerJsunit.test';
+import systempromptJsunit from './SystempromptJsunit.test';
 import TextPickerJsunit from './TextPicker/TextPickerJsunit.test';
 import TimePickerJsunit from './TimePickerTest/TimePickerJsunit.test';
+import timeStampJsunit from './TimePickerTest/TimeStampJsunit.test';
 import datePickerUIJsunit from './DatePickerTest/datePickerUIJsunit.test';
 import RatingAdvancedTest from './RatingTest/RatingAdvanced.test'
 import SliderInterfaceTest from './slider/sliderInterfaceTest.test'
-import SliderTestC from './SliderTestC/sliderJsunit.test';
+import sliderJsunitSliderTest from './SliderTestC/sliderJsunit.test';
 
 export default function testsuite() {
+
+  toggleJsunit()  //已知问题 DTS2025080833765 Failure: 4, Error: 0, Pass: 2
+  sliderTest()  //页面有注释 Circle、Ellipse、Path、Rect sdk未找到 run: 110, Failure: 10, Error: 0, Pass: 100
+  checkBoxTest1() // Failure: 1, Error: 0, Pass: 50  ArkUX_Stage_Checkbox_CheckMarkColor_static_1000, expect #FFFFC0CB equals #FFFFFFFF
+  checkBoxGroupTest() //Failure: 1, Error: 0, Pass: 51  ArkUX_Stage_CheckboxGroup_CheckMarkColor_static_1000, expect #FFFFC0CB equals #FFFFFFFF
+  Toggle3Jsunit(); //fail 1 已知问题 DTS2025080833765 1 testToggle02_static, expect ToggleType.Switch equals ToggleType.Button
+  sliderJsunitSliderTest()
+  TimePicker1Test()
+  textpicker();
+  datepicker()
+  TextPickerJsunit();
+  sliderMovingJsunit()
+  CheckboxTest2();
+  textpickermultiTest()
+  TextPickerSec()
+  rating3Jsunit();
+  SliderTestSec()
+  RatingUIJsunit();
   RatingAdvancedTest()
+  datePickerUIJsunit();
   SliderInterfaceTest()
   stageTimePickerDialog();
   stageTextPickerDialog();
-  TimePicker1Test()
   TimePickerTest()
-  CheckboxTest();
-  textpicker()
-  TextPickerSec()
-  textpickermultiTest()
-
-  toggleJsunit()
+  ActsDatePickerTest()
   checkboxJsunit()
   checkboxGroupJsunit()
   sliderJsunit1()
-
-  sliderTest()
-  SliderTestSec()
   buttonJsunit()
   ratingJsunit()
   sliderJsunit()
-
-  ActsDatePickerTest()
-  datepicker()
-  checkBoxTest1()
-  checkBoxGroupTest()
-  RatingUIJsunit();
-  toggle3Jsunit();
-  rating3Jsunit();
-
-  checkBoxGroupJsunit2()
   checkBoxGroupPartJsunit()
+  checkBoxGroupJsunit2()
   radioGroupJsunit()
-  sliderMovingJsunit()
   datePickerLunarJsunit()
-
   checkBoxGroupSelectAllJsunit()
-  textPickerDefaultPickerItemHeightJsunit()
   datePickerJsunit();
-  TextPickerJsunit();
+  systempromptJsunit();
+  stageDatePickerDialog();
+  radioTest();
+  radioJsunit2();
+  timeStampJsunit();
+  textPickerDefaultPickerItemHeightJsunit()
   TimePickerJsunit();
-  datePickerUIJsunit();
-  SliderTestC()
+  RadioJsunit();
 }

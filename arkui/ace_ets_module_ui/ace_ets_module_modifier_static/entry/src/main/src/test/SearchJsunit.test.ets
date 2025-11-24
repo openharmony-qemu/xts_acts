@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,12 +55,13 @@ export default function searchJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_002
-     * @tc.name     searchTest_static_002
-     * @tc.desc     searchTest_static_002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_002
+     * @tc.name searchTest_static_002
+     * @tc.desc Set copyOption values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_002 START');
@@ -72,12 +73,13 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_003
-     * @tc.name     searchTest_static_003
-     * @tc.desc     searchTest_static_003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_003
+     * @tc.name searchTest_static_003
+     * @tc.desc Set fontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_003 START');
@@ -89,12 +91,13 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_004
-     * @tc.name     searchTest_static_004
-     * @tc.desc     searchTest_static_004
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_004
+     * @tc.name searchTest_static_004
+     * @tc.desc Set placeholderColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_004 START');
@@ -106,50 +109,53 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_005
-     * @tc.name     searchTest_static_005
-     * @tc.desc     searchTest_static_005
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_005
+     * @tc.name searchTest_static_005
+     * @tc.desc Set placeholderFont values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_005 START');
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("searchTest_static_005 component  is: " + JSON.parseJsonElement(objNew.getElement('$attrs').getString('placeholderFont')).getString('size'));
-      let markObj = JSON.parseJsonElement(objNew.getElement('$attrs').getString('placeholderFont'));
+      console.info("searchTest_static_005 component  is: " + JSON.stringify(objNew.getElement('$attrs').getElement('placeholderFont').getString('size')));
+      let markObj = objNew.getElement('$attrs').getElement('placeholderFont');
       expect(markObj.getString('size')).assertEqual("16.00fp");
       expect(markObj.getString('style')).assertEqual("FontStyle.Italic");
       console.info('searchTest_static_005 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_006
-     * @tc.name     searchTest_static_006
-     * @tc.desc     searchTest_static_006
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_006
+     * @tc.name searchTest_static_006
+     * @tc.desc Set textFont values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_006 START');
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("searchTest_static_006 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      let markObj = JSON.parseJsonElement(objNew.getElement('$attrs').getString('textFont'));
+      let markObj = objNew.getElement('$attrs').getElement('textFont');
       expect(markObj.getString('fontSize')).assertEqual("16.00fp");
       expect(markObj.getString('fontStyle')).assertEqual("FontStyle.Italic");
       console.info('searchTest_static_006 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_007
-     * @tc.name     searchTest_static_007
-     * @tc.desc     searchTest_static_007
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_007
+     * @tc.name searchTest_static_007
+     * @tc.desc Set textAlign values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_007 START');
@@ -161,46 +167,49 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_008
-     * @tc.name     searchTest_static_008
-     * @tc.desc     searchTest_static_008
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_008
+     * @tc.name searchTest_static_008
+     * @tc.desc Set enableKeyboardOnFocus values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_008 START');
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("searchTest_static_008 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('enableKeyboardOnFocus')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('enableKeyboardOnFocus')).assertEqual(undefined);
       console.info('searchTest_static_008 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_009
-     * @tc.name     searchTest_static_009
-     * @tc.desc     searchTest_static_009
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_009
+     * @tc.name searchTest_static_009
+     * @tc.desc Set selectionMenuHidden values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_009 START');
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("searchTest_static_009 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('selectionMenuHidden')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('selectionMenuHidden')).assertEqual(undefined);
       console.info('searchTest_static_009 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_010
-     * @tc.name     searchTest_static_010
-     * @tc.desc     searchTest_static_010
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_010
+     * @tc.name searchTest_static_010
+     * @tc.desc Set caretStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_010 START');
@@ -213,12 +222,13 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_011
-     * @tc.name     searchTest_static_011
-     * @tc.desc     searchTest_static_011
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_011
+     * @tc.name searchTest_static_011
+     * @tc.desc Set searchIcon values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_011 START');
@@ -230,12 +240,13 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_012
-     * @tc.name     searchTest_static_012
-     * @tc.desc     searchTest_static_012
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_012
+     * @tc.name searchTest_static_012
+     * @tc.desc Set searchButton values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_012 START');
@@ -247,12 +258,13 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_013
-     * @tc.name     searchTest_static_013
-     * @tc.desc     searchTest_static_013
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_013
+     * @tc.name searchTest_static_013
+     * @tc.desc Set cancelButton values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_013 START');
@@ -264,12 +276,13 @@ export default function searchJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   searchTest_static_001
-     * @tc.name     searchTest_static_001
-     * @tc.desc     searchTest_static_001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number searchTest_static_001
+     * @tc.name searchTest_static_001
+     * @tc.desc Change copyOption values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('searchTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_001 START');

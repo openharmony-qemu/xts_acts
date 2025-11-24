@@ -42,7 +42,12 @@ import { State } from '@ohos.arkui.stateManagement'
 struct DatePickerDialogExample {
 
   private changeOrientation(isLandscape: boolean) {
-
+    // 获取UIAbility实例的上下文信息
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    // 调用该接口手动改变设备横竖屏状态
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    });
   }
   selectedDate: Date = new Date("2010-2-2")
 
@@ -64,19 +69,50 @@ struct DatePickerDialogExample {
       Button("DatePickerDialog")
         .margin(20)
         .onClick((e:ClickEvent) => {
-
+          this.getUIContext().showDatePickerDialog({
+            start: new Date("2000-1-1"),
+            end: new Date("2100-12-31"),
+            selected: this.selectedDate,
+            onDateAccept: (value: Date) => {
+              console.info("DatePickerDialog:onAccept()" + value.toString())
+            },
+            onCancel: () => {
+              console.info("DatePickerDialog:onCancel()")
+            },
+            onDateChange: (value: Date) => {
+              console.info("DatePickerDialog:onChange()" + value.toString())
+            }
+          })
         })
 
       Button("DatePickerDialog")
         .margin(20)
         .onClick((e:ClickEvent) => {
-
+          this.getUIContext().showDatePickerDialog({
+            start: new Date("2000-1-1"),
+            end: new Date("2100-12-31"),
+            selected: this.selectedDate,
+            lunar: false,
+            showTime: true,
+            onDateAccept: (value: Date) => {
+              this.selectedDate = value
+              console.info("DatePickerDialog:onDateAccept()" + value.toString())
+            },
+            onCancel: () => {
+              console.info("DatePickerDialog:onCancel()")
+            },
+            onDateChange: (value: Date):void => {
+              console.info("DatePickerDialog:onDateChange()" + value.toString())
+            }
+          })
         })
       DatePicker({
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: this.selectedDate
-      }).key('Stage_DatePicker_Test_0010')
+      })
+        .key('Stage_DatePicker_Test_0010')
+        .id('Stage_DatePicker_Test_0010')
         .onDateChange((value: Date):void => {
           console.info('DatePicker:onDateChange() select current date is: ' + value.toString())
         })

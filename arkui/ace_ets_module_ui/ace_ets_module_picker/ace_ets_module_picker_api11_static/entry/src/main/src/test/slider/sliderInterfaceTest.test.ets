@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,6 +27,8 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
+//import inputEventClient from '@ohos.multimodalInput.inputEventClient';
+import config from '@ohos.accessibility.config'
 import accessibility from '@ohos.accessibility';
 import Utils from '../../../ets/MainAbility/common/Utils'
 let domain: int = 0x0000;
@@ -40,6 +42,7 @@ async function sleep(time: int):Promise<int> {
   })
 }
 
+//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture']
 const BUNDLE_NAME = 'com.arkui.ace.picker'
 
 export default function SliderInterfaceTest() {
@@ -63,7 +66,6 @@ export default function SliderInterfaceTest() {
         console.info(`get ${target} pages.name:` + JSON.stringify(pages.name));
         if (!(target == pages.name)) {
           router.pushUrl(options);
-
         }
       } catch (err) {
         console.error(`push ${target} page error:` + err);
@@ -71,6 +73,11 @@ export default function SliderInterfaceTest() {
       await sleep(2);
     }
     beforeEach(async (): Promise<void> => {
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`)
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable,${err}`)
+      // })
     })
 
     afterEach(async (): Promise<void> => {
@@ -82,13 +89,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0180
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0180
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0180
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0180', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0180', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider01")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -105,13 +113,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0200
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0200
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0200
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider02")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -127,13 +136,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0210
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0210
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0210
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0210', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0210', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider03")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -149,13 +159,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0250
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0250
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0250
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0250', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0250', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider04")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -171,13 +182,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0380
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0380
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0380
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0380', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0380', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider05")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -193,13 +205,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0390
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0390
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0390
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0390', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0390', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider06")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -215,13 +228,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0420
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0420
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0420
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0420', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0420', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider07")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -237,13 +251,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0430
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0430
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0430
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0430', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0430', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider08")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -259,13 +274,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0440
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0440
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0440
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0440', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0440', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider09")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -283,13 +299,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0450
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0450
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0450
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0450', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0450', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider10")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -313,13 +330,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0480
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0480
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0480
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0480', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0480', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider11")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -344,13 +362,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0640
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0640
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0640
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0640', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0640', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider12")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -367,13 +386,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0650
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0650
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0650
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0650', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0650', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider13")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -390,13 +410,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0660
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0660
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0660
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0660', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0660', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider14")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -420,13 +441,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0670
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0670
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0670
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0670', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0670', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider15")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -452,13 +474,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0680
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0680
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0680
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0680', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0680', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider16")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -483,13 +506,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0690
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0690
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0690
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0690', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0690', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider17")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -512,13 +536,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0700
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0700
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0700
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0700', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0700', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider18")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -539,13 +564,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0710
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0710
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0710
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0710', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0710', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider19")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -566,13 +592,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0720
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0720
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0720
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0720', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0720', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider20")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -597,13 +624,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0730
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0730
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0730
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0730', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0730', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider20")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -627,13 +655,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_1080
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_1080
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_1080
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_1080', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_1080', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider21")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -658,13 +687,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0010
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0010
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0010
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider22")
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -683,13 +713,14 @@ export default function SliderInterfaceTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0020
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0020
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0020
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_static_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("slider23")
       await Utils.sleep(2000);
       let driver = Driver.create();

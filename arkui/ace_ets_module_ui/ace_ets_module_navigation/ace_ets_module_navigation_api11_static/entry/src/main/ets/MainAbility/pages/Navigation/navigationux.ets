@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';

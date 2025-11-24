@@ -12,43 +12,58 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType} from '@ohos.arkui.component'
+
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import {
+  Entry,
+  Text,
+  TextAttribute,
+  Column,
+  Component,
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  Image,
+  ImageFit,
+  Scroller,
+  Flex,
+  Margin,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  FontWeight,
+  ButtonType,
+  ClickEvent,
+  Margin,
+  FontWeight
+} from '@ohos.arkui.component'
+import { Hypium } from  '../../../../../hypium/hypium'
+import testsuite from '../../../../src/test/List.test'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State } from '@ohos.arkui.stateManagement'
-
+import common from '@ohos.app.ability.common';
 
 @Entry
 @Component
 struct Index {
-
-  aboutToAppear(){
+  aboutToAppear() {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
 
   build() {
-    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text('Hello World')
+    Flex({
+      direction: FlexDirection.Column,
+      alignItems: ItemAlign.Center,
+      justifyContent: FlexAlign.Center
+    }) {
+      Text('ACE ETS TEST')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
-      Button('') {
-        Text('next page')
-          .fontSize(25)
-          .fontWeight(FontWeight.Bold)
-      }.type(ButtonType.Capsule)
-      .margin({
-        top: 20
-      } as Margin)
-      .backgroundColor('#0D9FFB')
-      .onClick((e:ClickEvent) => {
-
-      })
     }
     .width('100%')
     .height('100%')

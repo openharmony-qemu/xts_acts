@@ -21,14 +21,14 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavigationStack18 {
   private arr: number[] = new Array<number>(1, 2,3)
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State bool: boolean = false
   @State text: string = 'start'
   @State flagBlur: string = 'BlurStart'
@@ -37,48 +37,48 @@ struct NavigationStack18 {
   build() {
     Scroll() {
       Column(){
-        // Navigation({}) {
+        Navigation(this.pageInfos) {
           Column() {
             List({space:12}){
               ForEach(this.arr, (item: number) => {
                 ListItem() {
-                  // NavRouter(){
-                  //   Text("NavRouter" + item).key(`NavigationStack18ListItemText${item}`)
-                  //     .width('100%')
-                  //     .height(60)
-                  //     .backgroundColor('#FFFFFF')
-                  //     .borderRadius(24)
-                  //     .fontSize(16)
-                  //     .fontWeight(1000)
-                  //     .textAlign(TextAlign.Center)
-                  //   NavDestination()
-                  //     .key('NavigationStack18NavDestination')
-                  //     .onBlur(()=>{
-                  //       this.flagBlur = 'BlurDone'
-                  //     })
-                  //     .onFocus(()=>{
-                  //       this.flagFocus = 'FocusDone'
-                  //     })
-                  // }
+                  Column(){
+                    Text("NavRouter" + item).key(`NavigationStack18ListItemText${item}`)
+                      .width('100%')
+                      .height(60)
+                      .backgroundColor('#FFFFFF')
+                      .borderRadius(24)
+                      .fontSize(16)
+                      .fontWeight(1000)
+                      .textAlign(TextAlign.Center)
+                    NavDestination()
+                      .key('NavigationStack18NavDestination')
+                      .onBlur(()=>{
+                        this.flagBlur = 'BlurDone'
+                      })
+                      .onFocus(()=>{
+                        this.flagFocus = 'FocusDone'
+                      })
+                  }
                 }.key(`NavigationStack18ListItem${item}`)
               },(item: number) => String(item))
             }
             .width('100%')
             .margin({top:12} as Margin)
           }
-        // }
-        // .height('60%')
-        // .title('NavIndex')
-        // .titleMode(NavigationTitleMode.Mini)
-        // .mode(NavigationMode.Stack)
-        // .hideNavBar(this.bool)
-        // .navBarWidth(260)
-        // .minContentWidth(300)
-        // .navBarWidthRange([200,400])
-        // .border({width: 1})
-        // .height('70%')
-        // .width('100%')
-        // .backgroundColor(Color.Pink)
+        }
+        .height('60%')
+        .title('NavIndex')
+        .titleMode(NavigationTitleMode.Mini)
+        .mode(NavigationMode.Stack)
+        .hideNavBar(this.bool)
+        .navBarWidth(260)
+        .minContentWidth(300)
+        .navBarWidthRange([200,400])
+        .border({width: 1})
+        .height('70%')
+        .width('100%')
+        .backgroundColor(Color.Pink)
         Text(this.getText).key('NavigationStack18getText').fontWeight(700)
         Text(this.flagBlur).key('NavigationStack18Blur').fontWeight(700)
         Text(this.flagFocus).key('NavigationStack18Focus').fontWeight(700)
@@ -94,7 +94,7 @@ struct NavigationStack18 {
           })
         Button('get').id('NavigationStack18get')
           .onClick((e: ClickEvent) => {
-            // this.getText = JSON.stringify(this.pageInfos.getAllPathName()?.length)
+            this.getText = JSON.stringify(this.pageInfos.getAllPathName()?.length)
           })
       }
       .border({width:1})

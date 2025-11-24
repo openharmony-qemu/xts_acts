@@ -14,14 +14,14 @@
  */
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,PopInfo,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -30,7 +30,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct Navigation_NavPathStackTest3 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
 
   @Builder pageOneTmp() {
     NavDestination() {
@@ -40,7 +40,7 @@ struct Navigation_NavPathStackTest3 {
       }.width('100%').height('100%')
     }.title('pageOne')
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
   }
@@ -55,7 +55,7 @@ struct Navigation_NavPathStackTest3 {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column() {
 
         Text('Navigation')
@@ -64,17 +64,17 @@ struct Navigation_NavPathStackTest3 {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushDestinationByName('pageOne', null, (popInfo)=>{
-            //   console.log('[pushDestinationByName]last page is: ' + popInfo.info.name + ', result: ' + JSON.stringify(popInfo.result));
-            // }).catch((error: BusinessError)=>{
-            //   console.error(`[pushDestinationByName]failed, error code = ${error.code}, error.message = ${error.message}.`);
-            // }).then(()=>{
-            //   console.error('[pushDestinationByName]success.');
-            // });
+            this.pageInfos.pushDestinationByName('pageOne', {}, (popInfo: PopInfo): void=>{
+              console.log('[pushDestinationByName]last page is: ' + popInfo.info.name + ', result: ' + JSON.stringify(popInfo.result));
+            }).catch((error: BusinessError): void =>{
+              console.error(`[pushDestinationByName]failed, error code = ${error.code}, error.message = ${error.message}.`);
+            }).then(()=>{
+              console.error('[pushDestinationByName]success.');
+            });
           })
           .id('NavPathStackApi3_pushDestinationByName')
 
       }
-    // }.title('NavIndex').navDestination(this.PageMap)
+    }.title('NavIndex').navDestination(this.PageMap)
   }
 }

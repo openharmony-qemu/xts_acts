@@ -21,11 +21,11 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 interface EventMsg {
   titleMode: NavigationTitleMode
   hideToolBar: string
@@ -101,7 +101,7 @@ struct NavigationExamplett {
     Column() {
       Navigation({}) {
         Button(this.hideBar ? "tool bar" : "hide bar")
-          .backgroundColor(0x2788D9).width('20%').height('10%').fontSize(20)
+          .backgroundColor(Color.Red).width('20%').height('10%').fontSize(20)
           .key('NavigationContent1')
           .onClick((e: ClickEvent) => {
             this.hideBar = !this.hideBar;
@@ -110,7 +110,7 @@ struct NavigationExamplett {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.hideBar,
-                } as Record<String, RecordData>
+                } as Record<String,undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 1366,
@@ -135,7 +135,6 @@ struct NavigationExamplett {
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
             }
-            // .editable(true)
           }, (item: number) => String(item))
         }
         .listDirection(Axis.Vertical)
@@ -145,7 +144,6 @@ struct NavigationExamplett {
         .width('100%')
       }
       .title(this.NavigationTitle)
-      // .subTitle('subtitle')
       .menus(this.NavigationMenus)
       .titleMode(NavigationTitleMode.Free)
       .hideTitleBar(false)
@@ -153,16 +151,6 @@ struct NavigationExamplett {
       .onTitleModeChange((titleModel: NavigationTitleMode) => {
         console.log('titleMode')
       })
-      // .toolBar({ items: [
-      //   { value: 'app', icon: 'images/grid.svg', action: () => {
-      //     console.log("app")
-      //   } },
-      //   { value: 'add', icon: 'images/add.svg', action: () => {
-      //     console.log("add")
-      //   } },
-      //   { value: 'collect', icon: 'images/collect.svg', action: () => {
-      //     console.log("collect")
-      //   } }] })
       .hideToolBar(this.hideBar)
     }
   }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -73,15 +73,14 @@ export default function RatingAdvancedTest() {
       console.info("RatingAdvancedTest after each called");
     });
 
-
-
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0040
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0040
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0040
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0040', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0040', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0040] START');
       await routerPush("ratingFocus01")
       await Utils.sleep(2000);
@@ -98,13 +97,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0050
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0050
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0050
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0050', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0050', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0050] START');
       await routerPush("ratingFocus02")
       await Utils.sleep(2000);
@@ -121,13 +121,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0060
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0060
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0060
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0060', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0060', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0060] START');
       await routerPush("ratingFocus03")
       await Utils.sleep(2000);
@@ -144,13 +145,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0070
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0070
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0070
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0070', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0070', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0070] START');
       await routerPush("ratingFocus04")
       await Utils.sleep(2000);
@@ -167,13 +169,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0080
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0080
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0080
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0080', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0080', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0080] START');
       await routerPush("ratingFocus05")
       await Utils.sleep(2000);
@@ -190,13 +193,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0090
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0090
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0090
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0090', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0090', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0090] START');
       await routerPush("ratingFocus06")
       await Utils.sleep(2000);
@@ -213,13 +217,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0010
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0010
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0010
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0010] START');
       await routerPush("rating01")
       await Utils.sleep(2000);
@@ -238,13 +243,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0020
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0020
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0020
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0020] START');
       await routerPush("rating02")
       await Utils.sleep(2000);
@@ -263,13 +269,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170] START');
       await routerPush("rating03")
       await Utils.sleep(2000);
@@ -286,20 +293,19 @@ export default function RatingAdvancedTest() {
       let strJson2 = inspector.getInspectorByKey('rating03');
       let obj2 = JSON.parseJsonElement(strJson2);
       await Utils.sleep(1000);
-      console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170] obj2.getElement('$attrs').content is: " + obj2.getElement('$attrs').getString('content'));
-      expect(obj2.getElement('$attrs').getString('stepSize')).assertContain(0.5);
+      console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_static_0170] obj2.getElement('$attrs').content is: " + obj2.getElement('$attrs').tryGetString('content'));
+      expect(obj2.getElement('$attrs').getString('stepSize')).assertEqual('0.500000');
       done();
     });
 
-
-
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0010
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0010
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0010
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0010] START');
       await routerPush("rating04")
       await Utils.sleep(2000);
@@ -317,13 +323,14 @@ export default function RatingAdvancedTest() {
 
 
 
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040
      * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040
      * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040
      * @tc.level    Level.LEVEL3
      */
-    it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040] START');
       await routerPush("rating05")
       await Utils.sleep(2000);

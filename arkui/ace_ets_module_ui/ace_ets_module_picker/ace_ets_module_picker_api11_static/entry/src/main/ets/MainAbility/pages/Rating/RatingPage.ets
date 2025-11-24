@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {MessageManager,Callback,Message} from '../../../MainAbility/common/MessageManager';
 import {
   Entry,
   Component,
@@ -46,35 +45,28 @@ import {
   Image,
   HorizontalAlign
 } from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RatingPage {
-  @State rating: double = 3.5
-  @State rating1: double = 3.5
+  @StoragePropRef('rating') rating: number = 3.5
+  @State rating1: number = 3.5
 
-  @State indicator: boolean = true
-  @State indicator1: boolean = true
-  @State stars: int = 5
-  @State stepSize: double = 0.5
+  @StoragePropRef('indicator') indicator: boolean = true
+  @StoragePropRef('indicator1') indicator1: boolean = true
+  @StoragePropRef('stars') stars: int = 5
+  @StoragePropRef('stepSize') stepSize: number = 0.5
   @State stars1: int = 5
-  @State stepSize1: double = 0.5
+  @State stepSize1: number = 0.5
   @State text: string = 'no change'
   @State backgroundUri: string = 'resources/base/media/star_1.png'
   @State foregroundUri: string = 'resources/base/media/star_2.png'
   @State secondaryUri: string = 'resources/base/media/star_3.png'
-  messageManager:MessageManager = new MessageManager()
-
-  onPageShow() {
-    console.info('RatingPage onPageShow')
-
-    AppStorage.setOrCreate('messageManager', this.messageManager)
-  }
 
   build() {
     Column() {
       Column() {
-        Rating({ rating: 0 }).margin({ top: 1, right: 8 } as Margin).key('rating')
+        Rating({ rating: 0 }).margin({ top: 1, right: 8 } as Margin).key('rating').id('rating')
           .starStyle({ backgroundUri: 'resources/base/media/star_1.png', foregroundUri: 'resources/base/media/star_2.png', secondaryUri: 'resources/base/media/star_3.png' })
         Text('default rating')
           .fontSize(16)
@@ -83,9 +75,10 @@ struct RatingPage {
           .stars(this.stars)
           .stepSize(this.stepSize)
           .key('rating1')
+          .id('rating1')
           .starStyle({ backgroundUri: this.backgroundUri,foregroundUri: this.foregroundUri,secondaryUri: this.secondaryUri })
           .margin({ top: 24 } as Margin)
-          .onChange((value: double):void => {
+          .onChange((value: number):void => {
             this.text = 'change succ'
             this.rating = value
           })
@@ -99,7 +92,7 @@ struct RatingPage {
           .id('ratingBtn')
           .starStyle({ backgroundUri: this.backgroundUri,foregroundUri: this.foregroundUri,secondaryUri: this.secondaryUri })
           .margin({ top: 24 } as Margin)
-          .onChange((value: double):void => {
+          .onChange((value: number):void => {
             this.text = 'change succ'
             this.rating1 = value
           })
@@ -107,7 +100,7 @@ struct RatingPage {
           .fontSize(16)
           .fontColor('rgba(24,36,49,0.60)')
           .margin({ top: 16 } as Margin)
-        Text(this.text).fontSize(20).margin(10).key('text')
+        Text(this.text).fontSize(20).margin(10).key('text').id('text')
       }
       .width('80%')
       .height('80%')

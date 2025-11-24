@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { Entry, Component, Column, Text, Rating, Margin, Row, TextPickerResult, ClickEvent, Alignment, TextAlign, TextOverflow } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
@@ -57,7 +57,7 @@ struct stageTextPickerDialog {
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<String, RecordData>
+                } as Record<string, Object | null | undefined>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -102,7 +102,7 @@ struct stageTextPickerDialog {
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<String, RecordData>
+                } as Record<string, Object | null | undefined>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -148,7 +148,7 @@ struct stageTextPickerDialog {
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<String, RecordData>
+                } as Record<string, Object | null | undefined>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,

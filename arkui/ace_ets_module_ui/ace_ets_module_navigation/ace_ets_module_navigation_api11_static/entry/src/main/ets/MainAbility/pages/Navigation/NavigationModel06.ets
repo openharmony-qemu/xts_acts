@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
@@ -29,7 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct NavigationModel06 {
   private arr: number[] = new Array<number>(1,2,3,4,5,6,7,8,9)
   @State text: string = 'start'
-  // @State minWidthBar:[Dimension, Dimension] = [200,300]
+  @State minWidthBar: [string|Resource|number, string|Resource|number]|undefined = [200,300] as [string|Resource|number, string|Resource|number]
   @State currentIndex: number = 0
   @State strText: string = 'doing'
   build() {
@@ -39,19 +39,19 @@ struct NavigationModel06 {
           List({space:12}){
             ForEach(this.arr, (item: number) => {
               ListItem() {
-                // NavRouter(){
-                //   Text("NavRouter" + item)
-                //     .width('100%')
-                //     .height(60)
-                //     .backgroundColor('#FFFFFF')
-                //     .borderRadius(24)
-                //     .fontSize(16)
-                //     .fontWeight(1000)
-                //     .textAlign(TextAlign.Center)
-                //   NavDestination()
-                //     .backgroundColor(Color.Orange)
-                //     .title("NavDestinationTitle"+ item)
-                // }
+                Column(){
+                  Text("NavRouter" + item)
+                    .width('100%')
+                    .height(60)
+                    .backgroundColor('#FFFFFF')
+                    .borderRadius(24)
+                    .fontSize(16)
+                    .fontWeight(1000)
+                    .textAlign(TextAlign.Center)
+                  NavDestination()
+                    .backgroundColor(Color.Orange)
+                    .title("NavDestinationTitle"+ item)
+                }
               }
             },(item: number) => String(item))
           }
@@ -60,7 +60,7 @@ struct NavigationModel06 {
         }
       }
       .mode(NavigationMode.Auto)
-      // .navBarWidthRange(this.minWidthBar)
+      .navBarWidthRange(this.minWidthBar)
       .width(300)
       .height('60%')
       .minContentWidth(200)
@@ -73,7 +73,7 @@ struct NavigationModel06 {
       Text(this.strText).fontWeight(700).fontSize(22).key('NavigationModel06Txt')
       Button('切换双栏').key('NavigationModel06But')
         .onClick((e: ClickEvent) => {
-          // this.minWidthBar = [50,300]
+          this.minWidthBar = [50,300] as [string|Resource|number, string|Resource|number]
         })
     }
     .border({width:1})

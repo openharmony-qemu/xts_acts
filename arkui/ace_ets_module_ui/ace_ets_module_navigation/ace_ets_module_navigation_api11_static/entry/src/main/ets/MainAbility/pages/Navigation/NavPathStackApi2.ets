@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,NavPathInfo,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
@@ -21,16 +21,15 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 
-
 @Entry
 @Component
 struct Navigation_NavPathStackTest2 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
 
   @Builder pageOneTmp() {
     NavDestination() {
@@ -40,7 +39,7 @@ struct Navigation_NavPathStackTest2 {
       }.width('100%').height('100%')
     }.title('pageOne')
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
   }
@@ -55,7 +54,7 @@ struct Navigation_NavPathStackTest2 {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column() {
 
         Text('Navigation')
@@ -64,11 +63,13 @@ struct Navigation_NavPathStackTest2 {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushDestinationByName('pageOne',null, true)
+            console.info("[NavPathStackApi2_static_001] onClick before")
+            this.pageInfos.pushDestinationByName('pageOne',{}, true)
+            console.info("[NavPathStackApi2_static_001] onClick after")
           })
           .id('NavPathStackApi2_pushDestinationByName')
 
       }
-    // }.title('NavIndex').navDestination(this.PageMap)
+    }.title('NavIndex').navDestination(this.PageMap)
   }
 }

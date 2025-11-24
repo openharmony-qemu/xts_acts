@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -59,8 +59,6 @@ export default function sliderMovingJsunit() {
         console.info("get slider state pages:" + JSON.stringify(pages));
         if (!("slider2" == pages.name)) {
           console.info("get slider pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -75,13 +73,14 @@ export default function sliderMovingJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testsliderMoving0011_static
      * @tc.name     testsliderMoving0011_static
      * @tc.desc     testsliderMoving0011_static
      * @tc.level    Level.LEVEL1
      */
-    it('testsliderMoving0011_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testsliderMoving0011_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('sliderMoving testsliderMoving0011 START');
       await Utils.sleep(2000);
       try {
@@ -89,13 +88,13 @@ export default function sliderMovingJsunit() {
           eventId: 60307,
           priority: events_emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback: (eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) => {
           try {
             if (eventData != null && eventData.data != null) {
               console.info("testsliderMoving0011 get event data is: " + JSON.stringify(eventData));
-              const data = eventData.data as ESObject //需要先获取并声明类型之后  再访问成员属性
-              if (data.getProperty('Mode') != null) {
-                expect(data.getProperty('Mode').toNumber()).assertEqual(0);
+              const data = eventData.data as Record<String,undefined|null|Object> //需要先获取并声明类型之后  再访问成员属性
+              if (data!['Mode'] != null) {
+                expect(data!['Mode'] as double).assertEqual(0);
               }
             }
           } catch (err) {
@@ -103,7 +102,7 @@ export default function sliderMovingJsunit() {
           }
         }
         events_emitter.on(event, callback);
-        console.info("testsliderMoving0011 click result is: " + JSON.stringify(inspector.sendEventByKey('Slider', 10, "")));
+        // console.info("testsliderMoving0011 click result is: " + JSON.stringify(inspector.sendEventByKey('Slider', 10, "")));
         await Utils.sleep(3000);
       } catch (err) {
         console.info("testsliderMoving0011 on events_emitter err : " + JSON.stringify(err));

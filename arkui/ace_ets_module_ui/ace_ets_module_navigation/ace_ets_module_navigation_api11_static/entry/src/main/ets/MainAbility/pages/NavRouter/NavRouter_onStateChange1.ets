@@ -13,49 +13,45 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,NavPathInfo,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,Padding,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavRouter_onStateChange1 {
-  @State isActiveWLAN: boolean = false
-
+  @State isActiveWLAN: boolean = true
+  @State pageInfos: NavPathStack = new NavPathStack()
   build() {
     Column(){
       Text('' + this.isActiveWLAN).key('NavRouter_onStateChange1_text1')
-      Navigation({}) {
-        // NavRouter() {
-        //   Row() {
-        //     Text(`push`)
-        //       .fontSize(22)
-        //       .fontWeight(500)
-        //       .textAlign(TextAlign.Center)
-        //       .id('NavRouter_onStateChange1_btn1')
-        //   }
-        //   .width('90%')
-        //   .height(60)
-        //
-        //   NavDestination() {
-        //     Flex({ direction: FlexDirection.Row }) {
-        //       Text('NavDestination').fontSize(30).padding({ left: 15 } as Padding)
-        //     }
-        //   }.title("NavDestination")
-        // }
-        // .margin({ top: 10, bottom: 10 } as Margin)
-        // .borderRadius(20)
-        // .mode(NavRouteMode.PUSH_WITH_RECREATE)
-        // .onStateChange((isActivated: boolean) => {
-        //   this.isActiveWLAN = isActivated
-        // })
+      Navigation(this.pageInfos) {
+        Column() {
+          Row() {
+            Text(`push`)
+              .fontSize(22)
+              .fontWeight(500)
+              .textAlign(TextAlign.Center)
+              .id('NavRouter_onStateChange1_btn1')
+          }
+          .width('90%')
+          .height(60)
+
+          NavDestination() {
+            Flex({ direction: FlexDirection.Row }) {
+              Text('NavDestination').fontSize(30).padding({ left: 15 } as Padding)
+            }
+          }.title("NavDestination")
+        }
+        .margin({ top: 10, bottom: 10 } as Margin)
+        .borderRadius(20)
       }
       .height('100%')
       .width('100%')

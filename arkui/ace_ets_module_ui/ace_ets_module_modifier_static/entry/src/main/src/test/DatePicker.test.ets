@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,12 +56,13 @@ export default function datePickerJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   testDatePickerStatic0021
-     * @tc.name     testDatePickerStatic0021
-     * @tc.desc     testDatePickerStatic0021
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testDatePickerStatic0021
+     * @tc.name testDatePickerStatic0021
+     * @tc.desc Set lunar values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testDatePickerStatic0021', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testDatePickerStatic0021] START');
@@ -72,12 +73,13 @@ export default function datePickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testDatePickerStatic0022
-     * @tc.name     testDatePickerStatic0022
-     * @tc.desc     testDatePickerStatic0022
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testDatePickerStatic0022
+     * @tc.name testDatePickerStatic0022
+     * @tc.desc Set selectedTextStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testDatePickerStatic0022', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testDatePickerStatic0022] START');
@@ -91,12 +93,13 @@ export default function datePickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testDatePickerStatic0023
-     * @tc.name     testDatePickerStatic0023
-     * @tc.desc     testDatePickerStatic0023
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testDatePickerStatic0023
+     * @tc.name testDatePickerStatic0023
+     * @tc.desc Set textStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testDatePickerStatic0023', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testDatePickerStatic0023] START');
@@ -111,12 +114,13 @@ export default function datePickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testDatePickerStatic0024
-     * @tc.name     testDatePickerStatic0024
-     * @tc.desc     testDatePickerStatic0024
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testDatePickerStatic0024
+     * @tc.name testDatePickerStatic0024
+     * @tc.desc Set disappearTextStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testDatePickerStatic0024', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testDatePickerStatic0024] START');
@@ -131,12 +135,13 @@ export default function datePickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testDatePickerStatic0025
-     * @tc.name     testDatePickerStatic0025
-     * @tc.desc     testDatePickerStatic0025
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testDatePickerStatic0025
+     * @tc.name testDatePickerStatic0025
+     * @tc.desc Change textStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testDatePickerStatic0025', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDatePickerStatic0025 START');

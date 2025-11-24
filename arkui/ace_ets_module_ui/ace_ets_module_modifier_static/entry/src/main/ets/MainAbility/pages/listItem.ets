@@ -12,36 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List,ListItemAttribute,SwipeEdgeEffect, ListItem,Padding,Column,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List, ListItem,Padding,Column,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { ListItemModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends ListItemModifier {
-
-  applyNormalAttribute(instance: ListItemAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange() {
-    this.selectable(false)
-  }
-}
-
+// import { ListItemModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends ListItemModifier {
+//
+//   applyNormalAttribute(instance: ListItemAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange() {
+//     this.selectable(false)
+//   }
+// }
+//
 
 @Entry
 @Component
 struct List_itemOnSelect {
-  @State customModifier: ListItemModifier = new CustomModifier()
-    .selected(true)
-    .selectable(true)
-    .swipeAction({
-      edgeEffect: SwipeEdgeEffect.Spring
-    })
+//   @State customModifier: ListItemModifier = new CustomModifier()
+//     .selected(true)
+//     .selectable(true)
+//     // .swipeAction({
+//     //   edgeEffect: SwipeEdgeEffect.Spring
+//     // })
 
   @Builder
   itemEnd() {
@@ -54,7 +54,7 @@ struct List_itemOnSelect {
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange();
+//         (this.customModifier as CustomModifier).onChange();
       }).key("changeButton")
 
       Button('Log Json Data')
@@ -77,7 +77,7 @@ struct List_itemOnSelect {
           .backgroundColor(0xFFFFFF)
         }
         .key("ListItemKey1")
-        .attributeModifier(this.customModifier as CustomModifier)
+//         .attributeModifier(this.customModifier as CustomModifier)
       }
     }
     .padding(10)

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 import Utils from '../../../ets/MainAbility/common/Utils'
@@ -75,36 +75,38 @@ export default function sliderJsunit1() {
     });
 
 
+    
     /*
      * @tc.number   testSlider001_static
      * @tc.name     testSlider001_static
      * @tc.desc     testSlider001_static
      * @tc.level    Level.LEVEL1
      */
-    it('testSlider001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testSlider001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSlider001] START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('slider');
       console.info("[testSlider001] component strJson:" + strJson);
-      console.info("[testSlider001] decoration:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('decoration')).assertEqual(undefined);
+      console.info("[testSlider001] decoration:" + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('decoration')).assertEqual(undefined);
       done();
     });
 
 
+    
     /*
      * @tc.number   testSlider002_static
      * @tc.name     testSlider002_static
      * @tc.desc     testSlider002_static
      * @tc.level    Level.LEVEL1
      */
-    it('testSlider002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testSlider002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSlider002] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "decorationValue": Axis.Horizontal
-          } as Record<String, RecordData>
+          } as Record<string, Object | null | undefined>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 196,
@@ -118,42 +120,44 @@ export default function sliderJsunit1() {
       await Utils.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('slider');
       console.info("[testSlider002] component strJson:" + strJson);
-      console.info("[testSlider002] decoration:" + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('decoration'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('decoration')).assertEqual(undefined);
+      console.info("[testSlider002] decoration:" + JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('decoration'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('decoration')).assertEqual(undefined);
       done();
     });
 
 
+    
     /*
      * @tc.number   testSlider003_static
      * @tc.name     testSlider003_static
      * @tc.desc     testSlider003_static
      * @tc.level    Level.LEVEL1
      */
-    it('testSlider003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testSlider003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSlider003] START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('slider');
-      console.info("[testSlider003] component strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('value')).assertEqual(undefined);
+      console.info("[testSlider003] component strJson:" + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('value')).assertEqual(undefined);
       done();
     });
 
 
+    
     /*
      * @tc.number   testSlider004_static
      * @tc.name     testSlider004_static
      * @tc.desc     testSlider004_static
      * @tc.level    Level.LEVEL1
      */
-    it('testSlider004_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testSlider004_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSlider004] START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "value": "10",
-          } as Record<String, RecordData>
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 196,
@@ -161,47 +165,49 @@ export default function sliderJsunit1() {
         }
         console.info("[testSlider004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[testSlider004] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('slider');
       console.info("[testSlider004] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('value')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').tryGetElement('value')).assertEqual(undefined);
       done();
     });
 
 
+    
     /*
      * @tc.number   testSlider005_static
      * @tc.name     testSlider005_static
      * @tc.desc     testSlider005_static
      * @tc.level    Level.LEVEL1
      */
-    it('testSlider005_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testSlider005_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testSlider005 START');
       let strJson: string = inspector.getInspectorByKey('slider');
       console.info("testSlider005 component strJson:" + strJson);
       console.info("testSlider005 component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('step')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('step')).assertEqual(undefined);
       console.info('testSlider005 END');
       done();
     });
 
 
+    
     /*
      * @tc.number   testSlider006_static
      * @tc.name     testSlider006_static
      * @tc.desc     testSlider006_static
      * @tc.level    Level.LEVEL1
      */
-    it('testSlider006_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testSlider006_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testSlider006 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "stepValue": "10",
-          } as Record<String, RecordData>
+          } as Record<string, Object | null | undefined>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 196,
@@ -215,7 +221,7 @@ export default function sliderJsunit1() {
       await Utils.sleep(4000);
       let strJsonNew: string = inspector.getInspectorByKey('slider');
       console.info("testSlider006 component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('step')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').tryGetElement('step')).assertEqual(undefined);
       console.info('testSlider006 END');
       done();
     });

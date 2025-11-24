@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
@@ -37,7 +37,9 @@ function sleep(time: int):Promise<int> {
     }, time * 1000);
   })
 }
-
+interface UseMilitaryTimes {
+  useMilitaryTime: string
+}
 export default function datePickerJsunit() {
   describe('datePickerJsunit', () => {
 
@@ -58,8 +60,6 @@ export default function datePickerJsunit() {
         console.info("get datePicker state pages:" + JSON.stringify(pages));
         if (!("datePickerneww" == pages.name)) {
           console.info("get datePicker pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -74,37 +74,39 @@ export default function datePickerJsunit() {
     });
 
 
+    
     /*
      * @tc.number   datePickerTest_0100
      * @tc.name     datePickerTest_0100
      * @tc.desc     datePickerTest_0100
      * @tc.level    Level.LEVEL1
      */
-    it('datePickerTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('datePickerTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerText_0100 START');
       let strJson = inspector.getInspectorByKey('datePicker');
       console.info("datePickerText_0100 component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("datePickerText_0100 component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$type')).assertEqual('DatePicker');
+      expect(obj.getElement('$type').asString()).assertEqual('DatePicker');
       console.info('datePickerTest_0200 END');
       done();
     });
 
 
+    
     /*
      * @tc.number   datePickerTest_static_0300
      * @tc.name     datePickerTest_static_0300
      * @tc.desc     datePickerTest_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('datePickerTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('datePickerTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerTest_0300 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "useMilitaryTime": "false",
-          } as Record<String, RecordData>
+          } as Record<string, Object | null | undefined>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 81,
@@ -117,7 +119,7 @@ export default function datePickerJsunit() {
       }
       let callback = (indexEventOne: events_emitter.EventData) => {
         console.info("datePickerTest_0300 get state result is: " + JSON.stringify(indexEventOne));
-        //expect(indexEventOne.data?.['useMilitaryTime']).assertEqual('false');
+        expect((indexEventOne.data as UseMilitaryTimes)?.useMilitaryTime).assertEqual('false');
       }
       let indexEventOne: events_emitter.InnerEvent = {
         eventId: 80,

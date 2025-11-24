@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Builder,Component,Scroller,NestedScrollMode,ScrollState,ScrollSource,ListItem,ListAttribute,Scroll,List,Video,BarPosition,ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Builder,Component,Scroller,ListItem,Scroll,List,Video,BarPosition,ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -20,24 +20,24 @@ import {
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';
-import { ListModifier } from "@ohos.arkui.modifier";
+// import { ListModifier } from "@ohos.arkui.modifier";
 import { BusinessError } from '@ohos.base';
 
-class CustomModifier extends ListModifier {
-  applyNormalAttribute(instance: ListAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-}
+// class CustomModifier extends ListModifier {
+//   applyNormalAttribute(instance: ListAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+// }
 
 @Entry
 @Component
 struct ListNestedScroll {
   scroller: Scroller = new Scroller()
-  @State customModifier: ListModifier = new CustomModifier()
-    .nestedScroll({
-      scrollForward: NestedScrollMode.PARALLEL,
-      scrollBackward: NestedScrollMode.PARALLEL,
-    })
+  // @State customModifier: ListModifier = new CustomModifier()
+  //   .nestedScroll({
+  //     scrollForward: NestedScrollMode.PARALLEL,
+  //     scrollBackward: NestedScrollMode.PARALLEL,
+  //   })
   @State selfScrollTime: number = 0
   @State parentScrollTime: number = 0
   private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
@@ -91,22 +91,24 @@ struct ListNestedScroll {
               // .listCard()
             }, (item: number) => String(item))
           }
-          .attributeModifier(this.customModifier as CustomModifier)
+          // .attributeModifier(this.customModifier as CustomModifier)
           .height('90%')
-          .onDidScroll((scrollOffset: double, scrollState: ScrollState) => {
-            if ((scrollOffset != 0 || scrollOffset != 0) && this.selfScrollTime == 0) {
-              this.selfScrollTime = Utils.getSystemTime()
-            }
-          })
+          // .onScroll((xOffset: number, yOffset: number) => {
+          //   console.info("WebView onScroll x = " + xOffset)
+          //   console.info("WebView onScroll y = " + yOffset)
+          //   if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
+          //     this.selfScrollTime = Utils.getSystemTime()
+          //   }
+          // })
           Column().width('100%').height('20%').backgroundColor(Color.Red)
         }.width('100%')
       }
-      .onWillScroll((xOffset: double, yOffset: double, scrollState: ScrollState, ScrollSource:ScrollSource) => {
-        console.info('ParentScroll:' + xOffset + ' ' + yOffset)
-        if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
-          this.parentScrollTime = Utils.getSystemTime()
-        }
-      })
+      // .onScroll((xOffset: number, yOffset: number) => {
+      //   console.info('ParentScroll:' + xOffset + ' ' + yOffset)
+      //   if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
+      //     this.parentScrollTime = Utils.getSystemTime()
+      //   }
+      // })
       .width('100%')
       .height('70%')
     }.key('ColumnSize')

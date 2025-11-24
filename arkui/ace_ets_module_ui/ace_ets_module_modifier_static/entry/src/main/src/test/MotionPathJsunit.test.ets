@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -62,20 +62,20 @@ export default function motionPathJsunit() {
       console.info("motionPath after each called");
     });
 
-    
-    /*
-     * @tc.number   motionPathTest_static_0100
-     * @tc.name     motionPathTest_static_0100
-     * @tc.desc     motionPathTest_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number motionPathTest_static_0100
+     * @tc.name motionPathTest_static_0100
+     * @tc.desc Set attribute values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('motionPathTest_static_0100 START');
      await UtilsTest.msSleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("motionPathTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        const indexdata = indexEvent.data as Record<String,undefined|null|Object>
-        expect(indexdata['ACTION'] as boolean).assertEqual(true);
+        expect((indexEvent.data as Action)?.ACTION).assertEqual(true);
         done();
       }
       let indexEvent: events_emitter.InnerEvent = {

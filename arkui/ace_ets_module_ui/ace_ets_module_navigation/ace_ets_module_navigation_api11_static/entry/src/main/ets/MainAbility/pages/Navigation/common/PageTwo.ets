@@ -21,14 +21,14 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {CustomTransition} from './CustomNavigationUtils'
 
 @Component
 export struct PageTwoTemp {
-  // @Consume('pageInfos') pageInfos: NavPathStack
+  @Consume('pageInfos') pageInfos: NavPathStack
   @State x: number = 300
 
   aboutToAppear() {
@@ -53,14 +53,14 @@ export struct PageTwoTemp {
           .height(40)
           .margin(20)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushPathByName('pageOne', null) //将name指定的NavDestination页面信息入栈，传递的数据为param
+            this.pageInfos.pushPathByName('pageOne', null) //将name指定的NavDestination页面信息入栈，传递的数据为param
           })
       }.width('100%').height('100%')
     }.title('pageTwo')
     .backgroundColor(Color.White)
     .onBackPressed((): boolean => {
-      // const popDestinationInfo = this.pageInfos.pop() // 弹出路由栈栈顶元素
-      // console.log('pop' + '返回值' + JSON.stringify(popDestinationInfo))
+      const popDestinationInfo = this.pageInfos.pop() // 弹出路由栈栈顶元素
+      console.log('pop' + '返回值' + JSON.stringify(popDestinationInfo))
       return true
     })
     .translate({x: this.x})

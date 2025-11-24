@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -58,8 +58,6 @@ export default function stageTimePickerDialog() {
         console.info("get stageTimePickerDialog state pages:" + JSON.stringify(pages));
         if (!("stageTimePickerDialog" == pages.name)) {
           console.info("get stageTimePickerDialog pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -67,24 +65,17 @@ export default function stageTimePickerDialog() {
         console.error("push stageTimePickerDialog page error: " + err);
       }
     });
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
 
 
+
+    
     /*
      * @tc.number   TimePickerDialog001_static
      * @tc.name     TimePickerDialog001_static
      * @tc.desc     TimePickerDialog001_static
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerDialog001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TimePickerDialog001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TimePickerDialog001_static START');
       setTimeout(() => {
         try {
@@ -118,13 +109,14 @@ export default function stageTimePickerDialog() {
     });
 
 
+    
     /*
      * @tc.number   TimePickerDialog002_static
      * @tc.name     TimePickerDialog002_static
      * @tc.desc     TimePickerDialog002_static
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerDialog002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TimePickerDialog002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TimePickerDialog002_static START');
       setTimeout(() => {
         try {
@@ -157,13 +149,14 @@ export default function stageTimePickerDialog() {
       }, 500)
     });
 
+    
     /*
      * @tc.number   TimePickerDialog003_static
      * @tc.name     TimePickerDialog003_static
      * @tc.desc     TimePickerDialog003_static
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerDialog003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TimePickerDialog003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TimePickerDialog003_static START');
       setTimeout(() => {
         try {

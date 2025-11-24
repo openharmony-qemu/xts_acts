@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Component, Column, Text, Rating, Margin, Color, ToggleType, ColumnOptions, Flex, FlexAlign, ItemAlign, Toggle, Padding } from '@ohos.arkui.component';
+import { Entry, Component, Column, Text, Rating, Margin,ResourceColor, Color, ToggleType, ColumnOptions, Flex, FlexAlign, ItemAlign, Toggle, Padding } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct Toggle3Example {
-  @State selectedColor: Color|string = '#330A59F7';
+  @State selectedColor: ResourceColor = '#330A59F7';
   @State toggleType: ToggleType = ToggleType.Button;
   @State isOn: boolean = false;
 
@@ -29,51 +29,21 @@ struct Toggle3Example {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    let stateChangeEventOne: events_emitter.InnerEvent = {
-      eventId: 232,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventOne, this.stateChangCallBack);
-
-    let stateChangeEventthree: events_emitter.InnerEvent = {
-      eventId: 1033,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventthree, this.stateChangCallBack);
-
-    let stateChangeEventfour: events_emitter.InnerEvent = {
-      eventId: 1034,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventfour, this.stateChangCallBack);
-
-    let stateChangeEventfive: events_emitter.InnerEvent = {
-      eventId: 1035,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventfive, this.stateChangCallBack);
-
-    let stateChangeEventsix: events_emitter.InnerEvent = {
-      eventId: 1036,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventsix, this.stateChangCallBack);
   }
 
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("[toggle] page stateChangCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("[toggle] page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
-      if (data.getProperty('selectedColor') != null) {
-        this.selectedColor = data.getProperty('selectedColor').toStaticObject() as Color;
+      const data = eventData.data as Record<String,undefined|null|Object>                       //需要先获取并声明类型之后  再访问成员属性
+      if (data!['selectedColor'] != null) {
+        this.selectedColor = data!['selectedColor'] as ResourceColor;
       }
-      if (data.getProperty('toggleType') != null) {
-        this.toggleType = data.getProperty('toggleType').toStaticObject() as ToggleType;
+      if (data!['toggleType'] != null) {
+        this.toggleType = data!['toggleType'] as ToggleType;
       }
-      if (data.getProperty('isOn') != null) {
-        this.isOn = data.getProperty('isOn').toBoolean();
+      if (data!['isOn'] != null) {
+        this.isOn = data!['isOn'] as boolean;
       }
     }
   }

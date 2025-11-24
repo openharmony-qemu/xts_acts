@@ -14,20 +14,20 @@
  */
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,NavPathInfo,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavigationApi3 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
 
   @State text1: string = '11'
   @State text2: string = '22'
@@ -42,7 +42,7 @@ struct NavigationApi3 {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushPath({name:'pageTwo', })
+            this.pageInfos.pushPath(new NavPathInfo('pageTwo',null))
           })
           .id('NavigationApi3_pushPathPageTwo')
 
@@ -51,13 +51,15 @@ struct NavigationApi3 {
     }.title('pageOne')
     .mode(NavDestinationMode.STANDARD)
     .onShown((): void=>{
+      console.log('pageOnw onShown','pageOnw onShown')
       this.text1 = 'pageOnw onShown'
     })
     .onHidden((): void=>{
+      console.log('pageOnw onHidden','pageOnw onHidden')
       this.text1 = 'pageOne onHidden'
     })
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
   }
@@ -72,7 +74,7 @@ struct NavigationApi3 {
         .width('80%')
         .height(40)
         .onClick((e: ClickEvent) => {
-          // this.pageInfos.pushPath({name:'pageThree', })
+          this.pageInfos.pushPath(new NavPathInfo('pageThree', null))
         })
         .id('NavigationApi3_pushPathPageThree')
 
@@ -81,13 +83,17 @@ struct NavigationApi3 {
   }.title('pageTwo')
   .mode(NavDestinationMode.STANDARD)
   .onShown((): void=>{
+    console.info("[NavigationApi3_static_001] onShown before: " + 111111);
     this.text2 = 'pageTwo onShown'
+    console.info("[NavigationApi3_static_001] onShown after: " + 111111);
   })
   .onHidden((): void=>{
+    console.info("[NavigationApi3_static_001] onHidden before: " + 111111);
     this.text2 = 'pageTwo onHidden'
+    console.info("[NavigationApi3_static_001] onHidden after: " + 111111);
   })
   .onBackPressed((): boolean => {
-    // this.pageInfos.pop()
+    this.pageInfos.pop()
     return true
   })
 }
@@ -108,7 +114,7 @@ struct NavigationApi3 {
       this.text3 = 'pageThree onHidden'
     })
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
   }
@@ -133,17 +139,17 @@ struct NavigationApi3 {
         Text(this.text3).id('NavigationApi3_text3')
       }.width('80%').borderWidth(1).margin({top:20} as Margin)
 
-      // Navigation(this.pageInfos) {
+      Navigation(this.pageInfos) {
         Column() {
           Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
             .width('80%')
             .height(40)
             .onClick((e: ClickEvent) => {
-              // this.pageInfos.pushPath({ name: 'pageOne' })
+              this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
             })
             .id('NavigationApi3_pushPathPageOne')
         }
-      // }.title('NavIndex').navDestination(this.PageMap)
+      }.title('NavIndex').navDestination(this.PageMap)
     }.width('100%')
 
   }

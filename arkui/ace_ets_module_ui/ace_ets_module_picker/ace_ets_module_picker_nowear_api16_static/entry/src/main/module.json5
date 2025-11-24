@@ -17,7 +17,6 @@
   "module": {
     "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:phone_entry_dsc",
     "mainElement": "EntryAbility",
     "deviceTypes": [],
@@ -32,7 +31,7 @@
     ],
     "abilities": [
       {
-        "name": "com.arkui.ace.picker.nowear.EntryAbility",
+        "name": "EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",

@@ -12,50 +12,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,Search,Rect, RichEditor,SearchController,ShapeAttribute, Position,Ellipse,LineCapStyle,LineJoinStyle,NavDestination,Shape,Path,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,Search,Rect, RichEditor,SearchController, Position,Ellipse,LineCapStyle,LineJoinStyle,NavDestination,Shape,Path,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { ShapeModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends ShapeModifier {
-
-
-  applyNormalAttribute(instance: ShapeAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange1() {
-    this.strokeDashOffset(16)
-  }
-}
+// import { ShapeModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends ShapeModifier {
+//
+//
+//   applyNormalAttribute(instance: ShapeAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.strokeDashOffset(16)
+//   }
+// }
 
 @Entry
 @Component
 struct ShapeExample {
-  @State customModifier: ShapeModifier = new CustomModifier()
-    .viewPort({ x: 1, y: -2, width: 100, height: 200 })
-    .stroke(Color.Pink)
-    .fill(0x317AF7)
-    .strokeDashOffset(15)
-    .strokeDashArray([30])
-    .strokeLineJoin(LineJoinStyle.Round)
-    .strokeLineCap(LineCapStyle.Round)
-    .strokeOpacity(0.5)
-    .strokeMiterLimit(5)
-    .mesh([10], 1, 1)
-    .strokeWidth("20px")
-    .fillOpacity(2)
-    .antiAlias(true)
+//   @State customModifier: ShapeModifier = new CustomModifier()
+//     .viewPort({ x: 1, y: -2, width: 100, height: 200 })
+//     .stroke(Color.Pink)
+//     .fill(0x317AF7)
+//     .strokeDashOffset(15)
+//     .strokeDashArray([30])
+//     .strokeLineJoin(LineJoinStyle.Round)
+//     .strokeLineCap(LineCapStyle.Round)
+//     .strokeOpacity(0.5)
+//     .strokeMiterLimit(5)
+//     .mesh([10], 1, 1)
+//     .strokeWidth("20px")
+//     .fillOpacity(2)
+//     .antiAlias(true)
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
 
       Button("change value").onClick((e: ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange1();
+        // (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Text('basic').fontSize(11).fontColor(0xCCCCCC).width(320)
@@ -69,7 +69,7 @@ struct ShapeExample {
       }
       .width(350)
         .key("ShapeKey1")
-        .attributeModifier(this.customModifier as CustomModifier)
+        // .attributeModifier(this.customModifier as CustomModifier)
       // 分别在Shape的(0, 0)、(-5, -5)点绘制一个 300 * 50 带边框的矩形,可以看出之所以将视口的起始位置坐标设为负值是因为绘制的起点默认为线宽的中点位置，因此要让边框完全显示则需要让视口偏移半个线宽
       Shape() {
         Rect().width(300).height(50)

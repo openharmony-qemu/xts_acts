@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
@@ -61,7 +61,6 @@ struct NavigationExample {
                 .fontSize(15)
                 .textAlign(TextAlign.Center)
             }
-            // .editable(true)
           }, (item: number) => String(item))
         }
         .listDirection(Axis.Vertical)
@@ -72,19 +71,11 @@ struct NavigationExample {
       .key('navigation1')
       .height('50%')
       .title('title')
-      // .subTitle('subtitle')
       .menus(this.NavigationMenus1)
       .titleMode(NavigationTitleMode.Full)
       .hideTitleBar(false)
       .hideToolBar(false)
       .hideBackButton(false)
-      // .toolBar({
-      //   items: [
-      //     { value: 'app' },
-      //     { value: 'add' },
-      //     { value: 'collect' }
-      //   ]
-      // })
       .onTitleModeChange((titleModel: NavigationTitleMode) => {
         console.log('titleMode:' + titleModel)
       })

@@ -21,67 +21,67 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavigationStack24 {
   private arr: number[] = new Array<number>(1, 2,3)
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State bool: boolean = false
   @State text: string = 'start'
   @State stateChange: boolean = false
   @State flagFocus: string = 'FocusStart'
   build() {
     Column(){
-      // Navigation(this.pageInfos) {
+      Navigation(this.pageInfos) {
         Column() {
           List({space:12}){
             ForEach(this.arr, (item: number) => {
               ListItem() {
-                // NavRouter(){
-                //   Text("NavRouter" + item).key(`NavigationStack24ListItemText${item}`)
-                //     .width('100%')
-                //     .height(60)
-                //     .backgroundColor('#FFFFFF')
-                //     .borderRadius(24)
-                //     .fontSize(16)
-                //     .fontWeight(1000)
-                //     .textAlign(TextAlign.Center)
-                //   NavDestination() {
-                //     Text(`${this.text+item}`).key('NavigationStack24TextCont')
-                //     Button('button').key('NavigationStack24ButtonContent')
-                //       .onClick((e: ClickEvent) => {
-                //         this.text = 'clicked'
-                //       })
-                //   }.key('NavigationStack24NavDestination')
-                //   .backgroundColor(Color.Orange)
-                //   .title("NavDestinationTitle"+ item)
-                // }
+                Column(){
+                  Text("NavRouter" + item).key(`NavigationStack24ListItemText${item}`)
+                    .width('100%')
+                    .height(60)
+                    .backgroundColor('#FFFFFF')
+                    .borderRadius(24)
+                    .fontSize(16)
+                    .fontWeight(1000)
+                    .textAlign(TextAlign.Center)
+                  NavDestination() {
+                    Text(`${this.text+item}`).key('NavigationStack24TextCont')
+                    Button('button').key('NavigationStack24ButtonContent')
+                      .onClick((e: ClickEvent) => {
+                        this.text = 'clicked'
+                      })
+                  }.key('NavigationStack24NavDestination')
+                  .backgroundColor(Color.Orange)
+                  .title("NavDestinationTitle"+ item)
+                }
               }.key(`NavigationStack24ListItem${item}`)
             },(item: number) => String(item))
           }
           .width('100%')
           .margin({top:12} as Margin)
         }
-      // }
-      // .onNavBarStateChange((isVisible: boolean) => {
-      //   this.stateChange = isVisible
-      // })
-      // .key('NavigationStack24Navigation')
-      // .height('60%')
-      // .title('NavIndex')
-      // .titleMode(NavigationTitleMode.Mini)
-      // .mode(NavigationMode.Stack)
-      // .hideNavBar(this.bool)
-      // .navBarWidth(260)
-      // .minContentWidth(300)
-      // .navBarWidthRange([200,400])
-      // .border({width: 1})
-      // .height('70%')
-      // .width('100%')
-      // .backgroundColor(Color.Pink)
+      }
+      .onNavBarStateChange((isVisible: boolean) => {
+        this.stateChange = isVisible
+      })
+      .key('NavigationStack24Navigation')
+      .height('60%')
+      .title('NavIndex')
+      .titleMode(NavigationTitleMode.Mini)
+      .mode(NavigationMode.Stack)
+      .hideNavBar(this.bool)
+      .navBarWidth(260)
+      .minContentWidth(300)
+      .navBarWidthRange([200,400])
+      .border({width: 1})
+      .height('70%')
+      .width('100%')
+      .backgroundColor(Color.Pink)
       Text(`${this.stateChange}`).key('NavigationStack24Blur').fontWeight(700)
       Button('隐藏导航栏')
         .key('NavigationStack24True')

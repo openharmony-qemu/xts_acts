@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -77,13 +77,14 @@ export default function ratingJsunit() {
 
 
 
+    
     /*
      * @tc.number   testGetRatingAttr010_static
      * @tc.name     testGetRatingAttr010_static
      * @tc.desc     testGetRatingAttr010_static
      * @tc.level    Level.LEVEL1
      */
-    it('testGetRatingAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testGetRatingAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetRatingAttr1 START');
       let strJson = inspector.getInspectorByKey('rating1');
       let obj = JSON.parseJsonElement(strJson);
@@ -105,13 +106,14 @@ export default function ratingJsunit() {
 
 
 
+    
     /*
      * @tc.number   testGetRatingAttr020_static
      * @tc.name     testGetRatingAttr020_static
      * @tc.desc     testGetRatingAttr020_static
      * @tc.level    Level.LEVEL1
      */
-    it('testGetRatingAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testGetRatingAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetRatingAttr2 START');
       let strJson = inspector.getInspectorByKey('rating2');
       let obj = JSON.parseJsonElement(strJson);

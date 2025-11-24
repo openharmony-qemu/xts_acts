@@ -12,68 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Entry,Component,$r,Column,ColumnOptions,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  FormComponent,
-  Visibility,
-  FormDimension,
-  Divider,
-  Counter,
-  DataPanel,
-  DatePicker,
-  BorderImageOption,
-  BorderOptions,
-  AdaptiveColor,
-  BackgroundEffectOptions,
-  BorderStyle,
-  RepeatMode,
-  GradientDirection,
-  Image,
-  Checkbox,
-  Blank,
-  MarkStyle,
-  ResourceColor,
-  CheckboxGroup,
-  Text,
-  Toggle,
-  ToggleType,
-  FlexAlign,
-  Color,
-  Flex,
-  ButtonType,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,
-  FontWeight,
-  Axis,
-  Margin,
-  Swiper,
-  ForEach,
-  PickerTextStyle,
-  CalendarAlign,
-  Date,
-  CalendarPicker,
-  EdgeEffect,
-  Curve,
-  SwiperDisplayMode,
-  ArrowPosition,
-  Select,
-  BlurStyle,
-  MenuAlignType,
-  TextInputController,
-  TextAlign,
-  AlphabetIndexer,
-  FormComponentAttribute
-} from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
-
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 // import { FormComponentModifier } from "@ohos.arkui.modifier";
 //
 // class CustomModifier extends FormComponentModifier {
@@ -90,19 +34,19 @@ import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct FormComponentExample {
-  //   @State customModifier: FormComponentModifier = new CustomModifier()
-  //     .size({ width: 200, height: 300 })
-  //     .allowUpdate(false)
-  //     .dimension(FormDimension.Dimension_2_1)
-  //     .visibility(Visibility.Visible)
-  //     .moduleName('model1')
+//   @State customModifier: FormComponentModifier = new CustomModifier()
+//     .size({ width: 200, height: 300 })
+//     .allowUpdate(false)
+//     .dimension(FormDimension.Dimension_2_1)
+//     .visibility(Visibility.Visible)
+//     .moduleName('model1')
 
   @State formId: int = 0;
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        //         (this.customModifier as CustomModifier).onChange1();
+//         (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Text('this is a card')
@@ -118,7 +62,7 @@ struct FormComponentExample {
         temporary: false
       })
         .key('FormComponentKey1')
-      //         .attributeModifier(this.customModifier as CustomModifier)
+//         .attributeModifier(this.customModifier as CustomModifier)
 
       FormComponent({
         id: this.formId,

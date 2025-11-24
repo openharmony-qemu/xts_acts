@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -67,12 +67,13 @@ export default function sharedTransitionJsunit() {
       console.info("sharedTransition after each called");
     });
 
-    
-    /*
-     * @tc.number   sharedTransitionTest_static_0100
-     * @tc.name     sharedTransitionTest_static_0100
-     * @tc.desc     sharedTransitionTest_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number sharedTransitionTest_static_0100
+     * @tc.name sharedTransitionTest_static_0100
+     * @tc.desc Set sharedTransition values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sharedTransitionTest_static_0100 START');
@@ -94,12 +95,11 @@ export default function sharedTransitionJsunit() {
         console.log("sharedTransitionTest_static_0100 change component data error: " + err.message);
       }
       let callback = (indexEventOne: events_emitter.EventData) => {
-        const data = indexEventOne.data as Record<String,undefined|null|Object>
         console.info("sharedTransitionTest_static_0100 get state result is: " + JSON.stringify(indexEventOne));
         try {
-          expect(data["duration"] as int).assertEqual(2000);
-          expect(data["delay"]  as int).assertEqual(5);
-          expect(data["type"] as SharedTransitionEffectType).assertEqual(SharedTransitionEffectType.Exchange);
+          expect((indexEventOne.data as EventD)?.duration).assertEqual(2000);
+          expect((indexEventOne.data as EventD)?.delay).assertEqual(5);
+          expect((indexEventOne.data as EventD)?.type).assertEqual(SharedTransitionEffectType.Exchange);
         } catch (err: Error) {
           console.info("sharedTransitionTest_static_0100 error: " + err.message);
         }
@@ -115,7 +115,7 @@ export default function sharedTransitionJsunit() {
         console.info("sharedTransitionTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("sharedTransitionTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('Navigator', 10, "")));
-       await UtilsTest.msSleep(2000);
+     await UtilsTest.msSleep(2000);
       console.info('sharedTransitionTest_static_0100 END');
       done();
     });

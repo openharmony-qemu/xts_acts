@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -59,12 +59,13 @@ export default function navDestinationJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   testNavDestinationStatic
-     * @tc.name     testNavDestinationStatic
-     * @tc.desc     testNavDestinationStatic
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testNavDestinationStatic
+     * @tc.name testNavDestinationStatic
+     * @tc.desc Set hideTitleBar values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testNavDestinationStatic', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testNavDestinationStatic] START');
@@ -72,17 +73,18 @@ export default function navDestinationJsunit() {
       console.info("[testNavDestinationStatic] strJson is : " + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testNavDestinationStatic] obj is : " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').tryGetElement('hideTitleBar')).assertEqual(undefined);
+      expect(obj.getElement('$attrs').getString('hideTitleBar')).assertEqual(undefined);
       console.info('[testNavDestinationStatic] END');
       done();
     });
 
-    
-    /*
-     * @tc.number   testNavDestinationStatic_01
-     * @tc.name     testNavDestinationStatic_01
-     * @tc.desc     testNavDestinationStatic_01
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testNavDestinationStatic_01
+     * @tc.name  testNavDestinationStatic_01
+     * @tc.desc Change hideTitleBar values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testNavDestinationStatic_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testNavDestinationStatic_01 START');
@@ -94,7 +96,8 @@ export default function navDestinationJsunit() {
       let strJsonNew = inspector.getInspectorByKey('NavDestination1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("testNavDestinationStatic_01 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('hideTitleBar')).assertEqual(undefined);
+      //expect(objNew.getElement('$attrs').hideTitleBar).assertEqual('false');
+      expect(objNew.getElement('$attrs').getString('hideTitleBar')).assertEqual(undefined);
       console.info('testNavDestinationStatic_01 END');
       done();
     });

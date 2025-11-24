@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,Padding,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle,HorizontalAlign
@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {MessageManager,Callback,Message } from '../../common/MessageManager';
@@ -32,34 +32,34 @@ struct navigationPosition {
   @State isActive: boolean = false
   @State dex: number = 0
   @State navBarWidth: number = 240
-  messageManager:MessageManager<number> = new MessageManager<number>()
+  messageManager:MessageManager<int | boolean> = new MessageManager<int | boolean>()
   @State navMode: NavigationMode[] = new Array<NavigationMode>(NavigationMode.Split, NavigationMode.Stack, NavigationMode.Auto)
   @State navModeIndex: number = 0
   @State hideNavBar: boolean = false
   @State minContentWidth: number = 360
   @State navBarPosition: NavBarPosition[] = new Array<NavBarPosition>(NavBarPosition.Start, NavBarPosition.End)
-  @State navBarPositionIndex: number = 0
+  @State navBarPositionIndex: int = 0
 
 
   onPageShow() {
     console.info('navigationPosition  onPageShow');
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager );
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int | boolean>>("messageManager",  this.messageManager );
+    let callback: Callback<int | boolean> = (message: Message<int | boolean>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'navBarWidth') {
-        this.navBarWidth = message.value;
+        this.navBarWidth = (message as Message<int>).value;
       }
       if (message.name == 'navModeIndex') {
-        this.navModeIndex = message.value;
+        this.navModeIndex = (message as Message<int>).value;
       }
       if (message.name == 'hideNavBar') {
         this.hideNavBar = (message as Message<boolean>).value;
       }
       if (message.name == 'minContentWidth') {
-        this.minContentWidth = message.value;
+        this.minContentWidth = (message as Message<int>).value;
       }
       if (message.name == 'navBarPositionIndex') {
-        this.navBarPositionIndex = message.value;
+        this.navBarPositionIndex = (message as Message<int>).value;
       }
     }
     this.messageManager.registerCallback(callback);
@@ -69,34 +69,33 @@ struct navigationPosition {
     Column() {
       Navigation({}) {
         List({ space: 12, initialIndex: 0 }) {
-          ForEach(this.arr, (item: number, index: int = 0) => {
+          ForEach(this.arr, (item: number) => {
             ListItem() {
-              // NavRouter() {
-              //   Row() {
-              //     Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
-              //     Text(`NavRouter${item + 1}`)
-              //       .fontSize(22)
-              //       .fontWeight(500)
-              //       .textAlign(TextAlign.Center)
-              //   }
-              //   .width(180)
-              //   .height(72)
-              //   .backgroundColor(this.dex === index ? '#ccc' : '#fff')
-              //   .borderRadius(24)
-              //
-              //   NavDestination() {
-              //     Text(`我是NavDestination第${item + 1}页内容`).fontSize(50)
-              //     Flex({ direction: FlexDirection.Row }) {
-              //       Row() {
-              //         Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
-              //         Text('今天共有七节课').fontSize(30)
-              //       }.padding({ left: 15 } as Padding)
-              //     }
-              //   }.backgroundColor('#ccc')
-              //   .title(`NavDestination${item + 1}`)
-              // }.onStateChange((isActivated: boolean) => {
-              //   this.dex = index
-              // })
+              Column(){
+
+                Row() {
+                  Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
+                  Text(`NavRouter${item + 1}`)
+                    .fontSize(22)
+                    .fontWeight(500)
+                    .textAlign(TextAlign.Center)
+                }
+                .width(180)
+                .height(72)
+                .backgroundColor('#ccc')
+                .borderRadius(24)
+
+                NavDestination() {
+                  Text(`我是NavDestination第${item + 1}页内容`).fontSize(50)
+                  Flex({ direction: FlexDirection.Row }) {
+                    Row() {
+                      Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+                      Text('今天共有七节课').fontSize(30)
+                    }.padding({ left: 15 } as Padding)
+                  }
+                }.backgroundColor('#ccc')
+                .title(`NavDestination${item + 1}`)
+              }
             }
           }, (item: number) => String(item))
         }
@@ -104,10 +103,8 @@ struct navigationPosition {
         .margin({ top: 12, left: 12 } as Margin)
       }
       .key('navigationPosition')
-      .navBarPosition(this.navBarPosition[this.navBarPositionIndex.toInt()])
+      .navBarPosition(this.navBarPosition[this.navBarPositionIndex])
       .hideNavBar(this.hideNavBar)
-      .hideTitleBar(true)
-      .hideToolBar(true)
     }.height('100%')
   }
 }

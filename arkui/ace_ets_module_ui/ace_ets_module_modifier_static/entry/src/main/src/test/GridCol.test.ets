@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,12 +56,13 @@ export default function gridColJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   gridColTest_static_0001
-     * @tc.name     gridColTest_static_0001
-     * @tc.desc     gridColTest_static_0001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number gridColTest_static_0001
+     * @tc.name gridColTest_static_0001
+     * @tc.desc Set order values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('gridColTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gridColTest_static_0001 START');
@@ -74,12 +75,13 @@ export default function gridColJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   gridColTest_static_0002
-     * @tc.name     gridColTest_static_0002
-     * @tc.desc     gridColTest_static_0002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number gridColTest_static_0002
+     * @tc.name gridColTest_static_0002
+     * @tc.desc Set gridColOffset values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('gridColTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gridColTest_static_0002 START');
@@ -92,12 +94,13 @@ export default function gridColJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   gridColTest_static_0003
-     * @tc.name     gridColTest_static_0003
-     * @tc.desc     gridColTest_static_0003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number gridColTest_static_0003
+     * @tc.name gridColTest_static_0003
+     * @tc.desc Set span values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('gridColTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gridColTest_static_0003 START');
@@ -110,12 +113,13 @@ export default function gridColJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   gridColTest_static_0004
-     * @tc.name     gridColTest_static_0004
-     * @tc.desc     gridColTest_static_0004
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number gridColTest_static_0004
+     * @tc.name gridColTest_static_0004
+     * @tc.desc Change order values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('gridColTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
