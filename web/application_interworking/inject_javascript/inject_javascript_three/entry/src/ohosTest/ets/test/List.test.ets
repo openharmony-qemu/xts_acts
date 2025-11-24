@@ -19,9 +19,21 @@ import webRunJavaScriptOnHeadEndTest from './WebRunJavaScriptOnHeadEndTest.test'
 import webJavaScriptOnDocumentStartTest from './WebJavaScriptOnDocumentStartTest.test';
 import webJavaScriptOnDocumentEndTest from './WebJavaScriptOnDocumentEndTest.test';
 import webViewRegisterJavaScriptProxyErrorCode from './WebViewRegisterJavaScriptProxyErrorCode.test';
+import webRunJavaScriptOnHeadEndSetUndefined from './WebRunJavaScriptOnHeadEndSetUndefined.test';
+import webRunJavaScriptOnHeadEndSetNull from './WebRunJavaScriptOnHeadEndSetNull.test';
+import webRunJavaScriptOnDocumentStartSetUndefined from './WebRunJavaScriptOnDocumentStartSetUndefined.test';
+import webRunJavaScriptOnDocumentStartSetNull from './WebRunJavaScriptOnDocumentStartSetNull.test';
+import webRunJavaScriptOnDocumentEndSetUndefined from './WebRunJavaScriptOnDocumentEndSetUndefined.test';
+import webRunJavaScriptOnDocumentEndSetNull from './WebRunJavaScriptOnDocumentEndSetNull.test';
 
 
 export default function testsuite() {
+  webRunJavaScriptOnHeadEndSetUndefined()
+  webRunJavaScriptOnHeadEndSetNull()
+  webRunJavaScriptOnDocumentStartSetUndefined()
+  webRunJavaScriptOnDocumentStartSetNull()
+  webRunJavaScriptOnDocumentEndSetUndefined()
+  webRunJavaScriptOnDocumentEndSetNull()
   webRunJavaScriptOnDocumentStartTest();
   webRunJavaScriptOnDocumentEndTest();
   webRunJavaScriptOnHeadEndTest();
