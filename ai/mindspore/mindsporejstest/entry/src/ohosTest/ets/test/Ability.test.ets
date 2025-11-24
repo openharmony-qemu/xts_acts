@@ -180,6 +180,14 @@ export default function abilityTest() {
     })
 
 
+    /**
+     * @tc.name   Test_fun
+     * @tc.number Test_fun
+     * @tc.desc   Test_fun
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_fun',Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_is_None_001");
 
@@ -195,6 +203,14 @@ export default function abilityTest() {
     })
 
     // loadTrainModelFromFile参数3个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -267,6 +283,14 @@ export default function abilityTest() {
     })
 
     // loadTrainModelFromFile参数2个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -334,6 +358,14 @@ export default function abilityTest() {
     })
 
     // loadTrainModelFromBuffer参数3个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -406,6 +438,14 @@ export default function abilityTest() {
     })
 
     // loadTrainModelFromBuffer参数2个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -475,6 +515,14 @@ export default function abilityTest() {
     })
     
     // loadTrainModelFromFd参数3个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -548,6 +596,14 @@ export default function abilityTest() {
     })
 
     // loadTrainModelFromFd参数2个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -618,6 +674,14 @@ export default function abilityTest() {
     })
 
     // exportModel参数4个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_parameter_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_parameter_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_parameter_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -655,6 +719,14 @@ export default function abilityTest() {
     })
 
     // exportModel参数2个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_parameter_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_parameter_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_parameter_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -721,6 +793,14 @@ export default function abilityTest() {
     })
 
     // exportModel参数3个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_parameter_0003
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_parameter_0003
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_parameter_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_0003', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -787,6 +867,14 @@ export default function abilityTest() {
     })
 
     // exportWeightsCollaborateWithMicro参数4个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -832,6 +920,14 @@ export default function abilityTest() {
     })
 
     // exportWeightsCollaborateWithMicro参数2个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -877,6 +973,14 @@ export default function abilityTest() {
     })
 
     // exportWeightsCollaborateWithMicro参数3个
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0003
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0003
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_0003', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -922,6 +1026,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：通过path加载模型，执行1轮训练并对比精度
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -988,6 +1100,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：加载模型文件路径不存在
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let model_file = globalThis.abilityContext.filesDir + '/not_exist/' + 'ml_face_isface_0.input';
@@ -1000,6 +1120,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：加载模型文件路径为空
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0003
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0003
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0003', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       console.log("==========MSLITE loadModel===========");
@@ -1009,6 +1137,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：加载模型文件路径为错误文件
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0004
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0004
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_0004', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
@@ -1021,6 +1157,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：通过path加载模型，执行1轮训练并对比精度
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1087,6 +1231,14 @@ export default function abilityTest() {
     })
 
     //异常场景：加载模型buffer为空
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       console.log("==========MSLITE loadModel===========");
@@ -1096,6 +1248,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：通过path加载模型，执行1轮训练并对比精度
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1163,6 +1323,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置学习率为0.01
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_learningRate_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_learningRate_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_learningRate_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_learningRate_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1230,6 +1398,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置学习率为1000.0
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_learningRate_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_learningRate_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_learningRate_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_learningRate_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1297,6 +1473,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置虚拟batch_size为2
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_setupVirtualBatch_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_setupVirtualBatch_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_setupVirtualBatch_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_setupVirtualBatch_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1365,6 +1549,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置优化等级O0
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_optimizationLevel_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_optimizationLevel_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_optimizationLevel_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_optimizationLevel_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1442,6 +1634,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置优化等级O2
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_optimizationLevel_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_optimizationLevel_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_optimizationLevel_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_optimizationLevel_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1519,6 +1719,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置优化等级O3
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_optimizationLevel_0003
+     * @tc.number SUB_AI_MindSpore_ArkTS_optimizationLevel_0003
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_optimizationLevel_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_optimizationLevel_0003', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1596,6 +1804,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置优化等级AUTO
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_optimizationLevel_0004
+     * @tc.number SUB_AI_MindSpore_ArkTS_optimizationLevel_0004
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_optimizationLevel_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_optimizationLevel_0004', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1673,6 +1889,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置存在的损失函数名
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_lossName_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_lossName_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_lossName_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_lossName_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1749,6 +1973,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：设置不存在的损失函数名
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_lossName_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_lossName_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_lossName_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_lossName_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1825,6 +2057,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：更新权重
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_updateWeights_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_updateWeights_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_updateWeights_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_updateWeights_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1877,6 +2117,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：更新权重后导出训练图，再获取权重
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_updateWeights_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_updateWeights_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_updateWeights_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_updateWeights_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -1947,6 +2195,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：训练model导出推理图后对比精度
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2013,6 +2269,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：quantization_type为OH_AI_NO_QUANT
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2079,6 +2343,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：quantization_type为OH_AI_WEIGHT_QUANT
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0003
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0003
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0003', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2145,6 +2417,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：quantization_type为OH_AI_FULL_QUANT
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0004
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0004
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0004', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2211,6 +2491,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：export_inference_only为false
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0005
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0005
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0005', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2299,6 +2587,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：export_inference_only为false，再指定output_tensor_name
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0006
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0006
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0006', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2388,6 +2684,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：指定导出不存在的output_tensor_name
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0007
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0007
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0007', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2425,6 +2729,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：model_file文件路径不存在
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0008
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0008
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0008', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2459,6 +2771,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：model_file路径为空
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0009
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0009
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0009', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2493,6 +2813,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：model_file路径为文件夹
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_0010
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_0010
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportModel_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportModel_0010', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2527,6 +2855,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：训练model更新并导出micro权重
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0001', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let syscontext: common.Context = globalThis.context
@@ -2572,6 +2908,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：weight_file文件路径不存在
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0002', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
@@ -2596,6 +2940,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：weight_file路径为空
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0003
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0003
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0003', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
@@ -2618,6 +2970,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：weight_file路径为文件夹
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0004
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0004
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0004', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
@@ -2640,6 +3000,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：is_inference为false
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0005
+     * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0005
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_0005', Level.LEVEL0, async () => {
       console.log("==========MSLITE start===========");
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
@@ -2665,6 +3033,14 @@ export default function abilityTest() {
 
 
     // 正常场景：ModelBuild，调用buffer方法，正常推理
+    /**
+     * @tc.name   Test_load_model_param_model_buffer
+     * @tc.number Test_load_model_param_model_buffer
+     * @tc.desc   Test_load_model_param_model_buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer");
       let modelName = 'ml_face_isface.ms';
@@ -2720,6 +3096,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：ModelBuild，调用fd方法，正常推理
+    /**
+     * @tc.name   Test_load_model_param_model_fd
+     * @tc.number Test_load_model_param_model_fd
+     * @tc.desc   Test_load_model_param_model_fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_fd', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_fd");
       let inputName = 'ml_face_isface_0.input';
@@ -2768,6 +3152,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：ModelBuild，调用loadModelFromFile方法，正常推理
+    /**
+     * @tc.name   Test_load_model_param_model_path
+     * @tc.number Test_load_model_param_model_path
+     * @tc.desc   Test_load_model_param_model_path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path");
       let inputName = 'ml_face_isface_0.input';
@@ -2824,6 +3216,14 @@ export default function abilityTest() {
     })
 
     //正常场景：Context设置CPU，4线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_001
+     * @tc.number Test_load_model_param_model_path_settings_threads_001
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_001");
       let inputName = 'ml_face_isface_0.input';
@@ -2876,6 +3276,14 @@ export default function abilityTest() {
     })
 
     //正常场景：Context设置CPU，2线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_002
+     * @tc.number Test_load_model_param_model_path_settings_threads_002
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_002");
       let inputName = 'ml_face_isface_0.input';
@@ -2928,6 +3336,14 @@ export default function abilityTest() {
     })
 
     //正常场景：Context设置CPU，1线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_003
+     * @tc.number Test_load_model_param_model_path_settings_threads_003
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_003");
       let inputName = 'ml_face_isface_0.input';
@@ -2980,6 +3396,14 @@ export default function abilityTest() {
     })
 
     //正常场景：Context设置CPU，0线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_004
+     * @tc.number Test_load_model_param_model_path_settings_threads_004
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_004");
       let inputName = 'ml_face_isface_0.input';
@@ -3032,6 +3456,14 @@ export default function abilityTest() {
     })
 
     //异常场景：Context设置CPU，绑核设置为3，绑核失败
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_affinity_001
+     * @tc.number Test_load_model_param_model_path_settings_affinity_001
+     * @tc.desc   Test_load_model_param_model_path_settings_affinity_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_affinity_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_affinity_001");
       let inputName = 'ml_face_isface_0.input';
@@ -3049,6 +3481,14 @@ export default function abilityTest() {
     })
 
     ///异常场景：Context设置CPU，绑核设置为2，绑小核
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_affinity_002
+     * @tc.number Test_load_model_param_model_path_settings_affinity_002
+     * @tc.desc   Test_load_model_param_model_path_settings_affinity_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_affinity_002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_affinity_002");
       let inputName = 'ml_face_isface_0.input';
@@ -3101,6 +3541,14 @@ export default function abilityTest() {
     })
 
     //异常场景：Context设置CPU，绑核设置为1，绑大核
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_affinity_003
+     * @tc.number Test_load_model_param_model_path_settings_affinity_003
+     * @tc.desc   Test_load_model_param_model_path_settings_affinity_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_affinity_003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_affinity_003");
       let inputName = 'ml_face_isface_0.input';
@@ -3153,6 +3601,14 @@ export default function abilityTest() {
     })
 
     //正常场景：Context设置CPU，绑核设置为0，不绑核
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_affinity_004
+     * @tc.number Test_load_model_param_model_path_settings_affinity_004
+     * @tc.desc   Test_load_model_param_model_path_settings_affinity_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_affinity_004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_affinity_004");
       let inputName = 'ml_face_isface_0.input';
@@ -3205,6 +3661,14 @@ export default function abilityTest() {
     })
 
     //正常场景：Context设置CPU，绑核列表[0,1,2,3]
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_affinity_list_001
+     * @tc.number Test_load_model_param_model_path_settings_affinity_list_001
+     * @tc.desc   Test_load_model_param_model_path_settings_affinity_list_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_affinity_list_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_affinity_list_001");
       let inputName = 'ml_face_isface_0.input';
@@ -3257,6 +3721,14 @@ export default function abilityTest() {
     })
 
     //异常场景：ModelBuild，调用model path方法，path为空
+    /**
+     * @tc.name   Test_load_model_param_model_path_is_None_001
+     * @tc.number Test_load_model_param_model_path_is_None_001
+     * @tc.desc   Test_load_model_param_model_path_is_None_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_is_None_001',Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_is_None_001");
       let model_file = "";
@@ -3269,6 +3741,14 @@ export default function abilityTest() {
     })
 
     //异常场景：ModelBuild，调用buffer方法，modelBuffer为None
+    /**
+     * @tc.name   Test_load_model_param_model_buffer_is_None_001
+     * @tc.number Test_load_model_param_model_buffer_is_None_001
+     * @tc.desc   Test_load_model_param_model_buffer_is_None_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer_is_None_001',Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer_is_None_001");
       let context:mindSporeLite.Context={};
@@ -3280,6 +3760,14 @@ export default function abilityTest() {
     })
 
     //异常场景：ModelBuild，context为null
+    /**
+     * @tc.name   Test_load_model_param_model_path_context_is_None_001
+     * @tc.number Test_load_model_param_model_path_context_is_None_001
+     * @tc.desc   Test_load_model_param_model_path_context_is_None_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_context_is_None_001',Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_context_is_None_001");
       let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3290,6 +3778,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：ModelResize，shape与之前一致
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_001
+     * @tc.number Test_load_model_param_model_path_resize_001
+     * @tc.desc   Test_load_model_param_model_path_resize_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_001");
       let inputName = 'ml_ocr_cn_0.input';
@@ -3361,6 +3857,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：ModelResize，shape与之前不一致
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_002
+     * @tc.number Test_load_model_param_model_path_resize_002
+     * @tc.desc   Test_load_model_param_model_path_resize_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_002");
       let inputName = 'ml_ocr_cn_0.input';
@@ -3432,6 +3936,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：ModelResize，shape为三维
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_003
+     * @tc.number Test_load_model_param_model_path_resize_003
+     * @tc.desc   Test_load_model_param_model_path_resize_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_003");
       let inputName = 'ml_ocr_cn_0.input';
@@ -3469,6 +3981,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：ModelResize，不支持resize的模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_004
+     * @tc.number Test_load_model_param_model_path_resize_004
+     * @tc.desc   Test_load_model_param_model_path_resize_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_004");
       let inputName = 'ml_face_isface_0.input';
@@ -3504,6 +4024,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：ModelResize，shape值有负数
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_005
+     * @tc.number Test_load_model_param_model_path_resize_005
+     * @tc.desc   Test_load_model_param_model_path_resize_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_005', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_005");
       let inputName = 'ml_ocr_cn_0.input';
@@ -3541,6 +4069,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：Build一次，Predict多次
+    /**
+     * @tc.name   Test_load_model_param_model_path_much_predict_001
+     * @tc.number Test_load_model_param_model_path_much_predict_001
+     * @tc.desc   Test_load_model_param_model_path_much_predict_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_much_predict_001',Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_much_predict_001");
       let inputName = 'ml_face_isface_0.input';
@@ -3596,6 +4132,14 @@ export default function abilityTest() {
     })
 
     // 异常场景：Build多次
+    /**
+     * @tc.name   Test_load_model_param_model_path_much_build_001
+     * @tc.number Test_load_model_param_model_path_much_build_001
+     * @tc.desc   Test_load_model_param_model_path_much_build_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_much_build_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_much_build_001");
       let inputName = 'ml_face_isface_0.input';
@@ -3646,6 +4190,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：单输入模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_001
+     * @tc.number Test_load_model_param_model_path_model_001
+     * @tc.desc   Test_load_model_param_model_path_model_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_001");
       let modelName = 'ml_face_isface.ms';
@@ -3696,6 +4248,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：多输入模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_002
+     * @tc.number Test_load_model_param_model_path_model_002
+     * @tc.desc   Test_load_model_param_model_path_model_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_002");
       let modelName = 'ml_video_edit_face_cutout_portraitSeg_deconv.ms';
@@ -3761,6 +4321,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：输入为uint8模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_003
+     * @tc.number Test_load_model_param_model_path_model_003
+     * @tc.desc   Test_load_model_param_model_path_model_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_003");
       let modelName = 'aiy_vision_classifier_plants_V1_3.ms';
@@ -3806,6 +4374,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：多输入单输出
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_004
+     * @tc.number Test_load_model_param_model_path_model_004
+     * @tc.desc   Test_load_model_param_model_path_model_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_004");
       let modelName = 'ml_headpose_pb2tflite.ms';
@@ -3888,6 +4464,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：调用loadModelFromFile callback接口设置context
+    /**
+     * @tc.name   Test_load_model_param_model_path_callback
+     * @tc.number Test_load_model_param_model_path_callback
+     * @tc.desc   Test_load_model_param_model_path_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_callback', Level.LEVEL0, async (done: Function) => {
       console.log("++++++MSLITE api test: loadModel param model file.Test_load_model_param_model_path_callback");
       let inputName = 'ml_face_isface_0.input';
@@ -3934,6 +4518,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：调用loadModelFromBuffer callback接口设置context
+    /**
+     * @tc.name   Test_load_model_param_model_buffer_callback
+     * @tc.number Test_load_model_param_model_buffer_callback
+     * @tc.desc   Test_load_model_param_model_buffer_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer_callback', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer_callback");
       let inputName = 'ml_face_isface_0.input';
@@ -3994,6 +4586,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：调用loadModelFromFd callback接口设置context
+    /**
+     * @tc.name   Test_load_model_param_model_fd_callback
+     * @tc.number Test_load_model_param_model_fd_callback
+     * @tc.desc   Test_load_model_param_model_fd_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_fd_callback', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_fd_callback");
       
@@ -4054,6 +4654,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：调用loadModelFromFile callback接口未设置context
+    /**
+     * @tc.name   Test_load_model_param_model_path_callback_no_context
+     * @tc.number Test_load_model_param_model_path_callback_no_context
+     * @tc.desc   Test_load_model_param_model_path_callback_no_context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_callback_no_context', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_callback_no_context");
       
@@ -4104,6 +4712,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：调用loadModelFromBuffer callback接口未设置context
+    /**
+     * @tc.name   Test_load_model_param_model_buffer_callback_no_context
+     * @tc.number Test_load_model_param_model_buffer_callback_no_context
+     * @tc.desc   Test_load_model_param_model_buffer_callback_no_context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer_callback_no_context', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer_callback_no_context");
       
@@ -4155,6 +4771,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：调用loadModelFromFd callback接口未设置context
+    /**
+     * @tc.name   Test_load_model_param_model_fd_callback_no_context
+     * @tc.number Test_load_model_param_model_fd_callback_no_context
+     * @tc.desc   Test_load_model_param_model_fd_callback_no_context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_fd_callback_no_context', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_fd_callback_no_context");
       
@@ -4206,6 +4830,14 @@ export default function abilityTest() {
     })
 
     // 正常场景：头文件枚举值测试
+    /**
+     * @tc.name   Test_enumerated_value
+     * @tc.number Test_enumerated_value
+     * @tc.desc   Test_enumerated_value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_enumerated_value', Level.LEVEL0, async (done: Function) => {
       try{
         expect(mindSporeLite.Format.NCHW).assertEqual(0);
@@ -4241,6 +4873,14 @@ export default function abilityTest() {
     })
 
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_NNRT_0001
+     * @tc.number SUB_AI_MindSpore_ArkTS_NNRT_0001
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_NNRT_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_NNRT_0001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.SUB_AI_MindSpore_ArkTS_NNRT_0001");
       let modelName = 'ml_face_isface.ms';
@@ -4312,6 +4952,14 @@ export default function abilityTest() {
       console.log('=========MSLITE new Float32Array end=====');
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_NNRT_0002
+     * @tc.number SUB_AI_MindSpore_ArkTS_NNRT_0002
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_NNRT_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_NNRT_0002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.SUB_AI_MindSpore_ArkTS_NNRT_0002");
       let modelName = 'ml_face_isface.ms';
@@ -4383,6 +5031,14 @@ export default function abilityTest() {
       console.log('=========MSLITE new Float32Array end=====');
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_NNRT_0003
+     * @tc.number SUB_AI_MindSpore_ArkTS_NNRT_0003
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_NNRT_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_NNRT_0003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.SUB_AI_MindSpore_ArkTS_NNRT_0003");
       let modelName = 'ml_face_isface.ms';
@@ -4454,6 +5110,14 @@ export default function abilityTest() {
       console.log('=========MSLITE new Float32Array end=====');
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_NNRT_0004
+     * @tc.number SUB_AI_MindSpore_ArkTS_NNRT_0004
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_NNRT_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_NNRT_0004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.SUB_AI_MindSpore_ArkTS_NNRT_0004");
       let modelName = 'ml_face_isface.ms';
@@ -4525,6 +5189,14 @@ export default function abilityTest() {
       console.log('=========MSLITE new Float32Array end=====');
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_NNRT_0005
+     * @tc.number SUB_AI_MindSpore_ArkTS_NNRT_0005
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_NNRT_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_NNRT_0005', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.SUB_AI_MindSpore_ArkTS_NNRT_0005");
       let modelName = 'ml_face_isface.ms';
@@ -4596,6 +5268,14 @@ export default function abilityTest() {
       console.log('=========MSLITE new Float32Array end=====');
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_NNRT_0006
+     * @tc.number SUB_AI_MindSpore_ArkTS_NNRT_0006
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_NNRT_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_NNRT_0006', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.SUB_AI_MindSpore_ArkTS_NNRT_0006");
       let modelName = 'ml_face_isface.ms';
@@ -4675,6 +5355,14 @@ export default function abilityTest() {
     })
 
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ArkTS_NNRT_0008
+     * @tc.number SUB_AI_MindSpore_ArkTS_NNRT_0008
+     * @tc.desc   SUB_AI_MindSpore_ArkTS_NNRT_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AI_MindSpore_ArkTS_NNRT_0008', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.SUB_AI_MindSpore_ArkTS_NNRT_0008");
       let modelName = 'ml_face_isface.ms';
@@ -4714,6 +5402,14 @@ export default function abilityTest() {
 
 
     // 正常场景：模拟器，ModelBuild，调用buffer方法，正常推理
+    /**
+     * @tc.name   Test_load_model_param_model_buffer_emulator
+     * @tc.number Test_load_model_param_model_buffer_emulator
+     * @tc.desc   Test_load_model_param_model_buffer_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer_emulator', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer");
       let modelName = 'ml_face_isface.ms';
@@ -4749,6 +5445,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，ModelBuild，调用fd方法，正常推理
+    /**
+     * @tc.name   Test_load_model_param_model_fd_emulator
+     * @tc.number Test_load_model_param_model_fd_emulator
+     * @tc.desc   Test_load_model_param_model_fd_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_fd_emulator', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_fd");
       let inputName = 'ml_face_isface_0.input';
@@ -4777,6 +5481,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，ModelBuild，调用loadModelFromFile方法，正常推理
+    /**
+     * @tc.name   Test_load_model_param_model_path_emulator
+     * @tc.number Test_load_model_param_model_path_emulator
+     * @tc.desc   Test_load_model_param_model_path_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_emulator', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path");
       let inputName = 'ml_face_isface_0.input';
@@ -4809,6 +5521,14 @@ export default function abilityTest() {
     });
 
     //正常场景：模拟器，Context设置CPU，4线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_emulator_001
+     * @tc.number Test_load_model_param_model_path_settings_threads_emulator_001
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_emulator_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_001");
       let inputName = 'ml_face_isface_0.input';
@@ -4841,6 +5561,14 @@ export default function abilityTest() {
     });
 
     //正常场景：模拟器，Context设置CPU，2线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_emulator_002
+     * @tc.number Test_load_model_param_model_path_settings_threads_emulator_002
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_emulator_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_emulator_002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_002");
       let inputName = 'ml_face_isface_0.input';
@@ -4873,6 +5601,14 @@ export default function abilityTest() {
     });
 
     //正常场景：模拟器，Context设置CPU，1线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_emulator_003
+     * @tc.number Test_load_model_param_model_path_settings_threads_emulator_003
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_emulator_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_emulator_003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_003");
       let inputName = 'ml_face_isface_0.input';
@@ -4905,6 +5641,14 @@ export default function abilityTest() {
     });
 
     //正常场景：模拟器，Context设置CPU，0线程
+    /**
+     * @tc.name   Test_load_model_param_model_path_settings_threads_emulator_004
+     * @tc.number Test_load_model_param_model_path_settings_threads_emulator_004
+     * @tc.desc   Test_load_model_param_model_path_settings_threads_emulator_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_settings_threads_emulator_004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_004");
       let inputName = 'ml_face_isface_0.input';
@@ -4937,6 +5681,14 @@ export default function abilityTest() {
     });
 
     //异常场景：模拟器，ModelBuild，调用model path方法，path为空
+    /**
+     * @tc.name   Test_load_model_param_model_path_is_None_emulator_001
+     * @tc.number Test_load_model_param_model_path_is_None_emulator_001
+     * @tc.desc   Test_load_model_param_model_path_is_None_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_is_None_emulator_001', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_is_None_001");
       let model_file = "";
@@ -4949,6 +5701,14 @@ export default function abilityTest() {
     });
 
     //异常场景：模拟器，ModelBuild，调用buffer方法，modelBuffer为None
+    /**
+     * @tc.name   Test_load_model_param_model_buffer_is_None_emulator_001
+     * @tc.number Test_load_model_param_model_buffer_is_None_emulator_001
+     * @tc.desc   Test_load_model_param_model_buffer_is_None_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer_is_None_emulator_001', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer_is_None_001");
       let context: mindSporeLite.Context = {};
@@ -4960,6 +5720,14 @@ export default function abilityTest() {
     });
 
     //异常场景：模拟器，ModelBuild，context为null
+    /**
+     * @tc.name   Test_load_model_param_model_path_context_is_None_emulator_001
+     * @tc.number Test_load_model_param_model_path_context_is_None_emulator_001
+     * @tc.desc   Test_load_model_param_model_path_context_is_None_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_context_is_None_emulator_001', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_context_is_None_001");      
       let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -4970,6 +5738,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，ModelResize，shape与之前一致
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_emulator_001
+     * @tc.number Test_load_model_param_model_path_resize_emulator_001
+     * @tc.desc   Test_load_model_param_model_path_resize_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_emulator_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_001");
       let inputName = 'ml_ocr_cn_0.input';
@@ -5003,6 +5779,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，ModelResize，shape与之前不一致
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_emulator_002
+     * @tc.number Test_load_model_param_model_path_resize_emulator_002
+     * @tc.desc   Test_load_model_param_model_path_resize_emulator_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_emulator_002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_002");
       let inputName = 'ml_ocr_cn_0.input';
@@ -5066,6 +5850,14 @@ export default function abilityTest() {
     });
 
     // 异常场景：模拟器，ModelResize，shape为三维
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_emulator_003
+     * @tc.number Test_load_model_param_model_path_resize_emulator_003
+     * @tc.desc   Test_load_model_param_model_path_resize_emulator_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_emulator_003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_003");
       let inputName = 'ml_ocr_cn_0.input';
@@ -5085,6 +5877,14 @@ export default function abilityTest() {
     });
 
     // 异常场景：模拟器，ModelResize，不支持resize的模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_emulator_004
+     * @tc.number Test_load_model_param_model_path_resize_emulator_004
+     * @tc.desc   Test_load_model_param_model_path_resize_emulator_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_emulator_004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_004");
       let inputName = 'ml_face_isface_0.input';
@@ -5104,6 +5904,14 @@ export default function abilityTest() {
     });
 
     // 异常场景：模拟器，ModelResize，shape值有负数
+    /**
+     * @tc.name   Test_load_model_param_model_path_resize_emulator_005
+     * @tc.number Test_load_model_param_model_path_resize_emulator_005
+     * @tc.desc   Test_load_model_param_model_path_resize_emulator_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_resize_emulator_005', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_005");
       let inputName = 'ml_ocr_cn_0.input';
@@ -5123,6 +5931,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，Build一次，Predict多次
+    /**
+     * @tc.name   Test_load_model_param_model_path_much_predict_emulator_001
+     * @tc.number Test_load_model_param_model_path_much_predict_emulator_001
+     * @tc.desc   Test_load_model_param_model_path_much_predict_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_much_predict_emulator_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_much_predict_001");
       let inputName = 'ml_face_isface_0.input';
@@ -5158,6 +5974,14 @@ export default function abilityTest() {
     });
 
     // 异常场景：模拟器，Build多次
+    /**
+     * @tc.name   Test_load_model_param_model_path_much_build_emulator_001
+     * @tc.number Test_load_model_param_model_path_much_build_emulator_001
+     * @tc.desc   Test_load_model_param_model_path_much_build_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_much_build_emulator_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_much_build_001");
       let inputName = 'ml_face_isface_0.input';
@@ -5188,6 +6012,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，单输入模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_emulator_001
+     * @tc.number Test_load_model_param_model_path_model_emulator_001
+     * @tc.desc   Test_load_model_param_model_path_model_emulator_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_emulator_001', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_001");
       let modelName = 'ml_face_isface.ms';
@@ -5219,6 +6051,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，多输入模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_emulator_002
+     * @tc.number Test_load_model_param_model_path_model_emulator_002
+     * @tc.desc   Test_load_model_param_model_path_model_emulator_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_emulator_002', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_002");
       let modelName = 'ml_video_edit_face_cutout_portraitSeg_deconv.ms';
@@ -5277,6 +6117,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，输入为uint8模型
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_emulator_003
+     * @tc.number Test_load_model_param_model_path_model_emulator_003
+     * @tc.desc   Test_load_model_param_model_path_model_emulator_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_emulator_003', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_003");
       let modelName = 'aiy_vision_classifier_plants_V1_3.ms';
@@ -5320,6 +6168,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，多输入单输出
+    /**
+     * @tc.name   Test_load_model_param_model_path_model_emulator_004
+     * @tc.number Test_load_model_param_model_path_model_emulator_004
+     * @tc.desc   Test_load_model_param_model_path_model_emulator_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_model_emulator_004', Level.LEVEL0, async () => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_004");
       let modelName = 'ml_headpose_pb2tflite.ms';
@@ -5394,6 +6250,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，调用loadModelFromFile callback接口设置context
+    /**
+     * @tc.name   Test_load_model_param_model_path_callback_emulator
+     * @tc.number Test_load_model_param_model_path_callback_emulator
+     * @tc.desc   Test_load_model_param_model_path_callback_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_callback_emulator', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_callback_emulator");
       let inputName = 'ml_face_isface_0.input';
@@ -5437,6 +6301,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，调用loadModelFromBuffer callback接口设置context
+    /**
+     * @tc.name   Test_load_model_param_model_buffer_callback_emulator
+     * @tc.number Test_load_model_param_model_buffer_callback_emulator
+     * @tc.desc   Test_load_model_param_model_buffer_callback_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer_callback_emulator', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer_callback_emulator");
       let inputName = 'ml_face_isface_0.input';
@@ -5492,6 +6364,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，调用loadModelFromFd callback接口设置context
+    /**
+     * @tc.name   Test_load_model_param_model_fd_callback_emulator
+     * @tc.number Test_load_model_param_model_fd_callback_emulator
+     * @tc.desc   Test_load_model_param_model_fd_callback_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_fd_callback_emulator', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_fd_callback_emulator");
       let inputName = 'ml_face_isface_0.input';
@@ -5547,6 +6427,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，调用loadModelFromFile callback接口未设置context
+    /**
+     * @tc.name   Test_load_model_param_model_path_callback_no_context_emulator
+     * @tc.number Test_load_model_param_model_path_callback_no_context_emulator
+     * @tc.desc   Test_load_model_param_model_path_callback_no_context_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_path_callback_no_context_emulator', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_path_callback_no_context_emulator");
       let inputName = 'ml_face_isface_0.input';
@@ -5596,6 +6484,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，调用loadModelFromBuffer callback接口未设置context
+    /**
+     * @tc.name   Test_load_model_param_model_buffer_callback_no_context_emulator
+     * @tc.number Test_load_model_param_model_buffer_callback_no_context_emulator
+     * @tc.desc   Test_load_model_param_model_buffer_callback_no_context_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_buffer_callback_no_context_emulator', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer_callback_no_context_emulator");
       let inputName = 'ml_face_isface_0.input';
@@ -5646,6 +6542,14 @@ export default function abilityTest() {
     });
 
     // 正常场景：模拟器，调用loadModelFromFd callback接口未设置context
+    /**
+     * @tc.name   Test_load_model_param_model_fd_callback_no_context_emulator
+     * @tc.number Test_load_model_param_model_fd_callback_no_context_emulator
+     * @tc.desc   Test_load_model_param_model_fd_callback_no_context_emulator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Test_load_model_param_model_fd_callback_no_context_emulator', Level.LEVEL0, async (done: Function) => {
       console.log("MSLITE api test: loadModel param model file.Test_load_model_param_model_fd_callback_no_context_emulator");
       let inputName = 'ml_face_isface_0.input';

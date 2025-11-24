@@ -43,9 +43,12 @@ void ExecuteModel(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs, float
 } // namespace
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Create_0100
- * @tc.name   : 创建执行实例，compilation为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Create_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Create_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Create_0100, Function | MediumTest | Level3)
 {
@@ -54,9 +57,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Create_0100, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Create_0200
- * @tc.name   : 创建执行实例，compilation未完成编译
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Create_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Create_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Create_0200, Function | MediumTest | Level3)
 {
@@ -80,9 +86,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Create_0200, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0100
- * @tc.name   : 设置输入，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0100, Function | MediumTest | Level3)
 {
@@ -105,9 +114,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0100, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0200
- * @tc.name   : 设置输入，inputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0200, Function | MediumTest | Level3)
 {
@@ -133,9 +145,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0200, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0300
- * @tc.name   : 设置输入，operand参数不一致
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0300, Function | MediumTest | Level3)
 {
@@ -161,9 +176,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0300, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0400
- * @tc.name   : 设置输入，operand形状改变
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0400, Function | MediumTest | Level3)
 {
@@ -190,9 +208,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0400, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0500
- * @tc.name   : 设置输入，buffer为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0500, Function | MediumTest | Level3)
 {
@@ -218,9 +239,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0500, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0600
- * @tc.name   : 设置输入，length小于输入长度
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0600, Function | MediumTest | Level3)
 {
@@ -245,9 +269,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0600, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0700
- * @tc.name   : 设置输入，重复设置同一inputIndex
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0700
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0700, Function | MediumTest | Level2)
 {
@@ -275,9 +302,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0700, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0800
- * @tc.name   : 变长模型，设置超出动态范围的输入
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0800
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0800, Function | MediumTest | Level2)
 {
@@ -310,9 +340,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0800, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_0900
- * @tc.name   : 变长模型，设置等于动态范围的最小输入
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_0900
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0900, Function | MediumTest | Level2)
 {
@@ -345,9 +378,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_0900, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetInput_1000
- * @tc.name   : 变长模型，设置等于动态范围的最大输入
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetInput_1000
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_1000, Function | MediumTest | Level2)
 {
@@ -380,9 +416,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetInput_1000, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetOutput_0100
- * @tc.name   : 设置输出，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetOutput_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetOutput_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0100, Function | MediumTest | Level3)
 {
@@ -420,9 +459,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0100, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetOutput_0200
- * @tc.name   : 设置输出，outputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetOutput_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetOutput_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0200, Function | MediumTest | Level3)
 {
@@ -460,9 +502,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0200, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetOutput_0300
- * @tc.name   : 设置输出，buffer为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetOutput_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetOutput_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0300, Function | MediumTest | Level3)
 {
@@ -500,9 +545,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0300, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetOutput_0400
- * @tc.name   : 设置输出，length小于输出长度
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetOutput_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetOutput_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0400, Function | MediumTest | Level3)
 {
@@ -539,9 +587,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0400, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_SetOutput_0500
- * @tc.name   : 设置输出，重复设置同一outputIndex
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_SetOutput_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_SetOutput_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0500, Function | MediumTest | Level2)
 {
@@ -581,18 +632,24 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_SetOutput_0500, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Run_0100
- * @tc.name   : 模型推理，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Run_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Run_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0100, Function | MediumTest | Level3)
 {
     ASSERT_EQ(OH_NN_INVALID_PARAMETER, OH_NNExecutor_Run(nullptr));
 }
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Run_0200
- * @tc.name   : 模型推理，executor未设置输入
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Run_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Run_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0200, Function | MediumTest | Level3)
 {
@@ -622,9 +679,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0200, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Run_0300
- * @tc.name   : 模型推理，executor未设置输出
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Run_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Run_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0300, Function | MediumTest | Level3)
 {
@@ -658,9 +718,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0300, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Run_0400
- * @tc.name   : 模型推理，executor设置输入个数不足
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Run_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Run_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0400, Function | MediumTest | Level3)
 {
@@ -692,9 +755,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0400, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Run_0500
- * @tc.name   : 模型推理，executor设置输出个数不足
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Run_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Run_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0500, Function | MediumTest | Level3)
 {
@@ -718,9 +784,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0500, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Run_0600
- * @tc.name   : 定长模型推理测试
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Run_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Run_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0600, Function | MediumTest | Level1)
 {
@@ -743,9 +812,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0600, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Run_0700
- * @tc.name   : 变长模型推理测试
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Run_0700
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Run_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0700, Function | MediumTest | Level1)
 {
@@ -773,9 +845,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Run_0700, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100
- * @tc.name   : 获取输出维度，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100, Function | MediumTest | Level3)
 {
@@ -803,9 +878,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200
- * @tc.name   : 获取输出维度，outputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200, Function | MediumTest | Level3)
 {
@@ -833,9 +911,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300
- * @tc.name   : 获取输出维度，*dimensions为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300, Function | MediumTest | Level3)
 {
@@ -862,9 +943,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400
- * @tc.name   : 获取输出维度，**dimensions非nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400, Function | MediumTest | Level3)
 {
@@ -893,9 +977,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500
- * @tc.name   : 获取输出维度，*dimensionCount为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500, Function | MediumTest | Level3)
 {
@@ -922,9 +1009,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600
- * @tc.name   : 未调用推理接口，获取输出维度
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600, Function | MediumTest | Level3)
 {
@@ -967,9 +1057,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700
- * @tc.name   : 模型推理成功，获取输出维度
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700, Function | MediumTest | Level2)
 {
@@ -997,9 +1090,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800
- * @tc.name   : 变长模型推理成功，获取输出维度
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800, Function | MediumTest | Level1)
 {
@@ -1034,9 +1130,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800,
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Destroy_0100
- * @tc.name   : 销毁执行器实例，*executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Destroy_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Destroy_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Destroy_0100, Function | MediumTest | Level3)
 {
@@ -1045,9 +1144,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Destroy_0100, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Destroy_0200
- * @tc.name   : 销毁执行器实例，executor释放
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Destroy_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Destroy_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Destroy_0200, Function | MediumTest | Level1)
 {
@@ -1073,9 +1175,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Destroy_0200, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNR_Func_North_Executor_Combine_0100
- * @tc.name   : 并发模型推理，推理成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNR_Func_North_Executor_Combine_0100
+ * @tc.number SUB_AI_NNR_Func_North_Executor_Combine_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNR_Func_North_Executor_Combine_0100, Function | MediumTest | Level2)
 {
@@ -1110,9 +1215,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNR_Func_North_Executor_Combine_0100, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Combine_0200
- * @tc.name   : 多次设置输入，仅首次成功，模型推理
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Combine_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Combine_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Combine_0200, Function | MediumTest | Level1)
 {
@@ -1158,9 +1266,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Combine_0200, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Combine_0300
- * @tc.name   : 多次设置输出，仅首次生效，模型推理
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Combine_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Combine_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Combine_0300, Function | MediumTest | Level1)
 {
@@ -1207,9 +1318,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Combine_0300, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Combine_0400
- * @tc.name   : 模型推理，共享输入非共享输出
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Combine_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Combine_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Combine_0400, Function | MediumTest | Level2)
 {
@@ -1264,9 +1378,12 @@ HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Combine_0400, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Combine_0500
- * @tc.name   : 模型推理，非共享输入共享输出
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Combine_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Combine_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ExecutorTest, SUB_AI_NNRt_Func_North_Executor_Combine_0500, Function | MediumTest | Level2)
 {
