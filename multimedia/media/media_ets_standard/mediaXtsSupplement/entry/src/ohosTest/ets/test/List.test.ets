@@ -15,9 +15,15 @@
 
 import AVPlayerLocalDeprecatedTest from './media/AVPlayerLocalDeprecatedTest.test';
 import AVPlayerLocalSuppTest from './media/AVPlayerLocalTest.test';
+import AVPlayerSetMediaSourceSuppTest from './media/AVPlayerMediaSourceSupp.test';
+import AVPlayerSetMediaMutedSuppTest from './media/AVPlayerSetMediaMutedSupp.test';
+import AVPlayerSetPlaybackRangeSuppTest from './media/AVPlayerSetPlaybackRangeSupp.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
   AVPlayerLocalSuppTest();
+  AVPlayerSetPlaybackRangeSuppTest();
+  AVPlayerSetMediaMutedSuppTest();
+  AVPlayerSetMediaSourceSuppTest();
 }
 
